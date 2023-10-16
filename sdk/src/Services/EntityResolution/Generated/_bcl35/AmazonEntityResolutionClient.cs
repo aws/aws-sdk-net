@@ -284,6 +284,88 @@ namespace Amazon.EntityResolution
         #endregion
 
 
+        #region  CreateIdMappingWorkflow
+
+        /// <summary>
+        /// Creates an <code>IdMappingWorkflow</code> object which stores the configuration of
+        /// the data processing job to be run. Each <code>IdMappingWorkflow</code> must have a
+        /// unique workflow name. To modify an existing workflow, use the <code>UpdateIdMappingWorkflow</code>
+        /// API.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateIdMappingWorkflow service method.</param>
+        /// 
+        /// <returns>The response from the CreateIdMappingWorkflow service method, as returned by EntityResolution.</returns>
+        /// <exception cref="Amazon.EntityResolution.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action. <code>HTTP Status Code:
+        /// 403</code>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource. Example: Workflow already exists, Schema already exists, Workflow is currently
+        /// running, etc. <code>HTTP Status Code: 400</code>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ExceedsLimitException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// Entity Resolution account limits. The error message describes the limit exceeded.
+        /// <code>HTTP Status Code: 402</code>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the Entity Resolution service.
+        /// <code>HTTP Status Code: 500</code>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
+        /// The request was denied due to request throttling. <code>HTTP Status Code: 429</code>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by Entity Resolution. <code>HTTP
+        /// Status Code: 400</code>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/CreateIdMappingWorkflow">REST API Reference for CreateIdMappingWorkflow Operation</seealso>
+        public virtual CreateIdMappingWorkflowResponse CreateIdMappingWorkflow(CreateIdMappingWorkflowRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateIdMappingWorkflowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateIdMappingWorkflowResponseUnmarshaller.Instance;
+
+            return Invoke<CreateIdMappingWorkflowResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateIdMappingWorkflow operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateIdMappingWorkflow operation on AmazonEntityResolutionClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateIdMappingWorkflow
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/CreateIdMappingWorkflow">REST API Reference for CreateIdMappingWorkflow Operation</seealso>
+        public virtual IAsyncResult BeginCreateIdMappingWorkflow(CreateIdMappingWorkflowRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateIdMappingWorkflowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateIdMappingWorkflowResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateIdMappingWorkflow operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateIdMappingWorkflow.</param>
+        /// 
+        /// <returns>Returns a  CreateIdMappingWorkflowResult from EntityResolution.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/CreateIdMappingWorkflow">REST API Reference for CreateIdMappingWorkflow Operation</seealso>
+        public virtual CreateIdMappingWorkflowResponse EndCreateIdMappingWorkflow(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateIdMappingWorkflowResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateMatchingWorkflow
 
         /// <summary>
@@ -448,6 +530,76 @@ namespace Amazon.EntityResolution
 
         #endregion
         
+        #region  DeleteIdMappingWorkflow
+
+        /// <summary>
+        /// Deletes the <code>IdMappingWorkflow</code> with a given name. This operation will
+        /// succeed even if a workflow with the given name does not exist.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIdMappingWorkflow service method.</param>
+        /// 
+        /// <returns>The response from the DeleteIdMappingWorkflow service method, as returned by EntityResolution.</returns>
+        /// <exception cref="Amazon.EntityResolution.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action. <code>HTTP Status Code:
+        /// 403</code>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the Entity Resolution service.
+        /// <code>HTTP Status Code: 500</code>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
+        /// The request was denied due to request throttling. <code>HTTP Status Code: 429</code>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by Entity Resolution. <code>HTTP
+        /// Status Code: 400</code>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/DeleteIdMappingWorkflow">REST API Reference for DeleteIdMappingWorkflow Operation</seealso>
+        public virtual DeleteIdMappingWorkflowResponse DeleteIdMappingWorkflow(DeleteIdMappingWorkflowRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteIdMappingWorkflowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteIdMappingWorkflowResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteIdMappingWorkflowResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteIdMappingWorkflow operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIdMappingWorkflow operation on AmazonEntityResolutionClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteIdMappingWorkflow
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/DeleteIdMappingWorkflow">REST API Reference for DeleteIdMappingWorkflow Operation</seealso>
+        public virtual IAsyncResult BeginDeleteIdMappingWorkflow(DeleteIdMappingWorkflowRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteIdMappingWorkflowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteIdMappingWorkflowResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteIdMappingWorkflow operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteIdMappingWorkflow.</param>
+        /// 
+        /// <returns>Returns a  DeleteIdMappingWorkflowResult from EntityResolution.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/DeleteIdMappingWorkflow">REST API Reference for DeleteIdMappingWorkflow Operation</seealso>
+        public virtual DeleteIdMappingWorkflowResponse EndDeleteIdMappingWorkflow(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteIdMappingWorkflowResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteMatchingWorkflow
 
         /// <summary>
@@ -523,7 +675,7 @@ namespace Amazon.EntityResolution
         /// <summary>
         /// Deletes the <code>SchemaMapping</code> with a given name. This operation will succeed
         /// even if a schema with the given name does not exist. This operation will fail if there
-        /// is a <code>DataIntegrationWorkflow</code> object that references the <code>SchemaMapping</code>
+        /// is a <code>MatchingWorkflow</code> object that references the <code>SchemaMapping</code>
         /// in the workflow's <code>InputSourceConfig</code>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteSchemaMapping service method.</param>
@@ -591,6 +743,151 @@ namespace Amazon.EntityResolution
         public virtual DeleteSchemaMappingResponse EndDeleteSchemaMapping(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteSchemaMappingResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetIdMappingJob
+
+        /// <summary>
+        /// Gets the status, metrics, and errors (if there are any) that are associated with a
+        /// job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIdMappingJob service method.</param>
+        /// 
+        /// <returns>The response from the GetIdMappingJob service method, as returned by EntityResolution.</returns>
+        /// <exception cref="Amazon.EntityResolution.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action. <code>HTTP Status Code:
+        /// 403</code>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the Entity Resolution service.
+        /// <code>HTTP Status Code: 500</code>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
+        /// The resource could not be found. <code>HTTP Status Code: 404</code>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
+        /// The request was denied due to request throttling. <code>HTTP Status Code: 429</code>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by Entity Resolution. <code>HTTP
+        /// Status Code: 400</code>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/GetIdMappingJob">REST API Reference for GetIdMappingJob Operation</seealso>
+        public virtual GetIdMappingJobResponse GetIdMappingJob(GetIdMappingJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetIdMappingJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetIdMappingJobResponseUnmarshaller.Instance;
+
+            return Invoke<GetIdMappingJobResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetIdMappingJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetIdMappingJob operation on AmazonEntityResolutionClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetIdMappingJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/GetIdMappingJob">REST API Reference for GetIdMappingJob Operation</seealso>
+        public virtual IAsyncResult BeginGetIdMappingJob(GetIdMappingJobRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetIdMappingJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetIdMappingJobResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetIdMappingJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetIdMappingJob.</param>
+        /// 
+        /// <returns>Returns a  GetIdMappingJobResult from EntityResolution.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/GetIdMappingJob">REST API Reference for GetIdMappingJob Operation</seealso>
+        public virtual GetIdMappingJobResponse EndGetIdMappingJob(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetIdMappingJobResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetIdMappingWorkflow
+
+        /// <summary>
+        /// Returns the <code>IdMappingWorkflow</code> with a given name, if it exists.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIdMappingWorkflow service method.</param>
+        /// 
+        /// <returns>The response from the GetIdMappingWorkflow service method, as returned by EntityResolution.</returns>
+        /// <exception cref="Amazon.EntityResolution.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action. <code>HTTP Status Code:
+        /// 403</code>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the Entity Resolution service.
+        /// <code>HTTP Status Code: 500</code>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
+        /// The resource could not be found. <code>HTTP Status Code: 404</code>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
+        /// The request was denied due to request throttling. <code>HTTP Status Code: 429</code>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by Entity Resolution. <code>HTTP
+        /// Status Code: 400</code>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/GetIdMappingWorkflow">REST API Reference for GetIdMappingWorkflow Operation</seealso>
+        public virtual GetIdMappingWorkflowResponse GetIdMappingWorkflow(GetIdMappingWorkflowRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetIdMappingWorkflowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetIdMappingWorkflowResponseUnmarshaller.Instance;
+
+            return Invoke<GetIdMappingWorkflowResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetIdMappingWorkflow operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetIdMappingWorkflow operation on AmazonEntityResolutionClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetIdMappingWorkflow
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/GetIdMappingWorkflow">REST API Reference for GetIdMappingWorkflow Operation</seealso>
+        public virtual IAsyncResult BeginGetIdMappingWorkflow(GetIdMappingWorkflowRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetIdMappingWorkflowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetIdMappingWorkflowResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetIdMappingWorkflow operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetIdMappingWorkflow.</param>
+        /// 
+        /// <returns>Returns a  GetIdMappingWorkflowResult from EntityResolution.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/GetIdMappingWorkflow">REST API Reference for GetIdMappingWorkflow Operation</seealso>
+        public virtual GetIdMappingWorkflowResponse EndGetIdMappingWorkflow(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetIdMappingWorkflowResponse>(asyncResult);
         }
 
         #endregion
@@ -812,6 +1109,78 @@ namespace Amazon.EntityResolution
 
         #endregion
         
+        #region  GetProviderService
+
+        /// <summary>
+        /// Returns the <code>ProviderService</code> of a given name.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetProviderService service method.</param>
+        /// 
+        /// <returns>The response from the GetProviderService service method, as returned by EntityResolution.</returns>
+        /// <exception cref="Amazon.EntityResolution.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action. <code>HTTP Status Code:
+        /// 403</code>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the Entity Resolution service.
+        /// <code>HTTP Status Code: 500</code>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
+        /// The resource could not be found. <code>HTTP Status Code: 404</code>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
+        /// The request was denied due to request throttling. <code>HTTP Status Code: 429</code>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by Entity Resolution. <code>HTTP
+        /// Status Code: 400</code>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/GetProviderService">REST API Reference for GetProviderService Operation</seealso>
+        public virtual GetProviderServiceResponse GetProviderService(GetProviderServiceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetProviderServiceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetProviderServiceResponseUnmarshaller.Instance;
+
+            return Invoke<GetProviderServiceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetProviderService operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetProviderService operation on AmazonEntityResolutionClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetProviderService
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/GetProviderService">REST API Reference for GetProviderService Operation</seealso>
+        public virtual IAsyncResult BeginGetProviderService(GetProviderServiceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetProviderServiceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetProviderServiceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetProviderService operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetProviderService.</param>
+        /// 
+        /// <returns>Returns a  GetProviderServiceResult from EntityResolution.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/GetProviderService">REST API Reference for GetProviderService Operation</seealso>
+        public virtual GetProviderServiceResponse EndGetProviderService(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetProviderServiceResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetSchemaMapping
 
         /// <summary>
@@ -880,6 +1249,148 @@ namespace Amazon.EntityResolution
         public virtual GetSchemaMappingResponse EndGetSchemaMapping(IAsyncResult asyncResult)
         {
             return EndInvoke<GetSchemaMappingResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListIdMappingJobs
+
+        /// <summary>
+        /// Lists all ID mapping jobs for a given workflow.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListIdMappingJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListIdMappingJobs service method, as returned by EntityResolution.</returns>
+        /// <exception cref="Amazon.EntityResolution.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action. <code>HTTP Status Code:
+        /// 403</code>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the Entity Resolution service.
+        /// <code>HTTP Status Code: 500</code>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
+        /// The resource could not be found. <code>HTTP Status Code: 404</code>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
+        /// The request was denied due to request throttling. <code>HTTP Status Code: 429</code>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by Entity Resolution. <code>HTTP
+        /// Status Code: 400</code>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/ListIdMappingJobs">REST API Reference for ListIdMappingJobs Operation</seealso>
+        public virtual ListIdMappingJobsResponse ListIdMappingJobs(ListIdMappingJobsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListIdMappingJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListIdMappingJobsResponseUnmarshaller.Instance;
+
+            return Invoke<ListIdMappingJobsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListIdMappingJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListIdMappingJobs operation on AmazonEntityResolutionClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListIdMappingJobs
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/ListIdMappingJobs">REST API Reference for ListIdMappingJobs Operation</seealso>
+        public virtual IAsyncResult BeginListIdMappingJobs(ListIdMappingJobsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListIdMappingJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListIdMappingJobsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListIdMappingJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListIdMappingJobs.</param>
+        /// 
+        /// <returns>Returns a  ListIdMappingJobsResult from EntityResolution.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/ListIdMappingJobs">REST API Reference for ListIdMappingJobs Operation</seealso>
+        public virtual ListIdMappingJobsResponse EndListIdMappingJobs(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListIdMappingJobsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListIdMappingWorkflows
+
+        /// <summary>
+        /// Returns a list of all the <code>IdMappingWorkflows</code> that have been created for
+        /// an Amazon Web Services account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListIdMappingWorkflows service method.</param>
+        /// 
+        /// <returns>The response from the ListIdMappingWorkflows service method, as returned by EntityResolution.</returns>
+        /// <exception cref="Amazon.EntityResolution.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action. <code>HTTP Status Code:
+        /// 403</code>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the Entity Resolution service.
+        /// <code>HTTP Status Code: 500</code>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
+        /// The request was denied due to request throttling. <code>HTTP Status Code: 429</code>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by Entity Resolution. <code>HTTP
+        /// Status Code: 400</code>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/ListIdMappingWorkflows">REST API Reference for ListIdMappingWorkflows Operation</seealso>
+        public virtual ListIdMappingWorkflowsResponse ListIdMappingWorkflows(ListIdMappingWorkflowsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListIdMappingWorkflowsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListIdMappingWorkflowsResponseUnmarshaller.Instance;
+
+            return Invoke<ListIdMappingWorkflowsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListIdMappingWorkflows operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListIdMappingWorkflows operation on AmazonEntityResolutionClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListIdMappingWorkflows
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/ListIdMappingWorkflows">REST API Reference for ListIdMappingWorkflows Operation</seealso>
+        public virtual IAsyncResult BeginListIdMappingWorkflows(ListIdMappingWorkflowsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListIdMappingWorkflowsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListIdMappingWorkflowsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListIdMappingWorkflows operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListIdMappingWorkflows.</param>
+        /// 
+        /// <returns>Returns a  ListIdMappingWorkflowsResult from EntityResolution.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/ListIdMappingWorkflows">REST API Reference for ListIdMappingWorkflows Operation</seealso>
+        public virtual ListIdMappingWorkflowsResponse EndListIdMappingWorkflows(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListIdMappingWorkflowsResponse>(asyncResult);
         }
 
         #endregion
@@ -1026,6 +1537,76 @@ namespace Amazon.EntityResolution
 
         #endregion
         
+        #region  ListProviderServices
+
+        /// <summary>
+        /// Returns a list of all the <code>ProviderServices</code> that are available in this
+        /// Amazon Web Services Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListProviderServices service method.</param>
+        /// 
+        /// <returns>The response from the ListProviderServices service method, as returned by EntityResolution.</returns>
+        /// <exception cref="Amazon.EntityResolution.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action. <code>HTTP Status Code:
+        /// 403</code>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the Entity Resolution service.
+        /// <code>HTTP Status Code: 500</code>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
+        /// The request was denied due to request throttling. <code>HTTP Status Code: 429</code>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by Entity Resolution. <code>HTTP
+        /// Status Code: 400</code>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/ListProviderServices">REST API Reference for ListProviderServices Operation</seealso>
+        public virtual ListProviderServicesResponse ListProviderServices(ListProviderServicesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListProviderServicesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListProviderServicesResponseUnmarshaller.Instance;
+
+            return Invoke<ListProviderServicesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListProviderServices operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListProviderServices operation on AmazonEntityResolutionClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListProviderServices
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/ListProviderServices">REST API Reference for ListProviderServices Operation</seealso>
+        public virtual IAsyncResult BeginListProviderServices(ListProviderServicesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListProviderServicesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListProviderServicesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListProviderServices operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListProviderServices.</param>
+        /// 
+        /// <returns>Returns a  ListProviderServicesResult from EntityResolution.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/ListProviderServices">REST API Reference for ListProviderServices Operation</seealso>
+        public virtual ListProviderServicesResponse EndListProviderServices(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListProviderServicesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListSchemaMappings
 
         /// <summary>
@@ -1158,6 +1739,89 @@ namespace Amazon.EntityResolution
         public virtual ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult)
         {
             return EndInvoke<ListTagsForResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StartIdMappingJob
+
+        /// <summary>
+        /// Starts the <code>IdMappingJob</code> of a workflow. The workflow must have previously
+        /// been created using the <code>CreateIdMappingWorkflow</code> endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartIdMappingJob service method.</param>
+        /// 
+        /// <returns>The response from the StartIdMappingJob service method, as returned by EntityResolution.</returns>
+        /// <exception cref="Amazon.EntityResolution.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action. <code>HTTP Status Code:
+        /// 403</code>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource. Example: Workflow already exists, Schema already exists, Workflow is currently
+        /// running, etc. <code>HTTP Status Code: 400</code>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ExceedsLimitException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// Entity Resolution account limits. The error message describes the limit exceeded.
+        /// <code>HTTP Status Code: 402</code>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the Entity Resolution service.
+        /// <code>HTTP Status Code: 500</code>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
+        /// The resource could not be found. <code>HTTP Status Code: 404</code>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
+        /// The request was denied due to request throttling. <code>HTTP Status Code: 429</code>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by Entity Resolution. <code>HTTP
+        /// Status Code: 400</code>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/StartIdMappingJob">REST API Reference for StartIdMappingJob Operation</seealso>
+        public virtual StartIdMappingJobResponse StartIdMappingJob(StartIdMappingJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartIdMappingJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartIdMappingJobResponseUnmarshaller.Instance;
+
+            return Invoke<StartIdMappingJobResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartIdMappingJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartIdMappingJob operation on AmazonEntityResolutionClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartIdMappingJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/StartIdMappingJob">REST API Reference for StartIdMappingJob Operation</seealso>
+        public virtual IAsyncResult BeginStartIdMappingJob(StartIdMappingJobRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartIdMappingJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartIdMappingJobResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartIdMappingJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartIdMappingJob.</param>
+        /// 
+        /// <returns>Returns a  StartIdMappingJobResult from EntityResolution.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/StartIdMappingJob">REST API Reference for StartIdMappingJob Operation</seealso>
+        public virtual StartIdMappingJobResponse EndStartIdMappingJob(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartIdMappingJobResponse>(asyncResult);
         }
 
         #endregion
@@ -1381,6 +2045,80 @@ namespace Amazon.EntityResolution
 
         #endregion
         
+        #region  UpdateIdMappingWorkflow
+
+        /// <summary>
+        /// Updates an existing <code>IdMappingWorkflow</code>. This method is identical to <code>CreateIdMappingWorkflow</code>,
+        /// except it uses an HTTP <code>PUT</code> request instead of a <code>POST</code> request,
+        /// and the <code>IdMappingWorkflow</code> must already exist for the method to succeed.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateIdMappingWorkflow service method.</param>
+        /// 
+        /// <returns>The response from the UpdateIdMappingWorkflow service method, as returned by EntityResolution.</returns>
+        /// <exception cref="Amazon.EntityResolution.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action. <code>HTTP Status Code:
+        /// 403</code>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the Entity Resolution service.
+        /// <code>HTTP Status Code: 500</code>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
+        /// The resource could not be found. <code>HTTP Status Code: 404</code>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
+        /// The request was denied due to request throttling. <code>HTTP Status Code: 429</code>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by Entity Resolution. <code>HTTP
+        /// Status Code: 400</code>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/UpdateIdMappingWorkflow">REST API Reference for UpdateIdMappingWorkflow Operation</seealso>
+        public virtual UpdateIdMappingWorkflowResponse UpdateIdMappingWorkflow(UpdateIdMappingWorkflowRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateIdMappingWorkflowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateIdMappingWorkflowResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateIdMappingWorkflowResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateIdMappingWorkflow operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateIdMappingWorkflow operation on AmazonEntityResolutionClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateIdMappingWorkflow
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/UpdateIdMappingWorkflow">REST API Reference for UpdateIdMappingWorkflow Operation</seealso>
+        public virtual IAsyncResult BeginUpdateIdMappingWorkflow(UpdateIdMappingWorkflowRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateIdMappingWorkflowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateIdMappingWorkflowResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateIdMappingWorkflow operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateIdMappingWorkflow.</param>
+        /// 
+        /// <returns>Returns a  UpdateIdMappingWorkflowResult from EntityResolution.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/UpdateIdMappingWorkflow">REST API Reference for UpdateIdMappingWorkflow Operation</seealso>
+        public virtual UpdateIdMappingWorkflowResponse EndUpdateIdMappingWorkflow(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateIdMappingWorkflowResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UpdateMatchingWorkflow
 
         /// <summary>
@@ -1451,6 +2189,90 @@ namespace Amazon.EntityResolution
         public virtual UpdateMatchingWorkflowResponse EndUpdateMatchingWorkflow(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateMatchingWorkflowResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateSchemaMapping
+
+        /// <summary>
+        /// Updates a schema mapping.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// A schema is immutable if it is being used by a workflow. Therefore, you can't update
+        /// a schema mapping if it's associated with a workflow. 
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSchemaMapping service method.</param>
+        /// 
+        /// <returns>The response from the UpdateSchemaMapping service method, as returned by EntityResolution.</returns>
+        /// <exception cref="Amazon.EntityResolution.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action. <code>HTTP Status Code:
+        /// 403</code>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource. Example: Workflow already exists, Schema already exists, Workflow is currently
+        /// running, etc. <code>HTTP Status Code: 400</code>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the Entity Resolution service.
+        /// <code>HTTP Status Code: 500</code>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
+        /// The resource could not be found. <code>HTTP Status Code: 404</code>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
+        /// The request was denied due to request throttling. <code>HTTP Status Code: 429</code>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by Entity Resolution. <code>HTTP
+        /// Status Code: 400</code>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/UpdateSchemaMapping">REST API Reference for UpdateSchemaMapping Operation</seealso>
+        public virtual UpdateSchemaMappingResponse UpdateSchemaMapping(UpdateSchemaMappingRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateSchemaMappingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSchemaMappingResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateSchemaMappingResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateSchemaMapping operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSchemaMapping operation on AmazonEntityResolutionClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateSchemaMapping
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/UpdateSchemaMapping">REST API Reference for UpdateSchemaMapping Operation</seealso>
+        public virtual IAsyncResult BeginUpdateSchemaMapping(UpdateSchemaMappingRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateSchemaMappingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSchemaMappingResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateSchemaMapping operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateSchemaMapping.</param>
+        /// 
+        /// <returns>Returns a  UpdateSchemaMappingResult from EntityResolution.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/UpdateSchemaMapping">REST API Reference for UpdateSchemaMapping Operation</seealso>
+        public virtual UpdateSchemaMappingResponse EndUpdateSchemaMapping(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateSchemaMappingResponse>(asyncResult);
         }
 
         #endregion

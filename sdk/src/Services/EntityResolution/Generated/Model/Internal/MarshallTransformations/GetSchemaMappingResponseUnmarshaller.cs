@@ -63,6 +63,12 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
                     response.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("hasWorkflows", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    response.HasWorkflows = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("mappedInputFields", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<SchemaInputAttribute, SchemaInputAttributeUnmarshaller>(SchemaInputAttributeUnmarshaller.Instance);

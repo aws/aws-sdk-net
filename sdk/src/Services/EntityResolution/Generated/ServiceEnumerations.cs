@@ -75,6 +75,52 @@ namespace Amazon.EntityResolution
 
 
     /// <summary>
+    /// Constants used for properties of type IdMappingType.
+    /// </summary>
+    public class IdMappingType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PROVIDER for IdMappingType
+        /// </summary>
+        public static readonly IdMappingType PROVIDER = new IdMappingType("PROVIDER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IdMappingType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IdMappingType FindValue(string value)
+        {
+            return FindValue<IdMappingType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IdMappingType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type IncrementalRunType.
     /// </summary>
     public class IncrementalRunType : ConstantClass
@@ -188,6 +234,10 @@ namespace Amazon.EntityResolution
         /// Constant ML_MATCHING for ResolutionType
         /// </summary>
         public static readonly ResolutionType ML_MATCHING = new ResolutionType("ML_MATCHING");
+        /// <summary>
+        /// Constant PROVIDER for ResolutionType
+        /// </summary>
+        public static readonly ResolutionType PROVIDER = new ResolutionType("PROVIDER");
         /// <summary>
         /// Constant RULE_MATCHING for ResolutionType
         /// </summary>
@@ -303,6 +353,10 @@ namespace Amazon.EntityResolution
         /// </summary>
         public static readonly SchemaAttributeType PHONE_NUMBER = new SchemaAttributeType("PHONE_NUMBER");
         /// <summary>
+        /// Constant PROVIDER_ID for SchemaAttributeType
+        /// </summary>
+        public static readonly SchemaAttributeType PROVIDER_ID = new SchemaAttributeType("PROVIDER_ID");
+        /// <summary>
         /// Constant STRING for SchemaAttributeType
         /// </summary>
         public static readonly SchemaAttributeType STRING = new SchemaAttributeType("STRING");
@@ -340,6 +394,56 @@ namespace Amazon.EntityResolution
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SchemaAttributeType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ServiceType.
+    /// </summary>
+    public class ServiceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ASSIGNMENT for ServiceType
+        /// </summary>
+        public static readonly ServiceType ASSIGNMENT = new ServiceType("ASSIGNMENT");
+        /// <summary>
+        /// Constant ID_MAPPING for ServiceType
+        /// </summary>
+        public static readonly ServiceType ID_MAPPING = new ServiceType("ID_MAPPING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ServiceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ServiceType FindValue(string value)
+        {
+            return FindValue<ServiceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ServiceType(string value)
         {
             return FindValue(value);
         }

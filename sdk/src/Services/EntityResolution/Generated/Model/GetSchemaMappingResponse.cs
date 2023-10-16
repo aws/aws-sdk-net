@@ -35,6 +35,7 @@ namespace Amazon.EntityResolution.Model
     {
         private DateTime? _createdAt;
         private string _description;
+        private bool? _hasWorkflows;
         private List<SchemaInputAttribute> _mappedInputFields = new List<SchemaInputAttribute>();
         private string _schemaArn;
         private string _schemaName;
@@ -77,6 +78,25 @@ namespace Amazon.EntityResolution.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HasWorkflows. 
+        /// <para>
+        /// Specifies whether the schema mapping has been applied to a workflow.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public bool HasWorkflows
+        {
+            get { return this._hasWorkflows.GetValueOrDefault(); }
+            set { this._hasWorkflows = value; }
+        }
+
+        // Check to see if HasWorkflows property is set
+        internal bool IsSetHasWorkflows()
+        {
+            return this._hasWorkflows.HasValue; 
         }
 
         /// <summary>
@@ -125,7 +145,7 @@ namespace Amazon.EntityResolution.Model
         /// The name of the schema.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=255)]
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string SchemaName
         {
             get { return this._schemaName; }

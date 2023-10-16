@@ -185,11 +185,11 @@ namespace Amazon.EntityResolution.Model
         /// <summary>
         /// Gets and sets the property WorkflowName. 
         /// <para>
-        /// The name of the workflow. There cannot be multiple <code>DataIntegrationWorkflows</code>
-        /// with the same name.
+        /// The name of the workflow. There can't be multiple <code>MatchingWorkflows</code> with
+        /// the same name.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=255)]
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string WorkflowName
         {
             get { return this._workflowName; }

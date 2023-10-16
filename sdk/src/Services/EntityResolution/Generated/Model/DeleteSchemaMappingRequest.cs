@@ -32,7 +32,7 @@ namespace Amazon.EntityResolution.Model
     /// Container for the parameters to the DeleteSchemaMapping operation.
     /// Deletes the <code>SchemaMapping</code> with a given name. This operation will succeed
     /// even if a schema with the given name does not exist. This operation will fail if there
-    /// is a <code>DataIntegrationWorkflow</code> object that references the <code>SchemaMapping</code>
+    /// is a <code>MatchingWorkflow</code> object that references the <code>SchemaMapping</code>
     /// in the workflow's <code>InputSourceConfig</code>.
     /// </summary>
     public partial class DeleteSchemaMappingRequest : AmazonEntityResolutionRequest
@@ -45,7 +45,7 @@ namespace Amazon.EntityResolution.Model
         /// The name of the schema to delete.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=255)]
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string SchemaName
         {
             get { return this._schemaName; }

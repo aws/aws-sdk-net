@@ -107,7 +107,7 @@ namespace Amazon.EntityResolution.Model
         /// The S3 path to which Entity Resolution will write the output table.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string OutputS3Path
         {
             get { return this._outputs3Path; }

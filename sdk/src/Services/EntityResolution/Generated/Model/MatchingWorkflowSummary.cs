@@ -36,6 +36,7 @@ namespace Amazon.EntityResolution.Model
     public partial class MatchingWorkflowSummary
     {
         private DateTime? _createdAt;
+        private ResolutionType _resolutionType;
         private DateTime? _updatedAt;
         private string _workflowArn;
         private string _workflowName;
@@ -57,6 +58,26 @@ namespace Amazon.EntityResolution.Model
         internal bool IsSetCreatedAt()
         {
             return this._createdAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResolutionType. 
+        /// <para>
+        /// The method that has been specified for data matching, either using matching provided
+        /// by Entity Resolution or through a provider service.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public ResolutionType ResolutionType
+        {
+            get { return this._resolutionType; }
+            set { this._resolutionType = value; }
+        }
+
+        // Check to see if ResolutionType property is set
+        internal bool IsSetResolutionType()
+        {
+            return this._resolutionType != null;
         }
 
         /// <summary>
@@ -103,7 +124,7 @@ namespace Amazon.EntityResolution.Model
         /// The name of the workflow.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=255)]
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string WorkflowName
         {
             get { return this._workflowName; }
