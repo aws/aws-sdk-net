@@ -40,9 +40,8 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property DomainNames. 
         /// <para>
-        /// Array of OpenSearch Service domain names that you want information about. If you don't
-        /// specify any domains, OpenSearch Service returns information about all domains owned
-        /// by the account.
+        /// Array of OpenSearch Service domain names that you want information about. You must
+        /// specify at least one domain name.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -2682,7 +2682,7 @@ namespace Amazon.OpenSearchService
 
 
         /// <summary>
-        /// Modifies the cluster configuration of the specified Amazon OpenSearch Service domain.sl
+        /// Modifies the cluster configuration of the specified Amazon OpenSearch Service domain.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDomainConfig service method.</param>
         /// <param name="cancellationToken">

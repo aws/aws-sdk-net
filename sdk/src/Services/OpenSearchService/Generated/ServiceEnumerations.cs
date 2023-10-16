@@ -491,6 +491,10 @@ namespace Amazon.OpenSearchService
     {
 
         /// <summary>
+        /// Constant EngineVersion for DescribePackagesFilterName
+        /// </summary>
+        public static readonly DescribePackagesFilterName EngineVersion = new DescribePackagesFilterName("EngineVersion");
+        /// <summary>
         /// Constant PackageID for DescribePackagesFilterName
         /// </summary>
         public static readonly DescribePackagesFilterName PackageID = new DescribePackagesFilterName("PackageID");
@@ -502,6 +506,10 @@ namespace Amazon.OpenSearchService
         /// Constant PackageStatus for DescribePackagesFilterName
         /// </summary>
         public static readonly DescribePackagesFilterName PackageStatus = new DescribePackagesFilterName("PackageStatus");
+        /// <summary>
+        /// Constant PackageType for DescribePackagesFilterName
+        /// </summary>
+        public static readonly DescribePackagesFilterName PackageType = new DescribePackagesFilterName("PackageType");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1856,6 +1864,10 @@ namespace Amazon.OpenSearchService
         /// Constant TXTDICTIONARY for PackageType
         /// </summary>
         public static readonly PackageType TXTDICTIONARY = new PackageType("TXT-DICTIONARY");
+        /// <summary>
+        /// Constant ZIPPLUGIN for PackageType
+        /// </summary>
+        public static readonly PackageType ZIPPLUGIN = new PackageType("ZIP-PLUGIN");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

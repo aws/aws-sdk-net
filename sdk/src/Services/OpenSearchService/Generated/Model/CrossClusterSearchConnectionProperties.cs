@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// Cross cluster search specific connection properties.
+    /// Cross-cluster search specific connection properties.
     /// </summary>
     public partial class CrossClusterSearchConnectionProperties
     {
@@ -38,7 +38,10 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property SkipUnavailable. 
         /// <para>
-        /// Status of SkipUnavailable param for outbound connection.
+        /// The status of the <code>SkipUnavailable</code> setting for the outbound connection.
+        /// This feature allows you to specify some clusters as optional and ensure that your
+        /// cross-cluster queries return partial results despite failures on one or more remote
+        /// clusters.
         /// </para>
         /// </summary>
         public SkipUnavailableStatus SkipUnavailable

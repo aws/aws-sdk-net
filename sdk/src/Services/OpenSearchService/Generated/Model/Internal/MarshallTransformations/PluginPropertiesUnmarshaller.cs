@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for PackageVersionHistory Object
+    /// Response Unmarshaller for PluginProperties Object
     /// </summary>  
-    public class PackageVersionHistoryUnmarshaller : IUnmarshaller<PackageVersionHistory, XmlUnmarshallerContext>, IUnmarshaller<PackageVersionHistory, JsonUnmarshallerContext>
+    public class PluginPropertiesUnmarshaller : IUnmarshaller<PluginProperties, XmlUnmarshallerContext>, IUnmarshaller<PluginProperties, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        PackageVersionHistory IUnmarshaller<PackageVersionHistory, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        PluginProperties IUnmarshaller<PluginProperties, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,45 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public PackageVersionHistory Unmarshall(JsonUnmarshallerContext context)
+        public PluginProperties Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            PackageVersionHistory unmarshalledObject = new PackageVersionHistory();
+            PluginProperties unmarshalledObject = new PluginProperties();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("CommitMessage", targetDepth))
+                if (context.TestExpression("ClassName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CommitMessage = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ClassName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("CreatedAt", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("PackageVersion", targetDepth))
+                if (context.TestExpression("Description", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PackageVersion = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("PluginProperties", targetDepth))
+                if (context.TestExpression("Name", targetDepth))
                 {
-                    var unmarshaller = PluginPropertiesUnmarshaller.Instance;
-                    unmarshalledObject.PluginProperties = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("UncompressedSizeInBytes", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.UncompressedSizeInBytes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Version", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Version = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +100,12 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         }
 
 
-        private static PackageVersionHistoryUnmarshaller _instance = new PackageVersionHistoryUnmarshaller();        
+        private static PluginPropertiesUnmarshaller _instance = new PluginPropertiesUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PackageVersionHistoryUnmarshaller Instance
+        public static PluginPropertiesUnmarshaller Instance
         {
             get
             {

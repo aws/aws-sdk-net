@@ -36,6 +36,7 @@ namespace Amazon.OpenSearchService.Model
         private string _commitMessage;
         private DateTime? _createdAt;
         private string _packageVersion;
+        private PluginProperties _pluginProperties;
 
         /// <summary>
         /// Gets and sets the property CommitMessage. 
@@ -90,6 +91,25 @@ namespace Amazon.OpenSearchService.Model
         internal bool IsSetPackageVersion()
         {
             return this._packageVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PluginProperties. 
+        /// <para>
+        /// Additional information about plugin properties if the package is a <code>ZIP-PLUGIN</code>
+        /// package.
+        /// </para>
+        /// </summary>
+        public PluginProperties PluginProperties
+        {
+            get { return this._pluginProperties; }
+            set { this._pluginProperties = value; }
+        }
+
+        // Check to see if PluginProperties property is set
+        internal bool IsSetPluginProperties()
+        {
+            return this._pluginProperties != null;
         }
 
     }

@@ -70,10 +70,22 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                     unmarshalledObject.AvailablePackageVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AvailablePluginProperties", targetDepth))
+                {
+                    var unmarshaller = PluginPropertiesUnmarshaller.Instance;
+                    unmarshalledObject.AvailablePluginProperties = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CreatedAt", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("EngineVersion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EngineVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ErrorDetails", targetDepth))
