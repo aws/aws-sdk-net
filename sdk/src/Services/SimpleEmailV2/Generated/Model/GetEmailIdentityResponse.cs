@@ -40,6 +40,7 @@ namespace Amazon.SimpleEmailV2.Model
         private MailFromAttributes _mailFromAttributes;
         private Dictionary<string, string> _policies = new Dictionary<string, string>();
         private List<Tag> _tags = new List<Tag>();
+        private VerificationInfo _verificationInfo;
         private VerificationStatus _verificationStatus;
         private bool? _verifiedForSendingStatus;
 
@@ -182,6 +183,25 @@ namespace Amazon.SimpleEmailV2.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VerificationInfo. 
+        /// <para>
+        /// An object that contains additional information about the verification status for the
+        /// identity.
+        /// </para>
+        /// </summary>
+        public VerificationInfo VerificationInfo
+        {
+            get { return this._verificationInfo; }
+            set { this._verificationInfo = value; }
+        }
+
+        // Check to see if VerificationInfo property is set
+        internal bool IsSetVerificationInfo()
+        {
+            return this._verificationInfo != null;
         }
 
         /// <summary>

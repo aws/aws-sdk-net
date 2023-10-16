@@ -2075,6 +2075,68 @@ namespace Amazon.SimpleEmailV2
 
 
     /// <summary>
+    /// Constants used for properties of type VerificationError.
+    /// </summary>
+    public class VerificationError : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DNS_SERVER_ERROR for VerificationError
+        /// </summary>
+        public static readonly VerificationError DNS_SERVER_ERROR = new VerificationError("DNS_SERVER_ERROR");
+        /// <summary>
+        /// Constant HOST_NOT_FOUND for VerificationError
+        /// </summary>
+        public static readonly VerificationError HOST_NOT_FOUND = new VerificationError("HOST_NOT_FOUND");
+        /// <summary>
+        /// Constant INVALID_VALUE for VerificationError
+        /// </summary>
+        public static readonly VerificationError INVALID_VALUE = new VerificationError("INVALID_VALUE");
+        /// <summary>
+        /// Constant SERVICE_ERROR for VerificationError
+        /// </summary>
+        public static readonly VerificationError SERVICE_ERROR = new VerificationError("SERVICE_ERROR");
+        /// <summary>
+        /// Constant TYPE_NOT_FOUND for VerificationError
+        /// </summary>
+        public static readonly VerificationError TYPE_NOT_FOUND = new VerificationError("TYPE_NOT_FOUND");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VerificationError(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VerificationError FindValue(string value)
+        {
+            return FindValue<VerificationError>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VerificationError(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type VerificationStatus.
     /// </summary>
     public class VerificationStatus : ConstantClass
