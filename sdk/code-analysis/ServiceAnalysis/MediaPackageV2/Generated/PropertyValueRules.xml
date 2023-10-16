@@ -24,6 +24,11 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaPackageV2.Model.CreateChannelResponse.Description</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaPackageV2.Model.CreateChannelGroupRequest.ChannelGroupName</property>
     <min>1</min>
     <max>256</max>
@@ -37,6 +42,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaPackageV2.Model.CreateChannelGroupRequest.Description</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaPackageV2.Model.CreateChannelGroupResponse.Description</property>
     <min>0</min>
     <max>1024</max>
   </property-value-rule>
@@ -176,10 +186,20 @@
     <pattern>[a-zA-Z0-9_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaPackageV2.Model.GetChannelResponse.Description</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaPackageV2.Model.GetChannelGroupRequest.ChannelGroupName</property>
     <min>1</min>
     <max>256</max>
     <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaPackageV2.Model.GetChannelGroupResponse.Description</property>
+    <min>0</min>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaPackageV2.Model.GetChannelPolicyRequest.ChannelGroupName</property>
@@ -192,6 +212,11 @@
     <min>1</min>
     <max>256</max>
     <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaPackageV2.Model.GetChannelPolicyResponse.Policy</property>
+    <min>0</min>
+    <max>6144</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaPackageV2.Model.GetOriginEndpointRequest.ChannelGroupName</property>
@@ -251,6 +276,29 @@
     <min>1</min>
     <max>256</max>
     <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaPackageV2.Model.GetOriginEndpointPolicyResponse.ChannelGroupName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaPackageV2.Model.GetOriginEndpointPolicyResponse.ChannelName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaPackageV2.Model.GetOriginEndpointPolicyResponse.OriginEndpointName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaPackageV2.Model.GetOriginEndpointPolicyResponse.Policy</property>
+    <min>0</min>
+    <max>6144</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaPackageV2.Model.ListChannelGroupsRequest.MaxResults</property>
@@ -343,6 +391,11 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaPackageV2.Model.UpdateChannelResponse.Description</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaPackageV2.Model.UpdateChannelGroupRequest.ChannelGroupName</property>
     <min>1</min>
     <max>256</max>
@@ -350,6 +403,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaPackageV2.Model.UpdateChannelGroupRequest.Description</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaPackageV2.Model.UpdateChannelGroupResponse.Description</property>
     <min>0</min>
     <max>1024</max>
   </property-value-rule>
@@ -403,6 +461,16 @@
     <min>1</min>
     <max>256</max>
     <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaPackageV2.Model.ChannelGroupListConfiguration.Description</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaPackageV2.Model.ChannelListConfiguration.Description</property>
+    <min>0</min>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaPackageV2.Model.CreateHlsManifestConfiguration.ChildManifestName</property>

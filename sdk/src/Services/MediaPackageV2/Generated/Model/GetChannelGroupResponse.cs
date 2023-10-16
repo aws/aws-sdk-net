@@ -105,6 +105,7 @@ namespace Amazon.MediaPackageV2.Model
         /// The description for your channel group.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string Description
         {
             get { return this._description; }

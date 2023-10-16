@@ -83,7 +83,7 @@ namespace Amazon.MediaPackageV2.Model
         /// The policy assigned to the channel.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=0, Max=6144)]
         public string Policy
         {
             get { return this._policy; }

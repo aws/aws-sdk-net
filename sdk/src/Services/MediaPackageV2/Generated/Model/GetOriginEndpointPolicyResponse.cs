@@ -45,7 +45,7 @@ namespace Amazon.MediaPackageV2.Model
         /// the channel group, and must be unique for your account in the AWS Region.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string ChannelGroupName
         {
             get { return this._channelGroupName; }
@@ -65,7 +65,7 @@ namespace Amazon.MediaPackageV2.Model
         /// and must be unique for your account in the AWS Region and channel group.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string ChannelName
         {
             get { return this._channelName; }
@@ -86,7 +86,7 @@ namespace Amazon.MediaPackageV2.Model
         /// channel.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string OriginEndpointName
         {
             get { return this._originEndpointName; }
@@ -105,7 +105,7 @@ namespace Amazon.MediaPackageV2.Model
         /// The policy assigned to the origin endpoint.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=0, Max=6144)]
         public string Policy
         {
             get { return this._policy; }
