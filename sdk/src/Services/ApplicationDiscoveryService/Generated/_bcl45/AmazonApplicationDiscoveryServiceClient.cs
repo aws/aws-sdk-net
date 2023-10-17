@@ -2006,7 +2006,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// with this user.
         /// </exception>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ConflictErrorException">
-        /// 
+        /// Conflict error.
         /// </exception>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.HomeRegionNotSetException">
         /// The home Region is not set. Set the home Region to continue.
@@ -2056,7 +2056,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// with this user.
         /// </exception>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ConflictErrorException">
-        /// 
+        /// Conflict error.
         /// </exception>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.HomeRegionNotSetException">
         /// The home Region is not set. Set the home Region to continue.

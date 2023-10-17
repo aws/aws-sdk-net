@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ApplicationDiscoveryService.Model
 {
     /// <summary>
-    /// 
+    /// Conflict error.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
