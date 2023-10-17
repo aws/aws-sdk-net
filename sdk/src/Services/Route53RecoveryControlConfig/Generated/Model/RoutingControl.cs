@@ -37,6 +37,7 @@ namespace Amazon.Route53RecoveryControlConfig.Model
     {
         private string _controlPanelArn;
         private string _name;
+        private string _owner;
         private string _routingControlArn;
         private Status _status;
 
@@ -76,6 +77,25 @@ namespace Amazon.Route53RecoveryControlConfig.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Owner. 
+        /// <para>
+        /// The Amazon Web Services account ID of the routing control owner.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=12)]
+        public string Owner
+        {
+            get { return this._owner; }
+            set { this._owner = value; }
+        }
+
+        // Check to see if Owner property is set
+        internal bool IsSetOwner()
+        {
+            return this._owner != null;
         }
 
         /// <summary>
