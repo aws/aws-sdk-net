@@ -457,6 +457,68 @@ namespace Amazon.Kafka
 
 
     /// <summary>
+    /// Constants used for properties of type ReplicatorState.
+    /// </summary>
+    public class ReplicatorState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATING for ReplicatorState
+        /// </summary>
+        public static readonly ReplicatorState CREATING = new ReplicatorState("CREATING");
+        /// <summary>
+        /// Constant DELETING for ReplicatorState
+        /// </summary>
+        public static readonly ReplicatorState DELETING = new ReplicatorState("DELETING");
+        /// <summary>
+        /// Constant FAILED for ReplicatorState
+        /// </summary>
+        public static readonly ReplicatorState FAILED = new ReplicatorState("FAILED");
+        /// <summary>
+        /// Constant RUNNING for ReplicatorState
+        /// </summary>
+        public static readonly ReplicatorState RUNNING = new ReplicatorState("RUNNING");
+        /// <summary>
+        /// Constant UPDATING for ReplicatorState
+        /// </summary>
+        public static readonly ReplicatorState UPDATING = new ReplicatorState("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ReplicatorState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ReplicatorState FindValue(string value)
+        {
+            return FindValue<ReplicatorState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ReplicatorState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type StorageMode.
     /// </summary>
     public class StorageMode : ConstantClass
@@ -500,6 +562,68 @@ namespace Amazon.Kafka
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator StorageMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TargetCompressionType.
+    /// </summary>
+    public class TargetCompressionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant GZIP for TargetCompressionType
+        /// </summary>
+        public static readonly TargetCompressionType GZIP = new TargetCompressionType("GZIP");
+        /// <summary>
+        /// Constant LZ4 for TargetCompressionType
+        /// </summary>
+        public static readonly TargetCompressionType LZ4 = new TargetCompressionType("LZ4");
+        /// <summary>
+        /// Constant NONE for TargetCompressionType
+        /// </summary>
+        public static readonly TargetCompressionType NONE = new TargetCompressionType("NONE");
+        /// <summary>
+        /// Constant SNAPPY for TargetCompressionType
+        /// </summary>
+        public static readonly TargetCompressionType SNAPPY = new TargetCompressionType("SNAPPY");
+        /// <summary>
+        /// Constant ZSTD for TargetCompressionType
+        /// </summary>
+        public static readonly TargetCompressionType ZSTD = new TargetCompressionType("ZSTD");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TargetCompressionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TargetCompressionType FindValue(string value)
+        {
+            return FindValue<TargetCompressionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TargetCompressionType(string value)
         {
             return FindValue(value);
         }

@@ -108,6 +108,14 @@ namespace Amazon.Kafka.Model
         }
 
         /// <summary>
+        /// Paginator for ListReplicators operation
+        ///</summary>
+        public IListReplicatorsPaginator ListReplicators(ListReplicatorsRequest request) 
+        {
+            return new ListReplicatorsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListScramSecrets operation
         ///</summary>
         public IListScramSecretsPaginator ListScramSecrets(ListScramSecretsRequest request) 
