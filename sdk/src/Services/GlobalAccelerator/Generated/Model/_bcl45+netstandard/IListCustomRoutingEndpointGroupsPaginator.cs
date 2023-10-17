@@ -29,5 +29,10 @@ namespace Amazon.GlobalAccelerator.Model
         /// Enumerable containing all full responses for the operation
         /// </summary>
         IPaginatedEnumerable<ListCustomRoutingEndpointGroupsResponse> Responses { get; }
+
+        /// <summary>
+        /// Enumerable containing all of the EndpointGroups
+        /// </summary>
+        IPaginatedEnumerable<CustomRoutingEndpointGroup> EndpointGroups { get; }
     }
 }
