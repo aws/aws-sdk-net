@@ -176,9 +176,9 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For containers in a task with the <code>awsvpc</code> network mode, the <code>hostPort</code>
-        /// is set to the same value as the <code>containerPort</code>. This is a static mapping
-        /// strategy.
+        /// For containers in a task with the <code>awsvpc</code> network mode, the <code>hostPortRange</code>
+        /// is set to the same value as the <code>containerPortRange</code>. This is a static
+        /// mapping strategy.
         /// </para>
         ///  </li> <li> 
         /// <para>

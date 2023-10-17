@@ -33,8 +33,6 @@ namespace Amazon.ECS.Model
     /// specify up to ten environment files. The file must have a <code>.env</code> file extension.
     /// Each line in an environment file should contain an environment variable in <code>VARIABLE=VALUE</code>
     /// format. Lines beginning with <code>#</code> are treated as comments and are ignored.
-    /// For more information about the environment variable file syntax, see <a href="https://docs.docker.com/compose/env-file/">Declare
-    /// default environment variables in file</a>.
     /// 
     ///  
     /// <para>
@@ -56,6 +54,22 @@ namespace Amazon.ECS.Model
     ///  </li> <li> 
     /// <para>
     /// Windows platform version <code>1.0.0</code> or later.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// Consider the following when using the Fargate launch type:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// The file is handled like a native Docker env-file.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// There is no support for shell escape handling.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The container entry point interperts the <code>VARIABLE</code> values.
     /// </para>
     ///  </li> </ul>
     /// </summary>

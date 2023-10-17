@@ -67,30 +67,87 @@ namespace Amazon.ECS.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>UNKNOWN</code>-The container health check is being evaluated or there's no
-    /// container health check defined.
+    ///  <code>UNKNOWN</code>-The container health check is being evaluated, there's no container
+    /// health check defined, or Amazon ECS doesn't have the health status of the container.
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// The following describes the possible <code>healthStatus</code> values for a task.
-    /// The container health check status of non-essential containers don't have an effect
-    /// on the health status of a task.
+    /// The following describes the possible <code>healthStatus</code> values based on the
+    /// container health checker status of essential containers in the task with the following
+    /// priority order (high to low):
     /// </para>
     ///  <ul> <li> 
-    /// <para>
-    ///  <code>HEALTHY</code>-All essential containers within the task have passed their health
-    /// checks.
-    /// </para>
-    ///  </li> <li> 
     /// <para>
     ///  <code>UNHEALTHY</code>-One or more essential containers have failed their health
     /// check.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>UNKNOWN</code>-The essential containers within the task are still having their
-    /// health checks evaluated, there are only nonessential containers with health checks
-    /// defined, or there are no container health checks defined.
+    ///  <code>UNKNOWN</code>-Any essential container running within the task is in an <code>UNKNOWN</code>
+    /// state and no other essential containers have an <code>UNHEALTHY</code> state.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>HEALTHY</code>-All essential containers within the task have passed their health
+    /// checks.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// Consider the following task health example with 2 containers.
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// If Container1 is <code>UNHEALTHY</code> and Container2 is <code>UNKNOWN</code>, the
+    /// task health is <code>UNHEALTHY</code>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// If Container1 is <code>UNHEALTHY</code> and Container2 is <code>HEALTHY</code>, the
+    /// task health is <code>UNHEALTHY</code>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// If Container1 is <code>HEALTHY</code> and Container2 is <code>UNKNOWN</code>, the
+    /// task health is <code>UNKNOWN</code>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// If Container1 is <code>HEALTHY</code> and Container2 is <code>HEALTHY</code>, the
+    /// task health is <code>HEALTHY</code>.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// Consider the following task health example with 3 containers.
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// If Container1 is <code>UNHEALTHY</code> and Container2 is <code>UNKNOWN</code>, and
+    /// Container3 is <code>UNKNOWN</code>, the task health is <code>UNHEALTHY</code>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// If Container1 is <code>UNHEALTHY</code> and Container2 is <code>UNKNOWN</code>, and
+    /// Container3 is <code>HEALTHY</code>, the task health is <code>UNHEALTHY</code>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// If Container1 is <code>UNHEALTHY</code> and Container2 is <code>HEALTHY</code>, and
+    /// Container3 is <code>HEALTHY</code>, the task health is <code>UNHEALTHY</code>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// If Container1 is <code>HEALTHY</code> and Container2 is <code>UNKNOWN</code>, and
+    /// Container3 is <code>HEALTHY</code>, the task health is <code>UNKNOWN</code>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// If Container1 is <code>HEALTHY</code> and Container2 is <code>UNKNOWN</code>, and
+    /// Container3 is <code>UNKNOWN</code>, the task health is <code>UNKNOWN</code>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// If Container1 is <code>HEALTHY</code> and Container2 is <code>HEALTHY</code>, and
+    /// Container3 is <code>HEALTHY</code>, the task health is <code>HEALTHY</code>.
     /// </para>
     ///  </li> </ul> 
     /// <para>
