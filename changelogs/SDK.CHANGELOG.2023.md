@@ -1,3 +1,24 @@
+### 3.7.664.0 (2023-10-17 18:25 UTC)
+* ApplicationDiscoveryService (3.7.202.0)
+	* This release introduces three new APIs: StartBatchDeleteConfigurationTask, DescribeBatchDeleteConfigurationTask, and BatchDeleteAgents.
+* CodePipeline (3.7.201.0)
+	* Add retryMode ALL_ACTIONS to RetryStageExecution API that retries a failed stage starting from first action in the stage
+* ECS (3.7.201.26)
+	* Documentation only updates to address Amazon ECS tickets.
+* GlobalAccelerator (3.7.201.0)
+	* Fixed error where ListCustomRoutingEndpointGroups did not have a paginator
+* GuardDuty (3.7.204.0)
+	* Add domainWithSuffix finding field to dnsRequestAction
+* Kafka (3.7.202.0)
+	* AWS Managed Streaming for Kafka is launching MSK Replicator, a new feature that enables customers to reliably replicate data across Amazon MSK clusters in same or different AWS regions. You can now use SDK to create, list, describe, delete, update, and manage tags of MSK Replicators.
+* Route53RecoveryCluster (3.7.201.0)
+	* Adds Owner field to ListRoutingControls API.
+* Route53RecoveryControlConfig (3.7.201.0)
+	* Adds permissions for GetResourcePolicy to support returning details about AWS Resource Access Manager resource policies for shared resources.
+* Core 3.7.204.3
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.663.0 (2023-10-16 18:23 UTC)
 * CloudFormation (3.7.204.0)
 	* SDK and documentation updates for UpdateReplacePolicy

@@ -32,7 +32,7 @@ namespace Amazon.ConnectCampaignService
     public partial class AmazonConnectCampaignServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.201.25");
+            InternalSDKUtils.BuildUserAgentString("3.7.201.26");
 
         private string _userAgent = UserAgentString;
         ///<summary>
