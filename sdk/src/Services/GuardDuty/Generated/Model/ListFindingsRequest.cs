@@ -199,6 +199,10 @@ namespace Amazon.GuardDuty.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// service.action.dnsRequestAction.domainWithSuffix
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// service.action.networkConnectionAction.blocked
         /// </para>
         ///  </li> <li> 

@@ -35,6 +35,7 @@ namespace Amazon.GuardDuty.Model
     {
         private bool? _blocked;
         private string _domain;
+        private string _domainWithSuffix;
         private string _protocol;
 
         /// <summary>
@@ -71,6 +72,25 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetDomain()
         {
             return this._domain != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DomainWithSuffix. 
+        /// <para>
+        /// The second and top level domain involved in the activity that prompted GuardDuty to
+        /// generate this finding.
+        /// </para>
+        /// </summary>
+        public string DomainWithSuffix
+        {
+            get { return this._domainWithSuffix; }
+            set { this._domainWithSuffix = value; }
+        }
+
+        // Check to see if DomainWithSuffix property is set
+        internal bool IsSetDomainWithSuffix()
+        {
+            return this._domainWithSuffix != null;
         }
 
         /// <summary>

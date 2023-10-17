@@ -78,9 +78,9 @@ namespace Amazon.GuardDuty.Internal
                     }
                     if (Equals(refs["UseFIPS"], true))
                     {
-                        if (Equals(true, GetAttr(refs["PartitionResult"], "supportsFIPS")))
+                        if (Equals(GetAttr(refs["PartitionResult"], "supportsFIPS"), true))
                         {
-                            if (Equals("aws-us-gov", GetAttr(refs["PartitionResult"], "name")))
+                            if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws-us-gov"))
                             {
                                 return new Endpoint(Interpolate(@"https://guardduty.{Region}.amazonaws.com", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                             }
