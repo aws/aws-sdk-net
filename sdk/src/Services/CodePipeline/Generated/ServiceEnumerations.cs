@@ -819,6 +819,10 @@ namespace Amazon.CodePipeline
     {
 
         /// <summary>
+        /// Constant ALL_ACTIONS for StageRetryMode
+        /// </summary>
+        public static readonly StageRetryMode ALL_ACTIONS = new StageRetryMode("ALL_ACTIONS");
+        /// <summary>
         /// Constant FAILED_ACTIONS for StageRetryMode
         /// </summary>
         public static readonly StageRetryMode FAILED_ACTIONS = new StageRetryMode("FAILED_ACTIONS");
