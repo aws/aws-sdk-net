@@ -330,6 +330,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.Iops = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("IsStorageConfigUpgradeAvailable", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.IsStorageConfigUpgradeAvailable = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("KmsKeyId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

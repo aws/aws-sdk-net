@@ -256,6 +256,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+                if(publicRequest.IsSetUpgradeStorageConfig())
+                {
+                    request.Parameters.Add("UpgradeStorageConfig", StringUtils.FromBool(publicRequest.UpgradeStorageConfig));
+                }
                 if(publicRequest.IsSetUseDefaultProcessorFeatures())
                 {
                     request.Parameters.Add("UseDefaultProcessorFeatures", StringUtils.FromBool(publicRequest.UseDefaultProcessorFeatures));

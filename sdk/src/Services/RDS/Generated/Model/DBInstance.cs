@@ -87,6 +87,7 @@ namespace Amazon.RDS.Model
         private bool? _iamDatabaseAuthenticationEnabled;
         private DateTime? _instanceCreateTime;
         private int? _iops;
+        private bool? _isStorageConfigUpgradeAvailable;
         private string _kmsKeyId;
         private DateTime? _latestRestorableTime;
         private string _licenseModel;
@@ -1031,6 +1032,28 @@ namespace Amazon.RDS.Model
         internal bool IsSetIops()
         {
             return this._iops.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsStorageConfigUpgradeAvailable. 
+        /// <para>
+        /// Indicates whether an upgrade is recommended for the storage file system configuration
+        /// on the DB instance. To migrate to the preferred configuration, you can either create
+        /// a blue/green deployment, or create a read replica from the DB instance. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.UpgradeFileSystem">Upgrading
+        /// the storage file system for a DB instance</a>.
+        /// </para>
+        /// </summary>
+        public bool IsStorageConfigUpgradeAvailable
+        {
+            get { return this._isStorageConfigUpgradeAvailable.GetValueOrDefault(); }
+            set { this._isStorageConfigUpgradeAvailable = value; }
+        }
+
+        // Check to see if IsStorageConfigUpgradeAvailable property is set
+        internal bool IsSetIsStorageConfigUpgradeAvailable()
+        {
+            return this._isStorageConfigUpgradeAvailable.HasValue; 
         }
 
         /// <summary>

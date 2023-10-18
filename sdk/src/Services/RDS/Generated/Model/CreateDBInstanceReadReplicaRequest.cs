@@ -98,6 +98,7 @@ namespace Amazon.RDS.Model
         private int? _storageThroughput;
         private string _storageType;
         private List<Tag> _tags = new List<Tag>();
+        private bool? _upgradeStorageConfig;
         private bool? _useDefaultProcessorFeatures;
         private List<string> _vpcSecurityGroupIds = new List<string>();
 
@@ -1472,6 +1473,26 @@ namespace Amazon.RDS.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UpgradeStorageConfig. 
+        /// <para>
+        /// Whether to upgrade the storage file system configuration on the read replica. This
+        /// option migrates the read replica from the old storage file system layout to the preferred
+        /// layout.
+        /// </para>
+        /// </summary>
+        public bool UpgradeStorageConfig
+        {
+            get { return this._upgradeStorageConfig.GetValueOrDefault(); }
+            set { this._upgradeStorageConfig = value; }
+        }
+
+        // Check to see if UpgradeStorageConfig property is set
+        internal bool IsSetUpgradeStorageConfig()
+        {
+            return this._upgradeStorageConfig.HasValue; 
         }
 
         /// <summary>

@@ -63,8 +63,10 @@ namespace Amazon.RDS.Model
         private string _source;
         private List<Tag> _tags = new List<Tag>();
         private string _targetDBClusterParameterGroupName;
+        private string _targetDBInstanceClass;
         private string _targetDBParameterGroupName;
         private string _targetEngineVersion;
+        private bool? _upgradeTargetStorageConfig;
 
         /// <summary>
         /// Gets and sets the property BlueGreenDeploymentName. 
@@ -165,6 +167,25 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property TargetDBInstanceClass. 
+        /// <para>
+        /// Specify the DB instance class for the databases in the green environment.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=5, Max=20)]
+        public string TargetDBInstanceClass
+        {
+            get { return this._targetDBInstanceClass; }
+            set { this._targetDBInstanceClass = value; }
+        }
+
+        // Check to see if TargetDBInstanceClass property is set
+        internal bool IsSetTargetDBInstanceClass()
+        {
+            return this._targetDBInstanceClass != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property TargetDBParameterGroupName. 
         /// <para>
         /// The DB parameter group associated with the DB instance in the green environment.
@@ -209,6 +230,27 @@ namespace Amazon.RDS.Model
         internal bool IsSetTargetEngineVersion()
         {
             return this._targetEngineVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UpgradeTargetStorageConfig. 
+        /// <para>
+        /// Whether to upgrade the storage file system configuration on the green database. This
+        /// option migrates the green DB instance from the older 32-bit file system to the preferred
+        /// configuration. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.UpgradeFileSystem">Upgrading
+        /// the storage file system for a DB instance</a>.
+        /// </para>
+        /// </summary>
+        public bool UpgradeTargetStorageConfig
+        {
+            get { return this._upgradeTargetStorageConfig.GetValueOrDefault(); }
+            set { this._upgradeTargetStorageConfig = value; }
+        }
+
+        // Check to see if UpgradeTargetStorageConfig property is set
+        internal bool IsSetUpgradeTargetStorageConfig()
+        {
+            return this._upgradeTargetStorageConfig.HasValue; 
         }
 
     }
