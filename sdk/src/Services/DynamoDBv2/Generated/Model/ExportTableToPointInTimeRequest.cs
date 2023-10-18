@@ -122,8 +122,8 @@ namespace Amazon.DynamoDBv2.Model
         /// Gets and sets the property ExportType. 
         /// <para>
         /// Choice of whether to execute as a full export or incremental export. Valid values
-        /// are <code>FULL_EXPORT</code> or <code>INCREMENTAL_EXPORT</code>. If <code>INCREMENTAL_EXPORT</code>
-        /// is provided, the <code>IncrementalExportSpecification</code> must also be used.
+        /// are FULL_EXPORT or INCREMENTAL_EXPORT. The default value is FULL_EXPORT. If INCREMENTAL_EXPORT
+        /// is provided, the IncrementalExportSpecification must also be used.
         /// </para>
         /// </summary>
         public ExportType ExportType
