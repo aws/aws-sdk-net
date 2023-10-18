@@ -41,6 +41,7 @@ namespace Amazon.Kendra.Model
     public partial class QueryResultItem
     {
         private List<AdditionalResultAttribute> _additionalAttributes = new List<AdditionalResultAttribute>();
+        private CollapsedResultDetail _collapsedResultDetail;
         private List<DocumentAttribute> _documentAttributes = new List<DocumentAttribute>();
         private TextWithHighlights _documentExcerpt;
         private string _documentId;
@@ -69,6 +70,24 @@ namespace Amazon.Kendra.Model
         internal bool IsSetAdditionalAttributes()
         {
             return this._additionalAttributes != null && this._additionalAttributes.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CollapsedResultDetail. 
+        /// <para>
+        /// Provides details about a collapsed group of search results.
+        /// </para>
+        /// </summary>
+        public CollapsedResultDetail CollapsedResultDetail
+        {
+            get { return this._collapsedResultDetail; }
+            set { this._collapsedResultDetail = value; }
+        }
+
+        // Check to see if CollapsedResultDetail property is set
+        internal bool IsSetCollapsedResultDetail()
+        {
+            return this._collapsedResultDetail != null;
         }
 
         /// <summary>

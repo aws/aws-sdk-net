@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for QueryResultItem Object
+    /// Response Unmarshaller for ExpandedResultItem Object
     /// </summary>  
-    public class QueryResultItemUnmarshaller : IUnmarshaller<QueryResultItem, XmlUnmarshallerContext>, IUnmarshaller<QueryResultItem, JsonUnmarshallerContext>
+    public class ExpandedResultItemUnmarshaller : IUnmarshaller<ExpandedResultItem, XmlUnmarshallerContext>, IUnmarshaller<ExpandedResultItem, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        QueryResultItem IUnmarshaller<QueryResultItem, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ExpandedResultItem IUnmarshaller<ExpandedResultItem, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,29 +53,17 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public QueryResultItem Unmarshall(JsonUnmarshallerContext context)
+        public ExpandedResultItem Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            QueryResultItem unmarshalledObject = new QueryResultItem();
+            ExpandedResultItem unmarshalledObject = new ExpandedResultItem();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AdditionalAttributes", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<AdditionalResultAttribute, AdditionalResultAttributeUnmarshaller>(AdditionalResultAttributeUnmarshaller.Instance);
-                    unmarshalledObject.AdditionalAttributes = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("CollapsedResultDetail", targetDepth))
-                {
-                    var unmarshaller = CollapsedResultDetailUnmarshaller.Instance;
-                    unmarshalledObject.CollapsedResultDetail = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("DocumentAttributes", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<DocumentAttribute, DocumentAttributeUnmarshaller>(DocumentAttributeUnmarshaller.Instance);
@@ -106,40 +94,10 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                     unmarshalledObject.DocumentURI = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("FeedbackToken", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FeedbackToken = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Format", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Format = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("Id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ScoreAttributes", targetDepth))
-                {
-                    var unmarshaller = ScoreAttributesUnmarshaller.Instance;
-                    unmarshalledObject.ScoreAttributes = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("TableExcerpt", targetDepth))
-                {
-                    var unmarshaller = TableExcerptUnmarshaller.Instance;
-                    unmarshalledObject.TableExcerpt = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Type", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -148,12 +106,12 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         }
 
 
-        private static QueryResultItemUnmarshaller _instance = new QueryResultItemUnmarshaller();        
+        private static ExpandedResultItemUnmarshaller _instance = new ExpandedResultItemUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static QueryResultItemUnmarshaller Instance
+        public static ExpandedResultItemUnmarshaller Instance
         {
             get
             {

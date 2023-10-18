@@ -78,6 +78,17 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetCollapseConfiguration())
+                {
+                    context.Writer.WritePropertyName("CollapseConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CollapseConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.CollapseConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetDocumentRelevanceOverrideConfigurations())
                 {
                     context.Writer.WritePropertyName("DocumentRelevanceOverrideConfigurations");
@@ -160,6 +171,22 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                     marshaller.Marshall(publicRequest.SortingConfiguration, context);
 
                     context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetSortingConfigurations())
+                {
+                    context.Writer.WritePropertyName("SortingConfigurations");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestSortingConfigurationsListValue in publicRequest.SortingConfigurations)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = SortingConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequestSortingConfigurationsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
                 if(publicRequest.IsSetSpellCorrectionConfiguration())
