@@ -1,3 +1,18 @@
+### 3.7.665.0 (2023-10-18 18:18 UTC)
+* Cloud9 (3.7.200.58)
+	* Update to imageId parameter behavior and dates updated.
+* ConnectWisdomService (3.7.202.0)
+	* This release adds an max limit of 25 recommendation ids for NotifyRecommendationsReceived API.
+* DynamoDBv2 (3.7.203.5)
+	* Updating descriptions for several APIs.
+* Kendra (3.7.202.0)
+	* Changes for a new feature in Amazon Kendra's Query API to Collapse/Expand query results
+* RDS (3.7.211.0)
+	* This release adds support for upgrading the storage file system configuration on the DB instance using a blue/green deployment or a read replica.
+* Core 3.7.204.4
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.664.0 (2023-10-17 18:25 UTC)
 * ApplicationDiscoveryService (3.7.202.0)
 	* This release introduces three new APIs: StartBatchDeleteConfigurationTask, DescribeBatchDeleteConfigurationTask, and BatchDeleteAgents.
