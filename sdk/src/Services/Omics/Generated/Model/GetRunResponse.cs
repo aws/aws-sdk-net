@@ -38,8 +38,10 @@ namespace Amazon.Omics.Model
         private DateTime? _creationTime;
         private string _definition;
         private string _digest;
+        private string _failureReason;
         private string _id;
         private RunLogLevel _logLevel;
+        private RunLogLocation _logLocation;
         private string _name;
         private string _outputUri;
         private Amazon.Runtime.Documents.Document _parameters;
@@ -154,6 +156,25 @@ namespace Amazon.Omics.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FailureReason. 
+        /// <para>
+        ///  The reason a run has failed. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string FailureReason
+        {
+            get { return this._failureReason; }
+            set { this._failureReason = value; }
+        }
+
+        // Check to see if FailureReason property is set
+        internal bool IsSetFailureReason()
+        {
+            return this._failureReason != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
         /// The run's ID.
@@ -192,6 +213,24 @@ namespace Amazon.Omics.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LogLocation. 
+        /// <para>
+        ///  The location of the run log. 
+        /// </para>
+        /// </summary>
+        public RunLogLocation LogLocation
+        {
+            get { return this._logLocation; }
+            set { this._logLocation = value; }
+        }
+
+        // Check to see if LogLocation property is set
+        internal bool IsSetLogLocation()
+        {
+            return this._logLocation != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
         /// The run's name.
@@ -216,7 +255,7 @@ namespace Amazon.Omics.Model
         /// The run's output URI.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
+        [AWSProperty(Min=1, Max=750)]
         public string OutputUri
         {
             get { return this._outputUri; }

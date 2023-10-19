@@ -29,50 +29,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Omics.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetRunTask operation.
-    /// Gets information about a workflow run task.
+    /// The URI for the run log.
     /// </summary>
-    public partial class GetRunTaskRequest : AmazonOmicsRequest
+    public partial class RunLogLocation
     {
-        private string _id;
-        private string _taskId;
+        private string _engineLogStream;
+        private string _runLogStream;
 
         /// <summary>
-        /// Gets and sets the property Id. 
+        /// Gets and sets the property EngineLogStream. 
         /// <para>
-        /// The workflow run ID.
+        ///  The log stream ARN for the engine log. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=18)]
-        public string Id
+        public string EngineLogStream
         {
-            get { return this._id; }
-            set { this._id = value; }
+            get { return this._engineLogStream; }
+            set { this._engineLogStream = value; }
         }
 
-        // Check to see if Id property is set
-        internal bool IsSetId()
+        // Check to see if EngineLogStream property is set
+        internal bool IsSetEngineLogStream()
         {
-            return this._id != null;
+            return this._engineLogStream != null;
         }
 
         /// <summary>
-        /// Gets and sets the property TaskId. 
+        /// Gets and sets the property RunLogStream. 
         /// <para>
-        /// The task's ID.
+        ///  The log stream ARN for the run log. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=18)]
-        public string TaskId
+        public string RunLogStream
         {
-            get { return this._taskId; }
-            set { this._taskId = value; }
+            get { return this._runLogStream; }
+            set { this._runLogStream = value; }
         }
 
-        // Check to see if TaskId property is set
-        internal bool IsSetTaskId()
+        // Check to see if RunLogStream property is set
+        internal bool IsSetRunLogStream()
         {
-            return this._taskId != null;
+            return this._runLogStream != null;
         }
 
     }

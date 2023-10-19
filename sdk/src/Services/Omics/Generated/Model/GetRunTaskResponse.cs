@@ -35,6 +35,7 @@ namespace Amazon.Omics.Model
     {
         private int? _cpus;
         private DateTime? _creationTime;
+        private string _failureReason;
         private int? _gpus;
         private string _instanceType;
         private string _logStream;
@@ -81,6 +82,25 @@ namespace Amazon.Omics.Model
         internal bool IsSetCreationTime()
         {
             return this._creationTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FailureReason. 
+        /// <para>
+        ///  The reason a task has failed. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string FailureReason
+        {
+            get { return this._failureReason; }
+            set { this._failureReason = value; }
+        }
+
+        // Check to see if FailureReason property is set
+        internal bool IsSetFailureReason()
+        {
+            return this._failureReason != null;
         }
 
         /// <summary>

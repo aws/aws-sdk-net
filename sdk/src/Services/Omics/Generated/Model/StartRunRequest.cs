@@ -101,7 +101,7 @@ namespace Amazon.Omics.Model
         /// An output URI for the run.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
+        [AWSProperty(Min=1, Max=750)]
         public string OutputUri
         {
             get { return this._outputUri; }
