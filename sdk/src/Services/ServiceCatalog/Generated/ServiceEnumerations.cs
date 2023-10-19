@@ -709,6 +709,10 @@ namespace Amazon.ServiceCatalog
         /// </summary>
         public static readonly ProductType CLOUD_FORMATION_TEMPLATE = new ProductType("CLOUD_FORMATION_TEMPLATE");
         /// <summary>
+        /// Constant EXTERNAL for ProductType
+        /// </summary>
+        public static readonly ProductType EXTERNAL = new ProductType("EXTERNAL");
+        /// <summary>
         /// Constant MARKETPLACE for ProductType
         /// </summary>
         public static readonly ProductType MARKETPLACE = new ProductType("MARKETPLACE");
@@ -1244,6 +1248,10 @@ namespace Amazon.ServiceCatalog
         /// Constant CLOUD_FORMATION_TEMPLATE for ProvisioningArtifactType
         /// </summary>
         public static readonly ProvisioningArtifactType CLOUD_FORMATION_TEMPLATE = new ProvisioningArtifactType("CLOUD_FORMATION_TEMPLATE");
+        /// <summary>
+        /// Constant EXTERNAL for ProvisioningArtifactType
+        /// </summary>
+        public static readonly ProvisioningArtifactType EXTERNAL = new ProvisioningArtifactType("EXTERNAL");
         /// <summary>
         /// Constant MARKETPLACE_AMI for ProvisioningArtifactType
         /// </summary>

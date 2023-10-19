@@ -170,7 +170,7 @@ namespace Amazon.ServiceCatalog
         ///  
         /// <para>
         /// You can associate a maximum of 10 Principals with a portfolio using <code>PrincipalType</code>
-        /// as <code>IAM_PATTERN</code> 
+        /// as <code>IAM_PATTERN</code>. 
         /// </para>
         ///  <note> 
         /// <para>
@@ -221,7 +221,7 @@ namespace Amazon.ServiceCatalog
         ///  
         /// <para>
         /// You can associate a maximum of 10 Principals with a portfolio using <code>PrincipalType</code>
-        /// as <code>IAM_PATTERN</code> 
+        /// as <code>IAM_PATTERN</code>. 
         /// </para>
         ///  <note> 
         /// <para>
