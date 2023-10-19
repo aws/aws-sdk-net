@@ -138,6 +138,10 @@ namespace Amazon.ManagedBlockchainQuery
         /// Constant ETHEREUM_MAINNET for QueryNetwork
         /// </summary>
         public static readonly QueryNetwork ETHEREUM_MAINNET = new QueryNetwork("ETHEREUM_MAINNET");
+        /// <summary>
+        /// Constant ETHEREUM_SEPOLIA_TESTNET for QueryNetwork
+        /// </summary>
+        public static readonly QueryNetwork ETHEREUM_SEPOLIA_TESTNET = new QueryNetwork("ETHEREUM_SEPOLIA_TESTNET");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
