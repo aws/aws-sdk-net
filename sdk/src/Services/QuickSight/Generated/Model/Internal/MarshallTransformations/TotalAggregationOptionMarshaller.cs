@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// DataPathValue Marshaller
+    /// TotalAggregationOption Marshaller
     /// </summary>
-    public class DataPathValueMarshaller : IRequestMarshaller<DataPathValue, JsonMarshallerContext> 
+    public class TotalAggregationOptionMarshaller : IRequestMarshaller<TotalAggregationOption, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,29 +43,23 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(DataPathValue requestObject, JsonMarshallerContext context)
+        public void Marshall(TotalAggregationOption requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetDataPathType())
-            {
-                context.Writer.WritePropertyName("DataPathType");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = DataPathTypeMarshaller.Instance;
-                marshaller.Marshall(requestObject.DataPathType, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
             if(requestObject.IsSetFieldId())
             {
                 context.Writer.WritePropertyName("FieldId");
                 context.Writer.Write(requestObject.FieldId);
             }
 
-            if(requestObject.IsSetFieldValue())
+            if(requestObject.IsSetTotalAggregationFunction())
             {
-                context.Writer.WritePropertyName("FieldValue");
-                context.Writer.Write(requestObject.FieldValue);
+                context.Writer.WritePropertyName("TotalAggregationFunction");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = TotalAggregationFunctionMarshaller.Instance;
+                marshaller.Marshall(requestObject.TotalAggregationFunction, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
         }
@@ -73,7 +67,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static DataPathValueMarshaller Instance = new DataPathValueMarshaller();
+        public readonly static TotalAggregationOptionMarshaller Instance = new TotalAggregationOptionMarshaller();
 
     }
 }

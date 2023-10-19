@@ -38,6 +38,7 @@ namespace Amazon.QuickSight.Model
         private DataSourceCredentials _credentials;
         private string _dataSourceId;
         private DataSourceParameters _dataSourceParameters;
+        private List<string> _folderArns = new List<string>();
         private string _name;
         private List<ResourcePermission> _permissions = new List<ResourcePermission>();
         private SslProperties _sslProperties;
@@ -120,6 +121,25 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetDataSourceParameters()
         {
             return this._dataSourceParameters != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FolderArns. 
+        /// <para>
+        /// When you create the data source, Amazon QuickSight adds the data source to these folders.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1)]
+        public List<string> FolderArns
+        {
+            get { return this._folderArns; }
+            set { this._folderArns = value; }
+        }
+
+        // Check to see if FolderArns property is set
+        internal bool IsSetFolderArns()
+        {
+            return this._folderArns != null && this._folderArns.Count > 0; 
         }
 
         /// <summary>

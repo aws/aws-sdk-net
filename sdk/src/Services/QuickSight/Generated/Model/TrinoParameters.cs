@@ -29,18 +29,37 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// The parameters that are required to connect to a Databricks data source.
+    /// The parameters that are required to connect to a Trino data source.
     /// </summary>
-    public partial class DatabricksParameters
+    public partial class TrinoParameters
     {
+        private string _catalog;
         private string _host;
         private int? _port;
-        private string _sqlEndpointPath;
+
+        /// <summary>
+        /// Gets and sets the property Catalog. 
+        /// <para>
+        /// The catalog name for the Trino data source.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Max=128)]
+        public string Catalog
+        {
+            get { return this._catalog; }
+            set { this._catalog = value; }
+        }
+
+        // Check to see if Catalog property is set
+        internal bool IsSetCatalog()
+        {
+            return this._catalog != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Host. 
         /// <para>
-        /// The host name of the Databricks data source.
+        /// The host name of the Trino data source.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -59,7 +78,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Port. 
         /// <para>
-        /// The port for the Databricks data source.
+        /// The port for the Trino data source.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=65535)]
@@ -73,25 +92,6 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetPort()
         {
             return this._port.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property SqlEndpointPath. 
-        /// <para>
-        /// The HTTP path of the Databricks data source.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=4096)]
-        public string SqlEndpointPath
-        {
-            get { return this._sqlEndpointPath; }
-            set { this._sqlEndpointPath = value; }
-        }
-
-        // Check to see if SqlEndpointPath property is set
-        internal bool IsSetSqlEndpointPath()
-        {
-            return this._sqlEndpointPath != null;
         }
 
     }

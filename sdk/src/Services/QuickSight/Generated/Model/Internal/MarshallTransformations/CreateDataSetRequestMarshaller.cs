@@ -152,6 +152,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetFolderArns())
+                {
+                    context.Writer.WritePropertyName("FolderArns");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestFolderArnsListValue in publicRequest.FolderArns)
+                    {
+                            context.Writer.Write(publicRequestFolderArnsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetImportMode())
                 {
                     context.Writer.WritePropertyName("ImportMode");

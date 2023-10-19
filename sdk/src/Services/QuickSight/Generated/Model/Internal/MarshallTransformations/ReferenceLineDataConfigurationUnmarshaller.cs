@@ -76,6 +76,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.DynamicConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SeriesType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SeriesType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("StaticConfiguration", targetDepth))
                 {
                     var unmarshaller = ReferenceLineStaticDataConfigurationUnmarshaller.Instance;

@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// DataPathValue Marshaller
+    /// DataPathType Marshaller
     /// </summary>
-    public class DataPathValueMarshaller : IRequestMarshaller<DataPathValue, JsonMarshallerContext> 
+    public class DataPathTypeMarshaller : IRequestMarshaller<DataPathType, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,29 +43,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(DataPathValue requestObject, JsonMarshallerContext context)
+        public void Marshall(DataPathType requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetDataPathType())
+            if(requestObject.IsSetPivotTableDataPathType())
             {
-                context.Writer.WritePropertyName("DataPathType");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = DataPathTypeMarshaller.Instance;
-                marshaller.Marshall(requestObject.DataPathType, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetFieldId())
-            {
-                context.Writer.WritePropertyName("FieldId");
-                context.Writer.Write(requestObject.FieldId);
-            }
-
-            if(requestObject.IsSetFieldValue())
-            {
-                context.Writer.WritePropertyName("FieldValue");
-                context.Writer.Write(requestObject.FieldValue);
+                context.Writer.WritePropertyName("PivotTableDataPathType");
+                context.Writer.Write(requestObject.PivotTableDataPathType);
             }
 
         }
@@ -73,7 +56,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static DataPathValueMarshaller Instance = new DataPathValueMarshaller();
+        public readonly static DataPathTypeMarshaller Instance = new DataPathTypeMarshaller();
 
     }
 }

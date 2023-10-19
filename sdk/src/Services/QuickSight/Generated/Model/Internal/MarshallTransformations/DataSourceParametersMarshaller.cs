@@ -276,6 +276,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetStarburstParameters())
+            {
+                context.Writer.WritePropertyName("StarburstParameters");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = StarburstParametersMarshaller.Instance;
+                marshaller.Marshall(requestObject.StarburstParameters, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetTeradataParameters())
             {
                 context.Writer.WritePropertyName("TeradataParameters");
@@ -283,6 +294,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
                 var marshaller = TeradataParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.TeradataParameters, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetTrinoParameters())
+            {
+                context.Writer.WritePropertyName("TrinoParameters");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = TrinoParametersMarshaller.Instance;
+                marshaller.Marshall(requestObject.TrinoParameters, context);
 
                 context.Writer.WriteObjectEnd();
             }

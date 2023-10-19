@@ -82,6 +82,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.ParameterName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("RollingDate", targetDepth))
+                {
+                    var unmarshaller = RollingDateConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.RollingDate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("TimeGranularity", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

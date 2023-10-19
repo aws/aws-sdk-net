@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// DataPathValue Marshaller
+    /// TrinoParameters Marshaller
     /// </summary>
-    public class DataPathValueMarshaller : IRequestMarshaller<DataPathValue, JsonMarshallerContext> 
+    public class TrinoParametersMarshaller : IRequestMarshaller<TrinoParameters, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,29 +43,24 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(DataPathValue requestObject, JsonMarshallerContext context)
+        public void Marshall(TrinoParameters requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetDataPathType())
+            if(requestObject.IsSetCatalog())
             {
-                context.Writer.WritePropertyName("DataPathType");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = DataPathTypeMarshaller.Instance;
-                marshaller.Marshall(requestObject.DataPathType, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("Catalog");
+                context.Writer.Write(requestObject.Catalog);
             }
 
-            if(requestObject.IsSetFieldId())
+            if(requestObject.IsSetHost())
             {
-                context.Writer.WritePropertyName("FieldId");
-                context.Writer.Write(requestObject.FieldId);
+                context.Writer.WritePropertyName("Host");
+                context.Writer.Write(requestObject.Host);
             }
 
-            if(requestObject.IsSetFieldValue())
+            if(requestObject.IsSetPort())
             {
-                context.Writer.WritePropertyName("FieldValue");
-                context.Writer.Write(requestObject.FieldValue);
+                context.Writer.WritePropertyName("Port");
+                context.Writer.Write(requestObject.Port);
             }
 
         }
@@ -73,7 +68,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static DataPathValueMarshaller Instance = new DataPathValueMarshaller();
+        public readonly static TrinoParametersMarshaller Instance = new TrinoParametersMarshaller();
 
     }
 }

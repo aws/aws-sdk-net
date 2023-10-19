@@ -29,39 +29,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// The data path that needs to be sorted.
+    /// The total aggregation settings map of a field id.
     /// </summary>
-    public partial class DataPathValue
+    public partial class TotalAggregationOption
     {
-        private DataPathType _dataPathType;
         private string _fieldId;
-        private string _fieldValue;
-
-        /// <summary>
-        /// Gets and sets the property DataPathType. 
-        /// <para>
-        /// The type configuration of the field.
-        /// </para>
-        /// </summary>
-        public DataPathType DataPathType
-        {
-            get { return this._dataPathType; }
-            set { this._dataPathType = value; }
-        }
-
-        // Check to see if DataPathType property is set
-        internal bool IsSetDataPathType()
-        {
-            return this._dataPathType != null;
-        }
+        private TotalAggregationFunction _totalAggregationFunction;
 
         /// <summary>
         /// Gets and sets the property FieldId. 
         /// <para>
-        /// The field ID of the field that needs to be sorted.
+        /// The field id that's associated with the total aggregation option.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=512)]
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string FieldId
         {
             get { return this._fieldId; }
@@ -75,22 +56,22 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FieldValue. 
+        /// Gets and sets the property TotalAggregationFunction. 
         /// <para>
-        /// The actual value of the field that needs to be sorted.
+        /// The total aggregation function that you want to set for a specified field id.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Max=2048)]
-        public string FieldValue
+        [AWSProperty(Required=true)]
+        public TotalAggregationFunction TotalAggregationFunction
         {
-            get { return this._fieldValue; }
-            set { this._fieldValue = value; }
+            get { return this._totalAggregationFunction; }
+            set { this._totalAggregationFunction = value; }
         }
 
-        // Check to see if FieldValue property is set
-        internal bool IsSetFieldValue()
+        // Check to see if TotalAggregationFunction property is set
+        internal bool IsSetTotalAggregationFunction()
         {
-            return this._fieldValue != null;
+            return this._totalAggregationFunction != null;
         }
 
     }

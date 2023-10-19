@@ -35,6 +35,7 @@ namespace Amazon.QuickSight.Model
     {
         private AxisBinding _axisBinding;
         private ReferenceLineDynamicDataConfiguration _dynamicConfiguration;
+        private ReferenceLineSeriesType _seriesType;
         private ReferenceLineStaticDataConfiguration _staticConfiguration;
 
         /// <summary>
@@ -44,11 +45,11 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// PrimaryY
+        ///  <code>PrimaryY</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SecondaryY
+        ///  <code>SecondaryY</code> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -80,6 +81,34 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetDynamicConfiguration()
         {
             return this._dynamicConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SeriesType. 
+        /// <para>
+        /// The series type of the reference line data configuration. Choose one of the following
+        /// options:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>BAR</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>LINE</code> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public ReferenceLineSeriesType SeriesType
+        {
+            get { return this._seriesType; }
+            set { this._seriesType = value; }
+        }
+
+        // Check to see if SeriesType property is set
+        internal bool IsSetSeriesType()
+        {
+            return this._seriesType != null;
         }
 
         /// <summary>

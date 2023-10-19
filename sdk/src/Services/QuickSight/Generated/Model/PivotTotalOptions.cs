@@ -37,6 +37,7 @@ namespace Amazon.QuickSight.Model
         private TableCellStyle _metricHeaderCellStyle;
         private TableTotalsPlacement _placement;
         private TableTotalsScrollStatus _scrollStatus;
+        private List<TotalAggregationOption> _totalAggregationOptions = new List<TotalAggregationOption>();
         private TableCellStyle _totalCellStyle;
         private Visibility _totalsVisibility;
         private TableCellStyle _valueCellStyle;
@@ -111,6 +112,25 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetScrollStatus()
         {
             return this._scrollStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TotalAggregationOptions. 
+        /// <para>
+        /// The total aggregation options for each value field.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=200)]
+        public List<TotalAggregationOption> TotalAggregationOptions
+        {
+            get { return this._totalAggregationOptions; }
+            set { this._totalAggregationOptions = value; }
+        }
+
+        // Check to see if TotalAggregationOptions property is set
+        internal bool IsSetTotalAggregationOptions()
+        {
+            return this._totalAggregationOptions != null && this._totalAggregationOptions.Count > 0; 
         }
 
         /// <summary>

@@ -29,18 +29,38 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// The parameters that are required to connect to a Databricks data source.
+    /// The parameters that are required to connect to a Starburst data source.
     /// </summary>
-    public partial class DatabricksParameters
+    public partial class StarburstParameters
     {
+        private string _catalog;
         private string _host;
         private int? _port;
-        private string _sqlEndpointPath;
+        private StarburstProductType _productType;
+
+        /// <summary>
+        /// Gets and sets the property Catalog. 
+        /// <para>
+        /// The catalog name for the Starburst data source.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Max=128)]
+        public string Catalog
+        {
+            get { return this._catalog; }
+            set { this._catalog = value; }
+        }
+
+        // Check to see if Catalog property is set
+        internal bool IsSetCatalog()
+        {
+            return this._catalog != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Host. 
         /// <para>
-        /// The host name of the Databricks data source.
+        /// The host name of the Starburst data source.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -59,7 +79,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Port. 
         /// <para>
-        /// The port for the Databricks data source.
+        /// The port for the Starburst data source.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=65535)]
@@ -76,22 +96,21 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SqlEndpointPath. 
+        /// Gets and sets the property ProductType. 
         /// <para>
-        /// The HTTP path of the Databricks data source.
+        /// The product type for the Starburst data source.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=4096)]
-        public string SqlEndpointPath
+        public StarburstProductType ProductType
         {
-            get { return this._sqlEndpointPath; }
-            set { this._sqlEndpointPath = value; }
+            get { return this._productType; }
+            set { this._productType = value; }
         }
 
-        // Check to see if SqlEndpointPath property is set
-        internal bool IsSetSqlEndpointPath()
+        // Check to see if ProductType property is set
+        internal bool IsSetProductType()
         {
-            return this._sqlEndpointPath != null;
+            return this._productType != null;
         }
 
     }

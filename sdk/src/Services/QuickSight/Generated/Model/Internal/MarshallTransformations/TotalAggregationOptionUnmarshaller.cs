@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DataPathValue Object
+    /// Response Unmarshaller for TotalAggregationOption Object
     /// </summary>  
-    public class DataPathValueUnmarshaller : IUnmarshaller<DataPathValue, XmlUnmarshallerContext>, IUnmarshaller<DataPathValue, JsonUnmarshallerContext>
+    public class TotalAggregationOptionUnmarshaller : IUnmarshaller<TotalAggregationOption, XmlUnmarshallerContext>, IUnmarshaller<TotalAggregationOption, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        DataPathValue IUnmarshaller<DataPathValue, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        TotalAggregationOption IUnmarshaller<TotalAggregationOption, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,27 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public DataPathValue Unmarshall(JsonUnmarshallerContext context)
+        public TotalAggregationOption Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            DataPathValue unmarshalledObject = new DataPathValue();
+            TotalAggregationOption unmarshalledObject = new TotalAggregationOption();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("DataPathType", targetDepth))
-                {
-                    var unmarshaller = DataPathTypeUnmarshaller.Instance;
-                    unmarshalledObject.DataPathType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("FieldId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FieldId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("FieldValue", targetDepth))
+                if (context.TestExpression("TotalAggregationFunction", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FieldValue = unmarshaller.Unmarshall(context);
+                    var unmarshaller = TotalAggregationFunctionUnmarshaller.Instance;
+                    unmarshalledObject.TotalAggregationFunction = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +82,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         }
 
 
-        private static DataPathValueUnmarshaller _instance = new DataPathValueUnmarshaller();        
+        private static TotalAggregationOptionUnmarshaller _instance = new TotalAggregationOptionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DataPathValueUnmarshaller Instance
+        public static TotalAggregationOptionUnmarshaller Instance
         {
             get
             {

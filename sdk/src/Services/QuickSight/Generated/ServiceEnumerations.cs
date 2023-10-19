@@ -4079,6 +4079,10 @@ namespace Amazon.QuickSight
     {
 
         /// <summary>
+        /// Constant RESTRICTED for FolderType
+        /// </summary>
+        public static readonly FolderType RESTRICTED = new FolderType("RESTRICTED");
+        /// <summary>
         /// Constant SHARED for FolderType
         /// </summary>
         public static readonly FolderType SHARED = new FolderType("SHARED");
@@ -7331,6 +7335,64 @@ namespace Amazon.QuickSight
 
 
     /// <summary>
+    /// Constants used for properties of type PivotTableDataPathType.
+    /// </summary>
+    public class PivotTableDataPathType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COUNT_METRIC_COLUMN for PivotTableDataPathType
+        /// </summary>
+        public static readonly PivotTableDataPathType COUNT_METRIC_COLUMN = new PivotTableDataPathType("COUNT_METRIC_COLUMN");
+        /// <summary>
+        /// Constant EMPTY_COLUMN_HEADER for PivotTableDataPathType
+        /// </summary>
+        public static readonly PivotTableDataPathType EMPTY_COLUMN_HEADER = new PivotTableDataPathType("EMPTY_COLUMN_HEADER");
+        /// <summary>
+        /// Constant HIERARCHY_ROWS_LAYOUT_COLUMN for PivotTableDataPathType
+        /// </summary>
+        public static readonly PivotTableDataPathType HIERARCHY_ROWS_LAYOUT_COLUMN = new PivotTableDataPathType("HIERARCHY_ROWS_LAYOUT_COLUMN");
+        /// <summary>
+        /// Constant MULTIPLE_ROW_METRICS_COLUMN for PivotTableDataPathType
+        /// </summary>
+        public static readonly PivotTableDataPathType MULTIPLE_ROW_METRICS_COLUMN = new PivotTableDataPathType("MULTIPLE_ROW_METRICS_COLUMN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PivotTableDataPathType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PivotTableDataPathType FindValue(string value)
+        {
+            return FindValue<PivotTableDataPathType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PivotTableDataPathType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type PivotTableFieldCollapseState.
     /// </summary>
     public class PivotTableFieldCollapseState : ConstantClass
@@ -7948,6 +8010,56 @@ namespace Amazon.QuickSight
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ReferenceLinePatternType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ReferenceLineSeriesType.
+    /// </summary>
+    public class ReferenceLineSeriesType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BAR for ReferenceLineSeriesType
+        /// </summary>
+        public static readonly ReferenceLineSeriesType BAR = new ReferenceLineSeriesType("BAR");
+        /// <summary>
+        /// Constant LINE for ReferenceLineSeriesType
+        /// </summary>
+        public static readonly ReferenceLineSeriesType LINE = new ReferenceLineSeriesType("LINE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ReferenceLineSeriesType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ReferenceLineSeriesType FindValue(string value)
+        {
+            return FindValue<ReferenceLineSeriesType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ReferenceLineSeriesType(string value)
         {
             return FindValue(value);
         }
@@ -8989,6 +9101,72 @@ namespace Amazon.QuickSight
 
 
     /// <summary>
+    /// Constants used for properties of type SimpleTotalAggregationFunction.
+    /// </summary>
+    public class SimpleTotalAggregationFunction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AVERAGE for SimpleTotalAggregationFunction
+        /// </summary>
+        public static readonly SimpleTotalAggregationFunction AVERAGE = new SimpleTotalAggregationFunction("AVERAGE");
+        /// <summary>
+        /// Constant DEFAULT for SimpleTotalAggregationFunction
+        /// </summary>
+        public static readonly SimpleTotalAggregationFunction DEFAULT = new SimpleTotalAggregationFunction("DEFAULT");
+        /// <summary>
+        /// Constant MAX for SimpleTotalAggregationFunction
+        /// </summary>
+        public static readonly SimpleTotalAggregationFunction MAX = new SimpleTotalAggregationFunction("MAX");
+        /// <summary>
+        /// Constant MIN for SimpleTotalAggregationFunction
+        /// </summary>
+        public static readonly SimpleTotalAggregationFunction MIN = new SimpleTotalAggregationFunction("MIN");
+        /// <summary>
+        /// Constant NONE for SimpleTotalAggregationFunction
+        /// </summary>
+        public static readonly SimpleTotalAggregationFunction NONE = new SimpleTotalAggregationFunction("NONE");
+        /// <summary>
+        /// Constant SUM for SimpleTotalAggregationFunction
+        /// </summary>
+        public static readonly SimpleTotalAggregationFunction SUM = new SimpleTotalAggregationFunction("SUM");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SimpleTotalAggregationFunction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SimpleTotalAggregationFunction FindValue(string value)
+        {
+            return FindValue<SimpleTotalAggregationFunction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SimpleTotalAggregationFunction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SmallMultiplesAxisPlacement.
     /// </summary>
     public class SmallMultiplesAxisPlacement : ConstantClass
@@ -9348,6 +9526,56 @@ namespace Amazon.QuickSight
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SpecialValue(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type StarburstProductType.
+    /// </summary>
+    public class StarburstProductType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ENTERPRISE for StarburstProductType
+        /// </summary>
+        public static readonly StarburstProductType ENTERPRISE = new StarburstProductType("ENTERPRISE");
+        /// <summary>
+        /// Constant GALAXY for StarburstProductType
+        /// </summary>
+        public static readonly StarburstProductType GALAXY = new StarburstProductType("GALAXY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StarburstProductType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StarburstProductType FindValue(string value)
+        {
+            return FindValue<StarburstProductType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StarburstProductType(string value)
         {
             return FindValue(value);
         }
