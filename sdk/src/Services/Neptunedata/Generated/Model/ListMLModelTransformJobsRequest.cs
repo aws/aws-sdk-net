@@ -32,6 +32,14 @@ namespace Amazon.Neptunedata.Model
     /// Container for the parameters to the ListMLModelTransformJobs operation.
     /// Returns a list of model transform job IDs. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/machine-learning-model-transform.html">Use
     /// a trained model to generate new model artifacts</a>.
+    /// 
+    ///  
+    /// <para>
+    /// When invoking this operation in a Neptune cluster that has IAM authentication enabled,
+    /// the IAM user or role making the request must have a policy attached that allows the
+    /// <a href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#listmlmodeltransformjobs">neptune-db:ListMLModelTransformJobs</a>
+    /// IAM action in that cluster.
+    /// </para>
     /// </summary>
     public partial class ListMLModelTransformJobsRequest : AmazonNeptunedataRequest
     {
