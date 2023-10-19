@@ -34,9 +34,9 @@ namespace Amazon.VerifiedPermissions.Model
     /// 
     ///  <note> 
     /// <para>
-    /// Although <a href="https://docs.cedarpolicy.com/schema.html#namespace">Cedar supports
-    /// multiple namespaces</a>, Verified Permissions currently supports only one namespace
-    /// per policy store.
+    /// Although <a href="https://docs.cedarpolicy.com/schema/schema.html#namespace">Cedar
+    /// supports multiple namespaces</a>, Verified Permissions currently supports only one
+    /// namespace per policy store.
     /// </para>
     ///  </note> <note> 
     /// <para>

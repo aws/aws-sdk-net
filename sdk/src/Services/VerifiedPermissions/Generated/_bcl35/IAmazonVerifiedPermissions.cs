@@ -184,6 +184,9 @@ namespace Amazon.VerifiedPermissions
         /// <exception cref="Amazon.VerifiedPermissions.Model.AccessDeniedException">
         /// You don't have sufficient access to perform this action.
         /// </exception>
+        /// <exception cref="Amazon.VerifiedPermissions.Model.ConflictException">
+        /// The request failed because another request to modify a resource occurred at the same.
+        /// </exception>
         /// <exception cref="Amazon.VerifiedPermissions.Model.InternalServerException">
         /// The request failed because of an internal error. Try your request again later
         /// </exception>
@@ -255,7 +258,7 @@ namespace Amazon.VerifiedPermissions
         /// <para>
         /// The policy attempts to access a record or entity attribute that isn't specified in
         /// the schema. Test for the existence of the attribute first before attempting to access
-        /// its value. For more information, see the <a href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has
+        /// its value. For more information, see the <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
         /// (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
         /// </para>
         ///  </li> <li> 
@@ -266,7 +269,7 @@ namespace Amazon.VerifiedPermissions
         /// <para>
         /// The policy attempts to access a record or entity attribute that is optional and isn't
         /// guaranteed to be present. Test for the existence of the attribute first before attempting
-        /// to access its value. For more information, see the <a href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has
+        /// to access its value. For more information, see the <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
         /// (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
         /// </para>
         ///  </li> <li> 
@@ -368,6 +371,9 @@ namespace Amazon.VerifiedPermissions
         /// <exception cref="Amazon.VerifiedPermissions.Model.AccessDeniedException">
         /// You don't have sufficient access to perform this action.
         /// </exception>
+        /// <exception cref="Amazon.VerifiedPermissions.Model.ConflictException">
+        /// The request failed because another request to modify a resource occurred at the same.
+        /// </exception>
         /// <exception cref="Amazon.VerifiedPermissions.Model.InternalServerException">
         /// The request failed because of an internal error. Try your request again later
         /// </exception>
@@ -439,7 +445,7 @@ namespace Amazon.VerifiedPermissions
         /// <para>
         /// The policy attempts to access a record or entity attribute that isn't specified in
         /// the schema. Test for the existence of the attribute first before attempting to access
-        /// its value. For more information, see the <a href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has
+        /// its value. For more information, see the <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
         /// (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
         /// </para>
         ///  </li> <li> 
@@ -450,7 +456,7 @@ namespace Amazon.VerifiedPermissions
         /// <para>
         /// The policy attempts to access a record or entity attribute that is optional and isn't
         /// guaranteed to be present. Test for the existence of the attribute first before attempting
-        /// to access its value. For more information, see the <a href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has
+        /// to access its value. For more information, see the <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
         /// (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
         /// </para>
         ///  </li> <li> 
@@ -521,9 +527,9 @@ namespace Amazon.VerifiedPermissions
         /// 
         ///  <note> 
         /// <para>
-        /// Although <a href="https://docs.cedarpolicy.com/schema.html#namespace">Cedar supports
-        /// multiple namespaces</a>, Verified Permissions currently supports only one namespace
-        /// per policy store.
+        /// Although <a href="https://docs.cedarpolicy.com/schema/schema.html#namespace">Cedar
+        /// supports multiple namespaces</a>, Verified Permissions currently supports only one
+        /// namespace per policy store.
         /// </para>
         ///  </note> <note> 
         /// <para>
@@ -539,6 +545,9 @@ namespace Amazon.VerifiedPermissions
         /// <returns>The response from the CreatePolicyStore service method, as returned by VerifiedPermissions.</returns>
         /// <exception cref="Amazon.VerifiedPermissions.Model.AccessDeniedException">
         /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.VerifiedPermissions.Model.ConflictException">
+        /// The request failed because another request to modify a resource occurred at the same.
         /// </exception>
         /// <exception cref="Amazon.VerifiedPermissions.Model.InternalServerException">
         /// The request failed because of an internal error. Try your request again later
@@ -608,7 +617,7 @@ namespace Amazon.VerifiedPermissions
         /// <para>
         /// The policy attempts to access a record or entity attribute that isn't specified in
         /// the schema. Test for the existence of the attribute first before attempting to access
-        /// its value. For more information, see the <a href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has
+        /// its value. For more information, see the <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
         /// (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
         /// </para>
         ///  </li> <li> 
@@ -619,7 +628,7 @@ namespace Amazon.VerifiedPermissions
         /// <para>
         /// The policy attempts to access a record or entity attribute that is optional and isn't
         /// guaranteed to be present. Test for the existence of the attribute first before attempting
-        /// to access its value. For more information, see the <a href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has
+        /// to access its value. For more information, see the <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
         /// (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
         /// </para>
         ///  </li> <li> 
@@ -708,6 +717,9 @@ namespace Amazon.VerifiedPermissions
         /// <exception cref="Amazon.VerifiedPermissions.Model.AccessDeniedException">
         /// You don't have sufficient access to perform this action.
         /// </exception>
+        /// <exception cref="Amazon.VerifiedPermissions.Model.ConflictException">
+        /// The request failed because another request to modify a resource occurred at the same.
+        /// </exception>
         /// <exception cref="Amazon.VerifiedPermissions.Model.InternalServerException">
         /// The request failed because of an internal error. Try your request again later
         /// </exception>
@@ -779,7 +791,7 @@ namespace Amazon.VerifiedPermissions
         /// <para>
         /// The policy attempts to access a record or entity attribute that isn't specified in
         /// the schema. Test for the existence of the attribute first before attempting to access
-        /// its value. For more information, see the <a href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has
+        /// its value. For more information, see the <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
         /// (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
         /// </para>
         ///  </li> <li> 
@@ -790,7 +802,7 @@ namespace Amazon.VerifiedPermissions
         /// <para>
         /// The policy attempts to access a record or entity attribute that is optional and isn't
         /// guaranteed to be present. Test for the existence of the attribute first before attempting
-        /// to access its value. For more information, see the <a href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has
+        /// to access its value. For more information, see the <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
         /// (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
         /// </para>
         ///  </li> <li> 
@@ -940,7 +952,7 @@ namespace Amazon.VerifiedPermissions
         /// <para>
         /// The policy attempts to access a record or entity attribute that isn't specified in
         /// the schema. Test for the existence of the attribute first before attempting to access
-        /// its value. For more information, see the <a href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has
+        /// its value. For more information, see the <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
         /// (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
         /// </para>
         ///  </li> <li> 
@@ -951,7 +963,7 @@ namespace Amazon.VerifiedPermissions
         /// <para>
         /// The policy attempts to access a record or entity attribute that is optional and isn't
         /// guaranteed to be present. Test for the existence of the attribute first before attempting
-        /// to access its value. For more information, see the <a href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has
+        /// to access its value. For more information, see the <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
         /// (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
         /// </para>
         ///  </li> <li> 
@@ -1103,7 +1115,7 @@ namespace Amazon.VerifiedPermissions
         /// <para>
         /// The policy attempts to access a record or entity attribute that isn't specified in
         /// the schema. Test for the existence of the attribute first before attempting to access
-        /// its value. For more information, see the <a href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has
+        /// its value. For more information, see the <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
         /// (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
         /// </para>
         ///  </li> <li> 
@@ -1114,7 +1126,7 @@ namespace Amazon.VerifiedPermissions
         /// <para>
         /// The policy attempts to access a record or entity attribute that is optional and isn't
         /// guaranteed to be present. Test for the existence of the attribute first before attempting
-        /// to access its value. For more information, see the <a href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has
+        /// to access its value. For more information, see the <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
         /// (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
         /// </para>
         ///  </li> <li> 
@@ -1260,7 +1272,7 @@ namespace Amazon.VerifiedPermissions
         /// <para>
         /// The policy attempts to access a record or entity attribute that isn't specified in
         /// the schema. Test for the existence of the attribute first before attempting to access
-        /// its value. For more information, see the <a href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has
+        /// its value. For more information, see the <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
         /// (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
         /// </para>
         ///  </li> <li> 
@@ -1271,7 +1283,7 @@ namespace Amazon.VerifiedPermissions
         /// <para>
         /// The policy attempts to access a record or entity attribute that is optional and isn't
         /// guaranteed to be present. Test for the existence of the attribute first before attempting
-        /// to access its value. For more information, see the <a href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has
+        /// to access its value. For more information, see the <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
         /// (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
         /// </para>
         ///  </li> <li> 
@@ -1425,7 +1437,7 @@ namespace Amazon.VerifiedPermissions
         /// <para>
         /// The policy attempts to access a record or entity attribute that isn't specified in
         /// the schema. Test for the existence of the attribute first before attempting to access
-        /// its value. For more information, see the <a href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has
+        /// its value. For more information, see the <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
         /// (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
         /// </para>
         ///  </li> <li> 
@@ -1436,7 +1448,7 @@ namespace Amazon.VerifiedPermissions
         /// <para>
         /// The policy attempts to access a record or entity attribute that is optional and isn't
         /// guaranteed to be present. Test for the existence of the attribute first before attempting
-        /// to access its value. For more information, see the <a href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has
+        /// to access its value. For more information, see the <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
         /// (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
         /// </para>
         ///  </li> <li> 
@@ -1579,7 +1591,7 @@ namespace Amazon.VerifiedPermissions
         /// <para>
         /// The policy attempts to access a record or entity attribute that isn't specified in
         /// the schema. Test for the existence of the attribute first before attempting to access
-        /// its value. For more information, see the <a href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has
+        /// its value. For more information, see the <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
         /// (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
         /// </para>
         ///  </li> <li> 
@@ -1590,7 +1602,7 @@ namespace Amazon.VerifiedPermissions
         /// <para>
         /// The policy attempts to access a record or entity attribute that is optional and isn't
         /// guaranteed to be present. Test for the existence of the attribute first before attempting
-        /// to access its value. For more information, see the <a href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has
+        /// to access its value. For more information, see the <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
         /// (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
         /// </para>
         ///  </li> <li> 
@@ -1733,7 +1745,7 @@ namespace Amazon.VerifiedPermissions
         /// <para>
         /// The policy attempts to access a record or entity attribute that isn't specified in
         /// the schema. Test for the existence of the attribute first before attempting to access
-        /// its value. For more information, see the <a href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has
+        /// its value. For more information, see the <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
         /// (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
         /// </para>
         ///  </li> <li> 
@@ -1744,7 +1756,7 @@ namespace Amazon.VerifiedPermissions
         /// <para>
         /// The policy attempts to access a record or entity attribute that is optional and isn't
         /// guaranteed to be present. Test for the existence of the attribute first before attempting
-        /// to access its value. For more information, see the <a href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has
+        /// to access its value. For more information, see the <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
         /// (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
         /// </para>
         ///  </li> <li> 
@@ -1887,7 +1899,7 @@ namespace Amazon.VerifiedPermissions
         /// <para>
         /// The policy attempts to access a record or entity attribute that isn't specified in
         /// the schema. Test for the existence of the attribute first before attempting to access
-        /// its value. For more information, see the <a href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has
+        /// its value. For more information, see the <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
         /// (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
         /// </para>
         ///  </li> <li> 
@@ -1898,7 +1910,7 @@ namespace Amazon.VerifiedPermissions
         /// <para>
         /// The policy attempts to access a record or entity attribute that is optional and isn't
         /// guaranteed to be present. Test for the existence of the attribute first before attempting
-        /// to access its value. For more information, see the <a href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has
+        /// to access its value. For more information, see the <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
         /// (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
         /// </para>
         ///  </li> <li> 
@@ -2041,7 +2053,7 @@ namespace Amazon.VerifiedPermissions
         /// <para>
         /// The policy attempts to access a record or entity attribute that isn't specified in
         /// the schema. Test for the existence of the attribute first before attempting to access
-        /// its value. For more information, see the <a href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has
+        /// its value. For more information, see the <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
         /// (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
         /// </para>
         ///  </li> <li> 
@@ -2052,7 +2064,7 @@ namespace Amazon.VerifiedPermissions
         /// <para>
         /// The policy attempts to access a record or entity attribute that is optional and isn't
         /// guaranteed to be present. Test for the existence of the attribute first before attempting
-        /// to access its value. For more information, see the <a href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has
+        /// to access its value. For more information, see the <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
         /// (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
         /// </para>
         ///  </li> <li> 
@@ -2195,7 +2207,7 @@ namespace Amazon.VerifiedPermissions
         /// <para>
         /// The policy attempts to access a record or entity attribute that isn't specified in
         /// the schema. Test for the existence of the attribute first before attempting to access
-        /// its value. For more information, see the <a href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has
+        /// its value. For more information, see the <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
         /// (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
         /// </para>
         ///  </li> <li> 
@@ -2206,7 +2218,7 @@ namespace Amazon.VerifiedPermissions
         /// <para>
         /// The policy attempts to access a record or entity attribute that is optional and isn't
         /// guaranteed to be present. Test for the existence of the attribute first before attempting
-        /// to access its value. For more information, see the <a href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has
+        /// to access its value. For more information, see the <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
         /// (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
         /// </para>
         ///  </li> <li> 
@@ -2353,7 +2365,7 @@ namespace Amazon.VerifiedPermissions
         /// <para>
         /// The policy attempts to access a record or entity attribute that isn't specified in
         /// the schema. Test for the existence of the attribute first before attempting to access
-        /// its value. For more information, see the <a href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has
+        /// its value. For more information, see the <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
         /// (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
         /// </para>
         ///  </li> <li> 
@@ -2364,7 +2376,7 @@ namespace Amazon.VerifiedPermissions
         /// <para>
         /// The policy attempts to access a record or entity attribute that is optional and isn't
         /// guaranteed to be present. Test for the existence of the attribute first before attempting
-        /// to access its value. For more information, see the <a href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has
+        /// to access its value. For more information, see the <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
         /// (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
         /// </para>
         ///  </li> <li> 
@@ -2541,7 +2553,7 @@ namespace Amazon.VerifiedPermissions
         /// <para>
         /// The policy attempts to access a record or entity attribute that isn't specified in
         /// the schema. Test for the existence of the attribute first before attempting to access
-        /// its value. For more information, see the <a href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has
+        /// its value. For more information, see the <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
         /// (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
         /// </para>
         ///  </li> <li> 
@@ -2552,7 +2564,7 @@ namespace Amazon.VerifiedPermissions
         /// <para>
         /// The policy attempts to access a record or entity attribute that is optional and isn't
         /// guaranteed to be present. Test for the existence of the attribute first before attempting
-        /// to access its value. For more information, see the <a href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has
+        /// to access its value. For more information, see the <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
         /// (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
         /// </para>
         ///  </li> <li> 
@@ -2696,7 +2708,7 @@ namespace Amazon.VerifiedPermissions
         /// <para>
         /// The policy attempts to access a record or entity attribute that isn't specified in
         /// the schema. Test for the existence of the attribute first before attempting to access
-        /// its value. For more information, see the <a href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has
+        /// its value. For more information, see the <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
         /// (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
         /// </para>
         ///  </li> <li> 
@@ -2707,7 +2719,7 @@ namespace Amazon.VerifiedPermissions
         /// <para>
         /// The policy attempts to access a record or entity attribute that is optional and isn't
         /// guaranteed to be present. Test for the existence of the attribute first before attempting
-        /// to access its value. For more information, see the <a href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has
+        /// to access its value. For more information, see the <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
         /// (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
         /// </para>
         ///  </li> <li> 
@@ -2850,7 +2862,7 @@ namespace Amazon.VerifiedPermissions
         /// <para>
         /// The policy attempts to access a record or entity attribute that isn't specified in
         /// the schema. Test for the existence of the attribute first before attempting to access
-        /// its value. For more information, see the <a href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has
+        /// its value. For more information, see the <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
         /// (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
         /// </para>
         ///  </li> <li> 
@@ -2861,7 +2873,7 @@ namespace Amazon.VerifiedPermissions
         /// <para>
         /// The policy attempts to access a record or entity attribute that is optional and isn't
         /// guaranteed to be present. Test for the existence of the attribute first before attempting
-        /// to access its value. For more information, see the <a href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has
+        /// to access its value. For more information, see the <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
         /// (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
         /// </para>
         ///  </li> <li> 
@@ -3001,7 +3013,7 @@ namespace Amazon.VerifiedPermissions
         /// <para>
         /// The policy attempts to access a record or entity attribute that isn't specified in
         /// the schema. Test for the existence of the attribute first before attempting to access
-        /// its value. For more information, see the <a href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has
+        /// its value. For more information, see the <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
         /// (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
         /// </para>
         ///  </li> <li> 
@@ -3012,7 +3024,7 @@ namespace Amazon.VerifiedPermissions
         /// <para>
         /// The policy attempts to access a record or entity attribute that is optional and isn't
         /// guaranteed to be present. Test for the existence of the attribute first before attempting
-        /// to access its value. For more information, see the <a href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has
+        /// to access its value. For more information, see the <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
         /// (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
         /// </para>
         ///  </li> <li> 
@@ -3155,7 +3167,7 @@ namespace Amazon.VerifiedPermissions
         /// <para>
         /// The policy attempts to access a record or entity attribute that isn't specified in
         /// the schema. Test for the existence of the attribute first before attempting to access
-        /// its value. For more information, see the <a href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has
+        /// its value. For more information, see the <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
         /// (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
         /// </para>
         ///  </li> <li> 
@@ -3166,7 +3178,7 @@ namespace Amazon.VerifiedPermissions
         /// <para>
         /// The policy attempts to access a record or entity attribute that is optional and isn't
         /// guaranteed to be present. Test for the existence of the attribute first before attempting
-        /// to access its value. For more information, see the <a href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has
+        /// to access its value. For more information, see the <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
         /// (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
         /// </para>
         ///  </li> <li> 
@@ -3329,7 +3341,7 @@ namespace Amazon.VerifiedPermissions
         /// <para>
         /// The policy attempts to access a record or entity attribute that isn't specified in
         /// the schema. Test for the existence of the attribute first before attempting to access
-        /// its value. For more information, see the <a href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has
+        /// its value. For more information, see the <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
         /// (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
         /// </para>
         ///  </li> <li> 
@@ -3340,7 +3352,7 @@ namespace Amazon.VerifiedPermissions
         /// <para>
         /// The policy attempts to access a record or entity attribute that is optional and isn't
         /// guaranteed to be present. Test for the existence of the attribute first before attempting
-        /// to access its value. For more information, see the <a href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has
+        /// to access its value. For more information, see the <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
         /// (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
         /// </para>
         ///  </li> <li> 
@@ -3497,7 +3509,7 @@ namespace Amazon.VerifiedPermissions
         /// <para>
         /// The policy attempts to access a record or entity attribute that isn't specified in
         /// the schema. Test for the existence of the attribute first before attempting to access
-        /// its value. For more information, see the <a href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has
+        /// its value. For more information, see the <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
         /// (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
         /// </para>
         ///  </li> <li> 
@@ -3508,7 +3520,7 @@ namespace Amazon.VerifiedPermissions
         /// <para>
         /// The policy attempts to access a record or entity attribute that is optional and isn't
         /// guaranteed to be present. Test for the existence of the attribute first before attempting
-        /// to access its value. For more information, see the <a href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has
+        /// to access its value. For more information, see the <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
         /// (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
         /// </para>
         ///  </li> <li> 
@@ -3712,7 +3724,7 @@ namespace Amazon.VerifiedPermissions
         /// <para>
         /// The policy attempts to access a record or entity attribute that isn't specified in
         /// the schema. Test for the existence of the attribute first before attempting to access
-        /// its value. For more information, see the <a href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has
+        /// its value. For more information, see the <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
         /// (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
         /// </para>
         ///  </li> <li> 
@@ -3723,7 +3735,7 @@ namespace Amazon.VerifiedPermissions
         /// <para>
         /// The policy attempts to access a record or entity attribute that is optional and isn't
         /// guaranteed to be present. Test for the existence of the attribute first before attempting
-        /// to access its value. For more information, see the <a href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has
+        /// to access its value. For more information, see the <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
         /// (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
         /// </para>
         ///  </li> <li> 
@@ -3878,7 +3890,7 @@ namespace Amazon.VerifiedPermissions
         /// <para>
         /// The policy attempts to access a record or entity attribute that isn't specified in
         /// the schema. Test for the existence of the attribute first before attempting to access
-        /// its value. For more information, see the <a href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has
+        /// its value. For more information, see the <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
         /// (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
         /// </para>
         ///  </li> <li> 
@@ -3889,7 +3901,7 @@ namespace Amazon.VerifiedPermissions
         /// <para>
         /// The policy attempts to access a record or entity attribute that is optional and isn't
         /// guaranteed to be present. Test for the existence of the attribute first before attempting
-        /// to access its value. For more information, see the <a href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has
+        /// to access its value. For more information, see the <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
         /// (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
         /// </para>
         ///  </li> <li> 
@@ -3962,8 +3974,9 @@ namespace Amazon.VerifiedPermissions
         /// 
         ///  <important> 
         /// <para>
-        /// Changes you make to the policy template content are immediately reflected in authorization
-        /// decisions that involve all template-linked policies instantiated from this template.
+        /// Changes you make to the policy template content are immediately (within the constraints
+        /// of eventual consistency) reflected in authorization decisions that involve all template-linked
+        /// policies instantiated from this template.
         /// </para>
         ///  </important> <note> 
         /// <para>
@@ -4051,7 +4064,7 @@ namespace Amazon.VerifiedPermissions
         /// <para>
         /// The policy attempts to access a record or entity attribute that isn't specified in
         /// the schema. Test for the existence of the attribute first before attempting to access
-        /// its value. For more information, see the <a href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has
+        /// its value. For more information, see the <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
         /// (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
         /// </para>
         ///  </li> <li> 
@@ -4062,7 +4075,7 @@ namespace Amazon.VerifiedPermissions
         /// <para>
         /// The policy attempts to access a record or entity attribute that is optional and isn't
         /// guaranteed to be present. Test for the existence of the attribute first before attempting
-        /// to access its value. For more information, see the <a href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has
+        /// to access its value. For more information, see the <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
         /// (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
         /// </para>
         ///  </li> <li> 
