@@ -380,8 +380,6 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Amazon FSx provides fully-managed third-party file systems optimized for a variety of enterprise and compute-intensive workloads.
 * [AWSSDK.GameLift](https://www.nuget.org/packages/AWSSDK.GameLift/)
 	* Amazon GameLift Service is a managed AWS service for developers who need a scalable, server-based solution for multiplayer games.
-* [AWSSDK.GameSparks](https://www.nuget.org/packages/AWSSDK.GameSparks/)
-	* Released the preview of Amazon GameSparks, a fully managed AWS service that provides a multi-service backend for game developers.
 * [AWSSDK.Glacier](https://www.nuget.org/packages/AWSSDK.Glacier/)
 	* Amazon Glacier is a secure, durable, and extremely low-cost storage service for data archiving and online backup.
 * [AWSSDK.GlobalAccelerator](https://www.nuget.org/packages/AWSSDK.GlobalAccelerator/)
