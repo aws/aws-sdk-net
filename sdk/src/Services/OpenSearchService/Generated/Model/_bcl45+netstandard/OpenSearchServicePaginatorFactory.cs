@@ -100,6 +100,14 @@ namespace Amazon.OpenSearchService.Model
         }
 
         /// <summary>
+        /// Paginator for ListDomainMaintenances operation
+        ///</summary>
+        public IListDomainMaintenancesPaginator ListDomainMaintenances(ListDomainMaintenancesRequest request) 
+        {
+            return new ListDomainMaintenancesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListDomainsForPackage operation
         ///</summary>
         public IListDomainsForPackagePaginator ListDomainsForPackage(ListDomainsForPackageRequest request) 

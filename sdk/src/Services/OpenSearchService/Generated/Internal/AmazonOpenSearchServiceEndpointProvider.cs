@@ -78,7 +78,7 @@ namespace Amazon.OpenSearchService.Internal
                     }
                     if (Equals(refs["UseFIPS"], true))
                     {
-                        if (Equals(true, GetAttr(refs["PartitionResult"], "supportsFIPS")))
+                        if (Equals(GetAttr(refs["PartitionResult"], "supportsFIPS"), true))
                         {
                             return new Endpoint(Interpolate(@"https://es-fips.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                         }

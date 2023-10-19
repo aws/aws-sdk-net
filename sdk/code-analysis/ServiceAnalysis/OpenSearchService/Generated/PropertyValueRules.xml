@@ -268,6 +268,29 @@
     <pattern>[a-z][a-z0-9\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.GetDomainMaintenanceStatusRequest.DomainName</property>
+    <min>3</min>
+    <max>28</max>
+    <pattern>[a-z][a-z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.GetDomainMaintenanceStatusRequest.MaintenanceId</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^([\s\S]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.GetDomainMaintenanceStatusResponse.NodeId</property>
+    <min>10</min>
+    <max>40</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.GetDomainMaintenanceStatusResponse.StatusMessage</property>
+    <min>0</min>
+    <max>1000</max>
+    <pattern>^([\s\S]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.OpenSearchService.Model.GetPackageVersionHistoryRequest.MaxResults</property>
     <max>100</max>
   </property-value-rule>
@@ -294,6 +317,16 @@
     <min>3</min>
     <max>28</max>
     <pattern>[a-z][a-z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.ListDomainMaintenancesRequest.DomainName</property>
+    <min>3</min>
+    <max>28</max>
+    <pattern>[a-z][a-z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.ListDomainMaintenancesRequest.MaxResults</property>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchService.Model.ListDomainsForPackageRequest.MaxResults</property>
@@ -414,6 +447,23 @@
     <min>3</min>
     <max>28</max>
     <pattern>[a-z][a-z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.StartDomainMaintenanceRequest.DomainName</property>
+    <min>3</min>
+    <max>28</max>
+    <pattern>[a-z][a-z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.StartDomainMaintenanceRequest.NodeId</property>
+    <min>10</min>
+    <max>40</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.StartDomainMaintenanceResponse.MaintenanceId</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^([\s\S]*)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchService.Model.StartServiceSoftwareUpdateRequest.DomainName</property>
@@ -600,6 +650,29 @@
     <min>3</min>
     <max>28</max>
     <pattern>[a-z][a-z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.DomainMaintenanceDetails.DomainName</property>
+    <min>3</min>
+    <max>28</max>
+    <pattern>[a-z][a-z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.DomainMaintenanceDetails.MaintenanceId</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^([\s\S]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.DomainMaintenanceDetails.NodeId</property>
+    <min>10</min>
+    <max>40</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.DomainMaintenanceDetails.StatusMessage</property>
+    <min>0</min>
+    <max>1000</max>
+    <pattern>^([\s\S]*)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchService.Model.DomainNodesStatus.AvailabilityZone</property>

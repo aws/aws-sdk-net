@@ -66,6 +66,11 @@ namespace Amazon.OpenSearchService.Model
         IGetUpgradeHistoryPaginator GetUpgradeHistory(GetUpgradeHistoryRequest request);
 
         /// <summary>
+        /// Paginator for ListDomainMaintenances operation
+        ///</summary>
+        IListDomainMaintenancesPaginator ListDomainMaintenances(ListDomainMaintenancesRequest request);
+
+        /// <summary>
         /// Paginator for ListDomainsForPackage operation
         ///</summary>
         IListDomainsForPackagePaginator ListDomainsForPackage(ListDomainsForPackageRequest request);

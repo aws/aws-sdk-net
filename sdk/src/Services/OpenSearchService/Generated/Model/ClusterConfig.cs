@@ -126,8 +126,8 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property InstanceCount. 
         /// <para>
-        /// Number of dedicated master nodes in the cluster. This number must be greater than
-        /// 1, otherwise you receive a validation exception.
+        /// Number of data nodes in the cluster. This number must be greater than 1, otherwise
+        /// you receive a validation exception.
         /// </para>
         /// </summary>
         public int InstanceCount
