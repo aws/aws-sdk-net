@@ -1484,7 +1484,8 @@ namespace Amazon.WorkSpaces
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// PCoIP is only available for Windows bundles.
+        /// You don't need to specify the <code>PCOIP</code> protocol for Linux bundles because
+        /// <code>WSP</code> is the default protocol for those bundles.
         /// </para>
         ///  </li> </ul> </note>
         /// </summary>
@@ -1523,7 +1524,8 @@ namespace Amazon.WorkSpaces
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// PCoIP is only available for Windows bundles.
+        /// You don't need to specify the <code>PCOIP</code> protocol for Linux bundles because
+        /// <code>WSP</code> is the default protocol for those bundles.
         /// </para>
         ///  </li> </ul> </note>
         /// </summary>
