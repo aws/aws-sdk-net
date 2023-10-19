@@ -95,17 +95,21 @@ namespace Amazon.SecretsManager.Model
         ///  <note> 
         /// <para>
         /// If you use the Amazon Web Services CLI or one of the Amazon Web Services SDKs to call
-        /// this operation, then you can leave this parameter empty because they generate a random
-        /// UUID for you. If you don't use the SDK and instead generate a raw HTTP request to
-        /// the Secrets Manager service endpoint, then you must generate a <code>ClientRequestToken</code>
-        /// yourself for new versions and include that value in the request. 
+        /// this operation, then you can leave this parameter empty. The CLI or SDK generates
+        /// a random UUID for you and includes it as the value for this parameter in the request.
+        /// 
         /// </para>
         ///  </note> 
         /// <para>
+        /// If you generate a raw HTTP request to the Secrets Manager service endpoint, then you
+        /// must generate a <code>ClientRequestToken</code> and include it in the request.
+        /// </para>
+        ///  
+        /// <para>
         /// This value helps ensure idempotency. Secrets Manager uses this value to prevent the
         /// accidental creation of duplicate versions if there are failures and retries during
-        /// the Lambda rotation function processing. We recommend that you generate a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a>
-        /// value to ensure uniqueness within the specified secret. 
+        /// a rotation. We recommend that you generate a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a>
+        /// value to ensure uniqueness of your versions within the specified secret. 
         /// </para>
         ///  <ul> <li> 
         /// <para>
