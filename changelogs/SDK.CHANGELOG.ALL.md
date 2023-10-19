@@ -1,3 +1,28 @@
+### 3.7.666.0 (2023-10-19 19:41 UTC)
+* EC2 (3.7.221.0)
+	* Amazon EC2 C7a instances, powered by 4th generation AMD EPYC processors, are ideal for high performance, compute-intensive workloads such as high performance computing. Amazon EC2 R7i instances are next-generation memory optimized and powered by custom 4th Generation Intel Xeon Scalable processors.
+* ManagedBlockchainQuery (3.7.202.0)
+	* This release adds support for Ethereum Sepolia network
+* Neptunedata (3.7.201.23)
+	* Doc changes to add IAM action mappings for the data actions.
+* Omics (3.7.206.0)
+	* This change enables customers to retrieve failure reasons with detailed status messages for their failed runs
+* OpenSearchService (3.7.202.0)
+	* Added Cluster Administrative options for node restart, opensearch process restart and opensearch dashboard restart for Multi-AZ without standby domains
+* QuickSight (3.7.207.0)
+	* This release adds the following: 1) Trino and Starburst Database Connectors 2) Custom total for tables and pivot tables 3) Enable restricted folders 4) Add rolling dates for time equality filters 5) Refine DataPathValue and introduce DataPathType 6) Add SeriesType to ReferenceLineDataConfiguration
+* SecretsManager (3.7.201.43)
+	* Documentation updates for Secrets Manager
+* ServiceCatalog (3.7.202.0)
+	* Introduce support for EXTERNAL product and provisioning artifact type in CreateProduct and CreateProvisioningArtifact APIs.
+* VerifiedPermissions (3.7.202.0)
+	* Improving Amazon Verified Permissions Create experience
+* WorkSpaces (3.7.202.6)
+	* Documentation updates for WorkSpaces
+* Core 3.7.204.5
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.665.0 (2023-10-18 18:18 UTC)
 * Cloud9 (3.7.200.58)
 	* Update to imageId parameter behavior and dates updated.
