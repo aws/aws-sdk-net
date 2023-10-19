@@ -1,0 +1,14 @@
+{
+  "core": {
+    "changeLogMessages": ["Add trimming support for .NET 8."],
+    "type": "patch",
+    "updateMinimum": true,
+    "backwardIncompatibilitiesToIgnore": [
+      "Amazon.Util.PaginatedResourceFactory/TypeRemoved",
+      "Amazon.Runtime.URIBasedRefreshingCredentialHelper/MethodOverloadAdded",
+      "Amazon.Util.Internal.ITypeInfo/MethodRemoved",
+      "Amazon.Util.PaginatedResourceInfo/TypeRemoved",
+      "Amazon.Runtime.Internal.Settings.SettingsCollection/MethodRemoved"
+    ]
+  }
+}

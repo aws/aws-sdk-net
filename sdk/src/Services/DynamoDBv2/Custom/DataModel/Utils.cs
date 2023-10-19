@@ -365,7 +365,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
             foreach (var inter in targetType.GetInterfaces())
             {
-                if (object.Equals(inter, interfaceType))
+                if (InternalSDKUtils.AreTypesEqual(inter, interfaceType))
                     return true;
                 if (inter.IsGenericTypeDefinition && inter.IsGenericType)
                 {
