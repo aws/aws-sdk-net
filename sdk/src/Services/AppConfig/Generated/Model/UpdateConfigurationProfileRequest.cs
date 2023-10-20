@@ -110,6 +110,7 @@ namespace Amazon.AppConfig.Model
         /// for that particular service.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=2048)]
         public string KmsKeyIdentifier
         {
             get { return this._kmsKeyIdentifier; }
