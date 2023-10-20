@@ -52,7 +52,7 @@ namespace Amazon.SimpleSystemsManagement
     ///  <ul> <li> 
     /// <para>
     /// For information about each of the capabilities that comprise Systems Manager, see
-    /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/what-is-systems-manager.html#systems-manager-capabilities">Systems
+    /// <a href="https://docs.aws.amazon.com/systems-manager-automation-runbooks/latest/userguide/systems-manager-capabilities.html">Systems
     /// Manager capabilities</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
     /// </para>
     ///  </li> <li> 
@@ -434,6 +434,9 @@ namespace Amazon.SimpleSystemsManagement
         /// <returns>The response from the AssociateOpsItemRelatedItem service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsItemConflictException">
+        /// The specified OpsItem is in the process of being deleted.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsItemInvalidParameterException">
         /// A specified parameter argument isn't valid. Verify the available arguments and try
@@ -2179,6 +2182,100 @@ namespace Amazon.SimpleSystemsManagement
         public virtual DeleteMaintenanceWindowResponse EndDeleteMaintenanceWindow(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteMaintenanceWindowResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteOpsItem
+
+        /// <summary>
+        /// Delete an OpsItem. You must have permission in Identity and Access Management (IAM)
+        /// to delete an OpsItem. 
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Note the following important information about this operation.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Deleting an OpsItem is irreversible. You can't restore a deleted OpsItem.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// This operation uses an <i>eventual consistency model</i>, which means the system can
+        /// take a few minutes to complete this operation. If you delete an OpsItem and immediately
+        /// call, for example, <a>GetOpsItem</a>, the deleted OpsItem might still appear in the
+        /// response. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// This operation is idempotent. The system doesn't throw an exception if you repeatedly
+        /// call this operation for the same OpsItem. If the first call is successful, all additional
+        /// calls return the same successful response as the first call.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// This operation doesn't support cross-account calls. A delegated administrator or management
+        /// account can't delete OpsItems in other accounts, even if OpsCenter has been set up
+        /// for cross-account administration. For more information about cross-account administration,
+        /// see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-setting-up-cross-account.html">Setting
+        /// up OpsCenter to centrally manage OpsItems across accounts</a> in the <i>Systems Manager
+        /// User Guide</i>.
+        /// </para>
+        ///  </li> </ul> </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteOpsItem service method.</param>
+        /// 
+        /// <returns>The response from the DeleteOpsItem service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsItemInvalidParameterException">
+        /// A specified parameter argument isn't valid. Verify the available arguments and try
+        /// again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteOpsItem">REST API Reference for DeleteOpsItem Operation</seealso>
+        public virtual DeleteOpsItemResponse DeleteOpsItem(DeleteOpsItemRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteOpsItemRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteOpsItemResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteOpsItemResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteOpsItem operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteOpsItem operation on AmazonSimpleSystemsManagementClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteOpsItem
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteOpsItem">REST API Reference for DeleteOpsItem Operation</seealso>
+        public virtual IAsyncResult BeginDeleteOpsItem(DeleteOpsItemRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteOpsItemRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteOpsItemResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteOpsItem operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteOpsItem.</param>
+        /// 
+        /// <returns>Returns a  DeleteOpsItemResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteOpsItem">REST API Reference for DeleteOpsItem Operation</seealso>
+        public virtual DeleteOpsItemResponse EndDeleteOpsItem(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteOpsItemResponse>(asyncResult);
         }
 
         #endregion
@@ -5279,6 +5376,9 @@ namespace Amazon.SimpleSystemsManagement
         /// <returns>The response from the DisassociateOpsItemRelatedItem service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsItemConflictException">
+        /// The specified OpsItem is in the process of being deleted.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsItemInvalidParameterException">
         /// A specified parameter argument isn't valid. Verify the available arguments and try
@@ -11378,6 +11478,9 @@ namespace Amazon.SimpleSystemsManagement
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsItemAlreadyExistsException">
         /// The OpsItem already exists.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsItemConflictException">
+        /// The specified OpsItem is in the process of being deleted.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsItemInvalidParameterException">
         /// A specified parameter argument isn't valid. Verify the available arguments and try

@@ -73,6 +73,10 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 {
                     return InternalServerErrorExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("OpsItemConflictException"))
+                {
+                    return OpsItemConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("OpsItemInvalidParameterException"))
                 {
                     return OpsItemInvalidParameterExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

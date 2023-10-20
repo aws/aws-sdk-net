@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AssociateOpsItemRelatedItem operation
+    /// Response Unmarshaller for DeleteOpsItem operation
     /// </summary>  
-    public class AssociateOpsItemRelatedItemResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DeleteOpsItemResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,19 +45,8 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            AssociateOpsItemRelatedItemResponse response = new AssociateOpsItemRelatedItemResponse();
+            DeleteOpsItemResponse response = new DeleteOpsItemResponse();
 
-            context.Read();
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
-            {
-                if (context.TestExpression("AssociationId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.AssociationId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-            }
 
             return response;
         }
@@ -84,33 +73,17 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 {
                     return InternalServerErrorExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("OpsItemConflictException"))
-                {
-                    return OpsItemConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("OpsItemInvalidParameterException"))
                 {
                     return OpsItemInvalidParameterExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("OpsItemLimitExceededException"))
-                {
-                    return OpsItemLimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("OpsItemNotFoundException"))
-                {
-                    return OpsItemNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("OpsItemRelatedItemAlreadyExistsException"))
-                {
-                    return OpsItemRelatedItemAlreadyExistsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
             }
             return new AmazonSimpleSystemsManagementException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static AssociateOpsItemRelatedItemResponseUnmarshaller _instance = new AssociateOpsItemRelatedItemResponseUnmarshaller();        
+        private static DeleteOpsItemResponseUnmarshaller _instance = new DeleteOpsItemResponseUnmarshaller();        
 
-        internal static AssociateOpsItemRelatedItemResponseUnmarshaller GetInstance()
+        internal static DeleteOpsItemResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -118,7 +91,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AssociateOpsItemRelatedItemResponseUnmarshaller Instance
+        public static DeleteOpsItemResponseUnmarshaller Instance
         {
             get
             {
