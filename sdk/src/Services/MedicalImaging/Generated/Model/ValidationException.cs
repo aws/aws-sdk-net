@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MedicalImaging.Model
 {
     /// <summary>
-    /// The input fails to satisfy the constraints specified by an AWS service.
+    /// The input fails to satisfy the constraints set by the service.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

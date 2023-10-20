@@ -137,8 +137,8 @@ namespace Amazon.MedicalImaging.Model
         /// <summary>
         /// Gets and sets the property KmsKeyArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) assigned to the AWS Key Management Service (AWS KMS)
-        /// key for accessing encrypted data.
+        /// The Amazon Resource Name (ARN) assigned to the Key Management Service (KMS) key for
+        /// accessing encrypted data.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=512)]
