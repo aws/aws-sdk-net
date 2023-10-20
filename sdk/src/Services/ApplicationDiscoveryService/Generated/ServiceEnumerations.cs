@@ -91,6 +91,68 @@ namespace Amazon.ApplicationDiscoveryService
 
 
     /// <summary>
+    /// Constants used for properties of type BatchDeleteConfigurationTaskStatus.
+    /// </summary>
+    public class BatchDeleteConfigurationTaskStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETED for BatchDeleteConfigurationTaskStatus
+        /// </summary>
+        public static readonly BatchDeleteConfigurationTaskStatus COMPLETED = new BatchDeleteConfigurationTaskStatus("COMPLETED");
+        /// <summary>
+        /// Constant DELETING for BatchDeleteConfigurationTaskStatus
+        /// </summary>
+        public static readonly BatchDeleteConfigurationTaskStatus DELETING = new BatchDeleteConfigurationTaskStatus("DELETING");
+        /// <summary>
+        /// Constant FAILED for BatchDeleteConfigurationTaskStatus
+        /// </summary>
+        public static readonly BatchDeleteConfigurationTaskStatus FAILED = new BatchDeleteConfigurationTaskStatus("FAILED");
+        /// <summary>
+        /// Constant INITIALIZING for BatchDeleteConfigurationTaskStatus
+        /// </summary>
+        public static readonly BatchDeleteConfigurationTaskStatus INITIALIZING = new BatchDeleteConfigurationTaskStatus("INITIALIZING");
+        /// <summary>
+        /// Constant VALIDATING for BatchDeleteConfigurationTaskStatus
+        /// </summary>
+        public static readonly BatchDeleteConfigurationTaskStatus VALIDATING = new BatchDeleteConfigurationTaskStatus("VALIDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BatchDeleteConfigurationTaskStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BatchDeleteConfigurationTaskStatus FindValue(string value)
+        {
+            return FindValue<BatchDeleteConfigurationTaskStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BatchDeleteConfigurationTaskStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type BatchDeleteImportDataErrorCode.
     /// </summary>
     public class BatchDeleteImportDataErrorCode : ConstantClass
@@ -312,6 +374,106 @@ namespace Amazon.ApplicationDiscoveryService
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DataSource(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DeleteAgentErrorCode.
+    /// </summary>
+    public class DeleteAgentErrorCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AGENT_IN_USE for DeleteAgentErrorCode
+        /// </summary>
+        public static readonly DeleteAgentErrorCode AGENT_IN_USE = new DeleteAgentErrorCode("AGENT_IN_USE");
+        /// <summary>
+        /// Constant INTERNAL_SERVER_ERROR for DeleteAgentErrorCode
+        /// </summary>
+        public static readonly DeleteAgentErrorCode INTERNAL_SERVER_ERROR = new DeleteAgentErrorCode("INTERNAL_SERVER_ERROR");
+        /// <summary>
+        /// Constant NOT_FOUND for DeleteAgentErrorCode
+        /// </summary>
+        public static readonly DeleteAgentErrorCode NOT_FOUND = new DeleteAgentErrorCode("NOT_FOUND");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DeleteAgentErrorCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DeleteAgentErrorCode FindValue(string value)
+        {
+            return FindValue<DeleteAgentErrorCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DeleteAgentErrorCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DeletionConfigurationItemType.
+    /// </summary>
+    public class DeletionConfigurationItemType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SERVER for DeletionConfigurationItemType
+        /// </summary>
+        public static readonly DeletionConfigurationItemType SERVER = new DeletionConfigurationItemType("SERVER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DeletionConfigurationItemType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DeletionConfigurationItemType FindValue(string value)
+        {
+            return FindValue<DeletionConfigurationItemType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DeletionConfigurationItemType(string value)
         {
             return FindValue(value);
         }

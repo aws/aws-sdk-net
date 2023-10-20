@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// BatchDeleteImportData Request Marshaller
+    /// DescribeBatchDeleteConfigurationTask Request Marshaller
     /// </summary>       
-    public class BatchDeleteImportDataRequestMarshaller : IMarshaller<IRequest, BatchDeleteImportDataRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class DescribeBatchDeleteConfigurationTaskRequestMarshaller : IMarshaller<IRequest, DescribeBatchDeleteConfigurationTaskRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((BatchDeleteImportDataRequest)input);
+            return this.Marshall((DescribeBatchDeleteConfigurationTaskRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(BatchDeleteImportDataRequest publicRequest)
+        public IRequest Marshall(DescribeBatchDeleteConfigurationTaskRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ApplicationDiscoveryService");
-            string target = "AWSPoseidonService_V2015_11_01.BatchDeleteImportData";
+            string target = "AWSPoseidonService_V2015_11_01.DescribeBatchDeleteConfigurationTask";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-11-01";
@@ -67,21 +67,10 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDeleteHistory())
+                if(publicRequest.IsSetTaskId())
                 {
-                    context.Writer.WritePropertyName("deleteHistory");
-                    context.Writer.Write(publicRequest.DeleteHistory);
-                }
-
-                if(publicRequest.IsSetImportTaskIds())
-                {
-                    context.Writer.WritePropertyName("importTaskIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestImportTaskIdsListValue in publicRequest.ImportTaskIds)
-                    {
-                            context.Writer.Write(publicRequestImportTaskIdsListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WritePropertyName("taskId");
+                    context.Writer.Write(publicRequest.TaskId);
                 }
 
                 writer.WriteObjectEnd();
@@ -92,9 +81,9 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
 
             return request;
         }
-        private static BatchDeleteImportDataRequestMarshaller _instance = new BatchDeleteImportDataRequestMarshaller();        
+        private static DescribeBatchDeleteConfigurationTaskRequestMarshaller _instance = new DescribeBatchDeleteConfigurationTaskRequestMarshaller();        
 
-        internal static BatchDeleteImportDataRequestMarshaller GetInstance()
+        internal static DescribeBatchDeleteConfigurationTaskRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -102,7 +91,7 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static BatchDeleteImportDataRequestMarshaller Instance
+        public static DescribeBatchDeleteConfigurationTaskRequestMarshaller Instance
         {
             get
             {

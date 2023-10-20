@@ -28,32 +28,32 @@ using Amazon.Runtime;
 namespace Amazon.ApplicationDiscoveryService.Model
 {
     /// <summary>
-    /// Base class for DescribeContinuousExports paginators.
+    /// Base class for DescribeTags paginators.
     /// </summary>
-    internal sealed partial class DescribeContinuousExportsPaginator : IPaginator<DescribeContinuousExportsResponse>, IDescribeContinuousExportsPaginator
+    internal sealed partial class DescribeTagsPaginator : IPaginator<DescribeTagsResponse>, IDescribeTagsPaginator
     {
         private readonly IAmazonApplicationDiscoveryService _client;
-        private readonly DescribeContinuousExportsRequest _request;
+        private readonly DescribeTagsRequest _request;
         private int _isPaginatorInUse = 0;
         
         /// <summary>
         /// Enumerable containing all full responses for the operation
         /// </summary>
-        public IPaginatedEnumerable<DescribeContinuousExportsResponse> Responses => new PaginatedResponse<DescribeContinuousExportsResponse>(this);
+        public IPaginatedEnumerable<DescribeTagsResponse> Responses => new PaginatedResponse<DescribeTagsResponse>(this);
 
         /// <summary>
-        /// Enumerable containing all of the Descriptions
+        /// Enumerable containing all of the Tags
         /// </summary>
-        public IPaginatedEnumerable<ContinuousExportDescription> Descriptions => 
-            new PaginatedResultKeyResponse<DescribeContinuousExportsResponse, ContinuousExportDescription>(this, (i) => i.Descriptions);
+        public IPaginatedEnumerable<ConfigurationTag> Tags => 
+            new PaginatedResultKeyResponse<DescribeTagsResponse, ConfigurationTag>(this, (i) => i.Tags);
 
-        internal DescribeContinuousExportsPaginator(IAmazonApplicationDiscoveryService client, DescribeContinuousExportsRequest request)
+        internal DescribeTagsPaginator(IAmazonApplicationDiscoveryService client, DescribeTagsRequest request)
         {
             this._client = client;
             this._request = request;
         }
 #if BCL
-        IEnumerable<DescribeContinuousExportsResponse> IPaginator<DescribeContinuousExportsResponse>.Paginate()
+        IEnumerable<DescribeTagsResponse> IPaginator<DescribeTagsResponse>.Paginate()
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {
@@ -61,11 +61,11 @@ namespace Amazon.ApplicationDiscoveryService.Model
             }
             PaginatorUtils.SetUserAgentAdditionOnRequest(_request);
             var nextToken = _request.NextToken;
-            DescribeContinuousExportsResponse response;
+            DescribeTagsResponse response;
             do
             {
                 _request.NextToken = nextToken;
-                response = _client.DescribeContinuousExports(_request);
+                response = _client.DescribeTags(_request);
                 nextToken = response.NextToken;
                 yield return response;
             }
@@ -73,7 +73,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<DescribeContinuousExportsResponse> IPaginator<DescribeContinuousExportsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<DescribeTagsResponse> IPaginator<DescribeTagsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {
@@ -81,11 +81,11 @@ namespace Amazon.ApplicationDiscoveryService.Model
             }
             PaginatorUtils.SetUserAgentAdditionOnRequest(_request);
             var nextToken = _request.NextToken;
-            DescribeContinuousExportsResponse response;
+            DescribeTagsResponse response;
             do
             {
                 _request.NextToken = nextToken;
-                response = await _client.DescribeContinuousExportsAsync(_request, cancellationToken).ConfigureAwait(false);
+                response = await _client.DescribeTagsAsync(_request, cancellationToken).ConfigureAwait(false);
                 nextToken = response.NextToken;
                 cancellationToken.ThrowIfCancellationRequested();
                 yield return response;

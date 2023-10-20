@@ -21,18 +21,18 @@ using Amazon.Runtime;
 namespace Amazon.ApplicationDiscoveryService.Model
 {
     /// <summary>
-    /// Paginator for the DescribeContinuousExports operation
+    /// Paginator for the DescribeAgents operation
     ///</summary>
-    public interface IDescribeContinuousExportsPaginator
+    public interface IDescribeAgentsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation
         /// </summary>
-        IPaginatedEnumerable<DescribeContinuousExportsResponse> Responses { get; }
+        IPaginatedEnumerable<DescribeAgentsResponse> Responses { get; }
 
         /// <summary>
-        /// Enumerable containing all of the Descriptions
+        /// Enumerable containing all of the AgentsInfo
         /// </summary>
-        IPaginatedEnumerable<ContinuousExportDescription> Descriptions { get; }
+        IPaginatedEnumerable<AgentInfo> AgentsInfo { get; }
     }
 }

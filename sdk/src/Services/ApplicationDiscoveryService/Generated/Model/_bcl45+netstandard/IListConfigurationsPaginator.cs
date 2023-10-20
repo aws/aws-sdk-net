@@ -21,18 +21,13 @@ using Amazon.Runtime;
 namespace Amazon.ApplicationDiscoveryService.Model
 {
     /// <summary>
-    /// Paginator for the DescribeContinuousExports operation
+    /// Paginator for the ListConfigurations operation
     ///</summary>
-    public interface IDescribeContinuousExportsPaginator
+    public interface IListConfigurationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation
         /// </summary>
-        IPaginatedEnumerable<DescribeContinuousExportsResponse> Responses { get; }
-
-        /// <summary>
-        /// Enumerable containing all of the Descriptions
-        /// </summary>
-        IPaginatedEnumerable<ContinuousExportDescription> Descriptions { get; }
+        IPaginatedEnumerable<ListConfigurationsResponse> Responses { get; }
     }
 }

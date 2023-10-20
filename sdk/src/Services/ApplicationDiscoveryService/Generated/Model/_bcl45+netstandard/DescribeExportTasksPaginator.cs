@@ -28,32 +28,32 @@ using Amazon.Runtime;
 namespace Amazon.ApplicationDiscoveryService.Model
 {
     /// <summary>
-    /// Base class for DescribeContinuousExports paginators.
+    /// Base class for DescribeExportTasks paginators.
     /// </summary>
-    internal sealed partial class DescribeContinuousExportsPaginator : IPaginator<DescribeContinuousExportsResponse>, IDescribeContinuousExportsPaginator
+    internal sealed partial class DescribeExportTasksPaginator : IPaginator<DescribeExportTasksResponse>, IDescribeExportTasksPaginator
     {
         private readonly IAmazonApplicationDiscoveryService _client;
-        private readonly DescribeContinuousExportsRequest _request;
+        private readonly DescribeExportTasksRequest _request;
         private int _isPaginatorInUse = 0;
         
         /// <summary>
         /// Enumerable containing all full responses for the operation
         /// </summary>
-        public IPaginatedEnumerable<DescribeContinuousExportsResponse> Responses => new PaginatedResponse<DescribeContinuousExportsResponse>(this);
+        public IPaginatedEnumerable<DescribeExportTasksResponse> Responses => new PaginatedResponse<DescribeExportTasksResponse>(this);
 
         /// <summary>
-        /// Enumerable containing all of the Descriptions
+        /// Enumerable containing all of the ExportsInfo
         /// </summary>
-        public IPaginatedEnumerable<ContinuousExportDescription> Descriptions => 
-            new PaginatedResultKeyResponse<DescribeContinuousExportsResponse, ContinuousExportDescription>(this, (i) => i.Descriptions);
+        public IPaginatedEnumerable<ExportInfo> ExportsInfo => 
+            new PaginatedResultKeyResponse<DescribeExportTasksResponse, ExportInfo>(this, (i) => i.ExportsInfo);
 
-        internal DescribeContinuousExportsPaginator(IAmazonApplicationDiscoveryService client, DescribeContinuousExportsRequest request)
+        internal DescribeExportTasksPaginator(IAmazonApplicationDiscoveryService client, DescribeExportTasksRequest request)
         {
             this._client = client;
             this._request = request;
         }
 #if BCL
-        IEnumerable<DescribeContinuousExportsResponse> IPaginator<DescribeContinuousExportsResponse>.Paginate()
+        IEnumerable<DescribeExportTasksResponse> IPaginator<DescribeExportTasksResponse>.Paginate()
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {
@@ -61,11 +61,11 @@ namespace Amazon.ApplicationDiscoveryService.Model
             }
             PaginatorUtils.SetUserAgentAdditionOnRequest(_request);
             var nextToken = _request.NextToken;
-            DescribeContinuousExportsResponse response;
+            DescribeExportTasksResponse response;
             do
             {
                 _request.NextToken = nextToken;
-                response = _client.DescribeContinuousExports(_request);
+                response = _client.DescribeExportTasks(_request);
                 nextToken = response.NextToken;
                 yield return response;
             }
@@ -73,7 +73,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<DescribeContinuousExportsResponse> IPaginator<DescribeContinuousExportsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<DescribeExportTasksResponse> IPaginator<DescribeExportTasksResponse>.PaginateAsync(CancellationToken cancellationToken = default)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {
@@ -81,11 +81,11 @@ namespace Amazon.ApplicationDiscoveryService.Model
             }
             PaginatorUtils.SetUserAgentAdditionOnRequest(_request);
             var nextToken = _request.NextToken;
-            DescribeContinuousExportsResponse response;
+            DescribeExportTasksResponse response;
             do
             {
                 _request.NextToken = nextToken;
-                response = await _client.DescribeContinuousExportsAsync(_request, cancellationToken).ConfigureAwait(false);
+                response = await _client.DescribeExportTasksAsync(_request, cancellationToken).ConfigureAwait(false);
                 nextToken = response.NextToken;
                 cancellationToken.ThrowIfCancellationRequested();
                 yield return response;

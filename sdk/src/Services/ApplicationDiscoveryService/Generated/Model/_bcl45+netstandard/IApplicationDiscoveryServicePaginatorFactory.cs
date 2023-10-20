@@ -26,13 +26,38 @@ namespace Amazon.ApplicationDiscoveryService.Model
     {
 
         /// <summary>
+        /// Paginator for DescribeAgents operation
+        ///</summary>
+        IDescribeAgentsPaginator DescribeAgents(DescribeAgentsRequest request);
+
+        /// <summary>
         /// Paginator for DescribeContinuousExports operation
         ///</summary>
         IDescribeContinuousExportsPaginator DescribeContinuousExports(DescribeContinuousExportsRequest request);
 
         /// <summary>
+        /// Paginator for DescribeExportConfigurations operation
+        ///</summary>
+        IDescribeExportConfigurationsPaginator DescribeExportConfigurations(DescribeExportConfigurationsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeExportTasks operation
+        ///</summary>
+        IDescribeExportTasksPaginator DescribeExportTasks(DescribeExportTasksRequest request);
+
+        /// <summary>
         /// Paginator for DescribeImportTasks operation
         ///</summary>
         IDescribeImportTasksPaginator DescribeImportTasks(DescribeImportTasksRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeTags operation
+        ///</summary>
+        IDescribeTagsPaginator DescribeTags(DescribeTagsRequest request);
+
+        /// <summary>
+        /// Paginator for ListConfigurations operation
+        ///</summary>
+        IListConfigurationsPaginator ListConfigurations(ListConfigurationsRequest request);
     }
 }

@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// BatchDeleteImportData Request Marshaller
+    /// BatchDeleteAgents Request Marshaller
     /// </summary>       
-    public class BatchDeleteImportDataRequestMarshaller : IMarshaller<IRequest, BatchDeleteImportDataRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class BatchDeleteAgentsRequestMarshaller : IMarshaller<IRequest, BatchDeleteAgentsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((BatchDeleteImportDataRequest)input);
+            return this.Marshall((BatchDeleteAgentsRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(BatchDeleteImportDataRequest publicRequest)
+        public IRequest Marshall(BatchDeleteAgentsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ApplicationDiscoveryService");
-            string target = "AWSPoseidonService_V2015_11_01.BatchDeleteImportData";
+            string target = "AWSPoseidonService_V2015_11_01.BatchDeleteAgents";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-11-01";
@@ -67,19 +67,18 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDeleteHistory())
+                if(publicRequest.IsSetDeleteAgents())
                 {
-                    context.Writer.WritePropertyName("deleteHistory");
-                    context.Writer.Write(publicRequest.DeleteHistory);
-                }
-
-                if(publicRequest.IsSetImportTaskIds())
-                {
-                    context.Writer.WritePropertyName("importTaskIds");
+                    context.Writer.WritePropertyName("deleteAgents");
                     context.Writer.WriteArrayStart();
-                    foreach(var publicRequestImportTaskIdsListValue in publicRequest.ImportTaskIds)
+                    foreach(var publicRequestDeleteAgentsListValue in publicRequest.DeleteAgents)
                     {
-                            context.Writer.Write(publicRequestImportTaskIdsListValue);
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = DeleteAgentMarshaller.Instance;
+                        marshaller.Marshall(publicRequestDeleteAgentsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
                     context.Writer.WriteArrayEnd();
                 }
@@ -92,9 +91,9 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
 
             return request;
         }
-        private static BatchDeleteImportDataRequestMarshaller _instance = new BatchDeleteImportDataRequestMarshaller();        
+        private static BatchDeleteAgentsRequestMarshaller _instance = new BatchDeleteAgentsRequestMarshaller();        
 
-        internal static BatchDeleteImportDataRequestMarshaller GetInstance()
+        internal static BatchDeleteAgentsRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -102,7 +101,7 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static BatchDeleteImportDataRequestMarshaller Instance
+        public static BatchDeleteAgentsRequestMarshaller Instance
         {
             get
             {

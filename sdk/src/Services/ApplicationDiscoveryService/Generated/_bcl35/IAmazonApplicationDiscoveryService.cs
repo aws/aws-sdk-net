@@ -216,6 +216,62 @@ namespace Amazon.ApplicationDiscoveryService
 
         #endregion
         
+        #region  BatchDeleteAgents
+
+
+        /// <summary>
+        /// Deletes one or more agents or collectors as specified by ID. Deleting an agent or
+        /// collector does not delete the previously discovered data. To delete the data collected,
+        /// use <code>StartBatchDeleteConfigurationTask</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDeleteAgents service method.</param>
+        /// 
+        /// <returns>The response from the BatchDeleteAgents service method, as returned by ApplicationDiscoveryService.</returns>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.AuthorizationErrorException">
+        /// The user does not have permission to perform the action. Check the IAM policy associated
+        /// with this user.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid. Verify the parameters and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.InvalidParameterValueException">
+        /// The value of one or more parameters are either invalid or out of range. Verify the
+        /// parameter values and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ServerInternalErrorException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/BatchDeleteAgents">REST API Reference for BatchDeleteAgents Operation</seealso>
+        BatchDeleteAgentsResponse BatchDeleteAgents(BatchDeleteAgentsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchDeleteAgents operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchDeleteAgents operation on AmazonApplicationDiscoveryServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchDeleteAgents
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/BatchDeleteAgents">REST API Reference for BatchDeleteAgents Operation</seealso>
+        IAsyncResult BeginBatchDeleteAgents(BatchDeleteAgentsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchDeleteAgents operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchDeleteAgents.</param>
+        /// 
+        /// <returns>Returns a  BatchDeleteAgentsResult from ApplicationDiscoveryService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/BatchDeleteAgents">REST API Reference for BatchDeleteAgents Operation</seealso>
+        BatchDeleteAgentsResponse EndBatchDeleteAgents(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  BatchDeleteImportData
 
 
@@ -584,6 +640,61 @@ namespace Amazon.ApplicationDiscoveryService
         /// <returns>Returns a  DescribeAgentsResult from ApplicationDiscoveryService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeAgents">REST API Reference for DescribeAgents Operation</seealso>
         DescribeAgentsResponse EndDescribeAgents(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeBatchDeleteConfigurationTask
+
+
+        /// <summary>
+        /// Takes a unique deletion task identifier as input and returns metadata about a configuration
+        /// deletion task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeBatchDeleteConfigurationTask service method.</param>
+        /// 
+        /// <returns>The response from the DescribeBatchDeleteConfigurationTask service method, as returned by ApplicationDiscoveryService.</returns>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.AuthorizationErrorException">
+        /// The user does not have permission to perform the action. Check the IAM policy associated
+        /// with this user.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.HomeRegionNotSetException">
+        /// The home Region is not set. Set the home Region to continue.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.InvalidParameterValueException">
+        /// The value of one or more parameters are either invalid or out of range. Verify the
+        /// parameter values and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ServerInternalErrorException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeBatchDeleteConfigurationTask">REST API Reference for DescribeBatchDeleteConfigurationTask Operation</seealso>
+        DescribeBatchDeleteConfigurationTaskResponse DescribeBatchDeleteConfigurationTask(DescribeBatchDeleteConfigurationTaskRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeBatchDeleteConfigurationTask operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeBatchDeleteConfigurationTask operation on AmazonApplicationDiscoveryServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeBatchDeleteConfigurationTask
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeBatchDeleteConfigurationTask">REST API Reference for DescribeBatchDeleteConfigurationTask Operation</seealso>
+        IAsyncResult BeginDescribeBatchDeleteConfigurationTask(DescribeBatchDeleteConfigurationTaskRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeBatchDeleteConfigurationTask operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeBatchDeleteConfigurationTask.</param>
+        /// 
+        /// <returns>Returns a  DescribeBatchDeleteConfigurationTaskResult from ApplicationDiscoveryService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeBatchDeleteConfigurationTask">REST API Reference for DescribeBatchDeleteConfigurationTask Operation</seealso>
+        DescribeBatchDeleteConfigurationTaskResponse EndDescribeBatchDeleteConfigurationTask(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1318,6 +1429,67 @@ namespace Amazon.ApplicationDiscoveryService
         /// <returns>Returns a  ListServerNeighborsResult from ApplicationDiscoveryService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/ListServerNeighbors">REST API Reference for ListServerNeighbors Operation</seealso>
         ListServerNeighborsResponse EndListServerNeighbors(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  StartBatchDeleteConfigurationTask
+
+
+        /// <summary>
+        /// Takes a list of configurationId as input and starts an asynchronous deletion task
+        /// to remove the configurationItems. Returns a unique deletion task identifier.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartBatchDeleteConfigurationTask service method.</param>
+        /// 
+        /// <returns>The response from the StartBatchDeleteConfigurationTask service method, as returned by ApplicationDiscoveryService.</returns>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.AuthorizationErrorException">
+        /// The user does not have permission to perform the action. Check the IAM policy associated
+        /// with this user.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.HomeRegionNotSetException">
+        /// The home Region is not set. Set the home Region to continue.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.InvalidParameterValueException">
+        /// The value of one or more parameters are either invalid or out of range. Verify the
+        /// parameter values and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.LimitExceededException">
+        /// The limit of 200 configuration IDs per request has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.OperationNotPermittedException">
+        /// This operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ServerInternalErrorException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/StartBatchDeleteConfigurationTask">REST API Reference for StartBatchDeleteConfigurationTask Operation</seealso>
+        StartBatchDeleteConfigurationTaskResponse StartBatchDeleteConfigurationTask(StartBatchDeleteConfigurationTaskRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartBatchDeleteConfigurationTask operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartBatchDeleteConfigurationTask operation on AmazonApplicationDiscoveryServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartBatchDeleteConfigurationTask
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/StartBatchDeleteConfigurationTask">REST API Reference for StartBatchDeleteConfigurationTask Operation</seealso>
+        IAsyncResult BeginStartBatchDeleteConfigurationTask(StartBatchDeleteConfigurationTaskRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartBatchDeleteConfigurationTask operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartBatchDeleteConfigurationTask.</param>
+        /// 
+        /// <returns>Returns a  StartBatchDeleteConfigurationTaskResult from ApplicationDiscoveryService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/StartBatchDeleteConfigurationTask">REST API Reference for StartBatchDeleteConfigurationTask Operation</seealso>
+        StartBatchDeleteConfigurationTaskResponse EndStartBatchDeleteConfigurationTask(IAsyncResult asyncResult);
 
         #endregion
         
