@@ -1,3 +1,21 @@
+### 3.7.667.0 (2023-10-20 20:15 UTC)
+* AppConfig (3.7.203.0)
+	* Update KmsKeyIdentifier constraints to support AWS KMS multi-Region keys.
+* AppIntegrationsService (3.7.202.0)
+	* Updated ScheduleConfig to be an optional input to CreateDataIntegration to support event driven downloading of files from sources such as Amazon s3 using Amazon Connect AppIntegrations.
+* ApplicationDiscoveryService (3.7.203.0)
+	* This release introduces three new APIs: StartBatchDeleteConfigurationTask, DescribeBatchDeleteConfigurationTask, and BatchDeleteAgents.
+* Connect (3.7.208.0)
+	* This release adds support for updating phone number metadata, such as phone number description.
+* MedicalImaging (3.7.200.58)
+	* Updates on documentation links
+* SimpleSystemsManagement (3.7.202.0)
+	* This release introduces a new API: DeleteOpsItem. This allows deletion of an OpsItem.
+* Core 3.7.204.6
+	* Improve documentation for InstanceProfileAWSCredentials constructors
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.666.0 (2023-10-19 19:41 UTC)
 * EC2 (3.7.221.0)
 	* Amazon EC2 C7a instances, powered by 4th generation AMD EPYC processors, are ideal for high performance, compute-intensive workloads such as high performance computing. Amazon EC2 R7i instances are next-generation memory optimized and powered by custom 4th Generation Intel Xeon Scalable processors.
