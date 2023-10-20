@@ -29,31 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// The distribution that determines which Amazon Web Services Regions should be used
-    /// to sign in agents in to both the instance and its replica(s).
+    /// This is the response object from the UpdatePhoneNumberMetadata operation.
     /// </summary>
-    public partial class SignInConfig
+    public partial class UpdatePhoneNumberMetadataResponse : AmazonWebServiceResponse
     {
-        private List<SignInDistribution> _distributions = new List<SignInDistribution>();
-
-        /// <summary>
-        /// Gets and sets the property Distributions. 
-        /// <para>
-        /// Information about traffic distributions.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public List<SignInDistribution> Distributions
-        {
-            get { return this._distributions; }
-            set { this._distributions = value; }
-        }
-
-        // Check to see if Distributions property is set
-        internal bool IsSetDistributions()
-        {
-            return this._distributions != null && this._distributions.Count > 0; 
-        }
 
     }
 }

@@ -2383,6 +2383,16 @@
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.UpdatePhoneNumberMetadataRequest.ClientToken</property>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.UpdatePhoneNumberMetadataRequest.PhoneNumberDescription</property>
+    <min>0</min>
+    <max>500</max>
+    <pattern>^[\W\S_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.UpdatePromptRequest.Description</property>
     <min>1</min>
     <max>250</max>

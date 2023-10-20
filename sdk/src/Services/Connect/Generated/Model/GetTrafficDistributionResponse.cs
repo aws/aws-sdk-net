@@ -98,7 +98,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property SignInConfig. 
         /// <para>
-        /// The distribution of allowing signing in to the instance and its replica(s).
+        /// The distribution that determines which Amazon Web Services Regions should be used
+        /// to sign in agents in to both the instance and its replica(s).
         /// </para>
         /// </summary>
         public SignInConfig SignInConfig

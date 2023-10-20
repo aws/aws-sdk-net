@@ -30,7 +30,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the SearchUsers operation.
-    /// Searches users in an Amazon Connect instance, with optional filtering.
+    /// Searches users in an Amazon Connect instance, with optional filtering. 
     /// 
     ///  <note> 
     /// <para>
@@ -52,6 +52,11 @@ namespace Amazon.Connect.Model
         /// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
         /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// InstanceID is a required field. The "Required: No" below is incorrect.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public string InstanceId

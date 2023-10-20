@@ -34,7 +34,7 @@ namespace Amazon.Connect.Model
     /// 
     ///  <note> 
     /// <para>
-    /// You can change the <code>SignInConfig</code> distribution only for a default <code>TrafficDistributionGroup</code>
+    /// The <code>SignInConfig</code> distribution is available only on a default <code>TrafficDistributionGroup</code>
     /// (see the <code>IsDefault</code> parameter in the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_TrafficDistributionGroup.html">TrafficDistributionGroup</a>
     /// data type). If you call <code>UpdateTrafficDistribution</code> with a modified <code>SignInConfig</code>
     /// and a non-default <code>TrafficDistributionGroup</code>, an <code>InvalidRequestException</code>
@@ -96,7 +96,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property SignInConfig. 
         /// <para>
-        /// The distribution of allowing signing in to the instance and its replica(s).
+        /// The distribution that determines which Amazon Web Services Regions should be used
+        /// to sign in agents in to both the instance and its replica(s).
         /// </para>
         /// </summary>
         public SignInConfig SignInConfig
