@@ -1,6 +1,8 @@
 ### 3.7.666.0 (2023-10-19 19:41 UTC)
 * EC2 (3.7.221.0)
 	* Amazon EC2 C7a instances, powered by 4th generation AMD EPYC processors, are ideal for high performance, compute-intensive workloads such as high performance computing. Amazon EC2 R7i instances are next-generation memory optimized and powered by custom 4th Generation Intel Xeon Scalable processors.
+* GameSparks (Removed)
+	* Amazon GameSparks has been removed from the SDK because the preview is not being continued.
 * ManagedBlockchainQuery (3.7.202.0)
 	* This release adds support for Ethereum Sepolia network
 * Neptunedata (3.7.201.23)
