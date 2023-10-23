@@ -225,7 +225,7 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics.Model
         /// Gets and sets the property DestinationS3BucketName. The name (friendly name, not ARN)
         /// of the destination S3 bucket.
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Required=true, Min=1, Max=63)]
         public string DestinationS3BucketName
         {
             get { return this._destinations3BucketName; }
@@ -262,7 +262,7 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics.Model
         /// Gets and sets the property RoleNameArn. The Amazon Resource Name (ARN) of the Role
         /// with an attached permissions policy to interact with the provided AWS services.
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string RoleNameArn
         {
             get { return this._roleNameArn; }
@@ -279,7 +279,7 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics.Model
         /// Gets and sets the property SnsTopicArn. Amazon Resource Name (ARN) for the SNS Topic
         /// that will be notified when the data set has been published or if an error has occurred.
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string SnsTopicArn
         {
             get { return this._snsTopicArn; }

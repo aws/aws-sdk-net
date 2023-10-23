@@ -314,11 +314,11 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics
 
 
         /// <summary>
-        /// Given a data set type and a from date, asynchronously publishes the requested customer
-        /// support data to the specified S3 bucket and notifies the specified SNS topic once
-        /// the data is available. Returns a unique request identifier that can be used to correlate
-        /// requests with notifications from the SNS topic. Data sets will be published in comma-separated
-        /// values (CSV) format with the file name {data_set_type}_YYYY-MM-DD'T'HH-mm-ss'Z'.csv.
+        /// <i>This target has been deprecated.</i> Given a data set type and a from date, asynchronously
+        /// publishes the requested customer support data to the specified S3 bucket and notifies
+        /// the specified SNS topic once the data is available. Returns a unique request identifier
+        /// that can be used to correlate requests with notifications from the SNS topic. Data
+        /// sets will be published in comma-separated values (CSV) format with the file name {data_set_type}_YYYY-MM-DD'T'HH-mm-ss'Z'.csv.
         /// If a file with the same name already exists (e.g. if the same data set is requested
         /// twice), the original file will be overwritten by the new file. Requires a Role with
         /// an attached permissions policy providing Allow permissions for the following actions:
@@ -331,6 +331,7 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics
         /// This exception is thrown when an internal service error occurs.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplacecommerceanalytics-2015-07-01/StartSupportDataExport">REST API Reference for StartSupportDataExport Operation</seealso>
+        [Obsolete("This target has been deprecated. As of December 2022 Product Support Connection is no longer supported.")]
         public virtual StartSupportDataExportResponse StartSupportDataExport(StartSupportDataExportRequest request)
         {
             var options = new InvokeOptions();
@@ -342,11 +343,11 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics
 
 
         /// <summary>
-        /// Given a data set type and a from date, asynchronously publishes the requested customer
-        /// support data to the specified S3 bucket and notifies the specified SNS topic once
-        /// the data is available. Returns a unique request identifier that can be used to correlate
-        /// requests with notifications from the SNS topic. Data sets will be published in comma-separated
-        /// values (CSV) format with the file name {data_set_type}_YYYY-MM-DD'T'HH-mm-ss'Z'.csv.
+        /// <i>This target has been deprecated.</i> Given a data set type and a from date, asynchronously
+        /// publishes the requested customer support data to the specified S3 bucket and notifies
+        /// the specified SNS topic once the data is available. Returns a unique request identifier
+        /// that can be used to correlate requests with notifications from the SNS topic. Data
+        /// sets will be published in comma-separated values (CSV) format with the file name {data_set_type}_YYYY-MM-DD'T'HH-mm-ss'Z'.csv.
         /// If a file with the same name already exists (e.g. if the same data set is requested
         /// twice), the original file will be overwritten by the new file. Requires a Role with
         /// an attached permissions policy providing Allow permissions for the following actions:
@@ -362,6 +363,7 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics
         /// This exception is thrown when an internal service error occurs.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplacecommerceanalytics-2015-07-01/StartSupportDataExport">REST API Reference for StartSupportDataExport Operation</seealso>
+        [Obsolete("This target has been deprecated. As of December 2022 Product Support Connection is no longer supported.")]
         public virtual Task<StartSupportDataExportResponse> StartSupportDataExportAsync(StartSupportDataExportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
