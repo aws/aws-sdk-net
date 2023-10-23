@@ -1,3 +1,16 @@
+### 3.7.668.0 (2023-10-23 18:17 UTC)
+* AWSMarketplaceCommerceAnalytics (3.7.201.0)
+	* The StartSupportDataExport operation has been deprecated as part of the Product Support Connection deprecation. As of December 2022, Product Support Connection is no longer supported.
+* NetworkManager (3.7.201.0)
+	* This release adds API support for Tunnel-less Connect (NoEncap Protocol) for AWS Cloud WAN
+* RedshiftServerless (3.7.202.0)
+	* This release adds support for customers to see the patch version and workgroup version in Amazon Redshift Serverless.
+* Rekognition (3.7.202.0)
+	* Amazon Rekognition introduces StartMediaAnalysisJob, GetMediaAnalysisJob, and ListMediaAnalysisJobs operations to run a bulk analysis of images with a Detect Moderation model.
+* Core 3.7.204.7
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.667.0 (2023-10-20 20:15 UTC)
 * AppConfig (3.7.203.0)
 	* Update KmsKeyIdentifier constraints to support AWS KMS multi-Region keys.
