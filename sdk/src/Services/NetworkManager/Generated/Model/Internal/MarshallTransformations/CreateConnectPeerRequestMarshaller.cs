@@ -116,6 +116,12 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.PeerAddress);
                 }
 
+                if(publicRequest.IsSetSubnetArn())
+                {
+                    context.Writer.WritePropertyName("SubnetArn");
+                    context.Writer.Write(publicRequest.SubnetArn);
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("Tags");
