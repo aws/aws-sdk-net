@@ -96,7 +96,7 @@ namespace Amazon.RedshiftServerless.Model
         ///  
         /// <para>
         /// You can't use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is
-        /// true. 
+        /// true.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]

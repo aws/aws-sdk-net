@@ -39,6 +39,7 @@ namespace Amazon.RedshiftServerless.Model
         private Endpoint _endpoint;
         private bool? _enhancedVpcRouting;
         private string _namespaceName;
+        private string _patchVersion;
         private int? _port;
         private bool? _publiclyAccessible;
         private List<string> _securityGroupIds = new List<string>();
@@ -47,6 +48,7 @@ namespace Amazon.RedshiftServerless.Model
         private string _workgroupArn;
         private string _workgroupId;
         private string _workgroupName;
+        private string _workgroupVersion;
 
         /// <summary>
         /// Gets and sets the property BaseCapacity. 
@@ -160,6 +162,26 @@ namespace Amazon.RedshiftServerless.Model
         internal bool IsSetNamespaceName()
         {
             return this._namespaceName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PatchVersion. 
+        /// <para>
+        /// The patch version of your Amazon Redshift Serverless workgroup. For more information
+        /// about patch versions, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/cluster-versions.html">Cluster
+        /// versions for Amazon Redshift</a>.
+        /// </para>
+        /// </summary>
+        public string PatchVersion
+        {
+            get { return this._patchVersion; }
+            set { this._patchVersion = value; }
+        }
+
+        // Check to see if PatchVersion property is set
+        internal bool IsSetPatchVersion()
+        {
+            return this._patchVersion != null;
         }
 
         /// <summary>
@@ -306,6 +328,26 @@ namespace Amazon.RedshiftServerless.Model
         internal bool IsSetWorkgroupName()
         {
             return this._workgroupName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkgroupVersion. 
+        /// <para>
+        /// The Amazon Redshift Serverless version of your workgroup. For more information about
+        /// Amazon Redshift Serverless versions, see<a href="https://docs.aws.amazon.com/redshift/latest/mgmt/cluster-versions.html">Cluster
+        /// versions for Amazon Redshift</a>.
+        /// </para>
+        /// </summary>
+        public string WorkgroupVersion
+        {
+            get { return this._workgroupVersion; }
+            set { this._workgroupVersion = value; }
+        }
+
+        // Check to see if WorkgroupVersion property is set
+        internal bool IsSetWorkgroupVersion()
+        {
+            return this._workgroupVersion != null;
         }
 
     }

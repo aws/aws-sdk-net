@@ -100,6 +100,12 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
                     unmarshalledObject.NamespaceName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("patchVersion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PatchVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("port", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
@@ -146,6 +152,12 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.WorkgroupName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("workgroupVersion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.WorkgroupVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
