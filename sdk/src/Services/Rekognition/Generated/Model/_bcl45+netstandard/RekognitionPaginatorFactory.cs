@@ -148,6 +148,14 @@ namespace Amazon.Rekognition.Model
         }
 
         /// <summary>
+        /// Paginator for ListMediaAnalysisJobs operation
+        ///</summary>
+        public IListMediaAnalysisJobsPaginator ListMediaAnalysisJobs(ListMediaAnalysisJobsRequest request) 
+        {
+            return new ListMediaAnalysisJobsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListProjectPolicies operation
         ///</summary>
         public IListProjectPoliciesPaginator ListProjectPolicies(ListProjectPoliciesRequest request) 

@@ -96,6 +96,11 @@ namespace Amazon.Rekognition.Model
         IListFacesPaginator ListFaces(ListFacesRequest request);
 
         /// <summary>
+        /// Paginator for ListMediaAnalysisJobs operation
+        ///</summary>
+        IListMediaAnalysisJobsPaginator ListMediaAnalysisJobs(ListMediaAnalysisJobsRequest request);
+
+        /// <summary>
         /// Paginator for ListProjectPolicies operation
         ///</summary>
         IListProjectPoliciesPaginator ListProjectPolicies(ListProjectPoliciesRequest request);

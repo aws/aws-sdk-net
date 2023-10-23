@@ -1311,6 +1311,146 @@ namespace Amazon.Rekognition
 
 
     /// <summary>
+    /// Constants used for properties of type MediaAnalysisJobFailureCode.
+    /// </summary>
+    public class MediaAnalysisJobFailureCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACCESS_DENIED for MediaAnalysisJobFailureCode
+        /// </summary>
+        public static readonly MediaAnalysisJobFailureCode ACCESS_DENIED = new MediaAnalysisJobFailureCode("ACCESS_DENIED");
+        /// <summary>
+        /// Constant INTERNAL_ERROR for MediaAnalysisJobFailureCode
+        /// </summary>
+        public static readonly MediaAnalysisJobFailureCode INTERNAL_ERROR = new MediaAnalysisJobFailureCode("INTERNAL_ERROR");
+        /// <summary>
+        /// Constant INVALID_KMS_KEY for MediaAnalysisJobFailureCode
+        /// </summary>
+        public static readonly MediaAnalysisJobFailureCode INVALID_KMS_KEY = new MediaAnalysisJobFailureCode("INVALID_KMS_KEY");
+        /// <summary>
+        /// Constant INVALID_MANIFEST for MediaAnalysisJobFailureCode
+        /// </summary>
+        public static readonly MediaAnalysisJobFailureCode INVALID_MANIFEST = new MediaAnalysisJobFailureCode("INVALID_MANIFEST");
+        /// <summary>
+        /// Constant INVALID_OUTPUT_CONFIG for MediaAnalysisJobFailureCode
+        /// </summary>
+        public static readonly MediaAnalysisJobFailureCode INVALID_OUTPUT_CONFIG = new MediaAnalysisJobFailureCode("INVALID_OUTPUT_CONFIG");
+        /// <summary>
+        /// Constant INVALID_S3_OBJECT for MediaAnalysisJobFailureCode
+        /// </summary>
+        public static readonly MediaAnalysisJobFailureCode INVALID_S3_OBJECT = new MediaAnalysisJobFailureCode("INVALID_S3_OBJECT");
+        /// <summary>
+        /// Constant RESOURCE_NOT_FOUND for MediaAnalysisJobFailureCode
+        /// </summary>
+        public static readonly MediaAnalysisJobFailureCode RESOURCE_NOT_FOUND = new MediaAnalysisJobFailureCode("RESOURCE_NOT_FOUND");
+        /// <summary>
+        /// Constant RESOURCE_NOT_READY for MediaAnalysisJobFailureCode
+        /// </summary>
+        public static readonly MediaAnalysisJobFailureCode RESOURCE_NOT_READY = new MediaAnalysisJobFailureCode("RESOURCE_NOT_READY");
+        /// <summary>
+        /// Constant THROTTLED for MediaAnalysisJobFailureCode
+        /// </summary>
+        public static readonly MediaAnalysisJobFailureCode THROTTLED = new MediaAnalysisJobFailureCode("THROTTLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MediaAnalysisJobFailureCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MediaAnalysisJobFailureCode FindValue(string value)
+        {
+            return FindValue<MediaAnalysisJobFailureCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MediaAnalysisJobFailureCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MediaAnalysisJobStatus.
+    /// </summary>
+    public class MediaAnalysisJobStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATED for MediaAnalysisJobStatus
+        /// </summary>
+        public static readonly MediaAnalysisJobStatus CREATED = new MediaAnalysisJobStatus("CREATED");
+        /// <summary>
+        /// Constant FAILED for MediaAnalysisJobStatus
+        /// </summary>
+        public static readonly MediaAnalysisJobStatus FAILED = new MediaAnalysisJobStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for MediaAnalysisJobStatus
+        /// </summary>
+        public static readonly MediaAnalysisJobStatus IN_PROGRESS = new MediaAnalysisJobStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant QUEUED for MediaAnalysisJobStatus
+        /// </summary>
+        public static readonly MediaAnalysisJobStatus QUEUED = new MediaAnalysisJobStatus("QUEUED");
+        /// <summary>
+        /// Constant SUCCEEDED for MediaAnalysisJobStatus
+        /// </summary>
+        public static readonly MediaAnalysisJobStatus SUCCEEDED = new MediaAnalysisJobStatus("SUCCEEDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MediaAnalysisJobStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MediaAnalysisJobStatus FindValue(string value)
+        {
+            return FindValue<MediaAnalysisJobStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MediaAnalysisJobStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type OrientationCorrection.
     /// </summary>
     public class OrientationCorrection : ConstantClass

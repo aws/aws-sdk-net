@@ -439,6 +439,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.Rekognition.IAmazonRekognition.GetMediaAnalysisJob(Amazon.Rekognition.Model.GetMediaAnalysisJobRequest)" />
+            <member name="M:Amazon.Rekognition.AmazonRekognitionClient.GetMediaAnalysisJob(Amazon.Rekognition.Model.GetMediaAnalysisJobRequest)" />
+            <member name="T:Amazon.Rekognition.Model.GetMediaAnalysisJobRequest" />
+            <member name="T:Amazon.Rekognition.Model.GetMediaAnalysisJobResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Retrieves the results for a given media analysis job.
+                </para>
+                <code
+                    title="GetMediaAnalysisJob"
+                    source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs"
+                    region="getmediaanalysisjob-1697650068124" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.Rekognition.IAmazonRekognition.IndexFaces(Amazon.Rekognition.Model.IndexFacesRequest)" />
             <member name="M:Amazon.Rekognition.AmazonRekognitionClient.IndexFaces(Amazon.Rekognition.Model.IndexFacesRequest)" />
             <member name="T:Amazon.Rekognition.Model.IndexFacesRequest" />
@@ -529,6 +548,25 @@
                     title="To list the faces in a collection"
                     source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs"
                     region="to-list-the-faces-in-a-collection-1482181416530" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Rekognition.IAmazonRekognition.ListMediaAnalysisJobs(Amazon.Rekognition.Model.ListMediaAnalysisJobsRequest)" />
+            <member name="M:Amazon.Rekognition.AmazonRekognitionClient.ListMediaAnalysisJobs(Amazon.Rekognition.Model.ListMediaAnalysisJobsRequest)" />
+            <member name="T:Amazon.Rekognition.Model.ListMediaAnalysisJobsRequest" />
+            <member name="T:Amazon.Rekognition.Model.ListMediaAnalysisJobsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Returns a list of media analysis jobs.
+                </para>
+                <code
+                    title="ListMediaAnalysisJobs"
+                    source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs"
+                    region="listmediaanalysisjobs-1697650653077" />
             </example>
         </value>
     </doc>
@@ -662,6 +700,25 @@
                     title="SearchUsersByImage"
                     source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs"
                     region="searchusersbyimage-1686183178610" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Rekognition.IAmazonRekognition.StartMediaAnalysisJob(Amazon.Rekognition.Model.StartMediaAnalysisJobRequest)" />
+            <member name="M:Amazon.Rekognition.AmazonRekognitionClient.StartMediaAnalysisJob(Amazon.Rekognition.Model.StartMediaAnalysisJobRequest)" />
+            <member name="T:Amazon.Rekognition.Model.StartMediaAnalysisJobRequest" />
+            <member name="T:Amazon.Rekognition.Model.StartMediaAnalysisJobResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Initiates a new media analysis job.
+                </para>
+                <code
+                    title="StartMediaAnalysisJob"
+                    source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs"
+                    region="startmediaanalysisjob-1697651090922" />
             </example>
         </value>
     </doc>

@@ -4118,6 +4118,67 @@ namespace Amazon.Rekognition
 
         #endregion
         
+        #region  GetMediaAnalysisJob
+
+
+        /// <summary>
+        /// Retrieves the results for a given media analysis job. Takes a <code>JobId</code> returned
+        /// by StartMediaAnalysisJob.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMediaAnalysisJob service method.</param>
+        /// 
+        /// <returns>The response from the GetMediaAnalysisJob service method, as returned by Rekognition.</returns>
+        /// <exception cref="Amazon.Rekognition.Model.AccessDeniedException">
+        /// You are not authorized to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InternalServerErrorException">
+        /// Amazon Rekognition experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InvalidParameterException">
+        /// Input parameter violated a constraint. Validate your parameter before calling the
+        /// API operation again.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
+        /// The number of requests exceeded your throughput limit. If you want to increase this
+        /// limit, contact Amazon Rekognition.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
+        /// The resource specified in the request cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
+        /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetMediaAnalysisJob">REST API Reference for GetMediaAnalysisJob Operation</seealso>
+        GetMediaAnalysisJobResponse GetMediaAnalysisJob(GetMediaAnalysisJobRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetMediaAnalysisJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetMediaAnalysisJob operation on AmazonRekognitionClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetMediaAnalysisJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetMediaAnalysisJob">REST API Reference for GetMediaAnalysisJob Operation</seealso>
+        IAsyncResult BeginGetMediaAnalysisJob(GetMediaAnalysisJobRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetMediaAnalysisJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetMediaAnalysisJob.</param>
+        /// 
+        /// <returns>Returns a  GetMediaAnalysisJobResult from Rekognition.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetMediaAnalysisJob">REST API Reference for GetMediaAnalysisJob Operation</seealso>
+        GetMediaAnalysisJobResponse EndGetMediaAnalysisJob(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetPersonTracking
 
 
@@ -4976,6 +5037,67 @@ namespace Amazon.Rekognition
         /// <returns>Returns a  ListFacesResult from Rekognition.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListFaces">REST API Reference for ListFaces Operation</seealso>
         ListFacesResponse EndListFaces(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListMediaAnalysisJobs
+
+
+        /// <summary>
+        /// Returns a list of media analysis jobs. Results are sorted by <code>CreationTimestamp</code>
+        /// in descending order.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMediaAnalysisJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListMediaAnalysisJobs service method, as returned by Rekognition.</returns>
+        /// <exception cref="Amazon.Rekognition.Model.AccessDeniedException">
+        /// You are not authorized to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InternalServerErrorException">
+        /// Amazon Rekognition experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InvalidPaginationTokenException">
+        /// Pagination token in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InvalidParameterException">
+        /// Input parameter violated a constraint. Validate your parameter before calling the
+        /// API operation again.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
+        /// The number of requests exceeded your throughput limit. If you want to increase this
+        /// limit, contact Amazon Rekognition.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
+        /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListMediaAnalysisJobs">REST API Reference for ListMediaAnalysisJobs Operation</seealso>
+        ListMediaAnalysisJobsResponse ListMediaAnalysisJobs(ListMediaAnalysisJobsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListMediaAnalysisJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListMediaAnalysisJobs operation on AmazonRekognitionClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListMediaAnalysisJobs
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListMediaAnalysisJobs">REST API Reference for ListMediaAnalysisJobs Operation</seealso>
+        IAsyncResult BeginListMediaAnalysisJobs(ListMediaAnalysisJobsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListMediaAnalysisJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListMediaAnalysisJobs.</param>
+        /// 
+        /// <returns>Returns a  ListMediaAnalysisJobsResult from Rekognition.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListMediaAnalysisJobs">REST API Reference for ListMediaAnalysisJobs Operation</seealso>
+        ListMediaAnalysisJobsResponse EndListMediaAnalysisJobs(IAsyncResult asyncResult);
 
         #endregion
         
@@ -6345,6 +6467,90 @@ namespace Amazon.Rekognition
         /// <returns>Returns a  StartLabelDetectionResult from Rekognition.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartLabelDetection">REST API Reference for StartLabelDetection Operation</seealso>
         StartLabelDetectionResponse EndStartLabelDetection(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  StartMediaAnalysisJob
+
+
+        /// <summary>
+        /// Initiates a new media analysis job. Accepts a manifest file in an Amazon S3 bucket.
+        /// The output is a manifest file and a summary of the manifest stored in the Amazon S3
+        /// bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartMediaAnalysisJob service method.</param>
+        /// 
+        /// <returns>The response from the StartMediaAnalysisJob service method, as returned by Rekognition.</returns>
+        /// <exception cref="Amazon.Rekognition.Model.AccessDeniedException">
+        /// You are not authorized to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.IdempotentParameterMismatchException">
+        /// A <code>ClientRequestToken</code> input parameter was reused with an operation, but
+        /// at least one of the other input parameters is different from the previous call to
+        /// the operation.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InternalServerErrorException">
+        /// Amazon Rekognition experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InvalidManifestException">
+        /// Indicates that a provided manifest file is empty or larger than the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InvalidParameterException">
+        /// Input parameter violated a constraint. Validate your parameter before calling the
+        /// API operation again.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InvalidS3ObjectException">
+        /// Amazon Rekognition is unable to access the S3 object specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.LimitExceededException">
+        /// An Amazon Rekognition service limit was exceeded. For example, if you start too many
+        /// jobs concurrently, subsequent calls to start operations (ex: <code>StartLabelDetection</code>)
+        /// will raise a <code>LimitExceededException</code> exception (HTTP status code: 400)
+        /// until the number of concurrently running jobs is below the Amazon Rekognition service
+        /// limit.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
+        /// The number of requests exceeded your throughput limit. If you want to increase this
+        /// limit, contact Amazon Rekognition.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
+        /// The resource specified in the request cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ResourceNotReadyException">
+        /// The requested resource isn't ready. For example, this exception occurs when you call
+        /// <code>DetectCustomLabels</code> with a model version that isn't deployed.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
+        /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartMediaAnalysisJob">REST API Reference for StartMediaAnalysisJob Operation</seealso>
+        StartMediaAnalysisJobResponse StartMediaAnalysisJob(StartMediaAnalysisJobRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartMediaAnalysisJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartMediaAnalysisJob operation on AmazonRekognitionClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartMediaAnalysisJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartMediaAnalysisJob">REST API Reference for StartMediaAnalysisJob Operation</seealso>
+        IAsyncResult BeginStartMediaAnalysisJob(StartMediaAnalysisJobRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartMediaAnalysisJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartMediaAnalysisJob.</param>
+        /// 
+        /// <returns>Returns a  StartMediaAnalysisJobResult from Rekognition.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartMediaAnalysisJob">REST API Reference for StartMediaAnalysisJob Operation</seealso>
+        StartMediaAnalysisJobResponse EndStartMediaAnalysisJob(IAsyncResult asyncResult);
 
         #endregion
         
