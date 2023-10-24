@@ -34,6 +34,7 @@ namespace Amazon.OpenSearchServerless.Model
     public partial class GetPoliciesStatsResponse : AmazonWebServiceResponse
     {
         private AccessPolicyStats _accessPolicyStats;
+        private LifecyclePolicyStats _lifecyclePolicyStats;
         private SecurityConfigStats _securityConfigStats;
         private SecurityPolicyStats _securityPolicyStats;
         private long? _totalPolicyCount;
@@ -54,6 +55,24 @@ namespace Amazon.OpenSearchServerless.Model
         internal bool IsSetAccessPolicyStats()
         {
             return this._accessPolicyStats != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LifecyclePolicyStats. 
+        /// <para>
+        /// Information about the lifecycle policies in your account.
+        /// </para>
+        /// </summary>
+        public LifecyclePolicyStats LifecyclePolicyStats
+        {
+            get { return this._lifecyclePolicyStats; }
+            set { this._lifecyclePolicyStats = value; }
+        }
+
+        // Check to see if LifecyclePolicyStats property is set
+        internal bool IsSetLifecyclePolicyStats()
+        {
+            return this._lifecyclePolicyStats != null;
         }
 
         /// <summary>

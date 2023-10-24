@@ -36,6 +36,11 @@ namespace Amazon.OpenSearchServerless.Model
         IListCollectionsPaginator ListCollections(ListCollectionsRequest request);
 
         /// <summary>
+        /// Paginator for ListLifecyclePolicies operation
+        ///</summary>
+        IListLifecyclePoliciesPaginator ListLifecyclePolicies(ListLifecyclePoliciesRequest request);
+
+        /// <summary>
         /// Paginator for ListSecurityConfigs operation
         ///</summary>
         IListSecurityConfigsPaginator ListSecurityConfigs(ListSecurityConfigsRequest request);

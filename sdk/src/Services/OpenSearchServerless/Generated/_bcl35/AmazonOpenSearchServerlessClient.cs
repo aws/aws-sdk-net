@@ -340,6 +340,130 @@ namespace Amazon.OpenSearchServerless
 
         #endregion
         
+        #region  BatchGetEffectiveLifecyclePolicy
+
+        /// <summary>
+        /// Returns a list of successful and failed retrievals for the OpenSearch Serverless indexes.
+        /// For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-lifecycle.html#serverless-lifecycle-list">Viewing
+        /// data lifecycle policies</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetEffectiveLifecyclePolicy service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetEffectiveLifecyclePolicy service method, as returned by OpenSearchServerless.</returns>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
+        /// Thrown when an error internal to the service occurs while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ValidationException">
+        /// Thrown when the HTTP request contains invalid input or is missing required input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/BatchGetEffectiveLifecyclePolicy">REST API Reference for BatchGetEffectiveLifecyclePolicy Operation</seealso>
+        public virtual BatchGetEffectiveLifecyclePolicyResponse BatchGetEffectiveLifecyclePolicy(BatchGetEffectiveLifecyclePolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetEffectiveLifecyclePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetEffectiveLifecyclePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetEffectiveLifecyclePolicyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchGetEffectiveLifecyclePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetEffectiveLifecyclePolicy operation on AmazonOpenSearchServerlessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchGetEffectiveLifecyclePolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/BatchGetEffectiveLifecyclePolicy">REST API Reference for BatchGetEffectiveLifecyclePolicy Operation</seealso>
+        public virtual IAsyncResult BeginBatchGetEffectiveLifecyclePolicy(BatchGetEffectiveLifecyclePolicyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetEffectiveLifecyclePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetEffectiveLifecyclePolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchGetEffectiveLifecyclePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchGetEffectiveLifecyclePolicy.</param>
+        /// 
+        /// <returns>Returns a  BatchGetEffectiveLifecyclePolicyResult from OpenSearchServerless.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/BatchGetEffectiveLifecyclePolicy">REST API Reference for BatchGetEffectiveLifecyclePolicy Operation</seealso>
+        public virtual BatchGetEffectiveLifecyclePolicyResponse EndBatchGetEffectiveLifecyclePolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<BatchGetEffectiveLifecyclePolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  BatchGetLifecyclePolicy
+
+        /// <summary>
+        /// Returns one or more configured OpenSearch Serverless lifecycle policies. For more
+        /// information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-lifecycle.html#serverless-lifecycle-list">Viewing
+        /// data lifecycle policies</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetLifecyclePolicy service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetLifecyclePolicy service method, as returned by OpenSearchServerless.</returns>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
+        /// Thrown when an error internal to the service occurs while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ValidationException">
+        /// Thrown when the HTTP request contains invalid input or is missing required input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/BatchGetLifecyclePolicy">REST API Reference for BatchGetLifecyclePolicy Operation</seealso>
+        public virtual BatchGetLifecyclePolicyResponse BatchGetLifecyclePolicy(BatchGetLifecyclePolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetLifecyclePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetLifecyclePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetLifecyclePolicyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchGetLifecyclePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetLifecyclePolicy operation on AmazonOpenSearchServerlessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchGetLifecyclePolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/BatchGetLifecyclePolicy">REST API Reference for BatchGetLifecyclePolicy Operation</seealso>
+        public virtual IAsyncResult BeginBatchGetLifecyclePolicy(BatchGetLifecyclePolicyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetLifecyclePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetLifecyclePolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchGetLifecyclePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchGetLifecyclePolicy.</param>
+        /// 
+        /// <returns>Returns a  BatchGetLifecyclePolicyResult from OpenSearchServerless.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/BatchGetLifecyclePolicy">REST API Reference for BatchGetLifecyclePolicy Operation</seealso>
+        public virtual BatchGetLifecyclePolicyResponse EndBatchGetLifecyclePolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<BatchGetLifecyclePolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  BatchGetVpcEndpoint
 
         /// <summary>
@@ -545,6 +669,78 @@ namespace Amazon.OpenSearchServerless
         public virtual CreateCollectionResponse EndCreateCollection(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateCollectionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateLifecyclePolicy
+
+        /// <summary>
+        /// Creates a lifecyle policy to be applied to OpenSearch Serverless indexes. Lifecycle
+        /// policies define the number of days or hours to retain the data on an OpenSearch Serverless
+        /// index. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-lifecycle.html#serverless-lifecycle-create">Creating
+        /// data lifecycle policies</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLifecyclePolicy service method.</param>
+        /// 
+        /// <returns>The response from the CreateLifecyclePolicy service method, as returned by OpenSearchServerless.</returns>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ConflictException">
+        /// When creating a resource, thrown when a resource with the same name already exists
+        /// or is being created. When deleting a resource, thrown when the resource is not in
+        /// the ACTIVE or FAILED state.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
+        /// Thrown when an error internal to the service occurs while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ServiceQuotaExceededException">
+        /// Thrown when you attempt to create more resources than the service allows based on
+        /// service quotas.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ValidationException">
+        /// Thrown when the HTTP request contains invalid input or is missing required input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/CreateLifecyclePolicy">REST API Reference for CreateLifecyclePolicy Operation</seealso>
+        public virtual CreateLifecyclePolicyResponse CreateLifecyclePolicy(CreateLifecyclePolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLifecyclePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLifecyclePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<CreateLifecyclePolicyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateLifecyclePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateLifecyclePolicy operation on AmazonOpenSearchServerlessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateLifecyclePolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/CreateLifecyclePolicy">REST API Reference for CreateLifecyclePolicy Operation</seealso>
+        public virtual IAsyncResult BeginCreateLifecyclePolicy(CreateLifecyclePolicyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLifecyclePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLifecyclePolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateLifecyclePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateLifecyclePolicy.</param>
+        /// 
+        /// <returns>Returns a  CreateLifecyclePolicyResult from OpenSearchServerless.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/CreateLifecyclePolicy">REST API Reference for CreateLifecyclePolicy Operation</seealso>
+        public virtual CreateLifecyclePolicyResponse EndCreateLifecyclePolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateLifecyclePolicyResponse>(asyncResult);
         }
 
         #endregion
@@ -899,6 +1095,75 @@ namespace Amazon.OpenSearchServerless
         public virtual DeleteCollectionResponse EndDeleteCollection(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteCollectionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteLifecyclePolicy
+
+        /// <summary>
+        /// Deletes an OpenSearch Serverless lifecycle policy. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-lifecycle.html#serverless-lifecycle-delete">Deleting
+        /// data lifecycle policies</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLifecyclePolicy service method.</param>
+        /// 
+        /// <returns>The response from the DeleteLifecyclePolicy service method, as returned by OpenSearchServerless.</returns>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ConflictException">
+        /// When creating a resource, thrown when a resource with the same name already exists
+        /// or is being created. When deleting a resource, thrown when the resource is not in
+        /// the ACTIVE or FAILED state.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
+        /// Thrown when an error internal to the service occurs while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ResourceNotFoundException">
+        /// Thrown when accessing or deleting a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ValidationException">
+        /// Thrown when the HTTP request contains invalid input or is missing required input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/DeleteLifecyclePolicy">REST API Reference for DeleteLifecyclePolicy Operation</seealso>
+        public virtual DeleteLifecyclePolicyResponse DeleteLifecyclePolicy(DeleteLifecyclePolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLifecyclePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLifecyclePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteLifecyclePolicyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteLifecyclePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLifecyclePolicy operation on AmazonOpenSearchServerlessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteLifecyclePolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/DeleteLifecyclePolicy">REST API Reference for DeleteLifecyclePolicy Operation</seealso>
+        public virtual IAsyncResult BeginDeleteLifecyclePolicy(DeleteLifecyclePolicyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLifecyclePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLifecyclePolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteLifecyclePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteLifecyclePolicy.</param>
+        /// 
+        /// <returns>Returns a  DeleteLifecyclePolicyResult from OpenSearchServerless.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/DeleteLifecyclePolicy">REST API Reference for DeleteLifecyclePolicy Operation</seealso>
+        public virtual DeleteLifecyclePolicyResponse EndDeleteLifecyclePolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteLifecyclePolicyResponse>(asyncResult);
         }
 
         #endregion
@@ -1552,6 +1817,68 @@ namespace Amazon.OpenSearchServerless
 
         #endregion
         
+        #region  ListLifecyclePolicies
+
+        /// <summary>
+        /// Returns a list of OpenSearch Serverless lifecycle policies. For more information,
+        /// see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-lifecycle.html#serverless-lifecycle-list">Viewing
+        /// data lifecycle policies</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListLifecyclePolicies service method.</param>
+        /// 
+        /// <returns>The response from the ListLifecyclePolicies service method, as returned by OpenSearchServerless.</returns>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
+        /// Thrown when an error internal to the service occurs while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ValidationException">
+        /// Thrown when the HTTP request contains invalid input or is missing required input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/ListLifecyclePolicies">REST API Reference for ListLifecyclePolicies Operation</seealso>
+        public virtual ListLifecyclePoliciesResponse ListLifecyclePolicies(ListLifecyclePoliciesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListLifecyclePoliciesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLifecyclePoliciesResponseUnmarshaller.Instance;
+
+            return Invoke<ListLifecyclePoliciesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListLifecyclePolicies operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListLifecyclePolicies operation on AmazonOpenSearchServerlessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListLifecyclePolicies
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/ListLifecyclePolicies">REST API Reference for ListLifecyclePolicies Operation</seealso>
+        public virtual IAsyncResult BeginListLifecyclePolicies(ListLifecyclePoliciesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListLifecyclePoliciesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLifecyclePoliciesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListLifecyclePolicies operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListLifecyclePolicies.</param>
+        /// 
+        /// <returns>Returns a  ListLifecyclePoliciesResult from OpenSearchServerless.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/ListLifecyclePolicies">REST API Reference for ListLifecyclePolicies Operation</seealso>
+        public virtual ListLifecyclePoliciesResponse EndListLifecyclePolicies(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListLifecyclePoliciesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListSecurityConfigs
 
         /// <summary>
@@ -2137,6 +2464,79 @@ namespace Amazon.OpenSearchServerless
         public virtual UpdateCollectionResponse EndUpdateCollection(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateCollectionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateLifecyclePolicy
+
+        /// <summary>
+        /// Updates an OpenSearch Serverless access policy. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-lifecycle.html#serverless-lifecycle-update">Updating
+        /// data lifecycle policies</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLifecyclePolicy service method.</param>
+        /// 
+        /// <returns>The response from the UpdateLifecyclePolicy service method, as returned by OpenSearchServerless.</returns>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ConflictException">
+        /// When creating a resource, thrown when a resource with the same name already exists
+        /// or is being created. When deleting a resource, thrown when the resource is not in
+        /// the ACTIVE or FAILED state.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
+        /// Thrown when an error internal to the service occurs while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ResourceNotFoundException">
+        /// Thrown when accessing or deleting a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ServiceQuotaExceededException">
+        /// Thrown when you attempt to create more resources than the service allows based on
+        /// service quotas.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ValidationException">
+        /// Thrown when the HTTP request contains invalid input or is missing required input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/UpdateLifecyclePolicy">REST API Reference for UpdateLifecyclePolicy Operation</seealso>
+        public virtual UpdateLifecyclePolicyResponse UpdateLifecyclePolicy(UpdateLifecyclePolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateLifecyclePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateLifecyclePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateLifecyclePolicyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateLifecyclePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLifecyclePolicy operation on AmazonOpenSearchServerlessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateLifecyclePolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/UpdateLifecyclePolicy">REST API Reference for UpdateLifecyclePolicy Operation</seealso>
+        public virtual IAsyncResult BeginUpdateLifecyclePolicy(UpdateLifecyclePolicyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateLifecyclePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateLifecyclePolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateLifecyclePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateLifecyclePolicy.</param>
+        /// 
+        /// <returns>Returns a  UpdateLifecyclePolicyResult from OpenSearchServerless.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/UpdateLifecyclePolicy">REST API Reference for UpdateLifecyclePolicy Operation</seealso>
+        public virtual UpdateLifecyclePolicyResponse EndUpdateLifecyclePolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateLifecyclePolicyResponse>(asyncResult);
         }
 
         #endregion
