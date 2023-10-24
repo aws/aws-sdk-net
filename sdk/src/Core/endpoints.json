@@ -12915,6 +12915,7 @@
               "hostname": "license-manager-user-subscriptions-fips.us-west-2.amazonaws.com"
             },
             "il-central-1": {},
+            "me-central-1": {},
             "me-south-1": {},
             "sa-east-1": {},
             "us-east-1": {
@@ -24406,8 +24407,26 @@
         },
         "states": {
           "endpoints": {
-            "cn-north-1": {},
-            "cn-northwest-1": {}
+            "cn-north-1": {
+              "variants": [
+                {
+                  "hostname": "states.cn-north-1.api.amazonwebservices.com.cn",
+                  "tags": [
+                    "dualstack"
+                  ]
+                }
+              ]
+            },
+            "cn-northwest-1": {
+              "variants": [
+                {
+                  "hostname": "states.cn-northwest-1.api.amazonwebservices.com.cn",
+                  "tags": [
+                    "dualstack"
+                  ]
+                }
+              ]
+            }
           }
         },
         "storagegateway": {
@@ -27103,6 +27122,19 @@
                   "tags": [
                     "fips"
                   ]
+                },
+                {
+                  "hostname": "glue-fips.us-gov-east-1.api.aws",
+                  "tags": [
+                    "dualstack",
+                    "fips"
+                  ]
+                },
+                {
+                  "hostname": "glue.us-gov-east-1.api.aws",
+                  "tags": [
+                    "dualstack"
+                  ]
                 }
               ]
             },
@@ -27112,6 +27144,19 @@
                   "hostname": "glue-fips.us-gov-west-1.amazonaws.com",
                   "tags": [
                     "fips"
+                  ]
+                },
+                {
+                  "hostname": "glue-fips.us-gov-west-1.api.aws",
+                  "tags": [
+                    "dualstack",
+                    "fips"
+                  ]
+                },
+                {
+                  "hostname": "glue.us-gov-west-1.api.aws",
+                  "tags": [
+                    "dualstack"
                   ]
                 }
               ]
