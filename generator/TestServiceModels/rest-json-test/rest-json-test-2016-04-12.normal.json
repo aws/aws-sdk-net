@@ -56,7 +56,33 @@
           "output":{"shape":"TestBlobPayloadResult"},
           "errors":[],
           "documentation":"<p> Post a test blob payload request. </p>"
+      },
+      "StaticOp": {
+        "name": "StaticOp",
+        "input": {
+          "shape": "StaticInputShape"
+        },
+        "http": {
+          "method": "POST",
+          "requestUri": "/path"
+        },
+        "endpoint":{
+          "hostPrefix": "data-"
         }
+      },
+      "MemberRefOp": {
+        "name": "MemberRefOp",
+        "input": {
+          "shape": "MemberRefInputShape"
+        },
+        "http": {
+          "method": "POST",
+          "requestUri": "/path"
+        },
+        "endpoint":{
+          "hostPrefix": "foo-{Name}."
+        }
+      }
     },
     "shapes":{
       "Integer":{
@@ -189,6 +215,23 @@
         "members":{
         },
         "documentation":"<p> The response structure for a blob payload request. </p>"
+      },
+      "StaticInputShape": {
+        "type": "structure",
+        "members": {
+          "Name": {
+            "shape": "String"
+          }
+        }
+      },
+      "MemberRefInputShape": {
+        "type": "structure",
+        "members": {
+          "Name": {
+            "shape": "String",
+            "hostLabel": true
+          }
+        }
       }
     }
   }

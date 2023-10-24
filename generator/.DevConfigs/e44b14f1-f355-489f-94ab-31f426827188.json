@@ -1,0 +1,9 @@
+{
+  "core": {
+    "changeLogMessages": [
+      "Update SDK generator to handle hostPrefix labels (https://smithy.io/2.0/spec/endpoint-traits.html#endpoint-trait)"
+    ],
+    "type": "patch",
+    "updateMinimum": false
+  }
+}

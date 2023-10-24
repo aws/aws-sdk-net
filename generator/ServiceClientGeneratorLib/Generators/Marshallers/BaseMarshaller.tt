@@ -259,7 +259,7 @@ using Amazon.Runtime.Internal.Util;
             foreach(var member in operation.RequestHostPrefixMembers)
             {
                 
-#>                <#=member.PropertyName#> = <#=member.PrimitiveMarshaller#>(<#=variableName#>.<#=member.PropertyName#>),
+#>                <#=member.ModeledName#> = <#=member.PrimitiveMarshaller#>(<#=variableName#>.<#=member.PropertyName#>),
 <#+
             }     
 #>
@@ -269,8 +269,8 @@ using Amazon.Runtime.Internal.Util;
             foreach(var member in operation.RequestHostPrefixMembers)
             {
 #>
-            if (!HostPrefixUtils.IsValidLabelValue(hostPrefixLabels.<#=member.PropertyName#>))
-                throw new <#=this.Config.BaseException#>("<#=member.PropertyName#> can only contain alphanumeric characters and dashes and must be between 1 and 63 characters long.");		
+            if (!HostPrefixUtils.IsValidLabelValue(hostPrefixLabels.<#=member.ModeledName#>))
+                throw new <#=this.Config.BaseException#>("<#=member.ModeledName#> can only contain alphanumeric characters and dashes and must be between 1 and 63 characters long.");		
 <#+
             }     
         }

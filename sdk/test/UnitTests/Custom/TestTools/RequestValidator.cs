@@ -491,7 +491,9 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
                             }
                             else
                             {
-                                hostPrefixTemplate = hostPrefixTemplate.Replace(string.Format("{{{0}}}", member.MarshallLocationName), (string)property.GetValue(this.Request));
+                                // The host prefix can be included in the body, and in that case the marshall location name will be empty.
+                                var nameToUseForPrefix = string.IsNullOrEmpty(member.MarshallLocationName) ? member.ModeledName : member.MarshallLocationName;
+                                hostPrefixTemplate = hostPrefixTemplate.Replace(string.Format("{{{0}}}", nameToUseForPrefix), (string)property.GetValue(this.Request));
                             }                           
                         }
                     }

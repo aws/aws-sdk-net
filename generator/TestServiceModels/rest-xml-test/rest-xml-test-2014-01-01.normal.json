@@ -23,6 +23,34 @@
         "shape": "InputShape"
       },
       "errors": []
+    },
+    "StaticOp": {
+      "name": "StaticOp",
+      "input": {
+        "shape": "StaticInputShape",
+        "locationName": "StaticOpRequest"
+      },
+      "http": {
+        "method": "POST",
+        "requestUri": "/path"
+      },
+      "endpoint": {
+        "hostPrefix": "data-"
+      }
+    },
+    "MemberRefOp": {
+      "name": "MemberRefOp",
+      "input": {
+        "shape": "MemberRefInputShape",
+        "locationName": "MemberRefOpRequest"
+      },
+      "http": {
+        "method": "POST",
+        "requestUri": "/path"
+      },
+      "endpoint": {
+        "hostPrefix": "foo-{Name}."
+      }
     }
   },
   "shapes": {
@@ -63,6 +91,26 @@
         "French",
         "German"
       ]
+    },
+    "StaticInputShape": {
+      "type": "structure",
+      "members": {
+        "Name": {
+          "shape": "StringType"
+        }
+      }
+    },
+    "MemberRefInputShape": {
+      "type": "structure",
+      "members": {
+        "Name": {
+          "shape": "StringType",
+          "hostLabel": true
+        }
+      }
+    },
+    "StringType": {
+      "type": "string"
     }
   }
 }
