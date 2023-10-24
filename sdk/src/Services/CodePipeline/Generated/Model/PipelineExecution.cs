@@ -39,6 +39,8 @@ namespace Amazon.CodePipeline.Model
         private int? _pipelineVersion;
         private PipelineExecutionStatus _status;
         private string _statusSummary;
+        private ExecutionTrigger _trigger;
+        private List<ResolvedPipelineVariable> _variables = new List<ResolvedPipelineVariable>();
 
         /// <summary>
         /// Gets and sets the property ArtifactRevisions. 
@@ -186,6 +188,39 @@ namespace Amazon.CodePipeline.Model
         internal bool IsSetStatusSummary()
         {
             return this._statusSummary != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Trigger.
+        /// </summary>
+        public ExecutionTrigger Trigger
+        {
+            get { return this._trigger; }
+            set { this._trigger = value; }
+        }
+
+        // Check to see if Trigger property is set
+        internal bool IsSetTrigger()
+        {
+            return this._trigger != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Variables. 
+        /// <para>
+        /// A list of pipeline variables used for the pipeline execution.
+        /// </para>
+        /// </summary>
+        public List<ResolvedPipelineVariable> Variables
+        {
+            get { return this._variables; }
+            set { this._variables = value; }
+        }
+
+        // Check to see if Variables property is set
+        internal bool IsSetVariables()
+        {
+            return this._variables != null && this._variables.Count > 0; 
         }
 
     }

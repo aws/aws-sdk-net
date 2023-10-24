@@ -747,6 +747,102 @@ namespace Amazon.CodePipeline
 
 
     /// <summary>
+    /// Constants used for properties of type PipelineTriggerProviderType.
+    /// </summary>
+    public class PipelineTriggerProviderType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CodeStarSourceConnection for PipelineTriggerProviderType
+        /// </summary>
+        public static readonly PipelineTriggerProviderType CodeStarSourceConnection = new PipelineTriggerProviderType("CodeStarSourceConnection");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PipelineTriggerProviderType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PipelineTriggerProviderType FindValue(string value)
+        {
+            return FindValue<PipelineTriggerProviderType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PipelineTriggerProviderType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PipelineType.
+    /// </summary>
+    public class PipelineType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant V1 for PipelineType
+        /// </summary>
+        public static readonly PipelineType V1 = new PipelineType("V1");
+        /// <summary>
+        /// Constant V2 for PipelineType
+        /// </summary>
+        public static readonly PipelineType V2 = new PipelineType("V2");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PipelineType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PipelineType FindValue(string value)
+        {
+            return FindValue<PipelineType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PipelineType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type StageExecutionStatus.
     /// </summary>
     public class StageExecutionStatus : ConstantClass
@@ -942,6 +1038,10 @@ namespace Amazon.CodePipeline
         /// Constant Webhook for TriggerType
         /// </summary>
         public static readonly TriggerType Webhook = new TriggerType("Webhook");
+        /// <summary>
+        /// Constant WebhookV2 for TriggerType
+        /// </summary>
+        public static readonly TriggerType WebhookV2 = new TriggerType("WebhookV2");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

@@ -81,6 +81,12 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Name);
             }
 
+            if(requestObject.IsSetPipelineType())
+            {
+                context.Writer.WritePropertyName("pipelineType");
+                context.Writer.Write(requestObject.PipelineType);
+            }
+
             if(requestObject.IsSetRoleArn())
             {
                 context.Writer.WritePropertyName("roleArn");
@@ -97,6 +103,38 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
 
                     var marshaller = StageDeclarationMarshaller.Instance;
                     marshaller.Marshall(requestObjectStagesListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetTriggers())
+            {
+                context.Writer.WritePropertyName("triggers");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectTriggersListValue in requestObject.Triggers)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = PipelineTriggerDeclarationMarshaller.Instance;
+                    marshaller.Marshall(requestObjectTriggersListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetVariables())
+            {
+                context.Writer.WritePropertyName("variables");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectVariablesListValue in requestObject.Variables)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = PipelineVariableDeclarationMarshaller.Instance;
+                    marshaller.Marshall(requestObjectVariablesListValue, context);
 
                     context.Writer.WriteObjectEnd();
                 }

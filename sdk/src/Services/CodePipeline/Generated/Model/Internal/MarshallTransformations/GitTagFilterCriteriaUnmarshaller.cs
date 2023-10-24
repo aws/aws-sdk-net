@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for PipelineSummary Object
+    /// Response Unmarshaller for GitTagFilterCriteria Object
     /// </summary>  
-    public class PipelineSummaryUnmarshaller : IUnmarshaller<PipelineSummary, XmlUnmarshallerContext>, IUnmarshaller<PipelineSummary, JsonUnmarshallerContext>
+    public class GitTagFilterCriteriaUnmarshaller : IUnmarshaller<GitTagFilterCriteria, XmlUnmarshallerContext>, IUnmarshaller<GitTagFilterCriteria, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        PipelineSummary IUnmarshaller<PipelineSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        GitTagFilterCriteria IUnmarshaller<GitTagFilterCriteria, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,27 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public PipelineSummary Unmarshall(JsonUnmarshallerContext context)
+        public GitTagFilterCriteria Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            PipelineSummary unmarshalledObject = new PipelineSummary();
+            GitTagFilterCriteria unmarshalledObject = new GitTagFilterCriteria();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("created", targetDepth))
+                if (context.TestExpression("excludes", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.Created = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Excludes = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("includes", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("pipelineType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PipelineType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("updated", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.Updated = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("version", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.Version = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Includes = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +82,12 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         }
 
 
-        private static PipelineSummaryUnmarshaller _instance = new PipelineSummaryUnmarshaller();        
+        private static GitTagFilterCriteriaUnmarshaller _instance = new GitTagFilterCriteriaUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PipelineSummaryUnmarshaller Instance
+        public static GitTagFilterCriteriaUnmarshaller Instance
         {
             get
             {

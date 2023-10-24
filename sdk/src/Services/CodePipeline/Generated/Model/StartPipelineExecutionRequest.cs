@@ -37,6 +37,7 @@ namespace Amazon.CodePipeline.Model
     {
         private string _clientRequestToken;
         private string _name;
+        private List<PipelineVariable> _variables = new List<PipelineVariable>();
 
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
@@ -74,6 +75,27 @@ namespace Amazon.CodePipeline.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Variables. 
+        /// <para>
+        /// A list that overrides pipeline variables for a pipeline execution that's being started.
+        /// Variable names must match <code>[A-Za-z0-9@\-_]+</code>, and the values can be anything
+        /// except an empty string.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=50)]
+        public List<PipelineVariable> Variables
+        {
+            get { return this._variables; }
+            set { this._variables = value; }
+        }
+
+        // Check to see if Variables property is set
+        internal bool IsSetVariables()
+        {
+            return this._variables != null && this._variables.Count > 0; 
         }
 
     }

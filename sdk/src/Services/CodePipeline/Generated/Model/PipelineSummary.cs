@@ -35,6 +35,7 @@ namespace Amazon.CodePipeline.Model
     {
         private DateTime? _created;
         private string _name;
+        private PipelineType _pipelineType;
         private DateTime? _updated;
         private int? _version;
 
@@ -73,6 +74,51 @@ namespace Amazon.CodePipeline.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PipelineType. 
+        /// <para>
+        /// CodePipeline provides the following pipeline types, which differ in characteristics
+        /// and price, so that you can tailor your pipeline features and cost to the needs of
+        /// your applications.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// V1 type pipelines have a JSON structure that contains standard pipeline, stage, and
+        /// action-level parameters.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// V2 type pipelines have the same structure as a V1 type, along with additional parameters
+        /// for release safety and trigger configuration.
+        /// </para>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// Including V2 parameters, such as triggers on Git tags, in the pipeline JSON when creating
+        /// or updating a pipeline will result in the pipeline having the V2 type of pipeline
+        /// and the associated costs.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// For information about pricing for CodePipeline, see <a href="https://aws.amazon.com/codepipeline/pricing/">Pricing</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  For information about which type of pipeline to choose, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types-planning.html">What
+        /// type of pipeline is right for me?</a>.
+        /// </para>
+        /// </summary>
+        public PipelineType PipelineType
+        {
+            get { return this._pipelineType; }
+            set { this._pipelineType = value; }
+        }
+
+        // Check to see if PipelineType property is set
+        internal bool IsSetPipelineType()
+        {
+            return this._pipelineType != null;
         }
 
         /// <summary>

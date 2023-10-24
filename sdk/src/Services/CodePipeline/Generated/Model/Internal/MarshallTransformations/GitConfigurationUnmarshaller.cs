@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for PipelineSummary Object
+    /// Response Unmarshaller for GitConfiguration Object
     /// </summary>  
-    public class PipelineSummaryUnmarshaller : IUnmarshaller<PipelineSummary, XmlUnmarshallerContext>, IUnmarshaller<PipelineSummary, JsonUnmarshallerContext>
+    public class GitConfigurationUnmarshaller : IUnmarshaller<GitConfiguration, XmlUnmarshallerContext>, IUnmarshaller<GitConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        PipelineSummary IUnmarshaller<PipelineSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        GitConfiguration IUnmarshaller<GitConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,27 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public PipelineSummary Unmarshall(JsonUnmarshallerContext context)
+        public GitConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            PipelineSummary unmarshalledObject = new PipelineSummary();
+            GitConfiguration unmarshalledObject = new GitConfiguration();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("created", targetDepth))
+                if (context.TestExpression("push", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.Created = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<GitPushFilter, GitPushFilterUnmarshaller>(GitPushFilterUnmarshaller.Instance);
+                    unmarshalledObject.Push = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("sourceActionName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("pipelineType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PipelineType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("updated", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.Updated = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("version", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.Version = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SourceActionName = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +82,12 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         }
 
 
-        private static PipelineSummaryUnmarshaller _instance = new PipelineSummaryUnmarshaller();        
+        private static GitConfigurationUnmarshaller _instance = new GitConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PipelineSummaryUnmarshaller Instance
+        public static GitConfigurationUnmarshaller Instance
         {
             get
             {

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for PipelineSummary Object
+    /// Response Unmarshaller for PipelineVariableDeclaration Object
     /// </summary>  
-    public class PipelineSummaryUnmarshaller : IUnmarshaller<PipelineSummary, XmlUnmarshallerContext>, IUnmarshaller<PipelineSummary, JsonUnmarshallerContext>
+    public class PipelineVariableDeclarationUnmarshaller : IUnmarshaller<PipelineVariableDeclaration, XmlUnmarshallerContext>, IUnmarshaller<PipelineVariableDeclaration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        PipelineSummary IUnmarshaller<PipelineSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        PipelineVariableDeclaration IUnmarshaller<PipelineVariableDeclaration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,21 +53,27 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public PipelineSummary Unmarshall(JsonUnmarshallerContext context)
+        public PipelineVariableDeclaration Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            PipelineSummary unmarshalledObject = new PipelineSummary();
+            PipelineVariableDeclaration unmarshalledObject = new PipelineVariableDeclaration();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("created", targetDepth))
+                if (context.TestExpression("defaultValue", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.Created = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DefaultValue = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("description", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("name", targetDepth))
@@ -76,36 +82,18 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("pipelineType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PipelineType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("updated", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.Updated = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("version", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.Version = unmarshaller.Unmarshall(context);
-                    continue;
-                }
             }
           
             return unmarshalledObject;
         }
 
 
-        private static PipelineSummaryUnmarshaller _instance = new PipelineSummaryUnmarshaller();        
+        private static PipelineVariableDeclarationUnmarshaller _instance = new PipelineVariableDeclarationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PipelineSummaryUnmarshaller Instance
+        public static PipelineVariableDeclarationUnmarshaller Instance
         {
             get
             {
