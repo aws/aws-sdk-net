@@ -623,9 +623,21 @@ namespace Amazon.Runtime
             }
             
             var hasSlash = url.AbsoluteUri.EndsWith("/", StringComparison.Ordinal) || parameterizedPath.StartsWith("/", StringComparison.Ordinal);
-            var uri = hasSlash
-                ? new Uri(url.AbsoluteUri + parameterizedPath)
-                : new Uri(url.AbsoluteUri + "/" + parameterizedPath);
+
+            var strUri = hasSlash
+                ? url.AbsoluteUri + parameterizedPath
+                : url.AbsoluteUri + "/" + parameterizedPath;
+
+#if NET8_0_OR_GREATER
+            // The UriCreationOptions and DangerousDisablePathAndQueryCanonicalization were added in .NET 6 and allows
+            // us to turn off the Uri behavior of canonicalizing Uri. For example if the resource path was "foo/../bar.txt"
+            // the URI class will change the canonicalize path to bar.txt. This behavior of changing the Uri after the 
+            // request has been signed will trigger a signature mismatch error. It is valid especially for S3 for the resource
+            // path to contain ".." segments.W
+            var uri = new Uri(strUri, new UriCreationOptions { DangerousDisablePathAndQueryCanonicalization = true });
+#else
+            var uri = new Uri(strUri);
+#endif
             DontUnescapePathDotsAndSlashes(uri);
             return uri;
         }
