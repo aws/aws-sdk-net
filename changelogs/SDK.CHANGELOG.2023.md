@@ -1,3 +1,22 @@
+### 3.7.669.0 (2023-10-24 18:19 UTC)
+* CodePipeline (3.7.202.0)
+	* Add ability to trigger pipelines from git tags, define variables at pipeline level and new pipeline type V2.
+* EC2 (3.7.222.0)
+	* This release updates the documentation for InstanceInterruptionBehavior and HibernationOptionsRequest to more accurately describe the behavior of these two parameters when using Spot hibernation.
+* EKS (3.7.202.0)
+	* Added support for Cluster Subnet and Security Group mutability.
+* IdentityManagement (3.7.201.0)
+	* Add the partitional endpoint for IAM in iso-f.
+* MigrationHubConfig (3.7.201.0)
+	* This release introduces DeleteHomeRegionControl API that customers can use to delete the Migration Hub Home Region configuration
+* MigrationHubStrategyRecommendations (3.7.201.0)
+	* This release introduces multi-data-source feature in Migration Hub Strategy Recommendations. This feature now supports vCenter as a data source to fetch inventory in addition to ADS and Import from file workflow that is currently supported with MHSR collector.
+* OpenSearchServerless (3.7.202.0)
+	* This release includes the following new APIs: CreateLifecyclePolicy, UpdateLifecyclePolicy, BatchGetLifecyclePolicy, DeleteLifecyclePolicy, ListLifecyclePolicies and BatchGetEffectiveLifecyclePolicy to support the data lifecycle management feature.
+* Core 3.7.204.8
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.668.0 (2023-10-23 18:17 UTC)
 * AWSMarketplaceCommerceAnalytics (3.7.201.0)
 	* The StartSupportDataExport operation has been deprecated as part of the Product Support Connection deprecation. As of December 2022, Product Support Connection is no longer supported.
