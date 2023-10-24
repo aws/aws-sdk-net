@@ -133,6 +133,63 @@ namespace Amazon.MigrationHubConfig
 
         #endregion
         
+        #region  DeleteHomeRegionControl
+
+
+        /// <summary>
+        /// This operation deletes the home region configuration for the calling account. The
+        /// operation does not delete discovery or migration tracking data in the home region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteHomeRegionControl service method.</param>
+        /// 
+        /// <returns>The response from the DeleteHomeRegionControl service method, as returned by MigrationHubConfig.</returns>
+        /// <exception cref="Amazon.MigrationHubConfig.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHubConfig.Model.InternalServerErrorException">
+        /// Exception raised when an internal, configuration, or dependency error is encountered.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHubConfig.Model.InvalidInputException">
+        /// Exception raised when the provided input violates a policy constraint or is entered
+        /// in the wrong format or data type.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHubConfig.Model.ServiceUnavailableException">
+        /// Exception raised when a request fails due to temporary unavailability of the service.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHubConfig.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhub-config-2019-06-30/DeleteHomeRegionControl">REST API Reference for DeleteHomeRegionControl Operation</seealso>
+        DeleteHomeRegionControlResponse DeleteHomeRegionControl(DeleteHomeRegionControlRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteHomeRegionControl operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteHomeRegionControl operation on AmazonMigrationHubConfigClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteHomeRegionControl
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhub-config-2019-06-30/DeleteHomeRegionControl">REST API Reference for DeleteHomeRegionControl Operation</seealso>
+        IAsyncResult BeginDeleteHomeRegionControl(DeleteHomeRegionControlRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteHomeRegionControl operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteHomeRegionControl.</param>
+        /// 
+        /// <returns>Returns a  DeleteHomeRegionControlResult from MigrationHubConfig.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhub-config-2019-06-30/DeleteHomeRegionControl">REST API Reference for DeleteHomeRegionControl Operation</seealso>
+        DeleteHomeRegionControlResponse EndDeleteHomeRegionControl(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeHomeRegionControls
 
 
