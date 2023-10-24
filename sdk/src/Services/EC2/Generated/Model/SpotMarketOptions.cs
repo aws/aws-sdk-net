@@ -60,7 +60,26 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property InstanceInterruptionBehavior. 
         /// <para>
-        /// The behavior when a Spot Instance is interrupted. The default is <code>terminate</code>.
+        /// The behavior when a Spot Instance is interrupted.
+        /// </para>
+        ///  
+        /// <para>
+        /// If <code>Configured</code> (for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_HibernationOptionsRequest.html">
+        /// <code>HibernationOptions</code> </a>) is set to <code>true</code>, the <code>InstanceInterruptionBehavior</code>
+        /// parameter is automatically set to <code>hibernate</code>. If you set it to <code>stop</code>
+        /// or <code>terminate</code>, you'll get an error.
+        /// </para>
+        ///  
+        /// <para>
+        /// If <code>Configured</code> (for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_HibernationOptionsRequest.html">
+        /// <code>HibernationOptions</code> </a>) is set to <code>false</code> or <code>null</code>,
+        /// the <code>InstanceInterruptionBehavior</code> parameter is automatically set to <code>terminate</code>.
+        /// You can also set it to <code>stop</code> or <code>hibernate</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/interruption-behavior.html">Interruption
+        /// behavior</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         public InstanceInterruptionBehavior InstanceInterruptionBehavior
