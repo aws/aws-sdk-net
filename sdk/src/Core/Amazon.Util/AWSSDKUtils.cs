@@ -398,9 +398,9 @@ namespace Amazon.Util
                     pathWasPreEncoded = true;
                 }
             }
-
+#pragma warning disable 0618
             var canonicalizedResourcePath = AWSSDKUtils.JoinResourcePathSegments(encodedSegments, false);
-
+#pragma warning restore 0618
             // Get the logger each time (it's cached) because we shouldn't store it in a static variable.
             Logger.GetLogger(typeof(AWSSDKUtils)).DebugFormat("{0} encoded {1}{2} for canonicalization: {3}",
                 pathWasPreEncoded ? "Double" : "Single",
@@ -448,11 +448,11 @@ namespace Amazon.Util
                 if (endpoint == null)
                     throw new ArgumentNullException(nameof(endpoint), "A non-null endpoint is necessary to decide whether or not to pre URL encode.");
 
-                encodedSegments = encodedSegments.Select(segment => UrlEncode(segment, true).Replace(Slash, EncodedSlash));
+                encodedSegments = encodedSegments.Select(segment => UrlEncode(segment, false));
                 pathWasPreEncoded = true;
             }
 
-            var canonicalizedResourcePath = AWSSDKUtils.JoinResourcePathSegments(encodedSegments, false);
+            var canonicalizedResourcePath = AWSSDKUtils.JoinResourcePathSegmentsV2(encodedSegments);
 
             // Get the logger each time (it's cached) because we shouldn't store it in a static variable.
             Logger.GetLogger(typeof(AWSSDKUtils)).DebugFormat("{0} encoded {1}{2} for canonicalization: {3}",
@@ -511,6 +511,7 @@ namespace Amazon.Util
         /// <param name="path">If the path property is specified,
         /// the accepted path characters {/+:} are not encoded.</param>
         /// <returns>A joined URL with encoded segments</returns>
+        [Obsolete("This method has been deprecated due to an issue with not encoding special characters. Use JoinResourcePathSegmentsV2 instead.")]
         public static string JoinResourcePathSegments(IEnumerable<string> pathSegments, bool path)
         {
             // Encode for canonicalization
@@ -524,6 +525,18 @@ namespace Amazon.Util
             // join the encoded segments with /
             return string.Join(Slash, pathSegments.ToArray());
         }
+        /// <summary>
+        /// Joins all path segments with the / character and encodes each segment before joining
+        /// </summary>
+        /// <param name="pathSegments"></param>
+        /// <returns></returns>
+        public static string JoinResourcePathSegmentsV2(IEnumerable<string> pathSegments)
+        {
+            pathSegments = pathSegments.Select(segment => UrlEncode(segment, false));
+
+            // join the encoded segments with /
+            return string.Join(Slash, pathSegments.ToArray());
+        }
 
         /// <summary>
         /// Takes a patterned resource path and resolves it using the key/value path resources into
@@ -532,9 +545,12 @@ namespace Amazon.Util
         /// <param name="resourcePath">The patterned resourcePath</param>
         /// <param name="pathResources">The key/value lookup for the patterned resourcePath</param>
         /// <returns>A segmented encoded URL</returns>
+        [Obsolete("ResolveResourcePath has been deprecated in favor of ResolveResourcePathV2 due to an encoding issue. Use ResolveResourcePathV2 instead.")]
         public static string ResolveResourcePath(string resourcePath, IDictionary<string, string> pathResources)
         {
+#pragma warning disable 0618
             return ResolveResourcePath(resourcePath, pathResources, true);
+#pragma warning restore 0618
         }
 
         /// <summary>
@@ -545,6 +561,7 @@ namespace Amazon.Util
         /// <param name="pathResources">The key/value lookup for the patterned resourcePath</param>
         /// <param name="skipEncodingValidPathChars">If true valid path characters {/+:} are not encoded</param>
         /// <returns>A segmented encoded URL</returns>
+        [Obsolete("This method has been deprecated in favor of ResolveResourcePathV2 due to an encoding issue with special characters. Please use ResolveResourcePathV2.")]
         public static string ResolveResourcePath(string resourcePath, IDictionary<string, string> pathResources, bool skipEncodingValidPathChars)
         {
             if (string.IsNullOrEmpty(resourcePath))
@@ -553,6 +570,21 @@ namespace Amazon.Util
             }
 
             return JoinResourcePathSegments(SplitResourcePathIntoSegments(resourcePath, pathResources), skipEncodingValidPathChars);
+        }
+        /// <summary>
+        /// Takes a patterned resource path and resolves it using the key/value path resources into
+        /// a segmented encoded URL.
+        /// </summary>
+        /// <param name="resourcePath">The patterned resourcePath</param>
+        /// <param name="pathResources">The key/value lookup for the patterned resourcePath</param>
+        /// <returns></returns>
+        public static string ResolveResourcePathV2(string resourcePath, IDictionary<string, string> pathResources)
+        {
+            if (string.IsNullOrEmpty(resourcePath))
+            {
+                return resourcePath; 
+            }
+            return JoinResourcePathSegmentsV2(SplitResourcePathIntoSegments(resourcePath, pathResources));
         }
 
         /// <summary>
@@ -1072,7 +1104,6 @@ namespace Amazon.Util
                 validUrlCharacters = ValidUrlCharacters;
 
             string unreservedChars = String.Concat(validUrlCharacters, (path ? ValidPathCharacters : ""));
-
             foreach (char symbol in System.Text.Encoding.UTF8.GetBytes(data))
             {
                 if (unreservedChars.IndexOf(symbol) != -1)
