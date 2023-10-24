@@ -598,6 +598,62 @@ namespace Amazon.MigrationHubStrategyRecommendations
 
         #endregion
         
+        #region  ListAnalyzableServers
+
+
+        /// <summary>
+        /// Retrieves a list of all the servers fetched from customer vCenter using Strategy Recommendation
+        /// Collector.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAnalyzableServers service method.</param>
+        /// 
+        /// <returns>The response from the ListAnalyzableServers service method, as returned by MigrationHubStrategyRecommendations.</returns>
+        /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.AccessDeniedException">
+        /// The user does not have permission to perform the action. Check the AWS Identity and
+        /// Access Management (IAM) policy associated with this user.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.InternalServerException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.ValidationException">
+        /// The request body isn't valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/ListAnalyzableServers">REST API Reference for ListAnalyzableServers Operation</seealso>
+        ListAnalyzableServersResponse ListAnalyzableServers(ListAnalyzableServersRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves a list of all the servers fetched from customer vCenter using Strategy Recommendation
+        /// Collector.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAnalyzableServers service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAnalyzableServers service method, as returned by MigrationHubStrategyRecommendations.</returns>
+        /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.AccessDeniedException">
+        /// The user does not have permission to perform the action. Check the AWS Identity and
+        /// Access Management (IAM) policy associated with this user.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.InternalServerException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.ValidationException">
+        /// The request body isn't valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/ListAnalyzableServers">REST API Reference for ListAnalyzableServers Operation</seealso>
+        Task<ListAnalyzableServersResponse> ListAnalyzableServersAsync(ListAnalyzableServersRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListApplicationComponents
 
 

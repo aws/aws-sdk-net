@@ -44,6 +44,14 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         }
 
         /// <summary>
+        /// Paginator for ListAnalyzableServers operation
+        ///</summary>
+        public IListAnalyzableServersPaginator ListAnalyzableServers(ListAnalyzableServersRequest request) 
+        {
+            return new ListAnalyzableServersPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListApplicationComponents operation
         ///</summary>
         public IListApplicationComponentsPaginator ListApplicationComponents(ListApplicationComponentsRequest request) 

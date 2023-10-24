@@ -109,6 +109,18 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MigrationHubStrategyRecommendations.Model.ListAnalyzableServersRequest.NextToken</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MigrationHubStrategyRecommendations.Model.ListAnalyzableServersResponse.NextToken</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MigrationHubStrategyRecommendations.Model.ListApplicationComponentsRequest.FilterValue</property>
     <min>0</min>
     <max>256</max>
@@ -244,6 +256,30 @@
     <property>Amazon.MigrationHubStrategyRecommendations.Model.UpdateServerConfigRequest.ServerId</property>
     <min>1</min>
     <max>27</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MigrationHubStrategyRecommendations.Model.AnalyzableServerSummary.Hostname</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MigrationHubStrategyRecommendations.Model.AnalyzableServerSummary.IpAddress</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MigrationHubStrategyRecommendations.Model.AnalyzableServerSummary.Source</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MigrationHubStrategyRecommendations.Model.AnalyzableServerSummary.VmId</property>
+    <min>0</min>
+    <max>1024</max>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>

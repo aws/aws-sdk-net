@@ -31,6 +31,11 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         IGetServerDetailsPaginator GetServerDetails(GetServerDetailsRequest request);
 
         /// <summary>
+        /// Paginator for ListAnalyzableServers operation
+        ///</summary>
+        IListAnalyzableServersPaginator ListAnalyzableServers(ListAnalyzableServersRequest request);
+
+        /// <summary>
         /// Paginator for ListApplicationComponents operation
         ///</summary>
         IListApplicationComponentsPaginator ListApplicationComponents(ListApplicationComponentsRequest request);

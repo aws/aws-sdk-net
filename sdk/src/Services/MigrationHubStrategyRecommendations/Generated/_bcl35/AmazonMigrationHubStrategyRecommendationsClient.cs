@@ -946,6 +946,74 @@ namespace Amazon.MigrationHubStrategyRecommendations
 
         #endregion
         
+        #region  ListAnalyzableServers
+
+        /// <summary>
+        /// Retrieves a list of all the servers fetched from customer vCenter using Strategy Recommendation
+        /// Collector.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAnalyzableServers service method.</param>
+        /// 
+        /// <returns>The response from the ListAnalyzableServers service method, as returned by MigrationHubStrategyRecommendations.</returns>
+        /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.AccessDeniedException">
+        /// The user does not have permission to perform the action. Check the AWS Identity and
+        /// Access Management (IAM) policy associated with this user.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.InternalServerException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHubStrategyRecommendations.Model.ValidationException">
+        /// The request body isn't valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/ListAnalyzableServers">REST API Reference for ListAnalyzableServers Operation</seealso>
+        public virtual ListAnalyzableServersResponse ListAnalyzableServers(ListAnalyzableServersRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAnalyzableServersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAnalyzableServersResponseUnmarshaller.Instance;
+
+            return Invoke<ListAnalyzableServersResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAnalyzableServers operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAnalyzableServers operation on AmazonMigrationHubStrategyRecommendationsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAnalyzableServers
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/ListAnalyzableServers">REST API Reference for ListAnalyzableServers Operation</seealso>
+        public virtual IAsyncResult BeginListAnalyzableServers(ListAnalyzableServersRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAnalyzableServersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAnalyzableServersResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAnalyzableServers operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAnalyzableServers.</param>
+        /// 
+        /// <returns>Returns a  ListAnalyzableServersResult from MigrationHubStrategyRecommendations.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/ListAnalyzableServers">REST API Reference for ListAnalyzableServers Operation</seealso>
+        public virtual ListAnalyzableServersResponse EndListAnalyzableServers(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListAnalyzableServersResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListApplicationComponents
 
         /// <summary>

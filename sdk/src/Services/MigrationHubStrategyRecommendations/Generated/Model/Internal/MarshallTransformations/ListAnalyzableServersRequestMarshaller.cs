@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// StartAssessment Request Marshaller
+    /// ListAnalyzableServers Request Marshaller
     /// </summary>       
-    public class StartAssessmentRequestMarshaller : IMarshaller<IRequest, StartAssessmentRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ListAnalyzableServersRequestMarshaller : IMarshaller<IRequest, ListAnalyzableServersRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((StartAssessmentRequest)input);
+            return this.Marshall((ListAnalyzableServersRequest)input);
         }
 
         /// <summary>
@@ -52,51 +52,35 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(StartAssessmentRequest publicRequest)
+        public IRequest Marshall(ListAnalyzableServersRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.MigrationHubStrategyRecommendations");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-02-19";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/start-assessment";
+            request.ResourcePath = "/list-analyzable-servers";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAssessmentDataSourceType())
+                if(publicRequest.IsSetMaxResults())
                 {
-                    context.Writer.WritePropertyName("assessmentDataSourceType");
-                    context.Writer.Write(publicRequest.AssessmentDataSourceType);
+                    context.Writer.WritePropertyName("maxResults");
+                    context.Writer.Write(publicRequest.MaxResults);
                 }
 
-                if(publicRequest.IsSetAssessmentTargets())
+                if(publicRequest.IsSetNextToken())
                 {
-                    context.Writer.WritePropertyName("assessmentTargets");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAssessmentTargetsListValue in publicRequest.AssessmentTargets)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = AssessmentTargetMarshaller.Instance;
-                        marshaller.Marshall(publicRequestAssessmentTargetsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WritePropertyName("nextToken");
+                    context.Writer.Write(publicRequest.NextToken);
                 }
 
-                if(publicRequest.IsSetS3bucketForAnalysisData())
+                if(publicRequest.IsSetSort())
                 {
-                    context.Writer.WritePropertyName("s3bucketForAnalysisData");
-                    context.Writer.Write(publicRequest.S3bucketForAnalysisData);
-                }
-
-                if(publicRequest.IsSetS3bucketForReportData())
-                {
-                    context.Writer.WritePropertyName("s3bucketForReportData");
-                    context.Writer.Write(publicRequest.S3bucketForReportData);
+                    context.Writer.WritePropertyName("sort");
+                    context.Writer.Write(publicRequest.Sort);
                 }
 
                 writer.WriteObjectEnd();
@@ -107,9 +91,9 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
 
             return request;
         }
-        private static StartAssessmentRequestMarshaller _instance = new StartAssessmentRequestMarshaller();        
+        private static ListAnalyzableServersRequestMarshaller _instance = new ListAnalyzableServersRequestMarshaller();        
 
-        internal static StartAssessmentRequestMarshaller GetInstance()
+        internal static ListAnalyzableServersRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -117,7 +101,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static StartAssessmentRequestMarshaller Instance
+        public static ListAnalyzableServersRequestMarshaller Instance
         {
             get
             {
