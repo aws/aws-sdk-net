@@ -331,9 +331,49 @@ namespace Amazon.EKS
         /// </summary>
         public static readonly ClusterIssueCode ConfigurationConflict = new ClusterIssueCode("ConfigurationConflict");
         /// <summary>
+        /// Constant Ec2SecurityGroupNotFound for ClusterIssueCode
+        /// </summary>
+        public static readonly ClusterIssueCode Ec2SecurityGroupNotFound = new ClusterIssueCode("Ec2SecurityGroupNotFound");
+        /// <summary>
+        /// Constant Ec2ServiceNotSubscribed for ClusterIssueCode
+        /// </summary>
+        public static readonly ClusterIssueCode Ec2ServiceNotSubscribed = new ClusterIssueCode("Ec2ServiceNotSubscribed");
+        /// <summary>
+        /// Constant Ec2SubnetNotFound for ClusterIssueCode
+        /// </summary>
+        public static readonly ClusterIssueCode Ec2SubnetNotFound = new ClusterIssueCode("Ec2SubnetNotFound");
+        /// <summary>
+        /// Constant IamRoleNotFound for ClusterIssueCode
+        /// </summary>
+        public static readonly ClusterIssueCode IamRoleNotFound = new ClusterIssueCode("IamRoleNotFound");
+        /// <summary>
+        /// Constant InsufficientFreeAddresses for ClusterIssueCode
+        /// </summary>
+        public static readonly ClusterIssueCode InsufficientFreeAddresses = new ClusterIssueCode("InsufficientFreeAddresses");
+        /// <summary>
         /// Constant InternalFailure for ClusterIssueCode
         /// </summary>
         public static readonly ClusterIssueCode InternalFailure = new ClusterIssueCode("InternalFailure");
+        /// <summary>
+        /// Constant KmsGrantRevoked for ClusterIssueCode
+        /// </summary>
+        public static readonly ClusterIssueCode KmsGrantRevoked = new ClusterIssueCode("KmsGrantRevoked");
+        /// <summary>
+        /// Constant KmsKeyDisabled for ClusterIssueCode
+        /// </summary>
+        public static readonly ClusterIssueCode KmsKeyDisabled = new ClusterIssueCode("KmsKeyDisabled");
+        /// <summary>
+        /// Constant KmsKeyMarkedForDeletion for ClusterIssueCode
+        /// </summary>
+        public static readonly ClusterIssueCode KmsKeyMarkedForDeletion = new ClusterIssueCode("KmsKeyMarkedForDeletion");
+        /// <summary>
+        /// Constant KmsKeyNotFound for ClusterIssueCode
+        /// </summary>
+        public static readonly ClusterIssueCode KmsKeyNotFound = new ClusterIssueCode("KmsKeyNotFound");
+        /// <summary>
+        /// Constant Other for ClusterIssueCode
+        /// </summary>
+        public static readonly ClusterIssueCode Other = new ClusterIssueCode("Other");
         /// <summary>
         /// Constant ResourceLimitExceeded for ClusterIssueCode
         /// </summary>
@@ -342,6 +382,18 @@ namespace Amazon.EKS
         /// Constant ResourceNotFound for ClusterIssueCode
         /// </summary>
         public static readonly ClusterIssueCode ResourceNotFound = new ClusterIssueCode("ResourceNotFound");
+        /// <summary>
+        /// Constant StsRegionalEndpointDisabled for ClusterIssueCode
+        /// </summary>
+        public static readonly ClusterIssueCode StsRegionalEndpointDisabled = new ClusterIssueCode("StsRegionalEndpointDisabled");
+        /// <summary>
+        /// Constant UnsupportedVersion for ClusterIssueCode
+        /// </summary>
+        public static readonly ClusterIssueCode UnsupportedVersion = new ClusterIssueCode("UnsupportedVersion");
+        /// <summary>
+        /// Constant VpcNotFound for ClusterIssueCode
+        /// </summary>
+        public static readonly ClusterIssueCode VpcNotFound = new ClusterIssueCode("VpcNotFound");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1227,6 +1279,10 @@ namespace Amazon.EKS
         /// </summary>
         public static readonly UpdateParamType ClusterLogging = new UpdateParamType("ClusterLogging");
         /// <summary>
+        /// Constant ConfigurationValues for UpdateParamType
+        /// </summary>
+        public static readonly UpdateParamType ConfigurationValues = new UpdateParamType("ConfigurationValues");
+        /// <summary>
         /// Constant DesiredSize for UpdateParamType
         /// </summary>
         public static readonly UpdateParamType DesiredSize = new UpdateParamType("DesiredSize");
@@ -1295,9 +1351,17 @@ namespace Amazon.EKS
         /// </summary>
         public static readonly UpdateParamType ResolveConflicts = new UpdateParamType("ResolveConflicts");
         /// <summary>
+        /// Constant SecurityGroups for UpdateParamType
+        /// </summary>
+        public static readonly UpdateParamType SecurityGroups = new UpdateParamType("SecurityGroups");
+        /// <summary>
         /// Constant ServiceAccountRoleArn for UpdateParamType
         /// </summary>
         public static readonly UpdateParamType ServiceAccountRoleArn = new UpdateParamType("ServiceAccountRoleArn");
+        /// <summary>
+        /// Constant Subnets for UpdateParamType
+        /// </summary>
+        public static readonly UpdateParamType Subnets = new UpdateParamType("Subnets");
         /// <summary>
         /// Constant TaintsToAdd for UpdateParamType
         /// </summary>
@@ -1442,6 +1506,10 @@ namespace Amazon.EKS
         /// Constant VersionUpdate for UpdateType
         /// </summary>
         public static readonly UpdateType VersionUpdate = new UpdateType("VersionUpdate");
+        /// <summary>
+        /// Constant VpcConfigUpdate for UpdateType
+        /// </summary>
+        public static readonly UpdateType VpcConfigUpdate = new UpdateType("VpcConfigUpdate");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
