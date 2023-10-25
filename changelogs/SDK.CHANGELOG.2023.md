@@ -1,3 +1,11 @@
+### 3.7.670.0 (2023-10-25 20:16 UTC)
+* ConnectCases (3.7.202.0)
+	* Increase maximum length of CommentBody to 3000, and increase maximum length of StringValue to 1500
+* GroundStation (3.7.201.0)
+	* This release will allow KMS alias names to be used when creating Mission Profiles
+* IdentityManagement (3.7.202.0)
+	* Updates to GetAccessKeyLastUsed action to replace NoSuchEntity error with AccessDeniedException error.
+
 ### 3.7.669.0 (2023-10-24 18:19 UTC)
 * CodePipeline (3.7.202.0)
 	* Add ability to trigger pipelines from git tags, define variables at pipeline level and new pipeline type V2.
