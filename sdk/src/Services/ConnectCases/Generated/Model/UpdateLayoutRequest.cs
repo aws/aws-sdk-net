@@ -58,8 +58,7 @@ namespace Amazon.ConnectCases.Model
         /// <summary>
         /// Gets and sets the property Content. 
         /// <para>
-        /// Information about which fields will be present in the layout, the order of the fields,
-        /// and a read-only attribute of the field. 
+        /// Information about which fields will be present in the layout, the order of the fields.
         /// </para>
         /// </summary>
         public LayoutContent Content
