@@ -70,6 +70,12 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
                     unmarshalledObject.KmsAliasArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("kmsAliasName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.KmsAliasName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("kmsKeyArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
