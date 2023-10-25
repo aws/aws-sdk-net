@@ -507,16 +507,6 @@ namespace Amazon.Runtime
 
                 throw;
             }
-            catch (OperationCanceledException canceledException)
-            {
-                if (canceledException.InnerException != null)
-                {
-                    throw canceledException.InnerException;
-                }
-
-                throw;
-            }
-
         }
 #else
         public IWebResponseData GetResponse()
