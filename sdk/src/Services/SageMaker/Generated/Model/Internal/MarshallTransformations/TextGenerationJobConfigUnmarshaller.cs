@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AutoMLProblemTypeResolvedAttributes Object
+    /// Response Unmarshaller for TextGenerationJobConfig Object
     /// </summary>  
-    public class AutoMLProblemTypeResolvedAttributesUnmarshaller : IUnmarshaller<AutoMLProblemTypeResolvedAttributes, XmlUnmarshallerContext>, IUnmarshaller<AutoMLProblemTypeResolvedAttributes, JsonUnmarshallerContext>
+    public class TextGenerationJobConfigUnmarshaller : IUnmarshaller<TextGenerationJobConfig, XmlUnmarshallerContext>, IUnmarshaller<TextGenerationJobConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AutoMLProblemTypeResolvedAttributes IUnmarshaller<AutoMLProblemTypeResolvedAttributes, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        TextGenerationJobConfig IUnmarshaller<TextGenerationJobConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,27 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public AutoMLProblemTypeResolvedAttributes Unmarshall(JsonUnmarshallerContext context)
+        public TextGenerationJobConfig Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AutoMLProblemTypeResolvedAttributes unmarshalledObject = new AutoMLProblemTypeResolvedAttributes();
+            TextGenerationJobConfig unmarshalledObject = new TextGenerationJobConfig();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("TabularResolvedAttributes", targetDepth))
+                if (context.TestExpression("BaseModelName", targetDepth))
                 {
-                    var unmarshaller = TabularResolvedAttributesUnmarshaller.Instance;
-                    unmarshalledObject.TabularResolvedAttributes = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.BaseModelName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("TextGenerationResolvedAttributes", targetDepth))
+                if (context.TestExpression("CompletionCriteria", targetDepth))
                 {
-                    var unmarshaller = TextGenerationResolvedAttributesUnmarshaller.Instance;
-                    unmarshalledObject.TextGenerationResolvedAttributes = unmarshaller.Unmarshall(context);
+                    var unmarshaller = AutoMLJobCompletionCriteriaUnmarshaller.Instance;
+                    unmarshalledObject.CompletionCriteria = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +82,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         }
 
 
-        private static AutoMLProblemTypeResolvedAttributesUnmarshaller _instance = new AutoMLProblemTypeResolvedAttributesUnmarshaller();        
+        private static TextGenerationJobConfigUnmarshaller _instance = new TextGenerationJobConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AutoMLProblemTypeResolvedAttributesUnmarshaller Instance
+        public static TextGenerationJobConfigUnmarshaller Instance
         {
             get
             {

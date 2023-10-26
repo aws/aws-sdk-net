@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Specifies a metric to minimize or maximize as the objective of a job.
+    /// Specifies a metric to minimize or maximize as the objective of an AutoML job.
     /// </summary>
     public partial class AutoMLJobObjective
     {
@@ -45,17 +45,42 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        /// For the list of all available metrics supported by Autopilot, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html#autopilot-metrics">Autopilot
-        /// metrics</a>.
-        /// </para>
-        ///  
-        /// <para>
-        /// If you do not specify a metric explicitly, the default behavior is to automatically
-        /// use:
+        /// The list of available metrics supported by Autopilot and the default metric applied
+        /// when you do not specify a metric name explicitly depend on the problem type.
         /// </para>
         ///  <ul> <li> 
         /// <para>
         /// For tabular problem types:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// List of available metrics: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  Regression: <code>InferenceLatency</code>, <code>MAE</code>, <code>MSE</code>, <code>R2</code>,
+        /// <code>RMSE</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  Binary classification: <code>Accuracy</code>, <code>AUC</code>, <code>BalancedAccuracy</code>,
+        /// <code>F1</code>, <code>InferenceLatency</code>, <code>LogLoss</code>, <code>Precision</code>,
+        /// <code>Recall</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  Multiclass classification: <code>Accuracy</code>, <code>BalancedAccuracy</code>,
+        /// <code>F1macro</code>, <code>InferenceLatency</code>, <code>LogLoss</code>, <code>PrecisionMacro</code>,
+        /// <code>RecallMacro</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For a description of each metric, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html#autopilot-metrics">Autopilot
+        /// metrics for classification and regression</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Default objective metrics:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -69,14 +94,51 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// Multiclass classification: <code>Accuracy</code>.
         /// </para>
-        ///  </li> </ul> </li> <li> 
+        ///  </li> </ul> </li> </ul> </li> <li> 
         /// <para>
-        /// For image or text classification problem types: <code>Accuracy</code> 
+        /// For image or text classification problem types:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// List of available metrics: <code>Accuracy</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// For a description of each metric, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/text-classification-data-format-and-metric.html">Autopilot
+        /// metrics for text and image classification</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For time-series forecasting problem types: <code>AverageWeightedQuantileLoss</code>
-        /// 
+        /// Default objective metrics: <code>Accuracy</code> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// For time-series forecasting problem types:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// List of available metrics: <code>RMSE</code>, <code>wQL</code>, <code>Average wQL</code>,
+        /// <code>MASE</code>, <code>MAPE</code>, <code>WAPE</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// For a description of each metric, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/timeseries-objective-metric.html">Autopilot
+        /// metrics for time-series forecasting</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Default objective metrics: <code>AverageWeightedQuantileLoss</code> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// For text generation problem types (LLMs fine-tuning): Fine-tuning language models
+        /// in Autopilot does not require setting the <code>AutoMLJobObjective</code> field. Autopilot
+        /// fine-tunes LLMs without requiring multiple candidates to be trained and evaluated.
+        /// Instead, using your dataset, Autopilot directly fine-tunes your target model to enhance
+        /// a default objective metric, the cross-entropy loss. After fine-tuning a language model,
+        /// you can evaluate the quality of its generated text using different metrics. For a
+        /// list of the available metrics, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/llms-finetuning-models.html">Metrics
+        /// for fine-tuning LLMs in Autopilot</a>.
         /// </para>
         ///  </li> </ul>
         /// </summary>

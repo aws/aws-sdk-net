@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// The collection of settings used by an AutoML job V2 for the <code>TABULAR</code> problem
-    /// type.
+    /// The collection of settings used by an AutoML job V2 for the tabular problem type.
     /// </summary>
     public partial class TabularJobConfig
     {

@@ -29,29 +29,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// The collection of settings used by an AutoML job V2 for the image classification problem
-    /// type.
+    /// The resolved attributes specific to the text generation problem type.
     /// </summary>
-    public partial class ImageClassificationJobConfig
+    public partial class TextGenerationResolvedAttributes
     {
-        private AutoMLJobCompletionCriteria _completionCriteria;
+        private string _baseModelName;
 
         /// <summary>
-        /// Gets and sets the property CompletionCriteria. 
+        /// Gets and sets the property BaseModelName. 
         /// <para>
-        /// How long a job is allowed to run, or how many candidates a job is allowed to generate.
+        /// The name of the base model to fine-tune.
         /// </para>
         /// </summary>
-        public AutoMLJobCompletionCriteria CompletionCriteria
+        [AWSProperty(Min=1, Max=256)]
+        public string BaseModelName
         {
-            get { return this._completionCriteria; }
-            set { this._completionCriteria = value; }
+            get { return this._baseModelName; }
+            set { this._baseModelName = value; }
         }
 
-        // Check to see if CompletionCriteria property is set
-        internal bool IsSetCompletionCriteria()
+        // Check to see if BaseModelName property is set
+        internal bool IsSetBaseModelName()
         {
-            return this._completionCriteria != null;
+            return this._baseModelName != null;
         }
 
     }

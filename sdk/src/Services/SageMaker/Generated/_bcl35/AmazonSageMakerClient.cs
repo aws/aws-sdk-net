@@ -862,7 +862,8 @@ namespace Amazon.SageMaker
         /// <para>
         ///  <code>CreateAutoMLJobV2</code> can manage tabular problem types identical to those
         /// of its previous version <code>CreateAutoMLJob</code>, as well as time-series forecasting,
-        /// and non-tabular problem types such as image or text classification.
+        /// non-tabular problem types such as image or text classification, and text generation
+        /// (LLMs fine-tuning).
         /// </para>
         ///  
         /// <para>
@@ -949,7 +950,8 @@ namespace Amazon.SageMaker
         /// <para>
         ///  <code>CreateAutoMLJobV2</code> can manage tabular problem types identical to those
         /// of its previous version <code>CreateAutoMLJob</code>, as well as time-series forecasting,
-        /// and non-tabular problem types such as image or text classification.
+        /// non-tabular problem types such as image or text classification, and text generation
+        /// (LLMs fine-tuning).
         /// </para>
         ///  
         /// <para>

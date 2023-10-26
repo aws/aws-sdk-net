@@ -1821,6 +1821,10 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly AutoMLMetricExtendedEnum MSE = new AutoMLMetricExtendedEnum("MSE");
         /// <summary>
+        /// Constant Perplexity for AutoMLMetricExtendedEnum
+        /// </summary>
+        public static readonly AutoMLMetricExtendedEnum Perplexity = new AutoMLMetricExtendedEnum("Perplexity");
+        /// <summary>
         /// Constant Precision for AutoMLMetricExtendedEnum
         /// </summary>
         public static readonly AutoMLMetricExtendedEnum Precision = new AutoMLMetricExtendedEnum("Precision");
@@ -1844,6 +1848,30 @@ namespace Amazon.SageMaker
         /// Constant RMSE for AutoMLMetricExtendedEnum
         /// </summary>
         public static readonly AutoMLMetricExtendedEnum RMSE = new AutoMLMetricExtendedEnum("RMSE");
+        /// <summary>
+        /// Constant Rouge1 for AutoMLMetricExtendedEnum
+        /// </summary>
+        public static readonly AutoMLMetricExtendedEnum Rouge1 = new AutoMLMetricExtendedEnum("Rouge1");
+        /// <summary>
+        /// Constant Rouge2 for AutoMLMetricExtendedEnum
+        /// </summary>
+        public static readonly AutoMLMetricExtendedEnum Rouge2 = new AutoMLMetricExtendedEnum("Rouge2");
+        /// <summary>
+        /// Constant RougeL for AutoMLMetricExtendedEnum
+        /// </summary>
+        public static readonly AutoMLMetricExtendedEnum RougeL = new AutoMLMetricExtendedEnum("RougeL");
+        /// <summary>
+        /// Constant RougeLSum for AutoMLMetricExtendedEnum
+        /// </summary>
+        public static readonly AutoMLMetricExtendedEnum RougeLSum = new AutoMLMetricExtendedEnum("RougeLSum");
+        /// <summary>
+        /// Constant TrainingLoss for AutoMLMetricExtendedEnum
+        /// </summary>
+        public static readonly AutoMLMetricExtendedEnum TrainingLoss = new AutoMLMetricExtendedEnum("TrainingLoss");
+        /// <summary>
+        /// Constant ValidationLoss for AutoMLMetricExtendedEnum
+        /// </summary>
+        public static readonly AutoMLMetricExtendedEnum ValidationLoss = new AutoMLMetricExtendedEnum("ValidationLoss");
         /// <summary>
         /// Constant WAPE for AutoMLMetricExtendedEnum
         /// </summary>
@@ -1956,6 +1984,10 @@ namespace Amazon.SageMaker
         /// Constant TextClassification for AutoMLProblemTypeConfigName
         /// </summary>
         public static readonly AutoMLProblemTypeConfigName TextClassification = new AutoMLProblemTypeConfigName("TextClassification");
+        /// <summary>
+        /// Constant TextGeneration for AutoMLProblemTypeConfigName
+        /// </summary>
+        public static readonly AutoMLProblemTypeConfigName TextGeneration = new AutoMLProblemTypeConfigName("TextGeneration");
         /// <summary>
         /// Constant TimeSeriesForecasting for AutoMLProblemTypeConfigName
         /// </summary>

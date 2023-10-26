@@ -82,6 +82,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.TextClassificationJobConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("TextGenerationJobConfig", targetDepth))
+                {
+                    var unmarshaller = TextGenerationJobConfigUnmarshaller.Instance;
+                    unmarshalledObject.TextGenerationJobConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("TimeSeriesForecastingJobConfig", targetDepth))
                 {
                     var unmarshaller = TimeSeriesForecastingJobConfigUnmarshaller.Instance;

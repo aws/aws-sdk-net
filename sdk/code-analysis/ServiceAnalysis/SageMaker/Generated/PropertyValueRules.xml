@@ -10109,6 +10109,18 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.TextGenerationJobConfig.BaseModelName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.TextGenerationResolvedAttributes.BaseModelName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.TimeSeriesConfig.ItemIdentifierAttributeName</property>
     <min>1</min>
     <max>256</max>

@@ -37,6 +37,7 @@ namespace Amazon.SageMaker.Model
         private ImageClassificationJobConfig _imageClassificationJobConfig;
         private TabularJobConfig _tabularJobConfig;
         private TextClassificationJobConfig _textClassificationJobConfig;
+        private TextGenerationJobConfig _textGenerationJobConfig;
         private TimeSeriesForecastingJobConfig _timeSeriesForecastingJobConfig;
 
         /// <summary>
@@ -60,7 +61,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property TabularJobConfig. 
         /// <para>
-        /// Settings used to configure an AutoML job V2 for a tabular problem type (regression,
+        /// Settings used to configure an AutoML job V2 for the tabular problem type (regression,
         /// classification).
         /// </para>
         /// </summary>
@@ -95,9 +96,36 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property TextGenerationJobConfig. 
+        /// <para>
+        /// Settings used to configure an AutoML job V2 for the text generation (LLMs fine-tuning)
+        /// problem type.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The text generation models that support fine-tuning in Autopilot are currently accessible
+        /// exclusively in regions supported by Canvas. Refer to the documentation of Canvas for
+        /// the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/canvas.html">full list
+        /// of its supported Regions</a>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public TextGenerationJobConfig TextGenerationJobConfig
+        {
+            get { return this._textGenerationJobConfig; }
+            set { this._textGenerationJobConfig = value; }
+        }
+
+        // Check to see if TextGenerationJobConfig property is set
+        internal bool IsSetTextGenerationJobConfig()
+        {
+            return this._textGenerationJobConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property TimeSeriesForecastingJobConfig. 
         /// <para>
-        /// Settings used to configure an AutoML job V2 for a time-series forecasting problem
+        /// Settings used to configure an AutoML job V2 for the time-series forecasting problem
         /// type.
         /// </para>
         /// </summary>

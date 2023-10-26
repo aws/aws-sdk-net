@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// The resolved attributes specific to the <code>TABULAR</code> problem type.
+    /// The resolved attributes specific to the tabular problem type.
     /// </summary>
     public partial class TabularResolvedAttributes
     {
