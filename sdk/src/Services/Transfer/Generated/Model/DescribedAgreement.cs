@@ -146,7 +146,7 @@ namespace Amazon.Transfer.Model
         /// The landing directory (folder) for files that are transferred by using the AS2 protocol.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string BaseDirectory
         {
             get { return this._baseDirectory; }

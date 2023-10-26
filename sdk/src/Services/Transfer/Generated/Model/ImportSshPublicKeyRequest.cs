@@ -75,7 +75,7 @@ namespace Amazon.Transfer.Model
         /// Transfer Family accepts RSA, ECDSA, and ED25519 keys.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=2048)]
+        [AWSProperty(Required=true, Min=0, Max=2048)]
         public string SshPublicKeyBody
         {
             get { return this._sshPublicKeyBody; }

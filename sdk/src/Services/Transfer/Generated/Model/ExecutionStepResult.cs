@@ -64,7 +64,7 @@ namespace Amazon.Transfer.Model
         /// the step type is <code>TAG</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=65536)]
+        [AWSProperty(Min=0, Max=65536)]
         public string Outputs
         {
             get { return this._outputs; }

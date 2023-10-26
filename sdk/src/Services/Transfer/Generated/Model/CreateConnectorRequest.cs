@@ -194,7 +194,7 @@ namespace Amazon.Transfer.Model
         /// The URL of the partner's AS2 or SFTP endpoint.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=255)]
+        [AWSProperty(Required=true, Min=0, Max=255)]
         public string Url
         {
             get { return this._url; }

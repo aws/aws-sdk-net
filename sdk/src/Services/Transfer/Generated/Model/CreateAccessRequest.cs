@@ -103,7 +103,7 @@ namespace Amazon.Transfer.Model
         /// </para>
         ///  </note>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string HomeDirectory
         {
             get { return this._homeDirectory; }
@@ -228,7 +228,7 @@ namespace Amazon.Transfer.Model
         /// </para>
         ///  </note>
         /// </summary>
-        [AWSProperty(Max=2048)]
+        [AWSProperty(Min=0, Max=2048)]
         public string Policy
         {
             get { return this._policy; }

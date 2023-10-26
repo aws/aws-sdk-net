@@ -84,8 +84,8 @@ namespace Amazon.Transfer.Model
         /// Gets and sets the property UserSecretId. 
         /// <para>
         /// The identifier for the secret (in Amazon Web Services Secrets Manager) that contains
-        /// the SFTP user's private key, password, or both. The identifier can be either the Amazon
-        /// Resource Name (ARN) or the name of the secret.
+        /// the SFTP user's private key, password, or both. The identifier must be the Amazon
+        /// Resource Name (ARN) of the secret.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

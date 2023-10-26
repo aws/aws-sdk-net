@@ -80,7 +80,7 @@ namespace Amazon.Transfer.Model
         /// Required when <code>Protocols</code> is set to <code>FTPS</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1600)]
+        [AWSProperty(Min=0, Max=1600)]
         public string Certificate
         {
             get { return this._certificate; }
@@ -241,7 +241,7 @@ namespace Amazon.Transfer.Model
         /// When set, you can view user activity in your CloudWatch logs.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=20, Max=2048)]
+        [AWSProperty(Min=0, Max=2048)]
         public string LoggingRole
         {
             get { return this._loggingRole; }
@@ -266,7 +266,7 @@ namespace Amazon.Transfer.Model
         /// </para>
         ///  </note>
         /// </summary>
-        [AWSProperty(Max=4096)]
+        [AWSProperty(Min=0, Max=4096)]
         public string PostAuthenticationLoginBanner
         {
             get { return this._postAuthenticationLoginBanner; }
@@ -294,7 +294,7 @@ namespace Amazon.Transfer.Model
         /// 
         /// </para>
         /// </summary>
-        [AWSProperty(Max=4096)]
+        [AWSProperty(Min=0, Max=4096)]
         public string PreAuthenticationLoginBanner
         {
             get { return this._preAuthenticationLoginBanner; }
@@ -426,7 +426,7 @@ namespace Amazon.Transfer.Model
         /// Specifies the name of the security policy that is attached to the server.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=100)]
+        [AWSProperty(Min=0, Max=100)]
         public string SecurityPolicyName
         {
             get { return this._securityPolicyName; }

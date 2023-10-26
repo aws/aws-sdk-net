@@ -101,7 +101,7 @@ namespace Amazon.Transfer.Model
         /// response.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=15)]
+        [AWSProperty(Min=0, Max=15)]
         public string PassiveIp
         {
             get { return this._passiveIp; }
