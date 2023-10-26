@@ -639,6 +639,10 @@
     <pattern>^[a-zA-Z0-9\-_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Redshift.Model.DeleteResourcePolicyRequest.ResourceArn</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Redshift.Model.DeleteScheduledActionRequest.ScheduledActionName</property>
     <max>2147483647</max>
   </property-value-rule>
@@ -949,6 +953,22 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeHsmConfigurationsResponse.Marker</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.DescribeInboundIntegrationsRequest.IntegrationArn</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.DescribeInboundIntegrationsRequest.Marker</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.DescribeInboundIntegrationsRequest.TargetArn</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.DescribeInboundIntegrationsResponse.Marker</property>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
@@ -1329,6 +1349,10 @@
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Redshift.Model.GetResourcePolicyRequest.ResourceArn</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyAquaConfigurationRequest.ClusterIdentifier</property>
     <max>2147483647</max>
   </property-value-rule>
@@ -1608,6 +1632,14 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.PurchaseReservedNodeOfferingRequest.ReservedNodeOfferingId</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.PutResourcePolicyRequest.Policy</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.PutResourcePolicyRequest.ResourceArn</property>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
@@ -2280,6 +2312,26 @@
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Redshift.Model.InboundIntegration.IntegrationArn</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.InboundIntegration.SourceArn</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.InboundIntegration.TargetArn</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.IntegrationError.ErrorCode</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.IntegrationError.ErrorMessage</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Redshift.Model.IPRange.CIDRIP</property>
     <max>2147483647</max>
   </property-value-rule>
@@ -2460,6 +2512,14 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ResizeInfo.ResizeType</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.ResourcePolicy.Policy</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.ResourcePolicy.ResourceArn</property>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>

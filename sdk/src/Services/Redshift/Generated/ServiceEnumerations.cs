@@ -1563,4 +1563,74 @@ namespace Amazon.Redshift
         }
     }
 
+
+    /// <summary>
+    /// Constants used for properties of type ZeroETLIntegrationStatus.
+    /// </summary>
+    public class ZeroETLIntegrationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Active for ZeroETLIntegrationStatus
+        /// </summary>
+        public static readonly ZeroETLIntegrationStatus Active = new ZeroETLIntegrationStatus("active");
+        /// <summary>
+        /// Constant Creating for ZeroETLIntegrationStatus
+        /// </summary>
+        public static readonly ZeroETLIntegrationStatus Creating = new ZeroETLIntegrationStatus("creating");
+        /// <summary>
+        /// Constant Deleting for ZeroETLIntegrationStatus
+        /// </summary>
+        public static readonly ZeroETLIntegrationStatus Deleting = new ZeroETLIntegrationStatus("deleting");
+        /// <summary>
+        /// Constant Failed for ZeroETLIntegrationStatus
+        /// </summary>
+        public static readonly ZeroETLIntegrationStatus Failed = new ZeroETLIntegrationStatus("failed");
+        /// <summary>
+        /// Constant Modifying for ZeroETLIntegrationStatus
+        /// </summary>
+        public static readonly ZeroETLIntegrationStatus Modifying = new ZeroETLIntegrationStatus("modifying");
+        /// <summary>
+        /// Constant Needs_attention for ZeroETLIntegrationStatus
+        /// </summary>
+        public static readonly ZeroETLIntegrationStatus Needs_attention = new ZeroETLIntegrationStatus("needs_attention");
+        /// <summary>
+        /// Constant Syncing for ZeroETLIntegrationStatus
+        /// </summary>
+        public static readonly ZeroETLIntegrationStatus Syncing = new ZeroETLIntegrationStatus("syncing");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ZeroETLIntegrationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ZeroETLIntegrationStatus FindValue(string value)
+        {
+            return FindValue<ZeroETLIntegrationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ZeroETLIntegrationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
 }
