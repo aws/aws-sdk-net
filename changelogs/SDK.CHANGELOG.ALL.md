@@ -1,3 +1,27 @@
+### 3.7.671.0 (2023-10-26 18:26 UTC)
+* AppStream (3.7.203.0)
+	* This release introduces multi-session fleets, allowing customers to provision more than one user session on a single fleet instance.
+* EC2 (3.7.223.0)
+	* Launching GetSecurityGroupsForVpc API. This API gets security groups that can be associated by the AWS account making the request with network interfaces in the specified VPC.
+* NetworkFirewall (3.7.202.0)
+	* Network Firewall now supports inspection of outbound SSL/TLS traffic.
+* OpenSearchService (3.7.203.0)
+	* You can specify ipv4 or dualstack IPAddressType for cluster endpoints. If you specify IPAddressType as dualstack, the new endpoint will be visible under the 'EndpointV2' parameter and will support IPv4 and IPv6 requests. Whereas, the 'Endpoint' will continue to serve IPv4 requests.
+* Redshift (3.7.202.0)
+	* Add Redshift APIs GetResourcePolicy, DeleteResourcePolicy, PutResourcePolicy and DescribeInboundIntegrations for the new Amazon Redshift Zero-ETL integration feature, which can be used to control data ingress into Redshift namespace, and view inbound integrations.
+* SageMaker (3.7.219.0)
+	* Amazon Sagemaker Autopilot now supports Text Generation jobs.
+* SimpleNotificationService (3.7.201.0)
+	* Message Archiving and Replay is now supported in Amazon SNS for FIFO topics.
+* SsmSap (3.7.202.0)
+	* AWS Systems Manager for SAP added support for registration and discovery of SAP ABAP applications
+* Transfer (3.7.203.0)
+	* No API changes from previous release. This release migrated the model to Smithy keeping all features unchanged.
+* Core 3.7.204.9
+	* Update SDK generator to handle hostPrefix labels (https://smithy.io/2.0/spec/endpoint-traits.html#endpoint-trait)
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.670.0 (2023-10-25 20:16 UTC)
 * ConnectCases (3.7.202.0)
 	* Increase maximum length of CommentBody to 3000, and increase maximum length of StringValue to 1500
