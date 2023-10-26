@@ -114,6 +114,12 @@ namespace Amazon.SsmSap.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetDatabaseArn())
+                {
+                    context.Writer.WritePropertyName("DatabaseArn");
+                    context.Writer.Write(publicRequest.DatabaseArn);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

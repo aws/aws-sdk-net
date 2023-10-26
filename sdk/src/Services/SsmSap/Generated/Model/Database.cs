@@ -105,7 +105,7 @@ namespace Amazon.SsmSap.Model
         /// The credentials of the database.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=20)]
+        [AWSProperty(Min=0, Max=20)]
         public List<ApplicationCredential> Credentials
         {
             get { return this._credentials; }

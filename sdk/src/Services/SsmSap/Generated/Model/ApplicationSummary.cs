@@ -34,6 +34,7 @@ namespace Amazon.SsmSap.Model
     public partial class ApplicationSummary
     {
         private string _arn;
+        private ApplicationDiscoveryStatus _discoveryStatus;
         private string _id;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private ApplicationType _type;
@@ -54,6 +55,24 @@ namespace Amazon.SsmSap.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DiscoveryStatus. 
+        /// <para>
+        /// The status of the latest discovery.
+        /// </para>
+        /// </summary>
+        public ApplicationDiscoveryStatus DiscoveryStatus
+        {
+            get { return this._discoveryStatus; }
+            set { this._discoveryStatus = value; }
+        }
+
+        // Check to see if DiscoveryStatus property is set
+        internal bool IsSetDiscoveryStatus()
+        {
+            return this._discoveryStatus != null;
         }
 
         /// <summary>

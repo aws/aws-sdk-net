@@ -100,6 +100,12 @@ namespace Amazon.SsmSap.Model.Internal.MarshallTransformations
                     unmarshalledObject.ComponentType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DatabaseConnection", targetDepth))
+                {
+                    var unmarshaller = DatabaseConnectionUnmarshaller.Instance;
+                    unmarshalledObject.DatabaseConnection = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Databases", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
@@ -142,6 +148,12 @@ namespace Amazon.SsmSap.Model.Internal.MarshallTransformations
                     unmarshalledObject.Resilience = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SapFeature", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SapFeature = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SapHostname", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -154,10 +166,22 @@ namespace Amazon.SsmSap.Model.Internal.MarshallTransformations
                     unmarshalledObject.SapKernelVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Sid", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Sid = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SystemNumber", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SystemNumber = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

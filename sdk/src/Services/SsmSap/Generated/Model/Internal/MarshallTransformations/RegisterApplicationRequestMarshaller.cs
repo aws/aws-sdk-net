@@ -93,6 +93,12 @@ namespace Amazon.SsmSap.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetDatabaseArn())
+                {
+                    context.Writer.WritePropertyName("DatabaseArn");
+                    context.Writer.Write(publicRequest.DatabaseArn);
+                }
+
                 if(publicRequest.IsSetInstances())
                 {
                     context.Writer.WritePropertyName("Instances");

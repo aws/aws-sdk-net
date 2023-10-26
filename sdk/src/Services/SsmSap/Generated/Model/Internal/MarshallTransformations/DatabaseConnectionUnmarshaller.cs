@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SsmSap.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ApplicationSummary Object
+    /// Response Unmarshaller for DatabaseConnection Object
     /// </summary>  
-    public class ApplicationSummaryUnmarshaller : IUnmarshaller<ApplicationSummary, XmlUnmarshallerContext>, IUnmarshaller<ApplicationSummary, JsonUnmarshallerContext>
+    public class DatabaseConnectionUnmarshaller : IUnmarshaller<DatabaseConnection, XmlUnmarshallerContext>, IUnmarshaller<DatabaseConnection, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ApplicationSummary IUnmarshaller<ApplicationSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        DatabaseConnection IUnmarshaller<DatabaseConnection, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,33 @@ namespace Amazon.SsmSap.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ApplicationSummary Unmarshall(JsonUnmarshallerContext context)
+        public DatabaseConnection Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ApplicationSummary unmarshalledObject = new ApplicationSummary();
+            DatabaseConnection unmarshalledObject = new DatabaseConnection();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Arn", targetDepth))
+                if (context.TestExpression("ConnectionIp", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ConnectionIp = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("DiscoveryStatus", targetDepth))
+                if (context.TestExpression("DatabaseArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DiscoveryStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DatabaseArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Id", targetDepth))
+                if (context.TestExpression("DatabaseConnectionMethod", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Tags", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    unmarshalledObject.Tags = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Type", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DatabaseConnectionMethod = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +88,12 @@ namespace Amazon.SsmSap.Model.Internal.MarshallTransformations
         }
 
 
-        private static ApplicationSummaryUnmarshaller _instance = new ApplicationSummaryUnmarshaller();        
+        private static DatabaseConnectionUnmarshaller _instance = new DatabaseConnectionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ApplicationSummaryUnmarshaller Instance
+        public static DatabaseConnectionUnmarshaller Instance
         {
             get
             {

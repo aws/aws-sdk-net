@@ -76,6 +76,12 @@ namespace Amazon.SsmSap.Model.Internal.MarshallTransformations
                     unmarshalledObject.Hostname = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("IpAddresses", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<IpAddressMember, IpAddressMemberUnmarshaller>(IpAddressMemberUnmarshaller.Instance);
+                    unmarshalledObject.IpAddresses = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("OsVersion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
