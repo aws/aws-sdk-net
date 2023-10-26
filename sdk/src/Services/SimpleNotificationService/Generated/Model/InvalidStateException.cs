@@ -29,41 +29,41 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
-    /// The request was rejected because the specified Amazon Web Services KMS key isn't enabled.
+    /// Indicates that the specified state is not a valid state for an event source.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
-    public partial class KMSDisabledException : AmazonSimpleNotificationServiceException
+    public partial class InvalidStateException : AmazonSimpleNotificationServiceException
     {
 
         /// <summary>
-        /// Constructs a new KMSDisabledException with the specified error
+        /// Constructs a new InvalidStateException with the specified error
         /// message.
         /// </summary>
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        public KMSDisabledException(string message) 
+        public InvalidStateException(string message) 
             : base(message) {}
 
         /// <summary>
-        /// Construct instance of KMSDisabledException
+        /// Construct instance of InvalidStateException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
-        public KMSDisabledException(string message, Exception innerException) 
+        public InvalidStateException(string message, Exception innerException) 
             : base(message, innerException) {}
 
         /// <summary>
-        /// Construct instance of KMSDisabledException
+        /// Construct instance of InvalidStateException
         /// </summary>
         /// <param name="innerException"></param>
-        public KMSDisabledException(Exception innerException) 
+        public InvalidStateException(Exception innerException) 
             : base(innerException) {}
 
         /// <summary>
-        /// Construct instance of KMSDisabledException
+        /// Construct instance of InvalidStateException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
@@ -71,30 +71,30 @@ namespace Amazon.SimpleNotificationService.Model
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public KMSDisabledException(string message, Exception innerException, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public InvalidStateException(string message, Exception innerException, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, requestId, statusCode) {}
 
         /// <summary>
-        /// Construct instance of KMSDisabledException
+        /// Construct instance of InvalidStateException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="errorType"></param>
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public KMSDisabledException(string message, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public InvalidStateException(string message, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
 #if !NETSTANDARD
         /// <summary>
-        /// Constructs a new instance of the KMSDisabledException class with serialized data.
+        /// Constructs a new instance of the InvalidStateException class with serialized data.
         /// </summary>
         /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
         /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
         /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is null. </exception>
         /// <exception cref="T:System.Runtime.Serialization.SerializationException">The class name is null or <see cref="P:System.Exception.HResult" /> is zero (0). </exception>
-        protected KMSDisabledException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        protected InvalidStateException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
         }

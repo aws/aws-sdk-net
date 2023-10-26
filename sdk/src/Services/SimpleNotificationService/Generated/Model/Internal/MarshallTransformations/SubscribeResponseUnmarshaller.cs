@@ -136,6 +136,10 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
                 {
                     return NotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ReplayLimitExceeded"))
+                {
+                    return ReplayLimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("SubscriptionLimitExceeded"))
                 {
                     return SubscriptionLimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
