@@ -606,6 +606,11 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.GetSecurityGroupsForVpcRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.GetSpotPlacementScoresRequest.MaxResults</property>
     <min>10</min>
     <max>1000</max>

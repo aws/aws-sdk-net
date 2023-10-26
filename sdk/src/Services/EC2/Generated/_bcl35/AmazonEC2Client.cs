@@ -28466,6 +28466,61 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  GetSecurityGroupsForVpc
+
+        /// <summary>
+        /// Gets security groups that can be associated by the Amazon Web Services account making
+        /// the request with network interfaces in the specified VPC.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSecurityGroupsForVpc service method.</param>
+        /// 
+        /// <returns>The response from the GetSecurityGroupsForVpc service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetSecurityGroupsForVpc">REST API Reference for GetSecurityGroupsForVpc Operation</seealso>
+        public virtual GetSecurityGroupsForVpcResponse GetSecurityGroupsForVpc(GetSecurityGroupsForVpcRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSecurityGroupsForVpcRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSecurityGroupsForVpcResponseUnmarshaller.Instance;
+
+            return Invoke<GetSecurityGroupsForVpcResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSecurityGroupsForVpc operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSecurityGroupsForVpc operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSecurityGroupsForVpc
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetSecurityGroupsForVpc">REST API Reference for GetSecurityGroupsForVpc Operation</seealso>
+        public virtual IAsyncResult BeginGetSecurityGroupsForVpc(GetSecurityGroupsForVpcRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSecurityGroupsForVpcRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSecurityGroupsForVpcResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetSecurityGroupsForVpc operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSecurityGroupsForVpc.</param>
+        /// 
+        /// <returns>Returns a  GetSecurityGroupsForVpcResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetSecurityGroupsForVpc">REST API Reference for GetSecurityGroupsForVpc Operation</seealso>
+        public virtual GetSecurityGroupsForVpcResponse EndGetSecurityGroupsForVpc(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetSecurityGroupsForVpcResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetSerialConsoleAccessStatus
 
         /// <summary>

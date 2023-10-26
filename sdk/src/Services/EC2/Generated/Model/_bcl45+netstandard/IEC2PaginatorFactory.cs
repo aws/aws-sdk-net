@@ -646,6 +646,11 @@ namespace Amazon.EC2.Model
         IGetNetworkInsightsAccessScopeAnalysisFindingsPaginator GetNetworkInsightsAccessScopeAnalysisFindings(GetNetworkInsightsAccessScopeAnalysisFindingsRequest request);
 
         /// <summary>
+        /// Paginator for GetSecurityGroupsForVpc operation
+        ///</summary>
+        IGetSecurityGroupsForVpcPaginator GetSecurityGroupsForVpc(GetSecurityGroupsForVpcRequest request);
+
+        /// <summary>
         /// Paginator for GetSpotPlacementScores operation
         ///</summary>
         IGetSpotPlacementScoresPaginator GetSpotPlacementScores(GetSpotPlacementScoresRequest request);

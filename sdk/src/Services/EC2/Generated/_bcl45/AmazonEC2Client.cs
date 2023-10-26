@@ -26955,6 +26955,49 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  GetSecurityGroupsForVpc
+
+
+        /// <summary>
+        /// Gets security groups that can be associated by the Amazon Web Services account making
+        /// the request with network interfaces in the specified VPC.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSecurityGroupsForVpc service method.</param>
+        /// 
+        /// <returns>The response from the GetSecurityGroupsForVpc service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetSecurityGroupsForVpc">REST API Reference for GetSecurityGroupsForVpc Operation</seealso>
+        public virtual GetSecurityGroupsForVpcResponse GetSecurityGroupsForVpc(GetSecurityGroupsForVpcRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSecurityGroupsForVpcRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSecurityGroupsForVpcResponseUnmarshaller.Instance;
+
+            return Invoke<GetSecurityGroupsForVpcResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets security groups that can be associated by the Amazon Web Services account making
+        /// the request with network interfaces in the specified VPC.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSecurityGroupsForVpc service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetSecurityGroupsForVpc service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetSecurityGroupsForVpc">REST API Reference for GetSecurityGroupsForVpc Operation</seealso>
+        public virtual Task<GetSecurityGroupsForVpcResponse> GetSecurityGroupsForVpcAsync(GetSecurityGroupsForVpcRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSecurityGroupsForVpcRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSecurityGroupsForVpcResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetSecurityGroupsForVpcResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetSerialConsoleAccessStatus
 
 

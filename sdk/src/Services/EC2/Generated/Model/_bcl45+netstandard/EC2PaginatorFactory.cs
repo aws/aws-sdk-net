@@ -1028,6 +1028,14 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Paginator for GetSecurityGroupsForVpc operation
+        ///</summary>
+        public IGetSecurityGroupsForVpcPaginator GetSecurityGroupsForVpc(GetSecurityGroupsForVpcRequest request) 
+        {
+            return new GetSecurityGroupsForVpcPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for GetSpotPlacementScores operation
         ///</summary>
         public IGetSpotPlacementScoresPaginator GetSpotPlacementScores(GetSpotPlacementScoresRequest request) 
