@@ -49,7 +49,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateSlackChannelConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<CreateSlackChannelConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateSlackChannelConfigurationRequest>(operation);
             var marshaller = new CreateSlackChannelConfigurationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -79,7 +79,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateSlackChannelConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<CreateSlackChannelConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateSlackChannelConfigurationRequest>(operation);
             var marshaller = new CreateSlackChannelConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -111,7 +111,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateSlackChannelConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<CreateSlackChannelConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateSlackChannelConfigurationRequest>(operation);
             var marshaller = new CreateSlackChannelConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -143,7 +143,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateSlackChannelConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<CreateSlackChannelConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateSlackChannelConfigurationRequest>(operation);
             var marshaller = new CreateSlackChannelConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -175,7 +175,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateSlackChannelConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<CreateSlackChannelConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateSlackChannelConfigurationRequest>(operation);
             var marshaller = new CreateSlackChannelConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -207,7 +207,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateSlackChannelConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<CreateSlackChannelConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateSlackChannelConfigurationRequest>(operation);
             var marshaller = new CreateSlackChannelConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -239,7 +239,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteAccountAlias");
 
-            var request = InstantiateClassGenerator.Execute<DeleteAccountAliasRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteAccountAliasRequest>(operation);
             var marshaller = new DeleteAccountAliasRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -269,7 +269,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteAccountAlias");
 
-            var request = InstantiateClassGenerator.Execute<DeleteAccountAliasRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteAccountAliasRequest>(operation);
             var marshaller = new DeleteAccountAliasRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -301,7 +301,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteAccountAlias");
 
-            var request = InstantiateClassGenerator.Execute<DeleteAccountAliasRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteAccountAliasRequest>(operation);
             var marshaller = new DeleteAccountAliasRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -333,7 +333,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteAccountAlias");
 
-            var request = InstantiateClassGenerator.Execute<DeleteAccountAliasRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteAccountAliasRequest>(operation);
             var marshaller = new DeleteAccountAliasRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -365,7 +365,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteSlackChannelConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<DeleteSlackChannelConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteSlackChannelConfigurationRequest>(operation);
             var marshaller = new DeleteSlackChannelConfigurationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -395,7 +395,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteSlackChannelConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<DeleteSlackChannelConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteSlackChannelConfigurationRequest>(operation);
             var marshaller = new DeleteSlackChannelConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -427,7 +427,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteSlackChannelConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<DeleteSlackChannelConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteSlackChannelConfigurationRequest>(operation);
             var marshaller = new DeleteSlackChannelConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -459,7 +459,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteSlackChannelConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<DeleteSlackChannelConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteSlackChannelConfigurationRequest>(operation);
             var marshaller = new DeleteSlackChannelConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -491,7 +491,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteSlackChannelConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<DeleteSlackChannelConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteSlackChannelConfigurationRequest>(operation);
             var marshaller = new DeleteSlackChannelConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -523,7 +523,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteSlackChannelConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<DeleteSlackChannelConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteSlackChannelConfigurationRequest>(operation);
             var marshaller = new DeleteSlackChannelConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -555,7 +555,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteSlackWorkspaceConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<DeleteSlackWorkspaceConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteSlackWorkspaceConfigurationRequest>(operation);
             var marshaller = new DeleteSlackWorkspaceConfigurationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -585,7 +585,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteSlackWorkspaceConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<DeleteSlackWorkspaceConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteSlackWorkspaceConfigurationRequest>(operation);
             var marshaller = new DeleteSlackWorkspaceConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -617,7 +617,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteSlackWorkspaceConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<DeleteSlackWorkspaceConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteSlackWorkspaceConfigurationRequest>(operation);
             var marshaller = new DeleteSlackWorkspaceConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -649,7 +649,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteSlackWorkspaceConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<DeleteSlackWorkspaceConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteSlackWorkspaceConfigurationRequest>(operation);
             var marshaller = new DeleteSlackWorkspaceConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -681,7 +681,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteSlackWorkspaceConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<DeleteSlackWorkspaceConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteSlackWorkspaceConfigurationRequest>(operation);
             var marshaller = new DeleteSlackWorkspaceConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -713,7 +713,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteSlackWorkspaceConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<DeleteSlackWorkspaceConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteSlackWorkspaceConfigurationRequest>(operation);
             var marshaller = new DeleteSlackWorkspaceConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -745,7 +745,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetAccountAlias");
 
-            var request = InstantiateClassGenerator.Execute<GetAccountAliasRequest>();
+            var request = InstantiateClassGenerator.Execute<GetAccountAliasRequest>(operation);
             var marshaller = new GetAccountAliasRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -775,7 +775,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetAccountAlias");
 
-            var request = InstantiateClassGenerator.Execute<GetAccountAliasRequest>();
+            var request = InstantiateClassGenerator.Execute<GetAccountAliasRequest>(operation);
             var marshaller = new GetAccountAliasRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -807,7 +807,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListSlackChannelConfigurations");
 
-            var request = InstantiateClassGenerator.Execute<ListSlackChannelConfigurationsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListSlackChannelConfigurationsRequest>(operation);
             var marshaller = new ListSlackChannelConfigurationsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -837,7 +837,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListSlackChannelConfigurations");
 
-            var request = InstantiateClassGenerator.Execute<ListSlackChannelConfigurationsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListSlackChannelConfigurationsRequest>(operation);
             var marshaller = new ListSlackChannelConfigurationsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -869,7 +869,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListSlackChannelConfigurations");
 
-            var request = InstantiateClassGenerator.Execute<ListSlackChannelConfigurationsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListSlackChannelConfigurationsRequest>(operation);
             var marshaller = new ListSlackChannelConfigurationsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -901,7 +901,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListSlackWorkspaceConfigurations");
 
-            var request = InstantiateClassGenerator.Execute<ListSlackWorkspaceConfigurationsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListSlackWorkspaceConfigurationsRequest>(operation);
             var marshaller = new ListSlackWorkspaceConfigurationsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -931,7 +931,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListSlackWorkspaceConfigurations");
 
-            var request = InstantiateClassGenerator.Execute<ListSlackWorkspaceConfigurationsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListSlackWorkspaceConfigurationsRequest>(operation);
             var marshaller = new ListSlackWorkspaceConfigurationsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -963,7 +963,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListSlackWorkspaceConfigurations");
 
-            var request = InstantiateClassGenerator.Execute<ListSlackWorkspaceConfigurationsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListSlackWorkspaceConfigurationsRequest>(operation);
             var marshaller = new ListSlackWorkspaceConfigurationsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -995,7 +995,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("PutAccountAlias");
 
-            var request = InstantiateClassGenerator.Execute<PutAccountAliasRequest>();
+            var request = InstantiateClassGenerator.Execute<PutAccountAliasRequest>(operation);
             var marshaller = new PutAccountAliasRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1025,7 +1025,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("PutAccountAlias");
 
-            var request = InstantiateClassGenerator.Execute<PutAccountAliasRequest>();
+            var request = InstantiateClassGenerator.Execute<PutAccountAliasRequest>(operation);
             var marshaller = new PutAccountAliasRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1057,7 +1057,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("PutAccountAlias");
 
-            var request = InstantiateClassGenerator.Execute<PutAccountAliasRequest>();
+            var request = InstantiateClassGenerator.Execute<PutAccountAliasRequest>(operation);
             var marshaller = new PutAccountAliasRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1089,7 +1089,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("PutAccountAlias");
 
-            var request = InstantiateClassGenerator.Execute<PutAccountAliasRequest>();
+            var request = InstantiateClassGenerator.Execute<PutAccountAliasRequest>(operation);
             var marshaller = new PutAccountAliasRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1121,7 +1121,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("RegisterSlackWorkspaceForOrganization");
 
-            var request = InstantiateClassGenerator.Execute<RegisterSlackWorkspaceForOrganizationRequest>();
+            var request = InstantiateClassGenerator.Execute<RegisterSlackWorkspaceForOrganizationRequest>(operation);
             var marshaller = new RegisterSlackWorkspaceForOrganizationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1151,7 +1151,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("RegisterSlackWorkspaceForOrganization");
 
-            var request = InstantiateClassGenerator.Execute<RegisterSlackWorkspaceForOrganizationRequest>();
+            var request = InstantiateClassGenerator.Execute<RegisterSlackWorkspaceForOrganizationRequest>(operation);
             var marshaller = new RegisterSlackWorkspaceForOrganizationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1183,7 +1183,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("RegisterSlackWorkspaceForOrganization");
 
-            var request = InstantiateClassGenerator.Execute<RegisterSlackWorkspaceForOrganizationRequest>();
+            var request = InstantiateClassGenerator.Execute<RegisterSlackWorkspaceForOrganizationRequest>(operation);
             var marshaller = new RegisterSlackWorkspaceForOrganizationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1215,7 +1215,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("RegisterSlackWorkspaceForOrganization");
 
-            var request = InstantiateClassGenerator.Execute<RegisterSlackWorkspaceForOrganizationRequest>();
+            var request = InstantiateClassGenerator.Execute<RegisterSlackWorkspaceForOrganizationRequest>(operation);
             var marshaller = new RegisterSlackWorkspaceForOrganizationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1247,7 +1247,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("RegisterSlackWorkspaceForOrganization");
 
-            var request = InstantiateClassGenerator.Execute<RegisterSlackWorkspaceForOrganizationRequest>();
+            var request = InstantiateClassGenerator.Execute<RegisterSlackWorkspaceForOrganizationRequest>(operation);
             var marshaller = new RegisterSlackWorkspaceForOrganizationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1279,7 +1279,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("RegisterSlackWorkspaceForOrganization");
 
-            var request = InstantiateClassGenerator.Execute<RegisterSlackWorkspaceForOrganizationRequest>();
+            var request = InstantiateClassGenerator.Execute<RegisterSlackWorkspaceForOrganizationRequest>(operation);
             var marshaller = new RegisterSlackWorkspaceForOrganizationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1311,7 +1311,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateSlackChannelConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<UpdateSlackChannelConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateSlackChannelConfigurationRequest>(operation);
             var marshaller = new UpdateSlackChannelConfigurationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1341,7 +1341,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateSlackChannelConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<UpdateSlackChannelConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateSlackChannelConfigurationRequest>(operation);
             var marshaller = new UpdateSlackChannelConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1373,7 +1373,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateSlackChannelConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<UpdateSlackChannelConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateSlackChannelConfigurationRequest>(operation);
             var marshaller = new UpdateSlackChannelConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1405,7 +1405,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateSlackChannelConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<UpdateSlackChannelConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateSlackChannelConfigurationRequest>(operation);
             var marshaller = new UpdateSlackChannelConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1437,7 +1437,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateSlackChannelConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<UpdateSlackChannelConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateSlackChannelConfigurationRequest>(operation);
             var marshaller = new UpdateSlackChannelConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1469,7 +1469,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateSlackChannelConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<UpdateSlackChannelConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateSlackChannelConfigurationRequest>(operation);
             var marshaller = new UpdateSlackChannelConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 

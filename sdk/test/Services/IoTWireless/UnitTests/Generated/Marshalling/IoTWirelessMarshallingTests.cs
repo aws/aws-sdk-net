@@ -49,7 +49,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("AssociateAwsAccountWithPartnerAccount");
 
-            var request = InstantiateClassGenerator.Execute<AssociateAwsAccountWithPartnerAccountRequest>();
+            var request = InstantiateClassGenerator.Execute<AssociateAwsAccountWithPartnerAccountRequest>(operation);
             var marshaller = new AssociateAwsAccountWithPartnerAccountRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -79,7 +79,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("AssociateAwsAccountWithPartnerAccount");
 
-            var request = InstantiateClassGenerator.Execute<AssociateAwsAccountWithPartnerAccountRequest>();
+            var request = InstantiateClassGenerator.Execute<AssociateAwsAccountWithPartnerAccountRequest>(operation);
             var marshaller = new AssociateAwsAccountWithPartnerAccountRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -111,7 +111,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("AssociateAwsAccountWithPartnerAccount");
 
-            var request = InstantiateClassGenerator.Execute<AssociateAwsAccountWithPartnerAccountRequest>();
+            var request = InstantiateClassGenerator.Execute<AssociateAwsAccountWithPartnerAccountRequest>(operation);
             var marshaller = new AssociateAwsAccountWithPartnerAccountRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -143,7 +143,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("AssociateAwsAccountWithPartnerAccount");
 
-            var request = InstantiateClassGenerator.Execute<AssociateAwsAccountWithPartnerAccountRequest>();
+            var request = InstantiateClassGenerator.Execute<AssociateAwsAccountWithPartnerAccountRequest>(operation);
             var marshaller = new AssociateAwsAccountWithPartnerAccountRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -175,7 +175,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("AssociateAwsAccountWithPartnerAccount");
 
-            var request = InstantiateClassGenerator.Execute<AssociateAwsAccountWithPartnerAccountRequest>();
+            var request = InstantiateClassGenerator.Execute<AssociateAwsAccountWithPartnerAccountRequest>(operation);
             var marshaller = new AssociateAwsAccountWithPartnerAccountRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -207,7 +207,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("AssociateAwsAccountWithPartnerAccount");
 
-            var request = InstantiateClassGenerator.Execute<AssociateAwsAccountWithPartnerAccountRequest>();
+            var request = InstantiateClassGenerator.Execute<AssociateAwsAccountWithPartnerAccountRequest>(operation);
             var marshaller = new AssociateAwsAccountWithPartnerAccountRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -239,7 +239,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("AssociateAwsAccountWithPartnerAccount");
 
-            var request = InstantiateClassGenerator.Execute<AssociateAwsAccountWithPartnerAccountRequest>();
+            var request = InstantiateClassGenerator.Execute<AssociateAwsAccountWithPartnerAccountRequest>(operation);
             var marshaller = new AssociateAwsAccountWithPartnerAccountRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -271,7 +271,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("AssociateMulticastGroupWithFuotaTask");
 
-            var request = InstantiateClassGenerator.Execute<AssociateMulticastGroupWithFuotaTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<AssociateMulticastGroupWithFuotaTaskRequest>(operation);
             var marshaller = new AssociateMulticastGroupWithFuotaTaskRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -301,7 +301,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("AssociateMulticastGroupWithFuotaTask");
 
-            var request = InstantiateClassGenerator.Execute<AssociateMulticastGroupWithFuotaTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<AssociateMulticastGroupWithFuotaTaskRequest>(operation);
             var marshaller = new AssociateMulticastGroupWithFuotaTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -333,7 +333,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("AssociateMulticastGroupWithFuotaTask");
 
-            var request = InstantiateClassGenerator.Execute<AssociateMulticastGroupWithFuotaTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<AssociateMulticastGroupWithFuotaTaskRequest>(operation);
             var marshaller = new AssociateMulticastGroupWithFuotaTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -365,7 +365,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("AssociateMulticastGroupWithFuotaTask");
 
-            var request = InstantiateClassGenerator.Execute<AssociateMulticastGroupWithFuotaTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<AssociateMulticastGroupWithFuotaTaskRequest>(operation);
             var marshaller = new AssociateMulticastGroupWithFuotaTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -397,7 +397,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("AssociateMulticastGroupWithFuotaTask");
 
-            var request = InstantiateClassGenerator.Execute<AssociateMulticastGroupWithFuotaTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<AssociateMulticastGroupWithFuotaTaskRequest>(operation);
             var marshaller = new AssociateMulticastGroupWithFuotaTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -429,7 +429,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("AssociateMulticastGroupWithFuotaTask");
 
-            var request = InstantiateClassGenerator.Execute<AssociateMulticastGroupWithFuotaTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<AssociateMulticastGroupWithFuotaTaskRequest>(operation);
             var marshaller = new AssociateMulticastGroupWithFuotaTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -461,7 +461,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("AssociateMulticastGroupWithFuotaTask");
 
-            var request = InstantiateClassGenerator.Execute<AssociateMulticastGroupWithFuotaTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<AssociateMulticastGroupWithFuotaTaskRequest>(operation);
             var marshaller = new AssociateMulticastGroupWithFuotaTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -493,7 +493,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("AssociateWirelessDeviceWithFuotaTask");
 
-            var request = InstantiateClassGenerator.Execute<AssociateWirelessDeviceWithFuotaTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<AssociateWirelessDeviceWithFuotaTaskRequest>(operation);
             var marshaller = new AssociateWirelessDeviceWithFuotaTaskRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -523,7 +523,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("AssociateWirelessDeviceWithFuotaTask");
 
-            var request = InstantiateClassGenerator.Execute<AssociateWirelessDeviceWithFuotaTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<AssociateWirelessDeviceWithFuotaTaskRequest>(operation);
             var marshaller = new AssociateWirelessDeviceWithFuotaTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -555,7 +555,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("AssociateWirelessDeviceWithFuotaTask");
 
-            var request = InstantiateClassGenerator.Execute<AssociateWirelessDeviceWithFuotaTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<AssociateWirelessDeviceWithFuotaTaskRequest>(operation);
             var marshaller = new AssociateWirelessDeviceWithFuotaTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -587,7 +587,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("AssociateWirelessDeviceWithFuotaTask");
 
-            var request = InstantiateClassGenerator.Execute<AssociateWirelessDeviceWithFuotaTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<AssociateWirelessDeviceWithFuotaTaskRequest>(operation);
             var marshaller = new AssociateWirelessDeviceWithFuotaTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -619,7 +619,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("AssociateWirelessDeviceWithFuotaTask");
 
-            var request = InstantiateClassGenerator.Execute<AssociateWirelessDeviceWithFuotaTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<AssociateWirelessDeviceWithFuotaTaskRequest>(operation);
             var marshaller = new AssociateWirelessDeviceWithFuotaTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -651,7 +651,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("AssociateWirelessDeviceWithFuotaTask");
 
-            var request = InstantiateClassGenerator.Execute<AssociateWirelessDeviceWithFuotaTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<AssociateWirelessDeviceWithFuotaTaskRequest>(operation);
             var marshaller = new AssociateWirelessDeviceWithFuotaTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -683,7 +683,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("AssociateWirelessDeviceWithFuotaTask");
 
-            var request = InstantiateClassGenerator.Execute<AssociateWirelessDeviceWithFuotaTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<AssociateWirelessDeviceWithFuotaTaskRequest>(operation);
             var marshaller = new AssociateWirelessDeviceWithFuotaTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -715,7 +715,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("AssociateWirelessDeviceWithMulticastGroup");
 
-            var request = InstantiateClassGenerator.Execute<AssociateWirelessDeviceWithMulticastGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<AssociateWirelessDeviceWithMulticastGroupRequest>(operation);
             var marshaller = new AssociateWirelessDeviceWithMulticastGroupRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -745,7 +745,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("AssociateWirelessDeviceWithMulticastGroup");
 
-            var request = InstantiateClassGenerator.Execute<AssociateWirelessDeviceWithMulticastGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<AssociateWirelessDeviceWithMulticastGroupRequest>(operation);
             var marshaller = new AssociateWirelessDeviceWithMulticastGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -777,7 +777,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("AssociateWirelessDeviceWithMulticastGroup");
 
-            var request = InstantiateClassGenerator.Execute<AssociateWirelessDeviceWithMulticastGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<AssociateWirelessDeviceWithMulticastGroupRequest>(operation);
             var marshaller = new AssociateWirelessDeviceWithMulticastGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -809,7 +809,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("AssociateWirelessDeviceWithMulticastGroup");
 
-            var request = InstantiateClassGenerator.Execute<AssociateWirelessDeviceWithMulticastGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<AssociateWirelessDeviceWithMulticastGroupRequest>(operation);
             var marshaller = new AssociateWirelessDeviceWithMulticastGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -841,7 +841,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("AssociateWirelessDeviceWithMulticastGroup");
 
-            var request = InstantiateClassGenerator.Execute<AssociateWirelessDeviceWithMulticastGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<AssociateWirelessDeviceWithMulticastGroupRequest>(operation);
             var marshaller = new AssociateWirelessDeviceWithMulticastGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -873,7 +873,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("AssociateWirelessDeviceWithMulticastGroup");
 
-            var request = InstantiateClassGenerator.Execute<AssociateWirelessDeviceWithMulticastGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<AssociateWirelessDeviceWithMulticastGroupRequest>(operation);
             var marshaller = new AssociateWirelessDeviceWithMulticastGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -905,7 +905,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("AssociateWirelessDeviceWithMulticastGroup");
 
-            var request = InstantiateClassGenerator.Execute<AssociateWirelessDeviceWithMulticastGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<AssociateWirelessDeviceWithMulticastGroupRequest>(operation);
             var marshaller = new AssociateWirelessDeviceWithMulticastGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -937,7 +937,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("AssociateWirelessDeviceWithThing");
 
-            var request = InstantiateClassGenerator.Execute<AssociateWirelessDeviceWithThingRequest>();
+            var request = InstantiateClassGenerator.Execute<AssociateWirelessDeviceWithThingRequest>(operation);
             var marshaller = new AssociateWirelessDeviceWithThingRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -967,7 +967,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("AssociateWirelessDeviceWithThing");
 
-            var request = InstantiateClassGenerator.Execute<AssociateWirelessDeviceWithThingRequest>();
+            var request = InstantiateClassGenerator.Execute<AssociateWirelessDeviceWithThingRequest>(operation);
             var marshaller = new AssociateWirelessDeviceWithThingRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -999,7 +999,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("AssociateWirelessDeviceWithThing");
 
-            var request = InstantiateClassGenerator.Execute<AssociateWirelessDeviceWithThingRequest>();
+            var request = InstantiateClassGenerator.Execute<AssociateWirelessDeviceWithThingRequest>(operation);
             var marshaller = new AssociateWirelessDeviceWithThingRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1031,7 +1031,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("AssociateWirelessDeviceWithThing");
 
-            var request = InstantiateClassGenerator.Execute<AssociateWirelessDeviceWithThingRequest>();
+            var request = InstantiateClassGenerator.Execute<AssociateWirelessDeviceWithThingRequest>(operation);
             var marshaller = new AssociateWirelessDeviceWithThingRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1063,7 +1063,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("AssociateWirelessDeviceWithThing");
 
-            var request = InstantiateClassGenerator.Execute<AssociateWirelessDeviceWithThingRequest>();
+            var request = InstantiateClassGenerator.Execute<AssociateWirelessDeviceWithThingRequest>(operation);
             var marshaller = new AssociateWirelessDeviceWithThingRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1095,7 +1095,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("AssociateWirelessDeviceWithThing");
 
-            var request = InstantiateClassGenerator.Execute<AssociateWirelessDeviceWithThingRequest>();
+            var request = InstantiateClassGenerator.Execute<AssociateWirelessDeviceWithThingRequest>(operation);
             var marshaller = new AssociateWirelessDeviceWithThingRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1127,7 +1127,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("AssociateWirelessDeviceWithThing");
 
-            var request = InstantiateClassGenerator.Execute<AssociateWirelessDeviceWithThingRequest>();
+            var request = InstantiateClassGenerator.Execute<AssociateWirelessDeviceWithThingRequest>(operation);
             var marshaller = new AssociateWirelessDeviceWithThingRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1159,7 +1159,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("AssociateWirelessGatewayWithCertificate");
 
-            var request = InstantiateClassGenerator.Execute<AssociateWirelessGatewayWithCertificateRequest>();
+            var request = InstantiateClassGenerator.Execute<AssociateWirelessGatewayWithCertificateRequest>(operation);
             var marshaller = new AssociateWirelessGatewayWithCertificateRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1189,7 +1189,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("AssociateWirelessGatewayWithCertificate");
 
-            var request = InstantiateClassGenerator.Execute<AssociateWirelessGatewayWithCertificateRequest>();
+            var request = InstantiateClassGenerator.Execute<AssociateWirelessGatewayWithCertificateRequest>(operation);
             var marshaller = new AssociateWirelessGatewayWithCertificateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1221,7 +1221,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("AssociateWirelessGatewayWithCertificate");
 
-            var request = InstantiateClassGenerator.Execute<AssociateWirelessGatewayWithCertificateRequest>();
+            var request = InstantiateClassGenerator.Execute<AssociateWirelessGatewayWithCertificateRequest>(operation);
             var marshaller = new AssociateWirelessGatewayWithCertificateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1253,7 +1253,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("AssociateWirelessGatewayWithCertificate");
 
-            var request = InstantiateClassGenerator.Execute<AssociateWirelessGatewayWithCertificateRequest>();
+            var request = InstantiateClassGenerator.Execute<AssociateWirelessGatewayWithCertificateRequest>(operation);
             var marshaller = new AssociateWirelessGatewayWithCertificateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1285,7 +1285,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("AssociateWirelessGatewayWithCertificate");
 
-            var request = InstantiateClassGenerator.Execute<AssociateWirelessGatewayWithCertificateRequest>();
+            var request = InstantiateClassGenerator.Execute<AssociateWirelessGatewayWithCertificateRequest>(operation);
             var marshaller = new AssociateWirelessGatewayWithCertificateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1317,7 +1317,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("AssociateWirelessGatewayWithCertificate");
 
-            var request = InstantiateClassGenerator.Execute<AssociateWirelessGatewayWithCertificateRequest>();
+            var request = InstantiateClassGenerator.Execute<AssociateWirelessGatewayWithCertificateRequest>(operation);
             var marshaller = new AssociateWirelessGatewayWithCertificateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1349,7 +1349,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("AssociateWirelessGatewayWithCertificate");
 
-            var request = InstantiateClassGenerator.Execute<AssociateWirelessGatewayWithCertificateRequest>();
+            var request = InstantiateClassGenerator.Execute<AssociateWirelessGatewayWithCertificateRequest>(operation);
             var marshaller = new AssociateWirelessGatewayWithCertificateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1381,7 +1381,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("AssociateWirelessGatewayWithThing");
 
-            var request = InstantiateClassGenerator.Execute<AssociateWirelessGatewayWithThingRequest>();
+            var request = InstantiateClassGenerator.Execute<AssociateWirelessGatewayWithThingRequest>(operation);
             var marshaller = new AssociateWirelessGatewayWithThingRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1411,7 +1411,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("AssociateWirelessGatewayWithThing");
 
-            var request = InstantiateClassGenerator.Execute<AssociateWirelessGatewayWithThingRequest>();
+            var request = InstantiateClassGenerator.Execute<AssociateWirelessGatewayWithThingRequest>(operation);
             var marshaller = new AssociateWirelessGatewayWithThingRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1443,7 +1443,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("AssociateWirelessGatewayWithThing");
 
-            var request = InstantiateClassGenerator.Execute<AssociateWirelessGatewayWithThingRequest>();
+            var request = InstantiateClassGenerator.Execute<AssociateWirelessGatewayWithThingRequest>(operation);
             var marshaller = new AssociateWirelessGatewayWithThingRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1475,7 +1475,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("AssociateWirelessGatewayWithThing");
 
-            var request = InstantiateClassGenerator.Execute<AssociateWirelessGatewayWithThingRequest>();
+            var request = InstantiateClassGenerator.Execute<AssociateWirelessGatewayWithThingRequest>(operation);
             var marshaller = new AssociateWirelessGatewayWithThingRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1507,7 +1507,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("AssociateWirelessGatewayWithThing");
 
-            var request = InstantiateClassGenerator.Execute<AssociateWirelessGatewayWithThingRequest>();
+            var request = InstantiateClassGenerator.Execute<AssociateWirelessGatewayWithThingRequest>(operation);
             var marshaller = new AssociateWirelessGatewayWithThingRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1539,7 +1539,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("AssociateWirelessGatewayWithThing");
 
-            var request = InstantiateClassGenerator.Execute<AssociateWirelessGatewayWithThingRequest>();
+            var request = InstantiateClassGenerator.Execute<AssociateWirelessGatewayWithThingRequest>(operation);
             var marshaller = new AssociateWirelessGatewayWithThingRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1571,7 +1571,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("AssociateWirelessGatewayWithThing");
 
-            var request = InstantiateClassGenerator.Execute<AssociateWirelessGatewayWithThingRequest>();
+            var request = InstantiateClassGenerator.Execute<AssociateWirelessGatewayWithThingRequest>(operation);
             var marshaller = new AssociateWirelessGatewayWithThingRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1603,7 +1603,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CancelMulticastGroupSession");
 
-            var request = InstantiateClassGenerator.Execute<CancelMulticastGroupSessionRequest>();
+            var request = InstantiateClassGenerator.Execute<CancelMulticastGroupSessionRequest>(operation);
             var marshaller = new CancelMulticastGroupSessionRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1633,7 +1633,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CancelMulticastGroupSession");
 
-            var request = InstantiateClassGenerator.Execute<CancelMulticastGroupSessionRequest>();
+            var request = InstantiateClassGenerator.Execute<CancelMulticastGroupSessionRequest>(operation);
             var marshaller = new CancelMulticastGroupSessionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1665,7 +1665,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CancelMulticastGroupSession");
 
-            var request = InstantiateClassGenerator.Execute<CancelMulticastGroupSessionRequest>();
+            var request = InstantiateClassGenerator.Execute<CancelMulticastGroupSessionRequest>(operation);
             var marshaller = new CancelMulticastGroupSessionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1697,7 +1697,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CancelMulticastGroupSession");
 
-            var request = InstantiateClassGenerator.Execute<CancelMulticastGroupSessionRequest>();
+            var request = InstantiateClassGenerator.Execute<CancelMulticastGroupSessionRequest>(operation);
             var marshaller = new CancelMulticastGroupSessionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1729,7 +1729,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CancelMulticastGroupSession");
 
-            var request = InstantiateClassGenerator.Execute<CancelMulticastGroupSessionRequest>();
+            var request = InstantiateClassGenerator.Execute<CancelMulticastGroupSessionRequest>(operation);
             var marshaller = new CancelMulticastGroupSessionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1761,7 +1761,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CancelMulticastGroupSession");
 
-            var request = InstantiateClassGenerator.Execute<CancelMulticastGroupSessionRequest>();
+            var request = InstantiateClassGenerator.Execute<CancelMulticastGroupSessionRequest>(operation);
             var marshaller = new CancelMulticastGroupSessionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1793,7 +1793,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CancelMulticastGroupSession");
 
-            var request = InstantiateClassGenerator.Execute<CancelMulticastGroupSessionRequest>();
+            var request = InstantiateClassGenerator.Execute<CancelMulticastGroupSessionRequest>(operation);
             var marshaller = new CancelMulticastGroupSessionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1825,7 +1825,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateDestination");
 
-            var request = InstantiateClassGenerator.Execute<CreateDestinationRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateDestinationRequest>(operation);
             var marshaller = new CreateDestinationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1855,7 +1855,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateDestination");
 
-            var request = InstantiateClassGenerator.Execute<CreateDestinationRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateDestinationRequest>(operation);
             var marshaller = new CreateDestinationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1887,7 +1887,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateDestination");
 
-            var request = InstantiateClassGenerator.Execute<CreateDestinationRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateDestinationRequest>(operation);
             var marshaller = new CreateDestinationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1919,7 +1919,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateDestination");
 
-            var request = InstantiateClassGenerator.Execute<CreateDestinationRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateDestinationRequest>(operation);
             var marshaller = new CreateDestinationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1951,7 +1951,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateDestination");
 
-            var request = InstantiateClassGenerator.Execute<CreateDestinationRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateDestinationRequest>(operation);
             var marshaller = new CreateDestinationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1983,7 +1983,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateDestination");
 
-            var request = InstantiateClassGenerator.Execute<CreateDestinationRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateDestinationRequest>(operation);
             var marshaller = new CreateDestinationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2015,7 +2015,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateDestination");
 
-            var request = InstantiateClassGenerator.Execute<CreateDestinationRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateDestinationRequest>(operation);
             var marshaller = new CreateDestinationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2047,7 +2047,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateDeviceProfile");
 
-            var request = InstantiateClassGenerator.Execute<CreateDeviceProfileRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateDeviceProfileRequest>(operation);
             var marshaller = new CreateDeviceProfileRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -2077,7 +2077,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateDeviceProfile");
 
-            var request = InstantiateClassGenerator.Execute<CreateDeviceProfileRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateDeviceProfileRequest>(operation);
             var marshaller = new CreateDeviceProfileRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2109,7 +2109,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateDeviceProfile");
 
-            var request = InstantiateClassGenerator.Execute<CreateDeviceProfileRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateDeviceProfileRequest>(operation);
             var marshaller = new CreateDeviceProfileRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2141,7 +2141,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateDeviceProfile");
 
-            var request = InstantiateClassGenerator.Execute<CreateDeviceProfileRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateDeviceProfileRequest>(operation);
             var marshaller = new CreateDeviceProfileRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2173,7 +2173,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateDeviceProfile");
 
-            var request = InstantiateClassGenerator.Execute<CreateDeviceProfileRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateDeviceProfileRequest>(operation);
             var marshaller = new CreateDeviceProfileRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2205,7 +2205,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateDeviceProfile");
 
-            var request = InstantiateClassGenerator.Execute<CreateDeviceProfileRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateDeviceProfileRequest>(operation);
             var marshaller = new CreateDeviceProfileRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2237,7 +2237,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateFuotaTask");
 
-            var request = InstantiateClassGenerator.Execute<CreateFuotaTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateFuotaTaskRequest>(operation);
             var marshaller = new CreateFuotaTaskRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -2267,7 +2267,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateFuotaTask");
 
-            var request = InstantiateClassGenerator.Execute<CreateFuotaTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateFuotaTaskRequest>(operation);
             var marshaller = new CreateFuotaTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2299,7 +2299,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateFuotaTask");
 
-            var request = InstantiateClassGenerator.Execute<CreateFuotaTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateFuotaTaskRequest>(operation);
             var marshaller = new CreateFuotaTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2331,7 +2331,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateFuotaTask");
 
-            var request = InstantiateClassGenerator.Execute<CreateFuotaTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateFuotaTaskRequest>(operation);
             var marshaller = new CreateFuotaTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2363,7 +2363,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateFuotaTask");
 
-            var request = InstantiateClassGenerator.Execute<CreateFuotaTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateFuotaTaskRequest>(operation);
             var marshaller = new CreateFuotaTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2395,7 +2395,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateFuotaTask");
 
-            var request = InstantiateClassGenerator.Execute<CreateFuotaTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateFuotaTaskRequest>(operation);
             var marshaller = new CreateFuotaTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2427,7 +2427,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateFuotaTask");
 
-            var request = InstantiateClassGenerator.Execute<CreateFuotaTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateFuotaTaskRequest>(operation);
             var marshaller = new CreateFuotaTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2459,7 +2459,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateMulticastGroup");
 
-            var request = InstantiateClassGenerator.Execute<CreateMulticastGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateMulticastGroupRequest>(operation);
             var marshaller = new CreateMulticastGroupRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -2489,7 +2489,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateMulticastGroup");
 
-            var request = InstantiateClassGenerator.Execute<CreateMulticastGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateMulticastGroupRequest>(operation);
             var marshaller = new CreateMulticastGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2521,7 +2521,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateMulticastGroup");
 
-            var request = InstantiateClassGenerator.Execute<CreateMulticastGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateMulticastGroupRequest>(operation);
             var marshaller = new CreateMulticastGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2553,7 +2553,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateMulticastGroup");
 
-            var request = InstantiateClassGenerator.Execute<CreateMulticastGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateMulticastGroupRequest>(operation);
             var marshaller = new CreateMulticastGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2585,7 +2585,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateMulticastGroup");
 
-            var request = InstantiateClassGenerator.Execute<CreateMulticastGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateMulticastGroupRequest>(operation);
             var marshaller = new CreateMulticastGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2617,7 +2617,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateMulticastGroup");
 
-            var request = InstantiateClassGenerator.Execute<CreateMulticastGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateMulticastGroupRequest>(operation);
             var marshaller = new CreateMulticastGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2649,7 +2649,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateMulticastGroup");
 
-            var request = InstantiateClassGenerator.Execute<CreateMulticastGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateMulticastGroupRequest>(operation);
             var marshaller = new CreateMulticastGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2681,7 +2681,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateNetworkAnalyzerConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<CreateNetworkAnalyzerConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateNetworkAnalyzerConfigurationRequest>(operation);
             var marshaller = new CreateNetworkAnalyzerConfigurationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -2711,7 +2711,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateNetworkAnalyzerConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<CreateNetworkAnalyzerConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateNetworkAnalyzerConfigurationRequest>(operation);
             var marshaller = new CreateNetworkAnalyzerConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2743,7 +2743,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateNetworkAnalyzerConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<CreateNetworkAnalyzerConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateNetworkAnalyzerConfigurationRequest>(operation);
             var marshaller = new CreateNetworkAnalyzerConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2775,7 +2775,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateNetworkAnalyzerConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<CreateNetworkAnalyzerConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateNetworkAnalyzerConfigurationRequest>(operation);
             var marshaller = new CreateNetworkAnalyzerConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2807,7 +2807,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateNetworkAnalyzerConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<CreateNetworkAnalyzerConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateNetworkAnalyzerConfigurationRequest>(operation);
             var marshaller = new CreateNetworkAnalyzerConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2839,7 +2839,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateNetworkAnalyzerConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<CreateNetworkAnalyzerConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateNetworkAnalyzerConfigurationRequest>(operation);
             var marshaller = new CreateNetworkAnalyzerConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2871,7 +2871,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateNetworkAnalyzerConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<CreateNetworkAnalyzerConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateNetworkAnalyzerConfigurationRequest>(operation);
             var marshaller = new CreateNetworkAnalyzerConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2903,7 +2903,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateServiceProfile");
 
-            var request = InstantiateClassGenerator.Execute<CreateServiceProfileRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateServiceProfileRequest>(operation);
             var marshaller = new CreateServiceProfileRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -2933,7 +2933,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateServiceProfile");
 
-            var request = InstantiateClassGenerator.Execute<CreateServiceProfileRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateServiceProfileRequest>(operation);
             var marshaller = new CreateServiceProfileRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2965,7 +2965,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateServiceProfile");
 
-            var request = InstantiateClassGenerator.Execute<CreateServiceProfileRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateServiceProfileRequest>(operation);
             var marshaller = new CreateServiceProfileRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2997,7 +2997,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateServiceProfile");
 
-            var request = InstantiateClassGenerator.Execute<CreateServiceProfileRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateServiceProfileRequest>(operation);
             var marshaller = new CreateServiceProfileRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3029,7 +3029,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateServiceProfile");
 
-            var request = InstantiateClassGenerator.Execute<CreateServiceProfileRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateServiceProfileRequest>(operation);
             var marshaller = new CreateServiceProfileRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3061,7 +3061,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateServiceProfile");
 
-            var request = InstantiateClassGenerator.Execute<CreateServiceProfileRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateServiceProfileRequest>(operation);
             var marshaller = new CreateServiceProfileRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3093,7 +3093,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateWirelessDevice");
 
-            var request = InstantiateClassGenerator.Execute<CreateWirelessDeviceRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateWirelessDeviceRequest>(operation);
             var marshaller = new CreateWirelessDeviceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -3123,7 +3123,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateWirelessDevice");
 
-            var request = InstantiateClassGenerator.Execute<CreateWirelessDeviceRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateWirelessDeviceRequest>(operation);
             var marshaller = new CreateWirelessDeviceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3155,7 +3155,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateWirelessDevice");
 
-            var request = InstantiateClassGenerator.Execute<CreateWirelessDeviceRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateWirelessDeviceRequest>(operation);
             var marshaller = new CreateWirelessDeviceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3187,7 +3187,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateWirelessDevice");
 
-            var request = InstantiateClassGenerator.Execute<CreateWirelessDeviceRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateWirelessDeviceRequest>(operation);
             var marshaller = new CreateWirelessDeviceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3219,7 +3219,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateWirelessDevice");
 
-            var request = InstantiateClassGenerator.Execute<CreateWirelessDeviceRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateWirelessDeviceRequest>(operation);
             var marshaller = new CreateWirelessDeviceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3251,7 +3251,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateWirelessDevice");
 
-            var request = InstantiateClassGenerator.Execute<CreateWirelessDeviceRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateWirelessDeviceRequest>(operation);
             var marshaller = new CreateWirelessDeviceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3283,7 +3283,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateWirelessDevice");
 
-            var request = InstantiateClassGenerator.Execute<CreateWirelessDeviceRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateWirelessDeviceRequest>(operation);
             var marshaller = new CreateWirelessDeviceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3315,7 +3315,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateWirelessGateway");
 
-            var request = InstantiateClassGenerator.Execute<CreateWirelessGatewayRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateWirelessGatewayRequest>(operation);
             var marshaller = new CreateWirelessGatewayRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -3345,7 +3345,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateWirelessGateway");
 
-            var request = InstantiateClassGenerator.Execute<CreateWirelessGatewayRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateWirelessGatewayRequest>(operation);
             var marshaller = new CreateWirelessGatewayRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3377,7 +3377,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateWirelessGateway");
 
-            var request = InstantiateClassGenerator.Execute<CreateWirelessGatewayRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateWirelessGatewayRequest>(operation);
             var marshaller = new CreateWirelessGatewayRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3409,7 +3409,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateWirelessGateway");
 
-            var request = InstantiateClassGenerator.Execute<CreateWirelessGatewayRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateWirelessGatewayRequest>(operation);
             var marshaller = new CreateWirelessGatewayRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3441,7 +3441,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateWirelessGateway");
 
-            var request = InstantiateClassGenerator.Execute<CreateWirelessGatewayRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateWirelessGatewayRequest>(operation);
             var marshaller = new CreateWirelessGatewayRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3473,7 +3473,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateWirelessGateway");
 
-            var request = InstantiateClassGenerator.Execute<CreateWirelessGatewayRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateWirelessGatewayRequest>(operation);
             var marshaller = new CreateWirelessGatewayRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3505,7 +3505,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateWirelessGatewayTask");
 
-            var request = InstantiateClassGenerator.Execute<CreateWirelessGatewayTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateWirelessGatewayTaskRequest>(operation);
             var marshaller = new CreateWirelessGatewayTaskRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -3535,7 +3535,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateWirelessGatewayTask");
 
-            var request = InstantiateClassGenerator.Execute<CreateWirelessGatewayTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateWirelessGatewayTaskRequest>(operation);
             var marshaller = new CreateWirelessGatewayTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3567,7 +3567,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateWirelessGatewayTask");
 
-            var request = InstantiateClassGenerator.Execute<CreateWirelessGatewayTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateWirelessGatewayTaskRequest>(operation);
             var marshaller = new CreateWirelessGatewayTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3599,7 +3599,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateWirelessGatewayTask");
 
-            var request = InstantiateClassGenerator.Execute<CreateWirelessGatewayTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateWirelessGatewayTaskRequest>(operation);
             var marshaller = new CreateWirelessGatewayTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3631,7 +3631,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateWirelessGatewayTask");
 
-            var request = InstantiateClassGenerator.Execute<CreateWirelessGatewayTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateWirelessGatewayTaskRequest>(operation);
             var marshaller = new CreateWirelessGatewayTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3663,7 +3663,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateWirelessGatewayTask");
 
-            var request = InstantiateClassGenerator.Execute<CreateWirelessGatewayTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateWirelessGatewayTaskRequest>(operation);
             var marshaller = new CreateWirelessGatewayTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3695,7 +3695,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateWirelessGatewayTask");
 
-            var request = InstantiateClassGenerator.Execute<CreateWirelessGatewayTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateWirelessGatewayTaskRequest>(operation);
             var marshaller = new CreateWirelessGatewayTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3727,7 +3727,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateWirelessGatewayTaskDefinition");
 
-            var request = InstantiateClassGenerator.Execute<CreateWirelessGatewayTaskDefinitionRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateWirelessGatewayTaskDefinitionRequest>(operation);
             var marshaller = new CreateWirelessGatewayTaskDefinitionRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -3757,7 +3757,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateWirelessGatewayTaskDefinition");
 
-            var request = InstantiateClassGenerator.Execute<CreateWirelessGatewayTaskDefinitionRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateWirelessGatewayTaskDefinitionRequest>(operation);
             var marshaller = new CreateWirelessGatewayTaskDefinitionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3789,7 +3789,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateWirelessGatewayTaskDefinition");
 
-            var request = InstantiateClassGenerator.Execute<CreateWirelessGatewayTaskDefinitionRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateWirelessGatewayTaskDefinitionRequest>(operation);
             var marshaller = new CreateWirelessGatewayTaskDefinitionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3821,7 +3821,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateWirelessGatewayTaskDefinition");
 
-            var request = InstantiateClassGenerator.Execute<CreateWirelessGatewayTaskDefinitionRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateWirelessGatewayTaskDefinitionRequest>(operation);
             var marshaller = new CreateWirelessGatewayTaskDefinitionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3853,7 +3853,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateWirelessGatewayTaskDefinition");
 
-            var request = InstantiateClassGenerator.Execute<CreateWirelessGatewayTaskDefinitionRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateWirelessGatewayTaskDefinitionRequest>(operation);
             var marshaller = new CreateWirelessGatewayTaskDefinitionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3885,7 +3885,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateWirelessGatewayTaskDefinition");
 
-            var request = InstantiateClassGenerator.Execute<CreateWirelessGatewayTaskDefinitionRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateWirelessGatewayTaskDefinitionRequest>(operation);
             var marshaller = new CreateWirelessGatewayTaskDefinitionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3917,7 +3917,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateWirelessGatewayTaskDefinition");
 
-            var request = InstantiateClassGenerator.Execute<CreateWirelessGatewayTaskDefinitionRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateWirelessGatewayTaskDefinitionRequest>(operation);
             var marshaller = new CreateWirelessGatewayTaskDefinitionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3949,7 +3949,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteDestination");
 
-            var request = InstantiateClassGenerator.Execute<DeleteDestinationRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteDestinationRequest>(operation);
             var marshaller = new DeleteDestinationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -3979,7 +3979,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteDestination");
 
-            var request = InstantiateClassGenerator.Execute<DeleteDestinationRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteDestinationRequest>(operation);
             var marshaller = new DeleteDestinationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4011,7 +4011,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteDestination");
 
-            var request = InstantiateClassGenerator.Execute<DeleteDestinationRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteDestinationRequest>(operation);
             var marshaller = new DeleteDestinationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4043,7 +4043,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteDestination");
 
-            var request = InstantiateClassGenerator.Execute<DeleteDestinationRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteDestinationRequest>(operation);
             var marshaller = new DeleteDestinationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4075,7 +4075,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteDestination");
 
-            var request = InstantiateClassGenerator.Execute<DeleteDestinationRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteDestinationRequest>(operation);
             var marshaller = new DeleteDestinationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4107,7 +4107,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteDestination");
 
-            var request = InstantiateClassGenerator.Execute<DeleteDestinationRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteDestinationRequest>(operation);
             var marshaller = new DeleteDestinationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4139,7 +4139,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteDestination");
 
-            var request = InstantiateClassGenerator.Execute<DeleteDestinationRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteDestinationRequest>(operation);
             var marshaller = new DeleteDestinationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4171,7 +4171,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteDeviceProfile");
 
-            var request = InstantiateClassGenerator.Execute<DeleteDeviceProfileRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteDeviceProfileRequest>(operation);
             var marshaller = new DeleteDeviceProfileRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -4201,7 +4201,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteDeviceProfile");
 
-            var request = InstantiateClassGenerator.Execute<DeleteDeviceProfileRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteDeviceProfileRequest>(operation);
             var marshaller = new DeleteDeviceProfileRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4233,7 +4233,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteDeviceProfile");
 
-            var request = InstantiateClassGenerator.Execute<DeleteDeviceProfileRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteDeviceProfileRequest>(operation);
             var marshaller = new DeleteDeviceProfileRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4265,7 +4265,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteDeviceProfile");
 
-            var request = InstantiateClassGenerator.Execute<DeleteDeviceProfileRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteDeviceProfileRequest>(operation);
             var marshaller = new DeleteDeviceProfileRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4297,7 +4297,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteDeviceProfile");
 
-            var request = InstantiateClassGenerator.Execute<DeleteDeviceProfileRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteDeviceProfileRequest>(operation);
             var marshaller = new DeleteDeviceProfileRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4329,7 +4329,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteDeviceProfile");
 
-            var request = InstantiateClassGenerator.Execute<DeleteDeviceProfileRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteDeviceProfileRequest>(operation);
             var marshaller = new DeleteDeviceProfileRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4361,7 +4361,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteDeviceProfile");
 
-            var request = InstantiateClassGenerator.Execute<DeleteDeviceProfileRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteDeviceProfileRequest>(operation);
             var marshaller = new DeleteDeviceProfileRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4393,7 +4393,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteFuotaTask");
 
-            var request = InstantiateClassGenerator.Execute<DeleteFuotaTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteFuotaTaskRequest>(operation);
             var marshaller = new DeleteFuotaTaskRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -4423,7 +4423,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteFuotaTask");
 
-            var request = InstantiateClassGenerator.Execute<DeleteFuotaTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteFuotaTaskRequest>(operation);
             var marshaller = new DeleteFuotaTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4455,7 +4455,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteFuotaTask");
 
-            var request = InstantiateClassGenerator.Execute<DeleteFuotaTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteFuotaTaskRequest>(operation);
             var marshaller = new DeleteFuotaTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4487,7 +4487,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteFuotaTask");
 
-            var request = InstantiateClassGenerator.Execute<DeleteFuotaTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteFuotaTaskRequest>(operation);
             var marshaller = new DeleteFuotaTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4519,7 +4519,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteFuotaTask");
 
-            var request = InstantiateClassGenerator.Execute<DeleteFuotaTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteFuotaTaskRequest>(operation);
             var marshaller = new DeleteFuotaTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4551,7 +4551,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteFuotaTask");
 
-            var request = InstantiateClassGenerator.Execute<DeleteFuotaTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteFuotaTaskRequest>(operation);
             var marshaller = new DeleteFuotaTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4583,7 +4583,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteMulticastGroup");
 
-            var request = InstantiateClassGenerator.Execute<DeleteMulticastGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteMulticastGroupRequest>(operation);
             var marshaller = new DeleteMulticastGroupRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -4613,7 +4613,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteMulticastGroup");
 
-            var request = InstantiateClassGenerator.Execute<DeleteMulticastGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteMulticastGroupRequest>(operation);
             var marshaller = new DeleteMulticastGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4645,7 +4645,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteMulticastGroup");
 
-            var request = InstantiateClassGenerator.Execute<DeleteMulticastGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteMulticastGroupRequest>(operation);
             var marshaller = new DeleteMulticastGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4677,7 +4677,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteMulticastGroup");
 
-            var request = InstantiateClassGenerator.Execute<DeleteMulticastGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteMulticastGroupRequest>(operation);
             var marshaller = new DeleteMulticastGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4709,7 +4709,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteMulticastGroup");
 
-            var request = InstantiateClassGenerator.Execute<DeleteMulticastGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteMulticastGroupRequest>(operation);
             var marshaller = new DeleteMulticastGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4741,7 +4741,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteMulticastGroup");
 
-            var request = InstantiateClassGenerator.Execute<DeleteMulticastGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteMulticastGroupRequest>(operation);
             var marshaller = new DeleteMulticastGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4773,7 +4773,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteMulticastGroup");
 
-            var request = InstantiateClassGenerator.Execute<DeleteMulticastGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteMulticastGroupRequest>(operation);
             var marshaller = new DeleteMulticastGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4805,7 +4805,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteNetworkAnalyzerConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<DeleteNetworkAnalyzerConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteNetworkAnalyzerConfigurationRequest>(operation);
             var marshaller = new DeleteNetworkAnalyzerConfigurationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -4835,7 +4835,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteNetworkAnalyzerConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<DeleteNetworkAnalyzerConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteNetworkAnalyzerConfigurationRequest>(operation);
             var marshaller = new DeleteNetworkAnalyzerConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4867,7 +4867,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteNetworkAnalyzerConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<DeleteNetworkAnalyzerConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteNetworkAnalyzerConfigurationRequest>(operation);
             var marshaller = new DeleteNetworkAnalyzerConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4899,7 +4899,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteNetworkAnalyzerConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<DeleteNetworkAnalyzerConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteNetworkAnalyzerConfigurationRequest>(operation);
             var marshaller = new DeleteNetworkAnalyzerConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4931,7 +4931,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteNetworkAnalyzerConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<DeleteNetworkAnalyzerConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteNetworkAnalyzerConfigurationRequest>(operation);
             var marshaller = new DeleteNetworkAnalyzerConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4963,7 +4963,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteNetworkAnalyzerConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<DeleteNetworkAnalyzerConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteNetworkAnalyzerConfigurationRequest>(operation);
             var marshaller = new DeleteNetworkAnalyzerConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4995,7 +4995,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteNetworkAnalyzerConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<DeleteNetworkAnalyzerConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteNetworkAnalyzerConfigurationRequest>(operation);
             var marshaller = new DeleteNetworkAnalyzerConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5027,7 +5027,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteQueuedMessages");
 
-            var request = InstantiateClassGenerator.Execute<DeleteQueuedMessagesRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteQueuedMessagesRequest>(operation);
             var marshaller = new DeleteQueuedMessagesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -5057,7 +5057,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteQueuedMessages");
 
-            var request = InstantiateClassGenerator.Execute<DeleteQueuedMessagesRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteQueuedMessagesRequest>(operation);
             var marshaller = new DeleteQueuedMessagesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5089,7 +5089,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteQueuedMessages");
 
-            var request = InstantiateClassGenerator.Execute<DeleteQueuedMessagesRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteQueuedMessagesRequest>(operation);
             var marshaller = new DeleteQueuedMessagesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5121,7 +5121,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteQueuedMessages");
 
-            var request = InstantiateClassGenerator.Execute<DeleteQueuedMessagesRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteQueuedMessagesRequest>(operation);
             var marshaller = new DeleteQueuedMessagesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5153,7 +5153,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteQueuedMessages");
 
-            var request = InstantiateClassGenerator.Execute<DeleteQueuedMessagesRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteQueuedMessagesRequest>(operation);
             var marshaller = new DeleteQueuedMessagesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5185,7 +5185,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteQueuedMessages");
 
-            var request = InstantiateClassGenerator.Execute<DeleteQueuedMessagesRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteQueuedMessagesRequest>(operation);
             var marshaller = new DeleteQueuedMessagesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5217,7 +5217,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteServiceProfile");
 
-            var request = InstantiateClassGenerator.Execute<DeleteServiceProfileRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteServiceProfileRequest>(operation);
             var marshaller = new DeleteServiceProfileRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -5247,7 +5247,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteServiceProfile");
 
-            var request = InstantiateClassGenerator.Execute<DeleteServiceProfileRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteServiceProfileRequest>(operation);
             var marshaller = new DeleteServiceProfileRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5279,7 +5279,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteServiceProfile");
 
-            var request = InstantiateClassGenerator.Execute<DeleteServiceProfileRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteServiceProfileRequest>(operation);
             var marshaller = new DeleteServiceProfileRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5311,7 +5311,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteServiceProfile");
 
-            var request = InstantiateClassGenerator.Execute<DeleteServiceProfileRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteServiceProfileRequest>(operation);
             var marshaller = new DeleteServiceProfileRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5343,7 +5343,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteServiceProfile");
 
-            var request = InstantiateClassGenerator.Execute<DeleteServiceProfileRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteServiceProfileRequest>(operation);
             var marshaller = new DeleteServiceProfileRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5375,7 +5375,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteServiceProfile");
 
-            var request = InstantiateClassGenerator.Execute<DeleteServiceProfileRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteServiceProfileRequest>(operation);
             var marshaller = new DeleteServiceProfileRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5407,7 +5407,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteServiceProfile");
 
-            var request = InstantiateClassGenerator.Execute<DeleteServiceProfileRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteServiceProfileRequest>(operation);
             var marshaller = new DeleteServiceProfileRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5439,7 +5439,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteWirelessDevice");
 
-            var request = InstantiateClassGenerator.Execute<DeleteWirelessDeviceRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteWirelessDeviceRequest>(operation);
             var marshaller = new DeleteWirelessDeviceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -5469,7 +5469,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteWirelessDevice");
 
-            var request = InstantiateClassGenerator.Execute<DeleteWirelessDeviceRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteWirelessDeviceRequest>(operation);
             var marshaller = new DeleteWirelessDeviceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5501,7 +5501,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteWirelessDevice");
 
-            var request = InstantiateClassGenerator.Execute<DeleteWirelessDeviceRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteWirelessDeviceRequest>(operation);
             var marshaller = new DeleteWirelessDeviceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5533,7 +5533,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteWirelessDevice");
 
-            var request = InstantiateClassGenerator.Execute<DeleteWirelessDeviceRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteWirelessDeviceRequest>(operation);
             var marshaller = new DeleteWirelessDeviceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5565,7 +5565,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteWirelessDevice");
 
-            var request = InstantiateClassGenerator.Execute<DeleteWirelessDeviceRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteWirelessDeviceRequest>(operation);
             var marshaller = new DeleteWirelessDeviceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5597,7 +5597,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteWirelessDevice");
 
-            var request = InstantiateClassGenerator.Execute<DeleteWirelessDeviceRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteWirelessDeviceRequest>(operation);
             var marshaller = new DeleteWirelessDeviceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5629,7 +5629,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteWirelessDeviceImportTask");
 
-            var request = InstantiateClassGenerator.Execute<DeleteWirelessDeviceImportTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteWirelessDeviceImportTaskRequest>(operation);
             var marshaller = new DeleteWirelessDeviceImportTaskRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -5659,7 +5659,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteWirelessDeviceImportTask");
 
-            var request = InstantiateClassGenerator.Execute<DeleteWirelessDeviceImportTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteWirelessDeviceImportTaskRequest>(operation);
             var marshaller = new DeleteWirelessDeviceImportTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5691,7 +5691,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteWirelessDeviceImportTask");
 
-            var request = InstantiateClassGenerator.Execute<DeleteWirelessDeviceImportTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteWirelessDeviceImportTaskRequest>(operation);
             var marshaller = new DeleteWirelessDeviceImportTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5723,7 +5723,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteWirelessDeviceImportTask");
 
-            var request = InstantiateClassGenerator.Execute<DeleteWirelessDeviceImportTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteWirelessDeviceImportTaskRequest>(operation);
             var marshaller = new DeleteWirelessDeviceImportTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5755,7 +5755,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteWirelessDeviceImportTask");
 
-            var request = InstantiateClassGenerator.Execute<DeleteWirelessDeviceImportTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteWirelessDeviceImportTaskRequest>(operation);
             var marshaller = new DeleteWirelessDeviceImportTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5787,7 +5787,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteWirelessDeviceImportTask");
 
-            var request = InstantiateClassGenerator.Execute<DeleteWirelessDeviceImportTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteWirelessDeviceImportTaskRequest>(operation);
             var marshaller = new DeleteWirelessDeviceImportTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5819,7 +5819,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteWirelessDeviceImportTask");
 
-            var request = InstantiateClassGenerator.Execute<DeleteWirelessDeviceImportTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteWirelessDeviceImportTaskRequest>(operation);
             var marshaller = new DeleteWirelessDeviceImportTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5851,7 +5851,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteWirelessGateway");
 
-            var request = InstantiateClassGenerator.Execute<DeleteWirelessGatewayRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteWirelessGatewayRequest>(operation);
             var marshaller = new DeleteWirelessGatewayRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -5881,7 +5881,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteWirelessGateway");
 
-            var request = InstantiateClassGenerator.Execute<DeleteWirelessGatewayRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteWirelessGatewayRequest>(operation);
             var marshaller = new DeleteWirelessGatewayRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5913,7 +5913,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteWirelessGateway");
 
-            var request = InstantiateClassGenerator.Execute<DeleteWirelessGatewayRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteWirelessGatewayRequest>(operation);
             var marshaller = new DeleteWirelessGatewayRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5945,7 +5945,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteWirelessGateway");
 
-            var request = InstantiateClassGenerator.Execute<DeleteWirelessGatewayRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteWirelessGatewayRequest>(operation);
             var marshaller = new DeleteWirelessGatewayRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5977,7 +5977,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteWirelessGateway");
 
-            var request = InstantiateClassGenerator.Execute<DeleteWirelessGatewayRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteWirelessGatewayRequest>(operation);
             var marshaller = new DeleteWirelessGatewayRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6009,7 +6009,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteWirelessGateway");
 
-            var request = InstantiateClassGenerator.Execute<DeleteWirelessGatewayRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteWirelessGatewayRequest>(operation);
             var marshaller = new DeleteWirelessGatewayRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6041,7 +6041,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteWirelessGatewayTask");
 
-            var request = InstantiateClassGenerator.Execute<DeleteWirelessGatewayTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteWirelessGatewayTaskRequest>(operation);
             var marshaller = new DeleteWirelessGatewayTaskRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -6071,7 +6071,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteWirelessGatewayTask");
 
-            var request = InstantiateClassGenerator.Execute<DeleteWirelessGatewayTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteWirelessGatewayTaskRequest>(operation);
             var marshaller = new DeleteWirelessGatewayTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6103,7 +6103,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteWirelessGatewayTask");
 
-            var request = InstantiateClassGenerator.Execute<DeleteWirelessGatewayTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteWirelessGatewayTaskRequest>(operation);
             var marshaller = new DeleteWirelessGatewayTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6135,7 +6135,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteWirelessGatewayTask");
 
-            var request = InstantiateClassGenerator.Execute<DeleteWirelessGatewayTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteWirelessGatewayTaskRequest>(operation);
             var marshaller = new DeleteWirelessGatewayTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6167,7 +6167,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteWirelessGatewayTask");
 
-            var request = InstantiateClassGenerator.Execute<DeleteWirelessGatewayTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteWirelessGatewayTaskRequest>(operation);
             var marshaller = new DeleteWirelessGatewayTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6199,7 +6199,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteWirelessGatewayTask");
 
-            var request = InstantiateClassGenerator.Execute<DeleteWirelessGatewayTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteWirelessGatewayTaskRequest>(operation);
             var marshaller = new DeleteWirelessGatewayTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6231,7 +6231,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteWirelessGatewayTaskDefinition");
 
-            var request = InstantiateClassGenerator.Execute<DeleteWirelessGatewayTaskDefinitionRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteWirelessGatewayTaskDefinitionRequest>(operation);
             var marshaller = new DeleteWirelessGatewayTaskDefinitionRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -6261,7 +6261,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteWirelessGatewayTaskDefinition");
 
-            var request = InstantiateClassGenerator.Execute<DeleteWirelessGatewayTaskDefinitionRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteWirelessGatewayTaskDefinitionRequest>(operation);
             var marshaller = new DeleteWirelessGatewayTaskDefinitionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6293,7 +6293,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteWirelessGatewayTaskDefinition");
 
-            var request = InstantiateClassGenerator.Execute<DeleteWirelessGatewayTaskDefinitionRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteWirelessGatewayTaskDefinitionRequest>(operation);
             var marshaller = new DeleteWirelessGatewayTaskDefinitionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6325,7 +6325,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteWirelessGatewayTaskDefinition");
 
-            var request = InstantiateClassGenerator.Execute<DeleteWirelessGatewayTaskDefinitionRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteWirelessGatewayTaskDefinitionRequest>(operation);
             var marshaller = new DeleteWirelessGatewayTaskDefinitionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6357,7 +6357,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteWirelessGatewayTaskDefinition");
 
-            var request = InstantiateClassGenerator.Execute<DeleteWirelessGatewayTaskDefinitionRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteWirelessGatewayTaskDefinitionRequest>(operation);
             var marshaller = new DeleteWirelessGatewayTaskDefinitionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6389,7 +6389,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteWirelessGatewayTaskDefinition");
 
-            var request = InstantiateClassGenerator.Execute<DeleteWirelessGatewayTaskDefinitionRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteWirelessGatewayTaskDefinitionRequest>(operation);
             var marshaller = new DeleteWirelessGatewayTaskDefinitionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6421,7 +6421,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeregisterWirelessDevice");
 
-            var request = InstantiateClassGenerator.Execute<DeregisterWirelessDeviceRequest>();
+            var request = InstantiateClassGenerator.Execute<DeregisterWirelessDeviceRequest>(operation);
             var marshaller = new DeregisterWirelessDeviceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -6451,7 +6451,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeregisterWirelessDevice");
 
-            var request = InstantiateClassGenerator.Execute<DeregisterWirelessDeviceRequest>();
+            var request = InstantiateClassGenerator.Execute<DeregisterWirelessDeviceRequest>(operation);
             var marshaller = new DeregisterWirelessDeviceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6483,7 +6483,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeregisterWirelessDevice");
 
-            var request = InstantiateClassGenerator.Execute<DeregisterWirelessDeviceRequest>();
+            var request = InstantiateClassGenerator.Execute<DeregisterWirelessDeviceRequest>(operation);
             var marshaller = new DeregisterWirelessDeviceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6515,7 +6515,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeregisterWirelessDevice");
 
-            var request = InstantiateClassGenerator.Execute<DeregisterWirelessDeviceRequest>();
+            var request = InstantiateClassGenerator.Execute<DeregisterWirelessDeviceRequest>(operation);
             var marshaller = new DeregisterWirelessDeviceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6547,7 +6547,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeregisterWirelessDevice");
 
-            var request = InstantiateClassGenerator.Execute<DeregisterWirelessDeviceRequest>();
+            var request = InstantiateClassGenerator.Execute<DeregisterWirelessDeviceRequest>(operation);
             var marshaller = new DeregisterWirelessDeviceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6579,7 +6579,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DisassociateAwsAccountFromPartnerAccount");
 
-            var request = InstantiateClassGenerator.Execute<DisassociateAwsAccountFromPartnerAccountRequest>();
+            var request = InstantiateClassGenerator.Execute<DisassociateAwsAccountFromPartnerAccountRequest>(operation);
             var marshaller = new DisassociateAwsAccountFromPartnerAccountRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -6609,7 +6609,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DisassociateAwsAccountFromPartnerAccount");
 
-            var request = InstantiateClassGenerator.Execute<DisassociateAwsAccountFromPartnerAccountRequest>();
+            var request = InstantiateClassGenerator.Execute<DisassociateAwsAccountFromPartnerAccountRequest>(operation);
             var marshaller = new DisassociateAwsAccountFromPartnerAccountRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6641,7 +6641,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DisassociateAwsAccountFromPartnerAccount");
 
-            var request = InstantiateClassGenerator.Execute<DisassociateAwsAccountFromPartnerAccountRequest>();
+            var request = InstantiateClassGenerator.Execute<DisassociateAwsAccountFromPartnerAccountRequest>(operation);
             var marshaller = new DisassociateAwsAccountFromPartnerAccountRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6673,7 +6673,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DisassociateAwsAccountFromPartnerAccount");
 
-            var request = InstantiateClassGenerator.Execute<DisassociateAwsAccountFromPartnerAccountRequest>();
+            var request = InstantiateClassGenerator.Execute<DisassociateAwsAccountFromPartnerAccountRequest>(operation);
             var marshaller = new DisassociateAwsAccountFromPartnerAccountRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6705,7 +6705,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DisassociateAwsAccountFromPartnerAccount");
 
-            var request = InstantiateClassGenerator.Execute<DisassociateAwsAccountFromPartnerAccountRequest>();
+            var request = InstantiateClassGenerator.Execute<DisassociateAwsAccountFromPartnerAccountRequest>(operation);
             var marshaller = new DisassociateAwsAccountFromPartnerAccountRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6737,7 +6737,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DisassociateMulticastGroupFromFuotaTask");
 
-            var request = InstantiateClassGenerator.Execute<DisassociateMulticastGroupFromFuotaTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<DisassociateMulticastGroupFromFuotaTaskRequest>(operation);
             var marshaller = new DisassociateMulticastGroupFromFuotaTaskRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -6767,7 +6767,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DisassociateMulticastGroupFromFuotaTask");
 
-            var request = InstantiateClassGenerator.Execute<DisassociateMulticastGroupFromFuotaTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<DisassociateMulticastGroupFromFuotaTaskRequest>(operation);
             var marshaller = new DisassociateMulticastGroupFromFuotaTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6799,7 +6799,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DisassociateMulticastGroupFromFuotaTask");
 
-            var request = InstantiateClassGenerator.Execute<DisassociateMulticastGroupFromFuotaTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<DisassociateMulticastGroupFromFuotaTaskRequest>(operation);
             var marshaller = new DisassociateMulticastGroupFromFuotaTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6831,7 +6831,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DisassociateMulticastGroupFromFuotaTask");
 
-            var request = InstantiateClassGenerator.Execute<DisassociateMulticastGroupFromFuotaTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<DisassociateMulticastGroupFromFuotaTaskRequest>(operation);
             var marshaller = new DisassociateMulticastGroupFromFuotaTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6863,7 +6863,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DisassociateMulticastGroupFromFuotaTask");
 
-            var request = InstantiateClassGenerator.Execute<DisassociateMulticastGroupFromFuotaTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<DisassociateMulticastGroupFromFuotaTaskRequest>(operation);
             var marshaller = new DisassociateMulticastGroupFromFuotaTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6895,7 +6895,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DisassociateMulticastGroupFromFuotaTask");
 
-            var request = InstantiateClassGenerator.Execute<DisassociateMulticastGroupFromFuotaTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<DisassociateMulticastGroupFromFuotaTaskRequest>(operation);
             var marshaller = new DisassociateMulticastGroupFromFuotaTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6927,7 +6927,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DisassociateWirelessDeviceFromFuotaTask");
 
-            var request = InstantiateClassGenerator.Execute<DisassociateWirelessDeviceFromFuotaTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<DisassociateWirelessDeviceFromFuotaTaskRequest>(operation);
             var marshaller = new DisassociateWirelessDeviceFromFuotaTaskRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -6957,7 +6957,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DisassociateWirelessDeviceFromFuotaTask");
 
-            var request = InstantiateClassGenerator.Execute<DisassociateWirelessDeviceFromFuotaTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<DisassociateWirelessDeviceFromFuotaTaskRequest>(operation);
             var marshaller = new DisassociateWirelessDeviceFromFuotaTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6989,7 +6989,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DisassociateWirelessDeviceFromFuotaTask");
 
-            var request = InstantiateClassGenerator.Execute<DisassociateWirelessDeviceFromFuotaTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<DisassociateWirelessDeviceFromFuotaTaskRequest>(operation);
             var marshaller = new DisassociateWirelessDeviceFromFuotaTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -7021,7 +7021,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DisassociateWirelessDeviceFromFuotaTask");
 
-            var request = InstantiateClassGenerator.Execute<DisassociateWirelessDeviceFromFuotaTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<DisassociateWirelessDeviceFromFuotaTaskRequest>(operation);
             var marshaller = new DisassociateWirelessDeviceFromFuotaTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -7053,7 +7053,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DisassociateWirelessDeviceFromFuotaTask");
 
-            var request = InstantiateClassGenerator.Execute<DisassociateWirelessDeviceFromFuotaTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<DisassociateWirelessDeviceFromFuotaTaskRequest>(operation);
             var marshaller = new DisassociateWirelessDeviceFromFuotaTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -7085,7 +7085,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DisassociateWirelessDeviceFromFuotaTask");
 
-            var request = InstantiateClassGenerator.Execute<DisassociateWirelessDeviceFromFuotaTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<DisassociateWirelessDeviceFromFuotaTaskRequest>(operation);
             var marshaller = new DisassociateWirelessDeviceFromFuotaTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -7117,7 +7117,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DisassociateWirelessDeviceFromFuotaTask");
 
-            var request = InstantiateClassGenerator.Execute<DisassociateWirelessDeviceFromFuotaTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<DisassociateWirelessDeviceFromFuotaTaskRequest>(operation);
             var marshaller = new DisassociateWirelessDeviceFromFuotaTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -7149,7 +7149,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DisassociateWirelessDeviceFromMulticastGroup");
 
-            var request = InstantiateClassGenerator.Execute<DisassociateWirelessDeviceFromMulticastGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<DisassociateWirelessDeviceFromMulticastGroupRequest>(operation);
             var marshaller = new DisassociateWirelessDeviceFromMulticastGroupRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -7179,7 +7179,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DisassociateWirelessDeviceFromMulticastGroup");
 
-            var request = InstantiateClassGenerator.Execute<DisassociateWirelessDeviceFromMulticastGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<DisassociateWirelessDeviceFromMulticastGroupRequest>(operation);
             var marshaller = new DisassociateWirelessDeviceFromMulticastGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -7211,7 +7211,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DisassociateWirelessDeviceFromMulticastGroup");
 
-            var request = InstantiateClassGenerator.Execute<DisassociateWirelessDeviceFromMulticastGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<DisassociateWirelessDeviceFromMulticastGroupRequest>(operation);
             var marshaller = new DisassociateWirelessDeviceFromMulticastGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -7243,7 +7243,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DisassociateWirelessDeviceFromMulticastGroup");
 
-            var request = InstantiateClassGenerator.Execute<DisassociateWirelessDeviceFromMulticastGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<DisassociateWirelessDeviceFromMulticastGroupRequest>(operation);
             var marshaller = new DisassociateWirelessDeviceFromMulticastGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -7275,7 +7275,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DisassociateWirelessDeviceFromMulticastGroup");
 
-            var request = InstantiateClassGenerator.Execute<DisassociateWirelessDeviceFromMulticastGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<DisassociateWirelessDeviceFromMulticastGroupRequest>(operation);
             var marshaller = new DisassociateWirelessDeviceFromMulticastGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -7307,7 +7307,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DisassociateWirelessDeviceFromMulticastGroup");
 
-            var request = InstantiateClassGenerator.Execute<DisassociateWirelessDeviceFromMulticastGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<DisassociateWirelessDeviceFromMulticastGroupRequest>(operation);
             var marshaller = new DisassociateWirelessDeviceFromMulticastGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -7339,7 +7339,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DisassociateWirelessDeviceFromThing");
 
-            var request = InstantiateClassGenerator.Execute<DisassociateWirelessDeviceFromThingRequest>();
+            var request = InstantiateClassGenerator.Execute<DisassociateWirelessDeviceFromThingRequest>(operation);
             var marshaller = new DisassociateWirelessDeviceFromThingRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -7369,7 +7369,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DisassociateWirelessDeviceFromThing");
 
-            var request = InstantiateClassGenerator.Execute<DisassociateWirelessDeviceFromThingRequest>();
+            var request = InstantiateClassGenerator.Execute<DisassociateWirelessDeviceFromThingRequest>(operation);
             var marshaller = new DisassociateWirelessDeviceFromThingRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -7401,7 +7401,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DisassociateWirelessDeviceFromThing");
 
-            var request = InstantiateClassGenerator.Execute<DisassociateWirelessDeviceFromThingRequest>();
+            var request = InstantiateClassGenerator.Execute<DisassociateWirelessDeviceFromThingRequest>(operation);
             var marshaller = new DisassociateWirelessDeviceFromThingRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -7433,7 +7433,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DisassociateWirelessDeviceFromThing");
 
-            var request = InstantiateClassGenerator.Execute<DisassociateWirelessDeviceFromThingRequest>();
+            var request = InstantiateClassGenerator.Execute<DisassociateWirelessDeviceFromThingRequest>(operation);
             var marshaller = new DisassociateWirelessDeviceFromThingRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -7465,7 +7465,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DisassociateWirelessDeviceFromThing");
 
-            var request = InstantiateClassGenerator.Execute<DisassociateWirelessDeviceFromThingRequest>();
+            var request = InstantiateClassGenerator.Execute<DisassociateWirelessDeviceFromThingRequest>(operation);
             var marshaller = new DisassociateWirelessDeviceFromThingRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -7497,7 +7497,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DisassociateWirelessDeviceFromThing");
 
-            var request = InstantiateClassGenerator.Execute<DisassociateWirelessDeviceFromThingRequest>();
+            var request = InstantiateClassGenerator.Execute<DisassociateWirelessDeviceFromThingRequest>(operation);
             var marshaller = new DisassociateWirelessDeviceFromThingRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -7529,7 +7529,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DisassociateWirelessDeviceFromThing");
 
-            var request = InstantiateClassGenerator.Execute<DisassociateWirelessDeviceFromThingRequest>();
+            var request = InstantiateClassGenerator.Execute<DisassociateWirelessDeviceFromThingRequest>(operation);
             var marshaller = new DisassociateWirelessDeviceFromThingRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -7561,7 +7561,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DisassociateWirelessGatewayFromCertificate");
 
-            var request = InstantiateClassGenerator.Execute<DisassociateWirelessGatewayFromCertificateRequest>();
+            var request = InstantiateClassGenerator.Execute<DisassociateWirelessGatewayFromCertificateRequest>(operation);
             var marshaller = new DisassociateWirelessGatewayFromCertificateRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -7591,7 +7591,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DisassociateWirelessGatewayFromCertificate");
 
-            var request = InstantiateClassGenerator.Execute<DisassociateWirelessGatewayFromCertificateRequest>();
+            var request = InstantiateClassGenerator.Execute<DisassociateWirelessGatewayFromCertificateRequest>(operation);
             var marshaller = new DisassociateWirelessGatewayFromCertificateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -7623,7 +7623,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DisassociateWirelessGatewayFromCertificate");
 
-            var request = InstantiateClassGenerator.Execute<DisassociateWirelessGatewayFromCertificateRequest>();
+            var request = InstantiateClassGenerator.Execute<DisassociateWirelessGatewayFromCertificateRequest>(operation);
             var marshaller = new DisassociateWirelessGatewayFromCertificateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -7655,7 +7655,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DisassociateWirelessGatewayFromCertificate");
 
-            var request = InstantiateClassGenerator.Execute<DisassociateWirelessGatewayFromCertificateRequest>();
+            var request = InstantiateClassGenerator.Execute<DisassociateWirelessGatewayFromCertificateRequest>(operation);
             var marshaller = new DisassociateWirelessGatewayFromCertificateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -7687,7 +7687,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DisassociateWirelessGatewayFromCertificate");
 
-            var request = InstantiateClassGenerator.Execute<DisassociateWirelessGatewayFromCertificateRequest>();
+            var request = InstantiateClassGenerator.Execute<DisassociateWirelessGatewayFromCertificateRequest>(operation);
             var marshaller = new DisassociateWirelessGatewayFromCertificateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -7719,7 +7719,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DisassociateWirelessGatewayFromCertificate");
 
-            var request = InstantiateClassGenerator.Execute<DisassociateWirelessGatewayFromCertificateRequest>();
+            var request = InstantiateClassGenerator.Execute<DisassociateWirelessGatewayFromCertificateRequest>(operation);
             var marshaller = new DisassociateWirelessGatewayFromCertificateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -7751,7 +7751,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DisassociateWirelessGatewayFromThing");
 
-            var request = InstantiateClassGenerator.Execute<DisassociateWirelessGatewayFromThingRequest>();
+            var request = InstantiateClassGenerator.Execute<DisassociateWirelessGatewayFromThingRequest>(operation);
             var marshaller = new DisassociateWirelessGatewayFromThingRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -7781,7 +7781,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DisassociateWirelessGatewayFromThing");
 
-            var request = InstantiateClassGenerator.Execute<DisassociateWirelessGatewayFromThingRequest>();
+            var request = InstantiateClassGenerator.Execute<DisassociateWirelessGatewayFromThingRequest>(operation);
             var marshaller = new DisassociateWirelessGatewayFromThingRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -7813,7 +7813,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DisassociateWirelessGatewayFromThing");
 
-            var request = InstantiateClassGenerator.Execute<DisassociateWirelessGatewayFromThingRequest>();
+            var request = InstantiateClassGenerator.Execute<DisassociateWirelessGatewayFromThingRequest>(operation);
             var marshaller = new DisassociateWirelessGatewayFromThingRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -7845,7 +7845,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DisassociateWirelessGatewayFromThing");
 
-            var request = InstantiateClassGenerator.Execute<DisassociateWirelessGatewayFromThingRequest>();
+            var request = InstantiateClassGenerator.Execute<DisassociateWirelessGatewayFromThingRequest>(operation);
             var marshaller = new DisassociateWirelessGatewayFromThingRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -7877,7 +7877,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DisassociateWirelessGatewayFromThing");
 
-            var request = InstantiateClassGenerator.Execute<DisassociateWirelessGatewayFromThingRequest>();
+            var request = InstantiateClassGenerator.Execute<DisassociateWirelessGatewayFromThingRequest>(operation);
             var marshaller = new DisassociateWirelessGatewayFromThingRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -7909,7 +7909,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DisassociateWirelessGatewayFromThing");
 
-            var request = InstantiateClassGenerator.Execute<DisassociateWirelessGatewayFromThingRequest>();
+            var request = InstantiateClassGenerator.Execute<DisassociateWirelessGatewayFromThingRequest>(operation);
             var marshaller = new DisassociateWirelessGatewayFromThingRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -7941,7 +7941,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DisassociateWirelessGatewayFromThing");
 
-            var request = InstantiateClassGenerator.Execute<DisassociateWirelessGatewayFromThingRequest>();
+            var request = InstantiateClassGenerator.Execute<DisassociateWirelessGatewayFromThingRequest>(operation);
             var marshaller = new DisassociateWirelessGatewayFromThingRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -7973,7 +7973,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetDestination");
 
-            var request = InstantiateClassGenerator.Execute<GetDestinationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetDestinationRequest>(operation);
             var marshaller = new GetDestinationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -8003,7 +8003,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetDestination");
 
-            var request = InstantiateClassGenerator.Execute<GetDestinationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetDestinationRequest>(operation);
             var marshaller = new GetDestinationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -8035,7 +8035,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetDestination");
 
-            var request = InstantiateClassGenerator.Execute<GetDestinationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetDestinationRequest>(operation);
             var marshaller = new GetDestinationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -8067,7 +8067,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetDestination");
 
-            var request = InstantiateClassGenerator.Execute<GetDestinationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetDestinationRequest>(operation);
             var marshaller = new GetDestinationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -8099,7 +8099,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetDestination");
 
-            var request = InstantiateClassGenerator.Execute<GetDestinationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetDestinationRequest>(operation);
             var marshaller = new GetDestinationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -8131,7 +8131,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetDestination");
 
-            var request = InstantiateClassGenerator.Execute<GetDestinationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetDestinationRequest>(operation);
             var marshaller = new GetDestinationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -8163,7 +8163,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetDeviceProfile");
 
-            var request = InstantiateClassGenerator.Execute<GetDeviceProfileRequest>();
+            var request = InstantiateClassGenerator.Execute<GetDeviceProfileRequest>(operation);
             var marshaller = new GetDeviceProfileRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -8193,7 +8193,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetDeviceProfile");
 
-            var request = InstantiateClassGenerator.Execute<GetDeviceProfileRequest>();
+            var request = InstantiateClassGenerator.Execute<GetDeviceProfileRequest>(operation);
             var marshaller = new GetDeviceProfileRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -8225,7 +8225,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetDeviceProfile");
 
-            var request = InstantiateClassGenerator.Execute<GetDeviceProfileRequest>();
+            var request = InstantiateClassGenerator.Execute<GetDeviceProfileRequest>(operation);
             var marshaller = new GetDeviceProfileRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -8257,7 +8257,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetDeviceProfile");
 
-            var request = InstantiateClassGenerator.Execute<GetDeviceProfileRequest>();
+            var request = InstantiateClassGenerator.Execute<GetDeviceProfileRequest>(operation);
             var marshaller = new GetDeviceProfileRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -8289,7 +8289,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetDeviceProfile");
 
-            var request = InstantiateClassGenerator.Execute<GetDeviceProfileRequest>();
+            var request = InstantiateClassGenerator.Execute<GetDeviceProfileRequest>(operation);
             var marshaller = new GetDeviceProfileRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -8321,7 +8321,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetDeviceProfile");
 
-            var request = InstantiateClassGenerator.Execute<GetDeviceProfileRequest>();
+            var request = InstantiateClassGenerator.Execute<GetDeviceProfileRequest>(operation);
             var marshaller = new GetDeviceProfileRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -8353,7 +8353,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetEventConfigurationByResourceTypes");
 
-            var request = InstantiateClassGenerator.Execute<GetEventConfigurationByResourceTypesRequest>();
+            var request = InstantiateClassGenerator.Execute<GetEventConfigurationByResourceTypesRequest>(operation);
             var marshaller = new GetEventConfigurationByResourceTypesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -8383,7 +8383,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetEventConfigurationByResourceTypes");
 
-            var request = InstantiateClassGenerator.Execute<GetEventConfigurationByResourceTypesRequest>();
+            var request = InstantiateClassGenerator.Execute<GetEventConfigurationByResourceTypesRequest>(operation);
             var marshaller = new GetEventConfigurationByResourceTypesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -8415,7 +8415,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetEventConfigurationByResourceTypes");
 
-            var request = InstantiateClassGenerator.Execute<GetEventConfigurationByResourceTypesRequest>();
+            var request = InstantiateClassGenerator.Execute<GetEventConfigurationByResourceTypesRequest>(operation);
             var marshaller = new GetEventConfigurationByResourceTypesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -8447,7 +8447,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetEventConfigurationByResourceTypes");
 
-            var request = InstantiateClassGenerator.Execute<GetEventConfigurationByResourceTypesRequest>();
+            var request = InstantiateClassGenerator.Execute<GetEventConfigurationByResourceTypesRequest>(operation);
             var marshaller = new GetEventConfigurationByResourceTypesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -8479,7 +8479,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetFuotaTask");
 
-            var request = InstantiateClassGenerator.Execute<GetFuotaTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<GetFuotaTaskRequest>(operation);
             var marshaller = new GetFuotaTaskRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -8509,7 +8509,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetFuotaTask");
 
-            var request = InstantiateClassGenerator.Execute<GetFuotaTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<GetFuotaTaskRequest>(operation);
             var marshaller = new GetFuotaTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -8541,7 +8541,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetFuotaTask");
 
-            var request = InstantiateClassGenerator.Execute<GetFuotaTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<GetFuotaTaskRequest>(operation);
             var marshaller = new GetFuotaTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -8573,7 +8573,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetFuotaTask");
 
-            var request = InstantiateClassGenerator.Execute<GetFuotaTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<GetFuotaTaskRequest>(operation);
             var marshaller = new GetFuotaTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -8605,7 +8605,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetFuotaTask");
 
-            var request = InstantiateClassGenerator.Execute<GetFuotaTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<GetFuotaTaskRequest>(operation);
             var marshaller = new GetFuotaTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -8637,7 +8637,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetFuotaTask");
 
-            var request = InstantiateClassGenerator.Execute<GetFuotaTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<GetFuotaTaskRequest>(operation);
             var marshaller = new GetFuotaTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -8669,7 +8669,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetLogLevelsByResourceTypes");
 
-            var request = InstantiateClassGenerator.Execute<GetLogLevelsByResourceTypesRequest>();
+            var request = InstantiateClassGenerator.Execute<GetLogLevelsByResourceTypesRequest>(operation);
             var marshaller = new GetLogLevelsByResourceTypesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -8699,7 +8699,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetLogLevelsByResourceTypes");
 
-            var request = InstantiateClassGenerator.Execute<GetLogLevelsByResourceTypesRequest>();
+            var request = InstantiateClassGenerator.Execute<GetLogLevelsByResourceTypesRequest>(operation);
             var marshaller = new GetLogLevelsByResourceTypesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -8731,7 +8731,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetLogLevelsByResourceTypes");
 
-            var request = InstantiateClassGenerator.Execute<GetLogLevelsByResourceTypesRequest>();
+            var request = InstantiateClassGenerator.Execute<GetLogLevelsByResourceTypesRequest>(operation);
             var marshaller = new GetLogLevelsByResourceTypesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -8763,7 +8763,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetLogLevelsByResourceTypes");
 
-            var request = InstantiateClassGenerator.Execute<GetLogLevelsByResourceTypesRequest>();
+            var request = InstantiateClassGenerator.Execute<GetLogLevelsByResourceTypesRequest>(operation);
             var marshaller = new GetLogLevelsByResourceTypesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -8795,7 +8795,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetLogLevelsByResourceTypes");
 
-            var request = InstantiateClassGenerator.Execute<GetLogLevelsByResourceTypesRequest>();
+            var request = InstantiateClassGenerator.Execute<GetLogLevelsByResourceTypesRequest>(operation);
             var marshaller = new GetLogLevelsByResourceTypesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -8827,7 +8827,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetLogLevelsByResourceTypes");
 
-            var request = InstantiateClassGenerator.Execute<GetLogLevelsByResourceTypesRequest>();
+            var request = InstantiateClassGenerator.Execute<GetLogLevelsByResourceTypesRequest>(operation);
             var marshaller = new GetLogLevelsByResourceTypesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -8859,7 +8859,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetMulticastGroup");
 
-            var request = InstantiateClassGenerator.Execute<GetMulticastGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<GetMulticastGroupRequest>(operation);
             var marshaller = new GetMulticastGroupRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -8889,7 +8889,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetMulticastGroup");
 
-            var request = InstantiateClassGenerator.Execute<GetMulticastGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<GetMulticastGroupRequest>(operation);
             var marshaller = new GetMulticastGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -8921,7 +8921,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetMulticastGroup");
 
-            var request = InstantiateClassGenerator.Execute<GetMulticastGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<GetMulticastGroupRequest>(operation);
             var marshaller = new GetMulticastGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -8953,7 +8953,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetMulticastGroup");
 
-            var request = InstantiateClassGenerator.Execute<GetMulticastGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<GetMulticastGroupRequest>(operation);
             var marshaller = new GetMulticastGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -8985,7 +8985,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetMulticastGroup");
 
-            var request = InstantiateClassGenerator.Execute<GetMulticastGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<GetMulticastGroupRequest>(operation);
             var marshaller = new GetMulticastGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -9017,7 +9017,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetMulticastGroup");
 
-            var request = InstantiateClassGenerator.Execute<GetMulticastGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<GetMulticastGroupRequest>(operation);
             var marshaller = new GetMulticastGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -9049,7 +9049,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetMulticastGroupSession");
 
-            var request = InstantiateClassGenerator.Execute<GetMulticastGroupSessionRequest>();
+            var request = InstantiateClassGenerator.Execute<GetMulticastGroupSessionRequest>(operation);
             var marshaller = new GetMulticastGroupSessionRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -9079,7 +9079,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetMulticastGroupSession");
 
-            var request = InstantiateClassGenerator.Execute<GetMulticastGroupSessionRequest>();
+            var request = InstantiateClassGenerator.Execute<GetMulticastGroupSessionRequest>(operation);
             var marshaller = new GetMulticastGroupSessionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -9111,7 +9111,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetMulticastGroupSession");
 
-            var request = InstantiateClassGenerator.Execute<GetMulticastGroupSessionRequest>();
+            var request = InstantiateClassGenerator.Execute<GetMulticastGroupSessionRequest>(operation);
             var marshaller = new GetMulticastGroupSessionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -9143,7 +9143,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetMulticastGroupSession");
 
-            var request = InstantiateClassGenerator.Execute<GetMulticastGroupSessionRequest>();
+            var request = InstantiateClassGenerator.Execute<GetMulticastGroupSessionRequest>(operation);
             var marshaller = new GetMulticastGroupSessionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -9175,7 +9175,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetMulticastGroupSession");
 
-            var request = InstantiateClassGenerator.Execute<GetMulticastGroupSessionRequest>();
+            var request = InstantiateClassGenerator.Execute<GetMulticastGroupSessionRequest>(operation);
             var marshaller = new GetMulticastGroupSessionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -9207,7 +9207,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetMulticastGroupSession");
 
-            var request = InstantiateClassGenerator.Execute<GetMulticastGroupSessionRequest>();
+            var request = InstantiateClassGenerator.Execute<GetMulticastGroupSessionRequest>(operation);
             var marshaller = new GetMulticastGroupSessionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -9239,7 +9239,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetNetworkAnalyzerConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<GetNetworkAnalyzerConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetNetworkAnalyzerConfigurationRequest>(operation);
             var marshaller = new GetNetworkAnalyzerConfigurationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -9269,7 +9269,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetNetworkAnalyzerConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<GetNetworkAnalyzerConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetNetworkAnalyzerConfigurationRequest>(operation);
             var marshaller = new GetNetworkAnalyzerConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -9301,7 +9301,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetNetworkAnalyzerConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<GetNetworkAnalyzerConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetNetworkAnalyzerConfigurationRequest>(operation);
             var marshaller = new GetNetworkAnalyzerConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -9333,7 +9333,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetNetworkAnalyzerConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<GetNetworkAnalyzerConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetNetworkAnalyzerConfigurationRequest>(operation);
             var marshaller = new GetNetworkAnalyzerConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -9365,7 +9365,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetNetworkAnalyzerConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<GetNetworkAnalyzerConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetNetworkAnalyzerConfigurationRequest>(operation);
             var marshaller = new GetNetworkAnalyzerConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -9397,7 +9397,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetNetworkAnalyzerConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<GetNetworkAnalyzerConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetNetworkAnalyzerConfigurationRequest>(operation);
             var marshaller = new GetNetworkAnalyzerConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -9429,7 +9429,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetPartnerAccount");
 
-            var request = InstantiateClassGenerator.Execute<GetPartnerAccountRequest>();
+            var request = InstantiateClassGenerator.Execute<GetPartnerAccountRequest>(operation);
             var marshaller = new GetPartnerAccountRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -9459,7 +9459,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetPartnerAccount");
 
-            var request = InstantiateClassGenerator.Execute<GetPartnerAccountRequest>();
+            var request = InstantiateClassGenerator.Execute<GetPartnerAccountRequest>(operation);
             var marshaller = new GetPartnerAccountRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -9491,7 +9491,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetPartnerAccount");
 
-            var request = InstantiateClassGenerator.Execute<GetPartnerAccountRequest>();
+            var request = InstantiateClassGenerator.Execute<GetPartnerAccountRequest>(operation);
             var marshaller = new GetPartnerAccountRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -9523,7 +9523,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetPartnerAccount");
 
-            var request = InstantiateClassGenerator.Execute<GetPartnerAccountRequest>();
+            var request = InstantiateClassGenerator.Execute<GetPartnerAccountRequest>(operation);
             var marshaller = new GetPartnerAccountRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -9555,7 +9555,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetPartnerAccount");
 
-            var request = InstantiateClassGenerator.Execute<GetPartnerAccountRequest>();
+            var request = InstantiateClassGenerator.Execute<GetPartnerAccountRequest>(operation);
             var marshaller = new GetPartnerAccountRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -9587,7 +9587,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetPosition");
 
-            var request = InstantiateClassGenerator.Execute<GetPositionRequest>();
+            var request = InstantiateClassGenerator.Execute<GetPositionRequest>(operation);
             var marshaller = new GetPositionRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -9617,7 +9617,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetPosition");
 
-            var request = InstantiateClassGenerator.Execute<GetPositionRequest>();
+            var request = InstantiateClassGenerator.Execute<GetPositionRequest>(operation);
             var marshaller = new GetPositionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -9649,7 +9649,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetPosition");
 
-            var request = InstantiateClassGenerator.Execute<GetPositionRequest>();
+            var request = InstantiateClassGenerator.Execute<GetPositionRequest>(operation);
             var marshaller = new GetPositionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -9681,7 +9681,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetPosition");
 
-            var request = InstantiateClassGenerator.Execute<GetPositionRequest>();
+            var request = InstantiateClassGenerator.Execute<GetPositionRequest>(operation);
             var marshaller = new GetPositionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -9713,7 +9713,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetPosition");
 
-            var request = InstantiateClassGenerator.Execute<GetPositionRequest>();
+            var request = InstantiateClassGenerator.Execute<GetPositionRequest>(operation);
             var marshaller = new GetPositionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -9745,7 +9745,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetPosition");
 
-            var request = InstantiateClassGenerator.Execute<GetPositionRequest>();
+            var request = InstantiateClassGenerator.Execute<GetPositionRequest>(operation);
             var marshaller = new GetPositionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -9777,7 +9777,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetPositionConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<GetPositionConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetPositionConfigurationRequest>(operation);
             var marshaller = new GetPositionConfigurationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -9807,7 +9807,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetPositionConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<GetPositionConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetPositionConfigurationRequest>(operation);
             var marshaller = new GetPositionConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -9839,7 +9839,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetPositionConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<GetPositionConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetPositionConfigurationRequest>(operation);
             var marshaller = new GetPositionConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -9871,7 +9871,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetPositionConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<GetPositionConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetPositionConfigurationRequest>(operation);
             var marshaller = new GetPositionConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -9903,7 +9903,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetPositionConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<GetPositionConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetPositionConfigurationRequest>(operation);
             var marshaller = new GetPositionConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -9935,7 +9935,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetPositionConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<GetPositionConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetPositionConfigurationRequest>(operation);
             var marshaller = new GetPositionConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -9967,7 +9967,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetPositionEstimate");
 
-            var request = InstantiateClassGenerator.Execute<GetPositionEstimateRequest>();
+            var request = InstantiateClassGenerator.Execute<GetPositionEstimateRequest>(operation);
             var marshaller = new GetPositionEstimateRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -9997,7 +9997,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetPositionEstimate");
 
-            var request = InstantiateClassGenerator.Execute<GetPositionEstimateRequest>();
+            var request = InstantiateClassGenerator.Execute<GetPositionEstimateRequest>(operation);
             var marshaller = new GetPositionEstimateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -10029,7 +10029,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetPositionEstimate");
 
-            var request = InstantiateClassGenerator.Execute<GetPositionEstimateRequest>();
+            var request = InstantiateClassGenerator.Execute<GetPositionEstimateRequest>(operation);
             var marshaller = new GetPositionEstimateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -10061,7 +10061,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetPositionEstimate");
 
-            var request = InstantiateClassGenerator.Execute<GetPositionEstimateRequest>();
+            var request = InstantiateClassGenerator.Execute<GetPositionEstimateRequest>(operation);
             var marshaller = new GetPositionEstimateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -10093,7 +10093,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetPositionEstimate");
 
-            var request = InstantiateClassGenerator.Execute<GetPositionEstimateRequest>();
+            var request = InstantiateClassGenerator.Execute<GetPositionEstimateRequest>(operation);
             var marshaller = new GetPositionEstimateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -10125,7 +10125,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetPositionEstimate");
 
-            var request = InstantiateClassGenerator.Execute<GetPositionEstimateRequest>();
+            var request = InstantiateClassGenerator.Execute<GetPositionEstimateRequest>(operation);
             var marshaller = new GetPositionEstimateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -10157,7 +10157,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetResourceEventConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<GetResourceEventConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetResourceEventConfigurationRequest>(operation);
             var marshaller = new GetResourceEventConfigurationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -10187,7 +10187,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetResourceEventConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<GetResourceEventConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetResourceEventConfigurationRequest>(operation);
             var marshaller = new GetResourceEventConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -10219,7 +10219,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetResourceEventConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<GetResourceEventConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetResourceEventConfigurationRequest>(operation);
             var marshaller = new GetResourceEventConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -10251,7 +10251,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetResourceEventConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<GetResourceEventConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetResourceEventConfigurationRequest>(operation);
             var marshaller = new GetResourceEventConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -10283,7 +10283,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetResourceEventConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<GetResourceEventConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetResourceEventConfigurationRequest>(operation);
             var marshaller = new GetResourceEventConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -10315,7 +10315,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetResourceEventConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<GetResourceEventConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetResourceEventConfigurationRequest>(operation);
             var marshaller = new GetResourceEventConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -10347,7 +10347,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetResourceLogLevel");
 
-            var request = InstantiateClassGenerator.Execute<GetResourceLogLevelRequest>();
+            var request = InstantiateClassGenerator.Execute<GetResourceLogLevelRequest>(operation);
             var marshaller = new GetResourceLogLevelRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -10377,7 +10377,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetResourceLogLevel");
 
-            var request = InstantiateClassGenerator.Execute<GetResourceLogLevelRequest>();
+            var request = InstantiateClassGenerator.Execute<GetResourceLogLevelRequest>(operation);
             var marshaller = new GetResourceLogLevelRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -10409,7 +10409,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetResourceLogLevel");
 
-            var request = InstantiateClassGenerator.Execute<GetResourceLogLevelRequest>();
+            var request = InstantiateClassGenerator.Execute<GetResourceLogLevelRequest>(operation);
             var marshaller = new GetResourceLogLevelRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -10441,7 +10441,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetResourceLogLevel");
 
-            var request = InstantiateClassGenerator.Execute<GetResourceLogLevelRequest>();
+            var request = InstantiateClassGenerator.Execute<GetResourceLogLevelRequest>(operation);
             var marshaller = new GetResourceLogLevelRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -10473,7 +10473,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetResourceLogLevel");
 
-            var request = InstantiateClassGenerator.Execute<GetResourceLogLevelRequest>();
+            var request = InstantiateClassGenerator.Execute<GetResourceLogLevelRequest>(operation);
             var marshaller = new GetResourceLogLevelRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -10505,7 +10505,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetResourceLogLevel");
 
-            var request = InstantiateClassGenerator.Execute<GetResourceLogLevelRequest>();
+            var request = InstantiateClassGenerator.Execute<GetResourceLogLevelRequest>(operation);
             var marshaller = new GetResourceLogLevelRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -10537,7 +10537,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetResourcePosition");
 
-            var request = InstantiateClassGenerator.Execute<GetResourcePositionRequest>();
+            var request = InstantiateClassGenerator.Execute<GetResourcePositionRequest>(operation);
             var marshaller = new GetResourcePositionRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -10567,7 +10567,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetResourcePosition");
 
-            var request = InstantiateClassGenerator.Execute<GetResourcePositionRequest>();
+            var request = InstantiateClassGenerator.Execute<GetResourcePositionRequest>(operation);
             var marshaller = new GetResourcePositionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -10599,7 +10599,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetResourcePosition");
 
-            var request = InstantiateClassGenerator.Execute<GetResourcePositionRequest>();
+            var request = InstantiateClassGenerator.Execute<GetResourcePositionRequest>(operation);
             var marshaller = new GetResourcePositionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -10631,7 +10631,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetResourcePosition");
 
-            var request = InstantiateClassGenerator.Execute<GetResourcePositionRequest>();
+            var request = InstantiateClassGenerator.Execute<GetResourcePositionRequest>(operation);
             var marshaller = new GetResourcePositionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -10663,7 +10663,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetResourcePosition");
 
-            var request = InstantiateClassGenerator.Execute<GetResourcePositionRequest>();
+            var request = InstantiateClassGenerator.Execute<GetResourcePositionRequest>(operation);
             var marshaller = new GetResourcePositionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -10695,7 +10695,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetResourcePosition");
 
-            var request = InstantiateClassGenerator.Execute<GetResourcePositionRequest>();
+            var request = InstantiateClassGenerator.Execute<GetResourcePositionRequest>(operation);
             var marshaller = new GetResourcePositionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -10727,7 +10727,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetServiceEndpoint");
 
-            var request = InstantiateClassGenerator.Execute<GetServiceEndpointRequest>();
+            var request = InstantiateClassGenerator.Execute<GetServiceEndpointRequest>(operation);
             var marshaller = new GetServiceEndpointRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -10757,7 +10757,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetServiceEndpoint");
 
-            var request = InstantiateClassGenerator.Execute<GetServiceEndpointRequest>();
+            var request = InstantiateClassGenerator.Execute<GetServiceEndpointRequest>(operation);
             var marshaller = new GetServiceEndpointRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -10789,7 +10789,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetServiceEndpoint");
 
-            var request = InstantiateClassGenerator.Execute<GetServiceEndpointRequest>();
+            var request = InstantiateClassGenerator.Execute<GetServiceEndpointRequest>(operation);
             var marshaller = new GetServiceEndpointRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -10821,7 +10821,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetServiceEndpoint");
 
-            var request = InstantiateClassGenerator.Execute<GetServiceEndpointRequest>();
+            var request = InstantiateClassGenerator.Execute<GetServiceEndpointRequest>(operation);
             var marshaller = new GetServiceEndpointRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -10853,7 +10853,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetServiceEndpoint");
 
-            var request = InstantiateClassGenerator.Execute<GetServiceEndpointRequest>();
+            var request = InstantiateClassGenerator.Execute<GetServiceEndpointRequest>(operation);
             var marshaller = new GetServiceEndpointRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -10885,7 +10885,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetServiceProfile");
 
-            var request = InstantiateClassGenerator.Execute<GetServiceProfileRequest>();
+            var request = InstantiateClassGenerator.Execute<GetServiceProfileRequest>(operation);
             var marshaller = new GetServiceProfileRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -10915,7 +10915,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetServiceProfile");
 
-            var request = InstantiateClassGenerator.Execute<GetServiceProfileRequest>();
+            var request = InstantiateClassGenerator.Execute<GetServiceProfileRequest>(operation);
             var marshaller = new GetServiceProfileRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -10947,7 +10947,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetServiceProfile");
 
-            var request = InstantiateClassGenerator.Execute<GetServiceProfileRequest>();
+            var request = InstantiateClassGenerator.Execute<GetServiceProfileRequest>(operation);
             var marshaller = new GetServiceProfileRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -10979,7 +10979,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetServiceProfile");
 
-            var request = InstantiateClassGenerator.Execute<GetServiceProfileRequest>();
+            var request = InstantiateClassGenerator.Execute<GetServiceProfileRequest>(operation);
             var marshaller = new GetServiceProfileRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -11011,7 +11011,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetServiceProfile");
 
-            var request = InstantiateClassGenerator.Execute<GetServiceProfileRequest>();
+            var request = InstantiateClassGenerator.Execute<GetServiceProfileRequest>(operation);
             var marshaller = new GetServiceProfileRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -11043,7 +11043,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetServiceProfile");
 
-            var request = InstantiateClassGenerator.Execute<GetServiceProfileRequest>();
+            var request = InstantiateClassGenerator.Execute<GetServiceProfileRequest>(operation);
             var marshaller = new GetServiceProfileRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -11075,7 +11075,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetWirelessDevice");
 
-            var request = InstantiateClassGenerator.Execute<GetWirelessDeviceRequest>();
+            var request = InstantiateClassGenerator.Execute<GetWirelessDeviceRequest>(operation);
             var marshaller = new GetWirelessDeviceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -11105,7 +11105,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetWirelessDevice");
 
-            var request = InstantiateClassGenerator.Execute<GetWirelessDeviceRequest>();
+            var request = InstantiateClassGenerator.Execute<GetWirelessDeviceRequest>(operation);
             var marshaller = new GetWirelessDeviceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -11137,7 +11137,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetWirelessDevice");
 
-            var request = InstantiateClassGenerator.Execute<GetWirelessDeviceRequest>();
+            var request = InstantiateClassGenerator.Execute<GetWirelessDeviceRequest>(operation);
             var marshaller = new GetWirelessDeviceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -11169,7 +11169,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetWirelessDevice");
 
-            var request = InstantiateClassGenerator.Execute<GetWirelessDeviceRequest>();
+            var request = InstantiateClassGenerator.Execute<GetWirelessDeviceRequest>(operation);
             var marshaller = new GetWirelessDeviceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -11201,7 +11201,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetWirelessDevice");
 
-            var request = InstantiateClassGenerator.Execute<GetWirelessDeviceRequest>();
+            var request = InstantiateClassGenerator.Execute<GetWirelessDeviceRequest>(operation);
             var marshaller = new GetWirelessDeviceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -11233,7 +11233,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetWirelessDevice");
 
-            var request = InstantiateClassGenerator.Execute<GetWirelessDeviceRequest>();
+            var request = InstantiateClassGenerator.Execute<GetWirelessDeviceRequest>(operation);
             var marshaller = new GetWirelessDeviceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -11265,7 +11265,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetWirelessDeviceImportTask");
 
-            var request = InstantiateClassGenerator.Execute<GetWirelessDeviceImportTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<GetWirelessDeviceImportTaskRequest>(operation);
             var marshaller = new GetWirelessDeviceImportTaskRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -11295,7 +11295,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetWirelessDeviceImportTask");
 
-            var request = InstantiateClassGenerator.Execute<GetWirelessDeviceImportTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<GetWirelessDeviceImportTaskRequest>(operation);
             var marshaller = new GetWirelessDeviceImportTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -11327,7 +11327,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetWirelessDeviceImportTask");
 
-            var request = InstantiateClassGenerator.Execute<GetWirelessDeviceImportTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<GetWirelessDeviceImportTaskRequest>(operation);
             var marshaller = new GetWirelessDeviceImportTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -11359,7 +11359,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetWirelessDeviceImportTask");
 
-            var request = InstantiateClassGenerator.Execute<GetWirelessDeviceImportTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<GetWirelessDeviceImportTaskRequest>(operation);
             var marshaller = new GetWirelessDeviceImportTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -11391,7 +11391,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetWirelessDeviceImportTask");
 
-            var request = InstantiateClassGenerator.Execute<GetWirelessDeviceImportTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<GetWirelessDeviceImportTaskRequest>(operation);
             var marshaller = new GetWirelessDeviceImportTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -11423,7 +11423,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetWirelessDeviceImportTask");
 
-            var request = InstantiateClassGenerator.Execute<GetWirelessDeviceImportTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<GetWirelessDeviceImportTaskRequest>(operation);
             var marshaller = new GetWirelessDeviceImportTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -11455,7 +11455,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetWirelessDeviceImportTask");
 
-            var request = InstantiateClassGenerator.Execute<GetWirelessDeviceImportTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<GetWirelessDeviceImportTaskRequest>(operation);
             var marshaller = new GetWirelessDeviceImportTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -11487,7 +11487,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetWirelessDeviceStatistics");
 
-            var request = InstantiateClassGenerator.Execute<GetWirelessDeviceStatisticsRequest>();
+            var request = InstantiateClassGenerator.Execute<GetWirelessDeviceStatisticsRequest>(operation);
             var marshaller = new GetWirelessDeviceStatisticsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -11517,7 +11517,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetWirelessDeviceStatistics");
 
-            var request = InstantiateClassGenerator.Execute<GetWirelessDeviceStatisticsRequest>();
+            var request = InstantiateClassGenerator.Execute<GetWirelessDeviceStatisticsRequest>(operation);
             var marshaller = new GetWirelessDeviceStatisticsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -11549,7 +11549,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetWirelessDeviceStatistics");
 
-            var request = InstantiateClassGenerator.Execute<GetWirelessDeviceStatisticsRequest>();
+            var request = InstantiateClassGenerator.Execute<GetWirelessDeviceStatisticsRequest>(operation);
             var marshaller = new GetWirelessDeviceStatisticsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -11581,7 +11581,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetWirelessDeviceStatistics");
 
-            var request = InstantiateClassGenerator.Execute<GetWirelessDeviceStatisticsRequest>();
+            var request = InstantiateClassGenerator.Execute<GetWirelessDeviceStatisticsRequest>(operation);
             var marshaller = new GetWirelessDeviceStatisticsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -11613,7 +11613,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetWirelessDeviceStatistics");
 
-            var request = InstantiateClassGenerator.Execute<GetWirelessDeviceStatisticsRequest>();
+            var request = InstantiateClassGenerator.Execute<GetWirelessDeviceStatisticsRequest>(operation);
             var marshaller = new GetWirelessDeviceStatisticsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -11645,7 +11645,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetWirelessDeviceStatistics");
 
-            var request = InstantiateClassGenerator.Execute<GetWirelessDeviceStatisticsRequest>();
+            var request = InstantiateClassGenerator.Execute<GetWirelessDeviceStatisticsRequest>(operation);
             var marshaller = new GetWirelessDeviceStatisticsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -11677,7 +11677,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetWirelessGateway");
 
-            var request = InstantiateClassGenerator.Execute<GetWirelessGatewayRequest>();
+            var request = InstantiateClassGenerator.Execute<GetWirelessGatewayRequest>(operation);
             var marshaller = new GetWirelessGatewayRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -11707,7 +11707,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetWirelessGateway");
 
-            var request = InstantiateClassGenerator.Execute<GetWirelessGatewayRequest>();
+            var request = InstantiateClassGenerator.Execute<GetWirelessGatewayRequest>(operation);
             var marshaller = new GetWirelessGatewayRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -11739,7 +11739,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetWirelessGateway");
 
-            var request = InstantiateClassGenerator.Execute<GetWirelessGatewayRequest>();
+            var request = InstantiateClassGenerator.Execute<GetWirelessGatewayRequest>(operation);
             var marshaller = new GetWirelessGatewayRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -11771,7 +11771,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetWirelessGateway");
 
-            var request = InstantiateClassGenerator.Execute<GetWirelessGatewayRequest>();
+            var request = InstantiateClassGenerator.Execute<GetWirelessGatewayRequest>(operation);
             var marshaller = new GetWirelessGatewayRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -11803,7 +11803,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetWirelessGateway");
 
-            var request = InstantiateClassGenerator.Execute<GetWirelessGatewayRequest>();
+            var request = InstantiateClassGenerator.Execute<GetWirelessGatewayRequest>(operation);
             var marshaller = new GetWirelessGatewayRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -11835,7 +11835,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetWirelessGateway");
 
-            var request = InstantiateClassGenerator.Execute<GetWirelessGatewayRequest>();
+            var request = InstantiateClassGenerator.Execute<GetWirelessGatewayRequest>(operation);
             var marshaller = new GetWirelessGatewayRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -11867,7 +11867,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetWirelessGatewayCertificate");
 
-            var request = InstantiateClassGenerator.Execute<GetWirelessGatewayCertificateRequest>();
+            var request = InstantiateClassGenerator.Execute<GetWirelessGatewayCertificateRequest>(operation);
             var marshaller = new GetWirelessGatewayCertificateRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -11897,7 +11897,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetWirelessGatewayCertificate");
 
-            var request = InstantiateClassGenerator.Execute<GetWirelessGatewayCertificateRequest>();
+            var request = InstantiateClassGenerator.Execute<GetWirelessGatewayCertificateRequest>(operation);
             var marshaller = new GetWirelessGatewayCertificateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -11929,7 +11929,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetWirelessGatewayCertificate");
 
-            var request = InstantiateClassGenerator.Execute<GetWirelessGatewayCertificateRequest>();
+            var request = InstantiateClassGenerator.Execute<GetWirelessGatewayCertificateRequest>(operation);
             var marshaller = new GetWirelessGatewayCertificateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -11961,7 +11961,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetWirelessGatewayCertificate");
 
-            var request = InstantiateClassGenerator.Execute<GetWirelessGatewayCertificateRequest>();
+            var request = InstantiateClassGenerator.Execute<GetWirelessGatewayCertificateRequest>(operation);
             var marshaller = new GetWirelessGatewayCertificateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -11993,7 +11993,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetWirelessGatewayCertificate");
 
-            var request = InstantiateClassGenerator.Execute<GetWirelessGatewayCertificateRequest>();
+            var request = InstantiateClassGenerator.Execute<GetWirelessGatewayCertificateRequest>(operation);
             var marshaller = new GetWirelessGatewayCertificateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -12025,7 +12025,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetWirelessGatewayCertificate");
 
-            var request = InstantiateClassGenerator.Execute<GetWirelessGatewayCertificateRequest>();
+            var request = InstantiateClassGenerator.Execute<GetWirelessGatewayCertificateRequest>(operation);
             var marshaller = new GetWirelessGatewayCertificateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -12057,7 +12057,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetWirelessGatewayFirmwareInformation");
 
-            var request = InstantiateClassGenerator.Execute<GetWirelessGatewayFirmwareInformationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetWirelessGatewayFirmwareInformationRequest>(operation);
             var marshaller = new GetWirelessGatewayFirmwareInformationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -12087,7 +12087,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetWirelessGatewayFirmwareInformation");
 
-            var request = InstantiateClassGenerator.Execute<GetWirelessGatewayFirmwareInformationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetWirelessGatewayFirmwareInformationRequest>(operation);
             var marshaller = new GetWirelessGatewayFirmwareInformationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -12119,7 +12119,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetWirelessGatewayFirmwareInformation");
 
-            var request = InstantiateClassGenerator.Execute<GetWirelessGatewayFirmwareInformationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetWirelessGatewayFirmwareInformationRequest>(operation);
             var marshaller = new GetWirelessGatewayFirmwareInformationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -12151,7 +12151,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetWirelessGatewayFirmwareInformation");
 
-            var request = InstantiateClassGenerator.Execute<GetWirelessGatewayFirmwareInformationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetWirelessGatewayFirmwareInformationRequest>(operation);
             var marshaller = new GetWirelessGatewayFirmwareInformationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -12183,7 +12183,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetWirelessGatewayFirmwareInformation");
 
-            var request = InstantiateClassGenerator.Execute<GetWirelessGatewayFirmwareInformationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetWirelessGatewayFirmwareInformationRequest>(operation);
             var marshaller = new GetWirelessGatewayFirmwareInformationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -12215,7 +12215,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetWirelessGatewayFirmwareInformation");
 
-            var request = InstantiateClassGenerator.Execute<GetWirelessGatewayFirmwareInformationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetWirelessGatewayFirmwareInformationRequest>(operation);
             var marshaller = new GetWirelessGatewayFirmwareInformationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -12247,7 +12247,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetWirelessGatewayStatistics");
 
-            var request = InstantiateClassGenerator.Execute<GetWirelessGatewayStatisticsRequest>();
+            var request = InstantiateClassGenerator.Execute<GetWirelessGatewayStatisticsRequest>(operation);
             var marshaller = new GetWirelessGatewayStatisticsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -12277,7 +12277,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetWirelessGatewayStatistics");
 
-            var request = InstantiateClassGenerator.Execute<GetWirelessGatewayStatisticsRequest>();
+            var request = InstantiateClassGenerator.Execute<GetWirelessGatewayStatisticsRequest>(operation);
             var marshaller = new GetWirelessGatewayStatisticsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -12309,7 +12309,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetWirelessGatewayStatistics");
 
-            var request = InstantiateClassGenerator.Execute<GetWirelessGatewayStatisticsRequest>();
+            var request = InstantiateClassGenerator.Execute<GetWirelessGatewayStatisticsRequest>(operation);
             var marshaller = new GetWirelessGatewayStatisticsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -12341,7 +12341,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetWirelessGatewayStatistics");
 
-            var request = InstantiateClassGenerator.Execute<GetWirelessGatewayStatisticsRequest>();
+            var request = InstantiateClassGenerator.Execute<GetWirelessGatewayStatisticsRequest>(operation);
             var marshaller = new GetWirelessGatewayStatisticsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -12373,7 +12373,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetWirelessGatewayStatistics");
 
-            var request = InstantiateClassGenerator.Execute<GetWirelessGatewayStatisticsRequest>();
+            var request = InstantiateClassGenerator.Execute<GetWirelessGatewayStatisticsRequest>(operation);
             var marshaller = new GetWirelessGatewayStatisticsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -12405,7 +12405,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetWirelessGatewayStatistics");
 
-            var request = InstantiateClassGenerator.Execute<GetWirelessGatewayStatisticsRequest>();
+            var request = InstantiateClassGenerator.Execute<GetWirelessGatewayStatisticsRequest>(operation);
             var marshaller = new GetWirelessGatewayStatisticsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -12437,7 +12437,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetWirelessGatewayTask");
 
-            var request = InstantiateClassGenerator.Execute<GetWirelessGatewayTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<GetWirelessGatewayTaskRequest>(operation);
             var marshaller = new GetWirelessGatewayTaskRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -12467,7 +12467,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetWirelessGatewayTask");
 
-            var request = InstantiateClassGenerator.Execute<GetWirelessGatewayTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<GetWirelessGatewayTaskRequest>(operation);
             var marshaller = new GetWirelessGatewayTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -12499,7 +12499,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetWirelessGatewayTask");
 
-            var request = InstantiateClassGenerator.Execute<GetWirelessGatewayTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<GetWirelessGatewayTaskRequest>(operation);
             var marshaller = new GetWirelessGatewayTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -12531,7 +12531,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetWirelessGatewayTask");
 
-            var request = InstantiateClassGenerator.Execute<GetWirelessGatewayTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<GetWirelessGatewayTaskRequest>(operation);
             var marshaller = new GetWirelessGatewayTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -12563,7 +12563,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetWirelessGatewayTask");
 
-            var request = InstantiateClassGenerator.Execute<GetWirelessGatewayTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<GetWirelessGatewayTaskRequest>(operation);
             var marshaller = new GetWirelessGatewayTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -12595,7 +12595,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetWirelessGatewayTask");
 
-            var request = InstantiateClassGenerator.Execute<GetWirelessGatewayTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<GetWirelessGatewayTaskRequest>(operation);
             var marshaller = new GetWirelessGatewayTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -12627,7 +12627,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetWirelessGatewayTaskDefinition");
 
-            var request = InstantiateClassGenerator.Execute<GetWirelessGatewayTaskDefinitionRequest>();
+            var request = InstantiateClassGenerator.Execute<GetWirelessGatewayTaskDefinitionRequest>(operation);
             var marshaller = new GetWirelessGatewayTaskDefinitionRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -12657,7 +12657,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetWirelessGatewayTaskDefinition");
 
-            var request = InstantiateClassGenerator.Execute<GetWirelessGatewayTaskDefinitionRequest>();
+            var request = InstantiateClassGenerator.Execute<GetWirelessGatewayTaskDefinitionRequest>(operation);
             var marshaller = new GetWirelessGatewayTaskDefinitionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -12689,7 +12689,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetWirelessGatewayTaskDefinition");
 
-            var request = InstantiateClassGenerator.Execute<GetWirelessGatewayTaskDefinitionRequest>();
+            var request = InstantiateClassGenerator.Execute<GetWirelessGatewayTaskDefinitionRequest>(operation);
             var marshaller = new GetWirelessGatewayTaskDefinitionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -12721,7 +12721,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetWirelessGatewayTaskDefinition");
 
-            var request = InstantiateClassGenerator.Execute<GetWirelessGatewayTaskDefinitionRequest>();
+            var request = InstantiateClassGenerator.Execute<GetWirelessGatewayTaskDefinitionRequest>(operation);
             var marshaller = new GetWirelessGatewayTaskDefinitionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -12753,7 +12753,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetWirelessGatewayTaskDefinition");
 
-            var request = InstantiateClassGenerator.Execute<GetWirelessGatewayTaskDefinitionRequest>();
+            var request = InstantiateClassGenerator.Execute<GetWirelessGatewayTaskDefinitionRequest>(operation);
             var marshaller = new GetWirelessGatewayTaskDefinitionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -12785,7 +12785,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetWirelessGatewayTaskDefinition");
 
-            var request = InstantiateClassGenerator.Execute<GetWirelessGatewayTaskDefinitionRequest>();
+            var request = InstantiateClassGenerator.Execute<GetWirelessGatewayTaskDefinitionRequest>(operation);
             var marshaller = new GetWirelessGatewayTaskDefinitionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -12817,7 +12817,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListDestinations");
 
-            var request = InstantiateClassGenerator.Execute<ListDestinationsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListDestinationsRequest>(operation);
             var marshaller = new ListDestinationsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -12847,7 +12847,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListDestinations");
 
-            var request = InstantiateClassGenerator.Execute<ListDestinationsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListDestinationsRequest>(operation);
             var marshaller = new ListDestinationsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -12879,7 +12879,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListDestinations");
 
-            var request = InstantiateClassGenerator.Execute<ListDestinationsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListDestinationsRequest>(operation);
             var marshaller = new ListDestinationsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -12911,7 +12911,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListDestinations");
 
-            var request = InstantiateClassGenerator.Execute<ListDestinationsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListDestinationsRequest>(operation);
             var marshaller = new ListDestinationsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -12943,7 +12943,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListDestinations");
 
-            var request = InstantiateClassGenerator.Execute<ListDestinationsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListDestinationsRequest>(operation);
             var marshaller = new ListDestinationsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -12975,7 +12975,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListDeviceProfiles");
 
-            var request = InstantiateClassGenerator.Execute<ListDeviceProfilesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListDeviceProfilesRequest>(operation);
             var marshaller = new ListDeviceProfilesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -13005,7 +13005,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListDeviceProfiles");
 
-            var request = InstantiateClassGenerator.Execute<ListDeviceProfilesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListDeviceProfilesRequest>(operation);
             var marshaller = new ListDeviceProfilesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -13037,7 +13037,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListDeviceProfiles");
 
-            var request = InstantiateClassGenerator.Execute<ListDeviceProfilesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListDeviceProfilesRequest>(operation);
             var marshaller = new ListDeviceProfilesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -13069,7 +13069,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListDeviceProfiles");
 
-            var request = InstantiateClassGenerator.Execute<ListDeviceProfilesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListDeviceProfilesRequest>(operation);
             var marshaller = new ListDeviceProfilesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -13101,7 +13101,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListDeviceProfiles");
 
-            var request = InstantiateClassGenerator.Execute<ListDeviceProfilesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListDeviceProfilesRequest>(operation);
             var marshaller = new ListDeviceProfilesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -13133,7 +13133,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListDevicesForWirelessDeviceImportTask");
 
-            var request = InstantiateClassGenerator.Execute<ListDevicesForWirelessDeviceImportTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<ListDevicesForWirelessDeviceImportTaskRequest>(operation);
             var marshaller = new ListDevicesForWirelessDeviceImportTaskRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -13163,7 +13163,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListDevicesForWirelessDeviceImportTask");
 
-            var request = InstantiateClassGenerator.Execute<ListDevicesForWirelessDeviceImportTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<ListDevicesForWirelessDeviceImportTaskRequest>(operation);
             var marshaller = new ListDevicesForWirelessDeviceImportTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -13195,7 +13195,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListDevicesForWirelessDeviceImportTask");
 
-            var request = InstantiateClassGenerator.Execute<ListDevicesForWirelessDeviceImportTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<ListDevicesForWirelessDeviceImportTaskRequest>(operation);
             var marshaller = new ListDevicesForWirelessDeviceImportTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -13227,7 +13227,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListDevicesForWirelessDeviceImportTask");
 
-            var request = InstantiateClassGenerator.Execute<ListDevicesForWirelessDeviceImportTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<ListDevicesForWirelessDeviceImportTaskRequest>(operation);
             var marshaller = new ListDevicesForWirelessDeviceImportTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -13259,7 +13259,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListDevicesForWirelessDeviceImportTask");
 
-            var request = InstantiateClassGenerator.Execute<ListDevicesForWirelessDeviceImportTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<ListDevicesForWirelessDeviceImportTaskRequest>(operation);
             var marshaller = new ListDevicesForWirelessDeviceImportTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -13291,7 +13291,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListDevicesForWirelessDeviceImportTask");
 
-            var request = InstantiateClassGenerator.Execute<ListDevicesForWirelessDeviceImportTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<ListDevicesForWirelessDeviceImportTaskRequest>(operation);
             var marshaller = new ListDevicesForWirelessDeviceImportTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -13323,7 +13323,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListDevicesForWirelessDeviceImportTask");
 
-            var request = InstantiateClassGenerator.Execute<ListDevicesForWirelessDeviceImportTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<ListDevicesForWirelessDeviceImportTaskRequest>(operation);
             var marshaller = new ListDevicesForWirelessDeviceImportTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -13355,7 +13355,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListEventConfigurations");
 
-            var request = InstantiateClassGenerator.Execute<ListEventConfigurationsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListEventConfigurationsRequest>(operation);
             var marshaller = new ListEventConfigurationsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -13385,7 +13385,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListEventConfigurations");
 
-            var request = InstantiateClassGenerator.Execute<ListEventConfigurationsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListEventConfigurationsRequest>(operation);
             var marshaller = new ListEventConfigurationsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -13417,7 +13417,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListEventConfigurations");
 
-            var request = InstantiateClassGenerator.Execute<ListEventConfigurationsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListEventConfigurationsRequest>(operation);
             var marshaller = new ListEventConfigurationsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -13449,7 +13449,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListEventConfigurations");
 
-            var request = InstantiateClassGenerator.Execute<ListEventConfigurationsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListEventConfigurationsRequest>(operation);
             var marshaller = new ListEventConfigurationsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -13481,7 +13481,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListEventConfigurations");
 
-            var request = InstantiateClassGenerator.Execute<ListEventConfigurationsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListEventConfigurationsRequest>(operation);
             var marshaller = new ListEventConfigurationsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -13513,7 +13513,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListFuotaTasks");
 
-            var request = InstantiateClassGenerator.Execute<ListFuotaTasksRequest>();
+            var request = InstantiateClassGenerator.Execute<ListFuotaTasksRequest>(operation);
             var marshaller = new ListFuotaTasksRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -13543,7 +13543,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListFuotaTasks");
 
-            var request = InstantiateClassGenerator.Execute<ListFuotaTasksRequest>();
+            var request = InstantiateClassGenerator.Execute<ListFuotaTasksRequest>(operation);
             var marshaller = new ListFuotaTasksRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -13575,7 +13575,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListFuotaTasks");
 
-            var request = InstantiateClassGenerator.Execute<ListFuotaTasksRequest>();
+            var request = InstantiateClassGenerator.Execute<ListFuotaTasksRequest>(operation);
             var marshaller = new ListFuotaTasksRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -13607,7 +13607,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListFuotaTasks");
 
-            var request = InstantiateClassGenerator.Execute<ListFuotaTasksRequest>();
+            var request = InstantiateClassGenerator.Execute<ListFuotaTasksRequest>(operation);
             var marshaller = new ListFuotaTasksRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -13639,7 +13639,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListFuotaTasks");
 
-            var request = InstantiateClassGenerator.Execute<ListFuotaTasksRequest>();
+            var request = InstantiateClassGenerator.Execute<ListFuotaTasksRequest>(operation);
             var marshaller = new ListFuotaTasksRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -13671,7 +13671,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListMulticastGroups");
 
-            var request = InstantiateClassGenerator.Execute<ListMulticastGroupsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListMulticastGroupsRequest>(operation);
             var marshaller = new ListMulticastGroupsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -13701,7 +13701,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListMulticastGroups");
 
-            var request = InstantiateClassGenerator.Execute<ListMulticastGroupsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListMulticastGroupsRequest>(operation);
             var marshaller = new ListMulticastGroupsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -13733,7 +13733,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListMulticastGroups");
 
-            var request = InstantiateClassGenerator.Execute<ListMulticastGroupsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListMulticastGroupsRequest>(operation);
             var marshaller = new ListMulticastGroupsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -13765,7 +13765,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListMulticastGroups");
 
-            var request = InstantiateClassGenerator.Execute<ListMulticastGroupsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListMulticastGroupsRequest>(operation);
             var marshaller = new ListMulticastGroupsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -13797,7 +13797,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListMulticastGroups");
 
-            var request = InstantiateClassGenerator.Execute<ListMulticastGroupsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListMulticastGroupsRequest>(operation);
             var marshaller = new ListMulticastGroupsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -13829,7 +13829,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListMulticastGroupsByFuotaTask");
 
-            var request = InstantiateClassGenerator.Execute<ListMulticastGroupsByFuotaTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<ListMulticastGroupsByFuotaTaskRequest>(operation);
             var marshaller = new ListMulticastGroupsByFuotaTaskRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -13859,7 +13859,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListMulticastGroupsByFuotaTask");
 
-            var request = InstantiateClassGenerator.Execute<ListMulticastGroupsByFuotaTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<ListMulticastGroupsByFuotaTaskRequest>(operation);
             var marshaller = new ListMulticastGroupsByFuotaTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -13891,7 +13891,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListMulticastGroupsByFuotaTask");
 
-            var request = InstantiateClassGenerator.Execute<ListMulticastGroupsByFuotaTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<ListMulticastGroupsByFuotaTaskRequest>(operation);
             var marshaller = new ListMulticastGroupsByFuotaTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -13923,7 +13923,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListMulticastGroupsByFuotaTask");
 
-            var request = InstantiateClassGenerator.Execute<ListMulticastGroupsByFuotaTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<ListMulticastGroupsByFuotaTaskRequest>(operation);
             var marshaller = new ListMulticastGroupsByFuotaTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -13955,7 +13955,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListMulticastGroupsByFuotaTask");
 
-            var request = InstantiateClassGenerator.Execute<ListMulticastGroupsByFuotaTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<ListMulticastGroupsByFuotaTaskRequest>(operation);
             var marshaller = new ListMulticastGroupsByFuotaTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -13987,7 +13987,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListMulticastGroupsByFuotaTask");
 
-            var request = InstantiateClassGenerator.Execute<ListMulticastGroupsByFuotaTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<ListMulticastGroupsByFuotaTaskRequest>(operation);
             var marshaller = new ListMulticastGroupsByFuotaTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -14019,7 +14019,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListNetworkAnalyzerConfigurations");
 
-            var request = InstantiateClassGenerator.Execute<ListNetworkAnalyzerConfigurationsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListNetworkAnalyzerConfigurationsRequest>(operation);
             var marshaller = new ListNetworkAnalyzerConfigurationsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -14049,7 +14049,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListNetworkAnalyzerConfigurations");
 
-            var request = InstantiateClassGenerator.Execute<ListNetworkAnalyzerConfigurationsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListNetworkAnalyzerConfigurationsRequest>(operation);
             var marshaller = new ListNetworkAnalyzerConfigurationsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -14081,7 +14081,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListNetworkAnalyzerConfigurations");
 
-            var request = InstantiateClassGenerator.Execute<ListNetworkAnalyzerConfigurationsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListNetworkAnalyzerConfigurationsRequest>(operation);
             var marshaller = new ListNetworkAnalyzerConfigurationsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -14113,7 +14113,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListNetworkAnalyzerConfigurations");
 
-            var request = InstantiateClassGenerator.Execute<ListNetworkAnalyzerConfigurationsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListNetworkAnalyzerConfigurationsRequest>(operation);
             var marshaller = new ListNetworkAnalyzerConfigurationsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -14145,7 +14145,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListNetworkAnalyzerConfigurations");
 
-            var request = InstantiateClassGenerator.Execute<ListNetworkAnalyzerConfigurationsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListNetworkAnalyzerConfigurationsRequest>(operation);
             var marshaller = new ListNetworkAnalyzerConfigurationsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -14177,7 +14177,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListPartnerAccounts");
 
-            var request = InstantiateClassGenerator.Execute<ListPartnerAccountsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListPartnerAccountsRequest>(operation);
             var marshaller = new ListPartnerAccountsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -14207,7 +14207,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListPartnerAccounts");
 
-            var request = InstantiateClassGenerator.Execute<ListPartnerAccountsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListPartnerAccountsRequest>(operation);
             var marshaller = new ListPartnerAccountsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -14239,7 +14239,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListPartnerAccounts");
 
-            var request = InstantiateClassGenerator.Execute<ListPartnerAccountsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListPartnerAccountsRequest>(operation);
             var marshaller = new ListPartnerAccountsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -14271,7 +14271,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListPartnerAccounts");
 
-            var request = InstantiateClassGenerator.Execute<ListPartnerAccountsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListPartnerAccountsRequest>(operation);
             var marshaller = new ListPartnerAccountsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -14303,7 +14303,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListPartnerAccounts");
 
-            var request = InstantiateClassGenerator.Execute<ListPartnerAccountsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListPartnerAccountsRequest>(operation);
             var marshaller = new ListPartnerAccountsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -14335,7 +14335,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListPositionConfigurations");
 
-            var request = InstantiateClassGenerator.Execute<ListPositionConfigurationsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListPositionConfigurationsRequest>(operation);
             var marshaller = new ListPositionConfigurationsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -14365,7 +14365,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListPositionConfigurations");
 
-            var request = InstantiateClassGenerator.Execute<ListPositionConfigurationsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListPositionConfigurationsRequest>(operation);
             var marshaller = new ListPositionConfigurationsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -14397,7 +14397,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListPositionConfigurations");
 
-            var request = InstantiateClassGenerator.Execute<ListPositionConfigurationsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListPositionConfigurationsRequest>(operation);
             var marshaller = new ListPositionConfigurationsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -14429,7 +14429,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListPositionConfigurations");
 
-            var request = InstantiateClassGenerator.Execute<ListPositionConfigurationsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListPositionConfigurationsRequest>(operation);
             var marshaller = new ListPositionConfigurationsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -14461,7 +14461,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListPositionConfigurations");
 
-            var request = InstantiateClassGenerator.Execute<ListPositionConfigurationsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListPositionConfigurationsRequest>(operation);
             var marshaller = new ListPositionConfigurationsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -14493,7 +14493,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListQueuedMessages");
 
-            var request = InstantiateClassGenerator.Execute<ListQueuedMessagesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListQueuedMessagesRequest>(operation);
             var marshaller = new ListQueuedMessagesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -14523,7 +14523,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListQueuedMessages");
 
-            var request = InstantiateClassGenerator.Execute<ListQueuedMessagesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListQueuedMessagesRequest>(operation);
             var marshaller = new ListQueuedMessagesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -14555,7 +14555,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListQueuedMessages");
 
-            var request = InstantiateClassGenerator.Execute<ListQueuedMessagesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListQueuedMessagesRequest>(operation);
             var marshaller = new ListQueuedMessagesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -14587,7 +14587,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListQueuedMessages");
 
-            var request = InstantiateClassGenerator.Execute<ListQueuedMessagesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListQueuedMessagesRequest>(operation);
             var marshaller = new ListQueuedMessagesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -14619,7 +14619,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListQueuedMessages");
 
-            var request = InstantiateClassGenerator.Execute<ListQueuedMessagesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListQueuedMessagesRequest>(operation);
             var marshaller = new ListQueuedMessagesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -14651,7 +14651,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListQueuedMessages");
 
-            var request = InstantiateClassGenerator.Execute<ListQueuedMessagesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListQueuedMessagesRequest>(operation);
             var marshaller = new ListQueuedMessagesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -14683,7 +14683,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListServiceProfiles");
 
-            var request = InstantiateClassGenerator.Execute<ListServiceProfilesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListServiceProfilesRequest>(operation);
             var marshaller = new ListServiceProfilesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -14713,7 +14713,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListServiceProfiles");
 
-            var request = InstantiateClassGenerator.Execute<ListServiceProfilesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListServiceProfilesRequest>(operation);
             var marshaller = new ListServiceProfilesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -14745,7 +14745,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListServiceProfiles");
 
-            var request = InstantiateClassGenerator.Execute<ListServiceProfilesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListServiceProfilesRequest>(operation);
             var marshaller = new ListServiceProfilesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -14777,7 +14777,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListServiceProfiles");
 
-            var request = InstantiateClassGenerator.Execute<ListServiceProfilesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListServiceProfilesRequest>(operation);
             var marshaller = new ListServiceProfilesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -14809,7 +14809,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListServiceProfiles");
 
-            var request = InstantiateClassGenerator.Execute<ListServiceProfilesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListServiceProfilesRequest>(operation);
             var marshaller = new ListServiceProfilesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -14841,7 +14841,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListTagsForResource");
 
-            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>(operation);
             var marshaller = new ListTagsForResourceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -14871,7 +14871,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListTagsForResource");
 
-            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>(operation);
             var marshaller = new ListTagsForResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -14903,7 +14903,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListTagsForResource");
 
-            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>(operation);
             var marshaller = new ListTagsForResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -14935,7 +14935,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListTagsForResource");
 
-            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>(operation);
             var marshaller = new ListTagsForResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -14967,7 +14967,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListTagsForResource");
 
-            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>(operation);
             var marshaller = new ListTagsForResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -14999,7 +14999,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListTagsForResource");
 
-            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>(operation);
             var marshaller = new ListTagsForResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -15031,7 +15031,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListWirelessDeviceImportTasks");
 
-            var request = InstantiateClassGenerator.Execute<ListWirelessDeviceImportTasksRequest>();
+            var request = InstantiateClassGenerator.Execute<ListWirelessDeviceImportTasksRequest>(operation);
             var marshaller = new ListWirelessDeviceImportTasksRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -15061,7 +15061,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListWirelessDeviceImportTasks");
 
-            var request = InstantiateClassGenerator.Execute<ListWirelessDeviceImportTasksRequest>();
+            var request = InstantiateClassGenerator.Execute<ListWirelessDeviceImportTasksRequest>(operation);
             var marshaller = new ListWirelessDeviceImportTasksRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -15093,7 +15093,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListWirelessDeviceImportTasks");
 
-            var request = InstantiateClassGenerator.Execute<ListWirelessDeviceImportTasksRequest>();
+            var request = InstantiateClassGenerator.Execute<ListWirelessDeviceImportTasksRequest>(operation);
             var marshaller = new ListWirelessDeviceImportTasksRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -15125,7 +15125,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListWirelessDeviceImportTasks");
 
-            var request = InstantiateClassGenerator.Execute<ListWirelessDeviceImportTasksRequest>();
+            var request = InstantiateClassGenerator.Execute<ListWirelessDeviceImportTasksRequest>(operation);
             var marshaller = new ListWirelessDeviceImportTasksRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -15157,7 +15157,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListWirelessDeviceImportTasks");
 
-            var request = InstantiateClassGenerator.Execute<ListWirelessDeviceImportTasksRequest>();
+            var request = InstantiateClassGenerator.Execute<ListWirelessDeviceImportTasksRequest>(operation);
             var marshaller = new ListWirelessDeviceImportTasksRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -15189,7 +15189,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListWirelessDeviceImportTasks");
 
-            var request = InstantiateClassGenerator.Execute<ListWirelessDeviceImportTasksRequest>();
+            var request = InstantiateClassGenerator.Execute<ListWirelessDeviceImportTasksRequest>(operation);
             var marshaller = new ListWirelessDeviceImportTasksRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -15221,7 +15221,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListWirelessDeviceImportTasks");
 
-            var request = InstantiateClassGenerator.Execute<ListWirelessDeviceImportTasksRequest>();
+            var request = InstantiateClassGenerator.Execute<ListWirelessDeviceImportTasksRequest>(operation);
             var marshaller = new ListWirelessDeviceImportTasksRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -15253,7 +15253,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListWirelessDevices");
 
-            var request = InstantiateClassGenerator.Execute<ListWirelessDevicesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListWirelessDevicesRequest>(operation);
             var marshaller = new ListWirelessDevicesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -15283,7 +15283,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListWirelessDevices");
 
-            var request = InstantiateClassGenerator.Execute<ListWirelessDevicesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListWirelessDevicesRequest>(operation);
             var marshaller = new ListWirelessDevicesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -15315,7 +15315,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListWirelessDevices");
 
-            var request = InstantiateClassGenerator.Execute<ListWirelessDevicesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListWirelessDevicesRequest>(operation);
             var marshaller = new ListWirelessDevicesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -15347,7 +15347,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListWirelessDevices");
 
-            var request = InstantiateClassGenerator.Execute<ListWirelessDevicesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListWirelessDevicesRequest>(operation);
             var marshaller = new ListWirelessDevicesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -15379,7 +15379,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListWirelessDevices");
 
-            var request = InstantiateClassGenerator.Execute<ListWirelessDevicesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListWirelessDevicesRequest>(operation);
             var marshaller = new ListWirelessDevicesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -15411,7 +15411,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListWirelessGateways");
 
-            var request = InstantiateClassGenerator.Execute<ListWirelessGatewaysRequest>();
+            var request = InstantiateClassGenerator.Execute<ListWirelessGatewaysRequest>(operation);
             var marshaller = new ListWirelessGatewaysRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -15441,7 +15441,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListWirelessGateways");
 
-            var request = InstantiateClassGenerator.Execute<ListWirelessGatewaysRequest>();
+            var request = InstantiateClassGenerator.Execute<ListWirelessGatewaysRequest>(operation);
             var marshaller = new ListWirelessGatewaysRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -15473,7 +15473,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListWirelessGateways");
 
-            var request = InstantiateClassGenerator.Execute<ListWirelessGatewaysRequest>();
+            var request = InstantiateClassGenerator.Execute<ListWirelessGatewaysRequest>(operation);
             var marshaller = new ListWirelessGatewaysRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -15505,7 +15505,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListWirelessGateways");
 
-            var request = InstantiateClassGenerator.Execute<ListWirelessGatewaysRequest>();
+            var request = InstantiateClassGenerator.Execute<ListWirelessGatewaysRequest>(operation);
             var marshaller = new ListWirelessGatewaysRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -15537,7 +15537,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListWirelessGateways");
 
-            var request = InstantiateClassGenerator.Execute<ListWirelessGatewaysRequest>();
+            var request = InstantiateClassGenerator.Execute<ListWirelessGatewaysRequest>(operation);
             var marshaller = new ListWirelessGatewaysRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -15569,7 +15569,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListWirelessGatewayTaskDefinitions");
 
-            var request = InstantiateClassGenerator.Execute<ListWirelessGatewayTaskDefinitionsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListWirelessGatewayTaskDefinitionsRequest>(operation);
             var marshaller = new ListWirelessGatewayTaskDefinitionsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -15599,7 +15599,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListWirelessGatewayTaskDefinitions");
 
-            var request = InstantiateClassGenerator.Execute<ListWirelessGatewayTaskDefinitionsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListWirelessGatewayTaskDefinitionsRequest>(operation);
             var marshaller = new ListWirelessGatewayTaskDefinitionsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -15631,7 +15631,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListWirelessGatewayTaskDefinitions");
 
-            var request = InstantiateClassGenerator.Execute<ListWirelessGatewayTaskDefinitionsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListWirelessGatewayTaskDefinitionsRequest>(operation);
             var marshaller = new ListWirelessGatewayTaskDefinitionsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -15663,7 +15663,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListWirelessGatewayTaskDefinitions");
 
-            var request = InstantiateClassGenerator.Execute<ListWirelessGatewayTaskDefinitionsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListWirelessGatewayTaskDefinitionsRequest>(operation);
             var marshaller = new ListWirelessGatewayTaskDefinitionsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -15695,7 +15695,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListWirelessGatewayTaskDefinitions");
 
-            var request = InstantiateClassGenerator.Execute<ListWirelessGatewayTaskDefinitionsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListWirelessGatewayTaskDefinitionsRequest>(operation);
             var marshaller = new ListWirelessGatewayTaskDefinitionsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -15727,7 +15727,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("PutPositionConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<PutPositionConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<PutPositionConfigurationRequest>(operation);
             var marshaller = new PutPositionConfigurationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -15757,7 +15757,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("PutPositionConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<PutPositionConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<PutPositionConfigurationRequest>(operation);
             var marshaller = new PutPositionConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -15789,7 +15789,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("PutPositionConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<PutPositionConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<PutPositionConfigurationRequest>(operation);
             var marshaller = new PutPositionConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -15821,7 +15821,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("PutPositionConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<PutPositionConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<PutPositionConfigurationRequest>(operation);
             var marshaller = new PutPositionConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -15853,7 +15853,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("PutPositionConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<PutPositionConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<PutPositionConfigurationRequest>(operation);
             var marshaller = new PutPositionConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -15885,7 +15885,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("PutPositionConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<PutPositionConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<PutPositionConfigurationRequest>(operation);
             var marshaller = new PutPositionConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -15917,7 +15917,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("PutResourceLogLevel");
 
-            var request = InstantiateClassGenerator.Execute<PutResourceLogLevelRequest>();
+            var request = InstantiateClassGenerator.Execute<PutResourceLogLevelRequest>(operation);
             var marshaller = new PutResourceLogLevelRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -15947,7 +15947,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("PutResourceLogLevel");
 
-            var request = InstantiateClassGenerator.Execute<PutResourceLogLevelRequest>();
+            var request = InstantiateClassGenerator.Execute<PutResourceLogLevelRequest>(operation);
             var marshaller = new PutResourceLogLevelRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -15979,7 +15979,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("PutResourceLogLevel");
 
-            var request = InstantiateClassGenerator.Execute<PutResourceLogLevelRequest>();
+            var request = InstantiateClassGenerator.Execute<PutResourceLogLevelRequest>(operation);
             var marshaller = new PutResourceLogLevelRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -16011,7 +16011,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("PutResourceLogLevel");
 
-            var request = InstantiateClassGenerator.Execute<PutResourceLogLevelRequest>();
+            var request = InstantiateClassGenerator.Execute<PutResourceLogLevelRequest>(operation);
             var marshaller = new PutResourceLogLevelRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -16043,7 +16043,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("PutResourceLogLevel");
 
-            var request = InstantiateClassGenerator.Execute<PutResourceLogLevelRequest>();
+            var request = InstantiateClassGenerator.Execute<PutResourceLogLevelRequest>(operation);
             var marshaller = new PutResourceLogLevelRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -16075,7 +16075,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("PutResourceLogLevel");
 
-            var request = InstantiateClassGenerator.Execute<PutResourceLogLevelRequest>();
+            var request = InstantiateClassGenerator.Execute<PutResourceLogLevelRequest>(operation);
             var marshaller = new PutResourceLogLevelRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -16107,7 +16107,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ResetAllResourceLogLevels");
 
-            var request = InstantiateClassGenerator.Execute<ResetAllResourceLogLevelsRequest>();
+            var request = InstantiateClassGenerator.Execute<ResetAllResourceLogLevelsRequest>(operation);
             var marshaller = new ResetAllResourceLogLevelsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -16137,7 +16137,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ResetAllResourceLogLevels");
 
-            var request = InstantiateClassGenerator.Execute<ResetAllResourceLogLevelsRequest>();
+            var request = InstantiateClassGenerator.Execute<ResetAllResourceLogLevelsRequest>(operation);
             var marshaller = new ResetAllResourceLogLevelsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -16169,7 +16169,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ResetAllResourceLogLevels");
 
-            var request = InstantiateClassGenerator.Execute<ResetAllResourceLogLevelsRequest>();
+            var request = InstantiateClassGenerator.Execute<ResetAllResourceLogLevelsRequest>(operation);
             var marshaller = new ResetAllResourceLogLevelsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -16201,7 +16201,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ResetAllResourceLogLevels");
 
-            var request = InstantiateClassGenerator.Execute<ResetAllResourceLogLevelsRequest>();
+            var request = InstantiateClassGenerator.Execute<ResetAllResourceLogLevelsRequest>(operation);
             var marshaller = new ResetAllResourceLogLevelsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -16233,7 +16233,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ResetAllResourceLogLevels");
 
-            var request = InstantiateClassGenerator.Execute<ResetAllResourceLogLevelsRequest>();
+            var request = InstantiateClassGenerator.Execute<ResetAllResourceLogLevelsRequest>(operation);
             var marshaller = new ResetAllResourceLogLevelsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -16265,7 +16265,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ResetAllResourceLogLevels");
 
-            var request = InstantiateClassGenerator.Execute<ResetAllResourceLogLevelsRequest>();
+            var request = InstantiateClassGenerator.Execute<ResetAllResourceLogLevelsRequest>(operation);
             var marshaller = new ResetAllResourceLogLevelsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -16297,7 +16297,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ResetResourceLogLevel");
 
-            var request = InstantiateClassGenerator.Execute<ResetResourceLogLevelRequest>();
+            var request = InstantiateClassGenerator.Execute<ResetResourceLogLevelRequest>(operation);
             var marshaller = new ResetResourceLogLevelRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -16327,7 +16327,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ResetResourceLogLevel");
 
-            var request = InstantiateClassGenerator.Execute<ResetResourceLogLevelRequest>();
+            var request = InstantiateClassGenerator.Execute<ResetResourceLogLevelRequest>(operation);
             var marshaller = new ResetResourceLogLevelRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -16359,7 +16359,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ResetResourceLogLevel");
 
-            var request = InstantiateClassGenerator.Execute<ResetResourceLogLevelRequest>();
+            var request = InstantiateClassGenerator.Execute<ResetResourceLogLevelRequest>(operation);
             var marshaller = new ResetResourceLogLevelRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -16391,7 +16391,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ResetResourceLogLevel");
 
-            var request = InstantiateClassGenerator.Execute<ResetResourceLogLevelRequest>();
+            var request = InstantiateClassGenerator.Execute<ResetResourceLogLevelRequest>(operation);
             var marshaller = new ResetResourceLogLevelRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -16423,7 +16423,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ResetResourceLogLevel");
 
-            var request = InstantiateClassGenerator.Execute<ResetResourceLogLevelRequest>();
+            var request = InstantiateClassGenerator.Execute<ResetResourceLogLevelRequest>(operation);
             var marshaller = new ResetResourceLogLevelRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -16455,7 +16455,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ResetResourceLogLevel");
 
-            var request = InstantiateClassGenerator.Execute<ResetResourceLogLevelRequest>();
+            var request = InstantiateClassGenerator.Execute<ResetResourceLogLevelRequest>(operation);
             var marshaller = new ResetResourceLogLevelRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -16487,7 +16487,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("SendDataToMulticastGroup");
 
-            var request = InstantiateClassGenerator.Execute<SendDataToMulticastGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<SendDataToMulticastGroupRequest>(operation);
             var marshaller = new SendDataToMulticastGroupRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -16517,7 +16517,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("SendDataToMulticastGroup");
 
-            var request = InstantiateClassGenerator.Execute<SendDataToMulticastGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<SendDataToMulticastGroupRequest>(operation);
             var marshaller = new SendDataToMulticastGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -16549,7 +16549,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("SendDataToMulticastGroup");
 
-            var request = InstantiateClassGenerator.Execute<SendDataToMulticastGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<SendDataToMulticastGroupRequest>(operation);
             var marshaller = new SendDataToMulticastGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -16581,7 +16581,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("SendDataToMulticastGroup");
 
-            var request = InstantiateClassGenerator.Execute<SendDataToMulticastGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<SendDataToMulticastGroupRequest>(operation);
             var marshaller = new SendDataToMulticastGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -16613,7 +16613,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("SendDataToMulticastGroup");
 
-            var request = InstantiateClassGenerator.Execute<SendDataToMulticastGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<SendDataToMulticastGroupRequest>(operation);
             var marshaller = new SendDataToMulticastGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -16645,7 +16645,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("SendDataToMulticastGroup");
 
-            var request = InstantiateClassGenerator.Execute<SendDataToMulticastGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<SendDataToMulticastGroupRequest>(operation);
             var marshaller = new SendDataToMulticastGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -16677,7 +16677,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("SendDataToMulticastGroup");
 
-            var request = InstantiateClassGenerator.Execute<SendDataToMulticastGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<SendDataToMulticastGroupRequest>(operation);
             var marshaller = new SendDataToMulticastGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -16709,7 +16709,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("SendDataToWirelessDevice");
 
-            var request = InstantiateClassGenerator.Execute<SendDataToWirelessDeviceRequest>();
+            var request = InstantiateClassGenerator.Execute<SendDataToWirelessDeviceRequest>(operation);
             var marshaller = new SendDataToWirelessDeviceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -16739,7 +16739,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("SendDataToWirelessDevice");
 
-            var request = InstantiateClassGenerator.Execute<SendDataToWirelessDeviceRequest>();
+            var request = InstantiateClassGenerator.Execute<SendDataToWirelessDeviceRequest>(operation);
             var marshaller = new SendDataToWirelessDeviceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -16771,7 +16771,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("SendDataToWirelessDevice");
 
-            var request = InstantiateClassGenerator.Execute<SendDataToWirelessDeviceRequest>();
+            var request = InstantiateClassGenerator.Execute<SendDataToWirelessDeviceRequest>(operation);
             var marshaller = new SendDataToWirelessDeviceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -16803,7 +16803,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("SendDataToWirelessDevice");
 
-            var request = InstantiateClassGenerator.Execute<SendDataToWirelessDeviceRequest>();
+            var request = InstantiateClassGenerator.Execute<SendDataToWirelessDeviceRequest>(operation);
             var marshaller = new SendDataToWirelessDeviceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -16835,7 +16835,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("SendDataToWirelessDevice");
 
-            var request = InstantiateClassGenerator.Execute<SendDataToWirelessDeviceRequest>();
+            var request = InstantiateClassGenerator.Execute<SendDataToWirelessDeviceRequest>(operation);
             var marshaller = new SendDataToWirelessDeviceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -16867,7 +16867,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartBulkAssociateWirelessDeviceWithMulticastGroup");
 
-            var request = InstantiateClassGenerator.Execute<StartBulkAssociateWirelessDeviceWithMulticastGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<StartBulkAssociateWirelessDeviceWithMulticastGroupRequest>(operation);
             var marshaller = new StartBulkAssociateWirelessDeviceWithMulticastGroupRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -16897,7 +16897,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartBulkAssociateWirelessDeviceWithMulticastGroup");
 
-            var request = InstantiateClassGenerator.Execute<StartBulkAssociateWirelessDeviceWithMulticastGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<StartBulkAssociateWirelessDeviceWithMulticastGroupRequest>(operation);
             var marshaller = new StartBulkAssociateWirelessDeviceWithMulticastGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -16929,7 +16929,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartBulkAssociateWirelessDeviceWithMulticastGroup");
 
-            var request = InstantiateClassGenerator.Execute<StartBulkAssociateWirelessDeviceWithMulticastGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<StartBulkAssociateWirelessDeviceWithMulticastGroupRequest>(operation);
             var marshaller = new StartBulkAssociateWirelessDeviceWithMulticastGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -16961,7 +16961,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartBulkAssociateWirelessDeviceWithMulticastGroup");
 
-            var request = InstantiateClassGenerator.Execute<StartBulkAssociateWirelessDeviceWithMulticastGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<StartBulkAssociateWirelessDeviceWithMulticastGroupRequest>(operation);
             var marshaller = new StartBulkAssociateWirelessDeviceWithMulticastGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -16993,7 +16993,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartBulkAssociateWirelessDeviceWithMulticastGroup");
 
-            var request = InstantiateClassGenerator.Execute<StartBulkAssociateWirelessDeviceWithMulticastGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<StartBulkAssociateWirelessDeviceWithMulticastGroupRequest>(operation);
             var marshaller = new StartBulkAssociateWirelessDeviceWithMulticastGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -17025,7 +17025,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartBulkAssociateWirelessDeviceWithMulticastGroup");
 
-            var request = InstantiateClassGenerator.Execute<StartBulkAssociateWirelessDeviceWithMulticastGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<StartBulkAssociateWirelessDeviceWithMulticastGroupRequest>(operation);
             var marshaller = new StartBulkAssociateWirelessDeviceWithMulticastGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -17057,7 +17057,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartBulkDisassociateWirelessDeviceFromMulticastGroup");
 
-            var request = InstantiateClassGenerator.Execute<StartBulkDisassociateWirelessDeviceFromMulticastGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<StartBulkDisassociateWirelessDeviceFromMulticastGroupRequest>(operation);
             var marshaller = new StartBulkDisassociateWirelessDeviceFromMulticastGroupRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -17087,7 +17087,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartBulkDisassociateWirelessDeviceFromMulticastGroup");
 
-            var request = InstantiateClassGenerator.Execute<StartBulkDisassociateWirelessDeviceFromMulticastGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<StartBulkDisassociateWirelessDeviceFromMulticastGroupRequest>(operation);
             var marshaller = new StartBulkDisassociateWirelessDeviceFromMulticastGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -17119,7 +17119,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartBulkDisassociateWirelessDeviceFromMulticastGroup");
 
-            var request = InstantiateClassGenerator.Execute<StartBulkDisassociateWirelessDeviceFromMulticastGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<StartBulkDisassociateWirelessDeviceFromMulticastGroupRequest>(operation);
             var marshaller = new StartBulkDisassociateWirelessDeviceFromMulticastGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -17151,7 +17151,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartBulkDisassociateWirelessDeviceFromMulticastGroup");
 
-            var request = InstantiateClassGenerator.Execute<StartBulkDisassociateWirelessDeviceFromMulticastGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<StartBulkDisassociateWirelessDeviceFromMulticastGroupRequest>(operation);
             var marshaller = new StartBulkDisassociateWirelessDeviceFromMulticastGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -17183,7 +17183,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartBulkDisassociateWirelessDeviceFromMulticastGroup");
 
-            var request = InstantiateClassGenerator.Execute<StartBulkDisassociateWirelessDeviceFromMulticastGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<StartBulkDisassociateWirelessDeviceFromMulticastGroupRequest>(operation);
             var marshaller = new StartBulkDisassociateWirelessDeviceFromMulticastGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -17215,7 +17215,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartBulkDisassociateWirelessDeviceFromMulticastGroup");
 
-            var request = InstantiateClassGenerator.Execute<StartBulkDisassociateWirelessDeviceFromMulticastGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<StartBulkDisassociateWirelessDeviceFromMulticastGroupRequest>(operation);
             var marshaller = new StartBulkDisassociateWirelessDeviceFromMulticastGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -17247,7 +17247,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartFuotaTask");
 
-            var request = InstantiateClassGenerator.Execute<StartFuotaTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<StartFuotaTaskRequest>(operation);
             var marshaller = new StartFuotaTaskRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -17277,7 +17277,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartFuotaTask");
 
-            var request = InstantiateClassGenerator.Execute<StartFuotaTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<StartFuotaTaskRequest>(operation);
             var marshaller = new StartFuotaTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -17309,7 +17309,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartFuotaTask");
 
-            var request = InstantiateClassGenerator.Execute<StartFuotaTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<StartFuotaTaskRequest>(operation);
             var marshaller = new StartFuotaTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -17341,7 +17341,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartFuotaTask");
 
-            var request = InstantiateClassGenerator.Execute<StartFuotaTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<StartFuotaTaskRequest>(operation);
             var marshaller = new StartFuotaTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -17373,7 +17373,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartFuotaTask");
 
-            var request = InstantiateClassGenerator.Execute<StartFuotaTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<StartFuotaTaskRequest>(operation);
             var marshaller = new StartFuotaTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -17405,7 +17405,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartFuotaTask");
 
-            var request = InstantiateClassGenerator.Execute<StartFuotaTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<StartFuotaTaskRequest>(operation);
             var marshaller = new StartFuotaTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -17437,7 +17437,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartFuotaTask");
 
-            var request = InstantiateClassGenerator.Execute<StartFuotaTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<StartFuotaTaskRequest>(operation);
             var marshaller = new StartFuotaTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -17469,7 +17469,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartMulticastGroupSession");
 
-            var request = InstantiateClassGenerator.Execute<StartMulticastGroupSessionRequest>();
+            var request = InstantiateClassGenerator.Execute<StartMulticastGroupSessionRequest>(operation);
             var marshaller = new StartMulticastGroupSessionRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -17499,7 +17499,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartMulticastGroupSession");
 
-            var request = InstantiateClassGenerator.Execute<StartMulticastGroupSessionRequest>();
+            var request = InstantiateClassGenerator.Execute<StartMulticastGroupSessionRequest>(operation);
             var marshaller = new StartMulticastGroupSessionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -17531,7 +17531,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartMulticastGroupSession");
 
-            var request = InstantiateClassGenerator.Execute<StartMulticastGroupSessionRequest>();
+            var request = InstantiateClassGenerator.Execute<StartMulticastGroupSessionRequest>(operation);
             var marshaller = new StartMulticastGroupSessionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -17563,7 +17563,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartMulticastGroupSession");
 
-            var request = InstantiateClassGenerator.Execute<StartMulticastGroupSessionRequest>();
+            var request = InstantiateClassGenerator.Execute<StartMulticastGroupSessionRequest>(operation);
             var marshaller = new StartMulticastGroupSessionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -17595,7 +17595,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartMulticastGroupSession");
 
-            var request = InstantiateClassGenerator.Execute<StartMulticastGroupSessionRequest>();
+            var request = InstantiateClassGenerator.Execute<StartMulticastGroupSessionRequest>(operation);
             var marshaller = new StartMulticastGroupSessionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -17627,7 +17627,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartMulticastGroupSession");
 
-            var request = InstantiateClassGenerator.Execute<StartMulticastGroupSessionRequest>();
+            var request = InstantiateClassGenerator.Execute<StartMulticastGroupSessionRequest>(operation);
             var marshaller = new StartMulticastGroupSessionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -17659,7 +17659,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartMulticastGroupSession");
 
-            var request = InstantiateClassGenerator.Execute<StartMulticastGroupSessionRequest>();
+            var request = InstantiateClassGenerator.Execute<StartMulticastGroupSessionRequest>(operation);
             var marshaller = new StartMulticastGroupSessionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -17691,7 +17691,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartSingleWirelessDeviceImportTask");
 
-            var request = InstantiateClassGenerator.Execute<StartSingleWirelessDeviceImportTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<StartSingleWirelessDeviceImportTaskRequest>(operation);
             var marshaller = new StartSingleWirelessDeviceImportTaskRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -17721,7 +17721,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartSingleWirelessDeviceImportTask");
 
-            var request = InstantiateClassGenerator.Execute<StartSingleWirelessDeviceImportTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<StartSingleWirelessDeviceImportTaskRequest>(operation);
             var marshaller = new StartSingleWirelessDeviceImportTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -17753,7 +17753,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartSingleWirelessDeviceImportTask");
 
-            var request = InstantiateClassGenerator.Execute<StartSingleWirelessDeviceImportTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<StartSingleWirelessDeviceImportTaskRequest>(operation);
             var marshaller = new StartSingleWirelessDeviceImportTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -17785,7 +17785,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartSingleWirelessDeviceImportTask");
 
-            var request = InstantiateClassGenerator.Execute<StartSingleWirelessDeviceImportTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<StartSingleWirelessDeviceImportTaskRequest>(operation);
             var marshaller = new StartSingleWirelessDeviceImportTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -17817,7 +17817,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartSingleWirelessDeviceImportTask");
 
-            var request = InstantiateClassGenerator.Execute<StartSingleWirelessDeviceImportTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<StartSingleWirelessDeviceImportTaskRequest>(operation);
             var marshaller = new StartSingleWirelessDeviceImportTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -17849,7 +17849,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartSingleWirelessDeviceImportTask");
 
-            var request = InstantiateClassGenerator.Execute<StartSingleWirelessDeviceImportTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<StartSingleWirelessDeviceImportTaskRequest>(operation);
             var marshaller = new StartSingleWirelessDeviceImportTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -17881,7 +17881,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartSingleWirelessDeviceImportTask");
 
-            var request = InstantiateClassGenerator.Execute<StartSingleWirelessDeviceImportTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<StartSingleWirelessDeviceImportTaskRequest>(operation);
             var marshaller = new StartSingleWirelessDeviceImportTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -17913,7 +17913,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartWirelessDeviceImportTask");
 
-            var request = InstantiateClassGenerator.Execute<StartWirelessDeviceImportTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<StartWirelessDeviceImportTaskRequest>(operation);
             var marshaller = new StartWirelessDeviceImportTaskRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -17943,7 +17943,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartWirelessDeviceImportTask");
 
-            var request = InstantiateClassGenerator.Execute<StartWirelessDeviceImportTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<StartWirelessDeviceImportTaskRequest>(operation);
             var marshaller = new StartWirelessDeviceImportTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -17975,7 +17975,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartWirelessDeviceImportTask");
 
-            var request = InstantiateClassGenerator.Execute<StartWirelessDeviceImportTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<StartWirelessDeviceImportTaskRequest>(operation);
             var marshaller = new StartWirelessDeviceImportTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -18007,7 +18007,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartWirelessDeviceImportTask");
 
-            var request = InstantiateClassGenerator.Execute<StartWirelessDeviceImportTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<StartWirelessDeviceImportTaskRequest>(operation);
             var marshaller = new StartWirelessDeviceImportTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -18039,7 +18039,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartWirelessDeviceImportTask");
 
-            var request = InstantiateClassGenerator.Execute<StartWirelessDeviceImportTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<StartWirelessDeviceImportTaskRequest>(operation);
             var marshaller = new StartWirelessDeviceImportTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -18071,7 +18071,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartWirelessDeviceImportTask");
 
-            var request = InstantiateClassGenerator.Execute<StartWirelessDeviceImportTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<StartWirelessDeviceImportTaskRequest>(operation);
             var marshaller = new StartWirelessDeviceImportTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -18103,7 +18103,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartWirelessDeviceImportTask");
 
-            var request = InstantiateClassGenerator.Execute<StartWirelessDeviceImportTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<StartWirelessDeviceImportTaskRequest>(operation);
             var marshaller = new StartWirelessDeviceImportTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -18135,7 +18135,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("TagResource");
 
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -18165,7 +18165,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("TagResource");
 
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -18197,7 +18197,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("TagResource");
 
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -18229,7 +18229,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("TagResource");
 
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -18261,7 +18261,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("TagResource");
 
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -18293,7 +18293,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("TagResource");
 
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -18325,7 +18325,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("TagResource");
 
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -18357,7 +18357,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("TestWirelessDevice");
 
-            var request = InstantiateClassGenerator.Execute<TestWirelessDeviceRequest>();
+            var request = InstantiateClassGenerator.Execute<TestWirelessDeviceRequest>(operation);
             var marshaller = new TestWirelessDeviceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -18387,7 +18387,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("TestWirelessDevice");
 
-            var request = InstantiateClassGenerator.Execute<TestWirelessDeviceRequest>();
+            var request = InstantiateClassGenerator.Execute<TestWirelessDeviceRequest>(operation);
             var marshaller = new TestWirelessDeviceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -18419,7 +18419,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("TestWirelessDevice");
 
-            var request = InstantiateClassGenerator.Execute<TestWirelessDeviceRequest>();
+            var request = InstantiateClassGenerator.Execute<TestWirelessDeviceRequest>(operation);
             var marshaller = new TestWirelessDeviceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -18451,7 +18451,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("TestWirelessDevice");
 
-            var request = InstantiateClassGenerator.Execute<TestWirelessDeviceRequest>();
+            var request = InstantiateClassGenerator.Execute<TestWirelessDeviceRequest>(operation);
             var marshaller = new TestWirelessDeviceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -18483,7 +18483,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("TestWirelessDevice");
 
-            var request = InstantiateClassGenerator.Execute<TestWirelessDeviceRequest>();
+            var request = InstantiateClassGenerator.Execute<TestWirelessDeviceRequest>(operation);
             var marshaller = new TestWirelessDeviceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -18515,7 +18515,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UntagResource");
 
-            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>(operation);
             var marshaller = new UntagResourceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -18545,7 +18545,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UntagResource");
 
-            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>(operation);
             var marshaller = new UntagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -18577,7 +18577,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UntagResource");
 
-            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>(operation);
             var marshaller = new UntagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -18609,7 +18609,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UntagResource");
 
-            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>(operation);
             var marshaller = new UntagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -18641,7 +18641,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UntagResource");
 
-            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>(operation);
             var marshaller = new UntagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -18673,7 +18673,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UntagResource");
 
-            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>(operation);
             var marshaller = new UntagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -18705,7 +18705,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateDestination");
 
-            var request = InstantiateClassGenerator.Execute<UpdateDestinationRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateDestinationRequest>(operation);
             var marshaller = new UpdateDestinationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -18735,7 +18735,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateDestination");
 
-            var request = InstantiateClassGenerator.Execute<UpdateDestinationRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateDestinationRequest>(operation);
             var marshaller = new UpdateDestinationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -18767,7 +18767,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateDestination");
 
-            var request = InstantiateClassGenerator.Execute<UpdateDestinationRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateDestinationRequest>(operation);
             var marshaller = new UpdateDestinationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -18799,7 +18799,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateDestination");
 
-            var request = InstantiateClassGenerator.Execute<UpdateDestinationRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateDestinationRequest>(operation);
             var marshaller = new UpdateDestinationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -18831,7 +18831,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateDestination");
 
-            var request = InstantiateClassGenerator.Execute<UpdateDestinationRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateDestinationRequest>(operation);
             var marshaller = new UpdateDestinationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -18863,7 +18863,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateDestination");
 
-            var request = InstantiateClassGenerator.Execute<UpdateDestinationRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateDestinationRequest>(operation);
             var marshaller = new UpdateDestinationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -18895,7 +18895,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateEventConfigurationByResourceTypes");
 
-            var request = InstantiateClassGenerator.Execute<UpdateEventConfigurationByResourceTypesRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateEventConfigurationByResourceTypesRequest>(operation);
             var marshaller = new UpdateEventConfigurationByResourceTypesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -18925,7 +18925,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateEventConfigurationByResourceTypes");
 
-            var request = InstantiateClassGenerator.Execute<UpdateEventConfigurationByResourceTypesRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateEventConfigurationByResourceTypesRequest>(operation);
             var marshaller = new UpdateEventConfigurationByResourceTypesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -18957,7 +18957,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateEventConfigurationByResourceTypes");
 
-            var request = InstantiateClassGenerator.Execute<UpdateEventConfigurationByResourceTypesRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateEventConfigurationByResourceTypesRequest>(operation);
             var marshaller = new UpdateEventConfigurationByResourceTypesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -18989,7 +18989,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateEventConfigurationByResourceTypes");
 
-            var request = InstantiateClassGenerator.Execute<UpdateEventConfigurationByResourceTypesRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateEventConfigurationByResourceTypesRequest>(operation);
             var marshaller = new UpdateEventConfigurationByResourceTypesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -19021,7 +19021,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateEventConfigurationByResourceTypes");
 
-            var request = InstantiateClassGenerator.Execute<UpdateEventConfigurationByResourceTypesRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateEventConfigurationByResourceTypesRequest>(operation);
             var marshaller = new UpdateEventConfigurationByResourceTypesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -19053,7 +19053,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateFuotaTask");
 
-            var request = InstantiateClassGenerator.Execute<UpdateFuotaTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateFuotaTaskRequest>(operation);
             var marshaller = new UpdateFuotaTaskRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -19083,7 +19083,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateFuotaTask");
 
-            var request = InstantiateClassGenerator.Execute<UpdateFuotaTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateFuotaTaskRequest>(operation);
             var marshaller = new UpdateFuotaTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -19115,7 +19115,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateFuotaTask");
 
-            var request = InstantiateClassGenerator.Execute<UpdateFuotaTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateFuotaTaskRequest>(operation);
             var marshaller = new UpdateFuotaTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -19147,7 +19147,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateFuotaTask");
 
-            var request = InstantiateClassGenerator.Execute<UpdateFuotaTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateFuotaTaskRequest>(operation);
             var marshaller = new UpdateFuotaTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -19179,7 +19179,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateFuotaTask");
 
-            var request = InstantiateClassGenerator.Execute<UpdateFuotaTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateFuotaTaskRequest>(operation);
             var marshaller = new UpdateFuotaTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -19211,7 +19211,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateFuotaTask");
 
-            var request = InstantiateClassGenerator.Execute<UpdateFuotaTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateFuotaTaskRequest>(operation);
             var marshaller = new UpdateFuotaTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -19243,7 +19243,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateFuotaTask");
 
-            var request = InstantiateClassGenerator.Execute<UpdateFuotaTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateFuotaTaskRequest>(operation);
             var marshaller = new UpdateFuotaTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -19275,7 +19275,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateLogLevelsByResourceTypes");
 
-            var request = InstantiateClassGenerator.Execute<UpdateLogLevelsByResourceTypesRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateLogLevelsByResourceTypesRequest>(operation);
             var marshaller = new UpdateLogLevelsByResourceTypesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -19305,7 +19305,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateLogLevelsByResourceTypes");
 
-            var request = InstantiateClassGenerator.Execute<UpdateLogLevelsByResourceTypesRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateLogLevelsByResourceTypesRequest>(operation);
             var marshaller = new UpdateLogLevelsByResourceTypesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -19337,7 +19337,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateLogLevelsByResourceTypes");
 
-            var request = InstantiateClassGenerator.Execute<UpdateLogLevelsByResourceTypesRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateLogLevelsByResourceTypesRequest>(operation);
             var marshaller = new UpdateLogLevelsByResourceTypesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -19369,7 +19369,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateLogLevelsByResourceTypes");
 
-            var request = InstantiateClassGenerator.Execute<UpdateLogLevelsByResourceTypesRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateLogLevelsByResourceTypesRequest>(operation);
             var marshaller = new UpdateLogLevelsByResourceTypesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -19401,7 +19401,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateLogLevelsByResourceTypes");
 
-            var request = InstantiateClassGenerator.Execute<UpdateLogLevelsByResourceTypesRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateLogLevelsByResourceTypesRequest>(operation);
             var marshaller = new UpdateLogLevelsByResourceTypesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -19433,7 +19433,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateLogLevelsByResourceTypes");
 
-            var request = InstantiateClassGenerator.Execute<UpdateLogLevelsByResourceTypesRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateLogLevelsByResourceTypesRequest>(operation);
             var marshaller = new UpdateLogLevelsByResourceTypesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -19465,7 +19465,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateLogLevelsByResourceTypes");
 
-            var request = InstantiateClassGenerator.Execute<UpdateLogLevelsByResourceTypesRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateLogLevelsByResourceTypesRequest>(operation);
             var marshaller = new UpdateLogLevelsByResourceTypesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -19497,7 +19497,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateMulticastGroup");
 
-            var request = InstantiateClassGenerator.Execute<UpdateMulticastGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateMulticastGroupRequest>(operation);
             var marshaller = new UpdateMulticastGroupRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -19527,7 +19527,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateMulticastGroup");
 
-            var request = InstantiateClassGenerator.Execute<UpdateMulticastGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateMulticastGroupRequest>(operation);
             var marshaller = new UpdateMulticastGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -19559,7 +19559,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateMulticastGroup");
 
-            var request = InstantiateClassGenerator.Execute<UpdateMulticastGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateMulticastGroupRequest>(operation);
             var marshaller = new UpdateMulticastGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -19591,7 +19591,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateMulticastGroup");
 
-            var request = InstantiateClassGenerator.Execute<UpdateMulticastGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateMulticastGroupRequest>(operation);
             var marshaller = new UpdateMulticastGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -19623,7 +19623,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateMulticastGroup");
 
-            var request = InstantiateClassGenerator.Execute<UpdateMulticastGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateMulticastGroupRequest>(operation);
             var marshaller = new UpdateMulticastGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -19655,7 +19655,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateMulticastGroup");
 
-            var request = InstantiateClassGenerator.Execute<UpdateMulticastGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateMulticastGroupRequest>(operation);
             var marshaller = new UpdateMulticastGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -19687,7 +19687,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateMulticastGroup");
 
-            var request = InstantiateClassGenerator.Execute<UpdateMulticastGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateMulticastGroupRequest>(operation);
             var marshaller = new UpdateMulticastGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -19719,7 +19719,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateNetworkAnalyzerConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<UpdateNetworkAnalyzerConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateNetworkAnalyzerConfigurationRequest>(operation);
             var marshaller = new UpdateNetworkAnalyzerConfigurationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -19749,7 +19749,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateNetworkAnalyzerConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<UpdateNetworkAnalyzerConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateNetworkAnalyzerConfigurationRequest>(operation);
             var marshaller = new UpdateNetworkAnalyzerConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -19781,7 +19781,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateNetworkAnalyzerConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<UpdateNetworkAnalyzerConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateNetworkAnalyzerConfigurationRequest>(operation);
             var marshaller = new UpdateNetworkAnalyzerConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -19813,7 +19813,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateNetworkAnalyzerConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<UpdateNetworkAnalyzerConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateNetworkAnalyzerConfigurationRequest>(operation);
             var marshaller = new UpdateNetworkAnalyzerConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -19845,7 +19845,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateNetworkAnalyzerConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<UpdateNetworkAnalyzerConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateNetworkAnalyzerConfigurationRequest>(operation);
             var marshaller = new UpdateNetworkAnalyzerConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -19877,7 +19877,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateNetworkAnalyzerConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<UpdateNetworkAnalyzerConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateNetworkAnalyzerConfigurationRequest>(operation);
             var marshaller = new UpdateNetworkAnalyzerConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -19909,7 +19909,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdatePartnerAccount");
 
-            var request = InstantiateClassGenerator.Execute<UpdatePartnerAccountRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdatePartnerAccountRequest>(operation);
             var marshaller = new UpdatePartnerAccountRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -19939,7 +19939,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdatePartnerAccount");
 
-            var request = InstantiateClassGenerator.Execute<UpdatePartnerAccountRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdatePartnerAccountRequest>(operation);
             var marshaller = new UpdatePartnerAccountRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -19971,7 +19971,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdatePartnerAccount");
 
-            var request = InstantiateClassGenerator.Execute<UpdatePartnerAccountRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdatePartnerAccountRequest>(operation);
             var marshaller = new UpdatePartnerAccountRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -20003,7 +20003,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdatePartnerAccount");
 
-            var request = InstantiateClassGenerator.Execute<UpdatePartnerAccountRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdatePartnerAccountRequest>(operation);
             var marshaller = new UpdatePartnerAccountRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -20035,7 +20035,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdatePartnerAccount");
 
-            var request = InstantiateClassGenerator.Execute<UpdatePartnerAccountRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdatePartnerAccountRequest>(operation);
             var marshaller = new UpdatePartnerAccountRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -20067,7 +20067,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdatePosition");
 
-            var request = InstantiateClassGenerator.Execute<UpdatePositionRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdatePositionRequest>(operation);
             var marshaller = new UpdatePositionRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -20097,7 +20097,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdatePosition");
 
-            var request = InstantiateClassGenerator.Execute<UpdatePositionRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdatePositionRequest>(operation);
             var marshaller = new UpdatePositionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -20129,7 +20129,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdatePosition");
 
-            var request = InstantiateClassGenerator.Execute<UpdatePositionRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdatePositionRequest>(operation);
             var marshaller = new UpdatePositionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -20161,7 +20161,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdatePosition");
 
-            var request = InstantiateClassGenerator.Execute<UpdatePositionRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdatePositionRequest>(operation);
             var marshaller = new UpdatePositionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -20193,7 +20193,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdatePosition");
 
-            var request = InstantiateClassGenerator.Execute<UpdatePositionRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdatePositionRequest>(operation);
             var marshaller = new UpdatePositionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -20225,7 +20225,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdatePosition");
 
-            var request = InstantiateClassGenerator.Execute<UpdatePositionRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdatePositionRequest>(operation);
             var marshaller = new UpdatePositionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -20257,7 +20257,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateResourceEventConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<UpdateResourceEventConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateResourceEventConfigurationRequest>(operation);
             var marshaller = new UpdateResourceEventConfigurationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -20287,7 +20287,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateResourceEventConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<UpdateResourceEventConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateResourceEventConfigurationRequest>(operation);
             var marshaller = new UpdateResourceEventConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -20319,7 +20319,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateResourceEventConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<UpdateResourceEventConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateResourceEventConfigurationRequest>(operation);
             var marshaller = new UpdateResourceEventConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -20351,7 +20351,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateResourceEventConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<UpdateResourceEventConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateResourceEventConfigurationRequest>(operation);
             var marshaller = new UpdateResourceEventConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -20383,7 +20383,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateResourceEventConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<UpdateResourceEventConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateResourceEventConfigurationRequest>(operation);
             var marshaller = new UpdateResourceEventConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -20415,7 +20415,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateResourceEventConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<UpdateResourceEventConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateResourceEventConfigurationRequest>(operation);
             var marshaller = new UpdateResourceEventConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -20447,7 +20447,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateResourceEventConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<UpdateResourceEventConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateResourceEventConfigurationRequest>(operation);
             var marshaller = new UpdateResourceEventConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -20479,7 +20479,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateResourcePosition");
 
-            var request = InstantiateClassGenerator.Execute<UpdateResourcePositionRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateResourcePositionRequest>(operation);
             var marshaller = new UpdateResourcePositionRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -20509,7 +20509,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateResourcePosition");
 
-            var request = InstantiateClassGenerator.Execute<UpdateResourcePositionRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateResourcePositionRequest>(operation);
             var marshaller = new UpdateResourcePositionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -20541,7 +20541,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateResourcePosition");
 
-            var request = InstantiateClassGenerator.Execute<UpdateResourcePositionRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateResourcePositionRequest>(operation);
             var marshaller = new UpdateResourcePositionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -20573,7 +20573,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateResourcePosition");
 
-            var request = InstantiateClassGenerator.Execute<UpdateResourcePositionRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateResourcePositionRequest>(operation);
             var marshaller = new UpdateResourcePositionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -20605,7 +20605,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateResourcePosition");
 
-            var request = InstantiateClassGenerator.Execute<UpdateResourcePositionRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateResourcePositionRequest>(operation);
             var marshaller = new UpdateResourcePositionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -20637,7 +20637,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateResourcePosition");
 
-            var request = InstantiateClassGenerator.Execute<UpdateResourcePositionRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateResourcePositionRequest>(operation);
             var marshaller = new UpdateResourcePositionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -20669,7 +20669,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateWirelessDevice");
 
-            var request = InstantiateClassGenerator.Execute<UpdateWirelessDeviceRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateWirelessDeviceRequest>(operation);
             var marshaller = new UpdateWirelessDeviceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -20699,7 +20699,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateWirelessDevice");
 
-            var request = InstantiateClassGenerator.Execute<UpdateWirelessDeviceRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateWirelessDeviceRequest>(operation);
             var marshaller = new UpdateWirelessDeviceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -20731,7 +20731,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateWirelessDevice");
 
-            var request = InstantiateClassGenerator.Execute<UpdateWirelessDeviceRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateWirelessDeviceRequest>(operation);
             var marshaller = new UpdateWirelessDeviceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -20763,7 +20763,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateWirelessDevice");
 
-            var request = InstantiateClassGenerator.Execute<UpdateWirelessDeviceRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateWirelessDeviceRequest>(operation);
             var marshaller = new UpdateWirelessDeviceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -20795,7 +20795,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateWirelessDevice");
 
-            var request = InstantiateClassGenerator.Execute<UpdateWirelessDeviceRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateWirelessDeviceRequest>(operation);
             var marshaller = new UpdateWirelessDeviceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -20827,7 +20827,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateWirelessDevice");
 
-            var request = InstantiateClassGenerator.Execute<UpdateWirelessDeviceRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateWirelessDeviceRequest>(operation);
             var marshaller = new UpdateWirelessDeviceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -20859,7 +20859,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateWirelessDeviceImportTask");
 
-            var request = InstantiateClassGenerator.Execute<UpdateWirelessDeviceImportTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateWirelessDeviceImportTaskRequest>(operation);
             var marshaller = new UpdateWirelessDeviceImportTaskRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -20889,7 +20889,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateWirelessDeviceImportTask");
 
-            var request = InstantiateClassGenerator.Execute<UpdateWirelessDeviceImportTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateWirelessDeviceImportTaskRequest>(operation);
             var marshaller = new UpdateWirelessDeviceImportTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -20921,7 +20921,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateWirelessDeviceImportTask");
 
-            var request = InstantiateClassGenerator.Execute<UpdateWirelessDeviceImportTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateWirelessDeviceImportTaskRequest>(operation);
             var marshaller = new UpdateWirelessDeviceImportTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -20953,7 +20953,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateWirelessDeviceImportTask");
 
-            var request = InstantiateClassGenerator.Execute<UpdateWirelessDeviceImportTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateWirelessDeviceImportTaskRequest>(operation);
             var marshaller = new UpdateWirelessDeviceImportTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -20985,7 +20985,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateWirelessDeviceImportTask");
 
-            var request = InstantiateClassGenerator.Execute<UpdateWirelessDeviceImportTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateWirelessDeviceImportTaskRequest>(operation);
             var marshaller = new UpdateWirelessDeviceImportTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -21017,7 +21017,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateWirelessDeviceImportTask");
 
-            var request = InstantiateClassGenerator.Execute<UpdateWirelessDeviceImportTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateWirelessDeviceImportTaskRequest>(operation);
             var marshaller = new UpdateWirelessDeviceImportTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -21049,7 +21049,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateWirelessDeviceImportTask");
 
-            var request = InstantiateClassGenerator.Execute<UpdateWirelessDeviceImportTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateWirelessDeviceImportTaskRequest>(operation);
             var marshaller = new UpdateWirelessDeviceImportTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -21081,7 +21081,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateWirelessGateway");
 
-            var request = InstantiateClassGenerator.Execute<UpdateWirelessGatewayRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateWirelessGatewayRequest>(operation);
             var marshaller = new UpdateWirelessGatewayRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -21111,7 +21111,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateWirelessGateway");
 
-            var request = InstantiateClassGenerator.Execute<UpdateWirelessGatewayRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateWirelessGatewayRequest>(operation);
             var marshaller = new UpdateWirelessGatewayRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -21143,7 +21143,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateWirelessGateway");
 
-            var request = InstantiateClassGenerator.Execute<UpdateWirelessGatewayRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateWirelessGatewayRequest>(operation);
             var marshaller = new UpdateWirelessGatewayRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -21175,7 +21175,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateWirelessGateway");
 
-            var request = InstantiateClassGenerator.Execute<UpdateWirelessGatewayRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateWirelessGatewayRequest>(operation);
             var marshaller = new UpdateWirelessGatewayRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -21207,7 +21207,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateWirelessGateway");
 
-            var request = InstantiateClassGenerator.Execute<UpdateWirelessGatewayRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateWirelessGatewayRequest>(operation);
             var marshaller = new UpdateWirelessGatewayRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -21239,7 +21239,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateWirelessGateway");
 
-            var request = InstantiateClassGenerator.Execute<UpdateWirelessGatewayRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateWirelessGatewayRequest>(operation);
             var marshaller = new UpdateWirelessGatewayRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 

@@ -49,7 +49,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateToken");
 
-            var request = InstantiateClassGenerator.Execute<CreateTokenRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateTokenRequest>(operation);
             var marshaller = new CreateTokenRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -79,7 +79,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateToken");
 
-            var request = InstantiateClassGenerator.Execute<CreateTokenRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateTokenRequest>(operation);
             var marshaller = new CreateTokenRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -111,7 +111,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateToken");
 
-            var request = InstantiateClassGenerator.Execute<CreateTokenRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateTokenRequest>(operation);
             var marshaller = new CreateTokenRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -143,7 +143,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateToken");
 
-            var request = InstantiateClassGenerator.Execute<CreateTokenRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateTokenRequest>(operation);
             var marshaller = new CreateTokenRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -175,7 +175,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateToken");
 
-            var request = InstantiateClassGenerator.Execute<CreateTokenRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateTokenRequest>(operation);
             var marshaller = new CreateTokenRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -207,7 +207,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateToken");
 
-            var request = InstantiateClassGenerator.Execute<CreateTokenRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateTokenRequest>(operation);
             var marshaller = new CreateTokenRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -239,7 +239,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateToken");
 
-            var request = InstantiateClassGenerator.Execute<CreateTokenRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateTokenRequest>(operation);
             var marshaller = new CreateTokenRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -271,7 +271,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateToken");
 
-            var request = InstantiateClassGenerator.Execute<CreateTokenRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateTokenRequest>(operation);
             var marshaller = new CreateTokenRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -303,7 +303,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateToken");
 
-            var request = InstantiateClassGenerator.Execute<CreateTokenRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateTokenRequest>(operation);
             var marshaller = new CreateTokenRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -335,7 +335,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateToken");
 
-            var request = InstantiateClassGenerator.Execute<CreateTokenRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateTokenRequest>(operation);
             var marshaller = new CreateTokenRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -367,7 +367,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateToken");
 
-            var request = InstantiateClassGenerator.Execute<CreateTokenRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateTokenRequest>(operation);
             var marshaller = new CreateTokenRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -399,7 +399,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateToken");
 
-            var request = InstantiateClassGenerator.Execute<CreateTokenRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateTokenRequest>(operation);
             var marshaller = new CreateTokenRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -431,7 +431,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("RegisterClient");
 
-            var request = InstantiateClassGenerator.Execute<RegisterClientRequest>();
+            var request = InstantiateClassGenerator.Execute<RegisterClientRequest>(operation);
             var marshaller = new RegisterClientRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -461,7 +461,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("RegisterClient");
 
-            var request = InstantiateClassGenerator.Execute<RegisterClientRequest>();
+            var request = InstantiateClassGenerator.Execute<RegisterClientRequest>(operation);
             var marshaller = new RegisterClientRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -493,7 +493,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("RegisterClient");
 
-            var request = InstantiateClassGenerator.Execute<RegisterClientRequest>();
+            var request = InstantiateClassGenerator.Execute<RegisterClientRequest>(operation);
             var marshaller = new RegisterClientRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -525,7 +525,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("RegisterClient");
 
-            var request = InstantiateClassGenerator.Execute<RegisterClientRequest>();
+            var request = InstantiateClassGenerator.Execute<RegisterClientRequest>(operation);
             var marshaller = new RegisterClientRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -557,7 +557,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("RegisterClient");
 
-            var request = InstantiateClassGenerator.Execute<RegisterClientRequest>();
+            var request = InstantiateClassGenerator.Execute<RegisterClientRequest>(operation);
             var marshaller = new RegisterClientRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -589,7 +589,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartDeviceAuthorization");
 
-            var request = InstantiateClassGenerator.Execute<StartDeviceAuthorizationRequest>();
+            var request = InstantiateClassGenerator.Execute<StartDeviceAuthorizationRequest>(operation);
             var marshaller = new StartDeviceAuthorizationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -619,7 +619,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartDeviceAuthorization");
 
-            var request = InstantiateClassGenerator.Execute<StartDeviceAuthorizationRequest>();
+            var request = InstantiateClassGenerator.Execute<StartDeviceAuthorizationRequest>(operation);
             var marshaller = new StartDeviceAuthorizationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -651,7 +651,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartDeviceAuthorization");
 
-            var request = InstantiateClassGenerator.Execute<StartDeviceAuthorizationRequest>();
+            var request = InstantiateClassGenerator.Execute<StartDeviceAuthorizationRequest>(operation);
             var marshaller = new StartDeviceAuthorizationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -683,7 +683,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartDeviceAuthorization");
 
-            var request = InstantiateClassGenerator.Execute<StartDeviceAuthorizationRequest>();
+            var request = InstantiateClassGenerator.Execute<StartDeviceAuthorizationRequest>(operation);
             var marshaller = new StartDeviceAuthorizationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -715,7 +715,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartDeviceAuthorization");
 
-            var request = InstantiateClassGenerator.Execute<StartDeviceAuthorizationRequest>();
+            var request = InstantiateClassGenerator.Execute<StartDeviceAuthorizationRequest>(operation);
             var marshaller = new StartDeviceAuthorizationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -747,7 +747,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartDeviceAuthorization");
 
-            var request = InstantiateClassGenerator.Execute<StartDeviceAuthorizationRequest>();
+            var request = InstantiateClassGenerator.Execute<StartDeviceAuthorizationRequest>(operation);
             var marshaller = new StartDeviceAuthorizationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 

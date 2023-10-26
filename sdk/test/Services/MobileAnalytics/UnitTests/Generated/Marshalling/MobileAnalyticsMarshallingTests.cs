@@ -49,7 +49,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("PutEvents");
 
-            var request = InstantiateClassGenerator.Execute<PutEventsRequest>();
+            var request = InstantiateClassGenerator.Execute<PutEventsRequest>(operation);
             var marshaller = new PutEventsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -65,7 +65,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("PutEvents");
 
-            var request = InstantiateClassGenerator.Execute<PutEventsRequest>();
+            var request = InstantiateClassGenerator.Execute<PutEventsRequest>(operation);
             var marshaller = new PutEventsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 

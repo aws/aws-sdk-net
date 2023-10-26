@@ -46,7 +46,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("EC2InstanceConnect")]
         public void SendSerialConsoleSSHPublicKeyMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<SendSerialConsoleSSHPublicKeyRequest>();
+            var operation = service_model.FindOperation("SendSerialConsoleSSHPublicKey");
+
+            var request = InstantiateClassGenerator.Execute<SendSerialConsoleSSHPublicKeyRequest>(operation);
             var marshaller = new SendSerialConsoleSSHPublicKeyRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -60,7 +62,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("SendSerialConsoleSSHPublicKey").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = SendSerialConsoleSSHPublicKeyResponseUnmarshaller.Instance.Unmarshall(context) as SendSerialConsoleSSHPublicKeyResponse;
@@ -75,7 +77,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("SendSerialConsoleSSHPublicKey");
 
-            var request = InstantiateClassGenerator.Execute<SendSerialConsoleSSHPublicKeyRequest>();
+            var request = InstantiateClassGenerator.Execute<SendSerialConsoleSSHPublicKeyRequest>(operation);
             var marshaller = new SendSerialConsoleSSHPublicKeyRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -107,7 +109,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("SendSerialConsoleSSHPublicKey");
 
-            var request = InstantiateClassGenerator.Execute<SendSerialConsoleSSHPublicKeyRequest>();
+            var request = InstantiateClassGenerator.Execute<SendSerialConsoleSSHPublicKeyRequest>(operation);
             var marshaller = new SendSerialConsoleSSHPublicKeyRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -139,7 +141,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("SendSerialConsoleSSHPublicKey");
 
-            var request = InstantiateClassGenerator.Execute<SendSerialConsoleSSHPublicKeyRequest>();
+            var request = InstantiateClassGenerator.Execute<SendSerialConsoleSSHPublicKeyRequest>(operation);
             var marshaller = new SendSerialConsoleSSHPublicKeyRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -171,7 +173,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("SendSerialConsoleSSHPublicKey");
 
-            var request = InstantiateClassGenerator.Execute<SendSerialConsoleSSHPublicKeyRequest>();
+            var request = InstantiateClassGenerator.Execute<SendSerialConsoleSSHPublicKeyRequest>(operation);
             var marshaller = new SendSerialConsoleSSHPublicKeyRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -203,7 +205,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("SendSerialConsoleSSHPublicKey");
 
-            var request = InstantiateClassGenerator.Execute<SendSerialConsoleSSHPublicKeyRequest>();
+            var request = InstantiateClassGenerator.Execute<SendSerialConsoleSSHPublicKeyRequest>(operation);
             var marshaller = new SendSerialConsoleSSHPublicKeyRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -235,7 +237,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("SendSerialConsoleSSHPublicKey");
 
-            var request = InstantiateClassGenerator.Execute<SendSerialConsoleSSHPublicKeyRequest>();
+            var request = InstantiateClassGenerator.Execute<SendSerialConsoleSSHPublicKeyRequest>(operation);
             var marshaller = new SendSerialConsoleSSHPublicKeyRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -267,7 +269,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("SendSerialConsoleSSHPublicKey");
 
-            var request = InstantiateClassGenerator.Execute<SendSerialConsoleSSHPublicKeyRequest>();
+            var request = InstantiateClassGenerator.Execute<SendSerialConsoleSSHPublicKeyRequest>(operation);
             var marshaller = new SendSerialConsoleSSHPublicKeyRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -299,7 +301,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("SendSerialConsoleSSHPublicKey");
 
-            var request = InstantiateClassGenerator.Execute<SendSerialConsoleSSHPublicKeyRequest>();
+            var request = InstantiateClassGenerator.Execute<SendSerialConsoleSSHPublicKeyRequest>(operation);
             var marshaller = new SendSerialConsoleSSHPublicKeyRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -331,7 +333,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("SendSerialConsoleSSHPublicKey");
 
-            var request = InstantiateClassGenerator.Execute<SendSerialConsoleSSHPublicKeyRequest>();
+            var request = InstantiateClassGenerator.Execute<SendSerialConsoleSSHPublicKeyRequest>(operation);
             var marshaller = new SendSerialConsoleSSHPublicKeyRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -363,7 +365,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("SendSerialConsoleSSHPublicKey");
 
-            var request = InstantiateClassGenerator.Execute<SendSerialConsoleSSHPublicKeyRequest>();
+            var request = InstantiateClassGenerator.Execute<SendSerialConsoleSSHPublicKeyRequest>(operation);
             var marshaller = new SendSerialConsoleSSHPublicKeyRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -395,7 +397,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("SendSerialConsoleSSHPublicKey");
 
-            var request = InstantiateClassGenerator.Execute<SendSerialConsoleSSHPublicKeyRequest>();
+            var request = InstantiateClassGenerator.Execute<SendSerialConsoleSSHPublicKeyRequest>(operation);
             var marshaller = new SendSerialConsoleSSHPublicKeyRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -425,7 +427,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("EC2InstanceConnect")]
         public void SendSSHPublicKeyMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<SendSSHPublicKeyRequest>();
+            var operation = service_model.FindOperation("SendSSHPublicKey");
+
+            var request = InstantiateClassGenerator.Execute<SendSSHPublicKeyRequest>(operation);
             var marshaller = new SendSSHPublicKeyRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -439,7 +443,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("SendSSHPublicKey").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = SendSSHPublicKeyResponseUnmarshaller.Instance.Unmarshall(context) as SendSSHPublicKeyResponse;
@@ -454,7 +458,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("SendSSHPublicKey");
 
-            var request = InstantiateClassGenerator.Execute<SendSSHPublicKeyRequest>();
+            var request = InstantiateClassGenerator.Execute<SendSSHPublicKeyRequest>(operation);
             var marshaller = new SendSSHPublicKeyRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -486,7 +490,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("SendSSHPublicKey");
 
-            var request = InstantiateClassGenerator.Execute<SendSSHPublicKeyRequest>();
+            var request = InstantiateClassGenerator.Execute<SendSSHPublicKeyRequest>(operation);
             var marshaller = new SendSSHPublicKeyRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -518,7 +522,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("SendSSHPublicKey");
 
-            var request = InstantiateClassGenerator.Execute<SendSSHPublicKeyRequest>();
+            var request = InstantiateClassGenerator.Execute<SendSSHPublicKeyRequest>(operation);
             var marshaller = new SendSSHPublicKeyRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -550,7 +554,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("SendSSHPublicKey");
 
-            var request = InstantiateClassGenerator.Execute<SendSSHPublicKeyRequest>();
+            var request = InstantiateClassGenerator.Execute<SendSSHPublicKeyRequest>(operation);
             var marshaller = new SendSSHPublicKeyRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -582,7 +586,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("SendSSHPublicKey");
 
-            var request = InstantiateClassGenerator.Execute<SendSSHPublicKeyRequest>();
+            var request = InstantiateClassGenerator.Execute<SendSSHPublicKeyRequest>(operation);
             var marshaller = new SendSSHPublicKeyRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -614,7 +618,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("SendSSHPublicKey");
 
-            var request = InstantiateClassGenerator.Execute<SendSSHPublicKeyRequest>();
+            var request = InstantiateClassGenerator.Execute<SendSSHPublicKeyRequest>(operation);
             var marshaller = new SendSSHPublicKeyRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -646,7 +650,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("SendSSHPublicKey");
 
-            var request = InstantiateClassGenerator.Execute<SendSSHPublicKeyRequest>();
+            var request = InstantiateClassGenerator.Execute<SendSSHPublicKeyRequest>(operation);
             var marshaller = new SendSSHPublicKeyRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);

@@ -49,7 +49,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ExecuteQuery");
 
-            var request = InstantiateClassGenerator.Execute<ExecuteQueryRequest>();
+            var request = InstantiateClassGenerator.Execute<ExecuteQueryRequest>(operation);
             var marshaller = new ExecuteQueryRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);

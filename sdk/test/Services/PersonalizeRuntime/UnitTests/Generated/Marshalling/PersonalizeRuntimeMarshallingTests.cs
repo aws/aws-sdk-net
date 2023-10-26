@@ -49,7 +49,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetPersonalizedRanking");
 
-            var request = InstantiateClassGenerator.Execute<GetPersonalizedRankingRequest>();
+            var request = InstantiateClassGenerator.Execute<GetPersonalizedRankingRequest>(operation);
             var marshaller = new GetPersonalizedRankingRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -79,7 +79,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetPersonalizedRanking");
 
-            var request = InstantiateClassGenerator.Execute<GetPersonalizedRankingRequest>();
+            var request = InstantiateClassGenerator.Execute<GetPersonalizedRankingRequest>(operation);
             var marshaller = new GetPersonalizedRankingRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -111,7 +111,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetPersonalizedRanking");
 
-            var request = InstantiateClassGenerator.Execute<GetPersonalizedRankingRequest>();
+            var request = InstantiateClassGenerator.Execute<GetPersonalizedRankingRequest>(operation);
             var marshaller = new GetPersonalizedRankingRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -143,7 +143,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetRecommendations");
 
-            var request = InstantiateClassGenerator.Execute<GetRecommendationsRequest>();
+            var request = InstantiateClassGenerator.Execute<GetRecommendationsRequest>(operation);
             var marshaller = new GetRecommendationsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -173,7 +173,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetRecommendations");
 
-            var request = InstantiateClassGenerator.Execute<GetRecommendationsRequest>();
+            var request = InstantiateClassGenerator.Execute<GetRecommendationsRequest>(operation);
             var marshaller = new GetRecommendationsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -205,7 +205,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetRecommendations");
 
-            var request = InstantiateClassGenerator.Execute<GetRecommendationsRequest>();
+            var request = InstantiateClassGenerator.Execute<GetRecommendationsRequest>(operation);
             var marshaller = new GetRecommendationsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 

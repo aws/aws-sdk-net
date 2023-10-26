@@ -46,7 +46,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("MigrationHubConfig")]
         public void CreateHomeRegionControlMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<CreateHomeRegionControlRequest>();
+            var operation = service_model.FindOperation("CreateHomeRegionControl");
+
+            var request = InstantiateClassGenerator.Execute<CreateHomeRegionControlRequest>(operation);
             var marshaller = new CreateHomeRegionControlRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -60,7 +62,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("CreateHomeRegionControl").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = CreateHomeRegionControlResponseUnmarshaller.Instance.Unmarshall(context) as CreateHomeRegionControlResponse;
@@ -75,7 +77,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateHomeRegionControl");
 
-            var request = InstantiateClassGenerator.Execute<CreateHomeRegionControlRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateHomeRegionControlRequest>(operation);
             var marshaller = new CreateHomeRegionControlRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -107,7 +109,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateHomeRegionControl");
 
-            var request = InstantiateClassGenerator.Execute<CreateHomeRegionControlRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateHomeRegionControlRequest>(operation);
             var marshaller = new CreateHomeRegionControlRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -139,7 +141,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateHomeRegionControl");
 
-            var request = InstantiateClassGenerator.Execute<CreateHomeRegionControlRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateHomeRegionControlRequest>(operation);
             var marshaller = new CreateHomeRegionControlRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -171,7 +173,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateHomeRegionControl");
 
-            var request = InstantiateClassGenerator.Execute<CreateHomeRegionControlRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateHomeRegionControlRequest>(operation);
             var marshaller = new CreateHomeRegionControlRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -203,7 +205,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateHomeRegionControl");
 
-            var request = InstantiateClassGenerator.Execute<CreateHomeRegionControlRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateHomeRegionControlRequest>(operation);
             var marshaller = new CreateHomeRegionControlRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -235,7 +237,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateHomeRegionControl");
 
-            var request = InstantiateClassGenerator.Execute<CreateHomeRegionControlRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateHomeRegionControlRequest>(operation);
             var marshaller = new CreateHomeRegionControlRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -265,7 +267,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("MigrationHubConfig")]
         public void DeleteHomeRegionControlMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DeleteHomeRegionControlRequest>();
+            var operation = service_model.FindOperation("DeleteHomeRegionControl");
+
+            var request = InstantiateClassGenerator.Execute<DeleteHomeRegionControlRequest>(operation);
             var marshaller = new DeleteHomeRegionControlRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -279,7 +283,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DeleteHomeRegionControl").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DeleteHomeRegionControlResponseUnmarshaller.Instance.Unmarshall(context) as DeleteHomeRegionControlResponse;
@@ -294,7 +298,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteHomeRegionControl");
 
-            var request = InstantiateClassGenerator.Execute<DeleteHomeRegionControlRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteHomeRegionControlRequest>(operation);
             var marshaller = new DeleteHomeRegionControlRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -326,7 +330,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteHomeRegionControl");
 
-            var request = InstantiateClassGenerator.Execute<DeleteHomeRegionControlRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteHomeRegionControlRequest>(operation);
             var marshaller = new DeleteHomeRegionControlRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -358,7 +362,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteHomeRegionControl");
 
-            var request = InstantiateClassGenerator.Execute<DeleteHomeRegionControlRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteHomeRegionControlRequest>(operation);
             var marshaller = new DeleteHomeRegionControlRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -390,7 +394,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteHomeRegionControl");
 
-            var request = InstantiateClassGenerator.Execute<DeleteHomeRegionControlRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteHomeRegionControlRequest>(operation);
             var marshaller = new DeleteHomeRegionControlRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -422,7 +426,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteHomeRegionControl");
 
-            var request = InstantiateClassGenerator.Execute<DeleteHomeRegionControlRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteHomeRegionControlRequest>(operation);
             var marshaller = new DeleteHomeRegionControlRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -452,7 +456,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("MigrationHubConfig")]
         public void DescribeHomeRegionControlsMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DescribeHomeRegionControlsRequest>();
+            var operation = service_model.FindOperation("DescribeHomeRegionControls");
+
+            var request = InstantiateClassGenerator.Execute<DescribeHomeRegionControlsRequest>(operation);
             var marshaller = new DescribeHomeRegionControlsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -466,7 +472,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeHomeRegionControls").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DescribeHomeRegionControlsResponseUnmarshaller.Instance.Unmarshall(context) as DescribeHomeRegionControlsResponse;
@@ -481,7 +487,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeHomeRegionControls");
 
-            var request = InstantiateClassGenerator.Execute<DescribeHomeRegionControlsRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeHomeRegionControlsRequest>(operation);
             var marshaller = new DescribeHomeRegionControlsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -513,7 +519,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeHomeRegionControls");
 
-            var request = InstantiateClassGenerator.Execute<DescribeHomeRegionControlsRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeHomeRegionControlsRequest>(operation);
             var marshaller = new DescribeHomeRegionControlsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -545,7 +551,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeHomeRegionControls");
 
-            var request = InstantiateClassGenerator.Execute<DescribeHomeRegionControlsRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeHomeRegionControlsRequest>(operation);
             var marshaller = new DescribeHomeRegionControlsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -577,7 +583,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeHomeRegionControls");
 
-            var request = InstantiateClassGenerator.Execute<DescribeHomeRegionControlsRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeHomeRegionControlsRequest>(operation);
             var marshaller = new DescribeHomeRegionControlsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -609,7 +615,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeHomeRegionControls");
 
-            var request = InstantiateClassGenerator.Execute<DescribeHomeRegionControlsRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeHomeRegionControlsRequest>(operation);
             var marshaller = new DescribeHomeRegionControlsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -639,7 +645,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("MigrationHubConfig")]
         public void GetHomeRegionMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<GetHomeRegionRequest>();
+            var operation = service_model.FindOperation("GetHomeRegion");
+
+            var request = InstantiateClassGenerator.Execute<GetHomeRegionRequest>(operation);
             var marshaller = new GetHomeRegionRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -653,7 +661,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetHomeRegion").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = GetHomeRegionResponseUnmarshaller.Instance.Unmarshall(context) as GetHomeRegionResponse;
@@ -668,7 +676,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetHomeRegion");
 
-            var request = InstantiateClassGenerator.Execute<GetHomeRegionRequest>();
+            var request = InstantiateClassGenerator.Execute<GetHomeRegionRequest>(operation);
             var marshaller = new GetHomeRegionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -700,7 +708,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetHomeRegion");
 
-            var request = InstantiateClassGenerator.Execute<GetHomeRegionRequest>();
+            var request = InstantiateClassGenerator.Execute<GetHomeRegionRequest>(operation);
             var marshaller = new GetHomeRegionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -732,7 +740,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetHomeRegion");
 
-            var request = InstantiateClassGenerator.Execute<GetHomeRegionRequest>();
+            var request = InstantiateClassGenerator.Execute<GetHomeRegionRequest>(operation);
             var marshaller = new GetHomeRegionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -764,7 +772,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetHomeRegion");
 
-            var request = InstantiateClassGenerator.Execute<GetHomeRegionRequest>();
+            var request = InstantiateClassGenerator.Execute<GetHomeRegionRequest>(operation);
             var marshaller = new GetHomeRegionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -796,7 +804,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetHomeRegion");
 
-            var request = InstantiateClassGenerator.Execute<GetHomeRegionRequest>();
+            var request = InstantiateClassGenerator.Execute<GetHomeRegionRequest>(operation);
             var marshaller = new GetHomeRegionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);

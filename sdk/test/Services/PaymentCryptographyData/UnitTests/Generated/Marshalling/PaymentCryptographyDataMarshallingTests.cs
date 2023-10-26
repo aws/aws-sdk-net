@@ -49,7 +49,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DecryptData");
 
-            var request = InstantiateClassGenerator.Execute<DecryptDataRequest>();
+            var request = InstantiateClassGenerator.Execute<DecryptDataRequest>(operation);
             var marshaller = new DecryptDataRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -79,7 +79,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DecryptData");
 
-            var request = InstantiateClassGenerator.Execute<DecryptDataRequest>();
+            var request = InstantiateClassGenerator.Execute<DecryptDataRequest>(operation);
             var marshaller = new DecryptDataRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -111,7 +111,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DecryptData");
 
-            var request = InstantiateClassGenerator.Execute<DecryptDataRequest>();
+            var request = InstantiateClassGenerator.Execute<DecryptDataRequest>(operation);
             var marshaller = new DecryptDataRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -143,7 +143,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DecryptData");
 
-            var request = InstantiateClassGenerator.Execute<DecryptDataRequest>();
+            var request = InstantiateClassGenerator.Execute<DecryptDataRequest>(operation);
             var marshaller = new DecryptDataRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -175,7 +175,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DecryptData");
 
-            var request = InstantiateClassGenerator.Execute<DecryptDataRequest>();
+            var request = InstantiateClassGenerator.Execute<DecryptDataRequest>(operation);
             var marshaller = new DecryptDataRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -207,7 +207,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DecryptData");
 
-            var request = InstantiateClassGenerator.Execute<DecryptDataRequest>();
+            var request = InstantiateClassGenerator.Execute<DecryptDataRequest>(operation);
             var marshaller = new DecryptDataRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -239,7 +239,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("EncryptData");
 
-            var request = InstantiateClassGenerator.Execute<EncryptDataRequest>();
+            var request = InstantiateClassGenerator.Execute<EncryptDataRequest>(operation);
             var marshaller = new EncryptDataRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -269,7 +269,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("EncryptData");
 
-            var request = InstantiateClassGenerator.Execute<EncryptDataRequest>();
+            var request = InstantiateClassGenerator.Execute<EncryptDataRequest>(operation);
             var marshaller = new EncryptDataRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -301,7 +301,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("EncryptData");
 
-            var request = InstantiateClassGenerator.Execute<EncryptDataRequest>();
+            var request = InstantiateClassGenerator.Execute<EncryptDataRequest>(operation);
             var marshaller = new EncryptDataRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -333,7 +333,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("EncryptData");
 
-            var request = InstantiateClassGenerator.Execute<EncryptDataRequest>();
+            var request = InstantiateClassGenerator.Execute<EncryptDataRequest>(operation);
             var marshaller = new EncryptDataRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -365,7 +365,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("EncryptData");
 
-            var request = InstantiateClassGenerator.Execute<EncryptDataRequest>();
+            var request = InstantiateClassGenerator.Execute<EncryptDataRequest>(operation);
             var marshaller = new EncryptDataRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -397,7 +397,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("EncryptData");
 
-            var request = InstantiateClassGenerator.Execute<EncryptDataRequest>();
+            var request = InstantiateClassGenerator.Execute<EncryptDataRequest>(operation);
             var marshaller = new EncryptDataRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -429,7 +429,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GenerateCardValidationData");
 
-            var request = InstantiateClassGenerator.Execute<GenerateCardValidationDataRequest>();
+            var request = InstantiateClassGenerator.Execute<GenerateCardValidationDataRequest>(operation);
             var marshaller = new GenerateCardValidationDataRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -459,7 +459,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GenerateCardValidationData");
 
-            var request = InstantiateClassGenerator.Execute<GenerateCardValidationDataRequest>();
+            var request = InstantiateClassGenerator.Execute<GenerateCardValidationDataRequest>(operation);
             var marshaller = new GenerateCardValidationDataRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -491,7 +491,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GenerateCardValidationData");
 
-            var request = InstantiateClassGenerator.Execute<GenerateCardValidationDataRequest>();
+            var request = InstantiateClassGenerator.Execute<GenerateCardValidationDataRequest>(operation);
             var marshaller = new GenerateCardValidationDataRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -523,7 +523,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GenerateCardValidationData");
 
-            var request = InstantiateClassGenerator.Execute<GenerateCardValidationDataRequest>();
+            var request = InstantiateClassGenerator.Execute<GenerateCardValidationDataRequest>(operation);
             var marshaller = new GenerateCardValidationDataRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -555,7 +555,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GenerateCardValidationData");
 
-            var request = InstantiateClassGenerator.Execute<GenerateCardValidationDataRequest>();
+            var request = InstantiateClassGenerator.Execute<GenerateCardValidationDataRequest>(operation);
             var marshaller = new GenerateCardValidationDataRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -587,7 +587,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GenerateCardValidationData");
 
-            var request = InstantiateClassGenerator.Execute<GenerateCardValidationDataRequest>();
+            var request = InstantiateClassGenerator.Execute<GenerateCardValidationDataRequest>(operation);
             var marshaller = new GenerateCardValidationDataRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -619,7 +619,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GenerateMac");
 
-            var request = InstantiateClassGenerator.Execute<GenerateMacRequest>();
+            var request = InstantiateClassGenerator.Execute<GenerateMacRequest>(operation);
             var marshaller = new GenerateMacRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -649,7 +649,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GenerateMac");
 
-            var request = InstantiateClassGenerator.Execute<GenerateMacRequest>();
+            var request = InstantiateClassGenerator.Execute<GenerateMacRequest>(operation);
             var marshaller = new GenerateMacRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -681,7 +681,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GenerateMac");
 
-            var request = InstantiateClassGenerator.Execute<GenerateMacRequest>();
+            var request = InstantiateClassGenerator.Execute<GenerateMacRequest>(operation);
             var marshaller = new GenerateMacRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -713,7 +713,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GenerateMac");
 
-            var request = InstantiateClassGenerator.Execute<GenerateMacRequest>();
+            var request = InstantiateClassGenerator.Execute<GenerateMacRequest>(operation);
             var marshaller = new GenerateMacRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -745,7 +745,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GenerateMac");
 
-            var request = InstantiateClassGenerator.Execute<GenerateMacRequest>();
+            var request = InstantiateClassGenerator.Execute<GenerateMacRequest>(operation);
             var marshaller = new GenerateMacRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -777,7 +777,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GenerateMac");
 
-            var request = InstantiateClassGenerator.Execute<GenerateMacRequest>();
+            var request = InstantiateClassGenerator.Execute<GenerateMacRequest>(operation);
             var marshaller = new GenerateMacRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -809,7 +809,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GeneratePinData");
 
-            var request = InstantiateClassGenerator.Execute<GeneratePinDataRequest>();
+            var request = InstantiateClassGenerator.Execute<GeneratePinDataRequest>(operation);
             var marshaller = new GeneratePinDataRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -839,7 +839,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GeneratePinData");
 
-            var request = InstantiateClassGenerator.Execute<GeneratePinDataRequest>();
+            var request = InstantiateClassGenerator.Execute<GeneratePinDataRequest>(operation);
             var marshaller = new GeneratePinDataRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -871,7 +871,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GeneratePinData");
 
-            var request = InstantiateClassGenerator.Execute<GeneratePinDataRequest>();
+            var request = InstantiateClassGenerator.Execute<GeneratePinDataRequest>(operation);
             var marshaller = new GeneratePinDataRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -903,7 +903,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GeneratePinData");
 
-            var request = InstantiateClassGenerator.Execute<GeneratePinDataRequest>();
+            var request = InstantiateClassGenerator.Execute<GeneratePinDataRequest>(operation);
             var marshaller = new GeneratePinDataRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -935,7 +935,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GeneratePinData");
 
-            var request = InstantiateClassGenerator.Execute<GeneratePinDataRequest>();
+            var request = InstantiateClassGenerator.Execute<GeneratePinDataRequest>(operation);
             var marshaller = new GeneratePinDataRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -967,7 +967,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GeneratePinData");
 
-            var request = InstantiateClassGenerator.Execute<GeneratePinDataRequest>();
+            var request = InstantiateClassGenerator.Execute<GeneratePinDataRequest>(operation);
             var marshaller = new GeneratePinDataRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -999,7 +999,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ReEncryptData");
 
-            var request = InstantiateClassGenerator.Execute<ReEncryptDataRequest>();
+            var request = InstantiateClassGenerator.Execute<ReEncryptDataRequest>(operation);
             var marshaller = new ReEncryptDataRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1029,7 +1029,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ReEncryptData");
 
-            var request = InstantiateClassGenerator.Execute<ReEncryptDataRequest>();
+            var request = InstantiateClassGenerator.Execute<ReEncryptDataRequest>(operation);
             var marshaller = new ReEncryptDataRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1061,7 +1061,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ReEncryptData");
 
-            var request = InstantiateClassGenerator.Execute<ReEncryptDataRequest>();
+            var request = InstantiateClassGenerator.Execute<ReEncryptDataRequest>(operation);
             var marshaller = new ReEncryptDataRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1093,7 +1093,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ReEncryptData");
 
-            var request = InstantiateClassGenerator.Execute<ReEncryptDataRequest>();
+            var request = InstantiateClassGenerator.Execute<ReEncryptDataRequest>(operation);
             var marshaller = new ReEncryptDataRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1125,7 +1125,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ReEncryptData");
 
-            var request = InstantiateClassGenerator.Execute<ReEncryptDataRequest>();
+            var request = InstantiateClassGenerator.Execute<ReEncryptDataRequest>(operation);
             var marshaller = new ReEncryptDataRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1157,7 +1157,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ReEncryptData");
 
-            var request = InstantiateClassGenerator.Execute<ReEncryptDataRequest>();
+            var request = InstantiateClassGenerator.Execute<ReEncryptDataRequest>(operation);
             var marshaller = new ReEncryptDataRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1189,7 +1189,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("TranslatePinData");
 
-            var request = InstantiateClassGenerator.Execute<TranslatePinDataRequest>();
+            var request = InstantiateClassGenerator.Execute<TranslatePinDataRequest>(operation);
             var marshaller = new TranslatePinDataRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1219,7 +1219,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("TranslatePinData");
 
-            var request = InstantiateClassGenerator.Execute<TranslatePinDataRequest>();
+            var request = InstantiateClassGenerator.Execute<TranslatePinDataRequest>(operation);
             var marshaller = new TranslatePinDataRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1251,7 +1251,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("TranslatePinData");
 
-            var request = InstantiateClassGenerator.Execute<TranslatePinDataRequest>();
+            var request = InstantiateClassGenerator.Execute<TranslatePinDataRequest>(operation);
             var marshaller = new TranslatePinDataRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1283,7 +1283,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("TranslatePinData");
 
-            var request = InstantiateClassGenerator.Execute<TranslatePinDataRequest>();
+            var request = InstantiateClassGenerator.Execute<TranslatePinDataRequest>(operation);
             var marshaller = new TranslatePinDataRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1315,7 +1315,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("TranslatePinData");
 
-            var request = InstantiateClassGenerator.Execute<TranslatePinDataRequest>();
+            var request = InstantiateClassGenerator.Execute<TranslatePinDataRequest>(operation);
             var marshaller = new TranslatePinDataRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1347,7 +1347,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("TranslatePinData");
 
-            var request = InstantiateClassGenerator.Execute<TranslatePinDataRequest>();
+            var request = InstantiateClassGenerator.Execute<TranslatePinDataRequest>(operation);
             var marshaller = new TranslatePinDataRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1379,7 +1379,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("VerifyAuthRequestCryptogram");
 
-            var request = InstantiateClassGenerator.Execute<VerifyAuthRequestCryptogramRequest>();
+            var request = InstantiateClassGenerator.Execute<VerifyAuthRequestCryptogramRequest>(operation);
             var marshaller = new VerifyAuthRequestCryptogramRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1409,7 +1409,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("VerifyAuthRequestCryptogram");
 
-            var request = InstantiateClassGenerator.Execute<VerifyAuthRequestCryptogramRequest>();
+            var request = InstantiateClassGenerator.Execute<VerifyAuthRequestCryptogramRequest>(operation);
             var marshaller = new VerifyAuthRequestCryptogramRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1441,7 +1441,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("VerifyAuthRequestCryptogram");
 
-            var request = InstantiateClassGenerator.Execute<VerifyAuthRequestCryptogramRequest>();
+            var request = InstantiateClassGenerator.Execute<VerifyAuthRequestCryptogramRequest>(operation);
             var marshaller = new VerifyAuthRequestCryptogramRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1473,7 +1473,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("VerifyAuthRequestCryptogram");
 
-            var request = InstantiateClassGenerator.Execute<VerifyAuthRequestCryptogramRequest>();
+            var request = InstantiateClassGenerator.Execute<VerifyAuthRequestCryptogramRequest>(operation);
             var marshaller = new VerifyAuthRequestCryptogramRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1505,7 +1505,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("VerifyAuthRequestCryptogram");
 
-            var request = InstantiateClassGenerator.Execute<VerifyAuthRequestCryptogramRequest>();
+            var request = InstantiateClassGenerator.Execute<VerifyAuthRequestCryptogramRequest>(operation);
             var marshaller = new VerifyAuthRequestCryptogramRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1537,7 +1537,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("VerifyAuthRequestCryptogram");
 
-            var request = InstantiateClassGenerator.Execute<VerifyAuthRequestCryptogramRequest>();
+            var request = InstantiateClassGenerator.Execute<VerifyAuthRequestCryptogramRequest>(operation);
             var marshaller = new VerifyAuthRequestCryptogramRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1569,7 +1569,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("VerifyAuthRequestCryptogram");
 
-            var request = InstantiateClassGenerator.Execute<VerifyAuthRequestCryptogramRequest>();
+            var request = InstantiateClassGenerator.Execute<VerifyAuthRequestCryptogramRequest>(operation);
             var marshaller = new VerifyAuthRequestCryptogramRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1601,7 +1601,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("VerifyCardValidationData");
 
-            var request = InstantiateClassGenerator.Execute<VerifyCardValidationDataRequest>();
+            var request = InstantiateClassGenerator.Execute<VerifyCardValidationDataRequest>(operation);
             var marshaller = new VerifyCardValidationDataRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1631,7 +1631,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("VerifyCardValidationData");
 
-            var request = InstantiateClassGenerator.Execute<VerifyCardValidationDataRequest>();
+            var request = InstantiateClassGenerator.Execute<VerifyCardValidationDataRequest>(operation);
             var marshaller = new VerifyCardValidationDataRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1663,7 +1663,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("VerifyCardValidationData");
 
-            var request = InstantiateClassGenerator.Execute<VerifyCardValidationDataRequest>();
+            var request = InstantiateClassGenerator.Execute<VerifyCardValidationDataRequest>(operation);
             var marshaller = new VerifyCardValidationDataRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1695,7 +1695,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("VerifyCardValidationData");
 
-            var request = InstantiateClassGenerator.Execute<VerifyCardValidationDataRequest>();
+            var request = InstantiateClassGenerator.Execute<VerifyCardValidationDataRequest>(operation);
             var marshaller = new VerifyCardValidationDataRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1727,7 +1727,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("VerifyCardValidationData");
 
-            var request = InstantiateClassGenerator.Execute<VerifyCardValidationDataRequest>();
+            var request = InstantiateClassGenerator.Execute<VerifyCardValidationDataRequest>(operation);
             var marshaller = new VerifyCardValidationDataRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1759,7 +1759,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("VerifyCardValidationData");
 
-            var request = InstantiateClassGenerator.Execute<VerifyCardValidationDataRequest>();
+            var request = InstantiateClassGenerator.Execute<VerifyCardValidationDataRequest>(operation);
             var marshaller = new VerifyCardValidationDataRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1791,7 +1791,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("VerifyCardValidationData");
 
-            var request = InstantiateClassGenerator.Execute<VerifyCardValidationDataRequest>();
+            var request = InstantiateClassGenerator.Execute<VerifyCardValidationDataRequest>(operation);
             var marshaller = new VerifyCardValidationDataRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1823,7 +1823,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("VerifyMac");
 
-            var request = InstantiateClassGenerator.Execute<VerifyMacRequest>();
+            var request = InstantiateClassGenerator.Execute<VerifyMacRequest>(operation);
             var marshaller = new VerifyMacRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1853,7 +1853,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("VerifyMac");
 
-            var request = InstantiateClassGenerator.Execute<VerifyMacRequest>();
+            var request = InstantiateClassGenerator.Execute<VerifyMacRequest>(operation);
             var marshaller = new VerifyMacRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1885,7 +1885,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("VerifyMac");
 
-            var request = InstantiateClassGenerator.Execute<VerifyMacRequest>();
+            var request = InstantiateClassGenerator.Execute<VerifyMacRequest>(operation);
             var marshaller = new VerifyMacRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1917,7 +1917,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("VerifyMac");
 
-            var request = InstantiateClassGenerator.Execute<VerifyMacRequest>();
+            var request = InstantiateClassGenerator.Execute<VerifyMacRequest>(operation);
             var marshaller = new VerifyMacRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1949,7 +1949,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("VerifyMac");
 
-            var request = InstantiateClassGenerator.Execute<VerifyMacRequest>();
+            var request = InstantiateClassGenerator.Execute<VerifyMacRequest>(operation);
             var marshaller = new VerifyMacRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1981,7 +1981,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("VerifyMac");
 
-            var request = InstantiateClassGenerator.Execute<VerifyMacRequest>();
+            var request = InstantiateClassGenerator.Execute<VerifyMacRequest>(operation);
             var marshaller = new VerifyMacRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2013,7 +2013,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("VerifyMac");
 
-            var request = InstantiateClassGenerator.Execute<VerifyMacRequest>();
+            var request = InstantiateClassGenerator.Execute<VerifyMacRequest>(operation);
             var marshaller = new VerifyMacRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2045,7 +2045,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("VerifyPinData");
 
-            var request = InstantiateClassGenerator.Execute<VerifyPinDataRequest>();
+            var request = InstantiateClassGenerator.Execute<VerifyPinDataRequest>(operation);
             var marshaller = new VerifyPinDataRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -2075,7 +2075,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("VerifyPinData");
 
-            var request = InstantiateClassGenerator.Execute<VerifyPinDataRequest>();
+            var request = InstantiateClassGenerator.Execute<VerifyPinDataRequest>(operation);
             var marshaller = new VerifyPinDataRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2107,7 +2107,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("VerifyPinData");
 
-            var request = InstantiateClassGenerator.Execute<VerifyPinDataRequest>();
+            var request = InstantiateClassGenerator.Execute<VerifyPinDataRequest>(operation);
             var marshaller = new VerifyPinDataRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2139,7 +2139,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("VerifyPinData");
 
-            var request = InstantiateClassGenerator.Execute<VerifyPinDataRequest>();
+            var request = InstantiateClassGenerator.Execute<VerifyPinDataRequest>(operation);
             var marshaller = new VerifyPinDataRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2171,7 +2171,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("VerifyPinData");
 
-            var request = InstantiateClassGenerator.Execute<VerifyPinDataRequest>();
+            var request = InstantiateClassGenerator.Execute<VerifyPinDataRequest>(operation);
             var marshaller = new VerifyPinDataRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2203,7 +2203,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("VerifyPinData");
 
-            var request = InstantiateClassGenerator.Execute<VerifyPinDataRequest>();
+            var request = InstantiateClassGenerator.Execute<VerifyPinDataRequest>(operation);
             var marshaller = new VerifyPinDataRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2235,7 +2235,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("VerifyPinData");
 
-            var request = InstantiateClassGenerator.Execute<VerifyPinDataRequest>();
+            var request = InstantiateClassGenerator.Execute<VerifyPinDataRequest>(operation);
             var marshaller = new VerifyPinDataRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 

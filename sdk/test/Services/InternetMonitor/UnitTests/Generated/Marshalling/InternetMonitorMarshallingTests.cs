@@ -49,7 +49,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateMonitor");
 
-            var request = InstantiateClassGenerator.Execute<CreateMonitorRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateMonitorRequest>(operation);
             var marshaller = new CreateMonitorRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -79,7 +79,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateMonitor");
 
-            var request = InstantiateClassGenerator.Execute<CreateMonitorRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateMonitorRequest>(operation);
             var marshaller = new CreateMonitorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -111,7 +111,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateMonitor");
 
-            var request = InstantiateClassGenerator.Execute<CreateMonitorRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateMonitorRequest>(operation);
             var marshaller = new CreateMonitorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -143,7 +143,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateMonitor");
 
-            var request = InstantiateClassGenerator.Execute<CreateMonitorRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateMonitorRequest>(operation);
             var marshaller = new CreateMonitorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -175,7 +175,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateMonitor");
 
-            var request = InstantiateClassGenerator.Execute<CreateMonitorRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateMonitorRequest>(operation);
             var marshaller = new CreateMonitorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -207,7 +207,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateMonitor");
 
-            var request = InstantiateClassGenerator.Execute<CreateMonitorRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateMonitorRequest>(operation);
             var marshaller = new CreateMonitorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -239,7 +239,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateMonitor");
 
-            var request = InstantiateClassGenerator.Execute<CreateMonitorRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateMonitorRequest>(operation);
             var marshaller = new CreateMonitorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -271,7 +271,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteMonitor");
 
-            var request = InstantiateClassGenerator.Execute<DeleteMonitorRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteMonitorRequest>(operation);
             var marshaller = new DeleteMonitorRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -301,7 +301,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteMonitor");
 
-            var request = InstantiateClassGenerator.Execute<DeleteMonitorRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteMonitorRequest>(operation);
             var marshaller = new DeleteMonitorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -333,7 +333,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteMonitor");
 
-            var request = InstantiateClassGenerator.Execute<DeleteMonitorRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteMonitorRequest>(operation);
             var marshaller = new DeleteMonitorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -365,7 +365,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteMonitor");
 
-            var request = InstantiateClassGenerator.Execute<DeleteMonitorRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteMonitorRequest>(operation);
             var marshaller = new DeleteMonitorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -397,7 +397,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteMonitor");
 
-            var request = InstantiateClassGenerator.Execute<DeleteMonitorRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteMonitorRequest>(operation);
             var marshaller = new DeleteMonitorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -429,7 +429,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetHealthEvent");
 
-            var request = InstantiateClassGenerator.Execute<GetHealthEventRequest>();
+            var request = InstantiateClassGenerator.Execute<GetHealthEventRequest>(operation);
             var marshaller = new GetHealthEventRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -459,7 +459,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetHealthEvent");
 
-            var request = InstantiateClassGenerator.Execute<GetHealthEventRequest>();
+            var request = InstantiateClassGenerator.Execute<GetHealthEventRequest>(operation);
             var marshaller = new GetHealthEventRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -491,7 +491,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetHealthEvent");
 
-            var request = InstantiateClassGenerator.Execute<GetHealthEventRequest>();
+            var request = InstantiateClassGenerator.Execute<GetHealthEventRequest>(operation);
             var marshaller = new GetHealthEventRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -523,7 +523,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetHealthEvent");
 
-            var request = InstantiateClassGenerator.Execute<GetHealthEventRequest>();
+            var request = InstantiateClassGenerator.Execute<GetHealthEventRequest>(operation);
             var marshaller = new GetHealthEventRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -555,7 +555,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetHealthEvent");
 
-            var request = InstantiateClassGenerator.Execute<GetHealthEventRequest>();
+            var request = InstantiateClassGenerator.Execute<GetHealthEventRequest>(operation);
             var marshaller = new GetHealthEventRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -587,7 +587,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetMonitor");
 
-            var request = InstantiateClassGenerator.Execute<GetMonitorRequest>();
+            var request = InstantiateClassGenerator.Execute<GetMonitorRequest>(operation);
             var marshaller = new GetMonitorRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -617,7 +617,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetMonitor");
 
-            var request = InstantiateClassGenerator.Execute<GetMonitorRequest>();
+            var request = InstantiateClassGenerator.Execute<GetMonitorRequest>(operation);
             var marshaller = new GetMonitorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -649,7 +649,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetMonitor");
 
-            var request = InstantiateClassGenerator.Execute<GetMonitorRequest>();
+            var request = InstantiateClassGenerator.Execute<GetMonitorRequest>(operation);
             var marshaller = new GetMonitorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -681,7 +681,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetMonitor");
 
-            var request = InstantiateClassGenerator.Execute<GetMonitorRequest>();
+            var request = InstantiateClassGenerator.Execute<GetMonitorRequest>(operation);
             var marshaller = new GetMonitorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -713,7 +713,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetMonitor");
 
-            var request = InstantiateClassGenerator.Execute<GetMonitorRequest>();
+            var request = InstantiateClassGenerator.Execute<GetMonitorRequest>(operation);
             var marshaller = new GetMonitorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -745,7 +745,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListHealthEvents");
 
-            var request = InstantiateClassGenerator.Execute<ListHealthEventsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListHealthEventsRequest>(operation);
             var marshaller = new ListHealthEventsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -775,7 +775,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListHealthEvents");
 
-            var request = InstantiateClassGenerator.Execute<ListHealthEventsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListHealthEventsRequest>(operation);
             var marshaller = new ListHealthEventsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -807,7 +807,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListHealthEvents");
 
-            var request = InstantiateClassGenerator.Execute<ListHealthEventsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListHealthEventsRequest>(operation);
             var marshaller = new ListHealthEventsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -839,7 +839,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListHealthEvents");
 
-            var request = InstantiateClassGenerator.Execute<ListHealthEventsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListHealthEventsRequest>(operation);
             var marshaller = new ListHealthEventsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -871,7 +871,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListHealthEvents");
 
-            var request = InstantiateClassGenerator.Execute<ListHealthEventsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListHealthEventsRequest>(operation);
             var marshaller = new ListHealthEventsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -903,7 +903,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListMonitors");
 
-            var request = InstantiateClassGenerator.Execute<ListMonitorsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListMonitorsRequest>(operation);
             var marshaller = new ListMonitorsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -933,7 +933,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListMonitors");
 
-            var request = InstantiateClassGenerator.Execute<ListMonitorsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListMonitorsRequest>(operation);
             var marshaller = new ListMonitorsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -965,7 +965,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListMonitors");
 
-            var request = InstantiateClassGenerator.Execute<ListMonitorsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListMonitorsRequest>(operation);
             var marshaller = new ListMonitorsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -997,7 +997,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListMonitors");
 
-            var request = InstantiateClassGenerator.Execute<ListMonitorsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListMonitorsRequest>(operation);
             var marshaller = new ListMonitorsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1029,7 +1029,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListMonitors");
 
-            var request = InstantiateClassGenerator.Execute<ListMonitorsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListMonitorsRequest>(operation);
             var marshaller = new ListMonitorsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1061,7 +1061,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListTagsForResource");
 
-            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>(operation);
             var marshaller = new ListTagsForResourceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1091,7 +1091,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListTagsForResource");
 
-            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>(operation);
             var marshaller = new ListTagsForResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1123,7 +1123,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListTagsForResource");
 
-            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>(operation);
             var marshaller = new ListTagsForResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1155,7 +1155,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListTagsForResource");
 
-            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>(operation);
             var marshaller = new ListTagsForResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1187,7 +1187,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListTagsForResource");
 
-            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>(operation);
             var marshaller = new ListTagsForResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1219,7 +1219,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListTagsForResource");
 
-            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>(operation);
             var marshaller = new ListTagsForResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1251,7 +1251,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("TagResource");
 
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1281,7 +1281,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("TagResource");
 
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1313,7 +1313,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("TagResource");
 
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1345,7 +1345,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("TagResource");
 
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1377,7 +1377,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("TagResource");
 
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1409,7 +1409,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("TagResource");
 
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1441,7 +1441,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UntagResource");
 
-            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>(operation);
             var marshaller = new UntagResourceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1471,7 +1471,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UntagResource");
 
-            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>(operation);
             var marshaller = new UntagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1503,7 +1503,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UntagResource");
 
-            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>(operation);
             var marshaller = new UntagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1535,7 +1535,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UntagResource");
 
-            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>(operation);
             var marshaller = new UntagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1567,7 +1567,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UntagResource");
 
-            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>(operation);
             var marshaller = new UntagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1599,7 +1599,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UntagResource");
 
-            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>(operation);
             var marshaller = new UntagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1631,7 +1631,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateMonitor");
 
-            var request = InstantiateClassGenerator.Execute<UpdateMonitorRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateMonitorRequest>(operation);
             var marshaller = new UpdateMonitorRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1661,7 +1661,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateMonitor");
 
-            var request = InstantiateClassGenerator.Execute<UpdateMonitorRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateMonitorRequest>(operation);
             var marshaller = new UpdateMonitorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1693,7 +1693,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateMonitor");
 
-            var request = InstantiateClassGenerator.Execute<UpdateMonitorRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateMonitorRequest>(operation);
             var marshaller = new UpdateMonitorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1725,7 +1725,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateMonitor");
 
-            var request = InstantiateClassGenerator.Execute<UpdateMonitorRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateMonitorRequest>(operation);
             var marshaller = new UpdateMonitorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1757,7 +1757,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateMonitor");
 
-            var request = InstantiateClassGenerator.Execute<UpdateMonitorRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateMonitorRequest>(operation);
             var marshaller = new UpdateMonitorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1789,7 +1789,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateMonitor");
 
-            var request = InstantiateClassGenerator.Execute<UpdateMonitorRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateMonitorRequest>(operation);
             var marshaller = new UpdateMonitorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1821,7 +1821,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateMonitor");
 
-            var request = InstantiateClassGenerator.Execute<UpdateMonitorRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateMonitorRequest>(operation);
             var marshaller = new UpdateMonitorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 

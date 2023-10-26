@@ -240,6 +240,40 @@ namespace Amazon.RestJsonTest
         #endregion
 
 
+        #region  MemberRefOp
+
+        internal virtual MemberRefOpResponse MemberRefOp(MemberRefOpRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = MemberRefOpRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = MemberRefOpResponseUnmarshaller.Instance;
+
+            return Invoke<MemberRefOpResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the MemberRefOp service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the MemberRefOp service method, as returned by RestJsonTest.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/test-2021-05-13/MemberRefOp">REST API Reference for MemberRefOp Operation</seealso>
+        public virtual Task<MemberRefOpResponse> MemberRefOpAsync(MemberRefOpRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = MemberRefOpRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = MemberRefOpResponseUnmarshaller.Instance;
+
+            return InvokeAsync<MemberRefOpResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  NoPayload
 
         internal virtual NoPayloadResponse NoPayload(NoPayloadRequest request)
@@ -270,6 +304,40 @@ namespace Amazon.RestJsonTest
             options.ResponseUnmarshaller = NoPayloadResponseUnmarshaller.Instance;
 
             return InvokeAsync<NoPayloadResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StaticOp
+
+        internal virtual StaticOpResponse StaticOp(StaticOpRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StaticOpRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StaticOpResponseUnmarshaller.Instance;
+
+            return Invoke<StaticOpResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StaticOp service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StaticOp service method, as returned by RestJsonTest.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/test-2021-05-13/StaticOp">REST API Reference for StaticOp Operation</seealso>
+        public virtual Task<StaticOpResponse> StaticOpAsync(StaticOpRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StaticOpRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StaticOpResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StaticOpResponse>(request, options, cancellationToken);
         }
 
         #endregion

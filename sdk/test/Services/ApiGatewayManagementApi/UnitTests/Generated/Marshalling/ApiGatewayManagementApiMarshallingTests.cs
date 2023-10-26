@@ -49,7 +49,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteConnection");
 
-            var request = InstantiateClassGenerator.Execute<DeleteConnectionRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteConnectionRequest>(operation);
             var marshaller = new DeleteConnectionRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -65,7 +65,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteConnection");
 
-            var request = InstantiateClassGenerator.Execute<DeleteConnectionRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteConnectionRequest>(operation);
             var marshaller = new DeleteConnectionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -97,7 +97,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteConnection");
 
-            var request = InstantiateClassGenerator.Execute<DeleteConnectionRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteConnectionRequest>(operation);
             var marshaller = new DeleteConnectionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -129,7 +129,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteConnection");
 
-            var request = InstantiateClassGenerator.Execute<DeleteConnectionRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteConnectionRequest>(operation);
             var marshaller = new DeleteConnectionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -161,7 +161,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetConnection");
 
-            var request = InstantiateClassGenerator.Execute<GetConnectionRequest>();
+            var request = InstantiateClassGenerator.Execute<GetConnectionRequest>(operation);
             var marshaller = new GetConnectionRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -191,7 +191,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetConnection");
 
-            var request = InstantiateClassGenerator.Execute<GetConnectionRequest>();
+            var request = InstantiateClassGenerator.Execute<GetConnectionRequest>(operation);
             var marshaller = new GetConnectionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -223,7 +223,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetConnection");
 
-            var request = InstantiateClassGenerator.Execute<GetConnectionRequest>();
+            var request = InstantiateClassGenerator.Execute<GetConnectionRequest>(operation);
             var marshaller = new GetConnectionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -255,7 +255,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetConnection");
 
-            var request = InstantiateClassGenerator.Execute<GetConnectionRequest>();
+            var request = InstantiateClassGenerator.Execute<GetConnectionRequest>(operation);
             var marshaller = new GetConnectionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -287,7 +287,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("PostToConnection");
 
-            var request = InstantiateClassGenerator.Execute<PostToConnectionRequest>();
+            var request = InstantiateClassGenerator.Execute<PostToConnectionRequest>(operation);
             var marshaller = new PostToConnectionRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -303,7 +303,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("PostToConnection");
 
-            var request = InstantiateClassGenerator.Execute<PostToConnectionRequest>();
+            var request = InstantiateClassGenerator.Execute<PostToConnectionRequest>(operation);
             var marshaller = new PostToConnectionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -335,7 +335,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("PostToConnection");
 
-            var request = InstantiateClassGenerator.Execute<PostToConnectionRequest>();
+            var request = InstantiateClassGenerator.Execute<PostToConnectionRequest>(operation);
             var marshaller = new PostToConnectionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -367,7 +367,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("PostToConnection");
 
-            var request = InstantiateClassGenerator.Execute<PostToConnectionRequest>();
+            var request = InstantiateClassGenerator.Execute<PostToConnectionRequest>(operation);
             var marshaller = new PostToConnectionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -399,7 +399,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("PostToConnection");
 
-            var request = InstantiateClassGenerator.Execute<PostToConnectionRequest>();
+            var request = InstantiateClassGenerator.Execute<PostToConnectionRequest>(operation);
             var marshaller = new PostToConnectionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 

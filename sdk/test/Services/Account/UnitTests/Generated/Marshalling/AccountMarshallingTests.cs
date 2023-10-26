@@ -49,7 +49,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteAlternateContact");
 
-            var request = InstantiateClassGenerator.Execute<DeleteAlternateContactRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteAlternateContactRequest>(operation);
             var marshaller = new DeleteAlternateContactRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -65,7 +65,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteAlternateContact");
 
-            var request = InstantiateClassGenerator.Execute<DeleteAlternateContactRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteAlternateContactRequest>(operation);
             var marshaller = new DeleteAlternateContactRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -97,7 +97,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteAlternateContact");
 
-            var request = InstantiateClassGenerator.Execute<DeleteAlternateContactRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteAlternateContactRequest>(operation);
             var marshaller = new DeleteAlternateContactRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -129,7 +129,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteAlternateContact");
 
-            var request = InstantiateClassGenerator.Execute<DeleteAlternateContactRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteAlternateContactRequest>(operation);
             var marshaller = new DeleteAlternateContactRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -161,7 +161,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteAlternateContact");
 
-            var request = InstantiateClassGenerator.Execute<DeleteAlternateContactRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteAlternateContactRequest>(operation);
             var marshaller = new DeleteAlternateContactRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -193,7 +193,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteAlternateContact");
 
-            var request = InstantiateClassGenerator.Execute<DeleteAlternateContactRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteAlternateContactRequest>(operation);
             var marshaller = new DeleteAlternateContactRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -225,7 +225,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DisableRegion");
 
-            var request = InstantiateClassGenerator.Execute<DisableRegionRequest>();
+            var request = InstantiateClassGenerator.Execute<DisableRegionRequest>(operation);
             var marshaller = new DisableRegionRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -241,7 +241,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DisableRegion");
 
-            var request = InstantiateClassGenerator.Execute<DisableRegionRequest>();
+            var request = InstantiateClassGenerator.Execute<DisableRegionRequest>(operation);
             var marshaller = new DisableRegionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -273,7 +273,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DisableRegion");
 
-            var request = InstantiateClassGenerator.Execute<DisableRegionRequest>();
+            var request = InstantiateClassGenerator.Execute<DisableRegionRequest>(operation);
             var marshaller = new DisableRegionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -305,7 +305,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DisableRegion");
 
-            var request = InstantiateClassGenerator.Execute<DisableRegionRequest>();
+            var request = InstantiateClassGenerator.Execute<DisableRegionRequest>(operation);
             var marshaller = new DisableRegionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -337,7 +337,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DisableRegion");
 
-            var request = InstantiateClassGenerator.Execute<DisableRegionRequest>();
+            var request = InstantiateClassGenerator.Execute<DisableRegionRequest>(operation);
             var marshaller = new DisableRegionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -369,7 +369,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DisableRegion");
 
-            var request = InstantiateClassGenerator.Execute<DisableRegionRequest>();
+            var request = InstantiateClassGenerator.Execute<DisableRegionRequest>(operation);
             var marshaller = new DisableRegionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -401,7 +401,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("EnableRegion");
 
-            var request = InstantiateClassGenerator.Execute<EnableRegionRequest>();
+            var request = InstantiateClassGenerator.Execute<EnableRegionRequest>(operation);
             var marshaller = new EnableRegionRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -417,7 +417,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("EnableRegion");
 
-            var request = InstantiateClassGenerator.Execute<EnableRegionRequest>();
+            var request = InstantiateClassGenerator.Execute<EnableRegionRequest>(operation);
             var marshaller = new EnableRegionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -449,7 +449,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("EnableRegion");
 
-            var request = InstantiateClassGenerator.Execute<EnableRegionRequest>();
+            var request = InstantiateClassGenerator.Execute<EnableRegionRequest>(operation);
             var marshaller = new EnableRegionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -481,7 +481,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("EnableRegion");
 
-            var request = InstantiateClassGenerator.Execute<EnableRegionRequest>();
+            var request = InstantiateClassGenerator.Execute<EnableRegionRequest>(operation);
             var marshaller = new EnableRegionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -513,7 +513,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("EnableRegion");
 
-            var request = InstantiateClassGenerator.Execute<EnableRegionRequest>();
+            var request = InstantiateClassGenerator.Execute<EnableRegionRequest>(operation);
             var marshaller = new EnableRegionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -545,7 +545,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("EnableRegion");
 
-            var request = InstantiateClassGenerator.Execute<EnableRegionRequest>();
+            var request = InstantiateClassGenerator.Execute<EnableRegionRequest>(operation);
             var marshaller = new EnableRegionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -577,7 +577,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetAlternateContact");
 
-            var request = InstantiateClassGenerator.Execute<GetAlternateContactRequest>();
+            var request = InstantiateClassGenerator.Execute<GetAlternateContactRequest>(operation);
             var marshaller = new GetAlternateContactRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -607,7 +607,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetAlternateContact");
 
-            var request = InstantiateClassGenerator.Execute<GetAlternateContactRequest>();
+            var request = InstantiateClassGenerator.Execute<GetAlternateContactRequest>(operation);
             var marshaller = new GetAlternateContactRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -639,7 +639,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetAlternateContact");
 
-            var request = InstantiateClassGenerator.Execute<GetAlternateContactRequest>();
+            var request = InstantiateClassGenerator.Execute<GetAlternateContactRequest>(operation);
             var marshaller = new GetAlternateContactRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -671,7 +671,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetAlternateContact");
 
-            var request = InstantiateClassGenerator.Execute<GetAlternateContactRequest>();
+            var request = InstantiateClassGenerator.Execute<GetAlternateContactRequest>(operation);
             var marshaller = new GetAlternateContactRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -703,7 +703,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetAlternateContact");
 
-            var request = InstantiateClassGenerator.Execute<GetAlternateContactRequest>();
+            var request = InstantiateClassGenerator.Execute<GetAlternateContactRequest>(operation);
             var marshaller = new GetAlternateContactRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -735,7 +735,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetAlternateContact");
 
-            var request = InstantiateClassGenerator.Execute<GetAlternateContactRequest>();
+            var request = InstantiateClassGenerator.Execute<GetAlternateContactRequest>(operation);
             var marshaller = new GetAlternateContactRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -767,7 +767,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetContactInformation");
 
-            var request = InstantiateClassGenerator.Execute<GetContactInformationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetContactInformationRequest>(operation);
             var marshaller = new GetContactInformationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -797,7 +797,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetContactInformation");
 
-            var request = InstantiateClassGenerator.Execute<GetContactInformationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetContactInformationRequest>(operation);
             var marshaller = new GetContactInformationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -829,7 +829,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetContactInformation");
 
-            var request = InstantiateClassGenerator.Execute<GetContactInformationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetContactInformationRequest>(operation);
             var marshaller = new GetContactInformationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -861,7 +861,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetContactInformation");
 
-            var request = InstantiateClassGenerator.Execute<GetContactInformationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetContactInformationRequest>(operation);
             var marshaller = new GetContactInformationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -893,7 +893,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetContactInformation");
 
-            var request = InstantiateClassGenerator.Execute<GetContactInformationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetContactInformationRequest>(operation);
             var marshaller = new GetContactInformationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -925,7 +925,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetContactInformation");
 
-            var request = InstantiateClassGenerator.Execute<GetContactInformationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetContactInformationRequest>(operation);
             var marshaller = new GetContactInformationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -957,7 +957,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetRegionOptStatus");
 
-            var request = InstantiateClassGenerator.Execute<GetRegionOptStatusRequest>();
+            var request = InstantiateClassGenerator.Execute<GetRegionOptStatusRequest>(operation);
             var marshaller = new GetRegionOptStatusRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -987,7 +987,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetRegionOptStatus");
 
-            var request = InstantiateClassGenerator.Execute<GetRegionOptStatusRequest>();
+            var request = InstantiateClassGenerator.Execute<GetRegionOptStatusRequest>(operation);
             var marshaller = new GetRegionOptStatusRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1019,7 +1019,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetRegionOptStatus");
 
-            var request = InstantiateClassGenerator.Execute<GetRegionOptStatusRequest>();
+            var request = InstantiateClassGenerator.Execute<GetRegionOptStatusRequest>(operation);
             var marshaller = new GetRegionOptStatusRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1051,7 +1051,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetRegionOptStatus");
 
-            var request = InstantiateClassGenerator.Execute<GetRegionOptStatusRequest>();
+            var request = InstantiateClassGenerator.Execute<GetRegionOptStatusRequest>(operation);
             var marshaller = new GetRegionOptStatusRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1083,7 +1083,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetRegionOptStatus");
 
-            var request = InstantiateClassGenerator.Execute<GetRegionOptStatusRequest>();
+            var request = InstantiateClassGenerator.Execute<GetRegionOptStatusRequest>(operation);
             var marshaller = new GetRegionOptStatusRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1115,7 +1115,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListRegions");
 
-            var request = InstantiateClassGenerator.Execute<ListRegionsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListRegionsRequest>(operation);
             var marshaller = new ListRegionsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1145,7 +1145,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListRegions");
 
-            var request = InstantiateClassGenerator.Execute<ListRegionsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListRegionsRequest>(operation);
             var marshaller = new ListRegionsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1177,7 +1177,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListRegions");
 
-            var request = InstantiateClassGenerator.Execute<ListRegionsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListRegionsRequest>(operation);
             var marshaller = new ListRegionsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1209,7 +1209,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListRegions");
 
-            var request = InstantiateClassGenerator.Execute<ListRegionsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListRegionsRequest>(operation);
             var marshaller = new ListRegionsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1241,7 +1241,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListRegions");
 
-            var request = InstantiateClassGenerator.Execute<ListRegionsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListRegionsRequest>(operation);
             var marshaller = new ListRegionsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1273,7 +1273,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("PutAlternateContact");
 
-            var request = InstantiateClassGenerator.Execute<PutAlternateContactRequest>();
+            var request = InstantiateClassGenerator.Execute<PutAlternateContactRequest>(operation);
             var marshaller = new PutAlternateContactRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1289,7 +1289,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("PutAlternateContact");
 
-            var request = InstantiateClassGenerator.Execute<PutAlternateContactRequest>();
+            var request = InstantiateClassGenerator.Execute<PutAlternateContactRequest>(operation);
             var marshaller = new PutAlternateContactRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1321,7 +1321,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("PutAlternateContact");
 
-            var request = InstantiateClassGenerator.Execute<PutAlternateContactRequest>();
+            var request = InstantiateClassGenerator.Execute<PutAlternateContactRequest>(operation);
             var marshaller = new PutAlternateContactRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1353,7 +1353,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("PutAlternateContact");
 
-            var request = InstantiateClassGenerator.Execute<PutAlternateContactRequest>();
+            var request = InstantiateClassGenerator.Execute<PutAlternateContactRequest>(operation);
             var marshaller = new PutAlternateContactRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1385,7 +1385,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("PutAlternateContact");
 
-            var request = InstantiateClassGenerator.Execute<PutAlternateContactRequest>();
+            var request = InstantiateClassGenerator.Execute<PutAlternateContactRequest>(operation);
             var marshaller = new PutAlternateContactRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1417,7 +1417,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("PutContactInformation");
 
-            var request = InstantiateClassGenerator.Execute<PutContactInformationRequest>();
+            var request = InstantiateClassGenerator.Execute<PutContactInformationRequest>(operation);
             var marshaller = new PutContactInformationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1433,7 +1433,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("PutContactInformation");
 
-            var request = InstantiateClassGenerator.Execute<PutContactInformationRequest>();
+            var request = InstantiateClassGenerator.Execute<PutContactInformationRequest>(operation);
             var marshaller = new PutContactInformationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1465,7 +1465,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("PutContactInformation");
 
-            var request = InstantiateClassGenerator.Execute<PutContactInformationRequest>();
+            var request = InstantiateClassGenerator.Execute<PutContactInformationRequest>(operation);
             var marshaller = new PutContactInformationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1497,7 +1497,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("PutContactInformation");
 
-            var request = InstantiateClassGenerator.Execute<PutContactInformationRequest>();
+            var request = InstantiateClassGenerator.Execute<PutContactInformationRequest>(operation);
             var marshaller = new PutContactInformationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1529,7 +1529,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("PutContactInformation");
 
-            var request = InstantiateClassGenerator.Execute<PutContactInformationRequest>();
+            var request = InstantiateClassGenerator.Execute<PutContactInformationRequest>(operation);
             var marshaller = new PutContactInformationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 

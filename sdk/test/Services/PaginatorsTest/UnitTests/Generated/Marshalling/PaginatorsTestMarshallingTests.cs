@@ -49,7 +49,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("TestPaginator");
 
-            var request = InstantiateClassGenerator.Execute<TestPaginatorRequest>();
+            var request = InstantiateClassGenerator.Execute<TestPaginatorRequest>(operation);
             var marshaller = new TestPaginatorRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);

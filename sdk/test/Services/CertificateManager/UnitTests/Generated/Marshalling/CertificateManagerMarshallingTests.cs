@@ -46,7 +46,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("CertificateManager")]
         public void AddTagsToCertificateMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<AddTagsToCertificateRequest>();
+            var operation = service_model.FindOperation("AddTagsToCertificate");
+
+            var request = InstantiateClassGenerator.Execute<AddTagsToCertificateRequest>(operation);
             var marshaller = new AddTagsToCertificateRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -63,7 +65,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("AddTagsToCertificate");
 
-            var request = InstantiateClassGenerator.Execute<AddTagsToCertificateRequest>();
+            var request = InstantiateClassGenerator.Execute<AddTagsToCertificateRequest>(operation);
             var marshaller = new AddTagsToCertificateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -95,7 +97,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("AddTagsToCertificate");
 
-            var request = InstantiateClassGenerator.Execute<AddTagsToCertificateRequest>();
+            var request = InstantiateClassGenerator.Execute<AddTagsToCertificateRequest>(operation);
             var marshaller = new AddTagsToCertificateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -127,7 +129,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("AddTagsToCertificate");
 
-            var request = InstantiateClassGenerator.Execute<AddTagsToCertificateRequest>();
+            var request = InstantiateClassGenerator.Execute<AddTagsToCertificateRequest>(operation);
             var marshaller = new AddTagsToCertificateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -159,7 +161,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("AddTagsToCertificate");
 
-            var request = InstantiateClassGenerator.Execute<AddTagsToCertificateRequest>();
+            var request = InstantiateClassGenerator.Execute<AddTagsToCertificateRequest>(operation);
             var marshaller = new AddTagsToCertificateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -191,7 +193,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("AddTagsToCertificate");
 
-            var request = InstantiateClassGenerator.Execute<AddTagsToCertificateRequest>();
+            var request = InstantiateClassGenerator.Execute<AddTagsToCertificateRequest>(operation);
             var marshaller = new AddTagsToCertificateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -223,7 +225,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("AddTagsToCertificate");
 
-            var request = InstantiateClassGenerator.Execute<AddTagsToCertificateRequest>();
+            var request = InstantiateClassGenerator.Execute<AddTagsToCertificateRequest>(operation);
             var marshaller = new AddTagsToCertificateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -255,7 +257,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("AddTagsToCertificate");
 
-            var request = InstantiateClassGenerator.Execute<AddTagsToCertificateRequest>();
+            var request = InstantiateClassGenerator.Execute<AddTagsToCertificateRequest>(operation);
             var marshaller = new AddTagsToCertificateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -285,7 +287,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("CertificateManager")]
         public void DeleteCertificateMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DeleteCertificateRequest>();
+            var operation = service_model.FindOperation("DeleteCertificate");
+
+            var request = InstantiateClassGenerator.Execute<DeleteCertificateRequest>(operation);
             var marshaller = new DeleteCertificateRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -302,7 +306,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteCertificate");
 
-            var request = InstantiateClassGenerator.Execute<DeleteCertificateRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteCertificateRequest>(operation);
             var marshaller = new DeleteCertificateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -334,7 +338,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteCertificate");
 
-            var request = InstantiateClassGenerator.Execute<DeleteCertificateRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteCertificateRequest>(operation);
             var marshaller = new DeleteCertificateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -366,7 +370,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteCertificate");
 
-            var request = InstantiateClassGenerator.Execute<DeleteCertificateRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteCertificateRequest>(operation);
             var marshaller = new DeleteCertificateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -398,7 +402,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteCertificate");
 
-            var request = InstantiateClassGenerator.Execute<DeleteCertificateRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteCertificateRequest>(operation);
             var marshaller = new DeleteCertificateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -430,7 +434,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteCertificate");
 
-            var request = InstantiateClassGenerator.Execute<DeleteCertificateRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteCertificateRequest>(operation);
             var marshaller = new DeleteCertificateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -462,7 +466,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteCertificate");
 
-            var request = InstantiateClassGenerator.Execute<DeleteCertificateRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteCertificateRequest>(operation);
             var marshaller = new DeleteCertificateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -492,7 +496,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("CertificateManager")]
         public void DescribeCertificateMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DescribeCertificateRequest>();
+            var operation = service_model.FindOperation("DescribeCertificate");
+
+            var request = InstantiateClassGenerator.Execute<DescribeCertificateRequest>(operation);
             var marshaller = new DescribeCertificateRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -506,7 +512,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeCertificate").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DescribeCertificateResponseUnmarshaller.Instance.Unmarshall(context) as DescribeCertificateResponse;
@@ -521,7 +527,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeCertificate");
 
-            var request = InstantiateClassGenerator.Execute<DescribeCertificateRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeCertificateRequest>(operation);
             var marshaller = new DescribeCertificateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -553,7 +559,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeCertificate");
 
-            var request = InstantiateClassGenerator.Execute<DescribeCertificateRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeCertificateRequest>(operation);
             var marshaller = new DescribeCertificateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -583,7 +589,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("CertificateManager")]
         public void ExportCertificateMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ExportCertificateRequest>();
+            var operation = service_model.FindOperation("ExportCertificate");
+
+            var request = InstantiateClassGenerator.Execute<ExportCertificateRequest>(operation);
             var marshaller = new ExportCertificateRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -597,7 +605,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ExportCertificate").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ExportCertificateResponseUnmarshaller.Instance.Unmarshall(context) as ExportCertificateResponse;
@@ -612,7 +620,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ExportCertificate");
 
-            var request = InstantiateClassGenerator.Execute<ExportCertificateRequest>();
+            var request = InstantiateClassGenerator.Execute<ExportCertificateRequest>(operation);
             var marshaller = new ExportCertificateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -644,7 +652,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ExportCertificate");
 
-            var request = InstantiateClassGenerator.Execute<ExportCertificateRequest>();
+            var request = InstantiateClassGenerator.Execute<ExportCertificateRequest>(operation);
             var marshaller = new ExportCertificateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -676,7 +684,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ExportCertificate");
 
-            var request = InstantiateClassGenerator.Execute<ExportCertificateRequest>();
+            var request = InstantiateClassGenerator.Execute<ExportCertificateRequest>(operation);
             var marshaller = new ExportCertificateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -706,7 +714,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("CertificateManager")]
         public void GetAccountConfigurationMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<GetAccountConfigurationRequest>();
+            var operation = service_model.FindOperation("GetAccountConfiguration");
+
+            var request = InstantiateClassGenerator.Execute<GetAccountConfigurationRequest>(operation);
             var marshaller = new GetAccountConfigurationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -717,7 +727,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetAccountConfiguration").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = GetAccountConfigurationResponseUnmarshaller.Instance.Unmarshall(context) as GetAccountConfigurationResponse;
@@ -732,7 +742,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetAccountConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<GetAccountConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetAccountConfigurationRequest>(operation);
             var marshaller = new GetAccountConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -764,7 +774,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetAccountConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<GetAccountConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetAccountConfigurationRequest>(operation);
             var marshaller = new GetAccountConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -794,7 +804,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("CertificateManager")]
         public void GetCertificateMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<GetCertificateRequest>();
+            var operation = service_model.FindOperation("GetCertificate");
+
+            var request = InstantiateClassGenerator.Execute<GetCertificateRequest>(operation);
             var marshaller = new GetCertificateRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -808,7 +820,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetCertificate").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = GetCertificateResponseUnmarshaller.Instance.Unmarshall(context) as GetCertificateResponse;
@@ -823,7 +835,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetCertificate");
 
-            var request = InstantiateClassGenerator.Execute<GetCertificateRequest>();
+            var request = InstantiateClassGenerator.Execute<GetCertificateRequest>(operation);
             var marshaller = new GetCertificateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -855,7 +867,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetCertificate");
 
-            var request = InstantiateClassGenerator.Execute<GetCertificateRequest>();
+            var request = InstantiateClassGenerator.Execute<GetCertificateRequest>(operation);
             var marshaller = new GetCertificateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -887,7 +899,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetCertificate");
 
-            var request = InstantiateClassGenerator.Execute<GetCertificateRequest>();
+            var request = InstantiateClassGenerator.Execute<GetCertificateRequest>(operation);
             var marshaller = new GetCertificateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -917,7 +929,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("CertificateManager")]
         public void ImportCertificateMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ImportCertificateRequest>();
+            var operation = service_model.FindOperation("ImportCertificate");
+
+            var request = InstantiateClassGenerator.Execute<ImportCertificateRequest>(operation);
             var marshaller = new ImportCertificateRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -931,7 +945,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ImportCertificate").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ImportCertificateResponseUnmarshaller.Instance.Unmarshall(context) as ImportCertificateResponse;
@@ -946,7 +960,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ImportCertificate");
 
-            var request = InstantiateClassGenerator.Execute<ImportCertificateRequest>();
+            var request = InstantiateClassGenerator.Execute<ImportCertificateRequest>(operation);
             var marshaller = new ImportCertificateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -978,7 +992,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ImportCertificate");
 
-            var request = InstantiateClassGenerator.Execute<ImportCertificateRequest>();
+            var request = InstantiateClassGenerator.Execute<ImportCertificateRequest>(operation);
             var marshaller = new ImportCertificateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1010,7 +1024,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ImportCertificate");
 
-            var request = InstantiateClassGenerator.Execute<ImportCertificateRequest>();
+            var request = InstantiateClassGenerator.Execute<ImportCertificateRequest>(operation);
             var marshaller = new ImportCertificateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1042,7 +1056,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ImportCertificate");
 
-            var request = InstantiateClassGenerator.Execute<ImportCertificateRequest>();
+            var request = InstantiateClassGenerator.Execute<ImportCertificateRequest>(operation);
             var marshaller = new ImportCertificateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1074,7 +1088,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ImportCertificate");
 
-            var request = InstantiateClassGenerator.Execute<ImportCertificateRequest>();
+            var request = InstantiateClassGenerator.Execute<ImportCertificateRequest>(operation);
             var marshaller = new ImportCertificateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1106,7 +1120,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ImportCertificate");
 
-            var request = InstantiateClassGenerator.Execute<ImportCertificateRequest>();
+            var request = InstantiateClassGenerator.Execute<ImportCertificateRequest>(operation);
             var marshaller = new ImportCertificateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1138,7 +1152,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ImportCertificate");
 
-            var request = InstantiateClassGenerator.Execute<ImportCertificateRequest>();
+            var request = InstantiateClassGenerator.Execute<ImportCertificateRequest>(operation);
             var marshaller = new ImportCertificateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1168,7 +1182,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("CertificateManager")]
         public void ListCertificatesMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ListCertificatesRequest>();
+            var operation = service_model.FindOperation("ListCertificates");
+
+            var request = InstantiateClassGenerator.Execute<ListCertificatesRequest>(operation);
             var marshaller = new ListCertificatesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1182,7 +1198,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListCertificates").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ListCertificatesResponseUnmarshaller.Instance.Unmarshall(context) as ListCertificatesResponse;
@@ -1197,7 +1213,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListCertificates");
 
-            var request = InstantiateClassGenerator.Execute<ListCertificatesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListCertificatesRequest>(operation);
             var marshaller = new ListCertificatesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1229,7 +1245,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListCertificates");
 
-            var request = InstantiateClassGenerator.Execute<ListCertificatesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListCertificatesRequest>(operation);
             var marshaller = new ListCertificatesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1259,7 +1275,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("CertificateManager")]
         public void ListTagsForCertificateMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ListTagsForCertificateRequest>();
+            var operation = service_model.FindOperation("ListTagsForCertificate");
+
+            var request = InstantiateClassGenerator.Execute<ListTagsForCertificateRequest>(operation);
             var marshaller = new ListTagsForCertificateRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1273,7 +1291,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListTagsForCertificate").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ListTagsForCertificateResponseUnmarshaller.Instance.Unmarshall(context) as ListTagsForCertificateResponse;
@@ -1288,7 +1306,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListTagsForCertificate");
 
-            var request = InstantiateClassGenerator.Execute<ListTagsForCertificateRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTagsForCertificateRequest>(operation);
             var marshaller = new ListTagsForCertificateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1320,7 +1338,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListTagsForCertificate");
 
-            var request = InstantiateClassGenerator.Execute<ListTagsForCertificateRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTagsForCertificateRequest>(operation);
             var marshaller = new ListTagsForCertificateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1350,7 +1368,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("CertificateManager")]
         public void PutAccountConfigurationMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<PutAccountConfigurationRequest>();
+            var operation = service_model.FindOperation("PutAccountConfiguration");
+
+            var request = InstantiateClassGenerator.Execute<PutAccountConfigurationRequest>(operation);
             var marshaller = new PutAccountConfigurationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1367,7 +1387,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("PutAccountConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<PutAccountConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<PutAccountConfigurationRequest>(operation);
             var marshaller = new PutAccountConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1399,7 +1419,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("PutAccountConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<PutAccountConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<PutAccountConfigurationRequest>(operation);
             var marshaller = new PutAccountConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1431,7 +1451,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("PutAccountConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<PutAccountConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<PutAccountConfigurationRequest>(operation);
             var marshaller = new PutAccountConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1463,7 +1483,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("PutAccountConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<PutAccountConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<PutAccountConfigurationRequest>(operation);
             var marshaller = new PutAccountConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1493,7 +1513,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("CertificateManager")]
         public void RemoveTagsFromCertificateMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<RemoveTagsFromCertificateRequest>();
+            var operation = service_model.FindOperation("RemoveTagsFromCertificate");
+
+            var request = InstantiateClassGenerator.Execute<RemoveTagsFromCertificateRequest>(operation);
             var marshaller = new RemoveTagsFromCertificateRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1510,7 +1532,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("RemoveTagsFromCertificate");
 
-            var request = InstantiateClassGenerator.Execute<RemoveTagsFromCertificateRequest>();
+            var request = InstantiateClassGenerator.Execute<RemoveTagsFromCertificateRequest>(operation);
             var marshaller = new RemoveTagsFromCertificateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1542,7 +1564,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("RemoveTagsFromCertificate");
 
-            var request = InstantiateClassGenerator.Execute<RemoveTagsFromCertificateRequest>();
+            var request = InstantiateClassGenerator.Execute<RemoveTagsFromCertificateRequest>(operation);
             var marshaller = new RemoveTagsFromCertificateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1574,7 +1596,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("RemoveTagsFromCertificate");
 
-            var request = InstantiateClassGenerator.Execute<RemoveTagsFromCertificateRequest>();
+            var request = InstantiateClassGenerator.Execute<RemoveTagsFromCertificateRequest>(operation);
             var marshaller = new RemoveTagsFromCertificateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1606,7 +1628,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("RemoveTagsFromCertificate");
 
-            var request = InstantiateClassGenerator.Execute<RemoveTagsFromCertificateRequest>();
+            var request = InstantiateClassGenerator.Execute<RemoveTagsFromCertificateRequest>(operation);
             var marshaller = new RemoveTagsFromCertificateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1638,7 +1660,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("RemoveTagsFromCertificate");
 
-            var request = InstantiateClassGenerator.Execute<RemoveTagsFromCertificateRequest>();
+            var request = InstantiateClassGenerator.Execute<RemoveTagsFromCertificateRequest>(operation);
             var marshaller = new RemoveTagsFromCertificateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1670,7 +1692,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("RemoveTagsFromCertificate");
 
-            var request = InstantiateClassGenerator.Execute<RemoveTagsFromCertificateRequest>();
+            var request = InstantiateClassGenerator.Execute<RemoveTagsFromCertificateRequest>(operation);
             var marshaller = new RemoveTagsFromCertificateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1700,7 +1722,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("CertificateManager")]
         public void RenewCertificateMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<RenewCertificateRequest>();
+            var operation = service_model.FindOperation("RenewCertificate");
+
+            var request = InstantiateClassGenerator.Execute<RenewCertificateRequest>(operation);
             var marshaller = new RenewCertificateRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1717,7 +1741,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("RenewCertificate");
 
-            var request = InstantiateClassGenerator.Execute<RenewCertificateRequest>();
+            var request = InstantiateClassGenerator.Execute<RenewCertificateRequest>(operation);
             var marshaller = new RenewCertificateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1749,7 +1773,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("RenewCertificate");
 
-            var request = InstantiateClassGenerator.Execute<RenewCertificateRequest>();
+            var request = InstantiateClassGenerator.Execute<RenewCertificateRequest>(operation);
             var marshaller = new RenewCertificateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1779,7 +1803,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("CertificateManager")]
         public void RequestCertificateMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<RequestCertificateRequest>();
+            var operation = service_model.FindOperation("RequestCertificate");
+
+            var request = InstantiateClassGenerator.Execute<RequestCertificateRequest>(operation);
             var marshaller = new RequestCertificateRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1793,7 +1819,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("RequestCertificate").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = RequestCertificateResponseUnmarshaller.Instance.Unmarshall(context) as RequestCertificateResponse;
@@ -1808,7 +1834,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("RequestCertificate");
 
-            var request = InstantiateClassGenerator.Execute<RequestCertificateRequest>();
+            var request = InstantiateClassGenerator.Execute<RequestCertificateRequest>(operation);
             var marshaller = new RequestCertificateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1840,7 +1866,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("RequestCertificate");
 
-            var request = InstantiateClassGenerator.Execute<RequestCertificateRequest>();
+            var request = InstantiateClassGenerator.Execute<RequestCertificateRequest>(operation);
             var marshaller = new RequestCertificateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1872,7 +1898,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("RequestCertificate");
 
-            var request = InstantiateClassGenerator.Execute<RequestCertificateRequest>();
+            var request = InstantiateClassGenerator.Execute<RequestCertificateRequest>(operation);
             var marshaller = new RequestCertificateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1904,7 +1930,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("RequestCertificate");
 
-            var request = InstantiateClassGenerator.Execute<RequestCertificateRequest>();
+            var request = InstantiateClassGenerator.Execute<RequestCertificateRequest>(operation);
             var marshaller = new RequestCertificateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1936,7 +1962,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("RequestCertificate");
 
-            var request = InstantiateClassGenerator.Execute<RequestCertificateRequest>();
+            var request = InstantiateClassGenerator.Execute<RequestCertificateRequest>(operation);
             var marshaller = new RequestCertificateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1968,7 +1994,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("RequestCertificate");
 
-            var request = InstantiateClassGenerator.Execute<RequestCertificateRequest>();
+            var request = InstantiateClassGenerator.Execute<RequestCertificateRequest>(operation);
             var marshaller = new RequestCertificateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2000,7 +2026,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("RequestCertificate");
 
-            var request = InstantiateClassGenerator.Execute<RequestCertificateRequest>();
+            var request = InstantiateClassGenerator.Execute<RequestCertificateRequest>(operation);
             var marshaller = new RequestCertificateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2030,7 +2056,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("CertificateManager")]
         public void ResendValidationEmailMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ResendValidationEmailRequest>();
+            var operation = service_model.FindOperation("ResendValidationEmail");
+
+            var request = InstantiateClassGenerator.Execute<ResendValidationEmailRequest>(operation);
             var marshaller = new ResendValidationEmailRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -2047,7 +2075,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ResendValidationEmail");
 
-            var request = InstantiateClassGenerator.Execute<ResendValidationEmailRequest>();
+            var request = InstantiateClassGenerator.Execute<ResendValidationEmailRequest>(operation);
             var marshaller = new ResendValidationEmailRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2079,7 +2107,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ResendValidationEmail");
 
-            var request = InstantiateClassGenerator.Execute<ResendValidationEmailRequest>();
+            var request = InstantiateClassGenerator.Execute<ResendValidationEmailRequest>(operation);
             var marshaller = new ResendValidationEmailRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2111,7 +2139,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ResendValidationEmail");
 
-            var request = InstantiateClassGenerator.Execute<ResendValidationEmailRequest>();
+            var request = InstantiateClassGenerator.Execute<ResendValidationEmailRequest>(operation);
             var marshaller = new ResendValidationEmailRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2143,7 +2171,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ResendValidationEmail");
 
-            var request = InstantiateClassGenerator.Execute<ResendValidationEmailRequest>();
+            var request = InstantiateClassGenerator.Execute<ResendValidationEmailRequest>(operation);
             var marshaller = new ResendValidationEmailRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2173,7 +2201,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("CertificateManager")]
         public void UpdateCertificateOptionsMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<UpdateCertificateOptionsRequest>();
+            var operation = service_model.FindOperation("UpdateCertificateOptions");
+
+            var request = InstantiateClassGenerator.Execute<UpdateCertificateOptionsRequest>(operation);
             var marshaller = new UpdateCertificateOptionsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -2190,7 +2220,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateCertificateOptions");
 
-            var request = InstantiateClassGenerator.Execute<UpdateCertificateOptionsRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateCertificateOptionsRequest>(operation);
             var marshaller = new UpdateCertificateOptionsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2222,7 +2252,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateCertificateOptions");
 
-            var request = InstantiateClassGenerator.Execute<UpdateCertificateOptionsRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateCertificateOptionsRequest>(operation);
             var marshaller = new UpdateCertificateOptionsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2254,7 +2284,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateCertificateOptions");
 
-            var request = InstantiateClassGenerator.Execute<UpdateCertificateOptionsRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateCertificateOptionsRequest>(operation);
             var marshaller = new UpdateCertificateOptionsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2286,7 +2316,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateCertificateOptions");
 
-            var request = InstantiateClassGenerator.Execute<UpdateCertificateOptionsRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateCertificateOptionsRequest>(operation);
             var marshaller = new UpdateCertificateOptionsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);

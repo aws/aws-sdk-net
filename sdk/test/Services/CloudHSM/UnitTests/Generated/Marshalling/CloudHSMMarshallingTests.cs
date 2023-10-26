@@ -46,7 +46,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("CloudHSM")]
         public void AddTagsToResourceMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<AddTagsToResourceRequest>();
+            var operation = service_model.FindOperation("AddTagsToResource");
+
+            var request = InstantiateClassGenerator.Execute<AddTagsToResourceRequest>(operation);
             var marshaller = new AddTagsToResourceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -60,7 +62,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("AddTagsToResource").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = AddTagsToResourceResponseUnmarshaller.Instance.Unmarshall(context) as AddTagsToResourceResponse;
@@ -75,7 +77,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("AddTagsToResource");
 
-            var request = InstantiateClassGenerator.Execute<AddTagsToResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<AddTagsToResourceRequest>(operation);
             var marshaller = new AddTagsToResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -107,7 +109,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("AddTagsToResource");
 
-            var request = InstantiateClassGenerator.Execute<AddTagsToResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<AddTagsToResourceRequest>(operation);
             var marshaller = new AddTagsToResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -139,7 +141,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("AddTagsToResource");
 
-            var request = InstantiateClassGenerator.Execute<AddTagsToResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<AddTagsToResourceRequest>(operation);
             var marshaller = new AddTagsToResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -169,7 +171,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("CloudHSM")]
         public void CreateHapgMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<CreateHapgRequest>();
+            var operation = service_model.FindOperation("CreateHapg");
+
+            var request = InstantiateClassGenerator.Execute<CreateHapgRequest>(operation);
             var marshaller = new CreateHapgRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -183,7 +187,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("CreateHapg").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = CreateHapgResponseUnmarshaller.Instance.Unmarshall(context) as CreateHapgResponse;
@@ -198,7 +202,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateHapg");
 
-            var request = InstantiateClassGenerator.Execute<CreateHapgRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateHapgRequest>(operation);
             var marshaller = new CreateHapgRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -230,7 +234,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateHapg");
 
-            var request = InstantiateClassGenerator.Execute<CreateHapgRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateHapgRequest>(operation);
             var marshaller = new CreateHapgRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -262,7 +266,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateHapg");
 
-            var request = InstantiateClassGenerator.Execute<CreateHapgRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateHapgRequest>(operation);
             var marshaller = new CreateHapgRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -292,7 +296,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("CloudHSM")]
         public void CreateHsmMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<CreateHsmRequest>();
+            var operation = service_model.FindOperation("CreateHsm");
+
+            var request = InstantiateClassGenerator.Execute<CreateHsmRequest>(operation);
             var marshaller = new CreateHsmRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -306,7 +312,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("CreateHsm").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = CreateHsmResponseUnmarshaller.Instance.Unmarshall(context) as CreateHsmResponse;
@@ -321,7 +327,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateHsm");
 
-            var request = InstantiateClassGenerator.Execute<CreateHsmRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateHsmRequest>(operation);
             var marshaller = new CreateHsmRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -353,7 +359,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateHsm");
 
-            var request = InstantiateClassGenerator.Execute<CreateHsmRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateHsmRequest>(operation);
             var marshaller = new CreateHsmRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -385,7 +391,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateHsm");
 
-            var request = InstantiateClassGenerator.Execute<CreateHsmRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateHsmRequest>(operation);
             var marshaller = new CreateHsmRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -415,7 +421,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("CloudHSM")]
         public void CreateLunaClientMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<CreateLunaClientRequest>();
+            var operation = service_model.FindOperation("CreateLunaClient");
+
+            var request = InstantiateClassGenerator.Execute<CreateLunaClientRequest>(operation);
             var marshaller = new CreateLunaClientRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -429,7 +437,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("CreateLunaClient").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = CreateLunaClientResponseUnmarshaller.Instance.Unmarshall(context) as CreateLunaClientResponse;
@@ -444,7 +452,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateLunaClient");
 
-            var request = InstantiateClassGenerator.Execute<CreateLunaClientRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateLunaClientRequest>(operation);
             var marshaller = new CreateLunaClientRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -476,7 +484,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateLunaClient");
 
-            var request = InstantiateClassGenerator.Execute<CreateLunaClientRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateLunaClientRequest>(operation);
             var marshaller = new CreateLunaClientRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -508,7 +516,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateLunaClient");
 
-            var request = InstantiateClassGenerator.Execute<CreateLunaClientRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateLunaClientRequest>(operation);
             var marshaller = new CreateLunaClientRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -538,7 +546,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("CloudHSM")]
         public void DeleteHapgMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DeleteHapgRequest>();
+            var operation = service_model.FindOperation("DeleteHapg");
+
+            var request = InstantiateClassGenerator.Execute<DeleteHapgRequest>(operation);
             var marshaller = new DeleteHapgRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -552,7 +562,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DeleteHapg").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DeleteHapgResponseUnmarshaller.Instance.Unmarshall(context) as DeleteHapgResponse;
@@ -567,7 +577,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteHapg");
 
-            var request = InstantiateClassGenerator.Execute<DeleteHapgRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteHapgRequest>(operation);
             var marshaller = new DeleteHapgRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -599,7 +609,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteHapg");
 
-            var request = InstantiateClassGenerator.Execute<DeleteHapgRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteHapgRequest>(operation);
             var marshaller = new DeleteHapgRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -631,7 +641,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteHapg");
 
-            var request = InstantiateClassGenerator.Execute<DeleteHapgRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteHapgRequest>(operation);
             var marshaller = new DeleteHapgRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -661,7 +671,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("CloudHSM")]
         public void DeleteHsmMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DeleteHsmRequest>();
+            var operation = service_model.FindOperation("DeleteHsm");
+
+            var request = InstantiateClassGenerator.Execute<DeleteHsmRequest>(operation);
             var marshaller = new DeleteHsmRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -675,7 +687,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DeleteHsm").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DeleteHsmResponseUnmarshaller.Instance.Unmarshall(context) as DeleteHsmResponse;
@@ -690,7 +702,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteHsm");
 
-            var request = InstantiateClassGenerator.Execute<DeleteHsmRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteHsmRequest>(operation);
             var marshaller = new DeleteHsmRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -722,7 +734,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteHsm");
 
-            var request = InstantiateClassGenerator.Execute<DeleteHsmRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteHsmRequest>(operation);
             var marshaller = new DeleteHsmRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -754,7 +766,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteHsm");
 
-            var request = InstantiateClassGenerator.Execute<DeleteHsmRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteHsmRequest>(operation);
             var marshaller = new DeleteHsmRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -784,7 +796,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("CloudHSM")]
         public void DeleteLunaClientMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DeleteLunaClientRequest>();
+            var operation = service_model.FindOperation("DeleteLunaClient");
+
+            var request = InstantiateClassGenerator.Execute<DeleteLunaClientRequest>(operation);
             var marshaller = new DeleteLunaClientRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -798,7 +812,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DeleteLunaClient").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DeleteLunaClientResponseUnmarshaller.Instance.Unmarshall(context) as DeleteLunaClientResponse;
@@ -813,7 +827,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteLunaClient");
 
-            var request = InstantiateClassGenerator.Execute<DeleteLunaClientRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteLunaClientRequest>(operation);
             var marshaller = new DeleteLunaClientRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -845,7 +859,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteLunaClient");
 
-            var request = InstantiateClassGenerator.Execute<DeleteLunaClientRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteLunaClientRequest>(operation);
             var marshaller = new DeleteLunaClientRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -877,7 +891,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteLunaClient");
 
-            var request = InstantiateClassGenerator.Execute<DeleteLunaClientRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteLunaClientRequest>(operation);
             var marshaller = new DeleteLunaClientRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -907,7 +921,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("CloudHSM")]
         public void DescribeHapgMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DescribeHapgRequest>();
+            var operation = service_model.FindOperation("DescribeHapg");
+
+            var request = InstantiateClassGenerator.Execute<DescribeHapgRequest>(operation);
             var marshaller = new DescribeHapgRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -921,7 +937,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeHapg").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DescribeHapgResponseUnmarshaller.Instance.Unmarshall(context) as DescribeHapgResponse;
@@ -936,7 +952,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeHapg");
 
-            var request = InstantiateClassGenerator.Execute<DescribeHapgRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeHapgRequest>(operation);
             var marshaller = new DescribeHapgRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -968,7 +984,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeHapg");
 
-            var request = InstantiateClassGenerator.Execute<DescribeHapgRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeHapgRequest>(operation);
             var marshaller = new DescribeHapgRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1000,7 +1016,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeHapg");
 
-            var request = InstantiateClassGenerator.Execute<DescribeHapgRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeHapgRequest>(operation);
             var marshaller = new DescribeHapgRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1030,7 +1046,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("CloudHSM")]
         public void DescribeHsmMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DescribeHsmRequest>();
+            var operation = service_model.FindOperation("DescribeHsm");
+
+            var request = InstantiateClassGenerator.Execute<DescribeHsmRequest>(operation);
             var marshaller = new DescribeHsmRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1044,7 +1062,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeHsm").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DescribeHsmResponseUnmarshaller.Instance.Unmarshall(context) as DescribeHsmResponse;
@@ -1059,7 +1077,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeHsm");
 
-            var request = InstantiateClassGenerator.Execute<DescribeHsmRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeHsmRequest>(operation);
             var marshaller = new DescribeHsmRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1091,7 +1109,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeHsm");
 
-            var request = InstantiateClassGenerator.Execute<DescribeHsmRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeHsmRequest>(operation);
             var marshaller = new DescribeHsmRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1123,7 +1141,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeHsm");
 
-            var request = InstantiateClassGenerator.Execute<DescribeHsmRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeHsmRequest>(operation);
             var marshaller = new DescribeHsmRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1153,7 +1171,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("CloudHSM")]
         public void DescribeLunaClientMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DescribeLunaClientRequest>();
+            var operation = service_model.FindOperation("DescribeLunaClient");
+
+            var request = InstantiateClassGenerator.Execute<DescribeLunaClientRequest>(operation);
             var marshaller = new DescribeLunaClientRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1167,7 +1187,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeLunaClient").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DescribeLunaClientResponseUnmarshaller.Instance.Unmarshall(context) as DescribeLunaClientResponse;
@@ -1182,7 +1202,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeLunaClient");
 
-            var request = InstantiateClassGenerator.Execute<DescribeLunaClientRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeLunaClientRequest>(operation);
             var marshaller = new DescribeLunaClientRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1214,7 +1234,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeLunaClient");
 
-            var request = InstantiateClassGenerator.Execute<DescribeLunaClientRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeLunaClientRequest>(operation);
             var marshaller = new DescribeLunaClientRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1246,7 +1266,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeLunaClient");
 
-            var request = InstantiateClassGenerator.Execute<DescribeLunaClientRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeLunaClientRequest>(operation);
             var marshaller = new DescribeLunaClientRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1276,7 +1296,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("CloudHSM")]
         public void GetConfigMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<GetConfigRequest>();
+            var operation = service_model.FindOperation("GetConfig");
+
+            var request = InstantiateClassGenerator.Execute<GetConfigRequest>(operation);
             var marshaller = new GetConfigRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1290,7 +1312,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetConfig").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = GetConfigResponseUnmarshaller.Instance.Unmarshall(context) as GetConfigResponse;
@@ -1305,7 +1327,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetConfig");
 
-            var request = InstantiateClassGenerator.Execute<GetConfigRequest>();
+            var request = InstantiateClassGenerator.Execute<GetConfigRequest>(operation);
             var marshaller = new GetConfigRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1337,7 +1359,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetConfig");
 
-            var request = InstantiateClassGenerator.Execute<GetConfigRequest>();
+            var request = InstantiateClassGenerator.Execute<GetConfigRequest>(operation);
             var marshaller = new GetConfigRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1369,7 +1391,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetConfig");
 
-            var request = InstantiateClassGenerator.Execute<GetConfigRequest>();
+            var request = InstantiateClassGenerator.Execute<GetConfigRequest>(operation);
             var marshaller = new GetConfigRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1399,7 +1421,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("CloudHSM")]
         public void ListAvailableZonesMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ListAvailableZonesRequest>();
+            var operation = service_model.FindOperation("ListAvailableZones");
+
+            var request = InstantiateClassGenerator.Execute<ListAvailableZonesRequest>(operation);
             var marshaller = new ListAvailableZonesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1413,7 +1437,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListAvailableZones").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ListAvailableZonesResponseUnmarshaller.Instance.Unmarshall(context) as ListAvailableZonesResponse;
@@ -1428,7 +1452,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListAvailableZones");
 
-            var request = InstantiateClassGenerator.Execute<ListAvailableZonesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListAvailableZonesRequest>(operation);
             var marshaller = new ListAvailableZonesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1460,7 +1484,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListAvailableZones");
 
-            var request = InstantiateClassGenerator.Execute<ListAvailableZonesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListAvailableZonesRequest>(operation);
             var marshaller = new ListAvailableZonesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1492,7 +1516,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListAvailableZones");
 
-            var request = InstantiateClassGenerator.Execute<ListAvailableZonesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListAvailableZonesRequest>(operation);
             var marshaller = new ListAvailableZonesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1522,7 +1546,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("CloudHSM")]
         public void ListHapgsMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ListHapgsRequest>();
+            var operation = service_model.FindOperation("ListHapgs");
+
+            var request = InstantiateClassGenerator.Execute<ListHapgsRequest>(operation);
             var marshaller = new ListHapgsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1536,7 +1562,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListHapgs").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ListHapgsResponseUnmarshaller.Instance.Unmarshall(context) as ListHapgsResponse;
@@ -1551,7 +1577,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListHapgs");
 
-            var request = InstantiateClassGenerator.Execute<ListHapgsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListHapgsRequest>(operation);
             var marshaller = new ListHapgsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1583,7 +1609,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListHapgs");
 
-            var request = InstantiateClassGenerator.Execute<ListHapgsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListHapgsRequest>(operation);
             var marshaller = new ListHapgsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1615,7 +1641,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListHapgs");
 
-            var request = InstantiateClassGenerator.Execute<ListHapgsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListHapgsRequest>(operation);
             var marshaller = new ListHapgsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1645,7 +1671,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("CloudHSM")]
         public void ListHsmsMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ListHsmsRequest>();
+            var operation = service_model.FindOperation("ListHsms");
+
+            var request = InstantiateClassGenerator.Execute<ListHsmsRequest>(operation);
             var marshaller = new ListHsmsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1659,7 +1687,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListHsms").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ListHsmsResponseUnmarshaller.Instance.Unmarshall(context) as ListHsmsResponse;
@@ -1674,7 +1702,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListHsms");
 
-            var request = InstantiateClassGenerator.Execute<ListHsmsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListHsmsRequest>(operation);
             var marshaller = new ListHsmsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1706,7 +1734,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListHsms");
 
-            var request = InstantiateClassGenerator.Execute<ListHsmsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListHsmsRequest>(operation);
             var marshaller = new ListHsmsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1738,7 +1766,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListHsms");
 
-            var request = InstantiateClassGenerator.Execute<ListHsmsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListHsmsRequest>(operation);
             var marshaller = new ListHsmsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1768,7 +1796,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("CloudHSM")]
         public void ListLunaClientsMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ListLunaClientsRequest>();
+            var operation = service_model.FindOperation("ListLunaClients");
+
+            var request = InstantiateClassGenerator.Execute<ListLunaClientsRequest>(operation);
             var marshaller = new ListLunaClientsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1782,7 +1812,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListLunaClients").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ListLunaClientsResponseUnmarshaller.Instance.Unmarshall(context) as ListLunaClientsResponse;
@@ -1797,7 +1827,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListLunaClients");
 
-            var request = InstantiateClassGenerator.Execute<ListLunaClientsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListLunaClientsRequest>(operation);
             var marshaller = new ListLunaClientsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1829,7 +1859,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListLunaClients");
 
-            var request = InstantiateClassGenerator.Execute<ListLunaClientsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListLunaClientsRequest>(operation);
             var marshaller = new ListLunaClientsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1861,7 +1891,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListLunaClients");
 
-            var request = InstantiateClassGenerator.Execute<ListLunaClientsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListLunaClientsRequest>(operation);
             var marshaller = new ListLunaClientsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1891,7 +1921,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("CloudHSM")]
         public void ListTagsForResourceMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var operation = service_model.FindOperation("ListTagsForResource");
+
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>(operation);
             var marshaller = new ListTagsForResourceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1905,7 +1937,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListTagsForResource").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ListTagsForResourceResponseUnmarshaller.Instance.Unmarshall(context) as ListTagsForResourceResponse;
@@ -1920,7 +1952,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListTagsForResource");
 
-            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>(operation);
             var marshaller = new ListTagsForResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1952,7 +1984,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListTagsForResource");
 
-            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>(operation);
             var marshaller = new ListTagsForResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1984,7 +2016,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListTagsForResource");
 
-            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>(operation);
             var marshaller = new ListTagsForResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2014,7 +2046,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("CloudHSM")]
         public void ModifyHapgMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ModifyHapgRequest>();
+            var operation = service_model.FindOperation("ModifyHapg");
+
+            var request = InstantiateClassGenerator.Execute<ModifyHapgRequest>(operation);
             var marshaller = new ModifyHapgRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -2028,7 +2062,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ModifyHapg").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ModifyHapgResponseUnmarshaller.Instance.Unmarshall(context) as ModifyHapgResponse;
@@ -2043,7 +2077,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ModifyHapg");
 
-            var request = InstantiateClassGenerator.Execute<ModifyHapgRequest>();
+            var request = InstantiateClassGenerator.Execute<ModifyHapgRequest>(operation);
             var marshaller = new ModifyHapgRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2075,7 +2109,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ModifyHapg");
 
-            var request = InstantiateClassGenerator.Execute<ModifyHapgRequest>();
+            var request = InstantiateClassGenerator.Execute<ModifyHapgRequest>(operation);
             var marshaller = new ModifyHapgRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2107,7 +2141,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ModifyHapg");
 
-            var request = InstantiateClassGenerator.Execute<ModifyHapgRequest>();
+            var request = InstantiateClassGenerator.Execute<ModifyHapgRequest>(operation);
             var marshaller = new ModifyHapgRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2137,7 +2171,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("CloudHSM")]
         public void ModifyHsmMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ModifyHsmRequest>();
+            var operation = service_model.FindOperation("ModifyHsm");
+
+            var request = InstantiateClassGenerator.Execute<ModifyHsmRequest>(operation);
             var marshaller = new ModifyHsmRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -2151,7 +2187,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ModifyHsm").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ModifyHsmResponseUnmarshaller.Instance.Unmarshall(context) as ModifyHsmResponse;
@@ -2166,7 +2202,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ModifyHsm");
 
-            var request = InstantiateClassGenerator.Execute<ModifyHsmRequest>();
+            var request = InstantiateClassGenerator.Execute<ModifyHsmRequest>(operation);
             var marshaller = new ModifyHsmRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2198,7 +2234,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ModifyHsm");
 
-            var request = InstantiateClassGenerator.Execute<ModifyHsmRequest>();
+            var request = InstantiateClassGenerator.Execute<ModifyHsmRequest>(operation);
             var marshaller = new ModifyHsmRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2230,7 +2266,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ModifyHsm");
 
-            var request = InstantiateClassGenerator.Execute<ModifyHsmRequest>();
+            var request = InstantiateClassGenerator.Execute<ModifyHsmRequest>(operation);
             var marshaller = new ModifyHsmRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2260,7 +2296,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("CloudHSM")]
         public void ModifyLunaClientMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ModifyLunaClientRequest>();
+            var operation = service_model.FindOperation("ModifyLunaClient");
+
+            var request = InstantiateClassGenerator.Execute<ModifyLunaClientRequest>(operation);
             var marshaller = new ModifyLunaClientRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -2274,7 +2312,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ModifyLunaClient").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ModifyLunaClientResponseUnmarshaller.Instance.Unmarshall(context) as ModifyLunaClientResponse;
@@ -2289,7 +2327,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ModifyLunaClient");
 
-            var request = InstantiateClassGenerator.Execute<ModifyLunaClientRequest>();
+            var request = InstantiateClassGenerator.Execute<ModifyLunaClientRequest>(operation);
             var marshaller = new ModifyLunaClientRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2319,7 +2357,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("CloudHSM")]
         public void RemoveTagsFromResourceMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<RemoveTagsFromResourceRequest>();
+            var operation = service_model.FindOperation("RemoveTagsFromResource");
+
+            var request = InstantiateClassGenerator.Execute<RemoveTagsFromResourceRequest>(operation);
             var marshaller = new RemoveTagsFromResourceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -2333,7 +2373,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("RemoveTagsFromResource").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = RemoveTagsFromResourceResponseUnmarshaller.Instance.Unmarshall(context) as RemoveTagsFromResourceResponse;
@@ -2348,7 +2388,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("RemoveTagsFromResource");
 
-            var request = InstantiateClassGenerator.Execute<RemoveTagsFromResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<RemoveTagsFromResourceRequest>(operation);
             var marshaller = new RemoveTagsFromResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2380,7 +2420,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("RemoveTagsFromResource");
 
-            var request = InstantiateClassGenerator.Execute<RemoveTagsFromResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<RemoveTagsFromResourceRequest>(operation);
             var marshaller = new RemoveTagsFromResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2412,7 +2452,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("RemoveTagsFromResource");
 
-            var request = InstantiateClassGenerator.Execute<RemoveTagsFromResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<RemoveTagsFromResourceRequest>(operation);
             var marshaller = new RemoveTagsFromResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);

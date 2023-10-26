@@ -46,7 +46,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AWSMarketplaceCommerceAnalytics")]
         public void GenerateDataSetMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<GenerateDataSetRequest>();
+            var operation = service_model.FindOperation("GenerateDataSet");
+
+            var request = InstantiateClassGenerator.Execute<GenerateDataSetRequest>(operation);
             var marshaller = new GenerateDataSetRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -60,7 +62,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GenerateDataSet").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = GenerateDataSetResponseUnmarshaller.Instance.Unmarshall(context) as GenerateDataSetResponse;
@@ -75,7 +77,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GenerateDataSet");
 
-            var request = InstantiateClassGenerator.Execute<GenerateDataSetRequest>();
+            var request = InstantiateClassGenerator.Execute<GenerateDataSetRequest>(operation);
             var marshaller = new GenerateDataSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -105,7 +107,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AWSMarketplaceCommerceAnalytics")]
         public void StartSupportDataExportMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<StartSupportDataExportRequest>();
+            var operation = service_model.FindOperation("StartSupportDataExport");
+
+            var request = InstantiateClassGenerator.Execute<StartSupportDataExportRequest>(operation);
             var marshaller = new StartSupportDataExportRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -119,7 +123,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("StartSupportDataExport").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = StartSupportDataExportResponseUnmarshaller.Instance.Unmarshall(context) as StartSupportDataExportResponse;
@@ -134,7 +138,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("StartSupportDataExport");
 
-            var request = InstantiateClassGenerator.Execute<StartSupportDataExportRequest>();
+            var request = InstantiateClassGenerator.Execute<StartSupportDataExportRequest>(operation);
             var marshaller = new StartSupportDataExportRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);

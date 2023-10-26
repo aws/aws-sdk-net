@@ -49,7 +49,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetRawMessageContent");
 
-            var request = InstantiateClassGenerator.Execute<GetRawMessageContentRequest>();
+            var request = InstantiateClassGenerator.Execute<GetRawMessageContentRequest>(operation);
             var marshaller = new GetRawMessageContentRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -79,7 +79,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetRawMessageContent");
 
-            var request = InstantiateClassGenerator.Execute<GetRawMessageContentRequest>();
+            var request = InstantiateClassGenerator.Execute<GetRawMessageContentRequest>(operation);
             var marshaller = new GetRawMessageContentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -111,7 +111,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("PutRawMessageContent");
 
-            var request = InstantiateClassGenerator.Execute<PutRawMessageContentRequest>();
+            var request = InstantiateClassGenerator.Execute<PutRawMessageContentRequest>(operation);
             var marshaller = new PutRawMessageContentRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -141,7 +141,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("PutRawMessageContent");
 
-            var request = InstantiateClassGenerator.Execute<PutRawMessageContentRequest>();
+            var request = InstantiateClassGenerator.Execute<PutRawMessageContentRequest>(operation);
             var marshaller = new PutRawMessageContentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -173,7 +173,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("PutRawMessageContent");
 
-            var request = InstantiateClassGenerator.Execute<PutRawMessageContentRequest>();
+            var request = InstantiateClassGenerator.Execute<PutRawMessageContentRequest>(operation);
             var marshaller = new PutRawMessageContentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -205,7 +205,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("PutRawMessageContent");
 
-            var request = InstantiateClassGenerator.Execute<PutRawMessageContentRequest>();
+            var request = InstantiateClassGenerator.Execute<PutRawMessageContentRequest>(operation);
             var marshaller = new PutRawMessageContentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -237,7 +237,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("PutRawMessageContent");
 
-            var request = InstantiateClassGenerator.Execute<PutRawMessageContentRequest>();
+            var request = InstantiateClassGenerator.Execute<PutRawMessageContentRequest>(operation);
             var marshaller = new PutRawMessageContentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 

@@ -45,11 +45,27 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("RestJsonTest")]
+        public void MemberRefOpMarshallTest()
+        {
+            var operation = service_model.FindOperation("MemberRefOp");
+
+            var request = InstantiateClassGenerator.Execute<MemberRefOpRequest>(operation);
+            var marshaller = new MemberRefOpRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("MemberRefOp", request, internalRequest, service_model);
+
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("RestJsonTest")]
         public void NoPayloadMarshallTest()
         {
             var operation = service_model.FindOperation("NoPayload");
 
-            var request = InstantiateClassGenerator.Execute<NoPayloadRequest>();
+            var request = InstantiateClassGenerator.Execute<NoPayloadRequest>(operation);
             var marshaller = new NoPayloadRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -75,11 +91,27 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("RestJsonTest")]
+        public void StaticOpMarshallTest()
+        {
+            var operation = service_model.FindOperation("StaticOp");
+
+            var request = InstantiateClassGenerator.Execute<StaticOpRequest>(operation);
+            var marshaller = new StaticOpRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("StaticOp", request, internalRequest, service_model);
+
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("RestJsonTest")]
         public void TestBlobPayloadMarshallTest()
         {
             var operation = service_model.FindOperation("TestBlobPayload");
 
-            var request = InstantiateClassGenerator.Execute<TestBlobPayloadRequest>();
+            var request = InstantiateClassGenerator.Execute<TestBlobPayloadRequest>(operation);
             var marshaller = new TestBlobPayloadRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -109,7 +141,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("TestBody");
 
-            var request = InstantiateClassGenerator.Execute<TestBodyRequest>();
+            var request = InstantiateClassGenerator.Execute<TestBodyRequest>(operation);
             var marshaller = new TestBodyRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -139,7 +171,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("TestPayload");
 
-            var request = InstantiateClassGenerator.Execute<TestPayloadRequest>();
+            var request = InstantiateClassGenerator.Execute<TestPayloadRequest>(operation);
             var marshaller = new TestPayloadRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);

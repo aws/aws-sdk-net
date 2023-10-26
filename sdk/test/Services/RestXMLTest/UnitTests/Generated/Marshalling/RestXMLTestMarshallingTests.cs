@@ -45,11 +45,43 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Xml")]
         [TestCategory("RestXMLTest")]
+        public void MemberRefOpMarshallTest()
+        {
+            var operation = service_model.FindOperation("MemberRefOp");
+
+            var request = InstantiateClassGenerator.Execute<MemberRefOpRequest>(operation);
+            var marshaller = new MemberRefOpRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("MemberRefOp", request, internalRequest, service_model);
+
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("RestXMLTest")]
+        public void StaticOpMarshallTest()
+        {
+            var operation = service_model.FindOperation("StaticOp");
+
+            var request = InstantiateClassGenerator.Execute<StaticOpRequest>(operation);
+            var marshaller = new StaticOpRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("StaticOp", request, internalRequest, service_model);
+
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("RestXMLTest")]
         public void TestOperationMarshallTest()
         {
             var operation = service_model.FindOperation("TestOperation");
 
-            var request = InstantiateClassGenerator.Execute<TestOperationRequest>();
+            var request = InstantiateClassGenerator.Execute<TestOperationRequest>(operation);
             var marshaller = new TestOperationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);

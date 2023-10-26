@@ -46,7 +46,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("Route53RecoveryCluster")]
         public void GetRoutingControlStateMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<GetRoutingControlStateRequest>();
+            var operation = service_model.FindOperation("GetRoutingControlState");
+
+            var request = InstantiateClassGenerator.Execute<GetRoutingControlStateRequest>(operation);
             var marshaller = new GetRoutingControlStateRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -60,7 +62,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetRoutingControlState").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = GetRoutingControlStateResponseUnmarshaller.Instance.Unmarshall(context) as GetRoutingControlStateResponse;
@@ -75,7 +77,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetRoutingControlState");
 
-            var request = InstantiateClassGenerator.Execute<GetRoutingControlStateRequest>();
+            var request = InstantiateClassGenerator.Execute<GetRoutingControlStateRequest>(operation);
             var marshaller = new GetRoutingControlStateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -107,7 +109,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetRoutingControlState");
 
-            var request = InstantiateClassGenerator.Execute<GetRoutingControlStateRequest>();
+            var request = InstantiateClassGenerator.Execute<GetRoutingControlStateRequest>(operation);
             var marshaller = new GetRoutingControlStateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -139,7 +141,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetRoutingControlState");
 
-            var request = InstantiateClassGenerator.Execute<GetRoutingControlStateRequest>();
+            var request = InstantiateClassGenerator.Execute<GetRoutingControlStateRequest>(operation);
             var marshaller = new GetRoutingControlStateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -171,7 +173,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetRoutingControlState");
 
-            var request = InstantiateClassGenerator.Execute<GetRoutingControlStateRequest>();
+            var request = InstantiateClassGenerator.Execute<GetRoutingControlStateRequest>(operation);
             var marshaller = new GetRoutingControlStateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -203,7 +205,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetRoutingControlState");
 
-            var request = InstantiateClassGenerator.Execute<GetRoutingControlStateRequest>();
+            var request = InstantiateClassGenerator.Execute<GetRoutingControlStateRequest>(operation);
             var marshaller = new GetRoutingControlStateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -235,7 +237,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetRoutingControlState");
 
-            var request = InstantiateClassGenerator.Execute<GetRoutingControlStateRequest>();
+            var request = InstantiateClassGenerator.Execute<GetRoutingControlStateRequest>(operation);
             var marshaller = new GetRoutingControlStateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -265,7 +267,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("Route53RecoveryCluster")]
         public void ListRoutingControlsMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ListRoutingControlsRequest>();
+            var operation = service_model.FindOperation("ListRoutingControls");
+
+            var request = InstantiateClassGenerator.Execute<ListRoutingControlsRequest>(operation);
             var marshaller = new ListRoutingControlsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -279,7 +283,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListRoutingControls").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ListRoutingControlsResponseUnmarshaller.Instance.Unmarshall(context) as ListRoutingControlsResponse;
@@ -294,7 +298,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListRoutingControls");
 
-            var request = InstantiateClassGenerator.Execute<ListRoutingControlsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListRoutingControlsRequest>(operation);
             var marshaller = new ListRoutingControlsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -326,7 +330,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListRoutingControls");
 
-            var request = InstantiateClassGenerator.Execute<ListRoutingControlsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListRoutingControlsRequest>(operation);
             var marshaller = new ListRoutingControlsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -358,7 +362,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListRoutingControls");
 
-            var request = InstantiateClassGenerator.Execute<ListRoutingControlsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListRoutingControlsRequest>(operation);
             var marshaller = new ListRoutingControlsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -390,7 +394,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListRoutingControls");
 
-            var request = InstantiateClassGenerator.Execute<ListRoutingControlsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListRoutingControlsRequest>(operation);
             var marshaller = new ListRoutingControlsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -422,7 +426,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListRoutingControls");
 
-            var request = InstantiateClassGenerator.Execute<ListRoutingControlsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListRoutingControlsRequest>(operation);
             var marshaller = new ListRoutingControlsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -454,7 +458,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListRoutingControls");
 
-            var request = InstantiateClassGenerator.Execute<ListRoutingControlsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListRoutingControlsRequest>(operation);
             var marshaller = new ListRoutingControlsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -484,7 +488,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("Route53RecoveryCluster")]
         public void UpdateRoutingControlStateMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<UpdateRoutingControlStateRequest>();
+            var operation = service_model.FindOperation("UpdateRoutingControlState");
+
+            var request = InstantiateClassGenerator.Execute<UpdateRoutingControlStateRequest>(operation);
             var marshaller = new UpdateRoutingControlStateRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -498,7 +504,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("UpdateRoutingControlState").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = UpdateRoutingControlStateResponseUnmarshaller.Instance.Unmarshall(context) as UpdateRoutingControlStateResponse;
@@ -513,7 +519,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateRoutingControlState");
 
-            var request = InstantiateClassGenerator.Execute<UpdateRoutingControlStateRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateRoutingControlStateRequest>(operation);
             var marshaller = new UpdateRoutingControlStateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -545,7 +551,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateRoutingControlState");
 
-            var request = InstantiateClassGenerator.Execute<UpdateRoutingControlStateRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateRoutingControlStateRequest>(operation);
             var marshaller = new UpdateRoutingControlStateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -577,7 +583,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateRoutingControlState");
 
-            var request = InstantiateClassGenerator.Execute<UpdateRoutingControlStateRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateRoutingControlStateRequest>(operation);
             var marshaller = new UpdateRoutingControlStateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -609,7 +615,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateRoutingControlState");
 
-            var request = InstantiateClassGenerator.Execute<UpdateRoutingControlStateRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateRoutingControlStateRequest>(operation);
             var marshaller = new UpdateRoutingControlStateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -641,7 +647,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateRoutingControlState");
 
-            var request = InstantiateClassGenerator.Execute<UpdateRoutingControlStateRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateRoutingControlStateRequest>(operation);
             var marshaller = new UpdateRoutingControlStateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -673,7 +679,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateRoutingControlState");
 
-            var request = InstantiateClassGenerator.Execute<UpdateRoutingControlStateRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateRoutingControlStateRequest>(operation);
             var marshaller = new UpdateRoutingControlStateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -705,7 +711,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateRoutingControlState");
 
-            var request = InstantiateClassGenerator.Execute<UpdateRoutingControlStateRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateRoutingControlStateRequest>(operation);
             var marshaller = new UpdateRoutingControlStateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -735,7 +741,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("Route53RecoveryCluster")]
         public void UpdateRoutingControlStatesMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<UpdateRoutingControlStatesRequest>();
+            var operation = service_model.FindOperation("UpdateRoutingControlStates");
+
+            var request = InstantiateClassGenerator.Execute<UpdateRoutingControlStatesRequest>(operation);
             var marshaller = new UpdateRoutingControlStatesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -749,7 +757,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("UpdateRoutingControlStates").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = UpdateRoutingControlStatesResponseUnmarshaller.Instance.Unmarshall(context) as UpdateRoutingControlStatesResponse;
@@ -764,7 +772,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateRoutingControlStates");
 
-            var request = InstantiateClassGenerator.Execute<UpdateRoutingControlStatesRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateRoutingControlStatesRequest>(operation);
             var marshaller = new UpdateRoutingControlStatesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -796,7 +804,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateRoutingControlStates");
 
-            var request = InstantiateClassGenerator.Execute<UpdateRoutingControlStatesRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateRoutingControlStatesRequest>(operation);
             var marshaller = new UpdateRoutingControlStatesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -828,7 +836,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateRoutingControlStates");
 
-            var request = InstantiateClassGenerator.Execute<UpdateRoutingControlStatesRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateRoutingControlStatesRequest>(operation);
             var marshaller = new UpdateRoutingControlStatesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -860,7 +868,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateRoutingControlStates");
 
-            var request = InstantiateClassGenerator.Execute<UpdateRoutingControlStatesRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateRoutingControlStatesRequest>(operation);
             var marshaller = new UpdateRoutingControlStatesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -892,7 +900,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateRoutingControlStates");
 
-            var request = InstantiateClassGenerator.Execute<UpdateRoutingControlStatesRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateRoutingControlStatesRequest>(operation);
             var marshaller = new UpdateRoutingControlStatesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -924,7 +932,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateRoutingControlStates");
 
-            var request = InstantiateClassGenerator.Execute<UpdateRoutingControlStatesRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateRoutingControlStatesRequest>(operation);
             var marshaller = new UpdateRoutingControlStatesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -956,7 +964,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateRoutingControlStates");
 
-            var request = InstantiateClassGenerator.Execute<UpdateRoutingControlStatesRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateRoutingControlStatesRequest>(operation);
             var marshaller = new UpdateRoutingControlStatesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -988,7 +996,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateRoutingControlStates");
 
-            var request = InstantiateClassGenerator.Execute<UpdateRoutingControlStatesRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateRoutingControlStatesRequest>(operation);
             var marshaller = new UpdateRoutingControlStatesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);

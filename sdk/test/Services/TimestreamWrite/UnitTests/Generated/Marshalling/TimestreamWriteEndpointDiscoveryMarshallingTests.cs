@@ -46,7 +46,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         public void CreateBatchLoadTaskEndpointDiscoveryMarshallTest()
         {
             var operation = service_model.FindOperation("CreateBatchLoadTask");
-            var request = InstantiateClassGenerator.Execute<CreateBatchLoadTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateBatchLoadTaskRequest>(operation);
             var marshaller = new CreateBatchLoadTaskEndpointDiscoveryMarshaller();
 
             var internalData = marshaller.Marshall(request);
@@ -61,7 +61,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         public void CreateDatabaseEndpointDiscoveryMarshallTest()
         {
             var operation = service_model.FindOperation("CreateDatabase");
-            var request = InstantiateClassGenerator.Execute<CreateDatabaseRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateDatabaseRequest>(operation);
             var marshaller = new CreateDatabaseEndpointDiscoveryMarshaller();
 
             var internalData = marshaller.Marshall(request);
@@ -76,7 +76,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         public void CreateTableEndpointDiscoveryMarshallTest()
         {
             var operation = service_model.FindOperation("CreateTable");
-            var request = InstantiateClassGenerator.Execute<CreateTableRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateTableRequest>(operation);
             var marshaller = new CreateTableEndpointDiscoveryMarshaller();
 
             var internalData = marshaller.Marshall(request);
@@ -91,7 +91,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         public void DeleteDatabaseEndpointDiscoveryMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteDatabase");
-            var request = InstantiateClassGenerator.Execute<DeleteDatabaseRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteDatabaseRequest>(operation);
             var marshaller = new DeleteDatabaseEndpointDiscoveryMarshaller();
 
             var internalData = marshaller.Marshall(request);
@@ -106,7 +106,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         public void DeleteTableEndpointDiscoveryMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteTable");
-            var request = InstantiateClassGenerator.Execute<DeleteTableRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteTableRequest>(operation);
             var marshaller = new DeleteTableEndpointDiscoveryMarshaller();
 
             var internalData = marshaller.Marshall(request);
@@ -121,7 +121,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         public void DescribeBatchLoadTaskEndpointDiscoveryMarshallTest()
         {
             var operation = service_model.FindOperation("DescribeBatchLoadTask");
-            var request = InstantiateClassGenerator.Execute<DescribeBatchLoadTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeBatchLoadTaskRequest>(operation);
             var marshaller = new DescribeBatchLoadTaskEndpointDiscoveryMarshaller();
 
             var internalData = marshaller.Marshall(request);
@@ -136,7 +136,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         public void DescribeDatabaseEndpointDiscoveryMarshallTest()
         {
             var operation = service_model.FindOperation("DescribeDatabase");
-            var request = InstantiateClassGenerator.Execute<DescribeDatabaseRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeDatabaseRequest>(operation);
             var marshaller = new DescribeDatabaseEndpointDiscoveryMarshaller();
 
             var internalData = marshaller.Marshall(request);
@@ -151,7 +151,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         public void DescribeTableEndpointDiscoveryMarshallTest()
         {
             var operation = service_model.FindOperation("DescribeTable");
-            var request = InstantiateClassGenerator.Execute<DescribeTableRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeTableRequest>(operation);
             var marshaller = new DescribeTableEndpointDiscoveryMarshaller();
 
             var internalData = marshaller.Marshall(request);
@@ -166,7 +166,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         public void ListBatchLoadTasksEndpointDiscoveryMarshallTest()
         {
             var operation = service_model.FindOperation("ListBatchLoadTasks");
-            var request = InstantiateClassGenerator.Execute<ListBatchLoadTasksRequest>();
+            var request = InstantiateClassGenerator.Execute<ListBatchLoadTasksRequest>(operation);
             var marshaller = new ListBatchLoadTasksEndpointDiscoveryMarshaller();
 
             var internalData = marshaller.Marshall(request);
@@ -181,7 +181,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         public void ListDatabasesEndpointDiscoveryMarshallTest()
         {
             var operation = service_model.FindOperation("ListDatabases");
-            var request = InstantiateClassGenerator.Execute<ListDatabasesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListDatabasesRequest>(operation);
             var marshaller = new ListDatabasesEndpointDiscoveryMarshaller();
 
             var internalData = marshaller.Marshall(request);
@@ -196,7 +196,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         public void ListTablesEndpointDiscoveryMarshallTest()
         {
             var operation = service_model.FindOperation("ListTables");
-            var request = InstantiateClassGenerator.Execute<ListTablesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTablesRequest>(operation);
             var marshaller = new ListTablesEndpointDiscoveryMarshaller();
 
             var internalData = marshaller.Marshall(request);
@@ -211,7 +211,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         public void ListTagsForResourceEndpointDiscoveryMarshallTest()
         {
             var operation = service_model.FindOperation("ListTagsForResource");
-            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>(operation);
             var marshaller = new ListTagsForResourceEndpointDiscoveryMarshaller();
 
             var internalData = marshaller.Marshall(request);
@@ -226,7 +226,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         public void ResumeBatchLoadTaskEndpointDiscoveryMarshallTest()
         {
             var operation = service_model.FindOperation("ResumeBatchLoadTask");
-            var request = InstantiateClassGenerator.Execute<ResumeBatchLoadTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<ResumeBatchLoadTaskRequest>(operation);
             var marshaller = new ResumeBatchLoadTaskEndpointDiscoveryMarshaller();
 
             var internalData = marshaller.Marshall(request);
@@ -241,7 +241,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         public void TagResourceEndpointDiscoveryMarshallTest()
         {
             var operation = service_model.FindOperation("TagResource");
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceEndpointDiscoveryMarshaller();
 
             var internalData = marshaller.Marshall(request);
@@ -256,7 +256,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         public void UntagResourceEndpointDiscoveryMarshallTest()
         {
             var operation = service_model.FindOperation("UntagResource");
-            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>(operation);
             var marshaller = new UntagResourceEndpointDiscoveryMarshaller();
 
             var internalData = marshaller.Marshall(request);
@@ -271,7 +271,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         public void UpdateDatabaseEndpointDiscoveryMarshallTest()
         {
             var operation = service_model.FindOperation("UpdateDatabase");
-            var request = InstantiateClassGenerator.Execute<UpdateDatabaseRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateDatabaseRequest>(operation);
             var marshaller = new UpdateDatabaseEndpointDiscoveryMarshaller();
 
             var internalData = marshaller.Marshall(request);
@@ -286,7 +286,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         public void UpdateTableEndpointDiscoveryMarshallTest()
         {
             var operation = service_model.FindOperation("UpdateTable");
-            var request = InstantiateClassGenerator.Execute<UpdateTableRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateTableRequest>(operation);
             var marshaller = new UpdateTableEndpointDiscoveryMarshaller();
 
             var internalData = marshaller.Marshall(request);
@@ -301,7 +301,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         public void WriteRecordsEndpointDiscoveryMarshallTest()
         {
             var operation = service_model.FindOperation("WriteRecords");
-            var request = InstantiateClassGenerator.Execute<WriteRecordsRequest>();
+            var request = InstantiateClassGenerator.Execute<WriteRecordsRequest>(operation);
             var marshaller = new WriteRecordsEndpointDiscoveryMarshaller();
 
             var internalData = marshaller.Marshall(request);

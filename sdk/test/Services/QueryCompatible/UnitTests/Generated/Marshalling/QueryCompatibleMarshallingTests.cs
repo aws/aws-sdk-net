@@ -46,7 +46,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("QueryCompatible")]
         public void CreateQueueMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<CreateQueueRequest>();
+            var operation = service_model.FindOperation("CreateQueue");
+
+            var request = InstantiateClassGenerator.Execute<CreateQueueRequest>(operation);
             var marshaller = new CreateQueueRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -60,7 +62,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("CreateQueue").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = CreateQueueResponseUnmarshaller.Instance.Unmarshall(context) as CreateQueueResponse;
@@ -75,7 +77,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateQueue");
 
-            var request = InstantiateClassGenerator.Execute<CreateQueueRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateQueueRequest>(operation);
             var marshaller = new CreateQueueRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -107,7 +109,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateQueue");
 
-            var request = InstantiateClassGenerator.Execute<CreateQueueRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateQueueRequest>(operation);
             var marshaller = new CreateQueueRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -129,6 +131,40 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var response = CreateQueueResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("QueryCompatible")]
+        public void MemberRefOpMarshallTest()
+        {
+            var operation = service_model.FindOperation("MemberRefOp");
+
+            var request = InstantiateClassGenerator.Execute<MemberRefOpRequest>(operation);
+            var marshaller = new MemberRefOpRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+            Comparer.CompareObjectToJson<MemberRefOpRequest>(request,jsonRequest);
+
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("QueryCompatible")]
+        public void StaticOpMarshallTest()
+        {
+            var operation = service_model.FindOperation("StaticOp");
+
+            var request = InstantiateClassGenerator.Execute<StaticOpRequest>(operation);
+            var marshaller = new StaticOpRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+            Comparer.CompareObjectToJson<StaticOpRequest>(request,jsonRequest);
+
         }
     }
 }

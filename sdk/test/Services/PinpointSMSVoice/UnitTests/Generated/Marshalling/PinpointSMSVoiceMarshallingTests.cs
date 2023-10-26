@@ -49,7 +49,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateConfigurationSet");
 
-            var request = InstantiateClassGenerator.Execute<CreateConfigurationSetRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateConfigurationSetRequest>(operation);
             var marshaller = new CreateConfigurationSetRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -79,7 +79,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateConfigurationSet");
 
-            var request = InstantiateClassGenerator.Execute<CreateConfigurationSetRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateConfigurationSetRequest>(operation);
             var marshaller = new CreateConfigurationSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -111,7 +111,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateConfigurationSet");
 
-            var request = InstantiateClassGenerator.Execute<CreateConfigurationSetRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateConfigurationSetRequest>(operation);
             var marshaller = new CreateConfigurationSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -143,7 +143,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateConfigurationSet");
 
-            var request = InstantiateClassGenerator.Execute<CreateConfigurationSetRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateConfigurationSetRequest>(operation);
             var marshaller = new CreateConfigurationSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -175,7 +175,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateConfigurationSet");
 
-            var request = InstantiateClassGenerator.Execute<CreateConfigurationSetRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateConfigurationSetRequest>(operation);
             var marshaller = new CreateConfigurationSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -207,7 +207,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateConfigurationSet");
 
-            var request = InstantiateClassGenerator.Execute<CreateConfigurationSetRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateConfigurationSetRequest>(operation);
             var marshaller = new CreateConfigurationSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -239,7 +239,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateConfigurationSetEventDestination");
 
-            var request = InstantiateClassGenerator.Execute<CreateConfigurationSetEventDestinationRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateConfigurationSetEventDestinationRequest>(operation);
             var marshaller = new CreateConfigurationSetEventDestinationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -269,7 +269,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateConfigurationSetEventDestination");
 
-            var request = InstantiateClassGenerator.Execute<CreateConfigurationSetEventDestinationRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateConfigurationSetEventDestinationRequest>(operation);
             var marshaller = new CreateConfigurationSetEventDestinationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -301,7 +301,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateConfigurationSetEventDestination");
 
-            var request = InstantiateClassGenerator.Execute<CreateConfigurationSetEventDestinationRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateConfigurationSetEventDestinationRequest>(operation);
             var marshaller = new CreateConfigurationSetEventDestinationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -333,7 +333,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateConfigurationSetEventDestination");
 
-            var request = InstantiateClassGenerator.Execute<CreateConfigurationSetEventDestinationRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateConfigurationSetEventDestinationRequest>(operation);
             var marshaller = new CreateConfigurationSetEventDestinationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -365,7 +365,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateConfigurationSetEventDestination");
 
-            var request = InstantiateClassGenerator.Execute<CreateConfigurationSetEventDestinationRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateConfigurationSetEventDestinationRequest>(operation);
             var marshaller = new CreateConfigurationSetEventDestinationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -397,7 +397,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateConfigurationSetEventDestination");
 
-            var request = InstantiateClassGenerator.Execute<CreateConfigurationSetEventDestinationRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateConfigurationSetEventDestinationRequest>(operation);
             var marshaller = new CreateConfigurationSetEventDestinationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -429,7 +429,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateConfigurationSetEventDestination");
 
-            var request = InstantiateClassGenerator.Execute<CreateConfigurationSetEventDestinationRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateConfigurationSetEventDestinationRequest>(operation);
             var marshaller = new CreateConfigurationSetEventDestinationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -461,7 +461,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteConfigurationSet");
 
-            var request = InstantiateClassGenerator.Execute<DeleteConfigurationSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteConfigurationSetRequest>(operation);
             var marshaller = new DeleteConfigurationSetRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -491,7 +491,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteConfigurationSet");
 
-            var request = InstantiateClassGenerator.Execute<DeleteConfigurationSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteConfigurationSetRequest>(operation);
             var marshaller = new DeleteConfigurationSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -523,7 +523,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteConfigurationSet");
 
-            var request = InstantiateClassGenerator.Execute<DeleteConfigurationSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteConfigurationSetRequest>(operation);
             var marshaller = new DeleteConfigurationSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -555,7 +555,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteConfigurationSet");
 
-            var request = InstantiateClassGenerator.Execute<DeleteConfigurationSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteConfigurationSetRequest>(operation);
             var marshaller = new DeleteConfigurationSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -587,7 +587,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteConfigurationSet");
 
-            var request = InstantiateClassGenerator.Execute<DeleteConfigurationSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteConfigurationSetRequest>(operation);
             var marshaller = new DeleteConfigurationSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -619,7 +619,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteConfigurationSetEventDestination");
 
-            var request = InstantiateClassGenerator.Execute<DeleteConfigurationSetEventDestinationRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteConfigurationSetEventDestinationRequest>(operation);
             var marshaller = new DeleteConfigurationSetEventDestinationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -649,7 +649,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteConfigurationSetEventDestination");
 
-            var request = InstantiateClassGenerator.Execute<DeleteConfigurationSetEventDestinationRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteConfigurationSetEventDestinationRequest>(operation);
             var marshaller = new DeleteConfigurationSetEventDestinationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -681,7 +681,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteConfigurationSetEventDestination");
 
-            var request = InstantiateClassGenerator.Execute<DeleteConfigurationSetEventDestinationRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteConfigurationSetEventDestinationRequest>(operation);
             var marshaller = new DeleteConfigurationSetEventDestinationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -713,7 +713,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteConfigurationSetEventDestination");
 
-            var request = InstantiateClassGenerator.Execute<DeleteConfigurationSetEventDestinationRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteConfigurationSetEventDestinationRequest>(operation);
             var marshaller = new DeleteConfigurationSetEventDestinationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -745,7 +745,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteConfigurationSetEventDestination");
 
-            var request = InstantiateClassGenerator.Execute<DeleteConfigurationSetEventDestinationRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteConfigurationSetEventDestinationRequest>(operation);
             var marshaller = new DeleteConfigurationSetEventDestinationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -777,7 +777,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetConfigurationSetEventDestinations");
 
-            var request = InstantiateClassGenerator.Execute<GetConfigurationSetEventDestinationsRequest>();
+            var request = InstantiateClassGenerator.Execute<GetConfigurationSetEventDestinationsRequest>(operation);
             var marshaller = new GetConfigurationSetEventDestinationsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -807,7 +807,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetConfigurationSetEventDestinations");
 
-            var request = InstantiateClassGenerator.Execute<GetConfigurationSetEventDestinationsRequest>();
+            var request = InstantiateClassGenerator.Execute<GetConfigurationSetEventDestinationsRequest>(operation);
             var marshaller = new GetConfigurationSetEventDestinationsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -839,7 +839,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetConfigurationSetEventDestinations");
 
-            var request = InstantiateClassGenerator.Execute<GetConfigurationSetEventDestinationsRequest>();
+            var request = InstantiateClassGenerator.Execute<GetConfigurationSetEventDestinationsRequest>(operation);
             var marshaller = new GetConfigurationSetEventDestinationsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -871,7 +871,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetConfigurationSetEventDestinations");
 
-            var request = InstantiateClassGenerator.Execute<GetConfigurationSetEventDestinationsRequest>();
+            var request = InstantiateClassGenerator.Execute<GetConfigurationSetEventDestinationsRequest>(operation);
             var marshaller = new GetConfigurationSetEventDestinationsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -903,7 +903,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetConfigurationSetEventDestinations");
 
-            var request = InstantiateClassGenerator.Execute<GetConfigurationSetEventDestinationsRequest>();
+            var request = InstantiateClassGenerator.Execute<GetConfigurationSetEventDestinationsRequest>(operation);
             var marshaller = new GetConfigurationSetEventDestinationsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -935,7 +935,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListConfigurationSets");
 
-            var request = InstantiateClassGenerator.Execute<ListConfigurationSetsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListConfigurationSetsRequest>(operation);
             var marshaller = new ListConfigurationSetsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -965,7 +965,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListConfigurationSets");
 
-            var request = InstantiateClassGenerator.Execute<ListConfigurationSetsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListConfigurationSetsRequest>(operation);
             var marshaller = new ListConfigurationSetsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -997,7 +997,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListConfigurationSets");
 
-            var request = InstantiateClassGenerator.Execute<ListConfigurationSetsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListConfigurationSetsRequest>(operation);
             var marshaller = new ListConfigurationSetsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1029,7 +1029,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListConfigurationSets");
 
-            var request = InstantiateClassGenerator.Execute<ListConfigurationSetsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListConfigurationSetsRequest>(operation);
             var marshaller = new ListConfigurationSetsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1061,7 +1061,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("SendVoiceMessage");
 
-            var request = InstantiateClassGenerator.Execute<SendVoiceMessageRequest>();
+            var request = InstantiateClassGenerator.Execute<SendVoiceMessageRequest>(operation);
             var marshaller = new SendVoiceMessageRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1091,7 +1091,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("SendVoiceMessage");
 
-            var request = InstantiateClassGenerator.Execute<SendVoiceMessageRequest>();
+            var request = InstantiateClassGenerator.Execute<SendVoiceMessageRequest>(operation);
             var marshaller = new SendVoiceMessageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1123,7 +1123,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("SendVoiceMessage");
 
-            var request = InstantiateClassGenerator.Execute<SendVoiceMessageRequest>();
+            var request = InstantiateClassGenerator.Execute<SendVoiceMessageRequest>(operation);
             var marshaller = new SendVoiceMessageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1155,7 +1155,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("SendVoiceMessage");
 
-            var request = InstantiateClassGenerator.Execute<SendVoiceMessageRequest>();
+            var request = InstantiateClassGenerator.Execute<SendVoiceMessageRequest>(operation);
             var marshaller = new SendVoiceMessageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1187,7 +1187,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateConfigurationSetEventDestination");
 
-            var request = InstantiateClassGenerator.Execute<UpdateConfigurationSetEventDestinationRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateConfigurationSetEventDestinationRequest>(operation);
             var marshaller = new UpdateConfigurationSetEventDestinationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1217,7 +1217,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateConfigurationSetEventDestination");
 
-            var request = InstantiateClassGenerator.Execute<UpdateConfigurationSetEventDestinationRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateConfigurationSetEventDestinationRequest>(operation);
             var marshaller = new UpdateConfigurationSetEventDestinationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1249,7 +1249,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateConfigurationSetEventDestination");
 
-            var request = InstantiateClassGenerator.Execute<UpdateConfigurationSetEventDestinationRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateConfigurationSetEventDestinationRequest>(operation);
             var marshaller = new UpdateConfigurationSetEventDestinationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1281,7 +1281,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateConfigurationSetEventDestination");
 
-            var request = InstantiateClassGenerator.Execute<UpdateConfigurationSetEventDestinationRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateConfigurationSetEventDestinationRequest>(operation);
             var marshaller = new UpdateConfigurationSetEventDestinationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1313,7 +1313,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateConfigurationSetEventDestination");
 
-            var request = InstantiateClassGenerator.Execute<UpdateConfigurationSetEventDestinationRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateConfigurationSetEventDestinationRequest>(operation);
             var marshaller = new UpdateConfigurationSetEventDestinationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 

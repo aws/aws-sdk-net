@@ -49,7 +49,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("JoinStorageSession");
 
-            var request = InstantiateClassGenerator.Execute<JoinStorageSessionRequest>();
+            var request = InstantiateClassGenerator.Execute<JoinStorageSessionRequest>(operation);
             var marshaller = new JoinStorageSessionRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -65,7 +65,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("JoinStorageSession");
 
-            var request = InstantiateClassGenerator.Execute<JoinStorageSessionRequest>();
+            var request = InstantiateClassGenerator.Execute<JoinStorageSessionRequest>(operation);
             var marshaller = new JoinStorageSessionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -97,7 +97,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("JoinStorageSession");
 
-            var request = InstantiateClassGenerator.Execute<JoinStorageSessionRequest>();
+            var request = InstantiateClassGenerator.Execute<JoinStorageSessionRequest>(operation);
             var marshaller = new JoinStorageSessionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -129,7 +129,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("JoinStorageSession");
 
-            var request = InstantiateClassGenerator.Execute<JoinStorageSessionRequest>();
+            var request = InstantiateClassGenerator.Execute<JoinStorageSessionRequest>(operation);
             var marshaller = new JoinStorageSessionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -161,7 +161,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("JoinStorageSession");
 
-            var request = InstantiateClassGenerator.Execute<JoinStorageSessionRequest>();
+            var request = InstantiateClassGenerator.Execute<JoinStorageSessionRequest>(operation);
             var marshaller = new JoinStorageSessionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 

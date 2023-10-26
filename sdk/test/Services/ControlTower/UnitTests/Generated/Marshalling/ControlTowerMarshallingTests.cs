@@ -49,7 +49,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DisableControl");
 
-            var request = InstantiateClassGenerator.Execute<DisableControlRequest>();
+            var request = InstantiateClassGenerator.Execute<DisableControlRequest>(operation);
             var marshaller = new DisableControlRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -79,7 +79,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DisableControl");
 
-            var request = InstantiateClassGenerator.Execute<DisableControlRequest>();
+            var request = InstantiateClassGenerator.Execute<DisableControlRequest>(operation);
             var marshaller = new DisableControlRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -111,7 +111,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DisableControl");
 
-            var request = InstantiateClassGenerator.Execute<DisableControlRequest>();
+            var request = InstantiateClassGenerator.Execute<DisableControlRequest>(operation);
             var marshaller = new DisableControlRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -143,7 +143,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DisableControl");
 
-            var request = InstantiateClassGenerator.Execute<DisableControlRequest>();
+            var request = InstantiateClassGenerator.Execute<DisableControlRequest>(operation);
             var marshaller = new DisableControlRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -175,7 +175,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DisableControl");
 
-            var request = InstantiateClassGenerator.Execute<DisableControlRequest>();
+            var request = InstantiateClassGenerator.Execute<DisableControlRequest>(operation);
             var marshaller = new DisableControlRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -207,7 +207,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DisableControl");
 
-            var request = InstantiateClassGenerator.Execute<DisableControlRequest>();
+            var request = InstantiateClassGenerator.Execute<DisableControlRequest>(operation);
             var marshaller = new DisableControlRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -239,7 +239,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DisableControl");
 
-            var request = InstantiateClassGenerator.Execute<DisableControlRequest>();
+            var request = InstantiateClassGenerator.Execute<DisableControlRequest>(operation);
             var marshaller = new DisableControlRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -271,7 +271,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DisableControl");
 
-            var request = InstantiateClassGenerator.Execute<DisableControlRequest>();
+            var request = InstantiateClassGenerator.Execute<DisableControlRequest>(operation);
             var marshaller = new DisableControlRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -303,7 +303,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("EnableControl");
 
-            var request = InstantiateClassGenerator.Execute<EnableControlRequest>();
+            var request = InstantiateClassGenerator.Execute<EnableControlRequest>(operation);
             var marshaller = new EnableControlRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -333,7 +333,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("EnableControl");
 
-            var request = InstantiateClassGenerator.Execute<EnableControlRequest>();
+            var request = InstantiateClassGenerator.Execute<EnableControlRequest>(operation);
             var marshaller = new EnableControlRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -365,7 +365,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("EnableControl");
 
-            var request = InstantiateClassGenerator.Execute<EnableControlRequest>();
+            var request = InstantiateClassGenerator.Execute<EnableControlRequest>(operation);
             var marshaller = new EnableControlRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -397,7 +397,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("EnableControl");
 
-            var request = InstantiateClassGenerator.Execute<EnableControlRequest>();
+            var request = InstantiateClassGenerator.Execute<EnableControlRequest>(operation);
             var marshaller = new EnableControlRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -429,7 +429,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("EnableControl");
 
-            var request = InstantiateClassGenerator.Execute<EnableControlRequest>();
+            var request = InstantiateClassGenerator.Execute<EnableControlRequest>(operation);
             var marshaller = new EnableControlRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -461,7 +461,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("EnableControl");
 
-            var request = InstantiateClassGenerator.Execute<EnableControlRequest>();
+            var request = InstantiateClassGenerator.Execute<EnableControlRequest>(operation);
             var marshaller = new EnableControlRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -493,7 +493,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("EnableControl");
 
-            var request = InstantiateClassGenerator.Execute<EnableControlRequest>();
+            var request = InstantiateClassGenerator.Execute<EnableControlRequest>(operation);
             var marshaller = new EnableControlRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -525,7 +525,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("EnableControl");
 
-            var request = InstantiateClassGenerator.Execute<EnableControlRequest>();
+            var request = InstantiateClassGenerator.Execute<EnableControlRequest>(operation);
             var marshaller = new EnableControlRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -557,7 +557,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetControlOperation");
 
-            var request = InstantiateClassGenerator.Execute<GetControlOperationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetControlOperationRequest>(operation);
             var marshaller = new GetControlOperationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -587,7 +587,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetControlOperation");
 
-            var request = InstantiateClassGenerator.Execute<GetControlOperationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetControlOperationRequest>(operation);
             var marshaller = new GetControlOperationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -619,7 +619,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetControlOperation");
 
-            var request = InstantiateClassGenerator.Execute<GetControlOperationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetControlOperationRequest>(operation);
             var marshaller = new GetControlOperationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -651,7 +651,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetControlOperation");
 
-            var request = InstantiateClassGenerator.Execute<GetControlOperationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetControlOperationRequest>(operation);
             var marshaller = new GetControlOperationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -683,7 +683,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetControlOperation");
 
-            var request = InstantiateClassGenerator.Execute<GetControlOperationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetControlOperationRequest>(operation);
             var marshaller = new GetControlOperationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -715,7 +715,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetControlOperation");
 
-            var request = InstantiateClassGenerator.Execute<GetControlOperationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetControlOperationRequest>(operation);
             var marshaller = new GetControlOperationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -747,7 +747,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetEnabledControl");
 
-            var request = InstantiateClassGenerator.Execute<GetEnabledControlRequest>();
+            var request = InstantiateClassGenerator.Execute<GetEnabledControlRequest>(operation);
             var marshaller = new GetEnabledControlRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -777,7 +777,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetEnabledControl");
 
-            var request = InstantiateClassGenerator.Execute<GetEnabledControlRequest>();
+            var request = InstantiateClassGenerator.Execute<GetEnabledControlRequest>(operation);
             var marshaller = new GetEnabledControlRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -809,7 +809,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetEnabledControl");
 
-            var request = InstantiateClassGenerator.Execute<GetEnabledControlRequest>();
+            var request = InstantiateClassGenerator.Execute<GetEnabledControlRequest>(operation);
             var marshaller = new GetEnabledControlRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -841,7 +841,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetEnabledControl");
 
-            var request = InstantiateClassGenerator.Execute<GetEnabledControlRequest>();
+            var request = InstantiateClassGenerator.Execute<GetEnabledControlRequest>(operation);
             var marshaller = new GetEnabledControlRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -873,7 +873,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetEnabledControl");
 
-            var request = InstantiateClassGenerator.Execute<GetEnabledControlRequest>();
+            var request = InstantiateClassGenerator.Execute<GetEnabledControlRequest>(operation);
             var marshaller = new GetEnabledControlRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -905,7 +905,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetEnabledControl");
 
-            var request = InstantiateClassGenerator.Execute<GetEnabledControlRequest>();
+            var request = InstantiateClassGenerator.Execute<GetEnabledControlRequest>(operation);
             var marshaller = new GetEnabledControlRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -937,7 +937,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListEnabledControls");
 
-            var request = InstantiateClassGenerator.Execute<ListEnabledControlsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListEnabledControlsRequest>(operation);
             var marshaller = new ListEnabledControlsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -967,7 +967,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListEnabledControls");
 
-            var request = InstantiateClassGenerator.Execute<ListEnabledControlsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListEnabledControlsRequest>(operation);
             var marshaller = new ListEnabledControlsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -999,7 +999,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListEnabledControls");
 
-            var request = InstantiateClassGenerator.Execute<ListEnabledControlsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListEnabledControlsRequest>(operation);
             var marshaller = new ListEnabledControlsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1031,7 +1031,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListEnabledControls");
 
-            var request = InstantiateClassGenerator.Execute<ListEnabledControlsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListEnabledControlsRequest>(operation);
             var marshaller = new ListEnabledControlsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1063,7 +1063,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListEnabledControls");
 
-            var request = InstantiateClassGenerator.Execute<ListEnabledControlsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListEnabledControlsRequest>(operation);
             var marshaller = new ListEnabledControlsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1095,7 +1095,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListEnabledControls");
 
-            var request = InstantiateClassGenerator.Execute<ListEnabledControlsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListEnabledControlsRequest>(operation);
             var marshaller = new ListEnabledControlsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 

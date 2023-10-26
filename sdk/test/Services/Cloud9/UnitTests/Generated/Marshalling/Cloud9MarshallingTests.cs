@@ -46,7 +46,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("Cloud9")]
         public void CreateEnvironmentEC2MarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<CreateEnvironmentEC2Request>();
+            var operation = service_model.FindOperation("CreateEnvironmentEC2");
+
+            var request = InstantiateClassGenerator.Execute<CreateEnvironmentEC2Request>(operation);
             var marshaller = new CreateEnvironmentEC2RequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -60,7 +62,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("CreateEnvironmentEC2").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = CreateEnvironmentEC2ResponseUnmarshaller.Instance.Unmarshall(context) as CreateEnvironmentEC2Response;
@@ -75,7 +77,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateEnvironmentEC2");
 
-            var request = InstantiateClassGenerator.Execute<CreateEnvironmentEC2Request>();
+            var request = InstantiateClassGenerator.Execute<CreateEnvironmentEC2Request>(operation);
             var marshaller = new CreateEnvironmentEC2RequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -107,7 +109,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateEnvironmentEC2");
 
-            var request = InstantiateClassGenerator.Execute<CreateEnvironmentEC2Request>();
+            var request = InstantiateClassGenerator.Execute<CreateEnvironmentEC2Request>(operation);
             var marshaller = new CreateEnvironmentEC2RequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -139,7 +141,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateEnvironmentEC2");
 
-            var request = InstantiateClassGenerator.Execute<CreateEnvironmentEC2Request>();
+            var request = InstantiateClassGenerator.Execute<CreateEnvironmentEC2Request>(operation);
             var marshaller = new CreateEnvironmentEC2RequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -171,7 +173,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateEnvironmentEC2");
 
-            var request = InstantiateClassGenerator.Execute<CreateEnvironmentEC2Request>();
+            var request = InstantiateClassGenerator.Execute<CreateEnvironmentEC2Request>(operation);
             var marshaller = new CreateEnvironmentEC2RequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -203,7 +205,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateEnvironmentEC2");
 
-            var request = InstantiateClassGenerator.Execute<CreateEnvironmentEC2Request>();
+            var request = InstantiateClassGenerator.Execute<CreateEnvironmentEC2Request>(operation);
             var marshaller = new CreateEnvironmentEC2RequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -235,7 +237,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateEnvironmentEC2");
 
-            var request = InstantiateClassGenerator.Execute<CreateEnvironmentEC2Request>();
+            var request = InstantiateClassGenerator.Execute<CreateEnvironmentEC2Request>(operation);
             var marshaller = new CreateEnvironmentEC2RequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -267,7 +269,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateEnvironmentEC2");
 
-            var request = InstantiateClassGenerator.Execute<CreateEnvironmentEC2Request>();
+            var request = InstantiateClassGenerator.Execute<CreateEnvironmentEC2Request>(operation);
             var marshaller = new CreateEnvironmentEC2RequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -297,7 +299,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("Cloud9")]
         public void CreateEnvironmentMembershipMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<CreateEnvironmentMembershipRequest>();
+            var operation = service_model.FindOperation("CreateEnvironmentMembership");
+
+            var request = InstantiateClassGenerator.Execute<CreateEnvironmentMembershipRequest>(operation);
             var marshaller = new CreateEnvironmentMembershipRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -311,7 +315,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("CreateEnvironmentMembership").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = CreateEnvironmentMembershipResponseUnmarshaller.Instance.Unmarshall(context) as CreateEnvironmentMembershipResponse;
@@ -326,7 +330,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateEnvironmentMembership");
 
-            var request = InstantiateClassGenerator.Execute<CreateEnvironmentMembershipRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateEnvironmentMembershipRequest>(operation);
             var marshaller = new CreateEnvironmentMembershipRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -358,7 +362,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateEnvironmentMembership");
 
-            var request = InstantiateClassGenerator.Execute<CreateEnvironmentMembershipRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateEnvironmentMembershipRequest>(operation);
             var marshaller = new CreateEnvironmentMembershipRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -390,7 +394,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateEnvironmentMembership");
 
-            var request = InstantiateClassGenerator.Execute<CreateEnvironmentMembershipRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateEnvironmentMembershipRequest>(operation);
             var marshaller = new CreateEnvironmentMembershipRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -422,7 +426,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateEnvironmentMembership");
 
-            var request = InstantiateClassGenerator.Execute<CreateEnvironmentMembershipRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateEnvironmentMembershipRequest>(operation);
             var marshaller = new CreateEnvironmentMembershipRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -454,7 +458,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateEnvironmentMembership");
 
-            var request = InstantiateClassGenerator.Execute<CreateEnvironmentMembershipRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateEnvironmentMembershipRequest>(operation);
             var marshaller = new CreateEnvironmentMembershipRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -486,7 +490,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateEnvironmentMembership");
 
-            var request = InstantiateClassGenerator.Execute<CreateEnvironmentMembershipRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateEnvironmentMembershipRequest>(operation);
             var marshaller = new CreateEnvironmentMembershipRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -518,7 +522,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateEnvironmentMembership");
 
-            var request = InstantiateClassGenerator.Execute<CreateEnvironmentMembershipRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateEnvironmentMembershipRequest>(operation);
             var marshaller = new CreateEnvironmentMembershipRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -548,7 +552,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("Cloud9")]
         public void DeleteEnvironmentMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DeleteEnvironmentRequest>();
+            var operation = service_model.FindOperation("DeleteEnvironment");
+
+            var request = InstantiateClassGenerator.Execute<DeleteEnvironmentRequest>(operation);
             var marshaller = new DeleteEnvironmentRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -562,7 +568,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DeleteEnvironment").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DeleteEnvironmentResponseUnmarshaller.Instance.Unmarshall(context) as DeleteEnvironmentResponse;
@@ -577,7 +583,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteEnvironment");
 
-            var request = InstantiateClassGenerator.Execute<DeleteEnvironmentRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteEnvironmentRequest>(operation);
             var marshaller = new DeleteEnvironmentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -609,7 +615,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteEnvironment");
 
-            var request = InstantiateClassGenerator.Execute<DeleteEnvironmentRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteEnvironmentRequest>(operation);
             var marshaller = new DeleteEnvironmentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -641,7 +647,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteEnvironment");
 
-            var request = InstantiateClassGenerator.Execute<DeleteEnvironmentRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteEnvironmentRequest>(operation);
             var marshaller = new DeleteEnvironmentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -673,7 +679,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteEnvironment");
 
-            var request = InstantiateClassGenerator.Execute<DeleteEnvironmentRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteEnvironmentRequest>(operation);
             var marshaller = new DeleteEnvironmentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -705,7 +711,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteEnvironment");
 
-            var request = InstantiateClassGenerator.Execute<DeleteEnvironmentRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteEnvironmentRequest>(operation);
             var marshaller = new DeleteEnvironmentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -737,7 +743,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteEnvironment");
 
-            var request = InstantiateClassGenerator.Execute<DeleteEnvironmentRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteEnvironmentRequest>(operation);
             var marshaller = new DeleteEnvironmentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -769,7 +775,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteEnvironment");
 
-            var request = InstantiateClassGenerator.Execute<DeleteEnvironmentRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteEnvironmentRequest>(operation);
             var marshaller = new DeleteEnvironmentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -799,7 +805,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("Cloud9")]
         public void DeleteEnvironmentMembershipMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DeleteEnvironmentMembershipRequest>();
+            var operation = service_model.FindOperation("DeleteEnvironmentMembership");
+
+            var request = InstantiateClassGenerator.Execute<DeleteEnvironmentMembershipRequest>(operation);
             var marshaller = new DeleteEnvironmentMembershipRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -813,7 +821,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DeleteEnvironmentMembership").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DeleteEnvironmentMembershipResponseUnmarshaller.Instance.Unmarshall(context) as DeleteEnvironmentMembershipResponse;
@@ -828,7 +836,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteEnvironmentMembership");
 
-            var request = InstantiateClassGenerator.Execute<DeleteEnvironmentMembershipRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteEnvironmentMembershipRequest>(operation);
             var marshaller = new DeleteEnvironmentMembershipRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -860,7 +868,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteEnvironmentMembership");
 
-            var request = InstantiateClassGenerator.Execute<DeleteEnvironmentMembershipRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteEnvironmentMembershipRequest>(operation);
             var marshaller = new DeleteEnvironmentMembershipRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -892,7 +900,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteEnvironmentMembership");
 
-            var request = InstantiateClassGenerator.Execute<DeleteEnvironmentMembershipRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteEnvironmentMembershipRequest>(operation);
             var marshaller = new DeleteEnvironmentMembershipRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -924,7 +932,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteEnvironmentMembership");
 
-            var request = InstantiateClassGenerator.Execute<DeleteEnvironmentMembershipRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteEnvironmentMembershipRequest>(operation);
             var marshaller = new DeleteEnvironmentMembershipRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -956,7 +964,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteEnvironmentMembership");
 
-            var request = InstantiateClassGenerator.Execute<DeleteEnvironmentMembershipRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteEnvironmentMembershipRequest>(operation);
             var marshaller = new DeleteEnvironmentMembershipRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -988,7 +996,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteEnvironmentMembership");
 
-            var request = InstantiateClassGenerator.Execute<DeleteEnvironmentMembershipRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteEnvironmentMembershipRequest>(operation);
             var marshaller = new DeleteEnvironmentMembershipRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1020,7 +1028,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteEnvironmentMembership");
 
-            var request = InstantiateClassGenerator.Execute<DeleteEnvironmentMembershipRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteEnvironmentMembershipRequest>(operation);
             var marshaller = new DeleteEnvironmentMembershipRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1050,7 +1058,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("Cloud9")]
         public void DescribeEnvironmentMembershipsMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DescribeEnvironmentMembershipsRequest>();
+            var operation = service_model.FindOperation("DescribeEnvironmentMemberships");
+
+            var request = InstantiateClassGenerator.Execute<DescribeEnvironmentMembershipsRequest>(operation);
             var marshaller = new DescribeEnvironmentMembershipsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1064,7 +1074,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeEnvironmentMemberships").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DescribeEnvironmentMembershipsResponseUnmarshaller.Instance.Unmarshall(context) as DescribeEnvironmentMembershipsResponse;
@@ -1079,7 +1089,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeEnvironmentMemberships");
 
-            var request = InstantiateClassGenerator.Execute<DescribeEnvironmentMembershipsRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeEnvironmentMembershipsRequest>(operation);
             var marshaller = new DescribeEnvironmentMembershipsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1111,7 +1121,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeEnvironmentMemberships");
 
-            var request = InstantiateClassGenerator.Execute<DescribeEnvironmentMembershipsRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeEnvironmentMembershipsRequest>(operation);
             var marshaller = new DescribeEnvironmentMembershipsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1143,7 +1153,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeEnvironmentMemberships");
 
-            var request = InstantiateClassGenerator.Execute<DescribeEnvironmentMembershipsRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeEnvironmentMembershipsRequest>(operation);
             var marshaller = new DescribeEnvironmentMembershipsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1175,7 +1185,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeEnvironmentMemberships");
 
-            var request = InstantiateClassGenerator.Execute<DescribeEnvironmentMembershipsRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeEnvironmentMembershipsRequest>(operation);
             var marshaller = new DescribeEnvironmentMembershipsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1207,7 +1217,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeEnvironmentMemberships");
 
-            var request = InstantiateClassGenerator.Execute<DescribeEnvironmentMembershipsRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeEnvironmentMembershipsRequest>(operation);
             var marshaller = new DescribeEnvironmentMembershipsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1239,7 +1249,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeEnvironmentMemberships");
 
-            var request = InstantiateClassGenerator.Execute<DescribeEnvironmentMembershipsRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeEnvironmentMembershipsRequest>(operation);
             var marshaller = new DescribeEnvironmentMembershipsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1271,7 +1281,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeEnvironmentMemberships");
 
-            var request = InstantiateClassGenerator.Execute<DescribeEnvironmentMembershipsRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeEnvironmentMembershipsRequest>(operation);
             var marshaller = new DescribeEnvironmentMembershipsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1301,7 +1311,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("Cloud9")]
         public void DescribeEnvironmentsMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DescribeEnvironmentsRequest>();
+            var operation = service_model.FindOperation("DescribeEnvironments");
+
+            var request = InstantiateClassGenerator.Execute<DescribeEnvironmentsRequest>(operation);
             var marshaller = new DescribeEnvironmentsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1315,7 +1327,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeEnvironments").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DescribeEnvironmentsResponseUnmarshaller.Instance.Unmarshall(context) as DescribeEnvironmentsResponse;
@@ -1330,7 +1342,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeEnvironments");
 
-            var request = InstantiateClassGenerator.Execute<DescribeEnvironmentsRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeEnvironmentsRequest>(operation);
             var marshaller = new DescribeEnvironmentsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1362,7 +1374,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeEnvironments");
 
-            var request = InstantiateClassGenerator.Execute<DescribeEnvironmentsRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeEnvironmentsRequest>(operation);
             var marshaller = new DescribeEnvironmentsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1394,7 +1406,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeEnvironments");
 
-            var request = InstantiateClassGenerator.Execute<DescribeEnvironmentsRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeEnvironmentsRequest>(operation);
             var marshaller = new DescribeEnvironmentsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1426,7 +1438,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeEnvironments");
 
-            var request = InstantiateClassGenerator.Execute<DescribeEnvironmentsRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeEnvironmentsRequest>(operation);
             var marshaller = new DescribeEnvironmentsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1458,7 +1470,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeEnvironments");
 
-            var request = InstantiateClassGenerator.Execute<DescribeEnvironmentsRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeEnvironmentsRequest>(operation);
             var marshaller = new DescribeEnvironmentsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1490,7 +1502,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeEnvironments");
 
-            var request = InstantiateClassGenerator.Execute<DescribeEnvironmentsRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeEnvironmentsRequest>(operation);
             var marshaller = new DescribeEnvironmentsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1522,7 +1534,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeEnvironments");
 
-            var request = InstantiateClassGenerator.Execute<DescribeEnvironmentsRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeEnvironmentsRequest>(operation);
             var marshaller = new DescribeEnvironmentsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1552,7 +1564,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("Cloud9")]
         public void DescribeEnvironmentStatusMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DescribeEnvironmentStatusRequest>();
+            var operation = service_model.FindOperation("DescribeEnvironmentStatus");
+
+            var request = InstantiateClassGenerator.Execute<DescribeEnvironmentStatusRequest>(operation);
             var marshaller = new DescribeEnvironmentStatusRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1566,7 +1580,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeEnvironmentStatus").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DescribeEnvironmentStatusResponseUnmarshaller.Instance.Unmarshall(context) as DescribeEnvironmentStatusResponse;
@@ -1581,7 +1595,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeEnvironmentStatus");
 
-            var request = InstantiateClassGenerator.Execute<DescribeEnvironmentStatusRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeEnvironmentStatusRequest>(operation);
             var marshaller = new DescribeEnvironmentStatusRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1613,7 +1627,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeEnvironmentStatus");
 
-            var request = InstantiateClassGenerator.Execute<DescribeEnvironmentStatusRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeEnvironmentStatusRequest>(operation);
             var marshaller = new DescribeEnvironmentStatusRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1645,7 +1659,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeEnvironmentStatus");
 
-            var request = InstantiateClassGenerator.Execute<DescribeEnvironmentStatusRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeEnvironmentStatusRequest>(operation);
             var marshaller = new DescribeEnvironmentStatusRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1677,7 +1691,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeEnvironmentStatus");
 
-            var request = InstantiateClassGenerator.Execute<DescribeEnvironmentStatusRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeEnvironmentStatusRequest>(operation);
             var marshaller = new DescribeEnvironmentStatusRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1709,7 +1723,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeEnvironmentStatus");
 
-            var request = InstantiateClassGenerator.Execute<DescribeEnvironmentStatusRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeEnvironmentStatusRequest>(operation);
             var marshaller = new DescribeEnvironmentStatusRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1741,7 +1755,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeEnvironmentStatus");
 
-            var request = InstantiateClassGenerator.Execute<DescribeEnvironmentStatusRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeEnvironmentStatusRequest>(operation);
             var marshaller = new DescribeEnvironmentStatusRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1773,7 +1787,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeEnvironmentStatus");
 
-            var request = InstantiateClassGenerator.Execute<DescribeEnvironmentStatusRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeEnvironmentStatusRequest>(operation);
             var marshaller = new DescribeEnvironmentStatusRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1803,7 +1817,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("Cloud9")]
         public void ListEnvironmentsMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ListEnvironmentsRequest>();
+            var operation = service_model.FindOperation("ListEnvironments");
+
+            var request = InstantiateClassGenerator.Execute<ListEnvironmentsRequest>(operation);
             var marshaller = new ListEnvironmentsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1817,7 +1833,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListEnvironments").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ListEnvironmentsResponseUnmarshaller.Instance.Unmarshall(context) as ListEnvironmentsResponse;
@@ -1832,7 +1848,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListEnvironments");
 
-            var request = InstantiateClassGenerator.Execute<ListEnvironmentsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListEnvironmentsRequest>(operation);
             var marshaller = new ListEnvironmentsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1864,7 +1880,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListEnvironments");
 
-            var request = InstantiateClassGenerator.Execute<ListEnvironmentsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListEnvironmentsRequest>(operation);
             var marshaller = new ListEnvironmentsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1896,7 +1912,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListEnvironments");
 
-            var request = InstantiateClassGenerator.Execute<ListEnvironmentsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListEnvironmentsRequest>(operation);
             var marshaller = new ListEnvironmentsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1928,7 +1944,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListEnvironments");
 
-            var request = InstantiateClassGenerator.Execute<ListEnvironmentsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListEnvironmentsRequest>(operation);
             var marshaller = new ListEnvironmentsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1960,7 +1976,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListEnvironments");
 
-            var request = InstantiateClassGenerator.Execute<ListEnvironmentsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListEnvironmentsRequest>(operation);
             var marshaller = new ListEnvironmentsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1992,7 +2008,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListEnvironments");
 
-            var request = InstantiateClassGenerator.Execute<ListEnvironmentsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListEnvironmentsRequest>(operation);
             var marshaller = new ListEnvironmentsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2024,7 +2040,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListEnvironments");
 
-            var request = InstantiateClassGenerator.Execute<ListEnvironmentsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListEnvironmentsRequest>(operation);
             var marshaller = new ListEnvironmentsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2054,7 +2070,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("Cloud9")]
         public void ListTagsForResourceMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var operation = service_model.FindOperation("ListTagsForResource");
+
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>(operation);
             var marshaller = new ListTagsForResourceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -2068,7 +2086,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListTagsForResource").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ListTagsForResourceResponseUnmarshaller.Instance.Unmarshall(context) as ListTagsForResourceResponse;
@@ -2083,7 +2101,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListTagsForResource");
 
-            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>(operation);
             var marshaller = new ListTagsForResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2115,7 +2133,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListTagsForResource");
 
-            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>(operation);
             var marshaller = new ListTagsForResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2147,7 +2165,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListTagsForResource");
 
-            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>(operation);
             var marshaller = new ListTagsForResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2177,7 +2195,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("Cloud9")]
         public void TagResourceMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var operation = service_model.FindOperation("TagResource");
+
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -2191,7 +2211,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("TagResource").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = TagResourceResponseUnmarshaller.Instance.Unmarshall(context) as TagResourceResponse;
@@ -2206,7 +2226,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("TagResource");
 
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2238,7 +2258,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("TagResource");
 
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2270,7 +2290,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("TagResource");
 
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2302,7 +2322,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("TagResource");
 
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2332,7 +2352,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("Cloud9")]
         public void UntagResourceMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var operation = service_model.FindOperation("UntagResource");
+
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>(operation);
             var marshaller = new UntagResourceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -2346,7 +2368,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("UntagResource").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = UntagResourceResponseUnmarshaller.Instance.Unmarshall(context) as UntagResourceResponse;
@@ -2361,7 +2383,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UntagResource");
 
-            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>(operation);
             var marshaller = new UntagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2393,7 +2415,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UntagResource");
 
-            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>(operation);
             var marshaller = new UntagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2425,7 +2447,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UntagResource");
 
-            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>(operation);
             var marshaller = new UntagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2457,7 +2479,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UntagResource");
 
-            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>(operation);
             var marshaller = new UntagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2487,7 +2509,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("Cloud9")]
         public void UpdateEnvironmentMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<UpdateEnvironmentRequest>();
+            var operation = service_model.FindOperation("UpdateEnvironment");
+
+            var request = InstantiateClassGenerator.Execute<UpdateEnvironmentRequest>(operation);
             var marshaller = new UpdateEnvironmentRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -2501,7 +2525,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("UpdateEnvironment").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = UpdateEnvironmentResponseUnmarshaller.Instance.Unmarshall(context) as UpdateEnvironmentResponse;
@@ -2516,7 +2540,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateEnvironment");
 
-            var request = InstantiateClassGenerator.Execute<UpdateEnvironmentRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateEnvironmentRequest>(operation);
             var marshaller = new UpdateEnvironmentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2548,7 +2572,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateEnvironment");
 
-            var request = InstantiateClassGenerator.Execute<UpdateEnvironmentRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateEnvironmentRequest>(operation);
             var marshaller = new UpdateEnvironmentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2580,7 +2604,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateEnvironment");
 
-            var request = InstantiateClassGenerator.Execute<UpdateEnvironmentRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateEnvironmentRequest>(operation);
             var marshaller = new UpdateEnvironmentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2612,7 +2636,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateEnvironment");
 
-            var request = InstantiateClassGenerator.Execute<UpdateEnvironmentRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateEnvironmentRequest>(operation);
             var marshaller = new UpdateEnvironmentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2644,7 +2668,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateEnvironment");
 
-            var request = InstantiateClassGenerator.Execute<UpdateEnvironmentRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateEnvironmentRequest>(operation);
             var marshaller = new UpdateEnvironmentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2676,7 +2700,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateEnvironment");
 
-            var request = InstantiateClassGenerator.Execute<UpdateEnvironmentRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateEnvironmentRequest>(operation);
             var marshaller = new UpdateEnvironmentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2708,7 +2732,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateEnvironment");
 
-            var request = InstantiateClassGenerator.Execute<UpdateEnvironmentRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateEnvironmentRequest>(operation);
             var marshaller = new UpdateEnvironmentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2738,7 +2762,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("Cloud9")]
         public void UpdateEnvironmentMembershipMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<UpdateEnvironmentMembershipRequest>();
+            var operation = service_model.FindOperation("UpdateEnvironmentMembership");
+
+            var request = InstantiateClassGenerator.Execute<UpdateEnvironmentMembershipRequest>(operation);
             var marshaller = new UpdateEnvironmentMembershipRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -2752,7 +2778,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("UpdateEnvironmentMembership").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = UpdateEnvironmentMembershipResponseUnmarshaller.Instance.Unmarshall(context) as UpdateEnvironmentMembershipResponse;
@@ -2767,7 +2793,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateEnvironmentMembership");
 
-            var request = InstantiateClassGenerator.Execute<UpdateEnvironmentMembershipRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateEnvironmentMembershipRequest>(operation);
             var marshaller = new UpdateEnvironmentMembershipRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2799,7 +2825,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateEnvironmentMembership");
 
-            var request = InstantiateClassGenerator.Execute<UpdateEnvironmentMembershipRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateEnvironmentMembershipRequest>(operation);
             var marshaller = new UpdateEnvironmentMembershipRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2831,7 +2857,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateEnvironmentMembership");
 
-            var request = InstantiateClassGenerator.Execute<UpdateEnvironmentMembershipRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateEnvironmentMembershipRequest>(operation);
             var marshaller = new UpdateEnvironmentMembershipRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2863,7 +2889,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateEnvironmentMembership");
 
-            var request = InstantiateClassGenerator.Execute<UpdateEnvironmentMembershipRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateEnvironmentMembershipRequest>(operation);
             var marshaller = new UpdateEnvironmentMembershipRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2895,7 +2921,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateEnvironmentMembership");
 
-            var request = InstantiateClassGenerator.Execute<UpdateEnvironmentMembershipRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateEnvironmentMembershipRequest>(operation);
             var marshaller = new UpdateEnvironmentMembershipRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2927,7 +2953,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateEnvironmentMembership");
 
-            var request = InstantiateClassGenerator.Execute<UpdateEnvironmentMembershipRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateEnvironmentMembershipRequest>(operation);
             var marshaller = new UpdateEnvironmentMembershipRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2959,7 +2985,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateEnvironmentMembership");
 
-            var request = InstantiateClassGenerator.Execute<UpdateEnvironmentMembershipRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateEnvironmentMembershipRequest>(operation);
             var marshaller = new UpdateEnvironmentMembershipRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);

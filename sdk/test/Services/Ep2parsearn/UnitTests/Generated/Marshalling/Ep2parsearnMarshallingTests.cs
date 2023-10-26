@@ -46,7 +46,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("Ep2parsearn")]
         public void MyOperationMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<MyOperationRequest>();
+            var operation = service_model.FindOperation("MyOperation");
+
+            var request = InstantiateClassGenerator.Execute<MyOperationRequest>(operation);
             var marshaller = new MyOperationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -60,7 +62,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("MyOperation").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = MyOperationResponseUnmarshaller.Instance.Unmarshall(context) as MyOperationResponse;

@@ -46,7 +46,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("HealthLake")]
         public void CreateFHIRDatastoreMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<CreateFHIRDatastoreRequest>();
+            var operation = service_model.FindOperation("CreateFHIRDatastore");
+
+            var request = InstantiateClassGenerator.Execute<CreateFHIRDatastoreRequest>(operation);
             var marshaller = new CreateFHIRDatastoreRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -60,7 +62,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("CreateFHIRDatastore").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = CreateFHIRDatastoreResponseUnmarshaller.Instance.Unmarshall(context) as CreateFHIRDatastoreResponse;
@@ -75,7 +77,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateFHIRDatastore");
 
-            var request = InstantiateClassGenerator.Execute<CreateFHIRDatastoreRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateFHIRDatastoreRequest>(operation);
             var marshaller = new CreateFHIRDatastoreRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -107,7 +109,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateFHIRDatastore");
 
-            var request = InstantiateClassGenerator.Execute<CreateFHIRDatastoreRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateFHIRDatastoreRequest>(operation);
             var marshaller = new CreateFHIRDatastoreRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -139,7 +141,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateFHIRDatastore");
 
-            var request = InstantiateClassGenerator.Execute<CreateFHIRDatastoreRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateFHIRDatastoreRequest>(operation);
             var marshaller = new CreateFHIRDatastoreRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -171,7 +173,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateFHIRDatastore");
 
-            var request = InstantiateClassGenerator.Execute<CreateFHIRDatastoreRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateFHIRDatastoreRequest>(operation);
             var marshaller = new CreateFHIRDatastoreRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -201,7 +203,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("HealthLake")]
         public void DeleteFHIRDatastoreMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DeleteFHIRDatastoreRequest>();
+            var operation = service_model.FindOperation("DeleteFHIRDatastore");
+
+            var request = InstantiateClassGenerator.Execute<DeleteFHIRDatastoreRequest>(operation);
             var marshaller = new DeleteFHIRDatastoreRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -215,7 +219,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DeleteFHIRDatastore").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DeleteFHIRDatastoreResponseUnmarshaller.Instance.Unmarshall(context) as DeleteFHIRDatastoreResponse;
@@ -230,7 +234,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteFHIRDatastore");
 
-            var request = InstantiateClassGenerator.Execute<DeleteFHIRDatastoreRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteFHIRDatastoreRequest>(operation);
             var marshaller = new DeleteFHIRDatastoreRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -262,7 +266,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteFHIRDatastore");
 
-            var request = InstantiateClassGenerator.Execute<DeleteFHIRDatastoreRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteFHIRDatastoreRequest>(operation);
             var marshaller = new DeleteFHIRDatastoreRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -294,7 +298,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteFHIRDatastore");
 
-            var request = InstantiateClassGenerator.Execute<DeleteFHIRDatastoreRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteFHIRDatastoreRequest>(operation);
             var marshaller = new DeleteFHIRDatastoreRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -326,7 +330,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteFHIRDatastore");
 
-            var request = InstantiateClassGenerator.Execute<DeleteFHIRDatastoreRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteFHIRDatastoreRequest>(operation);
             var marshaller = new DeleteFHIRDatastoreRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -358,7 +362,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteFHIRDatastore");
 
-            var request = InstantiateClassGenerator.Execute<DeleteFHIRDatastoreRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteFHIRDatastoreRequest>(operation);
             var marshaller = new DeleteFHIRDatastoreRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -390,7 +394,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteFHIRDatastore");
 
-            var request = InstantiateClassGenerator.Execute<DeleteFHIRDatastoreRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteFHIRDatastoreRequest>(operation);
             var marshaller = new DeleteFHIRDatastoreRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -420,7 +424,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("HealthLake")]
         public void DescribeFHIRDatastoreMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DescribeFHIRDatastoreRequest>();
+            var operation = service_model.FindOperation("DescribeFHIRDatastore");
+
+            var request = InstantiateClassGenerator.Execute<DescribeFHIRDatastoreRequest>(operation);
             var marshaller = new DescribeFHIRDatastoreRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -434,7 +440,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeFHIRDatastore").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DescribeFHIRDatastoreResponseUnmarshaller.Instance.Unmarshall(context) as DescribeFHIRDatastoreResponse;
@@ -449,7 +455,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeFHIRDatastore");
 
-            var request = InstantiateClassGenerator.Execute<DescribeFHIRDatastoreRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeFHIRDatastoreRequest>(operation);
             var marshaller = new DescribeFHIRDatastoreRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -481,7 +487,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeFHIRDatastore");
 
-            var request = InstantiateClassGenerator.Execute<DescribeFHIRDatastoreRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeFHIRDatastoreRequest>(operation);
             var marshaller = new DescribeFHIRDatastoreRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -513,7 +519,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeFHIRDatastore");
 
-            var request = InstantiateClassGenerator.Execute<DescribeFHIRDatastoreRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeFHIRDatastoreRequest>(operation);
             var marshaller = new DescribeFHIRDatastoreRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -545,7 +551,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeFHIRDatastore");
 
-            var request = InstantiateClassGenerator.Execute<DescribeFHIRDatastoreRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeFHIRDatastoreRequest>(operation);
             var marshaller = new DescribeFHIRDatastoreRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -575,7 +581,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("HealthLake")]
         public void DescribeFHIRExportJobMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DescribeFHIRExportJobRequest>();
+            var operation = service_model.FindOperation("DescribeFHIRExportJob");
+
+            var request = InstantiateClassGenerator.Execute<DescribeFHIRExportJobRequest>(operation);
             var marshaller = new DescribeFHIRExportJobRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -589,7 +597,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeFHIRExportJob").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DescribeFHIRExportJobResponseUnmarshaller.Instance.Unmarshall(context) as DescribeFHIRExportJobResponse;
@@ -604,7 +612,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeFHIRExportJob");
 
-            var request = InstantiateClassGenerator.Execute<DescribeFHIRExportJobRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeFHIRExportJobRequest>(operation);
             var marshaller = new DescribeFHIRExportJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -636,7 +644,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeFHIRExportJob");
 
-            var request = InstantiateClassGenerator.Execute<DescribeFHIRExportJobRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeFHIRExportJobRequest>(operation);
             var marshaller = new DescribeFHIRExportJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -668,7 +676,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeFHIRExportJob");
 
-            var request = InstantiateClassGenerator.Execute<DescribeFHIRExportJobRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeFHIRExportJobRequest>(operation);
             var marshaller = new DescribeFHIRExportJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -700,7 +708,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeFHIRExportJob");
 
-            var request = InstantiateClassGenerator.Execute<DescribeFHIRExportJobRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeFHIRExportJobRequest>(operation);
             var marshaller = new DescribeFHIRExportJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -730,7 +738,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("HealthLake")]
         public void DescribeFHIRImportJobMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DescribeFHIRImportJobRequest>();
+            var operation = service_model.FindOperation("DescribeFHIRImportJob");
+
+            var request = InstantiateClassGenerator.Execute<DescribeFHIRImportJobRequest>(operation);
             var marshaller = new DescribeFHIRImportJobRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -744,7 +754,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeFHIRImportJob").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DescribeFHIRImportJobResponseUnmarshaller.Instance.Unmarshall(context) as DescribeFHIRImportJobResponse;
@@ -759,7 +769,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeFHIRImportJob");
 
-            var request = InstantiateClassGenerator.Execute<DescribeFHIRImportJobRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeFHIRImportJobRequest>(operation);
             var marshaller = new DescribeFHIRImportJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -791,7 +801,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeFHIRImportJob");
 
-            var request = InstantiateClassGenerator.Execute<DescribeFHIRImportJobRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeFHIRImportJobRequest>(operation);
             var marshaller = new DescribeFHIRImportJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -823,7 +833,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeFHIRImportJob");
 
-            var request = InstantiateClassGenerator.Execute<DescribeFHIRImportJobRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeFHIRImportJobRequest>(operation);
             var marshaller = new DescribeFHIRImportJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -855,7 +865,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeFHIRImportJob");
 
-            var request = InstantiateClassGenerator.Execute<DescribeFHIRImportJobRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeFHIRImportJobRequest>(operation);
             var marshaller = new DescribeFHIRImportJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -885,7 +895,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("HealthLake")]
         public void ListFHIRDatastoresMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ListFHIRDatastoresRequest>();
+            var operation = service_model.FindOperation("ListFHIRDatastores");
+
+            var request = InstantiateClassGenerator.Execute<ListFHIRDatastoresRequest>(operation);
             var marshaller = new ListFHIRDatastoresRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -899,7 +911,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListFHIRDatastores").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ListFHIRDatastoresResponseUnmarshaller.Instance.Unmarshall(context) as ListFHIRDatastoresResponse;
@@ -914,7 +926,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListFHIRDatastores");
 
-            var request = InstantiateClassGenerator.Execute<ListFHIRDatastoresRequest>();
+            var request = InstantiateClassGenerator.Execute<ListFHIRDatastoresRequest>(operation);
             var marshaller = new ListFHIRDatastoresRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -946,7 +958,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListFHIRDatastores");
 
-            var request = InstantiateClassGenerator.Execute<ListFHIRDatastoresRequest>();
+            var request = InstantiateClassGenerator.Execute<ListFHIRDatastoresRequest>(operation);
             var marshaller = new ListFHIRDatastoresRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -978,7 +990,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListFHIRDatastores");
 
-            var request = InstantiateClassGenerator.Execute<ListFHIRDatastoresRequest>();
+            var request = InstantiateClassGenerator.Execute<ListFHIRDatastoresRequest>(operation);
             var marshaller = new ListFHIRDatastoresRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1008,7 +1020,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("HealthLake")]
         public void ListFHIRExportJobsMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ListFHIRExportJobsRequest>();
+            var operation = service_model.FindOperation("ListFHIRExportJobs");
+
+            var request = InstantiateClassGenerator.Execute<ListFHIRExportJobsRequest>(operation);
             var marshaller = new ListFHIRExportJobsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1022,7 +1036,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListFHIRExportJobs").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ListFHIRExportJobsResponseUnmarshaller.Instance.Unmarshall(context) as ListFHIRExportJobsResponse;
@@ -1037,7 +1051,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListFHIRExportJobs");
 
-            var request = InstantiateClassGenerator.Execute<ListFHIRExportJobsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListFHIRExportJobsRequest>(operation);
             var marshaller = new ListFHIRExportJobsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1069,7 +1083,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListFHIRExportJobs");
 
-            var request = InstantiateClassGenerator.Execute<ListFHIRExportJobsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListFHIRExportJobsRequest>(operation);
             var marshaller = new ListFHIRExportJobsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1101,7 +1115,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListFHIRExportJobs");
 
-            var request = InstantiateClassGenerator.Execute<ListFHIRExportJobsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListFHIRExportJobsRequest>(operation);
             var marshaller = new ListFHIRExportJobsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1133,7 +1147,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListFHIRExportJobs");
 
-            var request = InstantiateClassGenerator.Execute<ListFHIRExportJobsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListFHIRExportJobsRequest>(operation);
             var marshaller = new ListFHIRExportJobsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1165,7 +1179,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListFHIRExportJobs");
 
-            var request = InstantiateClassGenerator.Execute<ListFHIRExportJobsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListFHIRExportJobsRequest>(operation);
             var marshaller = new ListFHIRExportJobsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1195,7 +1209,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("HealthLake")]
         public void ListFHIRImportJobsMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ListFHIRImportJobsRequest>();
+            var operation = service_model.FindOperation("ListFHIRImportJobs");
+
+            var request = InstantiateClassGenerator.Execute<ListFHIRImportJobsRequest>(operation);
             var marshaller = new ListFHIRImportJobsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1209,7 +1225,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListFHIRImportJobs").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ListFHIRImportJobsResponseUnmarshaller.Instance.Unmarshall(context) as ListFHIRImportJobsResponse;
@@ -1224,7 +1240,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListFHIRImportJobs");
 
-            var request = InstantiateClassGenerator.Execute<ListFHIRImportJobsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListFHIRImportJobsRequest>(operation);
             var marshaller = new ListFHIRImportJobsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1256,7 +1272,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListFHIRImportJobs");
 
-            var request = InstantiateClassGenerator.Execute<ListFHIRImportJobsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListFHIRImportJobsRequest>(operation);
             var marshaller = new ListFHIRImportJobsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1288,7 +1304,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListFHIRImportJobs");
 
-            var request = InstantiateClassGenerator.Execute<ListFHIRImportJobsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListFHIRImportJobsRequest>(operation);
             var marshaller = new ListFHIRImportJobsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1320,7 +1336,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListFHIRImportJobs");
 
-            var request = InstantiateClassGenerator.Execute<ListFHIRImportJobsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListFHIRImportJobsRequest>(operation);
             var marshaller = new ListFHIRImportJobsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1352,7 +1368,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListFHIRImportJobs");
 
-            var request = InstantiateClassGenerator.Execute<ListFHIRImportJobsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListFHIRImportJobsRequest>(operation);
             var marshaller = new ListFHIRImportJobsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1382,7 +1398,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("HealthLake")]
         public void ListTagsForResourceMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var operation = service_model.FindOperation("ListTagsForResource");
+
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>(operation);
             var marshaller = new ListTagsForResourceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1396,7 +1414,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListTagsForResource").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ListTagsForResourceResponseUnmarshaller.Instance.Unmarshall(context) as ListTagsForResourceResponse;
@@ -1411,7 +1429,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListTagsForResource");
 
-            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>(operation);
             var marshaller = new ListTagsForResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1443,7 +1461,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListTagsForResource");
 
-            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>(operation);
             var marshaller = new ListTagsForResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1473,7 +1491,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("HealthLake")]
         public void StartFHIRExportJobMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<StartFHIRExportJobRequest>();
+            var operation = service_model.FindOperation("StartFHIRExportJob");
+
+            var request = InstantiateClassGenerator.Execute<StartFHIRExportJobRequest>(operation);
             var marshaller = new StartFHIRExportJobRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1487,7 +1507,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("StartFHIRExportJob").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = StartFHIRExportJobResponseUnmarshaller.Instance.Unmarshall(context) as StartFHIRExportJobResponse;
@@ -1502,7 +1522,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("StartFHIRExportJob");
 
-            var request = InstantiateClassGenerator.Execute<StartFHIRExportJobRequest>();
+            var request = InstantiateClassGenerator.Execute<StartFHIRExportJobRequest>(operation);
             var marshaller = new StartFHIRExportJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1534,7 +1554,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("StartFHIRExportJob");
 
-            var request = InstantiateClassGenerator.Execute<StartFHIRExportJobRequest>();
+            var request = InstantiateClassGenerator.Execute<StartFHIRExportJobRequest>(operation);
             var marshaller = new StartFHIRExportJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1566,7 +1586,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("StartFHIRExportJob");
 
-            var request = InstantiateClassGenerator.Execute<StartFHIRExportJobRequest>();
+            var request = InstantiateClassGenerator.Execute<StartFHIRExportJobRequest>(operation);
             var marshaller = new StartFHIRExportJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1598,7 +1618,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("StartFHIRExportJob");
 
-            var request = InstantiateClassGenerator.Execute<StartFHIRExportJobRequest>();
+            var request = InstantiateClassGenerator.Execute<StartFHIRExportJobRequest>(operation);
             var marshaller = new StartFHIRExportJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1630,7 +1650,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("StartFHIRExportJob");
 
-            var request = InstantiateClassGenerator.Execute<StartFHIRExportJobRequest>();
+            var request = InstantiateClassGenerator.Execute<StartFHIRExportJobRequest>(operation);
             var marshaller = new StartFHIRExportJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1660,7 +1680,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("HealthLake")]
         public void StartFHIRImportJobMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<StartFHIRImportJobRequest>();
+            var operation = service_model.FindOperation("StartFHIRImportJob");
+
+            var request = InstantiateClassGenerator.Execute<StartFHIRImportJobRequest>(operation);
             var marshaller = new StartFHIRImportJobRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1674,7 +1696,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("StartFHIRImportJob").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = StartFHIRImportJobResponseUnmarshaller.Instance.Unmarshall(context) as StartFHIRImportJobResponse;
@@ -1689,7 +1711,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("StartFHIRImportJob");
 
-            var request = InstantiateClassGenerator.Execute<StartFHIRImportJobRequest>();
+            var request = InstantiateClassGenerator.Execute<StartFHIRImportJobRequest>(operation);
             var marshaller = new StartFHIRImportJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1721,7 +1743,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("StartFHIRImportJob");
 
-            var request = InstantiateClassGenerator.Execute<StartFHIRImportJobRequest>();
+            var request = InstantiateClassGenerator.Execute<StartFHIRImportJobRequest>(operation);
             var marshaller = new StartFHIRImportJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1753,7 +1775,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("StartFHIRImportJob");
 
-            var request = InstantiateClassGenerator.Execute<StartFHIRImportJobRequest>();
+            var request = InstantiateClassGenerator.Execute<StartFHIRImportJobRequest>(operation);
             var marshaller = new StartFHIRImportJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1785,7 +1807,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("StartFHIRImportJob");
 
-            var request = InstantiateClassGenerator.Execute<StartFHIRImportJobRequest>();
+            var request = InstantiateClassGenerator.Execute<StartFHIRImportJobRequest>(operation);
             var marshaller = new StartFHIRImportJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1817,7 +1839,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("StartFHIRImportJob");
 
-            var request = InstantiateClassGenerator.Execute<StartFHIRImportJobRequest>();
+            var request = InstantiateClassGenerator.Execute<StartFHIRImportJobRequest>(operation);
             var marshaller = new StartFHIRImportJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1847,7 +1869,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("HealthLake")]
         public void TagResourceMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var operation = service_model.FindOperation("TagResource");
+
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1861,7 +1885,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("TagResource").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = TagResourceResponseUnmarshaller.Instance.Unmarshall(context) as TagResourceResponse;
@@ -1876,7 +1900,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("TagResource");
 
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1908,7 +1932,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("TagResource");
 
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1938,7 +1962,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("HealthLake")]
         public void UntagResourceMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var operation = service_model.FindOperation("UntagResource");
+
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>(operation);
             var marshaller = new UntagResourceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1952,7 +1978,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("UntagResource").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = UntagResourceResponseUnmarshaller.Instance.Unmarshall(context) as UntagResourceResponse;
@@ -1967,7 +1993,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UntagResource");
 
-            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>(operation);
             var marshaller = new UntagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1999,7 +2025,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UntagResource");
 
-            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>(operation);
             var marshaller = new UntagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);

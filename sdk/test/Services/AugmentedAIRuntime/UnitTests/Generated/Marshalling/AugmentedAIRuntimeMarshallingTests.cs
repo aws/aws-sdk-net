@@ -49,7 +49,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteHumanLoop");
 
-            var request = InstantiateClassGenerator.Execute<DeleteHumanLoopRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteHumanLoopRequest>(operation);
             var marshaller = new DeleteHumanLoopRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -79,7 +79,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteHumanLoop");
 
-            var request = InstantiateClassGenerator.Execute<DeleteHumanLoopRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteHumanLoopRequest>(operation);
             var marshaller = new DeleteHumanLoopRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -111,7 +111,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteHumanLoop");
 
-            var request = InstantiateClassGenerator.Execute<DeleteHumanLoopRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteHumanLoopRequest>(operation);
             var marshaller = new DeleteHumanLoopRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -143,7 +143,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteHumanLoop");
 
-            var request = InstantiateClassGenerator.Execute<DeleteHumanLoopRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteHumanLoopRequest>(operation);
             var marshaller = new DeleteHumanLoopRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -175,7 +175,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteHumanLoop");
 
-            var request = InstantiateClassGenerator.Execute<DeleteHumanLoopRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteHumanLoopRequest>(operation);
             var marshaller = new DeleteHumanLoopRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -207,7 +207,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DescribeHumanLoop");
 
-            var request = InstantiateClassGenerator.Execute<DescribeHumanLoopRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeHumanLoopRequest>(operation);
             var marshaller = new DescribeHumanLoopRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -237,7 +237,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DescribeHumanLoop");
 
-            var request = InstantiateClassGenerator.Execute<DescribeHumanLoopRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeHumanLoopRequest>(operation);
             var marshaller = new DescribeHumanLoopRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -269,7 +269,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DescribeHumanLoop");
 
-            var request = InstantiateClassGenerator.Execute<DescribeHumanLoopRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeHumanLoopRequest>(operation);
             var marshaller = new DescribeHumanLoopRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -301,7 +301,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DescribeHumanLoop");
 
-            var request = InstantiateClassGenerator.Execute<DescribeHumanLoopRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeHumanLoopRequest>(operation);
             var marshaller = new DescribeHumanLoopRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -333,7 +333,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DescribeHumanLoop");
 
-            var request = InstantiateClassGenerator.Execute<DescribeHumanLoopRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeHumanLoopRequest>(operation);
             var marshaller = new DescribeHumanLoopRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -365,7 +365,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListHumanLoops");
 
-            var request = InstantiateClassGenerator.Execute<ListHumanLoopsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListHumanLoopsRequest>(operation);
             var marshaller = new ListHumanLoopsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -395,7 +395,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListHumanLoops");
 
-            var request = InstantiateClassGenerator.Execute<ListHumanLoopsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListHumanLoopsRequest>(operation);
             var marshaller = new ListHumanLoopsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -427,7 +427,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListHumanLoops");
 
-            var request = InstantiateClassGenerator.Execute<ListHumanLoopsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListHumanLoopsRequest>(operation);
             var marshaller = new ListHumanLoopsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -459,7 +459,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListHumanLoops");
 
-            var request = InstantiateClassGenerator.Execute<ListHumanLoopsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListHumanLoopsRequest>(operation);
             var marshaller = new ListHumanLoopsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -491,7 +491,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListHumanLoops");
 
-            var request = InstantiateClassGenerator.Execute<ListHumanLoopsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListHumanLoopsRequest>(operation);
             var marshaller = new ListHumanLoopsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -523,7 +523,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartHumanLoop");
 
-            var request = InstantiateClassGenerator.Execute<StartHumanLoopRequest>();
+            var request = InstantiateClassGenerator.Execute<StartHumanLoopRequest>(operation);
             var marshaller = new StartHumanLoopRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -553,7 +553,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartHumanLoop");
 
-            var request = InstantiateClassGenerator.Execute<StartHumanLoopRequest>();
+            var request = InstantiateClassGenerator.Execute<StartHumanLoopRequest>(operation);
             var marshaller = new StartHumanLoopRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -585,7 +585,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartHumanLoop");
 
-            var request = InstantiateClassGenerator.Execute<StartHumanLoopRequest>();
+            var request = InstantiateClassGenerator.Execute<StartHumanLoopRequest>(operation);
             var marshaller = new StartHumanLoopRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -617,7 +617,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartHumanLoop");
 
-            var request = InstantiateClassGenerator.Execute<StartHumanLoopRequest>();
+            var request = InstantiateClassGenerator.Execute<StartHumanLoopRequest>(operation);
             var marshaller = new StartHumanLoopRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -649,7 +649,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartHumanLoop");
 
-            var request = InstantiateClassGenerator.Execute<StartHumanLoopRequest>();
+            var request = InstantiateClassGenerator.Execute<StartHumanLoopRequest>(operation);
             var marshaller = new StartHumanLoopRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -681,7 +681,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartHumanLoop");
 
-            var request = InstantiateClassGenerator.Execute<StartHumanLoopRequest>();
+            var request = InstantiateClassGenerator.Execute<StartHumanLoopRequest>(operation);
             var marshaller = new StartHumanLoopRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -713,7 +713,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StopHumanLoop");
 
-            var request = InstantiateClassGenerator.Execute<StopHumanLoopRequest>();
+            var request = InstantiateClassGenerator.Execute<StopHumanLoopRequest>(operation);
             var marshaller = new StopHumanLoopRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -743,7 +743,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StopHumanLoop");
 
-            var request = InstantiateClassGenerator.Execute<StopHumanLoopRequest>();
+            var request = InstantiateClassGenerator.Execute<StopHumanLoopRequest>(operation);
             var marshaller = new StopHumanLoopRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -775,7 +775,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StopHumanLoop");
 
-            var request = InstantiateClassGenerator.Execute<StopHumanLoopRequest>();
+            var request = InstantiateClassGenerator.Execute<StopHumanLoopRequest>(operation);
             var marshaller = new StopHumanLoopRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -807,7 +807,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StopHumanLoop");
 
-            var request = InstantiateClassGenerator.Execute<StopHumanLoopRequest>();
+            var request = InstantiateClassGenerator.Execute<StopHumanLoopRequest>(operation);
             var marshaller = new StopHumanLoopRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -839,7 +839,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StopHumanLoop");
 
-            var request = InstantiateClassGenerator.Execute<StopHumanLoopRequest>();
+            var request = InstantiateClassGenerator.Execute<StopHumanLoopRequest>(operation);
             var marshaller = new StopHumanLoopRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 

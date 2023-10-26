@@ -46,7 +46,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("DirectConnect")]
         public void AcceptDirectConnectGatewayAssociationProposalMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<AcceptDirectConnectGatewayAssociationProposalRequest>();
+            var operation = service_model.FindOperation("AcceptDirectConnectGatewayAssociationProposal");
+
+            var request = InstantiateClassGenerator.Execute<AcceptDirectConnectGatewayAssociationProposalRequest>(operation);
             var marshaller = new AcceptDirectConnectGatewayAssociationProposalRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -60,7 +62,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("AcceptDirectConnectGatewayAssociationProposal").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = AcceptDirectConnectGatewayAssociationProposalResponseUnmarshaller.Instance.Unmarshall(context) as AcceptDirectConnectGatewayAssociationProposalResponse;
@@ -75,7 +77,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("AcceptDirectConnectGatewayAssociationProposal");
 
-            var request = InstantiateClassGenerator.Execute<AcceptDirectConnectGatewayAssociationProposalRequest>();
+            var request = InstantiateClassGenerator.Execute<AcceptDirectConnectGatewayAssociationProposalRequest>(operation);
             var marshaller = new AcceptDirectConnectGatewayAssociationProposalRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -107,7 +109,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("AcceptDirectConnectGatewayAssociationProposal");
 
-            var request = InstantiateClassGenerator.Execute<AcceptDirectConnectGatewayAssociationProposalRequest>();
+            var request = InstantiateClassGenerator.Execute<AcceptDirectConnectGatewayAssociationProposalRequest>(operation);
             var marshaller = new AcceptDirectConnectGatewayAssociationProposalRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -137,7 +139,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("DirectConnect")]
         public void AllocateConnectionOnInterconnectMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<AllocateConnectionOnInterconnectRequest>();
+            var operation = service_model.FindOperation("AllocateConnectionOnInterconnect");
+
+            var request = InstantiateClassGenerator.Execute<AllocateConnectionOnInterconnectRequest>(operation);
             var marshaller = new AllocateConnectionOnInterconnectRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -151,7 +155,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("AllocateConnectionOnInterconnect").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = AllocateConnectionOnInterconnectResponseUnmarshaller.Instance.Unmarshall(context) as AllocateConnectionOnInterconnectResponse;
@@ -166,7 +170,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("AllocateConnectionOnInterconnect");
 
-            var request = InstantiateClassGenerator.Execute<AllocateConnectionOnInterconnectRequest>();
+            var request = InstantiateClassGenerator.Execute<AllocateConnectionOnInterconnectRequest>(operation);
             var marshaller = new AllocateConnectionOnInterconnectRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -198,7 +202,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("AllocateConnectionOnInterconnect");
 
-            var request = InstantiateClassGenerator.Execute<AllocateConnectionOnInterconnectRequest>();
+            var request = InstantiateClassGenerator.Execute<AllocateConnectionOnInterconnectRequest>(operation);
             var marshaller = new AllocateConnectionOnInterconnectRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -228,7 +232,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("DirectConnect")]
         public void AllocateHostedConnectionMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<AllocateHostedConnectionRequest>();
+            var operation = service_model.FindOperation("AllocateHostedConnection");
+
+            var request = InstantiateClassGenerator.Execute<AllocateHostedConnectionRequest>(operation);
             var marshaller = new AllocateHostedConnectionRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -242,7 +248,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("AllocateHostedConnection").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = AllocateHostedConnectionResponseUnmarshaller.Instance.Unmarshall(context) as AllocateHostedConnectionResponse;
@@ -257,7 +263,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("AllocateHostedConnection");
 
-            var request = InstantiateClassGenerator.Execute<AllocateHostedConnectionRequest>();
+            var request = InstantiateClassGenerator.Execute<AllocateHostedConnectionRequest>(operation);
             var marshaller = new AllocateHostedConnectionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -289,7 +295,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("AllocateHostedConnection");
 
-            var request = InstantiateClassGenerator.Execute<AllocateHostedConnectionRequest>();
+            var request = InstantiateClassGenerator.Execute<AllocateHostedConnectionRequest>(operation);
             var marshaller = new AllocateHostedConnectionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -321,7 +327,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("AllocateHostedConnection");
 
-            var request = InstantiateClassGenerator.Execute<AllocateHostedConnectionRequest>();
+            var request = InstantiateClassGenerator.Execute<AllocateHostedConnectionRequest>(operation);
             var marshaller = new AllocateHostedConnectionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -353,7 +359,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("AllocateHostedConnection");
 
-            var request = InstantiateClassGenerator.Execute<AllocateHostedConnectionRequest>();
+            var request = InstantiateClassGenerator.Execute<AllocateHostedConnectionRequest>(operation);
             var marshaller = new AllocateHostedConnectionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -383,7 +389,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("DirectConnect")]
         public void AllocatePrivateVirtualInterfaceMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<AllocatePrivateVirtualInterfaceRequest>();
+            var operation = service_model.FindOperation("AllocatePrivateVirtualInterface");
+
+            var request = InstantiateClassGenerator.Execute<AllocatePrivateVirtualInterfaceRequest>(operation);
             var marshaller = new AllocatePrivateVirtualInterfaceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -397,7 +405,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("AllocatePrivateVirtualInterface").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = AllocatePrivateVirtualInterfaceResponseUnmarshaller.Instance.Unmarshall(context) as AllocatePrivateVirtualInterfaceResponse;
@@ -412,7 +420,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("AllocatePrivateVirtualInterface");
 
-            var request = InstantiateClassGenerator.Execute<AllocatePrivateVirtualInterfaceRequest>();
+            var request = InstantiateClassGenerator.Execute<AllocatePrivateVirtualInterfaceRequest>(operation);
             var marshaller = new AllocatePrivateVirtualInterfaceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -444,7 +452,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("AllocatePrivateVirtualInterface");
 
-            var request = InstantiateClassGenerator.Execute<AllocatePrivateVirtualInterfaceRequest>();
+            var request = InstantiateClassGenerator.Execute<AllocatePrivateVirtualInterfaceRequest>(operation);
             var marshaller = new AllocatePrivateVirtualInterfaceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -476,7 +484,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("AllocatePrivateVirtualInterface");
 
-            var request = InstantiateClassGenerator.Execute<AllocatePrivateVirtualInterfaceRequest>();
+            var request = InstantiateClassGenerator.Execute<AllocatePrivateVirtualInterfaceRequest>(operation);
             var marshaller = new AllocatePrivateVirtualInterfaceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -508,7 +516,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("AllocatePrivateVirtualInterface");
 
-            var request = InstantiateClassGenerator.Execute<AllocatePrivateVirtualInterfaceRequest>();
+            var request = InstantiateClassGenerator.Execute<AllocatePrivateVirtualInterfaceRequest>(operation);
             var marshaller = new AllocatePrivateVirtualInterfaceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -538,7 +546,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("DirectConnect")]
         public void AllocatePublicVirtualInterfaceMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<AllocatePublicVirtualInterfaceRequest>();
+            var operation = service_model.FindOperation("AllocatePublicVirtualInterface");
+
+            var request = InstantiateClassGenerator.Execute<AllocatePublicVirtualInterfaceRequest>(operation);
             var marshaller = new AllocatePublicVirtualInterfaceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -552,7 +562,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("AllocatePublicVirtualInterface").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = AllocatePublicVirtualInterfaceResponseUnmarshaller.Instance.Unmarshall(context) as AllocatePublicVirtualInterfaceResponse;
@@ -567,7 +577,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("AllocatePublicVirtualInterface");
 
-            var request = InstantiateClassGenerator.Execute<AllocatePublicVirtualInterfaceRequest>();
+            var request = InstantiateClassGenerator.Execute<AllocatePublicVirtualInterfaceRequest>(operation);
             var marshaller = new AllocatePublicVirtualInterfaceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -599,7 +609,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("AllocatePublicVirtualInterface");
 
-            var request = InstantiateClassGenerator.Execute<AllocatePublicVirtualInterfaceRequest>();
+            var request = InstantiateClassGenerator.Execute<AllocatePublicVirtualInterfaceRequest>(operation);
             var marshaller = new AllocatePublicVirtualInterfaceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -631,7 +641,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("AllocatePublicVirtualInterface");
 
-            var request = InstantiateClassGenerator.Execute<AllocatePublicVirtualInterfaceRequest>();
+            var request = InstantiateClassGenerator.Execute<AllocatePublicVirtualInterfaceRequest>(operation);
             var marshaller = new AllocatePublicVirtualInterfaceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -663,7 +673,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("AllocatePublicVirtualInterface");
 
-            var request = InstantiateClassGenerator.Execute<AllocatePublicVirtualInterfaceRequest>();
+            var request = InstantiateClassGenerator.Execute<AllocatePublicVirtualInterfaceRequest>(operation);
             var marshaller = new AllocatePublicVirtualInterfaceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -693,7 +703,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("DirectConnect")]
         public void AllocateTransitVirtualInterfaceMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<AllocateTransitVirtualInterfaceRequest>();
+            var operation = service_model.FindOperation("AllocateTransitVirtualInterface");
+
+            var request = InstantiateClassGenerator.Execute<AllocateTransitVirtualInterfaceRequest>(operation);
             var marshaller = new AllocateTransitVirtualInterfaceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -707,7 +719,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("AllocateTransitVirtualInterface").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = AllocateTransitVirtualInterfaceResponseUnmarshaller.Instance.Unmarshall(context) as AllocateTransitVirtualInterfaceResponse;
@@ -722,7 +734,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("AllocateTransitVirtualInterface");
 
-            var request = InstantiateClassGenerator.Execute<AllocateTransitVirtualInterfaceRequest>();
+            var request = InstantiateClassGenerator.Execute<AllocateTransitVirtualInterfaceRequest>(operation);
             var marshaller = new AllocateTransitVirtualInterfaceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -754,7 +766,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("AllocateTransitVirtualInterface");
 
-            var request = InstantiateClassGenerator.Execute<AllocateTransitVirtualInterfaceRequest>();
+            var request = InstantiateClassGenerator.Execute<AllocateTransitVirtualInterfaceRequest>(operation);
             var marshaller = new AllocateTransitVirtualInterfaceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -786,7 +798,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("AllocateTransitVirtualInterface");
 
-            var request = InstantiateClassGenerator.Execute<AllocateTransitVirtualInterfaceRequest>();
+            var request = InstantiateClassGenerator.Execute<AllocateTransitVirtualInterfaceRequest>(operation);
             var marshaller = new AllocateTransitVirtualInterfaceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -818,7 +830,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("AllocateTransitVirtualInterface");
 
-            var request = InstantiateClassGenerator.Execute<AllocateTransitVirtualInterfaceRequest>();
+            var request = InstantiateClassGenerator.Execute<AllocateTransitVirtualInterfaceRequest>(operation);
             var marshaller = new AllocateTransitVirtualInterfaceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -848,7 +860,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("DirectConnect")]
         public void AssociateConnectionWithLagMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<AssociateConnectionWithLagRequest>();
+            var operation = service_model.FindOperation("AssociateConnectionWithLag");
+
+            var request = InstantiateClassGenerator.Execute<AssociateConnectionWithLagRequest>(operation);
             var marshaller = new AssociateConnectionWithLagRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -862,7 +876,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("AssociateConnectionWithLag").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = AssociateConnectionWithLagResponseUnmarshaller.Instance.Unmarshall(context) as AssociateConnectionWithLagResponse;
@@ -877,7 +891,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("AssociateConnectionWithLag");
 
-            var request = InstantiateClassGenerator.Execute<AssociateConnectionWithLagRequest>();
+            var request = InstantiateClassGenerator.Execute<AssociateConnectionWithLagRequest>(operation);
             var marshaller = new AssociateConnectionWithLagRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -909,7 +923,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("AssociateConnectionWithLag");
 
-            var request = InstantiateClassGenerator.Execute<AssociateConnectionWithLagRequest>();
+            var request = InstantiateClassGenerator.Execute<AssociateConnectionWithLagRequest>(operation);
             var marshaller = new AssociateConnectionWithLagRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -939,7 +953,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("DirectConnect")]
         public void AssociateHostedConnectionMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<AssociateHostedConnectionRequest>();
+            var operation = service_model.FindOperation("AssociateHostedConnection");
+
+            var request = InstantiateClassGenerator.Execute<AssociateHostedConnectionRequest>(operation);
             var marshaller = new AssociateHostedConnectionRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -953,7 +969,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("AssociateHostedConnection").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = AssociateHostedConnectionResponseUnmarshaller.Instance.Unmarshall(context) as AssociateHostedConnectionResponse;
@@ -968,7 +984,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("AssociateHostedConnection");
 
-            var request = InstantiateClassGenerator.Execute<AssociateHostedConnectionRequest>();
+            var request = InstantiateClassGenerator.Execute<AssociateHostedConnectionRequest>(operation);
             var marshaller = new AssociateHostedConnectionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1000,7 +1016,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("AssociateHostedConnection");
 
-            var request = InstantiateClassGenerator.Execute<AssociateHostedConnectionRequest>();
+            var request = InstantiateClassGenerator.Execute<AssociateHostedConnectionRequest>(operation);
             var marshaller = new AssociateHostedConnectionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1030,7 +1046,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("DirectConnect")]
         public void AssociateMacSecKeyMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<AssociateMacSecKeyRequest>();
+            var operation = service_model.FindOperation("AssociateMacSecKey");
+
+            var request = InstantiateClassGenerator.Execute<AssociateMacSecKeyRequest>(operation);
             var marshaller = new AssociateMacSecKeyRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1044,7 +1062,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("AssociateMacSecKey").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = AssociateMacSecKeyResponseUnmarshaller.Instance.Unmarshall(context) as AssociateMacSecKeyResponse;
@@ -1059,7 +1077,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("AssociateMacSecKey");
 
-            var request = InstantiateClassGenerator.Execute<AssociateMacSecKeyRequest>();
+            var request = InstantiateClassGenerator.Execute<AssociateMacSecKeyRequest>(operation);
             var marshaller = new AssociateMacSecKeyRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1091,7 +1109,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("AssociateMacSecKey");
 
-            var request = InstantiateClassGenerator.Execute<AssociateMacSecKeyRequest>();
+            var request = InstantiateClassGenerator.Execute<AssociateMacSecKeyRequest>(operation);
             var marshaller = new AssociateMacSecKeyRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1121,7 +1139,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("DirectConnect")]
         public void AssociateVirtualInterfaceMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<AssociateVirtualInterfaceRequest>();
+            var operation = service_model.FindOperation("AssociateVirtualInterface");
+
+            var request = InstantiateClassGenerator.Execute<AssociateVirtualInterfaceRequest>(operation);
             var marshaller = new AssociateVirtualInterfaceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1135,7 +1155,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("AssociateVirtualInterface").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = AssociateVirtualInterfaceResponseUnmarshaller.Instance.Unmarshall(context) as AssociateVirtualInterfaceResponse;
@@ -1150,7 +1170,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("AssociateVirtualInterface");
 
-            var request = InstantiateClassGenerator.Execute<AssociateVirtualInterfaceRequest>();
+            var request = InstantiateClassGenerator.Execute<AssociateVirtualInterfaceRequest>(operation);
             var marshaller = new AssociateVirtualInterfaceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1182,7 +1202,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("AssociateVirtualInterface");
 
-            var request = InstantiateClassGenerator.Execute<AssociateVirtualInterfaceRequest>();
+            var request = InstantiateClassGenerator.Execute<AssociateVirtualInterfaceRequest>(operation);
             var marshaller = new AssociateVirtualInterfaceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1212,7 +1232,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("DirectConnect")]
         public void ConfirmConnectionMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ConfirmConnectionRequest>();
+            var operation = service_model.FindOperation("ConfirmConnection");
+
+            var request = InstantiateClassGenerator.Execute<ConfirmConnectionRequest>(operation);
             var marshaller = new ConfirmConnectionRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1226,7 +1248,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ConfirmConnection").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ConfirmConnectionResponseUnmarshaller.Instance.Unmarshall(context) as ConfirmConnectionResponse;
@@ -1241,7 +1263,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ConfirmConnection");
 
-            var request = InstantiateClassGenerator.Execute<ConfirmConnectionRequest>();
+            var request = InstantiateClassGenerator.Execute<ConfirmConnectionRequest>(operation);
             var marshaller = new ConfirmConnectionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1273,7 +1295,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ConfirmConnection");
 
-            var request = InstantiateClassGenerator.Execute<ConfirmConnectionRequest>();
+            var request = InstantiateClassGenerator.Execute<ConfirmConnectionRequest>(operation);
             var marshaller = new ConfirmConnectionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1303,7 +1325,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("DirectConnect")]
         public void ConfirmCustomerAgreementMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ConfirmCustomerAgreementRequest>();
+            var operation = service_model.FindOperation("ConfirmCustomerAgreement");
+
+            var request = InstantiateClassGenerator.Execute<ConfirmCustomerAgreementRequest>(operation);
             var marshaller = new ConfirmCustomerAgreementRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1317,7 +1341,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ConfirmCustomerAgreement").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ConfirmCustomerAgreementResponseUnmarshaller.Instance.Unmarshall(context) as ConfirmCustomerAgreementResponse;
@@ -1332,7 +1356,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ConfirmCustomerAgreement");
 
-            var request = InstantiateClassGenerator.Execute<ConfirmCustomerAgreementRequest>();
+            var request = InstantiateClassGenerator.Execute<ConfirmCustomerAgreementRequest>(operation);
             var marshaller = new ConfirmCustomerAgreementRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1364,7 +1388,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ConfirmCustomerAgreement");
 
-            var request = InstantiateClassGenerator.Execute<ConfirmCustomerAgreementRequest>();
+            var request = InstantiateClassGenerator.Execute<ConfirmCustomerAgreementRequest>(operation);
             var marshaller = new ConfirmCustomerAgreementRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1394,7 +1418,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("DirectConnect")]
         public void ConfirmPrivateVirtualInterfaceMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ConfirmPrivateVirtualInterfaceRequest>();
+            var operation = service_model.FindOperation("ConfirmPrivateVirtualInterface");
+
+            var request = InstantiateClassGenerator.Execute<ConfirmPrivateVirtualInterfaceRequest>(operation);
             var marshaller = new ConfirmPrivateVirtualInterfaceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1408,7 +1434,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ConfirmPrivateVirtualInterface").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ConfirmPrivateVirtualInterfaceResponseUnmarshaller.Instance.Unmarshall(context) as ConfirmPrivateVirtualInterfaceResponse;
@@ -1423,7 +1449,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ConfirmPrivateVirtualInterface");
 
-            var request = InstantiateClassGenerator.Execute<ConfirmPrivateVirtualInterfaceRequest>();
+            var request = InstantiateClassGenerator.Execute<ConfirmPrivateVirtualInterfaceRequest>(operation);
             var marshaller = new ConfirmPrivateVirtualInterfaceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1455,7 +1481,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ConfirmPrivateVirtualInterface");
 
-            var request = InstantiateClassGenerator.Execute<ConfirmPrivateVirtualInterfaceRequest>();
+            var request = InstantiateClassGenerator.Execute<ConfirmPrivateVirtualInterfaceRequest>(operation);
             var marshaller = new ConfirmPrivateVirtualInterfaceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1485,7 +1511,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("DirectConnect")]
         public void ConfirmPublicVirtualInterfaceMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ConfirmPublicVirtualInterfaceRequest>();
+            var operation = service_model.FindOperation("ConfirmPublicVirtualInterface");
+
+            var request = InstantiateClassGenerator.Execute<ConfirmPublicVirtualInterfaceRequest>(operation);
             var marshaller = new ConfirmPublicVirtualInterfaceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1499,7 +1527,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ConfirmPublicVirtualInterface").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ConfirmPublicVirtualInterfaceResponseUnmarshaller.Instance.Unmarshall(context) as ConfirmPublicVirtualInterfaceResponse;
@@ -1514,7 +1542,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ConfirmPublicVirtualInterface");
 
-            var request = InstantiateClassGenerator.Execute<ConfirmPublicVirtualInterfaceRequest>();
+            var request = InstantiateClassGenerator.Execute<ConfirmPublicVirtualInterfaceRequest>(operation);
             var marshaller = new ConfirmPublicVirtualInterfaceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1546,7 +1574,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ConfirmPublicVirtualInterface");
 
-            var request = InstantiateClassGenerator.Execute<ConfirmPublicVirtualInterfaceRequest>();
+            var request = InstantiateClassGenerator.Execute<ConfirmPublicVirtualInterfaceRequest>(operation);
             var marshaller = new ConfirmPublicVirtualInterfaceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1576,7 +1604,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("DirectConnect")]
         public void ConfirmTransitVirtualInterfaceMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ConfirmTransitVirtualInterfaceRequest>();
+            var operation = service_model.FindOperation("ConfirmTransitVirtualInterface");
+
+            var request = InstantiateClassGenerator.Execute<ConfirmTransitVirtualInterfaceRequest>(operation);
             var marshaller = new ConfirmTransitVirtualInterfaceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1590,7 +1620,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ConfirmTransitVirtualInterface").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ConfirmTransitVirtualInterfaceResponseUnmarshaller.Instance.Unmarshall(context) as ConfirmTransitVirtualInterfaceResponse;
@@ -1605,7 +1635,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ConfirmTransitVirtualInterface");
 
-            var request = InstantiateClassGenerator.Execute<ConfirmTransitVirtualInterfaceRequest>();
+            var request = InstantiateClassGenerator.Execute<ConfirmTransitVirtualInterfaceRequest>(operation);
             var marshaller = new ConfirmTransitVirtualInterfaceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1637,7 +1667,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ConfirmTransitVirtualInterface");
 
-            var request = InstantiateClassGenerator.Execute<ConfirmTransitVirtualInterfaceRequest>();
+            var request = InstantiateClassGenerator.Execute<ConfirmTransitVirtualInterfaceRequest>(operation);
             var marshaller = new ConfirmTransitVirtualInterfaceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1667,7 +1697,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("DirectConnect")]
         public void CreateBGPPeerMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<CreateBGPPeerRequest>();
+            var operation = service_model.FindOperation("CreateBGPPeer");
+
+            var request = InstantiateClassGenerator.Execute<CreateBGPPeerRequest>(operation);
             var marshaller = new CreateBGPPeerRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1681,7 +1713,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("CreateBGPPeer").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = CreateBGPPeerResponseUnmarshaller.Instance.Unmarshall(context) as CreateBGPPeerResponse;
@@ -1696,7 +1728,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateBGPPeer");
 
-            var request = InstantiateClassGenerator.Execute<CreateBGPPeerRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateBGPPeerRequest>(operation);
             var marshaller = new CreateBGPPeerRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1728,7 +1760,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateBGPPeer");
 
-            var request = InstantiateClassGenerator.Execute<CreateBGPPeerRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateBGPPeerRequest>(operation);
             var marshaller = new CreateBGPPeerRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1758,7 +1790,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("DirectConnect")]
         public void CreateConnectionMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<CreateConnectionRequest>();
+            var operation = service_model.FindOperation("CreateConnection");
+
+            var request = InstantiateClassGenerator.Execute<CreateConnectionRequest>(operation);
             var marshaller = new CreateConnectionRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1772,7 +1806,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("CreateConnection").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = CreateConnectionResponseUnmarshaller.Instance.Unmarshall(context) as CreateConnectionResponse;
@@ -1787,7 +1821,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateConnection");
 
-            var request = InstantiateClassGenerator.Execute<CreateConnectionRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateConnectionRequest>(operation);
             var marshaller = new CreateConnectionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1819,7 +1853,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateConnection");
 
-            var request = InstantiateClassGenerator.Execute<CreateConnectionRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateConnectionRequest>(operation);
             var marshaller = new CreateConnectionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1851,7 +1885,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateConnection");
 
-            var request = InstantiateClassGenerator.Execute<CreateConnectionRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateConnectionRequest>(operation);
             var marshaller = new CreateConnectionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1883,7 +1917,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateConnection");
 
-            var request = InstantiateClassGenerator.Execute<CreateConnectionRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateConnectionRequest>(operation);
             var marshaller = new CreateConnectionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1913,7 +1947,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("DirectConnect")]
         public void CreateDirectConnectGatewayMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<CreateDirectConnectGatewayRequest>();
+            var operation = service_model.FindOperation("CreateDirectConnectGateway");
+
+            var request = InstantiateClassGenerator.Execute<CreateDirectConnectGatewayRequest>(operation);
             var marshaller = new CreateDirectConnectGatewayRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1927,7 +1963,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("CreateDirectConnectGateway").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = CreateDirectConnectGatewayResponseUnmarshaller.Instance.Unmarshall(context) as CreateDirectConnectGatewayResponse;
@@ -1942,7 +1978,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateDirectConnectGateway");
 
-            var request = InstantiateClassGenerator.Execute<CreateDirectConnectGatewayRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateDirectConnectGatewayRequest>(operation);
             var marshaller = new CreateDirectConnectGatewayRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1974,7 +2010,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateDirectConnectGateway");
 
-            var request = InstantiateClassGenerator.Execute<CreateDirectConnectGatewayRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateDirectConnectGatewayRequest>(operation);
             var marshaller = new CreateDirectConnectGatewayRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2004,7 +2040,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("DirectConnect")]
         public void CreateDirectConnectGatewayAssociationMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<CreateDirectConnectGatewayAssociationRequest>();
+            var operation = service_model.FindOperation("CreateDirectConnectGatewayAssociation");
+
+            var request = InstantiateClassGenerator.Execute<CreateDirectConnectGatewayAssociationRequest>(operation);
             var marshaller = new CreateDirectConnectGatewayAssociationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -2018,7 +2056,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("CreateDirectConnectGatewayAssociation").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = CreateDirectConnectGatewayAssociationResponseUnmarshaller.Instance.Unmarshall(context) as CreateDirectConnectGatewayAssociationResponse;
@@ -2033,7 +2071,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateDirectConnectGatewayAssociation");
 
-            var request = InstantiateClassGenerator.Execute<CreateDirectConnectGatewayAssociationRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateDirectConnectGatewayAssociationRequest>(operation);
             var marshaller = new CreateDirectConnectGatewayAssociationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2065,7 +2103,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateDirectConnectGatewayAssociation");
 
-            var request = InstantiateClassGenerator.Execute<CreateDirectConnectGatewayAssociationRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateDirectConnectGatewayAssociationRequest>(operation);
             var marshaller = new CreateDirectConnectGatewayAssociationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2095,7 +2133,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("DirectConnect")]
         public void CreateDirectConnectGatewayAssociationProposalMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<CreateDirectConnectGatewayAssociationProposalRequest>();
+            var operation = service_model.FindOperation("CreateDirectConnectGatewayAssociationProposal");
+
+            var request = InstantiateClassGenerator.Execute<CreateDirectConnectGatewayAssociationProposalRequest>(operation);
             var marshaller = new CreateDirectConnectGatewayAssociationProposalRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -2109,7 +2149,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("CreateDirectConnectGatewayAssociationProposal").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = CreateDirectConnectGatewayAssociationProposalResponseUnmarshaller.Instance.Unmarshall(context) as CreateDirectConnectGatewayAssociationProposalResponse;
@@ -2124,7 +2164,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateDirectConnectGatewayAssociationProposal");
 
-            var request = InstantiateClassGenerator.Execute<CreateDirectConnectGatewayAssociationProposalRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateDirectConnectGatewayAssociationProposalRequest>(operation);
             var marshaller = new CreateDirectConnectGatewayAssociationProposalRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2156,7 +2196,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateDirectConnectGatewayAssociationProposal");
 
-            var request = InstantiateClassGenerator.Execute<CreateDirectConnectGatewayAssociationProposalRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateDirectConnectGatewayAssociationProposalRequest>(operation);
             var marshaller = new CreateDirectConnectGatewayAssociationProposalRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2186,7 +2226,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("DirectConnect")]
         public void CreateInterconnectMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<CreateInterconnectRequest>();
+            var operation = service_model.FindOperation("CreateInterconnect");
+
+            var request = InstantiateClassGenerator.Execute<CreateInterconnectRequest>(operation);
             var marshaller = new CreateInterconnectRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -2200,7 +2242,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("CreateInterconnect").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = CreateInterconnectResponseUnmarshaller.Instance.Unmarshall(context) as CreateInterconnectResponse;
@@ -2215,7 +2257,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateInterconnect");
 
-            var request = InstantiateClassGenerator.Execute<CreateInterconnectRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateInterconnectRequest>(operation);
             var marshaller = new CreateInterconnectRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2247,7 +2289,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateInterconnect");
 
-            var request = InstantiateClassGenerator.Execute<CreateInterconnectRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateInterconnectRequest>(operation);
             var marshaller = new CreateInterconnectRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2279,7 +2321,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateInterconnect");
 
-            var request = InstantiateClassGenerator.Execute<CreateInterconnectRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateInterconnectRequest>(operation);
             var marshaller = new CreateInterconnectRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2311,7 +2353,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateInterconnect");
 
-            var request = InstantiateClassGenerator.Execute<CreateInterconnectRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateInterconnectRequest>(operation);
             var marshaller = new CreateInterconnectRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2341,7 +2383,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("DirectConnect")]
         public void CreateLagMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<CreateLagRequest>();
+            var operation = service_model.FindOperation("CreateLag");
+
+            var request = InstantiateClassGenerator.Execute<CreateLagRequest>(operation);
             var marshaller = new CreateLagRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -2355,7 +2399,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("CreateLag").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = CreateLagResponseUnmarshaller.Instance.Unmarshall(context) as CreateLagResponse;
@@ -2370,7 +2414,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateLag");
 
-            var request = InstantiateClassGenerator.Execute<CreateLagRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateLagRequest>(operation);
             var marshaller = new CreateLagRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2402,7 +2446,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateLag");
 
-            var request = InstantiateClassGenerator.Execute<CreateLagRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateLagRequest>(operation);
             var marshaller = new CreateLagRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2434,7 +2478,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateLag");
 
-            var request = InstantiateClassGenerator.Execute<CreateLagRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateLagRequest>(operation);
             var marshaller = new CreateLagRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2466,7 +2510,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateLag");
 
-            var request = InstantiateClassGenerator.Execute<CreateLagRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateLagRequest>(operation);
             var marshaller = new CreateLagRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2496,7 +2540,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("DirectConnect")]
         public void CreatePrivateVirtualInterfaceMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<CreatePrivateVirtualInterfaceRequest>();
+            var operation = service_model.FindOperation("CreatePrivateVirtualInterface");
+
+            var request = InstantiateClassGenerator.Execute<CreatePrivateVirtualInterfaceRequest>(operation);
             var marshaller = new CreatePrivateVirtualInterfaceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -2510,7 +2556,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("CreatePrivateVirtualInterface").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = CreatePrivateVirtualInterfaceResponseUnmarshaller.Instance.Unmarshall(context) as CreatePrivateVirtualInterfaceResponse;
@@ -2525,7 +2571,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreatePrivateVirtualInterface");
 
-            var request = InstantiateClassGenerator.Execute<CreatePrivateVirtualInterfaceRequest>();
+            var request = InstantiateClassGenerator.Execute<CreatePrivateVirtualInterfaceRequest>(operation);
             var marshaller = new CreatePrivateVirtualInterfaceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2557,7 +2603,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreatePrivateVirtualInterface");
 
-            var request = InstantiateClassGenerator.Execute<CreatePrivateVirtualInterfaceRequest>();
+            var request = InstantiateClassGenerator.Execute<CreatePrivateVirtualInterfaceRequest>(operation);
             var marshaller = new CreatePrivateVirtualInterfaceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2589,7 +2635,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreatePrivateVirtualInterface");
 
-            var request = InstantiateClassGenerator.Execute<CreatePrivateVirtualInterfaceRequest>();
+            var request = InstantiateClassGenerator.Execute<CreatePrivateVirtualInterfaceRequest>(operation);
             var marshaller = new CreatePrivateVirtualInterfaceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2621,7 +2667,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreatePrivateVirtualInterface");
 
-            var request = InstantiateClassGenerator.Execute<CreatePrivateVirtualInterfaceRequest>();
+            var request = InstantiateClassGenerator.Execute<CreatePrivateVirtualInterfaceRequest>(operation);
             var marshaller = new CreatePrivateVirtualInterfaceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2651,7 +2697,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("DirectConnect")]
         public void CreatePublicVirtualInterfaceMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<CreatePublicVirtualInterfaceRequest>();
+            var operation = service_model.FindOperation("CreatePublicVirtualInterface");
+
+            var request = InstantiateClassGenerator.Execute<CreatePublicVirtualInterfaceRequest>(operation);
             var marshaller = new CreatePublicVirtualInterfaceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -2665,7 +2713,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("CreatePublicVirtualInterface").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = CreatePublicVirtualInterfaceResponseUnmarshaller.Instance.Unmarshall(context) as CreatePublicVirtualInterfaceResponse;
@@ -2680,7 +2728,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreatePublicVirtualInterface");
 
-            var request = InstantiateClassGenerator.Execute<CreatePublicVirtualInterfaceRequest>();
+            var request = InstantiateClassGenerator.Execute<CreatePublicVirtualInterfaceRequest>(operation);
             var marshaller = new CreatePublicVirtualInterfaceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2712,7 +2760,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreatePublicVirtualInterface");
 
-            var request = InstantiateClassGenerator.Execute<CreatePublicVirtualInterfaceRequest>();
+            var request = InstantiateClassGenerator.Execute<CreatePublicVirtualInterfaceRequest>(operation);
             var marshaller = new CreatePublicVirtualInterfaceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2744,7 +2792,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreatePublicVirtualInterface");
 
-            var request = InstantiateClassGenerator.Execute<CreatePublicVirtualInterfaceRequest>();
+            var request = InstantiateClassGenerator.Execute<CreatePublicVirtualInterfaceRequest>(operation);
             var marshaller = new CreatePublicVirtualInterfaceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2776,7 +2824,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreatePublicVirtualInterface");
 
-            var request = InstantiateClassGenerator.Execute<CreatePublicVirtualInterfaceRequest>();
+            var request = InstantiateClassGenerator.Execute<CreatePublicVirtualInterfaceRequest>(operation);
             var marshaller = new CreatePublicVirtualInterfaceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2806,7 +2854,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("DirectConnect")]
         public void CreateTransitVirtualInterfaceMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<CreateTransitVirtualInterfaceRequest>();
+            var operation = service_model.FindOperation("CreateTransitVirtualInterface");
+
+            var request = InstantiateClassGenerator.Execute<CreateTransitVirtualInterfaceRequest>(operation);
             var marshaller = new CreateTransitVirtualInterfaceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -2820,7 +2870,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("CreateTransitVirtualInterface").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = CreateTransitVirtualInterfaceResponseUnmarshaller.Instance.Unmarshall(context) as CreateTransitVirtualInterfaceResponse;
@@ -2835,7 +2885,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateTransitVirtualInterface");
 
-            var request = InstantiateClassGenerator.Execute<CreateTransitVirtualInterfaceRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateTransitVirtualInterfaceRequest>(operation);
             var marshaller = new CreateTransitVirtualInterfaceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2867,7 +2917,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateTransitVirtualInterface");
 
-            var request = InstantiateClassGenerator.Execute<CreateTransitVirtualInterfaceRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateTransitVirtualInterfaceRequest>(operation);
             var marshaller = new CreateTransitVirtualInterfaceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2899,7 +2949,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateTransitVirtualInterface");
 
-            var request = InstantiateClassGenerator.Execute<CreateTransitVirtualInterfaceRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateTransitVirtualInterfaceRequest>(operation);
             var marshaller = new CreateTransitVirtualInterfaceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2931,7 +2981,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateTransitVirtualInterface");
 
-            var request = InstantiateClassGenerator.Execute<CreateTransitVirtualInterfaceRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateTransitVirtualInterfaceRequest>(operation);
             var marshaller = new CreateTransitVirtualInterfaceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2961,7 +3011,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("DirectConnect")]
         public void DeleteBGPPeerMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DeleteBGPPeerRequest>();
+            var operation = service_model.FindOperation("DeleteBGPPeer");
+
+            var request = InstantiateClassGenerator.Execute<DeleteBGPPeerRequest>(operation);
             var marshaller = new DeleteBGPPeerRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -2975,7 +3027,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DeleteBGPPeer").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DeleteBGPPeerResponseUnmarshaller.Instance.Unmarshall(context) as DeleteBGPPeerResponse;
@@ -2990,7 +3042,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteBGPPeer");
 
-            var request = InstantiateClassGenerator.Execute<DeleteBGPPeerRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteBGPPeerRequest>(operation);
             var marshaller = new DeleteBGPPeerRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3022,7 +3074,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteBGPPeer");
 
-            var request = InstantiateClassGenerator.Execute<DeleteBGPPeerRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteBGPPeerRequest>(operation);
             var marshaller = new DeleteBGPPeerRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3052,7 +3104,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("DirectConnect")]
         public void DeleteConnectionMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DeleteConnectionRequest>();
+            var operation = service_model.FindOperation("DeleteConnection");
+
+            var request = InstantiateClassGenerator.Execute<DeleteConnectionRequest>(operation);
             var marshaller = new DeleteConnectionRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -3066,7 +3120,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DeleteConnection").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DeleteConnectionResponseUnmarshaller.Instance.Unmarshall(context) as DeleteConnectionResponse;
@@ -3081,7 +3135,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteConnection");
 
-            var request = InstantiateClassGenerator.Execute<DeleteConnectionRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteConnectionRequest>(operation);
             var marshaller = new DeleteConnectionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3113,7 +3167,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteConnection");
 
-            var request = InstantiateClassGenerator.Execute<DeleteConnectionRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteConnectionRequest>(operation);
             var marshaller = new DeleteConnectionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3143,7 +3197,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("DirectConnect")]
         public void DeleteDirectConnectGatewayMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DeleteDirectConnectGatewayRequest>();
+            var operation = service_model.FindOperation("DeleteDirectConnectGateway");
+
+            var request = InstantiateClassGenerator.Execute<DeleteDirectConnectGatewayRequest>(operation);
             var marshaller = new DeleteDirectConnectGatewayRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -3157,7 +3213,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DeleteDirectConnectGateway").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DeleteDirectConnectGatewayResponseUnmarshaller.Instance.Unmarshall(context) as DeleteDirectConnectGatewayResponse;
@@ -3172,7 +3228,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteDirectConnectGateway");
 
-            var request = InstantiateClassGenerator.Execute<DeleteDirectConnectGatewayRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteDirectConnectGatewayRequest>(operation);
             var marshaller = new DeleteDirectConnectGatewayRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3204,7 +3260,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteDirectConnectGateway");
 
-            var request = InstantiateClassGenerator.Execute<DeleteDirectConnectGatewayRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteDirectConnectGatewayRequest>(operation);
             var marshaller = new DeleteDirectConnectGatewayRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3234,7 +3290,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("DirectConnect")]
         public void DeleteDirectConnectGatewayAssociationMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DeleteDirectConnectGatewayAssociationRequest>();
+            var operation = service_model.FindOperation("DeleteDirectConnectGatewayAssociation");
+
+            var request = InstantiateClassGenerator.Execute<DeleteDirectConnectGatewayAssociationRequest>(operation);
             var marshaller = new DeleteDirectConnectGatewayAssociationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -3248,7 +3306,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DeleteDirectConnectGatewayAssociation").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DeleteDirectConnectGatewayAssociationResponseUnmarshaller.Instance.Unmarshall(context) as DeleteDirectConnectGatewayAssociationResponse;
@@ -3263,7 +3321,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteDirectConnectGatewayAssociation");
 
-            var request = InstantiateClassGenerator.Execute<DeleteDirectConnectGatewayAssociationRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteDirectConnectGatewayAssociationRequest>(operation);
             var marshaller = new DeleteDirectConnectGatewayAssociationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3295,7 +3353,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteDirectConnectGatewayAssociation");
 
-            var request = InstantiateClassGenerator.Execute<DeleteDirectConnectGatewayAssociationRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteDirectConnectGatewayAssociationRequest>(operation);
             var marshaller = new DeleteDirectConnectGatewayAssociationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3325,7 +3383,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("DirectConnect")]
         public void DeleteDirectConnectGatewayAssociationProposalMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DeleteDirectConnectGatewayAssociationProposalRequest>();
+            var operation = service_model.FindOperation("DeleteDirectConnectGatewayAssociationProposal");
+
+            var request = InstantiateClassGenerator.Execute<DeleteDirectConnectGatewayAssociationProposalRequest>(operation);
             var marshaller = new DeleteDirectConnectGatewayAssociationProposalRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -3339,7 +3399,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DeleteDirectConnectGatewayAssociationProposal").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DeleteDirectConnectGatewayAssociationProposalResponseUnmarshaller.Instance.Unmarshall(context) as DeleteDirectConnectGatewayAssociationProposalResponse;
@@ -3354,7 +3414,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteDirectConnectGatewayAssociationProposal");
 
-            var request = InstantiateClassGenerator.Execute<DeleteDirectConnectGatewayAssociationProposalRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteDirectConnectGatewayAssociationProposalRequest>(operation);
             var marshaller = new DeleteDirectConnectGatewayAssociationProposalRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3386,7 +3446,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteDirectConnectGatewayAssociationProposal");
 
-            var request = InstantiateClassGenerator.Execute<DeleteDirectConnectGatewayAssociationProposalRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteDirectConnectGatewayAssociationProposalRequest>(operation);
             var marshaller = new DeleteDirectConnectGatewayAssociationProposalRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3416,7 +3476,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("DirectConnect")]
         public void DeleteInterconnectMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DeleteInterconnectRequest>();
+            var operation = service_model.FindOperation("DeleteInterconnect");
+
+            var request = InstantiateClassGenerator.Execute<DeleteInterconnectRequest>(operation);
             var marshaller = new DeleteInterconnectRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -3430,7 +3492,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DeleteInterconnect").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DeleteInterconnectResponseUnmarshaller.Instance.Unmarshall(context) as DeleteInterconnectResponse;
@@ -3445,7 +3507,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteInterconnect");
 
-            var request = InstantiateClassGenerator.Execute<DeleteInterconnectRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteInterconnectRequest>(operation);
             var marshaller = new DeleteInterconnectRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3477,7 +3539,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteInterconnect");
 
-            var request = InstantiateClassGenerator.Execute<DeleteInterconnectRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteInterconnectRequest>(operation);
             var marshaller = new DeleteInterconnectRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3507,7 +3569,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("DirectConnect")]
         public void DeleteLagMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DeleteLagRequest>();
+            var operation = service_model.FindOperation("DeleteLag");
+
+            var request = InstantiateClassGenerator.Execute<DeleteLagRequest>(operation);
             var marshaller = new DeleteLagRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -3521,7 +3585,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DeleteLag").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DeleteLagResponseUnmarshaller.Instance.Unmarshall(context) as DeleteLagResponse;
@@ -3536,7 +3600,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteLag");
 
-            var request = InstantiateClassGenerator.Execute<DeleteLagRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteLagRequest>(operation);
             var marshaller = new DeleteLagRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3568,7 +3632,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteLag");
 
-            var request = InstantiateClassGenerator.Execute<DeleteLagRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteLagRequest>(operation);
             var marshaller = new DeleteLagRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3598,7 +3662,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("DirectConnect")]
         public void DeleteVirtualInterfaceMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DeleteVirtualInterfaceRequest>();
+            var operation = service_model.FindOperation("DeleteVirtualInterface");
+
+            var request = InstantiateClassGenerator.Execute<DeleteVirtualInterfaceRequest>(operation);
             var marshaller = new DeleteVirtualInterfaceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -3612,7 +3678,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DeleteVirtualInterface").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DeleteVirtualInterfaceResponseUnmarshaller.Instance.Unmarshall(context) as DeleteVirtualInterfaceResponse;
@@ -3627,7 +3693,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteVirtualInterface");
 
-            var request = InstantiateClassGenerator.Execute<DeleteVirtualInterfaceRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteVirtualInterfaceRequest>(operation);
             var marshaller = new DeleteVirtualInterfaceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3659,7 +3725,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteVirtualInterface");
 
-            var request = InstantiateClassGenerator.Execute<DeleteVirtualInterfaceRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteVirtualInterfaceRequest>(operation);
             var marshaller = new DeleteVirtualInterfaceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3689,7 +3755,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("DirectConnect")]
         public void DescribeConnectionLoaMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DescribeConnectionLoaRequest>();
+            var operation = service_model.FindOperation("DescribeConnectionLoa");
+
+            var request = InstantiateClassGenerator.Execute<DescribeConnectionLoaRequest>(operation);
             var marshaller = new DescribeConnectionLoaRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -3703,7 +3771,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeConnectionLoa").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DescribeConnectionLoaResponseUnmarshaller.Instance.Unmarshall(context) as DescribeConnectionLoaResponse;
@@ -3718,7 +3786,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeConnectionLoa");
 
-            var request = InstantiateClassGenerator.Execute<DescribeConnectionLoaRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeConnectionLoaRequest>(operation);
             var marshaller = new DescribeConnectionLoaRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3750,7 +3818,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeConnectionLoa");
 
-            var request = InstantiateClassGenerator.Execute<DescribeConnectionLoaRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeConnectionLoaRequest>(operation);
             var marshaller = new DescribeConnectionLoaRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3780,7 +3848,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("DirectConnect")]
         public void DescribeConnectionsMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DescribeConnectionsRequest>();
+            var operation = service_model.FindOperation("DescribeConnections");
+
+            var request = InstantiateClassGenerator.Execute<DescribeConnectionsRequest>(operation);
             var marshaller = new DescribeConnectionsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -3794,7 +3864,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeConnections").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DescribeConnectionsResponseUnmarshaller.Instance.Unmarshall(context) as DescribeConnectionsResponse;
@@ -3809,7 +3879,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeConnections");
 
-            var request = InstantiateClassGenerator.Execute<DescribeConnectionsRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeConnectionsRequest>(operation);
             var marshaller = new DescribeConnectionsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3841,7 +3911,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeConnections");
 
-            var request = InstantiateClassGenerator.Execute<DescribeConnectionsRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeConnectionsRequest>(operation);
             var marshaller = new DescribeConnectionsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3871,7 +3941,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("DirectConnect")]
         public void DescribeConnectionsOnInterconnectMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DescribeConnectionsOnInterconnectRequest>();
+            var operation = service_model.FindOperation("DescribeConnectionsOnInterconnect");
+
+            var request = InstantiateClassGenerator.Execute<DescribeConnectionsOnInterconnectRequest>(operation);
             var marshaller = new DescribeConnectionsOnInterconnectRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -3885,7 +3957,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeConnectionsOnInterconnect").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DescribeConnectionsOnInterconnectResponseUnmarshaller.Instance.Unmarshall(context) as DescribeConnectionsOnInterconnectResponse;
@@ -3900,7 +3972,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeConnectionsOnInterconnect");
 
-            var request = InstantiateClassGenerator.Execute<DescribeConnectionsOnInterconnectRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeConnectionsOnInterconnectRequest>(operation);
             var marshaller = new DescribeConnectionsOnInterconnectRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3932,7 +4004,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeConnectionsOnInterconnect");
 
-            var request = InstantiateClassGenerator.Execute<DescribeConnectionsOnInterconnectRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeConnectionsOnInterconnectRequest>(operation);
             var marshaller = new DescribeConnectionsOnInterconnectRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3962,7 +4034,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("DirectConnect")]
         public void DescribeCustomerMetadataMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DescribeCustomerMetadataRequest>();
+            var operation = service_model.FindOperation("DescribeCustomerMetadata");
+
+            var request = InstantiateClassGenerator.Execute<DescribeCustomerMetadataRequest>(operation);
             var marshaller = new DescribeCustomerMetadataRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -3973,7 +4047,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeCustomerMetadata").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DescribeCustomerMetadataResponseUnmarshaller.Instance.Unmarshall(context) as DescribeCustomerMetadataResponse;
@@ -3988,7 +4062,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeCustomerMetadata");
 
-            var request = InstantiateClassGenerator.Execute<DescribeCustomerMetadataRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeCustomerMetadataRequest>(operation);
             var marshaller = new DescribeCustomerMetadataRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4020,7 +4094,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeCustomerMetadata");
 
-            var request = InstantiateClassGenerator.Execute<DescribeCustomerMetadataRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeCustomerMetadataRequest>(operation);
             var marshaller = new DescribeCustomerMetadataRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4050,7 +4124,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("DirectConnect")]
         public void DescribeDirectConnectGatewayAssociationProposalsMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DescribeDirectConnectGatewayAssociationProposalsRequest>();
+            var operation = service_model.FindOperation("DescribeDirectConnectGatewayAssociationProposals");
+
+            var request = InstantiateClassGenerator.Execute<DescribeDirectConnectGatewayAssociationProposalsRequest>(operation);
             var marshaller = new DescribeDirectConnectGatewayAssociationProposalsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -4064,7 +4140,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeDirectConnectGatewayAssociationProposals").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DescribeDirectConnectGatewayAssociationProposalsResponseUnmarshaller.Instance.Unmarshall(context) as DescribeDirectConnectGatewayAssociationProposalsResponse;
@@ -4079,7 +4155,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeDirectConnectGatewayAssociationProposals");
 
-            var request = InstantiateClassGenerator.Execute<DescribeDirectConnectGatewayAssociationProposalsRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeDirectConnectGatewayAssociationProposalsRequest>(operation);
             var marshaller = new DescribeDirectConnectGatewayAssociationProposalsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4111,7 +4187,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeDirectConnectGatewayAssociationProposals");
 
-            var request = InstantiateClassGenerator.Execute<DescribeDirectConnectGatewayAssociationProposalsRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeDirectConnectGatewayAssociationProposalsRequest>(operation);
             var marshaller = new DescribeDirectConnectGatewayAssociationProposalsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4141,7 +4217,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("DirectConnect")]
         public void DescribeDirectConnectGatewayAssociationsMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DescribeDirectConnectGatewayAssociationsRequest>();
+            var operation = service_model.FindOperation("DescribeDirectConnectGatewayAssociations");
+
+            var request = InstantiateClassGenerator.Execute<DescribeDirectConnectGatewayAssociationsRequest>(operation);
             var marshaller = new DescribeDirectConnectGatewayAssociationsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -4155,7 +4233,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeDirectConnectGatewayAssociations").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DescribeDirectConnectGatewayAssociationsResponseUnmarshaller.Instance.Unmarshall(context) as DescribeDirectConnectGatewayAssociationsResponse;
@@ -4170,7 +4248,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeDirectConnectGatewayAssociations");
 
-            var request = InstantiateClassGenerator.Execute<DescribeDirectConnectGatewayAssociationsRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeDirectConnectGatewayAssociationsRequest>(operation);
             var marshaller = new DescribeDirectConnectGatewayAssociationsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4202,7 +4280,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeDirectConnectGatewayAssociations");
 
-            var request = InstantiateClassGenerator.Execute<DescribeDirectConnectGatewayAssociationsRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeDirectConnectGatewayAssociationsRequest>(operation);
             var marshaller = new DescribeDirectConnectGatewayAssociationsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4232,7 +4310,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("DirectConnect")]
         public void DescribeDirectConnectGatewayAttachmentsMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DescribeDirectConnectGatewayAttachmentsRequest>();
+            var operation = service_model.FindOperation("DescribeDirectConnectGatewayAttachments");
+
+            var request = InstantiateClassGenerator.Execute<DescribeDirectConnectGatewayAttachmentsRequest>(operation);
             var marshaller = new DescribeDirectConnectGatewayAttachmentsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -4246,7 +4326,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeDirectConnectGatewayAttachments").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DescribeDirectConnectGatewayAttachmentsResponseUnmarshaller.Instance.Unmarshall(context) as DescribeDirectConnectGatewayAttachmentsResponse;
@@ -4261,7 +4341,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeDirectConnectGatewayAttachments");
 
-            var request = InstantiateClassGenerator.Execute<DescribeDirectConnectGatewayAttachmentsRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeDirectConnectGatewayAttachmentsRequest>(operation);
             var marshaller = new DescribeDirectConnectGatewayAttachmentsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4293,7 +4373,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeDirectConnectGatewayAttachments");
 
-            var request = InstantiateClassGenerator.Execute<DescribeDirectConnectGatewayAttachmentsRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeDirectConnectGatewayAttachmentsRequest>(operation);
             var marshaller = new DescribeDirectConnectGatewayAttachmentsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4323,7 +4403,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("DirectConnect")]
         public void DescribeDirectConnectGatewaysMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DescribeDirectConnectGatewaysRequest>();
+            var operation = service_model.FindOperation("DescribeDirectConnectGateways");
+
+            var request = InstantiateClassGenerator.Execute<DescribeDirectConnectGatewaysRequest>(operation);
             var marshaller = new DescribeDirectConnectGatewaysRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -4337,7 +4419,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeDirectConnectGateways").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DescribeDirectConnectGatewaysResponseUnmarshaller.Instance.Unmarshall(context) as DescribeDirectConnectGatewaysResponse;
@@ -4352,7 +4434,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeDirectConnectGateways");
 
-            var request = InstantiateClassGenerator.Execute<DescribeDirectConnectGatewaysRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeDirectConnectGatewaysRequest>(operation);
             var marshaller = new DescribeDirectConnectGatewaysRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4384,7 +4466,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeDirectConnectGateways");
 
-            var request = InstantiateClassGenerator.Execute<DescribeDirectConnectGatewaysRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeDirectConnectGatewaysRequest>(operation);
             var marshaller = new DescribeDirectConnectGatewaysRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4414,7 +4496,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("DirectConnect")]
         public void DescribeHostedConnectionsMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DescribeHostedConnectionsRequest>();
+            var operation = service_model.FindOperation("DescribeHostedConnections");
+
+            var request = InstantiateClassGenerator.Execute<DescribeHostedConnectionsRequest>(operation);
             var marshaller = new DescribeHostedConnectionsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -4428,7 +4512,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeHostedConnections").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DescribeHostedConnectionsResponseUnmarshaller.Instance.Unmarshall(context) as DescribeHostedConnectionsResponse;
@@ -4443,7 +4527,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeHostedConnections");
 
-            var request = InstantiateClassGenerator.Execute<DescribeHostedConnectionsRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeHostedConnectionsRequest>(operation);
             var marshaller = new DescribeHostedConnectionsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4475,7 +4559,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeHostedConnections");
 
-            var request = InstantiateClassGenerator.Execute<DescribeHostedConnectionsRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeHostedConnectionsRequest>(operation);
             var marshaller = new DescribeHostedConnectionsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4505,7 +4589,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("DirectConnect")]
         public void DescribeInterconnectLoaMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DescribeInterconnectLoaRequest>();
+            var operation = service_model.FindOperation("DescribeInterconnectLoa");
+
+            var request = InstantiateClassGenerator.Execute<DescribeInterconnectLoaRequest>(operation);
             var marshaller = new DescribeInterconnectLoaRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -4519,7 +4605,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeInterconnectLoa").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DescribeInterconnectLoaResponseUnmarshaller.Instance.Unmarshall(context) as DescribeInterconnectLoaResponse;
@@ -4534,7 +4620,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeInterconnectLoa");
 
-            var request = InstantiateClassGenerator.Execute<DescribeInterconnectLoaRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeInterconnectLoaRequest>(operation);
             var marshaller = new DescribeInterconnectLoaRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4566,7 +4652,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeInterconnectLoa");
 
-            var request = InstantiateClassGenerator.Execute<DescribeInterconnectLoaRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeInterconnectLoaRequest>(operation);
             var marshaller = new DescribeInterconnectLoaRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4596,7 +4682,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("DirectConnect")]
         public void DescribeInterconnectsMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DescribeInterconnectsRequest>();
+            var operation = service_model.FindOperation("DescribeInterconnects");
+
+            var request = InstantiateClassGenerator.Execute<DescribeInterconnectsRequest>(operation);
             var marshaller = new DescribeInterconnectsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -4610,7 +4698,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeInterconnects").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DescribeInterconnectsResponseUnmarshaller.Instance.Unmarshall(context) as DescribeInterconnectsResponse;
@@ -4625,7 +4713,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeInterconnects");
 
-            var request = InstantiateClassGenerator.Execute<DescribeInterconnectsRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeInterconnectsRequest>(operation);
             var marshaller = new DescribeInterconnectsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4657,7 +4745,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeInterconnects");
 
-            var request = InstantiateClassGenerator.Execute<DescribeInterconnectsRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeInterconnectsRequest>(operation);
             var marshaller = new DescribeInterconnectsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4687,7 +4775,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("DirectConnect")]
         public void DescribeLagsMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DescribeLagsRequest>();
+            var operation = service_model.FindOperation("DescribeLags");
+
+            var request = InstantiateClassGenerator.Execute<DescribeLagsRequest>(operation);
             var marshaller = new DescribeLagsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -4701,7 +4791,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeLags").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DescribeLagsResponseUnmarshaller.Instance.Unmarshall(context) as DescribeLagsResponse;
@@ -4716,7 +4806,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeLags");
 
-            var request = InstantiateClassGenerator.Execute<DescribeLagsRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeLagsRequest>(operation);
             var marshaller = new DescribeLagsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4748,7 +4838,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeLags");
 
-            var request = InstantiateClassGenerator.Execute<DescribeLagsRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeLagsRequest>(operation);
             var marshaller = new DescribeLagsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4778,7 +4868,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("DirectConnect")]
         public void DescribeLoaMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DescribeLoaRequest>();
+            var operation = service_model.FindOperation("DescribeLoa");
+
+            var request = InstantiateClassGenerator.Execute<DescribeLoaRequest>(operation);
             var marshaller = new DescribeLoaRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -4792,7 +4884,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeLoa").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DescribeLoaResponseUnmarshaller.Instance.Unmarshall(context) as DescribeLoaResponse;
@@ -4807,7 +4899,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeLoa");
 
-            var request = InstantiateClassGenerator.Execute<DescribeLoaRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeLoaRequest>(operation);
             var marshaller = new DescribeLoaRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4839,7 +4931,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeLoa");
 
-            var request = InstantiateClassGenerator.Execute<DescribeLoaRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeLoaRequest>(operation);
             var marshaller = new DescribeLoaRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4869,7 +4961,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("DirectConnect")]
         public void DescribeLocationsMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DescribeLocationsRequest>();
+            var operation = service_model.FindOperation("DescribeLocations");
+
+            var request = InstantiateClassGenerator.Execute<DescribeLocationsRequest>(operation);
             var marshaller = new DescribeLocationsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -4880,7 +4974,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeLocations").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DescribeLocationsResponseUnmarshaller.Instance.Unmarshall(context) as DescribeLocationsResponse;
@@ -4895,7 +4989,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeLocations");
 
-            var request = InstantiateClassGenerator.Execute<DescribeLocationsRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeLocationsRequest>(operation);
             var marshaller = new DescribeLocationsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4927,7 +5021,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeLocations");
 
-            var request = InstantiateClassGenerator.Execute<DescribeLocationsRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeLocationsRequest>(operation);
             var marshaller = new DescribeLocationsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4957,7 +5051,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("DirectConnect")]
         public void DescribeRouterConfigurationMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DescribeRouterConfigurationRequest>();
+            var operation = service_model.FindOperation("DescribeRouterConfiguration");
+
+            var request = InstantiateClassGenerator.Execute<DescribeRouterConfigurationRequest>(operation);
             var marshaller = new DescribeRouterConfigurationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -4971,7 +5067,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeRouterConfiguration").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DescribeRouterConfigurationResponseUnmarshaller.Instance.Unmarshall(context) as DescribeRouterConfigurationResponse;
@@ -4986,7 +5082,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeRouterConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<DescribeRouterConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeRouterConfigurationRequest>(operation);
             var marshaller = new DescribeRouterConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5018,7 +5114,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeRouterConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<DescribeRouterConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeRouterConfigurationRequest>(operation);
             var marshaller = new DescribeRouterConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5048,7 +5144,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("DirectConnect")]
         public void DescribeTagsMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DescribeTagsRequest>();
+            var operation = service_model.FindOperation("DescribeTags");
+
+            var request = InstantiateClassGenerator.Execute<DescribeTagsRequest>(operation);
             var marshaller = new DescribeTagsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -5062,7 +5160,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeTags").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DescribeTagsResponseUnmarshaller.Instance.Unmarshall(context) as DescribeTagsResponse;
@@ -5077,7 +5175,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeTags");
 
-            var request = InstantiateClassGenerator.Execute<DescribeTagsRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeTagsRequest>(operation);
             var marshaller = new DescribeTagsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5109,7 +5207,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeTags");
 
-            var request = InstantiateClassGenerator.Execute<DescribeTagsRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeTagsRequest>(operation);
             var marshaller = new DescribeTagsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5139,7 +5237,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("DirectConnect")]
         public void DescribeVirtualGatewaysMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DescribeVirtualGatewaysRequest>();
+            var operation = service_model.FindOperation("DescribeVirtualGateways");
+
+            var request = InstantiateClassGenerator.Execute<DescribeVirtualGatewaysRequest>(operation);
             var marshaller = new DescribeVirtualGatewaysRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -5150,7 +5250,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeVirtualGateways").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DescribeVirtualGatewaysResponseUnmarshaller.Instance.Unmarshall(context) as DescribeVirtualGatewaysResponse;
@@ -5165,7 +5265,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeVirtualGateways");
 
-            var request = InstantiateClassGenerator.Execute<DescribeVirtualGatewaysRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeVirtualGatewaysRequest>(operation);
             var marshaller = new DescribeVirtualGatewaysRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5197,7 +5297,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeVirtualGateways");
 
-            var request = InstantiateClassGenerator.Execute<DescribeVirtualGatewaysRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeVirtualGatewaysRequest>(operation);
             var marshaller = new DescribeVirtualGatewaysRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5227,7 +5327,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("DirectConnect")]
         public void DescribeVirtualInterfacesMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DescribeVirtualInterfacesRequest>();
+            var operation = service_model.FindOperation("DescribeVirtualInterfaces");
+
+            var request = InstantiateClassGenerator.Execute<DescribeVirtualInterfacesRequest>(operation);
             var marshaller = new DescribeVirtualInterfacesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -5241,7 +5343,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeVirtualInterfaces").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DescribeVirtualInterfacesResponseUnmarshaller.Instance.Unmarshall(context) as DescribeVirtualInterfacesResponse;
@@ -5256,7 +5358,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeVirtualInterfaces");
 
-            var request = InstantiateClassGenerator.Execute<DescribeVirtualInterfacesRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeVirtualInterfacesRequest>(operation);
             var marshaller = new DescribeVirtualInterfacesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5288,7 +5390,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeVirtualInterfaces");
 
-            var request = InstantiateClassGenerator.Execute<DescribeVirtualInterfacesRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeVirtualInterfacesRequest>(operation);
             var marshaller = new DescribeVirtualInterfacesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5318,7 +5420,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("DirectConnect")]
         public void DisassociateConnectionFromLagMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DisassociateConnectionFromLagRequest>();
+            var operation = service_model.FindOperation("DisassociateConnectionFromLag");
+
+            var request = InstantiateClassGenerator.Execute<DisassociateConnectionFromLagRequest>(operation);
             var marshaller = new DisassociateConnectionFromLagRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -5332,7 +5436,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DisassociateConnectionFromLag").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DisassociateConnectionFromLagResponseUnmarshaller.Instance.Unmarshall(context) as DisassociateConnectionFromLagResponse;
@@ -5347,7 +5451,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DisassociateConnectionFromLag");
 
-            var request = InstantiateClassGenerator.Execute<DisassociateConnectionFromLagRequest>();
+            var request = InstantiateClassGenerator.Execute<DisassociateConnectionFromLagRequest>(operation);
             var marshaller = new DisassociateConnectionFromLagRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5379,7 +5483,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DisassociateConnectionFromLag");
 
-            var request = InstantiateClassGenerator.Execute<DisassociateConnectionFromLagRequest>();
+            var request = InstantiateClassGenerator.Execute<DisassociateConnectionFromLagRequest>(operation);
             var marshaller = new DisassociateConnectionFromLagRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5409,7 +5513,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("DirectConnect")]
         public void DisassociateMacSecKeyMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DisassociateMacSecKeyRequest>();
+            var operation = service_model.FindOperation("DisassociateMacSecKey");
+
+            var request = InstantiateClassGenerator.Execute<DisassociateMacSecKeyRequest>(operation);
             var marshaller = new DisassociateMacSecKeyRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -5423,7 +5529,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DisassociateMacSecKey").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DisassociateMacSecKeyResponseUnmarshaller.Instance.Unmarshall(context) as DisassociateMacSecKeyResponse;
@@ -5438,7 +5544,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DisassociateMacSecKey");
 
-            var request = InstantiateClassGenerator.Execute<DisassociateMacSecKeyRequest>();
+            var request = InstantiateClassGenerator.Execute<DisassociateMacSecKeyRequest>(operation);
             var marshaller = new DisassociateMacSecKeyRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5470,7 +5576,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DisassociateMacSecKey");
 
-            var request = InstantiateClassGenerator.Execute<DisassociateMacSecKeyRequest>();
+            var request = InstantiateClassGenerator.Execute<DisassociateMacSecKeyRequest>(operation);
             var marshaller = new DisassociateMacSecKeyRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5500,7 +5606,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("DirectConnect")]
         public void ListVirtualInterfaceTestHistoryMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ListVirtualInterfaceTestHistoryRequest>();
+            var operation = service_model.FindOperation("ListVirtualInterfaceTestHistory");
+
+            var request = InstantiateClassGenerator.Execute<ListVirtualInterfaceTestHistoryRequest>(operation);
             var marshaller = new ListVirtualInterfaceTestHistoryRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -5514,7 +5622,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListVirtualInterfaceTestHistory").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ListVirtualInterfaceTestHistoryResponseUnmarshaller.Instance.Unmarshall(context) as ListVirtualInterfaceTestHistoryResponse;
@@ -5529,7 +5637,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListVirtualInterfaceTestHistory");
 
-            var request = InstantiateClassGenerator.Execute<ListVirtualInterfaceTestHistoryRequest>();
+            var request = InstantiateClassGenerator.Execute<ListVirtualInterfaceTestHistoryRequest>(operation);
             var marshaller = new ListVirtualInterfaceTestHistoryRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5561,7 +5669,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListVirtualInterfaceTestHistory");
 
-            var request = InstantiateClassGenerator.Execute<ListVirtualInterfaceTestHistoryRequest>();
+            var request = InstantiateClassGenerator.Execute<ListVirtualInterfaceTestHistoryRequest>(operation);
             var marshaller = new ListVirtualInterfaceTestHistoryRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5591,7 +5699,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("DirectConnect")]
         public void StartBgpFailoverTestMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<StartBgpFailoverTestRequest>();
+            var operation = service_model.FindOperation("StartBgpFailoverTest");
+
+            var request = InstantiateClassGenerator.Execute<StartBgpFailoverTestRequest>(operation);
             var marshaller = new StartBgpFailoverTestRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -5605,7 +5715,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("StartBgpFailoverTest").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = StartBgpFailoverTestResponseUnmarshaller.Instance.Unmarshall(context) as StartBgpFailoverTestResponse;
@@ -5620,7 +5730,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("StartBgpFailoverTest");
 
-            var request = InstantiateClassGenerator.Execute<StartBgpFailoverTestRequest>();
+            var request = InstantiateClassGenerator.Execute<StartBgpFailoverTestRequest>(operation);
             var marshaller = new StartBgpFailoverTestRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5652,7 +5762,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("StartBgpFailoverTest");
 
-            var request = InstantiateClassGenerator.Execute<StartBgpFailoverTestRequest>();
+            var request = InstantiateClassGenerator.Execute<StartBgpFailoverTestRequest>(operation);
             var marshaller = new StartBgpFailoverTestRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5682,7 +5792,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("DirectConnect")]
         public void StopBgpFailoverTestMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<StopBgpFailoverTestRequest>();
+            var operation = service_model.FindOperation("StopBgpFailoverTest");
+
+            var request = InstantiateClassGenerator.Execute<StopBgpFailoverTestRequest>(operation);
             var marshaller = new StopBgpFailoverTestRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -5696,7 +5808,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("StopBgpFailoverTest").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = StopBgpFailoverTestResponseUnmarshaller.Instance.Unmarshall(context) as StopBgpFailoverTestResponse;
@@ -5711,7 +5823,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("StopBgpFailoverTest");
 
-            var request = InstantiateClassGenerator.Execute<StopBgpFailoverTestRequest>();
+            var request = InstantiateClassGenerator.Execute<StopBgpFailoverTestRequest>(operation);
             var marshaller = new StopBgpFailoverTestRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5743,7 +5855,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("StopBgpFailoverTest");
 
-            var request = InstantiateClassGenerator.Execute<StopBgpFailoverTestRequest>();
+            var request = InstantiateClassGenerator.Execute<StopBgpFailoverTestRequest>(operation);
             var marshaller = new StopBgpFailoverTestRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5773,7 +5885,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("DirectConnect")]
         public void TagResourceMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var operation = service_model.FindOperation("TagResource");
+
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -5787,7 +5901,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("TagResource").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = TagResourceResponseUnmarshaller.Instance.Unmarshall(context) as TagResourceResponse;
@@ -5802,7 +5916,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("TagResource");
 
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5834,7 +5948,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("TagResource");
 
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5866,7 +5980,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("TagResource");
 
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5898,7 +6012,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("TagResource");
 
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5928,7 +6042,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("DirectConnect")]
         public void UntagResourceMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var operation = service_model.FindOperation("UntagResource");
+
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>(operation);
             var marshaller = new UntagResourceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -5942,7 +6058,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("UntagResource").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = UntagResourceResponseUnmarshaller.Instance.Unmarshall(context) as UntagResourceResponse;
@@ -5957,7 +6073,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UntagResource");
 
-            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>(operation);
             var marshaller = new UntagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5989,7 +6105,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UntagResource");
 
-            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>(operation);
             var marshaller = new UntagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6019,7 +6135,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("DirectConnect")]
         public void UpdateConnectionMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<UpdateConnectionRequest>();
+            var operation = service_model.FindOperation("UpdateConnection");
+
+            var request = InstantiateClassGenerator.Execute<UpdateConnectionRequest>(operation);
             var marshaller = new UpdateConnectionRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -6033,7 +6151,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("UpdateConnection").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = UpdateConnectionResponseUnmarshaller.Instance.Unmarshall(context) as UpdateConnectionResponse;
@@ -6048,7 +6166,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateConnection");
 
-            var request = InstantiateClassGenerator.Execute<UpdateConnectionRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateConnectionRequest>(operation);
             var marshaller = new UpdateConnectionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6080,7 +6198,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateConnection");
 
-            var request = InstantiateClassGenerator.Execute<UpdateConnectionRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateConnectionRequest>(operation);
             var marshaller = new UpdateConnectionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6110,7 +6228,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("DirectConnect")]
         public void UpdateDirectConnectGatewayMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<UpdateDirectConnectGatewayRequest>();
+            var operation = service_model.FindOperation("UpdateDirectConnectGateway");
+
+            var request = InstantiateClassGenerator.Execute<UpdateDirectConnectGatewayRequest>(operation);
             var marshaller = new UpdateDirectConnectGatewayRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -6124,7 +6244,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("UpdateDirectConnectGateway").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = UpdateDirectConnectGatewayResponseUnmarshaller.Instance.Unmarshall(context) as UpdateDirectConnectGatewayResponse;
@@ -6139,7 +6259,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateDirectConnectGateway");
 
-            var request = InstantiateClassGenerator.Execute<UpdateDirectConnectGatewayRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateDirectConnectGatewayRequest>(operation);
             var marshaller = new UpdateDirectConnectGatewayRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6171,7 +6291,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateDirectConnectGateway");
 
-            var request = InstantiateClassGenerator.Execute<UpdateDirectConnectGatewayRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateDirectConnectGatewayRequest>(operation);
             var marshaller = new UpdateDirectConnectGatewayRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6201,7 +6321,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("DirectConnect")]
         public void UpdateDirectConnectGatewayAssociationMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<UpdateDirectConnectGatewayAssociationRequest>();
+            var operation = service_model.FindOperation("UpdateDirectConnectGatewayAssociation");
+
+            var request = InstantiateClassGenerator.Execute<UpdateDirectConnectGatewayAssociationRequest>(operation);
             var marshaller = new UpdateDirectConnectGatewayAssociationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -6215,7 +6337,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("UpdateDirectConnectGatewayAssociation").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = UpdateDirectConnectGatewayAssociationResponseUnmarshaller.Instance.Unmarshall(context) as UpdateDirectConnectGatewayAssociationResponse;
@@ -6230,7 +6352,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateDirectConnectGatewayAssociation");
 
-            var request = InstantiateClassGenerator.Execute<UpdateDirectConnectGatewayAssociationRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateDirectConnectGatewayAssociationRequest>(operation);
             var marshaller = new UpdateDirectConnectGatewayAssociationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6262,7 +6384,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateDirectConnectGatewayAssociation");
 
-            var request = InstantiateClassGenerator.Execute<UpdateDirectConnectGatewayAssociationRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateDirectConnectGatewayAssociationRequest>(operation);
             var marshaller = new UpdateDirectConnectGatewayAssociationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6292,7 +6414,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("DirectConnect")]
         public void UpdateLagMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<UpdateLagRequest>();
+            var operation = service_model.FindOperation("UpdateLag");
+
+            var request = InstantiateClassGenerator.Execute<UpdateLagRequest>(operation);
             var marshaller = new UpdateLagRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -6306,7 +6430,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("UpdateLag").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = UpdateLagResponseUnmarshaller.Instance.Unmarshall(context) as UpdateLagResponse;
@@ -6321,7 +6445,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateLag");
 
-            var request = InstantiateClassGenerator.Execute<UpdateLagRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateLagRequest>(operation);
             var marshaller = new UpdateLagRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6353,7 +6477,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateLag");
 
-            var request = InstantiateClassGenerator.Execute<UpdateLagRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateLagRequest>(operation);
             var marshaller = new UpdateLagRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6383,7 +6507,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("DirectConnect")]
         public void UpdateVirtualInterfaceAttributesMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<UpdateVirtualInterfaceAttributesRequest>();
+            var operation = service_model.FindOperation("UpdateVirtualInterfaceAttributes");
+
+            var request = InstantiateClassGenerator.Execute<UpdateVirtualInterfaceAttributesRequest>(operation);
             var marshaller = new UpdateVirtualInterfaceAttributesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -6397,7 +6523,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("UpdateVirtualInterfaceAttributes").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = UpdateVirtualInterfaceAttributesResponseUnmarshaller.Instance.Unmarshall(context) as UpdateVirtualInterfaceAttributesResponse;
@@ -6412,7 +6538,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateVirtualInterfaceAttributes");
 
-            var request = InstantiateClassGenerator.Execute<UpdateVirtualInterfaceAttributesRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateVirtualInterfaceAttributesRequest>(operation);
             var marshaller = new UpdateVirtualInterfaceAttributesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6444,7 +6570,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateVirtualInterfaceAttributes");
 
-            var request = InstantiateClassGenerator.Execute<UpdateVirtualInterfaceAttributesRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateVirtualInterfaceAttributesRequest>(operation);
             var marshaller = new UpdateVirtualInterfaceAttributesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);

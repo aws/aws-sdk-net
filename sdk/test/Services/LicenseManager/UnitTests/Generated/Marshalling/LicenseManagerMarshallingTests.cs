@@ -46,7 +46,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("LicenseManager")]
         public void AcceptGrantMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<AcceptGrantRequest>();
+            var operation = service_model.FindOperation("AcceptGrant");
+
+            var request = InstantiateClassGenerator.Execute<AcceptGrantRequest>(operation);
             var marshaller = new AcceptGrantRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -60,7 +62,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("AcceptGrant").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = AcceptGrantResponseUnmarshaller.Instance.Unmarshall(context) as AcceptGrantResponse;
@@ -75,7 +77,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("AcceptGrant");
 
-            var request = InstantiateClassGenerator.Execute<AcceptGrantRequest>();
+            var request = InstantiateClassGenerator.Execute<AcceptGrantRequest>(operation);
             var marshaller = new AcceptGrantRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -107,7 +109,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("AcceptGrant");
 
-            var request = InstantiateClassGenerator.Execute<AcceptGrantRequest>();
+            var request = InstantiateClassGenerator.Execute<AcceptGrantRequest>(operation);
             var marshaller = new AcceptGrantRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -139,7 +141,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("AcceptGrant");
 
-            var request = InstantiateClassGenerator.Execute<AcceptGrantRequest>();
+            var request = InstantiateClassGenerator.Execute<AcceptGrantRequest>(operation);
             var marshaller = new AcceptGrantRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -171,7 +173,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("AcceptGrant");
 
-            var request = InstantiateClassGenerator.Execute<AcceptGrantRequest>();
+            var request = InstantiateClassGenerator.Execute<AcceptGrantRequest>(operation);
             var marshaller = new AcceptGrantRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -203,7 +205,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("AcceptGrant");
 
-            var request = InstantiateClassGenerator.Execute<AcceptGrantRequest>();
+            var request = InstantiateClassGenerator.Execute<AcceptGrantRequest>(operation);
             var marshaller = new AcceptGrantRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -235,7 +237,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("AcceptGrant");
 
-            var request = InstantiateClassGenerator.Execute<AcceptGrantRequest>();
+            var request = InstantiateClassGenerator.Execute<AcceptGrantRequest>(operation);
             var marshaller = new AcceptGrantRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -267,7 +269,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("AcceptGrant");
 
-            var request = InstantiateClassGenerator.Execute<AcceptGrantRequest>();
+            var request = InstantiateClassGenerator.Execute<AcceptGrantRequest>(operation);
             var marshaller = new AcceptGrantRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -297,7 +299,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("LicenseManager")]
         public void CheckInLicenseMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<CheckInLicenseRequest>();
+            var operation = service_model.FindOperation("CheckInLicense");
+
+            var request = InstantiateClassGenerator.Execute<CheckInLicenseRequest>(operation);
             var marshaller = new CheckInLicenseRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -311,7 +315,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("CheckInLicense").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = CheckInLicenseResponseUnmarshaller.Instance.Unmarshall(context) as CheckInLicenseResponse;
@@ -326,7 +330,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CheckInLicense");
 
-            var request = InstantiateClassGenerator.Execute<CheckInLicenseRequest>();
+            var request = InstantiateClassGenerator.Execute<CheckInLicenseRequest>(operation);
             var marshaller = new CheckInLicenseRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -358,7 +362,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CheckInLicense");
 
-            var request = InstantiateClassGenerator.Execute<CheckInLicenseRequest>();
+            var request = InstantiateClassGenerator.Execute<CheckInLicenseRequest>(operation);
             var marshaller = new CheckInLicenseRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -390,7 +394,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CheckInLicense");
 
-            var request = InstantiateClassGenerator.Execute<CheckInLicenseRequest>();
+            var request = InstantiateClassGenerator.Execute<CheckInLicenseRequest>(operation);
             var marshaller = new CheckInLicenseRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -422,7 +426,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CheckInLicense");
 
-            var request = InstantiateClassGenerator.Execute<CheckInLicenseRequest>();
+            var request = InstantiateClassGenerator.Execute<CheckInLicenseRequest>(operation);
             var marshaller = new CheckInLicenseRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -454,7 +458,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CheckInLicense");
 
-            var request = InstantiateClassGenerator.Execute<CheckInLicenseRequest>();
+            var request = InstantiateClassGenerator.Execute<CheckInLicenseRequest>(operation);
             var marshaller = new CheckInLicenseRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -486,7 +490,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CheckInLicense");
 
-            var request = InstantiateClassGenerator.Execute<CheckInLicenseRequest>();
+            var request = InstantiateClassGenerator.Execute<CheckInLicenseRequest>(operation);
             var marshaller = new CheckInLicenseRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -518,7 +522,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CheckInLicense");
 
-            var request = InstantiateClassGenerator.Execute<CheckInLicenseRequest>();
+            var request = InstantiateClassGenerator.Execute<CheckInLicenseRequest>(operation);
             var marshaller = new CheckInLicenseRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -550,7 +554,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CheckInLicense");
 
-            var request = InstantiateClassGenerator.Execute<CheckInLicenseRequest>();
+            var request = InstantiateClassGenerator.Execute<CheckInLicenseRequest>(operation);
             var marshaller = new CheckInLicenseRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -580,7 +584,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("LicenseManager")]
         public void CheckoutBorrowLicenseMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<CheckoutBorrowLicenseRequest>();
+            var operation = service_model.FindOperation("CheckoutBorrowLicense");
+
+            var request = InstantiateClassGenerator.Execute<CheckoutBorrowLicenseRequest>(operation);
             var marshaller = new CheckoutBorrowLicenseRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -594,7 +600,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("CheckoutBorrowLicense").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = CheckoutBorrowLicenseResponseUnmarshaller.Instance.Unmarshall(context) as CheckoutBorrowLicenseResponse;
@@ -609,7 +615,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CheckoutBorrowLicense");
 
-            var request = InstantiateClassGenerator.Execute<CheckoutBorrowLicenseRequest>();
+            var request = InstantiateClassGenerator.Execute<CheckoutBorrowLicenseRequest>(operation);
             var marshaller = new CheckoutBorrowLicenseRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -641,7 +647,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CheckoutBorrowLicense");
 
-            var request = InstantiateClassGenerator.Execute<CheckoutBorrowLicenseRequest>();
+            var request = InstantiateClassGenerator.Execute<CheckoutBorrowLicenseRequest>(operation);
             var marshaller = new CheckoutBorrowLicenseRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -673,7 +679,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CheckoutBorrowLicense");
 
-            var request = InstantiateClassGenerator.Execute<CheckoutBorrowLicenseRequest>();
+            var request = InstantiateClassGenerator.Execute<CheckoutBorrowLicenseRequest>(operation);
             var marshaller = new CheckoutBorrowLicenseRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -705,7 +711,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CheckoutBorrowLicense");
 
-            var request = InstantiateClassGenerator.Execute<CheckoutBorrowLicenseRequest>();
+            var request = InstantiateClassGenerator.Execute<CheckoutBorrowLicenseRequest>(operation);
             var marshaller = new CheckoutBorrowLicenseRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -737,7 +743,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CheckoutBorrowLicense");
 
-            var request = InstantiateClassGenerator.Execute<CheckoutBorrowLicenseRequest>();
+            var request = InstantiateClassGenerator.Execute<CheckoutBorrowLicenseRequest>(operation);
             var marshaller = new CheckoutBorrowLicenseRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -769,7 +775,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CheckoutBorrowLicense");
 
-            var request = InstantiateClassGenerator.Execute<CheckoutBorrowLicenseRequest>();
+            var request = InstantiateClassGenerator.Execute<CheckoutBorrowLicenseRequest>(operation);
             var marshaller = new CheckoutBorrowLicenseRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -801,7 +807,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CheckoutBorrowLicense");
 
-            var request = InstantiateClassGenerator.Execute<CheckoutBorrowLicenseRequest>();
+            var request = InstantiateClassGenerator.Execute<CheckoutBorrowLicenseRequest>(operation);
             var marshaller = new CheckoutBorrowLicenseRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -833,7 +839,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CheckoutBorrowLicense");
 
-            var request = InstantiateClassGenerator.Execute<CheckoutBorrowLicenseRequest>();
+            var request = InstantiateClassGenerator.Execute<CheckoutBorrowLicenseRequest>(operation);
             var marshaller = new CheckoutBorrowLicenseRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -865,7 +871,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CheckoutBorrowLicense");
 
-            var request = InstantiateClassGenerator.Execute<CheckoutBorrowLicenseRequest>();
+            var request = InstantiateClassGenerator.Execute<CheckoutBorrowLicenseRequest>(operation);
             var marshaller = new CheckoutBorrowLicenseRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -897,7 +903,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CheckoutBorrowLicense");
 
-            var request = InstantiateClassGenerator.Execute<CheckoutBorrowLicenseRequest>();
+            var request = InstantiateClassGenerator.Execute<CheckoutBorrowLicenseRequest>(operation);
             var marshaller = new CheckoutBorrowLicenseRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -929,7 +935,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CheckoutBorrowLicense");
 
-            var request = InstantiateClassGenerator.Execute<CheckoutBorrowLicenseRequest>();
+            var request = InstantiateClassGenerator.Execute<CheckoutBorrowLicenseRequest>(operation);
             var marshaller = new CheckoutBorrowLicenseRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -959,7 +965,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("LicenseManager")]
         public void CheckoutLicenseMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<CheckoutLicenseRequest>();
+            var operation = service_model.FindOperation("CheckoutLicense");
+
+            var request = InstantiateClassGenerator.Execute<CheckoutLicenseRequest>(operation);
             var marshaller = new CheckoutLicenseRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -973,7 +981,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("CheckoutLicense").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = CheckoutLicenseResponseUnmarshaller.Instance.Unmarshall(context) as CheckoutLicenseResponse;
@@ -988,7 +996,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CheckoutLicense");
 
-            var request = InstantiateClassGenerator.Execute<CheckoutLicenseRequest>();
+            var request = InstantiateClassGenerator.Execute<CheckoutLicenseRequest>(operation);
             var marshaller = new CheckoutLicenseRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1020,7 +1028,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CheckoutLicense");
 
-            var request = InstantiateClassGenerator.Execute<CheckoutLicenseRequest>();
+            var request = InstantiateClassGenerator.Execute<CheckoutLicenseRequest>(operation);
             var marshaller = new CheckoutLicenseRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1052,7 +1060,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CheckoutLicense");
 
-            var request = InstantiateClassGenerator.Execute<CheckoutLicenseRequest>();
+            var request = InstantiateClassGenerator.Execute<CheckoutLicenseRequest>(operation);
             var marshaller = new CheckoutLicenseRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1084,7 +1092,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CheckoutLicense");
 
-            var request = InstantiateClassGenerator.Execute<CheckoutLicenseRequest>();
+            var request = InstantiateClassGenerator.Execute<CheckoutLicenseRequest>(operation);
             var marshaller = new CheckoutLicenseRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1116,7 +1124,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CheckoutLicense");
 
-            var request = InstantiateClassGenerator.Execute<CheckoutLicenseRequest>();
+            var request = InstantiateClassGenerator.Execute<CheckoutLicenseRequest>(operation);
             var marshaller = new CheckoutLicenseRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1148,7 +1156,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CheckoutLicense");
 
-            var request = InstantiateClassGenerator.Execute<CheckoutLicenseRequest>();
+            var request = InstantiateClassGenerator.Execute<CheckoutLicenseRequest>(operation);
             var marshaller = new CheckoutLicenseRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1180,7 +1188,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CheckoutLicense");
 
-            var request = InstantiateClassGenerator.Execute<CheckoutLicenseRequest>();
+            var request = InstantiateClassGenerator.Execute<CheckoutLicenseRequest>(operation);
             var marshaller = new CheckoutLicenseRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1212,7 +1220,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CheckoutLicense");
 
-            var request = InstantiateClassGenerator.Execute<CheckoutLicenseRequest>();
+            var request = InstantiateClassGenerator.Execute<CheckoutLicenseRequest>(operation);
             var marshaller = new CheckoutLicenseRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1244,7 +1252,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CheckoutLicense");
 
-            var request = InstantiateClassGenerator.Execute<CheckoutLicenseRequest>();
+            var request = InstantiateClassGenerator.Execute<CheckoutLicenseRequest>(operation);
             var marshaller = new CheckoutLicenseRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1276,7 +1284,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CheckoutLicense");
 
-            var request = InstantiateClassGenerator.Execute<CheckoutLicenseRequest>();
+            var request = InstantiateClassGenerator.Execute<CheckoutLicenseRequest>(operation);
             var marshaller = new CheckoutLicenseRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1306,7 +1314,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("LicenseManager")]
         public void CreateGrantMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<CreateGrantRequest>();
+            var operation = service_model.FindOperation("CreateGrant");
+
+            var request = InstantiateClassGenerator.Execute<CreateGrantRequest>(operation);
             var marshaller = new CreateGrantRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1320,7 +1330,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("CreateGrant").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = CreateGrantResponseUnmarshaller.Instance.Unmarshall(context) as CreateGrantResponse;
@@ -1335,7 +1345,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateGrant");
 
-            var request = InstantiateClassGenerator.Execute<CreateGrantRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateGrantRequest>(operation);
             var marshaller = new CreateGrantRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1367,7 +1377,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateGrant");
 
-            var request = InstantiateClassGenerator.Execute<CreateGrantRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateGrantRequest>(operation);
             var marshaller = new CreateGrantRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1399,7 +1409,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateGrant");
 
-            var request = InstantiateClassGenerator.Execute<CreateGrantRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateGrantRequest>(operation);
             var marshaller = new CreateGrantRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1431,7 +1441,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateGrant");
 
-            var request = InstantiateClassGenerator.Execute<CreateGrantRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateGrantRequest>(operation);
             var marshaller = new CreateGrantRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1463,7 +1473,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateGrant");
 
-            var request = InstantiateClassGenerator.Execute<CreateGrantRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateGrantRequest>(operation);
             var marshaller = new CreateGrantRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1495,7 +1505,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateGrant");
 
-            var request = InstantiateClassGenerator.Execute<CreateGrantRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateGrantRequest>(operation);
             var marshaller = new CreateGrantRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1527,7 +1537,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateGrant");
 
-            var request = InstantiateClassGenerator.Execute<CreateGrantRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateGrantRequest>(operation);
             var marshaller = new CreateGrantRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1557,7 +1567,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("LicenseManager")]
         public void CreateGrantVersionMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<CreateGrantVersionRequest>();
+            var operation = service_model.FindOperation("CreateGrantVersion");
+
+            var request = InstantiateClassGenerator.Execute<CreateGrantVersionRequest>(operation);
             var marshaller = new CreateGrantVersionRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1571,7 +1583,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("CreateGrantVersion").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = CreateGrantVersionResponseUnmarshaller.Instance.Unmarshall(context) as CreateGrantVersionResponse;
@@ -1586,7 +1598,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateGrantVersion");
 
-            var request = InstantiateClassGenerator.Execute<CreateGrantVersionRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateGrantVersionRequest>(operation);
             var marshaller = new CreateGrantVersionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1618,7 +1630,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateGrantVersion");
 
-            var request = InstantiateClassGenerator.Execute<CreateGrantVersionRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateGrantVersionRequest>(operation);
             var marshaller = new CreateGrantVersionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1650,7 +1662,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateGrantVersion");
 
-            var request = InstantiateClassGenerator.Execute<CreateGrantVersionRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateGrantVersionRequest>(operation);
             var marshaller = new CreateGrantVersionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1682,7 +1694,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateGrantVersion");
 
-            var request = InstantiateClassGenerator.Execute<CreateGrantVersionRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateGrantVersionRequest>(operation);
             var marshaller = new CreateGrantVersionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1714,7 +1726,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateGrantVersion");
 
-            var request = InstantiateClassGenerator.Execute<CreateGrantVersionRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateGrantVersionRequest>(operation);
             var marshaller = new CreateGrantVersionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1746,7 +1758,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateGrantVersion");
 
-            var request = InstantiateClassGenerator.Execute<CreateGrantVersionRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateGrantVersionRequest>(operation);
             var marshaller = new CreateGrantVersionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1778,7 +1790,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateGrantVersion");
 
-            var request = InstantiateClassGenerator.Execute<CreateGrantVersionRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateGrantVersionRequest>(operation);
             var marshaller = new CreateGrantVersionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1808,7 +1820,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("LicenseManager")]
         public void CreateLicenseMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<CreateLicenseRequest>();
+            var operation = service_model.FindOperation("CreateLicense");
+
+            var request = InstantiateClassGenerator.Execute<CreateLicenseRequest>(operation);
             var marshaller = new CreateLicenseRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1822,7 +1836,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("CreateLicense").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = CreateLicenseResponseUnmarshaller.Instance.Unmarshall(context) as CreateLicenseResponse;
@@ -1837,7 +1851,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateLicense");
 
-            var request = InstantiateClassGenerator.Execute<CreateLicenseRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateLicenseRequest>(operation);
             var marshaller = new CreateLicenseRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1869,7 +1883,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateLicense");
 
-            var request = InstantiateClassGenerator.Execute<CreateLicenseRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateLicenseRequest>(operation);
             var marshaller = new CreateLicenseRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1901,7 +1915,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateLicense");
 
-            var request = InstantiateClassGenerator.Execute<CreateLicenseRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateLicenseRequest>(operation);
             var marshaller = new CreateLicenseRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1933,7 +1947,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateLicense");
 
-            var request = InstantiateClassGenerator.Execute<CreateLicenseRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateLicenseRequest>(operation);
             var marshaller = new CreateLicenseRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1965,7 +1979,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateLicense");
 
-            var request = InstantiateClassGenerator.Execute<CreateLicenseRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateLicenseRequest>(operation);
             var marshaller = new CreateLicenseRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1997,7 +2011,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateLicense");
 
-            var request = InstantiateClassGenerator.Execute<CreateLicenseRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateLicenseRequest>(operation);
             var marshaller = new CreateLicenseRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2029,7 +2043,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateLicense");
 
-            var request = InstantiateClassGenerator.Execute<CreateLicenseRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateLicenseRequest>(operation);
             var marshaller = new CreateLicenseRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2059,7 +2073,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("LicenseManager")]
         public void CreateLicenseConfigurationMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<CreateLicenseConfigurationRequest>();
+            var operation = service_model.FindOperation("CreateLicenseConfiguration");
+
+            var request = InstantiateClassGenerator.Execute<CreateLicenseConfigurationRequest>(operation);
             var marshaller = new CreateLicenseConfigurationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -2073,7 +2089,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("CreateLicenseConfiguration").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = CreateLicenseConfigurationResponseUnmarshaller.Instance.Unmarshall(context) as CreateLicenseConfigurationResponse;
@@ -2088,7 +2104,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateLicenseConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<CreateLicenseConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateLicenseConfigurationRequest>(operation);
             var marshaller = new CreateLicenseConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2120,7 +2136,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateLicenseConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<CreateLicenseConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateLicenseConfigurationRequest>(operation);
             var marshaller = new CreateLicenseConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2152,7 +2168,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateLicenseConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<CreateLicenseConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateLicenseConfigurationRequest>(operation);
             var marshaller = new CreateLicenseConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2184,7 +2200,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateLicenseConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<CreateLicenseConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateLicenseConfigurationRequest>(operation);
             var marshaller = new CreateLicenseConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2216,7 +2232,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateLicenseConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<CreateLicenseConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateLicenseConfigurationRequest>(operation);
             var marshaller = new CreateLicenseConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2248,7 +2264,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateLicenseConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<CreateLicenseConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateLicenseConfigurationRequest>(operation);
             var marshaller = new CreateLicenseConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2278,7 +2294,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("LicenseManager")]
         public void CreateLicenseConversionTaskForResourceMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<CreateLicenseConversionTaskForResourceRequest>();
+            var operation = service_model.FindOperation("CreateLicenseConversionTaskForResource");
+
+            var request = InstantiateClassGenerator.Execute<CreateLicenseConversionTaskForResourceRequest>(operation);
             var marshaller = new CreateLicenseConversionTaskForResourceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -2292,7 +2310,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("CreateLicenseConversionTaskForResource").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = CreateLicenseConversionTaskForResourceResponseUnmarshaller.Instance.Unmarshall(context) as CreateLicenseConversionTaskForResourceResponse;
@@ -2307,7 +2325,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateLicenseConversionTaskForResource");
 
-            var request = InstantiateClassGenerator.Execute<CreateLicenseConversionTaskForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateLicenseConversionTaskForResourceRequest>(operation);
             var marshaller = new CreateLicenseConversionTaskForResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2339,7 +2357,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateLicenseConversionTaskForResource");
 
-            var request = InstantiateClassGenerator.Execute<CreateLicenseConversionTaskForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateLicenseConversionTaskForResourceRequest>(operation);
             var marshaller = new CreateLicenseConversionTaskForResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2371,7 +2389,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateLicenseConversionTaskForResource");
 
-            var request = InstantiateClassGenerator.Execute<CreateLicenseConversionTaskForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateLicenseConversionTaskForResourceRequest>(operation);
             var marshaller = new CreateLicenseConversionTaskForResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2403,7 +2421,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateLicenseConversionTaskForResource");
 
-            var request = InstantiateClassGenerator.Execute<CreateLicenseConversionTaskForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateLicenseConversionTaskForResourceRequest>(operation);
             var marshaller = new CreateLicenseConversionTaskForResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2435,7 +2453,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateLicenseConversionTaskForResource");
 
-            var request = InstantiateClassGenerator.Execute<CreateLicenseConversionTaskForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateLicenseConversionTaskForResourceRequest>(operation);
             var marshaller = new CreateLicenseConversionTaskForResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2467,7 +2485,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateLicenseConversionTaskForResource");
 
-            var request = InstantiateClassGenerator.Execute<CreateLicenseConversionTaskForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateLicenseConversionTaskForResourceRequest>(operation);
             var marshaller = new CreateLicenseConversionTaskForResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2497,7 +2515,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("LicenseManager")]
         public void CreateLicenseManagerReportGeneratorMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<CreateLicenseManagerReportGeneratorRequest>();
+            var operation = service_model.FindOperation("CreateLicenseManagerReportGenerator");
+
+            var request = InstantiateClassGenerator.Execute<CreateLicenseManagerReportGeneratorRequest>(operation);
             var marshaller = new CreateLicenseManagerReportGeneratorRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -2511,7 +2531,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("CreateLicenseManagerReportGenerator").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = CreateLicenseManagerReportGeneratorResponseUnmarshaller.Instance.Unmarshall(context) as CreateLicenseManagerReportGeneratorResponse;
@@ -2526,7 +2546,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateLicenseManagerReportGenerator");
 
-            var request = InstantiateClassGenerator.Execute<CreateLicenseManagerReportGeneratorRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateLicenseManagerReportGeneratorRequest>(operation);
             var marshaller = new CreateLicenseManagerReportGeneratorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2558,7 +2578,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateLicenseManagerReportGenerator");
 
-            var request = InstantiateClassGenerator.Execute<CreateLicenseManagerReportGeneratorRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateLicenseManagerReportGeneratorRequest>(operation);
             var marshaller = new CreateLicenseManagerReportGeneratorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2590,7 +2610,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateLicenseManagerReportGenerator");
 
-            var request = InstantiateClassGenerator.Execute<CreateLicenseManagerReportGeneratorRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateLicenseManagerReportGeneratorRequest>(operation);
             var marshaller = new CreateLicenseManagerReportGeneratorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2622,7 +2642,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateLicenseManagerReportGenerator");
 
-            var request = InstantiateClassGenerator.Execute<CreateLicenseManagerReportGeneratorRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateLicenseManagerReportGeneratorRequest>(operation);
             var marshaller = new CreateLicenseManagerReportGeneratorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2654,7 +2674,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateLicenseManagerReportGenerator");
 
-            var request = InstantiateClassGenerator.Execute<CreateLicenseManagerReportGeneratorRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateLicenseManagerReportGeneratorRequest>(operation);
             var marshaller = new CreateLicenseManagerReportGeneratorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2686,7 +2706,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateLicenseManagerReportGenerator");
 
-            var request = InstantiateClassGenerator.Execute<CreateLicenseManagerReportGeneratorRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateLicenseManagerReportGeneratorRequest>(operation);
             var marshaller = new CreateLicenseManagerReportGeneratorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2718,7 +2738,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateLicenseManagerReportGenerator");
 
-            var request = InstantiateClassGenerator.Execute<CreateLicenseManagerReportGeneratorRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateLicenseManagerReportGeneratorRequest>(operation);
             var marshaller = new CreateLicenseManagerReportGeneratorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2750,7 +2770,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateLicenseManagerReportGenerator");
 
-            var request = InstantiateClassGenerator.Execute<CreateLicenseManagerReportGeneratorRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateLicenseManagerReportGeneratorRequest>(operation);
             var marshaller = new CreateLicenseManagerReportGeneratorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2780,7 +2800,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("LicenseManager")]
         public void CreateLicenseVersionMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<CreateLicenseVersionRequest>();
+            var operation = service_model.FindOperation("CreateLicenseVersion");
+
+            var request = InstantiateClassGenerator.Execute<CreateLicenseVersionRequest>(operation);
             var marshaller = new CreateLicenseVersionRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -2794,7 +2816,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("CreateLicenseVersion").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = CreateLicenseVersionResponseUnmarshaller.Instance.Unmarshall(context) as CreateLicenseVersionResponse;
@@ -2809,7 +2831,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateLicenseVersion");
 
-            var request = InstantiateClassGenerator.Execute<CreateLicenseVersionRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateLicenseVersionRequest>(operation);
             var marshaller = new CreateLicenseVersionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2841,7 +2863,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateLicenseVersion");
 
-            var request = InstantiateClassGenerator.Execute<CreateLicenseVersionRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateLicenseVersionRequest>(operation);
             var marshaller = new CreateLicenseVersionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2873,7 +2895,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateLicenseVersion");
 
-            var request = InstantiateClassGenerator.Execute<CreateLicenseVersionRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateLicenseVersionRequest>(operation);
             var marshaller = new CreateLicenseVersionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2905,7 +2927,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateLicenseVersion");
 
-            var request = InstantiateClassGenerator.Execute<CreateLicenseVersionRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateLicenseVersionRequest>(operation);
             var marshaller = new CreateLicenseVersionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2937,7 +2959,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateLicenseVersion");
 
-            var request = InstantiateClassGenerator.Execute<CreateLicenseVersionRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateLicenseVersionRequest>(operation);
             var marshaller = new CreateLicenseVersionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2969,7 +2991,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateLicenseVersion");
 
-            var request = InstantiateClassGenerator.Execute<CreateLicenseVersionRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateLicenseVersionRequest>(operation);
             var marshaller = new CreateLicenseVersionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3001,7 +3023,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateLicenseVersion");
 
-            var request = InstantiateClassGenerator.Execute<CreateLicenseVersionRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateLicenseVersionRequest>(operation);
             var marshaller = new CreateLicenseVersionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3033,7 +3055,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateLicenseVersion");
 
-            var request = InstantiateClassGenerator.Execute<CreateLicenseVersionRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateLicenseVersionRequest>(operation);
             var marshaller = new CreateLicenseVersionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3063,7 +3085,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("LicenseManager")]
         public void CreateTokenMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<CreateTokenRequest>();
+            var operation = service_model.FindOperation("CreateToken");
+
+            var request = InstantiateClassGenerator.Execute<CreateTokenRequest>(operation);
             var marshaller = new CreateTokenRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -3077,7 +3101,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("CreateToken").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = CreateTokenResponseUnmarshaller.Instance.Unmarshall(context) as CreateTokenResponse;
@@ -3092,7 +3116,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateToken");
 
-            var request = InstantiateClassGenerator.Execute<CreateTokenRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateTokenRequest>(operation);
             var marshaller = new CreateTokenRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3124,7 +3148,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateToken");
 
-            var request = InstantiateClassGenerator.Execute<CreateTokenRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateTokenRequest>(operation);
             var marshaller = new CreateTokenRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3156,7 +3180,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateToken");
 
-            var request = InstantiateClassGenerator.Execute<CreateTokenRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateTokenRequest>(operation);
             var marshaller = new CreateTokenRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3188,7 +3212,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateToken");
 
-            var request = InstantiateClassGenerator.Execute<CreateTokenRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateTokenRequest>(operation);
             var marshaller = new CreateTokenRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3220,7 +3244,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateToken");
 
-            var request = InstantiateClassGenerator.Execute<CreateTokenRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateTokenRequest>(operation);
             var marshaller = new CreateTokenRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3252,7 +3276,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateToken");
 
-            var request = InstantiateClassGenerator.Execute<CreateTokenRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateTokenRequest>(operation);
             var marshaller = new CreateTokenRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3284,7 +3308,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateToken");
 
-            var request = InstantiateClassGenerator.Execute<CreateTokenRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateTokenRequest>(operation);
             var marshaller = new CreateTokenRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3316,7 +3340,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateToken");
 
-            var request = InstantiateClassGenerator.Execute<CreateTokenRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateTokenRequest>(operation);
             var marshaller = new CreateTokenRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3346,7 +3370,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("LicenseManager")]
         public void DeleteGrantMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DeleteGrantRequest>();
+            var operation = service_model.FindOperation("DeleteGrant");
+
+            var request = InstantiateClassGenerator.Execute<DeleteGrantRequest>(operation);
             var marshaller = new DeleteGrantRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -3360,7 +3386,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DeleteGrant").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DeleteGrantResponseUnmarshaller.Instance.Unmarshall(context) as DeleteGrantResponse;
@@ -3375,7 +3401,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteGrant");
 
-            var request = InstantiateClassGenerator.Execute<DeleteGrantRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteGrantRequest>(operation);
             var marshaller = new DeleteGrantRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3407,7 +3433,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteGrant");
 
-            var request = InstantiateClassGenerator.Execute<DeleteGrantRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteGrantRequest>(operation);
             var marshaller = new DeleteGrantRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3439,7 +3465,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteGrant");
 
-            var request = InstantiateClassGenerator.Execute<DeleteGrantRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteGrantRequest>(operation);
             var marshaller = new DeleteGrantRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3471,7 +3497,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteGrant");
 
-            var request = InstantiateClassGenerator.Execute<DeleteGrantRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteGrantRequest>(operation);
             var marshaller = new DeleteGrantRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3503,7 +3529,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteGrant");
 
-            var request = InstantiateClassGenerator.Execute<DeleteGrantRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteGrantRequest>(operation);
             var marshaller = new DeleteGrantRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3535,7 +3561,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteGrant");
 
-            var request = InstantiateClassGenerator.Execute<DeleteGrantRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteGrantRequest>(operation);
             var marshaller = new DeleteGrantRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3567,7 +3593,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteGrant");
 
-            var request = InstantiateClassGenerator.Execute<DeleteGrantRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteGrantRequest>(operation);
             var marshaller = new DeleteGrantRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3597,7 +3623,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("LicenseManager")]
         public void DeleteLicenseMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DeleteLicenseRequest>();
+            var operation = service_model.FindOperation("DeleteLicense");
+
+            var request = InstantiateClassGenerator.Execute<DeleteLicenseRequest>(operation);
             var marshaller = new DeleteLicenseRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -3611,7 +3639,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DeleteLicense").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DeleteLicenseResponseUnmarshaller.Instance.Unmarshall(context) as DeleteLicenseResponse;
@@ -3626,7 +3654,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteLicense");
 
-            var request = InstantiateClassGenerator.Execute<DeleteLicenseRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteLicenseRequest>(operation);
             var marshaller = new DeleteLicenseRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3658,7 +3686,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteLicense");
 
-            var request = InstantiateClassGenerator.Execute<DeleteLicenseRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteLicenseRequest>(operation);
             var marshaller = new DeleteLicenseRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3690,7 +3718,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteLicense");
 
-            var request = InstantiateClassGenerator.Execute<DeleteLicenseRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteLicenseRequest>(operation);
             var marshaller = new DeleteLicenseRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3722,7 +3750,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteLicense");
 
-            var request = InstantiateClassGenerator.Execute<DeleteLicenseRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteLicenseRequest>(operation);
             var marshaller = new DeleteLicenseRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3754,7 +3782,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteLicense");
 
-            var request = InstantiateClassGenerator.Execute<DeleteLicenseRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteLicenseRequest>(operation);
             var marshaller = new DeleteLicenseRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3786,7 +3814,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteLicense");
 
-            var request = InstantiateClassGenerator.Execute<DeleteLicenseRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteLicenseRequest>(operation);
             var marshaller = new DeleteLicenseRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3818,7 +3846,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteLicense");
 
-            var request = InstantiateClassGenerator.Execute<DeleteLicenseRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteLicenseRequest>(operation);
             var marshaller = new DeleteLicenseRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3850,7 +3878,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteLicense");
 
-            var request = InstantiateClassGenerator.Execute<DeleteLicenseRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteLicenseRequest>(operation);
             var marshaller = new DeleteLicenseRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3880,7 +3908,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("LicenseManager")]
         public void DeleteLicenseConfigurationMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DeleteLicenseConfigurationRequest>();
+            var operation = service_model.FindOperation("DeleteLicenseConfiguration");
+
+            var request = InstantiateClassGenerator.Execute<DeleteLicenseConfigurationRequest>(operation);
             var marshaller = new DeleteLicenseConfigurationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -3894,7 +3924,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DeleteLicenseConfiguration").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DeleteLicenseConfigurationResponseUnmarshaller.Instance.Unmarshall(context) as DeleteLicenseConfigurationResponse;
@@ -3909,7 +3939,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteLicenseConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<DeleteLicenseConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteLicenseConfigurationRequest>(operation);
             var marshaller = new DeleteLicenseConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3941,7 +3971,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteLicenseConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<DeleteLicenseConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteLicenseConfigurationRequest>(operation);
             var marshaller = new DeleteLicenseConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3973,7 +4003,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteLicenseConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<DeleteLicenseConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteLicenseConfigurationRequest>(operation);
             var marshaller = new DeleteLicenseConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4005,7 +4035,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteLicenseConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<DeleteLicenseConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteLicenseConfigurationRequest>(operation);
             var marshaller = new DeleteLicenseConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4037,7 +4067,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteLicenseConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<DeleteLicenseConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteLicenseConfigurationRequest>(operation);
             var marshaller = new DeleteLicenseConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4067,7 +4097,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("LicenseManager")]
         public void DeleteLicenseManagerReportGeneratorMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DeleteLicenseManagerReportGeneratorRequest>();
+            var operation = service_model.FindOperation("DeleteLicenseManagerReportGenerator");
+
+            var request = InstantiateClassGenerator.Execute<DeleteLicenseManagerReportGeneratorRequest>(operation);
             var marshaller = new DeleteLicenseManagerReportGeneratorRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -4081,7 +4113,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DeleteLicenseManagerReportGenerator").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DeleteLicenseManagerReportGeneratorResponseUnmarshaller.Instance.Unmarshall(context) as DeleteLicenseManagerReportGeneratorResponse;
@@ -4096,7 +4128,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteLicenseManagerReportGenerator");
 
-            var request = InstantiateClassGenerator.Execute<DeleteLicenseManagerReportGeneratorRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteLicenseManagerReportGeneratorRequest>(operation);
             var marshaller = new DeleteLicenseManagerReportGeneratorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4128,7 +4160,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteLicenseManagerReportGenerator");
 
-            var request = InstantiateClassGenerator.Execute<DeleteLicenseManagerReportGeneratorRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteLicenseManagerReportGeneratorRequest>(operation);
             var marshaller = new DeleteLicenseManagerReportGeneratorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4160,7 +4192,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteLicenseManagerReportGenerator");
 
-            var request = InstantiateClassGenerator.Execute<DeleteLicenseManagerReportGeneratorRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteLicenseManagerReportGeneratorRequest>(operation);
             var marshaller = new DeleteLicenseManagerReportGeneratorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4192,7 +4224,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteLicenseManagerReportGenerator");
 
-            var request = InstantiateClassGenerator.Execute<DeleteLicenseManagerReportGeneratorRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteLicenseManagerReportGeneratorRequest>(operation);
             var marshaller = new DeleteLicenseManagerReportGeneratorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4224,7 +4256,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteLicenseManagerReportGenerator");
 
-            var request = InstantiateClassGenerator.Execute<DeleteLicenseManagerReportGeneratorRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteLicenseManagerReportGeneratorRequest>(operation);
             var marshaller = new DeleteLicenseManagerReportGeneratorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4256,7 +4288,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteLicenseManagerReportGenerator");
 
-            var request = InstantiateClassGenerator.Execute<DeleteLicenseManagerReportGeneratorRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteLicenseManagerReportGeneratorRequest>(operation);
             var marshaller = new DeleteLicenseManagerReportGeneratorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4288,7 +4320,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteLicenseManagerReportGenerator");
 
-            var request = InstantiateClassGenerator.Execute<DeleteLicenseManagerReportGeneratorRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteLicenseManagerReportGeneratorRequest>(operation);
             var marshaller = new DeleteLicenseManagerReportGeneratorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4320,7 +4352,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteLicenseManagerReportGenerator");
 
-            var request = InstantiateClassGenerator.Execute<DeleteLicenseManagerReportGeneratorRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteLicenseManagerReportGeneratorRequest>(operation);
             var marshaller = new DeleteLicenseManagerReportGeneratorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4350,7 +4382,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("LicenseManager")]
         public void DeleteTokenMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DeleteTokenRequest>();
+            var operation = service_model.FindOperation("DeleteToken");
+
+            var request = InstantiateClassGenerator.Execute<DeleteTokenRequest>(operation);
             var marshaller = new DeleteTokenRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -4364,7 +4398,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DeleteToken").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DeleteTokenResponseUnmarshaller.Instance.Unmarshall(context) as DeleteTokenResponse;
@@ -4379,7 +4413,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteToken");
 
-            var request = InstantiateClassGenerator.Execute<DeleteTokenRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteTokenRequest>(operation);
             var marshaller = new DeleteTokenRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4411,7 +4445,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteToken");
 
-            var request = InstantiateClassGenerator.Execute<DeleteTokenRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteTokenRequest>(operation);
             var marshaller = new DeleteTokenRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4443,7 +4477,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteToken");
 
-            var request = InstantiateClassGenerator.Execute<DeleteTokenRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteTokenRequest>(operation);
             var marshaller = new DeleteTokenRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4475,7 +4509,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteToken");
 
-            var request = InstantiateClassGenerator.Execute<DeleteTokenRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteTokenRequest>(operation);
             var marshaller = new DeleteTokenRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4507,7 +4541,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteToken");
 
-            var request = InstantiateClassGenerator.Execute<DeleteTokenRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteTokenRequest>(operation);
             var marshaller = new DeleteTokenRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4539,7 +4573,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteToken");
 
-            var request = InstantiateClassGenerator.Execute<DeleteTokenRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteTokenRequest>(operation);
             var marshaller = new DeleteTokenRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4571,7 +4605,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteToken");
 
-            var request = InstantiateClassGenerator.Execute<DeleteTokenRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteTokenRequest>(operation);
             var marshaller = new DeleteTokenRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4601,7 +4635,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("LicenseManager")]
         public void ExtendLicenseConsumptionMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ExtendLicenseConsumptionRequest>();
+            var operation = service_model.FindOperation("ExtendLicenseConsumption");
+
+            var request = InstantiateClassGenerator.Execute<ExtendLicenseConsumptionRequest>(operation);
             var marshaller = new ExtendLicenseConsumptionRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -4615,7 +4651,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ExtendLicenseConsumption").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ExtendLicenseConsumptionResponseUnmarshaller.Instance.Unmarshall(context) as ExtendLicenseConsumptionResponse;
@@ -4630,7 +4666,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ExtendLicenseConsumption");
 
-            var request = InstantiateClassGenerator.Execute<ExtendLicenseConsumptionRequest>();
+            var request = InstantiateClassGenerator.Execute<ExtendLicenseConsumptionRequest>(operation);
             var marshaller = new ExtendLicenseConsumptionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4662,7 +4698,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ExtendLicenseConsumption");
 
-            var request = InstantiateClassGenerator.Execute<ExtendLicenseConsumptionRequest>();
+            var request = InstantiateClassGenerator.Execute<ExtendLicenseConsumptionRequest>(operation);
             var marshaller = new ExtendLicenseConsumptionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4694,7 +4730,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ExtendLicenseConsumption");
 
-            var request = InstantiateClassGenerator.Execute<ExtendLicenseConsumptionRequest>();
+            var request = InstantiateClassGenerator.Execute<ExtendLicenseConsumptionRequest>(operation);
             var marshaller = new ExtendLicenseConsumptionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4726,7 +4762,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ExtendLicenseConsumption");
 
-            var request = InstantiateClassGenerator.Execute<ExtendLicenseConsumptionRequest>();
+            var request = InstantiateClassGenerator.Execute<ExtendLicenseConsumptionRequest>(operation);
             var marshaller = new ExtendLicenseConsumptionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4758,7 +4794,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ExtendLicenseConsumption");
 
-            var request = InstantiateClassGenerator.Execute<ExtendLicenseConsumptionRequest>();
+            var request = InstantiateClassGenerator.Execute<ExtendLicenseConsumptionRequest>(operation);
             var marshaller = new ExtendLicenseConsumptionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4790,7 +4826,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ExtendLicenseConsumption");
 
-            var request = InstantiateClassGenerator.Execute<ExtendLicenseConsumptionRequest>();
+            var request = InstantiateClassGenerator.Execute<ExtendLicenseConsumptionRequest>(operation);
             var marshaller = new ExtendLicenseConsumptionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4822,7 +4858,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ExtendLicenseConsumption");
 
-            var request = InstantiateClassGenerator.Execute<ExtendLicenseConsumptionRequest>();
+            var request = InstantiateClassGenerator.Execute<ExtendLicenseConsumptionRequest>(operation);
             var marshaller = new ExtendLicenseConsumptionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4852,7 +4888,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("LicenseManager")]
         public void GetAccessTokenMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<GetAccessTokenRequest>();
+            var operation = service_model.FindOperation("GetAccessToken");
+
+            var request = InstantiateClassGenerator.Execute<GetAccessTokenRequest>(operation);
             var marshaller = new GetAccessTokenRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -4866,7 +4904,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetAccessToken").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = GetAccessTokenResponseUnmarshaller.Instance.Unmarshall(context) as GetAccessTokenResponse;
@@ -4881,7 +4919,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetAccessToken");
 
-            var request = InstantiateClassGenerator.Execute<GetAccessTokenRequest>();
+            var request = InstantiateClassGenerator.Execute<GetAccessTokenRequest>(operation);
             var marshaller = new GetAccessTokenRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4913,7 +4951,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetAccessToken");
 
-            var request = InstantiateClassGenerator.Execute<GetAccessTokenRequest>();
+            var request = InstantiateClassGenerator.Execute<GetAccessTokenRequest>(operation);
             var marshaller = new GetAccessTokenRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4945,7 +4983,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetAccessToken");
 
-            var request = InstantiateClassGenerator.Execute<GetAccessTokenRequest>();
+            var request = InstantiateClassGenerator.Execute<GetAccessTokenRequest>(operation);
             var marshaller = new GetAccessTokenRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4977,7 +5015,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetAccessToken");
 
-            var request = InstantiateClassGenerator.Execute<GetAccessTokenRequest>();
+            var request = InstantiateClassGenerator.Execute<GetAccessTokenRequest>(operation);
             var marshaller = new GetAccessTokenRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5009,7 +5047,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetAccessToken");
 
-            var request = InstantiateClassGenerator.Execute<GetAccessTokenRequest>();
+            var request = InstantiateClassGenerator.Execute<GetAccessTokenRequest>(operation);
             var marshaller = new GetAccessTokenRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5039,7 +5077,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("LicenseManager")]
         public void GetGrantMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<GetGrantRequest>();
+            var operation = service_model.FindOperation("GetGrant");
+
+            var request = InstantiateClassGenerator.Execute<GetGrantRequest>(operation);
             var marshaller = new GetGrantRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -5053,7 +5093,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetGrant").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = GetGrantResponseUnmarshaller.Instance.Unmarshall(context) as GetGrantResponse;
@@ -5068,7 +5108,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetGrant");
 
-            var request = InstantiateClassGenerator.Execute<GetGrantRequest>();
+            var request = InstantiateClassGenerator.Execute<GetGrantRequest>(operation);
             var marshaller = new GetGrantRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5100,7 +5140,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetGrant");
 
-            var request = InstantiateClassGenerator.Execute<GetGrantRequest>();
+            var request = InstantiateClassGenerator.Execute<GetGrantRequest>(operation);
             var marshaller = new GetGrantRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5132,7 +5172,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetGrant");
 
-            var request = InstantiateClassGenerator.Execute<GetGrantRequest>();
+            var request = InstantiateClassGenerator.Execute<GetGrantRequest>(operation);
             var marshaller = new GetGrantRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5164,7 +5204,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetGrant");
 
-            var request = InstantiateClassGenerator.Execute<GetGrantRequest>();
+            var request = InstantiateClassGenerator.Execute<GetGrantRequest>(operation);
             var marshaller = new GetGrantRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5196,7 +5236,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetGrant");
 
-            var request = InstantiateClassGenerator.Execute<GetGrantRequest>();
+            var request = InstantiateClassGenerator.Execute<GetGrantRequest>(operation);
             var marshaller = new GetGrantRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5228,7 +5268,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetGrant");
 
-            var request = InstantiateClassGenerator.Execute<GetGrantRequest>();
+            var request = InstantiateClassGenerator.Execute<GetGrantRequest>(operation);
             var marshaller = new GetGrantRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5260,7 +5300,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetGrant");
 
-            var request = InstantiateClassGenerator.Execute<GetGrantRequest>();
+            var request = InstantiateClassGenerator.Execute<GetGrantRequest>(operation);
             var marshaller = new GetGrantRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5290,7 +5330,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("LicenseManager")]
         public void GetLicenseMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<GetLicenseRequest>();
+            var operation = service_model.FindOperation("GetLicense");
+
+            var request = InstantiateClassGenerator.Execute<GetLicenseRequest>(operation);
             var marshaller = new GetLicenseRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -5304,7 +5346,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetLicense").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = GetLicenseResponseUnmarshaller.Instance.Unmarshall(context) as GetLicenseResponse;
@@ -5319,7 +5361,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetLicense");
 
-            var request = InstantiateClassGenerator.Execute<GetLicenseRequest>();
+            var request = InstantiateClassGenerator.Execute<GetLicenseRequest>(operation);
             var marshaller = new GetLicenseRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5351,7 +5393,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetLicense");
 
-            var request = InstantiateClassGenerator.Execute<GetLicenseRequest>();
+            var request = InstantiateClassGenerator.Execute<GetLicenseRequest>(operation);
             var marshaller = new GetLicenseRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5383,7 +5425,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetLicense");
 
-            var request = InstantiateClassGenerator.Execute<GetLicenseRequest>();
+            var request = InstantiateClassGenerator.Execute<GetLicenseRequest>(operation);
             var marshaller = new GetLicenseRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5415,7 +5457,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetLicense");
 
-            var request = InstantiateClassGenerator.Execute<GetLicenseRequest>();
+            var request = InstantiateClassGenerator.Execute<GetLicenseRequest>(operation);
             var marshaller = new GetLicenseRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5447,7 +5489,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetLicense");
 
-            var request = InstantiateClassGenerator.Execute<GetLicenseRequest>();
+            var request = InstantiateClassGenerator.Execute<GetLicenseRequest>(operation);
             var marshaller = new GetLicenseRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5479,7 +5521,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetLicense");
 
-            var request = InstantiateClassGenerator.Execute<GetLicenseRequest>();
+            var request = InstantiateClassGenerator.Execute<GetLicenseRequest>(operation);
             var marshaller = new GetLicenseRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5509,7 +5551,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("LicenseManager")]
         public void GetLicenseConfigurationMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<GetLicenseConfigurationRequest>();
+            var operation = service_model.FindOperation("GetLicenseConfiguration");
+
+            var request = InstantiateClassGenerator.Execute<GetLicenseConfigurationRequest>(operation);
             var marshaller = new GetLicenseConfigurationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -5523,7 +5567,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetLicenseConfiguration").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = GetLicenseConfigurationResponseUnmarshaller.Instance.Unmarshall(context) as GetLicenseConfigurationResponse;
@@ -5538,7 +5582,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetLicenseConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<GetLicenseConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetLicenseConfigurationRequest>(operation);
             var marshaller = new GetLicenseConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5570,7 +5614,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetLicenseConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<GetLicenseConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetLicenseConfigurationRequest>(operation);
             var marshaller = new GetLicenseConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5602,7 +5646,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetLicenseConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<GetLicenseConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetLicenseConfigurationRequest>(operation);
             var marshaller = new GetLicenseConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5634,7 +5678,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetLicenseConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<GetLicenseConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetLicenseConfigurationRequest>(operation);
             var marshaller = new GetLicenseConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5666,7 +5710,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetLicenseConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<GetLicenseConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetLicenseConfigurationRequest>(operation);
             var marshaller = new GetLicenseConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5696,7 +5740,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("LicenseManager")]
         public void GetLicenseConversionTaskMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<GetLicenseConversionTaskRequest>();
+            var operation = service_model.FindOperation("GetLicenseConversionTask");
+
+            var request = InstantiateClassGenerator.Execute<GetLicenseConversionTaskRequest>(operation);
             var marshaller = new GetLicenseConversionTaskRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -5710,7 +5756,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetLicenseConversionTask").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = GetLicenseConversionTaskResponseUnmarshaller.Instance.Unmarshall(context) as GetLicenseConversionTaskResponse;
@@ -5725,7 +5771,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetLicenseConversionTask");
 
-            var request = InstantiateClassGenerator.Execute<GetLicenseConversionTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<GetLicenseConversionTaskRequest>(operation);
             var marshaller = new GetLicenseConversionTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5757,7 +5803,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetLicenseConversionTask");
 
-            var request = InstantiateClassGenerator.Execute<GetLicenseConversionTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<GetLicenseConversionTaskRequest>(operation);
             var marshaller = new GetLicenseConversionTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5789,7 +5835,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetLicenseConversionTask");
 
-            var request = InstantiateClassGenerator.Execute<GetLicenseConversionTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<GetLicenseConversionTaskRequest>(operation);
             var marshaller = new GetLicenseConversionTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5821,7 +5867,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetLicenseConversionTask");
 
-            var request = InstantiateClassGenerator.Execute<GetLicenseConversionTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<GetLicenseConversionTaskRequest>(operation);
             var marshaller = new GetLicenseConversionTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5853,7 +5899,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetLicenseConversionTask");
 
-            var request = InstantiateClassGenerator.Execute<GetLicenseConversionTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<GetLicenseConversionTaskRequest>(operation);
             var marshaller = new GetLicenseConversionTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5883,7 +5929,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("LicenseManager")]
         public void GetLicenseManagerReportGeneratorMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<GetLicenseManagerReportGeneratorRequest>();
+            var operation = service_model.FindOperation("GetLicenseManagerReportGenerator");
+
+            var request = InstantiateClassGenerator.Execute<GetLicenseManagerReportGeneratorRequest>(operation);
             var marshaller = new GetLicenseManagerReportGeneratorRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -5897,7 +5945,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetLicenseManagerReportGenerator").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = GetLicenseManagerReportGeneratorResponseUnmarshaller.Instance.Unmarshall(context) as GetLicenseManagerReportGeneratorResponse;
@@ -5912,7 +5960,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetLicenseManagerReportGenerator");
 
-            var request = InstantiateClassGenerator.Execute<GetLicenseManagerReportGeneratorRequest>();
+            var request = InstantiateClassGenerator.Execute<GetLicenseManagerReportGeneratorRequest>(operation);
             var marshaller = new GetLicenseManagerReportGeneratorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5944,7 +5992,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetLicenseManagerReportGenerator");
 
-            var request = InstantiateClassGenerator.Execute<GetLicenseManagerReportGeneratorRequest>();
+            var request = InstantiateClassGenerator.Execute<GetLicenseManagerReportGeneratorRequest>(operation);
             var marshaller = new GetLicenseManagerReportGeneratorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5976,7 +6024,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetLicenseManagerReportGenerator");
 
-            var request = InstantiateClassGenerator.Execute<GetLicenseManagerReportGeneratorRequest>();
+            var request = InstantiateClassGenerator.Execute<GetLicenseManagerReportGeneratorRequest>(operation);
             var marshaller = new GetLicenseManagerReportGeneratorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6008,7 +6056,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetLicenseManagerReportGenerator");
 
-            var request = InstantiateClassGenerator.Execute<GetLicenseManagerReportGeneratorRequest>();
+            var request = InstantiateClassGenerator.Execute<GetLicenseManagerReportGeneratorRequest>(operation);
             var marshaller = new GetLicenseManagerReportGeneratorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6040,7 +6088,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetLicenseManagerReportGenerator");
 
-            var request = InstantiateClassGenerator.Execute<GetLicenseManagerReportGeneratorRequest>();
+            var request = InstantiateClassGenerator.Execute<GetLicenseManagerReportGeneratorRequest>(operation);
             var marshaller = new GetLicenseManagerReportGeneratorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6072,7 +6120,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetLicenseManagerReportGenerator");
 
-            var request = InstantiateClassGenerator.Execute<GetLicenseManagerReportGeneratorRequest>();
+            var request = InstantiateClassGenerator.Execute<GetLicenseManagerReportGeneratorRequest>(operation);
             var marshaller = new GetLicenseManagerReportGeneratorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6104,7 +6152,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetLicenseManagerReportGenerator");
 
-            var request = InstantiateClassGenerator.Execute<GetLicenseManagerReportGeneratorRequest>();
+            var request = InstantiateClassGenerator.Execute<GetLicenseManagerReportGeneratorRequest>(operation);
             var marshaller = new GetLicenseManagerReportGeneratorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6136,7 +6184,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetLicenseManagerReportGenerator");
 
-            var request = InstantiateClassGenerator.Execute<GetLicenseManagerReportGeneratorRequest>();
+            var request = InstantiateClassGenerator.Execute<GetLicenseManagerReportGeneratorRequest>(operation);
             var marshaller = new GetLicenseManagerReportGeneratorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6166,7 +6214,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("LicenseManager")]
         public void GetLicenseUsageMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<GetLicenseUsageRequest>();
+            var operation = service_model.FindOperation("GetLicenseUsage");
+
+            var request = InstantiateClassGenerator.Execute<GetLicenseUsageRequest>(operation);
             var marshaller = new GetLicenseUsageRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -6180,7 +6230,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetLicenseUsage").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = GetLicenseUsageResponseUnmarshaller.Instance.Unmarshall(context) as GetLicenseUsageResponse;
@@ -6195,7 +6245,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetLicenseUsage");
 
-            var request = InstantiateClassGenerator.Execute<GetLicenseUsageRequest>();
+            var request = InstantiateClassGenerator.Execute<GetLicenseUsageRequest>(operation);
             var marshaller = new GetLicenseUsageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6227,7 +6277,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetLicenseUsage");
 
-            var request = InstantiateClassGenerator.Execute<GetLicenseUsageRequest>();
+            var request = InstantiateClassGenerator.Execute<GetLicenseUsageRequest>(operation);
             var marshaller = new GetLicenseUsageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6259,7 +6309,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetLicenseUsage");
 
-            var request = InstantiateClassGenerator.Execute<GetLicenseUsageRequest>();
+            var request = InstantiateClassGenerator.Execute<GetLicenseUsageRequest>(operation);
             var marshaller = new GetLicenseUsageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6291,7 +6341,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetLicenseUsage");
 
-            var request = InstantiateClassGenerator.Execute<GetLicenseUsageRequest>();
+            var request = InstantiateClassGenerator.Execute<GetLicenseUsageRequest>(operation);
             var marshaller = new GetLicenseUsageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6323,7 +6373,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetLicenseUsage");
 
-            var request = InstantiateClassGenerator.Execute<GetLicenseUsageRequest>();
+            var request = InstantiateClassGenerator.Execute<GetLicenseUsageRequest>(operation);
             var marshaller = new GetLicenseUsageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6355,7 +6405,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetLicenseUsage");
 
-            var request = InstantiateClassGenerator.Execute<GetLicenseUsageRequest>();
+            var request = InstantiateClassGenerator.Execute<GetLicenseUsageRequest>(operation);
             var marshaller = new GetLicenseUsageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6385,7 +6435,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("LicenseManager")]
         public void GetServiceSettingsMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<GetServiceSettingsRequest>();
+            var operation = service_model.FindOperation("GetServiceSettings");
+
+            var request = InstantiateClassGenerator.Execute<GetServiceSettingsRequest>(operation);
             var marshaller = new GetServiceSettingsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -6399,7 +6451,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetServiceSettings").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = GetServiceSettingsResponseUnmarshaller.Instance.Unmarshall(context) as GetServiceSettingsResponse;
@@ -6414,7 +6466,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetServiceSettings");
 
-            var request = InstantiateClassGenerator.Execute<GetServiceSettingsRequest>();
+            var request = InstantiateClassGenerator.Execute<GetServiceSettingsRequest>(operation);
             var marshaller = new GetServiceSettingsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6446,7 +6498,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetServiceSettings");
 
-            var request = InstantiateClassGenerator.Execute<GetServiceSettingsRequest>();
+            var request = InstantiateClassGenerator.Execute<GetServiceSettingsRequest>(operation);
             var marshaller = new GetServiceSettingsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6478,7 +6530,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetServiceSettings");
 
-            var request = InstantiateClassGenerator.Execute<GetServiceSettingsRequest>();
+            var request = InstantiateClassGenerator.Execute<GetServiceSettingsRequest>(operation);
             var marshaller = new GetServiceSettingsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6510,7 +6562,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetServiceSettings");
 
-            var request = InstantiateClassGenerator.Execute<GetServiceSettingsRequest>();
+            var request = InstantiateClassGenerator.Execute<GetServiceSettingsRequest>(operation);
             var marshaller = new GetServiceSettingsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6540,7 +6592,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("LicenseManager")]
         public void ListAssociationsForLicenseConfigurationMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ListAssociationsForLicenseConfigurationRequest>();
+            var operation = service_model.FindOperation("ListAssociationsForLicenseConfiguration");
+
+            var request = InstantiateClassGenerator.Execute<ListAssociationsForLicenseConfigurationRequest>(operation);
             var marshaller = new ListAssociationsForLicenseConfigurationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -6554,7 +6608,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListAssociationsForLicenseConfiguration").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ListAssociationsForLicenseConfigurationResponseUnmarshaller.Instance.Unmarshall(context) as ListAssociationsForLicenseConfigurationResponse;
@@ -6569,7 +6623,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListAssociationsForLicenseConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<ListAssociationsForLicenseConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<ListAssociationsForLicenseConfigurationRequest>(operation);
             var marshaller = new ListAssociationsForLicenseConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6601,7 +6655,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListAssociationsForLicenseConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<ListAssociationsForLicenseConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<ListAssociationsForLicenseConfigurationRequest>(operation);
             var marshaller = new ListAssociationsForLicenseConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6633,7 +6687,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListAssociationsForLicenseConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<ListAssociationsForLicenseConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<ListAssociationsForLicenseConfigurationRequest>(operation);
             var marshaller = new ListAssociationsForLicenseConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6665,7 +6719,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListAssociationsForLicenseConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<ListAssociationsForLicenseConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<ListAssociationsForLicenseConfigurationRequest>(operation);
             var marshaller = new ListAssociationsForLicenseConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6697,7 +6751,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListAssociationsForLicenseConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<ListAssociationsForLicenseConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<ListAssociationsForLicenseConfigurationRequest>(operation);
             var marshaller = new ListAssociationsForLicenseConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6729,7 +6783,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListAssociationsForLicenseConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<ListAssociationsForLicenseConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<ListAssociationsForLicenseConfigurationRequest>(operation);
             var marshaller = new ListAssociationsForLicenseConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6759,7 +6813,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("LicenseManager")]
         public void ListDistributedGrantsMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ListDistributedGrantsRequest>();
+            var operation = service_model.FindOperation("ListDistributedGrants");
+
+            var request = InstantiateClassGenerator.Execute<ListDistributedGrantsRequest>(operation);
             var marshaller = new ListDistributedGrantsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -6773,7 +6829,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListDistributedGrants").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ListDistributedGrantsResponseUnmarshaller.Instance.Unmarshall(context) as ListDistributedGrantsResponse;
@@ -6788,7 +6844,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListDistributedGrants");
 
-            var request = InstantiateClassGenerator.Execute<ListDistributedGrantsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListDistributedGrantsRequest>(operation);
             var marshaller = new ListDistributedGrantsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6820,7 +6876,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListDistributedGrants");
 
-            var request = InstantiateClassGenerator.Execute<ListDistributedGrantsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListDistributedGrantsRequest>(operation);
             var marshaller = new ListDistributedGrantsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6852,7 +6908,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListDistributedGrants");
 
-            var request = InstantiateClassGenerator.Execute<ListDistributedGrantsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListDistributedGrantsRequest>(operation);
             var marshaller = new ListDistributedGrantsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6884,7 +6940,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListDistributedGrants");
 
-            var request = InstantiateClassGenerator.Execute<ListDistributedGrantsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListDistributedGrantsRequest>(operation);
             var marshaller = new ListDistributedGrantsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6916,7 +6972,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListDistributedGrants");
 
-            var request = InstantiateClassGenerator.Execute<ListDistributedGrantsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListDistributedGrantsRequest>(operation);
             var marshaller = new ListDistributedGrantsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6948,7 +7004,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListDistributedGrants");
 
-            var request = InstantiateClassGenerator.Execute<ListDistributedGrantsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListDistributedGrantsRequest>(operation);
             var marshaller = new ListDistributedGrantsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6980,7 +7036,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListDistributedGrants");
 
-            var request = InstantiateClassGenerator.Execute<ListDistributedGrantsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListDistributedGrantsRequest>(operation);
             var marshaller = new ListDistributedGrantsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -7010,7 +7066,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("LicenseManager")]
         public void ListFailuresForLicenseConfigurationOperationsMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ListFailuresForLicenseConfigurationOperationsRequest>();
+            var operation = service_model.FindOperation("ListFailuresForLicenseConfigurationOperations");
+
+            var request = InstantiateClassGenerator.Execute<ListFailuresForLicenseConfigurationOperationsRequest>(operation);
             var marshaller = new ListFailuresForLicenseConfigurationOperationsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -7024,7 +7082,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListFailuresForLicenseConfigurationOperations").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ListFailuresForLicenseConfigurationOperationsResponseUnmarshaller.Instance.Unmarshall(context) as ListFailuresForLicenseConfigurationOperationsResponse;
@@ -7039,7 +7097,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListFailuresForLicenseConfigurationOperations");
 
-            var request = InstantiateClassGenerator.Execute<ListFailuresForLicenseConfigurationOperationsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListFailuresForLicenseConfigurationOperationsRequest>(operation);
             var marshaller = new ListFailuresForLicenseConfigurationOperationsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -7071,7 +7129,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListFailuresForLicenseConfigurationOperations");
 
-            var request = InstantiateClassGenerator.Execute<ListFailuresForLicenseConfigurationOperationsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListFailuresForLicenseConfigurationOperationsRequest>(operation);
             var marshaller = new ListFailuresForLicenseConfigurationOperationsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -7103,7 +7161,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListFailuresForLicenseConfigurationOperations");
 
-            var request = InstantiateClassGenerator.Execute<ListFailuresForLicenseConfigurationOperationsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListFailuresForLicenseConfigurationOperationsRequest>(operation);
             var marshaller = new ListFailuresForLicenseConfigurationOperationsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -7135,7 +7193,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListFailuresForLicenseConfigurationOperations");
 
-            var request = InstantiateClassGenerator.Execute<ListFailuresForLicenseConfigurationOperationsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListFailuresForLicenseConfigurationOperationsRequest>(operation);
             var marshaller = new ListFailuresForLicenseConfigurationOperationsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -7167,7 +7225,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListFailuresForLicenseConfigurationOperations");
 
-            var request = InstantiateClassGenerator.Execute<ListFailuresForLicenseConfigurationOperationsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListFailuresForLicenseConfigurationOperationsRequest>(operation);
             var marshaller = new ListFailuresForLicenseConfigurationOperationsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -7197,7 +7255,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("LicenseManager")]
         public void ListLicenseConfigurationsMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ListLicenseConfigurationsRequest>();
+            var operation = service_model.FindOperation("ListLicenseConfigurations");
+
+            var request = InstantiateClassGenerator.Execute<ListLicenseConfigurationsRequest>(operation);
             var marshaller = new ListLicenseConfigurationsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -7211,7 +7271,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListLicenseConfigurations").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ListLicenseConfigurationsResponseUnmarshaller.Instance.Unmarshall(context) as ListLicenseConfigurationsResponse;
@@ -7226,7 +7286,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListLicenseConfigurations");
 
-            var request = InstantiateClassGenerator.Execute<ListLicenseConfigurationsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListLicenseConfigurationsRequest>(operation);
             var marshaller = new ListLicenseConfigurationsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -7258,7 +7318,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListLicenseConfigurations");
 
-            var request = InstantiateClassGenerator.Execute<ListLicenseConfigurationsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListLicenseConfigurationsRequest>(operation);
             var marshaller = new ListLicenseConfigurationsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -7290,7 +7350,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListLicenseConfigurations");
 
-            var request = InstantiateClassGenerator.Execute<ListLicenseConfigurationsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListLicenseConfigurationsRequest>(operation);
             var marshaller = new ListLicenseConfigurationsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -7322,7 +7382,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListLicenseConfigurations");
 
-            var request = InstantiateClassGenerator.Execute<ListLicenseConfigurationsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListLicenseConfigurationsRequest>(operation);
             var marshaller = new ListLicenseConfigurationsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -7354,7 +7414,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListLicenseConfigurations");
 
-            var request = InstantiateClassGenerator.Execute<ListLicenseConfigurationsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListLicenseConfigurationsRequest>(operation);
             var marshaller = new ListLicenseConfigurationsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -7386,7 +7446,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListLicenseConfigurations");
 
-            var request = InstantiateClassGenerator.Execute<ListLicenseConfigurationsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListLicenseConfigurationsRequest>(operation);
             var marshaller = new ListLicenseConfigurationsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -7416,7 +7476,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("LicenseManager")]
         public void ListLicenseConversionTasksMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ListLicenseConversionTasksRequest>();
+            var operation = service_model.FindOperation("ListLicenseConversionTasks");
+
+            var request = InstantiateClassGenerator.Execute<ListLicenseConversionTasksRequest>(operation);
             var marshaller = new ListLicenseConversionTasksRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -7430,7 +7492,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListLicenseConversionTasks").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ListLicenseConversionTasksResponseUnmarshaller.Instance.Unmarshall(context) as ListLicenseConversionTasksResponse;
@@ -7445,7 +7507,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListLicenseConversionTasks");
 
-            var request = InstantiateClassGenerator.Execute<ListLicenseConversionTasksRequest>();
+            var request = InstantiateClassGenerator.Execute<ListLicenseConversionTasksRequest>(operation);
             var marshaller = new ListLicenseConversionTasksRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -7477,7 +7539,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListLicenseConversionTasks");
 
-            var request = InstantiateClassGenerator.Execute<ListLicenseConversionTasksRequest>();
+            var request = InstantiateClassGenerator.Execute<ListLicenseConversionTasksRequest>(operation);
             var marshaller = new ListLicenseConversionTasksRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -7509,7 +7571,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListLicenseConversionTasks");
 
-            var request = InstantiateClassGenerator.Execute<ListLicenseConversionTasksRequest>();
+            var request = InstantiateClassGenerator.Execute<ListLicenseConversionTasksRequest>(operation);
             var marshaller = new ListLicenseConversionTasksRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -7541,7 +7603,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListLicenseConversionTasks");
 
-            var request = InstantiateClassGenerator.Execute<ListLicenseConversionTasksRequest>();
+            var request = InstantiateClassGenerator.Execute<ListLicenseConversionTasksRequest>(operation);
             var marshaller = new ListLicenseConversionTasksRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -7573,7 +7635,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListLicenseConversionTasks");
 
-            var request = InstantiateClassGenerator.Execute<ListLicenseConversionTasksRequest>();
+            var request = InstantiateClassGenerator.Execute<ListLicenseConversionTasksRequest>(operation);
             var marshaller = new ListLicenseConversionTasksRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -7603,7 +7665,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("LicenseManager")]
         public void ListLicenseManagerReportGeneratorsMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ListLicenseManagerReportGeneratorsRequest>();
+            var operation = service_model.FindOperation("ListLicenseManagerReportGenerators");
+
+            var request = InstantiateClassGenerator.Execute<ListLicenseManagerReportGeneratorsRequest>(operation);
             var marshaller = new ListLicenseManagerReportGeneratorsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -7617,7 +7681,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListLicenseManagerReportGenerators").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ListLicenseManagerReportGeneratorsResponseUnmarshaller.Instance.Unmarshall(context) as ListLicenseManagerReportGeneratorsResponse;
@@ -7632,7 +7696,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListLicenseManagerReportGenerators");
 
-            var request = InstantiateClassGenerator.Execute<ListLicenseManagerReportGeneratorsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListLicenseManagerReportGeneratorsRequest>(operation);
             var marshaller = new ListLicenseManagerReportGeneratorsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -7664,7 +7728,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListLicenseManagerReportGenerators");
 
-            var request = InstantiateClassGenerator.Execute<ListLicenseManagerReportGeneratorsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListLicenseManagerReportGeneratorsRequest>(operation);
             var marshaller = new ListLicenseManagerReportGeneratorsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -7696,7 +7760,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListLicenseManagerReportGenerators");
 
-            var request = InstantiateClassGenerator.Execute<ListLicenseManagerReportGeneratorsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListLicenseManagerReportGeneratorsRequest>(operation);
             var marshaller = new ListLicenseManagerReportGeneratorsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -7728,7 +7792,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListLicenseManagerReportGenerators");
 
-            var request = InstantiateClassGenerator.Execute<ListLicenseManagerReportGeneratorsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListLicenseManagerReportGeneratorsRequest>(operation);
             var marshaller = new ListLicenseManagerReportGeneratorsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -7760,7 +7824,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListLicenseManagerReportGenerators");
 
-            var request = InstantiateClassGenerator.Execute<ListLicenseManagerReportGeneratorsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListLicenseManagerReportGeneratorsRequest>(operation);
             var marshaller = new ListLicenseManagerReportGeneratorsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -7792,7 +7856,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListLicenseManagerReportGenerators");
 
-            var request = InstantiateClassGenerator.Execute<ListLicenseManagerReportGeneratorsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListLicenseManagerReportGeneratorsRequest>(operation);
             var marshaller = new ListLicenseManagerReportGeneratorsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -7824,7 +7888,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListLicenseManagerReportGenerators");
 
-            var request = InstantiateClassGenerator.Execute<ListLicenseManagerReportGeneratorsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListLicenseManagerReportGeneratorsRequest>(operation);
             var marshaller = new ListLicenseManagerReportGeneratorsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -7856,7 +7920,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListLicenseManagerReportGenerators");
 
-            var request = InstantiateClassGenerator.Execute<ListLicenseManagerReportGeneratorsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListLicenseManagerReportGeneratorsRequest>(operation);
             var marshaller = new ListLicenseManagerReportGeneratorsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -7886,7 +7950,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("LicenseManager")]
         public void ListLicensesMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ListLicensesRequest>();
+            var operation = service_model.FindOperation("ListLicenses");
+
+            var request = InstantiateClassGenerator.Execute<ListLicensesRequest>(operation);
             var marshaller = new ListLicensesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -7900,7 +7966,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListLicenses").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ListLicensesResponseUnmarshaller.Instance.Unmarshall(context) as ListLicensesResponse;
@@ -7915,7 +7981,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListLicenses");
 
-            var request = InstantiateClassGenerator.Execute<ListLicensesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListLicensesRequest>(operation);
             var marshaller = new ListLicensesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -7947,7 +8013,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListLicenses");
 
-            var request = InstantiateClassGenerator.Execute<ListLicensesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListLicensesRequest>(operation);
             var marshaller = new ListLicensesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -7979,7 +8045,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListLicenses");
 
-            var request = InstantiateClassGenerator.Execute<ListLicensesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListLicensesRequest>(operation);
             var marshaller = new ListLicensesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -8011,7 +8077,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListLicenses");
 
-            var request = InstantiateClassGenerator.Execute<ListLicensesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListLicensesRequest>(operation);
             var marshaller = new ListLicensesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -8043,7 +8109,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListLicenses");
 
-            var request = InstantiateClassGenerator.Execute<ListLicensesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListLicensesRequest>(operation);
             var marshaller = new ListLicensesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -8075,7 +8141,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListLicenses");
 
-            var request = InstantiateClassGenerator.Execute<ListLicensesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListLicensesRequest>(operation);
             var marshaller = new ListLicensesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -8105,7 +8171,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("LicenseManager")]
         public void ListLicenseSpecificationsForResourceMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ListLicenseSpecificationsForResourceRequest>();
+            var operation = service_model.FindOperation("ListLicenseSpecificationsForResource");
+
+            var request = InstantiateClassGenerator.Execute<ListLicenseSpecificationsForResourceRequest>(operation);
             var marshaller = new ListLicenseSpecificationsForResourceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -8119,7 +8187,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListLicenseSpecificationsForResource").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ListLicenseSpecificationsForResourceResponseUnmarshaller.Instance.Unmarshall(context) as ListLicenseSpecificationsForResourceResponse;
@@ -8134,7 +8202,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListLicenseSpecificationsForResource");
 
-            var request = InstantiateClassGenerator.Execute<ListLicenseSpecificationsForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<ListLicenseSpecificationsForResourceRequest>(operation);
             var marshaller = new ListLicenseSpecificationsForResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -8166,7 +8234,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListLicenseSpecificationsForResource");
 
-            var request = InstantiateClassGenerator.Execute<ListLicenseSpecificationsForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<ListLicenseSpecificationsForResourceRequest>(operation);
             var marshaller = new ListLicenseSpecificationsForResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -8198,7 +8266,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListLicenseSpecificationsForResource");
 
-            var request = InstantiateClassGenerator.Execute<ListLicenseSpecificationsForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<ListLicenseSpecificationsForResourceRequest>(operation);
             var marshaller = new ListLicenseSpecificationsForResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -8230,7 +8298,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListLicenseSpecificationsForResource");
 
-            var request = InstantiateClassGenerator.Execute<ListLicenseSpecificationsForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<ListLicenseSpecificationsForResourceRequest>(operation);
             var marshaller = new ListLicenseSpecificationsForResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -8262,7 +8330,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListLicenseSpecificationsForResource");
 
-            var request = InstantiateClassGenerator.Execute<ListLicenseSpecificationsForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<ListLicenseSpecificationsForResourceRequest>(operation);
             var marshaller = new ListLicenseSpecificationsForResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -8292,7 +8360,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("LicenseManager")]
         public void ListLicenseVersionsMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ListLicenseVersionsRequest>();
+            var operation = service_model.FindOperation("ListLicenseVersions");
+
+            var request = InstantiateClassGenerator.Execute<ListLicenseVersionsRequest>(operation);
             var marshaller = new ListLicenseVersionsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -8306,7 +8376,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListLicenseVersions").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ListLicenseVersionsResponseUnmarshaller.Instance.Unmarshall(context) as ListLicenseVersionsResponse;
@@ -8321,7 +8391,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListLicenseVersions");
 
-            var request = InstantiateClassGenerator.Execute<ListLicenseVersionsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListLicenseVersionsRequest>(operation);
             var marshaller = new ListLicenseVersionsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -8353,7 +8423,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListLicenseVersions");
 
-            var request = InstantiateClassGenerator.Execute<ListLicenseVersionsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListLicenseVersionsRequest>(operation);
             var marshaller = new ListLicenseVersionsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -8385,7 +8455,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListLicenseVersions");
 
-            var request = InstantiateClassGenerator.Execute<ListLicenseVersionsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListLicenseVersionsRequest>(operation);
             var marshaller = new ListLicenseVersionsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -8417,7 +8487,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListLicenseVersions");
 
-            var request = InstantiateClassGenerator.Execute<ListLicenseVersionsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListLicenseVersionsRequest>(operation);
             var marshaller = new ListLicenseVersionsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -8449,7 +8519,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListLicenseVersions");
 
-            var request = InstantiateClassGenerator.Execute<ListLicenseVersionsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListLicenseVersionsRequest>(operation);
             var marshaller = new ListLicenseVersionsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -8479,7 +8549,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("LicenseManager")]
         public void ListReceivedGrantsMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ListReceivedGrantsRequest>();
+            var operation = service_model.FindOperation("ListReceivedGrants");
+
+            var request = InstantiateClassGenerator.Execute<ListReceivedGrantsRequest>(operation);
             var marshaller = new ListReceivedGrantsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -8493,7 +8565,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListReceivedGrants").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ListReceivedGrantsResponseUnmarshaller.Instance.Unmarshall(context) as ListReceivedGrantsResponse;
@@ -8508,7 +8580,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListReceivedGrants");
 
-            var request = InstantiateClassGenerator.Execute<ListReceivedGrantsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListReceivedGrantsRequest>(operation);
             var marshaller = new ListReceivedGrantsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -8540,7 +8612,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListReceivedGrants");
 
-            var request = InstantiateClassGenerator.Execute<ListReceivedGrantsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListReceivedGrantsRequest>(operation);
             var marshaller = new ListReceivedGrantsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -8572,7 +8644,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListReceivedGrants");
 
-            var request = InstantiateClassGenerator.Execute<ListReceivedGrantsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListReceivedGrantsRequest>(operation);
             var marshaller = new ListReceivedGrantsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -8604,7 +8676,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListReceivedGrants");
 
-            var request = InstantiateClassGenerator.Execute<ListReceivedGrantsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListReceivedGrantsRequest>(operation);
             var marshaller = new ListReceivedGrantsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -8636,7 +8708,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListReceivedGrants");
 
-            var request = InstantiateClassGenerator.Execute<ListReceivedGrantsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListReceivedGrantsRequest>(operation);
             var marshaller = new ListReceivedGrantsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -8668,7 +8740,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListReceivedGrants");
 
-            var request = InstantiateClassGenerator.Execute<ListReceivedGrantsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListReceivedGrantsRequest>(operation);
             var marshaller = new ListReceivedGrantsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -8700,7 +8772,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListReceivedGrants");
 
-            var request = InstantiateClassGenerator.Execute<ListReceivedGrantsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListReceivedGrantsRequest>(operation);
             var marshaller = new ListReceivedGrantsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -8730,7 +8802,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("LicenseManager")]
         public void ListReceivedGrantsForOrganizationMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ListReceivedGrantsForOrganizationRequest>();
+            var operation = service_model.FindOperation("ListReceivedGrantsForOrganization");
+
+            var request = InstantiateClassGenerator.Execute<ListReceivedGrantsForOrganizationRequest>(operation);
             var marshaller = new ListReceivedGrantsForOrganizationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -8744,7 +8818,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListReceivedGrantsForOrganization").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ListReceivedGrantsForOrganizationResponseUnmarshaller.Instance.Unmarshall(context) as ListReceivedGrantsForOrganizationResponse;
@@ -8759,7 +8833,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListReceivedGrantsForOrganization");
 
-            var request = InstantiateClassGenerator.Execute<ListReceivedGrantsForOrganizationRequest>();
+            var request = InstantiateClassGenerator.Execute<ListReceivedGrantsForOrganizationRequest>(operation);
             var marshaller = new ListReceivedGrantsForOrganizationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -8791,7 +8865,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListReceivedGrantsForOrganization");
 
-            var request = InstantiateClassGenerator.Execute<ListReceivedGrantsForOrganizationRequest>();
+            var request = InstantiateClassGenerator.Execute<ListReceivedGrantsForOrganizationRequest>(operation);
             var marshaller = new ListReceivedGrantsForOrganizationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -8823,7 +8897,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListReceivedGrantsForOrganization");
 
-            var request = InstantiateClassGenerator.Execute<ListReceivedGrantsForOrganizationRequest>();
+            var request = InstantiateClassGenerator.Execute<ListReceivedGrantsForOrganizationRequest>(operation);
             var marshaller = new ListReceivedGrantsForOrganizationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -8855,7 +8929,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListReceivedGrantsForOrganization");
 
-            var request = InstantiateClassGenerator.Execute<ListReceivedGrantsForOrganizationRequest>();
+            var request = InstantiateClassGenerator.Execute<ListReceivedGrantsForOrganizationRequest>(operation);
             var marshaller = new ListReceivedGrantsForOrganizationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -8887,7 +8961,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListReceivedGrantsForOrganization");
 
-            var request = InstantiateClassGenerator.Execute<ListReceivedGrantsForOrganizationRequest>();
+            var request = InstantiateClassGenerator.Execute<ListReceivedGrantsForOrganizationRequest>(operation);
             var marshaller = new ListReceivedGrantsForOrganizationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -8919,7 +8993,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListReceivedGrantsForOrganization");
 
-            var request = InstantiateClassGenerator.Execute<ListReceivedGrantsForOrganizationRequest>();
+            var request = InstantiateClassGenerator.Execute<ListReceivedGrantsForOrganizationRequest>(operation);
             var marshaller = new ListReceivedGrantsForOrganizationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -8951,7 +9025,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListReceivedGrantsForOrganization");
 
-            var request = InstantiateClassGenerator.Execute<ListReceivedGrantsForOrganizationRequest>();
+            var request = InstantiateClassGenerator.Execute<ListReceivedGrantsForOrganizationRequest>(operation);
             var marshaller = new ListReceivedGrantsForOrganizationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -8981,7 +9055,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("LicenseManager")]
         public void ListReceivedLicensesMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ListReceivedLicensesRequest>();
+            var operation = service_model.FindOperation("ListReceivedLicenses");
+
+            var request = InstantiateClassGenerator.Execute<ListReceivedLicensesRequest>(operation);
             var marshaller = new ListReceivedLicensesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -8995,7 +9071,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListReceivedLicenses").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ListReceivedLicensesResponseUnmarshaller.Instance.Unmarshall(context) as ListReceivedLicensesResponse;
@@ -9010,7 +9086,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListReceivedLicenses");
 
-            var request = InstantiateClassGenerator.Execute<ListReceivedLicensesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListReceivedLicensesRequest>(operation);
             var marshaller = new ListReceivedLicensesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -9042,7 +9118,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListReceivedLicenses");
 
-            var request = InstantiateClassGenerator.Execute<ListReceivedLicensesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListReceivedLicensesRequest>(operation);
             var marshaller = new ListReceivedLicensesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -9074,7 +9150,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListReceivedLicenses");
 
-            var request = InstantiateClassGenerator.Execute<ListReceivedLicensesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListReceivedLicensesRequest>(operation);
             var marshaller = new ListReceivedLicensesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -9106,7 +9182,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListReceivedLicenses");
 
-            var request = InstantiateClassGenerator.Execute<ListReceivedLicensesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListReceivedLicensesRequest>(operation);
             var marshaller = new ListReceivedLicensesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -9138,7 +9214,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListReceivedLicenses");
 
-            var request = InstantiateClassGenerator.Execute<ListReceivedLicensesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListReceivedLicensesRequest>(operation);
             var marshaller = new ListReceivedLicensesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -9170,7 +9246,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListReceivedLicenses");
 
-            var request = InstantiateClassGenerator.Execute<ListReceivedLicensesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListReceivedLicensesRequest>(operation);
             var marshaller = new ListReceivedLicensesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -9202,7 +9278,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListReceivedLicenses");
 
-            var request = InstantiateClassGenerator.Execute<ListReceivedLicensesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListReceivedLicensesRequest>(operation);
             var marshaller = new ListReceivedLicensesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -9232,7 +9308,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("LicenseManager")]
         public void ListReceivedLicensesForOrganizationMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ListReceivedLicensesForOrganizationRequest>();
+            var operation = service_model.FindOperation("ListReceivedLicensesForOrganization");
+
+            var request = InstantiateClassGenerator.Execute<ListReceivedLicensesForOrganizationRequest>(operation);
             var marshaller = new ListReceivedLicensesForOrganizationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -9246,7 +9324,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListReceivedLicensesForOrganization").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ListReceivedLicensesForOrganizationResponseUnmarshaller.Instance.Unmarshall(context) as ListReceivedLicensesForOrganizationResponse;
@@ -9261,7 +9339,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListReceivedLicensesForOrganization");
 
-            var request = InstantiateClassGenerator.Execute<ListReceivedLicensesForOrganizationRequest>();
+            var request = InstantiateClassGenerator.Execute<ListReceivedLicensesForOrganizationRequest>(operation);
             var marshaller = new ListReceivedLicensesForOrganizationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -9293,7 +9371,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListReceivedLicensesForOrganization");
 
-            var request = InstantiateClassGenerator.Execute<ListReceivedLicensesForOrganizationRequest>();
+            var request = InstantiateClassGenerator.Execute<ListReceivedLicensesForOrganizationRequest>(operation);
             var marshaller = new ListReceivedLicensesForOrganizationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -9325,7 +9403,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListReceivedLicensesForOrganization");
 
-            var request = InstantiateClassGenerator.Execute<ListReceivedLicensesForOrganizationRequest>();
+            var request = InstantiateClassGenerator.Execute<ListReceivedLicensesForOrganizationRequest>(operation);
             var marshaller = new ListReceivedLicensesForOrganizationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -9357,7 +9435,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListReceivedLicensesForOrganization");
 
-            var request = InstantiateClassGenerator.Execute<ListReceivedLicensesForOrganizationRequest>();
+            var request = InstantiateClassGenerator.Execute<ListReceivedLicensesForOrganizationRequest>(operation);
             var marshaller = new ListReceivedLicensesForOrganizationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -9389,7 +9467,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListReceivedLicensesForOrganization");
 
-            var request = InstantiateClassGenerator.Execute<ListReceivedLicensesForOrganizationRequest>();
+            var request = InstantiateClassGenerator.Execute<ListReceivedLicensesForOrganizationRequest>(operation);
             var marshaller = new ListReceivedLicensesForOrganizationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -9421,7 +9499,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListReceivedLicensesForOrganization");
 
-            var request = InstantiateClassGenerator.Execute<ListReceivedLicensesForOrganizationRequest>();
+            var request = InstantiateClassGenerator.Execute<ListReceivedLicensesForOrganizationRequest>(operation);
             var marshaller = new ListReceivedLicensesForOrganizationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -9453,7 +9531,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListReceivedLicensesForOrganization");
 
-            var request = InstantiateClassGenerator.Execute<ListReceivedLicensesForOrganizationRequest>();
+            var request = InstantiateClassGenerator.Execute<ListReceivedLicensesForOrganizationRequest>(operation);
             var marshaller = new ListReceivedLicensesForOrganizationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -9483,7 +9561,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("LicenseManager")]
         public void ListResourceInventoryMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ListResourceInventoryRequest>();
+            var operation = service_model.FindOperation("ListResourceInventory");
+
+            var request = InstantiateClassGenerator.Execute<ListResourceInventoryRequest>(operation);
             var marshaller = new ListResourceInventoryRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -9497,7 +9577,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListResourceInventory").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ListResourceInventoryResponseUnmarshaller.Instance.Unmarshall(context) as ListResourceInventoryResponse;
@@ -9512,7 +9592,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListResourceInventory");
 
-            var request = InstantiateClassGenerator.Execute<ListResourceInventoryRequest>();
+            var request = InstantiateClassGenerator.Execute<ListResourceInventoryRequest>(operation);
             var marshaller = new ListResourceInventoryRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -9544,7 +9624,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListResourceInventory");
 
-            var request = InstantiateClassGenerator.Execute<ListResourceInventoryRequest>();
+            var request = InstantiateClassGenerator.Execute<ListResourceInventoryRequest>(operation);
             var marshaller = new ListResourceInventoryRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -9576,7 +9656,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListResourceInventory");
 
-            var request = InstantiateClassGenerator.Execute<ListResourceInventoryRequest>();
+            var request = InstantiateClassGenerator.Execute<ListResourceInventoryRequest>(operation);
             var marshaller = new ListResourceInventoryRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -9608,7 +9688,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListResourceInventory");
 
-            var request = InstantiateClassGenerator.Execute<ListResourceInventoryRequest>();
+            var request = InstantiateClassGenerator.Execute<ListResourceInventoryRequest>(operation);
             var marshaller = new ListResourceInventoryRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -9640,7 +9720,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListResourceInventory");
 
-            var request = InstantiateClassGenerator.Execute<ListResourceInventoryRequest>();
+            var request = InstantiateClassGenerator.Execute<ListResourceInventoryRequest>(operation);
             var marshaller = new ListResourceInventoryRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -9672,7 +9752,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListResourceInventory");
 
-            var request = InstantiateClassGenerator.Execute<ListResourceInventoryRequest>();
+            var request = InstantiateClassGenerator.Execute<ListResourceInventoryRequest>(operation);
             var marshaller = new ListResourceInventoryRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -9704,7 +9784,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListResourceInventory");
 
-            var request = InstantiateClassGenerator.Execute<ListResourceInventoryRequest>();
+            var request = InstantiateClassGenerator.Execute<ListResourceInventoryRequest>(operation);
             var marshaller = new ListResourceInventoryRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -9734,7 +9814,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("LicenseManager")]
         public void ListTagsForResourceMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var operation = service_model.FindOperation("ListTagsForResource");
+
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>(operation);
             var marshaller = new ListTagsForResourceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -9748,7 +9830,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListTagsForResource").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ListTagsForResourceResponseUnmarshaller.Instance.Unmarshall(context) as ListTagsForResourceResponse;
@@ -9763,7 +9845,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListTagsForResource");
 
-            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>(operation);
             var marshaller = new ListTagsForResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -9795,7 +9877,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListTagsForResource");
 
-            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>(operation);
             var marshaller = new ListTagsForResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -9827,7 +9909,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListTagsForResource");
 
-            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>(operation);
             var marshaller = new ListTagsForResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -9859,7 +9941,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListTagsForResource");
 
-            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>(operation);
             var marshaller = new ListTagsForResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -9891,7 +9973,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListTagsForResource");
 
-            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>(operation);
             var marshaller = new ListTagsForResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -9921,7 +10003,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("LicenseManager")]
         public void ListTokensMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ListTokensRequest>();
+            var operation = service_model.FindOperation("ListTokens");
+
+            var request = InstantiateClassGenerator.Execute<ListTokensRequest>(operation);
             var marshaller = new ListTokensRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -9935,7 +10019,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListTokens").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ListTokensResponseUnmarshaller.Instance.Unmarshall(context) as ListTokensResponse;
@@ -9950,7 +10034,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListTokens");
 
-            var request = InstantiateClassGenerator.Execute<ListTokensRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTokensRequest>(operation);
             var marshaller = new ListTokensRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -9982,7 +10066,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListTokens");
 
-            var request = InstantiateClassGenerator.Execute<ListTokensRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTokensRequest>(operation);
             var marshaller = new ListTokensRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -10014,7 +10098,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListTokens");
 
-            var request = InstantiateClassGenerator.Execute<ListTokensRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTokensRequest>(operation);
             var marshaller = new ListTokensRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -10046,7 +10130,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListTokens");
 
-            var request = InstantiateClassGenerator.Execute<ListTokensRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTokensRequest>(operation);
             var marshaller = new ListTokensRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -10078,7 +10162,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListTokens");
 
-            var request = InstantiateClassGenerator.Execute<ListTokensRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTokensRequest>(operation);
             var marshaller = new ListTokensRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -10108,7 +10192,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("LicenseManager")]
         public void ListUsageForLicenseConfigurationMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ListUsageForLicenseConfigurationRequest>();
+            var operation = service_model.FindOperation("ListUsageForLicenseConfiguration");
+
+            var request = InstantiateClassGenerator.Execute<ListUsageForLicenseConfigurationRequest>(operation);
             var marshaller = new ListUsageForLicenseConfigurationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -10122,7 +10208,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListUsageForLicenseConfiguration").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ListUsageForLicenseConfigurationResponseUnmarshaller.Instance.Unmarshall(context) as ListUsageForLicenseConfigurationResponse;
@@ -10137,7 +10223,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListUsageForLicenseConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<ListUsageForLicenseConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<ListUsageForLicenseConfigurationRequest>(operation);
             var marshaller = new ListUsageForLicenseConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -10169,7 +10255,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListUsageForLicenseConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<ListUsageForLicenseConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<ListUsageForLicenseConfigurationRequest>(operation);
             var marshaller = new ListUsageForLicenseConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -10201,7 +10287,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListUsageForLicenseConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<ListUsageForLicenseConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<ListUsageForLicenseConfigurationRequest>(operation);
             var marshaller = new ListUsageForLicenseConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -10233,7 +10319,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListUsageForLicenseConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<ListUsageForLicenseConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<ListUsageForLicenseConfigurationRequest>(operation);
             var marshaller = new ListUsageForLicenseConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -10265,7 +10351,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListUsageForLicenseConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<ListUsageForLicenseConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<ListUsageForLicenseConfigurationRequest>(operation);
             var marshaller = new ListUsageForLicenseConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -10297,7 +10383,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListUsageForLicenseConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<ListUsageForLicenseConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<ListUsageForLicenseConfigurationRequest>(operation);
             var marshaller = new ListUsageForLicenseConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -10327,7 +10413,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("LicenseManager")]
         public void RejectGrantMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<RejectGrantRequest>();
+            var operation = service_model.FindOperation("RejectGrant");
+
+            var request = InstantiateClassGenerator.Execute<RejectGrantRequest>(operation);
             var marshaller = new RejectGrantRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -10341,7 +10429,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("RejectGrant").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = RejectGrantResponseUnmarshaller.Instance.Unmarshall(context) as RejectGrantResponse;
@@ -10356,7 +10444,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("RejectGrant");
 
-            var request = InstantiateClassGenerator.Execute<RejectGrantRequest>();
+            var request = InstantiateClassGenerator.Execute<RejectGrantRequest>(operation);
             var marshaller = new RejectGrantRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -10388,7 +10476,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("RejectGrant");
 
-            var request = InstantiateClassGenerator.Execute<RejectGrantRequest>();
+            var request = InstantiateClassGenerator.Execute<RejectGrantRequest>(operation);
             var marshaller = new RejectGrantRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -10420,7 +10508,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("RejectGrant");
 
-            var request = InstantiateClassGenerator.Execute<RejectGrantRequest>();
+            var request = InstantiateClassGenerator.Execute<RejectGrantRequest>(operation);
             var marshaller = new RejectGrantRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -10452,7 +10540,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("RejectGrant");
 
-            var request = InstantiateClassGenerator.Execute<RejectGrantRequest>();
+            var request = InstantiateClassGenerator.Execute<RejectGrantRequest>(operation);
             var marshaller = new RejectGrantRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -10484,7 +10572,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("RejectGrant");
 
-            var request = InstantiateClassGenerator.Execute<RejectGrantRequest>();
+            var request = InstantiateClassGenerator.Execute<RejectGrantRequest>(operation);
             var marshaller = new RejectGrantRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -10516,7 +10604,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("RejectGrant");
 
-            var request = InstantiateClassGenerator.Execute<RejectGrantRequest>();
+            var request = InstantiateClassGenerator.Execute<RejectGrantRequest>(operation);
             var marshaller = new RejectGrantRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -10548,7 +10636,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("RejectGrant");
 
-            var request = InstantiateClassGenerator.Execute<RejectGrantRequest>();
+            var request = InstantiateClassGenerator.Execute<RejectGrantRequest>(operation);
             var marshaller = new RejectGrantRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -10578,7 +10666,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("LicenseManager")]
         public void TagResourceMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var operation = service_model.FindOperation("TagResource");
+
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -10592,7 +10682,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("TagResource").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = TagResourceResponseUnmarshaller.Instance.Unmarshall(context) as TagResourceResponse;
@@ -10607,7 +10697,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("TagResource");
 
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -10639,7 +10729,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("TagResource");
 
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -10671,7 +10761,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("TagResource");
 
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -10703,7 +10793,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("TagResource");
 
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -10735,7 +10825,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("TagResource");
 
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -10765,7 +10855,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("LicenseManager")]
         public void UntagResourceMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var operation = service_model.FindOperation("UntagResource");
+
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>(operation);
             var marshaller = new UntagResourceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -10779,7 +10871,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("UntagResource").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = UntagResourceResponseUnmarshaller.Instance.Unmarshall(context) as UntagResourceResponse;
@@ -10794,7 +10886,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UntagResource");
 
-            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>(operation);
             var marshaller = new UntagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -10826,7 +10918,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UntagResource");
 
-            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>(operation);
             var marshaller = new UntagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -10858,7 +10950,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UntagResource");
 
-            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>(operation);
             var marshaller = new UntagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -10890,7 +10982,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UntagResource");
 
-            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>(operation);
             var marshaller = new UntagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -10922,7 +11014,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UntagResource");
 
-            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>(operation);
             var marshaller = new UntagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -10952,7 +11044,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("LicenseManager")]
         public void UpdateLicenseConfigurationMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<UpdateLicenseConfigurationRequest>();
+            var operation = service_model.FindOperation("UpdateLicenseConfiguration");
+
+            var request = InstantiateClassGenerator.Execute<UpdateLicenseConfigurationRequest>(operation);
             var marshaller = new UpdateLicenseConfigurationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -10966,7 +11060,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("UpdateLicenseConfiguration").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = UpdateLicenseConfigurationResponseUnmarshaller.Instance.Unmarshall(context) as UpdateLicenseConfigurationResponse;
@@ -10981,7 +11075,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateLicenseConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<UpdateLicenseConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateLicenseConfigurationRequest>(operation);
             var marshaller = new UpdateLicenseConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -11013,7 +11107,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateLicenseConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<UpdateLicenseConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateLicenseConfigurationRequest>(operation);
             var marshaller = new UpdateLicenseConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -11045,7 +11139,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateLicenseConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<UpdateLicenseConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateLicenseConfigurationRequest>(operation);
             var marshaller = new UpdateLicenseConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -11077,7 +11171,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateLicenseConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<UpdateLicenseConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateLicenseConfigurationRequest>(operation);
             var marshaller = new UpdateLicenseConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -11109,7 +11203,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateLicenseConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<UpdateLicenseConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateLicenseConfigurationRequest>(operation);
             var marshaller = new UpdateLicenseConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -11141,7 +11235,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateLicenseConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<UpdateLicenseConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateLicenseConfigurationRequest>(operation);
             var marshaller = new UpdateLicenseConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -11171,7 +11265,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("LicenseManager")]
         public void UpdateLicenseManagerReportGeneratorMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<UpdateLicenseManagerReportGeneratorRequest>();
+            var operation = service_model.FindOperation("UpdateLicenseManagerReportGenerator");
+
+            var request = InstantiateClassGenerator.Execute<UpdateLicenseManagerReportGeneratorRequest>(operation);
             var marshaller = new UpdateLicenseManagerReportGeneratorRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -11185,7 +11281,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("UpdateLicenseManagerReportGenerator").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = UpdateLicenseManagerReportGeneratorResponseUnmarshaller.Instance.Unmarshall(context) as UpdateLicenseManagerReportGeneratorResponse;
@@ -11200,7 +11296,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateLicenseManagerReportGenerator");
 
-            var request = InstantiateClassGenerator.Execute<UpdateLicenseManagerReportGeneratorRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateLicenseManagerReportGeneratorRequest>(operation);
             var marshaller = new UpdateLicenseManagerReportGeneratorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -11232,7 +11328,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateLicenseManagerReportGenerator");
 
-            var request = InstantiateClassGenerator.Execute<UpdateLicenseManagerReportGeneratorRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateLicenseManagerReportGeneratorRequest>(operation);
             var marshaller = new UpdateLicenseManagerReportGeneratorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -11264,7 +11360,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateLicenseManagerReportGenerator");
 
-            var request = InstantiateClassGenerator.Execute<UpdateLicenseManagerReportGeneratorRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateLicenseManagerReportGeneratorRequest>(operation);
             var marshaller = new UpdateLicenseManagerReportGeneratorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -11296,7 +11392,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateLicenseManagerReportGenerator");
 
-            var request = InstantiateClassGenerator.Execute<UpdateLicenseManagerReportGeneratorRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateLicenseManagerReportGeneratorRequest>(operation);
             var marshaller = new UpdateLicenseManagerReportGeneratorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -11328,7 +11424,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateLicenseManagerReportGenerator");
 
-            var request = InstantiateClassGenerator.Execute<UpdateLicenseManagerReportGeneratorRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateLicenseManagerReportGeneratorRequest>(operation);
             var marshaller = new UpdateLicenseManagerReportGeneratorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -11360,7 +11456,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateLicenseManagerReportGenerator");
 
-            var request = InstantiateClassGenerator.Execute<UpdateLicenseManagerReportGeneratorRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateLicenseManagerReportGeneratorRequest>(operation);
             var marshaller = new UpdateLicenseManagerReportGeneratorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -11392,7 +11488,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateLicenseManagerReportGenerator");
 
-            var request = InstantiateClassGenerator.Execute<UpdateLicenseManagerReportGeneratorRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateLicenseManagerReportGeneratorRequest>(operation);
             var marshaller = new UpdateLicenseManagerReportGeneratorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -11424,7 +11520,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateLicenseManagerReportGenerator");
 
-            var request = InstantiateClassGenerator.Execute<UpdateLicenseManagerReportGeneratorRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateLicenseManagerReportGeneratorRequest>(operation);
             var marshaller = new UpdateLicenseManagerReportGeneratorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -11454,7 +11550,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("LicenseManager")]
         public void UpdateLicenseSpecificationsForResourceMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<UpdateLicenseSpecificationsForResourceRequest>();
+            var operation = service_model.FindOperation("UpdateLicenseSpecificationsForResource");
+
+            var request = InstantiateClassGenerator.Execute<UpdateLicenseSpecificationsForResourceRequest>(operation);
             var marshaller = new UpdateLicenseSpecificationsForResourceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -11468,7 +11566,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("UpdateLicenseSpecificationsForResource").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = UpdateLicenseSpecificationsForResourceResponseUnmarshaller.Instance.Unmarshall(context) as UpdateLicenseSpecificationsForResourceResponse;
@@ -11483,7 +11581,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateLicenseSpecificationsForResource");
 
-            var request = InstantiateClassGenerator.Execute<UpdateLicenseSpecificationsForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateLicenseSpecificationsForResourceRequest>(operation);
             var marshaller = new UpdateLicenseSpecificationsForResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -11515,7 +11613,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateLicenseSpecificationsForResource");
 
-            var request = InstantiateClassGenerator.Execute<UpdateLicenseSpecificationsForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateLicenseSpecificationsForResourceRequest>(operation);
             var marshaller = new UpdateLicenseSpecificationsForResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -11547,7 +11645,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateLicenseSpecificationsForResource");
 
-            var request = InstantiateClassGenerator.Execute<UpdateLicenseSpecificationsForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateLicenseSpecificationsForResourceRequest>(operation);
             var marshaller = new UpdateLicenseSpecificationsForResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -11579,7 +11677,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateLicenseSpecificationsForResource");
 
-            var request = InstantiateClassGenerator.Execute<UpdateLicenseSpecificationsForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateLicenseSpecificationsForResourceRequest>(operation);
             var marshaller = new UpdateLicenseSpecificationsForResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -11611,7 +11709,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateLicenseSpecificationsForResource");
 
-            var request = InstantiateClassGenerator.Execute<UpdateLicenseSpecificationsForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateLicenseSpecificationsForResourceRequest>(operation);
             var marshaller = new UpdateLicenseSpecificationsForResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -11643,7 +11741,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateLicenseSpecificationsForResource");
 
-            var request = InstantiateClassGenerator.Execute<UpdateLicenseSpecificationsForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateLicenseSpecificationsForResourceRequest>(operation);
             var marshaller = new UpdateLicenseSpecificationsForResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -11675,7 +11773,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateLicenseSpecificationsForResource");
 
-            var request = InstantiateClassGenerator.Execute<UpdateLicenseSpecificationsForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateLicenseSpecificationsForResourceRequest>(operation);
             var marshaller = new UpdateLicenseSpecificationsForResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -11705,7 +11803,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("LicenseManager")]
         public void UpdateServiceSettingsMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<UpdateServiceSettingsRequest>();
+            var operation = service_model.FindOperation("UpdateServiceSettings");
+
+            var request = InstantiateClassGenerator.Execute<UpdateServiceSettingsRequest>(operation);
             var marshaller = new UpdateServiceSettingsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -11719,7 +11819,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("UpdateServiceSettings").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = UpdateServiceSettingsResponseUnmarshaller.Instance.Unmarshall(context) as UpdateServiceSettingsResponse;
@@ -11734,7 +11834,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateServiceSettings");
 
-            var request = InstantiateClassGenerator.Execute<UpdateServiceSettingsRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateServiceSettingsRequest>(operation);
             var marshaller = new UpdateServiceSettingsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -11766,7 +11866,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateServiceSettings");
 
-            var request = InstantiateClassGenerator.Execute<UpdateServiceSettingsRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateServiceSettingsRequest>(operation);
             var marshaller = new UpdateServiceSettingsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -11798,7 +11898,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateServiceSettings");
 
-            var request = InstantiateClassGenerator.Execute<UpdateServiceSettingsRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateServiceSettingsRequest>(operation);
             var marshaller = new UpdateServiceSettingsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -11830,7 +11930,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateServiceSettings");
 
-            var request = InstantiateClassGenerator.Execute<UpdateServiceSettingsRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateServiceSettingsRequest>(operation);
             var marshaller = new UpdateServiceSettingsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -11862,7 +11962,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateServiceSettings");
 
-            var request = InstantiateClassGenerator.Execute<UpdateServiceSettingsRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateServiceSettingsRequest>(operation);
             var marshaller = new UpdateServiceSettingsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);

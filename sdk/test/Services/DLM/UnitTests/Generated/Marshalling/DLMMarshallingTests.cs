@@ -49,7 +49,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateLifecyclePolicy");
 
-            var request = InstantiateClassGenerator.Execute<CreateLifecyclePolicyRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateLifecyclePolicyRequest>(operation);
             var marshaller = new CreateLifecyclePolicyRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -79,7 +79,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateLifecyclePolicy");
 
-            var request = InstantiateClassGenerator.Execute<CreateLifecyclePolicyRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateLifecyclePolicyRequest>(operation);
             var marshaller = new CreateLifecyclePolicyRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -111,7 +111,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateLifecyclePolicy");
 
-            var request = InstantiateClassGenerator.Execute<CreateLifecyclePolicyRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateLifecyclePolicyRequest>(operation);
             var marshaller = new CreateLifecyclePolicyRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -143,7 +143,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateLifecyclePolicy");
 
-            var request = InstantiateClassGenerator.Execute<CreateLifecyclePolicyRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateLifecyclePolicyRequest>(operation);
             var marshaller = new CreateLifecyclePolicyRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -175,7 +175,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteLifecyclePolicy");
 
-            var request = InstantiateClassGenerator.Execute<DeleteLifecyclePolicyRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteLifecyclePolicyRequest>(operation);
             var marshaller = new DeleteLifecyclePolicyRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -205,7 +205,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteLifecyclePolicy");
 
-            var request = InstantiateClassGenerator.Execute<DeleteLifecyclePolicyRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteLifecyclePolicyRequest>(operation);
             var marshaller = new DeleteLifecyclePolicyRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -237,7 +237,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteLifecyclePolicy");
 
-            var request = InstantiateClassGenerator.Execute<DeleteLifecyclePolicyRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteLifecyclePolicyRequest>(operation);
             var marshaller = new DeleteLifecyclePolicyRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -269,7 +269,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteLifecyclePolicy");
 
-            var request = InstantiateClassGenerator.Execute<DeleteLifecyclePolicyRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteLifecyclePolicyRequest>(operation);
             var marshaller = new DeleteLifecyclePolicyRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -301,7 +301,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetLifecyclePolicies");
 
-            var request = InstantiateClassGenerator.Execute<GetLifecyclePoliciesRequest>();
+            var request = InstantiateClassGenerator.Execute<GetLifecyclePoliciesRequest>(operation);
             var marshaller = new GetLifecyclePoliciesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -331,7 +331,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetLifecyclePolicies");
 
-            var request = InstantiateClassGenerator.Execute<GetLifecyclePoliciesRequest>();
+            var request = InstantiateClassGenerator.Execute<GetLifecyclePoliciesRequest>(operation);
             var marshaller = new GetLifecyclePoliciesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -363,7 +363,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetLifecyclePolicies");
 
-            var request = InstantiateClassGenerator.Execute<GetLifecyclePoliciesRequest>();
+            var request = InstantiateClassGenerator.Execute<GetLifecyclePoliciesRequest>(operation);
             var marshaller = new GetLifecyclePoliciesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -395,7 +395,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetLifecyclePolicies");
 
-            var request = InstantiateClassGenerator.Execute<GetLifecyclePoliciesRequest>();
+            var request = InstantiateClassGenerator.Execute<GetLifecyclePoliciesRequest>(operation);
             var marshaller = new GetLifecyclePoliciesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -427,7 +427,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetLifecyclePolicies");
 
-            var request = InstantiateClassGenerator.Execute<GetLifecyclePoliciesRequest>();
+            var request = InstantiateClassGenerator.Execute<GetLifecyclePoliciesRequest>(operation);
             var marshaller = new GetLifecyclePoliciesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -459,7 +459,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetLifecyclePolicy");
 
-            var request = InstantiateClassGenerator.Execute<GetLifecyclePolicyRequest>();
+            var request = InstantiateClassGenerator.Execute<GetLifecyclePolicyRequest>(operation);
             var marshaller = new GetLifecyclePolicyRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -489,7 +489,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetLifecyclePolicy");
 
-            var request = InstantiateClassGenerator.Execute<GetLifecyclePolicyRequest>();
+            var request = InstantiateClassGenerator.Execute<GetLifecyclePolicyRequest>(operation);
             var marshaller = new GetLifecyclePolicyRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -521,7 +521,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetLifecyclePolicy");
 
-            var request = InstantiateClassGenerator.Execute<GetLifecyclePolicyRequest>();
+            var request = InstantiateClassGenerator.Execute<GetLifecyclePolicyRequest>(operation);
             var marshaller = new GetLifecyclePolicyRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -553,7 +553,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetLifecyclePolicy");
 
-            var request = InstantiateClassGenerator.Execute<GetLifecyclePolicyRequest>();
+            var request = InstantiateClassGenerator.Execute<GetLifecyclePolicyRequest>(operation);
             var marshaller = new GetLifecyclePolicyRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -585,7 +585,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListTagsForResource");
 
-            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>(operation);
             var marshaller = new ListTagsForResourceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -615,7 +615,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListTagsForResource");
 
-            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>(operation);
             var marshaller = new ListTagsForResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -647,7 +647,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListTagsForResource");
 
-            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>(operation);
             var marshaller = new ListTagsForResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -679,7 +679,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListTagsForResource");
 
-            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>(operation);
             var marshaller = new ListTagsForResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -711,7 +711,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("TagResource");
 
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -741,7 +741,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("TagResource");
 
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -773,7 +773,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("TagResource");
 
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -805,7 +805,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("TagResource");
 
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -837,7 +837,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UntagResource");
 
-            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>(operation);
             var marshaller = new UntagResourceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -867,7 +867,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UntagResource");
 
-            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>(operation);
             var marshaller = new UntagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -899,7 +899,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UntagResource");
 
-            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>(operation);
             var marshaller = new UntagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -931,7 +931,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UntagResource");
 
-            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>(operation);
             var marshaller = new UntagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -963,7 +963,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateLifecyclePolicy");
 
-            var request = InstantiateClassGenerator.Execute<UpdateLifecyclePolicyRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateLifecyclePolicyRequest>(operation);
             var marshaller = new UpdateLifecyclePolicyRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -993,7 +993,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateLifecyclePolicy");
 
-            var request = InstantiateClassGenerator.Execute<UpdateLifecyclePolicyRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateLifecyclePolicyRequest>(operation);
             var marshaller = new UpdateLifecyclePolicyRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1025,7 +1025,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateLifecyclePolicy");
 
-            var request = InstantiateClassGenerator.Execute<UpdateLifecyclePolicyRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateLifecyclePolicyRequest>(operation);
             var marshaller = new UpdateLifecyclePolicyRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1057,7 +1057,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateLifecyclePolicy");
 
-            var request = InstantiateClassGenerator.Execute<UpdateLifecyclePolicyRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateLifecyclePolicyRequest>(operation);
             var marshaller = new UpdateLifecyclePolicyRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1089,7 +1089,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateLifecyclePolicy");
 
-            var request = InstantiateClassGenerator.Execute<UpdateLifecyclePolicyRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateLifecyclePolicyRequest>(operation);
             var marshaller = new UpdateLifecyclePolicyRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 

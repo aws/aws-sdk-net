@@ -49,7 +49,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("BatchExecuteStatement");
 
-            var request = InstantiateClassGenerator.Execute<BatchExecuteStatementRequest>();
+            var request = InstantiateClassGenerator.Execute<BatchExecuteStatementRequest>(operation);
             var marshaller = new BatchExecuteStatementRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -79,7 +79,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("BatchExecuteStatement");
 
-            var request = InstantiateClassGenerator.Execute<BatchExecuteStatementRequest>();
+            var request = InstantiateClassGenerator.Execute<BatchExecuteStatementRequest>(operation);
             var marshaller = new BatchExecuteStatementRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -111,7 +111,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("BatchExecuteStatement");
 
-            var request = InstantiateClassGenerator.Execute<BatchExecuteStatementRequest>();
+            var request = InstantiateClassGenerator.Execute<BatchExecuteStatementRequest>(operation);
             var marshaller = new BatchExecuteStatementRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -143,7 +143,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("BatchExecuteStatement");
 
-            var request = InstantiateClassGenerator.Execute<BatchExecuteStatementRequest>();
+            var request = InstantiateClassGenerator.Execute<BatchExecuteStatementRequest>(operation);
             var marshaller = new BatchExecuteStatementRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -175,7 +175,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("BatchExecuteStatement");
 
-            var request = InstantiateClassGenerator.Execute<BatchExecuteStatementRequest>();
+            var request = InstantiateClassGenerator.Execute<BatchExecuteStatementRequest>(operation);
             var marshaller = new BatchExecuteStatementRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -207,7 +207,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("BatchExecuteStatement");
 
-            var request = InstantiateClassGenerator.Execute<BatchExecuteStatementRequest>();
+            var request = InstantiateClassGenerator.Execute<BatchExecuteStatementRequest>(operation);
             var marshaller = new BatchExecuteStatementRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -239,7 +239,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("BatchExecuteStatement");
 
-            var request = InstantiateClassGenerator.Execute<BatchExecuteStatementRequest>();
+            var request = InstantiateClassGenerator.Execute<BatchExecuteStatementRequest>(operation);
             var marshaller = new BatchExecuteStatementRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -271,7 +271,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("BeginTransaction");
 
-            var request = InstantiateClassGenerator.Execute<BeginTransactionRequest>();
+            var request = InstantiateClassGenerator.Execute<BeginTransactionRequest>(operation);
             var marshaller = new BeginTransactionRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -301,7 +301,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("BeginTransaction");
 
-            var request = InstantiateClassGenerator.Execute<BeginTransactionRequest>();
+            var request = InstantiateClassGenerator.Execute<BeginTransactionRequest>(operation);
             var marshaller = new BeginTransactionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -333,7 +333,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("BeginTransaction");
 
-            var request = InstantiateClassGenerator.Execute<BeginTransactionRequest>();
+            var request = InstantiateClassGenerator.Execute<BeginTransactionRequest>(operation);
             var marshaller = new BeginTransactionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -365,7 +365,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("BeginTransaction");
 
-            var request = InstantiateClassGenerator.Execute<BeginTransactionRequest>();
+            var request = InstantiateClassGenerator.Execute<BeginTransactionRequest>(operation);
             var marshaller = new BeginTransactionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -397,7 +397,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("BeginTransaction");
 
-            var request = InstantiateClassGenerator.Execute<BeginTransactionRequest>();
+            var request = InstantiateClassGenerator.Execute<BeginTransactionRequest>(operation);
             var marshaller = new BeginTransactionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -429,7 +429,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("BeginTransaction");
 
-            var request = InstantiateClassGenerator.Execute<BeginTransactionRequest>();
+            var request = InstantiateClassGenerator.Execute<BeginTransactionRequest>(operation);
             var marshaller = new BeginTransactionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -461,7 +461,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("BeginTransaction");
 
-            var request = InstantiateClassGenerator.Execute<BeginTransactionRequest>();
+            var request = InstantiateClassGenerator.Execute<BeginTransactionRequest>(operation);
             var marshaller = new BeginTransactionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -493,7 +493,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CommitTransaction");
 
-            var request = InstantiateClassGenerator.Execute<CommitTransactionRequest>();
+            var request = InstantiateClassGenerator.Execute<CommitTransactionRequest>(operation);
             var marshaller = new CommitTransactionRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -523,7 +523,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CommitTransaction");
 
-            var request = InstantiateClassGenerator.Execute<CommitTransactionRequest>();
+            var request = InstantiateClassGenerator.Execute<CommitTransactionRequest>(operation);
             var marshaller = new CommitTransactionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -555,7 +555,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CommitTransaction");
 
-            var request = InstantiateClassGenerator.Execute<CommitTransactionRequest>();
+            var request = InstantiateClassGenerator.Execute<CommitTransactionRequest>(operation);
             var marshaller = new CommitTransactionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -587,7 +587,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CommitTransaction");
 
-            var request = InstantiateClassGenerator.Execute<CommitTransactionRequest>();
+            var request = InstantiateClassGenerator.Execute<CommitTransactionRequest>(operation);
             var marshaller = new CommitTransactionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -619,7 +619,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CommitTransaction");
 
-            var request = InstantiateClassGenerator.Execute<CommitTransactionRequest>();
+            var request = InstantiateClassGenerator.Execute<CommitTransactionRequest>(operation);
             var marshaller = new CommitTransactionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -651,7 +651,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CommitTransaction");
 
-            var request = InstantiateClassGenerator.Execute<CommitTransactionRequest>();
+            var request = InstantiateClassGenerator.Execute<CommitTransactionRequest>(operation);
             var marshaller = new CommitTransactionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -683,7 +683,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CommitTransaction");
 
-            var request = InstantiateClassGenerator.Execute<CommitTransactionRequest>();
+            var request = InstantiateClassGenerator.Execute<CommitTransactionRequest>(operation);
             var marshaller = new CommitTransactionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -715,7 +715,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CommitTransaction");
 
-            var request = InstantiateClassGenerator.Execute<CommitTransactionRequest>();
+            var request = InstantiateClassGenerator.Execute<CommitTransactionRequest>(operation);
             var marshaller = new CommitTransactionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -747,7 +747,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ExecuteSql");
 
-            var request = InstantiateClassGenerator.Execute<ExecuteSqlRequest>();
+            var request = InstantiateClassGenerator.Execute<ExecuteSqlRequest>(operation);
             var marshaller = new ExecuteSqlRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -777,7 +777,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ExecuteSql");
 
-            var request = InstantiateClassGenerator.Execute<ExecuteSqlRequest>();
+            var request = InstantiateClassGenerator.Execute<ExecuteSqlRequest>(operation);
             var marshaller = new ExecuteSqlRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -809,7 +809,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ExecuteSql");
 
-            var request = InstantiateClassGenerator.Execute<ExecuteSqlRequest>();
+            var request = InstantiateClassGenerator.Execute<ExecuteSqlRequest>(operation);
             var marshaller = new ExecuteSqlRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -841,7 +841,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ExecuteSql");
 
-            var request = InstantiateClassGenerator.Execute<ExecuteSqlRequest>();
+            var request = InstantiateClassGenerator.Execute<ExecuteSqlRequest>(operation);
             var marshaller = new ExecuteSqlRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -873,7 +873,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ExecuteSql");
 
-            var request = InstantiateClassGenerator.Execute<ExecuteSqlRequest>();
+            var request = InstantiateClassGenerator.Execute<ExecuteSqlRequest>(operation);
             var marshaller = new ExecuteSqlRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -905,7 +905,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ExecuteSql");
 
-            var request = InstantiateClassGenerator.Execute<ExecuteSqlRequest>();
+            var request = InstantiateClassGenerator.Execute<ExecuteSqlRequest>(operation);
             var marshaller = new ExecuteSqlRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -937,7 +937,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ExecuteStatement");
 
-            var request = InstantiateClassGenerator.Execute<ExecuteStatementRequest>();
+            var request = InstantiateClassGenerator.Execute<ExecuteStatementRequest>(operation);
             var marshaller = new ExecuteStatementRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -967,7 +967,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ExecuteStatement");
 
-            var request = InstantiateClassGenerator.Execute<ExecuteStatementRequest>();
+            var request = InstantiateClassGenerator.Execute<ExecuteStatementRequest>(operation);
             var marshaller = new ExecuteStatementRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -999,7 +999,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ExecuteStatement");
 
-            var request = InstantiateClassGenerator.Execute<ExecuteStatementRequest>();
+            var request = InstantiateClassGenerator.Execute<ExecuteStatementRequest>(operation);
             var marshaller = new ExecuteStatementRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1031,7 +1031,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ExecuteStatement");
 
-            var request = InstantiateClassGenerator.Execute<ExecuteStatementRequest>();
+            var request = InstantiateClassGenerator.Execute<ExecuteStatementRequest>(operation);
             var marshaller = new ExecuteStatementRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1063,7 +1063,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ExecuteStatement");
 
-            var request = InstantiateClassGenerator.Execute<ExecuteStatementRequest>();
+            var request = InstantiateClassGenerator.Execute<ExecuteStatementRequest>(operation);
             var marshaller = new ExecuteStatementRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1095,7 +1095,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ExecuteStatement");
 
-            var request = InstantiateClassGenerator.Execute<ExecuteStatementRequest>();
+            var request = InstantiateClassGenerator.Execute<ExecuteStatementRequest>(operation);
             var marshaller = new ExecuteStatementRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1127,7 +1127,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ExecuteStatement");
 
-            var request = InstantiateClassGenerator.Execute<ExecuteStatementRequest>();
+            var request = InstantiateClassGenerator.Execute<ExecuteStatementRequest>(operation);
             var marshaller = new ExecuteStatementRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1159,7 +1159,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("RollbackTransaction");
 
-            var request = InstantiateClassGenerator.Execute<RollbackTransactionRequest>();
+            var request = InstantiateClassGenerator.Execute<RollbackTransactionRequest>(operation);
             var marshaller = new RollbackTransactionRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1189,7 +1189,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("RollbackTransaction");
 
-            var request = InstantiateClassGenerator.Execute<RollbackTransactionRequest>();
+            var request = InstantiateClassGenerator.Execute<RollbackTransactionRequest>(operation);
             var marshaller = new RollbackTransactionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1221,7 +1221,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("RollbackTransaction");
 
-            var request = InstantiateClassGenerator.Execute<RollbackTransactionRequest>();
+            var request = InstantiateClassGenerator.Execute<RollbackTransactionRequest>(operation);
             var marshaller = new RollbackTransactionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1253,7 +1253,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("RollbackTransaction");
 
-            var request = InstantiateClassGenerator.Execute<RollbackTransactionRequest>();
+            var request = InstantiateClassGenerator.Execute<RollbackTransactionRequest>(operation);
             var marshaller = new RollbackTransactionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1285,7 +1285,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("RollbackTransaction");
 
-            var request = InstantiateClassGenerator.Execute<RollbackTransactionRequest>();
+            var request = InstantiateClassGenerator.Execute<RollbackTransactionRequest>(operation);
             var marshaller = new RollbackTransactionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1317,7 +1317,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("RollbackTransaction");
 
-            var request = InstantiateClassGenerator.Execute<RollbackTransactionRequest>();
+            var request = InstantiateClassGenerator.Execute<RollbackTransactionRequest>(operation);
             var marshaller = new RollbackTransactionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1349,7 +1349,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("RollbackTransaction");
 
-            var request = InstantiateClassGenerator.Execute<RollbackTransactionRequest>();
+            var request = InstantiateClassGenerator.Execute<RollbackTransactionRequest>(operation);
             var marshaller = new RollbackTransactionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1381,7 +1381,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("RollbackTransaction");
 
-            var request = InstantiateClassGenerator.Execute<RollbackTransactionRequest>();
+            var request = InstantiateClassGenerator.Execute<RollbackTransactionRequest>(operation);
             var marshaller = new RollbackTransactionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 

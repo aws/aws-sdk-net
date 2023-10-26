@@ -46,7 +46,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void ApproveSkillMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ApproveSkillRequest>();
+            var operation = service_model.FindOperation("ApproveSkill");
+
+            var request = InstantiateClassGenerator.Execute<ApproveSkillRequest>(operation);
             var marshaller = new ApproveSkillRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -60,7 +62,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ApproveSkill").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ApproveSkillResponseUnmarshaller.Instance.Unmarshall(context) as ApproveSkillResponse;
@@ -75,7 +77,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ApproveSkill");
 
-            var request = InstantiateClassGenerator.Execute<ApproveSkillRequest>();
+            var request = InstantiateClassGenerator.Execute<ApproveSkillRequest>(operation);
             var marshaller = new ApproveSkillRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -107,7 +109,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ApproveSkill");
 
-            var request = InstantiateClassGenerator.Execute<ApproveSkillRequest>();
+            var request = InstantiateClassGenerator.Execute<ApproveSkillRequest>(operation);
             var marshaller = new ApproveSkillRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -139,7 +141,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ApproveSkill");
 
-            var request = InstantiateClassGenerator.Execute<ApproveSkillRequest>();
+            var request = InstantiateClassGenerator.Execute<ApproveSkillRequest>(operation);
             var marshaller = new ApproveSkillRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -169,7 +171,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void AssociateContactWithAddressBookMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<AssociateContactWithAddressBookRequest>();
+            var operation = service_model.FindOperation("AssociateContactWithAddressBook");
+
+            var request = InstantiateClassGenerator.Execute<AssociateContactWithAddressBookRequest>(operation);
             var marshaller = new AssociateContactWithAddressBookRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -183,7 +187,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("AssociateContactWithAddressBook").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = AssociateContactWithAddressBookResponseUnmarshaller.Instance.Unmarshall(context) as AssociateContactWithAddressBookResponse;
@@ -198,7 +202,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("AssociateContactWithAddressBook");
 
-            var request = InstantiateClassGenerator.Execute<AssociateContactWithAddressBookRequest>();
+            var request = InstantiateClassGenerator.Execute<AssociateContactWithAddressBookRequest>(operation);
             var marshaller = new AssociateContactWithAddressBookRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -228,7 +232,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void AssociateDeviceWithNetworkProfileMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<AssociateDeviceWithNetworkProfileRequest>();
+            var operation = service_model.FindOperation("AssociateDeviceWithNetworkProfile");
+
+            var request = InstantiateClassGenerator.Execute<AssociateDeviceWithNetworkProfileRequest>(operation);
             var marshaller = new AssociateDeviceWithNetworkProfileRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -242,7 +248,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("AssociateDeviceWithNetworkProfile").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = AssociateDeviceWithNetworkProfileResponseUnmarshaller.Instance.Unmarshall(context) as AssociateDeviceWithNetworkProfileResponse;
@@ -257,7 +263,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("AssociateDeviceWithNetworkProfile");
 
-            var request = InstantiateClassGenerator.Execute<AssociateDeviceWithNetworkProfileRequest>();
+            var request = InstantiateClassGenerator.Execute<AssociateDeviceWithNetworkProfileRequest>(operation);
             var marshaller = new AssociateDeviceWithNetworkProfileRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -289,7 +295,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("AssociateDeviceWithNetworkProfile");
 
-            var request = InstantiateClassGenerator.Execute<AssociateDeviceWithNetworkProfileRequest>();
+            var request = InstantiateClassGenerator.Execute<AssociateDeviceWithNetworkProfileRequest>(operation);
             var marshaller = new AssociateDeviceWithNetworkProfileRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -321,7 +327,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("AssociateDeviceWithNetworkProfile");
 
-            var request = InstantiateClassGenerator.Execute<AssociateDeviceWithNetworkProfileRequest>();
+            var request = InstantiateClassGenerator.Execute<AssociateDeviceWithNetworkProfileRequest>(operation);
             var marshaller = new AssociateDeviceWithNetworkProfileRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -351,7 +357,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void AssociateDeviceWithRoomMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<AssociateDeviceWithRoomRequest>();
+            var operation = service_model.FindOperation("AssociateDeviceWithRoom");
+
+            var request = InstantiateClassGenerator.Execute<AssociateDeviceWithRoomRequest>(operation);
             var marshaller = new AssociateDeviceWithRoomRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -365,7 +373,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("AssociateDeviceWithRoom").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = AssociateDeviceWithRoomResponseUnmarshaller.Instance.Unmarshall(context) as AssociateDeviceWithRoomResponse;
@@ -380,7 +388,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("AssociateDeviceWithRoom");
 
-            var request = InstantiateClassGenerator.Execute<AssociateDeviceWithRoomRequest>();
+            var request = InstantiateClassGenerator.Execute<AssociateDeviceWithRoomRequest>(operation);
             var marshaller = new AssociateDeviceWithRoomRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -412,7 +420,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("AssociateDeviceWithRoom");
 
-            var request = InstantiateClassGenerator.Execute<AssociateDeviceWithRoomRequest>();
+            var request = InstantiateClassGenerator.Execute<AssociateDeviceWithRoomRequest>(operation);
             var marshaller = new AssociateDeviceWithRoomRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -444,7 +452,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("AssociateDeviceWithRoom");
 
-            var request = InstantiateClassGenerator.Execute<AssociateDeviceWithRoomRequest>();
+            var request = InstantiateClassGenerator.Execute<AssociateDeviceWithRoomRequest>(operation);
             var marshaller = new AssociateDeviceWithRoomRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -474,7 +482,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void AssociateSkillGroupWithRoomMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<AssociateSkillGroupWithRoomRequest>();
+            var operation = service_model.FindOperation("AssociateSkillGroupWithRoom");
+
+            var request = InstantiateClassGenerator.Execute<AssociateSkillGroupWithRoomRequest>(operation);
             var marshaller = new AssociateSkillGroupWithRoomRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -488,7 +498,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("AssociateSkillGroupWithRoom").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = AssociateSkillGroupWithRoomResponseUnmarshaller.Instance.Unmarshall(context) as AssociateSkillGroupWithRoomResponse;
@@ -503,7 +513,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("AssociateSkillGroupWithRoom");
 
-            var request = InstantiateClassGenerator.Execute<AssociateSkillGroupWithRoomRequest>();
+            var request = InstantiateClassGenerator.Execute<AssociateSkillGroupWithRoomRequest>(operation);
             var marshaller = new AssociateSkillGroupWithRoomRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -533,7 +543,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void AssociateSkillWithSkillGroupMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<AssociateSkillWithSkillGroupRequest>();
+            var operation = service_model.FindOperation("AssociateSkillWithSkillGroup");
+
+            var request = InstantiateClassGenerator.Execute<AssociateSkillWithSkillGroupRequest>(operation);
             var marshaller = new AssociateSkillWithSkillGroupRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -547,7 +559,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("AssociateSkillWithSkillGroup").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = AssociateSkillWithSkillGroupResponseUnmarshaller.Instance.Unmarshall(context) as AssociateSkillWithSkillGroupResponse;
@@ -562,7 +574,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("AssociateSkillWithSkillGroup");
 
-            var request = InstantiateClassGenerator.Execute<AssociateSkillWithSkillGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<AssociateSkillWithSkillGroupRequest>(operation);
             var marshaller = new AssociateSkillWithSkillGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -594,7 +606,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("AssociateSkillWithSkillGroup");
 
-            var request = InstantiateClassGenerator.Execute<AssociateSkillWithSkillGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<AssociateSkillWithSkillGroupRequest>(operation);
             var marshaller = new AssociateSkillWithSkillGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -626,7 +638,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("AssociateSkillWithSkillGroup");
 
-            var request = InstantiateClassGenerator.Execute<AssociateSkillWithSkillGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<AssociateSkillWithSkillGroupRequest>(operation);
             var marshaller = new AssociateSkillWithSkillGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -656,7 +668,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void AssociateSkillWithUsersMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<AssociateSkillWithUsersRequest>();
+            var operation = service_model.FindOperation("AssociateSkillWithUsers");
+
+            var request = InstantiateClassGenerator.Execute<AssociateSkillWithUsersRequest>(operation);
             var marshaller = new AssociateSkillWithUsersRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -670,7 +684,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("AssociateSkillWithUsers").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = AssociateSkillWithUsersResponseUnmarshaller.Instance.Unmarshall(context) as AssociateSkillWithUsersResponse;
@@ -685,7 +699,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("AssociateSkillWithUsers");
 
-            var request = InstantiateClassGenerator.Execute<AssociateSkillWithUsersRequest>();
+            var request = InstantiateClassGenerator.Execute<AssociateSkillWithUsersRequest>(operation);
             var marshaller = new AssociateSkillWithUsersRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -717,7 +731,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("AssociateSkillWithUsers");
 
-            var request = InstantiateClassGenerator.Execute<AssociateSkillWithUsersRequest>();
+            var request = InstantiateClassGenerator.Execute<AssociateSkillWithUsersRequest>(operation);
             var marshaller = new AssociateSkillWithUsersRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -747,7 +761,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void CreateAddressBookMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<CreateAddressBookRequest>();
+            var operation = service_model.FindOperation("CreateAddressBook");
+
+            var request = InstantiateClassGenerator.Execute<CreateAddressBookRequest>(operation);
             var marshaller = new CreateAddressBookRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -761,7 +777,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("CreateAddressBook").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = CreateAddressBookResponseUnmarshaller.Instance.Unmarshall(context) as CreateAddressBookResponse;
@@ -776,7 +792,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateAddressBook");
 
-            var request = InstantiateClassGenerator.Execute<CreateAddressBookRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateAddressBookRequest>(operation);
             var marshaller = new CreateAddressBookRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -808,7 +824,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateAddressBook");
 
-            var request = InstantiateClassGenerator.Execute<CreateAddressBookRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateAddressBookRequest>(operation);
             var marshaller = new CreateAddressBookRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -838,7 +854,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void CreateBusinessReportScheduleMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<CreateBusinessReportScheduleRequest>();
+            var operation = service_model.FindOperation("CreateBusinessReportSchedule");
+
+            var request = InstantiateClassGenerator.Execute<CreateBusinessReportScheduleRequest>(operation);
             var marshaller = new CreateBusinessReportScheduleRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -852,7 +870,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("CreateBusinessReportSchedule").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = CreateBusinessReportScheduleResponseUnmarshaller.Instance.Unmarshall(context) as CreateBusinessReportScheduleResponse;
@@ -867,7 +885,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateBusinessReportSchedule");
 
-            var request = InstantiateClassGenerator.Execute<CreateBusinessReportScheduleRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateBusinessReportScheduleRequest>(operation);
             var marshaller = new CreateBusinessReportScheduleRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -897,7 +915,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void CreateConferenceProviderMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<CreateConferenceProviderRequest>();
+            var operation = service_model.FindOperation("CreateConferenceProvider");
+
+            var request = InstantiateClassGenerator.Execute<CreateConferenceProviderRequest>(operation);
             var marshaller = new CreateConferenceProviderRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -911,7 +931,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("CreateConferenceProvider").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = CreateConferenceProviderResponseUnmarshaller.Instance.Unmarshall(context) as CreateConferenceProviderResponse;
@@ -926,7 +946,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateConferenceProvider");
 
-            var request = InstantiateClassGenerator.Execute<CreateConferenceProviderRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateConferenceProviderRequest>(operation);
             var marshaller = new CreateConferenceProviderRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -956,7 +976,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void CreateContactMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<CreateContactRequest>();
+            var operation = service_model.FindOperation("CreateContact");
+
+            var request = InstantiateClassGenerator.Execute<CreateContactRequest>(operation);
             var marshaller = new CreateContactRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -970,7 +992,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("CreateContact").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = CreateContactResponseUnmarshaller.Instance.Unmarshall(context) as CreateContactResponse;
@@ -985,7 +1007,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateContact");
 
-            var request = InstantiateClassGenerator.Execute<CreateContactRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateContactRequest>(operation);
             var marshaller = new CreateContactRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1017,7 +1039,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateContact");
 
-            var request = InstantiateClassGenerator.Execute<CreateContactRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateContactRequest>(operation);
             var marshaller = new CreateContactRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1047,7 +1069,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void CreateGatewayGroupMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<CreateGatewayGroupRequest>();
+            var operation = service_model.FindOperation("CreateGatewayGroup");
+
+            var request = InstantiateClassGenerator.Execute<CreateGatewayGroupRequest>(operation);
             var marshaller = new CreateGatewayGroupRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1061,7 +1085,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("CreateGatewayGroup").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = CreateGatewayGroupResponseUnmarshaller.Instance.Unmarshall(context) as CreateGatewayGroupResponse;
@@ -1076,7 +1100,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateGatewayGroup");
 
-            var request = InstantiateClassGenerator.Execute<CreateGatewayGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateGatewayGroupRequest>(operation);
             var marshaller = new CreateGatewayGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1108,7 +1132,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateGatewayGroup");
 
-            var request = InstantiateClassGenerator.Execute<CreateGatewayGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateGatewayGroupRequest>(operation);
             var marshaller = new CreateGatewayGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1138,7 +1162,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void CreateNetworkProfileMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<CreateNetworkProfileRequest>();
+            var operation = service_model.FindOperation("CreateNetworkProfile");
+
+            var request = InstantiateClassGenerator.Execute<CreateNetworkProfileRequest>(operation);
             var marshaller = new CreateNetworkProfileRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1152,7 +1178,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("CreateNetworkProfile").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = CreateNetworkProfileResponseUnmarshaller.Instance.Unmarshall(context) as CreateNetworkProfileResponse;
@@ -1167,7 +1193,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateNetworkProfile");
 
-            var request = InstantiateClassGenerator.Execute<CreateNetworkProfileRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateNetworkProfileRequest>(operation);
             var marshaller = new CreateNetworkProfileRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1199,7 +1225,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateNetworkProfile");
 
-            var request = InstantiateClassGenerator.Execute<CreateNetworkProfileRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateNetworkProfileRequest>(operation);
             var marshaller = new CreateNetworkProfileRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1231,7 +1257,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateNetworkProfile");
 
-            var request = InstantiateClassGenerator.Execute<CreateNetworkProfileRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateNetworkProfileRequest>(operation);
             var marshaller = new CreateNetworkProfileRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1263,7 +1289,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateNetworkProfile");
 
-            var request = InstantiateClassGenerator.Execute<CreateNetworkProfileRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateNetworkProfileRequest>(operation);
             var marshaller = new CreateNetworkProfileRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1295,7 +1321,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateNetworkProfile");
 
-            var request = InstantiateClassGenerator.Execute<CreateNetworkProfileRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateNetworkProfileRequest>(operation);
             var marshaller = new CreateNetworkProfileRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1325,7 +1351,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void CreateProfileMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<CreateProfileRequest>();
+            var operation = service_model.FindOperation("CreateProfile");
+
+            var request = InstantiateClassGenerator.Execute<CreateProfileRequest>(operation);
             var marshaller = new CreateProfileRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1339,7 +1367,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("CreateProfile").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = CreateProfileResponseUnmarshaller.Instance.Unmarshall(context) as CreateProfileResponse;
@@ -1354,7 +1382,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateProfile");
 
-            var request = InstantiateClassGenerator.Execute<CreateProfileRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateProfileRequest>(operation);
             var marshaller = new CreateProfileRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1386,7 +1414,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateProfile");
 
-            var request = InstantiateClassGenerator.Execute<CreateProfileRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateProfileRequest>(operation);
             var marshaller = new CreateProfileRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1418,7 +1446,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateProfile");
 
-            var request = InstantiateClassGenerator.Execute<CreateProfileRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateProfileRequest>(operation);
             var marshaller = new CreateProfileRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1448,7 +1476,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void CreateRoomMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<CreateRoomRequest>();
+            var operation = service_model.FindOperation("CreateRoom");
+
+            var request = InstantiateClassGenerator.Execute<CreateRoomRequest>(operation);
             var marshaller = new CreateRoomRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1462,7 +1492,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("CreateRoom").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = CreateRoomResponseUnmarshaller.Instance.Unmarshall(context) as CreateRoomResponse;
@@ -1477,7 +1507,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateRoom");
 
-            var request = InstantiateClassGenerator.Execute<CreateRoomRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateRoomRequest>(operation);
             var marshaller = new CreateRoomRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1509,7 +1539,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateRoom");
 
-            var request = InstantiateClassGenerator.Execute<CreateRoomRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateRoomRequest>(operation);
             var marshaller = new CreateRoomRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1539,7 +1569,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void CreateSkillGroupMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<CreateSkillGroupRequest>();
+            var operation = service_model.FindOperation("CreateSkillGroup");
+
+            var request = InstantiateClassGenerator.Execute<CreateSkillGroupRequest>(operation);
             var marshaller = new CreateSkillGroupRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1553,7 +1585,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("CreateSkillGroup").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = CreateSkillGroupResponseUnmarshaller.Instance.Unmarshall(context) as CreateSkillGroupResponse;
@@ -1568,7 +1600,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateSkillGroup");
 
-            var request = InstantiateClassGenerator.Execute<CreateSkillGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateSkillGroupRequest>(operation);
             var marshaller = new CreateSkillGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1600,7 +1632,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateSkillGroup");
 
-            var request = InstantiateClassGenerator.Execute<CreateSkillGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateSkillGroupRequest>(operation);
             var marshaller = new CreateSkillGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1632,7 +1664,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateSkillGroup");
 
-            var request = InstantiateClassGenerator.Execute<CreateSkillGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateSkillGroupRequest>(operation);
             var marshaller = new CreateSkillGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1662,7 +1694,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void CreateUserMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<CreateUserRequest>();
+            var operation = service_model.FindOperation("CreateUser");
+
+            var request = InstantiateClassGenerator.Execute<CreateUserRequest>(operation);
             var marshaller = new CreateUserRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1676,7 +1710,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("CreateUser").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = CreateUserResponseUnmarshaller.Instance.Unmarshall(context) as CreateUserResponse;
@@ -1691,7 +1725,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateUser");
 
-            var request = InstantiateClassGenerator.Execute<CreateUserRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateUserRequest>(operation);
             var marshaller = new CreateUserRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1723,7 +1757,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateUser");
 
-            var request = InstantiateClassGenerator.Execute<CreateUserRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateUserRequest>(operation);
             var marshaller = new CreateUserRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1755,7 +1789,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateUser");
 
-            var request = InstantiateClassGenerator.Execute<CreateUserRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateUserRequest>(operation);
             var marshaller = new CreateUserRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1785,7 +1819,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void DeleteAddressBookMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DeleteAddressBookRequest>();
+            var operation = service_model.FindOperation("DeleteAddressBook");
+
+            var request = InstantiateClassGenerator.Execute<DeleteAddressBookRequest>(operation);
             var marshaller = new DeleteAddressBookRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1799,7 +1835,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DeleteAddressBook").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DeleteAddressBookResponseUnmarshaller.Instance.Unmarshall(context) as DeleteAddressBookResponse;
@@ -1814,7 +1850,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteAddressBook");
 
-            var request = InstantiateClassGenerator.Execute<DeleteAddressBookRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteAddressBookRequest>(operation);
             var marshaller = new DeleteAddressBookRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1846,7 +1882,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteAddressBook");
 
-            var request = InstantiateClassGenerator.Execute<DeleteAddressBookRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteAddressBookRequest>(operation);
             var marshaller = new DeleteAddressBookRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1876,7 +1912,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void DeleteBusinessReportScheduleMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DeleteBusinessReportScheduleRequest>();
+            var operation = service_model.FindOperation("DeleteBusinessReportSchedule");
+
+            var request = InstantiateClassGenerator.Execute<DeleteBusinessReportScheduleRequest>(operation);
             var marshaller = new DeleteBusinessReportScheduleRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1890,7 +1928,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DeleteBusinessReportSchedule").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DeleteBusinessReportScheduleResponseUnmarshaller.Instance.Unmarshall(context) as DeleteBusinessReportScheduleResponse;
@@ -1905,7 +1943,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteBusinessReportSchedule");
 
-            var request = InstantiateClassGenerator.Execute<DeleteBusinessReportScheduleRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteBusinessReportScheduleRequest>(operation);
             var marshaller = new DeleteBusinessReportScheduleRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1937,7 +1975,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteBusinessReportSchedule");
 
-            var request = InstantiateClassGenerator.Execute<DeleteBusinessReportScheduleRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteBusinessReportScheduleRequest>(operation);
             var marshaller = new DeleteBusinessReportScheduleRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1967,7 +2005,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void DeleteConferenceProviderMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DeleteConferenceProviderRequest>();
+            var operation = service_model.FindOperation("DeleteConferenceProvider");
+
+            var request = InstantiateClassGenerator.Execute<DeleteConferenceProviderRequest>(operation);
             var marshaller = new DeleteConferenceProviderRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1981,7 +2021,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DeleteConferenceProvider").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DeleteConferenceProviderResponseUnmarshaller.Instance.Unmarshall(context) as DeleteConferenceProviderResponse;
@@ -1996,7 +2036,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteConferenceProvider");
 
-            var request = InstantiateClassGenerator.Execute<DeleteConferenceProviderRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteConferenceProviderRequest>(operation);
             var marshaller = new DeleteConferenceProviderRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2026,7 +2066,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void DeleteContactMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DeleteContactRequest>();
+            var operation = service_model.FindOperation("DeleteContact");
+
+            var request = InstantiateClassGenerator.Execute<DeleteContactRequest>(operation);
             var marshaller = new DeleteContactRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -2040,7 +2082,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DeleteContact").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DeleteContactResponseUnmarshaller.Instance.Unmarshall(context) as DeleteContactResponse;
@@ -2055,7 +2097,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteContact");
 
-            var request = InstantiateClassGenerator.Execute<DeleteContactRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteContactRequest>(operation);
             var marshaller = new DeleteContactRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2087,7 +2129,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteContact");
 
-            var request = InstantiateClassGenerator.Execute<DeleteContactRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteContactRequest>(operation);
             var marshaller = new DeleteContactRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2117,7 +2159,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void DeleteDeviceMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DeleteDeviceRequest>();
+            var operation = service_model.FindOperation("DeleteDevice");
+
+            var request = InstantiateClassGenerator.Execute<DeleteDeviceRequest>(operation);
             var marshaller = new DeleteDeviceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -2131,7 +2175,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DeleteDevice").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DeleteDeviceResponseUnmarshaller.Instance.Unmarshall(context) as DeleteDeviceResponse;
@@ -2146,7 +2190,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteDevice");
 
-            var request = InstantiateClassGenerator.Execute<DeleteDeviceRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteDeviceRequest>(operation);
             var marshaller = new DeleteDeviceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2178,7 +2222,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteDevice");
 
-            var request = InstantiateClassGenerator.Execute<DeleteDeviceRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteDeviceRequest>(operation);
             var marshaller = new DeleteDeviceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2210,7 +2254,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteDevice");
 
-            var request = InstantiateClassGenerator.Execute<DeleteDeviceRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteDeviceRequest>(operation);
             var marshaller = new DeleteDeviceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2240,7 +2284,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void DeleteDeviceUsageDataMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DeleteDeviceUsageDataRequest>();
+            var operation = service_model.FindOperation("DeleteDeviceUsageData");
+
+            var request = InstantiateClassGenerator.Execute<DeleteDeviceUsageDataRequest>(operation);
             var marshaller = new DeleteDeviceUsageDataRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -2254,7 +2300,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DeleteDeviceUsageData").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DeleteDeviceUsageDataResponseUnmarshaller.Instance.Unmarshall(context) as DeleteDeviceUsageDataResponse;
@@ -2269,7 +2315,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteDeviceUsageData");
 
-            var request = InstantiateClassGenerator.Execute<DeleteDeviceUsageDataRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteDeviceUsageDataRequest>(operation);
             var marshaller = new DeleteDeviceUsageDataRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2301,7 +2347,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteDeviceUsageData");
 
-            var request = InstantiateClassGenerator.Execute<DeleteDeviceUsageDataRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteDeviceUsageDataRequest>(operation);
             var marshaller = new DeleteDeviceUsageDataRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2333,7 +2379,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteDeviceUsageData");
 
-            var request = InstantiateClassGenerator.Execute<DeleteDeviceUsageDataRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteDeviceUsageDataRequest>(operation);
             var marshaller = new DeleteDeviceUsageDataRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2363,7 +2409,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void DeleteGatewayGroupMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DeleteGatewayGroupRequest>();
+            var operation = service_model.FindOperation("DeleteGatewayGroup");
+
+            var request = InstantiateClassGenerator.Execute<DeleteGatewayGroupRequest>(operation);
             var marshaller = new DeleteGatewayGroupRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -2377,7 +2425,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DeleteGatewayGroup").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DeleteGatewayGroupResponseUnmarshaller.Instance.Unmarshall(context) as DeleteGatewayGroupResponse;
@@ -2392,7 +2440,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteGatewayGroup");
 
-            var request = InstantiateClassGenerator.Execute<DeleteGatewayGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteGatewayGroupRequest>(operation);
             var marshaller = new DeleteGatewayGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2422,7 +2470,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void DeleteNetworkProfileMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DeleteNetworkProfileRequest>();
+            var operation = service_model.FindOperation("DeleteNetworkProfile");
+
+            var request = InstantiateClassGenerator.Execute<DeleteNetworkProfileRequest>(operation);
             var marshaller = new DeleteNetworkProfileRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -2436,7 +2486,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DeleteNetworkProfile").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DeleteNetworkProfileResponseUnmarshaller.Instance.Unmarshall(context) as DeleteNetworkProfileResponse;
@@ -2451,7 +2501,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteNetworkProfile");
 
-            var request = InstantiateClassGenerator.Execute<DeleteNetworkProfileRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteNetworkProfileRequest>(operation);
             var marshaller = new DeleteNetworkProfileRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2483,7 +2533,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteNetworkProfile");
 
-            var request = InstantiateClassGenerator.Execute<DeleteNetworkProfileRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteNetworkProfileRequest>(operation);
             var marshaller = new DeleteNetworkProfileRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2515,7 +2565,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteNetworkProfile");
 
-            var request = InstantiateClassGenerator.Execute<DeleteNetworkProfileRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteNetworkProfileRequest>(operation);
             var marshaller = new DeleteNetworkProfileRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2545,7 +2595,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void DeleteProfileMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DeleteProfileRequest>();
+            var operation = service_model.FindOperation("DeleteProfile");
+
+            var request = InstantiateClassGenerator.Execute<DeleteProfileRequest>(operation);
             var marshaller = new DeleteProfileRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -2559,7 +2611,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DeleteProfile").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DeleteProfileResponseUnmarshaller.Instance.Unmarshall(context) as DeleteProfileResponse;
@@ -2574,7 +2626,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteProfile");
 
-            var request = InstantiateClassGenerator.Execute<DeleteProfileRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteProfileRequest>(operation);
             var marshaller = new DeleteProfileRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2606,7 +2658,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteProfile");
 
-            var request = InstantiateClassGenerator.Execute<DeleteProfileRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteProfileRequest>(operation);
             var marshaller = new DeleteProfileRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2636,7 +2688,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void DeleteRoomMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DeleteRoomRequest>();
+            var operation = service_model.FindOperation("DeleteRoom");
+
+            var request = InstantiateClassGenerator.Execute<DeleteRoomRequest>(operation);
             var marshaller = new DeleteRoomRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -2650,7 +2704,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DeleteRoom").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DeleteRoomResponseUnmarshaller.Instance.Unmarshall(context) as DeleteRoomResponse;
@@ -2665,7 +2719,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteRoom");
 
-            var request = InstantiateClassGenerator.Execute<DeleteRoomRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteRoomRequest>(operation);
             var marshaller = new DeleteRoomRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2697,7 +2751,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteRoom");
 
-            var request = InstantiateClassGenerator.Execute<DeleteRoomRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteRoomRequest>(operation);
             var marshaller = new DeleteRoomRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2727,7 +2781,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void DeleteRoomSkillParameterMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DeleteRoomSkillParameterRequest>();
+            var operation = service_model.FindOperation("DeleteRoomSkillParameter");
+
+            var request = InstantiateClassGenerator.Execute<DeleteRoomSkillParameterRequest>(operation);
             var marshaller = new DeleteRoomSkillParameterRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -2741,7 +2797,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DeleteRoomSkillParameter").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DeleteRoomSkillParameterResponseUnmarshaller.Instance.Unmarshall(context) as DeleteRoomSkillParameterResponse;
@@ -2756,7 +2812,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteRoomSkillParameter");
 
-            var request = InstantiateClassGenerator.Execute<DeleteRoomSkillParameterRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteRoomSkillParameterRequest>(operation);
             var marshaller = new DeleteRoomSkillParameterRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2786,7 +2842,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void DeleteSkillAuthorizationMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DeleteSkillAuthorizationRequest>();
+            var operation = service_model.FindOperation("DeleteSkillAuthorization");
+
+            var request = InstantiateClassGenerator.Execute<DeleteSkillAuthorizationRequest>(operation);
             var marshaller = new DeleteSkillAuthorizationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -2800,7 +2858,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DeleteSkillAuthorization").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DeleteSkillAuthorizationResponseUnmarshaller.Instance.Unmarshall(context) as DeleteSkillAuthorizationResponse;
@@ -2815,7 +2873,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteSkillAuthorization");
 
-            var request = InstantiateClassGenerator.Execute<DeleteSkillAuthorizationRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteSkillAuthorizationRequest>(operation);
             var marshaller = new DeleteSkillAuthorizationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2847,7 +2905,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteSkillAuthorization");
 
-            var request = InstantiateClassGenerator.Execute<DeleteSkillAuthorizationRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteSkillAuthorizationRequest>(operation);
             var marshaller = new DeleteSkillAuthorizationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2877,7 +2935,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void DeleteSkillGroupMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DeleteSkillGroupRequest>();
+            var operation = service_model.FindOperation("DeleteSkillGroup");
+
+            var request = InstantiateClassGenerator.Execute<DeleteSkillGroupRequest>(operation);
             var marshaller = new DeleteSkillGroupRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -2891,7 +2951,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DeleteSkillGroup").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DeleteSkillGroupResponseUnmarshaller.Instance.Unmarshall(context) as DeleteSkillGroupResponse;
@@ -2906,7 +2966,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteSkillGroup");
 
-            var request = InstantiateClassGenerator.Execute<DeleteSkillGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteSkillGroupRequest>(operation);
             var marshaller = new DeleteSkillGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2938,7 +2998,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteSkillGroup");
 
-            var request = InstantiateClassGenerator.Execute<DeleteSkillGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteSkillGroupRequest>(operation);
             var marshaller = new DeleteSkillGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2968,7 +3028,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void DeleteUserMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DeleteUserRequest>();
+            var operation = service_model.FindOperation("DeleteUser");
+
+            var request = InstantiateClassGenerator.Execute<DeleteUserRequest>(operation);
             var marshaller = new DeleteUserRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -2982,7 +3044,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DeleteUser").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DeleteUserResponseUnmarshaller.Instance.Unmarshall(context) as DeleteUserResponse;
@@ -2997,7 +3059,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteUser");
 
-            var request = InstantiateClassGenerator.Execute<DeleteUserRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteUserRequest>(operation);
             var marshaller = new DeleteUserRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3029,7 +3091,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteUser");
 
-            var request = InstantiateClassGenerator.Execute<DeleteUserRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteUserRequest>(operation);
             var marshaller = new DeleteUserRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3059,7 +3121,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void DisassociateContactFromAddressBookMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DisassociateContactFromAddressBookRequest>();
+            var operation = service_model.FindOperation("DisassociateContactFromAddressBook");
+
+            var request = InstantiateClassGenerator.Execute<DisassociateContactFromAddressBookRequest>(operation);
             var marshaller = new DisassociateContactFromAddressBookRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -3073,7 +3137,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DisassociateContactFromAddressBook").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DisassociateContactFromAddressBookResponseUnmarshaller.Instance.Unmarshall(context) as DisassociateContactFromAddressBookResponse;
@@ -3086,7 +3150,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void DisassociateDeviceFromRoomMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DisassociateDeviceFromRoomRequest>();
+            var operation = service_model.FindOperation("DisassociateDeviceFromRoom");
+
+            var request = InstantiateClassGenerator.Execute<DisassociateDeviceFromRoomRequest>(operation);
             var marshaller = new DisassociateDeviceFromRoomRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -3100,7 +3166,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DisassociateDeviceFromRoom").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DisassociateDeviceFromRoomResponseUnmarshaller.Instance.Unmarshall(context) as DisassociateDeviceFromRoomResponse;
@@ -3115,7 +3181,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DisassociateDeviceFromRoom");
 
-            var request = InstantiateClassGenerator.Execute<DisassociateDeviceFromRoomRequest>();
+            var request = InstantiateClassGenerator.Execute<DisassociateDeviceFromRoomRequest>(operation);
             var marshaller = new DisassociateDeviceFromRoomRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3147,7 +3213,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DisassociateDeviceFromRoom");
 
-            var request = InstantiateClassGenerator.Execute<DisassociateDeviceFromRoomRequest>();
+            var request = InstantiateClassGenerator.Execute<DisassociateDeviceFromRoomRequest>(operation);
             var marshaller = new DisassociateDeviceFromRoomRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3177,7 +3243,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void DisassociateSkillFromSkillGroupMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DisassociateSkillFromSkillGroupRequest>();
+            var operation = service_model.FindOperation("DisassociateSkillFromSkillGroup");
+
+            var request = InstantiateClassGenerator.Execute<DisassociateSkillFromSkillGroupRequest>(operation);
             var marshaller = new DisassociateSkillFromSkillGroupRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -3191,7 +3259,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DisassociateSkillFromSkillGroup").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DisassociateSkillFromSkillGroupResponseUnmarshaller.Instance.Unmarshall(context) as DisassociateSkillFromSkillGroupResponse;
@@ -3206,7 +3274,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DisassociateSkillFromSkillGroup");
 
-            var request = InstantiateClassGenerator.Execute<DisassociateSkillFromSkillGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<DisassociateSkillFromSkillGroupRequest>(operation);
             var marshaller = new DisassociateSkillFromSkillGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3238,7 +3306,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DisassociateSkillFromSkillGroup");
 
-            var request = InstantiateClassGenerator.Execute<DisassociateSkillFromSkillGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<DisassociateSkillFromSkillGroupRequest>(operation);
             var marshaller = new DisassociateSkillFromSkillGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3268,7 +3336,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void DisassociateSkillFromUsersMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DisassociateSkillFromUsersRequest>();
+            var operation = service_model.FindOperation("DisassociateSkillFromUsers");
+
+            var request = InstantiateClassGenerator.Execute<DisassociateSkillFromUsersRequest>(operation);
             var marshaller = new DisassociateSkillFromUsersRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -3282,7 +3352,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DisassociateSkillFromUsers").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DisassociateSkillFromUsersResponseUnmarshaller.Instance.Unmarshall(context) as DisassociateSkillFromUsersResponse;
@@ -3297,7 +3367,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DisassociateSkillFromUsers");
 
-            var request = InstantiateClassGenerator.Execute<DisassociateSkillFromUsersRequest>();
+            var request = InstantiateClassGenerator.Execute<DisassociateSkillFromUsersRequest>(operation);
             var marshaller = new DisassociateSkillFromUsersRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3329,7 +3399,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DisassociateSkillFromUsers");
 
-            var request = InstantiateClassGenerator.Execute<DisassociateSkillFromUsersRequest>();
+            var request = InstantiateClassGenerator.Execute<DisassociateSkillFromUsersRequest>(operation);
             var marshaller = new DisassociateSkillFromUsersRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3359,7 +3429,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void DisassociateSkillGroupFromRoomMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DisassociateSkillGroupFromRoomRequest>();
+            var operation = service_model.FindOperation("DisassociateSkillGroupFromRoom");
+
+            var request = InstantiateClassGenerator.Execute<DisassociateSkillGroupFromRoomRequest>(operation);
             var marshaller = new DisassociateSkillGroupFromRoomRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -3373,7 +3445,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DisassociateSkillGroupFromRoom").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DisassociateSkillGroupFromRoomResponseUnmarshaller.Instance.Unmarshall(context) as DisassociateSkillGroupFromRoomResponse;
@@ -3388,7 +3460,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DisassociateSkillGroupFromRoom");
 
-            var request = InstantiateClassGenerator.Execute<DisassociateSkillGroupFromRoomRequest>();
+            var request = InstantiateClassGenerator.Execute<DisassociateSkillGroupFromRoomRequest>(operation);
             var marshaller = new DisassociateSkillGroupFromRoomRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3418,7 +3490,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void ForgetSmartHomeAppliancesMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ForgetSmartHomeAppliancesRequest>();
+            var operation = service_model.FindOperation("ForgetSmartHomeAppliances");
+
+            var request = InstantiateClassGenerator.Execute<ForgetSmartHomeAppliancesRequest>(operation);
             var marshaller = new ForgetSmartHomeAppliancesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -3432,7 +3506,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ForgetSmartHomeAppliances").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ForgetSmartHomeAppliancesResponseUnmarshaller.Instance.Unmarshall(context) as ForgetSmartHomeAppliancesResponse;
@@ -3447,7 +3521,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ForgetSmartHomeAppliances");
 
-            var request = InstantiateClassGenerator.Execute<ForgetSmartHomeAppliancesRequest>();
+            var request = InstantiateClassGenerator.Execute<ForgetSmartHomeAppliancesRequest>(operation);
             var marshaller = new ForgetSmartHomeAppliancesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3477,7 +3551,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void GetAddressBookMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<GetAddressBookRequest>();
+            var operation = service_model.FindOperation("GetAddressBook");
+
+            var request = InstantiateClassGenerator.Execute<GetAddressBookRequest>(operation);
             var marshaller = new GetAddressBookRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -3491,7 +3567,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetAddressBook").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = GetAddressBookResponseUnmarshaller.Instance.Unmarshall(context) as GetAddressBookResponse;
@@ -3506,7 +3582,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetAddressBook");
 
-            var request = InstantiateClassGenerator.Execute<GetAddressBookRequest>();
+            var request = InstantiateClassGenerator.Execute<GetAddressBookRequest>(operation);
             var marshaller = new GetAddressBookRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3536,7 +3612,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void GetConferencePreferenceMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<GetConferencePreferenceRequest>();
+            var operation = service_model.FindOperation("GetConferencePreference");
+
+            var request = InstantiateClassGenerator.Execute<GetConferencePreferenceRequest>(operation);
             var marshaller = new GetConferencePreferenceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -3550,7 +3628,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetConferencePreference").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = GetConferencePreferenceResponseUnmarshaller.Instance.Unmarshall(context) as GetConferencePreferenceResponse;
@@ -3565,7 +3643,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetConferencePreference");
 
-            var request = InstantiateClassGenerator.Execute<GetConferencePreferenceRequest>();
+            var request = InstantiateClassGenerator.Execute<GetConferencePreferenceRequest>(operation);
             var marshaller = new GetConferencePreferenceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3595,7 +3673,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void GetConferenceProviderMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<GetConferenceProviderRequest>();
+            var operation = service_model.FindOperation("GetConferenceProvider");
+
+            var request = InstantiateClassGenerator.Execute<GetConferenceProviderRequest>(operation);
             var marshaller = new GetConferenceProviderRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -3609,7 +3689,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetConferenceProvider").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = GetConferenceProviderResponseUnmarshaller.Instance.Unmarshall(context) as GetConferenceProviderResponse;
@@ -3624,7 +3704,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetConferenceProvider");
 
-            var request = InstantiateClassGenerator.Execute<GetConferenceProviderRequest>();
+            var request = InstantiateClassGenerator.Execute<GetConferenceProviderRequest>(operation);
             var marshaller = new GetConferenceProviderRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3654,7 +3734,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void GetContactMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<GetContactRequest>();
+            var operation = service_model.FindOperation("GetContact");
+
+            var request = InstantiateClassGenerator.Execute<GetContactRequest>(operation);
             var marshaller = new GetContactRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -3668,7 +3750,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetContact").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = GetContactResponseUnmarshaller.Instance.Unmarshall(context) as GetContactResponse;
@@ -3683,7 +3765,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetContact");
 
-            var request = InstantiateClassGenerator.Execute<GetContactRequest>();
+            var request = InstantiateClassGenerator.Execute<GetContactRequest>(operation);
             var marshaller = new GetContactRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3713,7 +3795,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void GetDeviceMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<GetDeviceRequest>();
+            var operation = service_model.FindOperation("GetDevice");
+
+            var request = InstantiateClassGenerator.Execute<GetDeviceRequest>(operation);
             var marshaller = new GetDeviceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -3727,7 +3811,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetDevice").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = GetDeviceResponseUnmarshaller.Instance.Unmarshall(context) as GetDeviceResponse;
@@ -3742,7 +3826,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetDevice");
 
-            var request = InstantiateClassGenerator.Execute<GetDeviceRequest>();
+            var request = InstantiateClassGenerator.Execute<GetDeviceRequest>(operation);
             var marshaller = new GetDeviceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3772,7 +3856,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void GetGatewayMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<GetGatewayRequest>();
+            var operation = service_model.FindOperation("GetGateway");
+
+            var request = InstantiateClassGenerator.Execute<GetGatewayRequest>(operation);
             var marshaller = new GetGatewayRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -3786,7 +3872,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetGateway").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = GetGatewayResponseUnmarshaller.Instance.Unmarshall(context) as GetGatewayResponse;
@@ -3801,7 +3887,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetGateway");
 
-            var request = InstantiateClassGenerator.Execute<GetGatewayRequest>();
+            var request = InstantiateClassGenerator.Execute<GetGatewayRequest>(operation);
             var marshaller = new GetGatewayRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3831,7 +3917,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void GetGatewayGroupMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<GetGatewayGroupRequest>();
+            var operation = service_model.FindOperation("GetGatewayGroup");
+
+            var request = InstantiateClassGenerator.Execute<GetGatewayGroupRequest>(operation);
             var marshaller = new GetGatewayGroupRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -3845,7 +3933,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetGatewayGroup").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = GetGatewayGroupResponseUnmarshaller.Instance.Unmarshall(context) as GetGatewayGroupResponse;
@@ -3860,7 +3948,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetGatewayGroup");
 
-            var request = InstantiateClassGenerator.Execute<GetGatewayGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<GetGatewayGroupRequest>(operation);
             var marshaller = new GetGatewayGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3890,7 +3978,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void GetInvitationConfigurationMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<GetInvitationConfigurationRequest>();
+            var operation = service_model.FindOperation("GetInvitationConfiguration");
+
+            var request = InstantiateClassGenerator.Execute<GetInvitationConfigurationRequest>(operation);
             var marshaller = new GetInvitationConfigurationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -3904,7 +3994,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetInvitationConfiguration").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = GetInvitationConfigurationResponseUnmarshaller.Instance.Unmarshall(context) as GetInvitationConfigurationResponse;
@@ -3919,7 +4009,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetInvitationConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<GetInvitationConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetInvitationConfigurationRequest>(operation);
             var marshaller = new GetInvitationConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3949,7 +4039,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void GetNetworkProfileMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<GetNetworkProfileRequest>();
+            var operation = service_model.FindOperation("GetNetworkProfile");
+
+            var request = InstantiateClassGenerator.Execute<GetNetworkProfileRequest>(operation);
             var marshaller = new GetNetworkProfileRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -3963,7 +4055,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetNetworkProfile").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = GetNetworkProfileResponseUnmarshaller.Instance.Unmarshall(context) as GetNetworkProfileResponse;
@@ -3978,7 +4070,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetNetworkProfile");
 
-            var request = InstantiateClassGenerator.Execute<GetNetworkProfileRequest>();
+            var request = InstantiateClassGenerator.Execute<GetNetworkProfileRequest>(operation);
             var marshaller = new GetNetworkProfileRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4010,7 +4102,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetNetworkProfile");
 
-            var request = InstantiateClassGenerator.Execute<GetNetworkProfileRequest>();
+            var request = InstantiateClassGenerator.Execute<GetNetworkProfileRequest>(operation);
             var marshaller = new GetNetworkProfileRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4040,7 +4132,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void GetProfileMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<GetProfileRequest>();
+            var operation = service_model.FindOperation("GetProfile");
+
+            var request = InstantiateClassGenerator.Execute<GetProfileRequest>(operation);
             var marshaller = new GetProfileRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -4054,7 +4148,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetProfile").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = GetProfileResponseUnmarshaller.Instance.Unmarshall(context) as GetProfileResponse;
@@ -4069,7 +4163,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetProfile");
 
-            var request = InstantiateClassGenerator.Execute<GetProfileRequest>();
+            var request = InstantiateClassGenerator.Execute<GetProfileRequest>(operation);
             var marshaller = new GetProfileRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4099,7 +4193,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void GetRoomMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<GetRoomRequest>();
+            var operation = service_model.FindOperation("GetRoom");
+
+            var request = InstantiateClassGenerator.Execute<GetRoomRequest>(operation);
             var marshaller = new GetRoomRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -4113,7 +4209,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetRoom").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = GetRoomResponseUnmarshaller.Instance.Unmarshall(context) as GetRoomResponse;
@@ -4128,7 +4224,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetRoom");
 
-            var request = InstantiateClassGenerator.Execute<GetRoomRequest>();
+            var request = InstantiateClassGenerator.Execute<GetRoomRequest>(operation);
             var marshaller = new GetRoomRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4158,7 +4254,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void GetRoomSkillParameterMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<GetRoomSkillParameterRequest>();
+            var operation = service_model.FindOperation("GetRoomSkillParameter");
+
+            var request = InstantiateClassGenerator.Execute<GetRoomSkillParameterRequest>(operation);
             var marshaller = new GetRoomSkillParameterRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -4172,7 +4270,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetRoomSkillParameter").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = GetRoomSkillParameterResponseUnmarshaller.Instance.Unmarshall(context) as GetRoomSkillParameterResponse;
@@ -4187,7 +4285,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetRoomSkillParameter");
 
-            var request = InstantiateClassGenerator.Execute<GetRoomSkillParameterRequest>();
+            var request = InstantiateClassGenerator.Execute<GetRoomSkillParameterRequest>(operation);
             var marshaller = new GetRoomSkillParameterRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4217,7 +4315,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void GetSkillGroupMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<GetSkillGroupRequest>();
+            var operation = service_model.FindOperation("GetSkillGroup");
+
+            var request = InstantiateClassGenerator.Execute<GetSkillGroupRequest>(operation);
             var marshaller = new GetSkillGroupRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -4231,7 +4331,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetSkillGroup").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = GetSkillGroupResponseUnmarshaller.Instance.Unmarshall(context) as GetSkillGroupResponse;
@@ -4246,7 +4346,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetSkillGroup");
 
-            var request = InstantiateClassGenerator.Execute<GetSkillGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<GetSkillGroupRequest>(operation);
             var marshaller = new GetSkillGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4276,7 +4376,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void ListBusinessReportSchedulesMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ListBusinessReportSchedulesRequest>();
+            var operation = service_model.FindOperation("ListBusinessReportSchedules");
+
+            var request = InstantiateClassGenerator.Execute<ListBusinessReportSchedulesRequest>(operation);
             var marshaller = new ListBusinessReportSchedulesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -4290,7 +4392,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListBusinessReportSchedules").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ListBusinessReportSchedulesResponseUnmarshaller.Instance.Unmarshall(context) as ListBusinessReportSchedulesResponse;
@@ -4303,7 +4405,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void ListConferenceProvidersMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ListConferenceProvidersRequest>();
+            var operation = service_model.FindOperation("ListConferenceProviders");
+
+            var request = InstantiateClassGenerator.Execute<ListConferenceProvidersRequest>(operation);
             var marshaller = new ListConferenceProvidersRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -4317,7 +4421,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListConferenceProviders").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ListConferenceProvidersResponseUnmarshaller.Instance.Unmarshall(context) as ListConferenceProvidersResponse;
@@ -4330,7 +4434,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void ListDeviceEventsMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ListDeviceEventsRequest>();
+            var operation = service_model.FindOperation("ListDeviceEvents");
+
+            var request = InstantiateClassGenerator.Execute<ListDeviceEventsRequest>(operation);
             var marshaller = new ListDeviceEventsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -4344,7 +4450,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListDeviceEvents").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ListDeviceEventsResponseUnmarshaller.Instance.Unmarshall(context) as ListDeviceEventsResponse;
@@ -4359,7 +4465,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListDeviceEvents");
 
-            var request = InstantiateClassGenerator.Execute<ListDeviceEventsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListDeviceEventsRequest>(operation);
             var marshaller = new ListDeviceEventsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4389,7 +4495,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void ListGatewayGroupsMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ListGatewayGroupsRequest>();
+            var operation = service_model.FindOperation("ListGatewayGroups");
+
+            var request = InstantiateClassGenerator.Execute<ListGatewayGroupsRequest>(operation);
             var marshaller = new ListGatewayGroupsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -4403,7 +4511,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListGatewayGroups").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ListGatewayGroupsResponseUnmarshaller.Instance.Unmarshall(context) as ListGatewayGroupsResponse;
@@ -4416,7 +4524,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void ListGatewaysMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ListGatewaysRequest>();
+            var operation = service_model.FindOperation("ListGateways");
+
+            var request = InstantiateClassGenerator.Execute<ListGatewaysRequest>(operation);
             var marshaller = new ListGatewaysRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -4430,7 +4540,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListGateways").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ListGatewaysResponseUnmarshaller.Instance.Unmarshall(context) as ListGatewaysResponse;
@@ -4443,7 +4553,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void ListSkillsMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ListSkillsRequest>();
+            var operation = service_model.FindOperation("ListSkills");
+
+            var request = InstantiateClassGenerator.Execute<ListSkillsRequest>(operation);
             var marshaller = new ListSkillsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -4457,7 +4569,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListSkills").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ListSkillsResponseUnmarshaller.Instance.Unmarshall(context) as ListSkillsResponse;
@@ -4470,7 +4582,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void ListSkillsStoreCategoriesMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ListSkillsStoreCategoriesRequest>();
+            var operation = service_model.FindOperation("ListSkillsStoreCategories");
+
+            var request = InstantiateClassGenerator.Execute<ListSkillsStoreCategoriesRequest>(operation);
             var marshaller = new ListSkillsStoreCategoriesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -4484,7 +4598,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListSkillsStoreCategories").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ListSkillsStoreCategoriesResponseUnmarshaller.Instance.Unmarshall(context) as ListSkillsStoreCategoriesResponse;
@@ -4497,7 +4611,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void ListSkillsStoreSkillsByCategoryMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ListSkillsStoreSkillsByCategoryRequest>();
+            var operation = service_model.FindOperation("ListSkillsStoreSkillsByCategory");
+
+            var request = InstantiateClassGenerator.Execute<ListSkillsStoreSkillsByCategoryRequest>(operation);
             var marshaller = new ListSkillsStoreSkillsByCategoryRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -4511,7 +4627,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListSkillsStoreSkillsByCategory").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ListSkillsStoreSkillsByCategoryResponseUnmarshaller.Instance.Unmarshall(context) as ListSkillsStoreSkillsByCategoryResponse;
@@ -4524,7 +4640,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void ListSmartHomeAppliancesMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ListSmartHomeAppliancesRequest>();
+            var operation = service_model.FindOperation("ListSmartHomeAppliances");
+
+            var request = InstantiateClassGenerator.Execute<ListSmartHomeAppliancesRequest>(operation);
             var marshaller = new ListSmartHomeAppliancesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -4538,7 +4656,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListSmartHomeAppliances").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ListSmartHomeAppliancesResponseUnmarshaller.Instance.Unmarshall(context) as ListSmartHomeAppliancesResponse;
@@ -4553,7 +4671,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListSmartHomeAppliances");
 
-            var request = InstantiateClassGenerator.Execute<ListSmartHomeAppliancesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListSmartHomeAppliancesRequest>(operation);
             var marshaller = new ListSmartHomeAppliancesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4583,7 +4701,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void ListTagsMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ListTagsRequest>();
+            var operation = service_model.FindOperation("ListTags");
+
+            var request = InstantiateClassGenerator.Execute<ListTagsRequest>(operation);
             var marshaller = new ListTagsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -4597,7 +4717,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListTags").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ListTagsResponseUnmarshaller.Instance.Unmarshall(context) as ListTagsResponse;
@@ -4612,7 +4732,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListTags");
 
-            var request = InstantiateClassGenerator.Execute<ListTagsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTagsRequest>(operation);
             var marshaller = new ListTagsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4642,7 +4762,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void PutConferencePreferenceMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<PutConferencePreferenceRequest>();
+            var operation = service_model.FindOperation("PutConferencePreference");
+
+            var request = InstantiateClassGenerator.Execute<PutConferencePreferenceRequest>(operation);
             var marshaller = new PutConferencePreferenceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -4656,7 +4778,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("PutConferencePreference").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = PutConferencePreferenceResponseUnmarshaller.Instance.Unmarshall(context) as PutConferencePreferenceResponse;
@@ -4671,7 +4793,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("PutConferencePreference");
 
-            var request = InstantiateClassGenerator.Execute<PutConferencePreferenceRequest>();
+            var request = InstantiateClassGenerator.Execute<PutConferencePreferenceRequest>(operation);
             var marshaller = new PutConferencePreferenceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4701,7 +4823,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void PutInvitationConfigurationMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<PutInvitationConfigurationRequest>();
+            var operation = service_model.FindOperation("PutInvitationConfiguration");
+
+            var request = InstantiateClassGenerator.Execute<PutInvitationConfigurationRequest>(operation);
             var marshaller = new PutInvitationConfigurationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -4715,7 +4839,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("PutInvitationConfiguration").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = PutInvitationConfigurationResponseUnmarshaller.Instance.Unmarshall(context) as PutInvitationConfigurationResponse;
@@ -4730,7 +4854,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("PutInvitationConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<PutInvitationConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<PutInvitationConfigurationRequest>(operation);
             var marshaller = new PutInvitationConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4762,7 +4886,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("PutInvitationConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<PutInvitationConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<PutInvitationConfigurationRequest>(operation);
             var marshaller = new PutInvitationConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4792,7 +4916,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void PutRoomSkillParameterMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<PutRoomSkillParameterRequest>();
+            var operation = service_model.FindOperation("PutRoomSkillParameter");
+
+            var request = InstantiateClassGenerator.Execute<PutRoomSkillParameterRequest>(operation);
             var marshaller = new PutRoomSkillParameterRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -4806,7 +4932,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("PutRoomSkillParameter").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = PutRoomSkillParameterResponseUnmarshaller.Instance.Unmarshall(context) as PutRoomSkillParameterResponse;
@@ -4821,7 +4947,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("PutRoomSkillParameter");
 
-            var request = InstantiateClassGenerator.Execute<PutRoomSkillParameterRequest>();
+            var request = InstantiateClassGenerator.Execute<PutRoomSkillParameterRequest>(operation);
             var marshaller = new PutRoomSkillParameterRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4851,7 +4977,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void PutSkillAuthorizationMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<PutSkillAuthorizationRequest>();
+            var operation = service_model.FindOperation("PutSkillAuthorization");
+
+            var request = InstantiateClassGenerator.Execute<PutSkillAuthorizationRequest>(operation);
             var marshaller = new PutSkillAuthorizationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -4865,7 +4993,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("PutSkillAuthorization").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = PutSkillAuthorizationResponseUnmarshaller.Instance.Unmarshall(context) as PutSkillAuthorizationResponse;
@@ -4880,7 +5008,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("PutSkillAuthorization");
 
-            var request = InstantiateClassGenerator.Execute<PutSkillAuthorizationRequest>();
+            var request = InstantiateClassGenerator.Execute<PutSkillAuthorizationRequest>(operation);
             var marshaller = new PutSkillAuthorizationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4912,7 +5040,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("PutSkillAuthorization");
 
-            var request = InstantiateClassGenerator.Execute<PutSkillAuthorizationRequest>();
+            var request = InstantiateClassGenerator.Execute<PutSkillAuthorizationRequest>(operation);
             var marshaller = new PutSkillAuthorizationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4942,7 +5070,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void RegisterAVSDeviceMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<RegisterAVSDeviceRequest>();
+            var operation = service_model.FindOperation("RegisterAVSDevice");
+
+            var request = InstantiateClassGenerator.Execute<RegisterAVSDeviceRequest>(operation);
             var marshaller = new RegisterAVSDeviceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -4956,7 +5086,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("RegisterAVSDevice").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = RegisterAVSDeviceResponseUnmarshaller.Instance.Unmarshall(context) as RegisterAVSDeviceResponse;
@@ -4971,7 +5101,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("RegisterAVSDevice");
 
-            var request = InstantiateClassGenerator.Execute<RegisterAVSDeviceRequest>();
+            var request = InstantiateClassGenerator.Execute<RegisterAVSDeviceRequest>(operation);
             var marshaller = new RegisterAVSDeviceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5003,7 +5133,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("RegisterAVSDevice");
 
-            var request = InstantiateClassGenerator.Execute<RegisterAVSDeviceRequest>();
+            var request = InstantiateClassGenerator.Execute<RegisterAVSDeviceRequest>(operation);
             var marshaller = new RegisterAVSDeviceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5035,7 +5165,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("RegisterAVSDevice");
 
-            var request = InstantiateClassGenerator.Execute<RegisterAVSDeviceRequest>();
+            var request = InstantiateClassGenerator.Execute<RegisterAVSDeviceRequest>(operation);
             var marshaller = new RegisterAVSDeviceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5067,7 +5197,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("RegisterAVSDevice");
 
-            var request = InstantiateClassGenerator.Execute<RegisterAVSDeviceRequest>();
+            var request = InstantiateClassGenerator.Execute<RegisterAVSDeviceRequest>(operation);
             var marshaller = new RegisterAVSDeviceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5097,7 +5227,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void RejectSkillMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<RejectSkillRequest>();
+            var operation = service_model.FindOperation("RejectSkill");
+
+            var request = InstantiateClassGenerator.Execute<RejectSkillRequest>(operation);
             var marshaller = new RejectSkillRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -5111,7 +5243,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("RejectSkill").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = RejectSkillResponseUnmarshaller.Instance.Unmarshall(context) as RejectSkillResponse;
@@ -5126,7 +5258,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("RejectSkill");
 
-            var request = InstantiateClassGenerator.Execute<RejectSkillRequest>();
+            var request = InstantiateClassGenerator.Execute<RejectSkillRequest>(operation);
             var marshaller = new RejectSkillRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5158,7 +5290,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("RejectSkill");
 
-            var request = InstantiateClassGenerator.Execute<RejectSkillRequest>();
+            var request = InstantiateClassGenerator.Execute<RejectSkillRequest>(operation);
             var marshaller = new RejectSkillRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5188,7 +5320,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void ResolveRoomMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ResolveRoomRequest>();
+            var operation = service_model.FindOperation("ResolveRoom");
+
+            var request = InstantiateClassGenerator.Execute<ResolveRoomRequest>(operation);
             var marshaller = new ResolveRoomRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -5202,7 +5336,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ResolveRoom").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ResolveRoomResponseUnmarshaller.Instance.Unmarshall(context) as ResolveRoomResponse;
@@ -5217,7 +5351,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ResolveRoom");
 
-            var request = InstantiateClassGenerator.Execute<ResolveRoomRequest>();
+            var request = InstantiateClassGenerator.Execute<ResolveRoomRequest>(operation);
             var marshaller = new ResolveRoomRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5247,7 +5381,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void RevokeInvitationMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<RevokeInvitationRequest>();
+            var operation = service_model.FindOperation("RevokeInvitation");
+
+            var request = InstantiateClassGenerator.Execute<RevokeInvitationRequest>(operation);
             var marshaller = new RevokeInvitationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -5261,7 +5397,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("RevokeInvitation").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = RevokeInvitationResponseUnmarshaller.Instance.Unmarshall(context) as RevokeInvitationResponse;
@@ -5276,7 +5412,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("RevokeInvitation");
 
-            var request = InstantiateClassGenerator.Execute<RevokeInvitationRequest>();
+            var request = InstantiateClassGenerator.Execute<RevokeInvitationRequest>(operation);
             var marshaller = new RevokeInvitationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5308,7 +5444,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("RevokeInvitation");
 
-            var request = InstantiateClassGenerator.Execute<RevokeInvitationRequest>();
+            var request = InstantiateClassGenerator.Execute<RevokeInvitationRequest>(operation);
             var marshaller = new RevokeInvitationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5338,7 +5474,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void SearchAddressBooksMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<SearchAddressBooksRequest>();
+            var operation = service_model.FindOperation("SearchAddressBooks");
+
+            var request = InstantiateClassGenerator.Execute<SearchAddressBooksRequest>(operation);
             var marshaller = new SearchAddressBooksRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -5352,7 +5490,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("SearchAddressBooks").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = SearchAddressBooksResponseUnmarshaller.Instance.Unmarshall(context) as SearchAddressBooksResponse;
@@ -5365,7 +5503,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void SearchContactsMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<SearchContactsRequest>();
+            var operation = service_model.FindOperation("SearchContacts");
+
+            var request = InstantiateClassGenerator.Execute<SearchContactsRequest>(operation);
             var marshaller = new SearchContactsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -5379,7 +5519,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("SearchContacts").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = SearchContactsResponseUnmarshaller.Instance.Unmarshall(context) as SearchContactsResponse;
@@ -5392,7 +5532,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void SearchDevicesMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<SearchDevicesRequest>();
+            var operation = service_model.FindOperation("SearchDevices");
+
+            var request = InstantiateClassGenerator.Execute<SearchDevicesRequest>(operation);
             var marshaller = new SearchDevicesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -5406,7 +5548,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("SearchDevices").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = SearchDevicesResponseUnmarshaller.Instance.Unmarshall(context) as SearchDevicesResponse;
@@ -5419,7 +5561,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void SearchNetworkProfilesMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<SearchNetworkProfilesRequest>();
+            var operation = service_model.FindOperation("SearchNetworkProfiles");
+
+            var request = InstantiateClassGenerator.Execute<SearchNetworkProfilesRequest>(operation);
             var marshaller = new SearchNetworkProfilesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -5433,7 +5577,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("SearchNetworkProfiles").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = SearchNetworkProfilesResponseUnmarshaller.Instance.Unmarshall(context) as SearchNetworkProfilesResponse;
@@ -5446,7 +5590,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void SearchProfilesMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<SearchProfilesRequest>();
+            var operation = service_model.FindOperation("SearchProfiles");
+
+            var request = InstantiateClassGenerator.Execute<SearchProfilesRequest>(operation);
             var marshaller = new SearchProfilesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -5460,7 +5606,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("SearchProfiles").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = SearchProfilesResponseUnmarshaller.Instance.Unmarshall(context) as SearchProfilesResponse;
@@ -5473,7 +5619,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void SearchRoomsMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<SearchRoomsRequest>();
+            var operation = service_model.FindOperation("SearchRooms");
+
+            var request = InstantiateClassGenerator.Execute<SearchRoomsRequest>(operation);
             var marshaller = new SearchRoomsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -5487,7 +5635,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("SearchRooms").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = SearchRoomsResponseUnmarshaller.Instance.Unmarshall(context) as SearchRoomsResponse;
@@ -5500,7 +5648,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void SearchSkillGroupsMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<SearchSkillGroupsRequest>();
+            var operation = service_model.FindOperation("SearchSkillGroups");
+
+            var request = InstantiateClassGenerator.Execute<SearchSkillGroupsRequest>(operation);
             var marshaller = new SearchSkillGroupsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -5514,7 +5664,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("SearchSkillGroups").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = SearchSkillGroupsResponseUnmarshaller.Instance.Unmarshall(context) as SearchSkillGroupsResponse;
@@ -5527,7 +5677,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void SearchUsersMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<SearchUsersRequest>();
+            var operation = service_model.FindOperation("SearchUsers");
+
+            var request = InstantiateClassGenerator.Execute<SearchUsersRequest>(operation);
             var marshaller = new SearchUsersRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -5541,7 +5693,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("SearchUsers").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = SearchUsersResponseUnmarshaller.Instance.Unmarshall(context) as SearchUsersResponse;
@@ -5554,7 +5706,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void SendAnnouncementMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<SendAnnouncementRequest>();
+            var operation = service_model.FindOperation("SendAnnouncement");
+
+            var request = InstantiateClassGenerator.Execute<SendAnnouncementRequest>(operation);
             var marshaller = new SendAnnouncementRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -5568,7 +5722,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("SendAnnouncement").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = SendAnnouncementResponseUnmarshaller.Instance.Unmarshall(context) as SendAnnouncementResponse;
@@ -5583,7 +5737,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("SendAnnouncement");
 
-            var request = InstantiateClassGenerator.Execute<SendAnnouncementRequest>();
+            var request = InstantiateClassGenerator.Execute<SendAnnouncementRequest>(operation);
             var marshaller = new SendAnnouncementRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5615,7 +5769,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("SendAnnouncement");
 
-            var request = InstantiateClassGenerator.Execute<SendAnnouncementRequest>();
+            var request = InstantiateClassGenerator.Execute<SendAnnouncementRequest>(operation);
             var marshaller = new SendAnnouncementRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5645,7 +5799,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void SendInvitationMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<SendInvitationRequest>();
+            var operation = service_model.FindOperation("SendInvitation");
+
+            var request = InstantiateClassGenerator.Execute<SendInvitationRequest>(operation);
             var marshaller = new SendInvitationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -5659,7 +5815,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("SendInvitation").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = SendInvitationResponseUnmarshaller.Instance.Unmarshall(context) as SendInvitationResponse;
@@ -5674,7 +5830,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("SendInvitation");
 
-            var request = InstantiateClassGenerator.Execute<SendInvitationRequest>();
+            var request = InstantiateClassGenerator.Execute<SendInvitationRequest>(operation);
             var marshaller = new SendInvitationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5706,7 +5862,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("SendInvitation");
 
-            var request = InstantiateClassGenerator.Execute<SendInvitationRequest>();
+            var request = InstantiateClassGenerator.Execute<SendInvitationRequest>(operation);
             var marshaller = new SendInvitationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5738,7 +5894,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("SendInvitation");
 
-            var request = InstantiateClassGenerator.Execute<SendInvitationRequest>();
+            var request = InstantiateClassGenerator.Execute<SendInvitationRequest>(operation);
             var marshaller = new SendInvitationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5768,7 +5924,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void StartDeviceSyncMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<StartDeviceSyncRequest>();
+            var operation = service_model.FindOperation("StartDeviceSync");
+
+            var request = InstantiateClassGenerator.Execute<StartDeviceSyncRequest>(operation);
             var marshaller = new StartDeviceSyncRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -5782,7 +5940,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("StartDeviceSync").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = StartDeviceSyncResponseUnmarshaller.Instance.Unmarshall(context) as StartDeviceSyncResponse;
@@ -5797,7 +5955,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("StartDeviceSync");
 
-            var request = InstantiateClassGenerator.Execute<StartDeviceSyncRequest>();
+            var request = InstantiateClassGenerator.Execute<StartDeviceSyncRequest>(operation);
             var marshaller = new StartDeviceSyncRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5827,7 +5985,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void StartSmartHomeApplianceDiscoveryMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<StartSmartHomeApplianceDiscoveryRequest>();
+            var operation = service_model.FindOperation("StartSmartHomeApplianceDiscovery");
+
+            var request = InstantiateClassGenerator.Execute<StartSmartHomeApplianceDiscoveryRequest>(operation);
             var marshaller = new StartSmartHomeApplianceDiscoveryRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -5841,7 +6001,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("StartSmartHomeApplianceDiscovery").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = StartSmartHomeApplianceDiscoveryResponseUnmarshaller.Instance.Unmarshall(context) as StartSmartHomeApplianceDiscoveryResponse;
@@ -5856,7 +6016,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("StartSmartHomeApplianceDiscovery");
 
-            var request = InstantiateClassGenerator.Execute<StartSmartHomeApplianceDiscoveryRequest>();
+            var request = InstantiateClassGenerator.Execute<StartSmartHomeApplianceDiscoveryRequest>(operation);
             var marshaller = new StartSmartHomeApplianceDiscoveryRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5886,7 +6046,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void TagResourceMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var operation = service_model.FindOperation("TagResource");
+
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -5900,7 +6062,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("TagResource").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = TagResourceResponseUnmarshaller.Instance.Unmarshall(context) as TagResourceResponse;
@@ -5915,7 +6077,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("TagResource");
 
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5945,7 +6107,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void UntagResourceMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var operation = service_model.FindOperation("UntagResource");
+
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>(operation);
             var marshaller = new UntagResourceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -5959,7 +6123,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("UntagResource").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = UntagResourceResponseUnmarshaller.Instance.Unmarshall(context) as UntagResourceResponse;
@@ -5974,7 +6138,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UntagResource");
 
-            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>(operation);
             var marshaller = new UntagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6004,7 +6168,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void UpdateAddressBookMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<UpdateAddressBookRequest>();
+            var operation = service_model.FindOperation("UpdateAddressBook");
+
+            var request = InstantiateClassGenerator.Execute<UpdateAddressBookRequest>(operation);
             var marshaller = new UpdateAddressBookRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -6018,7 +6184,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("UpdateAddressBook").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = UpdateAddressBookResponseUnmarshaller.Instance.Unmarshall(context) as UpdateAddressBookResponse;
@@ -6033,7 +6199,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateAddressBook");
 
-            var request = InstantiateClassGenerator.Execute<UpdateAddressBookRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateAddressBookRequest>(operation);
             var marshaller = new UpdateAddressBookRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6065,7 +6231,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateAddressBook");
 
-            var request = InstantiateClassGenerator.Execute<UpdateAddressBookRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateAddressBookRequest>(operation);
             var marshaller = new UpdateAddressBookRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6097,7 +6263,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateAddressBook");
 
-            var request = InstantiateClassGenerator.Execute<UpdateAddressBookRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateAddressBookRequest>(operation);
             var marshaller = new UpdateAddressBookRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6127,7 +6293,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void UpdateBusinessReportScheduleMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<UpdateBusinessReportScheduleRequest>();
+            var operation = service_model.FindOperation("UpdateBusinessReportSchedule");
+
+            var request = InstantiateClassGenerator.Execute<UpdateBusinessReportScheduleRequest>(operation);
             var marshaller = new UpdateBusinessReportScheduleRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -6141,7 +6309,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("UpdateBusinessReportSchedule").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = UpdateBusinessReportScheduleResponseUnmarshaller.Instance.Unmarshall(context) as UpdateBusinessReportScheduleResponse;
@@ -6156,7 +6324,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateBusinessReportSchedule");
 
-            var request = InstantiateClassGenerator.Execute<UpdateBusinessReportScheduleRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateBusinessReportScheduleRequest>(operation);
             var marshaller = new UpdateBusinessReportScheduleRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6188,7 +6356,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateBusinessReportSchedule");
 
-            var request = InstantiateClassGenerator.Execute<UpdateBusinessReportScheduleRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateBusinessReportScheduleRequest>(operation);
             var marshaller = new UpdateBusinessReportScheduleRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6218,7 +6386,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void UpdateConferenceProviderMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<UpdateConferenceProviderRequest>();
+            var operation = service_model.FindOperation("UpdateConferenceProvider");
+
+            var request = InstantiateClassGenerator.Execute<UpdateConferenceProviderRequest>(operation);
             var marshaller = new UpdateConferenceProviderRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -6232,7 +6402,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("UpdateConferenceProvider").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = UpdateConferenceProviderResponseUnmarshaller.Instance.Unmarshall(context) as UpdateConferenceProviderResponse;
@@ -6247,7 +6417,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateConferenceProvider");
 
-            var request = InstantiateClassGenerator.Execute<UpdateConferenceProviderRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateConferenceProviderRequest>(operation);
             var marshaller = new UpdateConferenceProviderRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6277,7 +6447,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void UpdateContactMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<UpdateContactRequest>();
+            var operation = service_model.FindOperation("UpdateContact");
+
+            var request = InstantiateClassGenerator.Execute<UpdateContactRequest>(operation);
             var marshaller = new UpdateContactRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -6291,7 +6463,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("UpdateContact").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = UpdateContactResponseUnmarshaller.Instance.Unmarshall(context) as UpdateContactResponse;
@@ -6306,7 +6478,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateContact");
 
-            var request = InstantiateClassGenerator.Execute<UpdateContactRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateContactRequest>(operation);
             var marshaller = new UpdateContactRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6338,7 +6510,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateContact");
 
-            var request = InstantiateClassGenerator.Execute<UpdateContactRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateContactRequest>(operation);
             var marshaller = new UpdateContactRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6368,7 +6540,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void UpdateDeviceMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<UpdateDeviceRequest>();
+            var operation = service_model.FindOperation("UpdateDevice");
+
+            var request = InstantiateClassGenerator.Execute<UpdateDeviceRequest>(operation);
             var marshaller = new UpdateDeviceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -6382,7 +6556,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("UpdateDevice").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = UpdateDeviceResponseUnmarshaller.Instance.Unmarshall(context) as UpdateDeviceResponse;
@@ -6397,7 +6571,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateDevice");
 
-            var request = InstantiateClassGenerator.Execute<UpdateDeviceRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateDeviceRequest>(operation);
             var marshaller = new UpdateDeviceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6429,7 +6603,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateDevice");
 
-            var request = InstantiateClassGenerator.Execute<UpdateDeviceRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateDeviceRequest>(operation);
             var marshaller = new UpdateDeviceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6461,7 +6635,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateDevice");
 
-            var request = InstantiateClassGenerator.Execute<UpdateDeviceRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateDeviceRequest>(operation);
             var marshaller = new UpdateDeviceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6491,7 +6665,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void UpdateGatewayMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<UpdateGatewayRequest>();
+            var operation = service_model.FindOperation("UpdateGateway");
+
+            var request = InstantiateClassGenerator.Execute<UpdateGatewayRequest>(operation);
             var marshaller = new UpdateGatewayRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -6505,7 +6681,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("UpdateGateway").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = UpdateGatewayResponseUnmarshaller.Instance.Unmarshall(context) as UpdateGatewayResponse;
@@ -6520,7 +6696,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateGateway");
 
-            var request = InstantiateClassGenerator.Execute<UpdateGatewayRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateGatewayRequest>(operation);
             var marshaller = new UpdateGatewayRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6552,7 +6728,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateGateway");
 
-            var request = InstantiateClassGenerator.Execute<UpdateGatewayRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateGatewayRequest>(operation);
             var marshaller = new UpdateGatewayRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6582,7 +6758,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void UpdateGatewayGroupMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<UpdateGatewayGroupRequest>();
+            var operation = service_model.FindOperation("UpdateGatewayGroup");
+
+            var request = InstantiateClassGenerator.Execute<UpdateGatewayGroupRequest>(operation);
             var marshaller = new UpdateGatewayGroupRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -6596,7 +6774,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("UpdateGatewayGroup").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = UpdateGatewayGroupResponseUnmarshaller.Instance.Unmarshall(context) as UpdateGatewayGroupResponse;
@@ -6611,7 +6789,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateGatewayGroup");
 
-            var request = InstantiateClassGenerator.Execute<UpdateGatewayGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateGatewayGroupRequest>(operation);
             var marshaller = new UpdateGatewayGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6643,7 +6821,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateGatewayGroup");
 
-            var request = InstantiateClassGenerator.Execute<UpdateGatewayGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateGatewayGroupRequest>(operation);
             var marshaller = new UpdateGatewayGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6673,7 +6851,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void UpdateNetworkProfileMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<UpdateNetworkProfileRequest>();
+            var operation = service_model.FindOperation("UpdateNetworkProfile");
+
+            var request = InstantiateClassGenerator.Execute<UpdateNetworkProfileRequest>(operation);
             var marshaller = new UpdateNetworkProfileRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -6687,7 +6867,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("UpdateNetworkProfile").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = UpdateNetworkProfileResponseUnmarshaller.Instance.Unmarshall(context) as UpdateNetworkProfileResponse;
@@ -6702,7 +6882,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateNetworkProfile");
 
-            var request = InstantiateClassGenerator.Execute<UpdateNetworkProfileRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateNetworkProfileRequest>(operation);
             var marshaller = new UpdateNetworkProfileRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6734,7 +6914,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateNetworkProfile");
 
-            var request = InstantiateClassGenerator.Execute<UpdateNetworkProfileRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateNetworkProfileRequest>(operation);
             var marshaller = new UpdateNetworkProfileRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6766,7 +6946,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateNetworkProfile");
 
-            var request = InstantiateClassGenerator.Execute<UpdateNetworkProfileRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateNetworkProfileRequest>(operation);
             var marshaller = new UpdateNetworkProfileRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6798,7 +6978,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateNetworkProfile");
 
-            var request = InstantiateClassGenerator.Execute<UpdateNetworkProfileRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateNetworkProfileRequest>(operation);
             var marshaller = new UpdateNetworkProfileRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6830,7 +7010,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateNetworkProfile");
 
-            var request = InstantiateClassGenerator.Execute<UpdateNetworkProfileRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateNetworkProfileRequest>(operation);
             var marshaller = new UpdateNetworkProfileRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6860,7 +7040,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void UpdateProfileMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<UpdateProfileRequest>();
+            var operation = service_model.FindOperation("UpdateProfile");
+
+            var request = InstantiateClassGenerator.Execute<UpdateProfileRequest>(operation);
             var marshaller = new UpdateProfileRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -6874,7 +7056,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("UpdateProfile").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = UpdateProfileResponseUnmarshaller.Instance.Unmarshall(context) as UpdateProfileResponse;
@@ -6889,7 +7071,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateProfile");
 
-            var request = InstantiateClassGenerator.Execute<UpdateProfileRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateProfileRequest>(operation);
             var marshaller = new UpdateProfileRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6921,7 +7103,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateProfile");
 
-            var request = InstantiateClassGenerator.Execute<UpdateProfileRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateProfileRequest>(operation);
             var marshaller = new UpdateProfileRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6953,7 +7135,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateProfile");
 
-            var request = InstantiateClassGenerator.Execute<UpdateProfileRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateProfileRequest>(operation);
             var marshaller = new UpdateProfileRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6983,7 +7165,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void UpdateRoomMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<UpdateRoomRequest>();
+            var operation = service_model.FindOperation("UpdateRoom");
+
+            var request = InstantiateClassGenerator.Execute<UpdateRoomRequest>(operation);
             var marshaller = new UpdateRoomRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -6997,7 +7181,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("UpdateRoom").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = UpdateRoomResponseUnmarshaller.Instance.Unmarshall(context) as UpdateRoomResponse;
@@ -7012,7 +7196,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateRoom");
 
-            var request = InstantiateClassGenerator.Execute<UpdateRoomRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateRoomRequest>(operation);
             var marshaller = new UpdateRoomRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -7044,7 +7228,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateRoom");
 
-            var request = InstantiateClassGenerator.Execute<UpdateRoomRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateRoomRequest>(operation);
             var marshaller = new UpdateRoomRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -7074,7 +7258,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AlexaForBusiness")]
         public void UpdateSkillGroupMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<UpdateSkillGroupRequest>();
+            var operation = service_model.FindOperation("UpdateSkillGroup");
+
+            var request = InstantiateClassGenerator.Execute<UpdateSkillGroupRequest>(operation);
             var marshaller = new UpdateSkillGroupRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -7088,7 +7274,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("UpdateSkillGroup").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = UpdateSkillGroupResponseUnmarshaller.Instance.Unmarshall(context) as UpdateSkillGroupResponse;
@@ -7103,7 +7289,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateSkillGroup");
 
-            var request = InstantiateClassGenerator.Execute<UpdateSkillGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateSkillGroupRequest>(operation);
             var marshaller = new UpdateSkillGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -7135,7 +7321,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateSkillGroup");
 
-            var request = InstantiateClassGenerator.Execute<UpdateSkillGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateSkillGroupRequest>(operation);
             var marshaller = new UpdateSkillGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -7167,7 +7353,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateSkillGroup");
 
-            var request = InstantiateClassGenerator.Execute<UpdateSkillGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateSkillGroupRequest>(operation);
             var marshaller = new UpdateSkillGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);

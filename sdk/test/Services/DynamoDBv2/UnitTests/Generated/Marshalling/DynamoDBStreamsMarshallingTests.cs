@@ -46,7 +46,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("DynamoDBv2")]
         public void DescribeStreamMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DescribeStreamRequest>();
+            var operation = service_model.FindOperation("DescribeStream");
+
+            var request = InstantiateClassGenerator.Execute<DescribeStreamRequest>(operation);
             var marshaller = new DescribeStreamRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -60,7 +62,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeStream").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DescribeStreamResponseUnmarshaller.Instance.Unmarshall(context) as DescribeStreamResponse;
@@ -75,7 +77,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeStream");
 
-            var request = InstantiateClassGenerator.Execute<DescribeStreamRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeStreamRequest>(operation);
             var marshaller = new DescribeStreamRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -107,7 +109,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeStream");
 
-            var request = InstantiateClassGenerator.Execute<DescribeStreamRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeStreamRequest>(operation);
             var marshaller = new DescribeStreamRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -137,7 +139,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("DynamoDBv2")]
         public void GetRecordsMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<GetRecordsRequest>();
+            var operation = service_model.FindOperation("GetRecords");
+
+            var request = InstantiateClassGenerator.Execute<GetRecordsRequest>(operation);
             var marshaller = new GetRecordsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -151,7 +155,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetRecords").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = GetRecordsResponseUnmarshaller.Instance.Unmarshall(context) as GetRecordsResponse;
@@ -166,7 +170,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetRecords");
 
-            var request = InstantiateClassGenerator.Execute<GetRecordsRequest>();
+            var request = InstantiateClassGenerator.Execute<GetRecordsRequest>(operation);
             var marshaller = new GetRecordsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -198,7 +202,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetRecords");
 
-            var request = InstantiateClassGenerator.Execute<GetRecordsRequest>();
+            var request = InstantiateClassGenerator.Execute<GetRecordsRequest>(operation);
             var marshaller = new GetRecordsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -230,7 +234,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetRecords");
 
-            var request = InstantiateClassGenerator.Execute<GetRecordsRequest>();
+            var request = InstantiateClassGenerator.Execute<GetRecordsRequest>(operation);
             var marshaller = new GetRecordsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -262,7 +266,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetRecords");
 
-            var request = InstantiateClassGenerator.Execute<GetRecordsRequest>();
+            var request = InstantiateClassGenerator.Execute<GetRecordsRequest>(operation);
             var marshaller = new GetRecordsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -294,7 +298,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetRecords");
 
-            var request = InstantiateClassGenerator.Execute<GetRecordsRequest>();
+            var request = InstantiateClassGenerator.Execute<GetRecordsRequest>(operation);
             var marshaller = new GetRecordsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -324,7 +328,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("DynamoDBv2")]
         public void GetShardIteratorMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<GetShardIteratorRequest>();
+            var operation = service_model.FindOperation("GetShardIterator");
+
+            var request = InstantiateClassGenerator.Execute<GetShardIteratorRequest>(operation);
             var marshaller = new GetShardIteratorRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -338,7 +344,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetShardIterator").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = GetShardIteratorResponseUnmarshaller.Instance.Unmarshall(context) as GetShardIteratorResponse;
@@ -353,7 +359,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetShardIterator");
 
-            var request = InstantiateClassGenerator.Execute<GetShardIteratorRequest>();
+            var request = InstantiateClassGenerator.Execute<GetShardIteratorRequest>(operation);
             var marshaller = new GetShardIteratorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -385,7 +391,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetShardIterator");
 
-            var request = InstantiateClassGenerator.Execute<GetShardIteratorRequest>();
+            var request = InstantiateClassGenerator.Execute<GetShardIteratorRequest>(operation);
             var marshaller = new GetShardIteratorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -417,7 +423,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetShardIterator");
 
-            var request = InstantiateClassGenerator.Execute<GetShardIteratorRequest>();
+            var request = InstantiateClassGenerator.Execute<GetShardIteratorRequest>(operation);
             var marshaller = new GetShardIteratorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -447,7 +453,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("DynamoDBv2")]
         public void ListStreamsMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ListStreamsRequest>();
+            var operation = service_model.FindOperation("ListStreams");
+
+            var request = InstantiateClassGenerator.Execute<ListStreamsRequest>(operation);
             var marshaller = new ListStreamsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -461,7 +469,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListStreams").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ListStreamsResponseUnmarshaller.Instance.Unmarshall(context) as ListStreamsResponse;
@@ -476,7 +484,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListStreams");
 
-            var request = InstantiateClassGenerator.Execute<ListStreamsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListStreamsRequest>(operation);
             var marshaller = new ListStreamsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -508,7 +516,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListStreams");
 
-            var request = InstantiateClassGenerator.Execute<ListStreamsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListStreamsRequest>(operation);
             var marshaller = new ListStreamsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);

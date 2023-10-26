@@ -49,7 +49,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetLatestConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<GetLatestConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetLatestConfigurationRequest>(operation);
             var marshaller = new GetLatestConfigurationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -83,7 +83,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetLatestConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<GetLatestConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetLatestConfigurationRequest>(operation);
             var marshaller = new GetLatestConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -119,7 +119,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetLatestConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<GetLatestConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetLatestConfigurationRequest>(operation);
             var marshaller = new GetLatestConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -155,7 +155,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetLatestConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<GetLatestConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetLatestConfigurationRequest>(operation);
             var marshaller = new GetLatestConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -191,7 +191,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetLatestConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<GetLatestConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetLatestConfigurationRequest>(operation);
             var marshaller = new GetLatestConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -227,7 +227,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartConfigurationSession");
 
-            var request = InstantiateClassGenerator.Execute<StartConfigurationSessionRequest>();
+            var request = InstantiateClassGenerator.Execute<StartConfigurationSessionRequest>(operation);
             var marshaller = new StartConfigurationSessionRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -257,7 +257,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartConfigurationSession");
 
-            var request = InstantiateClassGenerator.Execute<StartConfigurationSessionRequest>();
+            var request = InstantiateClassGenerator.Execute<StartConfigurationSessionRequest>(operation);
             var marshaller = new StartConfigurationSessionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -289,7 +289,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartConfigurationSession");
 
-            var request = InstantiateClassGenerator.Execute<StartConfigurationSessionRequest>();
+            var request = InstantiateClassGenerator.Execute<StartConfigurationSessionRequest>(operation);
             var marshaller = new StartConfigurationSessionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -321,7 +321,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartConfigurationSession");
 
-            var request = InstantiateClassGenerator.Execute<StartConfigurationSessionRequest>();
+            var request = InstantiateClassGenerator.Execute<StartConfigurationSessionRequest>(operation);
             var marshaller = new StartConfigurationSessionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -353,7 +353,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartConfigurationSession");
 
-            var request = InstantiateClassGenerator.Execute<StartConfigurationSessionRequest>();
+            var request = InstantiateClassGenerator.Execute<StartConfigurationSessionRequest>(operation);
             var marshaller = new StartConfigurationSessionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 

@@ -49,7 +49,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateEnvironment");
 
-            var request = InstantiateClassGenerator.Execute<CreateEnvironmentRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateEnvironmentRequest>(operation);
             var marshaller = new CreateEnvironmentRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -79,7 +79,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateEnvironment");
 
-            var request = InstantiateClassGenerator.Execute<CreateEnvironmentRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateEnvironmentRequest>(operation);
             var marshaller = new CreateEnvironmentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -111,7 +111,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateEnvironment");
 
-            var request = InstantiateClassGenerator.Execute<CreateEnvironmentRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateEnvironmentRequest>(operation);
             var marshaller = new CreateEnvironmentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -143,7 +143,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateEnvironment");
 
-            var request = InstantiateClassGenerator.Execute<CreateEnvironmentRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateEnvironmentRequest>(operation);
             var marshaller = new CreateEnvironmentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -175,7 +175,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateEnvironment");
 
-            var request = InstantiateClassGenerator.Execute<CreateEnvironmentRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateEnvironmentRequest>(operation);
             var marshaller = new CreateEnvironmentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -207,7 +207,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateEnvironment");
 
-            var request = InstantiateClassGenerator.Execute<CreateEnvironmentRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateEnvironmentRequest>(operation);
             var marshaller = new CreateEnvironmentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -239,7 +239,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateEnvironment");
 
-            var request = InstantiateClassGenerator.Execute<CreateEnvironmentRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateEnvironmentRequest>(operation);
             var marshaller = new CreateEnvironmentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -271,7 +271,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateKxChangeset");
 
-            var request = InstantiateClassGenerator.Execute<CreateKxChangesetRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateKxChangesetRequest>(operation);
             var marshaller = new CreateKxChangesetRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -301,7 +301,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateKxChangeset");
 
-            var request = InstantiateClassGenerator.Execute<CreateKxChangesetRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateKxChangesetRequest>(operation);
             var marshaller = new CreateKxChangesetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -333,7 +333,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateKxChangeset");
 
-            var request = InstantiateClassGenerator.Execute<CreateKxChangesetRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateKxChangesetRequest>(operation);
             var marshaller = new CreateKxChangesetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -365,7 +365,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateKxChangeset");
 
-            var request = InstantiateClassGenerator.Execute<CreateKxChangesetRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateKxChangesetRequest>(operation);
             var marshaller = new CreateKxChangesetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -397,7 +397,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateKxChangeset");
 
-            var request = InstantiateClassGenerator.Execute<CreateKxChangesetRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateKxChangesetRequest>(operation);
             var marshaller = new CreateKxChangesetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -429,7 +429,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateKxChangeset");
 
-            var request = InstantiateClassGenerator.Execute<CreateKxChangesetRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateKxChangesetRequest>(operation);
             var marshaller = new CreateKxChangesetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -461,7 +461,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateKxChangeset");
 
-            var request = InstantiateClassGenerator.Execute<CreateKxChangesetRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateKxChangesetRequest>(operation);
             var marshaller = new CreateKxChangesetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -493,7 +493,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateKxChangeset");
 
-            var request = InstantiateClassGenerator.Execute<CreateKxChangesetRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateKxChangesetRequest>(operation);
             var marshaller = new CreateKxChangesetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -525,7 +525,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateKxCluster");
 
-            var request = InstantiateClassGenerator.Execute<CreateKxClusterRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateKxClusterRequest>(operation);
             var marshaller = new CreateKxClusterRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -555,7 +555,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateKxCluster");
 
-            var request = InstantiateClassGenerator.Execute<CreateKxClusterRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateKxClusterRequest>(operation);
             var marshaller = new CreateKxClusterRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -587,7 +587,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateKxCluster");
 
-            var request = InstantiateClassGenerator.Execute<CreateKxClusterRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateKxClusterRequest>(operation);
             var marshaller = new CreateKxClusterRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -619,7 +619,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateKxCluster");
 
-            var request = InstantiateClassGenerator.Execute<CreateKxClusterRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateKxClusterRequest>(operation);
             var marshaller = new CreateKxClusterRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -651,7 +651,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateKxCluster");
 
-            var request = InstantiateClassGenerator.Execute<CreateKxClusterRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateKxClusterRequest>(operation);
             var marshaller = new CreateKxClusterRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -683,7 +683,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateKxCluster");
 
-            var request = InstantiateClassGenerator.Execute<CreateKxClusterRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateKxClusterRequest>(operation);
             var marshaller = new CreateKxClusterRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -715,7 +715,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateKxCluster");
 
-            var request = InstantiateClassGenerator.Execute<CreateKxClusterRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateKxClusterRequest>(operation);
             var marshaller = new CreateKxClusterRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -747,7 +747,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateKxCluster");
 
-            var request = InstantiateClassGenerator.Execute<CreateKxClusterRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateKxClusterRequest>(operation);
             var marshaller = new CreateKxClusterRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -779,7 +779,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateKxDatabase");
 
-            var request = InstantiateClassGenerator.Execute<CreateKxDatabaseRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateKxDatabaseRequest>(operation);
             var marshaller = new CreateKxDatabaseRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -809,7 +809,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateKxDatabase");
 
-            var request = InstantiateClassGenerator.Execute<CreateKxDatabaseRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateKxDatabaseRequest>(operation);
             var marshaller = new CreateKxDatabaseRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -841,7 +841,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateKxDatabase");
 
-            var request = InstantiateClassGenerator.Execute<CreateKxDatabaseRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateKxDatabaseRequest>(operation);
             var marshaller = new CreateKxDatabaseRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -873,7 +873,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateKxDatabase");
 
-            var request = InstantiateClassGenerator.Execute<CreateKxDatabaseRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateKxDatabaseRequest>(operation);
             var marshaller = new CreateKxDatabaseRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -905,7 +905,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateKxDatabase");
 
-            var request = InstantiateClassGenerator.Execute<CreateKxDatabaseRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateKxDatabaseRequest>(operation);
             var marshaller = new CreateKxDatabaseRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -937,7 +937,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateKxDatabase");
 
-            var request = InstantiateClassGenerator.Execute<CreateKxDatabaseRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateKxDatabaseRequest>(operation);
             var marshaller = new CreateKxDatabaseRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -969,7 +969,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateKxDatabase");
 
-            var request = InstantiateClassGenerator.Execute<CreateKxDatabaseRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateKxDatabaseRequest>(operation);
             var marshaller = new CreateKxDatabaseRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1001,7 +1001,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateKxDatabase");
 
-            var request = InstantiateClassGenerator.Execute<CreateKxDatabaseRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateKxDatabaseRequest>(operation);
             var marshaller = new CreateKxDatabaseRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1033,7 +1033,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateKxDatabase");
 
-            var request = InstantiateClassGenerator.Execute<CreateKxDatabaseRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateKxDatabaseRequest>(operation);
             var marshaller = new CreateKxDatabaseRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1065,7 +1065,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateKxEnvironment");
 
-            var request = InstantiateClassGenerator.Execute<CreateKxEnvironmentRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateKxEnvironmentRequest>(operation);
             var marshaller = new CreateKxEnvironmentRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1095,7 +1095,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateKxEnvironment");
 
-            var request = InstantiateClassGenerator.Execute<CreateKxEnvironmentRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateKxEnvironmentRequest>(operation);
             var marshaller = new CreateKxEnvironmentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1127,7 +1127,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateKxEnvironment");
 
-            var request = InstantiateClassGenerator.Execute<CreateKxEnvironmentRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateKxEnvironmentRequest>(operation);
             var marshaller = new CreateKxEnvironmentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1159,7 +1159,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateKxEnvironment");
 
-            var request = InstantiateClassGenerator.Execute<CreateKxEnvironmentRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateKxEnvironmentRequest>(operation);
             var marshaller = new CreateKxEnvironmentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1191,7 +1191,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateKxEnvironment");
 
-            var request = InstantiateClassGenerator.Execute<CreateKxEnvironmentRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateKxEnvironmentRequest>(operation);
             var marshaller = new CreateKxEnvironmentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1223,7 +1223,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateKxEnvironment");
 
-            var request = InstantiateClassGenerator.Execute<CreateKxEnvironmentRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateKxEnvironmentRequest>(operation);
             var marshaller = new CreateKxEnvironmentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1255,7 +1255,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateKxEnvironment");
 
-            var request = InstantiateClassGenerator.Execute<CreateKxEnvironmentRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateKxEnvironmentRequest>(operation);
             var marshaller = new CreateKxEnvironmentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1287,7 +1287,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateKxEnvironment");
 
-            var request = InstantiateClassGenerator.Execute<CreateKxEnvironmentRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateKxEnvironmentRequest>(operation);
             var marshaller = new CreateKxEnvironmentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1319,7 +1319,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateKxUser");
 
-            var request = InstantiateClassGenerator.Execute<CreateKxUserRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateKxUserRequest>(operation);
             var marshaller = new CreateKxUserRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1349,7 +1349,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateKxUser");
 
-            var request = InstantiateClassGenerator.Execute<CreateKxUserRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateKxUserRequest>(operation);
             var marshaller = new CreateKxUserRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1381,7 +1381,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateKxUser");
 
-            var request = InstantiateClassGenerator.Execute<CreateKxUserRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateKxUserRequest>(operation);
             var marshaller = new CreateKxUserRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1413,7 +1413,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateKxUser");
 
-            var request = InstantiateClassGenerator.Execute<CreateKxUserRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateKxUserRequest>(operation);
             var marshaller = new CreateKxUserRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1445,7 +1445,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateKxUser");
 
-            var request = InstantiateClassGenerator.Execute<CreateKxUserRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateKxUserRequest>(operation);
             var marshaller = new CreateKxUserRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1477,7 +1477,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateKxUser");
 
-            var request = InstantiateClassGenerator.Execute<CreateKxUserRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateKxUserRequest>(operation);
             var marshaller = new CreateKxUserRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1509,7 +1509,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateKxUser");
 
-            var request = InstantiateClassGenerator.Execute<CreateKxUserRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateKxUserRequest>(operation);
             var marshaller = new CreateKxUserRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1541,7 +1541,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateKxUser");
 
-            var request = InstantiateClassGenerator.Execute<CreateKxUserRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateKxUserRequest>(operation);
             var marshaller = new CreateKxUserRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1573,7 +1573,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateKxUser");
 
-            var request = InstantiateClassGenerator.Execute<CreateKxUserRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateKxUserRequest>(operation);
             var marshaller = new CreateKxUserRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1605,7 +1605,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteEnvironment");
 
-            var request = InstantiateClassGenerator.Execute<DeleteEnvironmentRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteEnvironmentRequest>(operation);
             var marshaller = new DeleteEnvironmentRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1635,7 +1635,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteEnvironment");
 
-            var request = InstantiateClassGenerator.Execute<DeleteEnvironmentRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteEnvironmentRequest>(operation);
             var marshaller = new DeleteEnvironmentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1667,7 +1667,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteEnvironment");
 
-            var request = InstantiateClassGenerator.Execute<DeleteEnvironmentRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteEnvironmentRequest>(operation);
             var marshaller = new DeleteEnvironmentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1699,7 +1699,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteEnvironment");
 
-            var request = InstantiateClassGenerator.Execute<DeleteEnvironmentRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteEnvironmentRequest>(operation);
             var marshaller = new DeleteEnvironmentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1731,7 +1731,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteEnvironment");
 
-            var request = InstantiateClassGenerator.Execute<DeleteEnvironmentRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteEnvironmentRequest>(operation);
             var marshaller = new DeleteEnvironmentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1763,7 +1763,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteEnvironment");
 
-            var request = InstantiateClassGenerator.Execute<DeleteEnvironmentRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteEnvironmentRequest>(operation);
             var marshaller = new DeleteEnvironmentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1795,7 +1795,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteKxCluster");
 
-            var request = InstantiateClassGenerator.Execute<DeleteKxClusterRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteKxClusterRequest>(operation);
             var marshaller = new DeleteKxClusterRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1825,7 +1825,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteKxCluster");
 
-            var request = InstantiateClassGenerator.Execute<DeleteKxClusterRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteKxClusterRequest>(operation);
             var marshaller = new DeleteKxClusterRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1857,7 +1857,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteKxCluster");
 
-            var request = InstantiateClassGenerator.Execute<DeleteKxClusterRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteKxClusterRequest>(operation);
             var marshaller = new DeleteKxClusterRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1889,7 +1889,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteKxCluster");
 
-            var request = InstantiateClassGenerator.Execute<DeleteKxClusterRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteKxClusterRequest>(operation);
             var marshaller = new DeleteKxClusterRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1921,7 +1921,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteKxCluster");
 
-            var request = InstantiateClassGenerator.Execute<DeleteKxClusterRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteKxClusterRequest>(operation);
             var marshaller = new DeleteKxClusterRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1953,7 +1953,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteKxCluster");
 
-            var request = InstantiateClassGenerator.Execute<DeleteKxClusterRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteKxClusterRequest>(operation);
             var marshaller = new DeleteKxClusterRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1985,7 +1985,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteKxCluster");
 
-            var request = InstantiateClassGenerator.Execute<DeleteKxClusterRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteKxClusterRequest>(operation);
             var marshaller = new DeleteKxClusterRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2017,7 +2017,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteKxCluster");
 
-            var request = InstantiateClassGenerator.Execute<DeleteKxClusterRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteKxClusterRequest>(operation);
             var marshaller = new DeleteKxClusterRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2049,7 +2049,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteKxDatabase");
 
-            var request = InstantiateClassGenerator.Execute<DeleteKxDatabaseRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteKxDatabaseRequest>(operation);
             var marshaller = new DeleteKxDatabaseRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -2079,7 +2079,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteKxDatabase");
 
-            var request = InstantiateClassGenerator.Execute<DeleteKxDatabaseRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteKxDatabaseRequest>(operation);
             var marshaller = new DeleteKxDatabaseRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2111,7 +2111,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteKxDatabase");
 
-            var request = InstantiateClassGenerator.Execute<DeleteKxDatabaseRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteKxDatabaseRequest>(operation);
             var marshaller = new DeleteKxDatabaseRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2143,7 +2143,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteKxDatabase");
 
-            var request = InstantiateClassGenerator.Execute<DeleteKxDatabaseRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteKxDatabaseRequest>(operation);
             var marshaller = new DeleteKxDatabaseRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2175,7 +2175,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteKxDatabase");
 
-            var request = InstantiateClassGenerator.Execute<DeleteKxDatabaseRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteKxDatabaseRequest>(operation);
             var marshaller = new DeleteKxDatabaseRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2207,7 +2207,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteKxDatabase");
 
-            var request = InstantiateClassGenerator.Execute<DeleteKxDatabaseRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteKxDatabaseRequest>(operation);
             var marshaller = new DeleteKxDatabaseRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2239,7 +2239,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteKxDatabase");
 
-            var request = InstantiateClassGenerator.Execute<DeleteKxDatabaseRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteKxDatabaseRequest>(operation);
             var marshaller = new DeleteKxDatabaseRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2271,7 +2271,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteKxEnvironment");
 
-            var request = InstantiateClassGenerator.Execute<DeleteKxEnvironmentRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteKxEnvironmentRequest>(operation);
             var marshaller = new DeleteKxEnvironmentRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -2301,7 +2301,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteKxEnvironment");
 
-            var request = InstantiateClassGenerator.Execute<DeleteKxEnvironmentRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteKxEnvironmentRequest>(operation);
             var marshaller = new DeleteKxEnvironmentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2333,7 +2333,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteKxEnvironment");
 
-            var request = InstantiateClassGenerator.Execute<DeleteKxEnvironmentRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteKxEnvironmentRequest>(operation);
             var marshaller = new DeleteKxEnvironmentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2365,7 +2365,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteKxEnvironment");
 
-            var request = InstantiateClassGenerator.Execute<DeleteKxEnvironmentRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteKxEnvironmentRequest>(operation);
             var marshaller = new DeleteKxEnvironmentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2397,7 +2397,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteKxEnvironment");
 
-            var request = InstantiateClassGenerator.Execute<DeleteKxEnvironmentRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteKxEnvironmentRequest>(operation);
             var marshaller = new DeleteKxEnvironmentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2429,7 +2429,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteKxEnvironment");
 
-            var request = InstantiateClassGenerator.Execute<DeleteKxEnvironmentRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteKxEnvironmentRequest>(operation);
             var marshaller = new DeleteKxEnvironmentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2461,7 +2461,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteKxUser");
 
-            var request = InstantiateClassGenerator.Execute<DeleteKxUserRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteKxUserRequest>(operation);
             var marshaller = new DeleteKxUserRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -2491,7 +2491,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteKxUser");
 
-            var request = InstantiateClassGenerator.Execute<DeleteKxUserRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteKxUserRequest>(operation);
             var marshaller = new DeleteKxUserRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2523,7 +2523,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteKxUser");
 
-            var request = InstantiateClassGenerator.Execute<DeleteKxUserRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteKxUserRequest>(operation);
             var marshaller = new DeleteKxUserRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2555,7 +2555,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteKxUser");
 
-            var request = InstantiateClassGenerator.Execute<DeleteKxUserRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteKxUserRequest>(operation);
             var marshaller = new DeleteKxUserRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2587,7 +2587,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteKxUser");
 
-            var request = InstantiateClassGenerator.Execute<DeleteKxUserRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteKxUserRequest>(operation);
             var marshaller = new DeleteKxUserRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2619,7 +2619,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteKxUser");
 
-            var request = InstantiateClassGenerator.Execute<DeleteKxUserRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteKxUserRequest>(operation);
             var marshaller = new DeleteKxUserRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2651,7 +2651,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetEnvironment");
 
-            var request = InstantiateClassGenerator.Execute<GetEnvironmentRequest>();
+            var request = InstantiateClassGenerator.Execute<GetEnvironmentRequest>(operation);
             var marshaller = new GetEnvironmentRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -2681,7 +2681,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetEnvironment");
 
-            var request = InstantiateClassGenerator.Execute<GetEnvironmentRequest>();
+            var request = InstantiateClassGenerator.Execute<GetEnvironmentRequest>(operation);
             var marshaller = new GetEnvironmentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2713,7 +2713,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetEnvironment");
 
-            var request = InstantiateClassGenerator.Execute<GetEnvironmentRequest>();
+            var request = InstantiateClassGenerator.Execute<GetEnvironmentRequest>(operation);
             var marshaller = new GetEnvironmentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2745,7 +2745,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetEnvironment");
 
-            var request = InstantiateClassGenerator.Execute<GetEnvironmentRequest>();
+            var request = InstantiateClassGenerator.Execute<GetEnvironmentRequest>(operation);
             var marshaller = new GetEnvironmentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2777,7 +2777,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetEnvironment");
 
-            var request = InstantiateClassGenerator.Execute<GetEnvironmentRequest>();
+            var request = InstantiateClassGenerator.Execute<GetEnvironmentRequest>(operation);
             var marshaller = new GetEnvironmentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2809,7 +2809,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetKxChangeset");
 
-            var request = InstantiateClassGenerator.Execute<GetKxChangesetRequest>();
+            var request = InstantiateClassGenerator.Execute<GetKxChangesetRequest>(operation);
             var marshaller = new GetKxChangesetRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -2839,7 +2839,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetKxChangeset");
 
-            var request = InstantiateClassGenerator.Execute<GetKxChangesetRequest>();
+            var request = InstantiateClassGenerator.Execute<GetKxChangesetRequest>(operation);
             var marshaller = new GetKxChangesetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2871,7 +2871,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetKxChangeset");
 
-            var request = InstantiateClassGenerator.Execute<GetKxChangesetRequest>();
+            var request = InstantiateClassGenerator.Execute<GetKxChangesetRequest>(operation);
             var marshaller = new GetKxChangesetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2903,7 +2903,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetKxChangeset");
 
-            var request = InstantiateClassGenerator.Execute<GetKxChangesetRequest>();
+            var request = InstantiateClassGenerator.Execute<GetKxChangesetRequest>(operation);
             var marshaller = new GetKxChangesetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2935,7 +2935,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetKxChangeset");
 
-            var request = InstantiateClassGenerator.Execute<GetKxChangesetRequest>();
+            var request = InstantiateClassGenerator.Execute<GetKxChangesetRequest>(operation);
             var marshaller = new GetKxChangesetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2967,7 +2967,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetKxChangeset");
 
-            var request = InstantiateClassGenerator.Execute<GetKxChangesetRequest>();
+            var request = InstantiateClassGenerator.Execute<GetKxChangesetRequest>(operation);
             var marshaller = new GetKxChangesetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2999,7 +2999,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetKxCluster");
 
-            var request = InstantiateClassGenerator.Execute<GetKxClusterRequest>();
+            var request = InstantiateClassGenerator.Execute<GetKxClusterRequest>(operation);
             var marshaller = new GetKxClusterRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -3029,7 +3029,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetKxCluster");
 
-            var request = InstantiateClassGenerator.Execute<GetKxClusterRequest>();
+            var request = InstantiateClassGenerator.Execute<GetKxClusterRequest>(operation);
             var marshaller = new GetKxClusterRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3061,7 +3061,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetKxCluster");
 
-            var request = InstantiateClassGenerator.Execute<GetKxClusterRequest>();
+            var request = InstantiateClassGenerator.Execute<GetKxClusterRequest>(operation);
             var marshaller = new GetKxClusterRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3093,7 +3093,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetKxCluster");
 
-            var request = InstantiateClassGenerator.Execute<GetKxClusterRequest>();
+            var request = InstantiateClassGenerator.Execute<GetKxClusterRequest>(operation);
             var marshaller = new GetKxClusterRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3125,7 +3125,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetKxCluster");
 
-            var request = InstantiateClassGenerator.Execute<GetKxClusterRequest>();
+            var request = InstantiateClassGenerator.Execute<GetKxClusterRequest>(operation);
             var marshaller = new GetKxClusterRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3157,7 +3157,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetKxCluster");
 
-            var request = InstantiateClassGenerator.Execute<GetKxClusterRequest>();
+            var request = InstantiateClassGenerator.Execute<GetKxClusterRequest>(operation);
             var marshaller = new GetKxClusterRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3189,7 +3189,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetKxCluster");
 
-            var request = InstantiateClassGenerator.Execute<GetKxClusterRequest>();
+            var request = InstantiateClassGenerator.Execute<GetKxClusterRequest>(operation);
             var marshaller = new GetKxClusterRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3221,7 +3221,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetKxCluster");
 
-            var request = InstantiateClassGenerator.Execute<GetKxClusterRequest>();
+            var request = InstantiateClassGenerator.Execute<GetKxClusterRequest>(operation);
             var marshaller = new GetKxClusterRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3253,7 +3253,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetKxConnectionString");
 
-            var request = InstantiateClassGenerator.Execute<GetKxConnectionStringRequest>();
+            var request = InstantiateClassGenerator.Execute<GetKxConnectionStringRequest>(operation);
             var marshaller = new GetKxConnectionStringRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -3283,7 +3283,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetKxConnectionString");
 
-            var request = InstantiateClassGenerator.Execute<GetKxConnectionStringRequest>();
+            var request = InstantiateClassGenerator.Execute<GetKxConnectionStringRequest>(operation);
             var marshaller = new GetKxConnectionStringRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3315,7 +3315,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetKxConnectionString");
 
-            var request = InstantiateClassGenerator.Execute<GetKxConnectionStringRequest>();
+            var request = InstantiateClassGenerator.Execute<GetKxConnectionStringRequest>(operation);
             var marshaller = new GetKxConnectionStringRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3347,7 +3347,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetKxConnectionString");
 
-            var request = InstantiateClassGenerator.Execute<GetKxConnectionStringRequest>();
+            var request = InstantiateClassGenerator.Execute<GetKxConnectionStringRequest>(operation);
             var marshaller = new GetKxConnectionStringRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3379,7 +3379,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetKxConnectionString");
 
-            var request = InstantiateClassGenerator.Execute<GetKxConnectionStringRequest>();
+            var request = InstantiateClassGenerator.Execute<GetKxConnectionStringRequest>(operation);
             var marshaller = new GetKxConnectionStringRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3411,7 +3411,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetKxConnectionString");
 
-            var request = InstantiateClassGenerator.Execute<GetKxConnectionStringRequest>();
+            var request = InstantiateClassGenerator.Execute<GetKxConnectionStringRequest>(operation);
             var marshaller = new GetKxConnectionStringRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3443,7 +3443,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetKxDatabase");
 
-            var request = InstantiateClassGenerator.Execute<GetKxDatabaseRequest>();
+            var request = InstantiateClassGenerator.Execute<GetKxDatabaseRequest>(operation);
             var marshaller = new GetKxDatabaseRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -3473,7 +3473,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetKxDatabase");
 
-            var request = InstantiateClassGenerator.Execute<GetKxDatabaseRequest>();
+            var request = InstantiateClassGenerator.Execute<GetKxDatabaseRequest>(operation);
             var marshaller = new GetKxDatabaseRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3505,7 +3505,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetKxDatabase");
 
-            var request = InstantiateClassGenerator.Execute<GetKxDatabaseRequest>();
+            var request = InstantiateClassGenerator.Execute<GetKxDatabaseRequest>(operation);
             var marshaller = new GetKxDatabaseRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3537,7 +3537,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetKxDatabase");
 
-            var request = InstantiateClassGenerator.Execute<GetKxDatabaseRequest>();
+            var request = InstantiateClassGenerator.Execute<GetKxDatabaseRequest>(operation);
             var marshaller = new GetKxDatabaseRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3569,7 +3569,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetKxDatabase");
 
-            var request = InstantiateClassGenerator.Execute<GetKxDatabaseRequest>();
+            var request = InstantiateClassGenerator.Execute<GetKxDatabaseRequest>(operation);
             var marshaller = new GetKxDatabaseRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3601,7 +3601,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetKxDatabase");
 
-            var request = InstantiateClassGenerator.Execute<GetKxDatabaseRequest>();
+            var request = InstantiateClassGenerator.Execute<GetKxDatabaseRequest>(operation);
             var marshaller = new GetKxDatabaseRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3633,7 +3633,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetKxEnvironment");
 
-            var request = InstantiateClassGenerator.Execute<GetKxEnvironmentRequest>();
+            var request = InstantiateClassGenerator.Execute<GetKxEnvironmentRequest>(operation);
             var marshaller = new GetKxEnvironmentRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -3663,7 +3663,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetKxEnvironment");
 
-            var request = InstantiateClassGenerator.Execute<GetKxEnvironmentRequest>();
+            var request = InstantiateClassGenerator.Execute<GetKxEnvironmentRequest>(operation);
             var marshaller = new GetKxEnvironmentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3695,7 +3695,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetKxEnvironment");
 
-            var request = InstantiateClassGenerator.Execute<GetKxEnvironmentRequest>();
+            var request = InstantiateClassGenerator.Execute<GetKxEnvironmentRequest>(operation);
             var marshaller = new GetKxEnvironmentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3727,7 +3727,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetKxEnvironment");
 
-            var request = InstantiateClassGenerator.Execute<GetKxEnvironmentRequest>();
+            var request = InstantiateClassGenerator.Execute<GetKxEnvironmentRequest>(operation);
             var marshaller = new GetKxEnvironmentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3759,7 +3759,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetKxEnvironment");
 
-            var request = InstantiateClassGenerator.Execute<GetKxEnvironmentRequest>();
+            var request = InstantiateClassGenerator.Execute<GetKxEnvironmentRequest>(operation);
             var marshaller = new GetKxEnvironmentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3791,7 +3791,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetKxUser");
 
-            var request = InstantiateClassGenerator.Execute<GetKxUserRequest>();
+            var request = InstantiateClassGenerator.Execute<GetKxUserRequest>(operation);
             var marshaller = new GetKxUserRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -3821,7 +3821,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetKxUser");
 
-            var request = InstantiateClassGenerator.Execute<GetKxUserRequest>();
+            var request = InstantiateClassGenerator.Execute<GetKxUserRequest>(operation);
             var marshaller = new GetKxUserRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3853,7 +3853,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetKxUser");
 
-            var request = InstantiateClassGenerator.Execute<GetKxUserRequest>();
+            var request = InstantiateClassGenerator.Execute<GetKxUserRequest>(operation);
             var marshaller = new GetKxUserRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3885,7 +3885,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetKxUser");
 
-            var request = InstantiateClassGenerator.Execute<GetKxUserRequest>();
+            var request = InstantiateClassGenerator.Execute<GetKxUserRequest>(operation);
             var marshaller = new GetKxUserRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3917,7 +3917,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetKxUser");
 
-            var request = InstantiateClassGenerator.Execute<GetKxUserRequest>();
+            var request = InstantiateClassGenerator.Execute<GetKxUserRequest>(operation);
             var marshaller = new GetKxUserRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3949,7 +3949,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetKxUser");
 
-            var request = InstantiateClassGenerator.Execute<GetKxUserRequest>();
+            var request = InstantiateClassGenerator.Execute<GetKxUserRequest>(operation);
             var marshaller = new GetKxUserRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3981,7 +3981,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListEnvironments");
 
-            var request = InstantiateClassGenerator.Execute<ListEnvironmentsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListEnvironmentsRequest>(operation);
             var marshaller = new ListEnvironmentsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -4011,7 +4011,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListEnvironments");
 
-            var request = InstantiateClassGenerator.Execute<ListEnvironmentsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListEnvironmentsRequest>(operation);
             var marshaller = new ListEnvironmentsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4043,7 +4043,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListEnvironments");
 
-            var request = InstantiateClassGenerator.Execute<ListEnvironmentsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListEnvironmentsRequest>(operation);
             var marshaller = new ListEnvironmentsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4075,7 +4075,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListKxChangesets");
 
-            var request = InstantiateClassGenerator.Execute<ListKxChangesetsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListKxChangesetsRequest>(operation);
             var marshaller = new ListKxChangesetsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -4105,7 +4105,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListKxChangesets");
 
-            var request = InstantiateClassGenerator.Execute<ListKxChangesetsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListKxChangesetsRequest>(operation);
             var marshaller = new ListKxChangesetsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4137,7 +4137,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListKxChangesets");
 
-            var request = InstantiateClassGenerator.Execute<ListKxChangesetsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListKxChangesetsRequest>(operation);
             var marshaller = new ListKxChangesetsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4169,7 +4169,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListKxChangesets");
 
-            var request = InstantiateClassGenerator.Execute<ListKxChangesetsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListKxChangesetsRequest>(operation);
             var marshaller = new ListKxChangesetsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4201,7 +4201,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListKxChangesets");
 
-            var request = InstantiateClassGenerator.Execute<ListKxChangesetsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListKxChangesetsRequest>(operation);
             var marshaller = new ListKxChangesetsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4233,7 +4233,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListKxChangesets");
 
-            var request = InstantiateClassGenerator.Execute<ListKxChangesetsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListKxChangesetsRequest>(operation);
             var marshaller = new ListKxChangesetsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4265,7 +4265,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListKxClusterNodes");
 
-            var request = InstantiateClassGenerator.Execute<ListKxClusterNodesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListKxClusterNodesRequest>(operation);
             var marshaller = new ListKxClusterNodesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -4295,7 +4295,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListKxClusterNodes");
 
-            var request = InstantiateClassGenerator.Execute<ListKxClusterNodesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListKxClusterNodesRequest>(operation);
             var marshaller = new ListKxClusterNodesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4327,7 +4327,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListKxClusterNodes");
 
-            var request = InstantiateClassGenerator.Execute<ListKxClusterNodesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListKxClusterNodesRequest>(operation);
             var marshaller = new ListKxClusterNodesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4359,7 +4359,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListKxClusterNodes");
 
-            var request = InstantiateClassGenerator.Execute<ListKxClusterNodesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListKxClusterNodesRequest>(operation);
             var marshaller = new ListKxClusterNodesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4391,7 +4391,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListKxClusterNodes");
 
-            var request = InstantiateClassGenerator.Execute<ListKxClusterNodesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListKxClusterNodesRequest>(operation);
             var marshaller = new ListKxClusterNodesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4423,7 +4423,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListKxClusterNodes");
 
-            var request = InstantiateClassGenerator.Execute<ListKxClusterNodesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListKxClusterNodesRequest>(operation);
             var marshaller = new ListKxClusterNodesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4455,7 +4455,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListKxClusterNodes");
 
-            var request = InstantiateClassGenerator.Execute<ListKxClusterNodesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListKxClusterNodesRequest>(operation);
             var marshaller = new ListKxClusterNodesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4487,7 +4487,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListKxClusters");
 
-            var request = InstantiateClassGenerator.Execute<ListKxClustersRequest>();
+            var request = InstantiateClassGenerator.Execute<ListKxClustersRequest>(operation);
             var marshaller = new ListKxClustersRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -4517,7 +4517,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListKxClusters");
 
-            var request = InstantiateClassGenerator.Execute<ListKxClustersRequest>();
+            var request = InstantiateClassGenerator.Execute<ListKxClustersRequest>(operation);
             var marshaller = new ListKxClustersRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4549,7 +4549,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListKxClusters");
 
-            var request = InstantiateClassGenerator.Execute<ListKxClustersRequest>();
+            var request = InstantiateClassGenerator.Execute<ListKxClustersRequest>(operation);
             var marshaller = new ListKxClustersRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4581,7 +4581,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListKxClusters");
 
-            var request = InstantiateClassGenerator.Execute<ListKxClustersRequest>();
+            var request = InstantiateClassGenerator.Execute<ListKxClustersRequest>(operation);
             var marshaller = new ListKxClustersRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4613,7 +4613,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListKxClusters");
 
-            var request = InstantiateClassGenerator.Execute<ListKxClustersRequest>();
+            var request = InstantiateClassGenerator.Execute<ListKxClustersRequest>(operation);
             var marshaller = new ListKxClustersRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4645,7 +4645,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListKxClusters");
 
-            var request = InstantiateClassGenerator.Execute<ListKxClustersRequest>();
+            var request = InstantiateClassGenerator.Execute<ListKxClustersRequest>(operation);
             var marshaller = new ListKxClustersRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4677,7 +4677,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListKxClusters");
 
-            var request = InstantiateClassGenerator.Execute<ListKxClustersRequest>();
+            var request = InstantiateClassGenerator.Execute<ListKxClustersRequest>(operation);
             var marshaller = new ListKxClustersRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4709,7 +4709,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListKxClusters");
 
-            var request = InstantiateClassGenerator.Execute<ListKxClustersRequest>();
+            var request = InstantiateClassGenerator.Execute<ListKxClustersRequest>(operation);
             var marshaller = new ListKxClustersRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4741,7 +4741,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListKxDatabases");
 
-            var request = InstantiateClassGenerator.Execute<ListKxDatabasesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListKxDatabasesRequest>(operation);
             var marshaller = new ListKxDatabasesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -4771,7 +4771,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListKxDatabases");
 
-            var request = InstantiateClassGenerator.Execute<ListKxDatabasesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListKxDatabasesRequest>(operation);
             var marshaller = new ListKxDatabasesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4803,7 +4803,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListKxDatabases");
 
-            var request = InstantiateClassGenerator.Execute<ListKxDatabasesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListKxDatabasesRequest>(operation);
             var marshaller = new ListKxDatabasesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4835,7 +4835,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListKxDatabases");
 
-            var request = InstantiateClassGenerator.Execute<ListKxDatabasesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListKxDatabasesRequest>(operation);
             var marshaller = new ListKxDatabasesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4867,7 +4867,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListKxDatabases");
 
-            var request = InstantiateClassGenerator.Execute<ListKxDatabasesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListKxDatabasesRequest>(operation);
             var marshaller = new ListKxDatabasesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4899,7 +4899,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListKxDatabases");
 
-            var request = InstantiateClassGenerator.Execute<ListKxDatabasesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListKxDatabasesRequest>(operation);
             var marshaller = new ListKxDatabasesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4931,7 +4931,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListKxEnvironments");
 
-            var request = InstantiateClassGenerator.Execute<ListKxEnvironmentsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListKxEnvironmentsRequest>(operation);
             var marshaller = new ListKxEnvironmentsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -4961,7 +4961,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListKxEnvironments");
 
-            var request = InstantiateClassGenerator.Execute<ListKxEnvironmentsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListKxEnvironmentsRequest>(operation);
             var marshaller = new ListKxEnvironmentsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4993,7 +4993,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListKxEnvironments");
 
-            var request = InstantiateClassGenerator.Execute<ListKxEnvironmentsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListKxEnvironmentsRequest>(operation);
             var marshaller = new ListKxEnvironmentsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5025,7 +5025,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListKxUsers");
 
-            var request = InstantiateClassGenerator.Execute<ListKxUsersRequest>();
+            var request = InstantiateClassGenerator.Execute<ListKxUsersRequest>(operation);
             var marshaller = new ListKxUsersRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -5055,7 +5055,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListKxUsers");
 
-            var request = InstantiateClassGenerator.Execute<ListKxUsersRequest>();
+            var request = InstantiateClassGenerator.Execute<ListKxUsersRequest>(operation);
             var marshaller = new ListKxUsersRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5087,7 +5087,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListKxUsers");
 
-            var request = InstantiateClassGenerator.Execute<ListKxUsersRequest>();
+            var request = InstantiateClassGenerator.Execute<ListKxUsersRequest>(operation);
             var marshaller = new ListKxUsersRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5119,7 +5119,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListKxUsers");
 
-            var request = InstantiateClassGenerator.Execute<ListKxUsersRequest>();
+            var request = InstantiateClassGenerator.Execute<ListKxUsersRequest>(operation);
             var marshaller = new ListKxUsersRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5151,7 +5151,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListKxUsers");
 
-            var request = InstantiateClassGenerator.Execute<ListKxUsersRequest>();
+            var request = InstantiateClassGenerator.Execute<ListKxUsersRequest>(operation);
             var marshaller = new ListKxUsersRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5183,7 +5183,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListKxUsers");
 
-            var request = InstantiateClassGenerator.Execute<ListKxUsersRequest>();
+            var request = InstantiateClassGenerator.Execute<ListKxUsersRequest>(operation);
             var marshaller = new ListKxUsersRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5215,7 +5215,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListTagsForResource");
 
-            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>(operation);
             var marshaller = new ListTagsForResourceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -5245,7 +5245,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListTagsForResource");
 
-            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>(operation);
             var marshaller = new ListTagsForResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5277,7 +5277,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListTagsForResource");
 
-            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>(operation);
             var marshaller = new ListTagsForResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5309,7 +5309,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListTagsForResource");
 
-            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>(operation);
             var marshaller = new ListTagsForResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5341,7 +5341,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("TagResource");
 
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -5371,7 +5371,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("TagResource");
 
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5403,7 +5403,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("TagResource");
 
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5435,7 +5435,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("TagResource");
 
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5467,7 +5467,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UntagResource");
 
-            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>(operation);
             var marshaller = new UntagResourceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -5497,7 +5497,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UntagResource");
 
-            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>(operation);
             var marshaller = new UntagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5529,7 +5529,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UntagResource");
 
-            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>(operation);
             var marshaller = new UntagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5561,7 +5561,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UntagResource");
 
-            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>(operation);
             var marshaller = new UntagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5593,7 +5593,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateEnvironment");
 
-            var request = InstantiateClassGenerator.Execute<UpdateEnvironmentRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateEnvironmentRequest>(operation);
             var marshaller = new UpdateEnvironmentRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -5623,7 +5623,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateEnvironment");
 
-            var request = InstantiateClassGenerator.Execute<UpdateEnvironmentRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateEnvironmentRequest>(operation);
             var marshaller = new UpdateEnvironmentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5655,7 +5655,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateEnvironment");
 
-            var request = InstantiateClassGenerator.Execute<UpdateEnvironmentRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateEnvironmentRequest>(operation);
             var marshaller = new UpdateEnvironmentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5687,7 +5687,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateEnvironment");
 
-            var request = InstantiateClassGenerator.Execute<UpdateEnvironmentRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateEnvironmentRequest>(operation);
             var marshaller = new UpdateEnvironmentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5719,7 +5719,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateEnvironment");
 
-            var request = InstantiateClassGenerator.Execute<UpdateEnvironmentRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateEnvironmentRequest>(operation);
             var marshaller = new UpdateEnvironmentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5751,7 +5751,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateEnvironment");
 
-            var request = InstantiateClassGenerator.Execute<UpdateEnvironmentRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateEnvironmentRequest>(operation);
             var marshaller = new UpdateEnvironmentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5783,7 +5783,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateKxClusterDatabases");
 
-            var request = InstantiateClassGenerator.Execute<UpdateKxClusterDatabasesRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateKxClusterDatabasesRequest>(operation);
             var marshaller = new UpdateKxClusterDatabasesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -5813,7 +5813,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateKxClusterDatabases");
 
-            var request = InstantiateClassGenerator.Execute<UpdateKxClusterDatabasesRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateKxClusterDatabasesRequest>(operation);
             var marshaller = new UpdateKxClusterDatabasesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5845,7 +5845,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateKxClusterDatabases");
 
-            var request = InstantiateClassGenerator.Execute<UpdateKxClusterDatabasesRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateKxClusterDatabasesRequest>(operation);
             var marshaller = new UpdateKxClusterDatabasesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5877,7 +5877,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateKxClusterDatabases");
 
-            var request = InstantiateClassGenerator.Execute<UpdateKxClusterDatabasesRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateKxClusterDatabasesRequest>(operation);
             var marshaller = new UpdateKxClusterDatabasesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5909,7 +5909,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateKxClusterDatabases");
 
-            var request = InstantiateClassGenerator.Execute<UpdateKxClusterDatabasesRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateKxClusterDatabasesRequest>(operation);
             var marshaller = new UpdateKxClusterDatabasesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5941,7 +5941,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateKxClusterDatabases");
 
-            var request = InstantiateClassGenerator.Execute<UpdateKxClusterDatabasesRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateKxClusterDatabasesRequest>(operation);
             var marshaller = new UpdateKxClusterDatabasesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5973,7 +5973,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateKxClusterDatabases");
 
-            var request = InstantiateClassGenerator.Execute<UpdateKxClusterDatabasesRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateKxClusterDatabasesRequest>(operation);
             var marshaller = new UpdateKxClusterDatabasesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6005,7 +6005,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateKxClusterDatabases");
 
-            var request = InstantiateClassGenerator.Execute<UpdateKxClusterDatabasesRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateKxClusterDatabasesRequest>(operation);
             var marshaller = new UpdateKxClusterDatabasesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6037,7 +6037,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateKxDatabase");
 
-            var request = InstantiateClassGenerator.Execute<UpdateKxDatabaseRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateKxDatabaseRequest>(operation);
             var marshaller = new UpdateKxDatabaseRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -6067,7 +6067,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateKxDatabase");
 
-            var request = InstantiateClassGenerator.Execute<UpdateKxDatabaseRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateKxDatabaseRequest>(operation);
             var marshaller = new UpdateKxDatabaseRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6099,7 +6099,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateKxDatabase");
 
-            var request = InstantiateClassGenerator.Execute<UpdateKxDatabaseRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateKxDatabaseRequest>(operation);
             var marshaller = new UpdateKxDatabaseRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6131,7 +6131,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateKxDatabase");
 
-            var request = InstantiateClassGenerator.Execute<UpdateKxDatabaseRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateKxDatabaseRequest>(operation);
             var marshaller = new UpdateKxDatabaseRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6163,7 +6163,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateKxDatabase");
 
-            var request = InstantiateClassGenerator.Execute<UpdateKxDatabaseRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateKxDatabaseRequest>(operation);
             var marshaller = new UpdateKxDatabaseRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6195,7 +6195,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateKxDatabase");
 
-            var request = InstantiateClassGenerator.Execute<UpdateKxDatabaseRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateKxDatabaseRequest>(operation);
             var marshaller = new UpdateKxDatabaseRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6227,7 +6227,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateKxDatabase");
 
-            var request = InstantiateClassGenerator.Execute<UpdateKxDatabaseRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateKxDatabaseRequest>(operation);
             var marshaller = new UpdateKxDatabaseRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6259,7 +6259,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateKxEnvironment");
 
-            var request = InstantiateClassGenerator.Execute<UpdateKxEnvironmentRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateKxEnvironmentRequest>(operation);
             var marshaller = new UpdateKxEnvironmentRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -6289,7 +6289,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateKxEnvironment");
 
-            var request = InstantiateClassGenerator.Execute<UpdateKxEnvironmentRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateKxEnvironmentRequest>(operation);
             var marshaller = new UpdateKxEnvironmentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6321,7 +6321,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateKxEnvironment");
 
-            var request = InstantiateClassGenerator.Execute<UpdateKxEnvironmentRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateKxEnvironmentRequest>(operation);
             var marshaller = new UpdateKxEnvironmentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6353,7 +6353,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateKxEnvironment");
 
-            var request = InstantiateClassGenerator.Execute<UpdateKxEnvironmentRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateKxEnvironmentRequest>(operation);
             var marshaller = new UpdateKxEnvironmentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6385,7 +6385,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateKxEnvironment");
 
-            var request = InstantiateClassGenerator.Execute<UpdateKxEnvironmentRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateKxEnvironmentRequest>(operation);
             var marshaller = new UpdateKxEnvironmentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6417,7 +6417,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateKxEnvironment");
 
-            var request = InstantiateClassGenerator.Execute<UpdateKxEnvironmentRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateKxEnvironmentRequest>(operation);
             var marshaller = new UpdateKxEnvironmentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6449,7 +6449,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateKxEnvironment");
 
-            var request = InstantiateClassGenerator.Execute<UpdateKxEnvironmentRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateKxEnvironmentRequest>(operation);
             var marshaller = new UpdateKxEnvironmentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6481,7 +6481,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateKxEnvironmentNetwork");
 
-            var request = InstantiateClassGenerator.Execute<UpdateKxEnvironmentNetworkRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateKxEnvironmentNetworkRequest>(operation);
             var marshaller = new UpdateKxEnvironmentNetworkRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -6511,7 +6511,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateKxEnvironmentNetwork");
 
-            var request = InstantiateClassGenerator.Execute<UpdateKxEnvironmentNetworkRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateKxEnvironmentNetworkRequest>(operation);
             var marshaller = new UpdateKxEnvironmentNetworkRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6543,7 +6543,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateKxEnvironmentNetwork");
 
-            var request = InstantiateClassGenerator.Execute<UpdateKxEnvironmentNetworkRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateKxEnvironmentNetworkRequest>(operation);
             var marshaller = new UpdateKxEnvironmentNetworkRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6575,7 +6575,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateKxEnvironmentNetwork");
 
-            var request = InstantiateClassGenerator.Execute<UpdateKxEnvironmentNetworkRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateKxEnvironmentNetworkRequest>(operation);
             var marshaller = new UpdateKxEnvironmentNetworkRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6607,7 +6607,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateKxEnvironmentNetwork");
 
-            var request = InstantiateClassGenerator.Execute<UpdateKxEnvironmentNetworkRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateKxEnvironmentNetworkRequest>(operation);
             var marshaller = new UpdateKxEnvironmentNetworkRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6639,7 +6639,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateKxEnvironmentNetwork");
 
-            var request = InstantiateClassGenerator.Execute<UpdateKxEnvironmentNetworkRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateKxEnvironmentNetworkRequest>(operation);
             var marshaller = new UpdateKxEnvironmentNetworkRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6671,7 +6671,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateKxEnvironmentNetwork");
 
-            var request = InstantiateClassGenerator.Execute<UpdateKxEnvironmentNetworkRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateKxEnvironmentNetworkRequest>(operation);
             var marshaller = new UpdateKxEnvironmentNetworkRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6703,7 +6703,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateKxUser");
 
-            var request = InstantiateClassGenerator.Execute<UpdateKxUserRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateKxUserRequest>(operation);
             var marshaller = new UpdateKxUserRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -6733,7 +6733,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateKxUser");
 
-            var request = InstantiateClassGenerator.Execute<UpdateKxUserRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateKxUserRequest>(operation);
             var marshaller = new UpdateKxUserRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6765,7 +6765,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateKxUser");
 
-            var request = InstantiateClassGenerator.Execute<UpdateKxUserRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateKxUserRequest>(operation);
             var marshaller = new UpdateKxUserRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6797,7 +6797,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateKxUser");
 
-            var request = InstantiateClassGenerator.Execute<UpdateKxUserRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateKxUserRequest>(operation);
             var marshaller = new UpdateKxUserRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6829,7 +6829,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateKxUser");
 
-            var request = InstantiateClassGenerator.Execute<UpdateKxUserRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateKxUserRequest>(operation);
             var marshaller = new UpdateKxUserRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6861,7 +6861,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateKxUser");
 
-            var request = InstantiateClassGenerator.Execute<UpdateKxUserRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateKxUserRequest>(operation);
             var marshaller = new UpdateKxUserRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6893,7 +6893,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateKxUser");
 
-            var request = InstantiateClassGenerator.Execute<UpdateKxUserRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateKxUserRequest>(operation);
             var marshaller = new UpdateKxUserRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6925,7 +6925,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateKxUser");
 
-            var request = InstantiateClassGenerator.Execute<UpdateKxUserRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateKxUserRequest>(operation);
             var marshaller = new UpdateKxUserRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
