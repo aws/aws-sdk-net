@@ -45,6 +45,23 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ServerCertificateConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetCertificateAuthorityArn())
+            {
+                context.Writer.WritePropertyName("CertificateAuthorityArn");
+                context.Writer.Write(requestObject.CertificateAuthorityArn);
+            }
+
+            if(requestObject.IsSetCheckCertificateRevocationStatus())
+            {
+                context.Writer.WritePropertyName("CheckCertificateRevocationStatus");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = CheckCertificateRevocationStatusActionsMarshaller.Instance;
+                marshaller.Marshall(requestObject.CheckCertificateRevocationStatus, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetScopes())
             {
                 context.Writer.WritePropertyName("Scopes");

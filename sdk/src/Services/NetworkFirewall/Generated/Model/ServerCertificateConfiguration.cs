@@ -29,10 +29,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NetworkFirewall.Model
 {
     /// <summary>
-    /// Configures the associated Certificate Manager Secure Sockets Layer/Transport Layer
-    /// Security (SSL/TLS) server certificates and scope settings Network Firewall uses to
-    /// decrypt traffic in a <a>TLSInspectionConfiguration</a>. For information about working
-    /// with SSL/TLS certificates for TLS inspection, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/tls-inspection-certificate-requirements.html">
+    /// Configures the Certificate Manager certificates and scope that Network Firewall uses
+    /// to decrypt and re-encrypt traffic using a <a>TLSInspectionConfiguration</a>. You can
+    /// configure <code>ServerCertificates</code> for inbound SSL/TLS inspection, a <code>CertificateAuthorityArn</code>
+    /// for outbound SSL/TLS inspection, or both. For information about working with certificates
+    /// for TLS inspection, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/tls-inspection-certificate-requirements.html">
     /// Requirements for using SSL/TLS server certficiates with TLS inspection configurations</a>
     /// in the <i>Network Firewall Developer Guide</i>.
     /// 
@@ -45,13 +46,82 @@ namespace Amazon.NetworkFirewall.Model
     /// </summary>
     public partial class ServerCertificateConfiguration
     {
+        private string _certificateAuthorityArn;
+        private CheckCertificateRevocationStatusActions _checkCertificateRevocationStatus;
         private List<ServerCertificateScope> _scopes = new List<ServerCertificateScope>();
         private List<ServerCertificate> _serverCertificates = new List<ServerCertificate>();
 
         /// <summary>
+        /// Gets and sets the property CertificateAuthorityArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the imported certificate authority (CA) certificate
+        /// configured in Certificate Manager (ACM) to use for outbound SSL/TLS inspection.
+        /// </para>
+        ///  
+        /// <para>
+        /// The following limitations apply:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You can use CA certificates that you imported into ACM, but you can't generate CA
+        /// certificates with ACM.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can't use certificates issued by Private Certificate Authority.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information about the certificate requirements for outbound inspection, see
+        /// <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/tls-inspection-certificate-requirements.html">Requirements
+        /// for using SSL/TLS certificates with TLS inspection configurations</a> in the <i>Network
+        /// Firewall Developer Guide</i>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about working with certificates in ACM, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
+        /// certificates</a> in the <i>Certificate Manager User Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string CertificateAuthorityArn
+        {
+            get { return this._certificateAuthorityArn; }
+            set { this._certificateAuthorityArn = value; }
+        }
+
+        // Check to see if CertificateAuthorityArn property is set
+        internal bool IsSetCertificateAuthorityArn()
+        {
+            return this._certificateAuthorityArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CheckCertificateRevocationStatus. 
+        /// <para>
+        /// When enabled, Network Firewall checks if the server certificate presented by the server
+        /// in the SSL/TLS connection has a revoked or unkown status. If the certificate has an
+        /// unknown or revoked status, you must specify the actions that Network Firewall takes
+        /// on outbound traffic. To use this option, you must specify a <code>CertificateAuthorityArn</code>
+        /// in <a>ServerCertificateConfiguration</a>.
+        /// </para>
+        /// </summary>
+        public CheckCertificateRevocationStatusActions CheckCertificateRevocationStatus
+        {
+            get { return this._checkCertificateRevocationStatus; }
+            set { this._checkCertificateRevocationStatus = value; }
+        }
+
+        // Check to see if CheckCertificateRevocationStatus property is set
+        internal bool IsSetCheckCertificateRevocationStatus()
+        {
+            return this._checkCertificateRevocationStatus != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Scopes. 
         /// <para>
-        /// A list of a server certificate configuration's scopes.
+        /// A list of scopes.
         /// </para>
         /// </summary>
         public List<ServerCertificateScope> Scopes
@@ -69,7 +139,8 @@ namespace Amazon.NetworkFirewall.Model
         /// <summary>
         /// Gets and sets the property ServerCertificates. 
         /// <para>
-        /// The list of a server certificate configuration's Certificate Manager SSL/TLS certificates.
+        /// The list of a server certificate configuration's Certificate Manager certificates,
+        /// used for inbound SSL/TLS inspection.
         /// </para>
         /// </summary>
         public List<ServerCertificate> ServerCertificates

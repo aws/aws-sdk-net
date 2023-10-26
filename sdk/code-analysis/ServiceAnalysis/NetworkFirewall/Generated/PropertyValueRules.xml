@@ -1049,6 +1049,12 @@
     <pattern>^arn:aws.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.ServerCertificateConfiguration.CertificateAuthorityArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn:aws.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NetworkFirewall.Model.SourceMetadata.SourceArn</property>
     <min>1</min>
     <max>256</max>

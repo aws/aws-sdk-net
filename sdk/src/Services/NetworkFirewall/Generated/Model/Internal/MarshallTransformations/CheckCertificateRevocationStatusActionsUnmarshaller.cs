@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ServerCertificateConfiguration Object
+    /// Response Unmarshaller for CheckCertificateRevocationStatusActions Object
     /// </summary>  
-    public class ServerCertificateConfigurationUnmarshaller : IUnmarshaller<ServerCertificateConfiguration, XmlUnmarshallerContext>, IUnmarshaller<ServerCertificateConfiguration, JsonUnmarshallerContext>
+    public class CheckCertificateRevocationStatusActionsUnmarshaller : IUnmarshaller<CheckCertificateRevocationStatusActions, XmlUnmarshallerContext>, IUnmarshaller<CheckCertificateRevocationStatusActions, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ServerCertificateConfiguration IUnmarshaller<ServerCertificateConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        CheckCertificateRevocationStatusActions IUnmarshaller<CheckCertificateRevocationStatusActions, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,27 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ServerCertificateConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public CheckCertificateRevocationStatusActions Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ServerCertificateConfiguration unmarshalledObject = new ServerCertificateConfiguration();
+            CheckCertificateRevocationStatusActions unmarshalledObject = new CheckCertificateRevocationStatusActions();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("CertificateAuthorityArn", targetDepth))
+                if (context.TestExpression("RevokedStatusAction", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CertificateAuthorityArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RevokedStatusAction = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("CheckCertificateRevocationStatus", targetDepth))
+                if (context.TestExpression("UnknownStatusAction", targetDepth))
                 {
-                    var unmarshaller = CheckCertificateRevocationStatusActionsUnmarshaller.Instance;
-                    unmarshalledObject.CheckCertificateRevocationStatus = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Scopes", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<ServerCertificateScope, ServerCertificateScopeUnmarshaller>(ServerCertificateScopeUnmarshaller.Instance);
-                    unmarshalledObject.Scopes = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ServerCertificates", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<ServerCertificate, ServerCertificateUnmarshaller>(ServerCertificateUnmarshaller.Instance);
-                    unmarshalledObject.ServerCertificates = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.UnknownStatusAction = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +82,12 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         }
 
 
-        private static ServerCertificateConfigurationUnmarshaller _instance = new ServerCertificateConfigurationUnmarshaller();        
+        private static CheckCertificateRevocationStatusActionsUnmarshaller _instance = new CheckCertificateRevocationStatusActionsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ServerCertificateConfigurationUnmarshaller Instance
+        public static CheckCertificateRevocationStatusActionsUnmarshaller Instance
         {
             get
             {
