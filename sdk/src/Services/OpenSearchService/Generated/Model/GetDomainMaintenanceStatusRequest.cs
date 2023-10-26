@@ -30,7 +30,7 @@ namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
     /// Container for the parameters to the GetDomainMaintenanceStatus operation.
-    /// Get the status of the maintenance action.
+    /// The status of the maintenance action.
     /// </summary>
     public partial class GetDomainMaintenanceStatusRequest : AmazonOpenSearchServiceRequest
     {
@@ -59,7 +59,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property MaintenanceId. 
         /// <para>
-        /// The request id of the maintenance action.
+        /// The request ID of the maintenance action.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

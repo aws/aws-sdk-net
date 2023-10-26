@@ -2491,7 +2491,7 @@ namespace Amazon.OpenSearchService
 
 
         /// <summary>
-        /// Get the status of the maintenance action.
+        /// The status of the maintenance action.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDomainMaintenanceStatus service method.</param>
         /// 
@@ -2523,7 +2523,7 @@ namespace Amazon.OpenSearchService
 
 
         /// <summary>
-        /// Get the status of the maintenance action.
+        /// The status of the maintenance action.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDomainMaintenanceStatus service method.</param>
         /// <param name="cancellationToken">
@@ -2785,7 +2785,7 @@ namespace Amazon.OpenSearchService
 
 
         /// <summary>
-        /// Get the list of the maintenance action.
+        /// A list of maintenance actions for the domain.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDomainMaintenances service method.</param>
         /// 
@@ -2817,7 +2817,7 @@ namespace Amazon.OpenSearchService
 
 
         /// <summary>
-        /// Get the list of the maintenance action.
+        /// A list of maintenance actions for the domain.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDomainMaintenances service method.</param>
         /// <param name="cancellationToken">
@@ -3806,8 +3806,9 @@ namespace Amazon.OpenSearchService
 
 
         /// <summary>
-        /// Starts the node maintenance (Node restart, Node reboot, Opensearch/Elasticsearch process
-        /// restart, Dashboard/kibana restart) on the data node.
+        /// Starts the node maintenance process on the data node. These processes can include
+        /// a node reboot, an Opensearch or Elasticsearch process restart, or a Dashboard or Kibana
+        /// restart.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartDomainMaintenance service method.</param>
         /// 
@@ -3839,8 +3840,9 @@ namespace Amazon.OpenSearchService
 
 
         /// <summary>
-        /// Starts the node maintenance (Node restart, Node reboot, Opensearch/Elasticsearch process
-        /// restart, Dashboard/kibana restart) on the data node.
+        /// Starts the node maintenance process on the data node. These processes can include
+        /// a node reboot, an Opensearch or Elasticsearch process restart, or a Dashboard or Kibana
+        /// restart.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartDomainMaintenance service method.</param>
         /// <param name="cancellationToken">

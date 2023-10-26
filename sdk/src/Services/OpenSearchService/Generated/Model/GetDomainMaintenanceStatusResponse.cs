@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// The result of a <code>GetDomainMaintenanceStatus</code> request. Contains information
-    /// about the requested action.
+    /// The result of a <code>GetDomainMaintenanceStatus</code> request that information about
+    /// the requested action.
     /// </summary>
     public partial class GetDomainMaintenanceStatusResponse : AmazonWebServiceResponse
     {
@@ -44,7 +44,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Action. 
         /// <para>
-        /// Contains action name.
+        /// The action name.
         /// </para>
         /// </summary>
         public MaintenanceType Action
@@ -62,7 +62,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// Contains time at which action created.
+        /// The time at which the action was created.
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -80,7 +80,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property NodeId. 
         /// <para>
-        /// Contains node id of maintenance action.
+        /// The node ID of the maintenance action.
         /// </para>
         /// </summary>
         [AWSProperty(Min=10, Max=40)]
@@ -99,7 +99,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Contains status of the maintenance action.
+        /// The status of the maintenance action.
         /// </para>
         /// </summary>
         public MaintenanceStatus Status
@@ -117,7 +117,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property StatusMessage. 
         /// <para>
-        /// Contains status message of the maintenance action.
+        /// The status message of the maintenance action.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000)]
@@ -136,7 +136,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// Contains time at which action updated.
+        /// The time at which the action was updated.
         /// </para>
         /// </summary>
         public DateTime UpdatedAt

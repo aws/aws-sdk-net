@@ -30,7 +30,7 @@ namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
     /// Container for the parameters to the ListDomainMaintenances operation.
-    /// Get the list of the maintenance action.
+    /// A list of maintenance actions for the domain.
     /// </summary>
     public partial class ListDomainMaintenancesRequest : AmazonOpenSearchServiceRequest
     {
@@ -101,7 +101,7 @@ namespace Amazon.OpenSearchService.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// If your initial <code>ListDomainMaintenances</code> operation returns a <code>nextToken</code>,
-        /// you can include the returned <code>nextToken</code> in subsequent <code>ListDomainMaintenances</code>
+        /// include the returned <code>nextToken</code> in subsequent <code>ListDomainMaintenances</code>
         /// operations, which returns results in the next page.
         /// </para>
         /// </summary>

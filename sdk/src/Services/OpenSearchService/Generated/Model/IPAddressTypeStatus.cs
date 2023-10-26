@@ -29,30 +29,46 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// The result of a <code>StartDomainMaintenance</code> request that information about
-    /// the requested action.
+    /// The IP address type status for the domain.
     /// </summary>
-    public partial class StartDomainMaintenanceResponse : AmazonWebServiceResponse
+    public partial class IPAddressTypeStatus
     {
-        private string _maintenanceId;
+        private IPAddressType _options;
+        private OptionStatus _status;
 
         /// <summary>
-        /// Gets and sets the property MaintenanceId. 
+        /// Gets and sets the property Options. 
         /// <para>
-        /// The request ID of requested action.
+        /// The IP address options for the domain.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
-        public string MaintenanceId
+        [AWSProperty(Required=true)]
+        public IPAddressType Options
         {
-            get { return this._maintenanceId; }
-            set { this._maintenanceId = value; }
+            get { return this._options; }
+            set { this._options = value; }
         }
 
-        // Check to see if MaintenanceId property is set
-        internal bool IsSetMaintenanceId()
+        // Check to see if Options property is set
+        internal bool IsSetOptions()
         {
-            return this._maintenanceId != null;
+            return this._options != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status.
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public OptionStatus Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
         }
 
     }

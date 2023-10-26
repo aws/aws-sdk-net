@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// The result of a <code>ListDomainMaintenances</code> request. Contains information
+    /// The result of a <code>ListDomainMaintenances</code> request that contains information
     /// about the requested actions.
     /// </summary>
     public partial class ListDomainMaintenancesResponse : AmazonWebServiceResponse
@@ -40,7 +40,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property DomainMaintenances. 
         /// <para>
-        /// List of the submitted maintenance actions.
+        /// A list of the submitted maintenance actions.
         /// </para>
         /// </summary>
         public List<DomainMaintenanceDetails> DomainMaintenances

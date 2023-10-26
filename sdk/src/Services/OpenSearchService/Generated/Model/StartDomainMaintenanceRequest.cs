@@ -30,8 +30,9 @@ namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
     /// Container for the parameters to the StartDomainMaintenance operation.
-    /// Starts the node maintenance (Node restart, Node reboot, Opensearch/Elasticsearch process
-    /// restart, Dashboard/kibana restart) on the data node.
+    /// Starts the node maintenance process on the data node. These processes can include
+    /// a node reboot, an Opensearch or Elasticsearch process restart, or a Dashboard or Kibana
+    /// restart.
     /// </summary>
     public partial class StartDomainMaintenanceRequest : AmazonOpenSearchServiceRequest
     {
@@ -80,7 +81,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property NodeId. 
         /// <para>
-        /// Id of the data node.
+        /// The ID of the data node.
         /// </para>
         /// </summary>
         [AWSProperty(Min=10, Max=40)]

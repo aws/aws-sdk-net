@@ -50,7 +50,9 @@ namespace Amazon.OpenSearchService.Model
         private EncryptionAtRestOptions _encryptionAtRestOptions;
         private string _endpoint;
         private Dictionary<string, string> _endpoints = new Dictionary<string, string>();
+        private string _endpointV2;
         private string _engineVersion;
+        private IPAddressType _ipAddressType;
         private Dictionary<string, LogPublishingOption> _logPublishingOptions = new Dictionary<string, LogPublishingOption>();
         private NodeToNodeEncryptionOptions _nodeToNodeEncryptionOptions;
         private OffPeakWindowOptions _offPeakWindowOptions;
@@ -382,6 +384,21 @@ namespace Amazon.OpenSearchService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EndpointV2.
+        /// </summary>
+        public string EndpointV2
+        {
+            get { return this._endpointV2; }
+            set { this._endpointV2 = value; }
+        }
+
+        // Check to see if EndpointV2 property is set
+        internal bool IsSetEndpointV2()
+        {
+            return this._endpointV2 != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
         /// Version of OpenSearch or Elasticsearch that the domain is running, in the format <code>Elasticsearch_X.Y</code>
@@ -399,6 +416,24 @@ namespace Amazon.OpenSearchService.Model
         internal bool IsSetEngineVersion()
         {
             return this._engineVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IPAddressType. 
+        /// <para>
+        /// The type of IP addresses supported by the endpoint for the domain.
+        /// </para>
+        /// </summary>
+        public IPAddressType IPAddressType
+        {
+            get { return this._ipAddressType; }
+            set { this._ipAddressType = value; }
+        }
+
+        // Check to see if IPAddressType property is set
+        internal bool IsSetIPAddressType()
+        {
+            return this._ipAddressType != null;
         }
 
         /// <summary>

@@ -63,7 +63,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// Contains time at which action created.
+        /// The time at which the action was created.
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -100,7 +100,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property MaintenanceId. 
         /// <para>
-        /// Id of the requested action.
+        /// The ID of the requested action.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -119,7 +119,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property NodeId. 
         /// <para>
-        /// Id of the data node.
+        /// The ID of the data node.
         /// </para>
         /// </summary>
         [AWSProperty(Min=10, Max=40)]
@@ -156,7 +156,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property StatusMessage. 
         /// <para>
-        /// The status message of the action.
+        /// The status message for the action.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000)]
@@ -175,7 +175,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// Contains time at which action updated.
+        /// The time at which the action was updated.
         /// </para>
         /// </summary>
         public DateTime UpdatedAt

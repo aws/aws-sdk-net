@@ -177,6 +177,12 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetIPAddressType())
+                {
+                    context.Writer.WritePropertyName("IPAddressType");
+                    context.Writer.Write(publicRequest.IPAddressType);
+                }
+
                 if(publicRequest.IsSetLogPublishingOptions())
                 {
                     context.Writer.WritePropertyName("LogPublishingOptions");
