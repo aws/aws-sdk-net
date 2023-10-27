@@ -144,7 +144,11 @@ namespace Amazon.Runtime.Credentials.Internal
                     {
                         throw new AmazonClientException("SSO Token has expired and can not be refreshed");
                     }
-
+                    //if registration is within 5 minutes of expiration, generate a new token
+                    if (ssoToken.RegisteredClientExpired() && options.SupportsGettingNewToken)
+                    {
+                        return GenerateNewToken(options);
+                    }
                     // did we recently try to refresh the token?
                     if (true == inMemoryToken?.RefreshState.IsInRefreshCoolDown())
                     {
@@ -332,7 +336,11 @@ namespace Amazon.Runtime.Credentials.Internal
                     {
                         throw new AmazonClientException("SSO Token has expired and can not be refreshed");
                     }
-
+                    //if registration is within 5 minutes of expiration, generate a new token
+                    if (ssoToken.RegisteredClientExpired() && options.SupportsGettingNewToken)
+                    {
+                        return await GenerateNewTokenAsync(options, cancellationToken).ConfigureAwait(false);
+                    }
                     // did we recently try to refresh the token?
                     if (true == inMemoryToken?.RefreshState.IsInRefreshCoolDown())
                     {

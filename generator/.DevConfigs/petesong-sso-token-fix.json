@@ -1,0 +1,14 @@
+{
+  "core":{
+    "changeLogMessages":["Update SSO Token Manager to generate a new token if the token's client registration has expired."],
+    "type": "patch",
+    "updateMinimum":true
+  },
+  "services": [
+    {
+      "serviceName": "SSOOIDC",
+      "type": "patch",
+      "changeLogMessages": ["Add RegistrationExpiresAt field to GetSsoTokenResponse."]
+    }
+  ]
+}
