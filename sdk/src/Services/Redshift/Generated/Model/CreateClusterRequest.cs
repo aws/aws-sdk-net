@@ -63,6 +63,7 @@ namespace Amazon.Redshift.Model
         private string _hsmClientCertificateIdentifier;
         private string _hsmConfigurationIdentifier;
         private List<string> _iamRoles = new List<string>();
+        private string _ipAddressType;
         private string _kmsKeyId;
         private string _loadSampleData;
         private string _maintenanceTrackName;
@@ -650,6 +651,26 @@ namespace Amazon.Redshift.Model
         internal bool IsSetIamRoles()
         {
             return this._iamRoles != null && this._iamRoles.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IpAddressType. 
+        /// <para>
+        /// The IP address types that the cluster supports. Possible values are <code>ipv4</code>
+        /// and <code>dualstack</code>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=2147483647)]
+        public string IpAddressType
+        {
+            get { return this._ipAddressType; }
+            set { this._ipAddressType = value; }
+        }
+
+        // Check to see if IpAddressType property is set
+        internal bool IsSetIpAddressType()
+        {
+            return this._ipAddressType != null;
         }
 
         /// <summary>

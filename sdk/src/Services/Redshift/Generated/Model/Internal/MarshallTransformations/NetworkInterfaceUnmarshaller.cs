@@ -60,6 +60,12 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                         unmarshalledObject.AvailabilityZone = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("Ipv6Address", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Ipv6Address = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("NetworkInterfaceId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

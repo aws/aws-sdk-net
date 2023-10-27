@@ -168,6 +168,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 {
                     return InvalidRetentionPeriodExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("Ipv6CidrBlockNotFoundFault"))
+                {
+                    return Ipv6CidrBlockNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceededFault"))
                 {
                     return LimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
