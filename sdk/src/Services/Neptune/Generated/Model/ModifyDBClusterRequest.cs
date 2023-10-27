@@ -323,7 +323,7 @@ namespace Amazon.Neptune.Model
         ///  
         /// <para>
         /// For a list of valid engine versions, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/engine-releases.html">Engine
-        /// Releases for Amazon Neptune</a>, or call <a href="https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions">DescribeDBEngineVersions</a>.
+        /// Releases for Amazon Neptune</a>, or call <a>DescribeDBEngineVersions</a>.
         /// </para>
         /// </summary>
         public string EngineVersion
@@ -521,7 +521,15 @@ namespace Amazon.Neptune.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ServerlessV2ScalingConfiguration.
+        /// Gets and sets the property ServerlessV2ScalingConfiguration. 
+        /// <para>
+        /// Contains the scaling configuration of a Neptune Serverless DB cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using
+        /// Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.
+        /// </para>
         /// </summary>
         public ServerlessV2ScalingConfiguration ServerlessV2ScalingConfiguration
         {

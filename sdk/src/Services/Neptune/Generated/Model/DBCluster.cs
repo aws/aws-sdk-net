@@ -33,7 +33,7 @@ namespace Amazon.Neptune.Model
     /// 
     ///  
     /// <para>
-    /// This data type is used as a response element in the <a>DescribeDBClusters</a> action.
+    /// This data type is used as a response element in the <a>DescribeDBClusters</a>.
     /// </para>
     /// </summary>
     public partial class DBCluster
@@ -817,7 +817,15 @@ namespace Amazon.Neptune.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ServerlessV2ScalingConfiguration.
+        /// Gets and sets the property ServerlessV2ScalingConfiguration. 
+        /// <para>
+        /// Shows the scaling configuration for a Neptune Serverless DB cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using
+        /// Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.
+        /// </para>
         /// </summary>
         public ServerlessV2ScalingConfigurationInfo ServerlessV2ScalingConfiguration
         {

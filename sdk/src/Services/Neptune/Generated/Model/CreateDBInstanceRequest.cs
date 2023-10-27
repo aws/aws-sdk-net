@@ -1020,6 +1020,7 @@ namespace Amazon.Neptune.Model
         /// The password for the given ARN from the key store in order to access the device.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string TdeCredentialPassword
         {
             get { return this._tdeCredentialPassword; }
