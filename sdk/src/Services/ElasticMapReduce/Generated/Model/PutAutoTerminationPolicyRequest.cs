@@ -32,8 +32,8 @@ namespace Amazon.ElasticMapReduce.Model
     /// Container for the parameters to the PutAutoTerminationPolicy operation.
     /// <note> 
     /// <para>
-    /// Auto-termination is supported in Amazon EMR releases 5.30.0 and 6.1.0 and later. For
-    /// more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-auto-termination-policy.html">Using
+    /// Auto-termination is supported in Amazon EMR releases 5.30.0 and 6.1.0 and higher.
+    /// For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-auto-termination-policy.html">Using
     /// an auto-termination policy</a>.
     /// </para>
     ///  </note> 

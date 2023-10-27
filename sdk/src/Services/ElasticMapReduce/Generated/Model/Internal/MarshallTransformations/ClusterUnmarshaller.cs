@@ -100,10 +100,22 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     unmarshalledObject.CustomAmiId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EbsRootVolumeIops", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.EbsRootVolumeIops = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("EbsRootVolumeSize", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
                     unmarshalledObject.EbsRootVolumeSize = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("EbsRootVolumeThroughput", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.EbsRootVolumeThroughput = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Ec2InstanceAttributes", targetDepth))

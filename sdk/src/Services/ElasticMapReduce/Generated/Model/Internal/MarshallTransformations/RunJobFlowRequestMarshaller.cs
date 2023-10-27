@@ -150,10 +150,22 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.CustomAmiId);
                 }
 
+                if(publicRequest.IsSetEbsRootVolumeIops())
+                {
+                    context.Writer.WritePropertyName("EbsRootVolumeIops");
+                    context.Writer.Write(publicRequest.EbsRootVolumeIops);
+                }
+
                 if(publicRequest.IsSetEbsRootVolumeSize())
                 {
                     context.Writer.WritePropertyName("EbsRootVolumeSize");
                     context.Writer.Write(publicRequest.EbsRootVolumeSize);
+                }
+
+                if(publicRequest.IsSetEbsRootVolumeThroughput())
+                {
+                    context.Writer.WritePropertyName("EbsRootVolumeThroughput");
+                    context.Writer.Write(publicRequest.EbsRootVolumeThroughput);
                 }
 
                 if(publicRequest.IsSetInstances())
