@@ -64,7 +64,7 @@ namespace Amazon.S3.Transfer
         /// </summary>
         public bool DisablePayloadSigning
         {
-            get { return this.DisablePayloadSigning;  }
+            get { return this.disablePayloadSigning;  }
             set { this.disablePayloadSigning = value;  }
         }
 
