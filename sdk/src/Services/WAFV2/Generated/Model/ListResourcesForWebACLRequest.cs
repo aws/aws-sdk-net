@@ -31,8 +31,24 @@ namespace Amazon.WAFV2.Model
     /// <summary>
     /// Container for the parameters to the ListResourcesForWebACL operation.
     /// Retrieves an array of the Amazon Resource Names (ARNs) for the regional resources
-    /// that are associated with the specified web ACL. If you want the list of Amazon CloudFront
-    /// resources, use the CloudFront call <code>ListDistributionsByWebACLId</code>.
+    /// that are associated with the specified web ACL. 
+    /// 
+    ///  
+    /// <para>
+    /// For Amazon CloudFront, don't use this call. Instead, use the CloudFront call <code>ListDistributionsByWebACLId</code>.
+    /// For information, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDistributionsByWebACLId.html">ListDistributionsByWebACLId</a>
+    /// in the <i>Amazon CloudFront API Reference</i>. 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Required permissions for customer-managed IAM policies</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// This call requires permissions that are specific to the protected resource type. For
+    /// details, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/security_iam_service-with-iam.html#security_iam_action-ListResourcesForWebACL">Permissions
+    /// for ListResourcesForWebACL</a> in the <i>WAF Developer Guide</i>.
+    /// </para>
     /// </summary>
     public partial class ListResourcesForWebACLRequest : AmazonWAFV2Request
     {
