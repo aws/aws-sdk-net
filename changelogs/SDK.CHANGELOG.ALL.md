@@ -1,3 +1,19 @@
+### 3.7.672.0 (2023-10-27 18:14 UTC)
+* ElasticMapReduce (3.7.201.0)
+	* Updated CreateCluster API request and DescribeCluster API responses to include EbsRootVolumeIops, and EbsRootVolumeThroughput attributes that specify the user configured root volume IOPS and throughput for Amazon EBS root device volume. This feature will be available from Amazon EMR releases 6.15.0
+* Neptune (3.7.201.0)
+	* Update TdeCredentialPassword type to SensitiveString
+* Pinpoint (3.7.201.58)
+	* Updated documentation to describe the case insensitivity for EndpointIds.
+* Redshift (3.7.203.0)
+	* added support to create a dual stack cluster
+* WAFV2 (3.7.203.18)
+	* Updates the descriptions for the calls that manage web ACL associations, to provide information for customer-managed IAM policies.
+* Core 3.7.204.10
+	* Deprecate AWSSDKUtils.ResolveResourcePath and AWSSDKUtils.JoinResourcePathSegments in favor of V2 version to fix encoding issue with special characters. Add protocol tests for http labels for greedy and non-greedy labels that include special characters.
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.671.0 (2023-10-26 18:26 UTC)
 * AppStream (3.7.203.0)
 	* This release introduces multi-session fleets, allowing customers to provision more than one user session on a single fleet instance.

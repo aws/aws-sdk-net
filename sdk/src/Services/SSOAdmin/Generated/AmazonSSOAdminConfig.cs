@@ -32,7 +32,7 @@ namespace Amazon.SSOAdmin
     public partial class AmazonSSOAdminConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.201.26");
+            InternalSDKUtils.BuildUserAgentString("3.7.201.27");
 
         private string _userAgent = UserAgentString;
         ///<summary>
