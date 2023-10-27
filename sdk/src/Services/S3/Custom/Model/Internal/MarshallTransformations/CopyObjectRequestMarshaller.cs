@@ -36,9 +36,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         public IRequest Marshall(CopyObjectRequest copyObjectRequest)
         {
-            var sourceKey = AmazonS3Util.RemoveLeadingSlash(copyObjectRequest.SourceKey);
-            var destinationKey = AmazonS3Util.RemoveLeadingSlash(copyObjectRequest.DestinationKey);
-            
             IRequest request = new DefaultRequest(copyObjectRequest, "AmazonS3");
 
             request.HttpMethod = "PUT";
@@ -53,7 +50,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             HeaderACLRequestMarshaller.Marshall(request, copyObjectRequest);
 
             if (copyObjectRequest.IsSetSourceBucket())
-                request.Headers.Add(HeaderKeys.XAmzCopySourceHeader, ConstructCopySourceHeaderValue(copyObjectRequest.SourceBucket, sourceKey, copyObjectRequest.SourceVersionId));
+                request.Headers.Add(HeaderKeys.XAmzCopySourceHeader, ConstructCopySourceHeaderValue(copyObjectRequest.SourceBucket, copyObjectRequest.SourceKey, copyObjectRequest.SourceVersionId));
 
             if (copyObjectRequest.IsSetETagToMatch())
                 request.Headers.Add(HeaderKeys.XAmzCopySourceIfMatchHeader, S3Transforms.ToStringValue(copyObjectRequest.ETagToMatch));
@@ -139,11 +136,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             if (string.IsNullOrEmpty(copyObjectRequest.DestinationBucket))
                 throw new System.ArgumentException("DestinationBucket is a required property and must be set before making this call.", "CopyObjectRequest.DestinationBucket");
-            if (string.IsNullOrEmpty(destinationKey))
+            if (string.IsNullOrEmpty(copyObjectRequest.DestinationKey))
                 throw new System.ArgumentException("DestinationKey is a required property and must be set before making this call.", "CopyObjectRequest.DestinationKey");
 
             request.ResourcePath = string.Format(CultureInfo.InvariantCulture, "/{0}",
-                                                 S3Transforms.ToStringValue(destinationKey));
+                                                 S3Transforms.ToStringValue(copyObjectRequest.DestinationKey));
 
 
             request.UseQueryString = true;

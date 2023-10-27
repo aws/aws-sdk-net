@@ -570,13 +570,6 @@ namespace Amazon.S3.Util
                 key.EndsWith(S3Constants.EncryptionInstructionfileSuffixV2, StringComparison.Ordinal);
         }
 
-        internal static string RemoveLeadingSlash(string key)
-        {
-            return key.StartsWith("/", StringComparison.Ordinal)
-                                    ? key.Substring(1)
-                                    : key;
-        }
-
         /// <summary>
         /// Check if the request resource is an outpost resource
         /// </summary>

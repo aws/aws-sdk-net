@@ -1,0 +1,9 @@
+{
+  "services": [
+    {
+      "serviceName": "S3",
+      "type": "patch",
+      "changeLogMessages": ["Update CopyObject and CopyPart requests not to remove leading slash from object keys"]
+    }
+  ]
+}
