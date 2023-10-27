@@ -91,7 +91,13 @@ namespace Amazon.Runtime.Internal.Util
         {
             return value.ToUniversalTime().ToString(AWSSDKUtils.ISO8601DateFormat, CultureInfo.InvariantCulture);
         }
-
+        /// <summary>
+        /// Converts a DateTime to ISO8601 formatted string.
+        /// </summary>
+        public static string FromDateTimeToISO8601NoMs(DateTime value)
+        {
+            return value.ToUniversalTime().ToString(AWSSDKUtils.ISO8601DateFormatNoMS, CultureInfo.InvariantCulture);
+        }
         /// <summary>
         /// Converts a DateTime to RFC822 formatted string.
         /// </summary>

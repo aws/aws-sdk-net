@@ -1,0 +1,7 @@
+{
+    "core": {
+      "changeLogMessages": ["Deprecate AWSSDKUtils.ResolveResourcePath and AWSSDKUtils.JoinResourcePathSegments in favor of V2 version to fix encoding issue with special characters. Add protocol tests for http labels for greedy and non-greedy labels that include special characters."],
+      "type": "patch",
+      "updateMinimum": true
+    }
+  }
