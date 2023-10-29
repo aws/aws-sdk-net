@@ -1,8 +1,11 @@
 {
   "core": {
-    "changeLogMessages": ["Add trimming support for .NET 8."],
-    "type": "patch",
-    "updateMinimum": true,
+    "changeLogMessages": [
+		"Add .NET 8 framework target for core and service projects.",
+		"For .NET 8 mark all SDK assemblies as trimmable and address all trim warnings.",
+		"For .NET 8 prevent the System.Uri class from canonicalizing the resource path. This broke scenarios with S3 object keys like `foo/../bar.txt`.",
+		"For .NET 8 use the System.Net.Http.HttpClient synchronous `Send` method when then internal synchronous service request methods are invoked."
+	],
     "backwardIncompatibilitiesToIgnore": [
       "Amazon.Util.PaginatedResourceFactory/TypeRemoved",
       "Amazon.Runtime.URIBasedRefreshingCredentialHelper/MethodOverloadAdded",
@@ -10,5 +13,6 @@
       "Amazon.Util.PaginatedResourceInfo/TypeRemoved",
       "Amazon.Runtime.Internal.Settings.SettingsCollection/MethodRemoved"
     ]
-  }
+  },
+  "overrideVersion": "3.7.300.0"
 }
