@@ -82,6 +82,83 @@
         "endpoint":{
           "hostPrefix": "foo-{Name}."
         }
+      },
+      "QueryStringEscaping":{
+        "name":"QueryStringEscaping",
+        "http":{
+          "method":"GET",
+          "requestUri":"/path"
+        },
+        "input":{"shape":"QueryStringEscapingRequest"},
+        "output":{"shape":"QueryStringEscapingResult"},
+        "errors":[],
+        "documentation":"<p>Handles query string escaping</p>"
+      },
+      "QueryStringList":{
+        "name":"QueryStringList",
+        "http":{
+          "method":"GET",
+          "requestUri":"/path"
+        },
+        "input":{"shape":"QueryStringListRequest"},
+        "output":{"shape":"QueryStringListResult"},
+        "errors":[],
+        "documentation":"<p>Handles query string lists of string</p>"
+      },
+      "QueryIntegerList":{
+        "name":"QueryIntegerList",
+        "http":{
+          "method":"GET",
+          "requestUri":"/path"
+        },
+        "input":{"shape":"QueryIntegerListRequest"},
+        "output":{"shape":"QueryIntegerListResult"},
+        "errors":[],
+        "documentation":"<p>Handles query string lists of integer</p>"
+      },
+      "QueryTimestampList":{
+        "name":"QueryTimestampList",
+        "http":{
+          "method":"GET",
+          "requestUri":"/path"
+        },
+        "input":{"shape":"QueryTimestampListRequest"},
+        "output":{"shape":"QueryTimestampListResult"},
+        "errors":[],
+        "documentation":"<p>Handles query string lists of timestamp</p>"
+      },
+      "QueryBooleanList":{
+        "name":"QueryBooleanList",
+        "http":{
+          "method":"GET",
+          "requestUri":"/path"
+        },
+        "input":{"shape":"QueryBooleanListRequest"},
+        "output":{"shape":"QueryBooleanListResult"},
+        "errors":[],
+        "documentation":"<p>Handles query string lists of boolean</p>"
+      },
+      "QueryStringListMap":{
+        "name":"QueryStringListMap",
+        "http":{
+          "method":"GET",
+          "requestUri":"/path"
+        },
+        "input":{"shape":"QueryStringListMapRequest"},
+        "output":{"shape":"QueryStringListMapResult"},
+        "errors":[],
+        "documentation":"<p>Handles query string maps of lists of string</p>"
+      },
+      "QueryIntegerListMap":{
+        "name":"QueryIntegerListMap",
+        "http":{
+          "method":"GET",
+          "requestUri":"/path"
+        },
+        "input":{"shape":"QueryIntegerListMapRequest"},
+        "output":{"shape":"QueryIntegerListMapResult"},
+        "errors":[],
+        "documentation":"<p>Handles query string maps of lists of integers</p>"
       }
     },
     "shapes":{
@@ -89,7 +166,30 @@
         "type":"integer"
       },
       "String":{"type":"string"},
+      "Timestamp":{
+        "type":"timestamp",
+        "timestampFormat":"iso8601"
+      },
+      "Boolean":{
+        "type":"boolean"
+      },
       "Blob":{"type":"blob"},
+      "StringList":{
+        "type":"list",
+        "member":{"shape":"String"}
+      },
+      "IntegerList":{
+        "type":"list",
+        "member":{"shape":"Integer"}
+      },
+      "TimestampList":{
+        "type":"list",
+        "member":{"shape":"Timestamp"}
+      },
+      "BooleanList":{
+        "type":"list",
+        "member":{"shape":"Boolean"}
+      },
       "NoPayloadRequest":{
         "type":"structure",
         "required":[],
@@ -232,6 +332,112 @@
             "hostLabel": true
           }
         }
+      },
+      "QueryStringEscapingRequest":{
+        "type":"structure",
+        "members":{
+          "queryString":{
+            "shape":"String",
+            "location":"querystring",
+            "locationName": "String"
+          }
+        }
+      },
+      "QueryStringEscapingResult":{
+        "type":"structure",        
+        "members":{}        
+      },
+      "QueryStringListRequest":{
+        "type":"structure",
+        "members":{
+          "queryStringList":{
+            "shape":"StringList",
+            "location":"querystring",
+            "locationName": "item"
+          }
+        }
+      },
+      "QueryStringListResult":{
+        "type":"structure",        
+        "members":{}        
+      },
+      "QueryIntegerListRequest":{
+        "type":"structure",
+        "members":{
+          "queryIntegerList":{
+            "shape":"IntegerList",
+            "location":"querystring",
+            "locationName": "item"
+          }
+        }
+      },
+      "QueryIntegerListResult":{
+        "type":"structure",        
+        "members":{}        
+      },
+      "QueryTimestampListRequest":{
+        "type":"structure",
+        "members":{
+          "queryTimestampList":{
+            "shape":"TimestampList",
+            "location":"querystring",
+            "locationName": "item"
+          }
+        }
+      },
+      "QueryTimestampListResult":{
+        "type":"structure",        
+        "members":{}        
+      },
+      "QueryBooleanListRequest":{
+        "type":"structure",
+        "members":{
+          "queryBooleanList":{
+            "shape":"BooleanList",
+            "location":"querystring",
+            "locationName": "item"
+          }
+        }
+      },
+      "QueryBooleanListResult":{
+        "type":"structure",        
+        "members":{}        
+      },
+      "QueryStringListMapRequest":{
+        "type":"structure",
+        "members":{
+          "queryParamsMapOfStringList":{
+            "shape":"MapOfStringsList",
+            "location":"querystring"
+          }
+        }
+      },
+      "QueryStringListMapResult":{
+        "type":"structure",        
+        "members":{}        
+      },
+      "MapOfStringsList":{
+        "type":"map",
+        "key":{"shape":"String"},
+        "value":{"shape":"StringList"}
+      },
+      "QueryIntegerListMapRequest":{
+        "type":"structure",
+        "members":{
+          "queryParamsMapOfIntegerList":{
+            "shape":"MapOfIntegersList",
+            "location":"querystring"
+          }
+        }
+      },
+      "QueryIntegerListMapResult":{
+        "type":"structure",        
+        "members":{}        
+      },
+      "MapOfIntegersList":{
+        "type":"map",
+        "key":{"shape":"String"},
+        "value":{"shape":"IntegerList"}
       }
     }
   }
