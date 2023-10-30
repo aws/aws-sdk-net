@@ -37,6 +37,7 @@ namespace Amazon.S3Outposts.Model
         private string _outpostArn;
         private string _outpostId;
         private string _ownerId;
+        private string _s3OutpostArn;
 
         /// <summary>
         /// Gets and sets the property CapacityInBytes. 
@@ -109,6 +110,24 @@ namespace Amazon.S3Outposts.Model
         internal bool IsSetOwnerId()
         {
             return this._ownerId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3OutpostArn. 
+        /// <para>
+        /// Specifies the unique S3 on Outposts ARN for use with Resource Access Manager (RAM).
+        /// </para>
+        /// </summary>
+        public string S3OutpostArn
+        {
+            get { return this._s3OutpostArn; }
+            set { this._s3OutpostArn = value; }
+        }
+
+        // Check to see if S3OutpostArn property is set
+        internal bool IsSetS3OutpostArn()
+        {
+            return this._s3OutpostArn != null;
         }
 
     }
