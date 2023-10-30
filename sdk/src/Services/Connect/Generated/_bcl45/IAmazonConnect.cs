@@ -44,7 +44,7 @@ namespace Amazon.Connect
     /// <para>
     /// There are limits to the number of Amazon Connect resources that you can create. There
     /// are also limits to the number of requests that you can make per second. For more information,
-    /// seeP98941055 <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
+    /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
     /// Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>.
     /// </para>
     ///  
@@ -9029,7 +9029,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Returns a list of third party applications in a specific security profile.
+        /// Returns a list of third-party applications in a specific security profile.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSecurityProfileApplications service method.</param>
         /// 
@@ -9055,7 +9055,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Returns a list of third party applications in a specific security profile.
+        /// Returns a list of third-party applications in a specific security profile.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSecurityProfileApplications service method.</param>
         /// <param name="cancellationToken">
@@ -10174,7 +10174,9 @@ namespace Amazon.Connect
 
         /// <summary>
         /// When a contact is being recorded, and the recording has been suspended using SuspendContactRecording,
-        /// this API resumes recording the call or screen.
+        /// this API resumes recording whatever recording is selected in the flow configuration:
+        /// call, screen, or both. If only call recording or only screen recording is enabled,
+        /// then it would resume.
         /// 
         ///  
         /// <para>
@@ -10200,7 +10202,9 @@ namespace Amazon.Connect
 
         /// <summary>
         /// When a contact is being recorded, and the recording has been suspended using SuspendContactRecording,
-        /// this API resumes recording the call or screen.
+        /// this API resumes recording whatever recording is selected in the flow configuration:
+        /// call, screen, or both. If only call recording or only screen recording is enabled,
+        /// then it would resume.
         /// 
         ///  
         /// <para>
@@ -11819,10 +11823,11 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// When a contact is being recorded, this API suspends recording the call or screen.
-        /// For example, you might suspend the call or screen recording while collecting sensitive
-        /// information, such as a credit card number. Then use ResumeContactRecording to restart
-        /// recording.
+        /// When a contact is being recorded, this API suspends recording whatever is selected
+        /// in the flow configuration: call, screen, or both. If only call recording or only screen
+        /// recording is enabled, then it would be suspended. For example, you might suspend the
+        /// screen recording while collecting sensitive information, such as a credit card number.
+        /// Then use ResumeContactRecording to restart recording the screen.
         /// 
         ///  
         /// <para>
@@ -11852,10 +11857,11 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// When a contact is being recorded, this API suspends recording the call or screen.
-        /// For example, you might suspend the call or screen recording while collecting sensitive
-        /// information, such as a credit card number. Then use ResumeContactRecording to restart
-        /// recording.
+        /// When a contact is being recorded, this API suspends recording whatever is selected
+        /// in the flow configuration: call, screen, or both. If only call recording or only screen
+        /// recording is enabled, then it would be suspended. For example, you might suspend the
+        /// screen recording while collecting sensitive information, such as a credit card number.
+        /// Then use ResumeContactRecording to restart recording the screen.
         /// 
         ///  
         /// <para>

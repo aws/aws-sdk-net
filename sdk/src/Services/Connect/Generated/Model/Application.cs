@@ -33,7 +33,7 @@ namespace Amazon.Connect.Model
     /// 
     ///  
     /// <para>
-    /// A third party application's metadata.
+    /// A third-party application's metadata.
     /// </para>
     /// </summary>
     public partial class Application

@@ -74,6 +74,7 @@ namespace Amazon.Connect.Model
     public partial class ClaimPhoneNumberRequest : AmazonConnectRequest
     {
         private string _clientToken;
+        private string _instanceId;
         private string _phoneNumber;
         private string _phoneNumberDescription;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
@@ -104,6 +105,28 @@ namespace Amazon.Connect.Model
         internal bool IsSetClientToken()
         {
             return this._clientToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceId. 
+        /// <para>
+        /// The identifier of the Amazon Connect instance that phone numbers are claimed to. You
+        /// can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+        /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance. You must enter
+        /// <code>InstanceId</code> or <code>TargetArn</code>. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=100)]
+        public string InstanceId
+        {
+            get { return this._instanceId; }
+            set { this._instanceId = value; }
+        }
+
+        // Check to see if InstanceId property is set
+        internal bool IsSetInstanceId()
+        {
+            return this._instanceId != null;
         }
 
         /// <summary>
@@ -169,10 +192,10 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property TargetArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution
-        /// groups that phone numbers are claimed to.
+        /// groups that phone number inbound traffic is routed through. You must enter <code>InstanceId</code>
+        /// or <code>TargetArn</code>. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string TargetArn
         {
             get { return this._targetArn; }

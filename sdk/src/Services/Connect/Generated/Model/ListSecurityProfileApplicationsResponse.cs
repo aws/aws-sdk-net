@@ -43,7 +43,7 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// A list of the third party application's metadata.
+        /// A list of the third-party application's metadata.
         /// </para>
         /// </summary>
         [AWSProperty(Max=10)]
@@ -62,8 +62,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token for the next set of results. The next set of results can be retrieved by
-        /// using the token value returned in the previous response when making the next request.
+        /// If there are additional results, this is the token for the next set of results.
         /// </para>
         /// </summary>
         public string NextToken
