@@ -29,13 +29,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Finspace.Model
 {
     /// <summary>
-    /// The configuration that allows you to choose how you want to update the databases
-    /// on a cluster. Depending on the option you choose, you can reduce the time it takes
-    /// to update the cluster.
+    /// The configuration that allows you to choose how you want to update code on a cluster.
+    /// Depending on the option you choose, you can reduce the time it takes to update the
+    /// cluster.
     /// </summary>
-    public partial class KxDeploymentConfiguration
+    public partial class KxClusterCodeDeploymentConfiguration
     {
-        private KxDeploymentStrategy _deploymentStrategy;
+        private KxClusterCodeDeploymentStrategy _deploymentStrategy;
 
         /// <summary>
         /// Gets and sets the property DeploymentStrategy. 
@@ -49,19 +49,13 @@ namespace Amazon.Finspace.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// NO_RESTART – This option updates the cluster without stopping the running q process.
-        /// It is only available for <code>HDB</code> type cluster. This option is quicker as
-        /// it reduces the turn around time to update configuration on a cluster. 
-        /// </para>
-        ///  
-        /// <para>
-        /// With this deployment mode, you cannot update the <code>initializationScript</code>
-        /// and <code>commandLineArguments</code> parameters.
+        /// FORCE – This option updates the cluster by immediately stopping all the running processes
+        /// before starting up new ones with the updated configuration. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
-        public KxDeploymentStrategy DeploymentStrategy
+        public KxClusterCodeDeploymentStrategy DeploymentStrategy
         {
             get { return this._deploymentStrategy; }
             set { this._deploymentStrategy = value; }

@@ -555,6 +555,56 @@ namespace Amazon.Finspace
 
 
     /// <summary>
+    /// Constants used for properties of type KxClusterCodeDeploymentStrategy.
+    /// </summary>
+    public class KxClusterCodeDeploymentStrategy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FORCE for KxClusterCodeDeploymentStrategy
+        /// </summary>
+        public static readonly KxClusterCodeDeploymentStrategy FORCE = new KxClusterCodeDeploymentStrategy("FORCE");
+        /// <summary>
+        /// Constant ROLLING for KxClusterCodeDeploymentStrategy
+        /// </summary>
+        public static readonly KxClusterCodeDeploymentStrategy ROLLING = new KxClusterCodeDeploymentStrategy("ROLLING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public KxClusterCodeDeploymentStrategy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static KxClusterCodeDeploymentStrategy FindValue(string value)
+        {
+            return FindValue<KxClusterCodeDeploymentStrategy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator KxClusterCodeDeploymentStrategy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type KxClusterStatus.
     /// </summary>
     public class KxClusterStatus : ConstantClass

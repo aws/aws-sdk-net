@@ -1667,6 +1667,70 @@ namespace Amazon.Finspace
 
         #endregion
         
+        #region  UpdateKxClusterCodeConfiguration
+
+
+        /// <summary>
+        /// Allows you to update code configuration on a running cluster. By using this API you
+        /// can update the code, the initialization script path, and the command line arguments
+        /// for a specific cluster. The configuration that you want to update will override any
+        /// existing configurations on the cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateKxClusterCodeConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the UpdateKxClusterCodeConfiguration service method, as returned by Finspace.</returns>
+        /// <exception cref="Amazon.Finspace.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Finspace.Model.ConflictException">
+        /// There was a conflict with this action, and it could not be completed.
+        /// </exception>
+        /// <exception cref="Amazon.Finspace.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Finspace.Model.LimitExceededException">
+        /// A service limit or quota is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Finspace.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Finspace.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Finspace.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/UpdateKxClusterCodeConfiguration">REST API Reference for UpdateKxClusterCodeConfiguration Operation</seealso>
+        UpdateKxClusterCodeConfigurationResponse UpdateKxClusterCodeConfiguration(UpdateKxClusterCodeConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateKxClusterCodeConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateKxClusterCodeConfiguration operation on AmazonFinspaceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateKxClusterCodeConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/UpdateKxClusterCodeConfiguration">REST API Reference for UpdateKxClusterCodeConfiguration Operation</seealso>
+        IAsyncResult BeginUpdateKxClusterCodeConfiguration(UpdateKxClusterCodeConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateKxClusterCodeConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateKxClusterCodeConfiguration.</param>
+        /// 
+        /// <returns>Returns a  UpdateKxClusterCodeConfigurationResult from Finspace.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/UpdateKxClusterCodeConfiguration">REST API Reference for UpdateKxClusterCodeConfiguration Operation</seealso>
+        UpdateKxClusterCodeConfigurationResponse EndUpdateKxClusterCodeConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  UpdateKxClusterDatabases
 
 

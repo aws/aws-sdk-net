@@ -58,13 +58,26 @@ namespace Amazon.Finspace.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of cache storage . The valid values are: 
+        /// The type of cache storage. The valid values are: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
         /// CACHE_1000 – This type provides at least 1000 MB/s disk access throughput. 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> <li> 
+        /// <para>
+        /// CACHE_250 – This type provides at least 250 MB/s disk access throughput. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CACHE_12 – This type provides at least 12 MB/s disk access throughput. 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For cache type <code>CACHE_1000</code> and <code>CACHE_250</code> you can select cache
+        /// size as 1200 GB or increments of 2400 GB. For cache type <code>CACHE_12</code> you
+        /// can select the cache size in increments of 6000 GB.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=8, Max=10)]
         public string Type
