@@ -44,6 +44,7 @@ namespace Amazon.S3.Model
         private long? lastByte;
         private string expectedBucketOwner;
         private string expectedSourceBucketOwner;
+        private RequestPayer requestPayer;
 
         [Obsolete("Use ServerSideEncryptionMethod in InitiateMultipartUploadRequest instead.")]
         private ServerSideEncryptionMethod serverSideEncryption;
@@ -593,6 +594,21 @@ namespace Amazon.S3.Model
         {
             return !String.IsNullOrEmpty(this.expectedSourceBucketOwner);
         }
+
+        /// <summary>
+        /// <para>Confirms that the requester knows that they will be charged for the request. 
+        /// Bucket owners need not specify this parameter in their requests</para>.
+        /// </summary>
+        public RequestPayer RequestPayer
+        {
+            get { return this.requestPayer; }
+            set { this.requestPayer = value; }
+        }
+
+        // Check to see if RequestPayer property is set
+        internal bool IsSetRequestPayer()
+        {
+            return requestPayer != null;
+        }
     }
 }
-    

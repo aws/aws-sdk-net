@@ -1,0 +1,9 @@
+{
+  "services": [
+    {
+      "serviceName": "S3",
+      "type": "patch",
+      "changeLogMessages": [ "Added RequestPayer property in CopyPartRequest class." ]
+    }
+  ]
+}
