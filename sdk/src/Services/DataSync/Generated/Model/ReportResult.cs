@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataSync.Model
 {
     /// <summary>
-    /// Indicates whether DataSync created a complete <a href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-task-reports.html">task
+    /// Indicates whether DataSync created a complete <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">task
     /// report</a> for your transfer.
     /// </summary>
     public partial class ReportResult

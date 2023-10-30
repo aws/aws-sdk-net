@@ -263,6 +263,13 @@ namespace Amazon.DataSync.Model
         /// <para>
         /// The number of files, objects, and directories that DataSync verified during your transfer.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// When you configure your task to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-data-verification-options.html">verify
+        /// only the data that's transferred</a>, DataSync doesn't verify directories in some
+        /// situations or files that fail to transfer.
+        /// </para>
+        ///  </note>
         /// </summary>
         public long FilesVerified
         {
@@ -315,7 +322,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property ReportResult. 
         /// <para>
-        /// Indicates whether DataSync generated a complete <a href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-task-reports.html">task
+        /// Indicates whether DataSync generated a complete <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">task
         /// report</a> for your transfer.
         /// </para>
         /// </summary>

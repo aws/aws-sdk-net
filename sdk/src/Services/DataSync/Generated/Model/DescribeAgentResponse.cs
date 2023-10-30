@@ -38,6 +38,7 @@ namespace Amazon.DataSync.Model
         private EndpointType _endpointType;
         private DateTime? _lastConnectionTime;
         private string _name;
+        private Platform _platform;
         private PrivateLinkConfig _privateLinkConfig;
         private AgentStatus _status;
 
@@ -63,7 +64,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// The time that the agent was activated (that is, created in your account).
+        /// The time that the agent was <a href="https://docs.aws.amazon.com/datasync/latest/userguide/activate-agent.html">activated</a>.
         /// </para>
         /// </summary>
         public DateTime CreationTime
@@ -81,8 +82,8 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property EndpointType. 
         /// <para>
-        /// The type of endpoint that your agent is connected to. If the endpoint is a VPC endpoint,
-        /// the agent is not accessible over the public internet. 
+        /// The type of <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html">service
+        /// endpoint</a> that your agent is connected to.
         /// </para>
         /// </summary>
         public EndpointType EndpointType
@@ -100,7 +101,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property LastConnectionTime. 
         /// <para>
-        /// The time that the agent last connected to DataSync.
+        /// The last time that the agent was communicating with the DataSync service.
         /// </para>
         /// </summary>
         public DateTime LastConnectionTime
@@ -135,9 +136,28 @@ namespace Amazon.DataSync.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Platform. 
+        /// <para>
+        /// The platform-related details about the agent, such as the version number.
+        /// </para>
+        /// </summary>
+        public Platform Platform
+        {
+            get { return this._platform; }
+            set { this._platform = value; }
+        }
+
+        // Check to see if Platform property is set
+        internal bool IsSetPlatform()
+        {
+            return this._platform != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property PrivateLinkConfig. 
         /// <para>
-        /// The subnet and the security group that DataSync used to access a VPC endpoint.
+        /// The network configuration that the agent uses when connecting to a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html#choose-service-endpoint-vpc">VPC
+        /// service endpoint</a>.
         /// </para>
         /// </summary>
         public PrivateLinkConfig PrivateLinkConfig
@@ -155,12 +175,21 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the agent. If the status is ONLINE, then the agent is configured properly
-        /// and is available to use. The Running status is the normal running status for an agent.
-        /// If the status is OFFLINE, the agent's VM is turned off or the agent is in an unhealthy
-        /// state. When the issue that caused the unhealthy state is resolved, the agent returns
-        /// to ONLINE status.
+        /// The status of the agent.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If the status is <code>ONLINE</code>, the agent is configured properly and ready to
+        /// use.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the status is <code>OFFLINE</code>, the agent has been out of contact with DataSync
+        /// for five minutes or longer. This can happen for a few reasons. For more information,
+        /// see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/troubleshooting-datasync-agents.html#troubleshoot-agent-offline">What
+        /// do I do if my agent is offline?</a> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public AgentStatus Status
         {

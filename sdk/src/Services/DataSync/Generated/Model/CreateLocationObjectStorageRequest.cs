@@ -113,7 +113,7 @@ namespace Amazon.DataSync.Model
         /// authenticate with the object storage server.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=1, Max=200)]
+        [AWSProperty(Sensitive=true, Min=0, Max=200)]
         public string SecretKey
         {
             get { return this._secretKey; }

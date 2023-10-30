@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DataSync.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AgentListEntry Object
+    /// Response Unmarshaller for Platform Object
     /// </summary>  
-    public class AgentListEntryUnmarshaller : IUnmarshaller<AgentListEntry, XmlUnmarshallerContext>, IUnmarshaller<AgentListEntry, JsonUnmarshallerContext>
+    public class PlatformUnmarshaller : IUnmarshaller<Platform, XmlUnmarshallerContext>, IUnmarshaller<Platform, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AgentListEntry IUnmarshaller<AgentListEntry, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        Platform IUnmarshaller<Platform, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,21 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public AgentListEntry Unmarshall(JsonUnmarshallerContext context)
+        public Platform Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AgentListEntry unmarshalledObject = new AgentListEntry();
+            Platform unmarshalledObject = new Platform();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AgentArn", targetDepth))
+                if (context.TestExpression("Version", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AgentArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Name", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Platform", targetDepth))
-                {
-                    var unmarshaller = PlatformUnmarshaller.Instance;
-                    unmarshalledObject.Platform = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Status", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Version = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +76,12 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
         }
 
 
-        private static AgentListEntryUnmarshaller _instance = new AgentListEntryUnmarshaller();        
+        private static PlatformUnmarshaller _instance = new PlatformUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AgentListEntryUnmarshaller Instance
+        public static PlatformUnmarshaller Instance
         {
             get
             {

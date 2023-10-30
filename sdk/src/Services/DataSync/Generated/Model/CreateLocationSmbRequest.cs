@@ -77,6 +77,11 @@ namespace Amazon.DataSync.Model
         /// </para>
         ///  
         /// <para>
+        /// If you have multiple domains in your environment, configuring this parameter makes
+        /// sure that DataSync connects to the right file server.
+        /// </para>
+        ///  
+        /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required
         /// permissions</a> for SMB locations.
         /// </para>

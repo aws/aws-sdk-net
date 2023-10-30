@@ -378,7 +378,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property TaskReportConfig. 
         /// <para>
-        /// The configuration of your task report. For more information, see <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/datasync/latest/userguide/creating-task-reports.html">Creating
+        /// The configuration of your task report. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Creating
         /// a task report</a>.
         /// </para>
         /// </summary>

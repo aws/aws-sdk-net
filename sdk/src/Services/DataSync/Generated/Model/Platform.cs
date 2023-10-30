@@ -29,50 +29,38 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataSync.Model
 {
     /// <summary>
-    /// Container for the parameters to the UpdateAgent operation.
-    /// Updates the name of an DataSync agent.
+    /// The platform-related details about the DataSync agent, such as the version number.
     /// </summary>
-    public partial class UpdateAgentRequest : AmazonDataSyncRequest
+    public partial class Platform
     {
-        private string _agentArn;
-        private string _name;
+        private string _version;
 
         /// <summary>
-        /// Gets and sets the property AgentArn. 
+        /// Gets and sets the property Version. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the agent to update.
+        /// The version of the DataSync agent.
         /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Max=128)]
-        public string AgentArn
-        {
-            get { return this._agentArn; }
-            set { this._agentArn = value; }
-        }
-
-        // Check to see if AgentArn property is set
-        internal bool IsSetAgentArn()
-        {
-            return this._agentArn != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Name. 
+        ///  <important> 
         /// <para>
-        /// The name that you want to use to configure the agent.
+        /// Beginning December 7, 2023, we will discontinue version 1 DataSync agents. Check the
+        /// DataSync console to see if you have affected agents. If you do, <a href="https://docs.aws.amazon.com/datasync/latest/userguide/replacing-agent.html">replace</a>
+        /// those agents before then to avoid data transfer or storage discovery disruptions.
+        /// If you need more help, contact <a href="https://aws.amazon.com/contact-us/">Amazon
+        /// Web Services Support</a>.
         /// </para>
+        ///  </important>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
-        public string Name
+        public string Version
         {
-            get { return this._name; }
-            set { this._name = value; }
+            get { return this._version; }
+            set { this._version = value; }
         }
 
-        // Check to see if Name property is set
-        internal bool IsSetName()
+        // Check to see if Version property is set
+        internal bool IsSetVersion()
         {
-            return this._name != null;
+            return this._version != null;
         }
 
     }
