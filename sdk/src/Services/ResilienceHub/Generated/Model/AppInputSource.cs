@@ -100,7 +100,8 @@ namespace Amazon.ResilienceHub.Model
         /// <para>
         /// The Amazon Resource Name (ARN) of the input source. For more information about ARNs,
         /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.
+        /// Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>
+        /// guide.
         /// </para>
         /// </summary>
         public string SourceArn

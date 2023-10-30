@@ -62,6 +62,9 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetAppArn())
                 request.Parameters.Add("appArn", StringUtils.FromString(publicRequest.AppArn));
             
+            if (publicRequest.IsSetFromLastAssessmentTime())
+                request.Parameters.Add("fromLastAssessmentTime", StringUtils.FromDateTimeToISO8601(publicRequest.FromLastAssessmentTime));
+            
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
             
@@ -70,6 +73,12 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
+            
+            if (publicRequest.IsSetReverseOrder())
+                request.Parameters.Add("reverseOrder", StringUtils.FromBool(publicRequest.ReverseOrder));
+            
+            if (publicRequest.IsSetToLastAssessmentTime())
+                request.Parameters.Add("toLastAssessmentTime", StringUtils.FromDateTimeToISO8601(publicRequest.ToLastAssessmentTime));
             request.ResourcePath = "/list-apps";
             request.UseQueryString = true;
 
