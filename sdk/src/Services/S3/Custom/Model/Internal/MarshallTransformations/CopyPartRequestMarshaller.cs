@@ -86,6 +86,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (copyPartRequest.IsSetExpectedBucketOwner())
                 request.Headers.Add(S3Constants.AmzHeaderExpectedBucketOwner, S3Transforms.ToStringValue(copyPartRequest.ExpectedBucketOwner));
 
+            if (copyPartRequest.IsSetRequestPayer())
+                request.Headers.Add(S3Constants.AmzHeaderRequestPayer, S3Transforms.ToStringValue(copyPartRequest.RequestPayer));
+
             if (copyPartRequest.IsSetExpectedSourceBucketOwner())
                 request.Headers.Add(S3Constants.AmzHeaderExpectedSourceBucketOwner, S3Transforms.ToStringValue(copyPartRequest.ExpectedSourceBucketOwner));
 
