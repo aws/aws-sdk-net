@@ -97,14 +97,18 @@ namespace Amazon.Util.Internal
                 GetExecutionEnvironmentUserAgentString(),
                 _customData).Trim();
 #elif NETSTANDARD
-            return string.Format(CultureInfo.InvariantCulture, "{0}/{1} aws-sdk-dotnet-core/{2} {3} OS/{4} {5} {6}",
+
+            var ftAot = InternalSDKUtils.IsRunningNativeAot() ? "ft/aot" : "";
+
+            return string.Format(CultureInfo.InvariantCulture, "{0}/{1} aws-sdk-dotnet-core/{2} {3} OS/{4} {5} {6} {7}",
                 _userAgentBaseName,
                 serviceSdkVersion,
                 CoreVersionNumber,
                 environmentInfo.FrameworkUserAgent,
                 environmentInfo.PlatformUserAgent,
                 GetExecutionEnvironmentUserAgentString(),
-                _customData).Trim();
+                _customData,
+                ftAot).Trim();
 #endif
         }
 
