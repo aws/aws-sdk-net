@@ -36,6 +36,9 @@ namespace Amazon.RedshiftServerless.Model
         private int? _baseCapacity;
         private List<ConfigParameter> _configParameters = new List<ConfigParameter>();
         private DateTime? _creationDate;
+        private string _customDomainCertificateArn;
+        private DateTime? _customDomainCertificateExpiryTime;
+        private string _customDomainName;
         private Endpoint _endpoint;
         private bool? _enhancedVpcRouting;
         private string _namespaceName;
@@ -107,6 +110,62 @@ namespace Amazon.RedshiftServerless.Model
         internal bool IsSetCreationDate()
         {
             return this._creationDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomDomainCertificateArn. 
+        /// <para>
+        /// The custom domain name’s certificate Amazon resource name (ARN).
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string CustomDomainCertificateArn
+        {
+            get { return this._customDomainCertificateArn; }
+            set { this._customDomainCertificateArn = value; }
+        }
+
+        // Check to see if CustomDomainCertificateArn property is set
+        internal bool IsSetCustomDomainCertificateArn()
+        {
+            return this._customDomainCertificateArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomDomainCertificateExpiryTime. 
+        /// <para>
+        /// The expiration time for the certificate.
+        /// </para>
+        /// </summary>
+        public DateTime CustomDomainCertificateExpiryTime
+        {
+            get { return this._customDomainCertificateExpiryTime.GetValueOrDefault(); }
+            set { this._customDomainCertificateExpiryTime = value; }
+        }
+
+        // Check to see if CustomDomainCertificateExpiryTime property is set
+        internal bool IsSetCustomDomainCertificateExpiryTime()
+        {
+            return this._customDomainCertificateExpiryTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomDomainName. 
+        /// <para>
+        /// The custom domain name associated with the workgroup.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=253)]
+        public string CustomDomainName
+        {
+            get { return this._customDomainName; }
+            set { this._customDomainName = value; }
+        }
+
+        // Check to see if CustomDomainName property is set
+        internal bool IsSetCustomDomainName()
+        {
+            return this._customDomainName != null;
         }
 
         /// <summary>

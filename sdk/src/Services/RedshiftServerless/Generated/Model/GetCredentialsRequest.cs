@@ -46,9 +46,30 @@ namespace Amazon.RedshiftServerless.Model
     /// </summary>
     public partial class GetCredentialsRequest : AmazonRedshiftServerlessRequest
     {
+        private string _customDomainName;
         private string _dbName;
         private int? _durationSeconds;
         private string _workgroupName;
+
+        /// <summary>
+        /// Gets and sets the property CustomDomainName. 
+        /// <para>
+        /// The custom domain name associated with the workgroup. The custom domain name or the
+        /// workgroup name must be included in the request.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=253)]
+        public string CustomDomainName
+        {
+            get { return this._customDomainName; }
+            set { this._customDomainName = value; }
+        }
+
+        // Check to see if CustomDomainName property is set
+        internal bool IsSetCustomDomainName()
+        {
+            return this._customDomainName != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DbName. 
@@ -120,7 +141,7 @@ namespace Amazon.RedshiftServerless.Model
         /// The name of the workgroup associated with the database.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=3, Max=64)]
+        [AWSProperty(Min=3, Max=64)]
         public string WorkgroupName
         {
             get { return this._workgroupName; }

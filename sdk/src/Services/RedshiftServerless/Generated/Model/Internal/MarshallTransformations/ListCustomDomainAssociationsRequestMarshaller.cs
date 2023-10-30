@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// GetCredentials Request Marshaller
+    /// ListCustomDomainAssociations Request Marshaller
     /// </summary>       
-    public class GetCredentialsRequestMarshaller : IMarshaller<IRequest, GetCredentialsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ListCustomDomainAssociationsRequestMarshaller : IMarshaller<IRequest, ListCustomDomainAssociationsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((GetCredentialsRequest)input);
+            return this.Marshall((ListCustomDomainAssociationsRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(GetCredentialsRequest publicRequest)
+        public IRequest Marshall(ListCustomDomainAssociationsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.RedshiftServerless");
-            string target = "RedshiftServerless.GetCredentials";
+            string target = "RedshiftServerless.ListCustomDomainAssociations";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-04-21";
@@ -67,28 +67,28 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetCustomDomainCertificateArn())
+                {
+                    context.Writer.WritePropertyName("customDomainCertificateArn");
+                    context.Writer.Write(publicRequest.CustomDomainCertificateArn);
+                }
+
                 if(publicRequest.IsSetCustomDomainName())
                 {
                     context.Writer.WritePropertyName("customDomainName");
                     context.Writer.Write(publicRequest.CustomDomainName);
                 }
 
-                if(publicRequest.IsSetDbName())
+                if(publicRequest.IsSetMaxResults())
                 {
-                    context.Writer.WritePropertyName("dbName");
-                    context.Writer.Write(publicRequest.DbName);
+                    context.Writer.WritePropertyName("maxResults");
+                    context.Writer.Write(publicRequest.MaxResults);
                 }
 
-                if(publicRequest.IsSetDurationSeconds())
+                if(publicRequest.IsSetNextToken())
                 {
-                    context.Writer.WritePropertyName("durationSeconds");
-                    context.Writer.Write(publicRequest.DurationSeconds);
-                }
-
-                if(publicRequest.IsSetWorkgroupName())
-                {
-                    context.Writer.WritePropertyName("workgroupName");
-                    context.Writer.Write(publicRequest.WorkgroupName);
+                    context.Writer.WritePropertyName("nextToken");
+                    context.Writer.Write(publicRequest.NextToken);
                 }
 
                 writer.WriteObjectEnd();
@@ -99,9 +99,9 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static GetCredentialsRequestMarshaller _instance = new GetCredentialsRequestMarshaller();        
+        private static ListCustomDomainAssociationsRequestMarshaller _instance = new ListCustomDomainAssociationsRequestMarshaller();        
 
-        internal static GetCredentialsRequestMarshaller GetInstance()
+        internal static ListCustomDomainAssociationsRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -109,7 +109,7 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetCredentialsRequestMarshaller Instance
+        public static ListCustomDomainAssociationsRequestMarshaller Instance
         {
             get
             {

@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// GetCredentials Request Marshaller
+    /// UpdateCustomDomainAssociation Request Marshaller
     /// </summary>       
-    public class GetCredentialsRequestMarshaller : IMarshaller<IRequest, GetCredentialsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class UpdateCustomDomainAssociationRequestMarshaller : IMarshaller<IRequest, UpdateCustomDomainAssociationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((GetCredentialsRequest)input);
+            return this.Marshall((UpdateCustomDomainAssociationRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(GetCredentialsRequest publicRequest)
+        public IRequest Marshall(UpdateCustomDomainAssociationRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.RedshiftServerless");
-            string target = "RedshiftServerless.GetCredentials";
+            string target = "RedshiftServerless.UpdateCustomDomainAssociation";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-04-21";
@@ -67,22 +67,16 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetCustomDomainCertificateArn())
+                {
+                    context.Writer.WritePropertyName("customDomainCertificateArn");
+                    context.Writer.Write(publicRequest.CustomDomainCertificateArn);
+                }
+
                 if(publicRequest.IsSetCustomDomainName())
                 {
                     context.Writer.WritePropertyName("customDomainName");
                     context.Writer.Write(publicRequest.CustomDomainName);
-                }
-
-                if(publicRequest.IsSetDbName())
-                {
-                    context.Writer.WritePropertyName("dbName");
-                    context.Writer.Write(publicRequest.DbName);
-                }
-
-                if(publicRequest.IsSetDurationSeconds())
-                {
-                    context.Writer.WritePropertyName("durationSeconds");
-                    context.Writer.Write(publicRequest.DurationSeconds);
                 }
 
                 if(publicRequest.IsSetWorkgroupName())
@@ -99,9 +93,9 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static GetCredentialsRequestMarshaller _instance = new GetCredentialsRequestMarshaller();        
+        private static UpdateCustomDomainAssociationRequestMarshaller _instance = new UpdateCustomDomainAssociationRequestMarshaller();        
 
-        internal static GetCredentialsRequestMarshaller GetInstance()
+        internal static UpdateCustomDomainAssociationRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -109,7 +103,7 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetCredentialsRequestMarshaller Instance
+        public static UpdateCustomDomainAssociationRequestMarshaller Instance
         {
             get
             {

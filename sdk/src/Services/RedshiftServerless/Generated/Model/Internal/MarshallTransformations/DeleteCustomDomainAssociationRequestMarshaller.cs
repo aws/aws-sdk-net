@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// GetCredentials Request Marshaller
+    /// DeleteCustomDomainAssociation Request Marshaller
     /// </summary>       
-    public class GetCredentialsRequestMarshaller : IMarshaller<IRequest, GetCredentialsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class DeleteCustomDomainAssociationRequestMarshaller : IMarshaller<IRequest, DeleteCustomDomainAssociationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((GetCredentialsRequest)input);
+            return this.Marshall((DeleteCustomDomainAssociationRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(GetCredentialsRequest publicRequest)
+        public IRequest Marshall(DeleteCustomDomainAssociationRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.RedshiftServerless");
-            string target = "RedshiftServerless.GetCredentials";
+            string target = "RedshiftServerless.DeleteCustomDomainAssociation";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-04-21";
@@ -73,18 +73,6 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.CustomDomainName);
                 }
 
-                if(publicRequest.IsSetDbName())
-                {
-                    context.Writer.WritePropertyName("dbName");
-                    context.Writer.Write(publicRequest.DbName);
-                }
-
-                if(publicRequest.IsSetDurationSeconds())
-                {
-                    context.Writer.WritePropertyName("durationSeconds");
-                    context.Writer.Write(publicRequest.DurationSeconds);
-                }
-
                 if(publicRequest.IsSetWorkgroupName())
                 {
                     context.Writer.WritePropertyName("workgroupName");
@@ -99,9 +87,9 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static GetCredentialsRequestMarshaller _instance = new GetCredentialsRequestMarshaller();        
+        private static DeleteCustomDomainAssociationRequestMarshaller _instance = new DeleteCustomDomainAssociationRequestMarshaller();        
 
-        internal static GetCredentialsRequestMarshaller GetInstance()
+        internal static DeleteCustomDomainAssociationRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -109,7 +97,7 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetCredentialsRequestMarshaller Instance
+        public static DeleteCustomDomainAssociationRequestMarshaller Instance
         {
             get
             {
