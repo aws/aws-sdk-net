@@ -1471,6 +1471,9 @@ namespace Amazon.MediaPackageV2
         /// <exception cref="Amazon.MediaPackageV2.Model.InternalServerException">
         /// Indicates that an error from the service occurred while trying to process a request.
         /// </exception>
+        /// <exception cref="Amazon.MediaPackageV2.Model.ResourceNotFoundException">
+        /// The specified resource doesn't exist.
+        /// </exception>
         /// <exception cref="Amazon.MediaPackageV2.Model.ThrottlingException">
         /// The request throughput limit was exceeded.
         /// </exception>
@@ -1506,6 +1509,9 @@ namespace Amazon.MediaPackageV2
         /// </exception>
         /// <exception cref="Amazon.MediaPackageV2.Model.InternalServerException">
         /// Indicates that an error from the service occurred while trying to process a request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageV2.Model.ResourceNotFoundException">
+        /// The specified resource doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.MediaPackageV2.Model.ThrottlingException">
         /// The request throughput limit was exceeded.

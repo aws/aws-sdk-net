@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetHlsManifestConfiguration Object
+    /// Response Unmarshaller for FilterConfiguration Object
     /// </summary>  
-    public class GetHlsManifestConfigurationUnmarshaller : IUnmarshaller<GetHlsManifestConfiguration, XmlUnmarshallerContext>, IUnmarshaller<GetHlsManifestConfiguration, JsonUnmarshallerContext>
+    public class FilterConfigurationUnmarshaller : IUnmarshaller<FilterConfiguration, XmlUnmarshallerContext>, IUnmarshaller<FilterConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        GetHlsManifestConfiguration IUnmarshaller<GetHlsManifestConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        FilterConfiguration IUnmarshaller<FilterConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,57 +53,39 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public GetHlsManifestConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public FilterConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            GetHlsManifestConfiguration unmarshalledObject = new GetHlsManifestConfiguration();
+            FilterConfiguration unmarshalledObject = new FilterConfiguration();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ChildManifestName", targetDepth))
+                if (context.TestExpression("End", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.End = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ManifestFilter", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ChildManifestName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ManifestFilter = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("FilterConfiguration", targetDepth))
+                if (context.TestExpression("Start", targetDepth))
                 {
-                    var unmarshaller = FilterConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.FilterConfiguration = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.Start = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ManifestName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ManifestName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ManifestWindowSeconds", targetDepth))
+                if (context.TestExpression("TimeDelaySeconds", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.ManifestWindowSeconds = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ProgramDateTimeIntervalSeconds", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.ProgramDateTimeIntervalSeconds = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ScteHls", targetDepth))
-                {
-                    var unmarshaller = ScteHlsUnmarshaller.Instance;
-                    unmarshalledObject.ScteHls = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Url", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Url = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TimeDelaySeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -112,12 +94,12 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
         }
 
 
-        private static GetHlsManifestConfigurationUnmarshaller _instance = new GetHlsManifestConfigurationUnmarshaller();        
+        private static FilterConfigurationUnmarshaller _instance = new FilterConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetHlsManifestConfigurationUnmarshaller Instance
+        public static FilterConfigurationUnmarshaller Instance
         {
             get
             {

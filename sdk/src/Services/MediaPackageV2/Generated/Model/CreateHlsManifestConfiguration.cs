@@ -34,6 +34,7 @@ namespace Amazon.MediaPackageV2.Model
     public partial class CreateHlsManifestConfiguration
     {
         private string _childManifestName;
+        private FilterConfiguration _filterConfiguration;
         private string _manifestName;
         private int? _manifestWindowSeconds;
         private int? _programDateTimeIntervalSeconds;
@@ -60,6 +61,21 @@ namespace Amazon.MediaPackageV2.Model
         internal bool IsSetChildManifestName()
         {
             return this._childManifestName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FilterConfiguration.
+        /// </summary>
+        public FilterConfiguration FilterConfiguration
+        {
+            get { return this._filterConfiguration; }
+            set { this._filterConfiguration = value; }
+        }
+
+        // Check to see if FilterConfiguration property is set
+        internal bool IsSetFilterConfiguration()
+        {
+            return this._filterConfiguration != null;
         }
 
         /// <summary>

@@ -647,6 +647,14 @@ namespace Amazon.MediaPackageV2
         /// </summary>
         public static readonly ValidationExceptionType ENCRYPTION_METHOD_CONTAINER_TYPE_MISMATCH = new ValidationExceptionType("ENCRYPTION_METHOD_CONTAINER_TYPE_MISMATCH");
         /// <summary>
+        /// Constant END_TIME_EARLIER_THAN_START_TIME for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType END_TIME_EARLIER_THAN_START_TIME = new ValidationExceptionType("END_TIME_EARLIER_THAN_START_TIME");
+        /// <summary>
+        /// Constant INVALID_MANIFEST_FILTER for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType INVALID_MANIFEST_FILTER = new ValidationExceptionType("INVALID_MANIFEST_FILTER");
+        /// <summary>
         /// Constant INVALID_PAGINATION_MAX_RESULTS for ValidationExceptionType
         /// </summary>
         public static readonly ValidationExceptionType INVALID_PAGINATION_MAX_RESULTS = new ValidationExceptionType("INVALID_PAGINATION_MAX_RESULTS");
@@ -662,6 +670,10 @@ namespace Amazon.MediaPackageV2
         /// Constant INVALID_ROLE_ARN for ValidationExceptionType
         /// </summary>
         public static readonly ValidationExceptionType INVALID_ROLE_ARN = new ValidationExceptionType("INVALID_ROLE_ARN");
+        /// <summary>
+        /// Constant INVALID_TIME_DELAY_SECONDS for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType INVALID_TIME_DELAY_SECONDS = new ValidationExceptionType("INVALID_TIME_DELAY_SECONDS");
         /// <summary>
         /// Constant MANIFEST_NAME_COLLISION for ValidationExceptionType
         /// </summary>
