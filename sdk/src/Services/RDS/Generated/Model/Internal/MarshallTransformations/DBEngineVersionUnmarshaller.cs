@@ -217,6 +217,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.SupportsGlobalDatabases = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("SupportsIntegrations", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.SupportsIntegrations = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("SupportsLocalWriteForwarding", targetDepth))
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;

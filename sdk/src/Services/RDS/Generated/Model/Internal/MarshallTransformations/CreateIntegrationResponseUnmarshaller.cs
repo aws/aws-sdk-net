@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ListTagsForResource operation
+    /// Response Unmarshaller for CreateIntegration operation
     /// </summary>  
-    public class ListTagsForResourceResponseUnmarshaller : XmlResponseUnmarshaller
+    public class CreateIntegrationResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,7 +43,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
-            ListTagsForResourceResponse response = new ListTagsForResourceResponse();
+            CreateIntegrationResponse response = new CreateIntegrationResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -51,7 +51,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement)
                 {                    
-                    if(context.TestExpression("ListTagsForResourceResult", 2))
+                    if(context.TestExpression("CreateIntegrationResult", 2))
                     {
                         UnmarshallResult(context, response);                        
                         continue;
@@ -67,7 +67,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             return response;
         }
 
-        private static void UnmarshallResult(XmlUnmarshallerContext context, ListTagsForResourceResponse response)
+        private static void UnmarshallResult(XmlUnmarshallerContext context, CreateIntegrationResponse response)
         {
             
             int originalDepth = context.CurrentDepth;
@@ -81,11 +81,67 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
-                    if (context.TestExpression("TagList/Tag", targetDepth))
+                    if (context.TestExpression("AdditionalEncryptionContext/entry", targetDepth))
+                    {
+                        var unmarshaller = new KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                        var item = unmarshaller.Unmarshall(context);
+                        response.AdditionalEncryptionContext.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("CreateTime", targetDepth))
+                    {
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        response.CreateTime = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Errors/IntegrationError", targetDepth))
+                    {
+                        var unmarshaller = IntegrationErrorUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        response.Errors.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("IntegrationArn", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.IntegrationArn = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("IntegrationName", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.IntegrationName = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("KMSKeyId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.KMSKeyId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("SourceArn", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.SourceArn = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Status", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.Status = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Tags/Tag", targetDepth))
                     {
                         var unmarshaller = TagUnmarshaller.Instance;
                         var item = unmarshaller.Unmarshall(context);
-                        response.TagList.Add(item);
+                        response.Tags.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("TargetArn", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.TargetArn = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 } 
@@ -113,10 +169,6 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new XmlUnmarshallerContext(streamCopy, false, null))
             {
-                if (errorResponse.Code != null && errorResponse.Code.Equals("BlueGreenDeploymentNotFoundFault"))
-                {
-                    return BlueGreenDeploymentNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("DBClusterNotFoundFault"))
                 {
                     return DBClusterNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -125,28 +177,28 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     return DBInstanceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("DBProxyNotFoundFault"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("IntegrationAlreadyExistsFault"))
                 {
-                    return DBProxyNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return IntegrationAlreadyExistsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("DBProxyTargetGroupNotFoundFault"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("IntegrationConflictOperationFault"))
                 {
-                    return DBProxyTargetGroupNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return IntegrationConflictOperationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("DBSnapshotNotFound"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("IntegrationQuotaExceededFault"))
                 {
-                    return DBSnapshotNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return IntegrationQuotaExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("IntegrationNotFoundFault"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("KMSKeyNotAccessibleFault"))
                 {
-                    return IntegrationNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return KMSKeyNotAccessibleExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
             }
             return new AmazonRDSException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        private static ListTagsForResourceResponseUnmarshaller _instance = new ListTagsForResourceResponseUnmarshaller();        
+        private static CreateIntegrationResponseUnmarshaller _instance = new CreateIntegrationResponseUnmarshaller();        
 
-        internal static ListTagsForResourceResponseUnmarshaller GetInstance()
+        internal static CreateIntegrationResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -154,7 +206,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListTagsForResourceResponseUnmarshaller Instance
+        public static CreateIntegrationResponseUnmarshaller Instance
         {
             get
             {

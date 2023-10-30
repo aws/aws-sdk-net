@@ -955,6 +955,76 @@ namespace Amazon.RDS
 
 
     /// <summary>
+    /// Constants used for properties of type IntegrationStatus.
+    /// </summary>
+    public class IntegrationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Active for IntegrationStatus
+        /// </summary>
+        public static readonly IntegrationStatus Active = new IntegrationStatus("active");
+        /// <summary>
+        /// Constant Creating for IntegrationStatus
+        /// </summary>
+        public static readonly IntegrationStatus Creating = new IntegrationStatus("creating");
+        /// <summary>
+        /// Constant Deleting for IntegrationStatus
+        /// </summary>
+        public static readonly IntegrationStatus Deleting = new IntegrationStatus("deleting");
+        /// <summary>
+        /// Constant Failed for IntegrationStatus
+        /// </summary>
+        public static readonly IntegrationStatus Failed = new IntegrationStatus("failed");
+        /// <summary>
+        /// Constant Modifying for IntegrationStatus
+        /// </summary>
+        public static readonly IntegrationStatus Modifying = new IntegrationStatus("modifying");
+        /// <summary>
+        /// Constant Needs_attention for IntegrationStatus
+        /// </summary>
+        public static readonly IntegrationStatus Needs_attention = new IntegrationStatus("needs_attention");
+        /// <summary>
+        /// Constant Syncing for IntegrationStatus
+        /// </summary>
+        public static readonly IntegrationStatus Syncing = new IntegrationStatus("syncing");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IntegrationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IntegrationStatus FindValue(string value)
+        {
+            return FindValue<IntegrationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IntegrationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type LocalWriteForwardingStatus.
     /// </summary>
     public class LocalWriteForwardingStatus : ConstantClass

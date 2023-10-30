@@ -249,6 +249,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBSnapshotNotFoundException">
         /// <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.IntegrationNotFoundException">
+        /// The specified integration could not be found.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AddTagsToResource">REST API Reference for AddTagsToResource Operation</seealso>
         Task<AddTagsToResourceResponse> AddTagsToResourceAsync(AddTagsToResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1578,6 +1581,47 @@ namespace Amazon.RDS
 
         #endregion
                 
+        #region  CreateIntegration
+
+
+
+        /// <summary>
+        /// Creates a zero-ETL integration with Amazon Redshift. For more information, see <a
+        /// href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/zero-etl.html">Working
+        /// with Amazon Aurora zero-ETL integrations with Amazon Redshift</a> in the <i>Amazon
+        /// Aurora User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateIntegration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateIntegration service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
+        /// <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
+        /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.IntegrationAlreadyExistsException">
+        /// The integration you are trying to create already exists.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.IntegrationConflictOperationException">
+        /// A conflicting conditional operation is currently in progress against this resource.
+        /// Typically occurs when there are multiple requests being made to the same resource
+        /// at the same time, and these requests conflict with each other.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.IntegrationQuotaExceededException">
+        /// You can't crate any more zero-ETL integrations because the quota has been reached.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
+        /// An error occurred accessing an Amazon Web Services KMS key.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateIntegration">REST API Reference for CreateIntegration Operation</seealso>
+        Task<CreateIntegrationResponse> CreateIntegrationAsync(CreateIntegrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateOptionGroup
 
 
@@ -2234,6 +2278,38 @@ namespace Amazon.RDS
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteGlobalCluster">REST API Reference for DeleteGlobalCluster Operation</seealso>
         Task<DeleteGlobalClusterResponse> DeleteGlobalClusterAsync(DeleteGlobalClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteIntegration
+
+
+
+        /// <summary>
+        /// Deletes a zero-ETL integration with Amazon Redshift. For more information, see <a
+        /// href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/zero-etl.deleting.html">Deleting
+        /// Amazon Aurora zero-ETL integrations with Amazon Redshift</a> in the <i>Amazon Aurora
+        /// User Guide</i>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIntegration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteIntegration service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.IntegrationConflictOperationException">
+        /// A conflicting conditional operation is currently in progress against this resource.
+        /// Typically occurs when there are multiple requests being made to the same resource
+        /// at the same time, and these requests conflict with each other.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.IntegrationNotFoundException">
+        /// The specified integration could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidIntegrationStateException">
+        /// The integration is in an invalid state and can't perform the requested operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteIntegration">REST API Reference for DeleteIntegration Operation</seealso>
+        Task<DeleteIntegrationResponse> DeleteIntegrationAsync(DeleteIntegrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -3410,6 +3486,30 @@ namespace Amazon.RDS
 
         #endregion
                 
+        #region  DescribeIntegrations
+
+
+
+        /// <summary>
+        /// Describe one or more zero-ETL integration with Amazon Redshift. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/zero-etl.describingmonitoring.html">Viewing
+        /// and monitoring Amazon Aurora zero-ETL integrations with Amazon Redshift</a> in the
+        /// <i>Amazon Aurora User Guide</i>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIntegrations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeIntegrations service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.IntegrationNotFoundException">
+        /// The specified integration could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeIntegrations">REST API Reference for DescribeIntegrations Operation</seealso>
+        Task<DescribeIntegrationsResponse> DescribeIntegrationsAsync(DescribeIntegrationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DescribeOptionGroupOptions
 
 
@@ -3865,6 +3965,9 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSnapshotNotFoundException">
         /// <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.IntegrationNotFoundException">
+        /// The specified integration could not be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -5151,6 +5254,9 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSnapshotNotFoundException">
         /// <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.IntegrationNotFoundException">
+        /// The specified integration could not be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RemoveTagsFromResource">REST API Reference for RemoveTagsFromResource Operation</seealso>
         Task<RemoveTagsFromResourceResponse> RemoveTagsFromResourceAsync(RemoveTagsFromResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));

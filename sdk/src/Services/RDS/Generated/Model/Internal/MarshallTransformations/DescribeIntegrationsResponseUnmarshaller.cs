@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for RemoveTagsFromResource operation
+    /// Response Unmarshaller for DescribeIntegrations operation
     /// </summary>  
-    public class RemoveTagsFromResourceResponseUnmarshaller : XmlResponseUnmarshaller
+    public class DescribeIntegrationsResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,7 +43,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
-            RemoveTagsFromResourceResponse response = new RemoveTagsFromResourceResponse();
+            DescribeIntegrationsResponse response = new DescribeIntegrationsResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -51,7 +51,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement)
                 {                    
-                    if(context.TestExpression("RemoveTagsFromResourceResult", 2))
+                    if(context.TestExpression("DescribeIntegrationsResult", 2))
                     {
                         UnmarshallResult(context, response);                        
                         continue;
@@ -67,8 +67,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             return response;
         }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA1801:ReviewUnusedParameters", MessageId="response")]
-        private static void UnmarshallResult(XmlUnmarshallerContext context, RemoveTagsFromResourceResponse response)
+        private static void UnmarshallResult(XmlUnmarshallerContext context, DescribeIntegrationsResponse response)
         {
             
             int originalDepth = context.CurrentDepth;
@@ -82,6 +81,19 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
+                    if (context.TestExpression("Integrations/Integration", targetDepth))
+                    {
+                        var unmarshaller = IntegrationUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        response.Integrations.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("Marker", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.Marker = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                 } 
            }
 
@@ -107,30 +119,6 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new XmlUnmarshallerContext(streamCopy, false, null))
             {
-                if (errorResponse.Code != null && errorResponse.Code.Equals("BlueGreenDeploymentNotFoundFault"))
-                {
-                    return BlueGreenDeploymentNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("DBClusterNotFoundFault"))
-                {
-                    return DBClusterNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("DBInstanceNotFound"))
-                {
-                    return DBInstanceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("DBProxyNotFoundFault"))
-                {
-                    return DBProxyNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("DBProxyTargetGroupNotFoundFault"))
-                {
-                    return DBProxyTargetGroupNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("DBSnapshotNotFound"))
-                {
-                    return DBSnapshotNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("IntegrationNotFoundFault"))
                 {
                     return IntegrationNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -138,9 +126,9 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             }
             return new AmazonRDSException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        private static RemoveTagsFromResourceResponseUnmarshaller _instance = new RemoveTagsFromResourceResponseUnmarshaller();        
+        private static DescribeIntegrationsResponseUnmarshaller _instance = new DescribeIntegrationsResponseUnmarshaller();        
 
-        internal static RemoveTagsFromResourceResponseUnmarshaller GetInstance()
+        internal static DescribeIntegrationsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -148,7 +136,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RemoveTagsFromResourceResponseUnmarshaller Instance
+        public static DescribeIntegrationsResponseUnmarshaller Instance
         {
             get
             {
