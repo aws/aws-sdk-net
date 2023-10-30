@@ -1,3 +1,25 @@
+### 3.7.673.0 (2023-10-30 18:22 UTC)
+* Connect (3.7.209.0)
+	* This release adds InstanceId field for phone number APIs.
+* ConnectWisdomService (3.7.202.7)
+	* This release added necessary API documents on creating a Wisdom knowledge base to integrate with S3.
+* DataExchange (3.7.201.0)
+	* We added a new API action: SendDataSetNotification.
+* DataSync (3.7.204.0)
+	* Platform version changes to support AL1 deprecation initiative.
+* Finspace (3.7.202.0)
+	* Introducing new API UpdateKxClusterCodeConfiguration, introducing new cache types for clusters and introducing new deployment modes for updating clusters.
+* MediaPackageV2 (3.7.202.0)
+	* This feature allows customers to create a combination of manifest filtering, startover and time delay configuration that applies to all egress requests by default.
+* RDS (3.7.212.0)
+	* This release launches the CreateIntegration, DeleteIntegration, and DescribeIntegrations APIs to manage zero-ETL Integrations.
+* RedshiftServerless (3.7.203.0)
+	* Added support for custom domain names for Amazon Redshift Serverless workgroups. This feature enables customers to create a custom domain name and use ACM to generate fully secure connections to it.
+* ResilienceHub (3.7.202.0)
+	* Introduced the ability to filter applications by their last assessment date and time and have included metrics for the application's estimated workload Recovery Time Objective (RTO) and estimated workload Recovery Point Objective (RPO).
+* S3Outposts (3.7.201.0)
+	* Updated ListOutpostsWithS3 API response to include S3OutpostArn for use with AWS RAM.
+
 ### 3.7.672.0 (2023-10-27 18:14 UTC)
 * ElasticMapReduce (3.7.201.0)
 	* Updated CreateCluster API request and DescribeCluster API responses to include EbsRootVolumeIops, and EbsRootVolumeThroughput attributes that specify the user configured root volume IOPS and throughput for Amazon EBS root device volume. This feature will be available from Amazon EMR releases 6.15.0
