@@ -1806,6 +1806,85 @@ namespace Amazon.DataExchange
 
         #endregion
         
+        #region  SendDataSetNotification
+
+
+        /// <summary>
+        /// The type of event associated with the data set.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendDataSetNotification service method.</param>
+        /// 
+        /// <returns>The response from the SendDataSetNotification service method, as returned by DataExchange.</returns>
+        /// <exception cref="Amazon.DataExchange.Model.AccessDeniedException">
+        /// Access to the resource is denied.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ConflictException">
+        /// The request couldn't be completed because it conflicted with the current state of
+        /// the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ResourceNotFoundException">
+        /// The resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ValidationException">
+        /// The request was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/SendDataSetNotification">REST API Reference for SendDataSetNotification Operation</seealso>
+        public virtual SendDataSetNotificationResponse SendDataSetNotification(SendDataSetNotificationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SendDataSetNotificationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendDataSetNotificationResponseUnmarshaller.Instance;
+
+            return Invoke<SendDataSetNotificationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// The type of event associated with the data set.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendDataSetNotification service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SendDataSetNotification service method, as returned by DataExchange.</returns>
+        /// <exception cref="Amazon.DataExchange.Model.AccessDeniedException">
+        /// Access to the resource is denied.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ConflictException">
+        /// The request couldn't be completed because it conflicted with the current state of
+        /// the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ResourceNotFoundException">
+        /// The resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ValidationException">
+        /// The request was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/SendDataSetNotification">REST API Reference for SendDataSetNotification Operation</seealso>
+        public virtual Task<SendDataSetNotificationResponse> SendDataSetNotificationAsync(SendDataSetNotificationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SendDataSetNotificationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendDataSetNotificationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<SendDataSetNotificationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StartJob
 
 

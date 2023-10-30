@@ -1785,6 +1785,79 @@ namespace Amazon.DataExchange
 
         #endregion
         
+        #region  SendDataSetNotification
+
+        /// <summary>
+        /// The type of event associated with the data set.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendDataSetNotification service method.</param>
+        /// 
+        /// <returns>The response from the SendDataSetNotification service method, as returned by DataExchange.</returns>
+        /// <exception cref="Amazon.DataExchange.Model.AccessDeniedException">
+        /// Access to the resource is denied.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ConflictException">
+        /// The request couldn't be completed because it conflicted with the current state of
+        /// the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ResourceNotFoundException">
+        /// The resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ValidationException">
+        /// The request was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/SendDataSetNotification">REST API Reference for SendDataSetNotification Operation</seealso>
+        public virtual SendDataSetNotificationResponse SendDataSetNotification(SendDataSetNotificationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SendDataSetNotificationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendDataSetNotificationResponseUnmarshaller.Instance;
+
+            return Invoke<SendDataSetNotificationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SendDataSetNotification operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SendDataSetNotification operation on AmazonDataExchangeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSendDataSetNotification
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/SendDataSetNotification">REST API Reference for SendDataSetNotification Operation</seealso>
+        public virtual IAsyncResult BeginSendDataSetNotification(SendDataSetNotificationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SendDataSetNotificationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendDataSetNotificationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SendDataSetNotification operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSendDataSetNotification.</param>
+        /// 
+        /// <returns>Returns a  SendDataSetNotificationResult from DataExchange.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/SendDataSetNotification">REST API Reference for SendDataSetNotification Operation</seealso>
+        public virtual SendDataSetNotificationResponse EndSendDataSetNotification(IAsyncResult asyncResult)
+        {
+            return EndInvoke<SendDataSetNotificationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  StartJob
 
         /// <summary>
