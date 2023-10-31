@@ -38,6 +38,7 @@ namespace Amazon.ApplicationInsights.Model
         private RecommendationType _recommendationType;
         private string _resourceGroupName;
         private Tier _tier;
+        private string _workloadName;
 
         /// <summary>
         /// Gets and sets the property ComponentName. 
@@ -112,6 +113,25 @@ namespace Amazon.ApplicationInsights.Model
         internal bool IsSetTier()
         {
             return this._tier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkloadName. 
+        /// <para>
+        /// The name of the workload.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=8)]
+        public string WorkloadName
+        {
+            get { return this._workloadName; }
+            set { this._workloadName = value; }
+        }
+
+        // Check to see if WorkloadName property is set
+        internal bool IsSetWorkloadName()
+        {
+            return this._workloadName != null;
         }
 
     }

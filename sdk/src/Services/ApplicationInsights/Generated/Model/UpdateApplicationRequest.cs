@@ -34,12 +34,32 @@ namespace Amazon.ApplicationInsights.Model
     /// </summary>
     public partial class UpdateApplicationRequest : AmazonApplicationInsightsRequest
     {
+        private bool? _attachMissingPermission;
         private bool? _autoConfigEnabled;
         private bool? _cweMonitorEnabled;
         private bool? _opsCenterEnabled;
         private string _opsItemSNSTopicArn;
         private bool? _removeSNSTopic;
         private string _resourceGroupName;
+
+        /// <summary>
+        /// Gets and sets the property AttachMissingPermission. 
+        /// <para>
+        /// If set to true, the managed policies for SSM and CW will be attached to the instance
+        /// roles if they are missing.
+        /// </para>
+        /// </summary>
+        public bool AttachMissingPermission
+        {
+            get { return this._attachMissingPermission.GetValueOrDefault(); }
+            set { this._attachMissingPermission = value; }
+        }
+
+        // Check to see if AttachMissingPermission property is set
+        internal bool IsSetAttachMissingPermission()
+        {
+            return this._attachMissingPermission.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property AutoConfigEnabled. 

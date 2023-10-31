@@ -91,6 +91,12 @@ namespace Amazon.ApplicationInsights.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Tier);
                 }
 
+                if(publicRequest.IsSetWorkloadName())
+                {
+                    context.Writer.WritePropertyName("WorkloadName");
+                    context.Writer.Write(publicRequest.WorkloadName);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

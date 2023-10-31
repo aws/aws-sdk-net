@@ -70,6 +70,12 @@ namespace Amazon.ApplicationInsights.Model.Internal.MarshallTransformations
                     unmarshalledObject.AccountId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AttachMissingPermission", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.AttachMissingPermission = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("AutoConfigEnabled", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;

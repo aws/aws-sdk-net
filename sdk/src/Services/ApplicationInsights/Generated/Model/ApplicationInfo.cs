@@ -34,6 +34,7 @@ namespace Amazon.ApplicationInsights.Model
     public partial class ApplicationInfo
     {
         private string _accountId;
+        private bool? _attachMissingPermission;
         private bool? _autoConfigEnabled;
         private bool? _cweMonitorEnabled;
         private DiscoveryType _discoveryType;
@@ -60,6 +61,25 @@ namespace Amazon.ApplicationInsights.Model
         internal bool IsSetAccountId()
         {
             return this._accountId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AttachMissingPermission. 
+        /// <para>
+        /// If set to true, the managed policies for SSM and CW will be attached to the instance
+        /// roles if they are missing.
+        /// </para>
+        /// </summary>
+        public bool AttachMissingPermission
+        {
+            get { return this._attachMissingPermission.GetValueOrDefault(); }
+            set { this._attachMissingPermission = value; }
+        }
+
+        // Check to see if AttachMissingPermission property is set
+        internal bool IsSetAttachMissingPermission()
+        {
+            return this._attachMissingPermission.HasValue; 
         }
 
         /// <summary>
