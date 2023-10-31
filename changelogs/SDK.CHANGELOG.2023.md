@@ -1,3 +1,19 @@
+### 3.7.674.0 (2023-10-31 18:33 UTC)
+* Amplify (3.7.201.0)
+	* Add backend field to CreateBranch and UpdateBranch requests. Add pagination support for ListApps, ListDomainAssociations, ListBranches, and ListJobs
+* ApplicationInsights (3.7.202.0)
+	* Automate attaching managed policies
+* EC2 (3.7.224.0)
+	* Capacity Blocks for ML are a new EC2 purchasing option for reserving GPU instances on a future date to support short duration machine learning (ML) workloads. Capacity Blocks automatically place instances close together inside Amazon EC2 UltraClusters for low-latency, high-throughput networking.
+* MainframeModernization (3.7.202.0)
+	* Added name filter ability for ListDataSets API, added ForceUpdate for Updating environment and BatchJob submission using S3BatchJobIdentifier
+* Neptunedata (3.7.202.0)
+	* Minor change to not retry CancelledByUserException
+* S3 (3.7.205.20)
+	* BREAKING CHANGE: Update CopyObject and CopyPart requests not to remove leading slash from object keys
+* Translate (3.7.201.0)
+	* Added support for Brevity translation settings feature.
+
 ### 3.7.673.0 (2023-10-30 18:22 UTC)
 * Connect (3.7.209.0)
 	* This release adds InstanceId field for phone number APIs.
