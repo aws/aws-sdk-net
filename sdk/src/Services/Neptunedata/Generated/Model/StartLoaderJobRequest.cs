@@ -413,7 +413,8 @@ namespace Amazon.Neptunedata.Model
         /// <para>
         /// You don't have to wait for one load job to complete before issuing the next one, because
         /// Neptune can queue up as many as 64 jobs at a time, provided that their <code>queueRequest</code>
-        /// parameters are all set to <code>"TRUE"</code>.
+        /// parameters are all set to <code>"TRUE"</code>. The queue order of the jobs will be
+        /// first-in-first-out (FIFO).
         /// </para>
         ///  
         /// <para>
