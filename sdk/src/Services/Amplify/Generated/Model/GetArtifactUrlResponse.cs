@@ -39,7 +39,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property ArtifactId. 
         /// <para>
-        ///  The unique ID for an artifact. 
+        /// The unique ID for an artifact. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=255)]
@@ -58,7 +58,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property ArtifactUrl. 
         /// <para>
-        ///  The presigned URL for the artifact. 
+        /// The presigned URL for the artifact. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=1000)]

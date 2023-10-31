@@ -38,7 +38,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property Webhook. 
         /// <para>
-        ///  Describes a webhook that connects repository events to an Amplify app. 
+        /// Describes a webhook that connects repository events to an Amplify app. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

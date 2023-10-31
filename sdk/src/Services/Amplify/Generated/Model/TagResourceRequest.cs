@@ -59,7 +59,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        ///  The tags used to tag the resource. 
+        /// The tags used to tag the resource. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=50)]

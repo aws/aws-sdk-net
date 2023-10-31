@@ -43,7 +43,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property BackendEnvironmentArn. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify
+        /// The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify
         /// app. 
         /// </para>
         /// </summary>
@@ -63,7 +63,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property CreateTime. 
         /// <para>
-        ///  The creation date and time for a backend environment that is part of an Amplify app.
+        /// The creation date and time for a backend environment that is part of an Amplify app.
         /// 
         /// </para>
         /// </summary>
@@ -83,7 +83,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property DeploymentArtifacts. 
         /// <para>
-        ///  The name of deployment artifacts. 
+        /// The name of deployment artifacts. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
@@ -102,7 +102,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property EnvironmentName. 
         /// <para>
-        ///  The name for a backend environment that is part of an Amplify app. 
+        /// The name for a backend environment that is part of an Amplify app. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -121,7 +121,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property StackName. 
         /// <para>
-        ///  The AWS CloudFormation stack name of a backend environment. 
+        /// The AWS CloudFormation stack name of a backend environment. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -140,7 +140,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property UpdateTime. 
         /// <para>
-        ///  The last updated date and time for a backend environment that is part of an Amplify
+        /// The last updated date and time for a backend environment that is part of an Amplify
         /// app. 
         /// </para>
         /// </summary>

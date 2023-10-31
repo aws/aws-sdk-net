@@ -39,7 +39,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property Artifacts. 
         /// <para>
-        ///  A list of artifacts. 
+        /// A list of artifacts. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -58,8 +58,8 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  A pagination token. If a non-null pagination token is returned in a result, pass
-        /// its value in another request to retrieve more entries. 
+        /// A pagination token. If a non-null pagination token is returned in a result, pass its
+        /// value in another request to retrieve more entries. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=2000)]

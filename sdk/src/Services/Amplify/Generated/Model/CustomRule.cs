@@ -41,7 +41,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property Condition. 
         /// <para>
-        ///  The condition for a URL rewrite or redirect rule, such as a country code. 
+        /// The condition for a URL rewrite or redirect rule, such as a country code. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]
@@ -60,7 +60,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property Source. 
         /// <para>
-        ///  The source pattern for a URL rewrite or redirect rule. 
+        /// The source pattern for a URL rewrite or redirect rule. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]
@@ -79,7 +79,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        ///  The status code for a URL rewrite or redirect rule. 
+        /// The status code for a URL rewrite or redirect rule. 
         /// </para>
         ///  <dl> <dt>200</dt> <dd> 
         /// <para>
@@ -120,7 +120,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property Target. 
         /// <para>
-        ///  The target pattern for a URL rewrite or redirect rule. 
+        /// The target pattern for a URL rewrite or redirect rule. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]

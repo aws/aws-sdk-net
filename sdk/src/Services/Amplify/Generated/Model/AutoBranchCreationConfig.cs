@@ -47,7 +47,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property BasicAuthCredentials. 
         /// <para>
-        ///  The basic authorization credentials for the autocreated branch. You must base64-encode
+        /// The basic authorization credentials for the autocreated branch. You must base64-encode
         /// the authorization credentials and provide them in the format <code>user:password</code>.
         /// </para>
         /// </summary>
@@ -67,7 +67,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property BuildSpec. 
         /// <para>
-        ///  The build specification (build spec) for the autocreated branch. 
+        /// The build specification (build spec) for the autocreated branch. 
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=25000)]
@@ -86,7 +86,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property EnableAutoBuild. 
         /// <para>
-        ///  Enables auto building for the autocreated branch. 
+        /// Enables auto building for the autocreated branch. 
         /// </para>
         /// </summary>
         public bool EnableAutoBuild
@@ -104,7 +104,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property EnableBasicAuth. 
         /// <para>
-        ///  Enables basic authorization for the autocreated branch. 
+        /// Enables basic authorization for the autocreated branch. 
         /// </para>
         /// </summary>
         public bool EnableBasicAuth
@@ -146,7 +146,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property EnablePullRequestPreview. 
         /// <para>
-        ///  Enables pull request previews for the autocreated branch. 
+        /// Enables pull request previews for the autocreated branch. 
         /// </para>
         /// </summary>
         public bool EnablePullRequestPreview
@@ -164,7 +164,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property EnvironmentVariables. 
         /// <para>
-        ///  The environment variables for the autocreated branch. 
+        /// The environment variables for the autocreated branch. 
         /// </para>
         /// </summary>
         public Dictionary<string, string> EnvironmentVariables
@@ -182,7 +182,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property Framework. 
         /// <para>
-        ///  The framework for the autocreated branch. 
+        /// The framework for the autocreated branch. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=255)]
@@ -201,7 +201,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property PullRequestEnvironmentName. 
         /// <para>
-        ///  The Amplify environment name for the pull request. 
+        /// The Amplify environment name for the pull request. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=20)]
@@ -220,7 +220,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property Stage. 
         /// <para>
-        ///  Describes the current stage for the autocreated branch. 
+        /// Describes the current stage for the autocreated branch. 
         /// </para>
         /// </summary>
         public Stage Stage

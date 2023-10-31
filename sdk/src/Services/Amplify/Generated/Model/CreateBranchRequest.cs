@@ -35,6 +35,7 @@ namespace Amazon.Amplify.Model
     public partial class CreateBranchRequest : AmazonAmplifyRequest
     {
         private string _appId;
+        private Backend _backend;
         private string _backendEnvironmentArn;
         private string _basicAuthCredentials;
         private string _branchName;
@@ -73,9 +74,28 @@ namespace Amazon.Amplify.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Backend. 
+        /// <para>
+        /// The backend for a <code>Branch</code> of an Amplify app. Use for a backend created
+        /// from an CloudFormation stack.
+        /// </para>
+        /// </summary>
+        public Backend Backend
+        {
+            get { return this._backend; }
+            set { this._backend = value; }
+        }
+
+        // Check to see if Backend property is set
+        internal bool IsSetBackend()
+        {
+            return this._backend != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property BackendEnvironmentArn. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify
+        /// The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify
         /// app. 
         /// </para>
         /// </summary>
@@ -115,7 +135,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property BranchName. 
         /// <para>
-        ///  The name for the branch. 
+        /// The name for the branch. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -153,7 +173,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        ///  The description for the branch. 
+        /// The description for the branch. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=1000)]
@@ -343,7 +363,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property Stage. 
         /// <para>
-        ///  Describes the current stage for the branch. 
+        /// Describes the current stage for the branch. 
         /// </para>
         /// </summary>
         public Stage Stage

@@ -38,7 +38,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property Webhook. 
         /// <para>
-        ///  Describes the structure of a webhook. 
+        /// Describes the structure of a webhook. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

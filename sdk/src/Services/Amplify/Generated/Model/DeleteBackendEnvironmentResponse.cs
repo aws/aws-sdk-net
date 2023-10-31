@@ -38,7 +38,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property BackendEnvironment. 
         /// <para>
-        ///  Describes the backend environment for an Amplify app. 
+        /// Describes the backend environment for an Amplify app. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -40,7 +40,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property AppId. 
         /// <para>
-        ///  The unique id for an Amplify app. 
+        /// The unique id for an Amplify app. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=20)]
@@ -59,7 +59,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property EnvironmentName. 
         /// <para>
-        ///  The name for the backend environment. 
+        /// The name for the backend environment. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

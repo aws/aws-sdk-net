@@ -823,6 +823,12 @@
     <pattern>(?s).*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Amplify.Model.Backend.StackArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws:cloudformation:[a-z0-9-]+:\d{12}:stack/.+/.+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Amplify.Model.BackendEnvironment.BackendEnvironmentArn</property>
     <min>0</min>
     <max>1000</max>
