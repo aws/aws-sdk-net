@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DataSetImportTask Object
+    /// Response Unmarshaller for S3BatchJobIdentifier Object
     /// </summary>  
-    public class DataSetImportTaskUnmarshaller : IUnmarshaller<DataSetImportTask, XmlUnmarshallerContext>, IUnmarshaller<DataSetImportTask, JsonUnmarshallerContext>
+    public class S3BatchJobIdentifierUnmarshaller : IUnmarshaller<S3BatchJobIdentifier, XmlUnmarshallerContext>, IUnmarshaller<S3BatchJobIdentifier, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        DataSetImportTask IUnmarshaller<DataSetImportTask, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        S3BatchJobIdentifier IUnmarshaller<S3BatchJobIdentifier, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,33 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public DataSetImportTask Unmarshall(JsonUnmarshallerContext context)
+        public S3BatchJobIdentifier Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            DataSetImportTask unmarshalledObject = new DataSetImportTask();
+            S3BatchJobIdentifier unmarshalledObject = new S3BatchJobIdentifier();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("status", targetDepth))
+                if (context.TestExpression("bucket", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Bucket = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("statusReason", targetDepth))
+                if (context.TestExpression("identifier", targetDepth))
+                {
+                    var unmarshaller = JobIdentifierUnmarshaller.Instance;
+                    unmarshalledObject.Identifier = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("keyPrefix", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StatusReason = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("summary", targetDepth))
-                {
-                    var unmarshaller = DataSetImportSummaryUnmarshaller.Instance;
-                    unmarshalledObject.Summary = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("taskId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TaskId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.KeyPrefix = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +88,12 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
         }
 
 
-        private static DataSetImportTaskUnmarshaller _instance = new DataSetImportTaskUnmarshaller();        
+        private static S3BatchJobIdentifierUnmarshaller _instance = new S3BatchJobIdentifierUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DataSetImportTaskUnmarshaller Instance
+        public static S3BatchJobIdentifierUnmarshaller Instance
         {
             get
             {

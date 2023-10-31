@@ -39,6 +39,7 @@ namespace Amazon.MainframeModernization.Model
     {
         private string _applicationId;
         private int? _maxResults;
+        private string _nameFilter;
         private string _nextToken;
         private string _prefix;
 
@@ -79,6 +80,24 @@ namespace Amazon.MainframeModernization.Model
         internal bool IsSetMaxResults()
         {
             return this._maxResults.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NameFilter. 
+        /// <para>
+        /// Filter dataset name matching the specified pattern. Can use * and % as wild cards.
+        /// </para>
+        /// </summary>
+        public string NameFilter
+        {
+            get { return this._nameFilter; }
+            set { this._nameFilter = value; }
+        }
+
+        // Check to see if NameFilter property is set
+        internal bool IsSetNameFilter()
+        {
+            return this._nameFilter != null;
         }
 
         /// <summary>

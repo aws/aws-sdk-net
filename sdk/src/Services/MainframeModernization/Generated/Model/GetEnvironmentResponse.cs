@@ -60,7 +60,7 @@ namespace Amazon.MainframeModernization.Model
         /// Gets and sets the property ActualCapacity. 
         /// <para>
         /// The number of instances included in the runtime environment. A standalone runtime
-        /// environment has a maxiumum of one instance. Currently, a high availability runtime
+        /// environment has a maximum of one instance. Currently, a high availability runtime
         /// environment has a maximum of two instances. 
         /// </para>
         /// </summary>
@@ -303,8 +303,8 @@ namespace Amazon.MainframeModernization.Model
         /// <summary>
         /// Gets and sets the property PreferredMaintenanceWindow. 
         /// <para>
-        /// Configures the maintenance window you want for the runtime environment. If you do
-        /// not provide a value, a random system-generated value will be assigned.
+        /// The maintenance window for the runtime environment. If you don't provide a value for
+        /// the maintenance window, the service assigns a random value.
         /// </para>
         /// </summary>
         public string PreferredMaintenanceWindow

@@ -86,6 +86,12 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.EngineVersion);
                 }
 
+                if(publicRequest.IsSetForceUpdate())
+                {
+                    context.Writer.WritePropertyName("forceUpdate");
+                    context.Writer.Write(publicRequest.ForceUpdate);
+                }
+
                 if(publicRequest.IsSetInstanceType())
                 {
                     context.Writer.WritePropertyName("instanceType");

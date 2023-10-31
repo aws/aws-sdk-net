@@ -34,72 +34,47 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DataSetImportTask Object
+    /// Response Unmarshaller for ExecutionTimeoutException Object
     /// </summary>  
-    public class DataSetImportTaskUnmarshaller : IUnmarshaller<DataSetImportTask, XmlUnmarshallerContext>, IUnmarshaller<DataSetImportTask, JsonUnmarshallerContext>
+    public class ExecutionTimeoutExceptionUnmarshaller : IErrorResponseUnmarshaller<ExecutionTimeoutException, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        DataSetImportTask IUnmarshaller<DataSetImportTask, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        public ExecutionTimeoutException Unmarshall(JsonUnmarshallerContext context)
         {
-            throw new NotImplementedException();
+            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse());
         }
 
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
+        /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public DataSetImportTask Unmarshall(JsonUnmarshallerContext context)
+        public ExecutionTimeoutException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
-                return null;
 
-            DataSetImportTask unmarshalledObject = new DataSetImportTask();
+            ExecutionTimeoutException unmarshalledObject = new ExecutionTimeoutException(errorResponse.Message, errorResponse.InnerException,
+                errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("status", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("statusReason", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StatusReason = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("summary", targetDepth))
-                {
-                    var unmarshaller = DataSetImportSummaryUnmarshaller.Instance;
-                    unmarshalledObject.Summary = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("taskId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TaskId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
             }
           
             return unmarshalledObject;
         }
 
-
-        private static DataSetImportTaskUnmarshaller _instance = new DataSetImportTaskUnmarshaller();        
+        private static ExecutionTimeoutExceptionUnmarshaller _instance = new ExecutionTimeoutExceptionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DataSetImportTaskUnmarshaller Instance
+        public static ExecutionTimeoutExceptionUnmarshaller Instance
         {
             get
             {

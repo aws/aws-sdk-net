@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// BatchJobIdentifier Marshaller
+    /// S3BatchJobIdentifier Marshaller
     /// </summary>
-    public class BatchJobIdentifierMarshaller : IRequestMarshaller<BatchJobIdentifier, JsonMarshallerContext> 
+    public class S3BatchJobIdentifierMarshaller : IRequestMarshaller<S3BatchJobIdentifier, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,39 +43,29 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(BatchJobIdentifier requestObject, JsonMarshallerContext context)
+        public void Marshall(S3BatchJobIdentifier requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetFileBatchJobIdentifier())
+            if(requestObject.IsSetBucket())
             {
-                context.Writer.WritePropertyName("fileBatchJobIdentifier");
+                context.Writer.WritePropertyName("bucket");
+                context.Writer.Write(requestObject.Bucket);
+            }
+
+            if(requestObject.IsSetIdentifier())
+            {
+                context.Writer.WritePropertyName("identifier");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = FileBatchJobIdentifierMarshaller.Instance;
-                marshaller.Marshall(requestObject.FileBatchJobIdentifier, context);
+                var marshaller = JobIdentifierMarshaller.Instance;
+                marshaller.Marshall(requestObject.Identifier, context);
 
                 context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetS3BatchJobIdentifier())
+            if(requestObject.IsSetKeyPrefix())
             {
-                context.Writer.WritePropertyName("s3BatchJobIdentifier");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = S3BatchJobIdentifierMarshaller.Instance;
-                marshaller.Marshall(requestObject.S3BatchJobIdentifier, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetScriptBatchJobIdentifier())
-            {
-                context.Writer.WritePropertyName("scriptBatchJobIdentifier");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = ScriptBatchJobIdentifierMarshaller.Instance;
-                marshaller.Marshall(requestObject.ScriptBatchJobIdentifier, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("keyPrefix");
+                context.Writer.Write(requestObject.KeyPrefix);
             }
 
         }
@@ -83,7 +73,7 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static BatchJobIdentifierMarshaller Instance = new BatchJobIdentifierMarshaller();
+        public readonly static S3BatchJobIdentifierMarshaller Instance = new S3BatchJobIdentifierMarshaller();
 
     }
 }

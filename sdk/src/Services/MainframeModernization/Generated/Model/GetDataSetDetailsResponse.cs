@@ -37,6 +37,7 @@ namespace Amazon.MainframeModernization.Model
         private DateTime? _creationTime;
         private string _dataSetName;
         private DatasetDetailOrgAttributes _dataSetOrg;
+        private long? _fileSize;
         private DateTime? _lastReferencedTime;
         private DateTime? _lastUpdatedTime;
         private string _location;
@@ -113,6 +114,24 @@ namespace Amazon.MainframeModernization.Model
         internal bool IsSetDataSetOrg()
         {
             return this._dataSetOrg != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FileSize. 
+        /// <para>
+        /// File size of the dataset.
+        /// </para>
+        /// </summary>
+        public long FileSize
+        {
+            get { return this._fileSize.GetValueOrDefault(); }
+            set { this._fileSize = value; }
+        }
+
+        // Check to see if FileSize property is set
+        internal bool IsSetFileSize()
+        {
+            return this._fileSize.HasValue; 
         }
 
         /// <summary>

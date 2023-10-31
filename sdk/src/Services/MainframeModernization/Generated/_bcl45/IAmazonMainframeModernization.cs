@@ -757,11 +757,20 @@ namespace Amazon.MainframeModernization
         /// <exception cref="Amazon.MainframeModernization.Model.AccessDeniedException">
         /// The account or role doesn't have the right permissions to make the request.
         /// </exception>
+        /// <exception cref="Amazon.MainframeModernization.Model.ConflictException">
+        /// The parameters provided in the request conflict with existing resources.
+        /// </exception>
+        /// <exception cref="Amazon.MainframeModernization.Model.ExecutionTimeoutException">
+        /// Failed to connect to server, or didn’t receive response within expected time period.
+        /// </exception>
         /// <exception cref="Amazon.MainframeModernization.Model.InternalServerException">
         /// An unexpected error occurred during the processing of the request.
         /// </exception>
         /// <exception cref="Amazon.MainframeModernization.Model.ResourceNotFoundException">
         /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.MainframeModernization.Model.ServiceUnavailableException">
+        /// Server cannot process the request at the moment.
         /// </exception>
         /// <exception cref="Amazon.MainframeModernization.Model.ThrottlingException">
         /// The number of requests made exceeds the limit.
@@ -786,11 +795,20 @@ namespace Amazon.MainframeModernization
         /// <exception cref="Amazon.MainframeModernization.Model.AccessDeniedException">
         /// The account or role doesn't have the right permissions to make the request.
         /// </exception>
+        /// <exception cref="Amazon.MainframeModernization.Model.ConflictException">
+        /// The parameters provided in the request conflict with existing resources.
+        /// </exception>
+        /// <exception cref="Amazon.MainframeModernization.Model.ExecutionTimeoutException">
+        /// Failed to connect to server, or didn’t receive response within expected time period.
+        /// </exception>
         /// <exception cref="Amazon.MainframeModernization.Model.InternalServerException">
         /// An unexpected error occurred during the processing of the request.
         /// </exception>
         /// <exception cref="Amazon.MainframeModernization.Model.ResourceNotFoundException">
         /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.MainframeModernization.Model.ServiceUnavailableException">
+        /// Server cannot process the request at the moment.
         /// </exception>
         /// <exception cref="Amazon.MainframeModernization.Model.ThrottlingException">
         /// The number of requests made exceeds the limit.
@@ -1332,11 +1350,20 @@ namespace Amazon.MainframeModernization
         /// <exception cref="Amazon.MainframeModernization.Model.AccessDeniedException">
         /// The account or role doesn't have the right permissions to make the request.
         /// </exception>
+        /// <exception cref="Amazon.MainframeModernization.Model.ConflictException">
+        /// The parameters provided in the request conflict with existing resources.
+        /// </exception>
+        /// <exception cref="Amazon.MainframeModernization.Model.ExecutionTimeoutException">
+        /// Failed to connect to server, or didn’t receive response within expected time period.
+        /// </exception>
         /// <exception cref="Amazon.MainframeModernization.Model.InternalServerException">
         /// An unexpected error occurred during the processing of the request.
         /// </exception>
         /// <exception cref="Amazon.MainframeModernization.Model.ResourceNotFoundException">
         /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.MainframeModernization.Model.ServiceUnavailableException">
+        /// Server cannot process the request at the moment.
         /// </exception>
         /// <exception cref="Amazon.MainframeModernization.Model.ThrottlingException">
         /// The number of requests made exceeds the limit.
@@ -1364,11 +1391,20 @@ namespace Amazon.MainframeModernization
         /// <exception cref="Amazon.MainframeModernization.Model.AccessDeniedException">
         /// The account or role doesn't have the right permissions to make the request.
         /// </exception>
+        /// <exception cref="Amazon.MainframeModernization.Model.ConflictException">
+        /// The parameters provided in the request conflict with existing resources.
+        /// </exception>
+        /// <exception cref="Amazon.MainframeModernization.Model.ExecutionTimeoutException">
+        /// Failed to connect to server, or didn’t receive response within expected time period.
+        /// </exception>
         /// <exception cref="Amazon.MainframeModernization.Model.InternalServerException">
         /// An unexpected error occurred during the processing of the request.
         /// </exception>
         /// <exception cref="Amazon.MainframeModernization.Model.ResourceNotFoundException">
         /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.MainframeModernization.Model.ServiceUnavailableException">
+        /// Server cannot process the request at the moment.
         /// </exception>
         /// <exception cref="Amazon.MainframeModernization.Model.ThrottlingException">
         /// The number of requests made exceeds the limit.

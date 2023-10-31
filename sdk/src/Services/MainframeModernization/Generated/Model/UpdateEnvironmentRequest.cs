@@ -38,6 +38,7 @@ namespace Amazon.MainframeModernization.Model
         private int? _desiredCapacity;
         private string _engineVersion;
         private string _environmentId;
+        private bool? _forceUpdate;
         private string _instanceType;
         private string _preferredMaintenanceWindow;
 
@@ -120,6 +121,35 @@ namespace Amazon.MainframeModernization.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ForceUpdate. 
+        /// <para>
+        /// Forces the updates on the environment. This option is needed if the applications in
+        /// the environment are not stopped or if there are ongoing application-related activities
+        /// in the environment.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you use this option, be aware that it could lead to data corruption in the applications,
+        /// and that you might need to perform repair and recovery procedures for the applications.
+        /// </para>
+        ///  
+        /// <para>
+        /// This option is not needed if the attribute being updated is <code>preferredMaintenanceWindow</code>.
+        /// </para>
+        /// </summary>
+        public bool ForceUpdate
+        {
+            get { return this._forceUpdate.GetValueOrDefault(); }
+            set { this._forceUpdate = value; }
+        }
+
+        // Check to see if ForceUpdate property is set
+        internal bool IsSetForceUpdate()
+        {
+            return this._forceUpdate.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
         /// The instance type for the runtime environment to update.
@@ -140,8 +170,14 @@ namespace Amazon.MainframeModernization.Model
         /// <summary>
         /// Gets and sets the property PreferredMaintenanceWindow. 
         /// <para>
-        /// Configures the maintenance window you want for the runtime environment. If you do
-        /// not provide a value, a random system-generated value will be assigned.
+        /// Configures the maintenance window that you want for the runtime environment. The maintenance
+        /// window must have the format <code>ddd:hh24:mi-ddd:hh24:mi</code> and must be less
+        /// than 24 hours. The following two examples are valid maintenance windows: <code>sun:23:45-mon:00:15</code>
+        /// or <code>sat:01:00-sat:03:00</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you do not provide a value, a random system-generated value will be assigned.
         /// </para>
         /// </summary>
         public string PreferredMaintenanceWindow

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DataSetImportTask Object
+    /// Response Unmarshaller for JobIdentifier Object
     /// </summary>  
-    public class DataSetImportTaskUnmarshaller : IUnmarshaller<DataSetImportTask, XmlUnmarshallerContext>, IUnmarshaller<DataSetImportTask, JsonUnmarshallerContext>
+    public class JobIdentifierUnmarshaller : IUnmarshaller<JobIdentifier, XmlUnmarshallerContext>, IUnmarshaller<JobIdentifier, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        DataSetImportTask IUnmarshaller<DataSetImportTask, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        JobIdentifier IUnmarshaller<JobIdentifier, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,27 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public DataSetImportTask Unmarshall(JsonUnmarshallerContext context)
+        public JobIdentifier Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            DataSetImportTask unmarshalledObject = new DataSetImportTask();
+            JobIdentifier unmarshalledObject = new JobIdentifier();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("status", targetDepth))
+                if (context.TestExpression("fileName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FileName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("statusReason", targetDepth))
+                if (context.TestExpression("scriptName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StatusReason = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("summary", targetDepth))
-                {
-                    var unmarshaller = DataSetImportSummaryUnmarshaller.Instance;
-                    unmarshalledObject.Summary = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("taskId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TaskId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ScriptName = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +82,12 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
         }
 
 
-        private static DataSetImportTaskUnmarshaller _instance = new DataSetImportTaskUnmarshaller();        
+        private static JobIdentifierUnmarshaller _instance = new JobIdentifierUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DataSetImportTaskUnmarshaller Instance
+        public static JobIdentifierUnmarshaller Instance
         {
             get
             {

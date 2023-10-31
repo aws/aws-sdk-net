@@ -373,6 +373,10 @@
     <max>2000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MainframeModernization.Model.ListDataSetsRequest.NameFilter</property>
+    <pattern>^\S{1,200}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MainframeModernization.Model.ListDataSetsRequest.NextToken</property>
     <pattern>^\S{1,2000}$</pattern>
   </property-value-rule>
