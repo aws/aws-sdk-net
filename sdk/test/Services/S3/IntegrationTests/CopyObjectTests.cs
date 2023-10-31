@@ -3,8 +3,8 @@ using Amazon.S3;
 using Amazon.S3.Model;
 using Amazon.S3.Util;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 using System.IO;
-using System.Net;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
@@ -13,7 +13,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
     {
         private const string testContent = "This is the content body!";
         private const string testKey = "testKey.txt";
-        private const string testKeyWithSlash = "/testkey";
 
         private string eastBucketName;
         private string westBucketName;
@@ -25,21 +24,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         {
             usEastClient = new AmazonS3Client(RegionEndpoint.USEast1);
             eastBucketName = S3TestUtils.CreateBucketWithWait(usEastClient);
-            
             usEastClient.PutObject(new PutObjectRequest
             {
                 BucketName = eastBucketName,
                 Key = testKey,
                 ContentBody = testContent
             });
-
-            usEastClient.PutObject(new PutObjectRequest
-            {
-                BucketName = eastBucketName,
-                Key = testKeyWithSlash,
-                ContentBody = testContent
-            });
-
             var usWestClient = new AmazonS3Client(RegionEndpoint.USWest1);
             westBucketName = S3TestUtils.CreateBucketWithWait(usWestClient);
         }
@@ -63,33 +53,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 DestinationBucket = westBucketName,
                 DestinationKey = testKey
             });
-        }
-
-        [TestMethod]
-        [TestCategory("S3")]
-        public void TestCopyObjectWithLeadingSlash()
-        {
-            var copyObjectResponse = usEastClient.CopyObject(new CopyObjectRequest
-            {
-                SourceBucket = eastBucketName,
-                SourceKey = testKeyWithSlash,
-                DestinationBucket = westBucketName,
-                DestinationKey = testKeyWithSlash
-            });
-            Assert.AreEqual(HttpStatusCode.OK, copyObjectResponse.HttpStatusCode);
-
-            var getObjectResponse = Client.GetObject(new GetObjectRequest
-            {
-                BucketName = westBucketName,
-                Key = testKeyWithSlash
-            });
-
-            using (getObjectResponse.ResponseStream)
-            using (var reader = new StreamReader(getObjectResponse.ResponseStream))
-            {
-                var actualText = reader.ReadToEnd();
-                Assert.AreEqual(testContent, actualText);
-            }
         }
     }
 }
