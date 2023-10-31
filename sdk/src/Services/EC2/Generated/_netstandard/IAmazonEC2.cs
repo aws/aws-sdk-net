@@ -6252,6 +6252,25 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  DescribeCapacityBlockOfferings
+
+
+
+        /// <summary>
+        /// Describes Capacity Block offerings available for purchase. With Capacity Blocks, you
+        /// purchase a specific instance type for a period of time.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCapacityBlockOfferings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeCapacityBlockOfferings service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityBlockOfferings">REST API Reference for DescribeCapacityBlockOfferings Operation</seealso>
+        Task<DescribeCapacityBlockOfferingsResponse> DescribeCapacityBlockOfferingsAsync(DescribeCapacityBlockOfferingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DescribeCapacityReservationFleets
 
 
@@ -14717,6 +14736,26 @@ namespace Amazon.EC2
         /// <returns>The response from the ProvisionPublicIpv4PoolCidr service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ProvisionPublicIpv4PoolCidr">REST API Reference for ProvisionPublicIpv4PoolCidr Operation</seealso>
         Task<ProvisionPublicIpv4PoolCidrResponse> ProvisionPublicIpv4PoolCidrAsync(ProvisionPublicIpv4PoolCidrRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  PurchaseCapacityBlock
+
+
+
+        /// <summary>
+        /// Purchase the Capacity Block for use with your account. With Capacity Blocks you ensure
+        /// GPU capacity is available for machine learning (ML) workloads. You must specify the
+        /// ID of the Capacity Block offering you are purchasing.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PurchaseCapacityBlock service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PurchaseCapacityBlock service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PurchaseCapacityBlock">REST API Reference for PurchaseCapacityBlock Operation</seealso>
+        Task<PurchaseCapacityBlockResponse> PurchaseCapacityBlockAsync(PurchaseCapacityBlockRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

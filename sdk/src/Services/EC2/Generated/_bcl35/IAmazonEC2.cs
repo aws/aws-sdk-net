@@ -11198,6 +11198,47 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeCapacityBlockOfferings
+
+
+        /// <summary>
+        /// Describes Capacity Block offerings available for purchase. With Capacity Blocks, you
+        /// purchase a specific instance type for a period of time.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCapacityBlockOfferings service method.</param>
+        /// 
+        /// <returns>The response from the DescribeCapacityBlockOfferings service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityBlockOfferings">REST API Reference for DescribeCapacityBlockOfferings Operation</seealso>
+        DescribeCapacityBlockOfferingsResponse DescribeCapacityBlockOfferings(DescribeCapacityBlockOfferingsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeCapacityBlockOfferings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCapacityBlockOfferings operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeCapacityBlockOfferings
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityBlockOfferings">REST API Reference for DescribeCapacityBlockOfferings Operation</seealso>
+        IAsyncResult BeginDescribeCapacityBlockOfferings(DescribeCapacityBlockOfferingsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeCapacityBlockOfferings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeCapacityBlockOfferings.</param>
+        /// 
+        /// <returns>Returns a  DescribeCapacityBlockOfferingsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityBlockOfferings">REST API Reference for DescribeCapacityBlockOfferings Operation</seealso>
+        DescribeCapacityBlockOfferingsResponse EndDescribeCapacityBlockOfferings(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeCapacityReservationFleets
 
 
@@ -26425,6 +26466,48 @@ namespace Amazon.EC2
         /// <returns>Returns a  ProvisionPublicIpv4PoolCidrResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ProvisionPublicIpv4PoolCidr">REST API Reference for ProvisionPublicIpv4PoolCidr Operation</seealso>
         ProvisionPublicIpv4PoolCidrResponse EndProvisionPublicIpv4PoolCidr(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  PurchaseCapacityBlock
+
+
+        /// <summary>
+        /// Purchase the Capacity Block for use with your account. With Capacity Blocks you ensure
+        /// GPU capacity is available for machine learning (ML) workloads. You must specify the
+        /// ID of the Capacity Block offering you are purchasing.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PurchaseCapacityBlock service method.</param>
+        /// 
+        /// <returns>The response from the PurchaseCapacityBlock service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PurchaseCapacityBlock">REST API Reference for PurchaseCapacityBlock Operation</seealso>
+        PurchaseCapacityBlockResponse PurchaseCapacityBlock(PurchaseCapacityBlockRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PurchaseCapacityBlock operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PurchaseCapacityBlock operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPurchaseCapacityBlock
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PurchaseCapacityBlock">REST API Reference for PurchaseCapacityBlock Operation</seealso>
+        IAsyncResult BeginPurchaseCapacityBlock(PurchaseCapacityBlockRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PurchaseCapacityBlock operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPurchaseCapacityBlock.</param>
+        /// 
+        /// <returns>Returns a  PurchaseCapacityBlockResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PurchaseCapacityBlock">REST API Reference for PurchaseCapacityBlock Operation</seealso>
+        PurchaseCapacityBlockResponse EndPurchaseCapacityBlock(IAsyncResult asyncResult);
 
         #endregion
         

@@ -2313,9 +2313,21 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly CapacityReservationState Failed = new CapacityReservationState("failed");
         /// <summary>
+        /// Constant PaymentFailed for CapacityReservationState
+        /// </summary>
+        public static readonly CapacityReservationState PaymentFailed = new CapacityReservationState("payment-failed");
+        /// <summary>
+        /// Constant PaymentPending for CapacityReservationState
+        /// </summary>
+        public static readonly CapacityReservationState PaymentPending = new CapacityReservationState("payment-pending");
+        /// <summary>
         /// Constant Pending for CapacityReservationState
         /// </summary>
         public static readonly CapacityReservationState Pending = new CapacityReservationState("pending");
+        /// <summary>
+        /// Constant Scheduled for CapacityReservationState
+        /// </summary>
+        public static readonly CapacityReservationState Scheduled = new CapacityReservationState("scheduled");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -2396,6 +2408,56 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator CapacityReservationTenancy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CapacityReservationType.
+    /// </summary>
+    public class CapacityReservationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CapacityBlock for CapacityReservationType
+        /// </summary>
+        public static readonly CapacityReservationType CapacityBlock = new CapacityReservationType("capacity-block");
+        /// <summary>
+        /// Constant Default for CapacityReservationType
+        /// </summary>
+        public static readonly CapacityReservationType Default = new CapacityReservationType("default");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CapacityReservationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CapacityReservationType FindValue(string value)
+        {
+            return FindValue<CapacityReservationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CapacityReservationType(string value)
         {
             return FindValue(value);
         }
@@ -3398,6 +3460,10 @@ namespace Amazon.EC2
     public class DefaultTargetCapacityType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant CapacityBlock for DefaultTargetCapacityType
+        /// </summary>
+        public static readonly DefaultTargetCapacityType CapacityBlock = new DefaultTargetCapacityType("capacity-block");
         /// <summary>
         /// Constant OnDemand for DefaultTargetCapacityType
         /// </summary>
@@ -7102,6 +7168,10 @@ namespace Amazon.EC2
     public class InstanceLifecycleType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant CapacityBlock for InstanceLifecycleType
+        /// </summary>
+        public static readonly InstanceLifecycleType CapacityBlock = new InstanceLifecycleType("capacity-block");
         /// <summary>
         /// Constant Scheduled for InstanceLifecycleType
         /// </summary>
@@ -13018,6 +13088,10 @@ namespace Amazon.EC2
     public class MarketType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant CapacityBlock for MarketType
+        /// </summary>
+        public static readonly MarketType CapacityBlock = new MarketType("capacity-block");
         /// <summary>
         /// Constant Spot for MarketType
         /// </summary>
@@ -19456,6 +19530,10 @@ namespace Amazon.EC2
     public class UsageClassType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant CapacityBlock for UsageClassType
+        /// </summary>
+        public static readonly UsageClassType CapacityBlock = new UsageClassType("capacity-block");
         /// <summary>
         /// Constant OnDemand for UsageClassType
         /// </summary>

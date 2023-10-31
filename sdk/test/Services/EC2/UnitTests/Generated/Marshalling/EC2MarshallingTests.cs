@@ -5334,6 +5334,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void DescribeCapacityBlockOfferingsMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeCapacityBlockOfferings");
+
+            var request = InstantiateClassGenerator.Execute<DescribeCapacityBlockOfferingsRequest>(operation);
+            var marshaller = new DescribeCapacityBlockOfferingsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DescribeCapacityBlockOfferingsResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeCapacityBlockOfferingsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void DescribeCapacityReservationFleetsMarshallTest()
         {
             var operation = service_model.FindOperation("DescribeCapacityReservationFleets");
@@ -12752,6 +12776,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
             var response = ProvisionPublicIpv4PoolCidrResponseUnmarshaller.Instance.Unmarshall(context)
                 as ProvisionPublicIpv4PoolCidrResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void PurchaseCapacityBlockMarshallTest()
+        {
+            var operation = service_model.FindOperation("PurchaseCapacityBlock");
+
+            var request = InstantiateClassGenerator.Execute<PurchaseCapacityBlockRequest>(operation);
+            var marshaller = new PurchaseCapacityBlockRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = PurchaseCapacityBlockResponseUnmarshaller.Instance.Unmarshall(context)
+                as PurchaseCapacityBlockResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 

@@ -10157,6 +10157,41 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeCapacityBlockOfferings
+
+        internal virtual DescribeCapacityBlockOfferingsResponse DescribeCapacityBlockOfferings(DescribeCapacityBlockOfferingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeCapacityBlockOfferingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeCapacityBlockOfferingsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeCapacityBlockOfferingsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes Capacity Block offerings available for purchase. With Capacity Blocks, you
+        /// purchase a specific instance type for a period of time.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCapacityBlockOfferings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeCapacityBlockOfferings service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityBlockOfferings">REST API Reference for DescribeCapacityBlockOfferings Operation</seealso>
+        public virtual Task<DescribeCapacityBlockOfferingsResponse> DescribeCapacityBlockOfferingsAsync(DescribeCapacityBlockOfferingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeCapacityBlockOfferingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeCapacityBlockOfferingsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeCapacityBlockOfferingsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeCapacityReservationFleets
 
         internal virtual DescribeCapacityReservationFleetsResponse DescribeCapacityReservationFleets(DescribeCapacityReservationFleetsRequest request)
@@ -23846,6 +23881,42 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = ProvisionPublicIpv4PoolCidrResponseUnmarshaller.Instance;
 
             return InvokeAsync<ProvisionPublicIpv4PoolCidrResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PurchaseCapacityBlock
+
+        internal virtual PurchaseCapacityBlockResponse PurchaseCapacityBlock(PurchaseCapacityBlockRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PurchaseCapacityBlockRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PurchaseCapacityBlockResponseUnmarshaller.Instance;
+
+            return Invoke<PurchaseCapacityBlockResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Purchase the Capacity Block for use with your account. With Capacity Blocks you ensure
+        /// GPU capacity is available for machine learning (ML) workloads. You must specify the
+        /// ID of the Capacity Block offering you are purchasing.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PurchaseCapacityBlock service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PurchaseCapacityBlock service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PurchaseCapacityBlock">REST API Reference for PurchaseCapacityBlock Operation</seealso>
+        public virtual Task<PurchaseCapacityBlockResponse> PurchaseCapacityBlockAsync(PurchaseCapacityBlockRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PurchaseCapacityBlockRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PurchaseCapacityBlockResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PurchaseCapacityBlockResponse>(request, options, cancellationToken);
         }
 
         #endregion

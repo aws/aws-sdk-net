@@ -68,6 +68,14 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeCapacityBlockOfferings operation
+        ///</summary>
+        public IDescribeCapacityBlockOfferingsPaginator DescribeCapacityBlockOfferings(DescribeCapacityBlockOfferingsRequest request) 
+        {
+            return new DescribeCapacityBlockOfferingsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeCapacityReservationFleets operation
         ///</summary>
         public IDescribeCapacityReservationFleetsPaginator DescribeCapacityReservationFleets(DescribeCapacityReservationFleetsRequest request) 

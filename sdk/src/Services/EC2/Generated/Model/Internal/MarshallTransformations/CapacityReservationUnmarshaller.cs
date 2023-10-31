@@ -163,6 +163,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.PlacementGroupArn = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("reservationType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ReservationType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("startDate", targetDepth))
                     {
                         var unmarshaller = DateTimeUnmarshaller.Instance;
