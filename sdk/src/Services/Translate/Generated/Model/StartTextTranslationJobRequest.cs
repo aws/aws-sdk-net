@@ -205,9 +205,21 @@ namespace Amazon.Translate.Model
         /// <summary>
         /// Gets and sets the property Settings. 
         /// <para>
-        /// Settings to configure your translation output, including the option to set the formality
-        /// level of the output text and the option to mask profane words and phrases.
+        /// Settings to configure your translation output. You can configure the following options:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Brevity: not supported.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Formality: sets the formality level of the output text.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Profanity: masks profane words and phrases in your translation output.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public TranslationSettings Settings
         {
