@@ -37,10 +37,12 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         public IRequest Marshall(CopyPartRequest copyPartRequest)
         {
             IRequest request = new DefaultRequest(copyPartRequest, "AmazonS3");
+            var sourceKey = AmazonS3Util.RemoveLeadingSlash(copyPartRequest.SourceKey);
+            var destinationKey = AmazonS3Util.RemoveLeadingSlash(copyPartRequest.DestinationKey);
             request.HttpMethod = "PUT";
 
             if (copyPartRequest.IsSetSourceBucket())
-                request.Headers.Add(HeaderKeys.XAmzCopySourceHeader, ConstructCopySourceHeaderValue(copyPartRequest.SourceBucket, copyPartRequest.SourceKey, copyPartRequest.SourceVersionId));
+                request.Headers.Add(HeaderKeys.XAmzCopySourceHeader, ConstructCopySourceHeaderValue(copyPartRequest.SourceBucket, sourceKey, copyPartRequest.SourceVersionId));
 
             if (copyPartRequest.IsSetETagToMatch())
                 request.Headers.Add(HeaderKeys.XAmzCopySourceIfMatchHeader, AWSSDKUtils.Join(copyPartRequest.ETagToMatch));
@@ -90,11 +92,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (string.IsNullOrEmpty(copyPartRequest.DestinationBucket))
                 throw new System.ArgumentException("DestinationBucket is a required property and must be set before making this call.", "CopyPartRequest.DestinationBucket");
 
-            if (string.IsNullOrEmpty(copyPartRequest.DestinationKey))
+            if (string.IsNullOrEmpty(destinationKey))
                 throw new System.ArgumentException("DestinationKey is a required property and must be set before making this call.", "CopyPartRequest.DestinationKey");
 
             request.ResourcePath = string.Format(CultureInfo.InvariantCulture, "/{0}",
-                                                 S3Transforms.ToStringValue(copyPartRequest.DestinationKey));
+                                                 S3Transforms.ToStringValue(destinationKey));
 
             request.AddSubResource("partNumber", S3Transforms.ToStringValue(copyPartRequest.PartNumber));
             request.AddSubResource("uploadId", S3Transforms.ToStringValue(copyPartRequest.UploadId));
