@@ -1,3 +1,21 @@
+### 3.7.675.0 (2023-11-01 18:20 UTC)
+* APIGateway (3.7.201.40)
+	* Marshaller changes from the generator changes supporting maps of lists.
+* Connect (3.7.210.0)
+	* Adds the BatchGetFlowAssociation API which returns flow associations (flow-resource) corresponding to the list of resourceArns supplied in the request. This release also adds IsDefault, LastModifiedRegion and LastModifiedTime fields to the responses of several Describe and List APIs.
+* DataExchange (3.7.201.1)
+	* Marshaller changes from the generator changes supporting maps of lists.
+* GlobalAccelerator (3.7.202.0)
+	* Global Accelerator now support accelerators with cross account endpoints.
+* RDS (3.7.213.0)
+	* This release adds support for customized networking resources to Amazon RDS Custom.
+* Redshift (3.7.204.0)
+	* Added support for Multi-AZ deployments for Provisioned RA3 clusters that provide 99.99% SLA availability.
+* SageMaker (3.7.220.0)
+	* Support for batch transform input in Model dashboard
+* Core 3.7.204.11
+	* Added generator support for maps of lists and associated protocol tests.
+
 ### 3.7.674.1 (2023-10-31 23:32 UTC)
 * S3 (3.7.205.21)
 	* Revert 'BREAKING CHANGE: Update CopyObject and CopyPart requests not to remove leading slash from object keys'
