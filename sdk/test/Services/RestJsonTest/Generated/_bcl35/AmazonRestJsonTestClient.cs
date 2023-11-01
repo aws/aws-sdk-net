@@ -344,6 +344,384 @@ namespace Amazon.RestJsonTest
 
         #endregion
         
+        #region  QueryBooleanList
+
+        /// <summary>
+        /// Handles query string lists of boolean
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the QueryBooleanList service method.</param>
+        /// 
+        /// <returns>The response from the QueryBooleanList service method, as returned by RestJsonTest.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/test-2021-05-13/QueryBooleanList">REST API Reference for QueryBooleanList Operation</seealso>
+        public virtual QueryBooleanListResponse QueryBooleanList(QueryBooleanListRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = QueryBooleanListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = QueryBooleanListResponseUnmarshaller.Instance;
+
+            return Invoke<QueryBooleanListResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the QueryBooleanList operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the QueryBooleanList operation on AmazonRestJsonTestClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndQueryBooleanList
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/test-2021-05-13/QueryBooleanList">REST API Reference for QueryBooleanList Operation</seealso>
+        public virtual IAsyncResult BeginQueryBooleanList(QueryBooleanListRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = QueryBooleanListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = QueryBooleanListResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  QueryBooleanList operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginQueryBooleanList.</param>
+        /// 
+        /// <returns>Returns a  QueryBooleanListResult from RestJsonTest.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/test-2021-05-13/QueryBooleanList">REST API Reference for QueryBooleanList Operation</seealso>
+        public virtual QueryBooleanListResponse EndQueryBooleanList(IAsyncResult asyncResult)
+        {
+            return EndInvoke<QueryBooleanListResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  QueryIntegerList
+
+        /// <summary>
+        /// Handles query string lists of integer
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the QueryIntegerList service method.</param>
+        /// 
+        /// <returns>The response from the QueryIntegerList service method, as returned by RestJsonTest.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/test-2021-05-13/QueryIntegerList">REST API Reference for QueryIntegerList Operation</seealso>
+        public virtual QueryIntegerListResponse QueryIntegerList(QueryIntegerListRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = QueryIntegerListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = QueryIntegerListResponseUnmarshaller.Instance;
+
+            return Invoke<QueryIntegerListResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the QueryIntegerList operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the QueryIntegerList operation on AmazonRestJsonTestClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndQueryIntegerList
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/test-2021-05-13/QueryIntegerList">REST API Reference for QueryIntegerList Operation</seealso>
+        public virtual IAsyncResult BeginQueryIntegerList(QueryIntegerListRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = QueryIntegerListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = QueryIntegerListResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  QueryIntegerList operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginQueryIntegerList.</param>
+        /// 
+        /// <returns>Returns a  QueryIntegerListResult from RestJsonTest.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/test-2021-05-13/QueryIntegerList">REST API Reference for QueryIntegerList Operation</seealso>
+        public virtual QueryIntegerListResponse EndQueryIntegerList(IAsyncResult asyncResult)
+        {
+            return EndInvoke<QueryIntegerListResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  QueryIntegerListMap
+
+        /// <summary>
+        /// Handles query string maps of lists of integers
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the QueryIntegerListMap service method.</param>
+        /// 
+        /// <returns>The response from the QueryIntegerListMap service method, as returned by RestJsonTest.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/test-2021-05-13/QueryIntegerListMap">REST API Reference for QueryIntegerListMap Operation</seealso>
+        public virtual QueryIntegerListMapResponse QueryIntegerListMap(QueryIntegerListMapRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = QueryIntegerListMapRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = QueryIntegerListMapResponseUnmarshaller.Instance;
+
+            return Invoke<QueryIntegerListMapResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the QueryIntegerListMap operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the QueryIntegerListMap operation on AmazonRestJsonTestClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndQueryIntegerListMap
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/test-2021-05-13/QueryIntegerListMap">REST API Reference for QueryIntegerListMap Operation</seealso>
+        public virtual IAsyncResult BeginQueryIntegerListMap(QueryIntegerListMapRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = QueryIntegerListMapRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = QueryIntegerListMapResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  QueryIntegerListMap operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginQueryIntegerListMap.</param>
+        /// 
+        /// <returns>Returns a  QueryIntegerListMapResult from RestJsonTest.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/test-2021-05-13/QueryIntegerListMap">REST API Reference for QueryIntegerListMap Operation</seealso>
+        public virtual QueryIntegerListMapResponse EndQueryIntegerListMap(IAsyncResult asyncResult)
+        {
+            return EndInvoke<QueryIntegerListMapResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  QueryStringEscaping
+
+        /// <summary>
+        /// Handles query string escaping
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the QueryStringEscaping service method.</param>
+        /// 
+        /// <returns>The response from the QueryStringEscaping service method, as returned by RestJsonTest.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/test-2021-05-13/QueryStringEscaping">REST API Reference for QueryStringEscaping Operation</seealso>
+        public virtual QueryStringEscapingResponse QueryStringEscaping(QueryStringEscapingRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = QueryStringEscapingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = QueryStringEscapingResponseUnmarshaller.Instance;
+
+            return Invoke<QueryStringEscapingResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the QueryStringEscaping operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the QueryStringEscaping operation on AmazonRestJsonTestClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndQueryStringEscaping
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/test-2021-05-13/QueryStringEscaping">REST API Reference for QueryStringEscaping Operation</seealso>
+        public virtual IAsyncResult BeginQueryStringEscaping(QueryStringEscapingRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = QueryStringEscapingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = QueryStringEscapingResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  QueryStringEscaping operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginQueryStringEscaping.</param>
+        /// 
+        /// <returns>Returns a  QueryStringEscapingResult from RestJsonTest.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/test-2021-05-13/QueryStringEscaping">REST API Reference for QueryStringEscaping Operation</seealso>
+        public virtual QueryStringEscapingResponse EndQueryStringEscaping(IAsyncResult asyncResult)
+        {
+            return EndInvoke<QueryStringEscapingResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  QueryStringList
+
+        /// <summary>
+        /// Handles query string lists of string
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the QueryStringList service method.</param>
+        /// 
+        /// <returns>The response from the QueryStringList service method, as returned by RestJsonTest.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/test-2021-05-13/QueryStringList">REST API Reference for QueryStringList Operation</seealso>
+        public virtual QueryStringListResponse QueryStringList(QueryStringListRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = QueryStringListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = QueryStringListResponseUnmarshaller.Instance;
+
+            return Invoke<QueryStringListResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the QueryStringList operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the QueryStringList operation on AmazonRestJsonTestClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndQueryStringList
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/test-2021-05-13/QueryStringList">REST API Reference for QueryStringList Operation</seealso>
+        public virtual IAsyncResult BeginQueryStringList(QueryStringListRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = QueryStringListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = QueryStringListResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  QueryStringList operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginQueryStringList.</param>
+        /// 
+        /// <returns>Returns a  QueryStringListResult from RestJsonTest.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/test-2021-05-13/QueryStringList">REST API Reference for QueryStringList Operation</seealso>
+        public virtual QueryStringListResponse EndQueryStringList(IAsyncResult asyncResult)
+        {
+            return EndInvoke<QueryStringListResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  QueryStringListMap
+
+        /// <summary>
+        /// Handles query string maps of lists of string
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the QueryStringListMap service method.</param>
+        /// 
+        /// <returns>The response from the QueryStringListMap service method, as returned by RestJsonTest.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/test-2021-05-13/QueryStringListMap">REST API Reference for QueryStringListMap Operation</seealso>
+        public virtual QueryStringListMapResponse QueryStringListMap(QueryStringListMapRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = QueryStringListMapRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = QueryStringListMapResponseUnmarshaller.Instance;
+
+            return Invoke<QueryStringListMapResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the QueryStringListMap operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the QueryStringListMap operation on AmazonRestJsonTestClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndQueryStringListMap
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/test-2021-05-13/QueryStringListMap">REST API Reference for QueryStringListMap Operation</seealso>
+        public virtual IAsyncResult BeginQueryStringListMap(QueryStringListMapRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = QueryStringListMapRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = QueryStringListMapResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  QueryStringListMap operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginQueryStringListMap.</param>
+        /// 
+        /// <returns>Returns a  QueryStringListMapResult from RestJsonTest.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/test-2021-05-13/QueryStringListMap">REST API Reference for QueryStringListMap Operation</seealso>
+        public virtual QueryStringListMapResponse EndQueryStringListMap(IAsyncResult asyncResult)
+        {
+            return EndInvoke<QueryStringListMapResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  QueryTimestampList
+
+        /// <summary>
+        /// Handles query string lists of timestamp
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the QueryTimestampList service method.</param>
+        /// 
+        /// <returns>The response from the QueryTimestampList service method, as returned by RestJsonTest.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/test-2021-05-13/QueryTimestampList">REST API Reference for QueryTimestampList Operation</seealso>
+        public virtual QueryTimestampListResponse QueryTimestampList(QueryTimestampListRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = QueryTimestampListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = QueryTimestampListResponseUnmarshaller.Instance;
+
+            return Invoke<QueryTimestampListResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the QueryTimestampList operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the QueryTimestampList operation on AmazonRestJsonTestClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndQueryTimestampList
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/test-2021-05-13/QueryTimestampList">REST API Reference for QueryTimestampList Operation</seealso>
+        public virtual IAsyncResult BeginQueryTimestampList(QueryTimestampListRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = QueryTimestampListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = QueryTimestampListResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  QueryTimestampList operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginQueryTimestampList.</param>
+        /// 
+        /// <returns>Returns a  QueryTimestampListResult from RestJsonTest.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/test-2021-05-13/QueryTimestampList">REST API Reference for QueryTimestampList Operation</seealso>
+        public virtual QueryTimestampListResponse EndQueryTimestampList(IAsyncResult asyncResult)
+        {
+            return EndInvoke<QueryTimestampListResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  StaticOp
 
         /// <summary>

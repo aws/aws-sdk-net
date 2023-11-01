@@ -308,6 +308,244 @@ namespace Amazon.RestJsonTest
 
         #endregion
         
+        #region  QueryBooleanList
+
+        internal virtual QueryBooleanListResponse QueryBooleanList(QueryBooleanListRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = QueryBooleanListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = QueryBooleanListResponseUnmarshaller.Instance;
+
+            return Invoke<QueryBooleanListResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Handles query string lists of boolean
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the QueryBooleanList service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the QueryBooleanList service method, as returned by RestJsonTest.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/test-2021-05-13/QueryBooleanList">REST API Reference for QueryBooleanList Operation</seealso>
+        public virtual Task<QueryBooleanListResponse> QueryBooleanListAsync(QueryBooleanListRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = QueryBooleanListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = QueryBooleanListResponseUnmarshaller.Instance;
+
+            return InvokeAsync<QueryBooleanListResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  QueryIntegerList
+
+        internal virtual QueryIntegerListResponse QueryIntegerList(QueryIntegerListRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = QueryIntegerListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = QueryIntegerListResponseUnmarshaller.Instance;
+
+            return Invoke<QueryIntegerListResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Handles query string lists of integer
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the QueryIntegerList service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the QueryIntegerList service method, as returned by RestJsonTest.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/test-2021-05-13/QueryIntegerList">REST API Reference for QueryIntegerList Operation</seealso>
+        public virtual Task<QueryIntegerListResponse> QueryIntegerListAsync(QueryIntegerListRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = QueryIntegerListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = QueryIntegerListResponseUnmarshaller.Instance;
+
+            return InvokeAsync<QueryIntegerListResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  QueryIntegerListMap
+
+        internal virtual QueryIntegerListMapResponse QueryIntegerListMap(QueryIntegerListMapRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = QueryIntegerListMapRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = QueryIntegerListMapResponseUnmarshaller.Instance;
+
+            return Invoke<QueryIntegerListMapResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Handles query string maps of lists of integers
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the QueryIntegerListMap service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the QueryIntegerListMap service method, as returned by RestJsonTest.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/test-2021-05-13/QueryIntegerListMap">REST API Reference for QueryIntegerListMap Operation</seealso>
+        public virtual Task<QueryIntegerListMapResponse> QueryIntegerListMapAsync(QueryIntegerListMapRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = QueryIntegerListMapRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = QueryIntegerListMapResponseUnmarshaller.Instance;
+
+            return InvokeAsync<QueryIntegerListMapResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  QueryStringEscaping
+
+        internal virtual QueryStringEscapingResponse QueryStringEscaping(QueryStringEscapingRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = QueryStringEscapingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = QueryStringEscapingResponseUnmarshaller.Instance;
+
+            return Invoke<QueryStringEscapingResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Handles query string escaping
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the QueryStringEscaping service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the QueryStringEscaping service method, as returned by RestJsonTest.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/test-2021-05-13/QueryStringEscaping">REST API Reference for QueryStringEscaping Operation</seealso>
+        public virtual Task<QueryStringEscapingResponse> QueryStringEscapingAsync(QueryStringEscapingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = QueryStringEscapingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = QueryStringEscapingResponseUnmarshaller.Instance;
+
+            return InvokeAsync<QueryStringEscapingResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  QueryStringList
+
+        internal virtual QueryStringListResponse QueryStringList(QueryStringListRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = QueryStringListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = QueryStringListResponseUnmarshaller.Instance;
+
+            return Invoke<QueryStringListResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Handles query string lists of string
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the QueryStringList service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the QueryStringList service method, as returned by RestJsonTest.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/test-2021-05-13/QueryStringList">REST API Reference for QueryStringList Operation</seealso>
+        public virtual Task<QueryStringListResponse> QueryStringListAsync(QueryStringListRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = QueryStringListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = QueryStringListResponseUnmarshaller.Instance;
+
+            return InvokeAsync<QueryStringListResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  QueryStringListMap
+
+        internal virtual QueryStringListMapResponse QueryStringListMap(QueryStringListMapRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = QueryStringListMapRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = QueryStringListMapResponseUnmarshaller.Instance;
+
+            return Invoke<QueryStringListMapResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Handles query string maps of lists of string
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the QueryStringListMap service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the QueryStringListMap service method, as returned by RestJsonTest.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/test-2021-05-13/QueryStringListMap">REST API Reference for QueryStringListMap Operation</seealso>
+        public virtual Task<QueryStringListMapResponse> QueryStringListMapAsync(QueryStringListMapRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = QueryStringListMapRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = QueryStringListMapResponseUnmarshaller.Instance;
+
+            return InvokeAsync<QueryStringListMapResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  QueryTimestampList
+
+        internal virtual QueryTimestampListResponse QueryTimestampList(QueryTimestampListRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = QueryTimestampListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = QueryTimestampListResponseUnmarshaller.Instance;
+
+            return Invoke<QueryTimestampListResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Handles query string lists of timestamp
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the QueryTimestampList service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the QueryTimestampList service method, as returned by RestJsonTest.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/test-2021-05-13/QueryTimestampList">REST API Reference for QueryTimestampList Operation</seealso>
+        public virtual Task<QueryTimestampListResponse> QueryTimestampListAsync(QueryTimestampListRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = QueryTimestampListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = QueryTimestampListResponseUnmarshaller.Instance;
+
+            return InvokeAsync<QueryTimestampListResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StaticOp
 
         internal virtual StaticOpResponse StaticOp(StaticOpRequest request)
