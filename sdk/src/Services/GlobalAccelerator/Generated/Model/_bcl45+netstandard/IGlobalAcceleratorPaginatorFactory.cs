@@ -36,6 +36,16 @@ namespace Amazon.GlobalAccelerator.Model
         IListByoipCidrsPaginator ListByoipCidrs(ListByoipCidrsRequest request);
 
         /// <summary>
+        /// Paginator for ListCrossAccountAttachments operation
+        ///</summary>
+        IListCrossAccountAttachmentsPaginator ListCrossAccountAttachments(ListCrossAccountAttachmentsRequest request);
+
+        /// <summary>
+        /// Paginator for ListCrossAccountResources operation
+        ///</summary>
+        IListCrossAccountResourcesPaginator ListCrossAccountResources(ListCrossAccountResourcesRequest request);
+
+        /// <summary>
         /// Paginator for ListCustomRoutingAccelerators operation
         ///</summary>
         IListCustomRoutingAcceleratorsPaginator ListCustomRoutingAccelerators(ListCustomRoutingAcceleratorsRequest request);

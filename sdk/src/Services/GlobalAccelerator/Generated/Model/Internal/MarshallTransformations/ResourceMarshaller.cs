@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CustomRoutingEndpointConfiguration Marshaller
+    /// Resource Marshaller
     /// </summary>
-    public class CustomRoutingEndpointConfigurationMarshaller : IRequestMarshaller<CustomRoutingEndpointConfiguration, JsonMarshallerContext> 
+    public class ResourceMarshaller : IRequestMarshaller<Resource, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,18 +43,18 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(CustomRoutingEndpointConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(Resource requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetAttachmentArn())
-            {
-                context.Writer.WritePropertyName("AttachmentArn");
-                context.Writer.Write(requestObject.AttachmentArn);
-            }
-
             if(requestObject.IsSetEndpointId())
             {
                 context.Writer.WritePropertyName("EndpointId");
                 context.Writer.Write(requestObject.EndpointId);
+            }
+
+            if(requestObject.IsSetRegion())
+            {
+                context.Writer.WritePropertyName("Region");
+                context.Writer.Write(requestObject.Region);
             }
 
         }
@@ -62,7 +62,7 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static CustomRoutingEndpointConfigurationMarshaller Instance = new CustomRoutingEndpointConfigurationMarshaller();
+        public readonly static ResourceMarshaller Instance = new ResourceMarshaller();
 
     }
 }

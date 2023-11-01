@@ -76,7 +76,7 @@ namespace Amazon.GlobalAccelerator
     /// dual-stack, Global Accelerator provides a total of four addresses: two static IPv4
     /// addresses and two static IPv6 addresses. With a standard accelerator for IPv4, instead
     /// of using the addresses that Global Accelerator provides, you can configure these entry
-    /// points to be IPv4 addresses from your own IP address ranges that you bring toGlobal
+    /// points to be IPv4 addresses from your own IP address ranges that you bring to Global
     /// Accelerator (BYOIP). 
     /// </para>
     ///  
@@ -765,6 +765,88 @@ namespace Amazon.GlobalAccelerator
 
         #endregion
         
+        #region  CreateCrossAccountAttachment
+
+        /// <summary>
+        /// Create a cross-account attachment in Global Accelerator. You create a cross-account
+        /// attachment to specify the <i>principals</i> who have permission to add to accelerators
+        /// in their own account the resources in your account that you also list in the attachment.
+        /// 
+        ///  
+        /// <para>
+        /// A principal can be an Amazon Web Services account number or the Amazon Resource Name
+        /// (ARN) for an accelerator. For account numbers that are listed as principals, to add
+        /// a resource listed in the attachment to an accelerator, you must sign in to an account
+        /// specified as a principal. Then you can add the resources that are listed to any of
+        /// your accelerators. If an accelerator ARN is listed in the cross-account attachment
+        /// as a principal, anyone with permission to make updates to the accelerator can add
+        /// as endpoints resources that are listed in the attachment. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCrossAccountAttachment service method.</param>
+        /// 
+        /// <returns>The response from the CreateCrossAccountAttachment service method, as returned by GlobalAccelerator.</returns>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.AccessDeniedException">
+        /// You don't have access permission.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
+        /// There was an internal error for Global Accelerator.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
+        /// An argument that you specified is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.LimitExceededException">
+        /// Processing your request would cause you to exceed an Global Accelerator limit.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.TransactionInProgressException">
+        /// There's already a transaction in progress. Another transaction can't be processed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/CreateCrossAccountAttachment">REST API Reference for CreateCrossAccountAttachment Operation</seealso>
+        public virtual CreateCrossAccountAttachmentResponse CreateCrossAccountAttachment(CreateCrossAccountAttachmentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateCrossAccountAttachmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCrossAccountAttachmentResponseUnmarshaller.Instance;
+
+            return Invoke<CreateCrossAccountAttachmentResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateCrossAccountAttachment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateCrossAccountAttachment operation on AmazonGlobalAcceleratorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateCrossAccountAttachment
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/CreateCrossAccountAttachment">REST API Reference for CreateCrossAccountAttachment Operation</seealso>
+        public virtual IAsyncResult BeginCreateCrossAccountAttachment(CreateCrossAccountAttachmentRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateCrossAccountAttachmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCrossAccountAttachmentResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateCrossAccountAttachment operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateCrossAccountAttachment.</param>
+        /// 
+        /// <returns>Returns a  CreateCrossAccountAttachmentResult from GlobalAccelerator.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/CreateCrossAccountAttachment">REST API Reference for CreateCrossAccountAttachment Operation</seealso>
+        public virtual CreateCrossAccountAttachmentResponse EndCreateCrossAccountAttachment(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateCrossAccountAttachmentResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateCustomRoutingAccelerator
 
         /// <summary>
@@ -1244,6 +1326,98 @@ namespace Amazon.GlobalAccelerator
         public virtual DeleteAcceleratorResponse EndDeleteAccelerator(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteAcceleratorResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteCrossAccountAttachment
+
+        /// <summary>
+        /// Delete a cross-account attachment. When you delete an attachment, Global Accelerator
+        /// revokes the permission to use the resources in the attachment from all principals
+        /// in the list of principals. Global Accelerator revokes the permission for specific
+        /// resources by doing the following:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// If the principal is an account ID, Global Accelerator reviews every accelerator in
+        /// the account and removes cross-account endpoints from all accelerators.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the principal is an accelerator, Global Accelerator reviews just that accelerator
+        /// and removes cross-account endpoints from it.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If there are overlapping permissions provided by multiple cross-account attachments,
+        /// Global Accelerator only removes endpoints if there are no current cross-account attachments
+        /// that provide access permission. For example, if you delete a cross-account attachment
+        /// that lists an accelerator as a principal, but another cross-account attachment includes
+        /// the account ID that owns that accelerator, endpoints will not be removed from the
+        /// accelerator.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCrossAccountAttachment service method.</param>
+        /// 
+        /// <returns>The response from the DeleteCrossAccountAttachment service method, as returned by GlobalAccelerator.</returns>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.AccessDeniedException">
+        /// You don't have access permission.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.AttachmentNotFoundException">
+        /// No cross-account attachment was found.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
+        /// There was an internal error for Global Accelerator.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
+        /// An argument that you specified is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.TransactionInProgressException">
+        /// There's already a transaction in progress. Another transaction can't be processed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/DeleteCrossAccountAttachment">REST API Reference for DeleteCrossAccountAttachment Operation</seealso>
+        public virtual DeleteCrossAccountAttachmentResponse DeleteCrossAccountAttachment(DeleteCrossAccountAttachmentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCrossAccountAttachmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCrossAccountAttachmentResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteCrossAccountAttachmentResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteCrossAccountAttachment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCrossAccountAttachment operation on AmazonGlobalAcceleratorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteCrossAccountAttachment
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/DeleteCrossAccountAttachment">REST API Reference for DeleteCrossAccountAttachment Operation</seealso>
+        public virtual IAsyncResult BeginDeleteCrossAccountAttachment(DeleteCrossAccountAttachmentRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCrossAccountAttachmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCrossAccountAttachmentResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteCrossAccountAttachment operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteCrossAccountAttachment.</param>
+        /// 
+        /// <returns>Returns a  DeleteCrossAccountAttachmentResult from GlobalAccelerator.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/DeleteCrossAccountAttachment">REST API Reference for DeleteCrossAccountAttachment Operation</seealso>
+        public virtual DeleteCrossAccountAttachmentResponse EndDeleteCrossAccountAttachment(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteCrossAccountAttachmentResponse>(asyncResult);
         }
 
         #endregion
@@ -1882,6 +2056,72 @@ namespace Amazon.GlobalAccelerator
 
         #endregion
         
+        #region  DescribeCrossAccountAttachment
+
+        /// <summary>
+        /// Gets configuration information about a cross-account attachment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCrossAccountAttachment service method.</param>
+        /// 
+        /// <returns>The response from the DescribeCrossAccountAttachment service method, as returned by GlobalAccelerator.</returns>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.AccessDeniedException">
+        /// You don't have access permission.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.AttachmentNotFoundException">
+        /// No cross-account attachment was found.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
+        /// There was an internal error for Global Accelerator.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
+        /// An argument that you specified is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/DescribeCrossAccountAttachment">REST API Reference for DescribeCrossAccountAttachment Operation</seealso>
+        public virtual DescribeCrossAccountAttachmentResponse DescribeCrossAccountAttachment(DescribeCrossAccountAttachmentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeCrossAccountAttachmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeCrossAccountAttachmentResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeCrossAccountAttachmentResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeCrossAccountAttachment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCrossAccountAttachment operation on AmazonGlobalAcceleratorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeCrossAccountAttachment
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/DescribeCrossAccountAttachment">REST API Reference for DescribeCrossAccountAttachment Operation</seealso>
+        public virtual IAsyncResult BeginDescribeCrossAccountAttachment(DescribeCrossAccountAttachmentRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeCrossAccountAttachmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeCrossAccountAttachmentResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeCrossAccountAttachment operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeCrossAccountAttachment.</param>
+        /// 
+        /// <returns>Returns a  DescribeCrossAccountAttachmentResult from GlobalAccelerator.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/DescribeCrossAccountAttachment">REST API Reference for DescribeCrossAccountAttachment Operation</seealso>
+        public virtual DescribeCrossAccountAttachmentResponse EndDescribeCrossAccountAttachment(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeCrossAccountAttachmentResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeCustomRoutingAccelerator
 
         /// <summary>
@@ -2386,6 +2626,201 @@ namespace Amazon.GlobalAccelerator
         public virtual ListByoipCidrsResponse EndListByoipCidrs(IAsyncResult asyncResult)
         {
             return EndInvoke<ListByoipCidrsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListCrossAccountAttachments
+
+        /// <summary>
+        /// List the cross-account attachments that have been created in Global Accelerator.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCrossAccountAttachments service method.</param>
+        /// 
+        /// <returns>The response from the ListCrossAccountAttachments service method, as returned by GlobalAccelerator.</returns>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.AccessDeniedException">
+        /// You don't have access permission.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
+        /// There was an internal error for Global Accelerator.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
+        /// An argument that you specified is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidNextTokenException">
+        /// There isn't another item to return.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/ListCrossAccountAttachments">REST API Reference for ListCrossAccountAttachments Operation</seealso>
+        public virtual ListCrossAccountAttachmentsResponse ListCrossAccountAttachments(ListCrossAccountAttachmentsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCrossAccountAttachmentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCrossAccountAttachmentsResponseUnmarshaller.Instance;
+
+            return Invoke<ListCrossAccountAttachmentsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListCrossAccountAttachments operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListCrossAccountAttachments operation on AmazonGlobalAcceleratorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListCrossAccountAttachments
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/ListCrossAccountAttachments">REST API Reference for ListCrossAccountAttachments Operation</seealso>
+        public virtual IAsyncResult BeginListCrossAccountAttachments(ListCrossAccountAttachmentsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCrossAccountAttachmentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCrossAccountAttachmentsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListCrossAccountAttachments operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListCrossAccountAttachments.</param>
+        /// 
+        /// <returns>Returns a  ListCrossAccountAttachmentsResult from GlobalAccelerator.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/ListCrossAccountAttachments">REST API Reference for ListCrossAccountAttachments Operation</seealso>
+        public virtual ListCrossAccountAttachmentsResponse EndListCrossAccountAttachments(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListCrossAccountAttachmentsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListCrossAccountResourceAccounts
+
+        /// <summary>
+        /// List the accounts that have cross-account endpoints.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCrossAccountResourceAccounts service method.</param>
+        /// 
+        /// <returns>The response from the ListCrossAccountResourceAccounts service method, as returned by GlobalAccelerator.</returns>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.AccessDeniedException">
+        /// You don't have access permission.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
+        /// There was an internal error for Global Accelerator.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/ListCrossAccountResourceAccounts">REST API Reference for ListCrossAccountResourceAccounts Operation</seealso>
+        public virtual ListCrossAccountResourceAccountsResponse ListCrossAccountResourceAccounts(ListCrossAccountResourceAccountsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCrossAccountResourceAccountsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCrossAccountResourceAccountsResponseUnmarshaller.Instance;
+
+            return Invoke<ListCrossAccountResourceAccountsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListCrossAccountResourceAccounts operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListCrossAccountResourceAccounts operation on AmazonGlobalAcceleratorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListCrossAccountResourceAccounts
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/ListCrossAccountResourceAccounts">REST API Reference for ListCrossAccountResourceAccounts Operation</seealso>
+        public virtual IAsyncResult BeginListCrossAccountResourceAccounts(ListCrossAccountResourceAccountsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCrossAccountResourceAccountsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCrossAccountResourceAccountsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListCrossAccountResourceAccounts operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListCrossAccountResourceAccounts.</param>
+        /// 
+        /// <returns>Returns a  ListCrossAccountResourceAccountsResult from GlobalAccelerator.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/ListCrossAccountResourceAccounts">REST API Reference for ListCrossAccountResourceAccounts Operation</seealso>
+        public virtual ListCrossAccountResourceAccountsResponse EndListCrossAccountResourceAccounts(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListCrossAccountResourceAccountsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListCrossAccountResources
+
+        /// <summary>
+        /// List the cross-account endpoints available to add to an accelerator.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCrossAccountResources service method.</param>
+        /// 
+        /// <returns>The response from the ListCrossAccountResources service method, as returned by GlobalAccelerator.</returns>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.AcceleratorNotFoundException">
+        /// The accelerator that you specified doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.AccessDeniedException">
+        /// You don't have access permission.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
+        /// There was an internal error for Global Accelerator.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
+        /// An argument that you specified is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidNextTokenException">
+        /// There isn't another item to return.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/ListCrossAccountResources">REST API Reference for ListCrossAccountResources Operation</seealso>
+        public virtual ListCrossAccountResourcesResponse ListCrossAccountResources(ListCrossAccountResourcesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCrossAccountResourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCrossAccountResourcesResponseUnmarshaller.Instance;
+
+            return Invoke<ListCrossAccountResourcesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListCrossAccountResources operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListCrossAccountResources operation on AmazonGlobalAcceleratorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListCrossAccountResources
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/ListCrossAccountResources">REST API Reference for ListCrossAccountResources Operation</seealso>
+        public virtual IAsyncResult BeginListCrossAccountResources(ListCrossAccountResourcesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCrossAccountResourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCrossAccountResourcesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListCrossAccountResources operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListCrossAccountResources.</param>
+        /// 
+        /// <returns>Returns a  ListCrossAccountResourcesResult from GlobalAccelerator.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/ListCrossAccountResources">REST API Reference for ListCrossAccountResources Operation</seealso>
+        public virtual ListCrossAccountResourcesResponse EndListCrossAccountResources(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListCrossAccountResourcesResponse>(asyncResult);
         }
 
         #endregion
@@ -3490,6 +3925,100 @@ namespace Amazon.GlobalAccelerator
         public virtual UpdateAcceleratorAttributesResponse EndUpdateAcceleratorAttributes(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateAcceleratorAttributesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateCrossAccountAttachment
+
+        /// <summary>
+        /// Update a cross-account attachment to add or remove principals or resources. When you
+        /// update an attachment to remove a principal (account ID or accelerator) or a resource,
+        /// Global Accelerator revokes the permission for specific resources by doing the following:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// If the principal is an account ID, Global Accelerator reviews every accelerator in
+        /// the account and removes cross-account endpoints from all accelerators.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the principal is an accelerator, Global Accelerator reviews just that accelerator
+        /// and removes cross-account endpoints from it.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If there are overlapping permissions provided by multiple cross-account attachments,
+        /// Global Accelerator only removes endpoints if there are no current cross-account attachments
+        /// that provide access permission. For example, if you delete a cross-account attachment
+        /// that lists an accelerator as a principal, but another cross-account attachment includes
+        /// the account ID that owns that accelerator, endpoints will not be removed from the
+        /// accelerator.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCrossAccountAttachment service method.</param>
+        /// 
+        /// <returns>The response from the UpdateCrossAccountAttachment service method, as returned by GlobalAccelerator.</returns>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.AccessDeniedException">
+        /// You don't have access permission.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.AttachmentNotFoundException">
+        /// No cross-account attachment was found.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
+        /// There was an internal error for Global Accelerator.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
+        /// An argument that you specified is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.LimitExceededException">
+        /// Processing your request would cause you to exceed an Global Accelerator limit.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.TransactionInProgressException">
+        /// There's already a transaction in progress. Another transaction can't be processed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/UpdateCrossAccountAttachment">REST API Reference for UpdateCrossAccountAttachment Operation</seealso>
+        public virtual UpdateCrossAccountAttachmentResponse UpdateCrossAccountAttachment(UpdateCrossAccountAttachmentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateCrossAccountAttachmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCrossAccountAttachmentResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateCrossAccountAttachmentResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateCrossAccountAttachment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCrossAccountAttachment operation on AmazonGlobalAcceleratorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateCrossAccountAttachment
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/UpdateCrossAccountAttachment">REST API Reference for UpdateCrossAccountAttachment Operation</seealso>
+        public virtual IAsyncResult BeginUpdateCrossAccountAttachment(UpdateCrossAccountAttachmentRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateCrossAccountAttachmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCrossAccountAttachmentResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateCrossAccountAttachment operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateCrossAccountAttachment.</param>
+        /// 
+        /// <returns>Returns a  UpdateCrossAccountAttachmentResult from GlobalAccelerator.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/UpdateCrossAccountAttachment">REST API Reference for UpdateCrossAccountAttachment Operation</seealso>
+        public virtual UpdateCrossAccountAttachmentResponse EndUpdateCrossAccountAttachment(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateCrossAccountAttachmentResponse>(asyncResult);
         }
 
         #endregion

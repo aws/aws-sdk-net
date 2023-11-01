@@ -29,10 +29,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GlobalAccelerator.Model
 {
     /// <summary>
-    /// The list of endpoint objects. For custom routing, this is a list of virtual private
-    /// cloud (VPC) subnet IDs.
+    /// An endpoint (Amazon Web Services resource) that is listed in a cross-account attachment
+    /// and can be added to an accelerator by specified principals, that are also listed in
+    /// the attachment.
     /// </summary>
-    public partial class CustomRoutingEndpointConfiguration
+    public partial class CrossAccountResource
     {
         private string _attachmentArn;
         private string _endpointId;
@@ -61,8 +62,8 @@ namespace Amazon.GlobalAccelerator.Model
         /// <summary>
         /// Gets and sets the property EndpointId. 
         /// <para>
-        /// An ID for the endpoint. For custom routing accelerators, this is the virtual private
-        /// cloud (VPC) subnet ID. 
+        /// The endpoint ID for the endpoint that is listed in a cross-account attachment and
+        /// can be added to an accelerator by specified principals.
         /// </para>
         /// </summary>
         [AWSProperty(Max=255)]

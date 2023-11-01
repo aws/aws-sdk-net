@@ -29,23 +29,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GlobalAccelerator.Model
 {
     /// <summary>
-    /// The list of endpoint objects. For custom routing, this is a list of virtual private
-    /// cloud (VPC) subnet IDs.
+    /// Container for the parameters to the DescribeCrossAccountAttachment operation.
+    /// Gets configuration information about a cross-account attachment.
     /// </summary>
-    public partial class CustomRoutingEndpointConfiguration
+    public partial class DescribeCrossAccountAttachmentRequest : AmazonGlobalAcceleratorRequest
     {
         private string _attachmentArn;
-        private string _endpointId;
 
         /// <summary>
         /// Gets and sets the property AttachmentArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the cross-account attachment that specifies the
-        /// endpoints (resources) that can be added to accelerators and principals that have permission
-        /// to add the endpoints to accelerators.
+        /// The Amazon Resource Name (ARN) for the cross-account attachment to describe.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=255)]
+        [AWSProperty(Required=true, Max=255)]
         public string AttachmentArn
         {
             get { return this._attachmentArn; }
@@ -56,26 +53,6 @@ namespace Amazon.GlobalAccelerator.Model
         internal bool IsSetAttachmentArn()
         {
             return this._attachmentArn != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property EndpointId. 
-        /// <para>
-        /// An ID for the endpoint. For custom routing accelerators, this is the virtual private
-        /// cloud (VPC) subnet ID. 
-        /// </para>
-        /// </summary>
-        [AWSProperty(Max=255)]
-        public string EndpointId
-        {
-            get { return this._endpointId; }
-            set { this._endpointId = value; }
-        }
-
-        // Check to see if EndpointId property is set
-        internal bool IsSetEndpointId()
-        {
-            return this._endpointId != null;
         }
 
     }

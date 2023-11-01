@@ -29,43 +29,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GlobalAccelerator.Model
 {
     /// <summary>
-    /// The list of endpoint objects. For custom routing, this is a list of virtual private
-    /// cloud (VPC) subnet IDs.
+    /// An Amazon Web Services resource that is supported by Global Accelerator and can be
+    /// added as an endpoint for an accelerator.
     /// </summary>
-    public partial class CustomRoutingEndpointConfiguration
+    public partial class Resource
     {
-        private string _attachmentArn;
         private string _endpointId;
-
-        /// <summary>
-        /// Gets and sets the property AttachmentArn. 
-        /// <para>
-        /// The Amazon Resource Name (ARN) of the cross-account attachment that specifies the
-        /// endpoints (resources) that can be added to accelerators and principals that have permission
-        /// to add the endpoints to accelerators.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Max=255)]
-        public string AttachmentArn
-        {
-            get { return this._attachmentArn; }
-            set { this._attachmentArn = value; }
-        }
-
-        // Check to see if AttachmentArn property is set
-        internal bool IsSetAttachmentArn()
-        {
-            return this._attachmentArn != null;
-        }
+        private string _region;
 
         /// <summary>
         /// Gets and sets the property EndpointId. 
         /// <para>
-        /// An ID for the endpoint. For custom routing accelerators, this is the virtual private
-        /// cloud (VPC) subnet ID. 
+        /// The endpoint ID for the endpoint (Amazon Web Services resource).
         /// </para>
         /// </summary>
-        [AWSProperty(Max=255)]
+        [AWSProperty(Required=true, Max=255)]
         public string EndpointId
         {
             get { return this._endpointId; }
@@ -76,6 +54,25 @@ namespace Amazon.GlobalAccelerator.Model
         internal bool IsSetEndpointId()
         {
             return this._endpointId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Region. 
+        /// <para>
+        /// The Amazon Web Services Region where a resource is located.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=255)]
+        public string Region
+        {
+            get { return this._region; }
+            set { this._region = value; }
+        }
+
+        // Check to see if Region property is set
+        internal bool IsSetRegion()
+        {
+            return this._region != null;
         }
 
     }
