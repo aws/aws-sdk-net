@@ -1289,6 +1289,10 @@
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Redshift.Model.FailoverPrimaryComputeRequest.ClusterIdentifier</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Redshift.Model.GetClusterCredentialsRequest.ClusterIdentifier</property>
     <max>2147483647</max>
   </property-value-rule>
@@ -2056,6 +2060,10 @@
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Redshift.Model.Cluster.MultiAZ</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Redshift.Model.Cluster.NodeType</property>
     <max>2147483647</max>
   </property-value-rule>
@@ -2552,6 +2560,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.RevisionTarget.Description</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.SecondaryClusterInfo.AvailabilityZone</property>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>

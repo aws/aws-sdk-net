@@ -160,6 +160,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("MasterPasswordSecretKmsKeyId", StringUtils.FromString(publicRequest.MasterPasswordSecretKmsKeyId));
                 }
+                if(publicRequest.IsSetMultiAZ())
+                {
+                    request.Parameters.Add("MultiAZ", StringUtils.FromBool(publicRequest.MultiAZ));
+                }
                 if(publicRequest.IsSetNodeType())
                 {
                     request.Parameters.Add("NodeType", StringUtils.FromString(publicRequest.NodeType));

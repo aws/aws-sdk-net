@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ModifyScheduledAction operation
+    /// Response Unmarshaller for FailoverPrimaryCompute operation
     /// </summary>  
-    public class ModifyScheduledActionResponseUnmarshaller : XmlResponseUnmarshaller
+    public class FailoverPrimaryComputeResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,7 +43,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
-            ModifyScheduledActionResponse response = new ModifyScheduledActionResponse();
+            FailoverPrimaryComputeResponse response = new FailoverPrimaryComputeResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -51,7 +51,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement)
                 {                    
-                    if(context.TestExpression("ModifyScheduledActionResult", 2))
+                    if(context.TestExpression("FailoverPrimaryComputeResult", 2))
                     {
                         UnmarshallResult(context, response);                        
                         continue;
@@ -67,7 +67,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             return response;
         }
 
-        private static void UnmarshallResult(XmlUnmarshallerContext context, ModifyScheduledActionResponse response)
+        private static void UnmarshallResult(XmlUnmarshallerContext context, FailoverPrimaryComputeResponse response)
         {
             
             int originalDepth = context.CurrentDepth;
@@ -81,59 +81,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
-                    if (context.TestExpression("EndTime", targetDepth))
+                    if (context.TestExpression("Cluster", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
-                        response.EndTime = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("IamRole", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        response.IamRole = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("NextInvocations/ScheduledActionTime", targetDepth))
-                    {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
-                        var item = unmarshaller.Unmarshall(context);
-                        response.NextInvocations.Add(item);
-                        continue;
-                    }
-                    if (context.TestExpression("Schedule", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        response.Schedule = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("ScheduledActionDescription", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        response.ScheduledActionDescription = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("ScheduledActionName", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        response.ScheduledActionName = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("StartTime", targetDepth))
-                    {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
-                        response.StartTime = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("State", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        response.State = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("TargetAction", targetDepth))
-                    {
-                        var unmarshaller = ScheduledActionTypeUnmarshaller.Instance;
-                        response.TargetAction = unmarshaller.Unmarshall(context);
+                        var unmarshaller = ClusterUnmarshaller.Instance;
+                        response.Cluster = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 } 
@@ -165,21 +116,9 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 {
                     return ClusterNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidScheduledAction"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidClusterState"))
                 {
-                    return InvalidScheduledActionExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidSchedule"))
-                {
-                    return InvalidScheduleExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ScheduledActionNotFound"))
-                {
-                    return ScheduledActionNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ScheduledActionTypeUnsupported"))
-                {
-                    return ScheduledActionTypeUnsupportedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return InvalidClusterStateExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("UnauthorizedOperation"))
                 {
@@ -192,9 +131,9 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             }
             return new AmazonRedshiftException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        private static ModifyScheduledActionResponseUnmarshaller _instance = new ModifyScheduledActionResponseUnmarshaller();        
+        private static FailoverPrimaryComputeResponseUnmarshaller _instance = new FailoverPrimaryComputeResponseUnmarshaller();        
 
-        internal static ModifyScheduledActionResponseUnmarshaller GetInstance()
+        internal static FailoverPrimaryComputeResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -202,7 +141,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ModifyScheduledActionResponseUnmarshaller Instance
+        public static FailoverPrimaryComputeResponseUnmarshaller Instance
         {
             get
             {

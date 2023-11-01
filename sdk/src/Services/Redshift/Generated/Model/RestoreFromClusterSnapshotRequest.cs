@@ -74,6 +74,7 @@ namespace Amazon.Redshift.Model
         private bool? _manageMasterPassword;
         private int? _manualSnapshotRetentionPeriod;
         private string _masterPasswordSecretKmsKeyId;
+        private bool? _multiAZ;
         private string _nodeType;
         private int? _numberOfNodes;
         private string _ownerAccount;
@@ -649,6 +650,24 @@ namespace Amazon.Redshift.Model
         internal bool IsSetMasterPasswordSecretKmsKeyId()
         {
             return this._masterPasswordSecretKmsKeyId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MultiAZ. 
+        /// <para>
+        /// If true, the snapshot will be restored to a cluster deployed in two Availability Zones.
+        /// </para>
+        /// </summary>
+        public bool MultiAZ
+        {
+            get { return this._multiAZ.GetValueOrDefault(); }
+            set { this._multiAZ = value; }
+        }
+
+        // Check to see if MultiAZ property is set
+        internal bool IsSetMultiAZ()
+        {
+            return this._multiAZ.HasValue; 
         }
 
         /// <summary>

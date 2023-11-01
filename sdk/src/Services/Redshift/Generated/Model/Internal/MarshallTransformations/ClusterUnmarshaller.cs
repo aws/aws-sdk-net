@@ -311,6 +311,18 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                         unmarshalledObject.ModifyStatus = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("MultiAZ", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.MultiAZ = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("MultiAZSecondary", targetDepth))
+                    {
+                        var unmarshaller = SecondaryClusterInfoUnmarshaller.Instance;
+                        unmarshalledObject.MultiAZSecondary = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("NextMaintenanceWindowStartTime", targetDepth))
                     {
                         var unmarshaller = DateTimeUnmarshaller.Instance;

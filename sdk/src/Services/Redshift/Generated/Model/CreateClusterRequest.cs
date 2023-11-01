@@ -72,6 +72,7 @@ namespace Amazon.Redshift.Model
         private string _masterPasswordSecretKmsKeyId;
         private string _masterUsername;
         private string _masterUserPassword;
+        private bool? _multiAZ;
         private string _nodeType;
         private int? _numberOfNodes;
         private int? _port;
@@ -895,6 +896,24 @@ namespace Amazon.Redshift.Model
         internal bool IsSetMasterUserPassword()
         {
             return this._masterUserPassword != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MultiAZ. 
+        /// <para>
+        /// If true, Amazon Redshift will deploy the cluster in two Availability Zones (AZ).
+        /// </para>
+        /// </summary>
+        public bool MultiAZ
+        {
+            get { return this._multiAZ.GetValueOrDefault(); }
+            set { this._multiAZ = value; }
+        }
+
+        // Check to see if MultiAZ property is set
+        internal bool IsSetMultiAZ()
+        {
+            return this._multiAZ.HasValue; 
         }
 
         /// <summary>

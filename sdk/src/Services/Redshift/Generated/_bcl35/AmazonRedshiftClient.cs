@@ -393,6 +393,9 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.UnauthorizedPartnerIntegrationException">
         /// The partner integration is not authorized.
         /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AddPartner">REST API Reference for AddPartner Operation</seealso>
         public virtual AddPartnerResponse AddPartner(AddPartnerRequest request)
         {
@@ -1019,6 +1022,9 @@ namespace Amazon.Redshift
         /// <param name="request">Container for the necessary parameters to execute the CopyClusterSnapshot service method.</param>
         /// 
         /// <returns>The response from the CopyClusterSnapshot service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+        /// </exception>
         /// <exception cref="Amazon.Redshift.Model.ClusterSnapshotAlreadyExistsException">
         /// The value specified as a snapshot identifier is already used by an existing snapshot.
         /// </exception>
@@ -1249,6 +1255,9 @@ namespace Amazon.Redshift
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.UnauthorizedOperationException">
         /// Your account is not authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateCluster">REST API Reference for CreateCluster Operation</seealso>
         public virtual CreateClusterResponse CreateCluster(CreateClusterRequest request)
@@ -2069,6 +2078,9 @@ namespace Amazon.Redshift
         /// <param name="request">Container for the necessary parameters to execute the CreateScheduledAction service method.</param>
         /// 
         /// <returns>The response from the CreateScheduledAction service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+        /// </exception>
         /// <exception cref="Amazon.Redshift.Model.InvalidScheduledActionException">
         /// The scheduled action is not valid.
         /// </exception>
@@ -2086,6 +2098,9 @@ namespace Amazon.Redshift
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.UnauthorizedOperationException">
         /// Your account is not authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateScheduledAction">REST API Reference for CreateScheduledAction Operation</seealso>
         public virtual CreateScheduledActionResponse CreateScheduledAction(CreateScheduledActionRequest request)
@@ -3263,6 +3278,9 @@ namespace Amazon.Redshift
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.UnauthorizedPartnerIntegrationException">
         /// The partner integration is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeletePartner">REST API Reference for DeletePartner Operation</seealso>
         public virtual DeletePartnerResponse DeletePartner(DeletePartnerRequest request)
@@ -5601,6 +5619,9 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
         /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
         /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeLoggingStatus">REST API Reference for DescribeLoggingStatus Operation</seealso>
         public virtual DescribeLoggingStatusResponse DescribeLoggingStatus(DescribeLoggingStatusRequest request)
         {
@@ -5811,6 +5832,9 @@ namespace Amazon.Redshift
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.UnauthorizedPartnerIntegrationException">
         /// The partner integration is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribePartners">REST API Reference for DescribePartners Operation</seealso>
         public virtual DescribePartnersResponse DescribePartners(DescribePartnersRequest request)
@@ -6130,6 +6154,9 @@ namespace Amazon.Redshift
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.ResizeNotFoundException">
         /// A resize operation for the specified cluster is not found.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeResize">REST API Reference for DescribeResize Operation</seealso>
         public virtual DescribeResizeResponse DescribeResize(DescribeResizeRequest request)
@@ -6671,6 +6698,9 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.InvalidClusterStateException">
         /// The specified cluster is not in the <code>available</code> state.
         /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DisableLogging">REST API Reference for DisableLogging Operation</seealso>
         public virtual DisableLoggingResponse DisableLogging(DisableLoggingRequest request)
         {
@@ -6744,6 +6774,9 @@ namespace Amazon.Redshift
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.UnauthorizedOperationException">
         /// Your account is not authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DisableSnapshotCopy">REST API Reference for DisableSnapshotCopy Operation</seealso>
         public virtual DisableSnapshotCopyResponse DisableSnapshotCopy(DisableSnapshotCopyRequest request)
@@ -6882,6 +6915,9 @@ namespace Amazon.Redshift
         /// The string specified for the logging S3 key prefix does not comply with the documented
         /// constraints.
         /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/EnableLogging">REST API Reference for EnableLogging Operation</seealso>
         public virtual EnableLoggingResponse EnableLogging(EnableLoggingRequest request)
         {
@@ -7019,6 +7055,73 @@ namespace Amazon.Redshift
         public virtual EnableSnapshotCopyResponse EndEnableSnapshotCopy(IAsyncResult asyncResult)
         {
             return EndInvoke<EnableSnapshotCopyResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  FailoverPrimaryCompute
+
+        /// <summary>
+        /// Fails over the primary compute unit of the specified Multi-AZ cluster to another Availability
+        /// Zone.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the FailoverPrimaryCompute service method.</param>
+        /// 
+        /// <returns>The response from the FailoverPrimaryCompute service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterStateException">
+        /// The specified cluster is not in the <code>available</code> state.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnauthorizedOperationException">
+        /// Your account is not authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/FailoverPrimaryCompute">REST API Reference for FailoverPrimaryCompute Operation</seealso>
+        public virtual FailoverPrimaryComputeResponse FailoverPrimaryCompute(FailoverPrimaryComputeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = FailoverPrimaryComputeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = FailoverPrimaryComputeResponseUnmarshaller.Instance;
+
+            return Invoke<FailoverPrimaryComputeResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the FailoverPrimaryCompute operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the FailoverPrimaryCompute operation on AmazonRedshiftClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndFailoverPrimaryCompute
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/FailoverPrimaryCompute">REST API Reference for FailoverPrimaryCompute Operation</seealso>
+        public virtual IAsyncResult BeginFailoverPrimaryCompute(FailoverPrimaryComputeRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = FailoverPrimaryComputeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = FailoverPrimaryComputeResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  FailoverPrimaryCompute operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginFailoverPrimaryCompute.</param>
+        /// 
+        /// <returns>Returns a  FailoverPrimaryComputeResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/FailoverPrimaryCompute">REST API Reference for FailoverPrimaryCompute Operation</seealso>
+        public virtual FailoverPrimaryComputeResponse EndFailoverPrimaryCompute(IAsyncResult asyncResult)
+        {
+            return EndInvoke<FailoverPrimaryComputeResponse>(asyncResult);
         }
 
         #endregion
@@ -7700,6 +7803,9 @@ namespace Amazon.Redshift
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.InvalidClusterStateException">
         /// The specified cluster is not in the <code>available</code> state.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterDbRevision">REST API Reference for ModifyClusterDbRevision Operation</seealso>
         public virtual ModifyClusterDbRevisionResponse ModifyClusterDbRevision(ModifyClusterDbRevisionRequest request)
@@ -8387,6 +8493,9 @@ namespace Amazon.Redshift
         /// <param name="request">Container for the necessary parameters to execute the ModifyScheduledAction service method.</param>
         /// 
         /// <returns>The response from the ModifyScheduledAction service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+        /// </exception>
         /// <exception cref="Amazon.Redshift.Model.InvalidScheduledActionException">
         /// The scheduled action is not valid.
         /// </exception>
@@ -8401,6 +8510,9 @@ namespace Amazon.Redshift
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.UnauthorizedOperationException">
         /// Your account is not authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyScheduledAction">REST API Reference for ModifyScheduledAction Operation</seealso>
         public virtual ModifyScheduledActionResponse ModifyScheduledAction(ModifyScheduledActionRequest request)
@@ -8668,6 +8780,9 @@ namespace Amazon.Redshift
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.InvalidClusterStateException">
         /// The specified cluster is not in the <code>available</code> state.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/PauseCluster">REST API Reference for PauseCluster Operation</seealso>
         public virtual PauseClusterResponse PauseCluster(PauseClusterRequest request)
@@ -9495,6 +9610,9 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.InvalidClusterStateException">
         /// The specified cluster is not in the <code>available</code> state.
         /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ResumeCluster">REST API Reference for ResumeCluster Operation</seealso>
         public virtual ResumeClusterResponse ResumeCluster(ResumeClusterRequest request)
         {
@@ -9778,6 +9896,9 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.InvalidClusterStateException">
         /// The specified cluster is not in the <code>available</code> state.
         /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RotateEncryptionKey">REST API Reference for RotateEncryptionKey Operation</seealso>
         public virtual RotateEncryptionKeyResponse RotateEncryptionKey(RotateEncryptionKeyRequest request)
         {
@@ -9840,6 +9961,9 @@ namespace Amazon.Redshift
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.UnauthorizedPartnerIntegrationException">
         /// The partner integration is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/UpdatePartnerStatus">REST API Reference for UpdatePartnerStatus Operation</seealso>
         public virtual UpdatePartnerStatusResponse UpdatePartnerStatus(UpdatePartnerStatusRequest request)

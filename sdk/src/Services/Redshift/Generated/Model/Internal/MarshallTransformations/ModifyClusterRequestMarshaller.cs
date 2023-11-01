@@ -147,6 +147,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("MasterUserPassword", StringUtils.FromString(publicRequest.MasterUserPassword));
                 }
+                if(publicRequest.IsSetMultiAZ())
+                {
+                    request.Parameters.Add("MultiAZ", StringUtils.FromBool(publicRequest.MultiAZ));
+                }
                 if(publicRequest.IsSetNewClusterIdentifier())
                 {
                     request.Parameters.Add("NewClusterIdentifier", StringUtils.FromString(publicRequest.NewClusterIdentifier));

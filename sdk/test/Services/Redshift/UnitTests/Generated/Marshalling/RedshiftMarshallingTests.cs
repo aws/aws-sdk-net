@@ -318,6 +318,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("Redshift")]
+        public void AddPartner_UnsupportedOperationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("AddPartner");
+
+            var request = InstantiateClassGenerator.Execute<AddPartnerRequest>(operation);
+            var marshaller = new AddPartnerRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("UnsupportedOperationException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = AddPartnerResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
         public void AssociateDataShareConsumerMarshallTest()
         {
             var operation = service_model.FindOperation("AssociateDataShareConsumer");
@@ -1137,6 +1160,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("Redshift")]
+        public void CopyClusterSnapshot_ClusterNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CopyClusterSnapshot");
+
+            var request = InstantiateClassGenerator.Execute<CopyClusterSnapshotRequest>(operation);
+            var marshaller = new CopyClusterSnapshotRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ClusterNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CopyClusterSnapshotResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
         public void CopyClusterSnapshot_ClusterSnapshotAlreadyExistsExceptionMarshallTest()
         {
             var operation = service_model.FindOperation("CopyClusterSnapshot");
@@ -1883,6 +1929,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             validator.Validate();
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("UnauthorizedOperationException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CreateClusterResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
+        public void CreateCluster_UnsupportedOperationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateCluster");
+
+            var request = InstantiateClassGenerator.Execute<CreateClusterRequest>(operation);
+            var marshaller = new CreateClusterRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("UnsupportedOperationException"));
             var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
             var response = CreateClusterResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
@@ -3379,6 +3448,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("Redshift")]
+        public void CreateScheduledAction_ClusterNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateScheduledAction");
+
+            var request = InstantiateClassGenerator.Execute<CreateScheduledActionRequest>(operation);
+            var marshaller = new CreateScheduledActionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ClusterNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CreateScheduledActionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
         public void CreateScheduledAction_InvalidScheduledActionExceptionMarshallTest()
         {
             var operation = service_model.FindOperation("CreateScheduledAction");
@@ -3506,6 +3598,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             validator.Validate();
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("UnauthorizedOperationException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CreateScheduledActionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
+        public void CreateScheduledAction_UnsupportedOperationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateScheduledAction");
+
+            var request = InstantiateClassGenerator.Execute<CreateScheduledActionRequest>(operation);
+            var marshaller = new CreateScheduledActionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("UnsupportedOperationException"));
             var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
             var response = CreateScheduledActionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
@@ -5151,6 +5266,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             validator.Validate();
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("UnauthorizedPartnerIntegrationException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DeletePartnerResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
+        public void DeletePartner_UnsupportedOperationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeletePartner");
+
+            var request = InstantiateClassGenerator.Execute<DeletePartnerRequest>(operation);
+            var marshaller = new DeletePartnerRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("UnsupportedOperationException"));
             var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
             var response = DeletePartnerResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
@@ -6987,6 +7125,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("Redshift")]
+        public void DescribeLoggingStatus_UnsupportedOperationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeLoggingStatus");
+
+            var request = InstantiateClassGenerator.Execute<DescribeLoggingStatusRequest>(operation);
+            var marshaller = new DescribeLoggingStatusRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("UnsupportedOperationException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DescribeLoggingStatusResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
         public void DescribeNodeConfigurationOptionsMarshallTest()
         {
             var operation = service_model.FindOperation("DescribeNodeConfigurationOptions");
@@ -7203,6 +7364,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             validator.Validate();
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("UnauthorizedPartnerIntegrationException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DescribePartnersResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
+        public void DescribePartners_UnsupportedOperationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribePartners");
+
+            var request = InstantiateClassGenerator.Execute<DescribePartnersRequest>(operation);
+            var marshaller = new DescribePartnersRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("UnsupportedOperationException"));
             var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
             var response = DescribePartnersResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
@@ -7521,6 +7705,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             validator.Validate();
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("ResizeNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DescribeResizeResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
+        public void DescribeResize_UnsupportedOperationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeResize");
+
+            var request = InstantiateClassGenerator.Execute<DescribeResizeRequest>(operation);
+            var marshaller = new DescribeResizeRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("UnsupportedOperationException"));
             var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
             var response = DescribeResizeResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
@@ -7984,6 +8191,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("Redshift")]
+        public void DisableLogging_UnsupportedOperationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DisableLogging");
+
+            var request = InstantiateClassGenerator.Execute<DisableLoggingRequest>(operation);
+            var marshaller = new DisableLoggingRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("UnsupportedOperationException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DisableLoggingResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
         public void DisableSnapshotCopyMarshallTest()
         {
             var operation = service_model.FindOperation("DisableSnapshotCopy");
@@ -8087,6 +8317,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             validator.Validate();
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("UnauthorizedOperationException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DisableSnapshotCopyResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
+        public void DisableSnapshotCopy_UnsupportedOperationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DisableSnapshotCopy");
+
+            var request = InstantiateClassGenerator.Execute<DisableSnapshotCopyRequest>(operation);
+            var marshaller = new DisableSnapshotCopyRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("UnsupportedOperationException"));
             var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
             var response = DisableSnapshotCopyResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
@@ -8315,6 +8568,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             validator.Validate();
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidS3KeyPrefixException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = EnableLoggingResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
+        public void EnableLogging_UnsupportedOperationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("EnableLogging");
+
+            var request = InstantiateClassGenerator.Execute<EnableLoggingRequest>(operation);
+            var marshaller = new EnableLoggingRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("UnsupportedOperationException"));
             var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
             var response = EnableLoggingResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
@@ -8593,6 +8869,120 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
             var response = EnableSnapshotCopyResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
+        public void FailoverPrimaryComputeMarshallTest()
+        {
+            var operation = service_model.FindOperation("FailoverPrimaryCompute");
+
+            var request = InstantiateClassGenerator.Execute<FailoverPrimaryComputeRequest>(operation);
+            var marshaller = new FailoverPrimaryComputeRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = FailoverPrimaryComputeResponseUnmarshaller.Instance.Unmarshall(context)
+                as FailoverPrimaryComputeResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
+        public void FailoverPrimaryCompute_ClusterNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("FailoverPrimaryCompute");
+
+            var request = InstantiateClassGenerator.Execute<FailoverPrimaryComputeRequest>(operation);
+            var marshaller = new FailoverPrimaryComputeRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ClusterNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = FailoverPrimaryComputeResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
+        public void FailoverPrimaryCompute_InvalidClusterStateExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("FailoverPrimaryCompute");
+
+            var request = InstantiateClassGenerator.Execute<FailoverPrimaryComputeRequest>(operation);
+            var marshaller = new FailoverPrimaryComputeRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidClusterStateException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = FailoverPrimaryComputeResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
+        public void FailoverPrimaryCompute_UnauthorizedOperationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("FailoverPrimaryCompute");
+
+            var request = InstantiateClassGenerator.Execute<FailoverPrimaryComputeRequest>(operation);
+            var marshaller = new FailoverPrimaryComputeRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("UnauthorizedOperationException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = FailoverPrimaryComputeResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
+        public void FailoverPrimaryCompute_UnsupportedOperationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("FailoverPrimaryCompute");
+
+            var request = InstantiateClassGenerator.Execute<FailoverPrimaryComputeRequest>(operation);
+            var marshaller = new FailoverPrimaryComputeRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("UnsupportedOperationException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = FailoverPrimaryComputeResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -9995,6 +10385,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("Redshift")]
+        public void ModifyClusterDbRevision_UnsupportedOperationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyClusterDbRevision");
+
+            var request = InstantiateClassGenerator.Execute<ModifyClusterDbRevisionRequest>(operation);
+            var marshaller = new ModifyClusterDbRevisionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("UnsupportedOperationException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = ModifyClusterDbRevisionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
         public void ModifyClusterIamRolesMarshallTest()
         {
             var operation = service_model.FindOperation("ModifyClusterIamRoles");
@@ -11038,6 +11451,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("Redshift")]
+        public void ModifyScheduledAction_ClusterNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyScheduledAction");
+
+            var request = InstantiateClassGenerator.Execute<ModifyScheduledActionRequest>(operation);
+            var marshaller = new ModifyScheduledActionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ClusterNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = ModifyScheduledActionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
         public void ModifyScheduledAction_InvalidScheduledActionExceptionMarshallTest()
         {
             var operation = service_model.FindOperation("ModifyScheduledAction");
@@ -11142,6 +11578,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             validator.Validate();
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("UnauthorizedOperationException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = ModifyScheduledActionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
+        public void ModifyScheduledAction_UnsupportedOperationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyScheduledAction");
+
+            var request = InstantiateClassGenerator.Execute<ModifyScheduledActionRequest>(operation);
+            var marshaller = new ModifyScheduledActionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("UnsupportedOperationException"));
             var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
             var response = ModifyScheduledActionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
@@ -11529,6 +11988,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             validator.Validate();
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidClusterStateException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = PauseClusterResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
+        public void PauseCluster_UnsupportedOperationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("PauseCluster");
+
+            var request = InstantiateClassGenerator.Execute<PauseClusterRequest>(operation);
+            var marshaller = new PauseClusterRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("UnsupportedOperationException"));
             var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
             var response = PauseClusterResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
@@ -13371,6 +13853,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("Redshift")]
+        public void ResumeCluster_UnsupportedOperationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ResumeCluster");
+
+            var request = InstantiateClassGenerator.Execute<ResumeClusterRequest>(operation);
+            var marshaller = new ResumeClusterRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("UnsupportedOperationException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = ResumeClusterResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
         public void RevokeClusterSecurityGroupIngressMarshallTest()
         {
             var operation = service_model.FindOperation("RevokeClusterSecurityGroupIngress");
@@ -13850,6 +14355,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("Redshift")]
+        public void RotateEncryptionKey_UnsupportedOperationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("RotateEncryptionKey");
+
+            var request = InstantiateClassGenerator.Execute<RotateEncryptionKeyRequest>(operation);
+            var marshaller = new RotateEncryptionKeyRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("UnsupportedOperationException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = RotateEncryptionKeyResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
         public void UpdatePartnerStatusMarshallTest()
         {
             var operation = service_model.FindOperation("UpdatePartnerStatus");
@@ -13930,6 +14458,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             validator.Validate();
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("UnauthorizedPartnerIntegrationException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = UpdatePartnerStatusResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
+        public void UpdatePartnerStatus_UnsupportedOperationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdatePartnerStatus");
+
+            var request = InstantiateClassGenerator.Execute<UpdatePartnerStatusRequest>(operation);
+            var marshaller = new UpdatePartnerStatusRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("UnsupportedOperationException"));
             var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
             var response = UpdatePartnerStatusResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);

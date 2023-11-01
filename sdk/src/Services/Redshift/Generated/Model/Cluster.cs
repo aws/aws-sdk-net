@@ -75,6 +75,8 @@ namespace Amazon.Redshift.Model
         private string _masterPasswordSecretKmsKeyId;
         private string _masterUsername;
         private string _modifyStatus;
+        private string _multiAZ;
+        private SecondaryClusterInfo _multiAZSecondary;
         private DateTime? _nextMaintenanceWindowStartTime;
         private string _nodeType;
         private int? _numberOfNodes;
@@ -1024,6 +1026,44 @@ namespace Amazon.Redshift.Model
         internal bool IsSetModifyStatus()
         {
             return this._modifyStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MultiAZ. 
+        /// <para>
+        /// A boolean value that, if true, indicates that the cluster is deployed in two Availability
+        /// Zones.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=2147483647)]
+        public string MultiAZ
+        {
+            get { return this._multiAZ; }
+            set { this._multiAZ = value; }
+        }
+
+        // Check to see if MultiAZ property is set
+        internal bool IsSetMultiAZ()
+        {
+            return this._multiAZ != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MultiAZSecondary. 
+        /// <para>
+        /// The secondary compute unit of a cluster, if Multi-AZ deployment is turned on.
+        /// </para>
+        /// </summary>
+        public SecondaryClusterInfo MultiAZSecondary
+        {
+            get { return this._multiAZSecondary; }
+            set { this._multiAZSecondary = value; }
+        }
+
+        // Check to see if MultiAZSecondary property is set
+        internal bool IsSetMultiAZSecondary()
+        {
+            return this._multiAZSecondary != null;
         }
 
         /// <summary>
