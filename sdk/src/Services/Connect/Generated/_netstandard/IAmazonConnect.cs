@@ -558,6 +558,42 @@ namespace Amazon.Connect
 
         #endregion
                 
+        #region  BatchGetFlowAssociation
+
+
+
+        /// <summary>
+        /// Retrieve the flow associations for the given resources.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetFlowAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchGetFlowAssociation service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/BatchGetFlowAssociation">REST API Reference for BatchGetFlowAssociation Operation</seealso>
+        Task<BatchGetFlowAssociationResponse> BatchGetFlowAssociationAsync(BatchGetFlowAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ClaimPhoneNumber
 
 
@@ -5644,7 +5680,9 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Replicates an Amazon Connect instance in the specified Amazon Web Services Region.
+        /// Replicates an Amazon Connect instance in the specified Amazon Web Services Region
+        /// and copies configuration information for Amazon Connect resources across Amazon Web
+        /// Services Regions. 
         /// 
         ///  
         /// <para>

@@ -127,8 +127,9 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// The <code>SignInConfig</code> distribution is available only on the default <code>TrafficDistributionGroup</code>.
-        /// If you call <code>UpdateTrafficDistribution</code> with a modified <code>SignInConfig</code>
+        /// The <code>SignInConfig</code> distribution is available only on a default <code>TrafficDistributionGroup</code>
+        /// (see the <code>IsDefault</code> parameter in the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_TrafficDistributionGroup.html">TrafficDistributionGroup</a>
+        /// data type). If you call <code>UpdateTrafficDistribution</code> with a modified <code>SignInConfig</code>
         /// and a non-default <code>TrafficDistributionGroup</code>, an <code>InvalidRequestException</code>
         /// is returned.
         /// </para>

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for UserSummary Object
+    /// Response Unmarshaller for FlowAssociationSummary Object
     /// </summary>  
-    public class UserSummaryUnmarshaller : IUnmarshaller<UserSummary, XmlUnmarshallerContext>, IUnmarshaller<UserSummary, JsonUnmarshallerContext>
+    public class FlowAssociationSummaryUnmarshaller : IUnmarshaller<FlowAssociationSummary, XmlUnmarshallerContext>, IUnmarshaller<FlowAssociationSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        UserSummary IUnmarshaller<UserSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        FlowAssociationSummary IUnmarshaller<FlowAssociationSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,33 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public UserSummary Unmarshall(JsonUnmarshallerContext context)
+        public FlowAssociationSummary Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            UserSummary unmarshalledObject = new UserSummary();
+            FlowAssociationSummary unmarshalledObject = new FlowAssociationSummary();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Arn", targetDepth))
+                if (context.TestExpression("FlowId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FlowId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Id", targetDepth))
+                if (context.TestExpression("ResourceId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ResourceId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("LastModifiedRegion", targetDepth))
+                if (context.TestExpression("ResourceType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LastModifiedRegion = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("LastModifiedTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastModifiedTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Username", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Username = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +88,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         }
 
 
-        private static UserSummaryUnmarshaller _instance = new UserSummaryUnmarshaller();        
+        private static FlowAssociationSummaryUnmarshaller _instance = new FlowAssociationSummaryUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UserSummaryUnmarshaller Instance
+        public static FlowAssociationSummaryUnmarshaller Instance
         {
             get
             {

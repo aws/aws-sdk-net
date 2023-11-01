@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ListSecurityProfileApplications operation
+    /// Response Unmarshaller for BatchGetFlowAssociation operation
     /// </summary>  
-    public class ListSecurityProfileApplicationsResponseUnmarshaller : JsonResponseUnmarshaller
+    public class BatchGetFlowAssociationResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,34 +45,16 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            ListSecurityProfileApplicationsResponse response = new ListSecurityProfileApplicationsResponse();
+            BatchGetFlowAssociationResponse response = new BatchGetFlowAssociationResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Applications", targetDepth))
+                if (context.TestExpression("FlowAssociationSummaryList", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Application, ApplicationUnmarshaller>(ApplicationUnmarshaller.Instance);
-                    response.Applications = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("LastModifiedRegion", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.LastModifiedRegion = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("LastModifiedTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.LastModifiedTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("NextToken", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.NextToken = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<FlowAssociationSummary, FlowAssociationSummaryUnmarshaller>(FlowAssociationSummaryUnmarshaller.Instance);
+                    response.FlowAssociationSummaryList = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -98,6 +80,10 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
             {
+                if (errorResponse.Code != null && errorResponse.Code.Equals("AccessDeniedException"))
+                {
+                    return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServiceException"))
                 {
                     return InternalServiceExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -122,9 +108,9 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             return new AmazonConnectException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static ListSecurityProfileApplicationsResponseUnmarshaller _instance = new ListSecurityProfileApplicationsResponseUnmarshaller();        
+        private static BatchGetFlowAssociationResponseUnmarshaller _instance = new BatchGetFlowAssociationResponseUnmarshaller();        
 
-        internal static ListSecurityProfileApplicationsResponseUnmarshaller GetInstance()
+        internal static BatchGetFlowAssociationResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -132,7 +118,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListSecurityProfileApplicationsResponseUnmarshaller Instance
+        public static BatchGetFlowAssociationResponseUnmarshaller Instance
         {
             get
             {
