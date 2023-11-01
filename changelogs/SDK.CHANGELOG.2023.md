@@ -1,3 +1,7 @@
+### 3.7.674.1 (2023-10-31 23:32 UTC)
+* S3 (3.7.205.21)
+	* Revert 'BREAKING CHANGE: Update CopyObject and CopyPart requests not to remove leading slash from object keys'
+
 ### 3.7.674.0 (2023-10-31 18:33 UTC)
 * Amplify (3.7.201.0)
 	* Add backend field to CreateBranch and UpdateBranch requests. Add pagination support for ListApps, ListDomainAssociations, ListBranches, and ListJobs
