@@ -10,7 +10,7 @@
 * NetworkFirewall (3.7.203.0)
 	* This release introduces the stateless rule analyzer, which enables you to analyze your stateless rules for asymmetric routing.
 * QuickSight (3.7.208.0)
-	* Got confirmed from qmeixua@ about custom week features, and tested locally with aws cli and java sdk that the subtypes are showing up.
+	* This release introduces Float Decimal Type as SubType in QuickSight SPICE datasets and Custom week start and Custom timezone options in Analysis and Dashboard
 * S3 (3.7.205.22)
 	* Added support for DisablePayloadSigning for TransferUtility's upload directory feature.
 	* Added RequestPayer property in CopyPartRequest class.
