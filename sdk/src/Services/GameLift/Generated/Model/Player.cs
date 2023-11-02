@@ -98,7 +98,7 @@ namespace Amazon.GameLift.Model
         /// A unique identifier for a player
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=1, Max=1024)]
         public string PlayerId
         {
             get { return this._playerId; }

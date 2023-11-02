@@ -2623,6 +2623,52 @@ namespace Amazon.GameLift
 
 
     /// <summary>
+    /// Constants used for properties of type InstanceRoleCredentialsProvider.
+    /// </summary>
+    public class InstanceRoleCredentialsProvider : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SHARED_CREDENTIAL_FILE for InstanceRoleCredentialsProvider
+        /// </summary>
+        public static readonly InstanceRoleCredentialsProvider SHARED_CREDENTIAL_FILE = new InstanceRoleCredentialsProvider("SHARED_CREDENTIAL_FILE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InstanceRoleCredentialsProvider(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InstanceRoleCredentialsProvider FindValue(string value)
+        {
+            return FindValue<InstanceRoleCredentialsProvider>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InstanceRoleCredentialsProvider(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type InstanceStatus.
     /// </summary>
     public class InstanceStatus : ConstantClass

@@ -57,7 +57,7 @@ namespace Amazon.GameLift.Model
         /// For fleets using Windows builds, only ports <code>1026-60000</code> are valid.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=60000)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=60000)]
         public int FromPort
         {
             get { return this._fromPort.GetValueOrDefault(); }
@@ -78,7 +78,7 @@ namespace Amazon.GameLift.Model
         /// mask]</code>".
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string IpRange
         {
             get { return this._ipRange; }
@@ -126,7 +126,7 @@ namespace Amazon.GameLift.Model
         /// For fleets using Windows builds, only ports <code>1026-60000</code> are valid.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=60000)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=60000)]
         public int ToPort
         {
             get { return this._toPort.GetValueOrDefault(); }

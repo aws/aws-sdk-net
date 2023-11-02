@@ -141,6 +141,12 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.InstanceRoleArn);
                 }
 
+                if(publicRequest.IsSetInstanceRoleCredentialsProvider())
+                {
+                    context.Writer.WritePropertyName("InstanceRoleCredentialsProvider");
+                    context.Writer.Write(publicRequest.InstanceRoleCredentialsProvider);
+                }
+
                 if(publicRequest.IsSetLocations())
                 {
                     context.Writer.WritePropertyName("Locations");

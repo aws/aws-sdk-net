@@ -115,7 +115,7 @@ namespace Amazon.GameLift.Model
         /// List of unique identifiers for the players to be added.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=25)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=25)]
         public List<string> PlayerIds
         {
             get { return this._playerIds; }
