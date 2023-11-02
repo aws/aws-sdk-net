@@ -44,6 +44,7 @@ namespace Amazon.DNXCore.IntegrationTests.S3
         [Theory]
         [InlineData(false, testKey, "/destinationTestKey1.txt", "destinationTestKey1.txt")]
         [InlineData(true, testKeyWithSlash, "/destinationTestKey2.txt", "/destinationTestKey2.txt")]
+        [InlineData(true, testKeyWithSlash, "/", "/")]
         [Trait(CategoryAttribute, "S3")]
         public async Task CopyObjectTestWithLeadingSlash(bool disableTrimmingLeadingSlash, string sourceKey, string destinationKey, string expectedKey)
         {

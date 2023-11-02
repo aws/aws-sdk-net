@@ -26,7 +26,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         {
             usEastClient = new AmazonS3Client(RegionEndpoint.USEast1);
             eastBucketName = S3TestUtils.CreateBucketWithWait(usEastClient);
-            
+
             usEastClient.PutObject(new PutObjectRequest
             {
                 BucketName = eastBucketName,
@@ -68,6 +68,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
         [DataRow(false, testKey, "/destinationTestKey1.txt", "destinationTestKey1.txt")]
         [DataRow(true, testKeyWithSlash, "/destinationTestKey2.txt", "/destinationTestKey2.txt")]
+        [DataRow(true, testKeyWithSlash, "/", "/")]
         [DataTestMethod]
         [TestCategory("S3")]
         public void TestCopyObjectWithLeadingSlash(bool disableTrimmingLeadingSlash, string sourceKey, string destinationKey, string expectedKey)
@@ -79,7 +80,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
                 DestinationBucket = westBucketName,
                 DestinationKey = destinationKey,
-                
+
                 DisableTrimmingLeadingSlash = disableTrimmingLeadingSlash
             });
             Assert.AreEqual(HttpStatusCode.OK, copyObjectResponse.HttpStatusCode);
