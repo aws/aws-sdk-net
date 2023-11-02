@@ -51,6 +51,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Name);
             }
 
+            if(requestObject.IsSetSubType())
+            {
+                context.Writer.WritePropertyName("SubType");
+                context.Writer.Write(requestObject.SubType);
+            }
+
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("Type");

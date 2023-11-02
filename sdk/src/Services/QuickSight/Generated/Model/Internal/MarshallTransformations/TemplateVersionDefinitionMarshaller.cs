@@ -120,6 +120,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetOptions())
+            {
+                context.Writer.WritePropertyName("Options");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AssetOptionsMarshaller.Instance;
+                marshaller.Marshall(requestObject.Options, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetParameterDeclarations())
             {
                 context.Writer.WritePropertyName("ParameterDeclarations");

@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CastColumnTypeOperation Marshaller
+    /// AssetOptions Marshaller
     /// </summary>
-    public class CastColumnTypeOperationMarshaller : IRequestMarshaller<CastColumnTypeOperation, JsonMarshallerContext> 
+    public class AssetOptionsMarshaller : IRequestMarshaller<AssetOptions, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,30 +43,18 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(CastColumnTypeOperation requestObject, JsonMarshallerContext context)
+        public void Marshall(AssetOptions requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetColumnName())
+            if(requestObject.IsSetTimezone())
             {
-                context.Writer.WritePropertyName("ColumnName");
-                context.Writer.Write(requestObject.ColumnName);
+                context.Writer.WritePropertyName("Timezone");
+                context.Writer.Write(requestObject.Timezone);
             }
 
-            if(requestObject.IsSetFormat())
+            if(requestObject.IsSetWeekStart())
             {
-                context.Writer.WritePropertyName("Format");
-                context.Writer.Write(requestObject.Format);
-            }
-
-            if(requestObject.IsSetNewColumnType())
-            {
-                context.Writer.WritePropertyName("NewColumnType");
-                context.Writer.Write(requestObject.NewColumnType);
-            }
-
-            if(requestObject.IsSetSubType())
-            {
-                context.Writer.WritePropertyName("SubType");
-                context.Writer.Write(requestObject.SubType);
+                context.Writer.WritePropertyName("WeekStart");
+                context.Writer.Write(requestObject.WeekStart);
             }
 
         }
@@ -74,7 +62,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static CastColumnTypeOperationMarshaller Instance = new CastColumnTypeOperationMarshaller();
+        public readonly static AssetOptionsMarshaller Instance = new AssetOptionsMarshaller();
 
     }
 }

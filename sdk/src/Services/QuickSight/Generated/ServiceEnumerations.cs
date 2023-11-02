@@ -1787,6 +1787,56 @@ namespace Amazon.QuickSight
 
 
     /// <summary>
+    /// Constants used for properties of type ColumnDataSubType.
+    /// </summary>
+    public class ColumnDataSubType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FIXED for ColumnDataSubType
+        /// </summary>
+        public static readonly ColumnDataSubType FIXED = new ColumnDataSubType("FIXED");
+        /// <summary>
+        /// Constant FLOAT for ColumnDataSubType
+        /// </summary>
+        public static readonly ColumnDataSubType FLOAT = new ColumnDataSubType("FLOAT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ColumnDataSubType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ColumnDataSubType FindValue(string value)
+        {
+            return FindValue<ColumnDataSubType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ColumnDataSubType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ColumnDataType.
     /// </summary>
     public class ColumnDataType : ConstantClass
@@ -3314,6 +3364,76 @@ namespace Amazon.QuickSight
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DateAggregationFunction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DayOfTheWeek.
+    /// </summary>
+    public class DayOfTheWeek : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FRIDAY for DayOfTheWeek
+        /// </summary>
+        public static readonly DayOfTheWeek FRIDAY = new DayOfTheWeek("FRIDAY");
+        /// <summary>
+        /// Constant MONDAY for DayOfTheWeek
+        /// </summary>
+        public static readonly DayOfTheWeek MONDAY = new DayOfTheWeek("MONDAY");
+        /// <summary>
+        /// Constant SATURDAY for DayOfTheWeek
+        /// </summary>
+        public static readonly DayOfTheWeek SATURDAY = new DayOfTheWeek("SATURDAY");
+        /// <summary>
+        /// Constant SUNDAY for DayOfTheWeek
+        /// </summary>
+        public static readonly DayOfTheWeek SUNDAY = new DayOfTheWeek("SUNDAY");
+        /// <summary>
+        /// Constant THURSDAY for DayOfTheWeek
+        /// </summary>
+        public static readonly DayOfTheWeek THURSDAY = new DayOfTheWeek("THURSDAY");
+        /// <summary>
+        /// Constant TUESDAY for DayOfTheWeek
+        /// </summary>
+        public static readonly DayOfTheWeek TUESDAY = new DayOfTheWeek("TUESDAY");
+        /// <summary>
+        /// Constant WEDNESDAY for DayOfTheWeek
+        /// </summary>
+        public static readonly DayOfTheWeek WEDNESDAY = new DayOfTheWeek("WEDNESDAY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DayOfTheWeek(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DayOfTheWeek FindValue(string value)
+        {
+            return FindValue<DayOfTheWeek>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DayOfTheWeek(string value)
         {
             return FindValue(value);
         }

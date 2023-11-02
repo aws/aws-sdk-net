@@ -40,6 +40,7 @@ namespace Amazon.QuickSight.Model
         private List<AnalysisError> _errors = new List<AnalysisError>();
         private DateTime? _lastUpdatedTime;
         private string _name;
+        private AssetOptions _options;
         private List<Sheet> _sheets = new List<Sheet>();
         private ResourceStatus _status;
         private string _themeArn;
@@ -172,6 +173,21 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Options.
+        /// </summary>
+        public AssetOptions Options
+        {
+            get { return this._options; }
+            set { this._options = value; }
+        }
+
+        // Check to see if Options property is set
+        internal bool IsSetOptions()
+        {
+            return this._options != null;
         }
 
         /// <summary>

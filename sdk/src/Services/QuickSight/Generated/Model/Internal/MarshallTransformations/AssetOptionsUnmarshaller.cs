@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CastColumnTypeOperation Object
+    /// Response Unmarshaller for AssetOptions Object
     /// </summary>  
-    public class CastColumnTypeOperationUnmarshaller : IUnmarshaller<CastColumnTypeOperation, XmlUnmarshallerContext>, IUnmarshaller<CastColumnTypeOperation, JsonUnmarshallerContext>
+    public class AssetOptionsUnmarshaller : IUnmarshaller<AssetOptions, XmlUnmarshallerContext>, IUnmarshaller<AssetOptions, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        CastColumnTypeOperation IUnmarshaller<CastColumnTypeOperation, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AssetOptions IUnmarshaller<AssetOptions, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,27 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public CastColumnTypeOperation Unmarshall(JsonUnmarshallerContext context)
+        public AssetOptions Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            CastColumnTypeOperation unmarshalledObject = new CastColumnTypeOperation();
+            AssetOptions unmarshalledObject = new AssetOptions();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ColumnName", targetDepth))
+                if (context.TestExpression("Timezone", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ColumnName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Timezone = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Format", targetDepth))
+                if (context.TestExpression("WeekStart", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Format = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("NewColumnType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.NewColumnType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SubType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SubType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.WeekStart = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +82,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         }
 
 
-        private static CastColumnTypeOperationUnmarshaller _instance = new CastColumnTypeOperationUnmarshaller();        
+        private static AssetOptionsUnmarshaller _instance = new AssetOptionsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CastColumnTypeOperationUnmarshaller Instance
+        public static AssetOptionsUnmarshaller Instance
         {
             get
             {
