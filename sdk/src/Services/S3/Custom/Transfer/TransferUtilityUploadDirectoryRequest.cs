@@ -22,8 +22,6 @@
 using System;
 using System.IO;
 using System.Collections.Generic;
-using System.Collections.Specialized;
-using System.Text;
 
 using Amazon.S3.Model;
 using Amazon.Util;
@@ -58,7 +56,17 @@ namespace Amazon.S3.Transfer
         private bool calculateContentMD5Header = false;
         private ObjectLockLegalHoldStatus objectLockLegalHoldStatus;
         private ObjectLockMode objectLockMode;
+        private bool disablePayloadSigning;
         private DateTime? objectLockRetainUntilDate;
+       
+        /// <summary>
+        /// Gets or sets whether the payload should be signed or not
+        /// </summary>
+        public bool DisablePayloadSigning
+        {
+            get { return this.disablePayloadSigning;  }
+            set { this.disablePayloadSigning = value;  }
+        }
 
         /// <summary>
         /// 	Gets or sets the directory where files are uploaded from.
