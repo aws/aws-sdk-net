@@ -37,8 +37,17 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         public IRequest Marshall(CopyPartRequest copyPartRequest)
         {
             IRequest request = new DefaultRequest(copyPartRequest, "AmazonS3");
-            var sourceKey = AmazonS3Util.RemoveLeadingSlash(copyPartRequest.SourceKey);
-            var destinationKey = AmazonS3Util.RemoveLeadingSlash(copyPartRequest.DestinationKey);
+
+            var sourceKey =
+                copyPartRequest.DisableTrimmingLeadingSlash ?
+                copyPartRequest.SourceKey :
+                AmazonS3Util.RemoveLeadingSlash(copyPartRequest.SourceKey);
+
+            var destinationKey =
+                copyPartRequest.DisableTrimmingLeadingSlash ?
+                copyPartRequest.DestinationKey :
+                AmazonS3Util.RemoveLeadingSlash(copyPartRequest.DestinationKey);
+
             request.HttpMethod = "PUT";
 
             if (copyPartRequest.IsSetSourceBucket())

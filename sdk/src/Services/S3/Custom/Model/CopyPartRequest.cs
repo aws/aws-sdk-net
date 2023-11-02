@@ -58,6 +58,8 @@ namespace Amazon.S3.Model
         private string copySourceServerSideEncryptionCustomerProvidedKey;
         private string copySourceServerSideEncryptionCustomerProvidedKeyMD5;
 
+        private bool disableTrimmingLeadingSlash = false;
+
         /// <summary>
         /// The name of the bucket containing the object to copy.
         /// </summary>
@@ -609,6 +611,16 @@ namespace Amazon.S3.Model
         internal bool IsSetRequestPayer()
         {
             return requestPayer != null;
+        }
+
+        /// <summary>
+        /// If this is set to true then the Amazon S3 client will not remove leading slashes from <see cref="SourceKey"/> and <see cref="DestinationKey"/>. 
+        /// The default value is false.
+        /// </summary>
+        public bool DisableTrimmingLeadingSlash
+        {
+            get { return this.disableTrimmingLeadingSlash; }
+            set { this.disableTrimmingLeadingSlash = value; }
         }
     }
 }
