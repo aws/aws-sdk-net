@@ -299,6 +299,56 @@ namespace Amazon.NetworkFirewall
 
 
     /// <summary>
+    /// Constants used for properties of type IdentifiedType.
+    /// </summary>
+    public class IdentifiedType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant STATELESS_RULE_CONTAINS_TCP_FLAGS for IdentifiedType
+        /// </summary>
+        public static readonly IdentifiedType STATELESS_RULE_CONTAINS_TCP_FLAGS = new IdentifiedType("STATELESS_RULE_CONTAINS_TCP_FLAGS");
+        /// <summary>
+        /// Constant STATELESS_RULE_FORWARDING_ASYMMETRICALLY for IdentifiedType
+        /// </summary>
+        public static readonly IdentifiedType STATELESS_RULE_FORWARDING_ASYMMETRICALLY = new IdentifiedType("STATELESS_RULE_FORWARDING_ASYMMETRICALLY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IdentifiedType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IdentifiedType FindValue(string value)
+        {
+            return FindValue<IdentifiedType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IdentifiedType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type IPAddressType.
     /// </summary>
     public class IPAddressType : ConstantClass

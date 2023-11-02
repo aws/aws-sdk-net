@@ -64,9 +64,8 @@ namespace Amazon.NetworkFirewall.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>ALERT</b> - Permits the packets to go to the intended destination and sends an
-        /// alert log message, if alert logging is configured in the <a>Firewall</a> <a>LoggingConfiguration</a>.
-        /// 
+        ///  <b>ALERT</b> - Sends an alert log message, if alert logging is configured in the
+        /// <a>Firewall</a> <a>LoggingConfiguration</a>. 
         /// </para>
         ///  
         /// <para>

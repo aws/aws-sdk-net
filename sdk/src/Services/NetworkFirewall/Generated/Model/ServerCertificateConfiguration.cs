@@ -34,8 +34,8 @@ namespace Amazon.NetworkFirewall.Model
     /// configure <code>ServerCertificates</code> for inbound SSL/TLS inspection, a <code>CertificateAuthorityArn</code>
     /// for outbound SSL/TLS inspection, or both. For information about working with certificates
     /// for TLS inspection, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/tls-inspection-certificate-requirements.html">
-    /// Requirements for using SSL/TLS server certficiates with TLS inspection configurations</a>
-    /// in the <i>Network Firewall Developer Guide</i>.
+    /// Using SSL/TLS server certficiates with TLS inspection configurations</a> in the <i>Network
+    /// Firewall Developer Guide</i>.
     /// 
     ///  <note> 
     /// <para>
@@ -55,7 +55,7 @@ namespace Amazon.NetworkFirewall.Model
         /// Gets and sets the property CertificateAuthorityArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the imported certificate authority (CA) certificate
-        /// configured in Certificate Manager (ACM) to use for outbound SSL/TLS inspection.
+        /// within Certificate Manager (ACM) to use for outbound SSL/TLS inspection.
         /// </para>
         ///  
         /// <para>
@@ -72,10 +72,10 @@ namespace Amazon.NetworkFirewall.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information about the certificate requirements for outbound inspection, see
-        /// <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/tls-inspection-certificate-requirements.html">Requirements
-        /// for using SSL/TLS certificates with TLS inspection configurations</a> in the <i>Network
-        /// Firewall Developer Guide</i>. 
+        /// For more information about configuring certificates for outbound inspection, see <a
+        /// href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/tls-inspection-certificate-requirements.html">Using
+        /// SSL/TLS certificates with certificates with TLS inspection configurations</a> in the
+        /// <i>Network Firewall Developer Guide</i>. 
         /// </para>
         ///  
         /// <para>
@@ -102,8 +102,8 @@ namespace Amazon.NetworkFirewall.Model
         /// When enabled, Network Firewall checks if the server certificate presented by the server
         /// in the SSL/TLS connection has a revoked or unkown status. If the certificate has an
         /// unknown or revoked status, you must specify the actions that Network Firewall takes
-        /// on outbound traffic. To use this option, you must specify a <code>CertificateAuthorityArn</code>
-        /// in <a>ServerCertificateConfiguration</a>.
+        /// on outbound traffic. To check the certificate revocation status, you must also specify
+        /// a <code>CertificateAuthorityArn</code> in <a>ServerCertificateConfiguration</a>.
         /// </para>
         /// </summary>
         public CheckCertificateRevocationStatusActions CheckCertificateRevocationStatus
@@ -139,8 +139,7 @@ namespace Amazon.NetworkFirewall.Model
         /// <summary>
         /// Gets and sets the property ServerCertificates. 
         /// <para>
-        /// The list of a server certificate configuration's Certificate Manager certificates,
-        /// used for inbound SSL/TLS inspection.
+        /// The list of server certificates to use for inbound SSL/TLS inspection.
         /// </para>
         /// </summary>
         public List<ServerCertificate> ServerCertificates

@@ -50,14 +50,14 @@ namespace Amazon.NetworkFirewall.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>DROP</b> - Network Firewall fails closed and drops all subsequent traffic.
+        ///  <b>DROP</b> - Network Firewall closes the connection and drops subsequent packets
+        /// for that connection.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>REJECT</b> - Network Firewall sends a TCP reject packet back to your client so
-        /// that the client can immediately establish a new session. Network Firewall then fails
-        /// closed and drops all subsequent traffic. <code>REJECT</code> is available only for
-        /// TCP traffic.
+        ///  <b>REJECT</b> - Network Firewall sends a TCP reject packet back to your client. The
+        /// service closes the connection and drops subsequent packets for that connection. <code>REJECT</code>
+        /// is available only for TCP traffic.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -88,14 +88,14 @@ namespace Amazon.NetworkFirewall.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>DROP</b> - Network Firewall fails closed and drops all subsequent traffic.
+        ///  <b>DROP</b> - Network Firewall closes the connection and drops subsequent packets
+        /// for that connection.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>REJECT</b> - Network Firewall sends a TCP reject packet back to your client so
-        /// that the client can immediately establish a new session. Network Firewall then fails
-        /// closed and drops all subsequent traffic. <code>REJECT</code> is available only for
-        /// TCP traffic. 
+        ///  <b>REJECT</b> - Network Firewall sends a TCP reject packet back to your client. The
+        /// service closes the connection and drops subsequent packets for that connection. <code>REJECT</code>
+        /// is available only for TCP traffic.
         /// </para>
         ///  </li> </ul>
         /// </summary>
