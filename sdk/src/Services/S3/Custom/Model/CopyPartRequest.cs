@@ -44,6 +44,7 @@ namespace Amazon.S3.Model
         private long? lastByte;
         private string expectedBucketOwner;
         private string expectedSourceBucketOwner;
+        private RequestPayer requestPayer;
 
         [Obsolete("Use ServerSideEncryptionMethod in InitiateMultipartUploadRequest instead.")]
         private ServerSideEncryptionMethod serverSideEncryption;
@@ -56,6 +57,8 @@ namespace Amazon.S3.Model
         private ServerSideEncryptionCustomerMethod copySourceServerSideCustomerEncryption;
         private string copySourceServerSideEncryptionCustomerProvidedKey;
         private string copySourceServerSideEncryptionCustomerProvidedKeyMD5;
+
+        private bool disableTrimmingLeadingSlash = false;
 
         /// <summary>
         /// The name of the bucket containing the object to copy.
@@ -593,6 +596,31 @@ namespace Amazon.S3.Model
         {
             return !String.IsNullOrEmpty(this.expectedSourceBucketOwner);
         }
+
+        /// <summary>
+        /// <para>Confirms that the requester knows that they will be charged for the request. 
+        /// Bucket owners need not specify this parameter in their requests</para>.
+        /// </summary>
+        public RequestPayer RequestPayer
+        {
+            get { return this.requestPayer; }
+            set { this.requestPayer = value; }
+        }
+
+        // Check to see if RequestPayer property is set
+        internal bool IsSetRequestPayer()
+        {
+            return requestPayer != null;
+        }
+
+        /// <summary>
+        /// If this is set to true then the Amazon S3 client will not remove leading slashes from <see cref="SourceKey"/> and <see cref="DestinationKey"/>. 
+        /// The default value is false.
+        /// </summary>
+        public bool DisableTrimmingLeadingSlash
+        {
+            get { return this.disableTrimmingLeadingSlash; }
+            set { this.disableTrimmingLeadingSlash = value; }
+        }
     }
 }
-    

@@ -172,10 +172,9 @@ namespace Amazon.Util
         /// The RFC822Date Format string. Used when parsing date objects
         /// </summary>
         public const string RFC822DateFormat = "ddd, dd MMM yyyy HH:mm:ss \\G\\M\\T";
-
 #endregion
 
-#region Internal Methods
+        #region Internal Methods
 
         /// <summary>
         /// Returns an extension of a path.

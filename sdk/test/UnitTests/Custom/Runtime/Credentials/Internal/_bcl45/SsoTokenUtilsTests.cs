@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 using System;
+using System.Xml;
 using Amazon.Runtime.Credentials.Internal;
 using AWSSDK_DotNet35.UnitTests.TestTools;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -42,6 +43,24 @@ namespace AWSSDK.UnitTests
                 };
 
                 Assert.AreEqual(expectNeedRefresh, ssoToken.NeedsRefresh());
+            }
+        }
+        [TestMethod]
+        [DataRow("2022-08-30T10:00:00Z", "2022-08-30T09:00:00Z", false)] // expires in 1 hours
+        [DataRow("2022-08-30T09:10:00Z", "2022-08-30T09:00:00Z", false)] // expires in 10 minutes
+        [DataRow("2022-08-30T09:05:00Z", "2022-08-30T09:00:00Z", true)]  // expires in 5 minutes
+        [DataRow("2022-08-30T09:00:10Z", "2022-08-30T09:00:00Z", true)]  // expires in 10 seconds
+        [DataRow("2022-08-30T09:00:00Z", "2022-08-30T09:05:00Z", true)]  // expired 5 minutes ago
+        [DataRow("2022-08-30T09:00:00Z", "2022-08-30T10:00:00Z", true)]  // expired 1 hour ago
+        public void RegisteredClientExpiredTests(string registrationExpiresAt, string currentTime, bool expectedRegisteredClientExpired)
+        {
+            using (new AWSConfigsDateFaker(() => XmlConvert.ToDateTime(currentTime, XmlDateTimeSerializationMode.Utc)))
+            {
+                var ssoToken = new SsoToken
+                {
+                    RegistrationExpiresAt = registrationExpiresAt
+                };
+                Assert.AreEqual(expectedRegisteredClientExpired, ssoToken.RegisteredClientExpired());
             }
         }
     }

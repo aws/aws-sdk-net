@@ -92,6 +92,21 @@ namespace Amazon.Runtime.Credentials.Internal
             return ToJson(token);
         }
 
+        /// <summary>
+        /// This determines whether the <seealso cref="SsoToken.RegistrationExpiresAt"/> field is 5 minutes within expiration
+        /// </summary>
+        /// <param name="token">The sso token</param>
+        /// <returns>This returns true if <seealso cref="SsoToken.RegistrationExpiresAt"/> is within 5 minutes of expiration. False otherwise</returns>
+        public static bool RegisteredClientExpired(this SsoToken token)
+        {
+            if (null == token)
+                throw new ArgumentNullException(nameof(token));
+            DateTime dateTime = ConvertRFC3339StringToDateTime(token.RegistrationExpiresAt);
+#pragma warning disable CS0618 // Type or member is obsolete
+            return AWSSDKUtils.CorrectedUtcNow >= dateTime.AddMinutes(-5);
+#pragma warning restore CS0618 // Type or member is obsolete               
+        }
+
         #endregion
 
         /// <summary>
@@ -162,5 +177,21 @@ namespace Amazon.Runtime.Credentials.Internal
             
             return token;
         }
+        #region private methods
+        /// <summary>
+        /// This method takes in an RFC3339 string representing a datetime and converts it to a DateTime object 
+        /// </summary>
+        /// <param name="stringFormattedDate">The RFC3339 formatted string</param>
+        /// <returns>Returns the datetime object serialized to UTC</returns>
+        /// <exception cref="ArgumentNullException"></exception>
+        private static DateTime ConvertRFC3339StringToDateTime(string stringFormattedDate)
+        {
+            if (string.IsNullOrEmpty(stringFormattedDate))
+            {
+                throw new ArgumentNullException(nameof(stringFormattedDate));
+            }
+            return XmlConvert.ToDateTime(stringFormattedDate, XmlDateTimeSerializationMode.Utc);
+        }
+        #endregion
     }
 }
