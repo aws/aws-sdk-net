@@ -67,6 +67,12 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetIpAddressType())
+            {
+                context.Writer.WritePropertyName("IpAddressType");
+                context.Writer.Write(requestObject.IpAddressType);
+            }
+
         }
 
         /// <summary>
