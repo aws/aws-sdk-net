@@ -714,6 +714,58 @@ namespace Amazon.Connect.Model
         /// <para>
         /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
         /// </para>
+        ///  </dd> <dt>PERCENT_NON_TALK_TIME</dt> <dd> 
+        /// <para>
+        /// This metric is available only for contacts analyzed by Contact Lens conversational
+        /// analytics.
+        /// </para>
+        ///  
+        /// <para>
+        /// Unit: Percentage
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+        /// </para>
+        ///  </dd> <dt>PERCENT_TALK_TIME</dt> <dd> 
+        /// <para>
+        /// This metric is available only for contacts analyzed by Contact Lens conversational
+        /// analytics.
+        /// </para>
+        ///  
+        /// <para>
+        /// Unit: Percentage
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+        /// </para>
+        ///  </dd> <dt>PERCENT_TALK_TIME_AGENT</dt> <dd> 
+        /// <para>
+        /// This metric is available only for contacts analyzed by Contact Lens conversational
+        /// analytics.
+        /// </para>
+        ///  
+        /// <para>
+        /// Unit: Percentage
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+        /// </para>
+        ///  </dd> <dt>PERCENT_TALK_TIME_CUSTOMER</dt> <dd> 
+        /// <para>
+        /// This metric is available only for contacts analyzed by Contact Lens conversational
+        /// analytics.
+        /// </para>
+        ///  
+        /// <para>
+        /// Unit: Percentage
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+        /// </para>
         ///  </dd> <dt>SERVICE_LEVEL</dt> <dd> 
         /// <para>
         /// You can include up to 20 SERVICE_LEVEL metrics in a request.
