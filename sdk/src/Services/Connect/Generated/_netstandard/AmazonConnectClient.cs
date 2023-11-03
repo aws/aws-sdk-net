@@ -1586,6 +1586,60 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  CreatePersistentContactAssociation
+
+        internal virtual CreatePersistentContactAssociationResponse CreatePersistentContactAssociation(CreatePersistentContactAssociationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePersistentContactAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePersistentContactAssociationResponseUnmarshaller.Instance;
+
+            return Invoke<CreatePersistentContactAssociationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Enables rehydration of chats for the lifespan of a contact. For more information about
+        /// chat rehydration, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html">Enable
+        /// persistent chat</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePersistentContactAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreatePersistentContactAssociation service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreatePersistentContactAssociation">REST API Reference for CreatePersistentContactAssociation Operation</seealso>
+        public virtual Task<CreatePersistentContactAssociationResponse> CreatePersistentContactAssociationAsync(CreatePersistentContactAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePersistentContactAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePersistentContactAssociationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreatePersistentContactAssociationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreatePrompt
 
         internal virtual CreatePromptResponse CreatePrompt(CreatePromptRequest request)
