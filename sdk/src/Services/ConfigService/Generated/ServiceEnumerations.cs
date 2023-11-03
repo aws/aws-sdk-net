@@ -1751,6 +1751,10 @@ namespace Amazon.ConfigService
         /// </summary>
         public static readonly ResourceType AWSACMPCACertificateAuthority = new ResourceType("AWS::ACMPCA::CertificateAuthority");
         /// <summary>
+        /// Constant AWSACMPCACertificateAuthorityActivation for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSACMPCACertificateAuthorityActivation = new ResourceType("AWS::ACMPCA::CertificateAuthorityActivation");
+        /// <summary>
         /// Constant AWSAmazonMQBroker for ResourceType
         /// </summary>
         public static readonly ResourceType AWSAmazonMQBroker = new ResourceType("AWS::AmazonMQ::Broker");
@@ -1806,6 +1810,14 @@ namespace Amazon.ConfigService
         /// Constant AWSAppIntegrationsEventIntegration for ResourceType
         /// </summary>
         public static readonly ResourceType AWSAppIntegrationsEventIntegration = new ResourceType("AWS::AppIntegrations::EventIntegration");
+        /// <summary>
+        /// Constant AWSAppMeshGatewayRoute for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSAppMeshGatewayRoute = new ResourceType("AWS::AppMesh::GatewayRoute");
+        /// <summary>
+        /// Constant AWSAppMeshMesh for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSAppMeshMesh = new ResourceType("AWS::AppMesh::Mesh");
         /// <summary>
         /// Constant AWSAppMeshRoute for ResourceType
         /// </summary>
@@ -2003,9 +2015,17 @@ namespace Amazon.ConfigService
         /// </summary>
         public static readonly ResourceType AWSConfigResourceCompliance = new ResourceType("AWS::Config::ResourceCompliance");
         /// <summary>
+        /// Constant AWSConnectInstance for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSConnectInstance = new ResourceType("AWS::Connect::Instance");
+        /// <summary>
         /// Constant AWSConnectPhoneNumber for ResourceType
         /// </summary>
         public static readonly ResourceType AWSConnectPhoneNumber = new ResourceType("AWS::Connect::PhoneNumber");
+        /// <summary>
+        /// Constant AWSConnectQuickConnect for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSConnectQuickConnect = new ResourceType("AWS::Connect::QuickConnect");
         /// <summary>
         /// Constant AWSCustomerProfilesDomain for ResourceType
         /// </summary>
@@ -2091,6 +2111,10 @@ namespace Amazon.ConfigService
         /// </summary>
         public static readonly ResourceType AWSEC2CapacityReservation = new ResourceType("AWS::EC2::CapacityReservation");
         /// <summary>
+        /// Constant AWSEC2CarrierGateway for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSEC2CarrierGateway = new ResourceType("AWS::EC2::CarrierGateway");
+        /// <summary>
         /// Constant AWSEC2ClientVpnEndpoint for ResourceType
         /// </summary>
         public static readonly ResourceType AWSEC2ClientVpnEndpoint = new ResourceType("AWS::EC2::ClientVpnEndpoint");
@@ -2134,6 +2158,10 @@ namespace Amazon.ConfigService
         /// Constant AWSEC2IPAM for ResourceType
         /// </summary>
         public static readonly ResourceType AWSEC2IPAM = new ResourceType("AWS::EC2::IPAM");
+        /// <summary>
+        /// Constant AWSEC2IPAMPool for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSEC2IPAMPool = new ResourceType("AWS::EC2::IPAMPool");
         /// <summary>
         /// Constant AWSEC2IPAMScope for ResourceType
         /// </summary>
@@ -2211,6 +2239,14 @@ namespace Amazon.ConfigService
         /// </summary>
         public static readonly ResourceType AWSEC2TransitGatewayAttachment = new ResourceType("AWS::EC2::TransitGatewayAttachment");
         /// <summary>
+        /// Constant AWSEC2TransitGatewayConnect for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSEC2TransitGatewayConnect = new ResourceType("AWS::EC2::TransitGatewayConnect");
+        /// <summary>
+        /// Constant AWSEC2TransitGatewayMulticastDomain for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSEC2TransitGatewayMulticastDomain = new ResourceType("AWS::EC2::TransitGatewayMulticastDomain");
+        /// <summary>
         /// Constant AWSEC2TransitGatewayRouteTable for ResourceType
         /// </summary>
         public static readonly ResourceType AWSEC2TransitGatewayRouteTable = new ResourceType("AWS::EC2::TransitGatewayRouteTable");
@@ -2258,6 +2294,10 @@ namespace Amazon.ConfigService
         /// Constant AWSECRRepository for ResourceType
         /// </summary>
         public static readonly ResourceType AWSECRRepository = new ResourceType("AWS::ECR::Repository");
+        /// <summary>
+        /// Constant AWSECSCapacityProvider for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSECSCapacityProvider = new ResourceType("AWS::ECS::CapacityProvider");
         /// <summary>
         /// Constant AWSECSCluster for ResourceType
         /// </summary>
@@ -2467,6 +2507,10 @@ namespace Amazon.ConfigService
         /// </summary>
         public static readonly ResourceType AWSIAMGroup = new ResourceType("AWS::IAM::Group");
         /// <summary>
+        /// Constant AWSIAMInstanceProfile for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSIAMInstanceProfile = new ResourceType("AWS::IAM::InstanceProfile");
+        /// <summary>
         /// Constant AWSIAMPolicy for ResourceType
         /// </summary>
         public static readonly ResourceType AWSIAMPolicy = new ResourceType("AWS::IAM::Policy");
@@ -2530,6 +2574,10 @@ namespace Amazon.ConfigService
         /// Constant AWSIoTAuthorizer for ResourceType
         /// </summary>
         public static readonly ResourceType AWSIoTAuthorizer = new ResourceType("AWS::IoT::Authorizer");
+        /// <summary>
+        /// Constant AWSIoTCACertificate for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSIoTCACertificate = new ResourceType("AWS::IoT::CACertificate");
         /// <summary>
         /// Constant AWSIoTCustomMetric for ResourceType
         /// </summary>
@@ -2615,6 +2663,10 @@ namespace Amazon.ConfigService
         /// </summary>
         public static readonly ResourceType AWSIoTTwinMakerScene = new ResourceType("AWS::IoTTwinMaker::Scene");
         /// <summary>
+        /// Constant AWSIoTTwinMakerSyncJob for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSIoTTwinMakerSyncJob = new ResourceType("AWS::IoTTwinMaker::SyncJob");
+        /// <summary>
         /// Constant AWSIoTTwinMakerWorkspace for ResourceType
         /// </summary>
         public static readonly ResourceType AWSIoTTwinMakerWorkspace = new ResourceType("AWS::IoTTwinMaker::Workspace");
@@ -2642,6 +2694,10 @@ namespace Amazon.ConfigService
         /// Constant AWSIVSRecordingConfiguration for ResourceType
         /// </summary>
         public static readonly ResourceType AWSIVSRecordingConfiguration = new ResourceType("AWS::IVS::RecordingConfiguration");
+        /// <summary>
+        /// Constant AWSKafkaConnectConnector for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSKafkaConnectConnector = new ResourceType("AWS::KafkaConnect::Connector");
         /// <summary>
         /// Constant AWSKendraIndex for ResourceType
         /// </summary>
@@ -2674,6 +2730,10 @@ namespace Amazon.ConfigService
         /// Constant AWSKMSKey for ResourceType
         /// </summary>
         public static readonly ResourceType AWSKMSKey = new ResourceType("AWS::KMS::Key");
+        /// <summary>
+        /// Constant AWSLambdaCodeSigningConfig for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSLambdaCodeSigningConfig = new ResourceType("AWS::Lambda::CodeSigningConfig");
         /// <summary>
         /// Constant AWSLambdaFunction for ResourceType
         /// </summary>
@@ -2762,6 +2822,10 @@ namespace Amazon.ConfigService
         /// Constant AWSNetworkFirewallRuleGroup for ResourceType
         /// </summary>
         public static readonly ResourceType AWSNetworkFirewallRuleGroup = new ResourceType("AWS::NetworkFirewall::RuleGroup");
+        /// <summary>
+        /// Constant AWSNetworkManagerConnectPeer for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSNetworkManagerConnectPeer = new ResourceType("AWS::NetworkManager::ConnectPeer");
         /// <summary>
         /// Constant AWSNetworkManagerCustomerGatewayAssociation for ResourceType
         /// </summary>
@@ -2918,6 +2982,10 @@ namespace Amazon.ConfigService
         /// Constant AWSResilienceHubResiliencyPolicy for ResourceType
         /// </summary>
         public static readonly ResourceType AWSResilienceHubResiliencyPolicy = new ResourceType("AWS::ResilienceHub::ResiliencyPolicy");
+        /// <summary>
+        /// Constant AWSResourceExplorer2Index for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSResourceExplorer2Index = new ResourceType("AWS::ResourceExplorer2::Index");
         /// <summary>
         /// Constant AWSRoboMakerRobotApplication for ResourceType
         /// </summary>
