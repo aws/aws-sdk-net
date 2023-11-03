@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTWireless.Model
 {
     /// <summary>
-    /// Trace content for your wireless gateway and wireless device resources.
+    /// Trace content for your wireless devices, gateways, and multicast groups.
     /// </summary>
     public partial class TraceContent
     {

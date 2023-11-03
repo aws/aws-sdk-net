@@ -100,7 +100,7 @@ namespace Amazon.IoTWireless.Model
         /// Gets and sets the property MulticastGroupsToRemove. 
         /// <para>
         /// Multicast group resources to remove from the network analyzer configuration. Provide
-        /// the <code>MulticastGroupId</code> of the resource to remove in the input array.
+        /// the <code>MulticastGroupId</code> of the resources to remove in the input array.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10)]

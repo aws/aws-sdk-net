@@ -36,6 +36,7 @@ namespace Amazon.IoTWireless.Model
         private string _appEui;
         private string _appKey;
         private string _genAppKey;
+        private string _joinEui;
 
         /// <summary>
         /// Gets and sets the property AppEui. 
@@ -89,6 +90,24 @@ namespace Amazon.IoTWireless.Model
         internal bool IsSetGenAppKey()
         {
             return this._genAppKey != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property JoinEui. 
+        /// <para>
+        /// The JoinEUI value.
+        /// </para>
+        /// </summary>
+        public string JoinEui
+        {
+            get { return this._joinEui; }
+            set { this._joinEui = value; }
+        }
+
+        // Check to see if JoinEui property is set
+        internal bool IsSetJoinEui()
+        {
+            return this._joinEui != null;
         }
 
     }
