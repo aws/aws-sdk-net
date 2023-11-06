@@ -31,6 +31,7 @@ namespace Amazon.MWAA.Model
     /// <summary>
     /// This is the response object from the PublishMetrics operation.
     /// </summary>
+    [Obsolete("This type is for internal use and not meant for public use. Data set for this type will be ignored.")]
     public partial class PublishMetricsResponse : AmazonWebServiceResponse
     {
 

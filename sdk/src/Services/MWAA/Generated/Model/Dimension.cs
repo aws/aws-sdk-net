@@ -33,6 +33,7 @@ namespace Amazon.MWAA.Model
     /// the metrics published to Amazon CloudWatch, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/cw-metrics.html">Amazon
     /// MWAA performance metrics in Amazon CloudWatch</a>.
     /// </summary>
+    [Obsolete("This type is for internal use and not meant for public use. Data set for this type will be ignored.")]
     public partial class Dimension
     {
         private string _name;

@@ -32,6 +32,7 @@ namespace Amazon.MWAA.Model
     /// Container for the parameters to the PublishMetrics operation.
     /// <b>Internal only</b>. Publishes environment health metrics to Amazon CloudWatch.
     /// </summary>
+    [Obsolete("This type is for internal use and not meant for public use. Data set for this type will be ignored.")]
     public partial class PublishMetricsRequest : AmazonMWAARequest
     {
         private string _environmentName;

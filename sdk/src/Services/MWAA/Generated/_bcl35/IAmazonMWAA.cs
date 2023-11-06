@@ -99,24 +99,14 @@ namespace Amazon.MWAA
     ///  <a href="https://docs.aws.amazon.com/mwaa/latest/API/API_CreateWebLoginToken.html">CreateWebLoginToken</a>
     /// 
     /// </para>
-    ///  </li> </ul> </li> <li> 
-    /// <para>
-    ///  <code>ops.airflow.{region}.amazonaws.com</code> - This endpoint is used to push environment
-    /// metrics that track environment health.
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a href="https://docs.aws.amazon.com/mwaa/latest/API/API_PublishMetrics.html ">PublishMetrics</a>
-    /// 
-    /// </para>
     ///  </li> </ul> </li> </ul> 
     /// <para>
     ///  <b>Regions</b> 
     /// </para>
     ///  
     /// <para>
-    /// For a list of regions that Amazon MWAA supports, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/what-is-mwaa.html#regions-mwaa">Region
-    /// availability</a> in the <i>Amazon MWAA User Guide</i>.
+    /// For a list of supported regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/mwaa.html">Amazon
+    /// MWAA endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.
     /// </para>
     /// 
     /// </para>
@@ -489,6 +479,7 @@ namespace Amazon.MWAA
         /// ValidationException: The provided input is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/PublishMetrics">REST API Reference for PublishMetrics Operation</seealso>
+        [Obsolete("This API is for internal use and not meant for public use, and is no longer available.")]
         PublishMetricsResponse PublishMetrics(PublishMetricsRequest request);
 
         /// <summary>
@@ -503,6 +494,7 @@ namespace Amazon.MWAA
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPublishMetrics
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/PublishMetrics">REST API Reference for PublishMetrics Operation</seealso>
+        [Obsolete("This API is for internal use and not meant for public use, and is no longer available.")]
         IAsyncResult BeginPublishMetrics(PublishMetricsRequest request, AsyncCallback callback, object state);
 
 
@@ -515,6 +507,7 @@ namespace Amazon.MWAA
         /// 
         /// <returns>Returns a  PublishMetricsResult from MWAA.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/PublishMetrics">REST API Reference for PublishMetrics Operation</seealso>
+        [Obsolete("This API is for internal use and not meant for public use, and is no longer available.")]
         PublishMetricsResponse EndPublishMetrics(IAsyncResult asyncResult);
 
         #endregion
