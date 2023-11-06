@@ -29,20 +29,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
-    /// Details about the instances that Amazon Web Services recommends that you purchase.
+    /// Details about the reservations that Amazon Web Services recommends that you purchase.
     /// </summary>
     public partial class InstanceDetails
     {
         private EC2InstanceDetails _ec2InstanceDetails;
         private ElastiCacheInstanceDetails _elastiCacheInstanceDetails;
         private ESInstanceDetails _esInstanceDetails;
+        private MemoryDBInstanceDetails _memoryDBInstanceDetails;
         private RDSInstanceDetails _rdsInstanceDetails;
         private RedshiftInstanceDetails _redshiftInstanceDetails;
 
         /// <summary>
         /// Gets and sets the property EC2InstanceDetails. 
         /// <para>
-        /// The Amazon EC2 instances that Amazon Web Services recommends that you purchase.
+        /// The Amazon EC2 reservations that Amazon Web Services recommends that you purchase.
         /// </para>
         /// </summary>
         public EC2InstanceDetails EC2InstanceDetails
@@ -60,7 +61,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property ElastiCacheInstanceDetails. 
         /// <para>
-        /// The ElastiCache instances that Amazon Web Services recommends that you purchase.
+        /// The ElastiCache reservations that Amazon Web Services recommends that you purchase.
         /// </para>
         /// </summary>
         public ElastiCacheInstanceDetails ElastiCacheInstanceDetails
@@ -78,8 +79,8 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property ESInstanceDetails. 
         /// <para>
-        /// The Amazon OpenSearch Service instances that Amazon Web Services recommends that you
-        /// purchase.
+        /// The Amazon OpenSearch Service reservations that Amazon Web Services recommends that
+        /// you purchase.
         /// </para>
         /// </summary>
         public ESInstanceDetails ESInstanceDetails
@@ -95,9 +96,27 @@ namespace Amazon.CostExplorer.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MemoryDBInstanceDetails. 
+        /// <para>
+        /// The MemoryDB reservations that Amazon Web Services recommends that you purchase.
+        /// </para>
+        /// </summary>
+        public MemoryDBInstanceDetails MemoryDBInstanceDetails
+        {
+            get { return this._memoryDBInstanceDetails; }
+            set { this._memoryDBInstanceDetails = value; }
+        }
+
+        // Check to see if MemoryDBInstanceDetails property is set
+        internal bool IsSetMemoryDBInstanceDetails()
+        {
+            return this._memoryDBInstanceDetails != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RDSInstanceDetails. 
         /// <para>
-        /// The Amazon RDS instances that Amazon Web Services recommends that you purchase.
+        /// The Amazon RDS reservations that Amazon Web Services recommends that you purchase.
         /// </para>
         /// </summary>
         public RDSInstanceDetails RDSInstanceDetails
@@ -115,7 +134,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property RedshiftInstanceDetails. 
         /// <para>
-        /// The Amazon Redshift instances that Amazon Web Services recommends that you purchase.
+        /// The Amazon Redshift reservations that Amazon Web Services recommends that you purchase.
         /// </para>
         /// </summary>
         public RedshiftInstanceDetails RedshiftInstanceDetails

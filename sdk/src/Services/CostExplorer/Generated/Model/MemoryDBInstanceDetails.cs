@@ -29,43 +29,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
-    /// Details about the Amazon EC2 reservations that Amazon Web Services recommends that
-    /// you purchase.
+    /// Details about the MemoryDB reservations that Amazon Web Services recommends that you
+    /// purchase.
     /// </summary>
-    public partial class EC2InstanceDetails
+    public partial class MemoryDBInstanceDetails
     {
-        private string _availabilityZone;
         private bool? _currentGeneration;
         private string _family;
-        private string _instanceType;
-        private string _platform;
+        private string _nodeType;
         private string _region;
         private bool? _sizeFlexEligible;
-        private string _tenancy;
-
-        /// <summary>
-        /// Gets and sets the property AvailabilityZone. 
-        /// <para>
-        /// The Availability Zone of the recommended reservation.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=0, Max=1024)]
-        public string AvailabilityZone
-        {
-            get { return this._availabilityZone; }
-            set { this._availabilityZone = value; }
-        }
-
-        // Check to see if AvailabilityZone property is set
-        internal bool IsSetAvailabilityZone()
-        {
-            return this._availabilityZone != null;
-        }
 
         /// <summary>
         /// Gets and sets the property CurrentGeneration. 
         /// <para>
-        /// Determines whether the recommendation is for a current-generation instance. 
+        /// Determines whether the recommendation is for a current generation instance.
         /// </para>
         /// </summary>
         public bool CurrentGeneration
@@ -100,42 +78,22 @@ namespace Amazon.CostExplorer.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InstanceType. 
+        /// Gets and sets the property NodeType. 
         /// <para>
-        /// The type of instance that Amazon Web Services recommends.
+        /// The node type of the recommended reservation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
-        public string InstanceType
+        public string NodeType
         {
-            get { return this._instanceType; }
-            set { this._instanceType = value; }
+            get { return this._nodeType; }
+            set { this._nodeType = value; }
         }
 
-        // Check to see if InstanceType property is set
-        internal bool IsSetInstanceType()
+        // Check to see if NodeType property is set
+        internal bool IsSetNodeType()
         {
-            return this._instanceType != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Platform. 
-        /// <para>
-        /// The platform of the recommended reservation. The platform is the specific combination
-        /// of operating system, license model, and software on an instance.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=0, Max=1024)]
-        public string Platform
-        {
-            get { return this._platform; }
-            set { this._platform = value; }
-        }
-
-        // Check to see if Platform property is set
-        internal bool IsSetPlatform()
-        {
-            return this._platform != null;
+            return this._nodeType != null;
         }
 
         /// <summary>
@@ -173,25 +131,6 @@ namespace Amazon.CostExplorer.Model
         internal bool IsSetSizeFlexEligible()
         {
             return this._sizeFlexEligible.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property Tenancy. 
-        /// <para>
-        /// Determines whether the recommended reservation is dedicated or shared.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=0, Max=1024)]
-        public string Tenancy
-        {
-            get { return this._tenancy; }
-            set { this._tenancy = value; }
-        }
-
-        // Check to see if Tenancy property is set
-        internal bool IsSetTenancy()
-        {
-            return this._tenancy != null;
         }
 
     }
