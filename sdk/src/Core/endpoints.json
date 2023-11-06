@@ -16464,6 +16464,12 @@
             ]
           },
           "endpoints": {
+            "af-south-1": {
+              "hostname": "resource-explorer-2.af-south-1.api.aws"
+            },
+            "ap-east-1": {
+              "hostname": "resource-explorer-2.ap-east-1.api.aws"
+            },
             "ap-northeast-1": {
               "hostname": "resource-explorer-2.ap-northeast-1.api.aws"
             },
@@ -16503,6 +16509,9 @@
             "eu-north-1": {
               "hostname": "resource-explorer-2.eu-north-1.api.aws"
             },
+            "eu-south-1": {
+              "hostname": "resource-explorer-2.eu-south-1.api.aws"
+            },
             "eu-west-1": {
               "hostname": "resource-explorer-2.eu-west-1.api.aws"
             },
@@ -16514,6 +16523,9 @@
             },
             "il-central-1": {
               "hostname": "resource-explorer-2.il-central-1.api.aws"
+            },
+            "me-central-1": {
+              "hostname": "resource-explorer-2.me-central-1.api.aws"
             },
             "me-south-1": {
               "hostname": "resource-explorer-2.me-south-1.api.aws"
@@ -31288,6 +31300,11 @@
               "https"
             ]
           },
+          "endpoints": {
+            "us-isob-east-1": {}
+          }
+        },
+        "cloudcontrolapi": {
           "endpoints": {
             "us-isob-east-1": {}
           }
