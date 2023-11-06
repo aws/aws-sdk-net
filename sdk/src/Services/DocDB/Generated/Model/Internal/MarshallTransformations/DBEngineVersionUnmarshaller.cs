@@ -91,6 +91,19 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
                         unmarshalledObject.ExportableLogTypes.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("SupportedCACertificateIdentifiers/member", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.SupportedCACertificateIdentifiers.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("SupportsCertificateRotationWithoutRestart", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.SupportsCertificateRotationWithoutRestart = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("SupportsLogExportsToCloudwatchLogs", targetDepth))
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;

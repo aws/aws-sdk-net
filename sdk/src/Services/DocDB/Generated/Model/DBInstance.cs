@@ -37,6 +37,7 @@ namespace Amazon.DocDB.Model
         private string _availabilityZone;
         private int? _backupRetentionPeriod;
         private string _caCertificateIdentifier;
+        private CertificateDetails _certificateDetails;
         private bool? _copyTagsToSnapshot;
         private string _dbClusterIdentifier;
         private string _dbInstanceArn;
@@ -132,6 +133,24 @@ namespace Amazon.DocDB.Model
         internal bool IsSetCACertificateIdentifier()
         {
             return this._caCertificateIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CertificateDetails. 
+        /// <para>
+        /// The details of the DB instance's server certificate.
+        /// </para>
+        /// </summary>
+        public CertificateDetails CertificateDetails
+        {
+            get { return this._certificateDetails; }
+            set { this._certificateDetails = value; }
+        }
+
+        // Check to see if CertificateDetails property is set
+        internal bool IsSetCertificateDetails()
+        {
+            return this._certificateDetails != null;
         }
 
         /// <summary>
