@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// StopContact Request Marshaller
+    /// BatchPutContact Request Marshaller
     /// </summary>       
-    public class StopContactRequestMarshaller : IMarshaller<IRequest, StopContactRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class BatchPutContactRequestMarshaller : IMarshaller<IRequest, BatchPutContactRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((StopContactRequest)input);
+            return this.Marshall((BatchPutContactRequest)input);
         }
 
         /// <summary>
@@ -52,40 +52,47 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(StopContactRequest publicRequest)
+        public IRequest Marshall(BatchPutContactRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Connect");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-08-08";
-            request.HttpMethod = "POST";
+            request.HttpMethod = "PUT";
 
-            request.ResourcePath = "/contact/stop";
+            if (!publicRequest.IsSetInstanceId())
+                throw new AmazonConnectException("Request object does not have required field InstanceId set");
+            request.AddPathResource("{InstanceId}", StringUtils.FromString(publicRequest.InstanceId));
+            request.ResourcePath = "/contact/batch/{InstanceId}";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetContactId())
+                if(publicRequest.IsSetClientToken())
                 {
-                    context.Writer.WritePropertyName("ContactId");
-                    context.Writer.Write(publicRequest.ContactId);
+                    context.Writer.WritePropertyName("ClientToken");
+                    context.Writer.Write(publicRequest.ClientToken);
                 }
 
-                if(publicRequest.IsSetDisconnectReason())
+                else if(!(publicRequest.IsSetClientToken()))
                 {
-                    context.Writer.WritePropertyName("DisconnectReason");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DisconnectReasonMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DisconnectReason, context);
-
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WritePropertyName("ClientToken");
+                    context.Writer.Write(Guid.NewGuid().ToString());
                 }
-
-                if(publicRequest.IsSetInstanceId())
+                if(publicRequest.IsSetContactDataRequestList())
                 {
-                    context.Writer.WritePropertyName("InstanceId");
-                    context.Writer.Write(publicRequest.InstanceId);
+                    context.Writer.WritePropertyName("ContactDataRequestList");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestContactDataRequestListListValue in publicRequest.ContactDataRequestList)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ContactDataRequestMarshaller.Instance;
+                        marshaller.Marshall(publicRequestContactDataRequestListListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
                 writer.WriteObjectEnd();
@@ -96,9 +103,9 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static StopContactRequestMarshaller _instance = new StopContactRequestMarshaller();        
+        private static BatchPutContactRequestMarshaller _instance = new BatchPutContactRequestMarshaller();        
 
-        internal static StopContactRequestMarshaller GetInstance()
+        internal static BatchPutContactRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -106,7 +113,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static StopContactRequestMarshaller Instance
+        public static BatchPutContactRequestMarshaller Instance
         {
             get
             {

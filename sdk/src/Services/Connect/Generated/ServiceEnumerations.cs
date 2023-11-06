@@ -965,6 +965,60 @@ namespace Amazon.Connect
 
 
     /// <summary>
+    /// Constants used for properties of type EndpointType.
+    /// </summary>
+    public class EndpointType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONTACT_FLOW for EndpointType
+        /// </summary>
+        public static readonly EndpointType CONTACT_FLOW = new EndpointType("CONTACT_FLOW");
+        /// <summary>
+        /// Constant TELEPHONE_NUMBER for EndpointType
+        /// </summary>
+        public static readonly EndpointType TELEPHONE_NUMBER = new EndpointType("TELEPHONE_NUMBER");
+        /// <summary>
+        /// Constant VOIP for EndpointType
+        /// </summary>
+        public static readonly EndpointType VOIP = new EndpointType("VOIP");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EndpointType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EndpointType FindValue(string value)
+        {
+            return FindValue<EndpointType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EndpointType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EvaluationFormQuestionType.
     /// </summary>
     public class EvaluationFormQuestionType : ConstantClass
@@ -1336,6 +1390,88 @@ namespace Amazon.Connect
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator EventSourceName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FailureReasonCode.
+    /// </summary>
+    public class FailureReasonCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant IDEMPOTENCY_EXCEPTION for FailureReasonCode
+        /// </summary>
+        public static readonly FailureReasonCode IDEMPOTENCY_EXCEPTION = new FailureReasonCode("IDEMPOTENCY_EXCEPTION");
+        /// <summary>
+        /// Constant INTERNAL_ERROR for FailureReasonCode
+        /// </summary>
+        public static readonly FailureReasonCode INTERNAL_ERROR = new FailureReasonCode("INTERNAL_ERROR");
+        /// <summary>
+        /// Constant INVALID_ATTRIBUTE_KEY for FailureReasonCode
+        /// </summary>
+        public static readonly FailureReasonCode INVALID_ATTRIBUTE_KEY = new FailureReasonCode("INVALID_ATTRIBUTE_KEY");
+        /// <summary>
+        /// Constant INVALID_CUSTOMER_ENDPOINT for FailureReasonCode
+        /// </summary>
+        public static readonly FailureReasonCode INVALID_CUSTOMER_ENDPOINT = new FailureReasonCode("INVALID_CUSTOMER_ENDPOINT");
+        /// <summary>
+        /// Constant INVALID_QUEUE for FailureReasonCode
+        /// </summary>
+        public static readonly FailureReasonCode INVALID_QUEUE = new FailureReasonCode("INVALID_QUEUE");
+        /// <summary>
+        /// Constant INVALID_SYSTEM_ENDPOINT for FailureReasonCode
+        /// </summary>
+        public static readonly FailureReasonCode INVALID_SYSTEM_ENDPOINT = new FailureReasonCode("INVALID_SYSTEM_ENDPOINT");
+        /// <summary>
+        /// Constant MISSING_CAMPAIGN for FailureReasonCode
+        /// </summary>
+        public static readonly FailureReasonCode MISSING_CAMPAIGN = new FailureReasonCode("MISSING_CAMPAIGN");
+        /// <summary>
+        /// Constant MISSING_CUSTOMER_ENDPOINT for FailureReasonCode
+        /// </summary>
+        public static readonly FailureReasonCode MISSING_CUSTOMER_ENDPOINT = new FailureReasonCode("MISSING_CUSTOMER_ENDPOINT");
+        /// <summary>
+        /// Constant MISSING_QUEUE_ID_AND_SYSTEM_ENDPOINT for FailureReasonCode
+        /// </summary>
+        public static readonly FailureReasonCode MISSING_QUEUE_ID_AND_SYSTEM_ENDPOINT = new FailureReasonCode("MISSING_QUEUE_ID_AND_SYSTEM_ENDPOINT");
+        /// <summary>
+        /// Constant REQUEST_THROTTLED for FailureReasonCode
+        /// </summary>
+        public static readonly FailureReasonCode REQUEST_THROTTLED = new FailureReasonCode("REQUEST_THROTTLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FailureReasonCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FailureReasonCode FindValue(string value)
+        {
+            return FindValue<FailureReasonCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FailureReasonCode(string value)
         {
             return FindValue(value);
         }

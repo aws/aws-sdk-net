@@ -54,6 +54,7 @@ namespace Amazon.Connect.Model
     public partial class StopContactRequest : AmazonConnectRequest
     {
         private string _contactId;
+        private DisconnectReason _disconnectReason;
         private string _instanceId;
 
         /// <summary>
@@ -73,6 +74,25 @@ namespace Amazon.Connect.Model
         internal bool IsSetContactId()
         {
             return this._contactId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DisconnectReason. 
+        /// <para>
+        /// The reason a contact can be disconnected. Only Amazon Connect outbound campaigns can
+        /// provide this field.
+        /// </para>
+        /// </summary>
+        public DisconnectReason DisconnectReason
+        {
+            get { return this._disconnectReason; }
+            set { this._disconnectReason = value; }
+        }
+
+        // Check to see if DisconnectReason property is set
+        internal bool IsSetDisconnectReason()
+        {
+            return this._disconnectReason != null;
         }
 
         /// <summary>

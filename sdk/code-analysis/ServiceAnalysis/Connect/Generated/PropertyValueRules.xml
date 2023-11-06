@@ -121,6 +121,15 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.BatchPutContactRequest.ClientToken</property>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.BatchPutContactRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.ClaimPhoneNumberRequest.ClientToken</property>
     <max>500</max>
   </property-value-rule>
@@ -2803,6 +2812,11 @@
     <pattern>\\+[1-9]\\d{1,14}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.Campaign.CampaignId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.ChatMessage.Content</property>
     <min>1</min>
     <max>16384</max>
@@ -2861,6 +2875,10 @@
     <property>Amazon.Connect.Model.Contact.RelatedContactId</property>
     <min>1</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ContactDataRequest.RequestIdentifier</property>
+    <max>80</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ContactFlow.Id</property>
@@ -2962,6 +2980,11 @@
     <property>Amazon.Connect.Model.EncryptionConfig.KeyId</property>
     <min>1</min>
     <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.Endpoint.Address</property>
+    <min>0</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.Evaluation.EvaluationId</property>
@@ -3142,6 +3165,10 @@
     <property>Amazon.Connect.Model.EventBridgeActionDefinition.Name</property>
     <min>1</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.FailedRequest.RequestIdentifier</property>
+    <max>80</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.FilterV2.FilterKey</property>
@@ -3589,6 +3616,15 @@
     <property>Amazon.Connect.Model.StringReference.Value</property>
     <min>0</min>
     <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.SuccessfulRequest.ContactId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.SuccessfulRequest.RequestIdentifier</property>
+    <max>80</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.TagSearchCondition.TagKey</property>

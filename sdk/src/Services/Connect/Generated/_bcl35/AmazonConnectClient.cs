@@ -1283,6 +1283,91 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  BatchPutContact
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// Only the Amazon Connect outbound campaigns service principal is allowed to assume
+        /// a role in your account and call this API.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Allows you to create a batch of contacts in Amazon Connect. The outbound campaigns
+        /// capability ingests dial requests via the <a href="https://docs.aws.amazon.com/connect-outbound/latest/APIReference/API_PutDialRequestBatch.html">PutDialRequestBatch</a>
+        /// API. It then uses BatchPutContact to create contacts corresponding to those dial requests.
+        /// If agents are available, the dial requests are dialed out, which results in a voice
+        /// call. The resulting voice call uses the same contactId that was created by BatchPutContact.
+        /// 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchPutContact service method.</param>
+        /// 
+        /// <returns>The response from the BatchPutContact service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.IdempotencyException">
+        /// An entity with the same name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.LimitExceededException">
+        /// The allowed limit for the resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/BatchPutContact">REST API Reference for BatchPutContact Operation</seealso>
+        public virtual BatchPutContactResponse BatchPutContact(BatchPutContactRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchPutContactRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchPutContactResponseUnmarshaller.Instance;
+
+            return Invoke<BatchPutContactResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchPutContact operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchPutContact operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchPutContact
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/BatchPutContact">REST API Reference for BatchPutContact Operation</seealso>
+        public virtual IAsyncResult BeginBatchPutContact(BatchPutContactRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchPutContactRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchPutContactResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchPutContact operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchPutContact.</param>
+        /// 
+        /// <returns>Returns a  BatchPutContactResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/BatchPutContact">REST API Reference for BatchPutContact Operation</seealso>
+        public virtual BatchPutContactResponse EndBatchPutContact(IAsyncResult asyncResult)
+        {
+            return EndInvoke<BatchPutContactResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ClaimPhoneNumber
 
         /// <summary>

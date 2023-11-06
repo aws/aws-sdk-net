@@ -1411,6 +1411,109 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  BatchPutContact
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// Only the Amazon Connect outbound campaigns service principal is allowed to assume
+        /// a role in your account and call this API.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Allows you to create a batch of contacts in Amazon Connect. The outbound campaigns
+        /// capability ingests dial requests via the <a href="https://docs.aws.amazon.com/connect-outbound/latest/APIReference/API_PutDialRequestBatch.html">PutDialRequestBatch</a>
+        /// API. It then uses BatchPutContact to create contacts corresponding to those dial requests.
+        /// If agents are available, the dial requests are dialed out, which results in a voice
+        /// call. The resulting voice call uses the same contactId that was created by BatchPutContact.
+        /// 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchPutContact service method.</param>
+        /// 
+        /// <returns>The response from the BatchPutContact service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.IdempotencyException">
+        /// An entity with the same name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.LimitExceededException">
+        /// The allowed limit for the resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/BatchPutContact">REST API Reference for BatchPutContact Operation</seealso>
+        public virtual BatchPutContactResponse BatchPutContact(BatchPutContactRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchPutContactRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchPutContactResponseUnmarshaller.Instance;
+
+            return Invoke<BatchPutContactResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// Only the Amazon Connect outbound campaigns service principal is allowed to assume
+        /// a role in your account and call this API.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Allows you to create a batch of contacts in Amazon Connect. The outbound campaigns
+        /// capability ingests dial requests via the <a href="https://docs.aws.amazon.com/connect-outbound/latest/APIReference/API_PutDialRequestBatch.html">PutDialRequestBatch</a>
+        /// API. It then uses BatchPutContact to create contacts corresponding to those dial requests.
+        /// If agents are available, the dial requests are dialed out, which results in a voice
+        /// call. The resulting voice call uses the same contactId that was created by BatchPutContact.
+        /// 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchPutContact service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchPutContact service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.IdempotencyException">
+        /// An entity with the same name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.LimitExceededException">
+        /// The allowed limit for the resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/BatchPutContact">REST API Reference for BatchPutContact Operation</seealso>
+        public virtual Task<BatchPutContactResponse> BatchPutContactAsync(BatchPutContactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchPutContactRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchPutContactResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<BatchPutContactResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ClaimPhoneNumber
 
 
