@@ -1737,9 +1737,9 @@ namespace Amazon.CodeBuild
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Do not store sensitive values, especially Amazon Web Services access key IDs and secret
-        /// access keys, in environment variables. We recommend that you use an Amazon EC2 Systems
-        /// Manager Parameter Store or Secrets Manager to store sensitive values.
+        /// Do not store sensitive values in environment variables. We recommend that you use
+        /// an Amazon EC2 Systems Manager Parameter Store or Secrets Manager to store sensitive
+        /// values.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1794,9 +1794,9 @@ namespace Amazon.CodeBuild
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Do not store sensitive values, especially Amazon Web Services access key IDs and secret
-        /// access keys, in environment variables. We recommend that you use an Amazon EC2 Systems
-        /// Manager Parameter Store or Secrets Manager to store sensitive values.
+        /// Do not store sensitive values in environment variables. We recommend that you use
+        /// an Amazon EC2 Systems Manager Parameter Store or Secrets Manager to store sensitive
+        /// values.
         /// </para>
         ///  </li> <li> 
         /// <para>

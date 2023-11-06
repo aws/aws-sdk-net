@@ -399,7 +399,7 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If an IAM user started the build, the user's name (for example, <code>MyUserName</code>).
+        /// If a user started the build, the user's name (for example, <code>MyUserName</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>

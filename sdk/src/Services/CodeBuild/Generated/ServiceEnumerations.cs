@@ -622,6 +622,26 @@ namespace Amazon.CodeBuild
         /// Constant BUILD_GENERAL1_SMALL for ComputeType
         /// </summary>
         public static readonly ComputeType BUILD_GENERAL1_SMALL = new ComputeType("BUILD_GENERAL1_SMALL");
+        /// <summary>
+        /// Constant BUILD_LAMBDA_10GB for ComputeType
+        /// </summary>
+        public static readonly ComputeType BUILD_LAMBDA_10GB = new ComputeType("BUILD_LAMBDA_10GB");
+        /// <summary>
+        /// Constant BUILD_LAMBDA_1GB for ComputeType
+        /// </summary>
+        public static readonly ComputeType BUILD_LAMBDA_1GB = new ComputeType("BUILD_LAMBDA_1GB");
+        /// <summary>
+        /// Constant BUILD_LAMBDA_2GB for ComputeType
+        /// </summary>
+        public static readonly ComputeType BUILD_LAMBDA_2GB = new ComputeType("BUILD_LAMBDA_2GB");
+        /// <summary>
+        /// Constant BUILD_LAMBDA_4GB for ComputeType
+        /// </summary>
+        public static readonly ComputeType BUILD_LAMBDA_4GB = new ComputeType("BUILD_LAMBDA_4GB");
+        /// <summary>
+        /// Constant BUILD_LAMBDA_8GB for ComputeType
+        /// </summary>
+        public static readonly ComputeType BUILD_LAMBDA_8GB = new ComputeType("BUILD_LAMBDA_8GB");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -715,6 +735,10 @@ namespace Amazon.CodeBuild
         /// </summary>
         public static readonly EnvironmentType ARM_CONTAINER = new EnvironmentType("ARM_CONTAINER");
         /// <summary>
+        /// Constant ARM_LAMBDA_CONTAINER for EnvironmentType
+        /// </summary>
+        public static readonly EnvironmentType ARM_LAMBDA_CONTAINER = new EnvironmentType("ARM_LAMBDA_CONTAINER");
+        /// <summary>
         /// Constant LINUX_CONTAINER for EnvironmentType
         /// </summary>
         public static readonly EnvironmentType LINUX_CONTAINER = new EnvironmentType("LINUX_CONTAINER");
@@ -722,6 +746,10 @@ namespace Amazon.CodeBuild
         /// Constant LINUX_GPU_CONTAINER for EnvironmentType
         /// </summary>
         public static readonly EnvironmentType LINUX_GPU_CONTAINER = new EnvironmentType("LINUX_GPU_CONTAINER");
+        /// <summary>
+        /// Constant LINUX_LAMBDA_CONTAINER for EnvironmentType
+        /// </summary>
+        public static readonly EnvironmentType LINUX_LAMBDA_CONTAINER = new EnvironmentType("LINUX_LAMBDA_CONTAINER");
         /// <summary>
         /// Constant WINDOWS_CONTAINER for EnvironmentType
         /// </summary>
