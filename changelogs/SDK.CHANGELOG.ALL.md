@@ -1,3 +1,24 @@
+### 3.7.678.0 (2023-11-06 19:22 UTC)
+* CodeBuild (3.7.201.0)
+	* AWS CodeBuild now supports AWS Lambda compute.
+* Connect (3.7.213.0)
+	* Added new API that allows Amazon Connect Outbound Campaigns to create contacts in Amazon Connect when ingesting your dial requests.
+* CostExplorer (3.7.203.0)
+	* This release extends the GetReservationPurchaseRecommendation API to support recommendations for Amazon MemoryDB reservations.
+* DocDB (3.7.201.0)
+	* Update the input of CreateDBInstance and ModifyDBInstance to support setting CA Certificates. Update the output of DescribeDBInstance and DescribeDBEngineVersions to show current and supported CA certificates.
+* IdentityManagement (3.7.203.0)
+	* Add partitional endpoint for iso-e.
+* MWAA (3.7.201.0)
+	* This release adds support for Apache Airflow version 2.7.2. This version release includes support for deferrable operators and triggers.
+* Polly (3.7.204.0)
+	* Amazon Polly adds new US English voices - Danielle and Gregory. Danielle and Gregory are available as Neural voices only.
+* Route53 (3.7.203.0)
+	* Add partitional endpoints for iso-e and iso-f.
+* Core 3.7.204.13
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.677.0 (2023-11-03 19:11 UTC)
 * ConfigService (3.7.203.0)
 	* Updated ResourceType enum with new resource types onboarded by AWS Config in October 2023.
