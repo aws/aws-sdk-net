@@ -1,3 +1,16 @@
+### 3.7.679.0 (2023-11-07 19:45 UTC)
+* DataExchange (3.7.202.0)
+	* Updated SendDataSetNotificationRequest Comment to be maximum length 4096.
+* DLM (3.7.201.0)
+	* Added support for pre and post scripts in Amazon Data Lifecycle Manager EBS snapshot lifecycle policies.
+* RDS (3.7.214.0)
+	* This Amazon RDS release adds support for the multi-tenant configuration. In this configuration, an RDS DB instance can contain multiple tenant databases. In RDS for Oracle, a tenant database is a pluggable database (PDB).
+* S3 (3.7.205.24)
+	* Fixed an issue where TransferUtility UploadAsync() is not sending metadata or headers with non-seekable stream.
+* Core 3.7.204.14
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.678.0 (2023-11-06 19:22 UTC)
 * CodeBuild (3.7.201.0)
 	* AWS CodeBuild now supports AWS Lambda compute.

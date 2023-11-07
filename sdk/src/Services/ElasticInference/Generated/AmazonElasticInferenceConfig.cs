@@ -32,7 +32,7 @@ namespace Amazon.ElasticInference
     public partial class AmazonElasticInferenceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.200.65");
+            InternalSDKUtils.BuildUserAgentString("3.7.200.66");
 
         private string _userAgent = UserAgentString;
         ///<summary>

@@ -1,9 +1,0 @@
-{
-    "services": [
-      {
-        "serviceName": "S3",
-        "type": "patch",
-        "changeLogMessages": [ "Fixed an issue where TransferUtility UploadAsync() is not sending metadata or headers with non-seekable stream." ]
-      }
-    ]
-  }
