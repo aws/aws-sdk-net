@@ -29,12 +29,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DLM.Model
 {
     /// <summary>
-    /// <b>[Snapshot and AMI policies only]</b> Specifies a cross-Region copy rule for snapshot
-    /// and AMI policies.
+    /// <b>[Snapshot and AMI policies only]</b> Specifies a cross-Region copy rule for a
+    /// snapshot and AMI policies.
     /// 
     ///  <note> 
     /// <para>
-    /// To specify a cross-Region copy action for event-based polices, use <a>CrossRegionCopyAction</a>.
+    /// To specify a cross-Region copy action for event-based polices, use <a href="https://docs.aws.amazon.com/dlm/latest/APIReference/API_CrossRegionCopyAction.html">CrossRegionCopyAction</a>.
     /// </para>
     ///  </note>
     /// </summary>
@@ -147,14 +147,15 @@ namespace Amazon.DLM.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Target. 
+        /// Gets and sets the property Target. <note> 
         /// <para>
-        /// The target Region or the Amazon Resource Name (ARN) of the target Outpost for the
-        /// snapshot copies.
+        /// Use this parameter for snapshot policies only. For AMI policies, use <b>TargetRegion</b>
+        /// instead.
         /// </para>
-        ///  
+        ///  </note> 
         /// <para>
-        /// Use this parameter instead of <b>TargetRegion</b>. Do not specify both.
+        ///  <b>[Snapshot policies only]</b> The target Region or the Amazon Resource Name (ARN)
+        /// of the target Outpost for the snapshot copies.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]
@@ -173,15 +174,15 @@ namespace Amazon.DLM.Model
         /// <summary>
         /// Gets and sets the property TargetRegion. <note> 
         /// <para>
-        /// Avoid using this parameter when creating new policies. Instead, use <b>Target</b>
-        /// to specify a target Region or a target Outpost for snapshot copies.
+        /// Use this parameter for AMI policies only. For snapshot policies, use <b>Target</b>
+        /// instead. For snapshot policies created before the <b>Target</b> parameter was introduced,
+        /// this parameter indicates the target Region for snapshot copies.
         /// </para>
-        ///  
+        ///   </note> 
         /// <para>
-        /// For policies created before the <b>Target</b> parameter was introduced, this parameter
-        /// indicates the target Region for snapshot copies.
+        ///  <b>[AMI policies only]</b> The target Region or the Amazon Resource Name (ARN) of
+        /// the target Outpost for the snapshot copies.
         /// </para>
-        ///  </note>
         /// </summary>
         [AWSProperty(Min=0, Max=16)]
         public string TargetRegion

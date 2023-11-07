@@ -165,7 +165,7 @@ namespace Amazon.DLM
         /// 
         ///  
         /// <para>
-        /// To get complete information about a policy, use <a>GetLifecyclePolicy</a>.
+        /// To get complete information about a policy, use <a href="https://docs.aws.amazon.com/dlm/latest/APIReference/API_GetLifecyclePolicy.html">GetLifecyclePolicy</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetLifecyclePolicies service method.</param>
@@ -193,7 +193,7 @@ namespace Amazon.DLM
         /// 
         ///  
         /// <para>
-        /// To get complete information about a policy, use <a>GetLifecyclePolicy</a>.
+        /// To get complete information about a policy, use <a href="https://docs.aws.amazon.com/dlm/latest/APIReference/API_GetLifecyclePolicy.html">GetLifecyclePolicy</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetLifecyclePolicies service method.</param>

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DLM.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CreateRule Object
+    /// Response Unmarshaller for Script Object
     /// </summary>  
-    public class CreateRuleUnmarshaller : IUnmarshaller<CreateRule, XmlUnmarshallerContext>, IUnmarshaller<CreateRule, JsonUnmarshallerContext>
+    public class ScriptUnmarshaller : IUnmarshaller<Script, XmlUnmarshallerContext>, IUnmarshaller<Script, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        CreateRule IUnmarshaller<CreateRule, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        Script IUnmarshaller<Script, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,51 +53,51 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public CreateRule Unmarshall(JsonUnmarshallerContext context)
+        public Script Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            CreateRule unmarshalledObject = new CreateRule();
+            Script unmarshalledObject = new Script();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("CronExpression", targetDepth))
+                if (context.TestExpression("ExecuteOperationOnScriptFailure", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CronExpression = unmarshaller.Unmarshall(context);
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.ExecuteOperationOnScriptFailure = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Interval", targetDepth))
+                if (context.TestExpression("ExecutionHandler", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ExecutionHandler = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ExecutionHandlerService", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ExecutionHandlerService = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ExecutionTimeout", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.Interval = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ExecutionTimeout = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("IntervalUnit", targetDepth))
+                if (context.TestExpression("MaximumRetryCount", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.IntervalUnit = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.MaximumRetryCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Location", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Location = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Scripts", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<Script, ScriptUnmarshaller>(ScriptUnmarshaller.Instance);
-                    unmarshalledObject.Scripts = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Times", targetDepth))
+                if (context.TestExpression("Stages", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.Times = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Stages = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -106,12 +106,12 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
         }
 
 
-        private static CreateRuleUnmarshaller _instance = new CreateRuleUnmarshaller();        
+        private static ScriptUnmarshaller _instance = new ScriptUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateRuleUnmarshaller Instance
+        public static ScriptUnmarshaller Instance
         {
             get
             {

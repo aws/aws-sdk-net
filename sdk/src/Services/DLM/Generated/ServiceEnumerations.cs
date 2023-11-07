@@ -117,6 +117,52 @@ namespace Amazon.DLM
 
 
     /// <summary>
+    /// Constants used for properties of type ExecutionHandlerServiceValues.
+    /// </summary>
+    public class ExecutionHandlerServiceValues : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AWS_SYSTEMS_MANAGER for ExecutionHandlerServiceValues
+        /// </summary>
+        public static readonly ExecutionHandlerServiceValues AWS_SYSTEMS_MANAGER = new ExecutionHandlerServiceValues("AWS_SYSTEMS_MANAGER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ExecutionHandlerServiceValues(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExecutionHandlerServiceValues FindValue(string value)
+        {
+            return FindValue<ExecutionHandlerServiceValues>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExecutionHandlerServiceValues(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type GettablePolicyStateValues.
     /// </summary>
     public class GettablePolicyStateValues : ConstantClass
@@ -522,6 +568,56 @@ namespace Amazon.DLM
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SettablePolicyStateValues(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type StageValues.
+    /// </summary>
+    public class StageValues : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant POST for StageValues
+        /// </summary>
+        public static readonly StageValues POST = new StageValues("POST");
+        /// <summary>
+        /// Constant PRE for StageValues
+        /// </summary>
+        public static readonly StageValues PRE = new StageValues("PRE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StageValues(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StageValues FindValue(string value)
+        {
+            return FindValue<StageValues>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StageValues(string value)
         {
             return FindValue(value);
         }

@@ -34,7 +34,7 @@ namespace Amazon.DLM.Model
     /// 
     ///  <note> 
     /// <para>
-    /// To specify a cross-Region copy rule for snapshot and AMI policies, use <a>CrossRegionCopyRule</a>.
+    /// To specify a cross-Region copy rule for snapshot and AMI policies, use <a href="https://docs.aws.amazon.com/dlm/latest/APIReference/API_CrossRegionCopyRule.html">CrossRegionCopyRule</a>.
     /// </para>
     ///  </note>
     /// </summary>
