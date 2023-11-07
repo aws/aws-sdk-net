@@ -1,0 +1,9 @@
+{
+  "core": {
+    "changeLogMessages": [
+      "Bulk sync endpoint rules and tests"
+    ],
+    "type": "patch",
+    "updateMinimum": true
+  }
+}
