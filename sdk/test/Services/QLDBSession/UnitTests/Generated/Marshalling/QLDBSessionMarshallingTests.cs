@@ -46,7 +46,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("QLDBSession")]
         public void SendCommandMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<SendCommandRequest>();
+            var operation = service_model.FindOperation("SendCommand");
+
+            var request = InstantiateClassGenerator.Execute<SendCommandRequest>(operation);
             var marshaller = new SendCommandRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -60,7 +62,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("SendCommand").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = SendCommandResponseUnmarshaller.Instance.Unmarshall(context) as SendCommandResponse;
@@ -75,7 +77,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("SendCommand");
 
-            var request = InstantiateClassGenerator.Execute<SendCommandRequest>();
+            var request = InstantiateClassGenerator.Execute<SendCommandRequest>(operation);
             var marshaller = new SendCommandRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -107,7 +109,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("SendCommand");
 
-            var request = InstantiateClassGenerator.Execute<SendCommandRequest>();
+            var request = InstantiateClassGenerator.Execute<SendCommandRequest>(operation);
             var marshaller = new SendCommandRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -139,7 +141,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("SendCommand");
 
-            var request = InstantiateClassGenerator.Execute<SendCommandRequest>();
+            var request = InstantiateClassGenerator.Execute<SendCommandRequest>(operation);
             var marshaller = new SendCommandRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -171,7 +173,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("SendCommand");
 
-            var request = InstantiateClassGenerator.Execute<SendCommandRequest>();
+            var request = InstantiateClassGenerator.Execute<SendCommandRequest>(operation);
             var marshaller = new SendCommandRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -203,7 +205,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("SendCommand");
 
-            var request = InstantiateClassGenerator.Execute<SendCommandRequest>();
+            var request = InstantiateClassGenerator.Execute<SendCommandRequest>(operation);
             var marshaller = new SendCommandRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -235,7 +237,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("SendCommand");
 
-            var request = InstantiateClassGenerator.Execute<SendCommandRequest>();
+            var request = InstantiateClassGenerator.Execute<SendCommandRequest>(operation);
             var marshaller = new SendCommandRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);

@@ -70,6 +70,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.TabularResolvedAttributes = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("TextGenerationResolvedAttributes", targetDepth))
+                {
+                    var unmarshaller = TextGenerationResolvedAttributesUnmarshaller.Instance;
+                    unmarshalledObject.TextGenerationResolvedAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

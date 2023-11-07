@@ -247,8 +247,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property UserGroupResolutionConfiguration. 
         /// <para>
-        /// Gets users and groups from IAM Identity Center (successor to Single Sign-On) identity
-        /// source. To configure this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.
+        /// Gets users and groups from IAM Identity Center identity source. To configure this,
+        /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.
         /// </para>
         /// </summary>
         public UserGroupResolutionConfiguration UserGroupResolutionConfiguration

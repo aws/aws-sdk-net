@@ -68,6 +68,14 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeCapacityBlockOfferings operation
+        ///</summary>
+        public IDescribeCapacityBlockOfferingsPaginator DescribeCapacityBlockOfferings(DescribeCapacityBlockOfferingsRequest request) 
+        {
+            return new DescribeCapacityBlockOfferingsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeCapacityReservationFleets operation
         ///</summary>
         public IDescribeCapacityReservationFleetsPaginator DescribeCapacityReservationFleets(DescribeCapacityReservationFleetsRequest request) 
@@ -1025,6 +1033,14 @@ namespace Amazon.EC2.Model
         public IGetNetworkInsightsAccessScopeAnalysisFindingsPaginator GetNetworkInsightsAccessScopeAnalysisFindings(GetNetworkInsightsAccessScopeAnalysisFindingsRequest request) 
         {
             return new GetNetworkInsightsAccessScopeAnalysisFindingsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for GetSecurityGroupsForVpc operation
+        ///</summary>
+        public IGetSecurityGroupsForVpcPaginator GetSecurityGroupsForVpc(GetSecurityGroupsForVpcRequest request) 
+        {
+            return new GetSecurityGroupsForVpcPaginator(this.client, request);
         }
 
         /// <summary>

@@ -46,7 +46,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         public void BatchGetItemEndpointDiscoveryMarshallTest()
         {
             var operation = service_model.FindOperation("BatchGetItem");
-            var request = InstantiateClassGenerator.Execute<BatchGetItemRequest>();
+            var request = InstantiateClassGenerator.Execute<BatchGetItemRequest>(operation);
             var marshaller = new BatchGetItemEndpointDiscoveryMarshaller();
 
             var internalData = marshaller.Marshall(request);
@@ -61,7 +61,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         public void BatchWriteItemEndpointDiscoveryMarshallTest()
         {
             var operation = service_model.FindOperation("BatchWriteItem");
-            var request = InstantiateClassGenerator.Execute<BatchWriteItemRequest>();
+            var request = InstantiateClassGenerator.Execute<BatchWriteItemRequest>(operation);
             var marshaller = new BatchWriteItemEndpointDiscoveryMarshaller();
 
             var internalData = marshaller.Marshall(request);
@@ -76,7 +76,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         public void CreateBackupEndpointDiscoveryMarshallTest()
         {
             var operation = service_model.FindOperation("CreateBackup");
-            var request = InstantiateClassGenerator.Execute<CreateBackupRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateBackupRequest>(operation);
             var marshaller = new CreateBackupEndpointDiscoveryMarshaller();
 
             var internalData = marshaller.Marshall(request);
@@ -91,7 +91,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         public void CreateGlobalTableEndpointDiscoveryMarshallTest()
         {
             var operation = service_model.FindOperation("CreateGlobalTable");
-            var request = InstantiateClassGenerator.Execute<CreateGlobalTableRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateGlobalTableRequest>(operation);
             var marshaller = new CreateGlobalTableEndpointDiscoveryMarshaller();
 
             var internalData = marshaller.Marshall(request);
@@ -106,7 +106,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         public void CreateTableEndpointDiscoveryMarshallTest()
         {
             var operation = service_model.FindOperation("CreateTable");
-            var request = InstantiateClassGenerator.Execute<CreateTableRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateTableRequest>(operation);
             var marshaller = new CreateTableEndpointDiscoveryMarshaller();
 
             var internalData = marshaller.Marshall(request);
@@ -121,7 +121,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         public void DeleteBackupEndpointDiscoveryMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteBackup");
-            var request = InstantiateClassGenerator.Execute<DeleteBackupRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteBackupRequest>(operation);
             var marshaller = new DeleteBackupEndpointDiscoveryMarshaller();
 
             var internalData = marshaller.Marshall(request);
@@ -136,7 +136,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         public void DeleteItemEndpointDiscoveryMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteItem");
-            var request = InstantiateClassGenerator.Execute<DeleteItemRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteItemRequest>(operation);
             var marshaller = new DeleteItemEndpointDiscoveryMarshaller();
 
             var internalData = marshaller.Marshall(request);
@@ -151,7 +151,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         public void DeleteTableEndpointDiscoveryMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteTable");
-            var request = InstantiateClassGenerator.Execute<DeleteTableRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteTableRequest>(operation);
             var marshaller = new DeleteTableEndpointDiscoveryMarshaller();
 
             var internalData = marshaller.Marshall(request);
@@ -166,7 +166,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         public void DescribeBackupEndpointDiscoveryMarshallTest()
         {
             var operation = service_model.FindOperation("DescribeBackup");
-            var request = InstantiateClassGenerator.Execute<DescribeBackupRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeBackupRequest>(operation);
             var marshaller = new DescribeBackupEndpointDiscoveryMarshaller();
 
             var internalData = marshaller.Marshall(request);
@@ -181,7 +181,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         public void DescribeContinuousBackupsEndpointDiscoveryMarshallTest()
         {
             var operation = service_model.FindOperation("DescribeContinuousBackups");
-            var request = InstantiateClassGenerator.Execute<DescribeContinuousBackupsRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeContinuousBackupsRequest>(operation);
             var marshaller = new DescribeContinuousBackupsEndpointDiscoveryMarshaller();
 
             var internalData = marshaller.Marshall(request);
@@ -196,7 +196,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         public void DescribeGlobalTableEndpointDiscoveryMarshallTest()
         {
             var operation = service_model.FindOperation("DescribeGlobalTable");
-            var request = InstantiateClassGenerator.Execute<DescribeGlobalTableRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeGlobalTableRequest>(operation);
             var marshaller = new DescribeGlobalTableEndpointDiscoveryMarshaller();
 
             var internalData = marshaller.Marshall(request);
@@ -211,7 +211,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         public void DescribeGlobalTableSettingsEndpointDiscoveryMarshallTest()
         {
             var operation = service_model.FindOperation("DescribeGlobalTableSettings");
-            var request = InstantiateClassGenerator.Execute<DescribeGlobalTableSettingsRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeGlobalTableSettingsRequest>(operation);
             var marshaller = new DescribeGlobalTableSettingsEndpointDiscoveryMarshaller();
 
             var internalData = marshaller.Marshall(request);
@@ -226,7 +226,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         public void DescribeKinesisStreamingDestinationEndpointDiscoveryMarshallTest()
         {
             var operation = service_model.FindOperation("DescribeKinesisStreamingDestination");
-            var request = InstantiateClassGenerator.Execute<DescribeKinesisStreamingDestinationRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeKinesisStreamingDestinationRequest>(operation);
             var marshaller = new DescribeKinesisStreamingDestinationEndpointDiscoveryMarshaller();
 
             var internalData = marshaller.Marshall(request);
@@ -241,7 +241,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         public void DescribeLimitsEndpointDiscoveryMarshallTest()
         {
             var operation = service_model.FindOperation("DescribeLimits");
-            var request = InstantiateClassGenerator.Execute<DescribeLimitsRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeLimitsRequest>(operation);
             var marshaller = new DescribeLimitsEndpointDiscoveryMarshaller();
 
             var internalData = marshaller.Marshall(request);
@@ -256,7 +256,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         public void DescribeTableEndpointDiscoveryMarshallTest()
         {
             var operation = service_model.FindOperation("DescribeTable");
-            var request = InstantiateClassGenerator.Execute<DescribeTableRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeTableRequest>(operation);
             var marshaller = new DescribeTableEndpointDiscoveryMarshaller();
 
             var internalData = marshaller.Marshall(request);
@@ -271,7 +271,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         public void DescribeTimeToLiveEndpointDiscoveryMarshallTest()
         {
             var operation = service_model.FindOperation("DescribeTimeToLive");
-            var request = InstantiateClassGenerator.Execute<DescribeTimeToLiveRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeTimeToLiveRequest>(operation);
             var marshaller = new DescribeTimeToLiveEndpointDiscoveryMarshaller();
 
             var internalData = marshaller.Marshall(request);
@@ -286,7 +286,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         public void DisableKinesisStreamingDestinationEndpointDiscoveryMarshallTest()
         {
             var operation = service_model.FindOperation("DisableKinesisStreamingDestination");
-            var request = InstantiateClassGenerator.Execute<DisableKinesisStreamingDestinationRequest>();
+            var request = InstantiateClassGenerator.Execute<DisableKinesisStreamingDestinationRequest>(operation);
             var marshaller = new DisableKinesisStreamingDestinationEndpointDiscoveryMarshaller();
 
             var internalData = marshaller.Marshall(request);
@@ -301,7 +301,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         public void EnableKinesisStreamingDestinationEndpointDiscoveryMarshallTest()
         {
             var operation = service_model.FindOperation("EnableKinesisStreamingDestination");
-            var request = InstantiateClassGenerator.Execute<EnableKinesisStreamingDestinationRequest>();
+            var request = InstantiateClassGenerator.Execute<EnableKinesisStreamingDestinationRequest>(operation);
             var marshaller = new EnableKinesisStreamingDestinationEndpointDiscoveryMarshaller();
 
             var internalData = marshaller.Marshall(request);
@@ -316,7 +316,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         public void GetItemEndpointDiscoveryMarshallTest()
         {
             var operation = service_model.FindOperation("GetItem");
-            var request = InstantiateClassGenerator.Execute<GetItemRequest>();
+            var request = InstantiateClassGenerator.Execute<GetItemRequest>(operation);
             var marshaller = new GetItemEndpointDiscoveryMarshaller();
 
             var internalData = marshaller.Marshall(request);
@@ -331,7 +331,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         public void ListBackupsEndpointDiscoveryMarshallTest()
         {
             var operation = service_model.FindOperation("ListBackups");
-            var request = InstantiateClassGenerator.Execute<ListBackupsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListBackupsRequest>(operation);
             var marshaller = new ListBackupsEndpointDiscoveryMarshaller();
 
             var internalData = marshaller.Marshall(request);
@@ -346,7 +346,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         public void ListGlobalTablesEndpointDiscoveryMarshallTest()
         {
             var operation = service_model.FindOperation("ListGlobalTables");
-            var request = InstantiateClassGenerator.Execute<ListGlobalTablesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListGlobalTablesRequest>(operation);
             var marshaller = new ListGlobalTablesEndpointDiscoveryMarshaller();
 
             var internalData = marshaller.Marshall(request);
@@ -361,7 +361,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         public void ListTablesEndpointDiscoveryMarshallTest()
         {
             var operation = service_model.FindOperation("ListTables");
-            var request = InstantiateClassGenerator.Execute<ListTablesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTablesRequest>(operation);
             var marshaller = new ListTablesEndpointDiscoveryMarshaller();
 
             var internalData = marshaller.Marshall(request);
@@ -376,7 +376,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         public void ListTagsOfResourceEndpointDiscoveryMarshallTest()
         {
             var operation = service_model.FindOperation("ListTagsOfResource");
-            var request = InstantiateClassGenerator.Execute<ListTagsOfResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTagsOfResourceRequest>(operation);
             var marshaller = new ListTagsOfResourceEndpointDiscoveryMarshaller();
 
             var internalData = marshaller.Marshall(request);
@@ -391,7 +391,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         public void PutItemEndpointDiscoveryMarshallTest()
         {
             var operation = service_model.FindOperation("PutItem");
-            var request = InstantiateClassGenerator.Execute<PutItemRequest>();
+            var request = InstantiateClassGenerator.Execute<PutItemRequest>(operation);
             var marshaller = new PutItemEndpointDiscoveryMarshaller();
 
             var internalData = marshaller.Marshall(request);
@@ -406,7 +406,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         public void QueryEndpointDiscoveryMarshallTest()
         {
             var operation = service_model.FindOperation("Query");
-            var request = InstantiateClassGenerator.Execute<QueryRequest>();
+            var request = InstantiateClassGenerator.Execute<QueryRequest>(operation);
             var marshaller = new QueryEndpointDiscoveryMarshaller();
 
             var internalData = marshaller.Marshall(request);
@@ -421,7 +421,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         public void RestoreTableFromBackupEndpointDiscoveryMarshallTest()
         {
             var operation = service_model.FindOperation("RestoreTableFromBackup");
-            var request = InstantiateClassGenerator.Execute<RestoreTableFromBackupRequest>();
+            var request = InstantiateClassGenerator.Execute<RestoreTableFromBackupRequest>(operation);
             var marshaller = new RestoreTableFromBackupEndpointDiscoveryMarshaller();
 
             var internalData = marshaller.Marshall(request);
@@ -436,7 +436,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         public void RestoreTableToPointInTimeEndpointDiscoveryMarshallTest()
         {
             var operation = service_model.FindOperation("RestoreTableToPointInTime");
-            var request = InstantiateClassGenerator.Execute<RestoreTableToPointInTimeRequest>();
+            var request = InstantiateClassGenerator.Execute<RestoreTableToPointInTimeRequest>(operation);
             var marshaller = new RestoreTableToPointInTimeEndpointDiscoveryMarshaller();
 
             var internalData = marshaller.Marshall(request);
@@ -451,7 +451,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         public void ScanEndpointDiscoveryMarshallTest()
         {
             var operation = service_model.FindOperation("Scan");
-            var request = InstantiateClassGenerator.Execute<ScanRequest>();
+            var request = InstantiateClassGenerator.Execute<ScanRequest>(operation);
             var marshaller = new ScanEndpointDiscoveryMarshaller();
 
             var internalData = marshaller.Marshall(request);
@@ -466,7 +466,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         public void TagResourceEndpointDiscoveryMarshallTest()
         {
             var operation = service_model.FindOperation("TagResource");
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceEndpointDiscoveryMarshaller();
 
             var internalData = marshaller.Marshall(request);
@@ -481,7 +481,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         public void TransactGetItemsEndpointDiscoveryMarshallTest()
         {
             var operation = service_model.FindOperation("TransactGetItems");
-            var request = InstantiateClassGenerator.Execute<TransactGetItemsRequest>();
+            var request = InstantiateClassGenerator.Execute<TransactGetItemsRequest>(operation);
             var marshaller = new TransactGetItemsEndpointDiscoveryMarshaller();
 
             var internalData = marshaller.Marshall(request);
@@ -496,7 +496,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         public void TransactWriteItemsEndpointDiscoveryMarshallTest()
         {
             var operation = service_model.FindOperation("TransactWriteItems");
-            var request = InstantiateClassGenerator.Execute<TransactWriteItemsRequest>();
+            var request = InstantiateClassGenerator.Execute<TransactWriteItemsRequest>(operation);
             var marshaller = new TransactWriteItemsEndpointDiscoveryMarshaller();
 
             var internalData = marshaller.Marshall(request);
@@ -511,7 +511,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         public void UntagResourceEndpointDiscoveryMarshallTest()
         {
             var operation = service_model.FindOperation("UntagResource");
-            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>(operation);
             var marshaller = new UntagResourceEndpointDiscoveryMarshaller();
 
             var internalData = marshaller.Marshall(request);
@@ -526,7 +526,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         public void UpdateContinuousBackupsEndpointDiscoveryMarshallTest()
         {
             var operation = service_model.FindOperation("UpdateContinuousBackups");
-            var request = InstantiateClassGenerator.Execute<UpdateContinuousBackupsRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateContinuousBackupsRequest>(operation);
             var marshaller = new UpdateContinuousBackupsEndpointDiscoveryMarshaller();
 
             var internalData = marshaller.Marshall(request);
@@ -541,7 +541,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         public void UpdateGlobalTableEndpointDiscoveryMarshallTest()
         {
             var operation = service_model.FindOperation("UpdateGlobalTable");
-            var request = InstantiateClassGenerator.Execute<UpdateGlobalTableRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateGlobalTableRequest>(operation);
             var marshaller = new UpdateGlobalTableEndpointDiscoveryMarshaller();
 
             var internalData = marshaller.Marshall(request);
@@ -556,7 +556,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         public void UpdateGlobalTableSettingsEndpointDiscoveryMarshallTest()
         {
             var operation = service_model.FindOperation("UpdateGlobalTableSettings");
-            var request = InstantiateClassGenerator.Execute<UpdateGlobalTableSettingsRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateGlobalTableSettingsRequest>(operation);
             var marshaller = new UpdateGlobalTableSettingsEndpointDiscoveryMarshaller();
 
             var internalData = marshaller.Marshall(request);
@@ -571,7 +571,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         public void UpdateItemEndpointDiscoveryMarshallTest()
         {
             var operation = service_model.FindOperation("UpdateItem");
-            var request = InstantiateClassGenerator.Execute<UpdateItemRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateItemRequest>(operation);
             var marshaller = new UpdateItemEndpointDiscoveryMarshaller();
 
             var internalData = marshaller.Marshall(request);
@@ -586,7 +586,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         public void UpdateTableEndpointDiscoveryMarshallTest()
         {
             var operation = service_model.FindOperation("UpdateTable");
-            var request = InstantiateClassGenerator.Execute<UpdateTableRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateTableRequest>(operation);
             var marshaller = new UpdateTableEndpointDiscoveryMarshaller();
 
             var internalData = marshaller.Marshall(request);
@@ -601,7 +601,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         public void UpdateTimeToLiveEndpointDiscoveryMarshallTest()
         {
             var operation = service_model.FindOperation("UpdateTimeToLive");
-            var request = InstantiateClassGenerator.Execute<UpdateTimeToLiveRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateTimeToLiveRequest>(operation);
             var marshaller = new UpdateTimeToLiveEndpointDiscoveryMarshaller();
 
             var internalData = marshaller.Marshall(request);

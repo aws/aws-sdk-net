@@ -243,7 +243,9 @@ namespace Amazon.Inspector2.Model
         /// <summary>
         /// Gets and sets the property ScanStatusCode. 
         /// <para>
-        /// The scan status code to filter on.
+        /// The scan status code to filter on. Valid values are: <code>ValidationException</code>,
+        /// <code>InternalServerException</code>, <code>ResourceNotFoundException</code>, <code>BadRequestException</code>,
+        /// and <code>ThrottlingException</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]

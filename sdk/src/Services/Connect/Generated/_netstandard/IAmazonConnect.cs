@@ -558,6 +558,91 @@ namespace Amazon.Connect
 
         #endregion
                 
+        #region  BatchGetFlowAssociation
+
+
+
+        /// <summary>
+        /// Retrieve the flow associations for the given resources.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetFlowAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchGetFlowAssociation service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/BatchGetFlowAssociation">REST API Reference for BatchGetFlowAssociation Operation</seealso>
+        Task<BatchGetFlowAssociationResponse> BatchGetFlowAssociationAsync(BatchGetFlowAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  BatchPutContact
+
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// Only the Amazon Connect outbound campaigns service principal is allowed to assume
+        /// a role in your account and call this API.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Allows you to create a batch of contacts in Amazon Connect. The outbound campaigns
+        /// capability ingests dial requests via the <a href="https://docs.aws.amazon.com/connect-outbound/latest/APIReference/API_PutDialRequestBatch.html">PutDialRequestBatch</a>
+        /// API. It then uses BatchPutContact to create contacts corresponding to those dial requests.
+        /// If agents are available, the dial requests are dialed out, which results in a voice
+        /// call. The resulting voice call uses the same contactId that was created by BatchPutContact.
+        /// 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchPutContact service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchPutContact service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.IdempotencyException">
+        /// An entity with the same name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.LimitExceededException">
+        /// The allowed limit for the resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/BatchPutContact">REST API Reference for BatchPutContact Operation</seealso>
+        Task<BatchPutContactResponse> BatchPutContactAsync(BatchPutContactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ClaimPhoneNumber
 
 
@@ -973,6 +1058,44 @@ namespace Amazon.Connect
 
         #endregion
                 
+        #region  CreatePersistentContactAssociation
+
+
+
+        /// <summary>
+        /// Enables rehydration of chats for the lifespan of a contact. For more information about
+        /// chat rehydration, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html">Enable
+        /// persistent chat</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePersistentContactAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreatePersistentContactAssociation service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreatePersistentContactAssociation">REST API Reference for CreatePersistentContactAssociation Operation</seealso>
+        Task<CreatePersistentContactAssociationResponse> CreatePersistentContactAssociationAsync(CreatePersistentContactAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreatePrompt
 
 
@@ -1288,7 +1411,7 @@ namespace Amazon.Connect
         /// 
         ///  <note> 
         /// <para>
-        /// You can change the <code>SignInConfig</code> distribution only for a default <code>TrafficDistributionGroup</code>
+        /// The <code>SignInConfig</code> distribution is available only on a default <code>TrafficDistributionGroup</code>
         /// (see the <code>IsDefault</code> parameter in the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_TrafficDistributionGroup.html">TrafficDistributionGroup</a>
         /// data type). If you call <code>UpdateTrafficDistribution</code> with a modified <code>SignInConfig</code>
         /// and a non-default <code>TrafficDistributionGroup</code>, an <code>InvalidRequestException</code>
@@ -1376,7 +1499,14 @@ namespace Amazon.Connect
         /// <summary>
         /// Creates a user account for the specified Amazon Connect instance.
         /// 
-        ///  
+        ///  <important> 
+        /// <para>
+        /// Certain <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UserIdentityInfo.html">UserIdentityInfo</a>
+        /// parameters are required in some situations. For example, <code>Email</code> is required
+        /// if you are using SAML for identity management. <code>FirstName</code> and <code>LastName</code>
+        /// are required if you are using Amazon Connect or SAML for identity management.
+        /// </para>
+        ///  </important> 
         /// <para>
         /// For information about how to create user accounts using the Amazon Connect console,
         /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/user-management.html">Add
@@ -3781,8 +3911,16 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Retrieves a token for federation.
+        /// Supports SAML sign-in for Amazon Connect. Retrieves a token for federation. The token
+        /// is for the Amazon Connect user which corresponds to the IAM credentials that were
+        /// used to invoke this action. 
         /// 
+        ///  
+        /// <para>
+        /// For more information about how SAML sign-in works in Amazon Connect, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/configure-saml.html
+        /// ">Configure SAML with IAM for Amazon Connect in the <i>Amazon Connect Administrator
+        /// Guide</i>.</a> 
+        /// </para>
         ///  <note> 
         /// <para>
         /// This API doesn't support root users. If you try to invoke GetFederationToken with
@@ -3836,6 +3974,17 @@ namespace Amazon.Connect
         /// For a description of each historical metric, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical
         /// Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// We recommend using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_GetMetricDataV2.html">GetMetricDataV2</a>
+        /// API. It provides more flexibility, features, and the ability to query longer time
+        /// ranges than <code>GetMetricData</code>. Use it to retrieve historical agent and contact
+        /// metrics for the last 3 months, at varying intervals. You can also use it to build
+        /// custom dashboards to measure historical queue and agent performance. For example,
+        /// you can track the number of incoming contacts for the last 7 days, with data split
+        /// by day, to see how contact volume changed per day of the week.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMetricData service method.</param>
         /// <param name="cancellationToken">
@@ -5031,7 +5180,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Returns a list of third party applications in a specific security profile.
+        /// Returns a list of third-party applications in a specific security profile.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSecurityProfileApplications service method.</param>
         /// <param name="cancellationToken">
@@ -5618,7 +5767,9 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Replicates an Amazon Connect instance in the specified Amazon Web Services Region.
+        /// Replicates an Amazon Connect instance in the specified Amazon Web Services Region
+        /// and copies configuration information for Amazon Connect resources across Amazon Web
+        /// Services Regions. 
         /// 
         ///  
         /// <para>
@@ -5668,7 +5819,9 @@ namespace Amazon.Connect
 
         /// <summary>
         /// When a contact is being recorded, and the recording has been suspended using SuspendContactRecording,
-        /// this API resumes recording the call or screen.
+        /// this API resumes recording whatever recording is selected in the flow configuration:
+        /// call, screen, or both. If only call recording or only screen recording is enabled,
+        /// then it would resume.
         /// 
         ///  
         /// <para>
@@ -5968,7 +6121,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Searches users in an Amazon Connect instance, with optional filtering.
+        /// Searches users in an Amazon Connect instance, with optional filtering. 
         /// 
         ///  <note> 
         /// <para>
@@ -6316,7 +6469,64 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Initiates a flow to start a new task.
+        /// Initiates a flow to start a new task contact. For more information about task contacts,
+        /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/tasks.html">Concepts:
+        /// Tasks in Amazon Connect</a> in the <i>Amazon Connect Administrator Guide</i>. 
+        /// 
+        ///  
+        /// <para>
+        /// When using <code>PreviousContactId</code> and <code>RelatedContactId</code> input
+        /// parameters, note the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>PreviousContactId</code> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Any updates to user-defined task contact attributes on any contact linked through
+        /// the same <code>PreviousContactId</code> will affect every contact in the chain.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// There can be a maximum of 12 linked task contacts in a chain. That is, 12 task contacts
+        /// can be created that share the same <code>PreviousContactId</code>.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        ///  <code>RelatedContactId</code> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Copies contact attributes from the related task contact to the new contact.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Any update on attributes in a new task contact does not update attributes on previous
+        /// contact.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// There’s no limit on the number of task contacts that can be created that use the same
+        /// <code>RelatedContactId</code>.
+        /// </para>
+        ///  </li> </ul> </li> </ul> 
+        /// <para>
+        /// In addition, when calling StartTaskContact include only one of these parameters: <code>ContactFlowID</code>,
+        /// <code>QuickConnectID</code>, or <code>TaskTemplateID</code>. Only one parameter is
+        /// required as long as the task template has a flow configured to run it. If more than
+        /// one parameter is specified, or only the <code>TaskTemplateID</code> is specified but
+        /// it does not have a flow configured, the request returns an error because Amazon Connect
+        /// cannot identify the unique flow to run when the task is created.
+        /// </para>
+        ///  
+        /// <para>
+        /// A <code>ServiceQuotaExceededException</code> occurs when the number of open tasks
+        /// exceeds the active tasks quota or there are already 12 tasks referencing the same
+        /// <code>PreviousContactId</code>. For more information about service quotas for task
+        /// contacts, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
+        /// Connect service quotas</a> in the <i>Amazon Connect Administrator Guide</i>. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartTaskContact service method.</param>
         /// <param name="cancellationToken">
@@ -6517,10 +6727,11 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// When a contact is being recorded, this API suspends recording the call or screen.
-        /// For example, you might suspend the call or screen recording while collecting sensitive
-        /// information, such as a credit card number. Then use ResumeContactRecording to restart
-        /// recording.
+        /// When a contact is being recorded, this API suspends recording whatever is selected
+        /// in the flow configuration: call, screen, or both. If only call recording or only screen
+        /// recording is enabled, then it would be suspended. For example, you might suspend the
+        /// screen recording while collecting sensitive information, such as a credit card number.
+        /// Then use ResumeContactRecording to restart recording the screen.
         /// 
         ///  
         /// <para>
@@ -7383,6 +7594,56 @@ namespace Amazon.Connect
 
         #endregion
                 
+        #region  UpdatePhoneNumberMetadata
+
+
+
+        /// <summary>
+        /// Updates a phone number’s metadata.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// To verify the status of a previous UpdatePhoneNumberMetadata operation, call the <a
+        /// href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribePhoneNumber.html">DescribePhoneNumber</a>
+        /// API.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePhoneNumberMetadata service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdatePhoneNumberMetadata service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.IdempotencyException">
+        /// An entity with the same name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
+        /// That resource is already in use. Please try another.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdatePhoneNumberMetadata">REST API Reference for UpdatePhoneNumberMetadata Operation</seealso>
+        Task<UpdatePhoneNumberMetadataResponse> UpdatePhoneNumberMetadataAsync(UpdatePhoneNumberMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  UpdatePrompt
 
 
@@ -7999,7 +8260,7 @@ namespace Amazon.Connect
         /// 
         ///  <note> 
         /// <para>
-        /// You can change the <code>SignInConfig</code> distribution only for a default <code>TrafficDistributionGroup</code>
+        /// The <code>SignInConfig</code> distribution is available only on a default <code>TrafficDistributionGroup</code>
         /// (see the <code>IsDefault</code> parameter in the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_TrafficDistributionGroup.html">TrafficDistributionGroup</a>
         /// data type). If you call <code>UpdateTrafficDistribution</code> with a modified <code>SignInConfig</code>
         /// and a non-default <code>TrafficDistributionGroup</code>, an <code>InvalidRequestException</code>

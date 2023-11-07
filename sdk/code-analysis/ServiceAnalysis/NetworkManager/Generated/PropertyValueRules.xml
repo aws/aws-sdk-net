@@ -181,6 +181,12 @@
     <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.NetworkManager.Model.CreateConnectPeerRequest.SubnetArn</property>
+    <min>0</min>
+    <max>500</max>
+    <pattern>^arn:[^:]{1,63}:ec2:[^:]{0,63}:[^:]{0,63}:subnet\/subnet-[0-9a-f]{8,17}$|^$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NetworkManager.Model.CreateCoreNetworkRequest.ClientToken</property>
     <min>0</min>
     <max>256</max>
@@ -1692,6 +1698,12 @@
     <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.NetworkManager.Model.ConnectPeer.SubnetArn</property>
+    <min>0</min>
+    <max>500</max>
+    <pattern>^arn:[^:]{1,63}:ec2:[^:]{0,63}:[^:]{0,63}:subnet\/subnet-[0-9a-f]{8,17}$|^$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NetworkManager.Model.ConnectPeerAssociation.ConnectPeerId</property>
     <min>0</min>
     <max>50</max>
@@ -1762,6 +1774,12 @@
     <min>1</min>
     <max>63</max>
     <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.ConnectPeerSummary.SubnetArn</property>
+    <min>0</min>
+    <max>500</max>
+    <pattern>^arn:[^:]{1,63}:ec2:[^:]{0,63}:[^:]{0,63}:subnet\/subnet-[0-9a-f]{8,17}$|^$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkManager.Model.CoreNetwork.CoreNetworkArn</property>

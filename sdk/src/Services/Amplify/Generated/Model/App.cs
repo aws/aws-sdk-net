@@ -62,7 +62,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property AppArn. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) of the Amplify app. 
+        /// The Amazon Resource Name (ARN) of the Amplify app. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=1000)]
@@ -81,7 +81,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property AppId. 
         /// <para>
-        ///  The unique ID of the Amplify app. 
+        /// The unique ID of the Amplify app. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=20)]
@@ -100,7 +100,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property AutoBranchCreationConfig. 
         /// <para>
-        ///  Describes the automated branch creation configuration for the Amplify app. 
+        /// Describes the automated branch creation configuration for the Amplify app. 
         /// </para>
         /// </summary>
         public AutoBranchCreationConfig AutoBranchCreationConfig
@@ -118,7 +118,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property AutoBranchCreationPatterns. 
         /// <para>
-        ///  Describes the automated branch creation glob patterns for the Amplify app. 
+        /// Describes the automated branch creation glob patterns for the Amplify app. 
         /// </para>
         /// </summary>
         public List<string> AutoBranchCreationPatterns
@@ -136,7 +136,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property BasicAuthCredentials. 
         /// <para>
-        ///  The basic authorization credentials for branches for the Amplify app. You must base64-encode
+        /// The basic authorization credentials for branches for the Amplify app. You must base64-encode
         /// the authorization credentials and provide them in the format <code>user:password</code>.
         /// </para>
         /// </summary>
@@ -156,7 +156,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property BuildSpec. 
         /// <para>
-        ///  Describes the content of the build specification (build spec) for the Amplify app.
+        /// Describes the content of the build specification (build spec) for the Amplify app.
         /// 
         /// </para>
         /// </summary>
@@ -176,7 +176,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property CreateTime. 
         /// <para>
-        ///  Creates a date and time for the Amplify app. 
+        /// Creates a date and time for the Amplify app. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -214,7 +214,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property CustomRules. 
         /// <para>
-        ///  Describes the custom redirect and rewrite rules for the Amplify app. 
+        /// Describes the custom redirect and rewrite rules for the Amplify app. 
         /// </para>
         /// </summary>
         public List<CustomRule> CustomRules
@@ -232,7 +232,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property DefaultDomain. 
         /// <para>
-        ///  The default domain for the Amplify app. 
+        /// The default domain for the Amplify app. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1000)]
@@ -251,7 +251,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        ///  The description for the Amplify app. 
+        /// The description for the Amplify app. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=1000)]
@@ -270,7 +270,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property EnableAutoBranchCreation. 
         /// <para>
-        ///  Enables automated branch creation for the Amplify app. 
+        /// Enables automated branch creation for the Amplify app. 
         /// </para>
         /// </summary>
         public bool EnableAutoBranchCreation
@@ -288,7 +288,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property EnableBasicAuth. 
         /// <para>
-        ///  Enables basic authorization for the Amplify app's branches. 
+        /// Enables basic authorization for the Amplify app's branches. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -307,7 +307,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property EnableBranchAutoBuild. 
         /// <para>
-        ///  Enables the auto-building of branches for the Amplify app. 
+        /// Enables the auto-building of branches for the Amplify app. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -326,8 +326,8 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property EnableBranchAutoDeletion. 
         /// <para>
-        ///  Automatically disconnect a branch in the Amplify Console when you delete a branch
-        /// from your Git repository. 
+        /// Automatically disconnect a branch in the Amplify console when you delete a branch
+        /// from your Git repository.
         /// </para>
         /// </summary>
         public bool EnableBranchAutoDeletion
@@ -345,7 +345,13 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property EnvironmentVariables. 
         /// <para>
-        ///  The environment variables for the Amplify app. 
+        /// The environment variables for the Amplify app. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For a list of the environment variables that are accessible to Amplify by default,
+        /// see <a href="https://docs.aws.amazon.com/amplify/latest/userguide/amplify-console-environment-variables.html">Amplify
+        /// Environment variables</a> in the <i>Amplify Hosting User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -364,7 +370,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property IamServiceRoleArn. 
         /// <para>
-        ///  The AWS Identity and Access Management (IAM) service role for the Amazon Resource
+        /// The AWS Identity and Access Management (IAM) service role for the Amazon Resource
         /// Name (ARN) of the Amplify app. 
         /// </para>
         /// </summary>
@@ -384,7 +390,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        ///  The name for the Amplify app. 
+        /// The name for the Amplify app. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -403,7 +409,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property Platform. 
         /// <para>
-        ///  The platform for the Amplify app. For a static app, set the platform type to <code>WEB</code>.
+        /// The platform for the Amplify app. For a static app, set the platform type to <code>WEB</code>.
         /// For a dynamic server-side rendered (SSR) app, set the platform type to <code>WEB_COMPUTE</code>.
         /// For an app requiring Amplify Hosting's original SSR support only, set the platform
         /// type to <code>WEB_DYNAMIC</code>.
@@ -425,7 +431,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property ProductionBranch. 
         /// <para>
-        ///  Describes the information about a production branch of the Amplify app. 
+        /// Describes the information about a production branch of the Amplify app. 
         /// </para>
         /// </summary>
         public ProductionBranch ProductionBranch
@@ -443,7 +449,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property Repository. 
         /// <para>
-        ///  The Git repository for the Amplify app. 
+        /// The Git repository for the Amplify app. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=1000)]
@@ -487,7 +493,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        ///  The tag for the Amplify app. 
+        /// The tag for the Amplify app. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
@@ -506,7 +512,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property UpdateTime. 
         /// <para>
-        ///  Updates the date and time for the Amplify app. 
+        /// Updates the date and time for the Amplify app. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

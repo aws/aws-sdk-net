@@ -53,6 +53,7 @@ namespace Amazon.EC2.Model
         private List<Filter> _filters = new List<Filter>();
         private List<string> _imageIds = new List<string>();
         private bool? _includeDeprecated;
+        private bool? _includeDisabled;
         private int? _maxResults;
         private string _nextToken;
         private List<string> _owners = new List<string>();
@@ -220,6 +221,12 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>source-instance-id</code> - The ID of the instance that the AMI was created
+        /// from if the AMI was created using CreateImage. This filter is applicable only if the
+        /// AMI was created using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>state</code> - The state of the image (<code>available</code> | <code>pending</code>
         /// | <code>failed</code>).
         /// </para>
@@ -316,6 +323,28 @@ namespace Amazon.EC2.Model
         internal bool IsSetIncludeDeprecated()
         {
             return this._includeDeprecated.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludeDisabled. 
+        /// <para>
+        /// Specifies whether to include disabled AMIs.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: No disabled AMIs are included in the response.
+        /// </para>
+        /// </summary>
+        public bool IncludeDisabled
+        {
+            get { return this._includeDisabled.GetValueOrDefault(); }
+            set { this._includeDisabled = value; }
+        }
+
+        // Check to see if IncludeDisabled property is set
+        internal bool IsSetIncludeDisabled()
+        {
+            return this._includeDisabled.HasValue; 
         }
 
         /// <summary>

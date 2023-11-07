@@ -88,6 +88,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.ScrollStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("TotalAggregationOptions", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<TotalAggregationOption, TotalAggregationOptionUnmarshaller>(TotalAggregationOptionUnmarshaller.Instance);
+                    unmarshalledObject.TotalAggregationOptions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("TotalCellStyle", targetDepth))
                 {
                     var unmarshaller = TableCellStyleUnmarshaller.Instance;

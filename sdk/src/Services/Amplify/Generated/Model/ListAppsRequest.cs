@@ -40,7 +40,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        ///  The maximum number of records to list in a single response. 
+        /// The maximum number of records to list in a single response. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
@@ -59,7 +59,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  A pagination token. If non-null, the pagination token is returned in a result. Pass
+        /// A pagination token. If non-null, the pagination token is returned in a result. Pass
         /// its value in another request to retrieve more entries. 
         /// </para>
         /// </summary>

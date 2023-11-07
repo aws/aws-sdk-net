@@ -2181,6 +2181,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly CapacityReservationInstancePlatform SUSELinux = new CapacityReservationInstancePlatform("SUSE Linux");
         /// <summary>
+        /// Constant UbuntuPro for CapacityReservationInstancePlatform
+        /// </summary>
+        public static readonly CapacityReservationInstancePlatform UbuntuPro = new CapacityReservationInstancePlatform("Ubuntu Pro");
+        /// <summary>
         /// Constant Windows for CapacityReservationInstancePlatform
         /// </summary>
         public static readonly CapacityReservationInstancePlatform Windows = new CapacityReservationInstancePlatform("Windows");
@@ -2309,9 +2313,21 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly CapacityReservationState Failed = new CapacityReservationState("failed");
         /// <summary>
+        /// Constant PaymentFailed for CapacityReservationState
+        /// </summary>
+        public static readonly CapacityReservationState PaymentFailed = new CapacityReservationState("payment-failed");
+        /// <summary>
+        /// Constant PaymentPending for CapacityReservationState
+        /// </summary>
+        public static readonly CapacityReservationState PaymentPending = new CapacityReservationState("payment-pending");
+        /// <summary>
         /// Constant Pending for CapacityReservationState
         /// </summary>
         public static readonly CapacityReservationState Pending = new CapacityReservationState("pending");
+        /// <summary>
+        /// Constant Scheduled for CapacityReservationState
+        /// </summary>
+        public static readonly CapacityReservationState Scheduled = new CapacityReservationState("scheduled");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -2392,6 +2408,56 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator CapacityReservationTenancy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CapacityReservationType.
+    /// </summary>
+    public class CapacityReservationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CapacityBlock for CapacityReservationType
+        /// </summary>
+        public static readonly CapacityReservationType CapacityBlock = new CapacityReservationType("capacity-block");
+        /// <summary>
+        /// Constant Default for CapacityReservationType
+        /// </summary>
+        public static readonly CapacityReservationType Default = new CapacityReservationType("default");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CapacityReservationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CapacityReservationType FindValue(string value)
+        {
+            return FindValue<CapacityReservationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CapacityReservationType(string value)
         {
             return FindValue(value);
         }
@@ -3394,6 +3460,10 @@ namespace Amazon.EC2
     public class DefaultTargetCapacityType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant CapacityBlock for DefaultTargetCapacityType
+        /// </summary>
+        public static readonly DefaultTargetCapacityType CapacityBlock = new DefaultTargetCapacityType("capacity-block");
         /// <summary>
         /// Constant OnDemand for DefaultTargetCapacityType
         /// </summary>
@@ -6465,6 +6535,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly ImageState Deregistered = new ImageState("deregistered");
         /// <summary>
+        /// Constant Disabled for ImageState
+        /// </summary>
+        public static readonly ImageState Disabled = new ImageState("disabled");
+        /// <summary>
         /// Constant Error for ImageState
         /// </summary>
         public static readonly ImageState Error = new ImageState("error");
@@ -7094,6 +7168,10 @@ namespace Amazon.EC2
     public class InstanceLifecycleType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant CapacityBlock for InstanceLifecycleType
+        /// </summary>
+        public static readonly InstanceLifecycleType CapacityBlock = new InstanceLifecycleType("capacity-block");
         /// <summary>
         /// Constant Scheduled for InstanceLifecycleType
         /// </summary>
@@ -8014,6 +8092,54 @@ namespace Amazon.EC2
         /// Constant C6iXlarge for InstanceType
         /// </summary>
         public static readonly InstanceType C6iXlarge = new InstanceType("c6i.xlarge");
+        /// <summary>
+        /// Constant C7a12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C7a12xlarge = new InstanceType("c7a.12xlarge");
+        /// <summary>
+        /// Constant C7a16xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C7a16xlarge = new InstanceType("c7a.16xlarge");
+        /// <summary>
+        /// Constant C7a24xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C7a24xlarge = new InstanceType("c7a.24xlarge");
+        /// <summary>
+        /// Constant C7a2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C7a2xlarge = new InstanceType("c7a.2xlarge");
+        /// <summary>
+        /// Constant C7a32xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C7a32xlarge = new InstanceType("c7a.32xlarge");
+        /// <summary>
+        /// Constant C7a48xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C7a48xlarge = new InstanceType("c7a.48xlarge");
+        /// <summary>
+        /// Constant C7a4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C7a4xlarge = new InstanceType("c7a.4xlarge");
+        /// <summary>
+        /// Constant C7a8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C7a8xlarge = new InstanceType("c7a.8xlarge");
+        /// <summary>
+        /// Constant C7aLarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C7aLarge = new InstanceType("c7a.large");
+        /// <summary>
+        /// Constant C7aMedium for InstanceType
+        /// </summary>
+        public static readonly InstanceType C7aMedium = new InstanceType("c7a.medium");
+        /// <summary>
+        /// Constant C7aMetal48xl for InstanceType
+        /// </summary>
+        public static readonly InstanceType C7aMetal48xl = new InstanceType("c7a.metal-48xl");
+        /// <summary>
+        /// Constant C7aXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C7aXlarge = new InstanceType("c7a.xlarge");
         /// <summary>
         /// Constant C7g12xlarge for InstanceType
         /// </summary>
@@ -10047,6 +10173,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType R7aMedium = new InstanceType("r7a.medium");
         /// <summary>
+        /// Constant R7aMetal48xl for InstanceType
+        /// </summary>
+        public static readonly InstanceType R7aMetal48xl = new InstanceType("r7a.metal-48xl");
+        /// <summary>
         /// Constant R7aXlarge for InstanceType
         /// </summary>
         public static readonly InstanceType R7aXlarge = new InstanceType("r7a.xlarge");
@@ -10118,6 +10248,42 @@ namespace Amazon.EC2
         /// Constant R7gXlarge for InstanceType
         /// </summary>
         public static readonly InstanceType R7gXlarge = new InstanceType("r7g.xlarge");
+        /// <summary>
+        /// Constant R7i12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R7i12xlarge = new InstanceType("r7i.12xlarge");
+        /// <summary>
+        /// Constant R7i16xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R7i16xlarge = new InstanceType("r7i.16xlarge");
+        /// <summary>
+        /// Constant R7i24xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R7i24xlarge = new InstanceType("r7i.24xlarge");
+        /// <summary>
+        /// Constant R7i2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R7i2xlarge = new InstanceType("r7i.2xlarge");
+        /// <summary>
+        /// Constant R7i48xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R7i48xlarge = new InstanceType("r7i.48xlarge");
+        /// <summary>
+        /// Constant R7i4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R7i4xlarge = new InstanceType("r7i.4xlarge");
+        /// <summary>
+        /// Constant R7i8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R7i8xlarge = new InstanceType("r7i.8xlarge");
+        /// <summary>
+        /// Constant R7iLarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R7iLarge = new InstanceType("r7i.large");
+        /// <summary>
+        /// Constant R7iXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R7iXlarge = new InstanceType("r7i.xlarge");
         /// <summary>
         /// Constant R7iz12xlarge for InstanceType
         /// </summary>
@@ -12922,6 +13088,10 @@ namespace Amazon.EC2
     public class MarketType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant CapacityBlock for MarketType
+        /// </summary>
+        public static readonly MarketType CapacityBlock = new MarketType("capacity-block");
         /// <summary>
         /// Constant Spot for MarketType
         /// </summary>
@@ -19360,6 +19530,10 @@ namespace Amazon.EC2
     public class UsageClassType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant CapacityBlock for UsageClassType
+        /// </summary>
+        public static readonly UsageClassType CapacityBlock = new UsageClassType("capacity-block");
         /// <summary>
         /// Constant OnDemand for UsageClassType
         /// </summary>

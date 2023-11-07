@@ -49,7 +49,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteEarthObservationJob");
 
-            var request = InstantiateClassGenerator.Execute<DeleteEarthObservationJobRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteEarthObservationJobRequest>(operation);
             var marshaller = new DeleteEarthObservationJobRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -79,7 +79,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteEarthObservationJob");
 
-            var request = InstantiateClassGenerator.Execute<DeleteEarthObservationJobRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteEarthObservationJobRequest>(operation);
             var marshaller = new DeleteEarthObservationJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -111,7 +111,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteEarthObservationJob");
 
-            var request = InstantiateClassGenerator.Execute<DeleteEarthObservationJobRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteEarthObservationJobRequest>(operation);
             var marshaller = new DeleteEarthObservationJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -143,7 +143,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteEarthObservationJob");
 
-            var request = InstantiateClassGenerator.Execute<DeleteEarthObservationJobRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteEarthObservationJobRequest>(operation);
             var marshaller = new DeleteEarthObservationJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -175,7 +175,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteEarthObservationJob");
 
-            var request = InstantiateClassGenerator.Execute<DeleteEarthObservationJobRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteEarthObservationJobRequest>(operation);
             var marshaller = new DeleteEarthObservationJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -207,7 +207,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteEarthObservationJob");
 
-            var request = InstantiateClassGenerator.Execute<DeleteEarthObservationJobRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteEarthObservationJobRequest>(operation);
             var marshaller = new DeleteEarthObservationJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -239,7 +239,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteEarthObservationJob");
 
-            var request = InstantiateClassGenerator.Execute<DeleteEarthObservationJobRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteEarthObservationJobRequest>(operation);
             var marshaller = new DeleteEarthObservationJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -271,7 +271,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteVectorEnrichmentJob");
 
-            var request = InstantiateClassGenerator.Execute<DeleteVectorEnrichmentJobRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteVectorEnrichmentJobRequest>(operation);
             var marshaller = new DeleteVectorEnrichmentJobRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -301,7 +301,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteVectorEnrichmentJob");
 
-            var request = InstantiateClassGenerator.Execute<DeleteVectorEnrichmentJobRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteVectorEnrichmentJobRequest>(operation);
             var marshaller = new DeleteVectorEnrichmentJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -333,7 +333,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteVectorEnrichmentJob");
 
-            var request = InstantiateClassGenerator.Execute<DeleteVectorEnrichmentJobRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteVectorEnrichmentJobRequest>(operation);
             var marshaller = new DeleteVectorEnrichmentJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -365,7 +365,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteVectorEnrichmentJob");
 
-            var request = InstantiateClassGenerator.Execute<DeleteVectorEnrichmentJobRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteVectorEnrichmentJobRequest>(operation);
             var marshaller = new DeleteVectorEnrichmentJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -397,7 +397,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteVectorEnrichmentJob");
 
-            var request = InstantiateClassGenerator.Execute<DeleteVectorEnrichmentJobRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteVectorEnrichmentJobRequest>(operation);
             var marshaller = new DeleteVectorEnrichmentJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -429,7 +429,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteVectorEnrichmentJob");
 
-            var request = InstantiateClassGenerator.Execute<DeleteVectorEnrichmentJobRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteVectorEnrichmentJobRequest>(operation);
             var marshaller = new DeleteVectorEnrichmentJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -461,7 +461,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteVectorEnrichmentJob");
 
-            var request = InstantiateClassGenerator.Execute<DeleteVectorEnrichmentJobRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteVectorEnrichmentJobRequest>(operation);
             var marshaller = new DeleteVectorEnrichmentJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -493,7 +493,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ExportEarthObservationJob");
 
-            var request = InstantiateClassGenerator.Execute<ExportEarthObservationJobRequest>();
+            var request = InstantiateClassGenerator.Execute<ExportEarthObservationJobRequest>(operation);
             var marshaller = new ExportEarthObservationJobRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -523,7 +523,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ExportEarthObservationJob");
 
-            var request = InstantiateClassGenerator.Execute<ExportEarthObservationJobRequest>();
+            var request = InstantiateClassGenerator.Execute<ExportEarthObservationJobRequest>(operation);
             var marshaller = new ExportEarthObservationJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -555,7 +555,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ExportEarthObservationJob");
 
-            var request = InstantiateClassGenerator.Execute<ExportEarthObservationJobRequest>();
+            var request = InstantiateClassGenerator.Execute<ExportEarthObservationJobRequest>(operation);
             var marshaller = new ExportEarthObservationJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -587,7 +587,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ExportEarthObservationJob");
 
-            var request = InstantiateClassGenerator.Execute<ExportEarthObservationJobRequest>();
+            var request = InstantiateClassGenerator.Execute<ExportEarthObservationJobRequest>(operation);
             var marshaller = new ExportEarthObservationJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -619,7 +619,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ExportEarthObservationJob");
 
-            var request = InstantiateClassGenerator.Execute<ExportEarthObservationJobRequest>();
+            var request = InstantiateClassGenerator.Execute<ExportEarthObservationJobRequest>(operation);
             var marshaller = new ExportEarthObservationJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -651,7 +651,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ExportEarthObservationJob");
 
-            var request = InstantiateClassGenerator.Execute<ExportEarthObservationJobRequest>();
+            var request = InstantiateClassGenerator.Execute<ExportEarthObservationJobRequest>(operation);
             var marshaller = new ExportEarthObservationJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -683,7 +683,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ExportEarthObservationJob");
 
-            var request = InstantiateClassGenerator.Execute<ExportEarthObservationJobRequest>();
+            var request = InstantiateClassGenerator.Execute<ExportEarthObservationJobRequest>(operation);
             var marshaller = new ExportEarthObservationJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -715,7 +715,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ExportEarthObservationJob");
 
-            var request = InstantiateClassGenerator.Execute<ExportEarthObservationJobRequest>();
+            var request = InstantiateClassGenerator.Execute<ExportEarthObservationJobRequest>(operation);
             var marshaller = new ExportEarthObservationJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -747,7 +747,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ExportVectorEnrichmentJob");
 
-            var request = InstantiateClassGenerator.Execute<ExportVectorEnrichmentJobRequest>();
+            var request = InstantiateClassGenerator.Execute<ExportVectorEnrichmentJobRequest>(operation);
             var marshaller = new ExportVectorEnrichmentJobRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -777,7 +777,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ExportVectorEnrichmentJob");
 
-            var request = InstantiateClassGenerator.Execute<ExportVectorEnrichmentJobRequest>();
+            var request = InstantiateClassGenerator.Execute<ExportVectorEnrichmentJobRequest>(operation);
             var marshaller = new ExportVectorEnrichmentJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -809,7 +809,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ExportVectorEnrichmentJob");
 
-            var request = InstantiateClassGenerator.Execute<ExportVectorEnrichmentJobRequest>();
+            var request = InstantiateClassGenerator.Execute<ExportVectorEnrichmentJobRequest>(operation);
             var marshaller = new ExportVectorEnrichmentJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -841,7 +841,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ExportVectorEnrichmentJob");
 
-            var request = InstantiateClassGenerator.Execute<ExportVectorEnrichmentJobRequest>();
+            var request = InstantiateClassGenerator.Execute<ExportVectorEnrichmentJobRequest>(operation);
             var marshaller = new ExportVectorEnrichmentJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -873,7 +873,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ExportVectorEnrichmentJob");
 
-            var request = InstantiateClassGenerator.Execute<ExportVectorEnrichmentJobRequest>();
+            var request = InstantiateClassGenerator.Execute<ExportVectorEnrichmentJobRequest>(operation);
             var marshaller = new ExportVectorEnrichmentJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -905,7 +905,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ExportVectorEnrichmentJob");
 
-            var request = InstantiateClassGenerator.Execute<ExportVectorEnrichmentJobRequest>();
+            var request = InstantiateClassGenerator.Execute<ExportVectorEnrichmentJobRequest>(operation);
             var marshaller = new ExportVectorEnrichmentJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -937,7 +937,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ExportVectorEnrichmentJob");
 
-            var request = InstantiateClassGenerator.Execute<ExportVectorEnrichmentJobRequest>();
+            var request = InstantiateClassGenerator.Execute<ExportVectorEnrichmentJobRequest>(operation);
             var marshaller = new ExportVectorEnrichmentJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -969,7 +969,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ExportVectorEnrichmentJob");
 
-            var request = InstantiateClassGenerator.Execute<ExportVectorEnrichmentJobRequest>();
+            var request = InstantiateClassGenerator.Execute<ExportVectorEnrichmentJobRequest>(operation);
             var marshaller = new ExportVectorEnrichmentJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1001,7 +1001,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetEarthObservationJob");
 
-            var request = InstantiateClassGenerator.Execute<GetEarthObservationJobRequest>();
+            var request = InstantiateClassGenerator.Execute<GetEarthObservationJobRequest>(operation);
             var marshaller = new GetEarthObservationJobRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1031,7 +1031,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetEarthObservationJob");
 
-            var request = InstantiateClassGenerator.Execute<GetEarthObservationJobRequest>();
+            var request = InstantiateClassGenerator.Execute<GetEarthObservationJobRequest>(operation);
             var marshaller = new GetEarthObservationJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1063,7 +1063,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetEarthObservationJob");
 
-            var request = InstantiateClassGenerator.Execute<GetEarthObservationJobRequest>();
+            var request = InstantiateClassGenerator.Execute<GetEarthObservationJobRequest>(operation);
             var marshaller = new GetEarthObservationJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1095,7 +1095,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetEarthObservationJob");
 
-            var request = InstantiateClassGenerator.Execute<GetEarthObservationJobRequest>();
+            var request = InstantiateClassGenerator.Execute<GetEarthObservationJobRequest>(operation);
             var marshaller = new GetEarthObservationJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1127,7 +1127,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetEarthObservationJob");
 
-            var request = InstantiateClassGenerator.Execute<GetEarthObservationJobRequest>();
+            var request = InstantiateClassGenerator.Execute<GetEarthObservationJobRequest>(operation);
             var marshaller = new GetEarthObservationJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1159,7 +1159,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetEarthObservationJob");
 
-            var request = InstantiateClassGenerator.Execute<GetEarthObservationJobRequest>();
+            var request = InstantiateClassGenerator.Execute<GetEarthObservationJobRequest>(operation);
             var marshaller = new GetEarthObservationJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1191,7 +1191,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetRasterDataCollection");
 
-            var request = InstantiateClassGenerator.Execute<GetRasterDataCollectionRequest>();
+            var request = InstantiateClassGenerator.Execute<GetRasterDataCollectionRequest>(operation);
             var marshaller = new GetRasterDataCollectionRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1221,7 +1221,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetRasterDataCollection");
 
-            var request = InstantiateClassGenerator.Execute<GetRasterDataCollectionRequest>();
+            var request = InstantiateClassGenerator.Execute<GetRasterDataCollectionRequest>(operation);
             var marshaller = new GetRasterDataCollectionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1253,7 +1253,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetRasterDataCollection");
 
-            var request = InstantiateClassGenerator.Execute<GetRasterDataCollectionRequest>();
+            var request = InstantiateClassGenerator.Execute<GetRasterDataCollectionRequest>(operation);
             var marshaller = new GetRasterDataCollectionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1285,7 +1285,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetRasterDataCollection");
 
-            var request = InstantiateClassGenerator.Execute<GetRasterDataCollectionRequest>();
+            var request = InstantiateClassGenerator.Execute<GetRasterDataCollectionRequest>(operation);
             var marshaller = new GetRasterDataCollectionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1317,7 +1317,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetRasterDataCollection");
 
-            var request = InstantiateClassGenerator.Execute<GetRasterDataCollectionRequest>();
+            var request = InstantiateClassGenerator.Execute<GetRasterDataCollectionRequest>(operation);
             var marshaller = new GetRasterDataCollectionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1349,7 +1349,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetRasterDataCollection");
 
-            var request = InstantiateClassGenerator.Execute<GetRasterDataCollectionRequest>();
+            var request = InstantiateClassGenerator.Execute<GetRasterDataCollectionRequest>(operation);
             var marshaller = new GetRasterDataCollectionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1381,7 +1381,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetTile");
 
-            var request = InstantiateClassGenerator.Execute<GetTileRequest>();
+            var request = InstantiateClassGenerator.Execute<GetTileRequest>(operation);
             var marshaller = new GetTileRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1411,7 +1411,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetTile");
 
-            var request = InstantiateClassGenerator.Execute<GetTileRequest>();
+            var request = InstantiateClassGenerator.Execute<GetTileRequest>(operation);
             var marshaller = new GetTileRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1443,7 +1443,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetTile");
 
-            var request = InstantiateClassGenerator.Execute<GetTileRequest>();
+            var request = InstantiateClassGenerator.Execute<GetTileRequest>(operation);
             var marshaller = new GetTileRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1475,7 +1475,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetTile");
 
-            var request = InstantiateClassGenerator.Execute<GetTileRequest>();
+            var request = InstantiateClassGenerator.Execute<GetTileRequest>(operation);
             var marshaller = new GetTileRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1507,7 +1507,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetTile");
 
-            var request = InstantiateClassGenerator.Execute<GetTileRequest>();
+            var request = InstantiateClassGenerator.Execute<GetTileRequest>(operation);
             var marshaller = new GetTileRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1539,7 +1539,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetTile");
 
-            var request = InstantiateClassGenerator.Execute<GetTileRequest>();
+            var request = InstantiateClassGenerator.Execute<GetTileRequest>(operation);
             var marshaller = new GetTileRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1571,7 +1571,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetVectorEnrichmentJob");
 
-            var request = InstantiateClassGenerator.Execute<GetVectorEnrichmentJobRequest>();
+            var request = InstantiateClassGenerator.Execute<GetVectorEnrichmentJobRequest>(operation);
             var marshaller = new GetVectorEnrichmentJobRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1601,7 +1601,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetVectorEnrichmentJob");
 
-            var request = InstantiateClassGenerator.Execute<GetVectorEnrichmentJobRequest>();
+            var request = InstantiateClassGenerator.Execute<GetVectorEnrichmentJobRequest>(operation);
             var marshaller = new GetVectorEnrichmentJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1633,7 +1633,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetVectorEnrichmentJob");
 
-            var request = InstantiateClassGenerator.Execute<GetVectorEnrichmentJobRequest>();
+            var request = InstantiateClassGenerator.Execute<GetVectorEnrichmentJobRequest>(operation);
             var marshaller = new GetVectorEnrichmentJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1665,7 +1665,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetVectorEnrichmentJob");
 
-            var request = InstantiateClassGenerator.Execute<GetVectorEnrichmentJobRequest>();
+            var request = InstantiateClassGenerator.Execute<GetVectorEnrichmentJobRequest>(operation);
             var marshaller = new GetVectorEnrichmentJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1697,7 +1697,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetVectorEnrichmentJob");
 
-            var request = InstantiateClassGenerator.Execute<GetVectorEnrichmentJobRequest>();
+            var request = InstantiateClassGenerator.Execute<GetVectorEnrichmentJobRequest>(operation);
             var marshaller = new GetVectorEnrichmentJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1729,7 +1729,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetVectorEnrichmentJob");
 
-            var request = InstantiateClassGenerator.Execute<GetVectorEnrichmentJobRequest>();
+            var request = InstantiateClassGenerator.Execute<GetVectorEnrichmentJobRequest>(operation);
             var marshaller = new GetVectorEnrichmentJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1761,7 +1761,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListEarthObservationJobs");
 
-            var request = InstantiateClassGenerator.Execute<ListEarthObservationJobsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListEarthObservationJobsRequest>(operation);
             var marshaller = new ListEarthObservationJobsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1791,7 +1791,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListEarthObservationJobs");
 
-            var request = InstantiateClassGenerator.Execute<ListEarthObservationJobsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListEarthObservationJobsRequest>(operation);
             var marshaller = new ListEarthObservationJobsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1823,7 +1823,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListEarthObservationJobs");
 
-            var request = InstantiateClassGenerator.Execute<ListEarthObservationJobsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListEarthObservationJobsRequest>(operation);
             var marshaller = new ListEarthObservationJobsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1855,7 +1855,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListEarthObservationJobs");
 
-            var request = InstantiateClassGenerator.Execute<ListEarthObservationJobsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListEarthObservationJobsRequest>(operation);
             var marshaller = new ListEarthObservationJobsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1887,7 +1887,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListEarthObservationJobs");
 
-            var request = InstantiateClassGenerator.Execute<ListEarthObservationJobsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListEarthObservationJobsRequest>(operation);
             var marshaller = new ListEarthObservationJobsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1919,7 +1919,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListEarthObservationJobs");
 
-            var request = InstantiateClassGenerator.Execute<ListEarthObservationJobsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListEarthObservationJobsRequest>(operation);
             var marshaller = new ListEarthObservationJobsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1951,7 +1951,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListRasterDataCollections");
 
-            var request = InstantiateClassGenerator.Execute<ListRasterDataCollectionsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListRasterDataCollectionsRequest>(operation);
             var marshaller = new ListRasterDataCollectionsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1981,7 +1981,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListRasterDataCollections");
 
-            var request = InstantiateClassGenerator.Execute<ListRasterDataCollectionsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListRasterDataCollectionsRequest>(operation);
             var marshaller = new ListRasterDataCollectionsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2013,7 +2013,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListRasterDataCollections");
 
-            var request = InstantiateClassGenerator.Execute<ListRasterDataCollectionsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListRasterDataCollectionsRequest>(operation);
             var marshaller = new ListRasterDataCollectionsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2045,7 +2045,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListRasterDataCollections");
 
-            var request = InstantiateClassGenerator.Execute<ListRasterDataCollectionsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListRasterDataCollectionsRequest>(operation);
             var marshaller = new ListRasterDataCollectionsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2077,7 +2077,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListRasterDataCollections");
 
-            var request = InstantiateClassGenerator.Execute<ListRasterDataCollectionsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListRasterDataCollectionsRequest>(operation);
             var marshaller = new ListRasterDataCollectionsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2109,7 +2109,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListRasterDataCollections");
 
-            var request = InstantiateClassGenerator.Execute<ListRasterDataCollectionsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListRasterDataCollectionsRequest>(operation);
             var marshaller = new ListRasterDataCollectionsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2141,7 +2141,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListTagsForResource");
 
-            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>(operation);
             var marshaller = new ListTagsForResourceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -2171,7 +2171,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListTagsForResource");
 
-            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>(operation);
             var marshaller = new ListTagsForResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2203,7 +2203,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListTagsForResource");
 
-            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>(operation);
             var marshaller = new ListTagsForResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2235,7 +2235,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListTagsForResource");
 
-            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>(operation);
             var marshaller = new ListTagsForResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2267,7 +2267,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListTagsForResource");
 
-            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>(operation);
             var marshaller = new ListTagsForResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2299,7 +2299,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListTagsForResource");
 
-            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>(operation);
             var marshaller = new ListTagsForResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2331,7 +2331,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListVectorEnrichmentJobs");
 
-            var request = InstantiateClassGenerator.Execute<ListVectorEnrichmentJobsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListVectorEnrichmentJobsRequest>(operation);
             var marshaller = new ListVectorEnrichmentJobsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -2361,7 +2361,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListVectorEnrichmentJobs");
 
-            var request = InstantiateClassGenerator.Execute<ListVectorEnrichmentJobsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListVectorEnrichmentJobsRequest>(operation);
             var marshaller = new ListVectorEnrichmentJobsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2393,7 +2393,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListVectorEnrichmentJobs");
 
-            var request = InstantiateClassGenerator.Execute<ListVectorEnrichmentJobsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListVectorEnrichmentJobsRequest>(operation);
             var marshaller = new ListVectorEnrichmentJobsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2425,7 +2425,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListVectorEnrichmentJobs");
 
-            var request = InstantiateClassGenerator.Execute<ListVectorEnrichmentJobsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListVectorEnrichmentJobsRequest>(operation);
             var marshaller = new ListVectorEnrichmentJobsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2457,7 +2457,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListVectorEnrichmentJobs");
 
-            var request = InstantiateClassGenerator.Execute<ListVectorEnrichmentJobsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListVectorEnrichmentJobsRequest>(operation);
             var marshaller = new ListVectorEnrichmentJobsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2489,7 +2489,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListVectorEnrichmentJobs");
 
-            var request = InstantiateClassGenerator.Execute<ListVectorEnrichmentJobsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListVectorEnrichmentJobsRequest>(operation);
             var marshaller = new ListVectorEnrichmentJobsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2521,7 +2521,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("SearchRasterDataCollection");
 
-            var request = InstantiateClassGenerator.Execute<SearchRasterDataCollectionRequest>();
+            var request = InstantiateClassGenerator.Execute<SearchRasterDataCollectionRequest>(operation);
             var marshaller = new SearchRasterDataCollectionRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -2551,7 +2551,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("SearchRasterDataCollection");
 
-            var request = InstantiateClassGenerator.Execute<SearchRasterDataCollectionRequest>();
+            var request = InstantiateClassGenerator.Execute<SearchRasterDataCollectionRequest>(operation);
             var marshaller = new SearchRasterDataCollectionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2583,7 +2583,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("SearchRasterDataCollection");
 
-            var request = InstantiateClassGenerator.Execute<SearchRasterDataCollectionRequest>();
+            var request = InstantiateClassGenerator.Execute<SearchRasterDataCollectionRequest>(operation);
             var marshaller = new SearchRasterDataCollectionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2615,7 +2615,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("SearchRasterDataCollection");
 
-            var request = InstantiateClassGenerator.Execute<SearchRasterDataCollectionRequest>();
+            var request = InstantiateClassGenerator.Execute<SearchRasterDataCollectionRequest>(operation);
             var marshaller = new SearchRasterDataCollectionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2647,7 +2647,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("SearchRasterDataCollection");
 
-            var request = InstantiateClassGenerator.Execute<SearchRasterDataCollectionRequest>();
+            var request = InstantiateClassGenerator.Execute<SearchRasterDataCollectionRequest>(operation);
             var marshaller = new SearchRasterDataCollectionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2679,7 +2679,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("SearchRasterDataCollection");
 
-            var request = InstantiateClassGenerator.Execute<SearchRasterDataCollectionRequest>();
+            var request = InstantiateClassGenerator.Execute<SearchRasterDataCollectionRequest>(operation);
             var marshaller = new SearchRasterDataCollectionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2711,7 +2711,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartEarthObservationJob");
 
-            var request = InstantiateClassGenerator.Execute<StartEarthObservationJobRequest>();
+            var request = InstantiateClassGenerator.Execute<StartEarthObservationJobRequest>(operation);
             var marshaller = new StartEarthObservationJobRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -2741,7 +2741,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartEarthObservationJob");
 
-            var request = InstantiateClassGenerator.Execute<StartEarthObservationJobRequest>();
+            var request = InstantiateClassGenerator.Execute<StartEarthObservationJobRequest>(operation);
             var marshaller = new StartEarthObservationJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2773,7 +2773,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartEarthObservationJob");
 
-            var request = InstantiateClassGenerator.Execute<StartEarthObservationJobRequest>();
+            var request = InstantiateClassGenerator.Execute<StartEarthObservationJobRequest>(operation);
             var marshaller = new StartEarthObservationJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2805,7 +2805,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartEarthObservationJob");
 
-            var request = InstantiateClassGenerator.Execute<StartEarthObservationJobRequest>();
+            var request = InstantiateClassGenerator.Execute<StartEarthObservationJobRequest>(operation);
             var marshaller = new StartEarthObservationJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2837,7 +2837,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartEarthObservationJob");
 
-            var request = InstantiateClassGenerator.Execute<StartEarthObservationJobRequest>();
+            var request = InstantiateClassGenerator.Execute<StartEarthObservationJobRequest>(operation);
             var marshaller = new StartEarthObservationJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2869,7 +2869,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartEarthObservationJob");
 
-            var request = InstantiateClassGenerator.Execute<StartEarthObservationJobRequest>();
+            var request = InstantiateClassGenerator.Execute<StartEarthObservationJobRequest>(operation);
             var marshaller = new StartEarthObservationJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2901,7 +2901,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartEarthObservationJob");
 
-            var request = InstantiateClassGenerator.Execute<StartEarthObservationJobRequest>();
+            var request = InstantiateClassGenerator.Execute<StartEarthObservationJobRequest>(operation);
             var marshaller = new StartEarthObservationJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2933,7 +2933,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartEarthObservationJob");
 
-            var request = InstantiateClassGenerator.Execute<StartEarthObservationJobRequest>();
+            var request = InstantiateClassGenerator.Execute<StartEarthObservationJobRequest>(operation);
             var marshaller = new StartEarthObservationJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2965,7 +2965,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartVectorEnrichmentJob");
 
-            var request = InstantiateClassGenerator.Execute<StartVectorEnrichmentJobRequest>();
+            var request = InstantiateClassGenerator.Execute<StartVectorEnrichmentJobRequest>(operation);
             var marshaller = new StartVectorEnrichmentJobRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -2995,7 +2995,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartVectorEnrichmentJob");
 
-            var request = InstantiateClassGenerator.Execute<StartVectorEnrichmentJobRequest>();
+            var request = InstantiateClassGenerator.Execute<StartVectorEnrichmentJobRequest>(operation);
             var marshaller = new StartVectorEnrichmentJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3027,7 +3027,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartVectorEnrichmentJob");
 
-            var request = InstantiateClassGenerator.Execute<StartVectorEnrichmentJobRequest>();
+            var request = InstantiateClassGenerator.Execute<StartVectorEnrichmentJobRequest>(operation);
             var marshaller = new StartVectorEnrichmentJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3059,7 +3059,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartVectorEnrichmentJob");
 
-            var request = InstantiateClassGenerator.Execute<StartVectorEnrichmentJobRequest>();
+            var request = InstantiateClassGenerator.Execute<StartVectorEnrichmentJobRequest>(operation);
             var marshaller = new StartVectorEnrichmentJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3091,7 +3091,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartVectorEnrichmentJob");
 
-            var request = InstantiateClassGenerator.Execute<StartVectorEnrichmentJobRequest>();
+            var request = InstantiateClassGenerator.Execute<StartVectorEnrichmentJobRequest>(operation);
             var marshaller = new StartVectorEnrichmentJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3123,7 +3123,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartVectorEnrichmentJob");
 
-            var request = InstantiateClassGenerator.Execute<StartVectorEnrichmentJobRequest>();
+            var request = InstantiateClassGenerator.Execute<StartVectorEnrichmentJobRequest>(operation);
             var marshaller = new StartVectorEnrichmentJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3155,7 +3155,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartVectorEnrichmentJob");
 
-            var request = InstantiateClassGenerator.Execute<StartVectorEnrichmentJobRequest>();
+            var request = InstantiateClassGenerator.Execute<StartVectorEnrichmentJobRequest>(operation);
             var marshaller = new StartVectorEnrichmentJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3187,7 +3187,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartVectorEnrichmentJob");
 
-            var request = InstantiateClassGenerator.Execute<StartVectorEnrichmentJobRequest>();
+            var request = InstantiateClassGenerator.Execute<StartVectorEnrichmentJobRequest>(operation);
             var marshaller = new StartVectorEnrichmentJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3219,7 +3219,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StopEarthObservationJob");
 
-            var request = InstantiateClassGenerator.Execute<StopEarthObservationJobRequest>();
+            var request = InstantiateClassGenerator.Execute<StopEarthObservationJobRequest>(operation);
             var marshaller = new StopEarthObservationJobRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -3249,7 +3249,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StopEarthObservationJob");
 
-            var request = InstantiateClassGenerator.Execute<StopEarthObservationJobRequest>();
+            var request = InstantiateClassGenerator.Execute<StopEarthObservationJobRequest>(operation);
             var marshaller = new StopEarthObservationJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3281,7 +3281,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StopEarthObservationJob");
 
-            var request = InstantiateClassGenerator.Execute<StopEarthObservationJobRequest>();
+            var request = InstantiateClassGenerator.Execute<StopEarthObservationJobRequest>(operation);
             var marshaller = new StopEarthObservationJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3313,7 +3313,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StopEarthObservationJob");
 
-            var request = InstantiateClassGenerator.Execute<StopEarthObservationJobRequest>();
+            var request = InstantiateClassGenerator.Execute<StopEarthObservationJobRequest>(operation);
             var marshaller = new StopEarthObservationJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3345,7 +3345,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StopEarthObservationJob");
 
-            var request = InstantiateClassGenerator.Execute<StopEarthObservationJobRequest>();
+            var request = InstantiateClassGenerator.Execute<StopEarthObservationJobRequest>(operation);
             var marshaller = new StopEarthObservationJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3377,7 +3377,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StopEarthObservationJob");
 
-            var request = InstantiateClassGenerator.Execute<StopEarthObservationJobRequest>();
+            var request = InstantiateClassGenerator.Execute<StopEarthObservationJobRequest>(operation);
             var marshaller = new StopEarthObservationJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3409,7 +3409,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StopEarthObservationJob");
 
-            var request = InstantiateClassGenerator.Execute<StopEarthObservationJobRequest>();
+            var request = InstantiateClassGenerator.Execute<StopEarthObservationJobRequest>(operation);
             var marshaller = new StopEarthObservationJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3441,7 +3441,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StopVectorEnrichmentJob");
 
-            var request = InstantiateClassGenerator.Execute<StopVectorEnrichmentJobRequest>();
+            var request = InstantiateClassGenerator.Execute<StopVectorEnrichmentJobRequest>(operation);
             var marshaller = new StopVectorEnrichmentJobRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -3471,7 +3471,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StopVectorEnrichmentJob");
 
-            var request = InstantiateClassGenerator.Execute<StopVectorEnrichmentJobRequest>();
+            var request = InstantiateClassGenerator.Execute<StopVectorEnrichmentJobRequest>(operation);
             var marshaller = new StopVectorEnrichmentJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3503,7 +3503,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StopVectorEnrichmentJob");
 
-            var request = InstantiateClassGenerator.Execute<StopVectorEnrichmentJobRequest>();
+            var request = InstantiateClassGenerator.Execute<StopVectorEnrichmentJobRequest>(operation);
             var marshaller = new StopVectorEnrichmentJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3535,7 +3535,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StopVectorEnrichmentJob");
 
-            var request = InstantiateClassGenerator.Execute<StopVectorEnrichmentJobRequest>();
+            var request = InstantiateClassGenerator.Execute<StopVectorEnrichmentJobRequest>(operation);
             var marshaller = new StopVectorEnrichmentJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3567,7 +3567,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StopVectorEnrichmentJob");
 
-            var request = InstantiateClassGenerator.Execute<StopVectorEnrichmentJobRequest>();
+            var request = InstantiateClassGenerator.Execute<StopVectorEnrichmentJobRequest>(operation);
             var marshaller = new StopVectorEnrichmentJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3599,7 +3599,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StopVectorEnrichmentJob");
 
-            var request = InstantiateClassGenerator.Execute<StopVectorEnrichmentJobRequest>();
+            var request = InstantiateClassGenerator.Execute<StopVectorEnrichmentJobRequest>(operation);
             var marshaller = new StopVectorEnrichmentJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3631,7 +3631,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StopVectorEnrichmentJob");
 
-            var request = InstantiateClassGenerator.Execute<StopVectorEnrichmentJobRequest>();
+            var request = InstantiateClassGenerator.Execute<StopVectorEnrichmentJobRequest>(operation);
             var marshaller = new StopVectorEnrichmentJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3663,7 +3663,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("TagResource");
 
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -3693,7 +3693,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("TagResource");
 
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3725,7 +3725,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("TagResource");
 
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3757,7 +3757,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("TagResource");
 
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3789,7 +3789,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("TagResource");
 
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3821,7 +3821,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("TagResource");
 
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3853,7 +3853,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UntagResource");
 
-            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>(operation);
             var marshaller = new UntagResourceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -3883,7 +3883,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UntagResource");
 
-            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>(operation);
             var marshaller = new UntagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3915,7 +3915,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UntagResource");
 
-            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>(operation);
             var marshaller = new UntagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3947,7 +3947,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UntagResource");
 
-            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>(operation);
             var marshaller = new UntagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3979,7 +3979,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UntagResource");
 
-            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>(operation);
             var marshaller = new UntagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4011,7 +4011,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UntagResource");
 
-            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>(operation);
             var marshaller = new UntagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 

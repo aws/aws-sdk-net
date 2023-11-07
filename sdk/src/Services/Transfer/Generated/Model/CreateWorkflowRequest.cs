@@ -48,7 +48,7 @@ namespace Amazon.Transfer.Model
         /// A textual description for the workflow.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string Description
         {
             get { return this._description; }
@@ -75,7 +75,7 @@ namespace Amazon.Transfer.Model
         /// </para>
         ///  </note>
         /// </summary>
-        [AWSProperty(Max=8)]
+        [AWSProperty(Min=0, Max=8)]
         public List<WorkflowStep> OnExceptionSteps
         {
             get { return this._onExceptionSteps; }
@@ -128,7 +128,7 @@ namespace Amazon.Transfer.Model
         /// EFS file system ID and path. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=8)]
+        [AWSProperty(Required=true, Min=0, Max=8)]
         public List<WorkflowStep> Steps
         {
             get { return this._steps; }

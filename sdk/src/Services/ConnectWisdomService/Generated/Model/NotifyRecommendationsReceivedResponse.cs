@@ -60,6 +60,7 @@ namespace Amazon.ConnectWisdomService.Model
         /// The identifiers of the recommendations.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=25)]
         public List<string> RecommendationIds
         {
             get { return this._recommendationIds; }

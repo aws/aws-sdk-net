@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
-    /// Details about the Amazon EC2 instances that Amazon Web Services recommends that you
-    /// purchase.
+    /// Details about the Amazon EC2 reservations that Amazon Web Services recommends that
+    /// you purchase.
     /// </summary>
     public partial class EC2InstanceDetails
     {

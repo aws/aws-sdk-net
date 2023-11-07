@@ -36,8 +36,9 @@ namespace Amazon.VerifiedPermissions.Model
     /// 
     ///  <important> 
     /// <para>
-    /// Changes you make to the policy template content are immediately reflected in authorization
-    /// decisions that involve all template-linked policies instantiated from this template.
+    /// Changes you make to the policy template content are immediately (within the constraints
+    /// of eventual consistency) reflected in authorization decisions that involve all template-linked
+    /// policies instantiated from this template.
     /// </para>
     ///  </important> <note> 
     /// <para>

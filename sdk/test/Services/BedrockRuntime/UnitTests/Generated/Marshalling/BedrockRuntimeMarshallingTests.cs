@@ -49,7 +49,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("InvokeModel");
 
-            var request = InstantiateClassGenerator.Execute<InvokeModelRequest>();
+            var request = InstantiateClassGenerator.Execute<InvokeModelRequest>(operation);
             var marshaller = new InvokeModelRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -80,7 +80,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("InvokeModel");
 
-            var request = InstantiateClassGenerator.Execute<InvokeModelRequest>();
+            var request = InstantiateClassGenerator.Execute<InvokeModelRequest>(operation);
             var marshaller = new InvokeModelRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -113,7 +113,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("InvokeModel");
 
-            var request = InstantiateClassGenerator.Execute<InvokeModelRequest>();
+            var request = InstantiateClassGenerator.Execute<InvokeModelRequest>(operation);
             var marshaller = new InvokeModelRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -146,7 +146,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("InvokeModel");
 
-            var request = InstantiateClassGenerator.Execute<InvokeModelRequest>();
+            var request = InstantiateClassGenerator.Execute<InvokeModelRequest>(operation);
             var marshaller = new InvokeModelRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -179,7 +179,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("InvokeModel");
 
-            var request = InstantiateClassGenerator.Execute<InvokeModelRequest>();
+            var request = InstantiateClassGenerator.Execute<InvokeModelRequest>(operation);
             var marshaller = new InvokeModelRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -212,7 +212,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("InvokeModel");
 
-            var request = InstantiateClassGenerator.Execute<InvokeModelRequest>();
+            var request = InstantiateClassGenerator.Execute<InvokeModelRequest>(operation);
             var marshaller = new InvokeModelRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -245,7 +245,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("InvokeModel");
 
-            var request = InstantiateClassGenerator.Execute<InvokeModelRequest>();
+            var request = InstantiateClassGenerator.Execute<InvokeModelRequest>(operation);
             var marshaller = new InvokeModelRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -278,7 +278,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("InvokeModel");
 
-            var request = InstantiateClassGenerator.Execute<InvokeModelRequest>();
+            var request = InstantiateClassGenerator.Execute<InvokeModelRequest>(operation);
             var marshaller = new InvokeModelRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -311,7 +311,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("InvokeModel");
 
-            var request = InstantiateClassGenerator.Execute<InvokeModelRequest>();
+            var request = InstantiateClassGenerator.Execute<InvokeModelRequest>(operation);
             var marshaller = new InvokeModelRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -344,7 +344,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("InvokeModel");
 
-            var request = InstantiateClassGenerator.Execute<InvokeModelRequest>();
+            var request = InstantiateClassGenerator.Execute<InvokeModelRequest>(operation);
             var marshaller = new InvokeModelRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -377,7 +377,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("InvokeModelWithResponseStream");
 
-            var request = InstantiateClassGenerator.Execute<InvokeModelWithResponseStreamRequest>();
+            var request = InstantiateClassGenerator.Execute<InvokeModelWithResponseStreamRequest>(operation);
             var marshaller = new InvokeModelWithResponseStreamRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -408,7 +408,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("InvokeModelWithResponseStream");
 
-            var request = InstantiateClassGenerator.Execute<InvokeModelWithResponseStreamRequest>();
+            var request = InstantiateClassGenerator.Execute<InvokeModelWithResponseStreamRequest>(operation);
             var marshaller = new InvokeModelWithResponseStreamRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -441,7 +441,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("InvokeModelWithResponseStream");
 
-            var request = InstantiateClassGenerator.Execute<InvokeModelWithResponseStreamRequest>();
+            var request = InstantiateClassGenerator.Execute<InvokeModelWithResponseStreamRequest>(operation);
             var marshaller = new InvokeModelWithResponseStreamRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -474,7 +474,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("InvokeModelWithResponseStream");
 
-            var request = InstantiateClassGenerator.Execute<InvokeModelWithResponseStreamRequest>();
+            var request = InstantiateClassGenerator.Execute<InvokeModelWithResponseStreamRequest>(operation);
             var marshaller = new InvokeModelWithResponseStreamRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -507,7 +507,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("InvokeModelWithResponseStream");
 
-            var request = InstantiateClassGenerator.Execute<InvokeModelWithResponseStreamRequest>();
+            var request = InstantiateClassGenerator.Execute<InvokeModelWithResponseStreamRequest>(operation);
             var marshaller = new InvokeModelWithResponseStreamRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -540,7 +540,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("InvokeModelWithResponseStream");
 
-            var request = InstantiateClassGenerator.Execute<InvokeModelWithResponseStreamRequest>();
+            var request = InstantiateClassGenerator.Execute<InvokeModelWithResponseStreamRequest>(operation);
             var marshaller = new InvokeModelWithResponseStreamRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -573,7 +573,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("InvokeModelWithResponseStream");
 
-            var request = InstantiateClassGenerator.Execute<InvokeModelWithResponseStreamRequest>();
+            var request = InstantiateClassGenerator.Execute<InvokeModelWithResponseStreamRequest>(operation);
             var marshaller = new InvokeModelWithResponseStreamRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -606,7 +606,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("InvokeModelWithResponseStream");
 
-            var request = InstantiateClassGenerator.Execute<InvokeModelWithResponseStreamRequest>();
+            var request = InstantiateClassGenerator.Execute<InvokeModelWithResponseStreamRequest>(operation);
             var marshaller = new InvokeModelWithResponseStreamRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -639,7 +639,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("InvokeModelWithResponseStream");
 
-            var request = InstantiateClassGenerator.Execute<InvokeModelWithResponseStreamRequest>();
+            var request = InstantiateClassGenerator.Execute<InvokeModelWithResponseStreamRequest>(operation);
             var marshaller = new InvokeModelWithResponseStreamRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -672,7 +672,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("InvokeModelWithResponseStream");
 
-            var request = InstantiateClassGenerator.Execute<InvokeModelWithResponseStreamRequest>();
+            var request = InstantiateClassGenerator.Execute<InvokeModelWithResponseStreamRequest>(operation);
             var marshaller = new InvokeModelWithResponseStreamRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -705,7 +705,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("InvokeModelWithResponseStream");
 
-            var request = InstantiateClassGenerator.Execute<InvokeModelWithResponseStreamRequest>();
+            var request = InstantiateClassGenerator.Execute<InvokeModelWithResponseStreamRequest>(operation);
             var marshaller = new InvokeModelWithResponseStreamRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 

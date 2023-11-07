@@ -34,15 +34,38 @@ namespace Amazon.GlobalAccelerator.Model
     /// </summary>
     public partial class EndpointConfiguration
     {
+        private string _attachmentArn;
         private bool? _clientIPPreservationEnabled;
         private string _endpointId;
         private int? _weight;
 
         /// <summary>
+        /// Gets and sets the property AttachmentArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the cross-account attachment that specifies the
+        /// endpoints (resources) that can be added to accelerators and principals that have permission
+        /// to add the endpoints to accelerators.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=255)]
+        public string AttachmentArn
+        {
+            get { return this._attachmentArn; }
+            set { this._attachmentArn = value; }
+        }
+
+        // Check to see if AttachmentArn property is set
+        internal bool IsSetAttachmentArn()
+        {
+            return this._attachmentArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ClientIPPreservationEnabled. 
         /// <para>
         /// Indicates whether client IP address preservation is enabled for an endpoint. The value
-        /// is true or false. The default value is true for new accelerators. 
+        /// is true or false. The default value is true for Application Load Balancer endpoints.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -53,7 +76,7 @@ namespace Amazon.GlobalAccelerator.Model
         /// <para>
         /// Client IP address preservation is supported, in specific Amazon Web Services Regions,
         /// for endpoints that are Application Load Balancers, Amazon EC2 instances, and Network
-        /// Load Balancers with Security Groups. IMPORTANT: You cannot use client IP address preservation
+        /// Load Balancers with security groups. IMPORTANT: You cannot use client IP address preservation
         /// with Network Load Balancers with TLS listeners.
         /// </para>
         ///  

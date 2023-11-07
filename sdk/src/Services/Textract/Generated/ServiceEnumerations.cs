@@ -25,6 +25,118 @@ namespace Amazon.Textract
 {
 
     /// <summary>
+    /// Constants used for properties of type AdapterVersionStatus.
+    /// </summary>
+    public class AdapterVersionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for AdapterVersionStatus
+        /// </summary>
+        public static readonly AdapterVersionStatus ACTIVE = new AdapterVersionStatus("ACTIVE");
+        /// <summary>
+        /// Constant AT_RISK for AdapterVersionStatus
+        /// </summary>
+        public static readonly AdapterVersionStatus AT_RISK = new AdapterVersionStatus("AT_RISK");
+        /// <summary>
+        /// Constant CREATION_ERROR for AdapterVersionStatus
+        /// </summary>
+        public static readonly AdapterVersionStatus CREATION_ERROR = new AdapterVersionStatus("CREATION_ERROR");
+        /// <summary>
+        /// Constant CREATION_IN_PROGRESS for AdapterVersionStatus
+        /// </summary>
+        public static readonly AdapterVersionStatus CREATION_IN_PROGRESS = new AdapterVersionStatus("CREATION_IN_PROGRESS");
+        /// <summary>
+        /// Constant DEPRECATED for AdapterVersionStatus
+        /// </summary>
+        public static readonly AdapterVersionStatus DEPRECATED = new AdapterVersionStatus("DEPRECATED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AdapterVersionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AdapterVersionStatus FindValue(string value)
+        {
+            return FindValue<AdapterVersionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AdapterVersionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AutoUpdate.
+    /// </summary>
+    public class AutoUpdate : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for AutoUpdate
+        /// </summary>
+        public static readonly AutoUpdate DISABLED = new AutoUpdate("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for AutoUpdate
+        /// </summary>
+        public static readonly AutoUpdate ENABLED = new AutoUpdate("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AutoUpdate(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AutoUpdate FindValue(string value)
+        {
+            return FindValue<AutoUpdate>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AutoUpdate(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type BlockType.
     /// </summary>
     public class BlockType : ConstantClass

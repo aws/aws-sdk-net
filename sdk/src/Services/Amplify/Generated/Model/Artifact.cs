@@ -39,7 +39,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property ArtifactFileName. 
         /// <para>
-        ///  The file name for the artifact. 
+        /// The file name for the artifact. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=1000)]
@@ -58,7 +58,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property ArtifactId. 
         /// <para>
-        ///  The unique ID for the artifact. 
+        /// The unique ID for the artifact. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=255)]

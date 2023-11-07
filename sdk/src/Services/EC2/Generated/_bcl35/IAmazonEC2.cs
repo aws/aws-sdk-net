@@ -11198,6 +11198,47 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeCapacityBlockOfferings
+
+
+        /// <summary>
+        /// Describes Capacity Block offerings available for purchase. With Capacity Blocks, you
+        /// purchase a specific instance type for a period of time.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCapacityBlockOfferings service method.</param>
+        /// 
+        /// <returns>The response from the DescribeCapacityBlockOfferings service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityBlockOfferings">REST API Reference for DescribeCapacityBlockOfferings Operation</seealso>
+        DescribeCapacityBlockOfferingsResponse DescribeCapacityBlockOfferings(DescribeCapacityBlockOfferingsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeCapacityBlockOfferings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCapacityBlockOfferings operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeCapacityBlockOfferings
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityBlockOfferings">REST API Reference for DescribeCapacityBlockOfferings Operation</seealso>
+        IAsyncResult BeginDescribeCapacityBlockOfferings(DescribeCapacityBlockOfferingsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeCapacityBlockOfferings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeCapacityBlockOfferings.</param>
+        /// 
+        /// <returns>Returns a  DescribeCapacityBlockOfferingsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityBlockOfferings">REST API Reference for DescribeCapacityBlockOfferings Operation</seealso>
+        DescribeCapacityBlockOfferingsResponse EndDescribeCapacityBlockOfferings(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeCapacityReservationFleets
 
 
@@ -18510,6 +18551,72 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DisableImage
+
+
+        /// <summary>
+        /// Sets the AMI state to <code>disabled</code> and removes all launch permissions from
+        /// the AMI. A disabled AMI can't be used for instance launches.
+        /// 
+        ///  
+        /// <para>
+        /// A disabled AMI can't be shared. If a public or shared AMI was previously shared, it
+        /// is made private. If an AMI was shared with an Amazon Web Services account, organization,
+        /// or Organizational Unit, they lose access to the disabled AMI. 
+        /// </para>
+        ///  
+        /// <para>
+        /// A disabled AMI does not appear in <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImages.html">DescribeImages</a>
+        /// API calls by default.
+        /// </para>
+        ///  
+        /// <para>
+        /// Only the AMI owner can disable an AMI.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can re-enable a disabled AMI using <a href="http://amazonaws.com/AWSEC2/latest/APIReference/API_EnableImage.html">EnableImage</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/disable-an-ami.html">Disable
+        /// an AMI</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableImage service method.</param>
+        /// 
+        /// <returns>The response from the DisableImage service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableImage">REST API Reference for DisableImage Operation</seealso>
+        DisableImageResponse DisableImage(DisableImageRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisableImage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisableImage operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisableImage
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableImage">REST API Reference for DisableImage Operation</seealso>
+        IAsyncResult BeginDisableImage(DisableImageRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisableImage operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisableImage.</param>
+        /// 
+        /// <returns>Returns a  DisableImageResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableImage">REST API Reference for DisableImage Operation</seealso>
+        DisableImageResponse EndDisableImage(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DisableImageBlockPublicAccess
 
 
@@ -19772,6 +19879,60 @@ namespace Amazon.EC2
         /// <returns>Returns a  EnableFastSnapshotRestoresResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableFastSnapshotRestores">REST API Reference for EnableFastSnapshotRestores Operation</seealso>
         EnableFastSnapshotRestoresResponse EndEnableFastSnapshotRestores(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  EnableImage
+
+
+        /// <summary>
+        /// Re-enables a disabled AMI. The re-enabled AMI is marked as <code>available</code>
+        /// and can be used for instance launches, appears in describe operations, and can be
+        /// shared. Amazon Web Services accounts, organizations, and Organizational Units that
+        /// lost access to the AMI when it was disabled do not regain access automatically. Once
+        /// the AMI is available, it can be shared with them again.
+        /// 
+        ///  
+        /// <para>
+        /// Only the AMI owner can re-enable a disabled AMI.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/disable-an-ami.html">Disable
+        /// an AMI</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableImage service method.</param>
+        /// 
+        /// <returns>The response from the EnableImage service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableImage">REST API Reference for EnableImage Operation</seealso>
+        EnableImageResponse EnableImage(EnableImageRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the EnableImage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the EnableImage operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndEnableImage
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableImage">REST API Reference for EnableImage Operation</seealso>
+        IAsyncResult BeginEnableImage(EnableImageRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  EnableImage operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginEnableImage.</param>
+        /// 
+        /// <returns>Returns a  EnableImageResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableImage">REST API Reference for EnableImage Operation</seealso>
+        EnableImageResponse EndEnableImage(IAsyncResult asyncResult);
 
         #endregion
         
@@ -21765,6 +21926,47 @@ namespace Amazon.EC2
         /// <returns>Returns a  GetReservedInstancesExchangeQuoteResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetReservedInstancesExchangeQuote">REST API Reference for GetReservedInstancesExchangeQuote Operation</seealso>
         GetReservedInstancesExchangeQuoteResponse EndGetReservedInstancesExchangeQuote(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetSecurityGroupsForVpc
+
+
+        /// <summary>
+        /// Gets security groups that can be associated by the Amazon Web Services account making
+        /// the request with network interfaces in the specified VPC.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSecurityGroupsForVpc service method.</param>
+        /// 
+        /// <returns>The response from the GetSecurityGroupsForVpc service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetSecurityGroupsForVpc">REST API Reference for GetSecurityGroupsForVpc Operation</seealso>
+        GetSecurityGroupsForVpcResponse GetSecurityGroupsForVpc(GetSecurityGroupsForVpcRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSecurityGroupsForVpc operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSecurityGroupsForVpc operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSecurityGroupsForVpc
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetSecurityGroupsForVpc">REST API Reference for GetSecurityGroupsForVpc Operation</seealso>
+        IAsyncResult BeginGetSecurityGroupsForVpc(GetSecurityGroupsForVpcRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetSecurityGroupsForVpc operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSecurityGroupsForVpc.</param>
+        /// 
+        /// <returns>Returns a  GetSecurityGroupsForVpcResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetSecurityGroupsForVpc">REST API Reference for GetSecurityGroupsForVpc Operation</seealso>
+        GetSecurityGroupsForVpcResponse EndGetSecurityGroupsForVpc(IAsyncResult asyncResult);
 
         #endregion
         
@@ -26264,6 +26466,48 @@ namespace Amazon.EC2
         /// <returns>Returns a  ProvisionPublicIpv4PoolCidrResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ProvisionPublicIpv4PoolCidr">REST API Reference for ProvisionPublicIpv4PoolCidr Operation</seealso>
         ProvisionPublicIpv4PoolCidrResponse EndProvisionPublicIpv4PoolCidr(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  PurchaseCapacityBlock
+
+
+        /// <summary>
+        /// Purchase the Capacity Block for use with your account. With Capacity Blocks you ensure
+        /// GPU capacity is available for machine learning (ML) workloads. You must specify the
+        /// ID of the Capacity Block offering you are purchasing.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PurchaseCapacityBlock service method.</param>
+        /// 
+        /// <returns>The response from the PurchaseCapacityBlock service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PurchaseCapacityBlock">REST API Reference for PurchaseCapacityBlock Operation</seealso>
+        PurchaseCapacityBlockResponse PurchaseCapacityBlock(PurchaseCapacityBlockRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PurchaseCapacityBlock operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PurchaseCapacityBlock operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPurchaseCapacityBlock
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PurchaseCapacityBlock">REST API Reference for PurchaseCapacityBlock Operation</seealso>
+        IAsyncResult BeginPurchaseCapacityBlock(PurchaseCapacityBlockRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PurchaseCapacityBlock operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPurchaseCapacityBlock.</param>
+        /// 
+        /// <returns>Returns a  PurchaseCapacityBlockResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PurchaseCapacityBlock">REST API Reference for PurchaseCapacityBlock Operation</seealso>
+        PurchaseCapacityBlockResponse EndPurchaseCapacityBlock(IAsyncResult asyncResult);
 
         #endregion
         

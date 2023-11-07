@@ -148,6 +148,18 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.ResiliencyScore = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("rpoInSecs", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.RpoInSecs = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("rtoInSecs", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.RtoInSecs = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -45,6 +45,8 @@ namespace Amazon.Glue.Model
         private CatalogKinesisSource _catalogKinesisSource;
         private CatalogSource _catalogSource;
         private BasicCatalogTarget _catalogTarget;
+        private ConnectorDataSource _connectorDataSource;
+        private ConnectorDataTarget _connectorDataTarget;
         private CustomCode _customCode;
         private DirectJDBCSource _directJDBCSource;
         private DirectKafkaSource _directKafkaSource;
@@ -303,6 +305,42 @@ namespace Amazon.Glue.Model
         internal bool IsSetCatalogTarget()
         {
             return this._catalogTarget != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConnectorDataSource. 
+        /// <para>
+        /// Specifies a source generated with standard connection options.
+        /// </para>
+        /// </summary>
+        public ConnectorDataSource ConnectorDataSource
+        {
+            get { return this._connectorDataSource; }
+            set { this._connectorDataSource = value; }
+        }
+
+        // Check to see if ConnectorDataSource property is set
+        internal bool IsSetConnectorDataSource()
+        {
+            return this._connectorDataSource != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConnectorDataTarget. 
+        /// <para>
+        /// Specifies a target generated with standard connection options.
+        /// </para>
+        /// </summary>
+        public ConnectorDataTarget ConnectorDataTarget
+        {
+            get { return this._connectorDataTarget; }
+            set { this._connectorDataTarget = value; }
+        }
+
+        // Check to see if ConnectorDataTarget property is set
+        internal bool IsSetConnectorDataTarget()
+        {
+            return this._connectorDataTarget != null;
         }
 
         /// <summary>

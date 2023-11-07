@@ -63,6 +63,12 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                     response.CreationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("failureReason", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.FailureReason = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("gpus", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

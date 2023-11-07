@@ -70,8 +70,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        /// For text and image classification, as well as time-series forecasting problem types,
-        /// the supported value is 1. For tabular problem types, the maximum value is 750.
+        /// For text and image classification, time-series forecasting, as well as text generation
+        /// (LLMs fine-tuning) problem types, the supported value is 1. For tabular problem types,
+        /// the maximum value is 750.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=750)]

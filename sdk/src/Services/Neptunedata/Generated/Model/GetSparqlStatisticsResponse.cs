@@ -59,8 +59,15 @@ namespace Amazon.Neptunedata.Model
         /// Gets and sets the property Status. 
         /// <para>
         /// The HTTP return code of the request. If the request succeeded, the code is 200. See
-        /// <a href="docs.aws.amazon.comneptune/latest/userguide/neptune-dfe-statistics.html#neptune-dfe-statistics-errors">Common
+        /// <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-dfe-statistics.html#neptune-dfe-statistics-errors">Common
         /// error codes for DFE statistics request</a> for a list of common errors.
+        /// </para>
+        ///  
+        /// <para>
+        /// When invoking this operation in a Neptune cluster that has IAM authentication enabled,
+        /// the IAM user or role making the request must have a policy attached that allows the
+        /// <a href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#getstatisticsstatus">neptune-db:GetStatisticsStatus</a>
+        /// IAM action in that cluster.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

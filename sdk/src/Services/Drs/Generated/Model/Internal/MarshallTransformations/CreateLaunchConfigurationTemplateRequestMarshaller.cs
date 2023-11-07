@@ -89,6 +89,12 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.LaunchDisposition);
                 }
 
+                if(publicRequest.IsSetLaunchIntoSourceInstance())
+                {
+                    context.Writer.WritePropertyName("launchIntoSourceInstance");
+                    context.Writer.Write(publicRequest.LaunchIntoSourceInstance);
+                }
+
                 if(publicRequest.IsSetLicensing())
                 {
                     context.Writer.WritePropertyName("licensing");

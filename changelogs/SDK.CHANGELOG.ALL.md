@@ -1,3 +1,351 @@
+### 3.7.678.0 (2023-11-06 19:22 UTC)
+* CodeBuild (3.7.201.0)
+	* AWS CodeBuild now supports AWS Lambda compute.
+* Connect (3.7.213.0)
+	* Added new API that allows Amazon Connect Outbound Campaigns to create contacts in Amazon Connect when ingesting your dial requests.
+* CostExplorer (3.7.203.0)
+	* This release extends the GetReservationPurchaseRecommendation API to support recommendations for Amazon MemoryDB reservations.
+* DocDB (3.7.201.0)
+	* Update the input of CreateDBInstance and ModifyDBInstance to support setting CA Certificates. Update the output of DescribeDBInstance and DescribeDBEngineVersions to show current and supported CA certificates.
+* IdentityManagement (3.7.203.0)
+	* Add partitional endpoint for iso-e.
+* MWAA (3.7.201.0)
+	* This release adds support for Apache Airflow version 2.7.2. This version release includes support for deferrable operators and triggers.
+* Polly (3.7.204.0)
+	* Amazon Polly adds new US English voices - Danielle and Gregory. Danielle and Gregory are available as Neural voices only.
+* Route53 (3.7.203.0)
+	* Add partitional endpoints for iso-e and iso-f.
+* Core 3.7.204.13
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.677.0 (2023-11-03 19:11 UTC)
+* ConfigService (3.7.203.0)
+	* Updated ResourceType enum with new resource types onboarded by AWS Config in October 2023.
+* Connect (3.7.212.0)
+	* Amazon Connect Chat introduces Create Persistent Contact Association API, allowing customers to choose when to resume previous conversations from previous chats, eliminating the need to repeat themselves and allowing agents to provide personalized service with access to entire conversation history.
+* IoTWireless (3.7.201.0)
+	* Added LoRaWAN version 1.0.4 support
+* LaunchWizard (3.7.200.0)
+	* AWS Launch Wizard is a service that helps reduce the time it takes to deploy applications to the cloud while providing a guided deployment experience.
+
+### 3.7.676.0 (2023-11-02 18:24 UTC)
+* AppRunner (3.7.204.0)
+	* AWS App Runner now supports using dual-stack address type for the public endpoint of your incoming traffic.
+* Connect (3.7.211.0)
+	* GetMetricDataV2 API: Update to include new metrics PERCENT_NON_TALK_TIME, PERCENT_TALK_TIME, PERCENT_TALK_TIME_AGENT, PERCENT_TALK_TIME_CUSTOMER
+* GameLift (3.7.202.0)
+	* Amazon GameLift adds support for shared credentials, which allows applications that are deployed on managed EC2 fleets to interact with other AWS resources.
+* Glue (3.7.208.0)
+	* This release introduces Google BigQuery Source and Target in AWS Glue CodeGenConfigurationNode.
+* NetworkFirewall (3.7.203.0)
+	* This release introduces the stateless rule analyzer, which enables you to analyze your stateless rules for asymmetric routing.
+* QuickSight (3.7.208.0)
+	* This release introduces Float Decimal Type as SubType in QuickSight SPICE datasets and Custom week start and Custom timezone options in Analysis and Dashboard
+* S3 (3.7.205.22)
+	* Added support for DisablePayloadSigning for TransferUtility's upload directory feature.
+	* Added RequestPayer property in CopyPartRequest class.
+	* Add `DisableTrimmingLeadingSlash` flag to CopyObject and CopyPart requests, used to determine if the service client should remove leading slashes from object keys
+* SSOOIDC (3.7.201.21)
+	* Add RegistrationExpiresAt field to GetSsoTokenResponse.
+* Core 3.7.204.12
+	* Update SSO Token Manager to generate a new token if the token's client registration has expired.
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.675.0 (2023-11-01 18:20 UTC)
+* APIGateway (3.7.201.40)
+	* Marshaller changes from the generator changes supporting maps of lists.
+* Connect (3.7.210.0)
+	* Adds the BatchGetFlowAssociation API which returns flow associations (flow-resource) corresponding to the list of resourceArns supplied in the request. This release also adds IsDefault, LastModifiedRegion and LastModifiedTime fields to the responses of several Describe and List APIs.
+* DataExchange (3.7.201.1)
+	* Marshaller changes from the generator changes supporting maps of lists.
+* GlobalAccelerator (3.7.202.0)
+	* Global Accelerator now support accelerators with cross account endpoints.
+* RDS (3.7.213.0)
+	* This release adds support for customized networking resources to Amazon RDS Custom.
+* Redshift (3.7.204.0)
+	* Added support for Multi-AZ deployments for Provisioned RA3 clusters that provide 99.99% SLA availability.
+* SageMaker (3.7.220.0)
+	* Support for batch transform input in Model dashboard
+* Core 3.7.204.11
+	* Added generator support for maps of lists and associated protocol tests.
+
+### 3.7.674.1 (2023-10-31 23:32 UTC)
+* S3 (3.7.205.21)
+	* Revert 'BREAKING CHANGE: Update CopyObject and CopyPart requests not to remove leading slash from object keys'
+
+### 3.7.674.0 (2023-10-31 18:33 UTC)
+* Amplify (3.7.201.0)
+	* Add backend field to CreateBranch and UpdateBranch requests. Add pagination support for ListApps, ListDomainAssociations, ListBranches, and ListJobs
+* ApplicationInsights (3.7.202.0)
+	* Automate attaching managed policies
+* EC2 (3.7.224.0)
+	* Capacity Blocks for ML are a new EC2 purchasing option for reserving GPU instances on a future date to support short duration machine learning (ML) workloads. Capacity Blocks automatically place instances close together inside Amazon EC2 UltraClusters for low-latency, high-throughput networking.
+* MainframeModernization (3.7.202.0)
+	* Added name filter ability for ListDataSets API, added ForceUpdate for Updating environment and BatchJob submission using S3BatchJobIdentifier
+* Neptunedata (3.7.202.0)
+	* Minor change to not retry CancelledByUserException
+* S3 (3.7.205.20)
+	* BREAKING CHANGE: Update CopyObject and CopyPart requests not to remove leading slash from object keys
+* Translate (3.7.201.0)
+	* Added support for Brevity translation settings feature.
+
+### 3.7.673.0 (2023-10-30 18:22 UTC)
+* Connect (3.7.209.0)
+	* This release adds InstanceId field for phone number APIs.
+* ConnectWisdomService (3.7.202.7)
+	* This release added necessary API documents on creating a Wisdom knowledge base to integrate with S3.
+* DataExchange (3.7.201.0)
+	* We added a new API action: SendDataSetNotification.
+* DataSync (3.7.204.0)
+	* Platform version changes to support AL1 deprecation initiative.
+* Finspace (3.7.202.0)
+	* Introducing new API UpdateKxClusterCodeConfiguration, introducing new cache types for clusters and introducing new deployment modes for updating clusters.
+* MediaPackageV2 (3.7.202.0)
+	* This feature allows customers to create a combination of manifest filtering, startover and time delay configuration that applies to all egress requests by default.
+* RDS (3.7.212.0)
+	* This release launches the CreateIntegration, DeleteIntegration, and DescribeIntegrations APIs to manage zero-ETL Integrations.
+* RedshiftServerless (3.7.203.0)
+	* Added support for custom domain names for Amazon Redshift Serverless workgroups. This feature enables customers to create a custom domain name and use ACM to generate fully secure connections to it.
+* ResilienceHub (3.7.202.0)
+	* Introduced the ability to filter applications by their last assessment date and time and have included metrics for the application's estimated workload Recovery Time Objective (RTO) and estimated workload Recovery Point Objective (RPO).
+* S3Outposts (3.7.201.0)
+	* Updated ListOutpostsWithS3 API response to include S3OutpostArn for use with AWS RAM.
+
+### 3.7.672.0 (2023-10-27 18:14 UTC)
+* ElasticMapReduce (3.7.201.0)
+	* Updated CreateCluster API request and DescribeCluster API responses to include EbsRootVolumeIops, and EbsRootVolumeThroughput attributes that specify the user configured root volume IOPS and throughput for Amazon EBS root device volume. This feature will be available from Amazon EMR releases 6.15.0
+* Neptune (3.7.201.0)
+	* Update TdeCredentialPassword type to SensitiveString
+* Pinpoint (3.7.201.58)
+	* Updated documentation to describe the case insensitivity for EndpointIds.
+* Redshift (3.7.203.0)
+	* added support to create a dual stack cluster
+* WAFV2 (3.7.203.18)
+	* Updates the descriptions for the calls that manage web ACL associations, to provide information for customer-managed IAM policies.
+* Core 3.7.204.10
+	* Deprecate AWSSDKUtils.ResolveResourcePath and AWSSDKUtils.JoinResourcePathSegments in favor of V2 version to fix encoding issue with special characters. Add protocol tests for http labels for greedy and non-greedy labels that include special characters.
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.671.0 (2023-10-26 18:26 UTC)
+* AppStream (3.7.203.0)
+	* This release introduces multi-session fleets, allowing customers to provision more than one user session on a single fleet instance.
+* EC2 (3.7.223.0)
+	* Launching GetSecurityGroupsForVpc API. This API gets security groups that can be associated by the AWS account making the request with network interfaces in the specified VPC.
+* NetworkFirewall (3.7.202.0)
+	* Network Firewall now supports inspection of outbound SSL/TLS traffic.
+* OpenSearchService (3.7.203.0)
+	* You can specify ipv4 or dualstack IPAddressType for cluster endpoints. If you specify IPAddressType as dualstack, the new endpoint will be visible under the 'EndpointV2' parameter and will support IPv4 and IPv6 requests. Whereas, the 'Endpoint' will continue to serve IPv4 requests.
+* Redshift (3.7.202.0)
+	* Add Redshift APIs GetResourcePolicy, DeleteResourcePolicy, PutResourcePolicy and DescribeInboundIntegrations for the new Amazon Redshift Zero-ETL integration feature, which can be used to control data ingress into Redshift namespace, and view inbound integrations.
+* SageMaker (3.7.219.0)
+	* Amazon Sagemaker Autopilot now supports Text Generation jobs.
+* SimpleNotificationService (3.7.201.0)
+	* Message Archiving and Replay is now supported in Amazon SNS for FIFO topics.
+* SsmSap (3.7.202.0)
+	* AWS Systems Manager for SAP added support for registration and discovery of SAP ABAP applications
+* Transfer (3.7.203.0)
+	* No API changes from previous release. This release migrated the model to Smithy keeping all features unchanged.
+* Core 3.7.204.9
+	* Update SDK generator to handle hostPrefix labels (https://smithy.io/2.0/spec/endpoint-traits.html#endpoint-trait)
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.670.0 (2023-10-25 20:16 UTC)
+* ConnectCases (3.7.202.0)
+	* Increase maximum length of CommentBody to 3000, and increase maximum length of StringValue to 1500
+* GroundStation (3.7.201.0)
+	* This release will allow KMS alias names to be used when creating Mission Profiles
+* IdentityManagement (3.7.202.0)
+	* Updates to GetAccessKeyLastUsed action to replace NoSuchEntity error with AccessDeniedException error.
+
+### 3.7.669.0 (2023-10-24 18:19 UTC)
+* CodePipeline (3.7.202.0)
+	* Add ability to trigger pipelines from git tags, define variables at pipeline level and new pipeline type V2.
+* EC2 (3.7.222.0)
+	* This release updates the documentation for InstanceInterruptionBehavior and HibernationOptionsRequest to more accurately describe the behavior of these two parameters when using Spot hibernation.
+* EKS (3.7.202.0)
+	* Added support for Cluster Subnet and Security Group mutability.
+* IdentityManagement (3.7.201.0)
+	* Add the partitional endpoint for IAM in iso-f.
+* MigrationHubConfig (3.7.201.0)
+	* This release introduces DeleteHomeRegionControl API that customers can use to delete the Migration Hub Home Region configuration
+* MigrationHubStrategyRecommendations (3.7.201.0)
+	* This release introduces multi-data-source feature in Migration Hub Strategy Recommendations. This feature now supports vCenter as a data source to fetch inventory in addition to ADS and Import from file workflow that is currently supported with MHSR collector.
+* OpenSearchServerless (3.7.202.0)
+	* This release includes the following new APIs: CreateLifecyclePolicy, UpdateLifecyclePolicy, BatchGetLifecyclePolicy, DeleteLifecyclePolicy, ListLifecyclePolicies and BatchGetEffectiveLifecyclePolicy to support the data lifecycle management feature.
+* Core 3.7.204.8
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.668.0 (2023-10-23 18:17 UTC)
+* AWSMarketplaceCommerceAnalytics (3.7.201.0)
+	* The StartSupportDataExport operation has been deprecated as part of the Product Support Connection deprecation. As of December 2022, Product Support Connection is no longer supported.
+* NetworkManager (3.7.201.0)
+	* This release adds API support for Tunnel-less Connect (NoEncap Protocol) for AWS Cloud WAN
+* RedshiftServerless (3.7.202.0)
+	* This release adds support for customers to see the patch version and workgroup version in Amazon Redshift Serverless.
+* Rekognition (3.7.202.0)
+	* Amazon Rekognition introduces StartMediaAnalysisJob, GetMediaAnalysisJob, and ListMediaAnalysisJobs operations to run a bulk analysis of images with a Detect Moderation model.
+* Core 3.7.204.7
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.667.0 (2023-10-20 20:15 UTC)
+* AppConfig (3.7.203.0)
+	* Update KmsKeyIdentifier constraints to support AWS KMS multi-Region keys.
+* AppIntegrationsService (3.7.202.0)
+	* Updated ScheduleConfig to be an optional input to CreateDataIntegration to support event driven downloading of files from sources such as Amazon s3 using Amazon Connect AppIntegrations.
+* ApplicationDiscoveryService (3.7.203.0)
+	* This release introduces three new APIs: StartBatchDeleteConfigurationTask, DescribeBatchDeleteConfigurationTask, and BatchDeleteAgents.
+* Connect (3.7.208.0)
+	* This release adds support for updating phone number metadata, such as phone number description.
+* MedicalImaging (3.7.200.58)
+	* Updates on documentation links
+* SimpleSystemsManagement (3.7.202.0)
+	* This release introduces a new API: DeleteOpsItem. This allows deletion of an OpsItem.
+* Core 3.7.204.6
+	* Improve documentation for InstanceProfileAWSCredentials constructors
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.666.0 (2023-10-19 19:41 UTC)
+* EC2 (3.7.221.0)
+	* Amazon EC2 C7a instances, powered by 4th generation AMD EPYC processors, are ideal for high performance, compute-intensive workloads such as high performance computing. Amazon EC2 R7i instances are next-generation memory optimized and powered by custom 4th Generation Intel Xeon Scalable processors.
+* GameSparks (Removed)
+	* Amazon GameSparks has been removed from the SDK because the preview is not being continued.
+* ManagedBlockchainQuery (3.7.202.0)
+	* This release adds support for Ethereum Sepolia network
+* Neptunedata (3.7.201.23)
+	* Doc changes to add IAM action mappings for the data actions.
+* Omics (3.7.206.0)
+	* This change enables customers to retrieve failure reasons with detailed status messages for their failed runs
+* OpenSearchService (3.7.202.0)
+	* Added Cluster Administrative options for node restart, opensearch process restart and opensearch dashboard restart for Multi-AZ without standby domains
+* QuickSight (3.7.207.0)
+	* This release adds the following: 1) Trino and Starburst Database Connectors 2) Custom total for tables and pivot tables 3) Enable restricted folders 4) Add rolling dates for time equality filters 5) Refine DataPathValue and introduce DataPathType 6) Add SeriesType to ReferenceLineDataConfiguration
+* SecretsManager (3.7.201.43)
+	* Documentation updates for Secrets Manager
+* ServiceCatalog (3.7.202.0)
+	* Introduce support for EXTERNAL product and provisioning artifact type in CreateProduct and CreateProvisioningArtifact APIs.
+* VerifiedPermissions (3.7.202.0)
+	* Improving Amazon Verified Permissions Create experience
+* WorkSpaces (3.7.202.6)
+	* Documentation updates for WorkSpaces
+* Core 3.7.204.5
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.665.0 (2023-10-18 18:18 UTC)
+* Cloud9 (3.7.200.58)
+	* Update to imageId parameter behavior and dates updated.
+* ConnectWisdomService (3.7.202.0)
+	* This release adds an max limit of 25 recommendation ids for NotifyRecommendationsReceived API.
+* DynamoDBv2 (3.7.203.5)
+	* Updating descriptions for several APIs.
+* Kendra (3.7.202.0)
+	* Changes for a new feature in Amazon Kendra's Query API to Collapse/Expand query results
+* RDS (3.7.211.0)
+	* This release adds support for upgrading the storage file system configuration on the DB instance using a blue/green deployment or a read replica.
+* Core 3.7.204.4
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.664.0 (2023-10-17 18:25 UTC)
+* ApplicationDiscoveryService (3.7.202.0)
+	* This release introduces three new APIs: StartBatchDeleteConfigurationTask, DescribeBatchDeleteConfigurationTask, and BatchDeleteAgents.
+* CodePipeline (3.7.201.0)
+	* Add retryMode ALL_ACTIONS to RetryStageExecution API that retries a failed stage starting from first action in the stage
+* ECS (3.7.201.26)
+	* Documentation only updates to address Amazon ECS tickets.
+* GlobalAccelerator (3.7.201.0)
+	* Fixed error where ListCustomRoutingEndpointGroups did not have a paginator
+* GuardDuty (3.7.204.0)
+	* Add domainWithSuffix finding field to dnsRequestAction
+* Kafka (3.7.202.0)
+	* AWS Managed Streaming for Kafka is launching MSK Replicator, a new feature that enables customers to reliably replicate data across Amazon MSK clusters in same or different AWS regions. You can now use SDK to create, list, describe, delete, update, and manage tags of MSK Replicators.
+* Route53RecoveryCluster (3.7.201.0)
+	* Adds Owner field to ListRoutingControls API.
+* Route53RecoveryControlConfig (3.7.201.0)
+	* Adds permissions for GetResourcePolicy to support returning details about AWS Resource Access Manager resource policies for shared resources.
+* Core 3.7.204.3
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.663.0 (2023-10-16 18:23 UTC)
+* CloudFormation (3.7.204.0)
+	* SDK and documentation updates for UpdateReplacePolicy
+* Drs (3.7.203.0)
+	* Updated exsiting API to allow AWS Elastic Disaster Recovery support of launching recovery into existing EC2 instances.
+* EntityResolution (3.7.202.0)
+	* This launch expands our matching techniques to include provider-based matching to help customer match, link, and enhance records with minimal data movement. With data service providers, we have removed the need for customers to build bespoke integrations,.
+* ManagedBlockchainQuery (3.7.201.0)
+	* This release introduces two new APIs: GetAssetContract and ListAssetContracts. This release also adds support for Bitcoin Testnet.
+* MediaPackageV2 (3.7.201.0)
+	* This release allows customers to manage MediaPackage v2 resource using CloudFormation.
+* OpenSearchService (3.7.201.0)
+	* This release allows customers to list and associate optional plugin packages with compatible Amazon OpenSearch Service clusters for enhanced functionality.
+* Redshift (3.7.201.0)
+	* Added support for managing credentials of provisioned cluster admin using AWS Secrets Manager.
+* RedshiftServerless (3.7.201.0)
+	* Added support for managing credentials of serverless namespace admin using AWS Secrets Manager.
+* SimpleEmailV2 (3.7.202.0)
+	* This release provides enhanced visibility into your SES identity verification status. This will offer you more actionable insights, enabling you to promptly address any verification-related issues.
+* Transfer (3.7.202.3)
+	* Documentation updates for AWS Transfer Family
+* XRay (3.7.202.0)
+	* This releases enhances GetTraceSummaries API to support new TimeRangeType Service to query trace summaries by segment end time.
+* Core 3.7.204.2
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.662.0 (2023-10-12 18:36 UTC)
+* AuditManager (3.7.202.0)
+	* This release introduces a new limit to the awsAccounts parameter. When you create or update an assessment, there is now a limit of 200 AWS accounts that can be specified in the assessment scope.
+* AutoScaling (3.7.203.0)
+	* Update the NotificationMetadata field to only allow visible ascii characters. Add paginators to DescribeInstanceRefreshes, DescribeLoadBalancers, and DescribeLoadBalancerTargetGroups
+* ConfigService (3.7.202.0)
+	* Add enums for resource types supported by Config
+* ControlTower (3.7.201.0)
+	* Added new EnabledControl resource details to ListEnabledControls API and added new GetEnabledControl API.
+* CustomerProfiles (3.7.203.0)
+	* Adds sensitive trait to various shapes in Customer Profiles Calculated Attribute API model.
+* EC2 (3.7.220.0)
+	* This release adds Ubuntu Pro as a supported platform for On-Demand Capacity Reservations and adds support for setting an Amazon Machine Image (AMI) to disabled state. Disabling the AMI makes it private if it was previously shared, and prevents new EC2 instance launches from it.
+* ElasticLoadBalancingV2 (3.7.201.39)
+	* This release enables routing policies with Availability Zone affinity for Network Load Balancers.
+* Glue (3.7.207.0)
+	* Extending version control support to GitLab and Bitbucket from AWSGlue
+* Inspector2 (3.7.202.0)
+	* Add MacOs ec2 platform support
+* IVSRealTime (3.7.202.0)
+	* Update GetParticipant to return additional metadata.
+* Lambda (3.7.202.0)
+	* Adds support for Lambda functions to access Dual-Stack subnets over IPv6, via an opt-in flag in CreateFunction and UpdateFunctionConfiguration APIs
+* LocationService (3.7.202.0)
+	* This release adds endpoint updates for all AWS Location resource operations.
+* MachineLearning (3.7.201.0)
+	* This release marks Password field as sensitive
+* Pricing (3.7.200.54)
+	* Documentation updates for Price List
+* RDS (3.7.210.0)
+	* This release adds support for adding a dedicated log volume to open-source RDS instances.
+* Rekognition (3.7.201.0)
+	* Amazon Rekognition introduces support for Custom Moderation. This allows the enhancement of accuracy for detect moderation labels operations by creating custom adapters tuned on customer data.
+* SageMaker (3.7.218.0)
+	* Amazon SageMaker Canvas adds KendraSettings and DirectDeploySettings support for CanvasAppSettings
+* Textract (3.7.202.0)
+	* This release adds 9 new APIs for adapter and adapter version management, 3 new APIs for tagging, and updates AnalyzeDocument and StartDocumentAnalysis API parameters for using adapters.
+* TranscribeService (3.7.202.0)
+	* This release is to enable m4a format to customers
+* WorkSpaces (3.7.202.2)
+	* Updated the CreateWorkspaces action documentation to clarify that the PCoIP protocol is only available for Windows bundles.
+* Core 3.7.204.1
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.661.0 (2023-10-07 04:59 UTC)
 * Core 3.7.204.0
 	* Add ContextAttributes property to IRequestContext to store request state in custom pipeline handlers.

@@ -127,4 +127,116 @@ namespace Amazon.ControlTower
         }
     }
 
+
+    /// <summary>
+    /// Constants used for properties of type DriftStatus.
+    /// </summary>
+    public class DriftStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DRIFTED for DriftStatus
+        /// </summary>
+        public static readonly DriftStatus DRIFTED = new DriftStatus("DRIFTED");
+        /// <summary>
+        /// Constant IN_SYNC for DriftStatus
+        /// </summary>
+        public static readonly DriftStatus IN_SYNC = new DriftStatus("IN_SYNC");
+        /// <summary>
+        /// Constant NOT_CHECKING for DriftStatus
+        /// </summary>
+        public static readonly DriftStatus NOT_CHECKING = new DriftStatus("NOT_CHECKING");
+        /// <summary>
+        /// Constant UNKNOWN for DriftStatus
+        /// </summary>
+        public static readonly DriftStatus UNKNOWN = new DriftStatus("UNKNOWN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DriftStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DriftStatus FindValue(string value)
+        {
+            return FindValue<DriftStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DriftStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EnablementStatus.
+    /// </summary>
+    public class EnablementStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for EnablementStatus
+        /// </summary>
+        public static readonly EnablementStatus FAILED = new EnablementStatus("FAILED");
+        /// <summary>
+        /// Constant SUCCEEDED for EnablementStatus
+        /// </summary>
+        public static readonly EnablementStatus SUCCEEDED = new EnablementStatus("SUCCEEDED");
+        /// <summary>
+        /// Constant UNDER_CHANGE for EnablementStatus
+        /// </summary>
+        public static readonly EnablementStatus UNDER_CHANGE = new EnablementStatus("UNDER_CHANGE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EnablementStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EnablementStatus FindValue(string value)
+        {
+            return FindValue<EnablementStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EnablementStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
 }

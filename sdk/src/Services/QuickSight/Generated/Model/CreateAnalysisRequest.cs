@@ -38,6 +38,7 @@ namespace Amazon.QuickSight.Model
         private string _analysisId;
         private string _awsAccountId;
         private AnalysisDefinition _definition;
+        private List<string> _folderArns = new List<string>();
         private string _name;
         private Parameters _parameters;
         private List<ResourcePermission> _permissions = new List<ResourcePermission>();
@@ -109,6 +110,25 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetDefinition()
         {
             return this._definition != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FolderArns. 
+        /// <para>
+        /// When you create the analysis, Amazon QuickSight adds the analysis to these folders.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1)]
+        public List<string> FolderArns
+        {
+            get { return this._folderArns; }
+            set { this._folderArns = value; }
+        }
+
+        // Check to see if FolderArns property is set
+        internal bool IsSetFolderArns()
+        {
+            return this._folderArns != null && this._folderArns.Count > 0; 
         }
 
         /// <summary>

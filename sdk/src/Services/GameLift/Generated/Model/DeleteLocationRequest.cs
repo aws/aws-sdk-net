@@ -35,7 +35,7 @@ namespace Amazon.GameLift.Model
     ///  
     /// <para>
     /// Before deleting a custom location, review any fleets currently using the custom location
-    /// and deregister the location if it is in use. For more information see, <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DeregisterCompute.html">DeregisterCompute</a>.
+    /// and deregister the location if it is in use. For more information, see <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DeregisterCompute.html">DeregisterCompute</a>.
     /// </para>
     /// </summary>
     public partial class DeleteLocationRequest : AmazonGameLiftRequest

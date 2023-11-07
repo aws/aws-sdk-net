@@ -200,7 +200,7 @@ using Amazon.Runtime.Internal.Util;
                 }
                 else if (member.IsMap)
                 {
-					if(!member.Shape.ValueShape.IsString)
+                    if(member.Shape.ValueShape.IsMap)
 					{
 						throw new NotImplementedException(string.Format(CultureInfo.InvariantCulture,
 							"Marshalling map with value type of {0} as query string param is not implemented.",
@@ -210,22 +210,54 @@ using Amazon.Runtime.Internal.Util;
             {
                 foreach(var kvp in <#=variableName#>.<#=member.PropertyName#>)
                 {
-                    request.Parameters.Add(kvp.Key, kvp.Value);
+<#+
+                if(member.Shape.ValueShape.IsList) 
+                {
+                    if(member.Shape.ValueShape.ListShape.IsString)
+                    {
+#>
+                    request.ParameterCollection.Add(kvp.Key, kvp.Value);
+<#+
+                    }
+                    else
+                    {
+#>
+                    request.ParameterCollection.Add(kvp.Key, kvp.Value.ConvertAll<string>(item => <#=member.Shape.ValueShape.ListShape.PrimitiveMarshaller(MarshallLocation.QueryString)#>(item)));
+<#+
+                    }
+                }
+                else 
+                {
+#>
+                    request.Parameters.Add(kvp.Key, <#=member.Shape.ValueShape.PrimitiveMarshaller(MarshallLocation.QueryString)#>(kvp.Value));
+<#+
+                }
+#>
                 }
             }
 <#+
                 }
                 else if (member.IsList)
                 {
-					if(!member.Shape.ListShape.IsString && !member.Shape.ListShape.IsDouble)
+                    if(member.Shape.ListShape.IsMap || member.Shape.ListShape.IsList)
 					{
 						throw new NotImplementedException(string.Format(CultureInfo.InvariantCulture,
 							"Marshalling list of {0} as query string param is not implemented.",
 							member.Shape.ListShape.Type));
 					}
+
+                    if(member.Shape.ListShape.IsString)
+                    {
 #>
                 request.ParameterCollection.Add("<#=member.MarshallLocationName#>", <#=variableName#>.<#=member.PropertyName#>);
 <#+
+                    }
+                    else
+                    {
+#>
+                request.ParameterCollection.Add("<#=member.MarshallLocationName#>", <#=variableName#>.<#=member.PropertyName#>.ConvertAll<string>(item => <#=member.Shape.ListShape.PrimitiveMarshaller(MarshallLocation.QueryString)#>(item)));
+<#+
+                    }
                 }
                 else
                 {
@@ -259,7 +291,7 @@ using Amazon.Runtime.Internal.Util;
             foreach(var member in operation.RequestHostPrefixMembers)
             {
                 
-#>                <#=member.PropertyName#> = <#=member.PrimitiveMarshaller#>(<#=variableName#>.<#=member.PropertyName#>),
+#>                <#=member.ModeledName#> = <#=member.PrimitiveMarshaller#>(<#=variableName#>.<#=member.PropertyName#>),
 <#+
             }     
 #>
@@ -269,8 +301,8 @@ using Amazon.Runtime.Internal.Util;
             foreach(var member in operation.RequestHostPrefixMembers)
             {
 #>
-            if (!HostPrefixUtils.IsValidLabelValue(hostPrefixLabels.<#=member.PropertyName#>))
-                throw new <#=this.Config.BaseException#>("<#=member.PropertyName#> can only contain alphanumeric characters and dashes and must be between 1 and 63 characters long.");		
+            if (!HostPrefixUtils.IsValidLabelValue(hostPrefixLabels.<#=member.ModeledName#>))
+                throw new <#=this.Config.BaseException#>("<#=member.ModeledName#> can only contain alphanumeric characters and dashes and must be between 1 and 63 characters long.");		
 <#+
             }     
         }

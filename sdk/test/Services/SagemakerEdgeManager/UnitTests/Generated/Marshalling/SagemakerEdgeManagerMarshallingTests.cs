@@ -49,7 +49,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetDeployments");
 
-            var request = InstantiateClassGenerator.Execute<GetDeploymentsRequest>();
+            var request = InstantiateClassGenerator.Execute<GetDeploymentsRequest>(operation);
             var marshaller = new GetDeploymentsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -79,7 +79,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetDeployments");
 
-            var request = InstantiateClassGenerator.Execute<GetDeploymentsRequest>();
+            var request = InstantiateClassGenerator.Execute<GetDeploymentsRequest>(operation);
             var marshaller = new GetDeploymentsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -111,7 +111,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetDeviceRegistration");
 
-            var request = InstantiateClassGenerator.Execute<GetDeviceRegistrationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetDeviceRegistrationRequest>(operation);
             var marshaller = new GetDeviceRegistrationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -141,7 +141,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetDeviceRegistration");
 
-            var request = InstantiateClassGenerator.Execute<GetDeviceRegistrationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetDeviceRegistrationRequest>(operation);
             var marshaller = new GetDeviceRegistrationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -173,7 +173,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("SendHeartbeat");
 
-            var request = InstantiateClassGenerator.Execute<SendHeartbeatRequest>();
+            var request = InstantiateClassGenerator.Execute<SendHeartbeatRequest>(operation);
             var marshaller = new SendHeartbeatRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -189,7 +189,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("SendHeartbeat");
 
-            var request = InstantiateClassGenerator.Execute<SendHeartbeatRequest>();
+            var request = InstantiateClassGenerator.Execute<SendHeartbeatRequest>(operation);
             var marshaller = new SendHeartbeatRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 

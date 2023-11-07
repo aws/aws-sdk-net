@@ -39,7 +39,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property JobSummaries. 
         /// <para>
-        ///  The result structure for the list job result request. 
+        /// The result structure for the list job result request. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -58,7 +58,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  A pagination token. If non-null the pagination token is returned in a result. Pass
+        /// A pagination token. If non-null the pagination token is returned in a result. Pass
         /// its value in another request to retrieve more entries. 
         /// </para>
         /// </summary>

@@ -32,7 +32,15 @@ namespace Amazon.Kendra.Model
     /// Container for the parameters to the Query operation.
     /// Searches an index given an input query.
     /// 
-    ///  
+    ///  <note> 
+    /// <para>
+    /// If you are working with large language models (LLMs) or implementing retrieval augmented
+    /// generation (RAG) systems, you can use Amazon Kendra's <a href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_Retrieve.html">Retrieve</a>
+    /// API, which can return longer semantically relevant passages. We recommend using the
+    /// <code>Retrieve</code> API instead of filing a service limit increase to increase the
+    /// <code>Query</code> API document excerpt length.
+    /// </para>
+    ///  </note> 
     /// <para>
     /// You can configure boosting or relevance tuning at the query level to override boosting
     /// at the index level, filter based on document fields/attributes and faceted search,
@@ -68,6 +76,7 @@ namespace Amazon.Kendra.Model
     public partial class QueryRequest : AmazonKendraRequest
     {
         private AttributeFilter _attributeFilter;
+        private CollapseConfiguration _collapseConfiguration;
         private List<DocumentRelevanceConfiguration> _documentRelevanceOverrideConfigurations = new List<DocumentRelevanceConfiguration>();
         private List<Facet> _facets = new List<Facet>();
         private string _indexId;
@@ -77,6 +86,7 @@ namespace Amazon.Kendra.Model
         private string _queryText;
         private List<string> _requestedDocumentAttributes = new List<string>();
         private SortingConfiguration _sortingConfiguration;
+        private List<SortingConfiguration> _sortingConfigurations = new List<SortingConfiguration>();
         private SpellCorrectionConfiguration _spellCorrectionConfiguration;
         private UserContext _userContext;
         private string _visitorId;
@@ -104,6 +114,26 @@ namespace Amazon.Kendra.Model
         internal bool IsSetAttributeFilter()
         {
             return this._attributeFilter != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CollapseConfiguration. 
+        /// <para>
+        /// Provides configuration to determine how to group results by document attribute value,
+        /// and how to display them (collapsed or expanded) under a designated primary document
+        /// for each group.
+        /// </para>
+        /// </summary>
+        public CollapseConfiguration CollapseConfiguration
+        {
+            get { return this._collapseConfiguration; }
+            set { this._collapseConfiguration = value; }
+        }
+
+        // Check to see if CollapseConfiguration property is set
+        internal bool IsSetCollapseConfiguration()
+        {
+            return this._collapseConfiguration != null;
         }
 
         /// <summary>
@@ -299,6 +329,37 @@ namespace Amazon.Kendra.Model
         internal bool IsSetSortingConfiguration()
         {
             return this._sortingConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SortingConfigurations. 
+        /// <para>
+        /// Provides configuration information to determine how the results of a query are sorted.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can set upto 3 fields that Amazon Kendra should sort the results on, and specify
+        /// whether the results should be sorted in ascending or descending order. The sort field
+        /// quota can be increased.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you don't provide a sorting configuration, the results are sorted by the relevance
+        /// that Amazon Kendra determines for the result. In the case of ties in sorting the results,
+        /// the results are sorted by relevance. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public List<SortingConfiguration> SortingConfigurations
+        {
+            get { return this._sortingConfigurations; }
+            set { this._sortingConfigurations = value; }
+        }
+
+        // Check to see if SortingConfigurations property is set
+        internal bool IsSetSortingConfigurations()
+        {
+            return this._sortingConfigurations != null && this._sortingConfigurations.Count > 0; 
         }
 
         /// <summary>

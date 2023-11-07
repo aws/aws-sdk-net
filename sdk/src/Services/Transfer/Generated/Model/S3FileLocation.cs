@@ -85,7 +85,7 @@ namespace Amazon.Transfer.Model
         /// key to retrieve the object.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string Key
         {
             get { return this._key; }

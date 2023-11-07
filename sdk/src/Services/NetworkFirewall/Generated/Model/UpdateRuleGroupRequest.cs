@@ -43,6 +43,7 @@ namespace Amazon.NetworkFirewall.Model
     /// </summary>
     public partial class UpdateRuleGroupRequest : AmazonNetworkFirewallRequest
     {
+        private bool? _analyzeRuleGroup;
         private string _description;
         private bool? _dryRun;
         private EncryptionConfiguration _encryptionConfiguration;
@@ -53,6 +54,28 @@ namespace Amazon.NetworkFirewall.Model
         private SourceMetadata _sourceMetadata;
         private RuleGroupType _type;
         private string _updateToken;
+
+        /// <summary>
+        /// Gets and sets the property AnalyzeRuleGroup. 
+        /// <para>
+        /// Indicates whether you want Network Firewall to analyze the stateless rules in the
+        /// rule group for rule behavior such as asymmetric routing. If set to <code>TRUE</code>,
+        /// Network Firewall runs the analysis and then updates the rule group for you. To run
+        /// the stateless rule group analyzer without updating the rule group, set <code>DryRun</code>
+        /// to <code>TRUE</code>. 
+        /// </para>
+        /// </summary>
+        public bool AnalyzeRuleGroup
+        {
+            get { return this._analyzeRuleGroup.GetValueOrDefault(); }
+            set { this._analyzeRuleGroup = value; }
+        }
+
+        // Check to see if AnalyzeRuleGroup property is set
+        internal bool IsSetAnalyzeRuleGroup()
+        {
+            return this._analyzeRuleGroup.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Description. 

@@ -271,7 +271,7 @@ namespace Amazon.GameLift.Model
         /// app needs both the IP address and port number.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
+        [AWSProperty(Sensitive=true, Min=1, Max=128)]
         public string IpAddress
         {
             get { return this._ipAddress; }
@@ -394,7 +394,7 @@ namespace Amazon.GameLift.Model
         /// an app needs both the IP address and port number.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=60000)]
+        [AWSProperty(Sensitive=true, Min=1, Max=60000)]
         public int Port
         {
             get { return this._port.GetValueOrDefault(); }

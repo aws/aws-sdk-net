@@ -26,6 +26,11 @@ namespace Amazon.RedshiftServerless.Model
     {
 
         /// <summary>
+        /// Paginator for ListCustomDomainAssociations operation
+        ///</summary>
+        IListCustomDomainAssociationsPaginator ListCustomDomainAssociations(ListCustomDomainAssociationsRequest request);
+
+        /// <summary>
         /// Paginator for ListEndpointAccess operation
         ///</summary>
         IListEndpointAccessPaginator ListEndpointAccess(ListEndpointAccessRequest request);

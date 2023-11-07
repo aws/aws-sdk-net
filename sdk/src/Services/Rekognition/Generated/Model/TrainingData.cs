@@ -38,7 +38,7 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property Assets. 
         /// <para>
-        /// A Sagemaker GroundTruth manifest file that contains the training images (assets).
+        /// A manifest file that contains references to the training images and ground-truth annotations.
         /// </para>
         /// </summary>
         public List<Asset> Assets

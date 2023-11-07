@@ -51,6 +51,7 @@ namespace Amazon.EC2.Model
         private string _outpostArn;
         private string _ownerId;
         private string _placementGroupArn;
+        private CapacityReservationType _reservationType;
         private DateTime? _startDate;
         private CapacityReservationState _state;
         private List<Tag> _tags = new List<Tag>();
@@ -418,6 +419,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetPlacementGroupArn()
         {
             return this._placementGroupArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReservationType. 
+        /// <para>
+        /// The type of Capacity Reservation.
+        /// </para>
+        /// </summary>
+        public CapacityReservationType ReservationType
+        {
+            get { return this._reservationType; }
+            set { this._reservationType = value; }
+        }
+
+        // Check to see if ReservationType property is set
+        internal bool IsSetReservationType()
+        {
+            return this._reservationType != null;
         }
 
         /// <summary>

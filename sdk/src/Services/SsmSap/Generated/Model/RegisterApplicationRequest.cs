@@ -54,6 +54,7 @@ namespace Amazon.SsmSap.Model
         private string _applicationId;
         private ApplicationType _applicationType;
         private List<ApplicationCredential> _credentials = new List<ApplicationCredential>();
+        private string _databaseArn;
         private List<string> _instances = new List<string>();
         private string _sapInstanceNumber;
         private string _sid;
@@ -103,7 +104,7 @@ namespace Amazon.SsmSap.Model
         /// The credentials of the SAP application.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=20)]
+        [AWSProperty(Min=0, Max=20)]
         public List<ApplicationCredential> Credentials
         {
             get { return this._credentials; }
@@ -114,6 +115,24 @@ namespace Amazon.SsmSap.Model
         internal bool IsSetCredentials()
         {
             return this._credentials != null && this._credentials.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DatabaseArn. 
+        /// <para>
+        /// The Amazon Resource Name of the SAP HANA database.
+        /// </para>
+        /// </summary>
+        public string DatabaseArn
+        {
+            get { return this._databaseArn; }
+            set { this._databaseArn = value; }
+        }
+
+        // Check to see if DatabaseArn property is set
+        internal bool IsSetDatabaseArn()
+        {
+            return this._databaseArn != null;
         }
 
         /// <summary>

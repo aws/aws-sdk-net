@@ -129,6 +129,7 @@ namespace Amazon.AppConfig.Model
         /// when the resource was created or updated.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string KmsKeyIdentifier
         {
             get { return this._kmsKeyIdentifier; }

@@ -87,6 +87,13 @@ namespace Amazon.ManagedBlockchainQuery.Model
         /// <para>
         /// The unique identifier of the token.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// You must specify this container with <code>btc</code> for the native BTC token, and
+        /// <code>eth</code> for the native ETH token. For all other token types you must specify
+        /// the <code>tokenId</code> in the 64 character hexadecimal <code>tokenid</code> format.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string TokenId
         {

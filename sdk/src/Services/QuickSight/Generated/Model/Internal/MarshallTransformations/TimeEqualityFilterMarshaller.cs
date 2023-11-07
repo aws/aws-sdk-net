@@ -68,6 +68,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ParameterName);
             }
 
+            if(requestObject.IsSetRollingDate())
+            {
+                context.Writer.WritePropertyName("RollingDate");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = RollingDateConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.RollingDate, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetTimeGranularity())
             {
                 context.Writer.WritePropertyName("TimeGranularity");

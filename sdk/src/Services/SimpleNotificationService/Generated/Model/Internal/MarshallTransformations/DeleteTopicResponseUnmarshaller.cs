@@ -123,6 +123,10 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
                 {
                     return InvalidParameterExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidState"))
+                {
+                    return InvalidStateExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("NotFound"))
                 {
                     return NotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

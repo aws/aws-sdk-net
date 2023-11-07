@@ -307,6 +307,10 @@
     <pattern>^mw-[0-9a-f]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DeleteOpsItemRequest.OpsItemId</property>
+    <pattern>^(oi)-[0-9a-f]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.DeleteOpsMetadataRequest.OpsMetadataArn</property>
     <min>1</min>
     <max>1011</max>

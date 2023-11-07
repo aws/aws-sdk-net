@@ -64,6 +64,12 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("CertificateAuthority", targetDepth))
+                {
+                    var unmarshaller = TlsCertificateDataUnmarshaller.Instance;
+                    unmarshalledObject.CertificateAuthority = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Certificates", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<TlsCertificateData, TlsCertificateDataUnmarshaller>(TlsCertificateDataUnmarshaller.Instance);

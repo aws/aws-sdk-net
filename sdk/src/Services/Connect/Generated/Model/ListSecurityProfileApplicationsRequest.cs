@@ -30,7 +30,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the ListSecurityProfileApplications operation.
-    /// Returns a list of third party applications in a specific security profile.
+    /// Returns a list of third-party applications in a specific security profile.
     /// </summary>
     public partial class ListSecurityProfileApplicationsRequest : AmazonConnectRequest
     {
@@ -42,7 +42,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The instance identifier.
+        /// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+        /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
@@ -80,8 +81,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token for the next set of results. The next set of results can be retrieved by
-        /// using the token value returned in the previous response when making the next request.
+        /// The token for the next set of results. Use the value returned in the previous response
+        /// in the next request to retrieve the next set of results.
         /// </para>
         /// </summary>
         public string NextToken
@@ -99,7 +100,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property SecurityProfileId. 
         /// <para>
-        /// The security profile identifier.
+        /// The identifier for the security profle.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

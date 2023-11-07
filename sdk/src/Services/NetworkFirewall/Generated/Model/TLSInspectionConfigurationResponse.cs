@@ -35,6 +35,7 @@ namespace Amazon.NetworkFirewall.Model
     /// </summary>
     public partial class TLSInspectionConfigurationResponse
     {
+        private TlsCertificateData _certificateAuthority;
         private List<TlsCertificateData> _certificates = new List<TlsCertificateData>();
         private string _description;
         private EncryptionConfiguration _encryptionConfiguration;
@@ -45,6 +46,21 @@ namespace Amazon.NetworkFirewall.Model
         private string _tlsInspectionConfigurationId;
         private string _tlsInspectionConfigurationName;
         private ResourceStatus _tlsInspectionConfigurationStatus;
+
+        /// <summary>
+        /// Gets and sets the property CertificateAuthority.
+        /// </summary>
+        public TlsCertificateData CertificateAuthority
+        {
+            get { return this._certificateAuthority; }
+            set { this._certificateAuthority = value; }
+        }
+
+        // Check to see if CertificateAuthority property is set
+        internal bool IsSetCertificateAuthority()
+        {
+            return this._certificateAuthority != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Certificates. 

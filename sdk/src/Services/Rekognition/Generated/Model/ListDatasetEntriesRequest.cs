@@ -30,11 +30,17 @@ namespace Amazon.Rekognition.Model
 {
     /// <summary>
     /// Container for the parameters to the ListDatasetEntries operation.
-    /// Lists the entries (images) within a dataset. An entry is a JSON Line that contains
+    /// <note> 
+    /// <para>
+    /// This operation applies only to Amazon Rekognition Custom Labels.
+    /// </para>
+    ///  </note> 
+    /// <para>
+    ///  Lists the entries (images) within a dataset. An entry is a JSON Line that contains
     /// the information for a single image, including the image location, assigned labels,
     /// and object location bounding boxes. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/customlabels-dg/md-manifest-files.html">Creating
     /// a manifest file</a>.
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// JSON Lines in the response include information about non-terminal errors found in

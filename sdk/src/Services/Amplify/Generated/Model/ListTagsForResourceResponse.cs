@@ -38,7 +38,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        ///  A list of tags for the specified The Amazon Resource Name (ARN). 
+        /// A list of tags for the specified The Amazon Resource Name (ARN). 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]

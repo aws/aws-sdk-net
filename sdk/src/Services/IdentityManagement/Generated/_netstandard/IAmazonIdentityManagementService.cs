@@ -2679,7 +2679,9 @@ namespace Amazon.IdentityManagement
         /// Recent activity usually appears within four hours. IAM reports activity for at least
         /// the last 400 days, or less if your Region began supporting this feature within the
         /// last year. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period">Regions
-        /// where data is tracked</a>.
+        /// where data is tracked</a>. For more information about services and actions for which
+        /// action last accessed information is displayed, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor-action-last-accessed.html">IAM
+        /// action last accessed information services and actions</a>.
         /// 
         ///  <important> 
         /// <para>
@@ -2779,10 +2781,6 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// 
         /// <returns>The response from the GetAccessKeyLastUsed service method, as returned by IdentityManagementService.</returns>
-        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced a resource entity that does not exist.
-        /// The error message describes the resource.
-        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetAccessKeyLastUsed">REST API Reference for GetAccessKeyLastUsed Operation</seealso>
         Task<GetAccessKeyLastUsedResponse> GetAccessKeyLastUsedAsync(GetAccessKeyLastUsedRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -4033,10 +4031,13 @@ namespace Amazon.IdentityManagement
         /// If the <code>UserName</code> is not specified, the user name is determined implicitly
         /// based on the Amazon Web Services access key ID used to sign the request. If a temporary
         /// access key is used, then <code>UserName</code> is required. If a long-term key is
-        /// assigned to the user, then <code>UserName</code> is not required. This operation works
-        /// for access keys under the Amazon Web Services account. Consequently, you can use this
-        /// operation to manage Amazon Web Services account root user credentials even if the
-        /// Amazon Web Services account has no associated users.
+        /// assigned to the user, then <code>UserName</code> is not required.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation works for access keys under the Amazon Web Services account. If the
+        /// Amazon Web Services account has no associated users, the root user returns it's own
+        /// access key IDs by running this command.
         /// </para>
         ///  <note> 
         /// <para>
@@ -4076,10 +4077,13 @@ namespace Amazon.IdentityManagement
         /// If the <code>UserName</code> is not specified, the user name is determined implicitly
         /// based on the Amazon Web Services access key ID used to sign the request. If a temporary
         /// access key is used, then <code>UserName</code> is required. If a long-term key is
-        /// assigned to the user, then <code>UserName</code> is not required. This operation works
-        /// for access keys under the Amazon Web Services account. Consequently, you can use this
-        /// operation to manage Amazon Web Services account root user credentials even if the
-        /// Amazon Web Services account has no associated users.
+        /// assigned to the user, then <code>UserName</code> is not required.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation works for access keys under the Amazon Web Services account. If the
+        /// Amazon Web Services account has no associated users, the root user returns it's own
+        /// access key IDs by running this command.
         /// </para>
         ///  <note> 
         /// <para>

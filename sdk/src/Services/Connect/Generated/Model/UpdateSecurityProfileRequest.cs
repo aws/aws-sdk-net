@@ -69,7 +69,7 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// A list of the third party application's metadata.
+        /// A list of the third-party application's metadata.
         /// </para>
         /// </summary>
         [AWSProperty(Max=10)]

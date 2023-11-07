@@ -620,11 +620,6 @@
     "service_envvar_name": "AWS_ENDPOINT_URL_GAMELIFT"
   },
   {
-    "service_id": "GameSparks",
-    "services_section_name": "gamesparks",
-    "service_envvar_name": "AWS_ENDPOINT_URL_GAMESPARKS"
-  },
-  {
     "service_id": "Glacier",
     "services_section_name": "glacier",
     "service_envvar_name": "AWS_ENDPOINT_URL_GLACIER"

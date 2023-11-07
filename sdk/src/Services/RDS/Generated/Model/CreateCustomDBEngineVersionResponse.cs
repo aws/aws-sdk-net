@@ -59,6 +59,7 @@ namespace Amazon.RDS.Model
         private bool? _supportsBabelfish;
         private bool? _supportsCertificateRotationWithoutRestart;
         private bool? _supportsGlobalDatabases;
+        private bool? _supportsIntegrations;
         private bool? _supportsLocalWriteForwarding;
         private bool? _supportsLogExportsToCloudwatchLogs;
         private bool? _supportsParallelQuery;
@@ -584,6 +585,25 @@ namespace Amazon.RDS.Model
         internal bool IsSetSupportsGlobalDatabases()
         {
             return this._supportsGlobalDatabases.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportsIntegrations. 
+        /// <para>
+        /// Indicates whether the DB engine version supports Aurora zero-ETL integrations with
+        /// Amazon Redshift.
+        /// </para>
+        /// </summary>
+        public bool SupportsIntegrations
+        {
+            get { return this._supportsIntegrations.GetValueOrDefault(); }
+            set { this._supportsIntegrations = value; }
+        }
+
+        // Check to see if SupportsIntegrations property is set
+        internal bool IsSetSupportsIntegrations()
+        {
+            return this._supportsIntegrations.HasValue; 
         }
 
         /// <summary>

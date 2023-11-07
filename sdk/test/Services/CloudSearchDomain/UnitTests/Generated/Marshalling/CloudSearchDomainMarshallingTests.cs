@@ -49,7 +49,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("Search");
 
-            var request = InstantiateClassGenerator.Execute<SearchRequest>();
+            var request = InstantiateClassGenerator.Execute<SearchRequest>(operation);
             var marshaller = new SearchRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -79,7 +79,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("Search");
 
-            var request = InstantiateClassGenerator.Execute<SearchRequest>();
+            var request = InstantiateClassGenerator.Execute<SearchRequest>(operation);
             var marshaller = new SearchRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -111,7 +111,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("Suggest");
 
-            var request = InstantiateClassGenerator.Execute<SuggestRequest>();
+            var request = InstantiateClassGenerator.Execute<SuggestRequest>(operation);
             var marshaller = new SuggestRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -141,7 +141,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("Suggest");
 
-            var request = InstantiateClassGenerator.Execute<SuggestRequest>();
+            var request = InstantiateClassGenerator.Execute<SuggestRequest>(operation);
             var marshaller = new SuggestRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -173,7 +173,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UploadDocuments");
 
-            var request = InstantiateClassGenerator.Execute<UploadDocumentsRequest>();
+            var request = InstantiateClassGenerator.Execute<UploadDocumentsRequest>(operation);
             var marshaller = new UploadDocumentsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -203,7 +203,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UploadDocuments");
 
-            var request = InstantiateClassGenerator.Execute<UploadDocumentsRequest>();
+            var request = InstantiateClassGenerator.Execute<UploadDocumentsRequest>(operation);
             var marshaller = new UploadDocumentsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 

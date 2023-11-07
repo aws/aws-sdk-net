@@ -65,7 +65,7 @@ namespace Amazon.Transfer.Model
         /// Specifies the text description for the workflow.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string Description
         {
             get { return this._description; }
@@ -85,7 +85,7 @@ namespace Amazon.Transfer.Model
         /// the workflow.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=8)]
+        [AWSProperty(Min=0, Max=8)]
         public List<WorkflowStep> OnExceptionSteps
         {
             get { return this._onExceptionSteps; }
@@ -104,7 +104,7 @@ namespace Amazon.Transfer.Model
         /// Specifies the details for the steps that are in the specified workflow.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=8)]
+        [AWSProperty(Min=0, Max=8)]
         public List<WorkflowStep> Steps
         {
             get { return this._steps; }

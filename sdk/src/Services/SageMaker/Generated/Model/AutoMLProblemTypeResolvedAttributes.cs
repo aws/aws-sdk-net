@@ -29,16 +29,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// The resolved attributes specific to the problem type of an AutoML job V2.
+    /// Stores resolved attributes specific to the problem type of an AutoML job V2.
     /// </summary>
     public partial class AutoMLProblemTypeResolvedAttributes
     {
         private TabularResolvedAttributes _tabularResolvedAttributes;
+        private TextGenerationResolvedAttributes _textGenerationResolvedAttributes;
 
         /// <summary>
         /// Gets and sets the property TabularResolvedAttributes. 
         /// <para>
-        /// Defines the resolved attributes for the <code>TABULAR</code> problem type.
+        /// The resolved attributes for the tabular problem type.
         /// </para>
         /// </summary>
         public TabularResolvedAttributes TabularResolvedAttributes
@@ -51,6 +52,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetTabularResolvedAttributes()
         {
             return this._tabularResolvedAttributes != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TextGenerationResolvedAttributes. 
+        /// <para>
+        /// The resolved attributes for the text generation problem type.
+        /// </para>
+        /// </summary>
+        public TextGenerationResolvedAttributes TextGenerationResolvedAttributes
+        {
+            get { return this._textGenerationResolvedAttributes; }
+            set { this._textGenerationResolvedAttributes = value; }
+        }
+
+        // Check to see if TextGenerationResolvedAttributes property is set
+        internal bool IsSetTextGenerationResolvedAttributes()
+        {
+            return this._textGenerationResolvedAttributes != null;
         }
 
     }

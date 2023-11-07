@@ -909,6 +909,9 @@ namespace Amazon.ApplicationInsights
         /// <exception cref="Amazon.ApplicationInsights.Model.InternalServerException">
         /// The server encountered an internal error and is unable to complete the request.
         /// </exception>
+        /// <exception cref="Amazon.ApplicationInsights.Model.ResourceInUseException">
+        /// The resource is already created or in use.
+        /// </exception>
         /// <exception cref="Amazon.ApplicationInsights.Model.ResourceNotFoundException">
         /// The resource does not exist in the customer account.
         /// </exception>

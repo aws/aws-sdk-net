@@ -34,6 +34,7 @@ namespace Amazon.MainframeModernization.Model
     public partial class DataSetImportTask
     {
         private DataSetTaskLifecycle _status;
+        private string _statusReason;
         private DataSetImportSummary _summary;
         private string _taskId;
 
@@ -54,6 +55,24 @@ namespace Amazon.MainframeModernization.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StatusReason. 
+        /// <para>
+        /// If dataset import failed, the failure reason will show here.
+        /// </para>
+        /// </summary>
+        public string StatusReason
+        {
+            get { return this._statusReason; }
+            set { this._statusReason = value; }
+        }
+
+        // Check to see if StatusReason property is set
+        internal bool IsSetStatusReason()
+        {
+            return this._statusReason != null;
         }
 
         /// <summary>

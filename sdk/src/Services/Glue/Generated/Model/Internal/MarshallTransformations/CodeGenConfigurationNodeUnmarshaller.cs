@@ -130,6 +130,18 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.CatalogTarget = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ConnectorDataSource", targetDepth))
+                {
+                    var unmarshaller = ConnectorDataSourceUnmarshaller.Instance;
+                    unmarshalledObject.ConnectorDataSource = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ConnectorDataTarget", targetDepth))
+                {
+                    var unmarshaller = ConnectorDataTargetUnmarshaller.Instance;
+                    unmarshalledObject.ConnectorDataTarget = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CustomCode", targetDepth))
                 {
                     var unmarshaller = CustomCodeUnmarshaller.Instance;

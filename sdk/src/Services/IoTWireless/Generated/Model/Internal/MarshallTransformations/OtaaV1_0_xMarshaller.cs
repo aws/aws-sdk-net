@@ -63,6 +63,12 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.GenAppKey);
             }
 
+            if(requestObject.IsSetJoinEui())
+            {
+                context.Writer.WritePropertyName("JoinEui");
+                context.Writer.Write(requestObject.JoinEui);
+            }
+
         }
 
         /// <summary>

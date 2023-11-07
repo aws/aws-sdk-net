@@ -33,8 +33,27 @@ namespace Amazon.EntityResolution.Model
     /// </summary>
     public partial class ResolutionTechniques
     {
+        private ProviderProperties _providerProperties;
         private ResolutionType _resolutionType;
         private RuleBasedProperties _ruleBasedProperties;
+
+        /// <summary>
+        /// Gets and sets the property ProviderProperties. 
+        /// <para>
+        /// The properties of the provider service.
+        /// </para>
+        /// </summary>
+        public ProviderProperties ProviderProperties
+        {
+            get { return this._providerProperties; }
+            set { this._providerProperties = value; }
+        }
+
+        // Check to see if ProviderProperties property is set
+        internal bool IsSetProviderProperties()
+        {
+            return this._providerProperties != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ResolutionType. 

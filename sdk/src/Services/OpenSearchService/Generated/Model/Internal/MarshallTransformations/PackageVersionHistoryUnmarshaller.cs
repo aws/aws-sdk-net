@@ -82,6 +82,12 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                     unmarshalledObject.PackageVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("PluginProperties", targetDepth))
+                {
+                    var unmarshaller = PluginPropertiesUnmarshaller.Instance;
+                    unmarshalledObject.PluginProperties = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

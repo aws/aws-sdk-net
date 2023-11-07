@@ -64,6 +64,12 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AutoUpdate", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AutoUpdate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CreationTimestamp", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
@@ -74,6 +80,12 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<DatasetMetadata, DatasetMetadataUnmarshaller>(DatasetMetadataUnmarshaller.Instance);
                     unmarshalledObject.Datasets = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Feature", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Feature = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ProjectArn", targetDepth))

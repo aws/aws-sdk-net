@@ -38,7 +38,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property LogUrl. 
         /// <para>
-        ///  The pre-signed URL for the requested access logs. 
+        /// The pre-signed URL for the requested access logs. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=1000)]

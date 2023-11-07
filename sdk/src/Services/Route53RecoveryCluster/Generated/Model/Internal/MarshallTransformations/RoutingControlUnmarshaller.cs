@@ -76,6 +76,12 @@ namespace Amazon.Route53RecoveryCluster.Model.Internal.MarshallTransformations
                     unmarshalledObject.ControlPanelName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Owner", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Owner = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RoutingControlArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

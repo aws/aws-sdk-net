@@ -1465,15 +1465,11 @@ namespace Amazon.Translate
 
         /// <summary>
         /// Translates the input document from the source language to the target language. This
-        /// synchronous operation supports plain text or HTML for the input document. <code>TranslateDocument</code>
-        /// supports translations from English to any supported language, and from any supported
-        /// language to English. Therefore, specify either the source language code or the target
-        /// language code as “en” (English). 
+        /// synchronous operation supports text, HTML, or Word documents as the input document.
+        /// <code>TranslateDocument</code> supports translations from English to any supported
+        /// language, and from any supported language to English. Therefore, specify either the
+        /// source language code or the target language code as “en” (English). 
         /// 
-        ///  
-        /// <para>
-        ///  <code>TranslateDocument</code> does not support language auto-detection. 
-        /// </para>
         ///  
         /// <para>
         ///  If you set the <code>Formality</code> parameter, the request will fail if the target
@@ -1527,15 +1523,11 @@ namespace Amazon.Translate
 
         /// <summary>
         /// Translates the input document from the source language to the target language. This
-        /// synchronous operation supports plain text or HTML for the input document. <code>TranslateDocument</code>
-        /// supports translations from English to any supported language, and from any supported
-        /// language to English. Therefore, specify either the source language code or the target
-        /// language code as “en” (English). 
+        /// synchronous operation supports text, HTML, or Word documents as the input document.
+        /// <code>TranslateDocument</code> supports translations from English to any supported
+        /// language, and from any supported language to English. Therefore, specify either the
+        /// source language code or the target language code as “en” (English). 
         /// 
-        ///  
-        /// <para>
-        ///  <code>TranslateDocument</code> does not support language auto-detection. 
-        /// </para>
         ///  
         /// <para>
         ///  If you set the <code>Formality</code> parameter, the request will fail if the target

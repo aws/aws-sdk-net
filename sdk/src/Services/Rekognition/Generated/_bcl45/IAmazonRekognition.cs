@@ -822,11 +822,17 @@ namespace Amazon.Rekognition
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// This operation applies only to Amazon Rekognition Custom Labels.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Copies a version of an Amazon Rekognition Custom Labels model from a source project
         /// to a destination project. The source and destination projects can be in different
         /// AWS accounts but must be in the same AWS Region. You can't copy a model to another
         /// AWS service. 
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// To copy a model version to a different AWS account, you need to create a resource-based
@@ -845,6 +851,10 @@ namespace Amazon.Rekognition
         /// need to create a project policy.
         /// </para>
         ///  <note> 
+        /// <para>
+        /// Copying project versions is supported only for Custom Labels models. 
+        /// </para>
+        ///  
         /// <para>
         /// To copy a model, the destination project, source project, and source model version
         /// must already exist.
@@ -876,10 +886,10 @@ namespace Amazon.Rekognition
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.LimitExceededException">
         /// An Amazon Rekognition service limit was exceeded. For example, if you start too many
-        /// Amazon Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>,
-        /// for example) will raise a <code>LimitExceededException</code> exception (HTTP status
-        /// code: 400) until the number of concurrently running jobs is below the Amazon Rekognition
-        /// service limit.
+        /// jobs concurrently, subsequent calls to start operations (ex: <code>StartLabelDetection</code>)
+        /// will raise a <code>LimitExceededException</code> exception (HTTP status code: 400)
+        /// until the number of concurrently running jobs is below the Amazon Rekognition service
+        /// limit.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
         /// The number of requests exceeded your throughput limit. If you want to increase this
@@ -904,11 +914,17 @@ namespace Amazon.Rekognition
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// This operation applies only to Amazon Rekognition Custom Labels.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Copies a version of an Amazon Rekognition Custom Labels model from a source project
         /// to a destination project. The source and destination projects can be in different
         /// AWS accounts but must be in the same AWS Region. You can't copy a model to another
         /// AWS service. 
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// To copy a model version to a different AWS account, you need to create a resource-based
@@ -927,6 +943,10 @@ namespace Amazon.Rekognition
         /// need to create a project policy.
         /// </para>
         ///  <note> 
+        /// <para>
+        /// Copying project versions is supported only for Custom Labels models. 
+        /// </para>
+        ///  
         /// <para>
         /// To copy a model, the destination project, source project, and source model version
         /// must already exist.
@@ -961,10 +981,10 @@ namespace Amazon.Rekognition
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.LimitExceededException">
         /// An Amazon Rekognition service limit was exceeded. For example, if you start too many
-        /// Amazon Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>,
-        /// for example) will raise a <code>LimitExceededException</code> exception (HTTP status
-        /// code: 400) until the number of concurrently running jobs is below the Amazon Rekognition
-        /// service limit.
+        /// jobs concurrently, subsequent calls to start operations (ex: <code>StartLabelDetection</code>)
+        /// will raise a <code>LimitExceededException</code> exception (HTTP status code: 400)
+        /// until the number of concurrently running jobs is below the Amazon Rekognition service
+        /// limit.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
         /// The number of requests exceeded your throughput limit. If you want to increase this
@@ -1116,10 +1136,16 @@ namespace Amazon.Rekognition
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// This operation applies only to Amazon Rekognition Custom Labels.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Creates a new Amazon Rekognition Custom Labels dataset. You can create a dataset by
         /// using an Amazon Sagemaker format manifest file or by copying an existing Amazon Rekognition
         /// Custom Labels dataset.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// To create a training dataset for a project, specify <code>TRAIN</code> for the value
@@ -1173,10 +1199,10 @@ namespace Amazon.Rekognition
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.LimitExceededException">
         /// An Amazon Rekognition service limit was exceeded. For example, if you start too many
-        /// Amazon Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>,
-        /// for example) will raise a <code>LimitExceededException</code> exception (HTTP status
-        /// code: 400) until the number of concurrently running jobs is below the Amazon Rekognition
-        /// service limit.
+        /// jobs concurrently, subsequent calls to start operations (ex: <code>StartLabelDetection</code>)
+        /// will raise a <code>LimitExceededException</code> exception (HTTP status code: 400)
+        /// until the number of concurrently running jobs is below the Amazon Rekognition service
+        /// limit.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
         /// The number of requests exceeded your throughput limit. If you want to increase this
@@ -1197,10 +1223,16 @@ namespace Amazon.Rekognition
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// This operation applies only to Amazon Rekognition Custom Labels.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Creates a new Amazon Rekognition Custom Labels dataset. You can create a dataset by
         /// using an Amazon Sagemaker format manifest file or by copying an existing Amazon Rekognition
         /// Custom Labels dataset.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// To create a training dataset for a project, specify <code>TRAIN</code> for the value
@@ -1257,10 +1289,10 @@ namespace Amazon.Rekognition
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.LimitExceededException">
         /// An Amazon Rekognition service limit was exceeded. For example, if you start too many
-        /// Amazon Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>,
-        /// for example) will raise a <code>LimitExceededException</code> exception (HTTP status
-        /// code: 400) until the number of concurrently running jobs is below the Amazon Rekognition
-        /// service limit.
+        /// jobs concurrently, subsequent calls to start operations (ex: <code>StartLabelDetection</code>)
+        /// will raise a <code>LimitExceededException</code> exception (HTTP status code: 400)
+        /// until the number of concurrently running jobs is below the Amazon Rekognition service
+        /// limit.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
         /// The number of requests exceeded your throughput limit. If you want to increase this
@@ -1378,15 +1410,13 @@ namespace Amazon.Rekognition
 
 
         /// <summary>
-        /// Creates a new Amazon Rekognition Custom Labels project. A project is a group of resources
-        /// (datasets, model versions) that you use to create and manage Amazon Rekognition Custom
-        /// Labels models. 
-        /// 
-        ///  
-        /// <para>
-        /// This operation requires permissions to perform the <code>rekognition:CreateProject</code>
+        /// Creates a new Amazon Rekognition project. A project is a group of resources (datasets,
+        /// model versions) that you use to create and manage a Amazon Rekognition Custom Labels
+        /// Model or custom adapter. You can specify a feature to create the project with, if
+        /// no feature is specified then Custom Labels is used by default. For adapters, you can
+        /// also choose whether or not to have the project auto update by using the AutoUpdate
+        /// argument. This operation requires permissions to perform the <code>rekognition:CreateProject</code>
         /// action.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateProject service method.</param>
         /// 
@@ -1403,10 +1433,10 @@ namespace Amazon.Rekognition
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.LimitExceededException">
         /// An Amazon Rekognition service limit was exceeded. For example, if you start too many
-        /// Amazon Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>,
-        /// for example) will raise a <code>LimitExceededException</code> exception (HTTP status
-        /// code: 400) until the number of concurrently running jobs is below the Amazon Rekognition
-        /// service limit.
+        /// jobs concurrently, subsequent calls to start operations (ex: <code>StartLabelDetection</code>)
+        /// will raise a <code>LimitExceededException</code> exception (HTTP status code: 400)
+        /// until the number of concurrently running jobs is below the Amazon Rekognition service
+        /// limit.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
         /// The number of requests exceeded your throughput limit. If you want to increase this
@@ -1424,15 +1454,13 @@ namespace Amazon.Rekognition
 
 
         /// <summary>
-        /// Creates a new Amazon Rekognition Custom Labels project. A project is a group of resources
-        /// (datasets, model versions) that you use to create and manage Amazon Rekognition Custom
-        /// Labels models. 
-        /// 
-        ///  
-        /// <para>
-        /// This operation requires permissions to perform the <code>rekognition:CreateProject</code>
+        /// Creates a new Amazon Rekognition project. A project is a group of resources (datasets,
+        /// model versions) that you use to create and manage a Amazon Rekognition Custom Labels
+        /// Model or custom adapter. You can specify a feature to create the project with, if
+        /// no feature is specified then Custom Labels is used by default. For adapters, you can
+        /// also choose whether or not to have the project auto update by using the AutoUpdate
+        /// argument. This operation requires permissions to perform the <code>rekognition:CreateProject</code>
         /// action.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateProject service method.</param>
         /// <param name="cancellationToken">
@@ -1452,10 +1480,10 @@ namespace Amazon.Rekognition
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.LimitExceededException">
         /// An Amazon Rekognition service limit was exceeded. For example, if you start too many
-        /// Amazon Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>,
-        /// for example) will raise a <code>LimitExceededException</code> exception (HTTP status
-        /// code: 400) until the number of concurrently running jobs is below the Amazon Rekognition
-        /// service limit.
+        /// jobs concurrently, subsequent calls to start operations (ex: <code>StartLabelDetection</code>)
+        /// will raise a <code>LimitExceededException</code> exception (HTTP status code: 400)
+        /// until the number of concurrently running jobs is below the Amazon Rekognition service
+        /// limit.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
         /// The number of requests exceeded your throughput limit. If you want to increase this
@@ -1476,17 +1504,32 @@ namespace Amazon.Rekognition
 
 
         /// <summary>
-        /// Creates a new version of a model and begins training. Models are managed as part of
-        /// an Amazon Rekognition Custom Labels project. The response from <code>CreateProjectVersion</code>
-        /// is an Amazon Resource Name (ARN) for the version of the model. 
+        /// Creates a new version of Amazon Rekognition project (like a Custom Labels model or
+        /// a custom adapter) and begins training. Models and adapters are managed as part of
+        /// a Rekognition project. The response from <code>CreateProjectVersion</code> is an Amazon
+        /// Resource Name (ARN) for the project version. 
         /// 
         ///  
         /// <para>
-        /// Training uses the training and test datasets associated with the project. For more
-        /// information, see Creating training and test dataset in the <i>Amazon Rekognition Custom
-        /// Labels Developer Guide</i>. 
+        /// The FeatureConfig operation argument allows you to configure specific model or adapter
+        /// settings. You can provide a description to the project version by using the VersionDescription
+        /// argment. Training can take a while to complete. You can get the current status by
+        /// calling <a>DescribeProjectVersions</a>. Training completed successfully if the value
+        /// of the <code>Status</code> field is <code>TRAINING_COMPLETED</code>. Once training
+        /// has successfully completed, call <a>DescribeProjectVersions</a> to get the training
+        /// results and evaluate the model.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation requires permissions to perform the <code>rekognition:CreateProjectVersion</code>
+        /// action.
         /// </para>
         ///  <note> 
+        /// <para>
+        ///  <i>The following applies only to projects with Amazon Rekognition Custom Labels as
+        /// the chosen feature:</i> 
+        /// </para>
+        ///  
         /// <para>
         /// You can train a model in a project that doesn't have associated datasets by specifying
         /// manifest files in the <code>TrainingData</code> and <code>TestingData</code> fields.
@@ -1504,32 +1547,7 @@ namespace Amazon.Rekognition
         /// Instead of training with a project without associated datasets, we recommend that
         /// you use the manifest files to create training and test datasets for the project.
         /// </para>
-        ///  </note> 
-        /// <para>
-        /// Training takes a while to complete. You can get the current status by calling <a>DescribeProjectVersions</a>.
-        /// Training completed successfully if the value of the <code>Status</code> field is <code>TRAINING_COMPLETED</code>.
-        /// </para>
-        ///  
-        /// <para>
-        /// If training fails, see Debugging a failed model training in the <i>Amazon Rekognition
-        /// Custom Labels</i> developer guide. 
-        /// </para>
-        ///  
-        /// <para>
-        /// Once training has successfully completed, call <a>DescribeProjectVersions</a> to get
-        /// the training results and evaluate the model. For more information, see Improving a
-        /// trained Amazon Rekognition Custom Labels model in the <i>Amazon Rekognition Custom
-        /// Labels</i> developers guide. 
-        /// </para>
-        ///  
-        /// <para>
-        /// After evaluating the model, you start the model by calling <a>StartProjectVersion</a>.
-        /// </para>
-        ///  
-        /// <para>
-        /// This operation requires permissions to perform the <code>rekognition:CreateProjectVersion</code>
-        /// action.
-        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateProjectVersion service method.</param>
         /// 
@@ -1546,10 +1564,10 @@ namespace Amazon.Rekognition
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.LimitExceededException">
         /// An Amazon Rekognition service limit was exceeded. For example, if you start too many
-        /// Amazon Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>,
-        /// for example) will raise a <code>LimitExceededException</code> exception (HTTP status
-        /// code: 400) until the number of concurrently running jobs is below the Amazon Rekognition
-        /// service limit.
+        /// jobs concurrently, subsequent calls to start operations (ex: <code>StartLabelDetection</code>)
+        /// will raise a <code>LimitExceededException</code> exception (HTTP status code: 400)
+        /// until the number of concurrently running jobs is below the Amazon Rekognition service
+        /// limit.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
         /// The number of requests exceeded your throughput limit. If you want to increase this
@@ -1574,17 +1592,32 @@ namespace Amazon.Rekognition
 
 
         /// <summary>
-        /// Creates a new version of a model and begins training. Models are managed as part of
-        /// an Amazon Rekognition Custom Labels project. The response from <code>CreateProjectVersion</code>
-        /// is an Amazon Resource Name (ARN) for the version of the model. 
+        /// Creates a new version of Amazon Rekognition project (like a Custom Labels model or
+        /// a custom adapter) and begins training. Models and adapters are managed as part of
+        /// a Rekognition project. The response from <code>CreateProjectVersion</code> is an Amazon
+        /// Resource Name (ARN) for the project version. 
         /// 
         ///  
         /// <para>
-        /// Training uses the training and test datasets associated with the project. For more
-        /// information, see Creating training and test dataset in the <i>Amazon Rekognition Custom
-        /// Labels Developer Guide</i>. 
+        /// The FeatureConfig operation argument allows you to configure specific model or adapter
+        /// settings. You can provide a description to the project version by using the VersionDescription
+        /// argment. Training can take a while to complete. You can get the current status by
+        /// calling <a>DescribeProjectVersions</a>. Training completed successfully if the value
+        /// of the <code>Status</code> field is <code>TRAINING_COMPLETED</code>. Once training
+        /// has successfully completed, call <a>DescribeProjectVersions</a> to get the training
+        /// results and evaluate the model.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation requires permissions to perform the <code>rekognition:CreateProjectVersion</code>
+        /// action.
         /// </para>
         ///  <note> 
+        /// <para>
+        ///  <i>The following applies only to projects with Amazon Rekognition Custom Labels as
+        /// the chosen feature:</i> 
+        /// </para>
+        ///  
         /// <para>
         /// You can train a model in a project that doesn't have associated datasets by specifying
         /// manifest files in the <code>TrainingData</code> and <code>TestingData</code> fields.
@@ -1602,32 +1635,7 @@ namespace Amazon.Rekognition
         /// Instead of training with a project without associated datasets, we recommend that
         /// you use the manifest files to create training and test datasets for the project.
         /// </para>
-        ///  </note> 
-        /// <para>
-        /// Training takes a while to complete. You can get the current status by calling <a>DescribeProjectVersions</a>.
-        /// Training completed successfully if the value of the <code>Status</code> field is <code>TRAINING_COMPLETED</code>.
-        /// </para>
-        ///  
-        /// <para>
-        /// If training fails, see Debugging a failed model training in the <i>Amazon Rekognition
-        /// Custom Labels</i> developer guide. 
-        /// </para>
-        ///  
-        /// <para>
-        /// Once training has successfully completed, call <a>DescribeProjectVersions</a> to get
-        /// the training results and evaluate the model. For more information, see Improving a
-        /// trained Amazon Rekognition Custom Labels model in the <i>Amazon Rekognition Custom
-        /// Labels</i> developers guide. 
-        /// </para>
-        ///  
-        /// <para>
-        /// After evaluating the model, you start the model by calling <a>StartProjectVersion</a>.
-        /// </para>
-        ///  
-        /// <para>
-        /// This operation requires permissions to perform the <code>rekognition:CreateProjectVersion</code>
-        /// action.
-        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateProjectVersion service method.</param>
         /// <param name="cancellationToken">
@@ -1647,10 +1655,10 @@ namespace Amazon.Rekognition
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.LimitExceededException">
         /// An Amazon Rekognition service limit was exceeded. For example, if you start too many
-        /// Amazon Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>,
-        /// for example) will raise a <code>LimitExceededException</code> exception (HTTP status
-        /// code: 400) until the number of concurrently running jobs is below the Amazon Rekognition
-        /// service limit.
+        /// jobs concurrently, subsequent calls to start operations (ex: <code>StartLabelDetection</code>)
+        /// will raise a <code>LimitExceededException</code> exception (HTTP status code: 400)
+        /// until the number of concurrently running jobs is below the Amazon Rekognition service
+        /// limit.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
         /// The number of requests exceeded your throughput limit. If you want to increase this
@@ -1737,10 +1745,10 @@ namespace Amazon.Rekognition
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.LimitExceededException">
         /// An Amazon Rekognition service limit was exceeded. For example, if you start too many
-        /// Amazon Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>,
-        /// for example) will raise a <code>LimitExceededException</code> exception (HTTP status
-        /// code: 400) until the number of concurrently running jobs is below the Amazon Rekognition
-        /// service limit.
+        /// jobs concurrently, subsequent calls to start operations (ex: <code>StartLabelDetection</code>)
+        /// will raise a <code>LimitExceededException</code> exception (HTTP status code: 400)
+        /// until the number of concurrently running jobs is below the Amazon Rekognition service
+        /// limit.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
         /// The number of requests exceeded your throughput limit. If you want to increase this
@@ -1824,10 +1832,10 @@ namespace Amazon.Rekognition
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.LimitExceededException">
         /// An Amazon Rekognition service limit was exceeded. For example, if you start too many
-        /// Amazon Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>,
-        /// for example) will raise a <code>LimitExceededException</code> exception (HTTP status
-        /// code: 400) until the number of concurrently running jobs is below the Amazon Rekognition
-        /// service limit.
+        /// jobs concurrently, subsequent calls to start operations (ex: <code>StartLabelDetection</code>)
+        /// will raise a <code>LimitExceededException</code> exception (HTTP status code: 400)
+        /// until the number of concurrently running jobs is below the Amazon Rekognition service
+        /// limit.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
         /// The number of requests exceeded your throughput limit. If you want to increase this
@@ -2052,12 +2060,18 @@ namespace Amazon.Rekognition
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// This operation applies only to Amazon Rekognition Custom Labels.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Deletes an existing Amazon Rekognition Custom Labels dataset. Deleting a dataset might
         /// take while. Use <a>DescribeDataset</a> to check the current status. The dataset is
         /// still deleting if the value of <code>Status</code> is <code>DELETE_IN_PROGRESS</code>.
         /// If you try to access the dataset after it is deleted, you get a <code>ResourceNotFoundException</code>
         /// exception. 
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// You can't delete a dataset while it is creating (<code>Status</code> = <code>CREATE_IN_PROGRESS</code>)
@@ -2084,10 +2098,10 @@ namespace Amazon.Rekognition
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.LimitExceededException">
         /// An Amazon Rekognition service limit was exceeded. For example, if you start too many
-        /// Amazon Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>,
-        /// for example) will raise a <code>LimitExceededException</code> exception (HTTP status
-        /// code: 400) until the number of concurrently running jobs is below the Amazon Rekognition
-        /// service limit.
+        /// jobs concurrently, subsequent calls to start operations (ex: <code>StartLabelDetection</code>)
+        /// will raise a <code>LimitExceededException</code> exception (HTTP status code: 400)
+        /// until the number of concurrently running jobs is below the Amazon Rekognition service
+        /// limit.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
         /// The number of requests exceeded your throughput limit. If you want to increase this
@@ -2108,12 +2122,18 @@ namespace Amazon.Rekognition
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// This operation applies only to Amazon Rekognition Custom Labels.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Deletes an existing Amazon Rekognition Custom Labels dataset. Deleting a dataset might
         /// take while. Use <a>DescribeDataset</a> to check the current status. The dataset is
         /// still deleting if the value of <code>Status</code> is <code>DELETE_IN_PROGRESS</code>.
         /// If you try to access the dataset after it is deleted, you get a <code>ResourceNotFoundException</code>
         /// exception. 
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// You can't delete a dataset while it is creating (<code>Status</code> = <code>CREATE_IN_PROGRESS</code>)
@@ -2143,10 +2163,10 @@ namespace Amazon.Rekognition
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.LimitExceededException">
         /// An Amazon Rekognition service limit was exceeded. For example, if you start too many
-        /// Amazon Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>,
-        /// for example) will raise a <code>LimitExceededException</code> exception (HTTP status
-        /// code: 400) until the number of concurrently running jobs is below the Amazon Rekognition
-        /// service limit.
+        /// jobs concurrently, subsequent calls to start operations (ex: <code>StartLabelDetection</code>)
+        /// will raise a <code>LimitExceededException</code> exception (HTTP status code: 400)
+        /// until the number of concurrently running jobs is below the Amazon Rekognition service
+        /// limit.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
         /// The number of requests exceeded your throughput limit. If you want to increase this
@@ -2252,8 +2272,9 @@ namespace Amazon.Rekognition
 
 
         /// <summary>
-        /// Deletes an Amazon Rekognition Custom Labels project. To delete a project you must
-        /// first delete all models associated with the project. To delete a model, see <a>DeleteProjectVersion</a>.
+        /// Deletes a Amazon Rekognition project. To delete a project you must first delete all
+        /// models or adapters associated with the project. To delete a model or adapter, see
+        /// <a>DeleteProjectVersion</a>.
         /// 
         ///  
         /// <para>
@@ -2300,8 +2321,9 @@ namespace Amazon.Rekognition
 
 
         /// <summary>
-        /// Deletes an Amazon Rekognition Custom Labels project. To delete a project you must
-        /// first delete all models associated with the project. To delete a model, see <a>DeleteProjectVersion</a>.
+        /// Deletes a Amazon Rekognition project. To delete a project you must first delete all
+        /// models or adapters associated with the project. To delete a model or adapter, see
+        /// <a>DeleteProjectVersion</a>.
         /// 
         ///  
         /// <para>
@@ -2354,8 +2376,14 @@ namespace Amazon.Rekognition
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// This operation applies only to Amazon Rekognition Custom Labels.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Deletes an existing project policy.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// To get a list of project policies attached to a project, call <a>ListProjectPolicies</a>.
@@ -2399,8 +2427,14 @@ namespace Amazon.Rekognition
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// This operation applies only to Amazon Rekognition Custom Labels.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Deletes an existing project policy.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// To get a list of project policies attached to a project, call <a>ListProjectPolicies</a>.
@@ -2450,14 +2484,15 @@ namespace Amazon.Rekognition
 
 
         /// <summary>
-        /// Deletes an Amazon Rekognition Custom Labels model. 
+        /// Deletes a Rekognition project model or project version, like a Amazon Rekognition
+        /// Custom Labels model or a custom adapter.
         /// 
         ///  
         /// <para>
-        /// You can't delete a model if it is running or if it is training. To check the status
-        /// of a model, use the <code>Status</code> field returned from <a>DescribeProjectVersions</a>.
-        /// To stop a running model call <a>StopProjectVersion</a>. If the model is training,
-        /// wait until it finishes.
+        /// You can't delete a project version if it is running or if it is training. To check
+        /// the status of a project version, use the Status field returned from <a>DescribeProjectVersions</a>.
+        /// To stop a project version call <a>StopProjectVersion</a>. If the project version is
+        /// training, wait until it finishes.
         /// </para>
         ///  
         /// <para>
@@ -2497,14 +2532,15 @@ namespace Amazon.Rekognition
 
 
         /// <summary>
-        /// Deletes an Amazon Rekognition Custom Labels model. 
+        /// Deletes a Rekognition project model or project version, like a Amazon Rekognition
+        /// Custom Labels model or a custom adapter.
         /// 
         ///  
         /// <para>
-        /// You can't delete a model if it is running or if it is training. To check the status
-        /// of a model, use the <code>Status</code> field returned from <a>DescribeProjectVersions</a>.
-        /// To stop a running model call <a>StopProjectVersion</a>. If the model is training,
-        /// wait until it finishes.
+        /// You can't delete a project version if it is running or if it is training. To check
+        /// the status of a project version, use the Status field returned from <a>DescribeProjectVersions</a>.
+        /// To stop a project version call <a>StopProjectVersion</a>. If the project version is
+        /// training, wait until it finishes.
         /// </para>
         ///  
         /// <para>
@@ -2808,10 +2844,16 @@ namespace Amazon.Rekognition
 
 
         /// <summary>
-        /// Describes an Amazon Rekognition Custom Labels dataset. You can get information such
+        /// <note> 
+        /// <para>
+        /// This operation applies only to Amazon Rekognition Custom Labels.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        ///  Describes an Amazon Rekognition Custom Labels dataset. You can get information such
         /// as the current status of a dataset and statistics about the images and labels in a
         /// dataset. 
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// This operation requires permissions to perform the <code>rekognition:DescribeDataset</code>
@@ -2847,10 +2889,16 @@ namespace Amazon.Rekognition
 
 
         /// <summary>
-        /// Describes an Amazon Rekognition Custom Labels dataset. You can get information such
+        /// <note> 
+        /// <para>
+        /// This operation applies only to Amazon Rekognition Custom Labels.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        ///  Describes an Amazon Rekognition Custom Labels dataset. You can get information such
         /// as the current status of a dataset and statistics about the images and labels in a
         /// dataset. 
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// This operation requires permissions to perform the <code>rekognition:DescribeDataset</code>
@@ -2892,7 +2940,7 @@ namespace Amazon.Rekognition
 
 
         /// <summary>
-        /// Gets information about your Amazon Rekognition Custom Labels projects. 
+        /// Gets information about your Rekognition projects.
         /// 
         ///  
         /// <para>
@@ -2929,7 +2977,7 @@ namespace Amazon.Rekognition
 
 
         /// <summary>
-        /// Gets information about your Amazon Rekognition Custom Labels projects. 
+        /// Gets information about your Rekognition projects.
         /// 
         ///  
         /// <para>
@@ -2972,10 +3020,9 @@ namespace Amazon.Rekognition
 
 
         /// <summary>
-        /// Lists and describes the versions of a model in an Amazon Rekognition Custom Labels
-        /// project. You can specify up to 10 model versions in <code>ProjectVersionArns</code>.
-        /// If you don't specify a value, descriptions for all model versions in the project are
-        /// returned.
+        /// Lists and describes the versions of an Amazon Rekognition project. You can specify
+        /// up to 10 model or adapter versions in <code>ProjectVersionArns</code>. If you don't
+        /// specify a value, descriptions for all model/adapter versions in the project are returned.
         /// 
         ///  
         /// <para>
@@ -3015,10 +3062,9 @@ namespace Amazon.Rekognition
 
 
         /// <summary>
-        /// Lists and describes the versions of a model in an Amazon Rekognition Custom Labels
-        /// project. You can specify up to 10 model versions in <code>ProjectVersionArns</code>.
-        /// If you don't specify a value, descriptions for all model versions in the project are
-        /// returned.
+        /// Lists and describes the versions of an Amazon Rekognition project. You can specify
+        /// up to 10 model or adapter versions in <code>ProjectVersionArns</code>. If you don't
+        /// specify a value, descriptions for all model/adapter versions in the project are returned.
         /// 
         ///  
         /// <para>
@@ -3136,9 +3182,15 @@ namespace Amazon.Rekognition
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// This operation applies only to Amazon Rekognition Custom Labels.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Detects custom labels in a supplied image by using an Amazon Rekognition Custom Labels
         /// model. 
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// You specify which version of a model version to use by using the <code>ProjectVersionArn</code>
@@ -3219,10 +3271,10 @@ namespace Amazon.Rekognition
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.LimitExceededException">
         /// An Amazon Rekognition service limit was exceeded. For example, if you start too many
-        /// Amazon Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>,
-        /// for example) will raise a <code>LimitExceededException</code> exception (HTTP status
-        /// code: 400) until the number of concurrently running jobs is below the Amazon Rekognition
-        /// service limit.
+        /// jobs concurrently, subsequent calls to start operations (ex: <code>StartLabelDetection</code>)
+        /// will raise a <code>LimitExceededException</code> exception (HTTP status code: 400)
+        /// until the number of concurrently running jobs is below the Amazon Rekognition service
+        /// limit.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
         /// The number of requests exceeded your throughput limit. If you want to increase this
@@ -3244,9 +3296,15 @@ namespace Amazon.Rekognition
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// This operation applies only to Amazon Rekognition Custom Labels.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Detects custom labels in a supplied image by using an Amazon Rekognition Custom Labels
         /// model. 
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// You specify which version of a model version to use by using the <code>ProjectVersionArn</code>
@@ -3330,10 +3388,10 @@ namespace Amazon.Rekognition
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.LimitExceededException">
         /// An Amazon Rekognition service limit was exceeded. For example, if you start too many
-        /// Amazon Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>,
-        /// for example) will raise a <code>LimitExceededException</code> exception (HTTP status
-        /// code: 400) until the number of concurrently running jobs is below the Amazon Rekognition
-        /// service limit.
+        /// jobs concurrently, subsequent calls to start operations (ex: <code>StartLabelDetection</code>)
+        /// will raise a <code>LimitExceededException</code> exception (HTTP status code: 400)
+        /// until the number of concurrently running jobs is below the Amazon Rekognition service
+        /// limit.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
         /// The number of requests exceeded your throughput limit. If you want to increase this
@@ -3943,6 +4001,11 @@ namespace Amazon.Rekognition
         /// operations, passing image bytes is not supported. The image must be either a PNG or
         /// JPEG formatted file. 
         /// </para>
+        ///  
+        /// <para>
+        /// You can specify an adapter to use when retrieving label predictions by providing a
+        /// <code>ProjectVersionArn</code> to the <code>ProjectVersion</code> argument.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DetectModerationLabels service method.</param>
         /// 
@@ -3975,6 +4038,13 @@ namespace Amazon.Rekognition
         /// The number of requests exceeded your throughput limit. If you want to increase this
         /// limit, contact Amazon Rekognition.
         /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
+        /// The resource specified in the request cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ResourceNotReadyException">
+        /// The requested resource isn't ready. For example, this exception occurs when you call
+        /// <code>DetectCustomLabels</code> with a model version that isn't deployed.
+        /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
         /// </exception>
@@ -4004,6 +4074,11 @@ namespace Amazon.Rekognition
         /// an image in an Amazon S3 bucket. If you use the AWS CLI to call Amazon Rekognition
         /// operations, passing image bytes is not supported. The image must be either a PNG or
         /// JPEG formatted file. 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can specify an adapter to use when retrieving label predictions by providing a
+        /// <code>ProjectVersionArn</code> to the <code>ProjectVersion</code> argument.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DetectModerationLabels service method.</param>
@@ -4039,6 +4114,13 @@ namespace Amazon.Rekognition
         /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
         /// The number of requests exceeded your throughput limit. If you want to increase this
         /// limit, contact Amazon Rekognition.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
+        /// The resource specified in the request cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ResourceNotReadyException">
+        /// The requested resource isn't ready. For example, this exception occurs when you call
+        /// <code>DetectCustomLabels</code> with a model version that isn't deployed.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
         /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
@@ -4524,11 +4606,17 @@ namespace Amazon.Rekognition
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// This operation applies only to Amazon Rekognition Custom Labels.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Distributes the entries (images) in a training dataset across the training dataset
         /// and the test dataset for a project. <code>DistributeDatasetEntries</code> moves 20%
         /// of the training dataset images to the test dataset. An entry is a JSON Line that describes
         /// an image. 
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// You supply the Amazon Resource Names (ARN) of a project's training dataset and test
@@ -4582,11 +4670,17 @@ namespace Amazon.Rekognition
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// This operation applies only to Amazon Rekognition Custom Labels.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Distributes the entries (images) in a training dataset across the training dataset
         /// and the test dataset for a project. <code>DistributeDatasetEntries</code> moves 20%
         /// of the training dataset images to the test dataset. An entry is a JSON Line that describes
         /// an image. 
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// You supply the Amazon Resource Names (ARN) of a project's training dataset and test
@@ -5762,6 +5856,76 @@ namespace Amazon.Rekognition
 
         #endregion
         
+        #region  GetMediaAnalysisJob
+
+
+        /// <summary>
+        /// Retrieves the results for a given media analysis job. Takes a <code>JobId</code> returned
+        /// by StartMediaAnalysisJob.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMediaAnalysisJob service method.</param>
+        /// 
+        /// <returns>The response from the GetMediaAnalysisJob service method, as returned by Rekognition.</returns>
+        /// <exception cref="Amazon.Rekognition.Model.AccessDeniedException">
+        /// You are not authorized to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InternalServerErrorException">
+        /// Amazon Rekognition experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InvalidParameterException">
+        /// Input parameter violated a constraint. Validate your parameter before calling the
+        /// API operation again.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
+        /// The number of requests exceeded your throughput limit. If you want to increase this
+        /// limit, contact Amazon Rekognition.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
+        /// The resource specified in the request cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
+        /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetMediaAnalysisJob">REST API Reference for GetMediaAnalysisJob Operation</seealso>
+        GetMediaAnalysisJobResponse GetMediaAnalysisJob(GetMediaAnalysisJobRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves the results for a given media analysis job. Takes a <code>JobId</code> returned
+        /// by StartMediaAnalysisJob.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMediaAnalysisJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetMediaAnalysisJob service method, as returned by Rekognition.</returns>
+        /// <exception cref="Amazon.Rekognition.Model.AccessDeniedException">
+        /// You are not authorized to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InternalServerErrorException">
+        /// Amazon Rekognition experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InvalidParameterException">
+        /// Input parameter violated a constraint. Validate your parameter before calling the
+        /// API operation again.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
+        /// The number of requests exceeded your throughput limit. If you want to increase this
+        /// limit, contact Amazon Rekognition.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
+        /// The resource specified in the request cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
+        /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetMediaAnalysisJob">REST API Reference for GetMediaAnalysisJob Operation</seealso>
+        Task<GetMediaAnalysisJobResponse> GetMediaAnalysisJobAsync(GetMediaAnalysisJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetPersonTracking
 
 
@@ -6718,11 +6882,17 @@ namespace Amazon.Rekognition
 
 
         /// <summary>
-        /// Lists the entries (images) within a dataset. An entry is a JSON Line that contains
+        /// <note> 
+        /// <para>
+        /// This operation applies only to Amazon Rekognition Custom Labels.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        ///  Lists the entries (images) within a dataset. An entry is a JSON Line that contains
         /// the information for a single image, including the image location, assigned labels,
         /// and object location bounding boxes. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/customlabels-dg/md-manifest-files.html">Creating
         /// a manifest file</a>.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// JSON Lines in the response include information about non-terminal errors found in
@@ -6781,11 +6951,17 @@ namespace Amazon.Rekognition
 
 
         /// <summary>
-        /// Lists the entries (images) within a dataset. An entry is a JSON Line that contains
+        /// <note> 
+        /// <para>
+        /// This operation applies only to Amazon Rekognition Custom Labels.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        ///  Lists the entries (images) within a dataset. An entry is a JSON Line that contains
         /// the information for a single image, including the image location, assigned labels,
         /// and object location bounding boxes. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/customlabels-dg/md-manifest-files.html">Creating
         /// a manifest file</a>.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// JSON Lines in the response include information about non-terminal errors found in
@@ -6850,10 +7026,16 @@ namespace Amazon.Rekognition
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// This operation applies only to Amazon Rekognition Custom Labels.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Lists the labels in a dataset. Amazon Rekognition Custom Labels uses labels to describe
         /// images. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/customlabels-dg/md-labeling-images.html">Labeling
         /// images</a>. 
-        /// 
+        /// </para>
         ///  
         /// <para>
         ///  Lists the labels in a dataset. Amazon Rekognition Custom Labels uses labels to describe
@@ -6900,10 +7082,16 @@ namespace Amazon.Rekognition
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// This operation applies only to Amazon Rekognition Custom Labels.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Lists the labels in a dataset. Amazon Rekognition Custom Labels uses labels to describe
         /// images. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/customlabels-dg/md-labeling-images.html">Labeling
         /// images</a>. 
-        /// 
+        /// </para>
         ///  
         /// <para>
         ///  Lists the labels in a dataset. Amazon Rekognition Custom Labels uses labels to describe
@@ -7044,12 +7232,88 @@ namespace Amazon.Rekognition
 
         #endregion
         
+        #region  ListMediaAnalysisJobs
+
+
+        /// <summary>
+        /// Returns a list of media analysis jobs. Results are sorted by <code>CreationTimestamp</code>
+        /// in descending order.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMediaAnalysisJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListMediaAnalysisJobs service method, as returned by Rekognition.</returns>
+        /// <exception cref="Amazon.Rekognition.Model.AccessDeniedException">
+        /// You are not authorized to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InternalServerErrorException">
+        /// Amazon Rekognition experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InvalidPaginationTokenException">
+        /// Pagination token in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InvalidParameterException">
+        /// Input parameter violated a constraint. Validate your parameter before calling the
+        /// API operation again.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
+        /// The number of requests exceeded your throughput limit. If you want to increase this
+        /// limit, contact Amazon Rekognition.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
+        /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListMediaAnalysisJobs">REST API Reference for ListMediaAnalysisJobs Operation</seealso>
+        ListMediaAnalysisJobsResponse ListMediaAnalysisJobs(ListMediaAnalysisJobsRequest request);
+
+
+
+        /// <summary>
+        /// Returns a list of media analysis jobs. Results are sorted by <code>CreationTimestamp</code>
+        /// in descending order.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMediaAnalysisJobs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListMediaAnalysisJobs service method, as returned by Rekognition.</returns>
+        /// <exception cref="Amazon.Rekognition.Model.AccessDeniedException">
+        /// You are not authorized to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InternalServerErrorException">
+        /// Amazon Rekognition experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InvalidPaginationTokenException">
+        /// Pagination token in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InvalidParameterException">
+        /// Input parameter violated a constraint. Validate your parameter before calling the
+        /// API operation again.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
+        /// The number of requests exceeded your throughput limit. If you want to increase this
+        /// limit, contact Amazon Rekognition.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
+        /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListMediaAnalysisJobs">REST API Reference for ListMediaAnalysisJobs Operation</seealso>
+        Task<ListMediaAnalysisJobsResponse> ListMediaAnalysisJobsAsync(ListMediaAnalysisJobsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListProjectPolicies
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// This operation applies only to Amazon Rekognition Custom Labels.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Gets a list of the project policies attached to a project.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// To attach a project policy to a project, call <a>PutProjectPolicy</a>. To remove a
@@ -7093,8 +7357,14 @@ namespace Amazon.Rekognition
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// This operation applies only to Amazon Rekognition Custom Labels.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Gets a list of the project policies attached to a project.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// To attach a project policy to a project, call <a>PutProjectPolicy</a>. To remove a
@@ -7376,11 +7646,18 @@ namespace Amazon.Rekognition
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// This operation applies only to Amazon Rekognition Custom Labels.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Attaches a project policy to a Amazon Rekognition Custom Labels project in a trusting
         /// AWS account. A project policy specifies that a trusted AWS account can copy a model
         /// version from a trusting AWS account to a project in the trusted AWS account. To copy
-        /// a model version you use the <a>CopyProjectVersion</a> operation.
-        /// 
+        /// a model version you use the <a>CopyProjectVersion</a> operation. Only applies to Custom
+        /// Labels projects.
+        /// </para>
         ///  
         /// <para>
         /// For more information about the format of a project policy document, see Attaching
@@ -7427,10 +7704,10 @@ namespace Amazon.Rekognition
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.LimitExceededException">
         /// An Amazon Rekognition service limit was exceeded. For example, if you start too many
-        /// Amazon Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>,
-        /// for example) will raise a <code>LimitExceededException</code> exception (HTTP status
-        /// code: 400) until the number of concurrently running jobs is below the Amazon Rekognition
-        /// service limit.
+        /// jobs concurrently, subsequent calls to start operations (ex: <code>StartLabelDetection</code>)
+        /// will raise a <code>LimitExceededException</code> exception (HTTP status code: 400)
+        /// until the number of concurrently running jobs is below the Amazon Rekognition service
+        /// limit.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.MalformedPolicyDocumentException">
         /// The format of the project policy document that you supplied to <code>PutProjectPolicy</code>
@@ -7459,11 +7736,18 @@ namespace Amazon.Rekognition
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// This operation applies only to Amazon Rekognition Custom Labels.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Attaches a project policy to a Amazon Rekognition Custom Labels project in a trusting
         /// AWS account. A project policy specifies that a trusted AWS account can copy a model
         /// version from a trusting AWS account to a project in the trusted AWS account. To copy
-        /// a model version you use the <a>CopyProjectVersion</a> operation.
-        /// 
+        /// a model version you use the <a>CopyProjectVersion</a> operation. Only applies to Custom
+        /// Labels projects.
+        /// </para>
         ///  
         /// <para>
         /// For more information about the format of a project policy document, see Attaching
@@ -7513,10 +7797,10 @@ namespace Amazon.Rekognition
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.LimitExceededException">
         /// An Amazon Rekognition service limit was exceeded. For example, if you start too many
-        /// Amazon Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>,
-        /// for example) will raise a <code>LimitExceededException</code> exception (HTTP status
-        /// code: 400) until the number of concurrently running jobs is below the Amazon Rekognition
-        /// service limit.
+        /// jobs concurrently, subsequent calls to start operations (ex: <code>StartLabelDetection</code>)
+        /// will raise a <code>LimitExceededException</code> exception (HTTP status code: 400)
+        /// until the number of concurrently running jobs is below the Amazon Rekognition service
+        /// limit.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.MalformedPolicyDocumentException">
         /// The format of the project policy document that you supplied to <code>PutProjectPolicy</code>
@@ -8290,10 +8574,10 @@ namespace Amazon.Rekognition
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.LimitExceededException">
         /// An Amazon Rekognition service limit was exceeded. For example, if you start too many
-        /// Amazon Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>,
-        /// for example) will raise a <code>LimitExceededException</code> exception (HTTP status
-        /// code: 400) until the number of concurrently running jobs is below the Amazon Rekognition
-        /// service limit.
+        /// jobs concurrently, subsequent calls to start operations (ex: <code>StartLabelDetection</code>)
+        /// will raise a <code>LimitExceededException</code> exception (HTTP status code: 400)
+        /// until the number of concurrently running jobs is below the Amazon Rekognition service
+        /// limit.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
         /// The number of requests exceeded your throughput limit. If you want to increase this
@@ -8359,10 +8643,10 @@ namespace Amazon.Rekognition
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.LimitExceededException">
         /// An Amazon Rekognition service limit was exceeded. For example, if you start too many
-        /// Amazon Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>,
-        /// for example) will raise a <code>LimitExceededException</code> exception (HTTP status
-        /// code: 400) until the number of concurrently running jobs is below the Amazon Rekognition
-        /// service limit.
+        /// jobs concurrently, subsequent calls to start operations (ex: <code>StartLabelDetection</code>)
+        /// will raise a <code>LimitExceededException</code> exception (HTTP status code: 400)
+        /// until the number of concurrently running jobs is below the Amazon Rekognition service
+        /// limit.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
         /// The number of requests exceeded your throughput limit. If you want to increase this
@@ -8432,10 +8716,10 @@ namespace Amazon.Rekognition
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.LimitExceededException">
         /// An Amazon Rekognition service limit was exceeded. For example, if you start too many
-        /// Amazon Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>,
-        /// for example) will raise a <code>LimitExceededException</code> exception (HTTP status
-        /// code: 400) until the number of concurrently running jobs is below the Amazon Rekognition
-        /// service limit.
+        /// jobs concurrently, subsequent calls to start operations (ex: <code>StartLabelDetection</code>)
+        /// will raise a <code>LimitExceededException</code> exception (HTTP status code: 400)
+        /// until the number of concurrently running jobs is below the Amazon Rekognition service
+        /// limit.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
         /// The number of requests exceeded your throughput limit. If you want to increase this
@@ -8505,10 +8789,10 @@ namespace Amazon.Rekognition
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.LimitExceededException">
         /// An Amazon Rekognition service limit was exceeded. For example, if you start too many
-        /// Amazon Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>,
-        /// for example) will raise a <code>LimitExceededException</code> exception (HTTP status
-        /// code: 400) until the number of concurrently running jobs is below the Amazon Rekognition
-        /// service limit.
+        /// jobs concurrently, subsequent calls to start operations (ex: <code>StartLabelDetection</code>)
+        /// will raise a <code>LimitExceededException</code> exception (HTTP status code: 400)
+        /// until the number of concurrently running jobs is below the Amazon Rekognition service
+        /// limit.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
         /// The number of requests exceeded your throughput limit. If you want to increase this
@@ -8572,10 +8856,10 @@ namespace Amazon.Rekognition
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.LimitExceededException">
         /// An Amazon Rekognition service limit was exceeded. For example, if you start too many
-        /// Amazon Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>,
-        /// for example) will raise a <code>LimitExceededException</code> exception (HTTP status
-        /// code: 400) until the number of concurrently running jobs is below the Amazon Rekognition
-        /// service limit.
+        /// jobs concurrently, subsequent calls to start operations (ex: <code>StartLabelDetection</code>)
+        /// will raise a <code>LimitExceededException</code> exception (HTTP status code: 400)
+        /// until the number of concurrently running jobs is below the Amazon Rekognition service
+        /// limit.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
         /// The number of requests exceeded your throughput limit. If you want to increase this
@@ -8639,10 +8923,10 @@ namespace Amazon.Rekognition
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.LimitExceededException">
         /// An Amazon Rekognition service limit was exceeded. For example, if you start too many
-        /// Amazon Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>,
-        /// for example) will raise a <code>LimitExceededException</code> exception (HTTP status
-        /// code: 400) until the number of concurrently running jobs is below the Amazon Rekognition
-        /// service limit.
+        /// jobs concurrently, subsequent calls to start operations (ex: <code>StartLabelDetection</code>)
+        /// will raise a <code>LimitExceededException</code> exception (HTTP status code: 400)
+        /// until the number of concurrently running jobs is below the Amazon Rekognition service
+        /// limit.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
         /// The number of requests exceeded your throughput limit. If you want to increase this
@@ -8704,10 +8988,10 @@ namespace Amazon.Rekognition
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.LimitExceededException">
         /// An Amazon Rekognition service limit was exceeded. For example, if you start too many
-        /// Amazon Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>,
-        /// for example) will raise a <code>LimitExceededException</code> exception (HTTP status
-        /// code: 400) until the number of concurrently running jobs is below the Amazon Rekognition
-        /// service limit.
+        /// jobs concurrently, subsequent calls to start operations (ex: <code>StartLabelDetection</code>)
+        /// will raise a <code>LimitExceededException</code> exception (HTTP status code: 400)
+        /// until the number of concurrently running jobs is below the Amazon Rekognition service
+        /// limit.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
         /// The number of requests exceeded your throughput limit. If you want to increase this
@@ -8772,10 +9056,10 @@ namespace Amazon.Rekognition
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.LimitExceededException">
         /// An Amazon Rekognition service limit was exceeded. For example, if you start too many
-        /// Amazon Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>,
-        /// for example) will raise a <code>LimitExceededException</code> exception (HTTP status
-        /// code: 400) until the number of concurrently running jobs is below the Amazon Rekognition
-        /// service limit.
+        /// jobs concurrently, subsequent calls to start operations (ex: <code>StartLabelDetection</code>)
+        /// will raise a <code>LimitExceededException</code> exception (HTTP status code: 400)
+        /// until the number of concurrently running jobs is below the Amazon Rekognition service
+        /// limit.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
         /// The number of requests exceeded your throughput limit. If you want to increase this
@@ -8865,10 +9149,10 @@ namespace Amazon.Rekognition
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.LimitExceededException">
         /// An Amazon Rekognition service limit was exceeded. For example, if you start too many
-        /// Amazon Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>,
-        /// for example) will raise a <code>LimitExceededException</code> exception (HTTP status
-        /// code: 400) until the number of concurrently running jobs is below the Amazon Rekognition
-        /// service limit.
+        /// jobs concurrently, subsequent calls to start operations (ex: <code>StartLabelDetection</code>)
+        /// will raise a <code>LimitExceededException</code> exception (HTTP status code: 400)
+        /// until the number of concurrently running jobs is below the Amazon Rekognition service
+        /// limit.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
         /// The number of requests exceeded your throughput limit. If you want to increase this
@@ -8955,10 +9239,10 @@ namespace Amazon.Rekognition
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.LimitExceededException">
         /// An Amazon Rekognition service limit was exceeded. For example, if you start too many
-        /// Amazon Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>,
-        /// for example) will raise a <code>LimitExceededException</code> exception (HTTP status
-        /// code: 400) until the number of concurrently running jobs is below the Amazon Rekognition
-        /// service limit.
+        /// jobs concurrently, subsequent calls to start operations (ex: <code>StartLabelDetection</code>)
+        /// will raise a <code>LimitExceededException</code> exception (HTTP status code: 400)
+        /// until the number of concurrently running jobs is below the Amazon Rekognition service
+        /// limit.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
         /// The number of requests exceeded your throughput limit. If you want to increase this
@@ -8973,6 +9257,122 @@ namespace Amazon.Rekognition
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartLabelDetection">REST API Reference for StartLabelDetection Operation</seealso>
         Task<StartLabelDetectionResponse> StartLabelDetectionAsync(StartLabelDetectionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  StartMediaAnalysisJob
+
+
+        /// <summary>
+        /// Initiates a new media analysis job. Accepts a manifest file in an Amazon S3 bucket.
+        /// The output is a manifest file and a summary of the manifest stored in the Amazon S3
+        /// bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartMediaAnalysisJob service method.</param>
+        /// 
+        /// <returns>The response from the StartMediaAnalysisJob service method, as returned by Rekognition.</returns>
+        /// <exception cref="Amazon.Rekognition.Model.AccessDeniedException">
+        /// You are not authorized to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.IdempotentParameterMismatchException">
+        /// A <code>ClientRequestToken</code> input parameter was reused with an operation, but
+        /// at least one of the other input parameters is different from the previous call to
+        /// the operation.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InternalServerErrorException">
+        /// Amazon Rekognition experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InvalidManifestException">
+        /// Indicates that a provided manifest file is empty or larger than the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InvalidParameterException">
+        /// Input parameter violated a constraint. Validate your parameter before calling the
+        /// API operation again.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InvalidS3ObjectException">
+        /// Amazon Rekognition is unable to access the S3 object specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.LimitExceededException">
+        /// An Amazon Rekognition service limit was exceeded. For example, if you start too many
+        /// jobs concurrently, subsequent calls to start operations (ex: <code>StartLabelDetection</code>)
+        /// will raise a <code>LimitExceededException</code> exception (HTTP status code: 400)
+        /// until the number of concurrently running jobs is below the Amazon Rekognition service
+        /// limit.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
+        /// The number of requests exceeded your throughput limit. If you want to increase this
+        /// limit, contact Amazon Rekognition.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
+        /// The resource specified in the request cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ResourceNotReadyException">
+        /// The requested resource isn't ready. For example, this exception occurs when you call
+        /// <code>DetectCustomLabels</code> with a model version that isn't deployed.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
+        /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartMediaAnalysisJob">REST API Reference for StartMediaAnalysisJob Operation</seealso>
+        StartMediaAnalysisJobResponse StartMediaAnalysisJob(StartMediaAnalysisJobRequest request);
+
+
+
+        /// <summary>
+        /// Initiates a new media analysis job. Accepts a manifest file in an Amazon S3 bucket.
+        /// The output is a manifest file and a summary of the manifest stored in the Amazon S3
+        /// bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartMediaAnalysisJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartMediaAnalysisJob service method, as returned by Rekognition.</returns>
+        /// <exception cref="Amazon.Rekognition.Model.AccessDeniedException">
+        /// You are not authorized to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.IdempotentParameterMismatchException">
+        /// A <code>ClientRequestToken</code> input parameter was reused with an operation, but
+        /// at least one of the other input parameters is different from the previous call to
+        /// the operation.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InternalServerErrorException">
+        /// Amazon Rekognition experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InvalidManifestException">
+        /// Indicates that a provided manifest file is empty or larger than the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InvalidParameterException">
+        /// Input parameter violated a constraint. Validate your parameter before calling the
+        /// API operation again.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InvalidS3ObjectException">
+        /// Amazon Rekognition is unable to access the S3 object specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.LimitExceededException">
+        /// An Amazon Rekognition service limit was exceeded. For example, if you start too many
+        /// jobs concurrently, subsequent calls to start operations (ex: <code>StartLabelDetection</code>)
+        /// will raise a <code>LimitExceededException</code> exception (HTTP status code: 400)
+        /// until the number of concurrently running jobs is below the Amazon Rekognition service
+        /// limit.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
+        /// The number of requests exceeded your throughput limit. If you want to increase this
+        /// limit, contact Amazon Rekognition.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
+        /// The resource specified in the request cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ResourceNotReadyException">
+        /// The requested resource isn't ready. For example, this exception occurs when you call
+        /// <code>DetectCustomLabels</code> with a model version that isn't deployed.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
+        /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartMediaAnalysisJob">REST API Reference for StartMediaAnalysisJob Operation</seealso>
+        Task<StartMediaAnalysisJobResponse> StartMediaAnalysisJobAsync(StartMediaAnalysisJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -9021,10 +9421,10 @@ namespace Amazon.Rekognition
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.LimitExceededException">
         /// An Amazon Rekognition service limit was exceeded. For example, if you start too many
-        /// Amazon Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>,
-        /// for example) will raise a <code>LimitExceededException</code> exception (HTTP status
-        /// code: 400) until the number of concurrently running jobs is below the Amazon Rekognition
-        /// service limit.
+        /// jobs concurrently, subsequent calls to start operations (ex: <code>StartLabelDetection</code>)
+        /// will raise a <code>LimitExceededException</code> exception (HTTP status code: 400)
+        /// until the number of concurrently running jobs is below the Amazon Rekognition service
+        /// limit.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
         /// The number of requests exceeded your throughput limit. If you want to increase this
@@ -9087,10 +9487,10 @@ namespace Amazon.Rekognition
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.LimitExceededException">
         /// An Amazon Rekognition service limit was exceeded. For example, if you start too many
-        /// Amazon Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>,
-        /// for example) will raise a <code>LimitExceededException</code> exception (HTTP status
-        /// code: 400) until the number of concurrently running jobs is below the Amazon Rekognition
-        /// service limit.
+        /// jobs concurrently, subsequent calls to start operations (ex: <code>StartLabelDetection</code>)
+        /// will raise a <code>LimitExceededException</code> exception (HTTP status code: 400)
+        /// until the number of concurrently running jobs is below the Amazon Rekognition service
+        /// limit.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
         /// The number of requests exceeded your throughput limit. If you want to increase this
@@ -9112,9 +9512,15 @@ namespace Amazon.Rekognition
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// This operation applies only to Amazon Rekognition Custom Labels.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Starts the running of the version of a model. Starting a model takes a while to complete.
-        /// To check the current state of the model, use <a>DescribeProjectVersions</a>.
-        /// 
+        /// To check the current state of the model, use <a>DescribeProjectVersions</a>. 
+        /// </para>
         ///  
         /// <para>
         /// Once the model is running, you can detect custom labels in new images by calling <a>DetectCustomLabels</a>.
@@ -9125,11 +9531,6 @@ namespace Amazon.Rekognition
         /// model, call <a>StopProjectVersion</a>.
         /// </para>
         ///  </note> 
-        /// <para>
-        /// For more information, see <i>Running a trained Amazon Rekognition Custom Labels model</i>
-        /// in the Amazon Rekognition Custom Labels Guide.
-        /// </para>
-        ///  
         /// <para>
         /// This operation requires permissions to perform the <code>rekognition:StartProjectVersion</code>
         /// action.
@@ -9150,10 +9551,10 @@ namespace Amazon.Rekognition
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.LimitExceededException">
         /// An Amazon Rekognition service limit was exceeded. For example, if you start too many
-        /// Amazon Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>,
-        /// for example) will raise a <code>LimitExceededException</code> exception (HTTP status
-        /// code: 400) until the number of concurrently running jobs is below the Amazon Rekognition
-        /// service limit.
+        /// jobs concurrently, subsequent calls to start operations (ex: <code>StartLabelDetection</code>)
+        /// will raise a <code>LimitExceededException</code> exception (HTTP status code: 400)
+        /// until the number of concurrently running jobs is below the Amazon Rekognition service
+        /// limit.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
         /// The number of requests exceeded your throughput limit. If you want to increase this
@@ -9174,9 +9575,15 @@ namespace Amazon.Rekognition
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// This operation applies only to Amazon Rekognition Custom Labels.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Starts the running of the version of a model. Starting a model takes a while to complete.
-        /// To check the current state of the model, use <a>DescribeProjectVersions</a>.
-        /// 
+        /// To check the current state of the model, use <a>DescribeProjectVersions</a>. 
+        /// </para>
         ///  
         /// <para>
         /// Once the model is running, you can detect custom labels in new images by calling <a>DetectCustomLabels</a>.
@@ -9187,11 +9594,6 @@ namespace Amazon.Rekognition
         /// model, call <a>StopProjectVersion</a>.
         /// </para>
         ///  </note> 
-        /// <para>
-        /// For more information, see <i>Running a trained Amazon Rekognition Custom Labels model</i>
-        /// in the Amazon Rekognition Custom Labels Guide.
-        /// </para>
-        ///  
         /// <para>
         /// This operation requires permissions to perform the <code>rekognition:StartProjectVersion</code>
         /// action.
@@ -9215,10 +9617,10 @@ namespace Amazon.Rekognition
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.LimitExceededException">
         /// An Amazon Rekognition service limit was exceeded. For example, if you start too many
-        /// Amazon Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>,
-        /// for example) will raise a <code>LimitExceededException</code> exception (HTTP status
-        /// code: 400) until the number of concurrently running jobs is below the Amazon Rekognition
-        /// service limit.
+        /// jobs concurrently, subsequent calls to start operations (ex: <code>StartLabelDetection</code>)
+        /// will raise a <code>LimitExceededException</code> exception (HTTP status code: 400)
+        /// until the number of concurrently running jobs is below the Amazon Rekognition service
+        /// limit.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
         /// The number of requests exceeded your throughput limit. If you want to increase this
@@ -9297,10 +9699,10 @@ namespace Amazon.Rekognition
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.LimitExceededException">
         /// An Amazon Rekognition service limit was exceeded. For example, if you start too many
-        /// Amazon Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>,
-        /// for example) will raise a <code>LimitExceededException</code> exception (HTTP status
-        /// code: 400) until the number of concurrently running jobs is below the Amazon Rekognition
-        /// service limit.
+        /// jobs concurrently, subsequent calls to start operations (ex: <code>StartLabelDetection</code>)
+        /// will raise a <code>LimitExceededException</code> exception (HTTP status code: 400)
+        /// until the number of concurrently running jobs is below the Amazon Rekognition service
+        /// limit.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
         /// The number of requests exceeded your throughput limit. If you want to increase this
@@ -9377,10 +9779,10 @@ namespace Amazon.Rekognition
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.LimitExceededException">
         /// An Amazon Rekognition service limit was exceeded. For example, if you start too many
-        /// Amazon Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>,
-        /// for example) will raise a <code>LimitExceededException</code> exception (HTTP status
-        /// code: 400) until the number of concurrently running jobs is below the Amazon Rekognition
-        /// service limit.
+        /// jobs concurrently, subsequent calls to start operations (ex: <code>StartLabelDetection</code>)
+        /// will raise a <code>LimitExceededException</code> exception (HTTP status code: 400)
+        /// until the number of concurrently running jobs is below the Amazon Rekognition service
+        /// limit.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
         /// The number of requests exceeded your throughput limit. If you want to increase this
@@ -9536,10 +9938,10 @@ namespace Amazon.Rekognition
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.LimitExceededException">
         /// An Amazon Rekognition service limit was exceeded. For example, if you start too many
-        /// Amazon Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>,
-        /// for example) will raise a <code>LimitExceededException</code> exception (HTTP status
-        /// code: 400) until the number of concurrently running jobs is below the Amazon Rekognition
-        /// service limit.
+        /// jobs concurrently, subsequent calls to start operations (ex: <code>StartLabelDetection</code>)
+        /// will raise a <code>LimitExceededException</code> exception (HTTP status code: 400)
+        /// until the number of concurrently running jobs is below the Amazon Rekognition service
+        /// limit.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
         /// The number of requests exceeded your throughput limit. If you want to increase this
@@ -9603,10 +10005,10 @@ namespace Amazon.Rekognition
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.LimitExceededException">
         /// An Amazon Rekognition service limit was exceeded. For example, if you start too many
-        /// Amazon Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>,
-        /// for example) will raise a <code>LimitExceededException</code> exception (HTTP status
-        /// code: 400) until the number of concurrently running jobs is below the Amazon Rekognition
-        /// service limit.
+        /// jobs concurrently, subsequent calls to start operations (ex: <code>StartLabelDetection</code>)
+        /// will raise a <code>LimitExceededException</code> exception (HTTP status code: 400)
+        /// until the number of concurrently running jobs is below the Amazon Rekognition service
+        /// limit.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
         /// The number of requests exceeded your throughput limit. If you want to increase this
@@ -9628,9 +10030,16 @@ namespace Amazon.Rekognition
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// This operation applies only to Amazon Rekognition Custom Labels.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Stops a running model. The operation might take a while to complete. To check the
-        /// current status, call <a>DescribeProjectVersions</a>. 
-        /// 
+        /// current status, call <a>DescribeProjectVersions</a>. Only applies to Custom Labels
+        /// projects.
+        /// </para>
         ///  
         /// <para>
         /// This operation requires permissions to perform the <code>rekognition:StopProjectVersion</code>
@@ -9669,9 +10078,16 @@ namespace Amazon.Rekognition
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// This operation applies only to Amazon Rekognition Custom Labels.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Stops a running model. The operation might take a while to complete. To check the
-        /// current status, call <a>DescribeProjectVersions</a>. 
-        /// 
+        /// current status, call <a>DescribeProjectVersions</a>. Only applies to Custom Labels
+        /// projects.
+        /// </para>
         ///  
         /// <para>
         /// This operation requires permissions to perform the <code>rekognition:StopProjectVersion</code>
@@ -9964,12 +10380,18 @@ namespace Amazon.Rekognition
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// This operation applies only to Amazon Rekognition Custom Labels.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Adds or updates one or more entries (images) in a dataset. An entry is a JSON Line
         /// which contains the information for a single image, including the image location, assigned
         /// labels, and object location bounding boxes. For more information, see Image-Level
         /// labels in manifest files and Object localization in manifest files in the <i>Amazon
         /// Rekognition Custom Labels Developer Guide</i>. 
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// If the <code>source-ref</code> field in the JSON line references an existing image,
@@ -10021,10 +10443,10 @@ namespace Amazon.Rekognition
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.LimitExceededException">
         /// An Amazon Rekognition service limit was exceeded. For example, if you start too many
-        /// Amazon Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>,
-        /// for example) will raise a <code>LimitExceededException</code> exception (HTTP status
-        /// code: 400) until the number of concurrently running jobs is below the Amazon Rekognition
-        /// service limit.
+        /// jobs concurrently, subsequent calls to start operations (ex: <code>StartLabelDetection</code>)
+        /// will raise a <code>LimitExceededException</code> exception (HTTP status code: 400)
+        /// until the number of concurrently running jobs is below the Amazon Rekognition service
+        /// limit.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
         /// The number of requests exceeded your throughput limit. If you want to increase this
@@ -10045,12 +10467,18 @@ namespace Amazon.Rekognition
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// This operation applies only to Amazon Rekognition Custom Labels.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Adds or updates one or more entries (images) in a dataset. An entry is a JSON Line
         /// which contains the information for a single image, including the image location, assigned
         /// labels, and object location bounding boxes. For more information, see Image-Level
         /// labels in manifest files and Object localization in manifest files in the <i>Amazon
         /// Rekognition Custom Labels Developer Guide</i>. 
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// If the <code>source-ref</code> field in the JSON line references an existing image,
@@ -10105,10 +10533,10 @@ namespace Amazon.Rekognition
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.LimitExceededException">
         /// An Amazon Rekognition service limit was exceeded. For example, if you start too many
-        /// Amazon Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>,
-        /// for example) will raise a <code>LimitExceededException</code> exception (HTTP status
-        /// code: 400) until the number of concurrently running jobs is below the Amazon Rekognition
-        /// service limit.
+        /// jobs concurrently, subsequent calls to start operations (ex: <code>StartLabelDetection</code>)
+        /// will raise a <code>LimitExceededException</code> exception (HTTP status code: 400)
+        /// until the number of concurrently running jobs is below the Amazon Rekognition service
+        /// limit.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
         /// The number of requests exceeded your throughput limit. If you want to increase this

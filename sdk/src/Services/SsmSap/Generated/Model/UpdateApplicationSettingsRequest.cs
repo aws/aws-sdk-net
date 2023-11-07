@@ -38,6 +38,7 @@ namespace Amazon.SsmSap.Model
         private BackintConfig _backint;
         private List<ApplicationCredential> _credentialsToAddOrUpdate = new List<ApplicationCredential>();
         private List<ApplicationCredential> _credentialsToRemove = new List<ApplicationCredential>();
+        private string _databaseArn;
 
         /// <summary>
         /// Gets and sets the property ApplicationId. 
@@ -82,7 +83,7 @@ namespace Amazon.SsmSap.Model
         /// The credentials to be added or updated.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=20)]
+        [AWSProperty(Min=0, Max=20)]
         public List<ApplicationCredential> CredentialsToAddOrUpdate
         {
             get { return this._credentialsToAddOrUpdate; }
@@ -101,7 +102,7 @@ namespace Amazon.SsmSap.Model
         /// The credentials to be removed.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=20)]
+        [AWSProperty(Min=0, Max=20)]
         public List<ApplicationCredential> CredentialsToRemove
         {
             get { return this._credentialsToRemove; }
@@ -112,6 +113,25 @@ namespace Amazon.SsmSap.Model
         internal bool IsSetCredentialsToRemove()
         {
             return this._credentialsToRemove != null && this._credentialsToRemove.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DatabaseArn. 
+        /// <para>
+        /// The Amazon Resource Name of the SAP HANA database that replaces the current SAP HANA
+        /// connection with the SAP_ABAP application.
+        /// </para>
+        /// </summary>
+        public string DatabaseArn
+        {
+            get { return this._databaseArn; }
+            set { this._databaseArn = value; }
+        }
+
+        // Check to see if DatabaseArn property is set
+        internal bool IsSetDatabaseArn()
+        {
+            return this._databaseArn != null;
         }
 
     }

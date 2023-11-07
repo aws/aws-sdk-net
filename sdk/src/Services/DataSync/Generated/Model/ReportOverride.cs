@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataSync.Model
 {
     /// <summary>
-    /// Specifies the level of detail for a particular aspect of your DataSync <a href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-task-reports.html">task
+    /// Specifies the level of detail for a particular aspect of your DataSync <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">task
     /// report</a>.
     /// </summary>
     public partial class ReportOverride

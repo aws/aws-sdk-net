@@ -119,6 +119,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("HsmConfigurationIdentifier", StringUtils.FromString(publicRequest.HsmConfigurationIdentifier));
                 }
+                if(publicRequest.IsSetIpAddressType())
+                {
+                    request.Parameters.Add("IpAddressType", StringUtils.FromString(publicRequest.IpAddressType));
+                }
                 if(publicRequest.IsSetKmsKeyId())
                 {
                     request.Parameters.Add("KmsKeyId", StringUtils.FromString(publicRequest.KmsKeyId));
@@ -127,13 +131,25 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("MaintenanceTrackName", StringUtils.FromString(publicRequest.MaintenanceTrackName));
                 }
+                if(publicRequest.IsSetManageMasterPassword())
+                {
+                    request.Parameters.Add("ManageMasterPassword", StringUtils.FromBool(publicRequest.ManageMasterPassword));
+                }
                 if(publicRequest.IsSetManualSnapshotRetentionPeriod())
                 {
                     request.Parameters.Add("ManualSnapshotRetentionPeriod", StringUtils.FromInt(publicRequest.ManualSnapshotRetentionPeriod));
                 }
+                if(publicRequest.IsSetMasterPasswordSecretKmsKeyId())
+                {
+                    request.Parameters.Add("MasterPasswordSecretKmsKeyId", StringUtils.FromString(publicRequest.MasterPasswordSecretKmsKeyId));
+                }
                 if(publicRequest.IsSetMasterUserPassword())
                 {
                     request.Parameters.Add("MasterUserPassword", StringUtils.FromString(publicRequest.MasterUserPassword));
+                }
+                if(publicRequest.IsSetMultiAZ())
+                {
+                    request.Parameters.Add("MultiAZ", StringUtils.FromBool(publicRequest.MultiAZ));
                 }
                 if(publicRequest.IsSetNewClusterIdentifier())
                 {

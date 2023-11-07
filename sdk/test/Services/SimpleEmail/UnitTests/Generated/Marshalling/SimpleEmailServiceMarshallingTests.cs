@@ -48,7 +48,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CloneReceiptRuleSet");
 
-            var request = InstantiateClassGenerator.Execute<CloneReceiptRuleSetRequest>();
+            var request = InstantiateClassGenerator.Execute<CloneReceiptRuleSetRequest>(operation);
             var marshaller = new CloneReceiptRuleSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
@@ -70,7 +70,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CloneReceiptRuleSet");
 
-            var request = InstantiateClassGenerator.Execute<CloneReceiptRuleSetRequest>();
+            var request = InstantiateClassGenerator.Execute<CloneReceiptRuleSetRequest>(operation);
             var marshaller = new CloneReceiptRuleSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -93,7 +93,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CloneReceiptRuleSet");
 
-            var request = InstantiateClassGenerator.Execute<CloneReceiptRuleSetRequest>();
+            var request = InstantiateClassGenerator.Execute<CloneReceiptRuleSetRequest>(operation);
             var marshaller = new CloneReceiptRuleSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -116,7 +116,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CloneReceiptRuleSet");
 
-            var request = InstantiateClassGenerator.Execute<CloneReceiptRuleSetRequest>();
+            var request = InstantiateClassGenerator.Execute<CloneReceiptRuleSetRequest>(operation);
             var marshaller = new CloneReceiptRuleSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -139,7 +139,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateConfigurationSet");
 
-            var request = InstantiateClassGenerator.Execute<CreateConfigurationSetRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateConfigurationSetRequest>(operation);
             var marshaller = new CreateConfigurationSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
@@ -161,7 +161,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateConfigurationSet");
 
-            var request = InstantiateClassGenerator.Execute<CreateConfigurationSetRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateConfigurationSetRequest>(operation);
             var marshaller = new CreateConfigurationSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -184,7 +184,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateConfigurationSet");
 
-            var request = InstantiateClassGenerator.Execute<CreateConfigurationSetRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateConfigurationSetRequest>(operation);
             var marshaller = new CreateConfigurationSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -207,7 +207,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateConfigurationSet");
 
-            var request = InstantiateClassGenerator.Execute<CreateConfigurationSetRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateConfigurationSetRequest>(operation);
             var marshaller = new CreateConfigurationSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -230,7 +230,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateConfigurationSetEventDestination");
 
-            var request = InstantiateClassGenerator.Execute<CreateConfigurationSetEventDestinationRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateConfigurationSetEventDestinationRequest>(operation);
             var marshaller = new CreateConfigurationSetEventDestinationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
@@ -252,7 +252,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateConfigurationSetEventDestination");
 
-            var request = InstantiateClassGenerator.Execute<CreateConfigurationSetEventDestinationRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateConfigurationSetEventDestinationRequest>(operation);
             var marshaller = new CreateConfigurationSetEventDestinationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -275,7 +275,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateConfigurationSetEventDestination");
 
-            var request = InstantiateClassGenerator.Execute<CreateConfigurationSetEventDestinationRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateConfigurationSetEventDestinationRequest>(operation);
             var marshaller = new CreateConfigurationSetEventDestinationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -298,7 +298,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateConfigurationSetEventDestination");
 
-            var request = InstantiateClassGenerator.Execute<CreateConfigurationSetEventDestinationRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateConfigurationSetEventDestinationRequest>(operation);
             var marshaller = new CreateConfigurationSetEventDestinationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -321,7 +321,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateConfigurationSetEventDestination");
 
-            var request = InstantiateClassGenerator.Execute<CreateConfigurationSetEventDestinationRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateConfigurationSetEventDestinationRequest>(operation);
             var marshaller = new CreateConfigurationSetEventDestinationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -344,7 +344,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateConfigurationSetEventDestination");
 
-            var request = InstantiateClassGenerator.Execute<CreateConfigurationSetEventDestinationRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateConfigurationSetEventDestinationRequest>(operation);
             var marshaller = new CreateConfigurationSetEventDestinationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -367,7 +367,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateConfigurationSetEventDestination");
 
-            var request = InstantiateClassGenerator.Execute<CreateConfigurationSetEventDestinationRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateConfigurationSetEventDestinationRequest>(operation);
             var marshaller = new CreateConfigurationSetEventDestinationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -390,7 +390,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateConfigurationSetTrackingOptions");
 
-            var request = InstantiateClassGenerator.Execute<CreateConfigurationSetTrackingOptionsRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateConfigurationSetTrackingOptionsRequest>(operation);
             var marshaller = new CreateConfigurationSetTrackingOptionsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
@@ -412,7 +412,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateConfigurationSetTrackingOptions");
 
-            var request = InstantiateClassGenerator.Execute<CreateConfigurationSetTrackingOptionsRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateConfigurationSetTrackingOptionsRequest>(operation);
             var marshaller = new CreateConfigurationSetTrackingOptionsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -435,7 +435,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateConfigurationSetTrackingOptions");
 
-            var request = InstantiateClassGenerator.Execute<CreateConfigurationSetTrackingOptionsRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateConfigurationSetTrackingOptionsRequest>(operation);
             var marshaller = new CreateConfigurationSetTrackingOptionsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -458,7 +458,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateConfigurationSetTrackingOptions");
 
-            var request = InstantiateClassGenerator.Execute<CreateConfigurationSetTrackingOptionsRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateConfigurationSetTrackingOptionsRequest>(operation);
             var marshaller = new CreateConfigurationSetTrackingOptionsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -481,7 +481,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateCustomVerificationEmailTemplate");
 
-            var request = InstantiateClassGenerator.Execute<CreateCustomVerificationEmailTemplateRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateCustomVerificationEmailTemplateRequest>(operation);
             var marshaller = new CreateCustomVerificationEmailTemplateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
@@ -498,7 +498,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateCustomVerificationEmailTemplate");
 
-            var request = InstantiateClassGenerator.Execute<CreateCustomVerificationEmailTemplateRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateCustomVerificationEmailTemplateRequest>(operation);
             var marshaller = new CreateCustomVerificationEmailTemplateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -521,7 +521,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateCustomVerificationEmailTemplate");
 
-            var request = InstantiateClassGenerator.Execute<CreateCustomVerificationEmailTemplateRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateCustomVerificationEmailTemplateRequest>(operation);
             var marshaller = new CreateCustomVerificationEmailTemplateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -544,7 +544,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateCustomVerificationEmailTemplate");
 
-            var request = InstantiateClassGenerator.Execute<CreateCustomVerificationEmailTemplateRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateCustomVerificationEmailTemplateRequest>(operation);
             var marshaller = new CreateCustomVerificationEmailTemplateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -567,7 +567,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateCustomVerificationEmailTemplate");
 
-            var request = InstantiateClassGenerator.Execute<CreateCustomVerificationEmailTemplateRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateCustomVerificationEmailTemplateRequest>(operation);
             var marshaller = new CreateCustomVerificationEmailTemplateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -590,7 +590,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateReceiptFilter");
 
-            var request = InstantiateClassGenerator.Execute<CreateReceiptFilterRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateReceiptFilterRequest>(operation);
             var marshaller = new CreateReceiptFilterRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
@@ -612,7 +612,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateReceiptFilter");
 
-            var request = InstantiateClassGenerator.Execute<CreateReceiptFilterRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateReceiptFilterRequest>(operation);
             var marshaller = new CreateReceiptFilterRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -635,7 +635,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateReceiptFilter");
 
-            var request = InstantiateClassGenerator.Execute<CreateReceiptFilterRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateReceiptFilterRequest>(operation);
             var marshaller = new CreateReceiptFilterRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -658,7 +658,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateReceiptRule");
 
-            var request = InstantiateClassGenerator.Execute<CreateReceiptRuleRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateReceiptRuleRequest>(operation);
             var marshaller = new CreateReceiptRuleRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
@@ -680,7 +680,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateReceiptRule");
 
-            var request = InstantiateClassGenerator.Execute<CreateReceiptRuleRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateReceiptRuleRequest>(operation);
             var marshaller = new CreateReceiptRuleRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -703,7 +703,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateReceiptRule");
 
-            var request = InstantiateClassGenerator.Execute<CreateReceiptRuleRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateReceiptRuleRequest>(operation);
             var marshaller = new CreateReceiptRuleRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -726,7 +726,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateReceiptRule");
 
-            var request = InstantiateClassGenerator.Execute<CreateReceiptRuleRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateReceiptRuleRequest>(operation);
             var marshaller = new CreateReceiptRuleRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -749,7 +749,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateReceiptRule");
 
-            var request = InstantiateClassGenerator.Execute<CreateReceiptRuleRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateReceiptRuleRequest>(operation);
             var marshaller = new CreateReceiptRuleRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -772,7 +772,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateReceiptRule");
 
-            var request = InstantiateClassGenerator.Execute<CreateReceiptRuleRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateReceiptRuleRequest>(operation);
             var marshaller = new CreateReceiptRuleRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -795,7 +795,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateReceiptRule");
 
-            var request = InstantiateClassGenerator.Execute<CreateReceiptRuleRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateReceiptRuleRequest>(operation);
             var marshaller = new CreateReceiptRuleRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -818,7 +818,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateReceiptRule");
 
-            var request = InstantiateClassGenerator.Execute<CreateReceiptRuleRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateReceiptRuleRequest>(operation);
             var marshaller = new CreateReceiptRuleRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -841,7 +841,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateReceiptRuleSet");
 
-            var request = InstantiateClassGenerator.Execute<CreateReceiptRuleSetRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateReceiptRuleSetRequest>(operation);
             var marshaller = new CreateReceiptRuleSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
@@ -863,7 +863,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateReceiptRuleSet");
 
-            var request = InstantiateClassGenerator.Execute<CreateReceiptRuleSetRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateReceiptRuleSetRequest>(operation);
             var marshaller = new CreateReceiptRuleSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -886,7 +886,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateReceiptRuleSet");
 
-            var request = InstantiateClassGenerator.Execute<CreateReceiptRuleSetRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateReceiptRuleSetRequest>(operation);
             var marshaller = new CreateReceiptRuleSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -909,7 +909,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateTemplate");
 
-            var request = InstantiateClassGenerator.Execute<CreateTemplateRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateTemplateRequest>(operation);
             var marshaller = new CreateTemplateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
@@ -931,7 +931,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateTemplate");
 
-            var request = InstantiateClassGenerator.Execute<CreateTemplateRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateTemplateRequest>(operation);
             var marshaller = new CreateTemplateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -954,7 +954,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateTemplate");
 
-            var request = InstantiateClassGenerator.Execute<CreateTemplateRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateTemplateRequest>(operation);
             var marshaller = new CreateTemplateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -977,7 +977,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateTemplate");
 
-            var request = InstantiateClassGenerator.Execute<CreateTemplateRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateTemplateRequest>(operation);
             var marshaller = new CreateTemplateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1000,7 +1000,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteConfigurationSet");
 
-            var request = InstantiateClassGenerator.Execute<DeleteConfigurationSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteConfigurationSetRequest>(operation);
             var marshaller = new DeleteConfigurationSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
@@ -1022,7 +1022,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteConfigurationSet");
 
-            var request = InstantiateClassGenerator.Execute<DeleteConfigurationSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteConfigurationSetRequest>(operation);
             var marshaller = new DeleteConfigurationSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1045,7 +1045,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteConfigurationSetEventDestination");
 
-            var request = InstantiateClassGenerator.Execute<DeleteConfigurationSetEventDestinationRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteConfigurationSetEventDestinationRequest>(operation);
             var marshaller = new DeleteConfigurationSetEventDestinationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
@@ -1067,7 +1067,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteConfigurationSetEventDestination");
 
-            var request = InstantiateClassGenerator.Execute<DeleteConfigurationSetEventDestinationRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteConfigurationSetEventDestinationRequest>(operation);
             var marshaller = new DeleteConfigurationSetEventDestinationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1090,7 +1090,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteConfigurationSetEventDestination");
 
-            var request = InstantiateClassGenerator.Execute<DeleteConfigurationSetEventDestinationRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteConfigurationSetEventDestinationRequest>(operation);
             var marshaller = new DeleteConfigurationSetEventDestinationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1113,7 +1113,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteConfigurationSetTrackingOptions");
 
-            var request = InstantiateClassGenerator.Execute<DeleteConfigurationSetTrackingOptionsRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteConfigurationSetTrackingOptionsRequest>(operation);
             var marshaller = new DeleteConfigurationSetTrackingOptionsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
@@ -1135,7 +1135,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteConfigurationSetTrackingOptions");
 
-            var request = InstantiateClassGenerator.Execute<DeleteConfigurationSetTrackingOptionsRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteConfigurationSetTrackingOptionsRequest>(operation);
             var marshaller = new DeleteConfigurationSetTrackingOptionsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1158,7 +1158,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteConfigurationSetTrackingOptions");
 
-            var request = InstantiateClassGenerator.Execute<DeleteConfigurationSetTrackingOptionsRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteConfigurationSetTrackingOptionsRequest>(operation);
             var marshaller = new DeleteConfigurationSetTrackingOptionsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1181,7 +1181,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteCustomVerificationEmailTemplate");
 
-            var request = InstantiateClassGenerator.Execute<DeleteCustomVerificationEmailTemplateRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteCustomVerificationEmailTemplateRequest>(operation);
             var marshaller = new DeleteCustomVerificationEmailTemplateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
@@ -1198,7 +1198,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteIdentity");
 
-            var request = InstantiateClassGenerator.Execute<DeleteIdentityRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteIdentityRequest>(operation);
             var marshaller = new DeleteIdentityRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
@@ -1220,7 +1220,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteIdentityPolicy");
 
-            var request = InstantiateClassGenerator.Execute<DeleteIdentityPolicyRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteIdentityPolicyRequest>(operation);
             var marshaller = new DeleteIdentityPolicyRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
@@ -1242,7 +1242,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteReceiptFilter");
 
-            var request = InstantiateClassGenerator.Execute<DeleteReceiptFilterRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteReceiptFilterRequest>(operation);
             var marshaller = new DeleteReceiptFilterRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
@@ -1264,7 +1264,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteReceiptRule");
 
-            var request = InstantiateClassGenerator.Execute<DeleteReceiptRuleRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteReceiptRuleRequest>(operation);
             var marshaller = new DeleteReceiptRuleRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
@@ -1286,7 +1286,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteReceiptRule");
 
-            var request = InstantiateClassGenerator.Execute<DeleteReceiptRuleRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteReceiptRuleRequest>(operation);
             var marshaller = new DeleteReceiptRuleRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1309,7 +1309,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteReceiptRuleSet");
 
-            var request = InstantiateClassGenerator.Execute<DeleteReceiptRuleSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteReceiptRuleSetRequest>(operation);
             var marshaller = new DeleteReceiptRuleSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
@@ -1331,7 +1331,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteReceiptRuleSet");
 
-            var request = InstantiateClassGenerator.Execute<DeleteReceiptRuleSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteReceiptRuleSetRequest>(operation);
             var marshaller = new DeleteReceiptRuleSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1354,7 +1354,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteTemplate");
 
-            var request = InstantiateClassGenerator.Execute<DeleteTemplateRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteTemplateRequest>(operation);
             var marshaller = new DeleteTemplateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
@@ -1376,7 +1376,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteVerifiedEmailAddress");
 
-            var request = InstantiateClassGenerator.Execute<DeleteVerifiedEmailAddressRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteVerifiedEmailAddressRequest>(operation);
             var marshaller = new DeleteVerifiedEmailAddressRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
@@ -1393,7 +1393,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DescribeActiveReceiptRuleSet");
 
-            var request = InstantiateClassGenerator.Execute<DescribeActiveReceiptRuleSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeActiveReceiptRuleSetRequest>(operation);
             var marshaller = new DescribeActiveReceiptRuleSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
@@ -1415,7 +1415,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DescribeConfigurationSet");
 
-            var request = InstantiateClassGenerator.Execute<DescribeConfigurationSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeConfigurationSetRequest>(operation);
             var marshaller = new DescribeConfigurationSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
@@ -1437,7 +1437,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DescribeConfigurationSet");
 
-            var request = InstantiateClassGenerator.Execute<DescribeConfigurationSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeConfigurationSetRequest>(operation);
             var marshaller = new DescribeConfigurationSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1460,7 +1460,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DescribeReceiptRule");
 
-            var request = InstantiateClassGenerator.Execute<DescribeReceiptRuleRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeReceiptRuleRequest>(operation);
             var marshaller = new DescribeReceiptRuleRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
@@ -1482,7 +1482,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DescribeReceiptRule");
 
-            var request = InstantiateClassGenerator.Execute<DescribeReceiptRuleRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeReceiptRuleRequest>(operation);
             var marshaller = new DescribeReceiptRuleRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1505,7 +1505,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DescribeReceiptRule");
 
-            var request = InstantiateClassGenerator.Execute<DescribeReceiptRuleRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeReceiptRuleRequest>(operation);
             var marshaller = new DescribeReceiptRuleRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1528,7 +1528,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DescribeReceiptRuleSet");
 
-            var request = InstantiateClassGenerator.Execute<DescribeReceiptRuleSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeReceiptRuleSetRequest>(operation);
             var marshaller = new DescribeReceiptRuleSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
@@ -1550,7 +1550,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DescribeReceiptRuleSet");
 
-            var request = InstantiateClassGenerator.Execute<DescribeReceiptRuleSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeReceiptRuleSetRequest>(operation);
             var marshaller = new DescribeReceiptRuleSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1573,7 +1573,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetAccountSendingEnabled");
 
-            var request = InstantiateClassGenerator.Execute<GetAccountSendingEnabledRequest>();
+            var request = InstantiateClassGenerator.Execute<GetAccountSendingEnabledRequest>(operation);
             var marshaller = new GetAccountSendingEnabledRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
@@ -1595,7 +1595,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetCustomVerificationEmailTemplate");
 
-            var request = InstantiateClassGenerator.Execute<GetCustomVerificationEmailTemplateRequest>();
+            var request = InstantiateClassGenerator.Execute<GetCustomVerificationEmailTemplateRequest>(operation);
             var marshaller = new GetCustomVerificationEmailTemplateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
@@ -1617,7 +1617,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetCustomVerificationEmailTemplate");
 
-            var request = InstantiateClassGenerator.Execute<GetCustomVerificationEmailTemplateRequest>();
+            var request = InstantiateClassGenerator.Execute<GetCustomVerificationEmailTemplateRequest>(operation);
             var marshaller = new GetCustomVerificationEmailTemplateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1640,7 +1640,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetIdentityDkimAttributes");
 
-            var request = InstantiateClassGenerator.Execute<GetIdentityDkimAttributesRequest>();
+            var request = InstantiateClassGenerator.Execute<GetIdentityDkimAttributesRequest>(operation);
             var marshaller = new GetIdentityDkimAttributesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
@@ -1662,7 +1662,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetIdentityMailFromDomainAttributes");
 
-            var request = InstantiateClassGenerator.Execute<GetIdentityMailFromDomainAttributesRequest>();
+            var request = InstantiateClassGenerator.Execute<GetIdentityMailFromDomainAttributesRequest>(operation);
             var marshaller = new GetIdentityMailFromDomainAttributesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
@@ -1684,7 +1684,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetIdentityNotificationAttributes");
 
-            var request = InstantiateClassGenerator.Execute<GetIdentityNotificationAttributesRequest>();
+            var request = InstantiateClassGenerator.Execute<GetIdentityNotificationAttributesRequest>(operation);
             var marshaller = new GetIdentityNotificationAttributesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
@@ -1706,7 +1706,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetIdentityPolicies");
 
-            var request = InstantiateClassGenerator.Execute<GetIdentityPoliciesRequest>();
+            var request = InstantiateClassGenerator.Execute<GetIdentityPoliciesRequest>(operation);
             var marshaller = new GetIdentityPoliciesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
@@ -1728,7 +1728,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetIdentityVerificationAttributes");
 
-            var request = InstantiateClassGenerator.Execute<GetIdentityVerificationAttributesRequest>();
+            var request = InstantiateClassGenerator.Execute<GetIdentityVerificationAttributesRequest>(operation);
             var marshaller = new GetIdentityVerificationAttributesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
@@ -1750,7 +1750,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetSendQuota");
 
-            var request = InstantiateClassGenerator.Execute<GetSendQuotaRequest>();
+            var request = InstantiateClassGenerator.Execute<GetSendQuotaRequest>(operation);
             var marshaller = new GetSendQuotaRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
@@ -1772,7 +1772,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetSendStatistics");
 
-            var request = InstantiateClassGenerator.Execute<GetSendStatisticsRequest>();
+            var request = InstantiateClassGenerator.Execute<GetSendStatisticsRequest>(operation);
             var marshaller = new GetSendStatisticsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
@@ -1794,7 +1794,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetTemplate");
 
-            var request = InstantiateClassGenerator.Execute<GetTemplateRequest>();
+            var request = InstantiateClassGenerator.Execute<GetTemplateRequest>(operation);
             var marshaller = new GetTemplateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
@@ -1816,7 +1816,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetTemplate");
 
-            var request = InstantiateClassGenerator.Execute<GetTemplateRequest>();
+            var request = InstantiateClassGenerator.Execute<GetTemplateRequest>(operation);
             var marshaller = new GetTemplateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1839,7 +1839,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListConfigurationSets");
 
-            var request = InstantiateClassGenerator.Execute<ListConfigurationSetsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListConfigurationSetsRequest>(operation);
             var marshaller = new ListConfigurationSetsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
@@ -1861,7 +1861,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListCustomVerificationEmailTemplates");
 
-            var request = InstantiateClassGenerator.Execute<ListCustomVerificationEmailTemplatesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListCustomVerificationEmailTemplatesRequest>(operation);
             var marshaller = new ListCustomVerificationEmailTemplatesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
@@ -1883,7 +1883,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListIdentities");
 
-            var request = InstantiateClassGenerator.Execute<ListIdentitiesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListIdentitiesRequest>(operation);
             var marshaller = new ListIdentitiesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
@@ -1905,7 +1905,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListIdentityPolicies");
 
-            var request = InstantiateClassGenerator.Execute<ListIdentityPoliciesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListIdentityPoliciesRequest>(operation);
             var marshaller = new ListIdentityPoliciesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
@@ -1927,7 +1927,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListReceiptFilters");
 
-            var request = InstantiateClassGenerator.Execute<ListReceiptFiltersRequest>();
+            var request = InstantiateClassGenerator.Execute<ListReceiptFiltersRequest>(operation);
             var marshaller = new ListReceiptFiltersRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
@@ -1949,7 +1949,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListReceiptRuleSets");
 
-            var request = InstantiateClassGenerator.Execute<ListReceiptRuleSetsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListReceiptRuleSetsRequest>(operation);
             var marshaller = new ListReceiptRuleSetsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
@@ -1971,7 +1971,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListTemplates");
 
-            var request = InstantiateClassGenerator.Execute<ListTemplatesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTemplatesRequest>(operation);
             var marshaller = new ListTemplatesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
@@ -1993,7 +1993,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListVerifiedEmailAddresses");
 
-            var request = InstantiateClassGenerator.Execute<ListVerifiedEmailAddressesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListVerifiedEmailAddressesRequest>(operation);
             var marshaller = new ListVerifiedEmailAddressesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
@@ -2015,7 +2015,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("PutConfigurationSetDeliveryOptions");
 
-            var request = InstantiateClassGenerator.Execute<PutConfigurationSetDeliveryOptionsRequest>();
+            var request = InstantiateClassGenerator.Execute<PutConfigurationSetDeliveryOptionsRequest>(operation);
             var marshaller = new PutConfigurationSetDeliveryOptionsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
@@ -2037,7 +2037,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("PutConfigurationSetDeliveryOptions");
 
-            var request = InstantiateClassGenerator.Execute<PutConfigurationSetDeliveryOptionsRequest>();
+            var request = InstantiateClassGenerator.Execute<PutConfigurationSetDeliveryOptionsRequest>(operation);
             var marshaller = new PutConfigurationSetDeliveryOptionsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2060,7 +2060,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("PutConfigurationSetDeliveryOptions");
 
-            var request = InstantiateClassGenerator.Execute<PutConfigurationSetDeliveryOptionsRequest>();
+            var request = InstantiateClassGenerator.Execute<PutConfigurationSetDeliveryOptionsRequest>(operation);
             var marshaller = new PutConfigurationSetDeliveryOptionsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2083,7 +2083,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("PutIdentityPolicy");
 
-            var request = InstantiateClassGenerator.Execute<PutIdentityPolicyRequest>();
+            var request = InstantiateClassGenerator.Execute<PutIdentityPolicyRequest>(operation);
             var marshaller = new PutIdentityPolicyRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
@@ -2105,7 +2105,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("PutIdentityPolicy");
 
-            var request = InstantiateClassGenerator.Execute<PutIdentityPolicyRequest>();
+            var request = InstantiateClassGenerator.Execute<PutIdentityPolicyRequest>(operation);
             var marshaller = new PutIdentityPolicyRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2128,7 +2128,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ReorderReceiptRuleSet");
 
-            var request = InstantiateClassGenerator.Execute<ReorderReceiptRuleSetRequest>();
+            var request = InstantiateClassGenerator.Execute<ReorderReceiptRuleSetRequest>(operation);
             var marshaller = new ReorderReceiptRuleSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
@@ -2150,7 +2150,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ReorderReceiptRuleSet");
 
-            var request = InstantiateClassGenerator.Execute<ReorderReceiptRuleSetRequest>();
+            var request = InstantiateClassGenerator.Execute<ReorderReceiptRuleSetRequest>(operation);
             var marshaller = new ReorderReceiptRuleSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2173,7 +2173,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ReorderReceiptRuleSet");
 
-            var request = InstantiateClassGenerator.Execute<ReorderReceiptRuleSetRequest>();
+            var request = InstantiateClassGenerator.Execute<ReorderReceiptRuleSetRequest>(operation);
             var marshaller = new ReorderReceiptRuleSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2196,7 +2196,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("SendBounce");
 
-            var request = InstantiateClassGenerator.Execute<SendBounceRequest>();
+            var request = InstantiateClassGenerator.Execute<SendBounceRequest>(operation);
             var marshaller = new SendBounceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
@@ -2218,7 +2218,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("SendBounce");
 
-            var request = InstantiateClassGenerator.Execute<SendBounceRequest>();
+            var request = InstantiateClassGenerator.Execute<SendBounceRequest>(operation);
             var marshaller = new SendBounceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2241,7 +2241,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("SendBulkTemplatedEmail");
 
-            var request = InstantiateClassGenerator.Execute<SendBulkTemplatedEmailRequest>();
+            var request = InstantiateClassGenerator.Execute<SendBulkTemplatedEmailRequest>(operation);
             var marshaller = new SendBulkTemplatedEmailRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
@@ -2263,7 +2263,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("SendBulkTemplatedEmail");
 
-            var request = InstantiateClassGenerator.Execute<SendBulkTemplatedEmailRequest>();
+            var request = InstantiateClassGenerator.Execute<SendBulkTemplatedEmailRequest>(operation);
             var marshaller = new SendBulkTemplatedEmailRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2286,7 +2286,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("SendBulkTemplatedEmail");
 
-            var request = InstantiateClassGenerator.Execute<SendBulkTemplatedEmailRequest>();
+            var request = InstantiateClassGenerator.Execute<SendBulkTemplatedEmailRequest>(operation);
             var marshaller = new SendBulkTemplatedEmailRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2309,7 +2309,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("SendBulkTemplatedEmail");
 
-            var request = InstantiateClassGenerator.Execute<SendBulkTemplatedEmailRequest>();
+            var request = InstantiateClassGenerator.Execute<SendBulkTemplatedEmailRequest>(operation);
             var marshaller = new SendBulkTemplatedEmailRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2332,7 +2332,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("SendBulkTemplatedEmail");
 
-            var request = InstantiateClassGenerator.Execute<SendBulkTemplatedEmailRequest>();
+            var request = InstantiateClassGenerator.Execute<SendBulkTemplatedEmailRequest>(operation);
             var marshaller = new SendBulkTemplatedEmailRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2355,7 +2355,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("SendBulkTemplatedEmail");
 
-            var request = InstantiateClassGenerator.Execute<SendBulkTemplatedEmailRequest>();
+            var request = InstantiateClassGenerator.Execute<SendBulkTemplatedEmailRequest>(operation);
             var marshaller = new SendBulkTemplatedEmailRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2378,7 +2378,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("SendBulkTemplatedEmail");
 
-            var request = InstantiateClassGenerator.Execute<SendBulkTemplatedEmailRequest>();
+            var request = InstantiateClassGenerator.Execute<SendBulkTemplatedEmailRequest>(operation);
             var marshaller = new SendBulkTemplatedEmailRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2401,7 +2401,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("SendCustomVerificationEmail");
 
-            var request = InstantiateClassGenerator.Execute<SendCustomVerificationEmailRequest>();
+            var request = InstantiateClassGenerator.Execute<SendCustomVerificationEmailRequest>(operation);
             var marshaller = new SendCustomVerificationEmailRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
@@ -2423,7 +2423,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("SendCustomVerificationEmail");
 
-            var request = InstantiateClassGenerator.Execute<SendCustomVerificationEmailRequest>();
+            var request = InstantiateClassGenerator.Execute<SendCustomVerificationEmailRequest>(operation);
             var marshaller = new SendCustomVerificationEmailRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2446,7 +2446,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("SendCustomVerificationEmail");
 
-            var request = InstantiateClassGenerator.Execute<SendCustomVerificationEmailRequest>();
+            var request = InstantiateClassGenerator.Execute<SendCustomVerificationEmailRequest>(operation);
             var marshaller = new SendCustomVerificationEmailRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2469,7 +2469,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("SendCustomVerificationEmail");
 
-            var request = InstantiateClassGenerator.Execute<SendCustomVerificationEmailRequest>();
+            var request = InstantiateClassGenerator.Execute<SendCustomVerificationEmailRequest>(operation);
             var marshaller = new SendCustomVerificationEmailRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2492,7 +2492,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("SendCustomVerificationEmail");
 
-            var request = InstantiateClassGenerator.Execute<SendCustomVerificationEmailRequest>();
+            var request = InstantiateClassGenerator.Execute<SendCustomVerificationEmailRequest>(operation);
             var marshaller = new SendCustomVerificationEmailRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2515,7 +2515,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("SendCustomVerificationEmail");
 
-            var request = InstantiateClassGenerator.Execute<SendCustomVerificationEmailRequest>();
+            var request = InstantiateClassGenerator.Execute<SendCustomVerificationEmailRequest>(operation);
             var marshaller = new SendCustomVerificationEmailRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2538,7 +2538,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("SendEmail");
 
-            var request = InstantiateClassGenerator.Execute<SendEmailRequest>();
+            var request = InstantiateClassGenerator.Execute<SendEmailRequest>(operation);
             var marshaller = new SendEmailRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
@@ -2560,7 +2560,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("SendEmail");
 
-            var request = InstantiateClassGenerator.Execute<SendEmailRequest>();
+            var request = InstantiateClassGenerator.Execute<SendEmailRequest>(operation);
             var marshaller = new SendEmailRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2583,7 +2583,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("SendEmail");
 
-            var request = InstantiateClassGenerator.Execute<SendEmailRequest>();
+            var request = InstantiateClassGenerator.Execute<SendEmailRequest>(operation);
             var marshaller = new SendEmailRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2606,7 +2606,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("SendEmail");
 
-            var request = InstantiateClassGenerator.Execute<SendEmailRequest>();
+            var request = InstantiateClassGenerator.Execute<SendEmailRequest>(operation);
             var marshaller = new SendEmailRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2629,7 +2629,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("SendEmail");
 
-            var request = InstantiateClassGenerator.Execute<SendEmailRequest>();
+            var request = InstantiateClassGenerator.Execute<SendEmailRequest>(operation);
             var marshaller = new SendEmailRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2652,7 +2652,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("SendEmail");
 
-            var request = InstantiateClassGenerator.Execute<SendEmailRequest>();
+            var request = InstantiateClassGenerator.Execute<SendEmailRequest>(operation);
             var marshaller = new SendEmailRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2675,7 +2675,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("SendRawEmail");
 
-            var request = InstantiateClassGenerator.Execute<SendRawEmailRequest>();
+            var request = InstantiateClassGenerator.Execute<SendRawEmailRequest>(operation);
             var marshaller = new SendRawEmailRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
@@ -2697,7 +2697,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("SendRawEmail");
 
-            var request = InstantiateClassGenerator.Execute<SendRawEmailRequest>();
+            var request = InstantiateClassGenerator.Execute<SendRawEmailRequest>(operation);
             var marshaller = new SendRawEmailRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2720,7 +2720,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("SendRawEmail");
 
-            var request = InstantiateClassGenerator.Execute<SendRawEmailRequest>();
+            var request = InstantiateClassGenerator.Execute<SendRawEmailRequest>(operation);
             var marshaller = new SendRawEmailRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2743,7 +2743,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("SendRawEmail");
 
-            var request = InstantiateClassGenerator.Execute<SendRawEmailRequest>();
+            var request = InstantiateClassGenerator.Execute<SendRawEmailRequest>(operation);
             var marshaller = new SendRawEmailRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2766,7 +2766,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("SendRawEmail");
 
-            var request = InstantiateClassGenerator.Execute<SendRawEmailRequest>();
+            var request = InstantiateClassGenerator.Execute<SendRawEmailRequest>(operation);
             var marshaller = new SendRawEmailRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2789,7 +2789,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("SendRawEmail");
 
-            var request = InstantiateClassGenerator.Execute<SendRawEmailRequest>();
+            var request = InstantiateClassGenerator.Execute<SendRawEmailRequest>(operation);
             var marshaller = new SendRawEmailRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2812,7 +2812,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("SendTemplatedEmail");
 
-            var request = InstantiateClassGenerator.Execute<SendTemplatedEmailRequest>();
+            var request = InstantiateClassGenerator.Execute<SendTemplatedEmailRequest>(operation);
             var marshaller = new SendTemplatedEmailRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
@@ -2834,7 +2834,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("SendTemplatedEmail");
 
-            var request = InstantiateClassGenerator.Execute<SendTemplatedEmailRequest>();
+            var request = InstantiateClassGenerator.Execute<SendTemplatedEmailRequest>(operation);
             var marshaller = new SendTemplatedEmailRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2857,7 +2857,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("SendTemplatedEmail");
 
-            var request = InstantiateClassGenerator.Execute<SendTemplatedEmailRequest>();
+            var request = InstantiateClassGenerator.Execute<SendTemplatedEmailRequest>(operation);
             var marshaller = new SendTemplatedEmailRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2880,7 +2880,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("SendTemplatedEmail");
 
-            var request = InstantiateClassGenerator.Execute<SendTemplatedEmailRequest>();
+            var request = InstantiateClassGenerator.Execute<SendTemplatedEmailRequest>(operation);
             var marshaller = new SendTemplatedEmailRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2903,7 +2903,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("SendTemplatedEmail");
 
-            var request = InstantiateClassGenerator.Execute<SendTemplatedEmailRequest>();
+            var request = InstantiateClassGenerator.Execute<SendTemplatedEmailRequest>(operation);
             var marshaller = new SendTemplatedEmailRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2926,7 +2926,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("SendTemplatedEmail");
 
-            var request = InstantiateClassGenerator.Execute<SendTemplatedEmailRequest>();
+            var request = InstantiateClassGenerator.Execute<SendTemplatedEmailRequest>(operation);
             var marshaller = new SendTemplatedEmailRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2949,7 +2949,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("SendTemplatedEmail");
 
-            var request = InstantiateClassGenerator.Execute<SendTemplatedEmailRequest>();
+            var request = InstantiateClassGenerator.Execute<SendTemplatedEmailRequest>(operation);
             var marshaller = new SendTemplatedEmailRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2972,7 +2972,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("SetActiveReceiptRuleSet");
 
-            var request = InstantiateClassGenerator.Execute<SetActiveReceiptRuleSetRequest>();
+            var request = InstantiateClassGenerator.Execute<SetActiveReceiptRuleSetRequest>(operation);
             var marshaller = new SetActiveReceiptRuleSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
@@ -2994,7 +2994,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("SetActiveReceiptRuleSet");
 
-            var request = InstantiateClassGenerator.Execute<SetActiveReceiptRuleSetRequest>();
+            var request = InstantiateClassGenerator.Execute<SetActiveReceiptRuleSetRequest>(operation);
             var marshaller = new SetActiveReceiptRuleSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3017,7 +3017,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("SetIdentityDkimEnabled");
 
-            var request = InstantiateClassGenerator.Execute<SetIdentityDkimEnabledRequest>();
+            var request = InstantiateClassGenerator.Execute<SetIdentityDkimEnabledRequest>(operation);
             var marshaller = new SetIdentityDkimEnabledRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
@@ -3039,7 +3039,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("SetIdentityFeedbackForwardingEnabled");
 
-            var request = InstantiateClassGenerator.Execute<SetIdentityFeedbackForwardingEnabledRequest>();
+            var request = InstantiateClassGenerator.Execute<SetIdentityFeedbackForwardingEnabledRequest>(operation);
             var marshaller = new SetIdentityFeedbackForwardingEnabledRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
@@ -3061,7 +3061,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("SetIdentityHeadersInNotificationsEnabled");
 
-            var request = InstantiateClassGenerator.Execute<SetIdentityHeadersInNotificationsEnabledRequest>();
+            var request = InstantiateClassGenerator.Execute<SetIdentityHeadersInNotificationsEnabledRequest>(operation);
             var marshaller = new SetIdentityHeadersInNotificationsEnabledRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
@@ -3083,7 +3083,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("SetIdentityMailFromDomain");
 
-            var request = InstantiateClassGenerator.Execute<SetIdentityMailFromDomainRequest>();
+            var request = InstantiateClassGenerator.Execute<SetIdentityMailFromDomainRequest>(operation);
             var marshaller = new SetIdentityMailFromDomainRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
@@ -3105,7 +3105,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("SetIdentityNotificationTopic");
 
-            var request = InstantiateClassGenerator.Execute<SetIdentityNotificationTopicRequest>();
+            var request = InstantiateClassGenerator.Execute<SetIdentityNotificationTopicRequest>(operation);
             var marshaller = new SetIdentityNotificationTopicRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
@@ -3127,7 +3127,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("SetReceiptRulePosition");
 
-            var request = InstantiateClassGenerator.Execute<SetReceiptRulePositionRequest>();
+            var request = InstantiateClassGenerator.Execute<SetReceiptRulePositionRequest>(operation);
             var marshaller = new SetReceiptRulePositionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
@@ -3149,7 +3149,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("SetReceiptRulePosition");
 
-            var request = InstantiateClassGenerator.Execute<SetReceiptRulePositionRequest>();
+            var request = InstantiateClassGenerator.Execute<SetReceiptRulePositionRequest>(operation);
             var marshaller = new SetReceiptRulePositionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3172,7 +3172,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("SetReceiptRulePosition");
 
-            var request = InstantiateClassGenerator.Execute<SetReceiptRulePositionRequest>();
+            var request = InstantiateClassGenerator.Execute<SetReceiptRulePositionRequest>(operation);
             var marshaller = new SetReceiptRulePositionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3195,7 +3195,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("TestRenderTemplate");
 
-            var request = InstantiateClassGenerator.Execute<TestRenderTemplateRequest>();
+            var request = InstantiateClassGenerator.Execute<TestRenderTemplateRequest>(operation);
             var marshaller = new TestRenderTemplateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
@@ -3217,7 +3217,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("TestRenderTemplate");
 
-            var request = InstantiateClassGenerator.Execute<TestRenderTemplateRequest>();
+            var request = InstantiateClassGenerator.Execute<TestRenderTemplateRequest>(operation);
             var marshaller = new TestRenderTemplateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3240,7 +3240,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("TestRenderTemplate");
 
-            var request = InstantiateClassGenerator.Execute<TestRenderTemplateRequest>();
+            var request = InstantiateClassGenerator.Execute<TestRenderTemplateRequest>(operation);
             var marshaller = new TestRenderTemplateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3263,7 +3263,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("TestRenderTemplate");
 
-            var request = InstantiateClassGenerator.Execute<TestRenderTemplateRequest>();
+            var request = InstantiateClassGenerator.Execute<TestRenderTemplateRequest>(operation);
             var marshaller = new TestRenderTemplateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3286,7 +3286,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateAccountSendingEnabled");
 
-            var request = InstantiateClassGenerator.Execute<UpdateAccountSendingEnabledRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateAccountSendingEnabledRequest>(operation);
             var marshaller = new UpdateAccountSendingEnabledRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
@@ -3303,7 +3303,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateConfigurationSetEventDestination");
 
-            var request = InstantiateClassGenerator.Execute<UpdateConfigurationSetEventDestinationRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateConfigurationSetEventDestinationRequest>(operation);
             var marshaller = new UpdateConfigurationSetEventDestinationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
@@ -3325,7 +3325,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateConfigurationSetEventDestination");
 
-            var request = InstantiateClassGenerator.Execute<UpdateConfigurationSetEventDestinationRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateConfigurationSetEventDestinationRequest>(operation);
             var marshaller = new UpdateConfigurationSetEventDestinationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3348,7 +3348,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateConfigurationSetEventDestination");
 
-            var request = InstantiateClassGenerator.Execute<UpdateConfigurationSetEventDestinationRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateConfigurationSetEventDestinationRequest>(operation);
             var marshaller = new UpdateConfigurationSetEventDestinationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3371,7 +3371,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateConfigurationSetEventDestination");
 
-            var request = InstantiateClassGenerator.Execute<UpdateConfigurationSetEventDestinationRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateConfigurationSetEventDestinationRequest>(operation);
             var marshaller = new UpdateConfigurationSetEventDestinationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3394,7 +3394,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateConfigurationSetEventDestination");
 
-            var request = InstantiateClassGenerator.Execute<UpdateConfigurationSetEventDestinationRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateConfigurationSetEventDestinationRequest>(operation);
             var marshaller = new UpdateConfigurationSetEventDestinationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3417,7 +3417,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateConfigurationSetEventDestination");
 
-            var request = InstantiateClassGenerator.Execute<UpdateConfigurationSetEventDestinationRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateConfigurationSetEventDestinationRequest>(operation);
             var marshaller = new UpdateConfigurationSetEventDestinationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3440,7 +3440,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateConfigurationSetReputationMetricsEnabled");
 
-            var request = InstantiateClassGenerator.Execute<UpdateConfigurationSetReputationMetricsEnabledRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateConfigurationSetReputationMetricsEnabledRequest>(operation);
             var marshaller = new UpdateConfigurationSetReputationMetricsEnabledRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
@@ -3457,7 +3457,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateConfigurationSetReputationMetricsEnabled");
 
-            var request = InstantiateClassGenerator.Execute<UpdateConfigurationSetReputationMetricsEnabledRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateConfigurationSetReputationMetricsEnabledRequest>(operation);
             var marshaller = new UpdateConfigurationSetReputationMetricsEnabledRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3480,7 +3480,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateConfigurationSetSendingEnabled");
 
-            var request = InstantiateClassGenerator.Execute<UpdateConfigurationSetSendingEnabledRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateConfigurationSetSendingEnabledRequest>(operation);
             var marshaller = new UpdateConfigurationSetSendingEnabledRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
@@ -3497,7 +3497,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateConfigurationSetSendingEnabled");
 
-            var request = InstantiateClassGenerator.Execute<UpdateConfigurationSetSendingEnabledRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateConfigurationSetSendingEnabledRequest>(operation);
             var marshaller = new UpdateConfigurationSetSendingEnabledRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3520,7 +3520,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateConfigurationSetTrackingOptions");
 
-            var request = InstantiateClassGenerator.Execute<UpdateConfigurationSetTrackingOptionsRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateConfigurationSetTrackingOptionsRequest>(operation);
             var marshaller = new UpdateConfigurationSetTrackingOptionsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
@@ -3542,7 +3542,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateConfigurationSetTrackingOptions");
 
-            var request = InstantiateClassGenerator.Execute<UpdateConfigurationSetTrackingOptionsRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateConfigurationSetTrackingOptionsRequest>(operation);
             var marshaller = new UpdateConfigurationSetTrackingOptionsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3565,7 +3565,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateConfigurationSetTrackingOptions");
 
-            var request = InstantiateClassGenerator.Execute<UpdateConfigurationSetTrackingOptionsRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateConfigurationSetTrackingOptionsRequest>(operation);
             var marshaller = new UpdateConfigurationSetTrackingOptionsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3588,7 +3588,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateConfigurationSetTrackingOptions");
 
-            var request = InstantiateClassGenerator.Execute<UpdateConfigurationSetTrackingOptionsRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateConfigurationSetTrackingOptionsRequest>(operation);
             var marshaller = new UpdateConfigurationSetTrackingOptionsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3611,7 +3611,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateCustomVerificationEmailTemplate");
 
-            var request = InstantiateClassGenerator.Execute<UpdateCustomVerificationEmailTemplateRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateCustomVerificationEmailTemplateRequest>(operation);
             var marshaller = new UpdateCustomVerificationEmailTemplateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
@@ -3628,7 +3628,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateCustomVerificationEmailTemplate");
 
-            var request = InstantiateClassGenerator.Execute<UpdateCustomVerificationEmailTemplateRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateCustomVerificationEmailTemplateRequest>(operation);
             var marshaller = new UpdateCustomVerificationEmailTemplateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3651,7 +3651,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateCustomVerificationEmailTemplate");
 
-            var request = InstantiateClassGenerator.Execute<UpdateCustomVerificationEmailTemplateRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateCustomVerificationEmailTemplateRequest>(operation);
             var marshaller = new UpdateCustomVerificationEmailTemplateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3674,7 +3674,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateCustomVerificationEmailTemplate");
 
-            var request = InstantiateClassGenerator.Execute<UpdateCustomVerificationEmailTemplateRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateCustomVerificationEmailTemplateRequest>(operation);
             var marshaller = new UpdateCustomVerificationEmailTemplateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3697,7 +3697,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateReceiptRule");
 
-            var request = InstantiateClassGenerator.Execute<UpdateReceiptRuleRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateReceiptRuleRequest>(operation);
             var marshaller = new UpdateReceiptRuleRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
@@ -3719,7 +3719,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateReceiptRule");
 
-            var request = InstantiateClassGenerator.Execute<UpdateReceiptRuleRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateReceiptRuleRequest>(operation);
             var marshaller = new UpdateReceiptRuleRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3742,7 +3742,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateReceiptRule");
 
-            var request = InstantiateClassGenerator.Execute<UpdateReceiptRuleRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateReceiptRuleRequest>(operation);
             var marshaller = new UpdateReceiptRuleRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3765,7 +3765,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateReceiptRule");
 
-            var request = InstantiateClassGenerator.Execute<UpdateReceiptRuleRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateReceiptRuleRequest>(operation);
             var marshaller = new UpdateReceiptRuleRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3788,7 +3788,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateReceiptRule");
 
-            var request = InstantiateClassGenerator.Execute<UpdateReceiptRuleRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateReceiptRuleRequest>(operation);
             var marshaller = new UpdateReceiptRuleRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3811,7 +3811,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateReceiptRule");
 
-            var request = InstantiateClassGenerator.Execute<UpdateReceiptRuleRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateReceiptRuleRequest>(operation);
             var marshaller = new UpdateReceiptRuleRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3834,7 +3834,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateReceiptRule");
 
-            var request = InstantiateClassGenerator.Execute<UpdateReceiptRuleRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateReceiptRuleRequest>(operation);
             var marshaller = new UpdateReceiptRuleRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3857,7 +3857,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateTemplate");
 
-            var request = InstantiateClassGenerator.Execute<UpdateTemplateRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateTemplateRequest>(operation);
             var marshaller = new UpdateTemplateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
@@ -3879,7 +3879,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateTemplate");
 
-            var request = InstantiateClassGenerator.Execute<UpdateTemplateRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateTemplateRequest>(operation);
             var marshaller = new UpdateTemplateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3902,7 +3902,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateTemplate");
 
-            var request = InstantiateClassGenerator.Execute<UpdateTemplateRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateTemplateRequest>(operation);
             var marshaller = new UpdateTemplateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3925,7 +3925,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("VerifyDomainDkim");
 
-            var request = InstantiateClassGenerator.Execute<VerifyDomainDkimRequest>();
+            var request = InstantiateClassGenerator.Execute<VerifyDomainDkimRequest>(operation);
             var marshaller = new VerifyDomainDkimRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
@@ -3947,7 +3947,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("VerifyDomainIdentity");
 
-            var request = InstantiateClassGenerator.Execute<VerifyDomainIdentityRequest>();
+            var request = InstantiateClassGenerator.Execute<VerifyDomainIdentityRequest>(operation);
             var marshaller = new VerifyDomainIdentityRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
@@ -3969,7 +3969,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("VerifyEmailAddress");
 
-            var request = InstantiateClassGenerator.Execute<VerifyEmailAddressRequest>();
+            var request = InstantiateClassGenerator.Execute<VerifyEmailAddressRequest>(operation);
             var marshaller = new VerifyEmailAddressRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
@@ -3986,7 +3986,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("VerifyEmailIdentity");
 
-            var request = InstantiateClassGenerator.Execute<VerifyEmailIdentityRequest>();
+            var request = InstantiateClassGenerator.Execute<VerifyEmailIdentityRequest>(operation);
             var marshaller = new VerifyEmailIdentityRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);

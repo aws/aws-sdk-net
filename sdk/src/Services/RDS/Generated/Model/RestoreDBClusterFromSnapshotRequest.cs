@@ -81,6 +81,7 @@ namespace Amazon.RDS.Model
         private string _optionGroupName;
         private int? _port;
         private bool? _publiclyAccessible;
+        private RdsCustomClusterConfiguration _rdsCustomClusterConfiguration;
         private ScalingConfiguration _scalingConfiguration;
         private ServerlessV2ScalingConfiguration _serverlessV2ScalingConfiguration;
         private string _snapshotIdentifier;
@@ -914,6 +915,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetPubliclyAccessible()
         {
             return this._publiclyAccessible.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RdsCustomClusterConfiguration. 
+        /// <para>
+        /// Reserved for future use.
+        /// </para>
+        /// </summary>
+        public RdsCustomClusterConfiguration RdsCustomClusterConfiguration
+        {
+            get { return this._rdsCustomClusterConfiguration; }
+            set { this._rdsCustomClusterConfiguration = value; }
+        }
+
+        // Check to see if RdsCustomClusterConfiguration property is set
+        internal bool IsSetRdsCustomClusterConfiguration()
+        {
+            return this._rdsCustomClusterConfiguration != null;
         }
 
         /// <summary>

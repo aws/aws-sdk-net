@@ -79,7 +79,12 @@ namespace Amazon.EC2.Model
         ///  <code>bucket</code> - Returns task information for tasks that targeted a specific
         /// bucket. For the filter value, specify the bucket name.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// When you specify the <code>ImageIds</code> parameter, any filters that you specify
+        /// are ignored. To use the filters, you must remove the <code>ImageIds</code> parameter.
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<Filter> Filters
         {
@@ -120,7 +125,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// You cannot specify this parameter and the <code>ImageIDs</code> parameter in the same
+        /// You cannot specify this parameter and the <code>ImageIds</code> parameter in the same
         /// call.
         /// </para>
         /// </summary>

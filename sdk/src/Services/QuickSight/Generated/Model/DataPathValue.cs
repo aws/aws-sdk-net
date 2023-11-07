@@ -33,8 +33,27 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class DataPathValue
     {
+        private DataPathType _dataPathType;
         private string _fieldId;
         private string _fieldValue;
+
+        /// <summary>
+        /// Gets and sets the property DataPathType. 
+        /// <para>
+        /// The type configuration of the field.
+        /// </para>
+        /// </summary>
+        public DataPathType DataPathType
+        {
+            get { return this._dataPathType; }
+            set { this._dataPathType = value; }
+        }
+
+        // Check to see if DataPathType property is set
+        internal bool IsSetDataPathType()
+        {
+            return this._dataPathType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property FieldId. 
@@ -42,7 +61,7 @@ namespace Amazon.QuickSight.Model
         /// The field ID of the field that needs to be sorted.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=512)]
+        [AWSProperty(Min=1, Max=512)]
         public string FieldId
         {
             get { return this._fieldId; }
@@ -61,7 +80,7 @@ namespace Amazon.QuickSight.Model
         /// The actual value of the field that needs to be sorted.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Max=2048)]
+        [AWSProperty(Sensitive=true, Max=2048)]
         public string FieldValue
         {
             get { return this._fieldValue; }

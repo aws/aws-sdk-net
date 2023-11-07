@@ -63,6 +63,12 @@ namespace Amazon.DynamoDBv2.Model
     /// <para>
     /// There is a user error, such as an invalid data format.
     /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  There is an ongoing <code>TransactWriteItems</code> operation that conflicts with
+    /// a concurrent <code>TransactWriteItems</code> request. In this case the <code>TransactWriteItems</code>
+    /// operation fails with a <code>TransactionCanceledException</code>. 
+    /// </para>
     ///  </li> </ul> 
     /// <para>
     /// DynamoDB cancels a <code>TransactGetItems</code> request under the following circumstances:

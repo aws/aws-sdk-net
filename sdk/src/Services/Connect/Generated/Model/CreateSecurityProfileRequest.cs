@@ -70,7 +70,7 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// A list of third party applications that the security profile will give access to.
+        /// A list of third-party applications that the security profile will give access to.
         /// </para>
         /// </summary>
         [AWSProperty(Max=10)]

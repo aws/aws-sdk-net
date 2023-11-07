@@ -30,7 +30,7 @@ namespace Amazon.Rekognition.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeProjects operation.
-    /// Gets information about your Amazon Rekognition Custom Labels projects. 
+    /// Gets information about your Rekognition projects.
     /// 
     ///  
     /// <para>
@@ -40,9 +40,30 @@ namespace Amazon.Rekognition.Model
     /// </summary>
     public partial class DescribeProjectsRequest : AmazonRekognitionRequest
     {
+        private List<string> _features = new List<string>();
         private int? _maxResults;
         private string _nextToken;
         private List<string> _projectNames = new List<string>();
+
+        /// <summary>
+        /// Gets and sets the property Features. 
+        /// <para>
+        /// Specifies the type of customization to filter projects by. If no value is specified,
+        /// CUSTOM_LABELS is used as a default.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2)]
+        public List<string> Features
+        {
+            get { return this._features; }
+            set { this._features = value; }
+        }
+
+        // Check to see if Features property is set
+        internal bool IsSetFeatures()
+        {
+            return this._features != null && this._features.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
@@ -69,8 +90,8 @@ namespace Amazon.Rekognition.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// If the previous response was incomplete (because there is more results to retrieve),
-        /// Amazon Rekognition Custom Labels returns a pagination token in the response. You can
-        /// use this pagination token to retrieve the next set of results. 
+        /// Rekognition returns a pagination token in the response. You can use this pagination
+        /// token to retrieve the next set of results. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]
@@ -89,9 +110,8 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property ProjectNames. 
         /// <para>
-        /// A list of the projects that you want Amazon Rekognition Custom Labels to describe.
-        /// If you don't specify a value, the response includes descriptions for all the projects
-        /// in your AWS account.
+        /// A list of the projects that you want Rekognition to describe. If you don't specify
+        /// a value, the response includes descriptions for all the projects in your AWS account.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]

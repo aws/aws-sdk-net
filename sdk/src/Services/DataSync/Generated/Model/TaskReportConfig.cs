@@ -34,7 +34,7 @@ namespace Amazon.DataSync.Model
     /// 
     ///  
     /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-task-reports.html">Task
+    /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Task
     /// reports</a>.
     /// </para>
     /// </summary>
@@ -50,7 +50,7 @@ namespace Amazon.DataSync.Model
         /// Gets and sets the property Destination. 
         /// <para>
         /// Specifies the Amazon S3 bucket where DataSync uploads your task report. For more information,
-        /// see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-task-reports.html#task-report-access">Task
+        /// see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html#task-report-access">Task
         /// reports</a>.
         /// </para>
         /// </summary>

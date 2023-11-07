@@ -43,7 +43,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         public void <#=operation.Name#>EndpointDiscoveryMarshallTest()
         {
             var operation = service_model.FindOperation("<#=operation.Name#>");
-            var request = InstantiateClassGenerator.Execute<<#=operation.Name#>Request>();
+            var request = InstantiateClassGenerator.Execute<<#=operation.Name#>Request>(operation);
             var marshaller = new <#=operation.Name#>EndpointDiscoveryMarshaller();
 
             var internalData = marshaller.Marshall(request);

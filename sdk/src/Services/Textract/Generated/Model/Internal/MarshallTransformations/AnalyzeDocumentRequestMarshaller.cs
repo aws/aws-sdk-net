@@ -67,6 +67,17 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAdaptersConfig())
+                {
+                    context.Writer.WritePropertyName("AdaptersConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AdaptersConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.AdaptersConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetDocument())
                 {
                     context.Writer.WritePropertyName("Document");

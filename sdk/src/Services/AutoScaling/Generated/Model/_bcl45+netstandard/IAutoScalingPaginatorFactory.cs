@@ -36,9 +36,24 @@ namespace Amazon.AutoScaling.Model
         IDescribeAutoScalingInstancesPaginator DescribeAutoScalingInstances(DescribeAutoScalingInstancesRequest request);
 
         /// <summary>
+        /// Paginator for DescribeInstanceRefreshes operation
+        ///</summary>
+        IDescribeInstanceRefreshesPaginator DescribeInstanceRefreshes(DescribeInstanceRefreshesRequest request);
+
+        /// <summary>
         /// Paginator for DescribeLaunchConfigurations operation
         ///</summary>
         IDescribeLaunchConfigurationsPaginator DescribeLaunchConfigurations(DescribeLaunchConfigurationsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeLoadBalancers operation
+        ///</summary>
+        IDescribeLoadBalancersPaginator DescribeLoadBalancers(DescribeLoadBalancersRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeLoadBalancerTargetGroups operation
+        ///</summary>
+        IDescribeLoadBalancerTargetGroupsPaginator DescribeLoadBalancerTargetGroups(DescribeLoadBalancerTargetGroupsRequest request);
 
         /// <summary>
         /// Paginator for DescribeNotificationConfigurations operation

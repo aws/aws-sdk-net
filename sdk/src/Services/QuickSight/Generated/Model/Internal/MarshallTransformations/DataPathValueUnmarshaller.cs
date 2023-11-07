@@ -64,6 +64,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("DataPathType", targetDepth))
+                {
+                    var unmarshaller = DataPathTypeUnmarshaller.Instance;
+                    unmarshalledObject.DataPathType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("FieldId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

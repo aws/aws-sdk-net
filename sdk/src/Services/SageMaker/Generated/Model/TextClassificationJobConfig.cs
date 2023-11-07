@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Stores the configuration information for the text classification problem of an AutoML
-    /// job V2.
+    /// The collection of settings used by an AutoML job V2 for the text classification problem
+    /// type.
     /// </summary>
     public partial class TextClassificationJobConfig
     {

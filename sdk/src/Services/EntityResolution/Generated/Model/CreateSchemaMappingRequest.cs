@@ -85,11 +85,11 @@ namespace Amazon.EntityResolution.Model
         /// <summary>
         /// Gets and sets the property SchemaName. 
         /// <para>
-        /// The name of the schema. There cannot be multiple <code>SchemaMappings</code> with
-        /// the same name.
+        /// The name of the schema. There can't be multiple <code>SchemaMappings</code> with the
+        /// same name.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=255)]
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string SchemaName
         {
             get { return this._schemaName; }

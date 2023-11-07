@@ -46,7 +46,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("RedshiftDataAPIService")]
         public void BatchExecuteStatementMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<BatchExecuteStatementRequest>();
+            var operation = service_model.FindOperation("BatchExecuteStatement");
+
+            var request = InstantiateClassGenerator.Execute<BatchExecuteStatementRequest>(operation);
             var marshaller = new BatchExecuteStatementRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -60,7 +62,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("BatchExecuteStatement").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = BatchExecuteStatementResponseUnmarshaller.Instance.Unmarshall(context) as BatchExecuteStatementResponse;
@@ -75,7 +77,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("BatchExecuteStatement");
 
-            var request = InstantiateClassGenerator.Execute<BatchExecuteStatementRequest>();
+            var request = InstantiateClassGenerator.Execute<BatchExecuteStatementRequest>(operation);
             var marshaller = new BatchExecuteStatementRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -107,7 +109,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("BatchExecuteStatement");
 
-            var request = InstantiateClassGenerator.Execute<BatchExecuteStatementRequest>();
+            var request = InstantiateClassGenerator.Execute<BatchExecuteStatementRequest>(operation);
             var marshaller = new BatchExecuteStatementRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -139,7 +141,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("BatchExecuteStatement");
 
-            var request = InstantiateClassGenerator.Execute<BatchExecuteStatementRequest>();
+            var request = InstantiateClassGenerator.Execute<BatchExecuteStatementRequest>(operation);
             var marshaller = new BatchExecuteStatementRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -169,7 +171,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("RedshiftDataAPIService")]
         public void CancelStatementMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<CancelStatementRequest>();
+            var operation = service_model.FindOperation("CancelStatement");
+
+            var request = InstantiateClassGenerator.Execute<CancelStatementRequest>(operation);
             var marshaller = new CancelStatementRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -183,7 +187,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("CancelStatement").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = CancelStatementResponseUnmarshaller.Instance.Unmarshall(context) as CancelStatementResponse;
@@ -198,7 +202,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CancelStatement");
 
-            var request = InstantiateClassGenerator.Execute<CancelStatementRequest>();
+            var request = InstantiateClassGenerator.Execute<CancelStatementRequest>(operation);
             var marshaller = new CancelStatementRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -230,7 +234,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CancelStatement");
 
-            var request = InstantiateClassGenerator.Execute<CancelStatementRequest>();
+            var request = InstantiateClassGenerator.Execute<CancelStatementRequest>(operation);
             var marshaller = new CancelStatementRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -262,7 +266,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CancelStatement");
 
-            var request = InstantiateClassGenerator.Execute<CancelStatementRequest>();
+            var request = InstantiateClassGenerator.Execute<CancelStatementRequest>(operation);
             var marshaller = new CancelStatementRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -294,7 +298,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CancelStatement");
 
-            var request = InstantiateClassGenerator.Execute<CancelStatementRequest>();
+            var request = InstantiateClassGenerator.Execute<CancelStatementRequest>(operation);
             var marshaller = new CancelStatementRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -324,7 +328,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("RedshiftDataAPIService")]
         public void DescribeStatementMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DescribeStatementRequest>();
+            var operation = service_model.FindOperation("DescribeStatement");
+
+            var request = InstantiateClassGenerator.Execute<DescribeStatementRequest>(operation);
             var marshaller = new DescribeStatementRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -338,7 +344,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeStatement").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DescribeStatementResponseUnmarshaller.Instance.Unmarshall(context) as DescribeStatementResponse;
@@ -353,7 +359,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeStatement");
 
-            var request = InstantiateClassGenerator.Execute<DescribeStatementRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeStatementRequest>(operation);
             var marshaller = new DescribeStatementRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -385,7 +391,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeStatement");
 
-            var request = InstantiateClassGenerator.Execute<DescribeStatementRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeStatementRequest>(operation);
             var marshaller = new DescribeStatementRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -417,7 +423,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeStatement");
 
-            var request = InstantiateClassGenerator.Execute<DescribeStatementRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeStatementRequest>(operation);
             var marshaller = new DescribeStatementRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -447,7 +453,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("RedshiftDataAPIService")]
         public void DescribeTableMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DescribeTableRequest>();
+            var operation = service_model.FindOperation("DescribeTable");
+
+            var request = InstantiateClassGenerator.Execute<DescribeTableRequest>(operation);
             var marshaller = new DescribeTableRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -461,7 +469,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeTable").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DescribeTableResponseUnmarshaller.Instance.Unmarshall(context) as DescribeTableResponse;
@@ -476,7 +484,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeTable");
 
-            var request = InstantiateClassGenerator.Execute<DescribeTableRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeTableRequest>(operation);
             var marshaller = new DescribeTableRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -508,7 +516,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeTable");
 
-            var request = InstantiateClassGenerator.Execute<DescribeTableRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeTableRequest>(operation);
             var marshaller = new DescribeTableRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -540,7 +548,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeTable");
 
-            var request = InstantiateClassGenerator.Execute<DescribeTableRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeTableRequest>(operation);
             var marshaller = new DescribeTableRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -570,7 +578,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("RedshiftDataAPIService")]
         public void ExecuteStatementMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ExecuteStatementRequest>();
+            var operation = service_model.FindOperation("ExecuteStatement");
+
+            var request = InstantiateClassGenerator.Execute<ExecuteStatementRequest>(operation);
             var marshaller = new ExecuteStatementRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -584,7 +594,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ExecuteStatement").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ExecuteStatementResponseUnmarshaller.Instance.Unmarshall(context) as ExecuteStatementResponse;
@@ -599,7 +609,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ExecuteStatement");
 
-            var request = InstantiateClassGenerator.Execute<ExecuteStatementRequest>();
+            var request = InstantiateClassGenerator.Execute<ExecuteStatementRequest>(operation);
             var marshaller = new ExecuteStatementRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -631,7 +641,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ExecuteStatement");
 
-            var request = InstantiateClassGenerator.Execute<ExecuteStatementRequest>();
+            var request = InstantiateClassGenerator.Execute<ExecuteStatementRequest>(operation);
             var marshaller = new ExecuteStatementRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -663,7 +673,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ExecuteStatement");
 
-            var request = InstantiateClassGenerator.Execute<ExecuteStatementRequest>();
+            var request = InstantiateClassGenerator.Execute<ExecuteStatementRequest>(operation);
             var marshaller = new ExecuteStatementRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -693,7 +703,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("RedshiftDataAPIService")]
         public void GetStatementResultMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<GetStatementResultRequest>();
+            var operation = service_model.FindOperation("GetStatementResult");
+
+            var request = InstantiateClassGenerator.Execute<GetStatementResultRequest>(operation);
             var marshaller = new GetStatementResultRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -707,7 +719,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetStatementResult").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = GetStatementResultResponseUnmarshaller.Instance.Unmarshall(context) as GetStatementResultResponse;
@@ -722,7 +734,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetStatementResult");
 
-            var request = InstantiateClassGenerator.Execute<GetStatementResultRequest>();
+            var request = InstantiateClassGenerator.Execute<GetStatementResultRequest>(operation);
             var marshaller = new GetStatementResultRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -754,7 +766,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetStatementResult");
 
-            var request = InstantiateClassGenerator.Execute<GetStatementResultRequest>();
+            var request = InstantiateClassGenerator.Execute<GetStatementResultRequest>(operation);
             var marshaller = new GetStatementResultRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -786,7 +798,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetStatementResult");
 
-            var request = InstantiateClassGenerator.Execute<GetStatementResultRequest>();
+            var request = InstantiateClassGenerator.Execute<GetStatementResultRequest>(operation);
             var marshaller = new GetStatementResultRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -816,7 +828,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("RedshiftDataAPIService")]
         public void ListDatabasesMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ListDatabasesRequest>();
+            var operation = service_model.FindOperation("ListDatabases");
+
+            var request = InstantiateClassGenerator.Execute<ListDatabasesRequest>(operation);
             var marshaller = new ListDatabasesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -830,7 +844,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListDatabases").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ListDatabasesResponseUnmarshaller.Instance.Unmarshall(context) as ListDatabasesResponse;
@@ -845,7 +859,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListDatabases");
 
-            var request = InstantiateClassGenerator.Execute<ListDatabasesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListDatabasesRequest>(operation);
             var marshaller = new ListDatabasesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -877,7 +891,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListDatabases");
 
-            var request = InstantiateClassGenerator.Execute<ListDatabasesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListDatabasesRequest>(operation);
             var marshaller = new ListDatabasesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -909,7 +923,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListDatabases");
 
-            var request = InstantiateClassGenerator.Execute<ListDatabasesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListDatabasesRequest>(operation);
             var marshaller = new ListDatabasesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -939,7 +953,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("RedshiftDataAPIService")]
         public void ListSchemasMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ListSchemasRequest>();
+            var operation = service_model.FindOperation("ListSchemas");
+
+            var request = InstantiateClassGenerator.Execute<ListSchemasRequest>(operation);
             var marshaller = new ListSchemasRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -953,7 +969,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListSchemas").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ListSchemasResponseUnmarshaller.Instance.Unmarshall(context) as ListSchemasResponse;
@@ -968,7 +984,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListSchemas");
 
-            var request = InstantiateClassGenerator.Execute<ListSchemasRequest>();
+            var request = InstantiateClassGenerator.Execute<ListSchemasRequest>(operation);
             var marshaller = new ListSchemasRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1000,7 +1016,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListSchemas");
 
-            var request = InstantiateClassGenerator.Execute<ListSchemasRequest>();
+            var request = InstantiateClassGenerator.Execute<ListSchemasRequest>(operation);
             var marshaller = new ListSchemasRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1032,7 +1048,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListSchemas");
 
-            var request = InstantiateClassGenerator.Execute<ListSchemasRequest>();
+            var request = InstantiateClassGenerator.Execute<ListSchemasRequest>(operation);
             var marshaller = new ListSchemasRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1062,7 +1078,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("RedshiftDataAPIService")]
         public void ListStatementsMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ListStatementsRequest>();
+            var operation = service_model.FindOperation("ListStatements");
+
+            var request = InstantiateClassGenerator.Execute<ListStatementsRequest>(operation);
             var marshaller = new ListStatementsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1076,7 +1094,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListStatements").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ListStatementsResponseUnmarshaller.Instance.Unmarshall(context) as ListStatementsResponse;
@@ -1091,7 +1109,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListStatements");
 
-            var request = InstantiateClassGenerator.Execute<ListStatementsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListStatementsRequest>(operation);
             var marshaller = new ListStatementsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1123,7 +1141,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListStatements");
 
-            var request = InstantiateClassGenerator.Execute<ListStatementsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListStatementsRequest>(operation);
             var marshaller = new ListStatementsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1153,7 +1171,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("RedshiftDataAPIService")]
         public void ListTablesMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ListTablesRequest>();
+            var operation = service_model.FindOperation("ListTables");
+
+            var request = InstantiateClassGenerator.Execute<ListTablesRequest>(operation);
             var marshaller = new ListTablesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1167,7 +1187,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListTables").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ListTablesResponseUnmarshaller.Instance.Unmarshall(context) as ListTablesResponse;
@@ -1182,7 +1202,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListTables");
 
-            var request = InstantiateClassGenerator.Execute<ListTablesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTablesRequest>(operation);
             var marshaller = new ListTablesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1214,7 +1234,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListTables");
 
-            var request = InstantiateClassGenerator.Execute<ListTablesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTablesRequest>(operation);
             var marshaller = new ListTablesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1246,7 +1266,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListTables");
 
-            var request = InstantiateClassGenerator.Execute<ListTablesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTablesRequest>(operation);
             var marshaller = new ListTablesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);

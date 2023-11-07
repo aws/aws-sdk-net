@@ -88,6 +88,12 @@ namespace Amazon.S3Outposts.Model.Internal.MarshallTransformations
                     unmarshalledObject.OwnerId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("S3OutpostArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.S3OutpostArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

@@ -198,7 +198,7 @@ namespace Amazon.ManagedBlockchainQuery.Model
         /// <summary>
         /// Gets and sets the property Network. 
         /// <para>
-        /// The blockchain network where the transaction occured.
+        /// The blockchain network where the transaction occurred.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

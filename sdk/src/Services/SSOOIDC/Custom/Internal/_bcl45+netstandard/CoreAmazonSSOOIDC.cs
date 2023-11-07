@@ -17,6 +17,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Xml;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Runtime.SharedInterfaces;
@@ -101,13 +102,14 @@ namespace Amazon.SSOOIDC.Internal
                 startDeviceAuthorizationResponse.Interval,
                 deviceCodeExpiration,
                 context);
-
+            var clientSecretExpiresAtString = XmlConvert.ToString(AWSSDKUtils.ConvertFromUnixEpochSeconds((int)registerClientResponse.ClientSecretExpiresAt), XmlDateTimeSerializationMode.Utc);
             return new GetSsoTokenResponse
             {
                 AccessToken = ssoToken.AccessToken,
                 Region = client.Config.RegionEndpoint.SystemName,
                 ClientId = registerClientResponse.ClientId,
                 ClientSecret = registerClientResponse.ClientSecret,
+                RegistrationExpiresAt = clientSecretExpiresAtString,
                 RefreshToken = ssoToken.RefreshToken,
                 ExpiresAt = DateTime.UtcNow.AddSeconds(ssoToken.ExpiresIn),
                 StartUrl = request.StartUrl
@@ -176,17 +178,19 @@ namespace Amazon.SSOOIDC.Internal
                 startDeviceAuthorizationResponse.Interval,
                 deviceCodeExpiration,
                 context).ConfigureAwait(false);
-
+            var clientSecretExpiresAtString = XmlConvert.ToString(AWSSDKUtils.ConvertFromUnixEpochSeconds((int)registerClientResponse.ClientSecretExpiresAt), XmlDateTimeSerializationMode.Utc);
             return new GetSsoTokenResponse
             {
                 AccessToken = ssoToken.AccessToken,
                 Region = client.Config.RegionEndpoint.SystemName,
                 ClientId = registerClientResponse.ClientId,
                 ClientSecret = registerClientResponse.ClientSecret,
+                RegistrationExpiresAt = clientSecretExpiresAtString,
                 RefreshToken = ssoToken.RefreshToken,
                 ExpiresAt = DateTime.UtcNow.AddSeconds(ssoToken.ExpiresIn),
                 StartUrl = request.StartUrl
             };
+            
         }
 
 #if BCL

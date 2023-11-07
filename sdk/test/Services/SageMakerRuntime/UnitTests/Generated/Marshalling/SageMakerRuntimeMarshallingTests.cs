@@ -49,7 +49,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("InvokeEndpoint");
 
-            var request = InstantiateClassGenerator.Execute<InvokeEndpointRequest>();
+            var request = InstantiateClassGenerator.Execute<InvokeEndpointRequest>(operation);
             var marshaller = new InvokeEndpointRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -82,7 +82,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("InvokeEndpoint");
 
-            var request = InstantiateClassGenerator.Execute<InvokeEndpointRequest>();
+            var request = InstantiateClassGenerator.Execute<InvokeEndpointRequest>(operation);
             var marshaller = new InvokeEndpointRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -117,7 +117,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("InvokeEndpoint");
 
-            var request = InstantiateClassGenerator.Execute<InvokeEndpointRequest>();
+            var request = InstantiateClassGenerator.Execute<InvokeEndpointRequest>(operation);
             var marshaller = new InvokeEndpointRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -152,7 +152,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("InvokeEndpoint");
 
-            var request = InstantiateClassGenerator.Execute<InvokeEndpointRequest>();
+            var request = InstantiateClassGenerator.Execute<InvokeEndpointRequest>(operation);
             var marshaller = new InvokeEndpointRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -187,7 +187,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("InvokeEndpoint");
 
-            var request = InstantiateClassGenerator.Execute<InvokeEndpointRequest>();
+            var request = InstantiateClassGenerator.Execute<InvokeEndpointRequest>(operation);
             var marshaller = new InvokeEndpointRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -222,7 +222,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("InvokeEndpoint");
 
-            var request = InstantiateClassGenerator.Execute<InvokeEndpointRequest>();
+            var request = InstantiateClassGenerator.Execute<InvokeEndpointRequest>(operation);
             var marshaller = new InvokeEndpointRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -257,7 +257,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("InvokeEndpoint");
 
-            var request = InstantiateClassGenerator.Execute<InvokeEndpointRequest>();
+            var request = InstantiateClassGenerator.Execute<InvokeEndpointRequest>(operation);
             var marshaller = new InvokeEndpointRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -292,7 +292,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("InvokeEndpointAsync");
 
-            var request = InstantiateClassGenerator.Execute<InvokeEndpointAsyncRequest>();
+            var request = InstantiateClassGenerator.Execute<InvokeEndpointAsyncRequest>(operation);
             var marshaller = new InvokeEndpointAsyncRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -324,7 +324,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("InvokeEndpointAsync");
 
-            var request = InstantiateClassGenerator.Execute<InvokeEndpointAsyncRequest>();
+            var request = InstantiateClassGenerator.Execute<InvokeEndpointAsyncRequest>(operation);
             var marshaller = new InvokeEndpointAsyncRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -358,7 +358,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("InvokeEndpointAsync");
 
-            var request = InstantiateClassGenerator.Execute<InvokeEndpointAsyncRequest>();
+            var request = InstantiateClassGenerator.Execute<InvokeEndpointAsyncRequest>(operation);
             var marshaller = new InvokeEndpointAsyncRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -392,7 +392,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("InvokeEndpointAsync");
 
-            var request = InstantiateClassGenerator.Execute<InvokeEndpointAsyncRequest>();
+            var request = InstantiateClassGenerator.Execute<InvokeEndpointAsyncRequest>(operation);
             var marshaller = new InvokeEndpointAsyncRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -426,7 +426,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("InvokeEndpointWithResponseStream");
 
-            var request = InstantiateClassGenerator.Execute<InvokeEndpointWithResponseStreamRequest>();
+            var request = InstantiateClassGenerator.Execute<InvokeEndpointWithResponseStreamRequest>(operation);
             var marshaller = new InvokeEndpointWithResponseStreamRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -459,7 +459,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("InvokeEndpointWithResponseStream");
 
-            var request = InstantiateClassGenerator.Execute<InvokeEndpointWithResponseStreamRequest>();
+            var request = InstantiateClassGenerator.Execute<InvokeEndpointWithResponseStreamRequest>(operation);
             var marshaller = new InvokeEndpointWithResponseStreamRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -494,7 +494,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("InvokeEndpointWithResponseStream");
 
-            var request = InstantiateClassGenerator.Execute<InvokeEndpointWithResponseStreamRequest>();
+            var request = InstantiateClassGenerator.Execute<InvokeEndpointWithResponseStreamRequest>(operation);
             var marshaller = new InvokeEndpointWithResponseStreamRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -529,7 +529,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("InvokeEndpointWithResponseStream");
 
-            var request = InstantiateClassGenerator.Execute<InvokeEndpointWithResponseStreamRequest>();
+            var request = InstantiateClassGenerator.Execute<InvokeEndpointWithResponseStreamRequest>(operation);
             var marshaller = new InvokeEndpointWithResponseStreamRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -564,7 +564,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("InvokeEndpointWithResponseStream");
 
-            var request = InstantiateClassGenerator.Execute<InvokeEndpointWithResponseStreamRequest>();
+            var request = InstantiateClassGenerator.Execute<InvokeEndpointWithResponseStreamRequest>(operation);
             var marshaller = new InvokeEndpointWithResponseStreamRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -599,7 +599,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("InvokeEndpointWithResponseStream");
 
-            var request = InstantiateClassGenerator.Execute<InvokeEndpointWithResponseStreamRequest>();
+            var request = InstantiateClassGenerator.Execute<InvokeEndpointWithResponseStreamRequest>(operation);
             var marshaller = new InvokeEndpointWithResponseStreamRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -634,7 +634,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("InvokeEndpointWithResponseStream");
 
-            var request = InstantiateClassGenerator.Execute<InvokeEndpointWithResponseStreamRequest>();
+            var request = InstantiateClassGenerator.Execute<InvokeEndpointWithResponseStreamRequest>(operation);
             var marshaller = new InvokeEndpointWithResponseStreamRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 

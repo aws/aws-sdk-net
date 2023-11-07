@@ -57,6 +57,18 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     response.Applications = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LastModifiedRegion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.LastModifiedRegion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LastModifiedTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    response.LastModifiedTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("NextToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

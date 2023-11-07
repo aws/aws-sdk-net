@@ -105,6 +105,11 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeCapacityBlockOfferingsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.DescribeCapacityReservationFleetsRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
@@ -604,6 +609,11 @@
     <property>Amazon.EC2.Model.GetNetworkInsightsAccessScopeAnalysisFindingsRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.GetSecurityGroupsForVpcRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.GetSpotPlacementScoresRequest.MaxResults</property>

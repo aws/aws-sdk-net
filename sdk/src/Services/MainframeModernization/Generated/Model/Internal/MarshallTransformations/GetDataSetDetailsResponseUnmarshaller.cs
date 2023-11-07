@@ -75,6 +75,12 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
                     response.DataSetOrg = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("fileSize", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    response.FileSize = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("lastReferencedTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
@@ -126,6 +132,14 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
                 {
                     return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
+                {
+                    return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ExecutionTimeoutException"))
+                {
+                    return ExecutionTimeoutExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerException"))
                 {
                     return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -133,6 +147,10 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {
                     return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceUnavailableException"))
+                {
+                    return ServiceUnavailableExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
                 {

@@ -190,10 +190,22 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.SqlServerParameters = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("StarburstParameters", targetDepth))
+                {
+                    var unmarshaller = StarburstParametersUnmarshaller.Instance;
+                    unmarshalledObject.StarburstParameters = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("TeradataParameters", targetDepth))
                 {
                     var unmarshaller = TeradataParametersUnmarshaller.Instance;
                     unmarshalledObject.TeradataParameters = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TrinoParameters", targetDepth))
+                {
+                    var unmarshaller = TrinoParametersUnmarshaller.Instance;
+                    unmarshalledObject.TrinoParameters = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TwitterParameters", targetDepth))

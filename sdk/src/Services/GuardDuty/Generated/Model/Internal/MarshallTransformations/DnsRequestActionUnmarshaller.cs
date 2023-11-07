@@ -76,6 +76,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                     unmarshalledObject.Domain = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("domainWithSuffix", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DomainWithSuffix = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("protocol", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

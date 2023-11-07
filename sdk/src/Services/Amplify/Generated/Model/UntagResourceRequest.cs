@@ -40,7 +40,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) to use to untag a resource. 
+        /// The Amazon Resource Name (ARN) to use to untag a resource. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=2048)]
@@ -59,7 +59,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property TagKeys. 
         /// <para>
-        ///  The tag keys to use to untag a resource. 
+        /// The tag keys to use to untag a resource. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=50)]

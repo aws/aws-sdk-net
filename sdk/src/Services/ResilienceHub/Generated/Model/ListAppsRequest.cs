@@ -48,9 +48,12 @@ namespace Amazon.ResilienceHub.Model
     public partial class ListAppsRequest : AmazonResilienceHubRequest
     {
         private string _appArn;
+        private DateTime? _fromLastAssessmentTime;
         private int? _maxResults;
         private string _name;
         private string _nextToken;
+        private bool? _reverseOrder;
+        private DateTime? _toLastAssessmentTime;
 
         /// <summary>
         /// Gets and sets the property AppArn. 
@@ -58,7 +61,8 @@ namespace Amazon.ResilienceHub.Model
         /// Amazon Resource Name (ARN) of the Resilience Hub application. The format for this
         /// ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
         /// For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.
+        /// Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>
+        /// guide.
         /// </para>
         /// </summary>
         public string AppArn
@@ -71,6 +75,25 @@ namespace Amazon.ResilienceHub.Model
         internal bool IsSetAppArn()
         {
             return this._appArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FromLastAssessmentTime. 
+        /// <para>
+        /// Indicates the lower limit of the range that is used to filter applications based on
+        /// their last assessment times.
+        /// </para>
+        /// </summary>
+        public DateTime FromLastAssessmentTime
+        {
+            get { return this._fromLastAssessmentTime.GetValueOrDefault(); }
+            set { this._fromLastAssessmentTime = value; }
+        }
+
+        // Check to see if FromLastAssessmentTime property is set
+        internal bool IsSetFromLastAssessmentTime()
+        {
+            return this._fromLastAssessmentTime.HasValue; 
         }
 
         /// <summary>
@@ -128,6 +151,45 @@ namespace Amazon.ResilienceHub.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReverseOrder. 
+        /// <para>
+        /// The application list is sorted based on the values of <code>lastAppComplianceEvaluationTime</code>
+        /// field. By default, application list is sorted in ascending order. To sort the appliation
+        /// list in descending order, set this field to <code>True</code>.
+        /// </para>
+        /// </summary>
+        public bool ReverseOrder
+        {
+            get { return this._reverseOrder.GetValueOrDefault(); }
+            set { this._reverseOrder = value; }
+        }
+
+        // Check to see if ReverseOrder property is set
+        internal bool IsSetReverseOrder()
+        {
+            return this._reverseOrder.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ToLastAssessmentTime. 
+        /// <para>
+        /// Indicates the upper limit of the range that is used to filter the applications based
+        /// on their last assessment times.
+        /// </para>
+        /// </summary>
+        public DateTime ToLastAssessmentTime
+        {
+            get { return this._toLastAssessmentTime.GetValueOrDefault(); }
+            set { this._toLastAssessmentTime = value; }
+        }
+
+        // Check to see if ToLastAssessmentTime property is set
+        internal bool IsSetToLastAssessmentTime()
+        {
+            return this._toLastAssessmentTime.HasValue; 
         }
 
     }

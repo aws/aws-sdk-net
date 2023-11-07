@@ -51,6 +51,17 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ChildManifestName);
             }
 
+            if(requestObject.IsSetFilterConfiguration())
+            {
+                context.Writer.WritePropertyName("FilterConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = FilterConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.FilterConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetManifestName())
             {
                 context.Writer.WritePropertyName("ManifestName");

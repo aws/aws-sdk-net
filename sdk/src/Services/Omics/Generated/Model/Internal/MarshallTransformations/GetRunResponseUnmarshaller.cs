@@ -81,6 +81,12 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                     response.Digest = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("failureReason", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.FailureReason = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -91,6 +97,12 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.LogLevel = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("logLocation", targetDepth))
+                {
+                    var unmarshaller = RunLogLocationUnmarshaller.Instance;
+                    response.LogLocation = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("name", targetDepth))

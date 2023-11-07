@@ -78,7 +78,7 @@ namespace Amazon.Glue.Internal
                     }
                     if (Equals(refs["UseFIPS"], true))
                     {
-                        if (Equals(true, GetAttr(refs["PartitionResult"], "supportsFIPS")))
+                        if (Equals(GetAttr(refs["PartitionResult"], "supportsFIPS"), true))
                         {
                             return new Endpoint(Interpolate(@"https://glue-fips.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                         }

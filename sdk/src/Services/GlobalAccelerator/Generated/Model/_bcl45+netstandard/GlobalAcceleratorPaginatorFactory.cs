@@ -52,6 +52,22 @@ namespace Amazon.GlobalAccelerator.Model
         }
 
         /// <summary>
+        /// Paginator for ListCrossAccountAttachments operation
+        ///</summary>
+        public IListCrossAccountAttachmentsPaginator ListCrossAccountAttachments(ListCrossAccountAttachmentsRequest request) 
+        {
+            return new ListCrossAccountAttachmentsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListCrossAccountResources operation
+        ///</summary>
+        public IListCrossAccountResourcesPaginator ListCrossAccountResources(ListCrossAccountResourcesRequest request) 
+        {
+            return new ListCrossAccountResourcesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListCustomRoutingAccelerators operation
         ///</summary>
         public IListCustomRoutingAcceleratorsPaginator ListCustomRoutingAccelerators(ListCustomRoutingAcceleratorsRequest request) 

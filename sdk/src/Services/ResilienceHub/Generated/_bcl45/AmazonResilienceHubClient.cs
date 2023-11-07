@@ -272,8 +272,12 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Adds the resource mapping for the draft application version. You can also update an
-        /// existing resource mapping to a new physical resource.
+        /// Adds the source of resource-maps to the draft version of an application. During assessment,
+        /// Resilience Hub will use these resource-maps to resolve the latest physical ID for
+        /// each resource in the application template. For more information about different types
+        /// of resources suported by Resilience Hub and how to add them in your application, see
+        /// <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/how-app-manage.html">Step
+        /// 2: How is your application managed?</a> in the Resilience Hub User Guide.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddDraftAppVersionResourceMappings service method.</param>
         /// 
@@ -314,8 +318,12 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Adds the resource mapping for the draft application version. You can also update an
-        /// existing resource mapping to a new physical resource.
+        /// Adds the source of resource-maps to the draft version of an application. During assessment,
+        /// Resilience Hub will use these resource-maps to resolve the latest physical ID for
+        /// each resource in the application template. For more information about different types
+        /// of resources suported by Resilience Hub and how to add them in your application, see
+        /// <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/how-app-manage.html">Step
+        /// 2: How is your application managed?</a> in the Resilience Hub User Guide.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddDraftAppVersionResourceMappings service method.</param>
         /// <param name="cancellationToken">
@@ -925,6 +933,17 @@ namespace Amazon.ResilienceHub
 
         /// <summary>
         /// Creates a resiliency policy for an application.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Resilience Hub allows you to provide a value of zero for <code>rtoInSecs</code> and
+        /// <code>rpoInSecs</code> of your resiliency policy. But, while assessing your application,
+        /// the lowest possible assessment result is near zero. Hence, if you provide value zero
+        /// for <code>rtoInSecs</code> and <code>rpoInSecs</code>, the estimated workload RTO
+        /// and estimated workload RPO result will be near zero and the <b>Compliance status</b>
+        /// for your application will be set to <b>Policy breached</b>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateResiliencyPolicy service method.</param>
         /// 
@@ -968,6 +987,17 @@ namespace Amazon.ResilienceHub
 
         /// <summary>
         /// Creates a resiliency policy for an application.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Resilience Hub allows you to provide a value of zero for <code>rtoInSecs</code> and
+        /// <code>rpoInSecs</code> of your resiliency policy. But, while assessing your application,
+        /// the lowest possible assessment result is near zero. Hence, if you provide value zero
+        /// for <code>rtoInSecs</code> and <code>rpoInSecs</code>, the estimated workload RTO
+        /// and estimated workload RPO result will be near zero and the <b>Compliance status</b>
+        /// for your application will be set to <b>Policy breached</b>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateResiliencyPolicy service method.</param>
         /// <param name="cancellationToken">
@@ -5074,6 +5104,17 @@ namespace Amazon.ResilienceHub
 
         /// <summary>
         /// Updates a resiliency policy.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Resilience Hub allows you to provide a value of zero for <code>rtoInSecs</code> and
+        /// <code>rpoInSecs</code> of your resiliency policy. But, while assessing your application,
+        /// the lowest possible assessment result is near zero. Hence, if you provide value zero
+        /// for <code>rtoInSecs</code> and <code>rpoInSecs</code>, the estimated workload RTO
+        /// and estimated workload RPO result will be near zero and the <b>Compliance status</b>
+        /// for your application will be set to <b>Policy breached</b>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateResiliencyPolicy service method.</param>
         /// 
@@ -5115,6 +5156,17 @@ namespace Amazon.ResilienceHub
 
         /// <summary>
         /// Updates a resiliency policy.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Resilience Hub allows you to provide a value of zero for <code>rtoInSecs</code> and
+        /// <code>rpoInSecs</code> of your resiliency policy. But, while assessing your application,
+        /// the lowest possible assessment result is near zero. Hence, if you provide value zero
+        /// for <code>rtoInSecs</code> and <code>rpoInSecs</code>, the estimated workload RTO
+        /// and estimated workload RPO result will be near zero and the <b>Compliance status</b>
+        /// for your application will be set to <b>Policy breached</b>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateResiliencyPolicy service method.</param>
         /// <param name="cancellationToken">

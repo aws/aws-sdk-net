@@ -70,6 +70,12 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.ChildManifestName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("FilterConfiguration", targetDepth))
+                {
+                    var unmarshaller = FilterConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.FilterConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ManifestName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

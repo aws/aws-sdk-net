@@ -39,6 +39,7 @@ namespace Amazon.NetworkManager.Model
         private string _coreNetworkId;
         private DateTime? _createdAt;
         private string _edgeLocation;
+        private string _subnetArn;
         private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
@@ -151,6 +152,25 @@ namespace Amazon.NetworkManager.Model
         internal bool IsSetEdgeLocation()
         {
             return this._edgeLocation != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SubnetArn. 
+        /// <para>
+        /// The subnet ARN for the Connect peer summary.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=500)]
+        public string SubnetArn
+        {
+            get { return this._subnetArn; }
+            set { this._subnetArn = value; }
+        }
+
+        // Check to see if SubnetArn property is set
+        internal bool IsSetSubnetArn()
+        {
+            return this._subnetArn != null;
         }
 
         /// <summary>

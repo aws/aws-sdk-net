@@ -67,6 +67,12 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetDeleteHistory())
+                {
+                    context.Writer.WritePropertyName("deleteHistory");
+                    context.Writer.Write(publicRequest.DeleteHistory);
+                }
+
                 if(publicRequest.IsSetImportTaskIds())
                 {
                     context.Writer.WritePropertyName("importTaskIds");

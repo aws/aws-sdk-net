@@ -86,6 +86,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("TargetDBClusterParameterGroupName", StringUtils.FromString(publicRequest.TargetDBClusterParameterGroupName));
                 }
+                if(publicRequest.IsSetTargetDBInstanceClass())
+                {
+                    request.Parameters.Add("TargetDBInstanceClass", StringUtils.FromString(publicRequest.TargetDBInstanceClass));
+                }
                 if(publicRequest.IsSetTargetDBParameterGroupName())
                 {
                     request.Parameters.Add("TargetDBParameterGroupName", StringUtils.FromString(publicRequest.TargetDBParameterGroupName));
@@ -93,6 +97,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetTargetEngineVersion())
                 {
                     request.Parameters.Add("TargetEngineVersion", StringUtils.FromString(publicRequest.TargetEngineVersion));
+                }
+                if(publicRequest.IsSetUpgradeTargetStorageConfig())
+                {
+                    request.Parameters.Add("UpgradeTargetStorageConfig", StringUtils.FromBool(publicRequest.UpgradeTargetStorageConfig));
                 }
             }
             return request;

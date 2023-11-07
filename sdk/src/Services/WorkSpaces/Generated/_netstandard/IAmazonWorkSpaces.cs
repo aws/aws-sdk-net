@@ -635,13 +635,18 @@ namespace Amazon.WorkSpaces
         /// <para>
         /// This operation is asynchronous and returns before the WorkSpaces are created.
         /// </para>
-        ///  <note> 
+        ///  <note> <ul> <li> 
         /// <para>
         /// The <code>MANUAL</code> running mode value is only supported by Amazon WorkSpaces
         /// Core. Contact your account team to be allow-listed to use this value. For more information,
         /// see <a href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.
         /// </para>
-        ///  </note>
+        ///  </li> <li> 
+        /// <para>
+        /// You don't need to specify the <code>PCOIP</code> protocol for Linux bundles because
+        /// <code>WSP</code> is the default protocol for those bundles.
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateWorkspaces service method.</param>
         /// <param name="cancellationToken">

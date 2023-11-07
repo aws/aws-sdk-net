@@ -38,7 +38,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property Branch. 
         /// <para>
-        ///  The branch for an Amplify app, which maps to a third-party repository branch. 
+        /// The branch for an Amplify app, which maps to a third-party repository branch. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

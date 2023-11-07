@@ -32,7 +32,9 @@ namespace Amazon.SageMaker.Model
     /// Defines the objective metric for a hyperparameter tuning job. Hyperparameter tuning
     /// uses the value of this metric to evaluate the training jobs it launches, and returns
     /// the training job that results in either the highest or lowest value for this metric,
-    /// depending on the value you specify for the <code>Type</code> parameter.
+    /// depending on the value you specify for the <code>Type</code> parameter. If you want
+    /// to define a custom objective metric, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics-variables.html">Define
+    /// metrics and environment variables</a>.
     /// </summary>
     public partial class HyperParameterTuningJobObjective
     {

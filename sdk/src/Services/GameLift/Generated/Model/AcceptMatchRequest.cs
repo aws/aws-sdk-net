@@ -113,7 +113,7 @@ namespace Amazon.GameLift.Model
         /// one or multiple player IDs.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public List<string> PlayerIds
         {
             get { return this._playerIds; }

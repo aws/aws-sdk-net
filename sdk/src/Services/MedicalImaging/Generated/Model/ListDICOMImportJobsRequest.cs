@@ -30,7 +30,7 @@ namespace Amazon.MedicalImaging.Model
 {
     /// <summary>
     /// Container for the parameters to the ListDICOMImportJobs operation.
-    /// List import jobs created by this AWS account for a specific data store.
+    /// List import jobs created for a specific data store.
     /// </summary>
     public partial class ListDICOMImportJobsRequest : AmazonMedicalImagingRequest
     {

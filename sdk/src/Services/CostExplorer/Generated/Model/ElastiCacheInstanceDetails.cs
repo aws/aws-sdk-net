@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
-    /// Details about the Amazon ElastiCache instances that Amazon Web Services recommends
+    /// Details about the Amazon ElastiCache reservations that Amazon Web Services recommends
     /// that you purchase.
     /// </summary>
     public partial class ElastiCacheInstanceDetails

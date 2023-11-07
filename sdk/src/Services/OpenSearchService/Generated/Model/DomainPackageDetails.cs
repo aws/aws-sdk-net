@@ -142,7 +142,7 @@ namespace Amazon.OpenSearchService.Model
         /// User-specified name of the package.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=3, Max=28)]
+        [AWSProperty(Min=3, Max=256)]
         public string PackageName
         {
             get { return this._packageName; }

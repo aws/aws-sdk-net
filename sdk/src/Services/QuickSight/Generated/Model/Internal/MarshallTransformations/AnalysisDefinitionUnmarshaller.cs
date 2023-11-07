@@ -94,6 +94,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.FilterGroups = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Options", targetDepth))
+                {
+                    var unmarshaller = AssetOptionsUnmarshaller.Instance;
+                    unmarshalledObject.Options = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ParameterDeclarations", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<ParameterDeclaration, ParameterDeclarationUnmarshaller>(ParameterDeclarationUnmarshaller.Instance);

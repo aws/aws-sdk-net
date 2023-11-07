@@ -166,6 +166,28 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetConnectorDataSource())
+            {
+                context.Writer.WritePropertyName("ConnectorDataSource");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ConnectorDataSourceMarshaller.Instance;
+                marshaller.Marshall(requestObject.ConnectorDataSource, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetConnectorDataTarget())
+            {
+                context.Writer.WritePropertyName("ConnectorDataTarget");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ConnectorDataTargetMarshaller.Instance;
+                marshaller.Marshall(requestObject.ConnectorDataTarget, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetCustomCode())
             {
                 context.Writer.WritePropertyName("CustomCode");

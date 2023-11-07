@@ -31,12 +31,13 @@ namespace Amazon.NetworkFirewall.Model
     /// <summary>
     /// Container for the parameters to the CreateTLSInspectionConfiguration operation.
     /// Creates an Network Firewall TLS inspection configuration. A TLS inspection configuration
-    /// contains the Certificate Manager certificate references that Network Firewall uses
-    /// to decrypt and re-encrypt inbound traffic.
+    /// contains Certificate Manager certificate associations between and the scope configurations
+    /// that Network Firewall uses to decrypt and re-encrypt traffic traveling through your
+    /// firewall.
     /// 
     ///  
     /// <para>
-    /// After you create a TLS inspection configuration, you associate it with a new firewall
+    /// After you create a TLS inspection configuration, you can associate it with a new firewall
     /// policy.
     /// </para>
     ///  
@@ -55,7 +56,7 @@ namespace Amazon.NetworkFirewall.Model
     /// </para>
     ///  
     /// <para>
-    ///  For more information about TLS inspection configurations, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/tls-inspection.html">Decrypting
+    ///  For more information about TLS inspection configurations, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/tls-inspection.html">Inspecting
     /// SSL/TLS traffic with TLS inspection configurations</a> in the <i>Network Firewall
     /// Developer Guide</i>. 
     /// </para>
@@ -137,10 +138,10 @@ namespace Amazon.NetworkFirewall.Model
         /// <para>
         /// To use a TLS inspection configuration, you add it to a new Network Firewall firewall
         /// policy, then you apply the firewall policy to a firewall. Network Firewall acts as
-        /// a proxy service to decrypt and inspect inbound traffic. You can reference a TLS inspection
-        /// configuration from more than one firewall policy, and you can use a firewall policy
-        /// in more than one firewall. For more information about using TLS inspection configurations,
-        /// see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/tls-inspection.html">Decrypting
+        /// a proxy service to decrypt and inspect the traffic traveling through your firewalls.
+        /// You can reference a TLS inspection configuration from more than one firewall policy,
+        /// and you can use a firewall policy in more than one firewall. For more information
+        /// about using TLS inspection configurations, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/tls-inspection.html">Inspecting
         /// SSL/TLS traffic with TLS inspection configurations</a> in the <i>Network Firewall
         /// Developer Guide</i>.
         /// </para>

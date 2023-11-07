@@ -185,6 +185,12 @@
     <max>50</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ApplicationInsights.Model.DescribeComponentConfigurationRecommendationRequest.WorkloadName</property>
+    <min>1</min>
+    <max>8</max>
+    <pattern>[a-zA-Z0-9\.\-_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.DescribeComponentConfigurationRecommendationResponse.ComponentConfiguration</property>
     <min>1</min>
     <max>10000</max>

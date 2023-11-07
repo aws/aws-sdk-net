@@ -535,9 +535,8 @@ namespace Amazon.Neptune.Model
         ///  
         /// <para>
         /// The default is a 30-minute window selected at random from an 8-hour block of time
-        /// for each Amazon Region. To see the time blocks available, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
-        /// Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i>
-        /// 
+        /// for each Amazon Region. To see the time blocks available, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-maintaining.html#manage-console-maintaining-window">Neptune
+        /// Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i> 
         /// </para>
         ///  
         /// <para>
@@ -587,9 +586,8 @@ namespace Amazon.Neptune.Model
         /// <para>
         /// The default is a 30-minute window selected at random from an 8-hour block of time
         /// for each Amazon Region, occurring on a random day of the week. To see the time blocks
-        /// available, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
-        /// Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i>
-        /// 
+        /// available, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-maintaining.html#manage-console-maintaining-window">Neptune
+        /// Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i> 
         /// </para>
         ///  
         /// <para>
@@ -650,7 +648,15 @@ namespace Amazon.Neptune.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ServerlessV2ScalingConfiguration.
+        /// Gets and sets the property ServerlessV2ScalingConfiguration. 
+        /// <para>
+        /// Contains the scaling configuration of a Neptune Serverless DB cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using
+        /// Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.
+        /// </para>
         /// </summary>
         public ServerlessV2ScalingConfiguration ServerlessV2ScalingConfiguration
         {

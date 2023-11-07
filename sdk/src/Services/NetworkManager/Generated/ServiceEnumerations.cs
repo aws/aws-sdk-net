@@ -1720,6 +1720,10 @@ namespace Amazon.NetworkManager
         /// Constant GRE for TunnelProtocol
         /// </summary>
         public static readonly TunnelProtocol GRE = new TunnelProtocol("GRE");
+        /// <summary>
+        /// Constant NO_ENCAP for TunnelProtocol
+        /// </summary>
+        public static readonly TunnelProtocol NO_ENCAP = new TunnelProtocol("NO_ENCAP");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

@@ -45,6 +45,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CanvasAppSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetDirectDeploySettings())
+            {
+                context.Writer.WritePropertyName("DirectDeploySettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = DirectDeploySettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.DirectDeploySettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetIdentityProviderOAuthSettings())
             {
                 context.Writer.WritePropertyName("IdentityProviderOAuthSettings");
@@ -59,6 +70,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
                 context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetKendraSettings())
+            {
+                context.Writer.WritePropertyName("KendraSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = KendraSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.KendraSettings, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
             if(requestObject.IsSetModelRegisterSettings())

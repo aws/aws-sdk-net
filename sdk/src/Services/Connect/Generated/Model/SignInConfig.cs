@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// The distribution of allowing signing in to the instance and its replica(s).
+    /// The distribution that determines which Amazon Web Services Regions should be used
+    /// to sign in agents in to both the instance and its replica(s).
     /// </summary>
     public partial class SignInConfig
     {

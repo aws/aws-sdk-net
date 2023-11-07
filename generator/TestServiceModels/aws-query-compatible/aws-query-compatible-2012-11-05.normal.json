@@ -31,6 +31,34 @@
         { "shape": "QueueDeletedRecently" },
         { "shape": "QueueNameExists" }
       ]
+    },
+    "StaticOp": {
+      "name": "StaticOp",
+      "input": {
+        "shape": "StaticInputShape",
+        "locationName": "StaticOpRequest"
+      },
+      "http": {
+        "method": "POST",
+        "requestUri": "/path"
+      },
+      "endpoint": {
+        "hostPrefix": "data-"
+      }
+    },
+    "MemberRefOp": {
+      "name": "MemberRefOp",
+      "input": {
+        "shape": "MemberRefInputShape",
+        "locationName": "MemberRefOpRequest"
+      },
+      "http": {
+        "method": "POST",
+        "requestUri": "/path"
+      },
+      "endpoint": {
+        "hostPrefix": "foo-{Name}."
+      }
     }
   },
   "shapes": {
@@ -68,6 +96,23 @@
         "senderFault": true
       },
       "exception": true
+    },
+    "StaticInputShape": {
+      "type": "structure",
+      "members": {
+        "Name": {
+          "shape": "String"
+        }
+      }
+    },
+    "MemberRefInputShape": {
+      "type": "structure",
+      "members": {
+        "Name": {
+          "shape": "String",
+          "hostLabel": true
+        }
+      }
     },
     "String": { "type": "string" }
   }

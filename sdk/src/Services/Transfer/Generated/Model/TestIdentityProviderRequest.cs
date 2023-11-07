@@ -167,7 +167,7 @@ namespace Amazon.Transfer.Model
         /// The source IP address of the account to be tested.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=32)]
+        [AWSProperty(Min=0, Max=32)]
         public string SourceIp
         {
             get { return this._sourceIp; }
@@ -205,7 +205,7 @@ namespace Amazon.Transfer.Model
         /// The password of the account to be tested.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=0, Max=1024)]
         public string UserPassword
         {
             get { return this._userPassword; }

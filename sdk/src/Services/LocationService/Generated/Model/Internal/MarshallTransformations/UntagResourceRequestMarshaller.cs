@@ -67,7 +67,7 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
             request.ResourcePath = "/tags/{ResourceArn}";
             request.UseQueryString = true;
             
-            request.HostPrefix = $"metadata.";
+            request.HostPrefix = $"cp.metadata.";
 
             return request;
         }

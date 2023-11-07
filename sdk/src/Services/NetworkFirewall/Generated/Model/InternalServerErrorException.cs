@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NetworkFirewall.Model
 {
     /// <summary>
-    /// Your request is valid, but Network Firewall couldn’t perform the operation because
+    /// Your request is valid, but Network Firewall couldn't perform the operation because
     /// of a system problem. Retry your request.
     /// </summary>
     #if !NETSTANDARD

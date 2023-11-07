@@ -64,6 +64,12 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("providerProperties", targetDepth))
+                {
+                    var unmarshaller = ProviderPropertiesUnmarshaller.Instance;
+                    unmarshalledObject.ProviderProperties = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("resolutionType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

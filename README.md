@@ -380,8 +380,6 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Amazon FSx provides fully-managed third-party file systems optimized for a variety of enterprise and compute-intensive workloads.
 * [AWSSDK.GameLift](https://www.nuget.org/packages/AWSSDK.GameLift/)
 	* Amazon GameLift Service is a managed AWS service for developers who need a scalable, server-based solution for multiplayer games.
-* [AWSSDK.GameSparks](https://www.nuget.org/packages/AWSSDK.GameSparks/)
-	* Released the preview of Amazon GameSparks, a fully managed AWS service that provides a multi-service backend for game developers.
 * [AWSSDK.Glacier](https://www.nuget.org/packages/AWSSDK.Glacier/)
 	* Amazon Glacier is a secure, durable, and extremely low-cost storage service for data archiving and online backup.
 * [AWSSDK.GlobalAccelerator](https://www.nuget.org/packages/AWSSDK.GlobalAccelerator/)
@@ -492,6 +490,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Lake Formation: (New Service) AWS Lake Formation is a fully managed service that makes it easier for customers to build, secure and manage data lakes.  AWS Lake Formation simplifies and automates many of the complex manual steps usually required to create data lakes including collecting, cleaning and cataloging data and securely making that data available for analytics and machine learning.
 * [AWSSDK.Lambda](https://www.nuget.org/packages/AWSSDK.Lambda/)
 	* AWS Lambda is a compute service that runs your code in response to events and automatically manages the compute resources for you, making it easy to build applications that respond quickly to new information.
+* [AWSSDK.LaunchWizard](https://www.nuget.org/packages/AWSSDK.LaunchWizard/)
+	* AWS Launch Wizard is a service that helps reduce the time it takes to deploy applications to the cloud while providing a guided deployment experience.
 * [AWSSDK.Lex](https://www.nuget.org/packages/AWSSDK.Lex/)
 	* Amazon Lex is a service for building conversational interactions into any application using voice or text.
 * [AWSSDK.LexModelBuildingService](https://www.nuget.org/packages/AWSSDK.LexModelBuildingService/)

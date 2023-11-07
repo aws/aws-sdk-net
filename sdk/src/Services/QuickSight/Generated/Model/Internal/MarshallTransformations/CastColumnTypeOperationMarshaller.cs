@@ -63,6 +63,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.NewColumnType);
             }
 
+            if(requestObject.IsSetSubType())
+            {
+                context.Writer.WritePropertyName("SubType");
+                context.Writer.Write(requestObject.SubType);
+            }
+
         }
 
         /// <summary>

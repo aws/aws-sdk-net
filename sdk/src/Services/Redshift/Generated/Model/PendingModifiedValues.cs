@@ -195,7 +195,7 @@ namespace Amazon.Redshift.Model
         /// The pending or in-progress change of the admin user password for the cluster.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=2147483647)]
+        [AWSProperty(Sensitive=true)]
         public string MasterUserPassword
         {
             get { return this._masterUserPassword; }

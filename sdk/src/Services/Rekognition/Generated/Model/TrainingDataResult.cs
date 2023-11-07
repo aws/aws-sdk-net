@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Rekognition.Model
 {
     /// <summary>
-    /// Sagemaker Groundtruth format manifest files for the input, output and validation datasets
-    /// that are used and created during testing.
+    /// The data validation manifest created for the training dataset during model training.
     /// </summary>
     public partial class TrainingDataResult
     {
@@ -41,7 +40,7 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property Input. 
         /// <para>
-        /// The training assets that you supplied for training.
+        /// The training data that you supplied.
         /// </para>
         /// </summary>
         public TrainingData Input
@@ -59,8 +58,8 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property Output. 
         /// <para>
-        /// The images (assets) that were actually trained by Amazon Rekognition Custom Labels.
-        /// 
+        /// Reference to images (assets) that were actually used during training with trained
+        /// model predictions.
         /// </para>
         /// </summary>
         public TrainingData Output
@@ -78,8 +77,7 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property Validation. 
         /// <para>
-        /// The location of the data validation manifest. The data validation manifest is created
-        /// for the training dataset during model training.
+        /// A manifest that you supplied for training, with validation results for each line.
         /// </para>
         /// </summary>
         public ValidationData Validation

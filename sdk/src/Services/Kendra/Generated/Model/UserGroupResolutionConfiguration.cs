@@ -30,9 +30,9 @@ namespace Amazon.Kendra.Model
 {
     /// <summary>
     /// Provides the configuration information to get users and groups from an IAM Identity
-    /// Center (successor to Single Sign-On) identity source. This is useful for user context
-    /// filtering, where search results are filtered based on the user or their group access
-    /// to documents. You can also use the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_PutPrincipalMapping.html">PutPrincipalMapping</a>
+    /// Center identity source. This is useful for user context filtering, where search results
+    /// are filtered based on the user or their group access to documents. You can also use
+    /// the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_PutPrincipalMapping.html">PutPrincipalMapping</a>
     /// API to map users to their groups so that you only need to provide the user ID when
     /// you issue the query.
     /// 
@@ -61,9 +61,8 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property UserGroupResolutionMode. 
         /// <para>
         /// The identity store provider (mode) you want to use to get users and groups. IAM Identity
-        /// Center (successor to Single Sign-On) is currently the only available mode. Your users
-        /// and groups must exist in an IAM Identity Center identity source in order to use this
-        /// mode.
+        /// Center is currently the only available mode. Your users and groups must exist in an
+        /// IAM Identity Center identity source in order to use this mode.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

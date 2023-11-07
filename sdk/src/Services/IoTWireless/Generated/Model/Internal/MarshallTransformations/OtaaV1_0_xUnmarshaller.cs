@@ -82,6 +82,12 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                     unmarshalledObject.GenAppKey = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("JoinEui", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.JoinEui = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

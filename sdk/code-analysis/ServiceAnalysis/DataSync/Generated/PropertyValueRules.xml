@@ -235,9 +235,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.CreateLocationObjectStorageRequest.SecretKey</property>
-    <min>1</min>
+    <min>0</min>
     <max>200</max>
-    <pattern>^.+$</pattern>
+    <pattern>^.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.CreateLocationObjectStorageRequest.ServerCertificate</property>
@@ -1028,9 +1028,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.UpdateLocationObjectStorageRequest.SecretKey</property>
-    <min>1</min>
+    <min>0</min>
     <max>200</max>
-    <pattern>^.+$</pattern>
+    <pattern>^.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.UpdateLocationObjectStorageRequest.ServerCertificate</property>
@@ -1417,6 +1417,12 @@
   <property-value-rule>
     <property>Amazon.DataSync.Model.Options.BytesPerSecond</property>
     <min>-1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataSync.Model.Platform.Version</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[a-zA-Z0-9\s+=._:@/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.PrivateLinkConfig.PrivateLinkEndpoint</property>

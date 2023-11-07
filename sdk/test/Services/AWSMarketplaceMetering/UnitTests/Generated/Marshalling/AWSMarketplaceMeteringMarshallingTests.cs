@@ -46,7 +46,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AWSMarketplaceMetering")]
         public void BatchMeterUsageMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<BatchMeterUsageRequest>();
+            var operation = service_model.FindOperation("BatchMeterUsage");
+
+            var request = InstantiateClassGenerator.Execute<BatchMeterUsageRequest>(operation);
             var marshaller = new BatchMeterUsageRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -60,7 +62,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("BatchMeterUsage").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = BatchMeterUsageResponseUnmarshaller.Instance.Unmarshall(context) as BatchMeterUsageResponse;
@@ -75,7 +77,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("BatchMeterUsage");
 
-            var request = InstantiateClassGenerator.Execute<BatchMeterUsageRequest>();
+            var request = InstantiateClassGenerator.Execute<BatchMeterUsageRequest>(operation);
             var marshaller = new BatchMeterUsageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -107,7 +109,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("BatchMeterUsage");
 
-            var request = InstantiateClassGenerator.Execute<BatchMeterUsageRequest>();
+            var request = InstantiateClassGenerator.Execute<BatchMeterUsageRequest>(operation);
             var marshaller = new BatchMeterUsageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -139,7 +141,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("BatchMeterUsage");
 
-            var request = InstantiateClassGenerator.Execute<BatchMeterUsageRequest>();
+            var request = InstantiateClassGenerator.Execute<BatchMeterUsageRequest>(operation);
             var marshaller = new BatchMeterUsageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -171,7 +173,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("BatchMeterUsage");
 
-            var request = InstantiateClassGenerator.Execute<BatchMeterUsageRequest>();
+            var request = InstantiateClassGenerator.Execute<BatchMeterUsageRequest>(operation);
             var marshaller = new BatchMeterUsageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -203,7 +205,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("BatchMeterUsage");
 
-            var request = InstantiateClassGenerator.Execute<BatchMeterUsageRequest>();
+            var request = InstantiateClassGenerator.Execute<BatchMeterUsageRequest>(operation);
             var marshaller = new BatchMeterUsageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -235,7 +237,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("BatchMeterUsage");
 
-            var request = InstantiateClassGenerator.Execute<BatchMeterUsageRequest>();
+            var request = InstantiateClassGenerator.Execute<BatchMeterUsageRequest>(operation);
             var marshaller = new BatchMeterUsageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -267,7 +269,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("BatchMeterUsage");
 
-            var request = InstantiateClassGenerator.Execute<BatchMeterUsageRequest>();
+            var request = InstantiateClassGenerator.Execute<BatchMeterUsageRequest>(operation);
             var marshaller = new BatchMeterUsageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -299,7 +301,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("BatchMeterUsage");
 
-            var request = InstantiateClassGenerator.Execute<BatchMeterUsageRequest>();
+            var request = InstantiateClassGenerator.Execute<BatchMeterUsageRequest>(operation);
             var marshaller = new BatchMeterUsageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -331,7 +333,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("BatchMeterUsage");
 
-            var request = InstantiateClassGenerator.Execute<BatchMeterUsageRequest>();
+            var request = InstantiateClassGenerator.Execute<BatchMeterUsageRequest>(operation);
             var marshaller = new BatchMeterUsageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -361,7 +363,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AWSMarketplaceMetering")]
         public void MeterUsageMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<MeterUsageRequest>();
+            var operation = service_model.FindOperation("MeterUsage");
+
+            var request = InstantiateClassGenerator.Execute<MeterUsageRequest>(operation);
             var marshaller = new MeterUsageRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -375,7 +379,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("MeterUsage").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = MeterUsageResponseUnmarshaller.Instance.Unmarshall(context) as MeterUsageResponse;
@@ -390,7 +394,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("MeterUsage");
 
-            var request = InstantiateClassGenerator.Execute<MeterUsageRequest>();
+            var request = InstantiateClassGenerator.Execute<MeterUsageRequest>(operation);
             var marshaller = new MeterUsageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -422,7 +426,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("MeterUsage");
 
-            var request = InstantiateClassGenerator.Execute<MeterUsageRequest>();
+            var request = InstantiateClassGenerator.Execute<MeterUsageRequest>(operation);
             var marshaller = new MeterUsageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -454,7 +458,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("MeterUsage");
 
-            var request = InstantiateClassGenerator.Execute<MeterUsageRequest>();
+            var request = InstantiateClassGenerator.Execute<MeterUsageRequest>(operation);
             var marshaller = new MeterUsageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -486,7 +490,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("MeterUsage");
 
-            var request = InstantiateClassGenerator.Execute<MeterUsageRequest>();
+            var request = InstantiateClassGenerator.Execute<MeterUsageRequest>(operation);
             var marshaller = new MeterUsageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -518,7 +522,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("MeterUsage");
 
-            var request = InstantiateClassGenerator.Execute<MeterUsageRequest>();
+            var request = InstantiateClassGenerator.Execute<MeterUsageRequest>(operation);
             var marshaller = new MeterUsageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -550,7 +554,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("MeterUsage");
 
-            var request = InstantiateClassGenerator.Execute<MeterUsageRequest>();
+            var request = InstantiateClassGenerator.Execute<MeterUsageRequest>(operation);
             var marshaller = new MeterUsageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -582,7 +586,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("MeterUsage");
 
-            var request = InstantiateClassGenerator.Execute<MeterUsageRequest>();
+            var request = InstantiateClassGenerator.Execute<MeterUsageRequest>(operation);
             var marshaller = new MeterUsageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -614,7 +618,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("MeterUsage");
 
-            var request = InstantiateClassGenerator.Execute<MeterUsageRequest>();
+            var request = InstantiateClassGenerator.Execute<MeterUsageRequest>(operation);
             var marshaller = new MeterUsageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -646,7 +650,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("MeterUsage");
 
-            var request = InstantiateClassGenerator.Execute<MeterUsageRequest>();
+            var request = InstantiateClassGenerator.Execute<MeterUsageRequest>(operation);
             var marshaller = new MeterUsageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -678,7 +682,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("MeterUsage");
 
-            var request = InstantiateClassGenerator.Execute<MeterUsageRequest>();
+            var request = InstantiateClassGenerator.Execute<MeterUsageRequest>(operation);
             var marshaller = new MeterUsageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -708,7 +712,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AWSMarketplaceMetering")]
         public void RegisterUsageMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<RegisterUsageRequest>();
+            var operation = service_model.FindOperation("RegisterUsage");
+
+            var request = InstantiateClassGenerator.Execute<RegisterUsageRequest>(operation);
             var marshaller = new RegisterUsageRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -722,7 +728,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("RegisterUsage").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = RegisterUsageResponseUnmarshaller.Instance.Unmarshall(context) as RegisterUsageResponse;
@@ -737,7 +743,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("RegisterUsage");
 
-            var request = InstantiateClassGenerator.Execute<RegisterUsageRequest>();
+            var request = InstantiateClassGenerator.Execute<RegisterUsageRequest>(operation);
             var marshaller = new RegisterUsageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -769,7 +775,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("RegisterUsage");
 
-            var request = InstantiateClassGenerator.Execute<RegisterUsageRequest>();
+            var request = InstantiateClassGenerator.Execute<RegisterUsageRequest>(operation);
             var marshaller = new RegisterUsageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -801,7 +807,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("RegisterUsage");
 
-            var request = InstantiateClassGenerator.Execute<RegisterUsageRequest>();
+            var request = InstantiateClassGenerator.Execute<RegisterUsageRequest>(operation);
             var marshaller = new RegisterUsageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -833,7 +839,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("RegisterUsage");
 
-            var request = InstantiateClassGenerator.Execute<RegisterUsageRequest>();
+            var request = InstantiateClassGenerator.Execute<RegisterUsageRequest>(operation);
             var marshaller = new RegisterUsageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -865,7 +871,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("RegisterUsage");
 
-            var request = InstantiateClassGenerator.Execute<RegisterUsageRequest>();
+            var request = InstantiateClassGenerator.Execute<RegisterUsageRequest>(operation);
             var marshaller = new RegisterUsageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -897,7 +903,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("RegisterUsage");
 
-            var request = InstantiateClassGenerator.Execute<RegisterUsageRequest>();
+            var request = InstantiateClassGenerator.Execute<RegisterUsageRequest>(operation);
             var marshaller = new RegisterUsageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -929,7 +935,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("RegisterUsage");
 
-            var request = InstantiateClassGenerator.Execute<RegisterUsageRequest>();
+            var request = InstantiateClassGenerator.Execute<RegisterUsageRequest>(operation);
             var marshaller = new RegisterUsageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -961,7 +967,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("RegisterUsage");
 
-            var request = InstantiateClassGenerator.Execute<RegisterUsageRequest>();
+            var request = InstantiateClassGenerator.Execute<RegisterUsageRequest>(operation);
             var marshaller = new RegisterUsageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -991,7 +997,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AWSMarketplaceMetering")]
         public void ResolveCustomerMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ResolveCustomerRequest>();
+            var operation = service_model.FindOperation("ResolveCustomer");
+
+            var request = InstantiateClassGenerator.Execute<ResolveCustomerRequest>(operation);
             var marshaller = new ResolveCustomerRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1005,7 +1013,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ResolveCustomer").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ResolveCustomerResponseUnmarshaller.Instance.Unmarshall(context) as ResolveCustomerResponse;
@@ -1020,7 +1028,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ResolveCustomer");
 
-            var request = InstantiateClassGenerator.Execute<ResolveCustomerRequest>();
+            var request = InstantiateClassGenerator.Execute<ResolveCustomerRequest>(operation);
             var marshaller = new ResolveCustomerRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1052,7 +1060,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ResolveCustomer");
 
-            var request = InstantiateClassGenerator.Execute<ResolveCustomerRequest>();
+            var request = InstantiateClassGenerator.Execute<ResolveCustomerRequest>(operation);
             var marshaller = new ResolveCustomerRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1084,7 +1092,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ResolveCustomer");
 
-            var request = InstantiateClassGenerator.Execute<ResolveCustomerRequest>();
+            var request = InstantiateClassGenerator.Execute<ResolveCustomerRequest>(operation);
             var marshaller = new ResolveCustomerRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1116,7 +1124,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ResolveCustomer");
 
-            var request = InstantiateClassGenerator.Execute<ResolveCustomerRequest>();
+            var request = InstantiateClassGenerator.Execute<ResolveCustomerRequest>(operation);
             var marshaller = new ResolveCustomerRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1148,7 +1156,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ResolveCustomer");
 
-            var request = InstantiateClassGenerator.Execute<ResolveCustomerRequest>();
+            var request = InstantiateClassGenerator.Execute<ResolveCustomerRequest>(operation);
             var marshaller = new ResolveCustomerRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);

@@ -31,6 +31,14 @@ namespace Amazon.Neptunedata.Model
     /// <summary>
     /// Container for the parameters to the DeleteSparqlStatistics operation.
     /// Deletes SPARQL statistics
+    /// 
+    ///  
+    /// <para>
+    /// When invoking this operation in a Neptune cluster that has IAM authentication enabled,
+    /// the IAM user or role making the request must have a policy attached that allows the
+    /// <a href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#deletestatistics">neptune-db:DeleteStatistics</a>
+    /// IAM action in that cluster.
+    /// </para>
     /// </summary>
     public partial class DeleteSparqlStatisticsRequest : AmazonNeptunedataRequest
     {

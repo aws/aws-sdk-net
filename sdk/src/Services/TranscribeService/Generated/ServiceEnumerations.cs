@@ -465,6 +465,10 @@ namespace Amazon.TranscribeService
         /// </summary>
         public static readonly MediaFormat Flac = new MediaFormat("flac");
         /// <summary>
+        /// Constant M4a for MediaFormat
+        /// </summary>
+        public static readonly MediaFormat M4a = new MediaFormat("m4a");
+        /// <summary>
         /// Constant Mp3 for MediaFormat
         /// </summary>
         public static readonly MediaFormat Mp3 = new MediaFormat("mp3");

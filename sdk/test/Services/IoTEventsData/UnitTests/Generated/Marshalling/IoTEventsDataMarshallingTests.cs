@@ -49,7 +49,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("BatchAcknowledgeAlarm");
 
-            var request = InstantiateClassGenerator.Execute<BatchAcknowledgeAlarmRequest>();
+            var request = InstantiateClassGenerator.Execute<BatchAcknowledgeAlarmRequest>(operation);
             var marshaller = new BatchAcknowledgeAlarmRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -79,7 +79,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("BatchAcknowledgeAlarm");
 
-            var request = InstantiateClassGenerator.Execute<BatchAcknowledgeAlarmRequest>();
+            var request = InstantiateClassGenerator.Execute<BatchAcknowledgeAlarmRequest>(operation);
             var marshaller = new BatchAcknowledgeAlarmRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -111,7 +111,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("BatchAcknowledgeAlarm");
 
-            var request = InstantiateClassGenerator.Execute<BatchAcknowledgeAlarmRequest>();
+            var request = InstantiateClassGenerator.Execute<BatchAcknowledgeAlarmRequest>(operation);
             var marshaller = new BatchAcknowledgeAlarmRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -143,7 +143,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("BatchAcknowledgeAlarm");
 
-            var request = InstantiateClassGenerator.Execute<BatchAcknowledgeAlarmRequest>();
+            var request = InstantiateClassGenerator.Execute<BatchAcknowledgeAlarmRequest>(operation);
             var marshaller = new BatchAcknowledgeAlarmRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -175,7 +175,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("BatchAcknowledgeAlarm");
 
-            var request = InstantiateClassGenerator.Execute<BatchAcknowledgeAlarmRequest>();
+            var request = InstantiateClassGenerator.Execute<BatchAcknowledgeAlarmRequest>(operation);
             var marshaller = new BatchAcknowledgeAlarmRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -207,7 +207,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("BatchDeleteDetector");
 
-            var request = InstantiateClassGenerator.Execute<BatchDeleteDetectorRequest>();
+            var request = InstantiateClassGenerator.Execute<BatchDeleteDetectorRequest>(operation);
             var marshaller = new BatchDeleteDetectorRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -237,7 +237,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("BatchDeleteDetector");
 
-            var request = InstantiateClassGenerator.Execute<BatchDeleteDetectorRequest>();
+            var request = InstantiateClassGenerator.Execute<BatchDeleteDetectorRequest>(operation);
             var marshaller = new BatchDeleteDetectorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -269,7 +269,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("BatchDeleteDetector");
 
-            var request = InstantiateClassGenerator.Execute<BatchDeleteDetectorRequest>();
+            var request = InstantiateClassGenerator.Execute<BatchDeleteDetectorRequest>(operation);
             var marshaller = new BatchDeleteDetectorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -301,7 +301,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("BatchDeleteDetector");
 
-            var request = InstantiateClassGenerator.Execute<BatchDeleteDetectorRequest>();
+            var request = InstantiateClassGenerator.Execute<BatchDeleteDetectorRequest>(operation);
             var marshaller = new BatchDeleteDetectorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -333,7 +333,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("BatchDeleteDetector");
 
-            var request = InstantiateClassGenerator.Execute<BatchDeleteDetectorRequest>();
+            var request = InstantiateClassGenerator.Execute<BatchDeleteDetectorRequest>(operation);
             var marshaller = new BatchDeleteDetectorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -365,7 +365,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("BatchDisableAlarm");
 
-            var request = InstantiateClassGenerator.Execute<BatchDisableAlarmRequest>();
+            var request = InstantiateClassGenerator.Execute<BatchDisableAlarmRequest>(operation);
             var marshaller = new BatchDisableAlarmRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -395,7 +395,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("BatchDisableAlarm");
 
-            var request = InstantiateClassGenerator.Execute<BatchDisableAlarmRequest>();
+            var request = InstantiateClassGenerator.Execute<BatchDisableAlarmRequest>(operation);
             var marshaller = new BatchDisableAlarmRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -427,7 +427,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("BatchDisableAlarm");
 
-            var request = InstantiateClassGenerator.Execute<BatchDisableAlarmRequest>();
+            var request = InstantiateClassGenerator.Execute<BatchDisableAlarmRequest>(operation);
             var marshaller = new BatchDisableAlarmRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -459,7 +459,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("BatchDisableAlarm");
 
-            var request = InstantiateClassGenerator.Execute<BatchDisableAlarmRequest>();
+            var request = InstantiateClassGenerator.Execute<BatchDisableAlarmRequest>(operation);
             var marshaller = new BatchDisableAlarmRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -491,7 +491,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("BatchDisableAlarm");
 
-            var request = InstantiateClassGenerator.Execute<BatchDisableAlarmRequest>();
+            var request = InstantiateClassGenerator.Execute<BatchDisableAlarmRequest>(operation);
             var marshaller = new BatchDisableAlarmRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -523,7 +523,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("BatchEnableAlarm");
 
-            var request = InstantiateClassGenerator.Execute<BatchEnableAlarmRequest>();
+            var request = InstantiateClassGenerator.Execute<BatchEnableAlarmRequest>(operation);
             var marshaller = new BatchEnableAlarmRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -553,7 +553,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("BatchEnableAlarm");
 
-            var request = InstantiateClassGenerator.Execute<BatchEnableAlarmRequest>();
+            var request = InstantiateClassGenerator.Execute<BatchEnableAlarmRequest>(operation);
             var marshaller = new BatchEnableAlarmRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -585,7 +585,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("BatchEnableAlarm");
 
-            var request = InstantiateClassGenerator.Execute<BatchEnableAlarmRequest>();
+            var request = InstantiateClassGenerator.Execute<BatchEnableAlarmRequest>(operation);
             var marshaller = new BatchEnableAlarmRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -617,7 +617,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("BatchEnableAlarm");
 
-            var request = InstantiateClassGenerator.Execute<BatchEnableAlarmRequest>();
+            var request = InstantiateClassGenerator.Execute<BatchEnableAlarmRequest>(operation);
             var marshaller = new BatchEnableAlarmRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -649,7 +649,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("BatchEnableAlarm");
 
-            var request = InstantiateClassGenerator.Execute<BatchEnableAlarmRequest>();
+            var request = InstantiateClassGenerator.Execute<BatchEnableAlarmRequest>(operation);
             var marshaller = new BatchEnableAlarmRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -681,7 +681,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("BatchPutMessage");
 
-            var request = InstantiateClassGenerator.Execute<BatchPutMessageRequest>();
+            var request = InstantiateClassGenerator.Execute<BatchPutMessageRequest>(operation);
             var marshaller = new BatchPutMessageRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -711,7 +711,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("BatchPutMessage");
 
-            var request = InstantiateClassGenerator.Execute<BatchPutMessageRequest>();
+            var request = InstantiateClassGenerator.Execute<BatchPutMessageRequest>(operation);
             var marshaller = new BatchPutMessageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -743,7 +743,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("BatchPutMessage");
 
-            var request = InstantiateClassGenerator.Execute<BatchPutMessageRequest>();
+            var request = InstantiateClassGenerator.Execute<BatchPutMessageRequest>(operation);
             var marshaller = new BatchPutMessageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -775,7 +775,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("BatchPutMessage");
 
-            var request = InstantiateClassGenerator.Execute<BatchPutMessageRequest>();
+            var request = InstantiateClassGenerator.Execute<BatchPutMessageRequest>(operation);
             var marshaller = new BatchPutMessageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -807,7 +807,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("BatchPutMessage");
 
-            var request = InstantiateClassGenerator.Execute<BatchPutMessageRequest>();
+            var request = InstantiateClassGenerator.Execute<BatchPutMessageRequest>(operation);
             var marshaller = new BatchPutMessageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -839,7 +839,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("BatchResetAlarm");
 
-            var request = InstantiateClassGenerator.Execute<BatchResetAlarmRequest>();
+            var request = InstantiateClassGenerator.Execute<BatchResetAlarmRequest>(operation);
             var marshaller = new BatchResetAlarmRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -869,7 +869,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("BatchResetAlarm");
 
-            var request = InstantiateClassGenerator.Execute<BatchResetAlarmRequest>();
+            var request = InstantiateClassGenerator.Execute<BatchResetAlarmRequest>(operation);
             var marshaller = new BatchResetAlarmRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -901,7 +901,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("BatchResetAlarm");
 
-            var request = InstantiateClassGenerator.Execute<BatchResetAlarmRequest>();
+            var request = InstantiateClassGenerator.Execute<BatchResetAlarmRequest>(operation);
             var marshaller = new BatchResetAlarmRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -933,7 +933,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("BatchResetAlarm");
 
-            var request = InstantiateClassGenerator.Execute<BatchResetAlarmRequest>();
+            var request = InstantiateClassGenerator.Execute<BatchResetAlarmRequest>(operation);
             var marshaller = new BatchResetAlarmRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -965,7 +965,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("BatchResetAlarm");
 
-            var request = InstantiateClassGenerator.Execute<BatchResetAlarmRequest>();
+            var request = InstantiateClassGenerator.Execute<BatchResetAlarmRequest>(operation);
             var marshaller = new BatchResetAlarmRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -997,7 +997,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("BatchSnoozeAlarm");
 
-            var request = InstantiateClassGenerator.Execute<BatchSnoozeAlarmRequest>();
+            var request = InstantiateClassGenerator.Execute<BatchSnoozeAlarmRequest>(operation);
             var marshaller = new BatchSnoozeAlarmRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1027,7 +1027,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("BatchSnoozeAlarm");
 
-            var request = InstantiateClassGenerator.Execute<BatchSnoozeAlarmRequest>();
+            var request = InstantiateClassGenerator.Execute<BatchSnoozeAlarmRequest>(operation);
             var marshaller = new BatchSnoozeAlarmRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1059,7 +1059,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("BatchSnoozeAlarm");
 
-            var request = InstantiateClassGenerator.Execute<BatchSnoozeAlarmRequest>();
+            var request = InstantiateClassGenerator.Execute<BatchSnoozeAlarmRequest>(operation);
             var marshaller = new BatchSnoozeAlarmRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1091,7 +1091,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("BatchSnoozeAlarm");
 
-            var request = InstantiateClassGenerator.Execute<BatchSnoozeAlarmRequest>();
+            var request = InstantiateClassGenerator.Execute<BatchSnoozeAlarmRequest>(operation);
             var marshaller = new BatchSnoozeAlarmRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1123,7 +1123,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("BatchSnoozeAlarm");
 
-            var request = InstantiateClassGenerator.Execute<BatchSnoozeAlarmRequest>();
+            var request = InstantiateClassGenerator.Execute<BatchSnoozeAlarmRequest>(operation);
             var marshaller = new BatchSnoozeAlarmRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1155,7 +1155,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("BatchUpdateDetector");
 
-            var request = InstantiateClassGenerator.Execute<BatchUpdateDetectorRequest>();
+            var request = InstantiateClassGenerator.Execute<BatchUpdateDetectorRequest>(operation);
             var marshaller = new BatchUpdateDetectorRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1185,7 +1185,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("BatchUpdateDetector");
 
-            var request = InstantiateClassGenerator.Execute<BatchUpdateDetectorRequest>();
+            var request = InstantiateClassGenerator.Execute<BatchUpdateDetectorRequest>(operation);
             var marshaller = new BatchUpdateDetectorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1217,7 +1217,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("BatchUpdateDetector");
 
-            var request = InstantiateClassGenerator.Execute<BatchUpdateDetectorRequest>();
+            var request = InstantiateClassGenerator.Execute<BatchUpdateDetectorRequest>(operation);
             var marshaller = new BatchUpdateDetectorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1249,7 +1249,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("BatchUpdateDetector");
 
-            var request = InstantiateClassGenerator.Execute<BatchUpdateDetectorRequest>();
+            var request = InstantiateClassGenerator.Execute<BatchUpdateDetectorRequest>(operation);
             var marshaller = new BatchUpdateDetectorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1281,7 +1281,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("BatchUpdateDetector");
 
-            var request = InstantiateClassGenerator.Execute<BatchUpdateDetectorRequest>();
+            var request = InstantiateClassGenerator.Execute<BatchUpdateDetectorRequest>(operation);
             var marshaller = new BatchUpdateDetectorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1313,7 +1313,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DescribeAlarm");
 
-            var request = InstantiateClassGenerator.Execute<DescribeAlarmRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeAlarmRequest>(operation);
             var marshaller = new DescribeAlarmRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1343,7 +1343,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DescribeAlarm");
 
-            var request = InstantiateClassGenerator.Execute<DescribeAlarmRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeAlarmRequest>(operation);
             var marshaller = new DescribeAlarmRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1375,7 +1375,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DescribeAlarm");
 
-            var request = InstantiateClassGenerator.Execute<DescribeAlarmRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeAlarmRequest>(operation);
             var marshaller = new DescribeAlarmRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1407,7 +1407,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DescribeAlarm");
 
-            var request = InstantiateClassGenerator.Execute<DescribeAlarmRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeAlarmRequest>(operation);
             var marshaller = new DescribeAlarmRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1439,7 +1439,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DescribeAlarm");
 
-            var request = InstantiateClassGenerator.Execute<DescribeAlarmRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeAlarmRequest>(operation);
             var marshaller = new DescribeAlarmRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1471,7 +1471,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DescribeAlarm");
 
-            var request = InstantiateClassGenerator.Execute<DescribeAlarmRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeAlarmRequest>(operation);
             var marshaller = new DescribeAlarmRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1503,7 +1503,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DescribeDetector");
 
-            var request = InstantiateClassGenerator.Execute<DescribeDetectorRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeDetectorRequest>(operation);
             var marshaller = new DescribeDetectorRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1533,7 +1533,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DescribeDetector");
 
-            var request = InstantiateClassGenerator.Execute<DescribeDetectorRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeDetectorRequest>(operation);
             var marshaller = new DescribeDetectorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1565,7 +1565,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DescribeDetector");
 
-            var request = InstantiateClassGenerator.Execute<DescribeDetectorRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeDetectorRequest>(operation);
             var marshaller = new DescribeDetectorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1597,7 +1597,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DescribeDetector");
 
-            var request = InstantiateClassGenerator.Execute<DescribeDetectorRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeDetectorRequest>(operation);
             var marshaller = new DescribeDetectorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1629,7 +1629,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DescribeDetector");
 
-            var request = InstantiateClassGenerator.Execute<DescribeDetectorRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeDetectorRequest>(operation);
             var marshaller = new DescribeDetectorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1661,7 +1661,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DescribeDetector");
 
-            var request = InstantiateClassGenerator.Execute<DescribeDetectorRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeDetectorRequest>(operation);
             var marshaller = new DescribeDetectorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1693,7 +1693,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListAlarms");
 
-            var request = InstantiateClassGenerator.Execute<ListAlarmsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListAlarmsRequest>(operation);
             var marshaller = new ListAlarmsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1723,7 +1723,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListAlarms");
 
-            var request = InstantiateClassGenerator.Execute<ListAlarmsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListAlarmsRequest>(operation);
             var marshaller = new ListAlarmsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1755,7 +1755,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListAlarms");
 
-            var request = InstantiateClassGenerator.Execute<ListAlarmsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListAlarmsRequest>(operation);
             var marshaller = new ListAlarmsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1787,7 +1787,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListAlarms");
 
-            var request = InstantiateClassGenerator.Execute<ListAlarmsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListAlarmsRequest>(operation);
             var marshaller = new ListAlarmsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1819,7 +1819,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListAlarms");
 
-            var request = InstantiateClassGenerator.Execute<ListAlarmsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListAlarmsRequest>(operation);
             var marshaller = new ListAlarmsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1851,7 +1851,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListAlarms");
 
-            var request = InstantiateClassGenerator.Execute<ListAlarmsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListAlarmsRequest>(operation);
             var marshaller = new ListAlarmsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1883,7 +1883,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListDetectors");
 
-            var request = InstantiateClassGenerator.Execute<ListDetectorsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListDetectorsRequest>(operation);
             var marshaller = new ListDetectorsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1913,7 +1913,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListDetectors");
 
-            var request = InstantiateClassGenerator.Execute<ListDetectorsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListDetectorsRequest>(operation);
             var marshaller = new ListDetectorsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1945,7 +1945,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListDetectors");
 
-            var request = InstantiateClassGenerator.Execute<ListDetectorsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListDetectorsRequest>(operation);
             var marshaller = new ListDetectorsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1977,7 +1977,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListDetectors");
 
-            var request = InstantiateClassGenerator.Execute<ListDetectorsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListDetectorsRequest>(operation);
             var marshaller = new ListDetectorsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2009,7 +2009,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListDetectors");
 
-            var request = InstantiateClassGenerator.Execute<ListDetectorsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListDetectorsRequest>(operation);
             var marshaller = new ListDetectorsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2041,7 +2041,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListDetectors");
 
-            var request = InstantiateClassGenerator.Execute<ListDetectorsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListDetectorsRequest>(operation);
             var marshaller = new ListDetectorsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 

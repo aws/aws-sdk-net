@@ -254,7 +254,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property InstanceDetails. 
         /// <para>
-        /// Details about the instances that Amazon Web Services recommends that you purchase.
+        /// Details about the reservations that Amazon Web Services recommends that you purchase.
         /// </para>
         /// </summary>
         public InstanceDetails InstanceDetails

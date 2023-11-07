@@ -71,6 +71,17 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ContactId);
                 }
 
+                if(publicRequest.IsSetDisconnectReason())
+                {
+                    context.Writer.WritePropertyName("DisconnectReason");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DisconnectReasonMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DisconnectReason, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetInstanceId())
                 {
                     context.Writer.WritePropertyName("InstanceId");

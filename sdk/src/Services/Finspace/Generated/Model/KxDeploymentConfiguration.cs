@@ -31,7 +31,7 @@ namespace Amazon.Finspace.Model
     /// <summary>
     /// The configuration that allows you to choose how you want to update the databases
     /// on a cluster. Depending on the option you choose, you can reduce the time it takes
-    /// to update the database changesets on to a cluster.
+    /// to update the cluster.
     /// </summary>
     public partial class KxDeploymentConfiguration
     {
@@ -44,14 +44,19 @@ namespace Amazon.Finspace.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// ROLLING – This options loads the updated database by stopping the exiting q process
-        /// and starting a new q process with updated configuration.
+        /// ROLLING – This options updates the cluster by stopping the exiting q process and starting
+        /// a new q process with updated configuration.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// NO_RESTART – This option loads the updated database on the running q process without
-        /// stopping it. This option is quicker as it reduces the turn around time to update a
-        /// kdb database changeset configuration on a cluster.
+        /// NO_RESTART – This option updates the cluster without stopping the running q process.
+        /// It is only available for <code>HDB</code> type cluster. This option is quicker as
+        /// it reduces the turn around time to update configuration on a cluster. 
+        /// </para>
+        ///  
+        /// <para>
+        /// With this deployment mode, you cannot update the <code>initializationScript</code>
+        /// and <code>commandLineArguments</code> parameters.
         /// </para>
         ///  </li> </ul>
         /// </summary>

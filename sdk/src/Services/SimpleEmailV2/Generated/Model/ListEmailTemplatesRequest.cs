@@ -72,7 +72,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// </para>
         ///  
         /// <para>
-        /// The value you specify has to be at least 1, and can be no more than 10.
+        /// The value you specify has to be at least 1, and can be no more than 100.
         /// </para>
         /// </summary>
         public int PageSize

@@ -150,7 +150,15 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TERRAFORM_OPEN_SOURCE</code> - Terraform open source configuration file
+        ///  <code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration file
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>TERRAFORM_CLOUD</code> - Terraform Cloud configuration file
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>EXTERNAL</code> - External configuration file
         /// </para>
         ///  </li> </ul>
         /// </summary>

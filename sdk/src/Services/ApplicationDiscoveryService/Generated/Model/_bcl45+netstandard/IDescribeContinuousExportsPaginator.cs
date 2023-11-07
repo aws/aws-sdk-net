@@ -29,5 +29,10 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// Enumerable containing all full responses for the operation
         /// </summary>
         IPaginatedEnumerable<DescribeContinuousExportsResponse> Responses { get; }
+
+        /// <summary>
+        /// Enumerable containing all of the Descriptions
+        /// </summary>
+        IPaginatedEnumerable<ContinuousExportDescription> Descriptions { get; }
     }
 }

@@ -173,7 +173,6 @@ namespace Amazon.AppIntegrationsService.Model
         /// The name of the data and how often it should be pulled from the source.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public ScheduleConfiguration ScheduleConfig
         {
             get { return this._scheduleConfig; }

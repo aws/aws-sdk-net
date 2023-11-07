@@ -30,8 +30,15 @@ namespace Amazon.Amplify.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDeployment operation.
-    /// Creates a deployment for a manually deployed Amplify app. Manually deployed apps
-    /// are not connected to a repository.
+    /// Creates a deployment for a manually deployed Amplify app. Manually deployed apps are
+    /// not connected to a repository. 
+    /// 
+    ///  
+    /// <para>
+    /// The maximum duration between the <code>CreateDeployment</code> call and the <code>StartDeployment</code>
+    /// call cannot exceed 8 hours. If the duration exceeds 8 hours, the <code>StartDeployment</code>
+    /// call and the associated <code>Job</code> will fail.
+    /// </para>
     /// </summary>
     public partial class CreateDeploymentRequest : AmazonAmplifyRequest
     {
@@ -61,7 +68,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property BranchName. 
         /// <para>
-        ///  The name for the branch, for the job. 
+        ///  The name of the branch to use for the job. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

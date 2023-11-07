@@ -49,7 +49,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("BatchGetRecord");
 
-            var request = InstantiateClassGenerator.Execute<BatchGetRecordRequest>();
+            var request = InstantiateClassGenerator.Execute<BatchGetRecordRequest>(operation);
             var marshaller = new BatchGetRecordRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -79,7 +79,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("BatchGetRecord");
 
-            var request = InstantiateClassGenerator.Execute<BatchGetRecordRequest>();
+            var request = InstantiateClassGenerator.Execute<BatchGetRecordRequest>(operation);
             var marshaller = new BatchGetRecordRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -111,7 +111,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("BatchGetRecord");
 
-            var request = InstantiateClassGenerator.Execute<BatchGetRecordRequest>();
+            var request = InstantiateClassGenerator.Execute<BatchGetRecordRequest>(operation);
             var marshaller = new BatchGetRecordRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -143,7 +143,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("BatchGetRecord");
 
-            var request = InstantiateClassGenerator.Execute<BatchGetRecordRequest>();
+            var request = InstantiateClassGenerator.Execute<BatchGetRecordRequest>(operation);
             var marshaller = new BatchGetRecordRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -175,7 +175,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("BatchGetRecord");
 
-            var request = InstantiateClassGenerator.Execute<BatchGetRecordRequest>();
+            var request = InstantiateClassGenerator.Execute<BatchGetRecordRequest>(operation);
             var marshaller = new BatchGetRecordRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -207,7 +207,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteRecord");
 
-            var request = InstantiateClassGenerator.Execute<DeleteRecordRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteRecordRequest>(operation);
             var marshaller = new DeleteRecordRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -223,7 +223,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteRecord");
 
-            var request = InstantiateClassGenerator.Execute<DeleteRecordRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteRecordRequest>(operation);
             var marshaller = new DeleteRecordRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -255,7 +255,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteRecord");
 
-            var request = InstantiateClassGenerator.Execute<DeleteRecordRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteRecordRequest>(operation);
             var marshaller = new DeleteRecordRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -287,7 +287,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteRecord");
 
-            var request = InstantiateClassGenerator.Execute<DeleteRecordRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteRecordRequest>(operation);
             var marshaller = new DeleteRecordRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -319,7 +319,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteRecord");
 
-            var request = InstantiateClassGenerator.Execute<DeleteRecordRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteRecordRequest>(operation);
             var marshaller = new DeleteRecordRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -351,7 +351,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetRecord");
 
-            var request = InstantiateClassGenerator.Execute<GetRecordRequest>();
+            var request = InstantiateClassGenerator.Execute<GetRecordRequest>(operation);
             var marshaller = new GetRecordRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -381,7 +381,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetRecord");
 
-            var request = InstantiateClassGenerator.Execute<GetRecordRequest>();
+            var request = InstantiateClassGenerator.Execute<GetRecordRequest>(operation);
             var marshaller = new GetRecordRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -413,7 +413,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetRecord");
 
-            var request = InstantiateClassGenerator.Execute<GetRecordRequest>();
+            var request = InstantiateClassGenerator.Execute<GetRecordRequest>(operation);
             var marshaller = new GetRecordRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -445,7 +445,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetRecord");
 
-            var request = InstantiateClassGenerator.Execute<GetRecordRequest>();
+            var request = InstantiateClassGenerator.Execute<GetRecordRequest>(operation);
             var marshaller = new GetRecordRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -477,7 +477,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetRecord");
 
-            var request = InstantiateClassGenerator.Execute<GetRecordRequest>();
+            var request = InstantiateClassGenerator.Execute<GetRecordRequest>(operation);
             var marshaller = new GetRecordRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -509,7 +509,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetRecord");
 
-            var request = InstantiateClassGenerator.Execute<GetRecordRequest>();
+            var request = InstantiateClassGenerator.Execute<GetRecordRequest>(operation);
             var marshaller = new GetRecordRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -541,7 +541,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("PutRecord");
 
-            var request = InstantiateClassGenerator.Execute<PutRecordRequest>();
+            var request = InstantiateClassGenerator.Execute<PutRecordRequest>(operation);
             var marshaller = new PutRecordRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -557,7 +557,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("PutRecord");
 
-            var request = InstantiateClassGenerator.Execute<PutRecordRequest>();
+            var request = InstantiateClassGenerator.Execute<PutRecordRequest>(operation);
             var marshaller = new PutRecordRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -589,7 +589,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("PutRecord");
 
-            var request = InstantiateClassGenerator.Execute<PutRecordRequest>();
+            var request = InstantiateClassGenerator.Execute<PutRecordRequest>(operation);
             var marshaller = new PutRecordRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -621,7 +621,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("PutRecord");
 
-            var request = InstantiateClassGenerator.Execute<PutRecordRequest>();
+            var request = InstantiateClassGenerator.Execute<PutRecordRequest>(operation);
             var marshaller = new PutRecordRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -653,7 +653,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("PutRecord");
 
-            var request = InstantiateClassGenerator.Execute<PutRecordRequest>();
+            var request = InstantiateClassGenerator.Execute<PutRecordRequest>(operation);
             var marshaller = new PutRecordRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 

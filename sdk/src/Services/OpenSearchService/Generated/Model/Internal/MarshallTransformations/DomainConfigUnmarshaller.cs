@@ -130,6 +130,12 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                     unmarshalledObject.EngineVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("IPAddressType", targetDepth))
+                {
+                    var unmarshaller = IPAddressTypeStatusUnmarshaller.Instance;
+                    unmarshalledObject.IPAddressType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LogPublishingOptions", targetDepth))
                 {
                     var unmarshaller = LogPublishingOptionsStatusUnmarshaller.Instance;

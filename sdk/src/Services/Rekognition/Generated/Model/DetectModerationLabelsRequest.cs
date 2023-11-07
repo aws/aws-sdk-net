@@ -51,12 +51,18 @@ namespace Amazon.Rekognition.Model
     /// operations, passing image bytes is not supported. The image must be either a PNG or
     /// JPEG formatted file. 
     /// </para>
+    ///  
+    /// <para>
+    /// You can specify an adapter to use when retrieving label predictions by providing a
+    /// <code>ProjectVersionArn</code> to the <code>ProjectVersion</code> argument.
+    /// </para>
     /// </summary>
     public partial class DetectModerationLabelsRequest : AmazonRekognitionRequest
     {
         private HumanLoopConfig _humanLoopConfig;
         private Image _image;
         private float? _minConfidence;
+        private string _projectVersion;
 
         /// <summary>
         /// Gets and sets the property HumanLoopConfig. 
@@ -127,6 +133,26 @@ namespace Amazon.Rekognition.Model
         internal bool IsSetMinConfidence()
         {
             return this._minConfidence.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProjectVersion. 
+        /// <para>
+        /// Identifier for the custom adapter. Expects the ProjectVersionArn as a value. Use the
+        /// CreateProject or CreateProjectVersion APIs to create a custom adapter.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string ProjectVersion
+        {
+            get { return this._projectVersion; }
+            set { this._projectVersion = value; }
+        }
+
+        // Check to see if ProjectVersion property is set
+        internal bool IsSetProjectVersion()
+        {
+            return this._projectVersion != null;
         }
 
     }

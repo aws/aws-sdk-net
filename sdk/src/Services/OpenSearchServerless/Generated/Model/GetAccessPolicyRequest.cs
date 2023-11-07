@@ -60,7 +60,7 @@ namespace Amazon.OpenSearchServerless.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// Tye type of policy. Currently the only supported value is <code>data</code>.
+        /// Tye type of policy. Currently, the only supported value is <code>data</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

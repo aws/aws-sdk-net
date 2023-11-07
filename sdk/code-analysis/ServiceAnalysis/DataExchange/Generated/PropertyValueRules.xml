@@ -66,6 +66,17 @@
     <max>512</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DataExchange.Model.SendDataSetNotificationRequest.ClientToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[\x21-\x7E]{1,64}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataExchange.Model.SendDataSetNotificationRequest.Comment</property>
+    <min>0</min>
+    <max>16384</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DataExchange.Model.UpdateRevisionRequest.Comment</property>
     <min>0</min>
     <max>16384</max>

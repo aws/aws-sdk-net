@@ -29,20 +29,65 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Translate.Model
 {
     /// <summary>
-    /// Settings to configure your translation output, including the option to set the formality
-    /// level of the output text and the option to mask profane words and phrases.
+    /// Settings to configure your translation output. You can configure the following options:
+    /// 
+    ///  <ul> <li> 
+    /// <para>
+    /// Brevity: reduces the length of the translation output for most translations. Available
+    /// for <code>TranslateText</code> only.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Formality: sets the formality level of the translation output.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Profanity: masks profane words and phrases in the translation output.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class TranslationSettings
     {
+        private Brevity _brevity;
         private Formality _formality;
         private Profanity _profanity;
 
         /// <summary>
+        /// Gets and sets the property Brevity. 
+        /// <para>
+        /// When you turn on brevity, Amazon Translate reduces the length of the translation output
+        /// for most translations (when compared with the same translation with brevity turned
+        /// off). By default, brevity is turned off.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you turn on brevity for a translation request with an unsupported language pair,
+        /// the translation proceeds with the brevity setting turned off.
+        /// </para>
+        ///  
+        /// <para>
+        /// For the language pairs that brevity supports, see <a href="https://docs.aws.amazon.com/translate/latest/dg/customizing-translations-brevity">Using
+        /// brevity</a> in the Amazon Translate Developer Guide.
+        /// </para>
+        /// </summary>
+        public Brevity Brevity
+        {
+            get { return this._brevity; }
+            set { this._brevity = value; }
+        }
+
+        // Check to see if Brevity property is set
+        internal bool IsSetBrevity()
+        {
+            return this._brevity != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Formality. 
         /// <para>
-        /// You can optionally specify the desired level of formality for translations to supported
-        /// target languages. The formality setting controls the level of formal language usage
-        /// (also known as <a href="https://en.wikipedia.org/wiki/Register_(sociolinguistics)">register</a>)
+        /// You can specify the desired level of formality for translations to supported target
+        /// languages. The formality setting controls the level of formal language usage (also
+        /// known as <a href="https://en.wikipedia.org/wiki/Register_(sociolinguistics)">register</a>)
         /// in the translation output. You can set the value to informal or formal. If you don't
         /// specify a value for formality, or if the target language doesn't support formality,
         /// the translation will ignore the formality setting.
@@ -73,8 +118,8 @@ namespace Amazon.Translate.Model
         /// <summary>
         /// Gets and sets the property Profanity. 
         /// <para>
-        /// Enable the profanity setting if you want Amazon Translate to mask profane words and
-        /// phrases in your translation output.
+        /// You can enable the profanity setting if you want to mask profane words and phrases
+        /// in your translation output.
         /// </para>
         ///  
         /// <para>

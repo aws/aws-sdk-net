@@ -66,6 +66,7 @@ namespace Amazon.RDS.Model
         private string _dbInstanceIdentifier;
         private string _dbParameterGroupName;
         private string _dbSubnetGroupName;
+        private bool? _dedicatedLogVolume;
         private bool? _deletionProtection;
         private string _domain;
         private string _domainAuthSecretArn;
@@ -97,6 +98,7 @@ namespace Amazon.RDS.Model
         private int? _storageThroughput;
         private string _storageType;
         private List<Tag> _tags = new List<Tag>();
+        private bool? _upgradeStorageConfig;
         private bool? _useDefaultProcessorFeatures;
         private List<string> _vpcSecurityGroupIds = new List<string>();
 
@@ -399,6 +401,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetDBSubnetGroupName()
         {
             return this._dbSubnetGroupName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DedicatedLogVolume. 
+        /// <para>
+        /// Indicates whether the DB instance has a dedicated log volume (DLV) enabled.
+        /// </para>
+        /// </summary>
+        public bool DedicatedLogVolume
+        {
+            get { return this._dedicatedLogVolume.GetValueOrDefault(); }
+            set { this._dedicatedLogVolume = value; }
+        }
+
+        // Check to see if DedicatedLogVolume property is set
+        internal bool IsSetDedicatedLogVolume()
+        {
+            return this._dedicatedLogVolume.HasValue; 
         }
 
         /// <summary>
@@ -1453,6 +1473,26 @@ namespace Amazon.RDS.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UpgradeStorageConfig. 
+        /// <para>
+        /// Whether to upgrade the storage file system configuration on the read replica. This
+        /// option migrates the read replica from the old storage file system layout to the preferred
+        /// layout.
+        /// </para>
+        /// </summary>
+        public bool UpgradeStorageConfig
+        {
+            get { return this._upgradeStorageConfig.GetValueOrDefault(); }
+            set { this._upgradeStorageConfig = value; }
+        }
+
+        // Check to see if UpgradeStorageConfig property is set
+        internal bool IsSetUpgradeStorageConfig()
+        {
+            return this._upgradeStorageConfig.HasValue; 
         }
 
         /// <summary>

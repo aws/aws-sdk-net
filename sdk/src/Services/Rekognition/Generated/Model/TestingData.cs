@@ -30,8 +30,8 @@ namespace Amazon.Rekognition.Model
 {
     /// <summary>
     /// The dataset used for testing. Optionally, if <code>AutoCreate</code> is set, Amazon
-    /// Rekognition Custom Labels uses the training dataset to create a test dataset with
-    /// a temporary split of the training dataset.
+    /// Rekognition uses the training dataset to create a test dataset with a temporary split
+    /// of the training dataset.
     /// </summary>
     public partial class TestingData
     {
@@ -59,9 +59,8 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property AutoCreate. 
         /// <para>
-        /// If specified, Amazon Rekognition Custom Labels temporarily splits the training dataset
-        /// (80%) to create a test dataset (20%) for the training job. After training completes,
-        /// the test dataset is not stored and the training dataset reverts to its previous size.
+        /// If specified, Rekognition splits training dataset to create a test dataset for the
+        /// training job.
         /// </para>
         /// </summary>
         public bool AutoCreate

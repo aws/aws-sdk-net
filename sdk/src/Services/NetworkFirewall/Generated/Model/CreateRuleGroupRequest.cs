@@ -41,6 +41,7 @@ namespace Amazon.NetworkFirewall.Model
     /// </summary>
     public partial class CreateRuleGroupRequest : AmazonNetworkFirewallRequest
     {
+        private bool? _analyzeRuleGroup;
         private int? _capacity;
         private string _description;
         private bool? _dryRun;
@@ -51,6 +52,28 @@ namespace Amazon.NetworkFirewall.Model
         private SourceMetadata _sourceMetadata;
         private List<Tag> _tags = new List<Tag>();
         private RuleGroupType _type;
+
+        /// <summary>
+        /// Gets and sets the property AnalyzeRuleGroup. 
+        /// <para>
+        /// Indicates whether you want Network Firewall to analyze the stateless rules in the
+        /// rule group for rule behavior such as asymmetric routing. If set to <code>TRUE</code>,
+        /// Network Firewall runs the analysis and then creates the rule group for you. To run
+        /// the stateless rule group analyzer without creating the rule group, set <code>DryRun</code>
+        /// to <code>TRUE</code>.
+        /// </para>
+        /// </summary>
+        public bool AnalyzeRuleGroup
+        {
+            get { return this._analyzeRuleGroup.GetValueOrDefault(); }
+            set { this._analyzeRuleGroup = value; }
+        }
+
+        // Check to see if AnalyzeRuleGroup property is set
+        internal bool IsSetAnalyzeRuleGroup()
+        {
+            return this._analyzeRuleGroup.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Capacity. 

@@ -46,7 +46,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("ServerMigrationService")]
         public void CreateAppMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<CreateAppRequest>();
+            var operation = service_model.FindOperation("CreateApp");
+
+            var request = InstantiateClassGenerator.Execute<CreateAppRequest>(operation);
             var marshaller = new CreateAppRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -60,7 +62,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("CreateApp").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = CreateAppResponseUnmarshaller.Instance.Unmarshall(context) as CreateAppResponse;
@@ -75,7 +77,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateApp");
 
-            var request = InstantiateClassGenerator.Execute<CreateAppRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateAppRequest>(operation);
             var marshaller = new CreateAppRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -107,7 +109,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateApp");
 
-            var request = InstantiateClassGenerator.Execute<CreateAppRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateAppRequest>(operation);
             var marshaller = new CreateAppRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -139,7 +141,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateApp");
 
-            var request = InstantiateClassGenerator.Execute<CreateAppRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateAppRequest>(operation);
             var marshaller = new CreateAppRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -171,7 +173,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateApp");
 
-            var request = InstantiateClassGenerator.Execute<CreateAppRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateAppRequest>(operation);
             var marshaller = new CreateAppRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -203,7 +205,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateApp");
 
-            var request = InstantiateClassGenerator.Execute<CreateAppRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateAppRequest>(operation);
             var marshaller = new CreateAppRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -233,7 +235,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("ServerMigrationService")]
         public void CreateReplicationJobMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<CreateReplicationJobRequest>();
+            var operation = service_model.FindOperation("CreateReplicationJob");
+
+            var request = InstantiateClassGenerator.Execute<CreateReplicationJobRequest>(operation);
             var marshaller = new CreateReplicationJobRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -247,7 +251,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("CreateReplicationJob").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = CreateReplicationJobResponseUnmarshaller.Instance.Unmarshall(context) as CreateReplicationJobResponse;
@@ -262,7 +266,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateReplicationJob");
 
-            var request = InstantiateClassGenerator.Execute<CreateReplicationJobRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateReplicationJobRequest>(operation);
             var marshaller = new CreateReplicationJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -294,7 +298,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateReplicationJob");
 
-            var request = InstantiateClassGenerator.Execute<CreateReplicationJobRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateReplicationJobRequest>(operation);
             var marshaller = new CreateReplicationJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -326,7 +330,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateReplicationJob");
 
-            var request = InstantiateClassGenerator.Execute<CreateReplicationJobRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateReplicationJobRequest>(operation);
             var marshaller = new CreateReplicationJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -358,7 +362,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateReplicationJob");
 
-            var request = InstantiateClassGenerator.Execute<CreateReplicationJobRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateReplicationJobRequest>(operation);
             var marshaller = new CreateReplicationJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -390,7 +394,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateReplicationJob");
 
-            var request = InstantiateClassGenerator.Execute<CreateReplicationJobRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateReplicationJobRequest>(operation);
             var marshaller = new CreateReplicationJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -422,7 +426,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateReplicationJob");
 
-            var request = InstantiateClassGenerator.Execute<CreateReplicationJobRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateReplicationJobRequest>(operation);
             var marshaller = new CreateReplicationJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -454,7 +458,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateReplicationJob");
 
-            var request = InstantiateClassGenerator.Execute<CreateReplicationJobRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateReplicationJobRequest>(operation);
             var marshaller = new CreateReplicationJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -486,7 +490,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateReplicationJob");
 
-            var request = InstantiateClassGenerator.Execute<CreateReplicationJobRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateReplicationJobRequest>(operation);
             var marshaller = new CreateReplicationJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -518,7 +522,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateReplicationJob");
 
-            var request = InstantiateClassGenerator.Execute<CreateReplicationJobRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateReplicationJobRequest>(operation);
             var marshaller = new CreateReplicationJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -548,7 +552,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("ServerMigrationService")]
         public void DeleteAppMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DeleteAppRequest>();
+            var operation = service_model.FindOperation("DeleteApp");
+
+            var request = InstantiateClassGenerator.Execute<DeleteAppRequest>(operation);
             var marshaller = new DeleteAppRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -562,7 +568,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DeleteApp").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DeleteAppResponseUnmarshaller.Instance.Unmarshall(context) as DeleteAppResponse;
@@ -577,7 +583,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteApp");
 
-            var request = InstantiateClassGenerator.Execute<DeleteAppRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteAppRequest>(operation);
             var marshaller = new DeleteAppRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -609,7 +615,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteApp");
 
-            var request = InstantiateClassGenerator.Execute<DeleteAppRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteAppRequest>(operation);
             var marshaller = new DeleteAppRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -641,7 +647,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteApp");
 
-            var request = InstantiateClassGenerator.Execute<DeleteAppRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteAppRequest>(operation);
             var marshaller = new DeleteAppRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -673,7 +679,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteApp");
 
-            var request = InstantiateClassGenerator.Execute<DeleteAppRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteAppRequest>(operation);
             var marshaller = new DeleteAppRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -705,7 +711,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteApp");
 
-            var request = InstantiateClassGenerator.Execute<DeleteAppRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteAppRequest>(operation);
             var marshaller = new DeleteAppRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -735,7 +741,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("ServerMigrationService")]
         public void DeleteAppLaunchConfigurationMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DeleteAppLaunchConfigurationRequest>();
+            var operation = service_model.FindOperation("DeleteAppLaunchConfiguration");
+
+            var request = InstantiateClassGenerator.Execute<DeleteAppLaunchConfigurationRequest>(operation);
             var marshaller = new DeleteAppLaunchConfigurationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -749,7 +757,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DeleteAppLaunchConfiguration").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DeleteAppLaunchConfigurationResponseUnmarshaller.Instance.Unmarshall(context) as DeleteAppLaunchConfigurationResponse;
@@ -764,7 +772,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteAppLaunchConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<DeleteAppLaunchConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteAppLaunchConfigurationRequest>(operation);
             var marshaller = new DeleteAppLaunchConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -796,7 +804,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteAppLaunchConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<DeleteAppLaunchConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteAppLaunchConfigurationRequest>(operation);
             var marshaller = new DeleteAppLaunchConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -828,7 +836,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteAppLaunchConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<DeleteAppLaunchConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteAppLaunchConfigurationRequest>(operation);
             var marshaller = new DeleteAppLaunchConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -860,7 +868,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteAppLaunchConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<DeleteAppLaunchConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteAppLaunchConfigurationRequest>(operation);
             var marshaller = new DeleteAppLaunchConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -892,7 +900,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteAppLaunchConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<DeleteAppLaunchConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteAppLaunchConfigurationRequest>(operation);
             var marshaller = new DeleteAppLaunchConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -922,7 +930,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("ServerMigrationService")]
         public void DeleteAppReplicationConfigurationMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DeleteAppReplicationConfigurationRequest>();
+            var operation = service_model.FindOperation("DeleteAppReplicationConfiguration");
+
+            var request = InstantiateClassGenerator.Execute<DeleteAppReplicationConfigurationRequest>(operation);
             var marshaller = new DeleteAppReplicationConfigurationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -936,7 +946,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DeleteAppReplicationConfiguration").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DeleteAppReplicationConfigurationResponseUnmarshaller.Instance.Unmarshall(context) as DeleteAppReplicationConfigurationResponse;
@@ -951,7 +961,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteAppReplicationConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<DeleteAppReplicationConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteAppReplicationConfigurationRequest>(operation);
             var marshaller = new DeleteAppReplicationConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -983,7 +993,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteAppReplicationConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<DeleteAppReplicationConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteAppReplicationConfigurationRequest>(operation);
             var marshaller = new DeleteAppReplicationConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1015,7 +1025,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteAppReplicationConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<DeleteAppReplicationConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteAppReplicationConfigurationRequest>(operation);
             var marshaller = new DeleteAppReplicationConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1047,7 +1057,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteAppReplicationConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<DeleteAppReplicationConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteAppReplicationConfigurationRequest>(operation);
             var marshaller = new DeleteAppReplicationConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1079,7 +1089,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteAppReplicationConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<DeleteAppReplicationConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteAppReplicationConfigurationRequest>(operation);
             var marshaller = new DeleteAppReplicationConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1109,7 +1119,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("ServerMigrationService")]
         public void DeleteAppValidationConfigurationMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DeleteAppValidationConfigurationRequest>();
+            var operation = service_model.FindOperation("DeleteAppValidationConfiguration");
+
+            var request = InstantiateClassGenerator.Execute<DeleteAppValidationConfigurationRequest>(operation);
             var marshaller = new DeleteAppValidationConfigurationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1123,7 +1135,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DeleteAppValidationConfiguration").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DeleteAppValidationConfigurationResponseUnmarshaller.Instance.Unmarshall(context) as DeleteAppValidationConfigurationResponse;
@@ -1138,7 +1150,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteAppValidationConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<DeleteAppValidationConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteAppValidationConfigurationRequest>(operation);
             var marshaller = new DeleteAppValidationConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1170,7 +1182,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteAppValidationConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<DeleteAppValidationConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteAppValidationConfigurationRequest>(operation);
             var marshaller = new DeleteAppValidationConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1202,7 +1214,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteAppValidationConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<DeleteAppValidationConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteAppValidationConfigurationRequest>(operation);
             var marshaller = new DeleteAppValidationConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1234,7 +1246,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteAppValidationConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<DeleteAppValidationConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteAppValidationConfigurationRequest>(operation);
             var marshaller = new DeleteAppValidationConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1266,7 +1278,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteAppValidationConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<DeleteAppValidationConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteAppValidationConfigurationRequest>(operation);
             var marshaller = new DeleteAppValidationConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1296,7 +1308,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("ServerMigrationService")]
         public void DeleteReplicationJobMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DeleteReplicationJobRequest>();
+            var operation = service_model.FindOperation("DeleteReplicationJob");
+
+            var request = InstantiateClassGenerator.Execute<DeleteReplicationJobRequest>(operation);
             var marshaller = new DeleteReplicationJobRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1310,7 +1324,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DeleteReplicationJob").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DeleteReplicationJobResponseUnmarshaller.Instance.Unmarshall(context) as DeleteReplicationJobResponse;
@@ -1325,7 +1339,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteReplicationJob");
 
-            var request = InstantiateClassGenerator.Execute<DeleteReplicationJobRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteReplicationJobRequest>(operation);
             var marshaller = new DeleteReplicationJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1357,7 +1371,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteReplicationJob");
 
-            var request = InstantiateClassGenerator.Execute<DeleteReplicationJobRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteReplicationJobRequest>(operation);
             var marshaller = new DeleteReplicationJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1389,7 +1403,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteReplicationJob");
 
-            var request = InstantiateClassGenerator.Execute<DeleteReplicationJobRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteReplicationJobRequest>(operation);
             var marshaller = new DeleteReplicationJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1421,7 +1435,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteReplicationJob");
 
-            var request = InstantiateClassGenerator.Execute<DeleteReplicationJobRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteReplicationJobRequest>(operation);
             var marshaller = new DeleteReplicationJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1453,7 +1467,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteReplicationJob");
 
-            var request = InstantiateClassGenerator.Execute<DeleteReplicationJobRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteReplicationJobRequest>(operation);
             var marshaller = new DeleteReplicationJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1483,7 +1497,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("ServerMigrationService")]
         public void DeleteServerCatalogMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DeleteServerCatalogRequest>();
+            var operation = service_model.FindOperation("DeleteServerCatalog");
+
+            var request = InstantiateClassGenerator.Execute<DeleteServerCatalogRequest>(operation);
             var marshaller = new DeleteServerCatalogRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1497,7 +1513,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DeleteServerCatalog").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DeleteServerCatalogResponseUnmarshaller.Instance.Unmarshall(context) as DeleteServerCatalogResponse;
@@ -1512,7 +1528,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteServerCatalog");
 
-            var request = InstantiateClassGenerator.Execute<DeleteServerCatalogRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteServerCatalogRequest>(operation);
             var marshaller = new DeleteServerCatalogRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1544,7 +1560,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteServerCatalog");
 
-            var request = InstantiateClassGenerator.Execute<DeleteServerCatalogRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteServerCatalogRequest>(operation);
             var marshaller = new DeleteServerCatalogRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1576,7 +1592,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteServerCatalog");
 
-            var request = InstantiateClassGenerator.Execute<DeleteServerCatalogRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteServerCatalogRequest>(operation);
             var marshaller = new DeleteServerCatalogRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1608,7 +1624,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteServerCatalog");
 
-            var request = InstantiateClassGenerator.Execute<DeleteServerCatalogRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteServerCatalogRequest>(operation);
             var marshaller = new DeleteServerCatalogRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1638,7 +1654,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("ServerMigrationService")]
         public void DisassociateConnectorMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DisassociateConnectorRequest>();
+            var operation = service_model.FindOperation("DisassociateConnector");
+
+            var request = InstantiateClassGenerator.Execute<DisassociateConnectorRequest>(operation);
             var marshaller = new DisassociateConnectorRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1652,7 +1670,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DisassociateConnector").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DisassociateConnectorResponseUnmarshaller.Instance.Unmarshall(context) as DisassociateConnectorResponse;
@@ -1667,7 +1685,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DisassociateConnector");
 
-            var request = InstantiateClassGenerator.Execute<DisassociateConnectorRequest>();
+            var request = InstantiateClassGenerator.Execute<DisassociateConnectorRequest>(operation);
             var marshaller = new DisassociateConnectorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1699,7 +1717,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DisassociateConnector");
 
-            var request = InstantiateClassGenerator.Execute<DisassociateConnectorRequest>();
+            var request = InstantiateClassGenerator.Execute<DisassociateConnectorRequest>(operation);
             var marshaller = new DisassociateConnectorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1731,7 +1749,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DisassociateConnector");
 
-            var request = InstantiateClassGenerator.Execute<DisassociateConnectorRequest>();
+            var request = InstantiateClassGenerator.Execute<DisassociateConnectorRequest>(operation);
             var marshaller = new DisassociateConnectorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1763,7 +1781,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DisassociateConnector");
 
-            var request = InstantiateClassGenerator.Execute<DisassociateConnectorRequest>();
+            var request = InstantiateClassGenerator.Execute<DisassociateConnectorRequest>(operation);
             var marshaller = new DisassociateConnectorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1793,7 +1811,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("ServerMigrationService")]
         public void GenerateChangeSetMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<GenerateChangeSetRequest>();
+            var operation = service_model.FindOperation("GenerateChangeSet");
+
+            var request = InstantiateClassGenerator.Execute<GenerateChangeSetRequest>(operation);
             var marshaller = new GenerateChangeSetRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1807,7 +1827,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GenerateChangeSet").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = GenerateChangeSetResponseUnmarshaller.Instance.Unmarshall(context) as GenerateChangeSetResponse;
@@ -1822,7 +1842,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GenerateChangeSet");
 
-            var request = InstantiateClassGenerator.Execute<GenerateChangeSetRequest>();
+            var request = InstantiateClassGenerator.Execute<GenerateChangeSetRequest>(operation);
             var marshaller = new GenerateChangeSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1854,7 +1874,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GenerateChangeSet");
 
-            var request = InstantiateClassGenerator.Execute<GenerateChangeSetRequest>();
+            var request = InstantiateClassGenerator.Execute<GenerateChangeSetRequest>(operation);
             var marshaller = new GenerateChangeSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1886,7 +1906,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GenerateChangeSet");
 
-            var request = InstantiateClassGenerator.Execute<GenerateChangeSetRequest>();
+            var request = InstantiateClassGenerator.Execute<GenerateChangeSetRequest>(operation);
             var marshaller = new GenerateChangeSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1918,7 +1938,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GenerateChangeSet");
 
-            var request = InstantiateClassGenerator.Execute<GenerateChangeSetRequest>();
+            var request = InstantiateClassGenerator.Execute<GenerateChangeSetRequest>(operation);
             var marshaller = new GenerateChangeSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1950,7 +1970,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GenerateChangeSet");
 
-            var request = InstantiateClassGenerator.Execute<GenerateChangeSetRequest>();
+            var request = InstantiateClassGenerator.Execute<GenerateChangeSetRequest>(operation);
             var marshaller = new GenerateChangeSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1980,7 +2000,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("ServerMigrationService")]
         public void GenerateTemplateMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<GenerateTemplateRequest>();
+            var operation = service_model.FindOperation("GenerateTemplate");
+
+            var request = InstantiateClassGenerator.Execute<GenerateTemplateRequest>(operation);
             var marshaller = new GenerateTemplateRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1994,7 +2016,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GenerateTemplate").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = GenerateTemplateResponseUnmarshaller.Instance.Unmarshall(context) as GenerateTemplateResponse;
@@ -2009,7 +2031,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GenerateTemplate");
 
-            var request = InstantiateClassGenerator.Execute<GenerateTemplateRequest>();
+            var request = InstantiateClassGenerator.Execute<GenerateTemplateRequest>(operation);
             var marshaller = new GenerateTemplateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2041,7 +2063,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GenerateTemplate");
 
-            var request = InstantiateClassGenerator.Execute<GenerateTemplateRequest>();
+            var request = InstantiateClassGenerator.Execute<GenerateTemplateRequest>(operation);
             var marshaller = new GenerateTemplateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2073,7 +2095,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GenerateTemplate");
 
-            var request = InstantiateClassGenerator.Execute<GenerateTemplateRequest>();
+            var request = InstantiateClassGenerator.Execute<GenerateTemplateRequest>(operation);
             var marshaller = new GenerateTemplateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2105,7 +2127,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GenerateTemplate");
 
-            var request = InstantiateClassGenerator.Execute<GenerateTemplateRequest>();
+            var request = InstantiateClassGenerator.Execute<GenerateTemplateRequest>(operation);
             var marshaller = new GenerateTemplateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2137,7 +2159,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GenerateTemplate");
 
-            var request = InstantiateClassGenerator.Execute<GenerateTemplateRequest>();
+            var request = InstantiateClassGenerator.Execute<GenerateTemplateRequest>(operation);
             var marshaller = new GenerateTemplateRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2167,7 +2189,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("ServerMigrationService")]
         public void GetAppMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<GetAppRequest>();
+            var operation = service_model.FindOperation("GetApp");
+
+            var request = InstantiateClassGenerator.Execute<GetAppRequest>(operation);
             var marshaller = new GetAppRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -2181,7 +2205,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetApp").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = GetAppResponseUnmarshaller.Instance.Unmarshall(context) as GetAppResponse;
@@ -2196,7 +2220,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetApp");
 
-            var request = InstantiateClassGenerator.Execute<GetAppRequest>();
+            var request = InstantiateClassGenerator.Execute<GetAppRequest>(operation);
             var marshaller = new GetAppRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2228,7 +2252,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetApp");
 
-            var request = InstantiateClassGenerator.Execute<GetAppRequest>();
+            var request = InstantiateClassGenerator.Execute<GetAppRequest>(operation);
             var marshaller = new GetAppRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2260,7 +2284,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetApp");
 
-            var request = InstantiateClassGenerator.Execute<GetAppRequest>();
+            var request = InstantiateClassGenerator.Execute<GetAppRequest>(operation);
             var marshaller = new GetAppRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2292,7 +2316,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetApp");
 
-            var request = InstantiateClassGenerator.Execute<GetAppRequest>();
+            var request = InstantiateClassGenerator.Execute<GetAppRequest>(operation);
             var marshaller = new GetAppRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2324,7 +2348,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetApp");
 
-            var request = InstantiateClassGenerator.Execute<GetAppRequest>();
+            var request = InstantiateClassGenerator.Execute<GetAppRequest>(operation);
             var marshaller = new GetAppRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2354,7 +2378,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("ServerMigrationService")]
         public void GetAppLaunchConfigurationMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<GetAppLaunchConfigurationRequest>();
+            var operation = service_model.FindOperation("GetAppLaunchConfiguration");
+
+            var request = InstantiateClassGenerator.Execute<GetAppLaunchConfigurationRequest>(operation);
             var marshaller = new GetAppLaunchConfigurationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -2368,7 +2394,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetAppLaunchConfiguration").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = GetAppLaunchConfigurationResponseUnmarshaller.Instance.Unmarshall(context) as GetAppLaunchConfigurationResponse;
@@ -2383,7 +2409,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetAppLaunchConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<GetAppLaunchConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetAppLaunchConfigurationRequest>(operation);
             var marshaller = new GetAppLaunchConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2415,7 +2441,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetAppLaunchConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<GetAppLaunchConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetAppLaunchConfigurationRequest>(operation);
             var marshaller = new GetAppLaunchConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2447,7 +2473,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetAppLaunchConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<GetAppLaunchConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetAppLaunchConfigurationRequest>(operation);
             var marshaller = new GetAppLaunchConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2479,7 +2505,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetAppLaunchConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<GetAppLaunchConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetAppLaunchConfigurationRequest>(operation);
             var marshaller = new GetAppLaunchConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2511,7 +2537,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetAppLaunchConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<GetAppLaunchConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetAppLaunchConfigurationRequest>(operation);
             var marshaller = new GetAppLaunchConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2541,7 +2567,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("ServerMigrationService")]
         public void GetAppReplicationConfigurationMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<GetAppReplicationConfigurationRequest>();
+            var operation = service_model.FindOperation("GetAppReplicationConfiguration");
+
+            var request = InstantiateClassGenerator.Execute<GetAppReplicationConfigurationRequest>(operation);
             var marshaller = new GetAppReplicationConfigurationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -2555,7 +2583,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetAppReplicationConfiguration").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = GetAppReplicationConfigurationResponseUnmarshaller.Instance.Unmarshall(context) as GetAppReplicationConfigurationResponse;
@@ -2570,7 +2598,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetAppReplicationConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<GetAppReplicationConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetAppReplicationConfigurationRequest>(operation);
             var marshaller = new GetAppReplicationConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2602,7 +2630,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetAppReplicationConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<GetAppReplicationConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetAppReplicationConfigurationRequest>(operation);
             var marshaller = new GetAppReplicationConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2634,7 +2662,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetAppReplicationConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<GetAppReplicationConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetAppReplicationConfigurationRequest>(operation);
             var marshaller = new GetAppReplicationConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2666,7 +2694,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetAppReplicationConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<GetAppReplicationConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetAppReplicationConfigurationRequest>(operation);
             var marshaller = new GetAppReplicationConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2698,7 +2726,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetAppReplicationConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<GetAppReplicationConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetAppReplicationConfigurationRequest>(operation);
             var marshaller = new GetAppReplicationConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2728,7 +2756,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("ServerMigrationService")]
         public void GetAppValidationConfigurationMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<GetAppValidationConfigurationRequest>();
+            var operation = service_model.FindOperation("GetAppValidationConfiguration");
+
+            var request = InstantiateClassGenerator.Execute<GetAppValidationConfigurationRequest>(operation);
             var marshaller = new GetAppValidationConfigurationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -2742,7 +2772,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetAppValidationConfiguration").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = GetAppValidationConfigurationResponseUnmarshaller.Instance.Unmarshall(context) as GetAppValidationConfigurationResponse;
@@ -2757,7 +2787,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetAppValidationConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<GetAppValidationConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetAppValidationConfigurationRequest>(operation);
             var marshaller = new GetAppValidationConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2789,7 +2819,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetAppValidationConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<GetAppValidationConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetAppValidationConfigurationRequest>(operation);
             var marshaller = new GetAppValidationConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2821,7 +2851,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetAppValidationConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<GetAppValidationConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetAppValidationConfigurationRequest>(operation);
             var marshaller = new GetAppValidationConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2853,7 +2883,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetAppValidationConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<GetAppValidationConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetAppValidationConfigurationRequest>(operation);
             var marshaller = new GetAppValidationConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2885,7 +2915,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetAppValidationConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<GetAppValidationConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetAppValidationConfigurationRequest>(operation);
             var marshaller = new GetAppValidationConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2915,7 +2945,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("ServerMigrationService")]
         public void GetAppValidationOutputMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<GetAppValidationOutputRequest>();
+            var operation = service_model.FindOperation("GetAppValidationOutput");
+
+            var request = InstantiateClassGenerator.Execute<GetAppValidationOutputRequest>(operation);
             var marshaller = new GetAppValidationOutputRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -2929,7 +2961,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetAppValidationOutput").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = GetAppValidationOutputResponseUnmarshaller.Instance.Unmarshall(context) as GetAppValidationOutputResponse;
@@ -2944,7 +2976,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetAppValidationOutput");
 
-            var request = InstantiateClassGenerator.Execute<GetAppValidationOutputRequest>();
+            var request = InstantiateClassGenerator.Execute<GetAppValidationOutputRequest>(operation);
             var marshaller = new GetAppValidationOutputRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2976,7 +3008,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetAppValidationOutput");
 
-            var request = InstantiateClassGenerator.Execute<GetAppValidationOutputRequest>();
+            var request = InstantiateClassGenerator.Execute<GetAppValidationOutputRequest>(operation);
             var marshaller = new GetAppValidationOutputRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3008,7 +3040,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetAppValidationOutput");
 
-            var request = InstantiateClassGenerator.Execute<GetAppValidationOutputRequest>();
+            var request = InstantiateClassGenerator.Execute<GetAppValidationOutputRequest>(operation);
             var marshaller = new GetAppValidationOutputRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3040,7 +3072,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetAppValidationOutput");
 
-            var request = InstantiateClassGenerator.Execute<GetAppValidationOutputRequest>();
+            var request = InstantiateClassGenerator.Execute<GetAppValidationOutputRequest>(operation);
             var marshaller = new GetAppValidationOutputRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3072,7 +3104,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetAppValidationOutput");
 
-            var request = InstantiateClassGenerator.Execute<GetAppValidationOutputRequest>();
+            var request = InstantiateClassGenerator.Execute<GetAppValidationOutputRequest>(operation);
             var marshaller = new GetAppValidationOutputRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3102,7 +3134,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("ServerMigrationService")]
         public void GetConnectorsMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<GetConnectorsRequest>();
+            var operation = service_model.FindOperation("GetConnectors");
+
+            var request = InstantiateClassGenerator.Execute<GetConnectorsRequest>(operation);
             var marshaller = new GetConnectorsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -3116,7 +3150,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetConnectors").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = GetConnectorsResponseUnmarshaller.Instance.Unmarshall(context) as GetConnectorsResponse;
@@ -3131,7 +3165,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetConnectors");
 
-            var request = InstantiateClassGenerator.Execute<GetConnectorsRequest>();
+            var request = InstantiateClassGenerator.Execute<GetConnectorsRequest>(operation);
             var marshaller = new GetConnectorsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3161,7 +3195,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("ServerMigrationService")]
         public void GetReplicationJobsMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<GetReplicationJobsRequest>();
+            var operation = service_model.FindOperation("GetReplicationJobs");
+
+            var request = InstantiateClassGenerator.Execute<GetReplicationJobsRequest>(operation);
             var marshaller = new GetReplicationJobsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -3175,7 +3211,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetReplicationJobs").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = GetReplicationJobsResponseUnmarshaller.Instance.Unmarshall(context) as GetReplicationJobsResponse;
@@ -3190,7 +3226,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetReplicationJobs");
 
-            var request = InstantiateClassGenerator.Execute<GetReplicationJobsRequest>();
+            var request = InstantiateClassGenerator.Execute<GetReplicationJobsRequest>(operation);
             var marshaller = new GetReplicationJobsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3222,7 +3258,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetReplicationJobs");
 
-            var request = InstantiateClassGenerator.Execute<GetReplicationJobsRequest>();
+            var request = InstantiateClassGenerator.Execute<GetReplicationJobsRequest>(operation);
             var marshaller = new GetReplicationJobsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3254,7 +3290,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetReplicationJobs");
 
-            var request = InstantiateClassGenerator.Execute<GetReplicationJobsRequest>();
+            var request = InstantiateClassGenerator.Execute<GetReplicationJobsRequest>(operation);
             var marshaller = new GetReplicationJobsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3284,7 +3320,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("ServerMigrationService")]
         public void GetReplicationRunsMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<GetReplicationRunsRequest>();
+            var operation = service_model.FindOperation("GetReplicationRuns");
+
+            var request = InstantiateClassGenerator.Execute<GetReplicationRunsRequest>(operation);
             var marshaller = new GetReplicationRunsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -3298,7 +3336,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetReplicationRuns").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = GetReplicationRunsResponseUnmarshaller.Instance.Unmarshall(context) as GetReplicationRunsResponse;
@@ -3313,7 +3351,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetReplicationRuns");
 
-            var request = InstantiateClassGenerator.Execute<GetReplicationRunsRequest>();
+            var request = InstantiateClassGenerator.Execute<GetReplicationRunsRequest>(operation);
             var marshaller = new GetReplicationRunsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3345,7 +3383,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetReplicationRuns");
 
-            var request = InstantiateClassGenerator.Execute<GetReplicationRunsRequest>();
+            var request = InstantiateClassGenerator.Execute<GetReplicationRunsRequest>(operation);
             var marshaller = new GetReplicationRunsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3377,7 +3415,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetReplicationRuns");
 
-            var request = InstantiateClassGenerator.Execute<GetReplicationRunsRequest>();
+            var request = InstantiateClassGenerator.Execute<GetReplicationRunsRequest>(operation);
             var marshaller = new GetReplicationRunsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3407,7 +3445,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("ServerMigrationService")]
         public void GetServersMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<GetServersRequest>();
+            var operation = service_model.FindOperation("GetServers");
+
+            var request = InstantiateClassGenerator.Execute<GetServersRequest>(operation);
             var marshaller = new GetServersRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -3421,7 +3461,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetServers").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = GetServersResponseUnmarshaller.Instance.Unmarshall(context) as GetServersResponse;
@@ -3436,7 +3476,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetServers");
 
-            var request = InstantiateClassGenerator.Execute<GetServersRequest>();
+            var request = InstantiateClassGenerator.Execute<GetServersRequest>(operation);
             var marshaller = new GetServersRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3468,7 +3508,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetServers");
 
-            var request = InstantiateClassGenerator.Execute<GetServersRequest>();
+            var request = InstantiateClassGenerator.Execute<GetServersRequest>(operation);
             var marshaller = new GetServersRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3500,7 +3540,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetServers");
 
-            var request = InstantiateClassGenerator.Execute<GetServersRequest>();
+            var request = InstantiateClassGenerator.Execute<GetServersRequest>(operation);
             var marshaller = new GetServersRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3532,7 +3572,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetServers");
 
-            var request = InstantiateClassGenerator.Execute<GetServersRequest>();
+            var request = InstantiateClassGenerator.Execute<GetServersRequest>(operation);
             var marshaller = new GetServersRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3562,7 +3602,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("ServerMigrationService")]
         public void ImportAppCatalogMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ImportAppCatalogRequest>();
+            var operation = service_model.FindOperation("ImportAppCatalog");
+
+            var request = InstantiateClassGenerator.Execute<ImportAppCatalogRequest>(operation);
             var marshaller = new ImportAppCatalogRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -3576,7 +3618,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ImportAppCatalog").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ImportAppCatalogResponseUnmarshaller.Instance.Unmarshall(context) as ImportAppCatalogResponse;
@@ -3591,7 +3633,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ImportAppCatalog");
 
-            var request = InstantiateClassGenerator.Execute<ImportAppCatalogRequest>();
+            var request = InstantiateClassGenerator.Execute<ImportAppCatalogRequest>(operation);
             var marshaller = new ImportAppCatalogRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3623,7 +3665,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ImportAppCatalog");
 
-            var request = InstantiateClassGenerator.Execute<ImportAppCatalogRequest>();
+            var request = InstantiateClassGenerator.Execute<ImportAppCatalogRequest>(operation);
             var marshaller = new ImportAppCatalogRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3655,7 +3697,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ImportAppCatalog");
 
-            var request = InstantiateClassGenerator.Execute<ImportAppCatalogRequest>();
+            var request = InstantiateClassGenerator.Execute<ImportAppCatalogRequest>(operation);
             var marshaller = new ImportAppCatalogRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3687,7 +3729,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ImportAppCatalog");
 
-            var request = InstantiateClassGenerator.Execute<ImportAppCatalogRequest>();
+            var request = InstantiateClassGenerator.Execute<ImportAppCatalogRequest>(operation);
             var marshaller = new ImportAppCatalogRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3719,7 +3761,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ImportAppCatalog");
 
-            var request = InstantiateClassGenerator.Execute<ImportAppCatalogRequest>();
+            var request = InstantiateClassGenerator.Execute<ImportAppCatalogRequest>(operation);
             var marshaller = new ImportAppCatalogRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3749,7 +3791,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("ServerMigrationService")]
         public void ImportServerCatalogMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ImportServerCatalogRequest>();
+            var operation = service_model.FindOperation("ImportServerCatalog");
+
+            var request = InstantiateClassGenerator.Execute<ImportServerCatalogRequest>(operation);
             var marshaller = new ImportServerCatalogRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -3763,7 +3807,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ImportServerCatalog").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ImportServerCatalogResponseUnmarshaller.Instance.Unmarshall(context) as ImportServerCatalogResponse;
@@ -3778,7 +3822,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ImportServerCatalog");
 
-            var request = InstantiateClassGenerator.Execute<ImportServerCatalogRequest>();
+            var request = InstantiateClassGenerator.Execute<ImportServerCatalogRequest>(operation);
             var marshaller = new ImportServerCatalogRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3810,7 +3854,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ImportServerCatalog");
 
-            var request = InstantiateClassGenerator.Execute<ImportServerCatalogRequest>();
+            var request = InstantiateClassGenerator.Execute<ImportServerCatalogRequest>(operation);
             var marshaller = new ImportServerCatalogRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3842,7 +3886,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ImportServerCatalog");
 
-            var request = InstantiateClassGenerator.Execute<ImportServerCatalogRequest>();
+            var request = InstantiateClassGenerator.Execute<ImportServerCatalogRequest>(operation);
             var marshaller = new ImportServerCatalogRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3874,7 +3918,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ImportServerCatalog");
 
-            var request = InstantiateClassGenerator.Execute<ImportServerCatalogRequest>();
+            var request = InstantiateClassGenerator.Execute<ImportServerCatalogRequest>(operation);
             var marshaller = new ImportServerCatalogRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3906,7 +3950,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ImportServerCatalog");
 
-            var request = InstantiateClassGenerator.Execute<ImportServerCatalogRequest>();
+            var request = InstantiateClassGenerator.Execute<ImportServerCatalogRequest>(operation);
             var marshaller = new ImportServerCatalogRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3936,7 +3980,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("ServerMigrationService")]
         public void LaunchAppMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<LaunchAppRequest>();
+            var operation = service_model.FindOperation("LaunchApp");
+
+            var request = InstantiateClassGenerator.Execute<LaunchAppRequest>(operation);
             var marshaller = new LaunchAppRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -3950,7 +3996,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("LaunchApp").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = LaunchAppResponseUnmarshaller.Instance.Unmarshall(context) as LaunchAppResponse;
@@ -3965,7 +4011,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("LaunchApp");
 
-            var request = InstantiateClassGenerator.Execute<LaunchAppRequest>();
+            var request = InstantiateClassGenerator.Execute<LaunchAppRequest>(operation);
             var marshaller = new LaunchAppRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3997,7 +4043,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("LaunchApp");
 
-            var request = InstantiateClassGenerator.Execute<LaunchAppRequest>();
+            var request = InstantiateClassGenerator.Execute<LaunchAppRequest>(operation);
             var marshaller = new LaunchAppRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4029,7 +4075,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("LaunchApp");
 
-            var request = InstantiateClassGenerator.Execute<LaunchAppRequest>();
+            var request = InstantiateClassGenerator.Execute<LaunchAppRequest>(operation);
             var marshaller = new LaunchAppRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4061,7 +4107,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("LaunchApp");
 
-            var request = InstantiateClassGenerator.Execute<LaunchAppRequest>();
+            var request = InstantiateClassGenerator.Execute<LaunchAppRequest>(operation);
             var marshaller = new LaunchAppRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4093,7 +4139,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("LaunchApp");
 
-            var request = InstantiateClassGenerator.Execute<LaunchAppRequest>();
+            var request = InstantiateClassGenerator.Execute<LaunchAppRequest>(operation);
             var marshaller = new LaunchAppRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4123,7 +4169,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("ServerMigrationService")]
         public void ListAppsMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ListAppsRequest>();
+            var operation = service_model.FindOperation("ListApps");
+
+            var request = InstantiateClassGenerator.Execute<ListAppsRequest>(operation);
             var marshaller = new ListAppsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -4137,7 +4185,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListApps").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ListAppsResponseUnmarshaller.Instance.Unmarshall(context) as ListAppsResponse;
@@ -4152,7 +4200,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListApps");
 
-            var request = InstantiateClassGenerator.Execute<ListAppsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListAppsRequest>(operation);
             var marshaller = new ListAppsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4184,7 +4232,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListApps");
 
-            var request = InstantiateClassGenerator.Execute<ListAppsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListAppsRequest>(operation);
             var marshaller = new ListAppsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4216,7 +4264,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListApps");
 
-            var request = InstantiateClassGenerator.Execute<ListAppsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListAppsRequest>(operation);
             var marshaller = new ListAppsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4248,7 +4296,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListApps");
 
-            var request = InstantiateClassGenerator.Execute<ListAppsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListAppsRequest>(operation);
             var marshaller = new ListAppsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4280,7 +4328,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListApps");
 
-            var request = InstantiateClassGenerator.Execute<ListAppsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListAppsRequest>(operation);
             var marshaller = new ListAppsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4310,7 +4358,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("ServerMigrationService")]
         public void NotifyAppValidationOutputMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<NotifyAppValidationOutputRequest>();
+            var operation = service_model.FindOperation("NotifyAppValidationOutput");
+
+            var request = InstantiateClassGenerator.Execute<NotifyAppValidationOutputRequest>(operation);
             var marshaller = new NotifyAppValidationOutputRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -4324,7 +4374,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("NotifyAppValidationOutput").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = NotifyAppValidationOutputResponseUnmarshaller.Instance.Unmarshall(context) as NotifyAppValidationOutputResponse;
@@ -4339,7 +4389,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("NotifyAppValidationOutput");
 
-            var request = InstantiateClassGenerator.Execute<NotifyAppValidationOutputRequest>();
+            var request = InstantiateClassGenerator.Execute<NotifyAppValidationOutputRequest>(operation);
             var marshaller = new NotifyAppValidationOutputRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4371,7 +4421,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("NotifyAppValidationOutput");
 
-            var request = InstantiateClassGenerator.Execute<NotifyAppValidationOutputRequest>();
+            var request = InstantiateClassGenerator.Execute<NotifyAppValidationOutputRequest>(operation);
             var marshaller = new NotifyAppValidationOutputRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4403,7 +4453,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("NotifyAppValidationOutput");
 
-            var request = InstantiateClassGenerator.Execute<NotifyAppValidationOutputRequest>();
+            var request = InstantiateClassGenerator.Execute<NotifyAppValidationOutputRequest>(operation);
             var marshaller = new NotifyAppValidationOutputRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4435,7 +4485,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("NotifyAppValidationOutput");
 
-            var request = InstantiateClassGenerator.Execute<NotifyAppValidationOutputRequest>();
+            var request = InstantiateClassGenerator.Execute<NotifyAppValidationOutputRequest>(operation);
             var marshaller = new NotifyAppValidationOutputRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4467,7 +4517,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("NotifyAppValidationOutput");
 
-            var request = InstantiateClassGenerator.Execute<NotifyAppValidationOutputRequest>();
+            var request = InstantiateClassGenerator.Execute<NotifyAppValidationOutputRequest>(operation);
             var marshaller = new NotifyAppValidationOutputRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4497,7 +4547,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("ServerMigrationService")]
         public void PutAppLaunchConfigurationMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<PutAppLaunchConfigurationRequest>();
+            var operation = service_model.FindOperation("PutAppLaunchConfiguration");
+
+            var request = InstantiateClassGenerator.Execute<PutAppLaunchConfigurationRequest>(operation);
             var marshaller = new PutAppLaunchConfigurationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -4511,7 +4563,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("PutAppLaunchConfiguration").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = PutAppLaunchConfigurationResponseUnmarshaller.Instance.Unmarshall(context) as PutAppLaunchConfigurationResponse;
@@ -4526,7 +4578,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("PutAppLaunchConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<PutAppLaunchConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<PutAppLaunchConfigurationRequest>(operation);
             var marshaller = new PutAppLaunchConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4558,7 +4610,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("PutAppLaunchConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<PutAppLaunchConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<PutAppLaunchConfigurationRequest>(operation);
             var marshaller = new PutAppLaunchConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4590,7 +4642,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("PutAppLaunchConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<PutAppLaunchConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<PutAppLaunchConfigurationRequest>(operation);
             var marshaller = new PutAppLaunchConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4622,7 +4674,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("PutAppLaunchConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<PutAppLaunchConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<PutAppLaunchConfigurationRequest>(operation);
             var marshaller = new PutAppLaunchConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4654,7 +4706,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("PutAppLaunchConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<PutAppLaunchConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<PutAppLaunchConfigurationRequest>(operation);
             var marshaller = new PutAppLaunchConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4684,7 +4736,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("ServerMigrationService")]
         public void PutAppReplicationConfigurationMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<PutAppReplicationConfigurationRequest>();
+            var operation = service_model.FindOperation("PutAppReplicationConfiguration");
+
+            var request = InstantiateClassGenerator.Execute<PutAppReplicationConfigurationRequest>(operation);
             var marshaller = new PutAppReplicationConfigurationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -4698,7 +4752,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("PutAppReplicationConfiguration").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = PutAppReplicationConfigurationResponseUnmarshaller.Instance.Unmarshall(context) as PutAppReplicationConfigurationResponse;
@@ -4713,7 +4767,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("PutAppReplicationConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<PutAppReplicationConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<PutAppReplicationConfigurationRequest>(operation);
             var marshaller = new PutAppReplicationConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4745,7 +4799,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("PutAppReplicationConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<PutAppReplicationConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<PutAppReplicationConfigurationRequest>(operation);
             var marshaller = new PutAppReplicationConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4777,7 +4831,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("PutAppReplicationConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<PutAppReplicationConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<PutAppReplicationConfigurationRequest>(operation);
             var marshaller = new PutAppReplicationConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4809,7 +4863,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("PutAppReplicationConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<PutAppReplicationConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<PutAppReplicationConfigurationRequest>(operation);
             var marshaller = new PutAppReplicationConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4841,7 +4895,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("PutAppReplicationConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<PutAppReplicationConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<PutAppReplicationConfigurationRequest>(operation);
             var marshaller = new PutAppReplicationConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4871,7 +4925,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("ServerMigrationService")]
         public void PutAppValidationConfigurationMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<PutAppValidationConfigurationRequest>();
+            var operation = service_model.FindOperation("PutAppValidationConfiguration");
+
+            var request = InstantiateClassGenerator.Execute<PutAppValidationConfigurationRequest>(operation);
             var marshaller = new PutAppValidationConfigurationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -4885,7 +4941,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("PutAppValidationConfiguration").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = PutAppValidationConfigurationResponseUnmarshaller.Instance.Unmarshall(context) as PutAppValidationConfigurationResponse;
@@ -4900,7 +4956,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("PutAppValidationConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<PutAppValidationConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<PutAppValidationConfigurationRequest>(operation);
             var marshaller = new PutAppValidationConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4932,7 +4988,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("PutAppValidationConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<PutAppValidationConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<PutAppValidationConfigurationRequest>(operation);
             var marshaller = new PutAppValidationConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4964,7 +5020,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("PutAppValidationConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<PutAppValidationConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<PutAppValidationConfigurationRequest>(operation);
             var marshaller = new PutAppValidationConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4996,7 +5052,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("PutAppValidationConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<PutAppValidationConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<PutAppValidationConfigurationRequest>(operation);
             var marshaller = new PutAppValidationConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5028,7 +5084,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("PutAppValidationConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<PutAppValidationConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<PutAppValidationConfigurationRequest>(operation);
             var marshaller = new PutAppValidationConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5058,7 +5114,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("ServerMigrationService")]
         public void StartAppReplicationMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<StartAppReplicationRequest>();
+            var operation = service_model.FindOperation("StartAppReplication");
+
+            var request = InstantiateClassGenerator.Execute<StartAppReplicationRequest>(operation);
             var marshaller = new StartAppReplicationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -5072,7 +5130,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("StartAppReplication").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = StartAppReplicationResponseUnmarshaller.Instance.Unmarshall(context) as StartAppReplicationResponse;
@@ -5087,7 +5145,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("StartAppReplication");
 
-            var request = InstantiateClassGenerator.Execute<StartAppReplicationRequest>();
+            var request = InstantiateClassGenerator.Execute<StartAppReplicationRequest>(operation);
             var marshaller = new StartAppReplicationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5119,7 +5177,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("StartAppReplication");
 
-            var request = InstantiateClassGenerator.Execute<StartAppReplicationRequest>();
+            var request = InstantiateClassGenerator.Execute<StartAppReplicationRequest>(operation);
             var marshaller = new StartAppReplicationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5151,7 +5209,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("StartAppReplication");
 
-            var request = InstantiateClassGenerator.Execute<StartAppReplicationRequest>();
+            var request = InstantiateClassGenerator.Execute<StartAppReplicationRequest>(operation);
             var marshaller = new StartAppReplicationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5183,7 +5241,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("StartAppReplication");
 
-            var request = InstantiateClassGenerator.Execute<StartAppReplicationRequest>();
+            var request = InstantiateClassGenerator.Execute<StartAppReplicationRequest>(operation);
             var marshaller = new StartAppReplicationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5215,7 +5273,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("StartAppReplication");
 
-            var request = InstantiateClassGenerator.Execute<StartAppReplicationRequest>();
+            var request = InstantiateClassGenerator.Execute<StartAppReplicationRequest>(operation);
             var marshaller = new StartAppReplicationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5245,7 +5303,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("ServerMigrationService")]
         public void StartOnDemandAppReplicationMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<StartOnDemandAppReplicationRequest>();
+            var operation = service_model.FindOperation("StartOnDemandAppReplication");
+
+            var request = InstantiateClassGenerator.Execute<StartOnDemandAppReplicationRequest>(operation);
             var marshaller = new StartOnDemandAppReplicationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -5259,7 +5319,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("StartOnDemandAppReplication").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = StartOnDemandAppReplicationResponseUnmarshaller.Instance.Unmarshall(context) as StartOnDemandAppReplicationResponse;
@@ -5274,7 +5334,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("StartOnDemandAppReplication");
 
-            var request = InstantiateClassGenerator.Execute<StartOnDemandAppReplicationRequest>();
+            var request = InstantiateClassGenerator.Execute<StartOnDemandAppReplicationRequest>(operation);
             var marshaller = new StartOnDemandAppReplicationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5306,7 +5366,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("StartOnDemandAppReplication");
 
-            var request = InstantiateClassGenerator.Execute<StartOnDemandAppReplicationRequest>();
+            var request = InstantiateClassGenerator.Execute<StartOnDemandAppReplicationRequest>(operation);
             var marshaller = new StartOnDemandAppReplicationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5338,7 +5398,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("StartOnDemandAppReplication");
 
-            var request = InstantiateClassGenerator.Execute<StartOnDemandAppReplicationRequest>();
+            var request = InstantiateClassGenerator.Execute<StartOnDemandAppReplicationRequest>(operation);
             var marshaller = new StartOnDemandAppReplicationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5370,7 +5430,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("StartOnDemandAppReplication");
 
-            var request = InstantiateClassGenerator.Execute<StartOnDemandAppReplicationRequest>();
+            var request = InstantiateClassGenerator.Execute<StartOnDemandAppReplicationRequest>(operation);
             var marshaller = new StartOnDemandAppReplicationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5402,7 +5462,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("StartOnDemandAppReplication");
 
-            var request = InstantiateClassGenerator.Execute<StartOnDemandAppReplicationRequest>();
+            var request = InstantiateClassGenerator.Execute<StartOnDemandAppReplicationRequest>(operation);
             var marshaller = new StartOnDemandAppReplicationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5432,7 +5492,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("ServerMigrationService")]
         public void StartOnDemandReplicationRunMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<StartOnDemandReplicationRunRequest>();
+            var operation = service_model.FindOperation("StartOnDemandReplicationRun");
+
+            var request = InstantiateClassGenerator.Execute<StartOnDemandReplicationRunRequest>(operation);
             var marshaller = new StartOnDemandReplicationRunRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -5446,7 +5508,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("StartOnDemandReplicationRun").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = StartOnDemandReplicationRunResponseUnmarshaller.Instance.Unmarshall(context) as StartOnDemandReplicationRunResponse;
@@ -5461,7 +5523,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("StartOnDemandReplicationRun");
 
-            var request = InstantiateClassGenerator.Execute<StartOnDemandReplicationRunRequest>();
+            var request = InstantiateClassGenerator.Execute<StartOnDemandReplicationRunRequest>(operation);
             var marshaller = new StartOnDemandReplicationRunRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5493,7 +5555,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("StartOnDemandReplicationRun");
 
-            var request = InstantiateClassGenerator.Execute<StartOnDemandReplicationRunRequest>();
+            var request = InstantiateClassGenerator.Execute<StartOnDemandReplicationRunRequest>(operation);
             var marshaller = new StartOnDemandReplicationRunRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5525,7 +5587,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("StartOnDemandReplicationRun");
 
-            var request = InstantiateClassGenerator.Execute<StartOnDemandReplicationRunRequest>();
+            var request = InstantiateClassGenerator.Execute<StartOnDemandReplicationRunRequest>(operation);
             var marshaller = new StartOnDemandReplicationRunRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5557,7 +5619,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("StartOnDemandReplicationRun");
 
-            var request = InstantiateClassGenerator.Execute<StartOnDemandReplicationRunRequest>();
+            var request = InstantiateClassGenerator.Execute<StartOnDemandReplicationRunRequest>(operation);
             var marshaller = new StartOnDemandReplicationRunRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5589,7 +5651,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("StartOnDemandReplicationRun");
 
-            var request = InstantiateClassGenerator.Execute<StartOnDemandReplicationRunRequest>();
+            var request = InstantiateClassGenerator.Execute<StartOnDemandReplicationRunRequest>(operation);
             var marshaller = new StartOnDemandReplicationRunRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5621,7 +5683,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("StartOnDemandReplicationRun");
 
-            var request = InstantiateClassGenerator.Execute<StartOnDemandReplicationRunRequest>();
+            var request = InstantiateClassGenerator.Execute<StartOnDemandReplicationRunRequest>(operation);
             var marshaller = new StartOnDemandReplicationRunRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5651,7 +5713,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("ServerMigrationService")]
         public void StopAppReplicationMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<StopAppReplicationRequest>();
+            var operation = service_model.FindOperation("StopAppReplication");
+
+            var request = InstantiateClassGenerator.Execute<StopAppReplicationRequest>(operation);
             var marshaller = new StopAppReplicationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -5665,7 +5729,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("StopAppReplication").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = StopAppReplicationResponseUnmarshaller.Instance.Unmarshall(context) as StopAppReplicationResponse;
@@ -5680,7 +5744,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("StopAppReplication");
 
-            var request = InstantiateClassGenerator.Execute<StopAppReplicationRequest>();
+            var request = InstantiateClassGenerator.Execute<StopAppReplicationRequest>(operation);
             var marshaller = new StopAppReplicationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5712,7 +5776,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("StopAppReplication");
 
-            var request = InstantiateClassGenerator.Execute<StopAppReplicationRequest>();
+            var request = InstantiateClassGenerator.Execute<StopAppReplicationRequest>(operation);
             var marshaller = new StopAppReplicationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5744,7 +5808,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("StopAppReplication");
 
-            var request = InstantiateClassGenerator.Execute<StopAppReplicationRequest>();
+            var request = InstantiateClassGenerator.Execute<StopAppReplicationRequest>(operation);
             var marshaller = new StopAppReplicationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5776,7 +5840,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("StopAppReplication");
 
-            var request = InstantiateClassGenerator.Execute<StopAppReplicationRequest>();
+            var request = InstantiateClassGenerator.Execute<StopAppReplicationRequest>(operation);
             var marshaller = new StopAppReplicationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5808,7 +5872,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("StopAppReplication");
 
-            var request = InstantiateClassGenerator.Execute<StopAppReplicationRequest>();
+            var request = InstantiateClassGenerator.Execute<StopAppReplicationRequest>(operation);
             var marshaller = new StopAppReplicationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5838,7 +5902,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("ServerMigrationService")]
         public void TerminateAppMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<TerminateAppRequest>();
+            var operation = service_model.FindOperation("TerminateApp");
+
+            var request = InstantiateClassGenerator.Execute<TerminateAppRequest>(operation);
             var marshaller = new TerminateAppRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -5852,7 +5918,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("TerminateApp").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = TerminateAppResponseUnmarshaller.Instance.Unmarshall(context) as TerminateAppResponse;
@@ -5867,7 +5933,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("TerminateApp");
 
-            var request = InstantiateClassGenerator.Execute<TerminateAppRequest>();
+            var request = InstantiateClassGenerator.Execute<TerminateAppRequest>(operation);
             var marshaller = new TerminateAppRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5899,7 +5965,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("TerminateApp");
 
-            var request = InstantiateClassGenerator.Execute<TerminateAppRequest>();
+            var request = InstantiateClassGenerator.Execute<TerminateAppRequest>(operation);
             var marshaller = new TerminateAppRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5931,7 +5997,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("TerminateApp");
 
-            var request = InstantiateClassGenerator.Execute<TerminateAppRequest>();
+            var request = InstantiateClassGenerator.Execute<TerminateAppRequest>(operation);
             var marshaller = new TerminateAppRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5963,7 +6029,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("TerminateApp");
 
-            var request = InstantiateClassGenerator.Execute<TerminateAppRequest>();
+            var request = InstantiateClassGenerator.Execute<TerminateAppRequest>(operation);
             var marshaller = new TerminateAppRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5995,7 +6061,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("TerminateApp");
 
-            var request = InstantiateClassGenerator.Execute<TerminateAppRequest>();
+            var request = InstantiateClassGenerator.Execute<TerminateAppRequest>(operation);
             var marshaller = new TerminateAppRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6025,7 +6091,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("ServerMigrationService")]
         public void UpdateAppMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<UpdateAppRequest>();
+            var operation = service_model.FindOperation("UpdateApp");
+
+            var request = InstantiateClassGenerator.Execute<UpdateAppRequest>(operation);
             var marshaller = new UpdateAppRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -6039,7 +6107,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("UpdateApp").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = UpdateAppResponseUnmarshaller.Instance.Unmarshall(context) as UpdateAppResponse;
@@ -6054,7 +6122,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateApp");
 
-            var request = InstantiateClassGenerator.Execute<UpdateAppRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateAppRequest>(operation);
             var marshaller = new UpdateAppRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6086,7 +6154,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateApp");
 
-            var request = InstantiateClassGenerator.Execute<UpdateAppRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateAppRequest>(operation);
             var marshaller = new UpdateAppRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6118,7 +6186,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateApp");
 
-            var request = InstantiateClassGenerator.Execute<UpdateAppRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateAppRequest>(operation);
             var marshaller = new UpdateAppRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6150,7 +6218,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateApp");
 
-            var request = InstantiateClassGenerator.Execute<UpdateAppRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateAppRequest>(operation);
             var marshaller = new UpdateAppRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6182,7 +6250,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateApp");
 
-            var request = InstantiateClassGenerator.Execute<UpdateAppRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateAppRequest>(operation);
             var marshaller = new UpdateAppRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6212,7 +6280,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("ServerMigrationService")]
         public void UpdateReplicationJobMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<UpdateReplicationJobRequest>();
+            var operation = service_model.FindOperation("UpdateReplicationJob");
+
+            var request = InstantiateClassGenerator.Execute<UpdateReplicationJobRequest>(operation);
             var marshaller = new UpdateReplicationJobRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -6226,7 +6296,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("UpdateReplicationJob").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = UpdateReplicationJobResponseUnmarshaller.Instance.Unmarshall(context) as UpdateReplicationJobResponse;
@@ -6241,7 +6311,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateReplicationJob");
 
-            var request = InstantiateClassGenerator.Execute<UpdateReplicationJobRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateReplicationJobRequest>(operation);
             var marshaller = new UpdateReplicationJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6273,7 +6343,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateReplicationJob");
 
-            var request = InstantiateClassGenerator.Execute<UpdateReplicationJobRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateReplicationJobRequest>(operation);
             var marshaller = new UpdateReplicationJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6305,7 +6375,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateReplicationJob");
 
-            var request = InstantiateClassGenerator.Execute<UpdateReplicationJobRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateReplicationJobRequest>(operation);
             var marshaller = new UpdateReplicationJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6337,7 +6407,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateReplicationJob");
 
-            var request = InstantiateClassGenerator.Execute<UpdateReplicationJobRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateReplicationJobRequest>(operation);
             var marshaller = new UpdateReplicationJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6369,7 +6439,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateReplicationJob");
 
-            var request = InstantiateClassGenerator.Execute<UpdateReplicationJobRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateReplicationJobRequest>(operation);
             var marshaller = new UpdateReplicationJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6401,7 +6471,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateReplicationJob");
 
-            var request = InstantiateClassGenerator.Execute<UpdateReplicationJobRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateReplicationJobRequest>(operation);
             var marshaller = new UpdateReplicationJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6433,7 +6503,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateReplicationJob");
 
-            var request = InstantiateClassGenerator.Execute<UpdateReplicationJobRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateReplicationJobRequest>(operation);
             var marshaller = new UpdateReplicationJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6465,7 +6535,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateReplicationJob");
 
-            var request = InstantiateClassGenerator.Execute<UpdateReplicationJobRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateReplicationJobRequest>(operation);
             var marshaller = new UpdateReplicationJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);

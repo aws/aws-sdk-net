@@ -39,8 +39,8 @@ namespace Amazon.Route53RecoveryCluster.Model
     ///  
     /// <para>
     /// A routing control is a simple on/off switch in Route 53 ARC that you can use to route
-    /// traffic to cells. When a routing control state is On, traffic flows to a cell. When
-    /// the state is Off, traffic does not flow.
+    /// traffic to cells. When a routing control state is set to ON, traffic flows to a cell.
+    /// When the state is set to OFF, traffic does not flow.
     /// </para>
     ///  
     /// <para>

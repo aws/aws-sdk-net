@@ -83,6 +83,17 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.LaunchDisposition);
                 }
 
+                if(publicRequest.IsSetLaunchIntoInstanceProperties())
+                {
+                    context.Writer.WritePropertyName("launchIntoInstanceProperties");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = LaunchIntoInstancePropertiesMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.LaunchIntoInstanceProperties, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetLicensing())
                 {
                     context.Writer.WritePropertyName("licensing");

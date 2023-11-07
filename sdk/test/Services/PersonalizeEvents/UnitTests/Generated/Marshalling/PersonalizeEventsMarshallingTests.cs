@@ -49,7 +49,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("PutEvents");
 
-            var request = InstantiateClassGenerator.Execute<PutEventsRequest>();
+            var request = InstantiateClassGenerator.Execute<PutEventsRequest>(operation);
             var marshaller = new PutEventsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -65,7 +65,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("PutEvents");
 
-            var request = InstantiateClassGenerator.Execute<PutEventsRequest>();
+            var request = InstantiateClassGenerator.Execute<PutEventsRequest>(operation);
             var marshaller = new PutEventsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -97,7 +97,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("PutItems");
 
-            var request = InstantiateClassGenerator.Execute<PutItemsRequest>();
+            var request = InstantiateClassGenerator.Execute<PutItemsRequest>(operation);
             var marshaller = new PutItemsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -113,7 +113,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("PutItems");
 
-            var request = InstantiateClassGenerator.Execute<PutItemsRequest>();
+            var request = InstantiateClassGenerator.Execute<PutItemsRequest>(operation);
             var marshaller = new PutItemsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -145,7 +145,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("PutItems");
 
-            var request = InstantiateClassGenerator.Execute<PutItemsRequest>();
+            var request = InstantiateClassGenerator.Execute<PutItemsRequest>(operation);
             var marshaller = new PutItemsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -177,7 +177,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("PutItems");
 
-            var request = InstantiateClassGenerator.Execute<PutItemsRequest>();
+            var request = InstantiateClassGenerator.Execute<PutItemsRequest>(operation);
             var marshaller = new PutItemsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -209,7 +209,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("PutUsers");
 
-            var request = InstantiateClassGenerator.Execute<PutUsersRequest>();
+            var request = InstantiateClassGenerator.Execute<PutUsersRequest>(operation);
             var marshaller = new PutUsersRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -225,7 +225,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("PutUsers");
 
-            var request = InstantiateClassGenerator.Execute<PutUsersRequest>();
+            var request = InstantiateClassGenerator.Execute<PutUsersRequest>(operation);
             var marshaller = new PutUsersRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -257,7 +257,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("PutUsers");
 
-            var request = InstantiateClassGenerator.Execute<PutUsersRequest>();
+            var request = InstantiateClassGenerator.Execute<PutUsersRequest>(operation);
             var marshaller = new PutUsersRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -289,7 +289,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("PutUsers");
 
-            var request = InstantiateClassGenerator.Execute<PutUsersRequest>();
+            var request = InstantiateClassGenerator.Execute<PutUsersRequest>(operation);
             var marshaller = new PutUsersRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 

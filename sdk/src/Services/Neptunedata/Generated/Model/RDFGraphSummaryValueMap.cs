@@ -40,7 +40,7 @@ namespace Amazon.Neptunedata.Model
         /// <summary>
         /// Gets and sets the property GraphSummary. 
         /// <para>
-        /// The graph summary of an RDF graph. See <a href="https://docs.aws.amazon.com/neptune-graph-summary.html#neptune-graph-summary-rdf-response">Graph
+        /// The graph summary of an RDF graph. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-graph-summary.html#neptune-graph-summary-rdf-response">Graph
         /// summary response for an RDF graph</a>.
         /// </para>
         /// </summary>

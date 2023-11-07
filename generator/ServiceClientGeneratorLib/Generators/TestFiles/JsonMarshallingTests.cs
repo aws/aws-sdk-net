@@ -109,17 +109,24 @@ namespace ServiceClientGenerator.Generators.TestFiles
             
             #line default
             #line hidden
-            this.Write("MarshallTest()\r\n        {\r\n            var request = InstantiateClassGenerator.Ex" +
-                    "ecute<");
+            this.Write("MarshallTest()\r\n        {\r\n            var operation = service_model.FindOperatio" +
+                    "n(\"");
             
             #line 44 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\JsonMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
-            this.Write("Request>();\r\n            var marshaller = new ");
+            this.Write("\");\r\n\r\n            var request = InstantiateClassGenerator.Execute<");
             
-            #line 45 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\JsonMarshallingTests.tt"
+            #line 46 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\JsonMarshallingTests.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
+            
+            #line default
+            #line hidden
+            this.Write("Request>(operation);\r\n            var marshaller = new ");
+            
+            #line 47 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\JsonMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
@@ -127,7 +134,7 @@ namespace ServiceClientGenerator.Generators.TestFiles
             this.Write("RequestMarshaller();\r\n\r\n            var internalRequest = marshaller.Marshall(req" +
                     "uest);\r\n");
             
-            #line 48 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\JsonMarshallingTests.tt"
+            #line 50 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\JsonMarshallingTests.tt"
 
             if(operation.RequestStructure != null)
             {
@@ -138,14 +145,14 @@ namespace ServiceClientGenerator.Generators.TestFiles
             this.Write("            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content" +
                     ");\r\n\t\t\tComparer.CompareObjectToJson<");
             
-            #line 53 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\JsonMarshallingTests.tt"
+            #line 55 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\JsonMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Request>(request,jsonRequest);\r\n\r\n");
             
-            #line 55 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\JsonMarshallingTests.tt"
+            #line 57 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\JsonMarshallingTests.tt"
 
             }
 
@@ -162,26 +169,19 @@ namespace ServiceClientGenerator.Generators.TestFiles
 					{""x-amz-crc32"",""0""}
 				}
 			};
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation(""");
-            
-            #line 68 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\JsonMarshallingTests.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
-            
-            #line default
-            #line hidden
-            this.Write(@""").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
 			webResponse.Headers.Add(""Content-Length"", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ");
             
-            #line 71 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\JsonMarshallingTests.tt"
+            #line 73 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\JsonMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("ResponseUnmarshaller.Instance.Unmarshall(context) as ");
             
-            #line 71 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\JsonMarshallingTests.tt"
+            #line 73 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\JsonMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
@@ -189,7 +189,7 @@ namespace ServiceClientGenerator.Generators.TestFiles
             this.Write("Response;\r\n\t\t\tInstantiateClassGenerator.ValidateObjectFullyInstantiated(response)" +
                     ";\r\n");
             
-            #line 73 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\JsonMarshallingTests.tt"
+            #line 75 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\JsonMarshallingTests.tt"
 
             }
 
@@ -198,7 +198,7 @@ namespace ServiceClientGenerator.Generators.TestFiles
             #line hidden
             this.Write("        }\r\n");
             
-            #line 77 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\JsonMarshallingTests.tt"
+            #line 79 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\JsonMarshallingTests.tt"
 
             foreach (var exception in operation.Exceptions)
             {
@@ -209,28 +209,28 @@ namespace ServiceClientGenerator.Generators.TestFiles
             this.Write("\r\n        [TestMethod]\r\n        [TestCategory(\"UnitTest\")]\r\n        [TestCategory" +
                     "(\"");
             
-            #line 84 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\JsonMarshallingTests.tt"
+            #line 86 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\JsonMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ServiceModel.Type));
             
             #line default
             #line hidden
             this.Write("\")]\r\n        [TestCategory(\"");
             
-            #line 85 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\JsonMarshallingTests.tt"
+            #line 87 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\JsonMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.TestCategory));
             
             #line default
             #line hidden
             this.Write("\")]\r\n        public void ");
             
-            #line 86 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\JsonMarshallingTests.tt"
+            #line 88 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\JsonMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("_");
             
-            #line 86 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\JsonMarshallingTests.tt"
+            #line 88 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\JsonMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(exception.Name));
             
             #line default
@@ -238,21 +238,21 @@ namespace ServiceClientGenerator.Generators.TestFiles
             this.Write("MarshallTest()\r\n        {\r\n            var operation =  service_model.FindOperati" +
                     "on(\"");
             
-            #line 88 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\JsonMarshallingTests.tt"
+            #line 90 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\JsonMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("\");\r\n\r\n            var request = InstantiateClassGenerator.Execute<");
             
-            #line 90 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\JsonMarshallingTests.tt"
+            #line 92 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\JsonMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
-            this.Write("Request>();\r\n            var marshaller = new ");
+            this.Write("Request>(operation);\r\n            var marshaller = new ");
             
-            #line 91 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\JsonMarshallingTests.tt"
+            #line 93 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\JsonMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
@@ -261,7 +261,7 @@ namespace ServiceClientGenerator.Generators.TestFiles
                     "st);\r\n            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest." +
                     "Content);\r\n\r\n            Comparer.CompareObjectToJson<");
             
-            #line 95 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\JsonMarshallingTests.tt"
+            #line 97 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\JsonMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
@@ -269,7 +269,7 @@ namespace ServiceClientGenerator.Generators.TestFiles
             this.Write("Request>(request,jsonRequest);\r\n\r\n            var exception = operation.Exception" +
                     "s.First(e => e.Name.Equals(\"");
             
-            #line 97 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\JsonMarshallingTests.tt"
+            #line 99 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\JsonMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(exception.Name));
             
             #line default
@@ -283,7 +283,7 @@ namespace ServiceClientGenerator.Generators.TestFiles
                     {""x-amz-crc32"",""0""},
                     {""x-amzn-ErrorType"",""");
             
-            #line 104 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\JsonMarshallingTests.tt"
+            #line 106 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\JsonMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(exception.Name));
             
             #line default
@@ -295,7 +295,7 @@ namespace ServiceClientGenerator.Generators.TestFiles
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
             var response = ");
             
-            #line 109 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\JsonMarshallingTests.tt"
+            #line 111 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\JsonMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
@@ -304,7 +304,7 @@ namespace ServiceClientGenerator.Generators.TestFiles
                     "tatusCode.OK);\r\n\r\n            InstantiateClassGenerator.ValidateObjectFullyInsta" +
                     "ntiated(response);\r\n        }\r\n");
             
-            #line 113 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\JsonMarshallingTests.tt"
+            #line 115 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\JsonMarshallingTests.tt"
 
             }
         }

@@ -36,6 +36,14 @@ namespace Amazon.ApplicationDiscoveryService.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeAgents operation
+        ///</summary>
+        public IDescribeAgentsPaginator DescribeAgents(DescribeAgentsRequest request) 
+        {
+            return new DescribeAgentsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeContinuousExports operation
         ///</summary>
         public IDescribeContinuousExportsPaginator DescribeContinuousExports(DescribeContinuousExportsRequest request) 
@@ -44,11 +52,43 @@ namespace Amazon.ApplicationDiscoveryService.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeExportConfigurations operation
+        ///</summary>
+        public IDescribeExportConfigurationsPaginator DescribeExportConfigurations(DescribeExportConfigurationsRequest request) 
+        {
+            return new DescribeExportConfigurationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeExportTasks operation
+        ///</summary>
+        public IDescribeExportTasksPaginator DescribeExportTasks(DescribeExportTasksRequest request) 
+        {
+            return new DescribeExportTasksPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeImportTasks operation
         ///</summary>
         public IDescribeImportTasksPaginator DescribeImportTasks(DescribeImportTasksRequest request) 
         {
             return new DescribeImportTasksPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeTags operation
+        ///</summary>
+        public IDescribeTagsPaginator DescribeTags(DescribeTagsRequest request) 
+        {
+            return new DescribeTagsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListConfigurations operation
+        ///</summary>
+        public IListConfigurationsPaginator ListConfigurations(ListConfigurationsRequest request) 
+        {
+            return new ListConfigurationsPaginator(this.client, request);
         }
     }
 }

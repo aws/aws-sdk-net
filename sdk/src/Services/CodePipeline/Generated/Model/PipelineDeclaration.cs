@@ -36,8 +36,11 @@ namespace Amazon.CodePipeline.Model
         private ArtifactStore _artifactStore;
         private Dictionary<string, ArtifactStore> _artifactStores = new Dictionary<string, ArtifactStore>();
         private string _name;
+        private PipelineType _pipelineType;
         private string _roleArn;
         private List<StageDeclaration> _stages = new List<StageDeclaration>();
+        private List<PipelineTriggerDeclaration> _triggers = new List<PipelineTriggerDeclaration>();
+        private List<PipelineVariableDeclaration> _variables = new List<PipelineVariableDeclaration>();
         private int? _version;
 
         /// <summary>
@@ -112,6 +115,51 @@ namespace Amazon.CodePipeline.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PipelineType. 
+        /// <para>
+        /// CodePipeline provides the following pipeline types, which differ in characteristics
+        /// and price, so that you can tailor your pipeline features and cost to the needs of
+        /// your applications.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// V1 type pipelines have a JSON structure that contains standard pipeline, stage, and
+        /// action-level parameters.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// V2 type pipelines have the same structure as a V1 type, along with additional parameters
+        /// for release safety and trigger configuration.
+        /// </para>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// Including V2 parameters, such as triggers on Git tags, in the pipeline JSON when creating
+        /// or updating a pipeline will result in the pipeline having the V2 type of pipeline
+        /// and the associated costs.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// For information about pricing for CodePipeline, see <a href="https://aws.amazon.com/codepipeline/pricing/">Pricing</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  For information about which type of pipeline to choose, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types-planning.html">What
+        /// type of pipeline is right for me?</a>.
+        /// </para>
+        /// </summary>
+        public PipelineType PipelineType
+        {
+            get { return this._pipelineType; }
+            set { this._pipelineType = value; }
+        }
+
+        // Check to see if PipelineType property is set
+        internal bool IsSetPipelineType()
+        {
+            return this._pipelineType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) for CodePipeline to use to either perform actions with
@@ -148,6 +196,52 @@ namespace Amazon.CodePipeline.Model
         internal bool IsSetStages()
         {
             return this._stages != null && this._stages.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Triggers. 
+        /// <para>
+        /// The trigger configuration specifying a type of event, such as Git tags, that starts
+        /// the pipeline.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// When a trigger configuration is specified, default change detection for repository
+        /// and branch commits is disabled.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Max=20)]
+        public List<PipelineTriggerDeclaration> Triggers
+        {
+            get { return this._triggers; }
+            set { this._triggers = value; }
+        }
+
+        // Check to see if Triggers property is set
+        internal bool IsSetTriggers()
+        {
+            return this._triggers != null && this._triggers.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Variables. 
+        /// <para>
+        /// A list that defines the pipeline variables for a pipeline resource. Variable names
+        /// can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9@\-_]+</code>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=50)]
+        public List<PipelineVariableDeclaration> Variables
+        {
+            get { return this._variables; }
+            set { this._variables = value; }
+        }
+
+        // Check to see if Variables property is set
+        internal bool IsSetVariables()
+        {
+            return this._variables != null && this._variables.Count > 0; 
         }
 
         /// <summary>

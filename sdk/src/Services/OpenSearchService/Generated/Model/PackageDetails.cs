@@ -34,7 +34,9 @@ namespace Amazon.OpenSearchService.Model
     public partial class PackageDetails
     {
         private string _availablePackageVersion;
+        private PluginProperties _availablePluginProperties;
         private DateTime? _createdAt;
+        private string _engineVersion;
         private ErrorDetails _errorDetails;
         private DateTime? _lastUpdatedAt;
         private string _packageDescription;
@@ -62,6 +64,25 @@ namespace Amazon.OpenSearchService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AvailablePluginProperties. 
+        /// <para>
+        /// If the package is a <code>ZIP-PLUGIN</code> package, additional information about
+        /// plugin properties.
+        /// </para>
+        /// </summary>
+        public PluginProperties AvailablePluginProperties
+        {
+            get { return this._availablePluginProperties; }
+            set { this._availablePluginProperties = value; }
+        }
+
+        // Check to see if AvailablePluginProperties property is set
+        internal bool IsSetAvailablePluginProperties()
+        {
+            return this._availablePluginProperties != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
         /// The timestamp when the package was created.
@@ -77,6 +98,25 @@ namespace Amazon.OpenSearchService.Model
         internal bool IsSetCreatedAt()
         {
             return this._createdAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EngineVersion. 
+        /// <para>
+        /// Version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or OpenSearch_X.Y.
+        /// Defaults to the latest version of OpenSearch.
+        /// </para>
+        /// </summary>
+        public string EngineVersion
+        {
+            get { return this._engineVersion; }
+            set { this._engineVersion = value; }
+        }
+
+        // Check to see if EngineVersion property is set
+        internal bool IsSetEngineVersion()
+        {
+            return this._engineVersion != null;
         }
 
         /// <summary>
@@ -158,7 +198,7 @@ namespace Amazon.OpenSearchService.Model
         /// The user-specified name of the package.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=3, Max=28)]
+        [AWSProperty(Min=3, Max=256)]
         public string PackageName
         {
             get { return this._packageName; }

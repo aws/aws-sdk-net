@@ -49,6 +49,7 @@ namespace Amazon.GameLift.Model
         private string _fleetId;
         private FleetType _fleetType;
         private string _instanceRoleArn;
+        private InstanceRoleCredentialsProvider _instanceRoleCredentialsProvider;
         private EC2InstanceType _instanceType;
         private List<string> _logPaths = new List<string>();
         private List<string> _metricGroups = new List<string>();
@@ -235,8 +236,8 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// Indicates whether to use On-Demand or Spot instances for this fleet. By default, this
         /// property is set to <code>ON_DEMAND</code>. Learn more about when to use <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot">
-        /// On-Demand versus Spot Instances</a>. This property cannot be changed after the fleet
-        /// is created.
+        /// On-Demand versus Spot Instances</a>. This fleet property can't be changed after the
+        /// fleet is created.
         /// </para>
         /// </summary>
         public FleetType FleetType
@@ -254,14 +255,12 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property InstanceRoleArn. 
         /// <para>
-        /// A unique identifier for an IAM role that manages access to your Amazon Web Services
-        /// services. With an instance role ARN set, any application that runs on an instance
-        /// in this fleet can assume the role, including install scripts, server processes, and
-        /// daemons (background processes). Create a role or look up a role's ARN by using the
-        /// <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the Amazon Web
-        /// Services Management Console. Learn more about using on-box credentials for your game
-        /// servers at <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
-        /// Access external resources from a game server</a>.
+        /// A unique identifier for an IAM role with access permissions to other Amazon Web Services
+        /// services. Any application that runs on an instance in the fleet--including install
+        /// scripts, server processes, and other processes--can use these permissions to interact
+        /// with Amazon Web Services resources that you own or have access to. For more information
+        /// about using the role with your game server builds, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
+        /// Communicate with other Amazon Web Services resources from your fleets</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -275,6 +274,30 @@ namespace Amazon.GameLift.Model
         internal bool IsSetInstanceRoleArn()
         {
             return this._instanceRoleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceRoleCredentialsProvider. 
+        /// <para>
+        /// Indicates that fleet instances maintain a shared credentials file for the IAM role
+        /// defined in <code>InstanceRoleArn</code>. Shared credentials allow applications that
+        /// are deployed with the game server executable to communicate with other Amazon Web
+        /// Services resources. This property is used only when the game server is integrated
+        /// with the server SDK version 5.x. For more information about using shared credentials,
+        /// see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
+        /// Communicate with other Amazon Web Services resources from your fleets</a>.
+        /// </para>
+        /// </summary>
+        public InstanceRoleCredentialsProvider InstanceRoleCredentialsProvider
+        {
+            get { return this._instanceRoleCredentialsProvider; }
+            set { this._instanceRoleCredentialsProvider = value; }
+        }
+
+        // Check to see if InstanceRoleCredentialsProvider property is set
+        internal bool IsSetInstanceRoleCredentialsProvider()
+        {
+            return this._instanceRoleCredentialsProvider != null;
         }
 
         /// <summary>

@@ -812,6 +812,53 @@ namespace Amazon.Route53RecoveryControlConfig
 
         #endregion
         
+        #region  GetResourcePolicy
+
+
+        /// <summary>
+        /// Get information about the resource policy for a cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourcePolicy service method.</param>
+        /// 
+        /// <returns>The response from the GetResourcePolicy service method, as returned by Route53RecoveryControlConfig.</returns>
+        /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.InternalServerException">
+        /// 500 response - InternalServiceError. Temporary service error. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ResourceNotFoundException">
+        /// 404 response - MalformedQueryString. The query string contains a syntax error or resource
+        /// not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
+        GetResourcePolicyResponse GetResourcePolicy(GetResourcePolicyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetResourcePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetResourcePolicy operation on AmazonRoute53RecoveryControlConfigClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetResourcePolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
+        IAsyncResult BeginGetResourcePolicy(GetResourcePolicyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetResourcePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetResourcePolicy.</param>
+        /// 
+        /// <returns>Returns a  GetResourcePolicyResult from Route53RecoveryControlConfig.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
+        GetResourcePolicyResponse EndGetResourcePolicy(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListAssociatedRoute53HealthChecks
 
 

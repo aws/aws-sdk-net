@@ -63,6 +63,12 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.MatchKey);
             }
 
+            if(requestObject.IsSetSubType())
+            {
+                context.Writer.WritePropertyName("subType");
+                context.Writer.Write(requestObject.SubType);
+            }
+
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("type");

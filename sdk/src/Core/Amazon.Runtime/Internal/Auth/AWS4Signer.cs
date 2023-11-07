@@ -224,7 +224,7 @@ namespace Amazon.Runtime.Internal.Auth
                                                        request.UseDoubleEncoding);
             if (metrics != null)
                 metrics.AddProperty(Metric.CanonicalRequest, canonicalRequest);
-
+            request.SignatureVersion = SignatureVersion.SigV4;
             return ComputeSignature(awsAccessKeyId,
                                     awsSecretAccessKey,
                                     request.DeterminedSigningRegion,

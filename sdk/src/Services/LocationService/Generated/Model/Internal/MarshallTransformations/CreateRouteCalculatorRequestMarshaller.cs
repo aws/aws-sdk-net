@@ -109,7 +109,7 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
             }
 
             
-            request.HostPrefix = $"routes.";
+            request.HostPrefix = $"cp.routes.";
 
             return request;
         }

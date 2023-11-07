@@ -313,6 +313,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBSnapshotNotFoundException">
         /// <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.IntegrationNotFoundException">
+        /// The specified integration could not be found.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AddTagsToResource">REST API Reference for AddTagsToResource Operation</seealso>
         AddTagsToResourceResponse AddTagsToResource(AddTagsToResourceRequest request);
 
@@ -2218,6 +2221,69 @@ namespace Amazon.RDS
 
         #endregion
         
+        #region  CreateIntegration
+
+
+        /// <summary>
+        /// Creates a zero-ETL integration with Amazon Redshift. For more information, see <a
+        /// href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/zero-etl.html">Working
+        /// with Amazon Aurora zero-ETL integrations with Amazon Redshift</a> in the <i>Amazon
+        /// Aurora User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateIntegration service method.</param>
+        /// 
+        /// <returns>The response from the CreateIntegration service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
+        /// <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
+        /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.IntegrationAlreadyExistsException">
+        /// The integration you are trying to create already exists.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.IntegrationConflictOperationException">
+        /// A conflicting conditional operation is currently in progress against this resource.
+        /// Typically occurs when there are multiple requests being made to the same resource
+        /// at the same time, and these requests conflict with each other.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.IntegrationQuotaExceededException">
+        /// You can't crate any more zero-ETL integrations because the quota has been reached.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
+        /// An error occurred accessing an Amazon Web Services KMS key.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateIntegration">REST API Reference for CreateIntegration Operation</seealso>
+        CreateIntegrationResponse CreateIntegration(CreateIntegrationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateIntegration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateIntegration operation on AmazonRDSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateIntegration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateIntegration">REST API Reference for CreateIntegration Operation</seealso>
+        IAsyncResult BeginCreateIntegration(CreateIntegrationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateIntegration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateIntegration.</param>
+        /// 
+        /// <returns>Returns a  CreateIntegrationResult from RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateIntegration">REST API Reference for CreateIntegration Operation</seealso>
+        CreateIntegrationResponse EndCreateIntegration(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateOptionGroup
 
 
@@ -3270,6 +3336,60 @@ namespace Amazon.RDS
         /// <returns>Returns a  DeleteGlobalClusterResult from RDS.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteGlobalCluster">REST API Reference for DeleteGlobalCluster Operation</seealso>
         DeleteGlobalClusterResponse EndDeleteGlobalCluster(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteIntegration
+
+
+        /// <summary>
+        /// Deletes a zero-ETL integration with Amazon Redshift. For more information, see <a
+        /// href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/zero-etl.deleting.html">Deleting
+        /// Amazon Aurora zero-ETL integrations with Amazon Redshift</a> in the <i>Amazon Aurora
+        /// User Guide</i>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIntegration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteIntegration service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.IntegrationConflictOperationException">
+        /// A conflicting conditional operation is currently in progress against this resource.
+        /// Typically occurs when there are multiple requests being made to the same resource
+        /// at the same time, and these requests conflict with each other.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.IntegrationNotFoundException">
+        /// The specified integration could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidIntegrationStateException">
+        /// The integration is in an invalid state and can't perform the requested operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteIntegration">REST API Reference for DeleteIntegration Operation</seealso>
+        DeleteIntegrationResponse DeleteIntegration(DeleteIntegrationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteIntegration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIntegration operation on AmazonRDSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteIntegration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteIntegration">REST API Reference for DeleteIntegration Operation</seealso>
+        IAsyncResult BeginDeleteIntegration(DeleteIntegrationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteIntegration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteIntegration.</param>
+        /// 
+        /// <returns>Returns a  DeleteIntegrationResult from RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteIntegration">REST API Reference for DeleteIntegration Operation</seealso>
+        DeleteIntegrationResponse EndDeleteIntegration(IAsyncResult asyncResult);
 
         #endregion
         
@@ -5154,6 +5274,52 @@ namespace Amazon.RDS
 
         #endregion
         
+        #region  DescribeIntegrations
+
+
+        /// <summary>
+        /// Describe one or more zero-ETL integration with Amazon Redshift. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/zero-etl.describingmonitoring.html">Viewing
+        /// and monitoring Amazon Aurora zero-ETL integrations with Amazon Redshift</a> in the
+        /// <i>Amazon Aurora User Guide</i>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIntegrations service method.</param>
+        /// 
+        /// <returns>The response from the DescribeIntegrations service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.IntegrationNotFoundException">
+        /// The specified integration could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeIntegrations">REST API Reference for DescribeIntegrations Operation</seealso>
+        DescribeIntegrationsResponse DescribeIntegrations(DescribeIntegrationsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeIntegrations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIntegrations operation on AmazonRDSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeIntegrations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeIntegrations">REST API Reference for DescribeIntegrations Operation</seealso>
+        IAsyncResult BeginDescribeIntegrations(DescribeIntegrationsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeIntegrations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeIntegrations.</param>
+        /// 
+        /// <returns>Returns a  DescribeIntegrationsResult from RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeIntegrations">REST API Reference for DescribeIntegrations Operation</seealso>
+        DescribeIntegrationsResponse EndDescribeIntegrations(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeOptionGroupOptions
 
 
@@ -5835,6 +6001,9 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSnapshotNotFoundException">
         /// <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.IntegrationNotFoundException">
+        /// The specified integration could not be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
@@ -7781,6 +7950,9 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSnapshotNotFoundException">
         /// <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.IntegrationNotFoundException">
+        /// The specified integration could not be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RemoveTagsFromResource">REST API Reference for RemoveTagsFromResource Operation</seealso>
         RemoveTagsFromResourceResponse RemoveTagsFromResource(RemoveTagsFromResourceRequest request);

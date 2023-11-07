@@ -432,6 +432,30 @@ namespace AWSSDKDocSamples.Amazon.Rekognition.Generated
             #endregion
         }
 
+        public void RekognitionGetMediaAnalysisJob()
+        {
+            #region getmediaanalysisjob-1697650068124
+
+            var client = new AmazonRekognitionClient();
+            var response = client.GetMediaAnalysisJob(new GetMediaAnalysisJobRequest 
+            {
+                JobId = "861a0645d98ef88efb75477628c011c04942d9d5f58faf2703c393c8cf8c1537"
+            });
+
+            DateTime completionTimestamp = response.CompletionTimestamp;
+            DateTime creationTimestamp = response.CreationTimestamp;
+            MediaAnalysisInput input = response.Input;
+            string jobId = response.JobId;
+            string jobName = response.JobName;
+            MediaAnalysisManifestSummary manifestSummary = response.ManifestSummary;
+            MediaAnalysisOperationsConfig operationsConfig = response.OperationsConfig;
+            MediaAnalysisOutputConfig outputConfig = response.OutputConfig;
+            MediaAnalysisResults results = response.Results;
+            string status = response.Status;
+
+            #endregion
+        }
+
         public void RekognitionIndexFaces()
         {
             #region to-add-a-face-to-a-collection-1482179542923
@@ -524,6 +548,21 @@ namespace AWSSDKDocSamples.Amazon.Rekognition.Generated
 
             string faceModelVersion = response.FaceModelVersion;
             List<Face> faces = response.Faces;
+
+            #endregion
+        }
+
+        public void RekognitionListMediaAnalysisJobs()
+        {
+            #region listmediaanalysisjobs-1697650653077
+
+            var client = new AmazonRekognitionClient();
+            var response = client.ListMediaAnalysisJobs(new ListMediaAnalysisJobsRequest 
+            {
+                MaxResults = 10
+            });
+
+            List<MediaAnalysisJobDescription> mediaAnalysisJobs = response.MediaAnalysisJobs;
 
             #endregion
         }
@@ -663,6 +702,33 @@ namespace AWSSDKDocSamples.Amazon.Rekognition.Generated
             SearchedFaceDetails searchedFace = response.SearchedFace;
             List<UnsearchedFace> unsearchedFaces = response.UnsearchedFaces;
             List<UserMatch> userMatches = response.UserMatches;
+
+            #endregion
+        }
+
+        public void RekognitionStartMediaAnalysisJob()
+        {
+            #region startmediaanalysisjob-1697651090922
+
+            var client = new AmazonRekognitionClient();
+            var response = client.StartMediaAnalysisJob(new StartMediaAnalysisJobRequest 
+            {
+                Input = new MediaAnalysisInput { S3Object = new S3Object {
+                    Bucket = "input-bucket",
+                    Name = "input-manifest.json"
+                } },
+                JobName = "job-name",
+                OperationsConfig = new MediaAnalysisOperationsConfig { DetectModerationLabels = new MediaAnalysisDetectModerationLabelsConfig {
+                    MinConfidence = 50,
+                    ProjectVersion = "arn:aws:rekognition:us-east-1:111122223333:project/my-project/version/1/1690556751958"
+                } },
+                OutputConfig = new MediaAnalysisOutputConfig {
+                    S3Bucket = "output-bucket",
+                    S3KeyPrefix = "output-location"
+                }
+            });
+
+            string jobId = response.JobId;
 
             #endregion
         }

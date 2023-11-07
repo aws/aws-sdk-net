@@ -30,8 +30,14 @@ namespace Amazon.Rekognition.Model
 {
     /// <summary>
     /// Container for the parameters to the ListProjectPolicies operation.
+    /// <note> 
+    /// <para>
+    /// This operation applies only to Amazon Rekognition Custom Labels.
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// Gets a list of the project policies attached to a project.
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// To attach a project policy to a project, call <a>PutProjectPolicy</a>. To remove a

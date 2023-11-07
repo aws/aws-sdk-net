@@ -669,6 +669,64 @@ namespace Amazon.DataExchange
 
 
     /// <summary>
+    /// Constants used for properties of type NotificationType.
+    /// </summary>
+    public class NotificationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DATA_DELAY for NotificationType
+        /// </summary>
+        public static readonly NotificationType DATA_DELAY = new NotificationType("DATA_DELAY");
+        /// <summary>
+        /// Constant DATA_UPDATE for NotificationType
+        /// </summary>
+        public static readonly NotificationType DATA_UPDATE = new NotificationType("DATA_UPDATE");
+        /// <summary>
+        /// Constant DEPRECATION for NotificationType
+        /// </summary>
+        public static readonly NotificationType DEPRECATION = new NotificationType("DEPRECATION");
+        /// <summary>
+        /// Constant SCHEMA_CHANGE for NotificationType
+        /// </summary>
+        public static readonly NotificationType SCHEMA_CHANGE = new NotificationType("SCHEMA_CHANGE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NotificationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NotificationType FindValue(string value)
+        {
+            return FindValue<NotificationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NotificationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Origin.
     /// </summary>
     public class Origin : ConstantClass
@@ -820,6 +878,60 @@ namespace Amazon.DataExchange
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ResourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SchemaChangeType.
+    /// </summary>
+    public class SchemaChangeType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ADD for SchemaChangeType
+        /// </summary>
+        public static readonly SchemaChangeType ADD = new SchemaChangeType("ADD");
+        /// <summary>
+        /// Constant MODIFY for SchemaChangeType
+        /// </summary>
+        public static readonly SchemaChangeType MODIFY = new SchemaChangeType("MODIFY");
+        /// <summary>
+        /// Constant REMOVE for SchemaChangeType
+        /// </summary>
+        public static readonly SchemaChangeType REMOVE = new SchemaChangeType("REMOVE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SchemaChangeType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SchemaChangeType FindValue(string value)
+        {
+            return FindValue<SchemaChangeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SchemaChangeType(string value)
         {
             return FindValue(value);
         }

@@ -30,7 +30,7 @@ namespace Amazon.DataSync.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateAgent operation.
-    /// Updates the name of an agent.
+    /// Updates the name of an DataSync agent.
     /// </summary>
     public partial class UpdateAgentRequest : AmazonDataSyncRequest
     {

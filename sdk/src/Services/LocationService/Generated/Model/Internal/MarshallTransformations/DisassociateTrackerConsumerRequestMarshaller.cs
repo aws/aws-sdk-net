@@ -66,7 +66,7 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
             request.AddPathResource("{TrackerName}", StringUtils.FromString(publicRequest.TrackerName));
             request.ResourcePath = "/tracking/v0/trackers/{TrackerName}/consumers/{ConsumerArn}";
             
-            request.HostPrefix = $"tracking.";
+            request.HostPrefix = $"cp.tracking.";
 
             return request;
         }

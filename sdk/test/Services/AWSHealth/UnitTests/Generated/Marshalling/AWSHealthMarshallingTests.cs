@@ -46,7 +46,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AWSHealth")]
         public void DescribeAffectedAccountsForOrganizationMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DescribeAffectedAccountsForOrganizationRequest>();
+            var operation = service_model.FindOperation("DescribeAffectedAccountsForOrganization");
+
+            var request = InstantiateClassGenerator.Execute<DescribeAffectedAccountsForOrganizationRequest>(operation);
             var marshaller = new DescribeAffectedAccountsForOrganizationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -60,7 +62,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeAffectedAccountsForOrganization").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DescribeAffectedAccountsForOrganizationResponseUnmarshaller.Instance.Unmarshall(context) as DescribeAffectedAccountsForOrganizationResponse;
@@ -75,7 +77,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeAffectedAccountsForOrganization");
 
-            var request = InstantiateClassGenerator.Execute<DescribeAffectedAccountsForOrganizationRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeAffectedAccountsForOrganizationRequest>(operation);
             var marshaller = new DescribeAffectedAccountsForOrganizationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -105,7 +107,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AWSHealth")]
         public void DescribeAffectedEntitiesMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DescribeAffectedEntitiesRequest>();
+            var operation = service_model.FindOperation("DescribeAffectedEntities");
+
+            var request = InstantiateClassGenerator.Execute<DescribeAffectedEntitiesRequest>(operation);
             var marshaller = new DescribeAffectedEntitiesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -119,7 +123,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeAffectedEntities").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DescribeAffectedEntitiesResponseUnmarshaller.Instance.Unmarshall(context) as DescribeAffectedEntitiesResponse;
@@ -134,7 +138,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeAffectedEntities");
 
-            var request = InstantiateClassGenerator.Execute<DescribeAffectedEntitiesRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeAffectedEntitiesRequest>(operation);
             var marshaller = new DescribeAffectedEntitiesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -166,7 +170,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeAffectedEntities");
 
-            var request = InstantiateClassGenerator.Execute<DescribeAffectedEntitiesRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeAffectedEntitiesRequest>(operation);
             var marshaller = new DescribeAffectedEntitiesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -196,7 +200,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AWSHealth")]
         public void DescribeAffectedEntitiesForOrganizationMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DescribeAffectedEntitiesForOrganizationRequest>();
+            var operation = service_model.FindOperation("DescribeAffectedEntitiesForOrganization");
+
+            var request = InstantiateClassGenerator.Execute<DescribeAffectedEntitiesForOrganizationRequest>(operation);
             var marshaller = new DescribeAffectedEntitiesForOrganizationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -210,7 +216,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeAffectedEntitiesForOrganization").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DescribeAffectedEntitiesForOrganizationResponseUnmarshaller.Instance.Unmarshall(context) as DescribeAffectedEntitiesForOrganizationResponse;
@@ -225,7 +231,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeAffectedEntitiesForOrganization");
 
-            var request = InstantiateClassGenerator.Execute<DescribeAffectedEntitiesForOrganizationRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeAffectedEntitiesForOrganizationRequest>(operation);
             var marshaller = new DescribeAffectedEntitiesForOrganizationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -257,7 +263,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeAffectedEntitiesForOrganization");
 
-            var request = InstantiateClassGenerator.Execute<DescribeAffectedEntitiesForOrganizationRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeAffectedEntitiesForOrganizationRequest>(operation);
             var marshaller = new DescribeAffectedEntitiesForOrganizationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -287,7 +293,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AWSHealth")]
         public void DescribeEntityAggregatesMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DescribeEntityAggregatesRequest>();
+            var operation = service_model.FindOperation("DescribeEntityAggregates");
+
+            var request = InstantiateClassGenerator.Execute<DescribeEntityAggregatesRequest>(operation);
             var marshaller = new DescribeEntityAggregatesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -301,7 +309,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeEntityAggregates").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DescribeEntityAggregatesResponseUnmarshaller.Instance.Unmarshall(context) as DescribeEntityAggregatesResponse;
@@ -314,7 +322,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AWSHealth")]
         public void DescribeEntityAggregatesForOrganizationMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DescribeEntityAggregatesForOrganizationRequest>();
+            var operation = service_model.FindOperation("DescribeEntityAggregatesForOrganization");
+
+            var request = InstantiateClassGenerator.Execute<DescribeEntityAggregatesForOrganizationRequest>(operation);
             var marshaller = new DescribeEntityAggregatesForOrganizationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -328,7 +338,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeEntityAggregatesForOrganization").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DescribeEntityAggregatesForOrganizationResponseUnmarshaller.Instance.Unmarshall(context) as DescribeEntityAggregatesForOrganizationResponse;
@@ -341,7 +351,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AWSHealth")]
         public void DescribeEventAggregatesMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DescribeEventAggregatesRequest>();
+            var operation = service_model.FindOperation("DescribeEventAggregates");
+
+            var request = InstantiateClassGenerator.Execute<DescribeEventAggregatesRequest>(operation);
             var marshaller = new DescribeEventAggregatesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -355,7 +367,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeEventAggregates").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DescribeEventAggregatesResponseUnmarshaller.Instance.Unmarshall(context) as DescribeEventAggregatesResponse;
@@ -370,7 +382,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeEventAggregates");
 
-            var request = InstantiateClassGenerator.Execute<DescribeEventAggregatesRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeEventAggregatesRequest>(operation);
             var marshaller = new DescribeEventAggregatesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -400,7 +412,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AWSHealth")]
         public void DescribeEventDetailsMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DescribeEventDetailsRequest>();
+            var operation = service_model.FindOperation("DescribeEventDetails");
+
+            var request = InstantiateClassGenerator.Execute<DescribeEventDetailsRequest>(operation);
             var marshaller = new DescribeEventDetailsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -414,7 +428,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeEventDetails").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DescribeEventDetailsResponseUnmarshaller.Instance.Unmarshall(context) as DescribeEventDetailsResponse;
@@ -429,7 +443,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeEventDetails");
 
-            var request = InstantiateClassGenerator.Execute<DescribeEventDetailsRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeEventDetailsRequest>(operation);
             var marshaller = new DescribeEventDetailsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -459,7 +473,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AWSHealth")]
         public void DescribeEventDetailsForOrganizationMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DescribeEventDetailsForOrganizationRequest>();
+            var operation = service_model.FindOperation("DescribeEventDetailsForOrganization");
+
+            var request = InstantiateClassGenerator.Execute<DescribeEventDetailsForOrganizationRequest>(operation);
             var marshaller = new DescribeEventDetailsForOrganizationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -473,7 +489,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeEventDetailsForOrganization").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DescribeEventDetailsForOrganizationResponseUnmarshaller.Instance.Unmarshall(context) as DescribeEventDetailsForOrganizationResponse;
@@ -488,7 +504,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeEventDetailsForOrganization");
 
-            var request = InstantiateClassGenerator.Execute<DescribeEventDetailsForOrganizationRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeEventDetailsForOrganizationRequest>(operation);
             var marshaller = new DescribeEventDetailsForOrganizationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -518,7 +534,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AWSHealth")]
         public void DescribeEventsMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DescribeEventsRequest>();
+            var operation = service_model.FindOperation("DescribeEvents");
+
+            var request = InstantiateClassGenerator.Execute<DescribeEventsRequest>(operation);
             var marshaller = new DescribeEventsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -532,7 +550,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeEvents").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DescribeEventsResponseUnmarshaller.Instance.Unmarshall(context) as DescribeEventsResponse;
@@ -547,7 +565,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeEvents");
 
-            var request = InstantiateClassGenerator.Execute<DescribeEventsRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeEventsRequest>(operation);
             var marshaller = new DescribeEventsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -579,7 +597,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeEvents");
 
-            var request = InstantiateClassGenerator.Execute<DescribeEventsRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeEventsRequest>(operation);
             var marshaller = new DescribeEventsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -609,7 +627,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AWSHealth")]
         public void DescribeEventsForOrganizationMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DescribeEventsForOrganizationRequest>();
+            var operation = service_model.FindOperation("DescribeEventsForOrganization");
+
+            var request = InstantiateClassGenerator.Execute<DescribeEventsForOrganizationRequest>(operation);
             var marshaller = new DescribeEventsForOrganizationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -623,7 +643,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeEventsForOrganization").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DescribeEventsForOrganizationResponseUnmarshaller.Instance.Unmarshall(context) as DescribeEventsForOrganizationResponse;
@@ -638,7 +658,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeEventsForOrganization");
 
-            var request = InstantiateClassGenerator.Execute<DescribeEventsForOrganizationRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeEventsForOrganizationRequest>(operation);
             var marshaller = new DescribeEventsForOrganizationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -670,7 +690,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeEventsForOrganization");
 
-            var request = InstantiateClassGenerator.Execute<DescribeEventsForOrganizationRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeEventsForOrganizationRequest>(operation);
             var marshaller = new DescribeEventsForOrganizationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -700,7 +720,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AWSHealth")]
         public void DescribeEventTypesMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DescribeEventTypesRequest>();
+            var operation = service_model.FindOperation("DescribeEventTypes");
+
+            var request = InstantiateClassGenerator.Execute<DescribeEventTypesRequest>(operation);
             var marshaller = new DescribeEventTypesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -714,7 +736,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeEventTypes").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DescribeEventTypesResponseUnmarshaller.Instance.Unmarshall(context) as DescribeEventTypesResponse;
@@ -729,7 +751,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeEventTypes");
 
-            var request = InstantiateClassGenerator.Execute<DescribeEventTypesRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeEventTypesRequest>(operation);
             var marshaller = new DescribeEventTypesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -761,7 +783,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeEventTypes");
 
-            var request = InstantiateClassGenerator.Execute<DescribeEventTypesRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeEventTypesRequest>(operation);
             var marshaller = new DescribeEventTypesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -791,7 +813,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AWSHealth")]
         public void DescribeHealthServiceStatusForOrganizationMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DescribeHealthServiceStatusForOrganizationRequest>();
+            var operation = service_model.FindOperation("DescribeHealthServiceStatusForOrganization");
+
+            var request = InstantiateClassGenerator.Execute<DescribeHealthServiceStatusForOrganizationRequest>(operation);
             var marshaller = new DescribeHealthServiceStatusForOrganizationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -802,7 +826,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeHealthServiceStatusForOrganization").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DescribeHealthServiceStatusForOrganizationResponseUnmarshaller.Instance.Unmarshall(context) as DescribeHealthServiceStatusForOrganizationResponse;
@@ -815,7 +839,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AWSHealth")]
         public void DisableHealthServiceAccessForOrganizationMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DisableHealthServiceAccessForOrganizationRequest>();
+            var operation = service_model.FindOperation("DisableHealthServiceAccessForOrganization");
+
+            var request = InstantiateClassGenerator.Execute<DisableHealthServiceAccessForOrganizationRequest>(operation);
             var marshaller = new DisableHealthServiceAccessForOrganizationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -829,7 +855,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DisableHealthServiceAccessForOrganization");
 
-            var request = InstantiateClassGenerator.Execute<DisableHealthServiceAccessForOrganizationRequest>();
+            var request = InstantiateClassGenerator.Execute<DisableHealthServiceAccessForOrganizationRequest>(operation);
             var marshaller = new DisableHealthServiceAccessForOrganizationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -859,7 +885,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("AWSHealth")]
         public void EnableHealthServiceAccessForOrganizationMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<EnableHealthServiceAccessForOrganizationRequest>();
+            var operation = service_model.FindOperation("EnableHealthServiceAccessForOrganization");
+
+            var request = InstantiateClassGenerator.Execute<EnableHealthServiceAccessForOrganizationRequest>(operation);
             var marshaller = new EnableHealthServiceAccessForOrganizationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -873,7 +901,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("EnableHealthServiceAccessForOrganization");
 
-            var request = InstantiateClassGenerator.Execute<EnableHealthServiceAccessForOrganizationRequest>();
+            var request = InstantiateClassGenerator.Execute<EnableHealthServiceAccessForOrganizationRequest>(operation);
             var marshaller = new EnableHealthServiceAccessForOrganizationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);

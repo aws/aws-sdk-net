@@ -361,6 +361,10 @@ namespace Amazon.MainframeModernization
         /// </summary>
         public static readonly DataSetTaskLifecycle Creating = new DataSetTaskLifecycle("Creating");
         /// <summary>
+        /// Constant Failed for DataSetTaskLifecycle
+        /// </summary>
+        public static readonly DataSetTaskLifecycle Failed = new DataSetTaskLifecycle("Failed");
+        /// <summary>
         /// Constant Running for DataSetTaskLifecycle
         /// </summary>
         public static readonly DataSetTaskLifecycle Running = new DataSetTaskLifecycle("Running");
@@ -418,6 +422,10 @@ namespace Amazon.MainframeModernization
         /// Constant Succeeded for DeploymentLifecycle
         /// </summary>
         public static readonly DeploymentLifecycle Succeeded = new DeploymentLifecycle("Succeeded");
+        /// <summary>
+        /// Constant UpdatingDeployment for DeploymentLifecycle
+        /// </summary>
+        public static readonly DeploymentLifecycle UpdatingDeployment = new DeploymentLifecycle("Updating Deployment");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

@@ -162,6 +162,51 @@ namespace Amazon.Textract.Model
         /// Comes with an alias and ID for ease of locating in a response. Also contains location
         /// and confidence score.
         /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The following BlockTypes are only returned for Amazon Textract Layout.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>LAYOUT_TITLE</code> - The main title of the document.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>LAYOUT_HEADER</code> - Text located in the top margin of the document.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>LAYOUT_FOOTER</code> - Text located in the bottom margin of the document.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>LAYOUT_SECTION_HEADER</code> - The titles of sections within a document.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>LAYOUT_PAGE_NUMBER</code> - The page number of the documents.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>LAYOUT_LIST</code> - Any information grouped together in list form. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>LAYOUT_FIGURE</code> - Indicates the location of an image in a document.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>LAYOUT_TABLE</code> - Indicates the location of a table in the document.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>LAYOUT_KEY_VALUE</code> - Indicates the location of form key-values in a document.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>LAYOUT_TEXT</code> - Text that is present typically as a part of paragraphs
+        /// in documents.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public BlockType BlockType

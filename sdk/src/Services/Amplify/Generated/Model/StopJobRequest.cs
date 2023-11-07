@@ -60,7 +60,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property BranchName. 
         /// <para>
-        ///  The name for the branch, for the job. 
+        /// The name of the branch to use for the stop job request. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

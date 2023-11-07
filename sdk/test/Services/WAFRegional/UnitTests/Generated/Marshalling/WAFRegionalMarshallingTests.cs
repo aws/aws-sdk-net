@@ -46,7 +46,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("WAFRegional")]
         public void AssociateWebACLMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<AssociateWebACLRequest>();
+            var operation = service_model.FindOperation("AssociateWebACL");
+
+            var request = InstantiateClassGenerator.Execute<AssociateWebACLRequest>(operation);
             var marshaller = new AssociateWebACLRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -60,7 +62,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("AssociateWebACL").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = AssociateWebACLResponseUnmarshaller.Instance.Unmarshall(context) as AssociateWebACLResponse;
@@ -75,7 +77,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("AssociateWebACL");
 
-            var request = InstantiateClassGenerator.Execute<AssociateWebACLRequest>();
+            var request = InstantiateClassGenerator.Execute<AssociateWebACLRequest>(operation);
             var marshaller = new AssociateWebACLRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -107,7 +109,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("AssociateWebACL");
 
-            var request = InstantiateClassGenerator.Execute<AssociateWebACLRequest>();
+            var request = InstantiateClassGenerator.Execute<AssociateWebACLRequest>(operation);
             var marshaller = new AssociateWebACLRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -139,7 +141,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("AssociateWebACL");
 
-            var request = InstantiateClassGenerator.Execute<AssociateWebACLRequest>();
+            var request = InstantiateClassGenerator.Execute<AssociateWebACLRequest>(operation);
             var marshaller = new AssociateWebACLRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -171,7 +173,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("AssociateWebACL");
 
-            var request = InstantiateClassGenerator.Execute<AssociateWebACLRequest>();
+            var request = InstantiateClassGenerator.Execute<AssociateWebACLRequest>(operation);
             var marshaller = new AssociateWebACLRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -203,7 +205,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("AssociateWebACL");
 
-            var request = InstantiateClassGenerator.Execute<AssociateWebACLRequest>();
+            var request = InstantiateClassGenerator.Execute<AssociateWebACLRequest>(operation);
             var marshaller = new AssociateWebACLRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -233,7 +235,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("WAFRegional")]
         public void CreateByteMatchSetMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<CreateByteMatchSetRequest>();
+            var operation = service_model.FindOperation("CreateByteMatchSet");
+
+            var request = InstantiateClassGenerator.Execute<CreateByteMatchSetRequest>(operation);
             var marshaller = new CreateByteMatchSetRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -247,7 +251,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("CreateByteMatchSet").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = CreateByteMatchSetResponseUnmarshaller.Instance.Unmarshall(context) as CreateByteMatchSetResponse;
@@ -262,7 +266,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateByteMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<CreateByteMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateByteMatchSetRequest>(operation);
             var marshaller = new CreateByteMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -294,7 +298,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateByteMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<CreateByteMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateByteMatchSetRequest>(operation);
             var marshaller = new CreateByteMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -326,7 +330,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateByteMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<CreateByteMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateByteMatchSetRequest>(operation);
             var marshaller = new CreateByteMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -358,7 +362,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateByteMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<CreateByteMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateByteMatchSetRequest>(operation);
             var marshaller = new CreateByteMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -390,7 +394,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateByteMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<CreateByteMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateByteMatchSetRequest>(operation);
             var marshaller = new CreateByteMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -422,7 +426,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateByteMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<CreateByteMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateByteMatchSetRequest>(operation);
             var marshaller = new CreateByteMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -452,7 +456,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("WAFRegional")]
         public void CreateGeoMatchSetMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<CreateGeoMatchSetRequest>();
+            var operation = service_model.FindOperation("CreateGeoMatchSet");
+
+            var request = InstantiateClassGenerator.Execute<CreateGeoMatchSetRequest>(operation);
             var marshaller = new CreateGeoMatchSetRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -466,7 +472,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("CreateGeoMatchSet").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = CreateGeoMatchSetResponseUnmarshaller.Instance.Unmarshall(context) as CreateGeoMatchSetResponse;
@@ -481,7 +487,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateGeoMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<CreateGeoMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateGeoMatchSetRequest>(operation);
             var marshaller = new CreateGeoMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -513,7 +519,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateGeoMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<CreateGeoMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateGeoMatchSetRequest>(operation);
             var marshaller = new CreateGeoMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -545,7 +551,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateGeoMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<CreateGeoMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateGeoMatchSetRequest>(operation);
             var marshaller = new CreateGeoMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -577,7 +583,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateGeoMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<CreateGeoMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateGeoMatchSetRequest>(operation);
             var marshaller = new CreateGeoMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -609,7 +615,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateGeoMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<CreateGeoMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateGeoMatchSetRequest>(operation);
             var marshaller = new CreateGeoMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -641,7 +647,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateGeoMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<CreateGeoMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateGeoMatchSetRequest>(operation);
             var marshaller = new CreateGeoMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -671,7 +677,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("WAFRegional")]
         public void CreateIPSetMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<CreateIPSetRequest>();
+            var operation = service_model.FindOperation("CreateIPSet");
+
+            var request = InstantiateClassGenerator.Execute<CreateIPSetRequest>(operation);
             var marshaller = new CreateIPSetRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -685,7 +693,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("CreateIPSet").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = CreateIPSetResponseUnmarshaller.Instance.Unmarshall(context) as CreateIPSetResponse;
@@ -700,7 +708,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateIPSet");
 
-            var request = InstantiateClassGenerator.Execute<CreateIPSetRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateIPSetRequest>(operation);
             var marshaller = new CreateIPSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -732,7 +740,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateIPSet");
 
-            var request = InstantiateClassGenerator.Execute<CreateIPSetRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateIPSetRequest>(operation);
             var marshaller = new CreateIPSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -764,7 +772,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateIPSet");
 
-            var request = InstantiateClassGenerator.Execute<CreateIPSetRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateIPSetRequest>(operation);
             var marshaller = new CreateIPSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -796,7 +804,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateIPSet");
 
-            var request = InstantiateClassGenerator.Execute<CreateIPSetRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateIPSetRequest>(operation);
             var marshaller = new CreateIPSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -828,7 +836,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateIPSet");
 
-            var request = InstantiateClassGenerator.Execute<CreateIPSetRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateIPSetRequest>(operation);
             var marshaller = new CreateIPSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -860,7 +868,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateIPSet");
 
-            var request = InstantiateClassGenerator.Execute<CreateIPSetRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateIPSetRequest>(operation);
             var marshaller = new CreateIPSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -890,7 +898,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("WAFRegional")]
         public void CreateRateBasedRuleMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<CreateRateBasedRuleRequest>();
+            var operation = service_model.FindOperation("CreateRateBasedRule");
+
+            var request = InstantiateClassGenerator.Execute<CreateRateBasedRuleRequest>(operation);
             var marshaller = new CreateRateBasedRuleRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -904,7 +914,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("CreateRateBasedRule").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = CreateRateBasedRuleResponseUnmarshaller.Instance.Unmarshall(context) as CreateRateBasedRuleResponse;
@@ -919,7 +929,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateRateBasedRule");
 
-            var request = InstantiateClassGenerator.Execute<CreateRateBasedRuleRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateRateBasedRuleRequest>(operation);
             var marshaller = new CreateRateBasedRuleRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -951,7 +961,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateRateBasedRule");
 
-            var request = InstantiateClassGenerator.Execute<CreateRateBasedRuleRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateRateBasedRuleRequest>(operation);
             var marshaller = new CreateRateBasedRuleRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -983,7 +993,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateRateBasedRule");
 
-            var request = InstantiateClassGenerator.Execute<CreateRateBasedRuleRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateRateBasedRuleRequest>(operation);
             var marshaller = new CreateRateBasedRuleRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1015,7 +1025,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateRateBasedRule");
 
-            var request = InstantiateClassGenerator.Execute<CreateRateBasedRuleRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateRateBasedRuleRequest>(operation);
             var marshaller = new CreateRateBasedRuleRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1047,7 +1057,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateRateBasedRule");
 
-            var request = InstantiateClassGenerator.Execute<CreateRateBasedRuleRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateRateBasedRuleRequest>(operation);
             var marshaller = new CreateRateBasedRuleRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1079,7 +1089,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateRateBasedRule");
 
-            var request = InstantiateClassGenerator.Execute<CreateRateBasedRuleRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateRateBasedRuleRequest>(operation);
             var marshaller = new CreateRateBasedRuleRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1111,7 +1121,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateRateBasedRule");
 
-            var request = InstantiateClassGenerator.Execute<CreateRateBasedRuleRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateRateBasedRuleRequest>(operation);
             var marshaller = new CreateRateBasedRuleRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1143,7 +1153,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateRateBasedRule");
 
-            var request = InstantiateClassGenerator.Execute<CreateRateBasedRuleRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateRateBasedRuleRequest>(operation);
             var marshaller = new CreateRateBasedRuleRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1173,7 +1183,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("WAFRegional")]
         public void CreateRegexMatchSetMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<CreateRegexMatchSetRequest>();
+            var operation = service_model.FindOperation("CreateRegexMatchSet");
+
+            var request = InstantiateClassGenerator.Execute<CreateRegexMatchSetRequest>(operation);
             var marshaller = new CreateRegexMatchSetRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1187,7 +1199,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("CreateRegexMatchSet").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = CreateRegexMatchSetResponseUnmarshaller.Instance.Unmarshall(context) as CreateRegexMatchSetResponse;
@@ -1202,7 +1214,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateRegexMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<CreateRegexMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateRegexMatchSetRequest>(operation);
             var marshaller = new CreateRegexMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1234,7 +1246,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateRegexMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<CreateRegexMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateRegexMatchSetRequest>(operation);
             var marshaller = new CreateRegexMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1266,7 +1278,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateRegexMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<CreateRegexMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateRegexMatchSetRequest>(operation);
             var marshaller = new CreateRegexMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1298,7 +1310,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateRegexMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<CreateRegexMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateRegexMatchSetRequest>(operation);
             var marshaller = new CreateRegexMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1328,7 +1340,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("WAFRegional")]
         public void CreateRegexPatternSetMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<CreateRegexPatternSetRequest>();
+            var operation = service_model.FindOperation("CreateRegexPatternSet");
+
+            var request = InstantiateClassGenerator.Execute<CreateRegexPatternSetRequest>(operation);
             var marshaller = new CreateRegexPatternSetRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1342,7 +1356,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("CreateRegexPatternSet").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = CreateRegexPatternSetResponseUnmarshaller.Instance.Unmarshall(context) as CreateRegexPatternSetResponse;
@@ -1357,7 +1371,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateRegexPatternSet");
 
-            var request = InstantiateClassGenerator.Execute<CreateRegexPatternSetRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateRegexPatternSetRequest>(operation);
             var marshaller = new CreateRegexPatternSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1389,7 +1403,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateRegexPatternSet");
 
-            var request = InstantiateClassGenerator.Execute<CreateRegexPatternSetRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateRegexPatternSetRequest>(operation);
             var marshaller = new CreateRegexPatternSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1421,7 +1435,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateRegexPatternSet");
 
-            var request = InstantiateClassGenerator.Execute<CreateRegexPatternSetRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateRegexPatternSetRequest>(operation);
             var marshaller = new CreateRegexPatternSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1453,7 +1467,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateRegexPatternSet");
 
-            var request = InstantiateClassGenerator.Execute<CreateRegexPatternSetRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateRegexPatternSetRequest>(operation);
             var marshaller = new CreateRegexPatternSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1483,7 +1497,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("WAFRegional")]
         public void CreateRuleMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<CreateRuleRequest>();
+            var operation = service_model.FindOperation("CreateRule");
+
+            var request = InstantiateClassGenerator.Execute<CreateRuleRequest>(operation);
             var marshaller = new CreateRuleRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1497,7 +1513,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("CreateRule").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = CreateRuleResponseUnmarshaller.Instance.Unmarshall(context) as CreateRuleResponse;
@@ -1512,7 +1528,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateRule");
 
-            var request = InstantiateClassGenerator.Execute<CreateRuleRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateRuleRequest>(operation);
             var marshaller = new CreateRuleRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1544,7 +1560,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateRule");
 
-            var request = InstantiateClassGenerator.Execute<CreateRuleRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateRuleRequest>(operation);
             var marshaller = new CreateRuleRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1576,7 +1592,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateRule");
 
-            var request = InstantiateClassGenerator.Execute<CreateRuleRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateRuleRequest>(operation);
             var marshaller = new CreateRuleRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1608,7 +1624,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateRule");
 
-            var request = InstantiateClassGenerator.Execute<CreateRuleRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateRuleRequest>(operation);
             var marshaller = new CreateRuleRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1640,7 +1656,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateRule");
 
-            var request = InstantiateClassGenerator.Execute<CreateRuleRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateRuleRequest>(operation);
             var marshaller = new CreateRuleRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1672,7 +1688,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateRule");
 
-            var request = InstantiateClassGenerator.Execute<CreateRuleRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateRuleRequest>(operation);
             var marshaller = new CreateRuleRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1704,7 +1720,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateRule");
 
-            var request = InstantiateClassGenerator.Execute<CreateRuleRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateRuleRequest>(operation);
             var marshaller = new CreateRuleRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1736,7 +1752,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateRule");
 
-            var request = InstantiateClassGenerator.Execute<CreateRuleRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateRuleRequest>(operation);
             var marshaller = new CreateRuleRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1766,7 +1782,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("WAFRegional")]
         public void CreateRuleGroupMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<CreateRuleGroupRequest>();
+            var operation = service_model.FindOperation("CreateRuleGroup");
+
+            var request = InstantiateClassGenerator.Execute<CreateRuleGroupRequest>(operation);
             var marshaller = new CreateRuleGroupRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1780,7 +1798,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("CreateRuleGroup").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = CreateRuleGroupResponseUnmarshaller.Instance.Unmarshall(context) as CreateRuleGroupResponse;
@@ -1795,7 +1813,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateRuleGroup");
 
-            var request = InstantiateClassGenerator.Execute<CreateRuleGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateRuleGroupRequest>(operation);
             var marshaller = new CreateRuleGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1827,7 +1845,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateRuleGroup");
 
-            var request = InstantiateClassGenerator.Execute<CreateRuleGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateRuleGroupRequest>(operation);
             var marshaller = new CreateRuleGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1859,7 +1877,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateRuleGroup");
 
-            var request = InstantiateClassGenerator.Execute<CreateRuleGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateRuleGroupRequest>(operation);
             var marshaller = new CreateRuleGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1891,7 +1909,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateRuleGroup");
 
-            var request = InstantiateClassGenerator.Execute<CreateRuleGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateRuleGroupRequest>(operation);
             var marshaller = new CreateRuleGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1923,7 +1941,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateRuleGroup");
 
-            var request = InstantiateClassGenerator.Execute<CreateRuleGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateRuleGroupRequest>(operation);
             var marshaller = new CreateRuleGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1955,7 +1973,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateRuleGroup");
 
-            var request = InstantiateClassGenerator.Execute<CreateRuleGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateRuleGroupRequest>(operation);
             var marshaller = new CreateRuleGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1987,7 +2005,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateRuleGroup");
 
-            var request = InstantiateClassGenerator.Execute<CreateRuleGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateRuleGroupRequest>(operation);
             var marshaller = new CreateRuleGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2017,7 +2035,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("WAFRegional")]
         public void CreateSizeConstraintSetMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<CreateSizeConstraintSetRequest>();
+            var operation = service_model.FindOperation("CreateSizeConstraintSet");
+
+            var request = InstantiateClassGenerator.Execute<CreateSizeConstraintSetRequest>(operation);
             var marshaller = new CreateSizeConstraintSetRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -2031,7 +2051,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("CreateSizeConstraintSet").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = CreateSizeConstraintSetResponseUnmarshaller.Instance.Unmarshall(context) as CreateSizeConstraintSetResponse;
@@ -2046,7 +2066,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateSizeConstraintSet");
 
-            var request = InstantiateClassGenerator.Execute<CreateSizeConstraintSetRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateSizeConstraintSetRequest>(operation);
             var marshaller = new CreateSizeConstraintSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2078,7 +2098,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateSizeConstraintSet");
 
-            var request = InstantiateClassGenerator.Execute<CreateSizeConstraintSetRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateSizeConstraintSetRequest>(operation);
             var marshaller = new CreateSizeConstraintSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2110,7 +2130,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateSizeConstraintSet");
 
-            var request = InstantiateClassGenerator.Execute<CreateSizeConstraintSetRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateSizeConstraintSetRequest>(operation);
             var marshaller = new CreateSizeConstraintSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2142,7 +2162,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateSizeConstraintSet");
 
-            var request = InstantiateClassGenerator.Execute<CreateSizeConstraintSetRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateSizeConstraintSetRequest>(operation);
             var marshaller = new CreateSizeConstraintSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2174,7 +2194,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateSizeConstraintSet");
 
-            var request = InstantiateClassGenerator.Execute<CreateSizeConstraintSetRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateSizeConstraintSetRequest>(operation);
             var marshaller = new CreateSizeConstraintSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2206,7 +2226,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateSizeConstraintSet");
 
-            var request = InstantiateClassGenerator.Execute<CreateSizeConstraintSetRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateSizeConstraintSetRequest>(operation);
             var marshaller = new CreateSizeConstraintSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2236,7 +2256,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("WAFRegional")]
         public void CreateSqlInjectionMatchSetMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<CreateSqlInjectionMatchSetRequest>();
+            var operation = service_model.FindOperation("CreateSqlInjectionMatchSet");
+
+            var request = InstantiateClassGenerator.Execute<CreateSqlInjectionMatchSetRequest>(operation);
             var marshaller = new CreateSqlInjectionMatchSetRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -2250,7 +2272,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("CreateSqlInjectionMatchSet").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = CreateSqlInjectionMatchSetResponseUnmarshaller.Instance.Unmarshall(context) as CreateSqlInjectionMatchSetResponse;
@@ -2265,7 +2287,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateSqlInjectionMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<CreateSqlInjectionMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateSqlInjectionMatchSetRequest>(operation);
             var marshaller = new CreateSqlInjectionMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2297,7 +2319,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateSqlInjectionMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<CreateSqlInjectionMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateSqlInjectionMatchSetRequest>(operation);
             var marshaller = new CreateSqlInjectionMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2329,7 +2351,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateSqlInjectionMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<CreateSqlInjectionMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateSqlInjectionMatchSetRequest>(operation);
             var marshaller = new CreateSqlInjectionMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2361,7 +2383,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateSqlInjectionMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<CreateSqlInjectionMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateSqlInjectionMatchSetRequest>(operation);
             var marshaller = new CreateSqlInjectionMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2393,7 +2415,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateSqlInjectionMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<CreateSqlInjectionMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateSqlInjectionMatchSetRequest>(operation);
             var marshaller = new CreateSqlInjectionMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2425,7 +2447,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateSqlInjectionMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<CreateSqlInjectionMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateSqlInjectionMatchSetRequest>(operation);
             var marshaller = new CreateSqlInjectionMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2455,7 +2477,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("WAFRegional")]
         public void CreateWebACLMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<CreateWebACLRequest>();
+            var operation = service_model.FindOperation("CreateWebACL");
+
+            var request = InstantiateClassGenerator.Execute<CreateWebACLRequest>(operation);
             var marshaller = new CreateWebACLRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -2469,7 +2493,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("CreateWebACL").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = CreateWebACLResponseUnmarshaller.Instance.Unmarshall(context) as CreateWebACLResponse;
@@ -2484,7 +2508,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateWebACL");
 
-            var request = InstantiateClassGenerator.Execute<CreateWebACLRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateWebACLRequest>(operation);
             var marshaller = new CreateWebACLRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2516,7 +2540,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateWebACL");
 
-            var request = InstantiateClassGenerator.Execute<CreateWebACLRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateWebACLRequest>(operation);
             var marshaller = new CreateWebACLRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2548,7 +2572,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateWebACL");
 
-            var request = InstantiateClassGenerator.Execute<CreateWebACLRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateWebACLRequest>(operation);
             var marshaller = new CreateWebACLRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2580,7 +2604,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateWebACL");
 
-            var request = InstantiateClassGenerator.Execute<CreateWebACLRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateWebACLRequest>(operation);
             var marshaller = new CreateWebACLRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2612,7 +2636,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateWebACL");
 
-            var request = InstantiateClassGenerator.Execute<CreateWebACLRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateWebACLRequest>(operation);
             var marshaller = new CreateWebACLRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2644,7 +2668,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateWebACL");
 
-            var request = InstantiateClassGenerator.Execute<CreateWebACLRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateWebACLRequest>(operation);
             var marshaller = new CreateWebACLRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2676,7 +2700,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateWebACL");
 
-            var request = InstantiateClassGenerator.Execute<CreateWebACLRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateWebACLRequest>(operation);
             var marshaller = new CreateWebACLRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2708,7 +2732,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateWebACL");
 
-            var request = InstantiateClassGenerator.Execute<CreateWebACLRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateWebACLRequest>(operation);
             var marshaller = new CreateWebACLRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2740,7 +2764,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateWebACL");
 
-            var request = InstantiateClassGenerator.Execute<CreateWebACLRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateWebACLRequest>(operation);
             var marshaller = new CreateWebACLRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2770,7 +2794,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("WAFRegional")]
         public void CreateWebACLMigrationStackMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<CreateWebACLMigrationStackRequest>();
+            var operation = service_model.FindOperation("CreateWebACLMigrationStack");
+
+            var request = InstantiateClassGenerator.Execute<CreateWebACLMigrationStackRequest>(operation);
             var marshaller = new CreateWebACLMigrationStackRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -2784,7 +2810,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("CreateWebACLMigrationStack").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = CreateWebACLMigrationStackResponseUnmarshaller.Instance.Unmarshall(context) as CreateWebACLMigrationStackResponse;
@@ -2799,7 +2825,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateWebACLMigrationStack");
 
-            var request = InstantiateClassGenerator.Execute<CreateWebACLMigrationStackRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateWebACLMigrationStackRequest>(operation);
             var marshaller = new CreateWebACLMigrationStackRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2831,7 +2857,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateWebACLMigrationStack");
 
-            var request = InstantiateClassGenerator.Execute<CreateWebACLMigrationStackRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateWebACLMigrationStackRequest>(operation);
             var marshaller = new CreateWebACLMigrationStackRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2863,7 +2889,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateWebACLMigrationStack");
 
-            var request = InstantiateClassGenerator.Execute<CreateWebACLMigrationStackRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateWebACLMigrationStackRequest>(operation);
             var marshaller = new CreateWebACLMigrationStackRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2895,7 +2921,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateWebACLMigrationStack");
 
-            var request = InstantiateClassGenerator.Execute<CreateWebACLMigrationStackRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateWebACLMigrationStackRequest>(operation);
             var marshaller = new CreateWebACLMigrationStackRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2927,7 +2953,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateWebACLMigrationStack");
 
-            var request = InstantiateClassGenerator.Execute<CreateWebACLMigrationStackRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateWebACLMigrationStackRequest>(operation);
             var marshaller = new CreateWebACLMigrationStackRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2957,7 +2983,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("WAFRegional")]
         public void CreateXssMatchSetMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<CreateXssMatchSetRequest>();
+            var operation = service_model.FindOperation("CreateXssMatchSet");
+
+            var request = InstantiateClassGenerator.Execute<CreateXssMatchSetRequest>(operation);
             var marshaller = new CreateXssMatchSetRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -2971,7 +2999,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("CreateXssMatchSet").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = CreateXssMatchSetResponseUnmarshaller.Instance.Unmarshall(context) as CreateXssMatchSetResponse;
@@ -2986,7 +3014,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateXssMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<CreateXssMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateXssMatchSetRequest>(operation);
             var marshaller = new CreateXssMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3018,7 +3046,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateXssMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<CreateXssMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateXssMatchSetRequest>(operation);
             var marshaller = new CreateXssMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3050,7 +3078,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateXssMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<CreateXssMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateXssMatchSetRequest>(operation);
             var marshaller = new CreateXssMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3082,7 +3110,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateXssMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<CreateXssMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateXssMatchSetRequest>(operation);
             var marshaller = new CreateXssMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3114,7 +3142,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateXssMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<CreateXssMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateXssMatchSetRequest>(operation);
             var marshaller = new CreateXssMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3146,7 +3174,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateXssMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<CreateXssMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateXssMatchSetRequest>(operation);
             var marshaller = new CreateXssMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3176,7 +3204,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("WAFRegional")]
         public void DeleteByteMatchSetMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DeleteByteMatchSetRequest>();
+            var operation = service_model.FindOperation("DeleteByteMatchSet");
+
+            var request = InstantiateClassGenerator.Execute<DeleteByteMatchSetRequest>(operation);
             var marshaller = new DeleteByteMatchSetRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -3190,7 +3220,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DeleteByteMatchSet").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DeleteByteMatchSetResponseUnmarshaller.Instance.Unmarshall(context) as DeleteByteMatchSetResponse;
@@ -3205,7 +3235,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteByteMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<DeleteByteMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteByteMatchSetRequest>(operation);
             var marshaller = new DeleteByteMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3237,7 +3267,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteByteMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<DeleteByteMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteByteMatchSetRequest>(operation);
             var marshaller = new DeleteByteMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3269,7 +3299,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteByteMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<DeleteByteMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteByteMatchSetRequest>(operation);
             var marshaller = new DeleteByteMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3301,7 +3331,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteByteMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<DeleteByteMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteByteMatchSetRequest>(operation);
             var marshaller = new DeleteByteMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3333,7 +3363,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteByteMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<DeleteByteMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteByteMatchSetRequest>(operation);
             var marshaller = new DeleteByteMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3365,7 +3395,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteByteMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<DeleteByteMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteByteMatchSetRequest>(operation);
             var marshaller = new DeleteByteMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3395,7 +3425,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("WAFRegional")]
         public void DeleteGeoMatchSetMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DeleteGeoMatchSetRequest>();
+            var operation = service_model.FindOperation("DeleteGeoMatchSet");
+
+            var request = InstantiateClassGenerator.Execute<DeleteGeoMatchSetRequest>(operation);
             var marshaller = new DeleteGeoMatchSetRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -3409,7 +3441,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DeleteGeoMatchSet").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DeleteGeoMatchSetResponseUnmarshaller.Instance.Unmarshall(context) as DeleteGeoMatchSetResponse;
@@ -3424,7 +3456,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteGeoMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<DeleteGeoMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteGeoMatchSetRequest>(operation);
             var marshaller = new DeleteGeoMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3456,7 +3488,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteGeoMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<DeleteGeoMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteGeoMatchSetRequest>(operation);
             var marshaller = new DeleteGeoMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3488,7 +3520,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteGeoMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<DeleteGeoMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteGeoMatchSetRequest>(operation);
             var marshaller = new DeleteGeoMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3520,7 +3552,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteGeoMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<DeleteGeoMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteGeoMatchSetRequest>(operation);
             var marshaller = new DeleteGeoMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3552,7 +3584,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteGeoMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<DeleteGeoMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteGeoMatchSetRequest>(operation);
             var marshaller = new DeleteGeoMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3584,7 +3616,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteGeoMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<DeleteGeoMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteGeoMatchSetRequest>(operation);
             var marshaller = new DeleteGeoMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3614,7 +3646,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("WAFRegional")]
         public void DeleteIPSetMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DeleteIPSetRequest>();
+            var operation = service_model.FindOperation("DeleteIPSet");
+
+            var request = InstantiateClassGenerator.Execute<DeleteIPSetRequest>(operation);
             var marshaller = new DeleteIPSetRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -3628,7 +3662,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DeleteIPSet").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DeleteIPSetResponseUnmarshaller.Instance.Unmarshall(context) as DeleteIPSetResponse;
@@ -3643,7 +3677,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteIPSet");
 
-            var request = InstantiateClassGenerator.Execute<DeleteIPSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteIPSetRequest>(operation);
             var marshaller = new DeleteIPSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3675,7 +3709,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteIPSet");
 
-            var request = InstantiateClassGenerator.Execute<DeleteIPSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteIPSetRequest>(operation);
             var marshaller = new DeleteIPSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3707,7 +3741,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteIPSet");
 
-            var request = InstantiateClassGenerator.Execute<DeleteIPSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteIPSetRequest>(operation);
             var marshaller = new DeleteIPSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3739,7 +3773,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteIPSet");
 
-            var request = InstantiateClassGenerator.Execute<DeleteIPSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteIPSetRequest>(operation);
             var marshaller = new DeleteIPSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3771,7 +3805,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteIPSet");
 
-            var request = InstantiateClassGenerator.Execute<DeleteIPSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteIPSetRequest>(operation);
             var marshaller = new DeleteIPSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3803,7 +3837,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteIPSet");
 
-            var request = InstantiateClassGenerator.Execute<DeleteIPSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteIPSetRequest>(operation);
             var marshaller = new DeleteIPSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3833,7 +3867,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("WAFRegional")]
         public void DeleteLoggingConfigurationMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DeleteLoggingConfigurationRequest>();
+            var operation = service_model.FindOperation("DeleteLoggingConfiguration");
+
+            var request = InstantiateClassGenerator.Execute<DeleteLoggingConfigurationRequest>(operation);
             var marshaller = new DeleteLoggingConfigurationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -3847,7 +3883,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DeleteLoggingConfiguration").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DeleteLoggingConfigurationResponseUnmarshaller.Instance.Unmarshall(context) as DeleteLoggingConfigurationResponse;
@@ -3862,7 +3898,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteLoggingConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<DeleteLoggingConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteLoggingConfigurationRequest>(operation);
             var marshaller = new DeleteLoggingConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3894,7 +3930,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteLoggingConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<DeleteLoggingConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteLoggingConfigurationRequest>(operation);
             var marshaller = new DeleteLoggingConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3926,7 +3962,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteLoggingConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<DeleteLoggingConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteLoggingConfigurationRequest>(operation);
             var marshaller = new DeleteLoggingConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3956,7 +3992,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("WAFRegional")]
         public void DeletePermissionPolicyMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DeletePermissionPolicyRequest>();
+            var operation = service_model.FindOperation("DeletePermissionPolicy");
+
+            var request = InstantiateClassGenerator.Execute<DeletePermissionPolicyRequest>(operation);
             var marshaller = new DeletePermissionPolicyRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -3970,7 +4008,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DeletePermissionPolicy").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DeletePermissionPolicyResponseUnmarshaller.Instance.Unmarshall(context) as DeletePermissionPolicyResponse;
@@ -3985,7 +4023,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeletePermissionPolicy");
 
-            var request = InstantiateClassGenerator.Execute<DeletePermissionPolicyRequest>();
+            var request = InstantiateClassGenerator.Execute<DeletePermissionPolicyRequest>(operation);
             var marshaller = new DeletePermissionPolicyRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4017,7 +4055,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeletePermissionPolicy");
 
-            var request = InstantiateClassGenerator.Execute<DeletePermissionPolicyRequest>();
+            var request = InstantiateClassGenerator.Execute<DeletePermissionPolicyRequest>(operation);
             var marshaller = new DeletePermissionPolicyRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4049,7 +4087,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeletePermissionPolicy");
 
-            var request = InstantiateClassGenerator.Execute<DeletePermissionPolicyRequest>();
+            var request = InstantiateClassGenerator.Execute<DeletePermissionPolicyRequest>(operation);
             var marshaller = new DeletePermissionPolicyRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4079,7 +4117,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("WAFRegional")]
         public void DeleteRateBasedRuleMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DeleteRateBasedRuleRequest>();
+            var operation = service_model.FindOperation("DeleteRateBasedRule");
+
+            var request = InstantiateClassGenerator.Execute<DeleteRateBasedRuleRequest>(operation);
             var marshaller = new DeleteRateBasedRuleRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -4093,7 +4133,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DeleteRateBasedRule").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DeleteRateBasedRuleResponseUnmarshaller.Instance.Unmarshall(context) as DeleteRateBasedRuleResponse;
@@ -4108,7 +4148,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteRateBasedRule");
 
-            var request = InstantiateClassGenerator.Execute<DeleteRateBasedRuleRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteRateBasedRuleRequest>(operation);
             var marshaller = new DeleteRateBasedRuleRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4140,7 +4180,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteRateBasedRule");
 
-            var request = InstantiateClassGenerator.Execute<DeleteRateBasedRuleRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteRateBasedRuleRequest>(operation);
             var marshaller = new DeleteRateBasedRuleRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4172,7 +4212,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteRateBasedRule");
 
-            var request = InstantiateClassGenerator.Execute<DeleteRateBasedRuleRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteRateBasedRuleRequest>(operation);
             var marshaller = new DeleteRateBasedRuleRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4204,7 +4244,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteRateBasedRule");
 
-            var request = InstantiateClassGenerator.Execute<DeleteRateBasedRuleRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteRateBasedRuleRequest>(operation);
             var marshaller = new DeleteRateBasedRuleRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4236,7 +4276,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteRateBasedRule");
 
-            var request = InstantiateClassGenerator.Execute<DeleteRateBasedRuleRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteRateBasedRuleRequest>(operation);
             var marshaller = new DeleteRateBasedRuleRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4268,7 +4308,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteRateBasedRule");
 
-            var request = InstantiateClassGenerator.Execute<DeleteRateBasedRuleRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteRateBasedRuleRequest>(operation);
             var marshaller = new DeleteRateBasedRuleRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4300,7 +4340,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteRateBasedRule");
 
-            var request = InstantiateClassGenerator.Execute<DeleteRateBasedRuleRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteRateBasedRuleRequest>(operation);
             var marshaller = new DeleteRateBasedRuleRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4332,7 +4372,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteRateBasedRule");
 
-            var request = InstantiateClassGenerator.Execute<DeleteRateBasedRuleRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteRateBasedRuleRequest>(operation);
             var marshaller = new DeleteRateBasedRuleRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4362,7 +4402,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("WAFRegional")]
         public void DeleteRegexMatchSetMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DeleteRegexMatchSetRequest>();
+            var operation = service_model.FindOperation("DeleteRegexMatchSet");
+
+            var request = InstantiateClassGenerator.Execute<DeleteRegexMatchSetRequest>(operation);
             var marshaller = new DeleteRegexMatchSetRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -4376,7 +4418,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DeleteRegexMatchSet").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DeleteRegexMatchSetResponseUnmarshaller.Instance.Unmarshall(context) as DeleteRegexMatchSetResponse;
@@ -4391,7 +4433,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteRegexMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<DeleteRegexMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteRegexMatchSetRequest>(operation);
             var marshaller = new DeleteRegexMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4423,7 +4465,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteRegexMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<DeleteRegexMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteRegexMatchSetRequest>(operation);
             var marshaller = new DeleteRegexMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4455,7 +4497,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteRegexMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<DeleteRegexMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteRegexMatchSetRequest>(operation);
             var marshaller = new DeleteRegexMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4487,7 +4529,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteRegexMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<DeleteRegexMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteRegexMatchSetRequest>(operation);
             var marshaller = new DeleteRegexMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4519,7 +4561,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteRegexMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<DeleteRegexMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteRegexMatchSetRequest>(operation);
             var marshaller = new DeleteRegexMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4551,7 +4593,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteRegexMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<DeleteRegexMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteRegexMatchSetRequest>(operation);
             var marshaller = new DeleteRegexMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4581,7 +4623,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("WAFRegional")]
         public void DeleteRegexPatternSetMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DeleteRegexPatternSetRequest>();
+            var operation = service_model.FindOperation("DeleteRegexPatternSet");
+
+            var request = InstantiateClassGenerator.Execute<DeleteRegexPatternSetRequest>(operation);
             var marshaller = new DeleteRegexPatternSetRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -4595,7 +4639,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DeleteRegexPatternSet").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DeleteRegexPatternSetResponseUnmarshaller.Instance.Unmarshall(context) as DeleteRegexPatternSetResponse;
@@ -4610,7 +4654,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteRegexPatternSet");
 
-            var request = InstantiateClassGenerator.Execute<DeleteRegexPatternSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteRegexPatternSetRequest>(operation);
             var marshaller = new DeleteRegexPatternSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4642,7 +4686,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteRegexPatternSet");
 
-            var request = InstantiateClassGenerator.Execute<DeleteRegexPatternSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteRegexPatternSetRequest>(operation);
             var marshaller = new DeleteRegexPatternSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4674,7 +4718,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteRegexPatternSet");
 
-            var request = InstantiateClassGenerator.Execute<DeleteRegexPatternSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteRegexPatternSetRequest>(operation);
             var marshaller = new DeleteRegexPatternSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4706,7 +4750,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteRegexPatternSet");
 
-            var request = InstantiateClassGenerator.Execute<DeleteRegexPatternSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteRegexPatternSetRequest>(operation);
             var marshaller = new DeleteRegexPatternSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4738,7 +4782,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteRegexPatternSet");
 
-            var request = InstantiateClassGenerator.Execute<DeleteRegexPatternSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteRegexPatternSetRequest>(operation);
             var marshaller = new DeleteRegexPatternSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4770,7 +4814,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteRegexPatternSet");
 
-            var request = InstantiateClassGenerator.Execute<DeleteRegexPatternSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteRegexPatternSetRequest>(operation);
             var marshaller = new DeleteRegexPatternSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4800,7 +4844,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("WAFRegional")]
         public void DeleteRuleMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DeleteRuleRequest>();
+            var operation = service_model.FindOperation("DeleteRule");
+
+            var request = InstantiateClassGenerator.Execute<DeleteRuleRequest>(operation);
             var marshaller = new DeleteRuleRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -4814,7 +4860,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DeleteRule").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DeleteRuleResponseUnmarshaller.Instance.Unmarshall(context) as DeleteRuleResponse;
@@ -4829,7 +4875,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteRule");
 
-            var request = InstantiateClassGenerator.Execute<DeleteRuleRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteRuleRequest>(operation);
             var marshaller = new DeleteRuleRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4861,7 +4907,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteRule");
 
-            var request = InstantiateClassGenerator.Execute<DeleteRuleRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteRuleRequest>(operation);
             var marshaller = new DeleteRuleRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4893,7 +4939,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteRule");
 
-            var request = InstantiateClassGenerator.Execute<DeleteRuleRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteRuleRequest>(operation);
             var marshaller = new DeleteRuleRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4925,7 +4971,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteRule");
 
-            var request = InstantiateClassGenerator.Execute<DeleteRuleRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteRuleRequest>(operation);
             var marshaller = new DeleteRuleRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4957,7 +5003,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteRule");
 
-            var request = InstantiateClassGenerator.Execute<DeleteRuleRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteRuleRequest>(operation);
             var marshaller = new DeleteRuleRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4989,7 +5035,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteRule");
 
-            var request = InstantiateClassGenerator.Execute<DeleteRuleRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteRuleRequest>(operation);
             var marshaller = new DeleteRuleRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5021,7 +5067,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteRule");
 
-            var request = InstantiateClassGenerator.Execute<DeleteRuleRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteRuleRequest>(operation);
             var marshaller = new DeleteRuleRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5053,7 +5099,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteRule");
 
-            var request = InstantiateClassGenerator.Execute<DeleteRuleRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteRuleRequest>(operation);
             var marshaller = new DeleteRuleRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5083,7 +5129,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("WAFRegional")]
         public void DeleteRuleGroupMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DeleteRuleGroupRequest>();
+            var operation = service_model.FindOperation("DeleteRuleGroup");
+
+            var request = InstantiateClassGenerator.Execute<DeleteRuleGroupRequest>(operation);
             var marshaller = new DeleteRuleGroupRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -5097,7 +5145,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DeleteRuleGroup").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DeleteRuleGroupResponseUnmarshaller.Instance.Unmarshall(context) as DeleteRuleGroupResponse;
@@ -5112,7 +5160,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteRuleGroup");
 
-            var request = InstantiateClassGenerator.Execute<DeleteRuleGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteRuleGroupRequest>(operation);
             var marshaller = new DeleteRuleGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5144,7 +5192,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteRuleGroup");
 
-            var request = InstantiateClassGenerator.Execute<DeleteRuleGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteRuleGroupRequest>(operation);
             var marshaller = new DeleteRuleGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5176,7 +5224,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteRuleGroup");
 
-            var request = InstantiateClassGenerator.Execute<DeleteRuleGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteRuleGroupRequest>(operation);
             var marshaller = new DeleteRuleGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5208,7 +5256,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteRuleGroup");
 
-            var request = InstantiateClassGenerator.Execute<DeleteRuleGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteRuleGroupRequest>(operation);
             var marshaller = new DeleteRuleGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5240,7 +5288,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteRuleGroup");
 
-            var request = InstantiateClassGenerator.Execute<DeleteRuleGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteRuleGroupRequest>(operation);
             var marshaller = new DeleteRuleGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5272,7 +5320,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteRuleGroup");
 
-            var request = InstantiateClassGenerator.Execute<DeleteRuleGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteRuleGroupRequest>(operation);
             var marshaller = new DeleteRuleGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5304,7 +5352,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteRuleGroup");
 
-            var request = InstantiateClassGenerator.Execute<DeleteRuleGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteRuleGroupRequest>(operation);
             var marshaller = new DeleteRuleGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5336,7 +5384,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteRuleGroup");
 
-            var request = InstantiateClassGenerator.Execute<DeleteRuleGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteRuleGroupRequest>(operation);
             var marshaller = new DeleteRuleGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5366,7 +5414,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("WAFRegional")]
         public void DeleteSizeConstraintSetMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DeleteSizeConstraintSetRequest>();
+            var operation = service_model.FindOperation("DeleteSizeConstraintSet");
+
+            var request = InstantiateClassGenerator.Execute<DeleteSizeConstraintSetRequest>(operation);
             var marshaller = new DeleteSizeConstraintSetRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -5380,7 +5430,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DeleteSizeConstraintSet").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DeleteSizeConstraintSetResponseUnmarshaller.Instance.Unmarshall(context) as DeleteSizeConstraintSetResponse;
@@ -5395,7 +5445,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteSizeConstraintSet");
 
-            var request = InstantiateClassGenerator.Execute<DeleteSizeConstraintSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteSizeConstraintSetRequest>(operation);
             var marshaller = new DeleteSizeConstraintSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5427,7 +5477,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteSizeConstraintSet");
 
-            var request = InstantiateClassGenerator.Execute<DeleteSizeConstraintSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteSizeConstraintSetRequest>(operation);
             var marshaller = new DeleteSizeConstraintSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5459,7 +5509,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteSizeConstraintSet");
 
-            var request = InstantiateClassGenerator.Execute<DeleteSizeConstraintSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteSizeConstraintSetRequest>(operation);
             var marshaller = new DeleteSizeConstraintSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5491,7 +5541,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteSizeConstraintSet");
 
-            var request = InstantiateClassGenerator.Execute<DeleteSizeConstraintSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteSizeConstraintSetRequest>(operation);
             var marshaller = new DeleteSizeConstraintSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5523,7 +5573,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteSizeConstraintSet");
 
-            var request = InstantiateClassGenerator.Execute<DeleteSizeConstraintSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteSizeConstraintSetRequest>(operation);
             var marshaller = new DeleteSizeConstraintSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5555,7 +5605,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteSizeConstraintSet");
 
-            var request = InstantiateClassGenerator.Execute<DeleteSizeConstraintSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteSizeConstraintSetRequest>(operation);
             var marshaller = new DeleteSizeConstraintSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5585,7 +5635,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("WAFRegional")]
         public void DeleteSqlInjectionMatchSetMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DeleteSqlInjectionMatchSetRequest>();
+            var operation = service_model.FindOperation("DeleteSqlInjectionMatchSet");
+
+            var request = InstantiateClassGenerator.Execute<DeleteSqlInjectionMatchSetRequest>(operation);
             var marshaller = new DeleteSqlInjectionMatchSetRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -5599,7 +5651,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DeleteSqlInjectionMatchSet").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DeleteSqlInjectionMatchSetResponseUnmarshaller.Instance.Unmarshall(context) as DeleteSqlInjectionMatchSetResponse;
@@ -5614,7 +5666,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteSqlInjectionMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<DeleteSqlInjectionMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteSqlInjectionMatchSetRequest>(operation);
             var marshaller = new DeleteSqlInjectionMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5646,7 +5698,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteSqlInjectionMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<DeleteSqlInjectionMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteSqlInjectionMatchSetRequest>(operation);
             var marshaller = new DeleteSqlInjectionMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5678,7 +5730,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteSqlInjectionMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<DeleteSqlInjectionMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteSqlInjectionMatchSetRequest>(operation);
             var marshaller = new DeleteSqlInjectionMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5710,7 +5762,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteSqlInjectionMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<DeleteSqlInjectionMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteSqlInjectionMatchSetRequest>(operation);
             var marshaller = new DeleteSqlInjectionMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5742,7 +5794,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteSqlInjectionMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<DeleteSqlInjectionMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteSqlInjectionMatchSetRequest>(operation);
             var marshaller = new DeleteSqlInjectionMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5774,7 +5826,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteSqlInjectionMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<DeleteSqlInjectionMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteSqlInjectionMatchSetRequest>(operation);
             var marshaller = new DeleteSqlInjectionMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5804,7 +5856,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("WAFRegional")]
         public void DeleteWebACLMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DeleteWebACLRequest>();
+            var operation = service_model.FindOperation("DeleteWebACL");
+
+            var request = InstantiateClassGenerator.Execute<DeleteWebACLRequest>(operation);
             var marshaller = new DeleteWebACLRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -5818,7 +5872,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DeleteWebACL").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DeleteWebACLResponseUnmarshaller.Instance.Unmarshall(context) as DeleteWebACLResponse;
@@ -5833,7 +5887,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteWebACL");
 
-            var request = InstantiateClassGenerator.Execute<DeleteWebACLRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteWebACLRequest>(operation);
             var marshaller = new DeleteWebACLRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5865,7 +5919,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteWebACL");
 
-            var request = InstantiateClassGenerator.Execute<DeleteWebACLRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteWebACLRequest>(operation);
             var marshaller = new DeleteWebACLRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5897,7 +5951,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteWebACL");
 
-            var request = InstantiateClassGenerator.Execute<DeleteWebACLRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteWebACLRequest>(operation);
             var marshaller = new DeleteWebACLRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5929,7 +5983,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteWebACL");
 
-            var request = InstantiateClassGenerator.Execute<DeleteWebACLRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteWebACLRequest>(operation);
             var marshaller = new DeleteWebACLRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5961,7 +6015,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteWebACL");
 
-            var request = InstantiateClassGenerator.Execute<DeleteWebACLRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteWebACLRequest>(operation);
             var marshaller = new DeleteWebACLRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5993,7 +6047,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteWebACL");
 
-            var request = InstantiateClassGenerator.Execute<DeleteWebACLRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteWebACLRequest>(operation);
             var marshaller = new DeleteWebACLRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6025,7 +6079,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteWebACL");
 
-            var request = InstantiateClassGenerator.Execute<DeleteWebACLRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteWebACLRequest>(operation);
             var marshaller = new DeleteWebACLRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6057,7 +6111,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteWebACL");
 
-            var request = InstantiateClassGenerator.Execute<DeleteWebACLRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteWebACLRequest>(operation);
             var marshaller = new DeleteWebACLRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6087,7 +6141,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("WAFRegional")]
         public void DeleteXssMatchSetMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DeleteXssMatchSetRequest>();
+            var operation = service_model.FindOperation("DeleteXssMatchSet");
+
+            var request = InstantiateClassGenerator.Execute<DeleteXssMatchSetRequest>(operation);
             var marshaller = new DeleteXssMatchSetRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -6101,7 +6157,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DeleteXssMatchSet").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DeleteXssMatchSetResponseUnmarshaller.Instance.Unmarshall(context) as DeleteXssMatchSetResponse;
@@ -6116,7 +6172,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteXssMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<DeleteXssMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteXssMatchSetRequest>(operation);
             var marshaller = new DeleteXssMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6148,7 +6204,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteXssMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<DeleteXssMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteXssMatchSetRequest>(operation);
             var marshaller = new DeleteXssMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6180,7 +6236,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteXssMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<DeleteXssMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteXssMatchSetRequest>(operation);
             var marshaller = new DeleteXssMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6212,7 +6268,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteXssMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<DeleteXssMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteXssMatchSetRequest>(operation);
             var marshaller = new DeleteXssMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6244,7 +6300,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteXssMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<DeleteXssMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteXssMatchSetRequest>(operation);
             var marshaller = new DeleteXssMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6276,7 +6332,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteXssMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<DeleteXssMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteXssMatchSetRequest>(operation);
             var marshaller = new DeleteXssMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6306,7 +6362,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("WAFRegional")]
         public void DisassociateWebACLMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DisassociateWebACLRequest>();
+            var operation = service_model.FindOperation("DisassociateWebACL");
+
+            var request = InstantiateClassGenerator.Execute<DisassociateWebACLRequest>(operation);
             var marshaller = new DisassociateWebACLRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -6320,7 +6378,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DisassociateWebACL").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DisassociateWebACLResponseUnmarshaller.Instance.Unmarshall(context) as DisassociateWebACLResponse;
@@ -6335,7 +6393,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DisassociateWebACL");
 
-            var request = InstantiateClassGenerator.Execute<DisassociateWebACLRequest>();
+            var request = InstantiateClassGenerator.Execute<DisassociateWebACLRequest>(operation);
             var marshaller = new DisassociateWebACLRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6367,7 +6425,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DisassociateWebACL");
 
-            var request = InstantiateClassGenerator.Execute<DisassociateWebACLRequest>();
+            var request = InstantiateClassGenerator.Execute<DisassociateWebACLRequest>(operation);
             var marshaller = new DisassociateWebACLRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6399,7 +6457,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DisassociateWebACL");
 
-            var request = InstantiateClassGenerator.Execute<DisassociateWebACLRequest>();
+            var request = InstantiateClassGenerator.Execute<DisassociateWebACLRequest>(operation);
             var marshaller = new DisassociateWebACLRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6431,7 +6489,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DisassociateWebACL");
 
-            var request = InstantiateClassGenerator.Execute<DisassociateWebACLRequest>();
+            var request = InstantiateClassGenerator.Execute<DisassociateWebACLRequest>(operation);
             var marshaller = new DisassociateWebACLRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6461,7 +6519,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("WAFRegional")]
         public void GetByteMatchSetMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<GetByteMatchSetRequest>();
+            var operation = service_model.FindOperation("GetByteMatchSet");
+
+            var request = InstantiateClassGenerator.Execute<GetByteMatchSetRequest>(operation);
             var marshaller = new GetByteMatchSetRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -6475,7 +6535,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetByteMatchSet").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = GetByteMatchSetResponseUnmarshaller.Instance.Unmarshall(context) as GetByteMatchSetResponse;
@@ -6490,7 +6550,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetByteMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<GetByteMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<GetByteMatchSetRequest>(operation);
             var marshaller = new GetByteMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6522,7 +6582,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetByteMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<GetByteMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<GetByteMatchSetRequest>(operation);
             var marshaller = new GetByteMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6554,7 +6614,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetByteMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<GetByteMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<GetByteMatchSetRequest>(operation);
             var marshaller = new GetByteMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6584,7 +6644,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("WAFRegional")]
         public void GetChangeTokenMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<GetChangeTokenRequest>();
+            var operation = service_model.FindOperation("GetChangeToken");
+
+            var request = InstantiateClassGenerator.Execute<GetChangeTokenRequest>(operation);
             var marshaller = new GetChangeTokenRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -6598,7 +6660,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetChangeToken").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = GetChangeTokenResponseUnmarshaller.Instance.Unmarshall(context) as GetChangeTokenResponse;
@@ -6613,7 +6675,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetChangeToken");
 
-            var request = InstantiateClassGenerator.Execute<GetChangeTokenRequest>();
+            var request = InstantiateClassGenerator.Execute<GetChangeTokenRequest>(operation);
             var marshaller = new GetChangeTokenRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6643,7 +6705,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("WAFRegional")]
         public void GetChangeTokenStatusMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<GetChangeTokenStatusRequest>();
+            var operation = service_model.FindOperation("GetChangeTokenStatus");
+
+            var request = InstantiateClassGenerator.Execute<GetChangeTokenStatusRequest>(operation);
             var marshaller = new GetChangeTokenStatusRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -6657,7 +6721,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetChangeTokenStatus").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = GetChangeTokenStatusResponseUnmarshaller.Instance.Unmarshall(context) as GetChangeTokenStatusResponse;
@@ -6672,7 +6736,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetChangeTokenStatus");
 
-            var request = InstantiateClassGenerator.Execute<GetChangeTokenStatusRequest>();
+            var request = InstantiateClassGenerator.Execute<GetChangeTokenStatusRequest>(operation);
             var marshaller = new GetChangeTokenStatusRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6704,7 +6768,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetChangeTokenStatus");
 
-            var request = InstantiateClassGenerator.Execute<GetChangeTokenStatusRequest>();
+            var request = InstantiateClassGenerator.Execute<GetChangeTokenStatusRequest>(operation);
             var marshaller = new GetChangeTokenStatusRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6734,7 +6798,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("WAFRegional")]
         public void GetGeoMatchSetMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<GetGeoMatchSetRequest>();
+            var operation = service_model.FindOperation("GetGeoMatchSet");
+
+            var request = InstantiateClassGenerator.Execute<GetGeoMatchSetRequest>(operation);
             var marshaller = new GetGeoMatchSetRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -6748,7 +6814,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetGeoMatchSet").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = GetGeoMatchSetResponseUnmarshaller.Instance.Unmarshall(context) as GetGeoMatchSetResponse;
@@ -6763,7 +6829,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetGeoMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<GetGeoMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<GetGeoMatchSetRequest>(operation);
             var marshaller = new GetGeoMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6795,7 +6861,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetGeoMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<GetGeoMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<GetGeoMatchSetRequest>(operation);
             var marshaller = new GetGeoMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6827,7 +6893,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetGeoMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<GetGeoMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<GetGeoMatchSetRequest>(operation);
             var marshaller = new GetGeoMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6857,7 +6923,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("WAFRegional")]
         public void GetIPSetMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<GetIPSetRequest>();
+            var operation = service_model.FindOperation("GetIPSet");
+
+            var request = InstantiateClassGenerator.Execute<GetIPSetRequest>(operation);
             var marshaller = new GetIPSetRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -6871,7 +6939,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetIPSet").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = GetIPSetResponseUnmarshaller.Instance.Unmarshall(context) as GetIPSetResponse;
@@ -6886,7 +6954,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetIPSet");
 
-            var request = InstantiateClassGenerator.Execute<GetIPSetRequest>();
+            var request = InstantiateClassGenerator.Execute<GetIPSetRequest>(operation);
             var marshaller = new GetIPSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6918,7 +6986,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetIPSet");
 
-            var request = InstantiateClassGenerator.Execute<GetIPSetRequest>();
+            var request = InstantiateClassGenerator.Execute<GetIPSetRequest>(operation);
             var marshaller = new GetIPSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6950,7 +7018,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetIPSet");
 
-            var request = InstantiateClassGenerator.Execute<GetIPSetRequest>();
+            var request = InstantiateClassGenerator.Execute<GetIPSetRequest>(operation);
             var marshaller = new GetIPSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6980,7 +7048,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("WAFRegional")]
         public void GetLoggingConfigurationMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<GetLoggingConfigurationRequest>();
+            var operation = service_model.FindOperation("GetLoggingConfiguration");
+
+            var request = InstantiateClassGenerator.Execute<GetLoggingConfigurationRequest>(operation);
             var marshaller = new GetLoggingConfigurationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -6994,7 +7064,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetLoggingConfiguration").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = GetLoggingConfigurationResponseUnmarshaller.Instance.Unmarshall(context) as GetLoggingConfigurationResponse;
@@ -7009,7 +7079,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetLoggingConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<GetLoggingConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetLoggingConfigurationRequest>(operation);
             var marshaller = new GetLoggingConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -7041,7 +7111,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetLoggingConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<GetLoggingConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetLoggingConfigurationRequest>(operation);
             var marshaller = new GetLoggingConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -7071,7 +7141,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("WAFRegional")]
         public void GetPermissionPolicyMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<GetPermissionPolicyRequest>();
+            var operation = service_model.FindOperation("GetPermissionPolicy");
+
+            var request = InstantiateClassGenerator.Execute<GetPermissionPolicyRequest>(operation);
             var marshaller = new GetPermissionPolicyRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -7085,7 +7157,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetPermissionPolicy").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = GetPermissionPolicyResponseUnmarshaller.Instance.Unmarshall(context) as GetPermissionPolicyResponse;
@@ -7100,7 +7172,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetPermissionPolicy");
 
-            var request = InstantiateClassGenerator.Execute<GetPermissionPolicyRequest>();
+            var request = InstantiateClassGenerator.Execute<GetPermissionPolicyRequest>(operation);
             var marshaller = new GetPermissionPolicyRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -7132,7 +7204,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetPermissionPolicy");
 
-            var request = InstantiateClassGenerator.Execute<GetPermissionPolicyRequest>();
+            var request = InstantiateClassGenerator.Execute<GetPermissionPolicyRequest>(operation);
             var marshaller = new GetPermissionPolicyRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -7162,7 +7234,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("WAFRegional")]
         public void GetRateBasedRuleMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<GetRateBasedRuleRequest>();
+            var operation = service_model.FindOperation("GetRateBasedRule");
+
+            var request = InstantiateClassGenerator.Execute<GetRateBasedRuleRequest>(operation);
             var marshaller = new GetRateBasedRuleRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -7176,7 +7250,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetRateBasedRule").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = GetRateBasedRuleResponseUnmarshaller.Instance.Unmarshall(context) as GetRateBasedRuleResponse;
@@ -7191,7 +7265,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetRateBasedRule");
 
-            var request = InstantiateClassGenerator.Execute<GetRateBasedRuleRequest>();
+            var request = InstantiateClassGenerator.Execute<GetRateBasedRuleRequest>(operation);
             var marshaller = new GetRateBasedRuleRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -7223,7 +7297,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetRateBasedRule");
 
-            var request = InstantiateClassGenerator.Execute<GetRateBasedRuleRequest>();
+            var request = InstantiateClassGenerator.Execute<GetRateBasedRuleRequest>(operation);
             var marshaller = new GetRateBasedRuleRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -7255,7 +7329,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetRateBasedRule");
 
-            var request = InstantiateClassGenerator.Execute<GetRateBasedRuleRequest>();
+            var request = InstantiateClassGenerator.Execute<GetRateBasedRuleRequest>(operation);
             var marshaller = new GetRateBasedRuleRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -7285,7 +7359,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("WAFRegional")]
         public void GetRateBasedRuleManagedKeysMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<GetRateBasedRuleManagedKeysRequest>();
+            var operation = service_model.FindOperation("GetRateBasedRuleManagedKeys");
+
+            var request = InstantiateClassGenerator.Execute<GetRateBasedRuleManagedKeysRequest>(operation);
             var marshaller = new GetRateBasedRuleManagedKeysRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -7299,7 +7375,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetRateBasedRuleManagedKeys").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = GetRateBasedRuleManagedKeysResponseUnmarshaller.Instance.Unmarshall(context) as GetRateBasedRuleManagedKeysResponse;
@@ -7314,7 +7390,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetRateBasedRuleManagedKeys");
 
-            var request = InstantiateClassGenerator.Execute<GetRateBasedRuleManagedKeysRequest>();
+            var request = InstantiateClassGenerator.Execute<GetRateBasedRuleManagedKeysRequest>(operation);
             var marshaller = new GetRateBasedRuleManagedKeysRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -7346,7 +7422,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetRateBasedRuleManagedKeys");
 
-            var request = InstantiateClassGenerator.Execute<GetRateBasedRuleManagedKeysRequest>();
+            var request = InstantiateClassGenerator.Execute<GetRateBasedRuleManagedKeysRequest>(operation);
             var marshaller = new GetRateBasedRuleManagedKeysRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -7378,7 +7454,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetRateBasedRuleManagedKeys");
 
-            var request = InstantiateClassGenerator.Execute<GetRateBasedRuleManagedKeysRequest>();
+            var request = InstantiateClassGenerator.Execute<GetRateBasedRuleManagedKeysRequest>(operation);
             var marshaller = new GetRateBasedRuleManagedKeysRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -7410,7 +7486,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetRateBasedRuleManagedKeys");
 
-            var request = InstantiateClassGenerator.Execute<GetRateBasedRuleManagedKeysRequest>();
+            var request = InstantiateClassGenerator.Execute<GetRateBasedRuleManagedKeysRequest>(operation);
             var marshaller = new GetRateBasedRuleManagedKeysRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -7440,7 +7516,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("WAFRegional")]
         public void GetRegexMatchSetMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<GetRegexMatchSetRequest>();
+            var operation = service_model.FindOperation("GetRegexMatchSet");
+
+            var request = InstantiateClassGenerator.Execute<GetRegexMatchSetRequest>(operation);
             var marshaller = new GetRegexMatchSetRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -7454,7 +7532,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetRegexMatchSet").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = GetRegexMatchSetResponseUnmarshaller.Instance.Unmarshall(context) as GetRegexMatchSetResponse;
@@ -7469,7 +7547,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetRegexMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<GetRegexMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<GetRegexMatchSetRequest>(operation);
             var marshaller = new GetRegexMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -7501,7 +7579,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetRegexMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<GetRegexMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<GetRegexMatchSetRequest>(operation);
             var marshaller = new GetRegexMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -7533,7 +7611,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetRegexMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<GetRegexMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<GetRegexMatchSetRequest>(operation);
             var marshaller = new GetRegexMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -7563,7 +7641,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("WAFRegional")]
         public void GetRegexPatternSetMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<GetRegexPatternSetRequest>();
+            var operation = service_model.FindOperation("GetRegexPatternSet");
+
+            var request = InstantiateClassGenerator.Execute<GetRegexPatternSetRequest>(operation);
             var marshaller = new GetRegexPatternSetRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -7577,7 +7657,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetRegexPatternSet").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = GetRegexPatternSetResponseUnmarshaller.Instance.Unmarshall(context) as GetRegexPatternSetResponse;
@@ -7592,7 +7672,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetRegexPatternSet");
 
-            var request = InstantiateClassGenerator.Execute<GetRegexPatternSetRequest>();
+            var request = InstantiateClassGenerator.Execute<GetRegexPatternSetRequest>(operation);
             var marshaller = new GetRegexPatternSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -7624,7 +7704,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetRegexPatternSet");
 
-            var request = InstantiateClassGenerator.Execute<GetRegexPatternSetRequest>();
+            var request = InstantiateClassGenerator.Execute<GetRegexPatternSetRequest>(operation);
             var marshaller = new GetRegexPatternSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -7656,7 +7736,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetRegexPatternSet");
 
-            var request = InstantiateClassGenerator.Execute<GetRegexPatternSetRequest>();
+            var request = InstantiateClassGenerator.Execute<GetRegexPatternSetRequest>(operation);
             var marshaller = new GetRegexPatternSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -7686,7 +7766,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("WAFRegional")]
         public void GetRuleMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<GetRuleRequest>();
+            var operation = service_model.FindOperation("GetRule");
+
+            var request = InstantiateClassGenerator.Execute<GetRuleRequest>(operation);
             var marshaller = new GetRuleRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -7700,7 +7782,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetRule").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = GetRuleResponseUnmarshaller.Instance.Unmarshall(context) as GetRuleResponse;
@@ -7715,7 +7797,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetRule");
 
-            var request = InstantiateClassGenerator.Execute<GetRuleRequest>();
+            var request = InstantiateClassGenerator.Execute<GetRuleRequest>(operation);
             var marshaller = new GetRuleRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -7747,7 +7829,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetRule");
 
-            var request = InstantiateClassGenerator.Execute<GetRuleRequest>();
+            var request = InstantiateClassGenerator.Execute<GetRuleRequest>(operation);
             var marshaller = new GetRuleRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -7779,7 +7861,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetRule");
 
-            var request = InstantiateClassGenerator.Execute<GetRuleRequest>();
+            var request = InstantiateClassGenerator.Execute<GetRuleRequest>(operation);
             var marshaller = new GetRuleRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -7809,7 +7891,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("WAFRegional")]
         public void GetRuleGroupMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<GetRuleGroupRequest>();
+            var operation = service_model.FindOperation("GetRuleGroup");
+
+            var request = InstantiateClassGenerator.Execute<GetRuleGroupRequest>(operation);
             var marshaller = new GetRuleGroupRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -7823,7 +7907,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetRuleGroup").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = GetRuleGroupResponseUnmarshaller.Instance.Unmarshall(context) as GetRuleGroupResponse;
@@ -7838,7 +7922,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetRuleGroup");
 
-            var request = InstantiateClassGenerator.Execute<GetRuleGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<GetRuleGroupRequest>(operation);
             var marshaller = new GetRuleGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -7870,7 +7954,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetRuleGroup");
 
-            var request = InstantiateClassGenerator.Execute<GetRuleGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<GetRuleGroupRequest>(operation);
             var marshaller = new GetRuleGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -7900,7 +7984,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("WAFRegional")]
         public void GetSampledRequestsMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<GetSampledRequestsRequest>();
+            var operation = service_model.FindOperation("GetSampledRequests");
+
+            var request = InstantiateClassGenerator.Execute<GetSampledRequestsRequest>(operation);
             var marshaller = new GetSampledRequestsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -7914,7 +8000,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetSampledRequests").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = GetSampledRequestsResponseUnmarshaller.Instance.Unmarshall(context) as GetSampledRequestsResponse;
@@ -7929,7 +8015,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetSampledRequests");
 
-            var request = InstantiateClassGenerator.Execute<GetSampledRequestsRequest>();
+            var request = InstantiateClassGenerator.Execute<GetSampledRequestsRequest>(operation);
             var marshaller = new GetSampledRequestsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -7961,7 +8047,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetSampledRequests");
 
-            var request = InstantiateClassGenerator.Execute<GetSampledRequestsRequest>();
+            var request = InstantiateClassGenerator.Execute<GetSampledRequestsRequest>(operation);
             var marshaller = new GetSampledRequestsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -7991,7 +8077,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("WAFRegional")]
         public void GetSizeConstraintSetMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<GetSizeConstraintSetRequest>();
+            var operation = service_model.FindOperation("GetSizeConstraintSet");
+
+            var request = InstantiateClassGenerator.Execute<GetSizeConstraintSetRequest>(operation);
             var marshaller = new GetSizeConstraintSetRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -8005,7 +8093,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetSizeConstraintSet").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = GetSizeConstraintSetResponseUnmarshaller.Instance.Unmarshall(context) as GetSizeConstraintSetResponse;
@@ -8020,7 +8108,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetSizeConstraintSet");
 
-            var request = InstantiateClassGenerator.Execute<GetSizeConstraintSetRequest>();
+            var request = InstantiateClassGenerator.Execute<GetSizeConstraintSetRequest>(operation);
             var marshaller = new GetSizeConstraintSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -8052,7 +8140,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetSizeConstraintSet");
 
-            var request = InstantiateClassGenerator.Execute<GetSizeConstraintSetRequest>();
+            var request = InstantiateClassGenerator.Execute<GetSizeConstraintSetRequest>(operation);
             var marshaller = new GetSizeConstraintSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -8084,7 +8172,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetSizeConstraintSet");
 
-            var request = InstantiateClassGenerator.Execute<GetSizeConstraintSetRequest>();
+            var request = InstantiateClassGenerator.Execute<GetSizeConstraintSetRequest>(operation);
             var marshaller = new GetSizeConstraintSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -8114,7 +8202,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("WAFRegional")]
         public void GetSqlInjectionMatchSetMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<GetSqlInjectionMatchSetRequest>();
+            var operation = service_model.FindOperation("GetSqlInjectionMatchSet");
+
+            var request = InstantiateClassGenerator.Execute<GetSqlInjectionMatchSetRequest>(operation);
             var marshaller = new GetSqlInjectionMatchSetRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -8128,7 +8218,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetSqlInjectionMatchSet").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = GetSqlInjectionMatchSetResponseUnmarshaller.Instance.Unmarshall(context) as GetSqlInjectionMatchSetResponse;
@@ -8143,7 +8233,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetSqlInjectionMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<GetSqlInjectionMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<GetSqlInjectionMatchSetRequest>(operation);
             var marshaller = new GetSqlInjectionMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -8175,7 +8265,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetSqlInjectionMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<GetSqlInjectionMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<GetSqlInjectionMatchSetRequest>(operation);
             var marshaller = new GetSqlInjectionMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -8207,7 +8297,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetSqlInjectionMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<GetSqlInjectionMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<GetSqlInjectionMatchSetRequest>(operation);
             var marshaller = new GetSqlInjectionMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -8237,7 +8327,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("WAFRegional")]
         public void GetWebACLMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<GetWebACLRequest>();
+            var operation = service_model.FindOperation("GetWebACL");
+
+            var request = InstantiateClassGenerator.Execute<GetWebACLRequest>(operation);
             var marshaller = new GetWebACLRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -8251,7 +8343,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetWebACL").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = GetWebACLResponseUnmarshaller.Instance.Unmarshall(context) as GetWebACLResponse;
@@ -8266,7 +8358,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetWebACL");
 
-            var request = InstantiateClassGenerator.Execute<GetWebACLRequest>();
+            var request = InstantiateClassGenerator.Execute<GetWebACLRequest>(operation);
             var marshaller = new GetWebACLRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -8298,7 +8390,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetWebACL");
 
-            var request = InstantiateClassGenerator.Execute<GetWebACLRequest>();
+            var request = InstantiateClassGenerator.Execute<GetWebACLRequest>(operation);
             var marshaller = new GetWebACLRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -8330,7 +8422,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetWebACL");
 
-            var request = InstantiateClassGenerator.Execute<GetWebACLRequest>();
+            var request = InstantiateClassGenerator.Execute<GetWebACLRequest>(operation);
             var marshaller = new GetWebACLRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -8360,7 +8452,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("WAFRegional")]
         public void GetWebACLForResourceMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<GetWebACLForResourceRequest>();
+            var operation = service_model.FindOperation("GetWebACLForResource");
+
+            var request = InstantiateClassGenerator.Execute<GetWebACLForResourceRequest>(operation);
             var marshaller = new GetWebACLForResourceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -8374,7 +8468,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetWebACLForResource").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = GetWebACLForResourceResponseUnmarshaller.Instance.Unmarshall(context) as GetWebACLForResourceResponse;
@@ -8389,7 +8483,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetWebACLForResource");
 
-            var request = InstantiateClassGenerator.Execute<GetWebACLForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<GetWebACLForResourceRequest>(operation);
             var marshaller = new GetWebACLForResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -8421,7 +8515,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetWebACLForResource");
 
-            var request = InstantiateClassGenerator.Execute<GetWebACLForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<GetWebACLForResourceRequest>(operation);
             var marshaller = new GetWebACLForResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -8453,7 +8547,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetWebACLForResource");
 
-            var request = InstantiateClassGenerator.Execute<GetWebACLForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<GetWebACLForResourceRequest>(operation);
             var marshaller = new GetWebACLForResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -8485,7 +8579,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetWebACLForResource");
 
-            var request = InstantiateClassGenerator.Execute<GetWebACLForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<GetWebACLForResourceRequest>(operation);
             var marshaller = new GetWebACLForResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -8517,7 +8611,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetWebACLForResource");
 
-            var request = InstantiateClassGenerator.Execute<GetWebACLForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<GetWebACLForResourceRequest>(operation);
             var marshaller = new GetWebACLForResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -8547,7 +8641,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("WAFRegional")]
         public void GetXssMatchSetMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<GetXssMatchSetRequest>();
+            var operation = service_model.FindOperation("GetXssMatchSet");
+
+            var request = InstantiateClassGenerator.Execute<GetXssMatchSetRequest>(operation);
             var marshaller = new GetXssMatchSetRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -8561,7 +8657,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetXssMatchSet").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = GetXssMatchSetResponseUnmarshaller.Instance.Unmarshall(context) as GetXssMatchSetResponse;
@@ -8576,7 +8672,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetXssMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<GetXssMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<GetXssMatchSetRequest>(operation);
             var marshaller = new GetXssMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -8608,7 +8704,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetXssMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<GetXssMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<GetXssMatchSetRequest>(operation);
             var marshaller = new GetXssMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -8640,7 +8736,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetXssMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<GetXssMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<GetXssMatchSetRequest>(operation);
             var marshaller = new GetXssMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -8670,7 +8766,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("WAFRegional")]
         public void ListActivatedRulesInRuleGroupMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ListActivatedRulesInRuleGroupRequest>();
+            var operation = service_model.FindOperation("ListActivatedRulesInRuleGroup");
+
+            var request = InstantiateClassGenerator.Execute<ListActivatedRulesInRuleGroupRequest>(operation);
             var marshaller = new ListActivatedRulesInRuleGroupRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -8684,7 +8782,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListActivatedRulesInRuleGroup").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ListActivatedRulesInRuleGroupResponseUnmarshaller.Instance.Unmarshall(context) as ListActivatedRulesInRuleGroupResponse;
@@ -8699,7 +8797,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListActivatedRulesInRuleGroup");
 
-            var request = InstantiateClassGenerator.Execute<ListActivatedRulesInRuleGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<ListActivatedRulesInRuleGroupRequest>(operation);
             var marshaller = new ListActivatedRulesInRuleGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -8731,7 +8829,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListActivatedRulesInRuleGroup");
 
-            var request = InstantiateClassGenerator.Execute<ListActivatedRulesInRuleGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<ListActivatedRulesInRuleGroupRequest>(operation);
             var marshaller = new ListActivatedRulesInRuleGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -8763,7 +8861,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListActivatedRulesInRuleGroup");
 
-            var request = InstantiateClassGenerator.Execute<ListActivatedRulesInRuleGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<ListActivatedRulesInRuleGroupRequest>(operation);
             var marshaller = new ListActivatedRulesInRuleGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -8793,7 +8891,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("WAFRegional")]
         public void ListByteMatchSetsMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ListByteMatchSetsRequest>();
+            var operation = service_model.FindOperation("ListByteMatchSets");
+
+            var request = InstantiateClassGenerator.Execute<ListByteMatchSetsRequest>(operation);
             var marshaller = new ListByteMatchSetsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -8807,7 +8907,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListByteMatchSets").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ListByteMatchSetsResponseUnmarshaller.Instance.Unmarshall(context) as ListByteMatchSetsResponse;
@@ -8822,7 +8922,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListByteMatchSets");
 
-            var request = InstantiateClassGenerator.Execute<ListByteMatchSetsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListByteMatchSetsRequest>(operation);
             var marshaller = new ListByteMatchSetsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -8854,7 +8954,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListByteMatchSets");
 
-            var request = InstantiateClassGenerator.Execute<ListByteMatchSetsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListByteMatchSetsRequest>(operation);
             var marshaller = new ListByteMatchSetsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -8884,7 +8984,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("WAFRegional")]
         public void ListGeoMatchSetsMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ListGeoMatchSetsRequest>();
+            var operation = service_model.FindOperation("ListGeoMatchSets");
+
+            var request = InstantiateClassGenerator.Execute<ListGeoMatchSetsRequest>(operation);
             var marshaller = new ListGeoMatchSetsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -8898,7 +9000,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListGeoMatchSets").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ListGeoMatchSetsResponseUnmarshaller.Instance.Unmarshall(context) as ListGeoMatchSetsResponse;
@@ -8913,7 +9015,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListGeoMatchSets");
 
-            var request = InstantiateClassGenerator.Execute<ListGeoMatchSetsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListGeoMatchSetsRequest>(operation);
             var marshaller = new ListGeoMatchSetsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -8945,7 +9047,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListGeoMatchSets");
 
-            var request = InstantiateClassGenerator.Execute<ListGeoMatchSetsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListGeoMatchSetsRequest>(operation);
             var marshaller = new ListGeoMatchSetsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -8975,7 +9077,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("WAFRegional")]
         public void ListIPSetsMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ListIPSetsRequest>();
+            var operation = service_model.FindOperation("ListIPSets");
+
+            var request = InstantiateClassGenerator.Execute<ListIPSetsRequest>(operation);
             var marshaller = new ListIPSetsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -8989,7 +9093,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListIPSets").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ListIPSetsResponseUnmarshaller.Instance.Unmarshall(context) as ListIPSetsResponse;
@@ -9004,7 +9108,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListIPSets");
 
-            var request = InstantiateClassGenerator.Execute<ListIPSetsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListIPSetsRequest>(operation);
             var marshaller = new ListIPSetsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -9036,7 +9140,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListIPSets");
 
-            var request = InstantiateClassGenerator.Execute<ListIPSetsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListIPSetsRequest>(operation);
             var marshaller = new ListIPSetsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -9066,7 +9170,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("WAFRegional")]
         public void ListLoggingConfigurationsMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ListLoggingConfigurationsRequest>();
+            var operation = service_model.FindOperation("ListLoggingConfigurations");
+
+            var request = InstantiateClassGenerator.Execute<ListLoggingConfigurationsRequest>(operation);
             var marshaller = new ListLoggingConfigurationsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -9080,7 +9186,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListLoggingConfigurations").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ListLoggingConfigurationsResponseUnmarshaller.Instance.Unmarshall(context) as ListLoggingConfigurationsResponse;
@@ -9095,7 +9201,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListLoggingConfigurations");
 
-            var request = InstantiateClassGenerator.Execute<ListLoggingConfigurationsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListLoggingConfigurationsRequest>(operation);
             var marshaller = new ListLoggingConfigurationsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -9127,7 +9233,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListLoggingConfigurations");
 
-            var request = InstantiateClassGenerator.Execute<ListLoggingConfigurationsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListLoggingConfigurationsRequest>(operation);
             var marshaller = new ListLoggingConfigurationsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -9159,7 +9265,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListLoggingConfigurations");
 
-            var request = InstantiateClassGenerator.Execute<ListLoggingConfigurationsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListLoggingConfigurationsRequest>(operation);
             var marshaller = new ListLoggingConfigurationsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -9189,7 +9295,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("WAFRegional")]
         public void ListRateBasedRulesMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ListRateBasedRulesRequest>();
+            var operation = service_model.FindOperation("ListRateBasedRules");
+
+            var request = InstantiateClassGenerator.Execute<ListRateBasedRulesRequest>(operation);
             var marshaller = new ListRateBasedRulesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -9203,7 +9311,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListRateBasedRules").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ListRateBasedRulesResponseUnmarshaller.Instance.Unmarshall(context) as ListRateBasedRulesResponse;
@@ -9218,7 +9326,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListRateBasedRules");
 
-            var request = InstantiateClassGenerator.Execute<ListRateBasedRulesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListRateBasedRulesRequest>(operation);
             var marshaller = new ListRateBasedRulesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -9250,7 +9358,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListRateBasedRules");
 
-            var request = InstantiateClassGenerator.Execute<ListRateBasedRulesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListRateBasedRulesRequest>(operation);
             var marshaller = new ListRateBasedRulesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -9280,7 +9388,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("WAFRegional")]
         public void ListRegexMatchSetsMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ListRegexMatchSetsRequest>();
+            var operation = service_model.FindOperation("ListRegexMatchSets");
+
+            var request = InstantiateClassGenerator.Execute<ListRegexMatchSetsRequest>(operation);
             var marshaller = new ListRegexMatchSetsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -9294,7 +9404,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListRegexMatchSets").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ListRegexMatchSetsResponseUnmarshaller.Instance.Unmarshall(context) as ListRegexMatchSetsResponse;
@@ -9309,7 +9419,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListRegexMatchSets");
 
-            var request = InstantiateClassGenerator.Execute<ListRegexMatchSetsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListRegexMatchSetsRequest>(operation);
             var marshaller = new ListRegexMatchSetsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -9341,7 +9451,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListRegexMatchSets");
 
-            var request = InstantiateClassGenerator.Execute<ListRegexMatchSetsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListRegexMatchSetsRequest>(operation);
             var marshaller = new ListRegexMatchSetsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -9371,7 +9481,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("WAFRegional")]
         public void ListRegexPatternSetsMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ListRegexPatternSetsRequest>();
+            var operation = service_model.FindOperation("ListRegexPatternSets");
+
+            var request = InstantiateClassGenerator.Execute<ListRegexPatternSetsRequest>(operation);
             var marshaller = new ListRegexPatternSetsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -9385,7 +9497,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListRegexPatternSets").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ListRegexPatternSetsResponseUnmarshaller.Instance.Unmarshall(context) as ListRegexPatternSetsResponse;
@@ -9400,7 +9512,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListRegexPatternSets");
 
-            var request = InstantiateClassGenerator.Execute<ListRegexPatternSetsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListRegexPatternSetsRequest>(operation);
             var marshaller = new ListRegexPatternSetsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -9432,7 +9544,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListRegexPatternSets");
 
-            var request = InstantiateClassGenerator.Execute<ListRegexPatternSetsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListRegexPatternSetsRequest>(operation);
             var marshaller = new ListRegexPatternSetsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -9462,7 +9574,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("WAFRegional")]
         public void ListResourcesForWebACLMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ListResourcesForWebACLRequest>();
+            var operation = service_model.FindOperation("ListResourcesForWebACL");
+
+            var request = InstantiateClassGenerator.Execute<ListResourcesForWebACLRequest>(operation);
             var marshaller = new ListResourcesForWebACLRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -9476,7 +9590,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListResourcesForWebACL").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ListResourcesForWebACLResponseUnmarshaller.Instance.Unmarshall(context) as ListResourcesForWebACLResponse;
@@ -9491,7 +9605,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListResourcesForWebACL");
 
-            var request = InstantiateClassGenerator.Execute<ListResourcesForWebACLRequest>();
+            var request = InstantiateClassGenerator.Execute<ListResourcesForWebACLRequest>(operation);
             var marshaller = new ListResourcesForWebACLRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -9523,7 +9637,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListResourcesForWebACL");
 
-            var request = InstantiateClassGenerator.Execute<ListResourcesForWebACLRequest>();
+            var request = InstantiateClassGenerator.Execute<ListResourcesForWebACLRequest>(operation);
             var marshaller = new ListResourcesForWebACLRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -9555,7 +9669,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListResourcesForWebACL");
 
-            var request = InstantiateClassGenerator.Execute<ListResourcesForWebACLRequest>();
+            var request = InstantiateClassGenerator.Execute<ListResourcesForWebACLRequest>(operation);
             var marshaller = new ListResourcesForWebACLRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -9587,7 +9701,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListResourcesForWebACL");
 
-            var request = InstantiateClassGenerator.Execute<ListResourcesForWebACLRequest>();
+            var request = InstantiateClassGenerator.Execute<ListResourcesForWebACLRequest>(operation);
             var marshaller = new ListResourcesForWebACLRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -9617,7 +9731,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("WAFRegional")]
         public void ListRuleGroupsMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ListRuleGroupsRequest>();
+            var operation = service_model.FindOperation("ListRuleGroups");
+
+            var request = InstantiateClassGenerator.Execute<ListRuleGroupsRequest>(operation);
             var marshaller = new ListRuleGroupsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -9631,7 +9747,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListRuleGroups").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ListRuleGroupsResponseUnmarshaller.Instance.Unmarshall(context) as ListRuleGroupsResponse;
@@ -9646,7 +9762,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListRuleGroups");
 
-            var request = InstantiateClassGenerator.Execute<ListRuleGroupsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListRuleGroupsRequest>(operation);
             var marshaller = new ListRuleGroupsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -9676,7 +9792,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("WAFRegional")]
         public void ListRulesMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ListRulesRequest>();
+            var operation = service_model.FindOperation("ListRules");
+
+            var request = InstantiateClassGenerator.Execute<ListRulesRequest>(operation);
             var marshaller = new ListRulesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -9690,7 +9808,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListRules").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ListRulesResponseUnmarshaller.Instance.Unmarshall(context) as ListRulesResponse;
@@ -9705,7 +9823,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListRules");
 
-            var request = InstantiateClassGenerator.Execute<ListRulesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListRulesRequest>(operation);
             var marshaller = new ListRulesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -9737,7 +9855,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListRules");
 
-            var request = InstantiateClassGenerator.Execute<ListRulesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListRulesRequest>(operation);
             var marshaller = new ListRulesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -9767,7 +9885,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("WAFRegional")]
         public void ListSizeConstraintSetsMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ListSizeConstraintSetsRequest>();
+            var operation = service_model.FindOperation("ListSizeConstraintSets");
+
+            var request = InstantiateClassGenerator.Execute<ListSizeConstraintSetsRequest>(operation);
             var marshaller = new ListSizeConstraintSetsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -9781,7 +9901,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListSizeConstraintSets").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ListSizeConstraintSetsResponseUnmarshaller.Instance.Unmarshall(context) as ListSizeConstraintSetsResponse;
@@ -9796,7 +9916,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListSizeConstraintSets");
 
-            var request = InstantiateClassGenerator.Execute<ListSizeConstraintSetsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListSizeConstraintSetsRequest>(operation);
             var marshaller = new ListSizeConstraintSetsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -9828,7 +9948,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListSizeConstraintSets");
 
-            var request = InstantiateClassGenerator.Execute<ListSizeConstraintSetsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListSizeConstraintSetsRequest>(operation);
             var marshaller = new ListSizeConstraintSetsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -9858,7 +9978,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("WAFRegional")]
         public void ListSqlInjectionMatchSetsMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ListSqlInjectionMatchSetsRequest>();
+            var operation = service_model.FindOperation("ListSqlInjectionMatchSets");
+
+            var request = InstantiateClassGenerator.Execute<ListSqlInjectionMatchSetsRequest>(operation);
             var marshaller = new ListSqlInjectionMatchSetsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -9872,7 +9994,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListSqlInjectionMatchSets").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ListSqlInjectionMatchSetsResponseUnmarshaller.Instance.Unmarshall(context) as ListSqlInjectionMatchSetsResponse;
@@ -9887,7 +10009,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListSqlInjectionMatchSets");
 
-            var request = InstantiateClassGenerator.Execute<ListSqlInjectionMatchSetsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListSqlInjectionMatchSetsRequest>(operation);
             var marshaller = new ListSqlInjectionMatchSetsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -9919,7 +10041,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListSqlInjectionMatchSets");
 
-            var request = InstantiateClassGenerator.Execute<ListSqlInjectionMatchSetsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListSqlInjectionMatchSetsRequest>(operation);
             var marshaller = new ListSqlInjectionMatchSetsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -9949,7 +10071,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("WAFRegional")]
         public void ListSubscribedRuleGroupsMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ListSubscribedRuleGroupsRequest>();
+            var operation = service_model.FindOperation("ListSubscribedRuleGroups");
+
+            var request = InstantiateClassGenerator.Execute<ListSubscribedRuleGroupsRequest>(operation);
             var marshaller = new ListSubscribedRuleGroupsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -9963,7 +10087,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListSubscribedRuleGroups").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ListSubscribedRuleGroupsResponseUnmarshaller.Instance.Unmarshall(context) as ListSubscribedRuleGroupsResponse;
@@ -9978,7 +10102,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListSubscribedRuleGroups");
 
-            var request = InstantiateClassGenerator.Execute<ListSubscribedRuleGroupsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListSubscribedRuleGroupsRequest>(operation);
             var marshaller = new ListSubscribedRuleGroupsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -10010,7 +10134,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListSubscribedRuleGroups");
 
-            var request = InstantiateClassGenerator.Execute<ListSubscribedRuleGroupsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListSubscribedRuleGroupsRequest>(operation);
             var marshaller = new ListSubscribedRuleGroupsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -10040,7 +10164,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("WAFRegional")]
         public void ListTagsForResourceMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var operation = service_model.FindOperation("ListTagsForResource");
+
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>(operation);
             var marshaller = new ListTagsForResourceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -10054,7 +10180,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListTagsForResource").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ListTagsForResourceResponseUnmarshaller.Instance.Unmarshall(context) as ListTagsForResourceResponse;
@@ -10069,7 +10195,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListTagsForResource");
 
-            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>(operation);
             var marshaller = new ListTagsForResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -10101,7 +10227,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListTagsForResource");
 
-            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>(operation);
             var marshaller = new ListTagsForResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -10133,7 +10259,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListTagsForResource");
 
-            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>(operation);
             var marshaller = new ListTagsForResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -10165,7 +10291,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListTagsForResource");
 
-            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>(operation);
             var marshaller = new ListTagsForResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -10197,7 +10323,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListTagsForResource");
 
-            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>(operation);
             var marshaller = new ListTagsForResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -10229,7 +10355,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListTagsForResource");
 
-            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>(operation);
             var marshaller = new ListTagsForResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -10259,7 +10385,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("WAFRegional")]
         public void ListWebACLsMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ListWebACLsRequest>();
+            var operation = service_model.FindOperation("ListWebACLs");
+
+            var request = InstantiateClassGenerator.Execute<ListWebACLsRequest>(operation);
             var marshaller = new ListWebACLsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -10273,7 +10401,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListWebACLs").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ListWebACLsResponseUnmarshaller.Instance.Unmarshall(context) as ListWebACLsResponse;
@@ -10288,7 +10416,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListWebACLs");
 
-            var request = InstantiateClassGenerator.Execute<ListWebACLsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListWebACLsRequest>(operation);
             var marshaller = new ListWebACLsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -10320,7 +10448,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListWebACLs");
 
-            var request = InstantiateClassGenerator.Execute<ListWebACLsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListWebACLsRequest>(operation);
             var marshaller = new ListWebACLsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -10350,7 +10478,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("WAFRegional")]
         public void ListXssMatchSetsMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ListXssMatchSetsRequest>();
+            var operation = service_model.FindOperation("ListXssMatchSets");
+
+            var request = InstantiateClassGenerator.Execute<ListXssMatchSetsRequest>(operation);
             var marshaller = new ListXssMatchSetsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -10364,7 +10494,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListXssMatchSets").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ListXssMatchSetsResponseUnmarshaller.Instance.Unmarshall(context) as ListXssMatchSetsResponse;
@@ -10379,7 +10509,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListXssMatchSets");
 
-            var request = InstantiateClassGenerator.Execute<ListXssMatchSetsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListXssMatchSetsRequest>(operation);
             var marshaller = new ListXssMatchSetsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -10411,7 +10541,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListXssMatchSets");
 
-            var request = InstantiateClassGenerator.Execute<ListXssMatchSetsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListXssMatchSetsRequest>(operation);
             var marshaller = new ListXssMatchSetsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -10441,7 +10571,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("WAFRegional")]
         public void PutLoggingConfigurationMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<PutLoggingConfigurationRequest>();
+            var operation = service_model.FindOperation("PutLoggingConfiguration");
+
+            var request = InstantiateClassGenerator.Execute<PutLoggingConfigurationRequest>(operation);
             var marshaller = new PutLoggingConfigurationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -10455,7 +10587,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("PutLoggingConfiguration").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = PutLoggingConfigurationResponseUnmarshaller.Instance.Unmarshall(context) as PutLoggingConfigurationResponse;
@@ -10470,7 +10602,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("PutLoggingConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<PutLoggingConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<PutLoggingConfigurationRequest>(operation);
             var marshaller = new PutLoggingConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -10502,7 +10634,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("PutLoggingConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<PutLoggingConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<PutLoggingConfigurationRequest>(operation);
             var marshaller = new PutLoggingConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -10534,7 +10666,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("PutLoggingConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<PutLoggingConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<PutLoggingConfigurationRequest>(operation);
             var marshaller = new PutLoggingConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -10566,7 +10698,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("PutLoggingConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<PutLoggingConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<PutLoggingConfigurationRequest>(operation);
             var marshaller = new PutLoggingConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -10596,7 +10728,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("WAFRegional")]
         public void PutPermissionPolicyMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<PutPermissionPolicyRequest>();
+            var operation = service_model.FindOperation("PutPermissionPolicy");
+
+            var request = InstantiateClassGenerator.Execute<PutPermissionPolicyRequest>(operation);
             var marshaller = new PutPermissionPolicyRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -10610,7 +10744,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("PutPermissionPolicy").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = PutPermissionPolicyResponseUnmarshaller.Instance.Unmarshall(context) as PutPermissionPolicyResponse;
@@ -10625,7 +10759,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("PutPermissionPolicy");
 
-            var request = InstantiateClassGenerator.Execute<PutPermissionPolicyRequest>();
+            var request = InstantiateClassGenerator.Execute<PutPermissionPolicyRequest>(operation);
             var marshaller = new PutPermissionPolicyRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -10657,7 +10791,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("PutPermissionPolicy");
 
-            var request = InstantiateClassGenerator.Execute<PutPermissionPolicyRequest>();
+            var request = InstantiateClassGenerator.Execute<PutPermissionPolicyRequest>(operation);
             var marshaller = new PutPermissionPolicyRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -10689,7 +10823,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("PutPermissionPolicy");
 
-            var request = InstantiateClassGenerator.Execute<PutPermissionPolicyRequest>();
+            var request = InstantiateClassGenerator.Execute<PutPermissionPolicyRequest>(operation);
             var marshaller = new PutPermissionPolicyRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -10721,7 +10855,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("PutPermissionPolicy");
 
-            var request = InstantiateClassGenerator.Execute<PutPermissionPolicyRequest>();
+            var request = InstantiateClassGenerator.Execute<PutPermissionPolicyRequest>(operation);
             var marshaller = new PutPermissionPolicyRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -10751,7 +10885,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("WAFRegional")]
         public void TagResourceMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var operation = service_model.FindOperation("TagResource");
+
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -10765,7 +10901,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("TagResource").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = TagResourceResponseUnmarshaller.Instance.Unmarshall(context) as TagResourceResponse;
@@ -10780,7 +10916,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("TagResource");
 
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -10812,7 +10948,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("TagResource");
 
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -10844,7 +10980,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("TagResource");
 
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -10876,7 +11012,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("TagResource");
 
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -10908,7 +11044,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("TagResource");
 
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -10940,7 +11076,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("TagResource");
 
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -10972,7 +11108,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("TagResource");
 
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -11002,7 +11138,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("WAFRegional")]
         public void UntagResourceMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var operation = service_model.FindOperation("UntagResource");
+
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>(operation);
             var marshaller = new UntagResourceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -11016,7 +11154,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("UntagResource").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = UntagResourceResponseUnmarshaller.Instance.Unmarshall(context) as UntagResourceResponse;
@@ -11031,7 +11169,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UntagResource");
 
-            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>(operation);
             var marshaller = new UntagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -11063,7 +11201,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UntagResource");
 
-            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>(operation);
             var marshaller = new UntagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -11095,7 +11233,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UntagResource");
 
-            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>(operation);
             var marshaller = new UntagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -11127,7 +11265,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UntagResource");
 
-            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>(operation);
             var marshaller = new UntagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -11159,7 +11297,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UntagResource");
 
-            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>(operation);
             var marshaller = new UntagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -11191,7 +11329,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UntagResource");
 
-            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>(operation);
             var marshaller = new UntagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -11221,7 +11359,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("WAFRegional")]
         public void UpdateByteMatchSetMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<UpdateByteMatchSetRequest>();
+            var operation = service_model.FindOperation("UpdateByteMatchSet");
+
+            var request = InstantiateClassGenerator.Execute<UpdateByteMatchSetRequest>(operation);
             var marshaller = new UpdateByteMatchSetRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -11235,7 +11375,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("UpdateByteMatchSet").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = UpdateByteMatchSetResponseUnmarshaller.Instance.Unmarshall(context) as UpdateByteMatchSetResponse;
@@ -11250,7 +11390,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateByteMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<UpdateByteMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateByteMatchSetRequest>(operation);
             var marshaller = new UpdateByteMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -11282,7 +11422,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateByteMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<UpdateByteMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateByteMatchSetRequest>(operation);
             var marshaller = new UpdateByteMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -11314,7 +11454,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateByteMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<UpdateByteMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateByteMatchSetRequest>(operation);
             var marshaller = new UpdateByteMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -11346,7 +11486,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateByteMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<UpdateByteMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateByteMatchSetRequest>(operation);
             var marshaller = new UpdateByteMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -11378,7 +11518,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateByteMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<UpdateByteMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateByteMatchSetRequest>(operation);
             var marshaller = new UpdateByteMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -11410,7 +11550,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateByteMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<UpdateByteMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateByteMatchSetRequest>(operation);
             var marshaller = new UpdateByteMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -11442,7 +11582,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateByteMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<UpdateByteMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateByteMatchSetRequest>(operation);
             var marshaller = new UpdateByteMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -11474,7 +11614,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateByteMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<UpdateByteMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateByteMatchSetRequest>(operation);
             var marshaller = new UpdateByteMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -11504,7 +11644,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("WAFRegional")]
         public void UpdateGeoMatchSetMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<UpdateGeoMatchSetRequest>();
+            var operation = service_model.FindOperation("UpdateGeoMatchSet");
+
+            var request = InstantiateClassGenerator.Execute<UpdateGeoMatchSetRequest>(operation);
             var marshaller = new UpdateGeoMatchSetRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -11518,7 +11660,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("UpdateGeoMatchSet").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = UpdateGeoMatchSetResponseUnmarshaller.Instance.Unmarshall(context) as UpdateGeoMatchSetResponse;
@@ -11533,7 +11675,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateGeoMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<UpdateGeoMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateGeoMatchSetRequest>(operation);
             var marshaller = new UpdateGeoMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -11565,7 +11707,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateGeoMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<UpdateGeoMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateGeoMatchSetRequest>(operation);
             var marshaller = new UpdateGeoMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -11597,7 +11739,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateGeoMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<UpdateGeoMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateGeoMatchSetRequest>(operation);
             var marshaller = new UpdateGeoMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -11629,7 +11771,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateGeoMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<UpdateGeoMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateGeoMatchSetRequest>(operation);
             var marshaller = new UpdateGeoMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -11661,7 +11803,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateGeoMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<UpdateGeoMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateGeoMatchSetRequest>(operation);
             var marshaller = new UpdateGeoMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -11693,7 +11835,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateGeoMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<UpdateGeoMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateGeoMatchSetRequest>(operation);
             var marshaller = new UpdateGeoMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -11725,7 +11867,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateGeoMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<UpdateGeoMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateGeoMatchSetRequest>(operation);
             var marshaller = new UpdateGeoMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -11757,7 +11899,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateGeoMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<UpdateGeoMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateGeoMatchSetRequest>(operation);
             var marshaller = new UpdateGeoMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -11789,7 +11931,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateGeoMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<UpdateGeoMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateGeoMatchSetRequest>(operation);
             var marshaller = new UpdateGeoMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -11819,7 +11961,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("WAFRegional")]
         public void UpdateIPSetMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<UpdateIPSetRequest>();
+            var operation = service_model.FindOperation("UpdateIPSet");
+
+            var request = InstantiateClassGenerator.Execute<UpdateIPSetRequest>(operation);
             var marshaller = new UpdateIPSetRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -11833,7 +11977,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("UpdateIPSet").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = UpdateIPSetResponseUnmarshaller.Instance.Unmarshall(context) as UpdateIPSetResponse;
@@ -11848,7 +11992,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateIPSet");
 
-            var request = InstantiateClassGenerator.Execute<UpdateIPSetRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateIPSetRequest>(operation);
             var marshaller = new UpdateIPSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -11880,7 +12024,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateIPSet");
 
-            var request = InstantiateClassGenerator.Execute<UpdateIPSetRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateIPSetRequest>(operation);
             var marshaller = new UpdateIPSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -11912,7 +12056,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateIPSet");
 
-            var request = InstantiateClassGenerator.Execute<UpdateIPSetRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateIPSetRequest>(operation);
             var marshaller = new UpdateIPSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -11944,7 +12088,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateIPSet");
 
-            var request = InstantiateClassGenerator.Execute<UpdateIPSetRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateIPSetRequest>(operation);
             var marshaller = new UpdateIPSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -11976,7 +12120,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateIPSet");
 
-            var request = InstantiateClassGenerator.Execute<UpdateIPSetRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateIPSetRequest>(operation);
             var marshaller = new UpdateIPSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -12008,7 +12152,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateIPSet");
 
-            var request = InstantiateClassGenerator.Execute<UpdateIPSetRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateIPSetRequest>(operation);
             var marshaller = new UpdateIPSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -12040,7 +12184,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateIPSet");
 
-            var request = InstantiateClassGenerator.Execute<UpdateIPSetRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateIPSetRequest>(operation);
             var marshaller = new UpdateIPSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -12072,7 +12216,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateIPSet");
 
-            var request = InstantiateClassGenerator.Execute<UpdateIPSetRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateIPSetRequest>(operation);
             var marshaller = new UpdateIPSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -12104,7 +12248,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateIPSet");
 
-            var request = InstantiateClassGenerator.Execute<UpdateIPSetRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateIPSetRequest>(operation);
             var marshaller = new UpdateIPSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -12134,7 +12278,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("WAFRegional")]
         public void UpdateRateBasedRuleMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<UpdateRateBasedRuleRequest>();
+            var operation = service_model.FindOperation("UpdateRateBasedRule");
+
+            var request = InstantiateClassGenerator.Execute<UpdateRateBasedRuleRequest>(operation);
             var marshaller = new UpdateRateBasedRuleRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -12148,7 +12294,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("UpdateRateBasedRule").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = UpdateRateBasedRuleResponseUnmarshaller.Instance.Unmarshall(context) as UpdateRateBasedRuleResponse;
@@ -12163,7 +12309,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateRateBasedRule");
 
-            var request = InstantiateClassGenerator.Execute<UpdateRateBasedRuleRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateRateBasedRuleRequest>(operation);
             var marshaller = new UpdateRateBasedRuleRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -12195,7 +12341,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateRateBasedRule");
 
-            var request = InstantiateClassGenerator.Execute<UpdateRateBasedRuleRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateRateBasedRuleRequest>(operation);
             var marshaller = new UpdateRateBasedRuleRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -12227,7 +12373,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateRateBasedRule");
 
-            var request = InstantiateClassGenerator.Execute<UpdateRateBasedRuleRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateRateBasedRuleRequest>(operation);
             var marshaller = new UpdateRateBasedRuleRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -12259,7 +12405,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateRateBasedRule");
 
-            var request = InstantiateClassGenerator.Execute<UpdateRateBasedRuleRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateRateBasedRuleRequest>(operation);
             var marshaller = new UpdateRateBasedRuleRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -12291,7 +12437,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateRateBasedRule");
 
-            var request = InstantiateClassGenerator.Execute<UpdateRateBasedRuleRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateRateBasedRuleRequest>(operation);
             var marshaller = new UpdateRateBasedRuleRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -12323,7 +12469,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateRateBasedRule");
 
-            var request = InstantiateClassGenerator.Execute<UpdateRateBasedRuleRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateRateBasedRuleRequest>(operation);
             var marshaller = new UpdateRateBasedRuleRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -12355,7 +12501,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateRateBasedRule");
 
-            var request = InstantiateClassGenerator.Execute<UpdateRateBasedRuleRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateRateBasedRuleRequest>(operation);
             var marshaller = new UpdateRateBasedRuleRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -12387,7 +12533,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateRateBasedRule");
 
-            var request = InstantiateClassGenerator.Execute<UpdateRateBasedRuleRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateRateBasedRuleRequest>(operation);
             var marshaller = new UpdateRateBasedRuleRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -12419,7 +12565,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateRateBasedRule");
 
-            var request = InstantiateClassGenerator.Execute<UpdateRateBasedRuleRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateRateBasedRuleRequest>(operation);
             var marshaller = new UpdateRateBasedRuleRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -12449,7 +12595,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("WAFRegional")]
         public void UpdateRegexMatchSetMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<UpdateRegexMatchSetRequest>();
+            var operation = service_model.FindOperation("UpdateRegexMatchSet");
+
+            var request = InstantiateClassGenerator.Execute<UpdateRegexMatchSetRequest>(operation);
             var marshaller = new UpdateRegexMatchSetRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -12463,7 +12611,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("UpdateRegexMatchSet").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = UpdateRegexMatchSetResponseUnmarshaller.Instance.Unmarshall(context) as UpdateRegexMatchSetResponse;
@@ -12478,7 +12626,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateRegexMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<UpdateRegexMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateRegexMatchSetRequest>(operation);
             var marshaller = new UpdateRegexMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -12510,7 +12658,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateRegexMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<UpdateRegexMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateRegexMatchSetRequest>(operation);
             var marshaller = new UpdateRegexMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -12542,7 +12690,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateRegexMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<UpdateRegexMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateRegexMatchSetRequest>(operation);
             var marshaller = new UpdateRegexMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -12574,7 +12722,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateRegexMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<UpdateRegexMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateRegexMatchSetRequest>(operation);
             var marshaller = new UpdateRegexMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -12606,7 +12754,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateRegexMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<UpdateRegexMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateRegexMatchSetRequest>(operation);
             var marshaller = new UpdateRegexMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -12638,7 +12786,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateRegexMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<UpdateRegexMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateRegexMatchSetRequest>(operation);
             var marshaller = new UpdateRegexMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -12670,7 +12818,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateRegexMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<UpdateRegexMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateRegexMatchSetRequest>(operation);
             var marshaller = new UpdateRegexMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -12702,7 +12850,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateRegexMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<UpdateRegexMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateRegexMatchSetRequest>(operation);
             var marshaller = new UpdateRegexMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -12732,7 +12880,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("WAFRegional")]
         public void UpdateRegexPatternSetMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<UpdateRegexPatternSetRequest>();
+            var operation = service_model.FindOperation("UpdateRegexPatternSet");
+
+            var request = InstantiateClassGenerator.Execute<UpdateRegexPatternSetRequest>(operation);
             var marshaller = new UpdateRegexPatternSetRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -12746,7 +12896,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("UpdateRegexPatternSet").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = UpdateRegexPatternSetResponseUnmarshaller.Instance.Unmarshall(context) as UpdateRegexPatternSetResponse;
@@ -12761,7 +12911,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateRegexPatternSet");
 
-            var request = InstantiateClassGenerator.Execute<UpdateRegexPatternSetRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateRegexPatternSetRequest>(operation);
             var marshaller = new UpdateRegexPatternSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -12793,7 +12943,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateRegexPatternSet");
 
-            var request = InstantiateClassGenerator.Execute<UpdateRegexPatternSetRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateRegexPatternSetRequest>(operation);
             var marshaller = new UpdateRegexPatternSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -12825,7 +12975,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateRegexPatternSet");
 
-            var request = InstantiateClassGenerator.Execute<UpdateRegexPatternSetRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateRegexPatternSetRequest>(operation);
             var marshaller = new UpdateRegexPatternSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -12857,7 +13007,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateRegexPatternSet");
 
-            var request = InstantiateClassGenerator.Execute<UpdateRegexPatternSetRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateRegexPatternSetRequest>(operation);
             var marshaller = new UpdateRegexPatternSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -12889,7 +13039,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateRegexPatternSet");
 
-            var request = InstantiateClassGenerator.Execute<UpdateRegexPatternSetRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateRegexPatternSetRequest>(operation);
             var marshaller = new UpdateRegexPatternSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -12921,7 +13071,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateRegexPatternSet");
 
-            var request = InstantiateClassGenerator.Execute<UpdateRegexPatternSetRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateRegexPatternSetRequest>(operation);
             var marshaller = new UpdateRegexPatternSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -12953,7 +13103,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateRegexPatternSet");
 
-            var request = InstantiateClassGenerator.Execute<UpdateRegexPatternSetRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateRegexPatternSetRequest>(operation);
             var marshaller = new UpdateRegexPatternSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -12985,7 +13135,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateRegexPatternSet");
 
-            var request = InstantiateClassGenerator.Execute<UpdateRegexPatternSetRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateRegexPatternSetRequest>(operation);
             var marshaller = new UpdateRegexPatternSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -13015,7 +13165,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("WAFRegional")]
         public void UpdateRuleMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<UpdateRuleRequest>();
+            var operation = service_model.FindOperation("UpdateRule");
+
+            var request = InstantiateClassGenerator.Execute<UpdateRuleRequest>(operation);
             var marshaller = new UpdateRuleRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -13029,7 +13181,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("UpdateRule").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = UpdateRuleResponseUnmarshaller.Instance.Unmarshall(context) as UpdateRuleResponse;
@@ -13044,7 +13196,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateRule");
 
-            var request = InstantiateClassGenerator.Execute<UpdateRuleRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateRuleRequest>(operation);
             var marshaller = new UpdateRuleRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -13076,7 +13228,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateRule");
 
-            var request = InstantiateClassGenerator.Execute<UpdateRuleRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateRuleRequest>(operation);
             var marshaller = new UpdateRuleRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -13108,7 +13260,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateRule");
 
-            var request = InstantiateClassGenerator.Execute<UpdateRuleRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateRuleRequest>(operation);
             var marshaller = new UpdateRuleRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -13140,7 +13292,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateRule");
 
-            var request = InstantiateClassGenerator.Execute<UpdateRuleRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateRuleRequest>(operation);
             var marshaller = new UpdateRuleRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -13172,7 +13324,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateRule");
 
-            var request = InstantiateClassGenerator.Execute<UpdateRuleRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateRuleRequest>(operation);
             var marshaller = new UpdateRuleRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -13204,7 +13356,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateRule");
 
-            var request = InstantiateClassGenerator.Execute<UpdateRuleRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateRuleRequest>(operation);
             var marshaller = new UpdateRuleRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -13236,7 +13388,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateRule");
 
-            var request = InstantiateClassGenerator.Execute<UpdateRuleRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateRuleRequest>(operation);
             var marshaller = new UpdateRuleRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -13268,7 +13420,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateRule");
 
-            var request = InstantiateClassGenerator.Execute<UpdateRuleRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateRuleRequest>(operation);
             var marshaller = new UpdateRuleRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -13300,7 +13452,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateRule");
 
-            var request = InstantiateClassGenerator.Execute<UpdateRuleRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateRuleRequest>(operation);
             var marshaller = new UpdateRuleRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -13330,7 +13482,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("WAFRegional")]
         public void UpdateRuleGroupMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<UpdateRuleGroupRequest>();
+            var operation = service_model.FindOperation("UpdateRuleGroup");
+
+            var request = InstantiateClassGenerator.Execute<UpdateRuleGroupRequest>(operation);
             var marshaller = new UpdateRuleGroupRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -13344,7 +13498,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("UpdateRuleGroup").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = UpdateRuleGroupResponseUnmarshaller.Instance.Unmarshall(context) as UpdateRuleGroupResponse;
@@ -13359,7 +13513,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateRuleGroup");
 
-            var request = InstantiateClassGenerator.Execute<UpdateRuleGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateRuleGroupRequest>(operation);
             var marshaller = new UpdateRuleGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -13391,7 +13545,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateRuleGroup");
 
-            var request = InstantiateClassGenerator.Execute<UpdateRuleGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateRuleGroupRequest>(operation);
             var marshaller = new UpdateRuleGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -13423,7 +13577,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateRuleGroup");
 
-            var request = InstantiateClassGenerator.Execute<UpdateRuleGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateRuleGroupRequest>(operation);
             var marshaller = new UpdateRuleGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -13455,7 +13609,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateRuleGroup");
 
-            var request = InstantiateClassGenerator.Execute<UpdateRuleGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateRuleGroupRequest>(operation);
             var marshaller = new UpdateRuleGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -13487,7 +13641,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateRuleGroup");
 
-            var request = InstantiateClassGenerator.Execute<UpdateRuleGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateRuleGroupRequest>(operation);
             var marshaller = new UpdateRuleGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -13519,7 +13673,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateRuleGroup");
 
-            var request = InstantiateClassGenerator.Execute<UpdateRuleGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateRuleGroupRequest>(operation);
             var marshaller = new UpdateRuleGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -13551,7 +13705,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateRuleGroup");
 
-            var request = InstantiateClassGenerator.Execute<UpdateRuleGroupRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateRuleGroupRequest>(operation);
             var marshaller = new UpdateRuleGroupRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -13581,7 +13735,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("WAFRegional")]
         public void UpdateSizeConstraintSetMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<UpdateSizeConstraintSetRequest>();
+            var operation = service_model.FindOperation("UpdateSizeConstraintSet");
+
+            var request = InstantiateClassGenerator.Execute<UpdateSizeConstraintSetRequest>(operation);
             var marshaller = new UpdateSizeConstraintSetRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -13595,7 +13751,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("UpdateSizeConstraintSet").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = UpdateSizeConstraintSetResponseUnmarshaller.Instance.Unmarshall(context) as UpdateSizeConstraintSetResponse;
@@ -13610,7 +13766,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateSizeConstraintSet");
 
-            var request = InstantiateClassGenerator.Execute<UpdateSizeConstraintSetRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateSizeConstraintSetRequest>(operation);
             var marshaller = new UpdateSizeConstraintSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -13642,7 +13798,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateSizeConstraintSet");
 
-            var request = InstantiateClassGenerator.Execute<UpdateSizeConstraintSetRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateSizeConstraintSetRequest>(operation);
             var marshaller = new UpdateSizeConstraintSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -13674,7 +13830,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateSizeConstraintSet");
 
-            var request = InstantiateClassGenerator.Execute<UpdateSizeConstraintSetRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateSizeConstraintSetRequest>(operation);
             var marshaller = new UpdateSizeConstraintSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -13706,7 +13862,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateSizeConstraintSet");
 
-            var request = InstantiateClassGenerator.Execute<UpdateSizeConstraintSetRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateSizeConstraintSetRequest>(operation);
             var marshaller = new UpdateSizeConstraintSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -13738,7 +13894,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateSizeConstraintSet");
 
-            var request = InstantiateClassGenerator.Execute<UpdateSizeConstraintSetRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateSizeConstraintSetRequest>(operation);
             var marshaller = new UpdateSizeConstraintSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -13770,7 +13926,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateSizeConstraintSet");
 
-            var request = InstantiateClassGenerator.Execute<UpdateSizeConstraintSetRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateSizeConstraintSetRequest>(operation);
             var marshaller = new UpdateSizeConstraintSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -13802,7 +13958,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateSizeConstraintSet");
 
-            var request = InstantiateClassGenerator.Execute<UpdateSizeConstraintSetRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateSizeConstraintSetRequest>(operation);
             var marshaller = new UpdateSizeConstraintSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -13834,7 +13990,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateSizeConstraintSet");
 
-            var request = InstantiateClassGenerator.Execute<UpdateSizeConstraintSetRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateSizeConstraintSetRequest>(operation);
             var marshaller = new UpdateSizeConstraintSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -13866,7 +14022,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateSizeConstraintSet");
 
-            var request = InstantiateClassGenerator.Execute<UpdateSizeConstraintSetRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateSizeConstraintSetRequest>(operation);
             var marshaller = new UpdateSizeConstraintSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -13896,7 +14052,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("WAFRegional")]
         public void UpdateSqlInjectionMatchSetMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<UpdateSqlInjectionMatchSetRequest>();
+            var operation = service_model.FindOperation("UpdateSqlInjectionMatchSet");
+
+            var request = InstantiateClassGenerator.Execute<UpdateSqlInjectionMatchSetRequest>(operation);
             var marshaller = new UpdateSqlInjectionMatchSetRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -13910,7 +14068,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("UpdateSqlInjectionMatchSet").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = UpdateSqlInjectionMatchSetResponseUnmarshaller.Instance.Unmarshall(context) as UpdateSqlInjectionMatchSetResponse;
@@ -13925,7 +14083,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateSqlInjectionMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<UpdateSqlInjectionMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateSqlInjectionMatchSetRequest>(operation);
             var marshaller = new UpdateSqlInjectionMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -13957,7 +14115,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateSqlInjectionMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<UpdateSqlInjectionMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateSqlInjectionMatchSetRequest>(operation);
             var marshaller = new UpdateSqlInjectionMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -13989,7 +14147,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateSqlInjectionMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<UpdateSqlInjectionMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateSqlInjectionMatchSetRequest>(operation);
             var marshaller = new UpdateSqlInjectionMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -14021,7 +14179,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateSqlInjectionMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<UpdateSqlInjectionMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateSqlInjectionMatchSetRequest>(operation);
             var marshaller = new UpdateSqlInjectionMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -14053,7 +14211,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateSqlInjectionMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<UpdateSqlInjectionMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateSqlInjectionMatchSetRequest>(operation);
             var marshaller = new UpdateSqlInjectionMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -14085,7 +14243,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateSqlInjectionMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<UpdateSqlInjectionMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateSqlInjectionMatchSetRequest>(operation);
             var marshaller = new UpdateSqlInjectionMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -14117,7 +14275,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateSqlInjectionMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<UpdateSqlInjectionMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateSqlInjectionMatchSetRequest>(operation);
             var marshaller = new UpdateSqlInjectionMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -14149,7 +14307,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateSqlInjectionMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<UpdateSqlInjectionMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateSqlInjectionMatchSetRequest>(operation);
             var marshaller = new UpdateSqlInjectionMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -14179,7 +14337,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("WAFRegional")]
         public void UpdateWebACLMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<UpdateWebACLRequest>();
+            var operation = service_model.FindOperation("UpdateWebACL");
+
+            var request = InstantiateClassGenerator.Execute<UpdateWebACLRequest>(operation);
             var marshaller = new UpdateWebACLRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -14193,7 +14353,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("UpdateWebACL").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = UpdateWebACLResponseUnmarshaller.Instance.Unmarshall(context) as UpdateWebACLResponse;
@@ -14208,7 +14368,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateWebACL");
 
-            var request = InstantiateClassGenerator.Execute<UpdateWebACLRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateWebACLRequest>(operation);
             var marshaller = new UpdateWebACLRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -14240,7 +14400,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateWebACL");
 
-            var request = InstantiateClassGenerator.Execute<UpdateWebACLRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateWebACLRequest>(operation);
             var marshaller = new UpdateWebACLRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -14272,7 +14432,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateWebACL");
 
-            var request = InstantiateClassGenerator.Execute<UpdateWebACLRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateWebACLRequest>(operation);
             var marshaller = new UpdateWebACLRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -14304,7 +14464,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateWebACL");
 
-            var request = InstantiateClassGenerator.Execute<UpdateWebACLRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateWebACLRequest>(operation);
             var marshaller = new UpdateWebACLRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -14336,7 +14496,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateWebACL");
 
-            var request = InstantiateClassGenerator.Execute<UpdateWebACLRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateWebACLRequest>(operation);
             var marshaller = new UpdateWebACLRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -14368,7 +14528,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateWebACL");
 
-            var request = InstantiateClassGenerator.Execute<UpdateWebACLRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateWebACLRequest>(operation);
             var marshaller = new UpdateWebACLRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -14400,7 +14560,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateWebACL");
 
-            var request = InstantiateClassGenerator.Execute<UpdateWebACLRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateWebACLRequest>(operation);
             var marshaller = new UpdateWebACLRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -14432,7 +14592,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateWebACL");
 
-            var request = InstantiateClassGenerator.Execute<UpdateWebACLRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateWebACLRequest>(operation);
             var marshaller = new UpdateWebACLRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -14464,7 +14624,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateWebACL");
 
-            var request = InstantiateClassGenerator.Execute<UpdateWebACLRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateWebACLRequest>(operation);
             var marshaller = new UpdateWebACLRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -14496,7 +14656,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateWebACL");
 
-            var request = InstantiateClassGenerator.Execute<UpdateWebACLRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateWebACLRequest>(operation);
             var marshaller = new UpdateWebACLRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -14526,7 +14686,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("WAFRegional")]
         public void UpdateXssMatchSetMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<UpdateXssMatchSetRequest>();
+            var operation = service_model.FindOperation("UpdateXssMatchSet");
+
+            var request = InstantiateClassGenerator.Execute<UpdateXssMatchSetRequest>(operation);
             var marshaller = new UpdateXssMatchSetRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -14540,7 +14702,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("UpdateXssMatchSet").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = UpdateXssMatchSetResponseUnmarshaller.Instance.Unmarshall(context) as UpdateXssMatchSetResponse;
@@ -14555,7 +14717,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateXssMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<UpdateXssMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateXssMatchSetRequest>(operation);
             var marshaller = new UpdateXssMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -14587,7 +14749,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateXssMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<UpdateXssMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateXssMatchSetRequest>(operation);
             var marshaller = new UpdateXssMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -14619,7 +14781,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateXssMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<UpdateXssMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateXssMatchSetRequest>(operation);
             var marshaller = new UpdateXssMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -14651,7 +14813,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateXssMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<UpdateXssMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateXssMatchSetRequest>(operation);
             var marshaller = new UpdateXssMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -14683,7 +14845,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateXssMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<UpdateXssMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateXssMatchSetRequest>(operation);
             var marshaller = new UpdateXssMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -14715,7 +14877,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateXssMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<UpdateXssMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateXssMatchSetRequest>(operation);
             var marshaller = new UpdateXssMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -14747,7 +14909,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateXssMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<UpdateXssMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateXssMatchSetRequest>(operation);
             var marshaller = new UpdateXssMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -14779,7 +14941,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateXssMatchSet");
 
-            var request = InstantiateClassGenerator.Execute<UpdateXssMatchSetRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateXssMatchSetRequest>(operation);
             var marshaller = new UpdateXssMatchSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);

@@ -31,6 +31,19 @@ namespace Amazon.MedicalImaging.Model
     /// <summary>
     /// Container for the parameters to the SearchImageSets operation.
     /// Search image sets based on defined input attributes.
+    /// 
+    ///  <note> 
+    /// <para>
+    ///  <code>SearchImageSets</code> accepts a single search query parameter and returns
+    /// a paginated response of all image sets that have the matching criteria. All range
+    /// queries must be input as <code>(lowerBound, upperBound)</code>.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <code>SearchImageSets</code> uses the <code>updatedAt</code> field for sorting in
+    /// decreasing order from latest to oldest.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class SearchImageSetsRequest : AmazonMedicalImagingRequest
     {

@@ -7,6 +7,12 @@
     <pattern>^([a-z]+)-([a-z]+)-([0-9]+)$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MigrationHubConfig.Model.DeleteHomeRegionControlRequest.ControlId</property>
+    <min>1</min>
+    <max>50</max>
+    <pattern>^hrc-[a-z0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MigrationHubConfig.Model.DescribeHomeRegionControlsRequest.ControlId</property>
     <min>1</min>
     <max>50</max>

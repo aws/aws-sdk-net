@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// The required parameters that are needed to connect to a Databricks data source.
+    /// The parameters that are required to connect to a Databricks data source.
     /// </summary>
     public partial class DatabricksParameters
     {

@@ -93,6 +93,12 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                     response.Tags = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("VerificationInfo", targetDepth))
+                {
+                    var unmarshaller = VerificationInfoUnmarshaller.Instance;
+                    response.VerificationInfo = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("VerificationStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

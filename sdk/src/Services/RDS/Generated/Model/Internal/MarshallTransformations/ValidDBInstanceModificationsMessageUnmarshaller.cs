@@ -61,6 +61,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.Storage.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("SupportsDedicatedLogVolume", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.SupportsDedicatedLogVolume = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("ValidProcessorFeatures/AvailableProcessorFeature", targetDepth))
                     {
                         var unmarshaller = AvailableProcessorFeatureUnmarshaller.Instance;

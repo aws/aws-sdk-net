@@ -131,9 +131,17 @@ namespace Amazon.ManagedBlockchainQuery
         /// </summary>
         public static readonly QueryNetwork BITCOIN_MAINNET = new QueryNetwork("BITCOIN_MAINNET");
         /// <summary>
+        /// Constant BITCOIN_TESTNET for QueryNetwork
+        /// </summary>
+        public static readonly QueryNetwork BITCOIN_TESTNET = new QueryNetwork("BITCOIN_TESTNET");
+        /// <summary>
         /// Constant ETHEREUM_MAINNET for QueryNetwork
         /// </summary>
         public static readonly QueryNetwork ETHEREUM_MAINNET = new QueryNetwork("ETHEREUM_MAINNET");
+        /// <summary>
+        /// Constant ETHEREUM_SEPOLIA_TESTNET for QueryNetwork
+        /// </summary>
+        public static readonly QueryNetwork ETHEREUM_SEPOLIA_TESTNET = new QueryNetwork("ETHEREUM_SEPOLIA_TESTNET");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -164,6 +172,60 @@ namespace Amazon.ManagedBlockchainQuery
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator QueryNetwork(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type QueryTokenStandard.
+    /// </summary>
+    public class QueryTokenStandard : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ERC1155 for QueryTokenStandard
+        /// </summary>
+        public static readonly QueryTokenStandard ERC1155 = new QueryTokenStandard("ERC1155");
+        /// <summary>
+        /// Constant ERC20 for QueryTokenStandard
+        /// </summary>
+        public static readonly QueryTokenStandard ERC20 = new QueryTokenStandard("ERC20");
+        /// <summary>
+        /// Constant ERC721 for QueryTokenStandard
+        /// </summary>
+        public static readonly QueryTokenStandard ERC721 = new QueryTokenStandard("ERC721");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public QueryTokenStandard(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static QueryTokenStandard FindValue(string value)
+        {
+            return FindValue<QueryTokenStandard>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator QueryTokenStandard(string value)
         {
             return FindValue(value);
         }

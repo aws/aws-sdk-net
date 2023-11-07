@@ -39,9 +39,9 @@ namespace Amazon.Amplify
     /// Implementation for accessing Amplify
     ///
     /// Amplify enables developers to develop and deploy cloud-powered mobile and web apps.
-    /// The Amplify Console provides a continuous delivery and hosting service for web applications.
+    /// Amplify Hosting provides a continuous delivery and hosting service for web applications.
     /// For more information, see the <a href="https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html">Amplify
-    /// Console User Guide</a>. The Amplify Framework is a comprehensive set of SDKs, libraries,
+    /// Hosting User Guide</a>. The Amplify Framework is a comprehensive set of SDKs, libraries,
     /// tools, and documentation for client app development. For more information, see the
     /// <a href="https://docs.amplify.aws/">Amplify Framework.</a>
     /// </summary>
@@ -208,6 +208,24 @@ namespace Amazon.Amplify
         }
 
         #endregion
+#if AWS_ASYNC_ENUMERABLES_API
+        private IAmplifyPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IAmplifyPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new AmplifyPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
 
         #region Overrides
 
@@ -418,8 +436,15 @@ namespace Amazon.Amplify
 
 
         /// <summary>
-        /// Creates a deployment for a manually deployed Amplify app. Manually deployed apps
-        /// are not connected to a repository.
+        /// Creates a deployment for a manually deployed Amplify app. Manually deployed apps are
+        /// not connected to a repository. 
+        /// 
+        ///  
+        /// <para>
+        /// The maximum duration between the <code>CreateDeployment</code> call and the <code>StartDeployment</code>
+        /// call cannot exceed 8 hours. If the duration exceeds 8 hours, the <code>StartDeployment</code>
+        /// call and the associated <code>Job</code> will fail.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDeployment service method.</param>
         /// <param name="cancellationToken">
@@ -910,7 +935,7 @@ namespace Amazon.Amplify
 
 
         /// <summary>
-        /// Returns an existing Amplify app by appID.
+        /// Returns an existing Amplify app specified by an app ID.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetApp service method.</param>
         /// <param name="cancellationToken">
@@ -1595,7 +1620,14 @@ namespace Amazon.Amplify
 
         /// <summary>
         /// Starts a deployment for a manually deployed app. Manually deployed apps are not connected
-        /// to a repository.
+        /// to a repository. 
+        /// 
+        ///  
+        /// <para>
+        /// The maximum duration between the <code>CreateDeployment</code> call and the <code>StartDeployment</code>
+        /// call cannot exceed 8 hours. If the duration exceeds 8 hours, the <code>StartDeployment</code>
+        /// call and the associated <code>Job</code> will fail.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartDeployment service method.</param>
         /// <param name="cancellationToken">

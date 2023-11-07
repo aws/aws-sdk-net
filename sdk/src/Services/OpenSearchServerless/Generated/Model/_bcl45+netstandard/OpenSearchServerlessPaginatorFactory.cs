@@ -52,6 +52,14 @@ namespace Amazon.OpenSearchServerless.Model
         }
 
         /// <summary>
+        /// Paginator for ListLifecyclePolicies operation
+        ///</summary>
+        public IListLifecyclePoliciesPaginator ListLifecyclePolicies(ListLifecyclePoliciesRequest request) 
+        {
+            return new ListLifecyclePoliciesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListSecurityConfigs operation
         ///</summary>
         public IListSecurityConfigsPaginator ListSecurityConfigs(ListSecurityConfigsRequest request) 

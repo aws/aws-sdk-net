@@ -145,7 +145,7 @@ namespace Amazon.Transfer.Model
         /// Provides the location of the service endpoint used to authenticate users.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=255)]
+        [AWSProperty(Min=0, Max=255)]
         public string Url
         {
             get { return this._url; }

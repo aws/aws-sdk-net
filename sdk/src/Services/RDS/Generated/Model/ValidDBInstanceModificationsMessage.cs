@@ -36,6 +36,7 @@ namespace Amazon.RDS.Model
     public partial class ValidDBInstanceModificationsMessage
     {
         private List<ValidStorageOptions> _storage = new List<ValidStorageOptions>();
+        private bool? _supportsDedicatedLogVolume;
         private List<AvailableProcessorFeature> _validProcessorFeatures = new List<AvailableProcessorFeature>();
 
         /// <summary>
@@ -54,6 +55,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetStorage()
         {
             return this._storage != null && this._storage.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportsDedicatedLogVolume. 
+        /// <para>
+        /// Indicates whether a DB instance supports using a dedicated log volume (DLV).
+        /// </para>
+        /// </summary>
+        public bool SupportsDedicatedLogVolume
+        {
+            get { return this._supportsDedicatedLogVolume.GetValueOrDefault(); }
+            set { this._supportsDedicatedLogVolume = value; }
+        }
+
+        // Check to see if SupportsDedicatedLogVolume property is set
+        internal bool IsSetSupportsDedicatedLogVolume()
+        {
+            return this._supportsDedicatedLogVolume.HasValue; 
         }
 
         /// <summary>

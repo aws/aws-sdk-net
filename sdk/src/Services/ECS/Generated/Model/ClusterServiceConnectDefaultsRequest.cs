@@ -75,7 +75,7 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// If you update the service with an empty string <code>""</code> for the namespace name,
+        /// If you update the cluster with an empty string <code>""</code> for the namespace name,
         /// the cluster configuration for Service Connect is removed. Note that the namespace
         /// will remain in Cloud Map and must be deleted separately.
         /// </para>

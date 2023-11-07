@@ -509,6 +509,10 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.ReplayLimitExceededException">
+        /// Indicates that the request parameter has exceeded the maximum number of concurrent
+        /// message replays.
+        /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.SubscriptionLimitExceededException">
         /// Indicates that the customer already owns the maximum allowed number of subscriptions.
         /// </exception>
@@ -551,6 +555,10 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.ReplayLimitExceededException">
+        /// Indicates that the request parameter has exceeded the maximum number of concurrent
+        /// message replays.
+        /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.SubscriptionLimitExceededException">
         /// Indicates that the customer already owns the maximum allowed number of subscriptions.
         /// </exception>
@@ -590,6 +598,10 @@ namespace Amazon.SimpleNotificationService
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.ReplayLimitExceededException">
+        /// Indicates that the request parameter has exceeded the maximum number of concurrent
+        /// message replays.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.SubscriptionLimitExceededException">
         /// Indicates that the customer already owns the maximum allowed number of subscriptions.
@@ -1310,6 +1322,9 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterException">
         /// Indicates that a request parameter does not comply with the associated constraints.
         /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidStateException">
+        /// Indicates that the specified state is not a valid state for an event source.
+        /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
@@ -1350,6 +1365,9 @@ namespace Amazon.SimpleNotificationService
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterException">
         /// Indicates that a request parameter does not comply with the associated constraints.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidStateException">
+        /// Indicates that the specified state is not a valid state for an event source.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
@@ -2998,13 +3016,13 @@ namespace Amazon.SimpleNotificationService
         /// The ciphertext references a key that doesn't exist or that you don't have access to.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.KMSDisabledException">
-        /// The request was rejected because the specified customer master key (CMK) isn't enabled.
+        /// The request was rejected because the specified Amazon Web Services KMS key isn't enabled.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.KMSInvalidStateException">
         /// The request was rejected because the state of the specified resource isn't valid for
-        /// this request. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects Use of a Customer Master Key</a> in the <i>Key Management Service
-        /// Developer Guide</i>.
+        /// this request. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+        /// states of Amazon Web Services KMS keys</a> in the <i>Key Management Service Developer
+        /// Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.KMSNotFoundException">
         /// The request was rejected because the specified entity or resource can't be found.
@@ -3098,13 +3116,13 @@ namespace Amazon.SimpleNotificationService
         /// The ciphertext references a key that doesn't exist or that you don't have access to.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.KMSDisabledException">
-        /// The request was rejected because the specified customer master key (CMK) isn't enabled.
+        /// The request was rejected because the specified Amazon Web Services KMS key isn't enabled.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.KMSInvalidStateException">
         /// The request was rejected because the state of the specified resource isn't valid for
-        /// this request. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects Use of a Customer Master Key</a> in the <i>Key Management Service
-        /// Developer Guide</i>.
+        /// this request. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+        /// states of Amazon Web Services KMS keys</a> in the <i>Key Management Service Developer
+        /// Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.KMSNotFoundException">
         /// The request was rejected because the specified entity or resource can't be found.
@@ -3197,13 +3215,13 @@ namespace Amazon.SimpleNotificationService
         /// The ciphertext references a key that doesn't exist or that you don't have access to.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.KMSDisabledException">
-        /// The request was rejected because the specified customer master key (CMK) isn't enabled.
+        /// The request was rejected because the specified Amazon Web Services KMS key isn't enabled.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.KMSInvalidStateException">
         /// The request was rejected because the state of the specified resource isn't valid for
-        /// this request. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects Use of a Customer Master Key</a> in the <i>Key Management Service
-        /// Developer Guide</i>.
+        /// this request. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+        /// states of Amazon Web Services KMS keys</a> in the <i>Key Management Service Developer
+        /// Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.KMSNotFoundException">
         /// The request was rejected because the specified entity or resource can't be found.
@@ -3356,13 +3374,13 @@ namespace Amazon.SimpleNotificationService
         /// The ciphertext references a key that doesn't exist or that you don't have access to.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.KMSDisabledException">
-        /// The request was rejected because the specified customer master key (CMK) isn't enabled.
+        /// The request was rejected because the specified Amazon Web Services KMS key isn't enabled.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.KMSInvalidStateException">
         /// The request was rejected because the state of the specified resource isn't valid for
-        /// this request. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects Use of a Customer Master Key</a> in the <i>Key Management Service
-        /// Developer Guide</i>.
+        /// this request. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+        /// states of Amazon Web Services KMS keys</a> in the <i>Key Management Service Developer
+        /// Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.KMSNotFoundException">
         /// The request was rejected because the specified entity or resource can't be found.
@@ -3864,6 +3882,10 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.ReplayLimitExceededException">
+        /// Indicates that the request parameter has exceeded the maximum number of concurrent
+        /// message replays.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetSubscriptionAttributes">REST API Reference for SetSubscriptionAttributes Operation</seealso>
         public virtual SetSubscriptionAttributesResponse SetSubscriptionAttributes(string subscriptionArn, string attributeName, string attributeValue)
         {
@@ -3897,6 +3919,10 @@ namespace Amazon.SimpleNotificationService
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.ReplayLimitExceededException">
+        /// Indicates that the request parameter has exceeded the maximum number of concurrent
+        /// message replays.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetSubscriptionAttributes">REST API Reference for SetSubscriptionAttributes Operation</seealso>
         public virtual SetSubscriptionAttributesResponse SetSubscriptionAttributes(SetSubscriptionAttributesRequest request)
@@ -4076,7 +4102,7 @@ namespace Amazon.SimpleNotificationService
         ///  
         /// <para>
         /// You call the <code>ConfirmSubscription</code> action with the token from the subscription
-        /// response. Confirmation tokens are valid for three days.
+        /// response. Confirmation tokens are valid for two days.
         /// </para>
         ///  
         /// <para>
@@ -4109,6 +4135,10 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
         /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.ReplayLimitExceededException">
+        /// Indicates that the request parameter has exceeded the maximum number of concurrent
+        /// message replays.
+        /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.SubscriptionLimitExceededException">
         /// Indicates that the customer already owns the maximum allowed number of subscriptions.
         /// </exception>
@@ -4132,7 +4162,7 @@ namespace Amazon.SimpleNotificationService
         ///  
         /// <para>
         /// You call the <code>ConfirmSubscription</code> action with the token from the subscription
-        /// response. Confirmation tokens are valid for three days.
+        /// response. Confirmation tokens are valid for two days.
         /// </para>
         ///  
         /// <para>
@@ -4162,6 +4192,10 @@ namespace Amazon.SimpleNotificationService
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.ReplayLimitExceededException">
+        /// Indicates that the request parameter has exceeded the maximum number of concurrent
+        /// message replays.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.SubscriptionLimitExceededException">
         /// Indicates that the customer already owns the maximum allowed number of subscriptions.

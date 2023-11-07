@@ -65,6 +65,12 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAssessmentDataSourceType())
+                {
+                    context.Writer.WritePropertyName("assessmentDataSourceType");
+                    context.Writer.Write(publicRequest.AssessmentDataSourceType);
+                }
+
                 if(publicRequest.IsSetAssessmentTargets())
                 {
                     context.Writer.WritePropertyName("assessmentTargets");

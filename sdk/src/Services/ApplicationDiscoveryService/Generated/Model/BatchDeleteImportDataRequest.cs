@@ -45,7 +45,27 @@ namespace Amazon.ApplicationDiscoveryService.Model
     /// </summary>
     public partial class BatchDeleteImportDataRequest : AmazonApplicationDiscoveryServiceRequest
     {
+        private bool? _deleteHistory;
         private List<string> _importTaskIds = new List<string>();
+
+        /// <summary>
+        /// Gets and sets the property DeleteHistory. 
+        /// <para>
+        ///  Set to <code>true</code> to remove the deleted import task from <a>DescribeImportTasks</a>.
+        /// 
+        /// </para>
+        /// </summary>
+        public bool DeleteHistory
+        {
+            get { return this._deleteHistory.GetValueOrDefault(); }
+            set { this._deleteHistory = value; }
+        }
+
+        // Check to see if DeleteHistory property is set
+        internal bool IsSetDeleteHistory()
+        {
+            return this._deleteHistory.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property ImportTaskIds. 

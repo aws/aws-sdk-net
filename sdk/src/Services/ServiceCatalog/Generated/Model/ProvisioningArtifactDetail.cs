@@ -187,10 +187,23 @@ namespace Amazon.ServiceCatalog.Model
         /// <para>
         /// The type of provisioning artifact.
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
         ///  <code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration file
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>TERRAFORM_CLOUD</code> - Terraform Cloud configuration file
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>EXTERNAL</code> - External configuration file
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public ProvisioningArtifactType Type
         {

@@ -82,6 +82,12 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("pipelineType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PipelineType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("roleArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -92,6 +98,18 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<StageDeclaration, StageDeclarationUnmarshaller>(StageDeclarationUnmarshaller.Instance);
                     unmarshalledObject.Stages = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("triggers", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<PipelineTriggerDeclaration, PipelineTriggerDeclarationUnmarshaller>(PipelineTriggerDeclarationUnmarshaller.Instance);
+                    unmarshalledObject.Triggers = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("variables", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<PipelineVariableDeclaration, PipelineVariableDeclarationUnmarshaller>(PipelineVariableDeclarationUnmarshaller.Instance);
+                    unmarshalledObject.Variables = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("version", targetDepth))

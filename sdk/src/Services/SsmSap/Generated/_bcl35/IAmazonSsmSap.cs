@@ -108,6 +108,9 @@ namespace Amazon.SsmSap
         /// <exception cref="Amazon.SsmSap.Model.InternalServerException">
         /// An internal error has occurred.
         /// </exception>
+        /// <exception cref="Amazon.SsmSap.Model.UnauthorizedException">
+        /// The request is not authorized.
+        /// </exception>
         /// <exception cref="Amazon.SsmSap.Model.ValidationException">
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
@@ -200,6 +203,9 @@ namespace Amazon.SsmSap
         /// <returns>The response from the GetComponent service method, as returned by SsmSap.</returns>
         /// <exception cref="Amazon.SsmSap.Model.InternalServerException">
         /// An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.SsmSap.Model.UnauthorizedException">
+        /// The request is not authorized.
         /// </exception>
         /// <exception cref="Amazon.SsmSap.Model.ValidationException">
         /// The input fails to satisfy the constraints specified by an AWS service.
@@ -440,6 +446,9 @@ namespace Amazon.SsmSap
         /// </exception>
         /// <exception cref="Amazon.SsmSap.Model.ResourceNotFoundException">
         /// The resource is not available.
+        /// </exception>
+        /// <exception cref="Amazon.SsmSap.Model.UnauthorizedException">
+        /// The request is not authorized.
         /// </exception>
         /// <exception cref="Amazon.SsmSap.Model.ValidationException">
         /// The input fails to satisfy the constraints specified by an AWS service.
@@ -702,6 +711,9 @@ namespace Amazon.SsmSap
         /// <exception cref="Amazon.SsmSap.Model.InternalServerException">
         /// An internal error has occurred.
         /// </exception>
+        /// <exception cref="Amazon.SsmSap.Model.ResourceNotFoundException">
+        /// The resource is not available.
+        /// </exception>
         /// <exception cref="Amazon.SsmSap.Model.ValidationException">
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
@@ -753,6 +765,9 @@ namespace Amazon.SsmSap
         /// </exception>
         /// <exception cref="Amazon.SsmSap.Model.ResourceNotFoundException">
         /// The resource is not available.
+        /// </exception>
+        /// <exception cref="Amazon.SsmSap.Model.UnauthorizedException">
+        /// The request is not authorized.
         /// </exception>
         /// <exception cref="Amazon.SsmSap.Model.ValidationException">
         /// The input fails to satisfy the constraints specified by an AWS service.
@@ -903,6 +918,9 @@ namespace Amazon.SsmSap
         /// </exception>
         /// <exception cref="Amazon.SsmSap.Model.ResourceNotFoundException">
         /// The resource is not available.
+        /// </exception>
+        /// <exception cref="Amazon.SsmSap.Model.UnauthorizedException">
+        /// The request is not authorized.
         /// </exception>
         /// <exception cref="Amazon.SsmSap.Model.ValidationException">
         /// The input fails to satisfy the constraints specified by an AWS service.

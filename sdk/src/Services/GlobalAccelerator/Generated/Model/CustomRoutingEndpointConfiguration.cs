@@ -34,7 +34,29 @@ namespace Amazon.GlobalAccelerator.Model
     /// </summary>
     public partial class CustomRoutingEndpointConfiguration
     {
+        private string _attachmentArn;
         private string _endpointId;
+
+        /// <summary>
+        /// Gets and sets the property AttachmentArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the cross-account attachment that specifies the
+        /// endpoints (resources) that can be added to accelerators and principals that have permission
+        /// to add the endpoints to accelerators.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=255)]
+        public string AttachmentArn
+        {
+            get { return this._attachmentArn; }
+            set { this._attachmentArn = value; }
+        }
+
+        // Check to see if AttachmentArn property is set
+        internal bool IsSetAttachmentArn()
+        {
+            return this._attachmentArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property EndpointId. 

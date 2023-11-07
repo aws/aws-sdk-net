@@ -36,6 +36,22 @@ namespace Amazon.EntityResolution.Model
         }
 
         /// <summary>
+        /// Paginator for ListIdMappingJobs operation
+        ///</summary>
+        public IListIdMappingJobsPaginator ListIdMappingJobs(ListIdMappingJobsRequest request) 
+        {
+            return new ListIdMappingJobsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListIdMappingWorkflows operation
+        ///</summary>
+        public IListIdMappingWorkflowsPaginator ListIdMappingWorkflows(ListIdMappingWorkflowsRequest request) 
+        {
+            return new ListIdMappingWorkflowsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListMatchingJobs operation
         ///</summary>
         public IListMatchingJobsPaginator ListMatchingJobs(ListMatchingJobsRequest request) 
@@ -49,6 +65,14 @@ namespace Amazon.EntityResolution.Model
         public IListMatchingWorkflowsPaginator ListMatchingWorkflows(ListMatchingWorkflowsRequest request) 
         {
             return new ListMatchingWorkflowsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListProviderServices operation
+        ///</summary>
+        public IListProviderServicesPaginator ListProviderServices(ListProviderServicesRequest request) 
+        {
+            return new ListProviderServicesPaginator(this.client, request);
         }
 
         /// <summary>

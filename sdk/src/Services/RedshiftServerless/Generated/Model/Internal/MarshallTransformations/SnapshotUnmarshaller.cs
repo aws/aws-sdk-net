@@ -82,6 +82,18 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
                     unmarshalledObject.ActualIncrementalBackupSizeInMegaBytes = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("adminPasswordSecretArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AdminPasswordSecretArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("adminPasswordSecretKmsKeyId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AdminPasswordSecretKmsKeyId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("adminUsername", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

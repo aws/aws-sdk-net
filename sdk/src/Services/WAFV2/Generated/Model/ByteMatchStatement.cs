@@ -178,9 +178,9 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>HeaderOrder</code>: The comma-separated list of header names to match for.
-        /// WAF creates a string that contains the ordered list of header names, from the headers
-        /// in the web request, and then matches against that string. 
+        ///  <code>HeaderOrder</code>: The list of header names to match for. WAF creates a string
+        /// that contains the ordered list of header names, from the headers in the web request,
+        /// and then matches against that string. 
         /// </para>
         ///  </li> </ul> 
         /// <para>

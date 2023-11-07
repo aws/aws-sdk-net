@@ -35,6 +35,7 @@ namespace Amazon.Amplify.Model
     {
         private string _activeJobId;
         private List<string> _associatedResources = new List<string>();
+        private Backend _backend;
         private string _backendEnvironmentArn;
         private string _basicAuthCredentials;
         private string _branchArn;
@@ -96,6 +97,21 @@ namespace Amazon.Amplify.Model
         internal bool IsSetAssociatedResources()
         {
             return this._associatedResources != null && this._associatedResources.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Backend.
+        /// </summary>
+        public Backend Backend
+        {
+            get { return this._backend; }
+            set { this._backend = value; }
+        }
+
+        // Check to see if Backend property is set
+        internal bool IsSetBackend()
+        {
+            return this._backend != null;
         }
 
         /// <summary>

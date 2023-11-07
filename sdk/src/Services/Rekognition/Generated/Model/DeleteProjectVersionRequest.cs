@@ -30,14 +30,15 @@ namespace Amazon.Rekognition.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteProjectVersion operation.
-    /// Deletes an Amazon Rekognition Custom Labels model. 
+    /// Deletes a Rekognition project model or project version, like a Amazon Rekognition
+    /// Custom Labels model or a custom adapter.
     /// 
     ///  
     /// <para>
-    /// You can't delete a model if it is running or if it is training. To check the status
-    /// of a model, use the <code>Status</code> field returned from <a>DescribeProjectVersions</a>.
-    /// To stop a running model call <a>StopProjectVersion</a>. If the model is training,
-    /// wait until it finishes.
+    /// You can't delete a project version if it is running or if it is training. To check
+    /// the status of a project version, use the Status field returned from <a>DescribeProjectVersions</a>.
+    /// To stop a project version call <a>StopProjectVersion</a>. If the project version is
+    /// training, wait until it finishes.
     /// </para>
     ///  
     /// <para>
@@ -52,7 +53,7 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property ProjectVersionArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the model version that you want to delete.
+        /// The Amazon Resource Name (ARN) of the project version that you want to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]

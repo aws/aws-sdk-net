@@ -9,6 +9,7 @@ using System.Reflection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Net;
 using Amazon.Runtime.Documents;
+using ServiceClientGenerator;
 
 namespace AWSSDK_DotNet35.UnitTests.TestTools
 {
@@ -21,29 +22,31 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
     /// </summary>
     public class InstantiateClassGenerator
     {
-        public static T Execute<T>()
+        public static T Execute<T>(Operation operation = null)
             where T : new()
         {
             var type = typeof(T);
-            var result = Execute(type);
+            var result = Execute(type, operation);
             var rootObject = (T)result;
             return rootObject;
         }
 
-        public static object Execute(Type type)
+        public static object Execute(Type type, Operation operation = null)
         {
             var rootObject = Activator.CreateInstance(type);
             TypeCircularReference<Type> tcr = new TypeCircularReference<Type>();
-            InstantiateProperties(tcr, rootObject);
+            InstantiateProperties(tcr, rootObject, operation);
             return rootObject;
         }
 
-        private static void InstantiateProperties(TypeCircularReference<Type> tcr, object owningObject)
+        private static void InstantiateProperties(TypeCircularReference<Type> tcr, object owningObject, Operation operation = null)
         {
             if (owningObject == null)
             {
                 return;
             }
+
+            var hostPrefixMembers = operation == null ? new HashSet<string>() : new HashSet<string>(operation.RequestHostPrefixMembers.Select(x => x.PropertyName));
 
             foreach (var info in owningObject.GetType().GetProperties())
             {
@@ -51,7 +54,23 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
                     continue;
 
                 var type = info.PropertyType;
-                var propertyValue = string.Equals(info.Name, "AccountId") && type == typeof(string) ? "0123456789" : InstantiateType(tcr, type);
+                var isString = type == typeof(string);
+                var isHostPrefix = hostPrefixMembers.Contains(info.Name);
+
+                object propertyValue;
+                if (isString && string.Equals(info.Name, "AccountId"))
+                {
+                    propertyValue = "0123456789";
+                }
+                else if (isString && isHostPrefix)
+                {
+                    propertyValue = "abc-def";
+                }
+                else
+                {
+                    propertyValue = InstantiateType(tcr, type);
+                }
+
                 info.SetMethod.Invoke(owningObject, new object[] { propertyValue });
             }
         }

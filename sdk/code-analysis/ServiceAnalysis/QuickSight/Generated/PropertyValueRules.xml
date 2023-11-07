@@ -4756,6 +4756,20 @@
     <max>65535</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.StarburstParameters.Catalog</property>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.StarburstParameters.Host</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.StarburstParameters.Port</property>
+    <min>1</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.StringDatasetParameter.Id</property>
     <min>1</min>
     <max>128</max>
@@ -5141,10 +5155,29 @@
     <pattern>[\w\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.TotalAggregationOption.FieldId</property>
+    <min>1</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.TreeMapVisual.VisualId</property>
     <min>1</min>
     <max>512</max>
     <pattern>[\w\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.TrinoParameters.Catalog</property>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.TrinoParameters.Host</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.TrinoParameters.Port</property>
+    <min>1</min>
+    <max>65535</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.TwitterParameters.MaxRows</property>

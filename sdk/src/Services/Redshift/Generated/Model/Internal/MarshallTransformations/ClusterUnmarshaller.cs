@@ -263,6 +263,12 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                         unmarshalledObject.IamRoles.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("IpAddressType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.IpAddressType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("KmsKeyId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -281,6 +287,18 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                         unmarshalledObject.ManualSnapshotRetentionPeriod = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("MasterPasswordSecretArn", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.MasterPasswordSecretArn = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("MasterPasswordSecretKmsKeyId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.MasterPasswordSecretKmsKeyId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("MasterUsername", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -291,6 +309,18 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.ModifyStatus = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("MultiAZ", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.MultiAZ = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("MultiAZSecondary", targetDepth))
+                    {
+                        var unmarshaller = SecondaryClusterInfoUnmarshaller.Instance;
+                        unmarshalledObject.MultiAZSecondary = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("NextMaintenanceWindowStartTime", targetDepth))

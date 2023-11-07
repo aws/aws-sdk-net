@@ -76,6 +76,12 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("pipelineType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PipelineType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("updated", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

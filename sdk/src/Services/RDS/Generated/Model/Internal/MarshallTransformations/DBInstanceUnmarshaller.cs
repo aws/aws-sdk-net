@@ -262,6 +262,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.DBSystemId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("DedicatedLogVolume", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.DedicatedLogVolume = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("DeletionProtection", targetDepth))
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;
@@ -322,6 +328,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = IntUnmarshaller.Instance;
                         unmarshalledObject.Iops = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("IsStorageConfigUpgradeAvailable", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.IsStorageConfigUpgradeAvailable = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("KmsKeyId", targetDepth))

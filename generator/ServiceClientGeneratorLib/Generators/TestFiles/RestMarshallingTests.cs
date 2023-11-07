@@ -130,7 +130,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             
             #line default
             #line hidden
-            this.Write("Request>();\r\n            var marshaller = new ");
+            this.Write("Request>(operation);\r\n            var marshaller = new ");
             
             #line 48 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
@@ -812,7 +812,7 @@ if (operation.RequestHeaderMembers.Count(m => m.Shape.IsMap) > 0)
             
             #line default
             #line hidden
-            this.Write("Request>();\r\n            var marshaller = new ");
+            this.Write("Request>(operation);\r\n            var marshaller = new ");
             
             #line 265 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));

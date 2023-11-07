@@ -46,7 +46,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property AppId. 
         /// <para>
-        ///  The unique ID for an Amplify app. 
+        /// The unique ID for an Amplify app. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=20)]
@@ -65,7 +65,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property BranchName. 
         /// <para>
-        ///  The branch name for the job. 
+        /// The name of the branch to use for the job. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -140,7 +140,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property JobId. 
         /// <para>
-        ///  The unique ID for an existing job. This is required if the value of <code>jobType</code>
+        /// The unique ID for an existing job. This is required if the value of <code>jobType</code>
         /// is <code>RETRY</code>. 
         /// </para>
         /// </summary>
@@ -160,7 +160,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property JobReason. 
         /// <para>
-        ///  A descriptive reason for starting this job. 
+        /// A descriptive reason for starting the job.
         /// </para>
         /// </summary>
         [AWSProperty(Max=255)]
@@ -179,11 +179,14 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property JobType. 
         /// <para>
-        ///  Describes the type for the job. The job type <code>RELEASE</code> starts a new job
+        /// Describes the type for the job. The job type <code>RELEASE</code> starts a new job
         /// with the latest change from the specified branch. This value is available only for
-        /// apps that are connected to a repository. The job type <code>RETRY</code> retries an
-        /// existing job. If the job type value is <code>RETRY</code>, the <code>jobId</code>
-        /// is also required. 
+        /// apps that are connected to a repository. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The job type <code>RETRY</code> retries an existing job. If the job type value is
+        /// <code>RETRY</code>, the <code>jobId</code> is also required. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=10)]

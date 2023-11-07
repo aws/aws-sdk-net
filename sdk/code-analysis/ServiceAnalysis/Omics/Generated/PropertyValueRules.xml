@@ -908,6 +908,12 @@
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Omics.Model.GetRunResponse.FailureReason</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Omics.Model.GetRunResponse.Id</property>
     <min>1</min>
     <max>18</max>
@@ -927,7 +933,7 @@
   <property-value-rule>
     <property>Amazon.Omics.Model.GetRunResponse.OutputUri</property>
     <min>1</min>
-    <max>128</max>
+    <max>750</max>
     <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1047,6 +1053,12 @@
   <property-value-rule>
     <property>Amazon.Omics.Model.GetRunTaskResponse.Cpus</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.GetRunTaskResponse.FailureReason</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetRunTaskResponse.Gpus</property>
@@ -1802,7 +1814,7 @@
   <property-value-rule>
     <property>Amazon.Omics.Model.StartRunRequest.OutputUri</property>
     <min>1</min>
-    <max>128</max>
+    <max>750</max>
     <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -2617,6 +2629,14 @@
     <min>1</min>
     <max>18</max>
     <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.RunLogLocation.EngineLogStream</property>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.RunLogLocation.RunLogStream</property>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.SequenceInformation.GeneratedFrom</property>

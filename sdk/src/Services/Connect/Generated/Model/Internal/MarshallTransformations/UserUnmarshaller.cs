@@ -94,6 +94,18 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     unmarshalledObject.IdentityInfo = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LastModifiedRegion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LastModifiedRegion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LastModifiedTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.LastModifiedTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("PhoneConfig", targetDepth))
                 {
                     var unmarshaller = UserPhoneConfigUnmarshaller.Instance;

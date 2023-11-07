@@ -83,6 +83,58 @@ namespace Amazon.OpenSearchServerless
 
         #endregion
                 
+        #region  BatchGetEffectiveLifecyclePolicy
+
+
+
+        /// <summary>
+        /// Returns a list of successful and failed retrievals for the OpenSearch Serverless indexes.
+        /// For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-lifecycle.html#serverless-lifecycle-list">Viewing
+        /// data lifecycle policies</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetEffectiveLifecyclePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchGetEffectiveLifecyclePolicy service method, as returned by OpenSearchServerless.</returns>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
+        /// Thrown when an error internal to the service occurs while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ValidationException">
+        /// Thrown when the HTTP request contains invalid input or is missing required input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/BatchGetEffectiveLifecyclePolicy">REST API Reference for BatchGetEffectiveLifecyclePolicy Operation</seealso>
+        Task<BatchGetEffectiveLifecyclePolicyResponse> BatchGetEffectiveLifecyclePolicyAsync(BatchGetEffectiveLifecyclePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  BatchGetLifecyclePolicy
+
+
+
+        /// <summary>
+        /// Returns one or more configured OpenSearch Serverless lifecycle policies. For more
+        /// information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-lifecycle.html#serverless-lifecycle-list">Viewing
+        /// data lifecycle policies</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetLifecyclePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchGetLifecyclePolicy service method, as returned by OpenSearchServerless.</returns>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
+        /// Thrown when an error internal to the service occurs while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ValidationException">
+        /// Thrown when the HTTP request contains invalid input or is missing required input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/BatchGetLifecyclePolicy">REST API Reference for BatchGetLifecyclePolicy Operation</seealso>
+        Task<BatchGetLifecyclePolicyResponse> BatchGetLifecyclePolicyAsync(BatchGetLifecyclePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  BatchGetVpcEndpoint
 
 
@@ -181,6 +233,42 @@ namespace Amazon.OpenSearchServerless
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/CreateCollection">REST API Reference for CreateCollection Operation</seealso>
         Task<CreateCollectionResponse> CreateCollectionAsync(CreateCollectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateLifecyclePolicy
+
+
+
+        /// <summary>
+        /// Creates a lifecyle policy to be applied to OpenSearch Serverless indexes. Lifecycle
+        /// policies define the number of days or hours to retain the data on an OpenSearch Serverless
+        /// index. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-lifecycle.html#serverless-lifecycle-create">Creating
+        /// data lifecycle policies</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLifecyclePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateLifecyclePolicy service method, as returned by OpenSearchServerless.</returns>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ConflictException">
+        /// When creating a resource, thrown when a resource with the same name already exists
+        /// or is being created. When deleting a resource, thrown when the resource is not in
+        /// the ACTIVE or FAILED state.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
+        /// Thrown when an error internal to the service occurs while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ServiceQuotaExceededException">
+        /// Thrown when you attempt to create more resources than the service allows based on
+        /// service quotas.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ValidationException">
+        /// Thrown when the HTTP request contains invalid input or is missing required input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/CreateLifecyclePolicy">REST API Reference for CreateLifecyclePolicy Operation</seealso>
+        Task<CreateLifecyclePolicyResponse> CreateLifecyclePolicyAsync(CreateLifecyclePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -355,6 +443,39 @@ namespace Amazon.OpenSearchServerless
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/DeleteCollection">REST API Reference for DeleteCollection Operation</seealso>
         Task<DeleteCollectionResponse> DeleteCollectionAsync(DeleteCollectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteLifecyclePolicy
+
+
+
+        /// <summary>
+        /// Deletes an OpenSearch Serverless lifecycle policy. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-lifecycle.html#serverless-lifecycle-delete">Deleting
+        /// data lifecycle policies</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLifecyclePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteLifecyclePolicy service method, as returned by OpenSearchServerless.</returns>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ConflictException">
+        /// When creating a resource, thrown when a resource with the same name already exists
+        /// or is being created. When deleting a resource, thrown when the resource is not in
+        /// the ACTIVE or FAILED state.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
+        /// Thrown when an error internal to the service occurs while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ResourceNotFoundException">
+        /// Thrown when accessing or deleting a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ValidationException">
+        /// Thrown when the HTTP request contains invalid input or is missing required input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/DeleteLifecyclePolicy">REST API Reference for DeleteLifecyclePolicy Operation</seealso>
+        Task<DeleteLifecyclePolicyResponse> DeleteLifecyclePolicyAsync(DeleteLifecyclePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -647,6 +768,32 @@ namespace Amazon.OpenSearchServerless
 
         #endregion
                 
+        #region  ListLifecyclePolicies
+
+
+
+        /// <summary>
+        /// Returns a list of OpenSearch Serverless lifecycle policies. For more information,
+        /// see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-lifecycle.html#serverless-lifecycle-list">Viewing
+        /// data lifecycle policies</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListLifecyclePolicies service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListLifecyclePolicies service method, as returned by OpenSearchServerless.</returns>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
+        /// Thrown when an error internal to the service occurs while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ValidationException">
+        /// Thrown when the HTTP request contains invalid input or is missing required input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/ListLifecyclePolicies">REST API Reference for ListLifecyclePolicies Operation</seealso>
+        Task<ListLifecyclePoliciesResponse> ListLifecyclePoliciesAsync(ListLifecyclePoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListSecurityConfigs
 
 
@@ -909,6 +1056,43 @@ namespace Amazon.OpenSearchServerless
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/UpdateCollection">REST API Reference for UpdateCollection Operation</seealso>
         Task<UpdateCollectionResponse> UpdateCollectionAsync(UpdateCollectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateLifecyclePolicy
+
+
+
+        /// <summary>
+        /// Updates an OpenSearch Serverless access policy. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-lifecycle.html#serverless-lifecycle-update">Updating
+        /// data lifecycle policies</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLifecyclePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateLifecyclePolicy service method, as returned by OpenSearchServerless.</returns>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ConflictException">
+        /// When creating a resource, thrown when a resource with the same name already exists
+        /// or is being created. When deleting a resource, thrown when the resource is not in
+        /// the ACTIVE or FAILED state.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
+        /// Thrown when an error internal to the service occurs while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ResourceNotFoundException">
+        /// Thrown when accessing or deleting a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ServiceQuotaExceededException">
+        /// Thrown when you attempt to create more resources than the service allows based on
+        /// service quotas.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ValidationException">
+        /// Thrown when the HTTP request contains invalid input or is missing required input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/UpdateLifecyclePolicy">REST API Reference for UpdateLifecyclePolicy Operation</seealso>
+        Task<UpdateLifecyclePolicyResponse> UpdateLifecyclePolicyAsync(UpdateLifecyclePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

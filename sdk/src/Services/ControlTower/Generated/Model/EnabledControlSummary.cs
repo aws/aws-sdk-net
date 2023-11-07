@@ -33,13 +33,38 @@ namespace Amazon.ControlTower.Model
     /// </summary>
     public partial class EnabledControlSummary
     {
+        private string _arn;
         private string _controlIdentifier;
+        private DriftStatusSummary _driftStatusSummary;
+        private EnablementStatusSummary _statusSummary;
+        private string _targetIdentifier;
+
+        /// <summary>
+        /// Gets and sets the property Arn. 
+        /// <para>
+        ///  The ARN of the enabled control. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string Arn
+        {
+            get { return this._arn; }
+            set { this._arn = value; }
+        }
+
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
+        {
+            return this._arn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ControlIdentifier. 
         /// <para>
         /// The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls
-        /// are permitted, with the exception of the <b>Region deny</b> guardrail.
+        /// are permitted, with the exception of the <b>Region deny</b> control. For information
+        /// on how to find the <code>controlIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the
+        /// overview page</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -53,6 +78,58 @@ namespace Amazon.ControlTower.Model
         internal bool IsSetControlIdentifier()
         {
             return this._controlIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DriftStatusSummary. 
+        /// <para>
+        ///  The drift status of the enabled control. 
+        /// </para>
+        /// </summary>
+        public DriftStatusSummary DriftStatusSummary
+        {
+            get { return this._driftStatusSummary; }
+            set { this._driftStatusSummary = value; }
+        }
+
+        // Check to see if DriftStatusSummary property is set
+        internal bool IsSetDriftStatusSummary()
+        {
+            return this._driftStatusSummary != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StatusSummary. <zonbook></zonbook><xhtml></xhtml>
+        /// </summary>
+        public EnablementStatusSummary StatusSummary
+        {
+            get { return this._statusSummary; }
+            set { this._statusSummary = value; }
+        }
+
+        // Check to see if StatusSummary property is set
+        internal bool IsSetStatusSummary()
+        {
+            return this._statusSummary != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetIdentifier. 
+        /// <para>
+        ///  The ARN of the organizational unit. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string TargetIdentifier
+        {
+            get { return this._targetIdentifier; }
+            set { this._targetIdentifier = value; }
+        }
+
+        // Check to see if TargetIdentifier property is set
+        internal bool IsSetTargetIdentifier()
+        {
+            return this._targetIdentifier != null;
         }
 
     }

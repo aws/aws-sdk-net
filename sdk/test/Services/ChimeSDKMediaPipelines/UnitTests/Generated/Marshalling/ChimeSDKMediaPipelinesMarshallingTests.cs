@@ -49,7 +49,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateMediaCapturePipeline");
 
-            var request = InstantiateClassGenerator.Execute<CreateMediaCapturePipelineRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateMediaCapturePipelineRequest>(operation);
             var marshaller = new CreateMediaCapturePipelineRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -79,7 +79,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateMediaCapturePipeline");
 
-            var request = InstantiateClassGenerator.Execute<CreateMediaCapturePipelineRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateMediaCapturePipelineRequest>(operation);
             var marshaller = new CreateMediaCapturePipelineRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -111,7 +111,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateMediaCapturePipeline");
 
-            var request = InstantiateClassGenerator.Execute<CreateMediaCapturePipelineRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateMediaCapturePipelineRequest>(operation);
             var marshaller = new CreateMediaCapturePipelineRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -143,7 +143,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateMediaCapturePipeline");
 
-            var request = InstantiateClassGenerator.Execute<CreateMediaCapturePipelineRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateMediaCapturePipelineRequest>(operation);
             var marshaller = new CreateMediaCapturePipelineRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -175,7 +175,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateMediaCapturePipeline");
 
-            var request = InstantiateClassGenerator.Execute<CreateMediaCapturePipelineRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateMediaCapturePipelineRequest>(operation);
             var marshaller = new CreateMediaCapturePipelineRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -207,7 +207,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateMediaCapturePipeline");
 
-            var request = InstantiateClassGenerator.Execute<CreateMediaCapturePipelineRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateMediaCapturePipelineRequest>(operation);
             var marshaller = new CreateMediaCapturePipelineRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -239,7 +239,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateMediaCapturePipeline");
 
-            var request = InstantiateClassGenerator.Execute<CreateMediaCapturePipelineRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateMediaCapturePipelineRequest>(operation);
             var marshaller = new CreateMediaCapturePipelineRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -271,7 +271,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateMediaCapturePipeline");
 
-            var request = InstantiateClassGenerator.Execute<CreateMediaCapturePipelineRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateMediaCapturePipelineRequest>(operation);
             var marshaller = new CreateMediaCapturePipelineRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -303,7 +303,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateMediaConcatenationPipeline");
 
-            var request = InstantiateClassGenerator.Execute<CreateMediaConcatenationPipelineRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateMediaConcatenationPipelineRequest>(operation);
             var marshaller = new CreateMediaConcatenationPipelineRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -333,7 +333,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateMediaConcatenationPipeline");
 
-            var request = InstantiateClassGenerator.Execute<CreateMediaConcatenationPipelineRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateMediaConcatenationPipelineRequest>(operation);
             var marshaller = new CreateMediaConcatenationPipelineRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -365,7 +365,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateMediaConcatenationPipeline");
 
-            var request = InstantiateClassGenerator.Execute<CreateMediaConcatenationPipelineRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateMediaConcatenationPipelineRequest>(operation);
             var marshaller = new CreateMediaConcatenationPipelineRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -397,7 +397,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateMediaConcatenationPipeline");
 
-            var request = InstantiateClassGenerator.Execute<CreateMediaConcatenationPipelineRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateMediaConcatenationPipelineRequest>(operation);
             var marshaller = new CreateMediaConcatenationPipelineRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -429,7 +429,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateMediaConcatenationPipeline");
 
-            var request = InstantiateClassGenerator.Execute<CreateMediaConcatenationPipelineRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateMediaConcatenationPipelineRequest>(operation);
             var marshaller = new CreateMediaConcatenationPipelineRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -461,7 +461,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateMediaConcatenationPipeline");
 
-            var request = InstantiateClassGenerator.Execute<CreateMediaConcatenationPipelineRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateMediaConcatenationPipelineRequest>(operation);
             var marshaller = new CreateMediaConcatenationPipelineRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -493,7 +493,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateMediaConcatenationPipeline");
 
-            var request = InstantiateClassGenerator.Execute<CreateMediaConcatenationPipelineRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateMediaConcatenationPipelineRequest>(operation);
             var marshaller = new CreateMediaConcatenationPipelineRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -525,7 +525,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateMediaConcatenationPipeline");
 
-            var request = InstantiateClassGenerator.Execute<CreateMediaConcatenationPipelineRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateMediaConcatenationPipelineRequest>(operation);
             var marshaller = new CreateMediaConcatenationPipelineRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -557,7 +557,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateMediaInsightsPipeline");
 
-            var request = InstantiateClassGenerator.Execute<CreateMediaInsightsPipelineRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateMediaInsightsPipelineRequest>(operation);
             var marshaller = new CreateMediaInsightsPipelineRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -587,7 +587,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateMediaInsightsPipeline");
 
-            var request = InstantiateClassGenerator.Execute<CreateMediaInsightsPipelineRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateMediaInsightsPipelineRequest>(operation);
             var marshaller = new CreateMediaInsightsPipelineRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -619,7 +619,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateMediaInsightsPipeline");
 
-            var request = InstantiateClassGenerator.Execute<CreateMediaInsightsPipelineRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateMediaInsightsPipelineRequest>(operation);
             var marshaller = new CreateMediaInsightsPipelineRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -651,7 +651,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateMediaInsightsPipeline");
 
-            var request = InstantiateClassGenerator.Execute<CreateMediaInsightsPipelineRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateMediaInsightsPipelineRequest>(operation);
             var marshaller = new CreateMediaInsightsPipelineRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -683,7 +683,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateMediaInsightsPipeline");
 
-            var request = InstantiateClassGenerator.Execute<CreateMediaInsightsPipelineRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateMediaInsightsPipelineRequest>(operation);
             var marshaller = new CreateMediaInsightsPipelineRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -715,7 +715,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateMediaInsightsPipeline");
 
-            var request = InstantiateClassGenerator.Execute<CreateMediaInsightsPipelineRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateMediaInsightsPipelineRequest>(operation);
             var marshaller = new CreateMediaInsightsPipelineRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -747,7 +747,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateMediaInsightsPipeline");
 
-            var request = InstantiateClassGenerator.Execute<CreateMediaInsightsPipelineRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateMediaInsightsPipelineRequest>(operation);
             var marshaller = new CreateMediaInsightsPipelineRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -779,7 +779,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateMediaInsightsPipeline");
 
-            var request = InstantiateClassGenerator.Execute<CreateMediaInsightsPipelineRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateMediaInsightsPipelineRequest>(operation);
             var marshaller = new CreateMediaInsightsPipelineRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -811,7 +811,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateMediaInsightsPipeline");
 
-            var request = InstantiateClassGenerator.Execute<CreateMediaInsightsPipelineRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateMediaInsightsPipelineRequest>(operation);
             var marshaller = new CreateMediaInsightsPipelineRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -843,7 +843,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateMediaInsightsPipelineConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<CreateMediaInsightsPipelineConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateMediaInsightsPipelineConfigurationRequest>(operation);
             var marshaller = new CreateMediaInsightsPipelineConfigurationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -873,7 +873,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateMediaInsightsPipelineConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<CreateMediaInsightsPipelineConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateMediaInsightsPipelineConfigurationRequest>(operation);
             var marshaller = new CreateMediaInsightsPipelineConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -905,7 +905,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateMediaInsightsPipelineConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<CreateMediaInsightsPipelineConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateMediaInsightsPipelineConfigurationRequest>(operation);
             var marshaller = new CreateMediaInsightsPipelineConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -937,7 +937,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateMediaInsightsPipelineConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<CreateMediaInsightsPipelineConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateMediaInsightsPipelineConfigurationRequest>(operation);
             var marshaller = new CreateMediaInsightsPipelineConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -969,7 +969,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateMediaInsightsPipelineConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<CreateMediaInsightsPipelineConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateMediaInsightsPipelineConfigurationRequest>(operation);
             var marshaller = new CreateMediaInsightsPipelineConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1001,7 +1001,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateMediaInsightsPipelineConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<CreateMediaInsightsPipelineConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateMediaInsightsPipelineConfigurationRequest>(operation);
             var marshaller = new CreateMediaInsightsPipelineConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1033,7 +1033,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateMediaInsightsPipelineConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<CreateMediaInsightsPipelineConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateMediaInsightsPipelineConfigurationRequest>(operation);
             var marshaller = new CreateMediaInsightsPipelineConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1065,7 +1065,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateMediaInsightsPipelineConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<CreateMediaInsightsPipelineConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateMediaInsightsPipelineConfigurationRequest>(operation);
             var marshaller = new CreateMediaInsightsPipelineConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1097,7 +1097,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateMediaInsightsPipelineConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<CreateMediaInsightsPipelineConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateMediaInsightsPipelineConfigurationRequest>(operation);
             var marshaller = new CreateMediaInsightsPipelineConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1129,7 +1129,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateMediaLiveConnectorPipeline");
 
-            var request = InstantiateClassGenerator.Execute<CreateMediaLiveConnectorPipelineRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateMediaLiveConnectorPipelineRequest>(operation);
             var marshaller = new CreateMediaLiveConnectorPipelineRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1159,7 +1159,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateMediaLiveConnectorPipeline");
 
-            var request = InstantiateClassGenerator.Execute<CreateMediaLiveConnectorPipelineRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateMediaLiveConnectorPipelineRequest>(operation);
             var marshaller = new CreateMediaLiveConnectorPipelineRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1191,7 +1191,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateMediaLiveConnectorPipeline");
 
-            var request = InstantiateClassGenerator.Execute<CreateMediaLiveConnectorPipelineRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateMediaLiveConnectorPipelineRequest>(operation);
             var marshaller = new CreateMediaLiveConnectorPipelineRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1223,7 +1223,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateMediaLiveConnectorPipeline");
 
-            var request = InstantiateClassGenerator.Execute<CreateMediaLiveConnectorPipelineRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateMediaLiveConnectorPipelineRequest>(operation);
             var marshaller = new CreateMediaLiveConnectorPipelineRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1255,7 +1255,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateMediaLiveConnectorPipeline");
 
-            var request = InstantiateClassGenerator.Execute<CreateMediaLiveConnectorPipelineRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateMediaLiveConnectorPipelineRequest>(operation);
             var marshaller = new CreateMediaLiveConnectorPipelineRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1287,7 +1287,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateMediaLiveConnectorPipeline");
 
-            var request = InstantiateClassGenerator.Execute<CreateMediaLiveConnectorPipelineRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateMediaLiveConnectorPipelineRequest>(operation);
             var marshaller = new CreateMediaLiveConnectorPipelineRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1319,7 +1319,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateMediaLiveConnectorPipeline");
 
-            var request = InstantiateClassGenerator.Execute<CreateMediaLiveConnectorPipelineRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateMediaLiveConnectorPipelineRequest>(operation);
             var marshaller = new CreateMediaLiveConnectorPipelineRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1351,7 +1351,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateMediaLiveConnectorPipeline");
 
-            var request = InstantiateClassGenerator.Execute<CreateMediaLiveConnectorPipelineRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateMediaLiveConnectorPipelineRequest>(operation);
             var marshaller = new CreateMediaLiveConnectorPipelineRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1383,7 +1383,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateMediaPipelineKinesisVideoStreamPool");
 
-            var request = InstantiateClassGenerator.Execute<CreateMediaPipelineKinesisVideoStreamPoolRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateMediaPipelineKinesisVideoStreamPoolRequest>(operation);
             var marshaller = new CreateMediaPipelineKinesisVideoStreamPoolRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1413,7 +1413,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateMediaPipelineKinesisVideoStreamPool");
 
-            var request = InstantiateClassGenerator.Execute<CreateMediaPipelineKinesisVideoStreamPoolRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateMediaPipelineKinesisVideoStreamPoolRequest>(operation);
             var marshaller = new CreateMediaPipelineKinesisVideoStreamPoolRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1445,7 +1445,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateMediaPipelineKinesisVideoStreamPool");
 
-            var request = InstantiateClassGenerator.Execute<CreateMediaPipelineKinesisVideoStreamPoolRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateMediaPipelineKinesisVideoStreamPoolRequest>(operation);
             var marshaller = new CreateMediaPipelineKinesisVideoStreamPoolRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1477,7 +1477,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateMediaPipelineKinesisVideoStreamPool");
 
-            var request = InstantiateClassGenerator.Execute<CreateMediaPipelineKinesisVideoStreamPoolRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateMediaPipelineKinesisVideoStreamPoolRequest>(operation);
             var marshaller = new CreateMediaPipelineKinesisVideoStreamPoolRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1509,7 +1509,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateMediaPipelineKinesisVideoStreamPool");
 
-            var request = InstantiateClassGenerator.Execute<CreateMediaPipelineKinesisVideoStreamPoolRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateMediaPipelineKinesisVideoStreamPoolRequest>(operation);
             var marshaller = new CreateMediaPipelineKinesisVideoStreamPoolRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1541,7 +1541,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateMediaPipelineKinesisVideoStreamPool");
 
-            var request = InstantiateClassGenerator.Execute<CreateMediaPipelineKinesisVideoStreamPoolRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateMediaPipelineKinesisVideoStreamPoolRequest>(operation);
             var marshaller = new CreateMediaPipelineKinesisVideoStreamPoolRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1573,7 +1573,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateMediaPipelineKinesisVideoStreamPool");
 
-            var request = InstantiateClassGenerator.Execute<CreateMediaPipelineKinesisVideoStreamPoolRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateMediaPipelineKinesisVideoStreamPoolRequest>(operation);
             var marshaller = new CreateMediaPipelineKinesisVideoStreamPoolRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1605,7 +1605,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateMediaPipelineKinesisVideoStreamPool");
 
-            var request = InstantiateClassGenerator.Execute<CreateMediaPipelineKinesisVideoStreamPoolRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateMediaPipelineKinesisVideoStreamPoolRequest>(operation);
             var marshaller = new CreateMediaPipelineKinesisVideoStreamPoolRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1637,7 +1637,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateMediaPipelineKinesisVideoStreamPool");
 
-            var request = InstantiateClassGenerator.Execute<CreateMediaPipelineKinesisVideoStreamPoolRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateMediaPipelineKinesisVideoStreamPoolRequest>(operation);
             var marshaller = new CreateMediaPipelineKinesisVideoStreamPoolRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1669,7 +1669,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateMediaStreamPipeline");
 
-            var request = InstantiateClassGenerator.Execute<CreateMediaStreamPipelineRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateMediaStreamPipelineRequest>(operation);
             var marshaller = new CreateMediaStreamPipelineRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1699,7 +1699,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateMediaStreamPipeline");
 
-            var request = InstantiateClassGenerator.Execute<CreateMediaStreamPipelineRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateMediaStreamPipelineRequest>(operation);
             var marshaller = new CreateMediaStreamPipelineRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1731,7 +1731,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateMediaStreamPipeline");
 
-            var request = InstantiateClassGenerator.Execute<CreateMediaStreamPipelineRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateMediaStreamPipelineRequest>(operation);
             var marshaller = new CreateMediaStreamPipelineRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1763,7 +1763,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateMediaStreamPipeline");
 
-            var request = InstantiateClassGenerator.Execute<CreateMediaStreamPipelineRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateMediaStreamPipelineRequest>(operation);
             var marshaller = new CreateMediaStreamPipelineRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1795,7 +1795,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateMediaStreamPipeline");
 
-            var request = InstantiateClassGenerator.Execute<CreateMediaStreamPipelineRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateMediaStreamPipelineRequest>(operation);
             var marshaller = new CreateMediaStreamPipelineRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1827,7 +1827,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateMediaStreamPipeline");
 
-            var request = InstantiateClassGenerator.Execute<CreateMediaStreamPipelineRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateMediaStreamPipelineRequest>(operation);
             var marshaller = new CreateMediaStreamPipelineRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1859,7 +1859,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateMediaStreamPipeline");
 
-            var request = InstantiateClassGenerator.Execute<CreateMediaStreamPipelineRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateMediaStreamPipelineRequest>(operation);
             var marshaller = new CreateMediaStreamPipelineRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1891,7 +1891,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateMediaStreamPipeline");
 
-            var request = InstantiateClassGenerator.Execute<CreateMediaStreamPipelineRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateMediaStreamPipelineRequest>(operation);
             var marshaller = new CreateMediaStreamPipelineRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1923,7 +1923,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateMediaStreamPipeline");
 
-            var request = InstantiateClassGenerator.Execute<CreateMediaStreamPipelineRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateMediaStreamPipelineRequest>(operation);
             var marshaller = new CreateMediaStreamPipelineRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1955,7 +1955,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteMediaCapturePipeline");
 
-            var request = InstantiateClassGenerator.Execute<DeleteMediaCapturePipelineRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteMediaCapturePipelineRequest>(operation);
             var marshaller = new DeleteMediaCapturePipelineRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1971,7 +1971,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteMediaCapturePipeline");
 
-            var request = InstantiateClassGenerator.Execute<DeleteMediaCapturePipelineRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteMediaCapturePipelineRequest>(operation);
             var marshaller = new DeleteMediaCapturePipelineRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2003,7 +2003,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteMediaCapturePipeline");
 
-            var request = InstantiateClassGenerator.Execute<DeleteMediaCapturePipelineRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteMediaCapturePipelineRequest>(operation);
             var marshaller = new DeleteMediaCapturePipelineRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2035,7 +2035,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteMediaCapturePipeline");
 
-            var request = InstantiateClassGenerator.Execute<DeleteMediaCapturePipelineRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteMediaCapturePipelineRequest>(operation);
             var marshaller = new DeleteMediaCapturePipelineRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2067,7 +2067,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteMediaCapturePipeline");
 
-            var request = InstantiateClassGenerator.Execute<DeleteMediaCapturePipelineRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteMediaCapturePipelineRequest>(operation);
             var marshaller = new DeleteMediaCapturePipelineRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2099,7 +2099,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteMediaCapturePipeline");
 
-            var request = InstantiateClassGenerator.Execute<DeleteMediaCapturePipelineRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteMediaCapturePipelineRequest>(operation);
             var marshaller = new DeleteMediaCapturePipelineRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2131,7 +2131,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteMediaCapturePipeline");
 
-            var request = InstantiateClassGenerator.Execute<DeleteMediaCapturePipelineRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteMediaCapturePipelineRequest>(operation);
             var marshaller = new DeleteMediaCapturePipelineRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2163,7 +2163,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteMediaCapturePipeline");
 
-            var request = InstantiateClassGenerator.Execute<DeleteMediaCapturePipelineRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteMediaCapturePipelineRequest>(operation);
             var marshaller = new DeleteMediaCapturePipelineRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2195,7 +2195,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteMediaInsightsPipelineConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<DeleteMediaInsightsPipelineConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteMediaInsightsPipelineConfigurationRequest>(operation);
             var marshaller = new DeleteMediaInsightsPipelineConfigurationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -2211,7 +2211,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteMediaInsightsPipelineConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<DeleteMediaInsightsPipelineConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteMediaInsightsPipelineConfigurationRequest>(operation);
             var marshaller = new DeleteMediaInsightsPipelineConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2243,7 +2243,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteMediaInsightsPipelineConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<DeleteMediaInsightsPipelineConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteMediaInsightsPipelineConfigurationRequest>(operation);
             var marshaller = new DeleteMediaInsightsPipelineConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2275,7 +2275,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteMediaInsightsPipelineConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<DeleteMediaInsightsPipelineConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteMediaInsightsPipelineConfigurationRequest>(operation);
             var marshaller = new DeleteMediaInsightsPipelineConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2307,7 +2307,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteMediaInsightsPipelineConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<DeleteMediaInsightsPipelineConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteMediaInsightsPipelineConfigurationRequest>(operation);
             var marshaller = new DeleteMediaInsightsPipelineConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2339,7 +2339,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteMediaInsightsPipelineConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<DeleteMediaInsightsPipelineConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteMediaInsightsPipelineConfigurationRequest>(operation);
             var marshaller = new DeleteMediaInsightsPipelineConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2371,7 +2371,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteMediaInsightsPipelineConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<DeleteMediaInsightsPipelineConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteMediaInsightsPipelineConfigurationRequest>(operation);
             var marshaller = new DeleteMediaInsightsPipelineConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2403,7 +2403,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteMediaInsightsPipelineConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<DeleteMediaInsightsPipelineConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteMediaInsightsPipelineConfigurationRequest>(operation);
             var marshaller = new DeleteMediaInsightsPipelineConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2435,7 +2435,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteMediaInsightsPipelineConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<DeleteMediaInsightsPipelineConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteMediaInsightsPipelineConfigurationRequest>(operation);
             var marshaller = new DeleteMediaInsightsPipelineConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2467,7 +2467,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteMediaPipeline");
 
-            var request = InstantiateClassGenerator.Execute<DeleteMediaPipelineRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteMediaPipelineRequest>(operation);
             var marshaller = new DeleteMediaPipelineRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -2483,7 +2483,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteMediaPipeline");
 
-            var request = InstantiateClassGenerator.Execute<DeleteMediaPipelineRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteMediaPipelineRequest>(operation);
             var marshaller = new DeleteMediaPipelineRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2515,7 +2515,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteMediaPipeline");
 
-            var request = InstantiateClassGenerator.Execute<DeleteMediaPipelineRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteMediaPipelineRequest>(operation);
             var marshaller = new DeleteMediaPipelineRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2547,7 +2547,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteMediaPipeline");
 
-            var request = InstantiateClassGenerator.Execute<DeleteMediaPipelineRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteMediaPipelineRequest>(operation);
             var marshaller = new DeleteMediaPipelineRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2579,7 +2579,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteMediaPipeline");
 
-            var request = InstantiateClassGenerator.Execute<DeleteMediaPipelineRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteMediaPipelineRequest>(operation);
             var marshaller = new DeleteMediaPipelineRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2611,7 +2611,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteMediaPipeline");
 
-            var request = InstantiateClassGenerator.Execute<DeleteMediaPipelineRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteMediaPipelineRequest>(operation);
             var marshaller = new DeleteMediaPipelineRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2643,7 +2643,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteMediaPipeline");
 
-            var request = InstantiateClassGenerator.Execute<DeleteMediaPipelineRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteMediaPipelineRequest>(operation);
             var marshaller = new DeleteMediaPipelineRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2675,7 +2675,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteMediaPipeline");
 
-            var request = InstantiateClassGenerator.Execute<DeleteMediaPipelineRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteMediaPipelineRequest>(operation);
             var marshaller = new DeleteMediaPipelineRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2707,7 +2707,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteMediaPipeline");
 
-            var request = InstantiateClassGenerator.Execute<DeleteMediaPipelineRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteMediaPipelineRequest>(operation);
             var marshaller = new DeleteMediaPipelineRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2739,7 +2739,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteMediaPipelineKinesisVideoStreamPool");
 
-            var request = InstantiateClassGenerator.Execute<DeleteMediaPipelineKinesisVideoStreamPoolRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteMediaPipelineKinesisVideoStreamPoolRequest>(operation);
             var marshaller = new DeleteMediaPipelineKinesisVideoStreamPoolRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -2755,7 +2755,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteMediaPipelineKinesisVideoStreamPool");
 
-            var request = InstantiateClassGenerator.Execute<DeleteMediaPipelineKinesisVideoStreamPoolRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteMediaPipelineKinesisVideoStreamPoolRequest>(operation);
             var marshaller = new DeleteMediaPipelineKinesisVideoStreamPoolRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2787,7 +2787,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteMediaPipelineKinesisVideoStreamPool");
 
-            var request = InstantiateClassGenerator.Execute<DeleteMediaPipelineKinesisVideoStreamPoolRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteMediaPipelineKinesisVideoStreamPoolRequest>(operation);
             var marshaller = new DeleteMediaPipelineKinesisVideoStreamPoolRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2819,7 +2819,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteMediaPipelineKinesisVideoStreamPool");
 
-            var request = InstantiateClassGenerator.Execute<DeleteMediaPipelineKinesisVideoStreamPoolRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteMediaPipelineKinesisVideoStreamPoolRequest>(operation);
             var marshaller = new DeleteMediaPipelineKinesisVideoStreamPoolRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2851,7 +2851,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteMediaPipelineKinesisVideoStreamPool");
 
-            var request = InstantiateClassGenerator.Execute<DeleteMediaPipelineKinesisVideoStreamPoolRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteMediaPipelineKinesisVideoStreamPoolRequest>(operation);
             var marshaller = new DeleteMediaPipelineKinesisVideoStreamPoolRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2883,7 +2883,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteMediaPipelineKinesisVideoStreamPool");
 
-            var request = InstantiateClassGenerator.Execute<DeleteMediaPipelineKinesisVideoStreamPoolRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteMediaPipelineKinesisVideoStreamPoolRequest>(operation);
             var marshaller = new DeleteMediaPipelineKinesisVideoStreamPoolRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2915,7 +2915,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteMediaPipelineKinesisVideoStreamPool");
 
-            var request = InstantiateClassGenerator.Execute<DeleteMediaPipelineKinesisVideoStreamPoolRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteMediaPipelineKinesisVideoStreamPoolRequest>(operation);
             var marshaller = new DeleteMediaPipelineKinesisVideoStreamPoolRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2947,7 +2947,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteMediaPipelineKinesisVideoStreamPool");
 
-            var request = InstantiateClassGenerator.Execute<DeleteMediaPipelineKinesisVideoStreamPoolRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteMediaPipelineKinesisVideoStreamPoolRequest>(operation);
             var marshaller = new DeleteMediaPipelineKinesisVideoStreamPoolRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2979,7 +2979,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteMediaPipelineKinesisVideoStreamPool");
 
-            var request = InstantiateClassGenerator.Execute<DeleteMediaPipelineKinesisVideoStreamPoolRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteMediaPipelineKinesisVideoStreamPoolRequest>(operation);
             var marshaller = new DeleteMediaPipelineKinesisVideoStreamPoolRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3011,7 +3011,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetMediaCapturePipeline");
 
-            var request = InstantiateClassGenerator.Execute<GetMediaCapturePipelineRequest>();
+            var request = InstantiateClassGenerator.Execute<GetMediaCapturePipelineRequest>(operation);
             var marshaller = new GetMediaCapturePipelineRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -3041,7 +3041,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetMediaCapturePipeline");
 
-            var request = InstantiateClassGenerator.Execute<GetMediaCapturePipelineRequest>();
+            var request = InstantiateClassGenerator.Execute<GetMediaCapturePipelineRequest>(operation);
             var marshaller = new GetMediaCapturePipelineRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3073,7 +3073,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetMediaCapturePipeline");
 
-            var request = InstantiateClassGenerator.Execute<GetMediaCapturePipelineRequest>();
+            var request = InstantiateClassGenerator.Execute<GetMediaCapturePipelineRequest>(operation);
             var marshaller = new GetMediaCapturePipelineRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3105,7 +3105,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetMediaCapturePipeline");
 
-            var request = InstantiateClassGenerator.Execute<GetMediaCapturePipelineRequest>();
+            var request = InstantiateClassGenerator.Execute<GetMediaCapturePipelineRequest>(operation);
             var marshaller = new GetMediaCapturePipelineRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3137,7 +3137,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetMediaCapturePipeline");
 
-            var request = InstantiateClassGenerator.Execute<GetMediaCapturePipelineRequest>();
+            var request = InstantiateClassGenerator.Execute<GetMediaCapturePipelineRequest>(operation);
             var marshaller = new GetMediaCapturePipelineRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3169,7 +3169,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetMediaCapturePipeline");
 
-            var request = InstantiateClassGenerator.Execute<GetMediaCapturePipelineRequest>();
+            var request = InstantiateClassGenerator.Execute<GetMediaCapturePipelineRequest>(operation);
             var marshaller = new GetMediaCapturePipelineRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3201,7 +3201,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetMediaCapturePipeline");
 
-            var request = InstantiateClassGenerator.Execute<GetMediaCapturePipelineRequest>();
+            var request = InstantiateClassGenerator.Execute<GetMediaCapturePipelineRequest>(operation);
             var marshaller = new GetMediaCapturePipelineRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3233,7 +3233,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetMediaCapturePipeline");
 
-            var request = InstantiateClassGenerator.Execute<GetMediaCapturePipelineRequest>();
+            var request = InstantiateClassGenerator.Execute<GetMediaCapturePipelineRequest>(operation);
             var marshaller = new GetMediaCapturePipelineRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3265,7 +3265,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetMediaInsightsPipelineConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<GetMediaInsightsPipelineConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetMediaInsightsPipelineConfigurationRequest>(operation);
             var marshaller = new GetMediaInsightsPipelineConfigurationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -3295,7 +3295,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetMediaInsightsPipelineConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<GetMediaInsightsPipelineConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetMediaInsightsPipelineConfigurationRequest>(operation);
             var marshaller = new GetMediaInsightsPipelineConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3327,7 +3327,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetMediaInsightsPipelineConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<GetMediaInsightsPipelineConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetMediaInsightsPipelineConfigurationRequest>(operation);
             var marshaller = new GetMediaInsightsPipelineConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3359,7 +3359,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetMediaInsightsPipelineConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<GetMediaInsightsPipelineConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetMediaInsightsPipelineConfigurationRequest>(operation);
             var marshaller = new GetMediaInsightsPipelineConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3391,7 +3391,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetMediaInsightsPipelineConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<GetMediaInsightsPipelineConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetMediaInsightsPipelineConfigurationRequest>(operation);
             var marshaller = new GetMediaInsightsPipelineConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3423,7 +3423,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetMediaInsightsPipelineConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<GetMediaInsightsPipelineConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetMediaInsightsPipelineConfigurationRequest>(operation);
             var marshaller = new GetMediaInsightsPipelineConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3455,7 +3455,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetMediaInsightsPipelineConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<GetMediaInsightsPipelineConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetMediaInsightsPipelineConfigurationRequest>(operation);
             var marshaller = new GetMediaInsightsPipelineConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3487,7 +3487,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetMediaInsightsPipelineConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<GetMediaInsightsPipelineConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetMediaInsightsPipelineConfigurationRequest>(operation);
             var marshaller = new GetMediaInsightsPipelineConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3519,7 +3519,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetMediaPipeline");
 
-            var request = InstantiateClassGenerator.Execute<GetMediaPipelineRequest>();
+            var request = InstantiateClassGenerator.Execute<GetMediaPipelineRequest>(operation);
             var marshaller = new GetMediaPipelineRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -3549,7 +3549,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetMediaPipeline");
 
-            var request = InstantiateClassGenerator.Execute<GetMediaPipelineRequest>();
+            var request = InstantiateClassGenerator.Execute<GetMediaPipelineRequest>(operation);
             var marshaller = new GetMediaPipelineRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3581,7 +3581,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetMediaPipeline");
 
-            var request = InstantiateClassGenerator.Execute<GetMediaPipelineRequest>();
+            var request = InstantiateClassGenerator.Execute<GetMediaPipelineRequest>(operation);
             var marshaller = new GetMediaPipelineRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3613,7 +3613,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetMediaPipeline");
 
-            var request = InstantiateClassGenerator.Execute<GetMediaPipelineRequest>();
+            var request = InstantiateClassGenerator.Execute<GetMediaPipelineRequest>(operation);
             var marshaller = new GetMediaPipelineRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3645,7 +3645,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetMediaPipeline");
 
-            var request = InstantiateClassGenerator.Execute<GetMediaPipelineRequest>();
+            var request = InstantiateClassGenerator.Execute<GetMediaPipelineRequest>(operation);
             var marshaller = new GetMediaPipelineRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3677,7 +3677,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetMediaPipeline");
 
-            var request = InstantiateClassGenerator.Execute<GetMediaPipelineRequest>();
+            var request = InstantiateClassGenerator.Execute<GetMediaPipelineRequest>(operation);
             var marshaller = new GetMediaPipelineRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3709,7 +3709,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetMediaPipeline");
 
-            var request = InstantiateClassGenerator.Execute<GetMediaPipelineRequest>();
+            var request = InstantiateClassGenerator.Execute<GetMediaPipelineRequest>(operation);
             var marshaller = new GetMediaPipelineRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3741,7 +3741,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetMediaPipeline");
 
-            var request = InstantiateClassGenerator.Execute<GetMediaPipelineRequest>();
+            var request = InstantiateClassGenerator.Execute<GetMediaPipelineRequest>(operation);
             var marshaller = new GetMediaPipelineRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3773,7 +3773,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetMediaPipelineKinesisVideoStreamPool");
 
-            var request = InstantiateClassGenerator.Execute<GetMediaPipelineKinesisVideoStreamPoolRequest>();
+            var request = InstantiateClassGenerator.Execute<GetMediaPipelineKinesisVideoStreamPoolRequest>(operation);
             var marshaller = new GetMediaPipelineKinesisVideoStreamPoolRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -3803,7 +3803,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetMediaPipelineKinesisVideoStreamPool");
 
-            var request = InstantiateClassGenerator.Execute<GetMediaPipelineKinesisVideoStreamPoolRequest>();
+            var request = InstantiateClassGenerator.Execute<GetMediaPipelineKinesisVideoStreamPoolRequest>(operation);
             var marshaller = new GetMediaPipelineKinesisVideoStreamPoolRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3835,7 +3835,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetMediaPipelineKinesisVideoStreamPool");
 
-            var request = InstantiateClassGenerator.Execute<GetMediaPipelineKinesisVideoStreamPoolRequest>();
+            var request = InstantiateClassGenerator.Execute<GetMediaPipelineKinesisVideoStreamPoolRequest>(operation);
             var marshaller = new GetMediaPipelineKinesisVideoStreamPoolRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3867,7 +3867,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetMediaPipelineKinesisVideoStreamPool");
 
-            var request = InstantiateClassGenerator.Execute<GetMediaPipelineKinesisVideoStreamPoolRequest>();
+            var request = InstantiateClassGenerator.Execute<GetMediaPipelineKinesisVideoStreamPoolRequest>(operation);
             var marshaller = new GetMediaPipelineKinesisVideoStreamPoolRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3899,7 +3899,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetMediaPipelineKinesisVideoStreamPool");
 
-            var request = InstantiateClassGenerator.Execute<GetMediaPipelineKinesisVideoStreamPoolRequest>();
+            var request = InstantiateClassGenerator.Execute<GetMediaPipelineKinesisVideoStreamPoolRequest>(operation);
             var marshaller = new GetMediaPipelineKinesisVideoStreamPoolRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3931,7 +3931,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetMediaPipelineKinesisVideoStreamPool");
 
-            var request = InstantiateClassGenerator.Execute<GetMediaPipelineKinesisVideoStreamPoolRequest>();
+            var request = InstantiateClassGenerator.Execute<GetMediaPipelineKinesisVideoStreamPoolRequest>(operation);
             var marshaller = new GetMediaPipelineKinesisVideoStreamPoolRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3963,7 +3963,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetMediaPipelineKinesisVideoStreamPool");
 
-            var request = InstantiateClassGenerator.Execute<GetMediaPipelineKinesisVideoStreamPoolRequest>();
+            var request = InstantiateClassGenerator.Execute<GetMediaPipelineKinesisVideoStreamPoolRequest>(operation);
             var marshaller = new GetMediaPipelineKinesisVideoStreamPoolRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3995,7 +3995,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetMediaPipelineKinesisVideoStreamPool");
 
-            var request = InstantiateClassGenerator.Execute<GetMediaPipelineKinesisVideoStreamPoolRequest>();
+            var request = InstantiateClassGenerator.Execute<GetMediaPipelineKinesisVideoStreamPoolRequest>(operation);
             var marshaller = new GetMediaPipelineKinesisVideoStreamPoolRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4027,7 +4027,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetSpeakerSearchTask");
 
-            var request = InstantiateClassGenerator.Execute<GetSpeakerSearchTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<GetSpeakerSearchTaskRequest>(operation);
             var marshaller = new GetSpeakerSearchTaskRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -4057,7 +4057,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetSpeakerSearchTask");
 
-            var request = InstantiateClassGenerator.Execute<GetSpeakerSearchTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<GetSpeakerSearchTaskRequest>(operation);
             var marshaller = new GetSpeakerSearchTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4089,7 +4089,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetSpeakerSearchTask");
 
-            var request = InstantiateClassGenerator.Execute<GetSpeakerSearchTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<GetSpeakerSearchTaskRequest>(operation);
             var marshaller = new GetSpeakerSearchTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4121,7 +4121,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetSpeakerSearchTask");
 
-            var request = InstantiateClassGenerator.Execute<GetSpeakerSearchTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<GetSpeakerSearchTaskRequest>(operation);
             var marshaller = new GetSpeakerSearchTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4153,7 +4153,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetSpeakerSearchTask");
 
-            var request = InstantiateClassGenerator.Execute<GetSpeakerSearchTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<GetSpeakerSearchTaskRequest>(operation);
             var marshaller = new GetSpeakerSearchTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4185,7 +4185,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetSpeakerSearchTask");
 
-            var request = InstantiateClassGenerator.Execute<GetSpeakerSearchTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<GetSpeakerSearchTaskRequest>(operation);
             var marshaller = new GetSpeakerSearchTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4217,7 +4217,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetSpeakerSearchTask");
 
-            var request = InstantiateClassGenerator.Execute<GetSpeakerSearchTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<GetSpeakerSearchTaskRequest>(operation);
             var marshaller = new GetSpeakerSearchTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4249,7 +4249,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetSpeakerSearchTask");
 
-            var request = InstantiateClassGenerator.Execute<GetSpeakerSearchTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<GetSpeakerSearchTaskRequest>(operation);
             var marshaller = new GetSpeakerSearchTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4281,7 +4281,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetVoiceToneAnalysisTask");
 
-            var request = InstantiateClassGenerator.Execute<GetVoiceToneAnalysisTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<GetVoiceToneAnalysisTaskRequest>(operation);
             var marshaller = new GetVoiceToneAnalysisTaskRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -4311,7 +4311,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetVoiceToneAnalysisTask");
 
-            var request = InstantiateClassGenerator.Execute<GetVoiceToneAnalysisTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<GetVoiceToneAnalysisTaskRequest>(operation);
             var marshaller = new GetVoiceToneAnalysisTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4343,7 +4343,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetVoiceToneAnalysisTask");
 
-            var request = InstantiateClassGenerator.Execute<GetVoiceToneAnalysisTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<GetVoiceToneAnalysisTaskRequest>(operation);
             var marshaller = new GetVoiceToneAnalysisTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4375,7 +4375,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetVoiceToneAnalysisTask");
 
-            var request = InstantiateClassGenerator.Execute<GetVoiceToneAnalysisTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<GetVoiceToneAnalysisTaskRequest>(operation);
             var marshaller = new GetVoiceToneAnalysisTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4407,7 +4407,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetVoiceToneAnalysisTask");
 
-            var request = InstantiateClassGenerator.Execute<GetVoiceToneAnalysisTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<GetVoiceToneAnalysisTaskRequest>(operation);
             var marshaller = new GetVoiceToneAnalysisTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4439,7 +4439,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetVoiceToneAnalysisTask");
 
-            var request = InstantiateClassGenerator.Execute<GetVoiceToneAnalysisTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<GetVoiceToneAnalysisTaskRequest>(operation);
             var marshaller = new GetVoiceToneAnalysisTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4471,7 +4471,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetVoiceToneAnalysisTask");
 
-            var request = InstantiateClassGenerator.Execute<GetVoiceToneAnalysisTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<GetVoiceToneAnalysisTaskRequest>(operation);
             var marshaller = new GetVoiceToneAnalysisTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4503,7 +4503,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetVoiceToneAnalysisTask");
 
-            var request = InstantiateClassGenerator.Execute<GetVoiceToneAnalysisTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<GetVoiceToneAnalysisTaskRequest>(operation);
             var marshaller = new GetVoiceToneAnalysisTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4535,7 +4535,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListMediaCapturePipelines");
 
-            var request = InstantiateClassGenerator.Execute<ListMediaCapturePipelinesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListMediaCapturePipelinesRequest>(operation);
             var marshaller = new ListMediaCapturePipelinesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -4565,7 +4565,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListMediaCapturePipelines");
 
-            var request = InstantiateClassGenerator.Execute<ListMediaCapturePipelinesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListMediaCapturePipelinesRequest>(operation);
             var marshaller = new ListMediaCapturePipelinesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4597,7 +4597,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListMediaCapturePipelines");
 
-            var request = InstantiateClassGenerator.Execute<ListMediaCapturePipelinesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListMediaCapturePipelinesRequest>(operation);
             var marshaller = new ListMediaCapturePipelinesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4629,7 +4629,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListMediaCapturePipelines");
 
-            var request = InstantiateClassGenerator.Execute<ListMediaCapturePipelinesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListMediaCapturePipelinesRequest>(operation);
             var marshaller = new ListMediaCapturePipelinesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4661,7 +4661,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListMediaCapturePipelines");
 
-            var request = InstantiateClassGenerator.Execute<ListMediaCapturePipelinesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListMediaCapturePipelinesRequest>(operation);
             var marshaller = new ListMediaCapturePipelinesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4693,7 +4693,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListMediaCapturePipelines");
 
-            var request = InstantiateClassGenerator.Execute<ListMediaCapturePipelinesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListMediaCapturePipelinesRequest>(operation);
             var marshaller = new ListMediaCapturePipelinesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4725,7 +4725,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListMediaCapturePipelines");
 
-            var request = InstantiateClassGenerator.Execute<ListMediaCapturePipelinesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListMediaCapturePipelinesRequest>(operation);
             var marshaller = new ListMediaCapturePipelinesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4757,7 +4757,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListMediaCapturePipelines");
 
-            var request = InstantiateClassGenerator.Execute<ListMediaCapturePipelinesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListMediaCapturePipelinesRequest>(operation);
             var marshaller = new ListMediaCapturePipelinesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4789,7 +4789,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListMediaInsightsPipelineConfigurations");
 
-            var request = InstantiateClassGenerator.Execute<ListMediaInsightsPipelineConfigurationsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListMediaInsightsPipelineConfigurationsRequest>(operation);
             var marshaller = new ListMediaInsightsPipelineConfigurationsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -4819,7 +4819,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListMediaInsightsPipelineConfigurations");
 
-            var request = InstantiateClassGenerator.Execute<ListMediaInsightsPipelineConfigurationsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListMediaInsightsPipelineConfigurationsRequest>(operation);
             var marshaller = new ListMediaInsightsPipelineConfigurationsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4851,7 +4851,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListMediaInsightsPipelineConfigurations");
 
-            var request = InstantiateClassGenerator.Execute<ListMediaInsightsPipelineConfigurationsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListMediaInsightsPipelineConfigurationsRequest>(operation);
             var marshaller = new ListMediaInsightsPipelineConfigurationsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4883,7 +4883,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListMediaInsightsPipelineConfigurations");
 
-            var request = InstantiateClassGenerator.Execute<ListMediaInsightsPipelineConfigurationsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListMediaInsightsPipelineConfigurationsRequest>(operation);
             var marshaller = new ListMediaInsightsPipelineConfigurationsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4915,7 +4915,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListMediaInsightsPipelineConfigurations");
 
-            var request = InstantiateClassGenerator.Execute<ListMediaInsightsPipelineConfigurationsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListMediaInsightsPipelineConfigurationsRequest>(operation);
             var marshaller = new ListMediaInsightsPipelineConfigurationsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4947,7 +4947,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListMediaInsightsPipelineConfigurations");
 
-            var request = InstantiateClassGenerator.Execute<ListMediaInsightsPipelineConfigurationsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListMediaInsightsPipelineConfigurationsRequest>(operation);
             var marshaller = new ListMediaInsightsPipelineConfigurationsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4979,7 +4979,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListMediaInsightsPipelineConfigurations");
 
-            var request = InstantiateClassGenerator.Execute<ListMediaInsightsPipelineConfigurationsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListMediaInsightsPipelineConfigurationsRequest>(operation);
             var marshaller = new ListMediaInsightsPipelineConfigurationsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5011,7 +5011,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListMediaInsightsPipelineConfigurations");
 
-            var request = InstantiateClassGenerator.Execute<ListMediaInsightsPipelineConfigurationsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListMediaInsightsPipelineConfigurationsRequest>(operation);
             var marshaller = new ListMediaInsightsPipelineConfigurationsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5043,7 +5043,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListMediaPipelineKinesisVideoStreamPools");
 
-            var request = InstantiateClassGenerator.Execute<ListMediaPipelineKinesisVideoStreamPoolsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListMediaPipelineKinesisVideoStreamPoolsRequest>(operation);
             var marshaller = new ListMediaPipelineKinesisVideoStreamPoolsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -5073,7 +5073,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListMediaPipelineKinesisVideoStreamPools");
 
-            var request = InstantiateClassGenerator.Execute<ListMediaPipelineKinesisVideoStreamPoolsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListMediaPipelineKinesisVideoStreamPoolsRequest>(operation);
             var marshaller = new ListMediaPipelineKinesisVideoStreamPoolsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5105,7 +5105,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListMediaPipelineKinesisVideoStreamPools");
 
-            var request = InstantiateClassGenerator.Execute<ListMediaPipelineKinesisVideoStreamPoolsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListMediaPipelineKinesisVideoStreamPoolsRequest>(operation);
             var marshaller = new ListMediaPipelineKinesisVideoStreamPoolsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5137,7 +5137,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListMediaPipelineKinesisVideoStreamPools");
 
-            var request = InstantiateClassGenerator.Execute<ListMediaPipelineKinesisVideoStreamPoolsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListMediaPipelineKinesisVideoStreamPoolsRequest>(operation);
             var marshaller = new ListMediaPipelineKinesisVideoStreamPoolsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5169,7 +5169,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListMediaPipelineKinesisVideoStreamPools");
 
-            var request = InstantiateClassGenerator.Execute<ListMediaPipelineKinesisVideoStreamPoolsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListMediaPipelineKinesisVideoStreamPoolsRequest>(operation);
             var marshaller = new ListMediaPipelineKinesisVideoStreamPoolsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5201,7 +5201,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListMediaPipelineKinesisVideoStreamPools");
 
-            var request = InstantiateClassGenerator.Execute<ListMediaPipelineKinesisVideoStreamPoolsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListMediaPipelineKinesisVideoStreamPoolsRequest>(operation);
             var marshaller = new ListMediaPipelineKinesisVideoStreamPoolsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5233,7 +5233,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListMediaPipelineKinesisVideoStreamPools");
 
-            var request = InstantiateClassGenerator.Execute<ListMediaPipelineKinesisVideoStreamPoolsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListMediaPipelineKinesisVideoStreamPoolsRequest>(operation);
             var marshaller = new ListMediaPipelineKinesisVideoStreamPoolsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5265,7 +5265,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListMediaPipelineKinesisVideoStreamPools");
 
-            var request = InstantiateClassGenerator.Execute<ListMediaPipelineKinesisVideoStreamPoolsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListMediaPipelineKinesisVideoStreamPoolsRequest>(operation);
             var marshaller = new ListMediaPipelineKinesisVideoStreamPoolsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5297,7 +5297,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListMediaPipelines");
 
-            var request = InstantiateClassGenerator.Execute<ListMediaPipelinesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListMediaPipelinesRequest>(operation);
             var marshaller = new ListMediaPipelinesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -5327,7 +5327,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListMediaPipelines");
 
-            var request = InstantiateClassGenerator.Execute<ListMediaPipelinesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListMediaPipelinesRequest>(operation);
             var marshaller = new ListMediaPipelinesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5359,7 +5359,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListMediaPipelines");
 
-            var request = InstantiateClassGenerator.Execute<ListMediaPipelinesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListMediaPipelinesRequest>(operation);
             var marshaller = new ListMediaPipelinesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5391,7 +5391,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListMediaPipelines");
 
-            var request = InstantiateClassGenerator.Execute<ListMediaPipelinesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListMediaPipelinesRequest>(operation);
             var marshaller = new ListMediaPipelinesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5423,7 +5423,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListMediaPipelines");
 
-            var request = InstantiateClassGenerator.Execute<ListMediaPipelinesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListMediaPipelinesRequest>(operation);
             var marshaller = new ListMediaPipelinesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5455,7 +5455,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListMediaPipelines");
 
-            var request = InstantiateClassGenerator.Execute<ListMediaPipelinesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListMediaPipelinesRequest>(operation);
             var marshaller = new ListMediaPipelinesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5487,7 +5487,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListMediaPipelines");
 
-            var request = InstantiateClassGenerator.Execute<ListMediaPipelinesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListMediaPipelinesRequest>(operation);
             var marshaller = new ListMediaPipelinesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5519,7 +5519,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListMediaPipelines");
 
-            var request = InstantiateClassGenerator.Execute<ListMediaPipelinesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListMediaPipelinesRequest>(operation);
             var marshaller = new ListMediaPipelinesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5551,7 +5551,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListTagsForResource");
 
-            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>(operation);
             var marshaller = new ListTagsForResourceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -5581,7 +5581,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListTagsForResource");
 
-            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>(operation);
             var marshaller = new ListTagsForResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5613,7 +5613,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListTagsForResource");
 
-            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>(operation);
             var marshaller = new ListTagsForResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5645,7 +5645,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListTagsForResource");
 
-            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>(operation);
             var marshaller = new ListTagsForResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5677,7 +5677,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListTagsForResource");
 
-            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>(operation);
             var marshaller = new ListTagsForResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5709,7 +5709,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListTagsForResource");
 
-            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>(operation);
             var marshaller = new ListTagsForResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5741,7 +5741,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListTagsForResource");
 
-            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>(operation);
             var marshaller = new ListTagsForResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5773,7 +5773,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListTagsForResource");
 
-            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>(operation);
             var marshaller = new ListTagsForResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5805,7 +5805,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartSpeakerSearchTask");
 
-            var request = InstantiateClassGenerator.Execute<StartSpeakerSearchTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<StartSpeakerSearchTaskRequest>(operation);
             var marshaller = new StartSpeakerSearchTaskRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -5835,7 +5835,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartSpeakerSearchTask");
 
-            var request = InstantiateClassGenerator.Execute<StartSpeakerSearchTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<StartSpeakerSearchTaskRequest>(operation);
             var marshaller = new StartSpeakerSearchTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5867,7 +5867,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartSpeakerSearchTask");
 
-            var request = InstantiateClassGenerator.Execute<StartSpeakerSearchTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<StartSpeakerSearchTaskRequest>(operation);
             var marshaller = new StartSpeakerSearchTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5899,7 +5899,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartSpeakerSearchTask");
 
-            var request = InstantiateClassGenerator.Execute<StartSpeakerSearchTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<StartSpeakerSearchTaskRequest>(operation);
             var marshaller = new StartSpeakerSearchTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5931,7 +5931,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartSpeakerSearchTask");
 
-            var request = InstantiateClassGenerator.Execute<StartSpeakerSearchTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<StartSpeakerSearchTaskRequest>(operation);
             var marshaller = new StartSpeakerSearchTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5963,7 +5963,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartSpeakerSearchTask");
 
-            var request = InstantiateClassGenerator.Execute<StartSpeakerSearchTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<StartSpeakerSearchTaskRequest>(operation);
             var marshaller = new StartSpeakerSearchTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5995,7 +5995,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartSpeakerSearchTask");
 
-            var request = InstantiateClassGenerator.Execute<StartSpeakerSearchTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<StartSpeakerSearchTaskRequest>(operation);
             var marshaller = new StartSpeakerSearchTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6027,7 +6027,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartSpeakerSearchTask");
 
-            var request = InstantiateClassGenerator.Execute<StartSpeakerSearchTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<StartSpeakerSearchTaskRequest>(operation);
             var marshaller = new StartSpeakerSearchTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6059,7 +6059,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartSpeakerSearchTask");
 
-            var request = InstantiateClassGenerator.Execute<StartSpeakerSearchTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<StartSpeakerSearchTaskRequest>(operation);
             var marshaller = new StartSpeakerSearchTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6091,7 +6091,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartVoiceToneAnalysisTask");
 
-            var request = InstantiateClassGenerator.Execute<StartVoiceToneAnalysisTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<StartVoiceToneAnalysisTaskRequest>(operation);
             var marshaller = new StartVoiceToneAnalysisTaskRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -6121,7 +6121,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartVoiceToneAnalysisTask");
 
-            var request = InstantiateClassGenerator.Execute<StartVoiceToneAnalysisTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<StartVoiceToneAnalysisTaskRequest>(operation);
             var marshaller = new StartVoiceToneAnalysisTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6153,7 +6153,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartVoiceToneAnalysisTask");
 
-            var request = InstantiateClassGenerator.Execute<StartVoiceToneAnalysisTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<StartVoiceToneAnalysisTaskRequest>(operation);
             var marshaller = new StartVoiceToneAnalysisTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6185,7 +6185,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartVoiceToneAnalysisTask");
 
-            var request = InstantiateClassGenerator.Execute<StartVoiceToneAnalysisTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<StartVoiceToneAnalysisTaskRequest>(operation);
             var marshaller = new StartVoiceToneAnalysisTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6217,7 +6217,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartVoiceToneAnalysisTask");
 
-            var request = InstantiateClassGenerator.Execute<StartVoiceToneAnalysisTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<StartVoiceToneAnalysisTaskRequest>(operation);
             var marshaller = new StartVoiceToneAnalysisTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6249,7 +6249,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartVoiceToneAnalysisTask");
 
-            var request = InstantiateClassGenerator.Execute<StartVoiceToneAnalysisTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<StartVoiceToneAnalysisTaskRequest>(operation);
             var marshaller = new StartVoiceToneAnalysisTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6281,7 +6281,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartVoiceToneAnalysisTask");
 
-            var request = InstantiateClassGenerator.Execute<StartVoiceToneAnalysisTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<StartVoiceToneAnalysisTaskRequest>(operation);
             var marshaller = new StartVoiceToneAnalysisTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6313,7 +6313,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartVoiceToneAnalysisTask");
 
-            var request = InstantiateClassGenerator.Execute<StartVoiceToneAnalysisTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<StartVoiceToneAnalysisTaskRequest>(operation);
             var marshaller = new StartVoiceToneAnalysisTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6345,7 +6345,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartVoiceToneAnalysisTask");
 
-            var request = InstantiateClassGenerator.Execute<StartVoiceToneAnalysisTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<StartVoiceToneAnalysisTaskRequest>(operation);
             var marshaller = new StartVoiceToneAnalysisTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6377,7 +6377,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StopSpeakerSearchTask");
 
-            var request = InstantiateClassGenerator.Execute<StopSpeakerSearchTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<StopSpeakerSearchTaskRequest>(operation);
             var marshaller = new StopSpeakerSearchTaskRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -6393,7 +6393,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StopSpeakerSearchTask");
 
-            var request = InstantiateClassGenerator.Execute<StopSpeakerSearchTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<StopSpeakerSearchTaskRequest>(operation);
             var marshaller = new StopSpeakerSearchTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6425,7 +6425,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StopSpeakerSearchTask");
 
-            var request = InstantiateClassGenerator.Execute<StopSpeakerSearchTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<StopSpeakerSearchTaskRequest>(operation);
             var marshaller = new StopSpeakerSearchTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6457,7 +6457,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StopSpeakerSearchTask");
 
-            var request = InstantiateClassGenerator.Execute<StopSpeakerSearchTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<StopSpeakerSearchTaskRequest>(operation);
             var marshaller = new StopSpeakerSearchTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6489,7 +6489,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StopSpeakerSearchTask");
 
-            var request = InstantiateClassGenerator.Execute<StopSpeakerSearchTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<StopSpeakerSearchTaskRequest>(operation);
             var marshaller = new StopSpeakerSearchTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6521,7 +6521,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StopSpeakerSearchTask");
 
-            var request = InstantiateClassGenerator.Execute<StopSpeakerSearchTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<StopSpeakerSearchTaskRequest>(operation);
             var marshaller = new StopSpeakerSearchTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6553,7 +6553,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StopSpeakerSearchTask");
 
-            var request = InstantiateClassGenerator.Execute<StopSpeakerSearchTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<StopSpeakerSearchTaskRequest>(operation);
             var marshaller = new StopSpeakerSearchTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6585,7 +6585,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StopSpeakerSearchTask");
 
-            var request = InstantiateClassGenerator.Execute<StopSpeakerSearchTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<StopSpeakerSearchTaskRequest>(operation);
             var marshaller = new StopSpeakerSearchTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6617,7 +6617,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StopSpeakerSearchTask");
 
-            var request = InstantiateClassGenerator.Execute<StopSpeakerSearchTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<StopSpeakerSearchTaskRequest>(operation);
             var marshaller = new StopSpeakerSearchTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6649,7 +6649,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StopVoiceToneAnalysisTask");
 
-            var request = InstantiateClassGenerator.Execute<StopVoiceToneAnalysisTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<StopVoiceToneAnalysisTaskRequest>(operation);
             var marshaller = new StopVoiceToneAnalysisTaskRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -6665,7 +6665,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StopVoiceToneAnalysisTask");
 
-            var request = InstantiateClassGenerator.Execute<StopVoiceToneAnalysisTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<StopVoiceToneAnalysisTaskRequest>(operation);
             var marshaller = new StopVoiceToneAnalysisTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6697,7 +6697,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StopVoiceToneAnalysisTask");
 
-            var request = InstantiateClassGenerator.Execute<StopVoiceToneAnalysisTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<StopVoiceToneAnalysisTaskRequest>(operation);
             var marshaller = new StopVoiceToneAnalysisTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6729,7 +6729,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StopVoiceToneAnalysisTask");
 
-            var request = InstantiateClassGenerator.Execute<StopVoiceToneAnalysisTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<StopVoiceToneAnalysisTaskRequest>(operation);
             var marshaller = new StopVoiceToneAnalysisTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6761,7 +6761,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StopVoiceToneAnalysisTask");
 
-            var request = InstantiateClassGenerator.Execute<StopVoiceToneAnalysisTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<StopVoiceToneAnalysisTaskRequest>(operation);
             var marshaller = new StopVoiceToneAnalysisTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6793,7 +6793,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StopVoiceToneAnalysisTask");
 
-            var request = InstantiateClassGenerator.Execute<StopVoiceToneAnalysisTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<StopVoiceToneAnalysisTaskRequest>(operation);
             var marshaller = new StopVoiceToneAnalysisTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6825,7 +6825,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StopVoiceToneAnalysisTask");
 
-            var request = InstantiateClassGenerator.Execute<StopVoiceToneAnalysisTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<StopVoiceToneAnalysisTaskRequest>(operation);
             var marshaller = new StopVoiceToneAnalysisTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6857,7 +6857,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StopVoiceToneAnalysisTask");
 
-            var request = InstantiateClassGenerator.Execute<StopVoiceToneAnalysisTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<StopVoiceToneAnalysisTaskRequest>(operation);
             var marshaller = new StopVoiceToneAnalysisTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6889,7 +6889,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StopVoiceToneAnalysisTask");
 
-            var request = InstantiateClassGenerator.Execute<StopVoiceToneAnalysisTaskRequest>();
+            var request = InstantiateClassGenerator.Execute<StopVoiceToneAnalysisTaskRequest>(operation);
             var marshaller = new StopVoiceToneAnalysisTaskRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6921,7 +6921,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("TagResource");
 
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -6951,7 +6951,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("TagResource");
 
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6983,7 +6983,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("TagResource");
 
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -7015,7 +7015,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("TagResource");
 
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -7047,7 +7047,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("TagResource");
 
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -7079,7 +7079,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("TagResource");
 
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -7111,7 +7111,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("TagResource");
 
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -7143,7 +7143,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("TagResource");
 
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -7175,7 +7175,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UntagResource");
 
-            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>(operation);
             var marshaller = new UntagResourceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -7205,7 +7205,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UntagResource");
 
-            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>(operation);
             var marshaller = new UntagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -7237,7 +7237,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UntagResource");
 
-            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>(operation);
             var marshaller = new UntagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -7269,7 +7269,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UntagResource");
 
-            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>(operation);
             var marshaller = new UntagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -7301,7 +7301,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UntagResource");
 
-            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>(operation);
             var marshaller = new UntagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -7333,7 +7333,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UntagResource");
 
-            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>(operation);
             var marshaller = new UntagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -7365,7 +7365,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UntagResource");
 
-            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>(operation);
             var marshaller = new UntagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -7397,7 +7397,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UntagResource");
 
-            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>(operation);
             var marshaller = new UntagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -7429,7 +7429,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateMediaInsightsPipelineConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<UpdateMediaInsightsPipelineConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateMediaInsightsPipelineConfigurationRequest>(operation);
             var marshaller = new UpdateMediaInsightsPipelineConfigurationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -7459,7 +7459,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateMediaInsightsPipelineConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<UpdateMediaInsightsPipelineConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateMediaInsightsPipelineConfigurationRequest>(operation);
             var marshaller = new UpdateMediaInsightsPipelineConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -7491,7 +7491,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateMediaInsightsPipelineConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<UpdateMediaInsightsPipelineConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateMediaInsightsPipelineConfigurationRequest>(operation);
             var marshaller = new UpdateMediaInsightsPipelineConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -7523,7 +7523,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateMediaInsightsPipelineConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<UpdateMediaInsightsPipelineConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateMediaInsightsPipelineConfigurationRequest>(operation);
             var marshaller = new UpdateMediaInsightsPipelineConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -7555,7 +7555,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateMediaInsightsPipelineConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<UpdateMediaInsightsPipelineConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateMediaInsightsPipelineConfigurationRequest>(operation);
             var marshaller = new UpdateMediaInsightsPipelineConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -7587,7 +7587,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateMediaInsightsPipelineConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<UpdateMediaInsightsPipelineConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateMediaInsightsPipelineConfigurationRequest>(operation);
             var marshaller = new UpdateMediaInsightsPipelineConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -7619,7 +7619,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateMediaInsightsPipelineConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<UpdateMediaInsightsPipelineConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateMediaInsightsPipelineConfigurationRequest>(operation);
             var marshaller = new UpdateMediaInsightsPipelineConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -7651,7 +7651,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateMediaInsightsPipelineConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<UpdateMediaInsightsPipelineConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateMediaInsightsPipelineConfigurationRequest>(operation);
             var marshaller = new UpdateMediaInsightsPipelineConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -7683,7 +7683,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateMediaInsightsPipelineConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<UpdateMediaInsightsPipelineConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateMediaInsightsPipelineConfigurationRequest>(operation);
             var marshaller = new UpdateMediaInsightsPipelineConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -7715,7 +7715,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateMediaInsightsPipelineStatus");
 
-            var request = InstantiateClassGenerator.Execute<UpdateMediaInsightsPipelineStatusRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateMediaInsightsPipelineStatusRequest>(operation);
             var marshaller = new UpdateMediaInsightsPipelineStatusRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -7731,7 +7731,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateMediaInsightsPipelineStatus");
 
-            var request = InstantiateClassGenerator.Execute<UpdateMediaInsightsPipelineStatusRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateMediaInsightsPipelineStatusRequest>(operation);
             var marshaller = new UpdateMediaInsightsPipelineStatusRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -7763,7 +7763,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateMediaInsightsPipelineStatus");
 
-            var request = InstantiateClassGenerator.Execute<UpdateMediaInsightsPipelineStatusRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateMediaInsightsPipelineStatusRequest>(operation);
             var marshaller = new UpdateMediaInsightsPipelineStatusRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -7795,7 +7795,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateMediaInsightsPipelineStatus");
 
-            var request = InstantiateClassGenerator.Execute<UpdateMediaInsightsPipelineStatusRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateMediaInsightsPipelineStatusRequest>(operation);
             var marshaller = new UpdateMediaInsightsPipelineStatusRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -7827,7 +7827,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateMediaInsightsPipelineStatus");
 
-            var request = InstantiateClassGenerator.Execute<UpdateMediaInsightsPipelineStatusRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateMediaInsightsPipelineStatusRequest>(operation);
             var marshaller = new UpdateMediaInsightsPipelineStatusRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -7859,7 +7859,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateMediaInsightsPipelineStatus");
 
-            var request = InstantiateClassGenerator.Execute<UpdateMediaInsightsPipelineStatusRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateMediaInsightsPipelineStatusRequest>(operation);
             var marshaller = new UpdateMediaInsightsPipelineStatusRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -7891,7 +7891,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateMediaInsightsPipelineStatus");
 
-            var request = InstantiateClassGenerator.Execute<UpdateMediaInsightsPipelineStatusRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateMediaInsightsPipelineStatusRequest>(operation);
             var marshaller = new UpdateMediaInsightsPipelineStatusRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -7923,7 +7923,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateMediaInsightsPipelineStatus");
 
-            var request = InstantiateClassGenerator.Execute<UpdateMediaInsightsPipelineStatusRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateMediaInsightsPipelineStatusRequest>(operation);
             var marshaller = new UpdateMediaInsightsPipelineStatusRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -7955,7 +7955,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateMediaInsightsPipelineStatus");
 
-            var request = InstantiateClassGenerator.Execute<UpdateMediaInsightsPipelineStatusRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateMediaInsightsPipelineStatusRequest>(operation);
             var marshaller = new UpdateMediaInsightsPipelineStatusRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -7987,7 +7987,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateMediaPipelineKinesisVideoStreamPool");
 
-            var request = InstantiateClassGenerator.Execute<UpdateMediaPipelineKinesisVideoStreamPoolRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateMediaPipelineKinesisVideoStreamPoolRequest>(operation);
             var marshaller = new UpdateMediaPipelineKinesisVideoStreamPoolRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -8017,7 +8017,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateMediaPipelineKinesisVideoStreamPool");
 
-            var request = InstantiateClassGenerator.Execute<UpdateMediaPipelineKinesisVideoStreamPoolRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateMediaPipelineKinesisVideoStreamPoolRequest>(operation);
             var marshaller = new UpdateMediaPipelineKinesisVideoStreamPoolRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -8049,7 +8049,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateMediaPipelineKinesisVideoStreamPool");
 
-            var request = InstantiateClassGenerator.Execute<UpdateMediaPipelineKinesisVideoStreamPoolRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateMediaPipelineKinesisVideoStreamPoolRequest>(operation);
             var marshaller = new UpdateMediaPipelineKinesisVideoStreamPoolRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -8081,7 +8081,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateMediaPipelineKinesisVideoStreamPool");
 
-            var request = InstantiateClassGenerator.Execute<UpdateMediaPipelineKinesisVideoStreamPoolRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateMediaPipelineKinesisVideoStreamPoolRequest>(operation);
             var marshaller = new UpdateMediaPipelineKinesisVideoStreamPoolRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -8113,7 +8113,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateMediaPipelineKinesisVideoStreamPool");
 
-            var request = InstantiateClassGenerator.Execute<UpdateMediaPipelineKinesisVideoStreamPoolRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateMediaPipelineKinesisVideoStreamPoolRequest>(operation);
             var marshaller = new UpdateMediaPipelineKinesisVideoStreamPoolRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -8145,7 +8145,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateMediaPipelineKinesisVideoStreamPool");
 
-            var request = InstantiateClassGenerator.Execute<UpdateMediaPipelineKinesisVideoStreamPoolRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateMediaPipelineKinesisVideoStreamPoolRequest>(operation);
             var marshaller = new UpdateMediaPipelineKinesisVideoStreamPoolRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -8177,7 +8177,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateMediaPipelineKinesisVideoStreamPool");
 
-            var request = InstantiateClassGenerator.Execute<UpdateMediaPipelineKinesisVideoStreamPoolRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateMediaPipelineKinesisVideoStreamPoolRequest>(operation);
             var marshaller = new UpdateMediaPipelineKinesisVideoStreamPoolRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -8209,7 +8209,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateMediaPipelineKinesisVideoStreamPool");
 
-            var request = InstantiateClassGenerator.Execute<UpdateMediaPipelineKinesisVideoStreamPoolRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateMediaPipelineKinesisVideoStreamPoolRequest>(operation);
             var marshaller = new UpdateMediaPipelineKinesisVideoStreamPoolRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -8241,7 +8241,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateMediaPipelineKinesisVideoStreamPool");
 
-            var request = InstantiateClassGenerator.Execute<UpdateMediaPipelineKinesisVideoStreamPoolRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateMediaPipelineKinesisVideoStreamPoolRequest>(operation);
             var marshaller = new UpdateMediaPipelineKinesisVideoStreamPoolRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 

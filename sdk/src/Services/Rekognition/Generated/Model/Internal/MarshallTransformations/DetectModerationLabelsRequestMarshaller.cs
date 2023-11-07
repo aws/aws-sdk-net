@@ -95,6 +95,12 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.MinConfidence);
                 }
 
+                if(publicRequest.IsSetProjectVersion())
+                {
+                    context.Writer.WritePropertyName("ProjectVersion");
+                    context.Writer.Write(publicRequest.ProjectVersion);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

@@ -70,6 +70,12 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("hasWorkflows", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.HasWorkflows = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("schemaArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

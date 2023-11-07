@@ -36,9 +36,13 @@ namespace Amazon.RedshiftServerless.Model
         private int? _baseCapacity;
         private List<ConfigParameter> _configParameters = new List<ConfigParameter>();
         private DateTime? _creationDate;
+        private string _customDomainCertificateArn;
+        private DateTime? _customDomainCertificateExpiryTime;
+        private string _customDomainName;
         private Endpoint _endpoint;
         private bool? _enhancedVpcRouting;
         private string _namespaceName;
+        private string _patchVersion;
         private int? _port;
         private bool? _publiclyAccessible;
         private List<string> _securityGroupIds = new List<string>();
@@ -47,6 +51,7 @@ namespace Amazon.RedshiftServerless.Model
         private string _workgroupArn;
         private string _workgroupId;
         private string _workgroupName;
+        private string _workgroupVersion;
 
         /// <summary>
         /// Gets and sets the property BaseCapacity. 
@@ -108,6 +113,62 @@ namespace Amazon.RedshiftServerless.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CustomDomainCertificateArn. 
+        /// <para>
+        /// The custom domain name’s certificate Amazon resource name (ARN).
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string CustomDomainCertificateArn
+        {
+            get { return this._customDomainCertificateArn; }
+            set { this._customDomainCertificateArn = value; }
+        }
+
+        // Check to see if CustomDomainCertificateArn property is set
+        internal bool IsSetCustomDomainCertificateArn()
+        {
+            return this._customDomainCertificateArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomDomainCertificateExpiryTime. 
+        /// <para>
+        /// The expiration time for the certificate.
+        /// </para>
+        /// </summary>
+        public DateTime CustomDomainCertificateExpiryTime
+        {
+            get { return this._customDomainCertificateExpiryTime.GetValueOrDefault(); }
+            set { this._customDomainCertificateExpiryTime = value; }
+        }
+
+        // Check to see if CustomDomainCertificateExpiryTime property is set
+        internal bool IsSetCustomDomainCertificateExpiryTime()
+        {
+            return this._customDomainCertificateExpiryTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomDomainName. 
+        /// <para>
+        /// The custom domain name associated with the workgroup.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=253)]
+        public string CustomDomainName
+        {
+            get { return this._customDomainName; }
+            set { this._customDomainName = value; }
+        }
+
+        // Check to see if CustomDomainName property is set
+        internal bool IsSetCustomDomainName()
+        {
+            return this._customDomainName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Endpoint. 
         /// <para>
         /// The endpoint that is created from the workgroup.
@@ -160,6 +221,26 @@ namespace Amazon.RedshiftServerless.Model
         internal bool IsSetNamespaceName()
         {
             return this._namespaceName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PatchVersion. 
+        /// <para>
+        /// The patch version of your Amazon Redshift Serverless workgroup. For more information
+        /// about patch versions, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/cluster-versions.html">Cluster
+        /// versions for Amazon Redshift</a>.
+        /// </para>
+        /// </summary>
+        public string PatchVersion
+        {
+            get { return this._patchVersion; }
+            set { this._patchVersion = value; }
+        }
+
+        // Check to see if PatchVersion property is set
+        internal bool IsSetPatchVersion()
+        {
+            return this._patchVersion != null;
         }
 
         /// <summary>
@@ -306,6 +387,26 @@ namespace Amazon.RedshiftServerless.Model
         internal bool IsSetWorkgroupName()
         {
             return this._workgroupName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkgroupVersion. 
+        /// <para>
+        /// The Amazon Redshift Serverless version of your workgroup. For more information about
+        /// Amazon Redshift Serverless versions, see<a href="https://docs.aws.amazon.com/redshift/latest/mgmt/cluster-versions.html">Cluster
+        /// versions for Amazon Redshift</a>.
+        /// </para>
+        /// </summary>
+        public string WorkgroupVersion
+        {
+            get { return this._workgroupVersion; }
+            set { this._workgroupVersion = value; }
+        }
+
+        // Check to see if WorkgroupVersion property is set
+        internal bool IsSetWorkgroupVersion()
+        {
+            return this._workgroupVersion != null;
         }
 
     }

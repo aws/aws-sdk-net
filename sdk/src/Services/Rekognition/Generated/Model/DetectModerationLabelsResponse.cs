@@ -36,6 +36,7 @@ namespace Amazon.Rekognition.Model
         private HumanLoopActivationOutput _humanLoopActivationOutput;
         private List<ModerationLabel> _moderationLabels = new List<ModerationLabel>();
         private string _moderationModelVersion;
+        private string _projectVersion;
 
         /// <summary>
         /// Gets and sets the property HumanLoopActivationOutput. 
@@ -77,7 +78,8 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property ModerationModelVersion. 
         /// <para>
-        /// Version number of the moderation detection model that was used to detect unsafe content.
+        /// Version number of the base moderation detection model that was used to detect unsafe
+        /// content.
         /// </para>
         /// </summary>
         public string ModerationModelVersion
@@ -90,6 +92,27 @@ namespace Amazon.Rekognition.Model
         internal bool IsSetModerationModelVersion()
         {
             return this._moderationModelVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProjectVersion. 
+        /// <para>
+        /// Identifier of the custom adapter that was used during inference. If during inference
+        /// the adapter was EXPIRED, then the parameter will not be returned, indicating that
+        /// a base moderation detection project version was used.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string ProjectVersion
+        {
+            get { return this._projectVersion; }
+            set { this._projectVersion = value; }
+        }
+
+        // Check to see if ProjectVersion property is set
+        internal bool IsSetProjectVersion()
+        {
+            return this._projectVersion != null;
         }
 
     }

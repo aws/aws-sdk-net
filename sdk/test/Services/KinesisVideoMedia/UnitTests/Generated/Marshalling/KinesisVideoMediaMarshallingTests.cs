@@ -49,7 +49,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetMedia");
 
-            var request = InstantiateClassGenerator.Execute<GetMediaRequest>();
+            var request = InstantiateClassGenerator.Execute<GetMediaRequest>(operation);
             var marshaller = new GetMediaRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -80,7 +80,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetMedia");
 
-            var request = InstantiateClassGenerator.Execute<GetMediaRequest>();
+            var request = InstantiateClassGenerator.Execute<GetMediaRequest>(operation);
             var marshaller = new GetMediaRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -113,7 +113,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetMedia");
 
-            var request = InstantiateClassGenerator.Execute<GetMediaRequest>();
+            var request = InstantiateClassGenerator.Execute<GetMediaRequest>(operation);
             var marshaller = new GetMediaRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -146,7 +146,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetMedia");
 
-            var request = InstantiateClassGenerator.Execute<GetMediaRequest>();
+            var request = InstantiateClassGenerator.Execute<GetMediaRequest>(operation);
             var marshaller = new GetMediaRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -179,7 +179,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetMedia");
 
-            var request = InstantiateClassGenerator.Execute<GetMediaRequest>();
+            var request = InstantiateClassGenerator.Execute<GetMediaRequest>(operation);
             var marshaller = new GetMediaRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -212,7 +212,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetMedia");
 
-            var request = InstantiateClassGenerator.Execute<GetMediaRequest>();
+            var request = InstantiateClassGenerator.Execute<GetMediaRequest>(operation);
             var marshaller = new GetMediaRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -245,7 +245,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetMedia");
 
-            var request = InstantiateClassGenerator.Execute<GetMediaRequest>();
+            var request = InstantiateClassGenerator.Execute<GetMediaRequest>(operation);
             var marshaller = new GetMediaRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 

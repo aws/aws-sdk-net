@@ -76,6 +76,7 @@ namespace Amazon.RDS.Model
         private List<DBSecurityGroupMembership> _dbSecurityGroups = new List<DBSecurityGroupMembership>();
         private DBSubnetGroup _dbSubnetGroup;
         private string _dbSystemId;
+        private bool? _dedicatedLogVolume;
         private bool? _deletionProtection;
         private List<DomainMembership> _domainMemberships = new List<DomainMembership>();
         private List<string> _enabledCloudwatchLogsExports = new List<string>();
@@ -86,6 +87,7 @@ namespace Amazon.RDS.Model
         private bool? _iamDatabaseAuthenticationEnabled;
         private DateTime? _instanceCreateTime;
         private int? _iops;
+        private bool? _isStorageConfigUpgradeAvailable;
         private string _kmsKeyId;
         private DateTime? _latestRestorableTime;
         private string _licenseModel;
@@ -814,6 +816,24 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DedicatedLogVolume. 
+        /// <para>
+        /// Indicates whether the DB instance has a dedicated log volume (DLV) enabled.
+        /// </para>
+        /// </summary>
+        public bool DedicatedLogVolume
+        {
+            get { return this._dedicatedLogVolume.GetValueOrDefault(); }
+            set { this._dedicatedLogVolume = value; }
+        }
+
+        // Check to see if DedicatedLogVolume property is set
+        internal bool IsSetDedicatedLogVolume()
+        {
+            return this._dedicatedLogVolume.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property DeletionProtection. 
         /// <para>
         /// Indicates whether the DB instance has deletion protection enabled. The database can't
@@ -1012,6 +1032,28 @@ namespace Amazon.RDS.Model
         internal bool IsSetIops()
         {
             return this._iops.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsStorageConfigUpgradeAvailable. 
+        /// <para>
+        /// Indicates whether an upgrade is recommended for the storage file system configuration
+        /// on the DB instance. To migrate to the preferred configuration, you can either create
+        /// a blue/green deployment, or create a read replica from the DB instance. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.UpgradeFileSystem">Upgrading
+        /// the storage file system for a DB instance</a>.
+        /// </para>
+        /// </summary>
+        public bool IsStorageConfigUpgradeAvailable
+        {
+            get { return this._isStorageConfigUpgradeAvailable.GetValueOrDefault(); }
+            set { this._isStorageConfigUpgradeAvailable = value; }
+        }
+
+        // Check to see if IsStorageConfigUpgradeAvailable property is set
+        internal bool IsSetIsStorageConfigUpgradeAvailable()
+        {
+            return this._isStorageConfigUpgradeAvailable.HasValue; 
         }
 
         /// <summary>

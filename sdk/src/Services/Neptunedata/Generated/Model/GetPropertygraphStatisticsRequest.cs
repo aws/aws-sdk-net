@@ -31,6 +31,14 @@ namespace Amazon.Neptunedata.Model
     /// <summary>
     /// Container for the parameters to the GetPropertygraphStatistics operation.
     /// Gets property graph statistics (Gremlin and openCypher).
+    /// 
+    ///  
+    /// <para>
+    /// When invoking this operation in a Neptune cluster that has IAM authentication enabled,
+    /// the IAM user or role making the request must have a policy attached that allows the
+    /// <a href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#getstatisticsstatus">neptune-db:GetStatisticsStatus</a>
+    /// IAM action in that cluster.
+    /// </para>
     /// </summary>
     public partial class GetPropertygraphStatisticsRequest : AmazonNeptunedataRequest
     {

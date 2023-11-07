@@ -49,7 +49,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CancelSolNetworkOperation");
 
-            var request = InstantiateClassGenerator.Execute<CancelSolNetworkOperationRequest>();
+            var request = InstantiateClassGenerator.Execute<CancelSolNetworkOperationRequest>(operation);
             var marshaller = new CancelSolNetworkOperationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -65,7 +65,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CancelSolNetworkOperation");
 
-            var request = InstantiateClassGenerator.Execute<CancelSolNetworkOperationRequest>();
+            var request = InstantiateClassGenerator.Execute<CancelSolNetworkOperationRequest>(operation);
             var marshaller = new CancelSolNetworkOperationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -97,7 +97,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CancelSolNetworkOperation");
 
-            var request = InstantiateClassGenerator.Execute<CancelSolNetworkOperationRequest>();
+            var request = InstantiateClassGenerator.Execute<CancelSolNetworkOperationRequest>(operation);
             var marshaller = new CancelSolNetworkOperationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -129,7 +129,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CancelSolNetworkOperation");
 
-            var request = InstantiateClassGenerator.Execute<CancelSolNetworkOperationRequest>();
+            var request = InstantiateClassGenerator.Execute<CancelSolNetworkOperationRequest>(operation);
             var marshaller = new CancelSolNetworkOperationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -161,7 +161,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CancelSolNetworkOperation");
 
-            var request = InstantiateClassGenerator.Execute<CancelSolNetworkOperationRequest>();
+            var request = InstantiateClassGenerator.Execute<CancelSolNetworkOperationRequest>(operation);
             var marshaller = new CancelSolNetworkOperationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -193,7 +193,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CancelSolNetworkOperation");
 
-            var request = InstantiateClassGenerator.Execute<CancelSolNetworkOperationRequest>();
+            var request = InstantiateClassGenerator.Execute<CancelSolNetworkOperationRequest>(operation);
             var marshaller = new CancelSolNetworkOperationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -225,7 +225,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateSolFunctionPackage");
 
-            var request = InstantiateClassGenerator.Execute<CreateSolFunctionPackageRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateSolFunctionPackageRequest>(operation);
             var marshaller = new CreateSolFunctionPackageRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -255,7 +255,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateSolFunctionPackage");
 
-            var request = InstantiateClassGenerator.Execute<CreateSolFunctionPackageRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateSolFunctionPackageRequest>(operation);
             var marshaller = new CreateSolFunctionPackageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -287,7 +287,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateSolFunctionPackage");
 
-            var request = InstantiateClassGenerator.Execute<CreateSolFunctionPackageRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateSolFunctionPackageRequest>(operation);
             var marshaller = new CreateSolFunctionPackageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -319,7 +319,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateSolFunctionPackage");
 
-            var request = InstantiateClassGenerator.Execute<CreateSolFunctionPackageRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateSolFunctionPackageRequest>(operation);
             var marshaller = new CreateSolFunctionPackageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -351,7 +351,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateSolFunctionPackage");
 
-            var request = InstantiateClassGenerator.Execute<CreateSolFunctionPackageRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateSolFunctionPackageRequest>(operation);
             var marshaller = new CreateSolFunctionPackageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -383,7 +383,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateSolFunctionPackage");
 
-            var request = InstantiateClassGenerator.Execute<CreateSolFunctionPackageRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateSolFunctionPackageRequest>(operation);
             var marshaller = new CreateSolFunctionPackageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -415,7 +415,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateSolNetworkInstance");
 
-            var request = InstantiateClassGenerator.Execute<CreateSolNetworkInstanceRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateSolNetworkInstanceRequest>(operation);
             var marshaller = new CreateSolNetworkInstanceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -445,7 +445,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateSolNetworkInstance");
 
-            var request = InstantiateClassGenerator.Execute<CreateSolNetworkInstanceRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateSolNetworkInstanceRequest>(operation);
             var marshaller = new CreateSolNetworkInstanceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -477,7 +477,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateSolNetworkInstance");
 
-            var request = InstantiateClassGenerator.Execute<CreateSolNetworkInstanceRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateSolNetworkInstanceRequest>(operation);
             var marshaller = new CreateSolNetworkInstanceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -509,7 +509,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateSolNetworkInstance");
 
-            var request = InstantiateClassGenerator.Execute<CreateSolNetworkInstanceRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateSolNetworkInstanceRequest>(operation);
             var marshaller = new CreateSolNetworkInstanceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -541,7 +541,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateSolNetworkInstance");
 
-            var request = InstantiateClassGenerator.Execute<CreateSolNetworkInstanceRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateSolNetworkInstanceRequest>(operation);
             var marshaller = new CreateSolNetworkInstanceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -573,7 +573,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateSolNetworkInstance");
 
-            var request = InstantiateClassGenerator.Execute<CreateSolNetworkInstanceRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateSolNetworkInstanceRequest>(operation);
             var marshaller = new CreateSolNetworkInstanceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -605,7 +605,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateSolNetworkInstance");
 
-            var request = InstantiateClassGenerator.Execute<CreateSolNetworkInstanceRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateSolNetworkInstanceRequest>(operation);
             var marshaller = new CreateSolNetworkInstanceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -637,7 +637,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateSolNetworkPackage");
 
-            var request = InstantiateClassGenerator.Execute<CreateSolNetworkPackageRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateSolNetworkPackageRequest>(operation);
             var marshaller = new CreateSolNetworkPackageRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -667,7 +667,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateSolNetworkPackage");
 
-            var request = InstantiateClassGenerator.Execute<CreateSolNetworkPackageRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateSolNetworkPackageRequest>(operation);
             var marshaller = new CreateSolNetworkPackageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -699,7 +699,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateSolNetworkPackage");
 
-            var request = InstantiateClassGenerator.Execute<CreateSolNetworkPackageRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateSolNetworkPackageRequest>(operation);
             var marshaller = new CreateSolNetworkPackageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -731,7 +731,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateSolNetworkPackage");
 
-            var request = InstantiateClassGenerator.Execute<CreateSolNetworkPackageRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateSolNetworkPackageRequest>(operation);
             var marshaller = new CreateSolNetworkPackageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -763,7 +763,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateSolNetworkPackage");
 
-            var request = InstantiateClassGenerator.Execute<CreateSolNetworkPackageRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateSolNetworkPackageRequest>(operation);
             var marshaller = new CreateSolNetworkPackageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -795,7 +795,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateSolNetworkPackage");
 
-            var request = InstantiateClassGenerator.Execute<CreateSolNetworkPackageRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateSolNetworkPackageRequest>(operation);
             var marshaller = new CreateSolNetworkPackageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -827,7 +827,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteSolFunctionPackage");
 
-            var request = InstantiateClassGenerator.Execute<DeleteSolFunctionPackageRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteSolFunctionPackageRequest>(operation);
             var marshaller = new DeleteSolFunctionPackageRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -843,7 +843,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteSolFunctionPackage");
 
-            var request = InstantiateClassGenerator.Execute<DeleteSolFunctionPackageRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteSolFunctionPackageRequest>(operation);
             var marshaller = new DeleteSolFunctionPackageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -875,7 +875,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteSolFunctionPackage");
 
-            var request = InstantiateClassGenerator.Execute<DeleteSolFunctionPackageRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteSolFunctionPackageRequest>(operation);
             var marshaller = new DeleteSolFunctionPackageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -907,7 +907,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteSolFunctionPackage");
 
-            var request = InstantiateClassGenerator.Execute<DeleteSolFunctionPackageRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteSolFunctionPackageRequest>(operation);
             var marshaller = new DeleteSolFunctionPackageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -939,7 +939,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteSolFunctionPackage");
 
-            var request = InstantiateClassGenerator.Execute<DeleteSolFunctionPackageRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteSolFunctionPackageRequest>(operation);
             var marshaller = new DeleteSolFunctionPackageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -971,7 +971,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteSolFunctionPackage");
 
-            var request = InstantiateClassGenerator.Execute<DeleteSolFunctionPackageRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteSolFunctionPackageRequest>(operation);
             var marshaller = new DeleteSolFunctionPackageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1003,7 +1003,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteSolNetworkInstance");
 
-            var request = InstantiateClassGenerator.Execute<DeleteSolNetworkInstanceRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteSolNetworkInstanceRequest>(operation);
             var marshaller = new DeleteSolNetworkInstanceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1019,7 +1019,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteSolNetworkInstance");
 
-            var request = InstantiateClassGenerator.Execute<DeleteSolNetworkInstanceRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteSolNetworkInstanceRequest>(operation);
             var marshaller = new DeleteSolNetworkInstanceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1051,7 +1051,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteSolNetworkInstance");
 
-            var request = InstantiateClassGenerator.Execute<DeleteSolNetworkInstanceRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteSolNetworkInstanceRequest>(operation);
             var marshaller = new DeleteSolNetworkInstanceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1083,7 +1083,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteSolNetworkInstance");
 
-            var request = InstantiateClassGenerator.Execute<DeleteSolNetworkInstanceRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteSolNetworkInstanceRequest>(operation);
             var marshaller = new DeleteSolNetworkInstanceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1115,7 +1115,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteSolNetworkInstance");
 
-            var request = InstantiateClassGenerator.Execute<DeleteSolNetworkInstanceRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteSolNetworkInstanceRequest>(operation);
             var marshaller = new DeleteSolNetworkInstanceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1147,7 +1147,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteSolNetworkInstance");
 
-            var request = InstantiateClassGenerator.Execute<DeleteSolNetworkInstanceRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteSolNetworkInstanceRequest>(operation);
             var marshaller = new DeleteSolNetworkInstanceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1179,7 +1179,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteSolNetworkPackage");
 
-            var request = InstantiateClassGenerator.Execute<DeleteSolNetworkPackageRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteSolNetworkPackageRequest>(operation);
             var marshaller = new DeleteSolNetworkPackageRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1195,7 +1195,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteSolNetworkPackage");
 
-            var request = InstantiateClassGenerator.Execute<DeleteSolNetworkPackageRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteSolNetworkPackageRequest>(operation);
             var marshaller = new DeleteSolNetworkPackageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1227,7 +1227,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteSolNetworkPackage");
 
-            var request = InstantiateClassGenerator.Execute<DeleteSolNetworkPackageRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteSolNetworkPackageRequest>(operation);
             var marshaller = new DeleteSolNetworkPackageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1259,7 +1259,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteSolNetworkPackage");
 
-            var request = InstantiateClassGenerator.Execute<DeleteSolNetworkPackageRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteSolNetworkPackageRequest>(operation);
             var marshaller = new DeleteSolNetworkPackageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1291,7 +1291,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteSolNetworkPackage");
 
-            var request = InstantiateClassGenerator.Execute<DeleteSolNetworkPackageRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteSolNetworkPackageRequest>(operation);
             var marshaller = new DeleteSolNetworkPackageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1323,7 +1323,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteSolNetworkPackage");
 
-            var request = InstantiateClassGenerator.Execute<DeleteSolNetworkPackageRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteSolNetworkPackageRequest>(operation);
             var marshaller = new DeleteSolNetworkPackageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1355,7 +1355,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetSolFunctionInstance");
 
-            var request = InstantiateClassGenerator.Execute<GetSolFunctionInstanceRequest>();
+            var request = InstantiateClassGenerator.Execute<GetSolFunctionInstanceRequest>(operation);
             var marshaller = new GetSolFunctionInstanceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1385,7 +1385,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetSolFunctionInstance");
 
-            var request = InstantiateClassGenerator.Execute<GetSolFunctionInstanceRequest>();
+            var request = InstantiateClassGenerator.Execute<GetSolFunctionInstanceRequest>(operation);
             var marshaller = new GetSolFunctionInstanceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1417,7 +1417,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetSolFunctionInstance");
 
-            var request = InstantiateClassGenerator.Execute<GetSolFunctionInstanceRequest>();
+            var request = InstantiateClassGenerator.Execute<GetSolFunctionInstanceRequest>(operation);
             var marshaller = new GetSolFunctionInstanceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1449,7 +1449,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetSolFunctionInstance");
 
-            var request = InstantiateClassGenerator.Execute<GetSolFunctionInstanceRequest>();
+            var request = InstantiateClassGenerator.Execute<GetSolFunctionInstanceRequest>(operation);
             var marshaller = new GetSolFunctionInstanceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1481,7 +1481,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetSolFunctionInstance");
 
-            var request = InstantiateClassGenerator.Execute<GetSolFunctionInstanceRequest>();
+            var request = InstantiateClassGenerator.Execute<GetSolFunctionInstanceRequest>(operation);
             var marshaller = new GetSolFunctionInstanceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1513,7 +1513,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetSolFunctionInstance");
 
-            var request = InstantiateClassGenerator.Execute<GetSolFunctionInstanceRequest>();
+            var request = InstantiateClassGenerator.Execute<GetSolFunctionInstanceRequest>(operation);
             var marshaller = new GetSolFunctionInstanceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1545,7 +1545,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetSolFunctionPackage");
 
-            var request = InstantiateClassGenerator.Execute<GetSolFunctionPackageRequest>();
+            var request = InstantiateClassGenerator.Execute<GetSolFunctionPackageRequest>(operation);
             var marshaller = new GetSolFunctionPackageRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1575,7 +1575,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetSolFunctionPackage");
 
-            var request = InstantiateClassGenerator.Execute<GetSolFunctionPackageRequest>();
+            var request = InstantiateClassGenerator.Execute<GetSolFunctionPackageRequest>(operation);
             var marshaller = new GetSolFunctionPackageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1607,7 +1607,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetSolFunctionPackage");
 
-            var request = InstantiateClassGenerator.Execute<GetSolFunctionPackageRequest>();
+            var request = InstantiateClassGenerator.Execute<GetSolFunctionPackageRequest>(operation);
             var marshaller = new GetSolFunctionPackageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1639,7 +1639,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetSolFunctionPackage");
 
-            var request = InstantiateClassGenerator.Execute<GetSolFunctionPackageRequest>();
+            var request = InstantiateClassGenerator.Execute<GetSolFunctionPackageRequest>(operation);
             var marshaller = new GetSolFunctionPackageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1671,7 +1671,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetSolFunctionPackage");
 
-            var request = InstantiateClassGenerator.Execute<GetSolFunctionPackageRequest>();
+            var request = InstantiateClassGenerator.Execute<GetSolFunctionPackageRequest>(operation);
             var marshaller = new GetSolFunctionPackageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1703,7 +1703,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetSolFunctionPackage");
 
-            var request = InstantiateClassGenerator.Execute<GetSolFunctionPackageRequest>();
+            var request = InstantiateClassGenerator.Execute<GetSolFunctionPackageRequest>(operation);
             var marshaller = new GetSolFunctionPackageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1735,7 +1735,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetSolFunctionPackageContent");
 
-            var request = InstantiateClassGenerator.Execute<GetSolFunctionPackageContentRequest>();
+            var request = InstantiateClassGenerator.Execute<GetSolFunctionPackageContentRequest>(operation);
             var marshaller = new GetSolFunctionPackageContentRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1766,7 +1766,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetSolFunctionPackageContent");
 
-            var request = InstantiateClassGenerator.Execute<GetSolFunctionPackageContentRequest>();
+            var request = InstantiateClassGenerator.Execute<GetSolFunctionPackageContentRequest>(operation);
             var marshaller = new GetSolFunctionPackageContentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1799,7 +1799,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetSolFunctionPackageContent");
 
-            var request = InstantiateClassGenerator.Execute<GetSolFunctionPackageContentRequest>();
+            var request = InstantiateClassGenerator.Execute<GetSolFunctionPackageContentRequest>(operation);
             var marshaller = new GetSolFunctionPackageContentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1832,7 +1832,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetSolFunctionPackageContent");
 
-            var request = InstantiateClassGenerator.Execute<GetSolFunctionPackageContentRequest>();
+            var request = InstantiateClassGenerator.Execute<GetSolFunctionPackageContentRequest>(operation);
             var marshaller = new GetSolFunctionPackageContentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1865,7 +1865,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetSolFunctionPackageContent");
 
-            var request = InstantiateClassGenerator.Execute<GetSolFunctionPackageContentRequest>();
+            var request = InstantiateClassGenerator.Execute<GetSolFunctionPackageContentRequest>(operation);
             var marshaller = new GetSolFunctionPackageContentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1898,7 +1898,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetSolFunctionPackageContent");
 
-            var request = InstantiateClassGenerator.Execute<GetSolFunctionPackageContentRequest>();
+            var request = InstantiateClassGenerator.Execute<GetSolFunctionPackageContentRequest>(operation);
             var marshaller = new GetSolFunctionPackageContentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1931,7 +1931,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetSolFunctionPackageDescriptor");
 
-            var request = InstantiateClassGenerator.Execute<GetSolFunctionPackageDescriptorRequest>();
+            var request = InstantiateClassGenerator.Execute<GetSolFunctionPackageDescriptorRequest>(operation);
             var marshaller = new GetSolFunctionPackageDescriptorRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1962,7 +1962,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetSolFunctionPackageDescriptor");
 
-            var request = InstantiateClassGenerator.Execute<GetSolFunctionPackageDescriptorRequest>();
+            var request = InstantiateClassGenerator.Execute<GetSolFunctionPackageDescriptorRequest>(operation);
             var marshaller = new GetSolFunctionPackageDescriptorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1995,7 +1995,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetSolFunctionPackageDescriptor");
 
-            var request = InstantiateClassGenerator.Execute<GetSolFunctionPackageDescriptorRequest>();
+            var request = InstantiateClassGenerator.Execute<GetSolFunctionPackageDescriptorRequest>(operation);
             var marshaller = new GetSolFunctionPackageDescriptorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2028,7 +2028,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetSolFunctionPackageDescriptor");
 
-            var request = InstantiateClassGenerator.Execute<GetSolFunctionPackageDescriptorRequest>();
+            var request = InstantiateClassGenerator.Execute<GetSolFunctionPackageDescriptorRequest>(operation);
             var marshaller = new GetSolFunctionPackageDescriptorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2061,7 +2061,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetSolFunctionPackageDescriptor");
 
-            var request = InstantiateClassGenerator.Execute<GetSolFunctionPackageDescriptorRequest>();
+            var request = InstantiateClassGenerator.Execute<GetSolFunctionPackageDescriptorRequest>(operation);
             var marshaller = new GetSolFunctionPackageDescriptorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2094,7 +2094,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetSolFunctionPackageDescriptor");
 
-            var request = InstantiateClassGenerator.Execute<GetSolFunctionPackageDescriptorRequest>();
+            var request = InstantiateClassGenerator.Execute<GetSolFunctionPackageDescriptorRequest>(operation);
             var marshaller = new GetSolFunctionPackageDescriptorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2127,7 +2127,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetSolNetworkInstance");
 
-            var request = InstantiateClassGenerator.Execute<GetSolNetworkInstanceRequest>();
+            var request = InstantiateClassGenerator.Execute<GetSolNetworkInstanceRequest>(operation);
             var marshaller = new GetSolNetworkInstanceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -2157,7 +2157,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetSolNetworkInstance");
 
-            var request = InstantiateClassGenerator.Execute<GetSolNetworkInstanceRequest>();
+            var request = InstantiateClassGenerator.Execute<GetSolNetworkInstanceRequest>(operation);
             var marshaller = new GetSolNetworkInstanceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2189,7 +2189,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetSolNetworkInstance");
 
-            var request = InstantiateClassGenerator.Execute<GetSolNetworkInstanceRequest>();
+            var request = InstantiateClassGenerator.Execute<GetSolNetworkInstanceRequest>(operation);
             var marshaller = new GetSolNetworkInstanceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2221,7 +2221,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetSolNetworkInstance");
 
-            var request = InstantiateClassGenerator.Execute<GetSolNetworkInstanceRequest>();
+            var request = InstantiateClassGenerator.Execute<GetSolNetworkInstanceRequest>(operation);
             var marshaller = new GetSolNetworkInstanceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2253,7 +2253,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetSolNetworkInstance");
 
-            var request = InstantiateClassGenerator.Execute<GetSolNetworkInstanceRequest>();
+            var request = InstantiateClassGenerator.Execute<GetSolNetworkInstanceRequest>(operation);
             var marshaller = new GetSolNetworkInstanceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2285,7 +2285,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetSolNetworkInstance");
 
-            var request = InstantiateClassGenerator.Execute<GetSolNetworkInstanceRequest>();
+            var request = InstantiateClassGenerator.Execute<GetSolNetworkInstanceRequest>(operation);
             var marshaller = new GetSolNetworkInstanceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2317,7 +2317,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetSolNetworkOperation");
 
-            var request = InstantiateClassGenerator.Execute<GetSolNetworkOperationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetSolNetworkOperationRequest>(operation);
             var marshaller = new GetSolNetworkOperationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -2347,7 +2347,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetSolNetworkOperation");
 
-            var request = InstantiateClassGenerator.Execute<GetSolNetworkOperationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetSolNetworkOperationRequest>(operation);
             var marshaller = new GetSolNetworkOperationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2379,7 +2379,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetSolNetworkOperation");
 
-            var request = InstantiateClassGenerator.Execute<GetSolNetworkOperationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetSolNetworkOperationRequest>(operation);
             var marshaller = new GetSolNetworkOperationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2411,7 +2411,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetSolNetworkOperation");
 
-            var request = InstantiateClassGenerator.Execute<GetSolNetworkOperationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetSolNetworkOperationRequest>(operation);
             var marshaller = new GetSolNetworkOperationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2443,7 +2443,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetSolNetworkOperation");
 
-            var request = InstantiateClassGenerator.Execute<GetSolNetworkOperationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetSolNetworkOperationRequest>(operation);
             var marshaller = new GetSolNetworkOperationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2475,7 +2475,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetSolNetworkOperation");
 
-            var request = InstantiateClassGenerator.Execute<GetSolNetworkOperationRequest>();
+            var request = InstantiateClassGenerator.Execute<GetSolNetworkOperationRequest>(operation);
             var marshaller = new GetSolNetworkOperationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2507,7 +2507,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetSolNetworkPackage");
 
-            var request = InstantiateClassGenerator.Execute<GetSolNetworkPackageRequest>();
+            var request = InstantiateClassGenerator.Execute<GetSolNetworkPackageRequest>(operation);
             var marshaller = new GetSolNetworkPackageRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -2537,7 +2537,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetSolNetworkPackage");
 
-            var request = InstantiateClassGenerator.Execute<GetSolNetworkPackageRequest>();
+            var request = InstantiateClassGenerator.Execute<GetSolNetworkPackageRequest>(operation);
             var marshaller = new GetSolNetworkPackageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2569,7 +2569,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetSolNetworkPackage");
 
-            var request = InstantiateClassGenerator.Execute<GetSolNetworkPackageRequest>();
+            var request = InstantiateClassGenerator.Execute<GetSolNetworkPackageRequest>(operation);
             var marshaller = new GetSolNetworkPackageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2601,7 +2601,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetSolNetworkPackage");
 
-            var request = InstantiateClassGenerator.Execute<GetSolNetworkPackageRequest>();
+            var request = InstantiateClassGenerator.Execute<GetSolNetworkPackageRequest>(operation);
             var marshaller = new GetSolNetworkPackageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2633,7 +2633,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetSolNetworkPackage");
 
-            var request = InstantiateClassGenerator.Execute<GetSolNetworkPackageRequest>();
+            var request = InstantiateClassGenerator.Execute<GetSolNetworkPackageRequest>(operation);
             var marshaller = new GetSolNetworkPackageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2665,7 +2665,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetSolNetworkPackage");
 
-            var request = InstantiateClassGenerator.Execute<GetSolNetworkPackageRequest>();
+            var request = InstantiateClassGenerator.Execute<GetSolNetworkPackageRequest>(operation);
             var marshaller = new GetSolNetworkPackageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2697,7 +2697,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetSolNetworkPackageContent");
 
-            var request = InstantiateClassGenerator.Execute<GetSolNetworkPackageContentRequest>();
+            var request = InstantiateClassGenerator.Execute<GetSolNetworkPackageContentRequest>(operation);
             var marshaller = new GetSolNetworkPackageContentRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -2728,7 +2728,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetSolNetworkPackageContent");
 
-            var request = InstantiateClassGenerator.Execute<GetSolNetworkPackageContentRequest>();
+            var request = InstantiateClassGenerator.Execute<GetSolNetworkPackageContentRequest>(operation);
             var marshaller = new GetSolNetworkPackageContentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2761,7 +2761,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetSolNetworkPackageContent");
 
-            var request = InstantiateClassGenerator.Execute<GetSolNetworkPackageContentRequest>();
+            var request = InstantiateClassGenerator.Execute<GetSolNetworkPackageContentRequest>(operation);
             var marshaller = new GetSolNetworkPackageContentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2794,7 +2794,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetSolNetworkPackageContent");
 
-            var request = InstantiateClassGenerator.Execute<GetSolNetworkPackageContentRequest>();
+            var request = InstantiateClassGenerator.Execute<GetSolNetworkPackageContentRequest>(operation);
             var marshaller = new GetSolNetworkPackageContentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2827,7 +2827,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetSolNetworkPackageContent");
 
-            var request = InstantiateClassGenerator.Execute<GetSolNetworkPackageContentRequest>();
+            var request = InstantiateClassGenerator.Execute<GetSolNetworkPackageContentRequest>(operation);
             var marshaller = new GetSolNetworkPackageContentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2860,7 +2860,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetSolNetworkPackageContent");
 
-            var request = InstantiateClassGenerator.Execute<GetSolNetworkPackageContentRequest>();
+            var request = InstantiateClassGenerator.Execute<GetSolNetworkPackageContentRequest>(operation);
             var marshaller = new GetSolNetworkPackageContentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2893,7 +2893,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetSolNetworkPackageDescriptor");
 
-            var request = InstantiateClassGenerator.Execute<GetSolNetworkPackageDescriptorRequest>();
+            var request = InstantiateClassGenerator.Execute<GetSolNetworkPackageDescriptorRequest>(operation);
             var marshaller = new GetSolNetworkPackageDescriptorRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -2924,7 +2924,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetSolNetworkPackageDescriptor");
 
-            var request = InstantiateClassGenerator.Execute<GetSolNetworkPackageDescriptorRequest>();
+            var request = InstantiateClassGenerator.Execute<GetSolNetworkPackageDescriptorRequest>(operation);
             var marshaller = new GetSolNetworkPackageDescriptorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2957,7 +2957,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetSolNetworkPackageDescriptor");
 
-            var request = InstantiateClassGenerator.Execute<GetSolNetworkPackageDescriptorRequest>();
+            var request = InstantiateClassGenerator.Execute<GetSolNetworkPackageDescriptorRequest>(operation);
             var marshaller = new GetSolNetworkPackageDescriptorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2990,7 +2990,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetSolNetworkPackageDescriptor");
 
-            var request = InstantiateClassGenerator.Execute<GetSolNetworkPackageDescriptorRequest>();
+            var request = InstantiateClassGenerator.Execute<GetSolNetworkPackageDescriptorRequest>(operation);
             var marshaller = new GetSolNetworkPackageDescriptorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3023,7 +3023,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetSolNetworkPackageDescriptor");
 
-            var request = InstantiateClassGenerator.Execute<GetSolNetworkPackageDescriptorRequest>();
+            var request = InstantiateClassGenerator.Execute<GetSolNetworkPackageDescriptorRequest>(operation);
             var marshaller = new GetSolNetworkPackageDescriptorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3056,7 +3056,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetSolNetworkPackageDescriptor");
 
-            var request = InstantiateClassGenerator.Execute<GetSolNetworkPackageDescriptorRequest>();
+            var request = InstantiateClassGenerator.Execute<GetSolNetworkPackageDescriptorRequest>(operation);
             var marshaller = new GetSolNetworkPackageDescriptorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3089,7 +3089,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("InstantiateSolNetworkInstance");
 
-            var request = InstantiateClassGenerator.Execute<InstantiateSolNetworkInstanceRequest>();
+            var request = InstantiateClassGenerator.Execute<InstantiateSolNetworkInstanceRequest>(operation);
             var marshaller = new InstantiateSolNetworkInstanceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -3119,7 +3119,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("InstantiateSolNetworkInstance");
 
-            var request = InstantiateClassGenerator.Execute<InstantiateSolNetworkInstanceRequest>();
+            var request = InstantiateClassGenerator.Execute<InstantiateSolNetworkInstanceRequest>(operation);
             var marshaller = new InstantiateSolNetworkInstanceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3151,7 +3151,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("InstantiateSolNetworkInstance");
 
-            var request = InstantiateClassGenerator.Execute<InstantiateSolNetworkInstanceRequest>();
+            var request = InstantiateClassGenerator.Execute<InstantiateSolNetworkInstanceRequest>(operation);
             var marshaller = new InstantiateSolNetworkInstanceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3183,7 +3183,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("InstantiateSolNetworkInstance");
 
-            var request = InstantiateClassGenerator.Execute<InstantiateSolNetworkInstanceRequest>();
+            var request = InstantiateClassGenerator.Execute<InstantiateSolNetworkInstanceRequest>(operation);
             var marshaller = new InstantiateSolNetworkInstanceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3215,7 +3215,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("InstantiateSolNetworkInstance");
 
-            var request = InstantiateClassGenerator.Execute<InstantiateSolNetworkInstanceRequest>();
+            var request = InstantiateClassGenerator.Execute<InstantiateSolNetworkInstanceRequest>(operation);
             var marshaller = new InstantiateSolNetworkInstanceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3247,7 +3247,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("InstantiateSolNetworkInstance");
 
-            var request = InstantiateClassGenerator.Execute<InstantiateSolNetworkInstanceRequest>();
+            var request = InstantiateClassGenerator.Execute<InstantiateSolNetworkInstanceRequest>(operation);
             var marshaller = new InstantiateSolNetworkInstanceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3279,7 +3279,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("InstantiateSolNetworkInstance");
 
-            var request = InstantiateClassGenerator.Execute<InstantiateSolNetworkInstanceRequest>();
+            var request = InstantiateClassGenerator.Execute<InstantiateSolNetworkInstanceRequest>(operation);
             var marshaller = new InstantiateSolNetworkInstanceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3311,7 +3311,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListSolFunctionInstances");
 
-            var request = InstantiateClassGenerator.Execute<ListSolFunctionInstancesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListSolFunctionInstancesRequest>(operation);
             var marshaller = new ListSolFunctionInstancesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -3341,7 +3341,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListSolFunctionInstances");
 
-            var request = InstantiateClassGenerator.Execute<ListSolFunctionInstancesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListSolFunctionInstancesRequest>(operation);
             var marshaller = new ListSolFunctionInstancesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3373,7 +3373,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListSolFunctionInstances");
 
-            var request = InstantiateClassGenerator.Execute<ListSolFunctionInstancesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListSolFunctionInstancesRequest>(operation);
             var marshaller = new ListSolFunctionInstancesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3405,7 +3405,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListSolFunctionInstances");
 
-            var request = InstantiateClassGenerator.Execute<ListSolFunctionInstancesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListSolFunctionInstancesRequest>(operation);
             var marshaller = new ListSolFunctionInstancesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3437,7 +3437,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListSolFunctionInstances");
 
-            var request = InstantiateClassGenerator.Execute<ListSolFunctionInstancesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListSolFunctionInstancesRequest>(operation);
             var marshaller = new ListSolFunctionInstancesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3469,7 +3469,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListSolFunctionPackages");
 
-            var request = InstantiateClassGenerator.Execute<ListSolFunctionPackagesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListSolFunctionPackagesRequest>(operation);
             var marshaller = new ListSolFunctionPackagesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -3499,7 +3499,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListSolFunctionPackages");
 
-            var request = InstantiateClassGenerator.Execute<ListSolFunctionPackagesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListSolFunctionPackagesRequest>(operation);
             var marshaller = new ListSolFunctionPackagesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3531,7 +3531,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListSolFunctionPackages");
 
-            var request = InstantiateClassGenerator.Execute<ListSolFunctionPackagesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListSolFunctionPackagesRequest>(operation);
             var marshaller = new ListSolFunctionPackagesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3563,7 +3563,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListSolFunctionPackages");
 
-            var request = InstantiateClassGenerator.Execute<ListSolFunctionPackagesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListSolFunctionPackagesRequest>(operation);
             var marshaller = new ListSolFunctionPackagesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3595,7 +3595,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListSolFunctionPackages");
 
-            var request = InstantiateClassGenerator.Execute<ListSolFunctionPackagesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListSolFunctionPackagesRequest>(operation);
             var marshaller = new ListSolFunctionPackagesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3627,7 +3627,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListSolNetworkInstances");
 
-            var request = InstantiateClassGenerator.Execute<ListSolNetworkInstancesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListSolNetworkInstancesRequest>(operation);
             var marshaller = new ListSolNetworkInstancesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -3657,7 +3657,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListSolNetworkInstances");
 
-            var request = InstantiateClassGenerator.Execute<ListSolNetworkInstancesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListSolNetworkInstancesRequest>(operation);
             var marshaller = new ListSolNetworkInstancesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3689,7 +3689,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListSolNetworkInstances");
 
-            var request = InstantiateClassGenerator.Execute<ListSolNetworkInstancesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListSolNetworkInstancesRequest>(operation);
             var marshaller = new ListSolNetworkInstancesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3721,7 +3721,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListSolNetworkInstances");
 
-            var request = InstantiateClassGenerator.Execute<ListSolNetworkInstancesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListSolNetworkInstancesRequest>(operation);
             var marshaller = new ListSolNetworkInstancesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3753,7 +3753,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListSolNetworkInstances");
 
-            var request = InstantiateClassGenerator.Execute<ListSolNetworkInstancesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListSolNetworkInstancesRequest>(operation);
             var marshaller = new ListSolNetworkInstancesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3785,7 +3785,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListSolNetworkOperations");
 
-            var request = InstantiateClassGenerator.Execute<ListSolNetworkOperationsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListSolNetworkOperationsRequest>(operation);
             var marshaller = new ListSolNetworkOperationsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -3815,7 +3815,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListSolNetworkOperations");
 
-            var request = InstantiateClassGenerator.Execute<ListSolNetworkOperationsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListSolNetworkOperationsRequest>(operation);
             var marshaller = new ListSolNetworkOperationsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3847,7 +3847,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListSolNetworkOperations");
 
-            var request = InstantiateClassGenerator.Execute<ListSolNetworkOperationsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListSolNetworkOperationsRequest>(operation);
             var marshaller = new ListSolNetworkOperationsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3879,7 +3879,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListSolNetworkOperations");
 
-            var request = InstantiateClassGenerator.Execute<ListSolNetworkOperationsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListSolNetworkOperationsRequest>(operation);
             var marshaller = new ListSolNetworkOperationsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3911,7 +3911,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListSolNetworkOperations");
 
-            var request = InstantiateClassGenerator.Execute<ListSolNetworkOperationsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListSolNetworkOperationsRequest>(operation);
             var marshaller = new ListSolNetworkOperationsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -3943,7 +3943,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListSolNetworkPackages");
 
-            var request = InstantiateClassGenerator.Execute<ListSolNetworkPackagesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListSolNetworkPackagesRequest>(operation);
             var marshaller = new ListSolNetworkPackagesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -3973,7 +3973,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListSolNetworkPackages");
 
-            var request = InstantiateClassGenerator.Execute<ListSolNetworkPackagesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListSolNetworkPackagesRequest>(operation);
             var marshaller = new ListSolNetworkPackagesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4005,7 +4005,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListSolNetworkPackages");
 
-            var request = InstantiateClassGenerator.Execute<ListSolNetworkPackagesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListSolNetworkPackagesRequest>(operation);
             var marshaller = new ListSolNetworkPackagesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4037,7 +4037,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListSolNetworkPackages");
 
-            var request = InstantiateClassGenerator.Execute<ListSolNetworkPackagesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListSolNetworkPackagesRequest>(operation);
             var marshaller = new ListSolNetworkPackagesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4069,7 +4069,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListSolNetworkPackages");
 
-            var request = InstantiateClassGenerator.Execute<ListSolNetworkPackagesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListSolNetworkPackagesRequest>(operation);
             var marshaller = new ListSolNetworkPackagesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4101,7 +4101,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListTagsForResource");
 
-            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>(operation);
             var marshaller = new ListTagsForResourceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -4131,7 +4131,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListTagsForResource");
 
-            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>(operation);
             var marshaller = new ListTagsForResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4163,7 +4163,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListTagsForResource");
 
-            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>(operation);
             var marshaller = new ListTagsForResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4195,7 +4195,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListTagsForResource");
 
-            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>(operation);
             var marshaller = new ListTagsForResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4227,7 +4227,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListTagsForResource");
 
-            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>(operation);
             var marshaller = new ListTagsForResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4259,7 +4259,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListTagsForResource");
 
-            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>(operation);
             var marshaller = new ListTagsForResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4291,7 +4291,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("PutSolFunctionPackageContent");
 
-            var request = InstantiateClassGenerator.Execute<PutSolFunctionPackageContentRequest>();
+            var request = InstantiateClassGenerator.Execute<PutSolFunctionPackageContentRequest>(operation);
             var marshaller = new PutSolFunctionPackageContentRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -4321,7 +4321,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("PutSolFunctionPackageContent");
 
-            var request = InstantiateClassGenerator.Execute<PutSolFunctionPackageContentRequest>();
+            var request = InstantiateClassGenerator.Execute<PutSolFunctionPackageContentRequest>(operation);
             var marshaller = new PutSolFunctionPackageContentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4353,7 +4353,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("PutSolFunctionPackageContent");
 
-            var request = InstantiateClassGenerator.Execute<PutSolFunctionPackageContentRequest>();
+            var request = InstantiateClassGenerator.Execute<PutSolFunctionPackageContentRequest>(operation);
             var marshaller = new PutSolFunctionPackageContentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4385,7 +4385,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("PutSolFunctionPackageContent");
 
-            var request = InstantiateClassGenerator.Execute<PutSolFunctionPackageContentRequest>();
+            var request = InstantiateClassGenerator.Execute<PutSolFunctionPackageContentRequest>(operation);
             var marshaller = new PutSolFunctionPackageContentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4417,7 +4417,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("PutSolFunctionPackageContent");
 
-            var request = InstantiateClassGenerator.Execute<PutSolFunctionPackageContentRequest>();
+            var request = InstantiateClassGenerator.Execute<PutSolFunctionPackageContentRequest>(operation);
             var marshaller = new PutSolFunctionPackageContentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4449,7 +4449,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("PutSolFunctionPackageContent");
 
-            var request = InstantiateClassGenerator.Execute<PutSolFunctionPackageContentRequest>();
+            var request = InstantiateClassGenerator.Execute<PutSolFunctionPackageContentRequest>(operation);
             var marshaller = new PutSolFunctionPackageContentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4481,7 +4481,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("PutSolNetworkPackageContent");
 
-            var request = InstantiateClassGenerator.Execute<PutSolNetworkPackageContentRequest>();
+            var request = InstantiateClassGenerator.Execute<PutSolNetworkPackageContentRequest>(operation);
             var marshaller = new PutSolNetworkPackageContentRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -4511,7 +4511,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("PutSolNetworkPackageContent");
 
-            var request = InstantiateClassGenerator.Execute<PutSolNetworkPackageContentRequest>();
+            var request = InstantiateClassGenerator.Execute<PutSolNetworkPackageContentRequest>(operation);
             var marshaller = new PutSolNetworkPackageContentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4543,7 +4543,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("PutSolNetworkPackageContent");
 
-            var request = InstantiateClassGenerator.Execute<PutSolNetworkPackageContentRequest>();
+            var request = InstantiateClassGenerator.Execute<PutSolNetworkPackageContentRequest>(operation);
             var marshaller = new PutSolNetworkPackageContentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4575,7 +4575,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("PutSolNetworkPackageContent");
 
-            var request = InstantiateClassGenerator.Execute<PutSolNetworkPackageContentRequest>();
+            var request = InstantiateClassGenerator.Execute<PutSolNetworkPackageContentRequest>(operation);
             var marshaller = new PutSolNetworkPackageContentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4607,7 +4607,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("PutSolNetworkPackageContent");
 
-            var request = InstantiateClassGenerator.Execute<PutSolNetworkPackageContentRequest>();
+            var request = InstantiateClassGenerator.Execute<PutSolNetworkPackageContentRequest>(operation);
             var marshaller = new PutSolNetworkPackageContentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4639,7 +4639,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("PutSolNetworkPackageContent");
 
-            var request = InstantiateClassGenerator.Execute<PutSolNetworkPackageContentRequest>();
+            var request = InstantiateClassGenerator.Execute<PutSolNetworkPackageContentRequest>(operation);
             var marshaller = new PutSolNetworkPackageContentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4671,7 +4671,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("TagResource");
 
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -4701,7 +4701,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("TagResource");
 
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4733,7 +4733,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("TagResource");
 
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4765,7 +4765,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("TagResource");
 
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4797,7 +4797,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("TagResource");
 
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4829,7 +4829,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("TagResource");
 
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4861,7 +4861,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("TerminateSolNetworkInstance");
 
-            var request = InstantiateClassGenerator.Execute<TerminateSolNetworkInstanceRequest>();
+            var request = InstantiateClassGenerator.Execute<TerminateSolNetworkInstanceRequest>(operation);
             var marshaller = new TerminateSolNetworkInstanceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -4891,7 +4891,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("TerminateSolNetworkInstance");
 
-            var request = InstantiateClassGenerator.Execute<TerminateSolNetworkInstanceRequest>();
+            var request = InstantiateClassGenerator.Execute<TerminateSolNetworkInstanceRequest>(operation);
             var marshaller = new TerminateSolNetworkInstanceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4923,7 +4923,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("TerminateSolNetworkInstance");
 
-            var request = InstantiateClassGenerator.Execute<TerminateSolNetworkInstanceRequest>();
+            var request = InstantiateClassGenerator.Execute<TerminateSolNetworkInstanceRequest>(operation);
             var marshaller = new TerminateSolNetworkInstanceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4955,7 +4955,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("TerminateSolNetworkInstance");
 
-            var request = InstantiateClassGenerator.Execute<TerminateSolNetworkInstanceRequest>();
+            var request = InstantiateClassGenerator.Execute<TerminateSolNetworkInstanceRequest>(operation);
             var marshaller = new TerminateSolNetworkInstanceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -4987,7 +4987,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("TerminateSolNetworkInstance");
 
-            var request = InstantiateClassGenerator.Execute<TerminateSolNetworkInstanceRequest>();
+            var request = InstantiateClassGenerator.Execute<TerminateSolNetworkInstanceRequest>(operation);
             var marshaller = new TerminateSolNetworkInstanceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5019,7 +5019,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("TerminateSolNetworkInstance");
 
-            var request = InstantiateClassGenerator.Execute<TerminateSolNetworkInstanceRequest>();
+            var request = InstantiateClassGenerator.Execute<TerminateSolNetworkInstanceRequest>(operation);
             var marshaller = new TerminateSolNetworkInstanceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5051,7 +5051,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("TerminateSolNetworkInstance");
 
-            var request = InstantiateClassGenerator.Execute<TerminateSolNetworkInstanceRequest>();
+            var request = InstantiateClassGenerator.Execute<TerminateSolNetworkInstanceRequest>(operation);
             var marshaller = new TerminateSolNetworkInstanceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5083,7 +5083,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UntagResource");
 
-            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>(operation);
             var marshaller = new UntagResourceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -5113,7 +5113,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UntagResource");
 
-            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>(operation);
             var marshaller = new UntagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5145,7 +5145,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UntagResource");
 
-            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>(operation);
             var marshaller = new UntagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5177,7 +5177,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UntagResource");
 
-            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>(operation);
             var marshaller = new UntagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5209,7 +5209,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UntagResource");
 
-            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>(operation);
             var marshaller = new UntagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5241,7 +5241,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UntagResource");
 
-            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>(operation);
             var marshaller = new UntagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5273,7 +5273,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateSolFunctionPackage");
 
-            var request = InstantiateClassGenerator.Execute<UpdateSolFunctionPackageRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateSolFunctionPackageRequest>(operation);
             var marshaller = new UpdateSolFunctionPackageRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -5303,7 +5303,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateSolFunctionPackage");
 
-            var request = InstantiateClassGenerator.Execute<UpdateSolFunctionPackageRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateSolFunctionPackageRequest>(operation);
             var marshaller = new UpdateSolFunctionPackageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5335,7 +5335,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateSolFunctionPackage");
 
-            var request = InstantiateClassGenerator.Execute<UpdateSolFunctionPackageRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateSolFunctionPackageRequest>(operation);
             var marshaller = new UpdateSolFunctionPackageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5367,7 +5367,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateSolFunctionPackage");
 
-            var request = InstantiateClassGenerator.Execute<UpdateSolFunctionPackageRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateSolFunctionPackageRequest>(operation);
             var marshaller = new UpdateSolFunctionPackageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5399,7 +5399,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateSolFunctionPackage");
 
-            var request = InstantiateClassGenerator.Execute<UpdateSolFunctionPackageRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateSolFunctionPackageRequest>(operation);
             var marshaller = new UpdateSolFunctionPackageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5431,7 +5431,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateSolFunctionPackage");
 
-            var request = InstantiateClassGenerator.Execute<UpdateSolFunctionPackageRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateSolFunctionPackageRequest>(operation);
             var marshaller = new UpdateSolFunctionPackageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5463,7 +5463,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateSolNetworkInstance");
 
-            var request = InstantiateClassGenerator.Execute<UpdateSolNetworkInstanceRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateSolNetworkInstanceRequest>(operation);
             var marshaller = new UpdateSolNetworkInstanceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -5493,7 +5493,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateSolNetworkInstance");
 
-            var request = InstantiateClassGenerator.Execute<UpdateSolNetworkInstanceRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateSolNetworkInstanceRequest>(operation);
             var marshaller = new UpdateSolNetworkInstanceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5525,7 +5525,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateSolNetworkInstance");
 
-            var request = InstantiateClassGenerator.Execute<UpdateSolNetworkInstanceRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateSolNetworkInstanceRequest>(operation);
             var marshaller = new UpdateSolNetworkInstanceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5557,7 +5557,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateSolNetworkInstance");
 
-            var request = InstantiateClassGenerator.Execute<UpdateSolNetworkInstanceRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateSolNetworkInstanceRequest>(operation);
             var marshaller = new UpdateSolNetworkInstanceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5589,7 +5589,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateSolNetworkInstance");
 
-            var request = InstantiateClassGenerator.Execute<UpdateSolNetworkInstanceRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateSolNetworkInstanceRequest>(operation);
             var marshaller = new UpdateSolNetworkInstanceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5621,7 +5621,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateSolNetworkInstance");
 
-            var request = InstantiateClassGenerator.Execute<UpdateSolNetworkInstanceRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateSolNetworkInstanceRequest>(operation);
             var marshaller = new UpdateSolNetworkInstanceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5653,7 +5653,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateSolNetworkInstance");
 
-            var request = InstantiateClassGenerator.Execute<UpdateSolNetworkInstanceRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateSolNetworkInstanceRequest>(operation);
             var marshaller = new UpdateSolNetworkInstanceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5685,7 +5685,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateSolNetworkPackage");
 
-            var request = InstantiateClassGenerator.Execute<UpdateSolNetworkPackageRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateSolNetworkPackageRequest>(operation);
             var marshaller = new UpdateSolNetworkPackageRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -5715,7 +5715,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateSolNetworkPackage");
 
-            var request = InstantiateClassGenerator.Execute<UpdateSolNetworkPackageRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateSolNetworkPackageRequest>(operation);
             var marshaller = new UpdateSolNetworkPackageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5747,7 +5747,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateSolNetworkPackage");
 
-            var request = InstantiateClassGenerator.Execute<UpdateSolNetworkPackageRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateSolNetworkPackageRequest>(operation);
             var marshaller = new UpdateSolNetworkPackageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5779,7 +5779,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateSolNetworkPackage");
 
-            var request = InstantiateClassGenerator.Execute<UpdateSolNetworkPackageRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateSolNetworkPackageRequest>(operation);
             var marshaller = new UpdateSolNetworkPackageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5811,7 +5811,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateSolNetworkPackage");
 
-            var request = InstantiateClassGenerator.Execute<UpdateSolNetworkPackageRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateSolNetworkPackageRequest>(operation);
             var marshaller = new UpdateSolNetworkPackageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5843,7 +5843,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateSolNetworkPackage");
 
-            var request = InstantiateClassGenerator.Execute<UpdateSolNetworkPackageRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateSolNetworkPackageRequest>(operation);
             var marshaller = new UpdateSolNetworkPackageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5875,7 +5875,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ValidateSolFunctionPackageContent");
 
-            var request = InstantiateClassGenerator.Execute<ValidateSolFunctionPackageContentRequest>();
+            var request = InstantiateClassGenerator.Execute<ValidateSolFunctionPackageContentRequest>(operation);
             var marshaller = new ValidateSolFunctionPackageContentRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -5905,7 +5905,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ValidateSolFunctionPackageContent");
 
-            var request = InstantiateClassGenerator.Execute<ValidateSolFunctionPackageContentRequest>();
+            var request = InstantiateClassGenerator.Execute<ValidateSolFunctionPackageContentRequest>(operation);
             var marshaller = new ValidateSolFunctionPackageContentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5937,7 +5937,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ValidateSolFunctionPackageContent");
 
-            var request = InstantiateClassGenerator.Execute<ValidateSolFunctionPackageContentRequest>();
+            var request = InstantiateClassGenerator.Execute<ValidateSolFunctionPackageContentRequest>(operation);
             var marshaller = new ValidateSolFunctionPackageContentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -5969,7 +5969,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ValidateSolFunctionPackageContent");
 
-            var request = InstantiateClassGenerator.Execute<ValidateSolFunctionPackageContentRequest>();
+            var request = InstantiateClassGenerator.Execute<ValidateSolFunctionPackageContentRequest>(operation);
             var marshaller = new ValidateSolFunctionPackageContentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6001,7 +6001,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ValidateSolFunctionPackageContent");
 
-            var request = InstantiateClassGenerator.Execute<ValidateSolFunctionPackageContentRequest>();
+            var request = InstantiateClassGenerator.Execute<ValidateSolFunctionPackageContentRequest>(operation);
             var marshaller = new ValidateSolFunctionPackageContentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6033,7 +6033,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ValidateSolFunctionPackageContent");
 
-            var request = InstantiateClassGenerator.Execute<ValidateSolFunctionPackageContentRequest>();
+            var request = InstantiateClassGenerator.Execute<ValidateSolFunctionPackageContentRequest>(operation);
             var marshaller = new ValidateSolFunctionPackageContentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6065,7 +6065,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ValidateSolNetworkPackageContent");
 
-            var request = InstantiateClassGenerator.Execute<ValidateSolNetworkPackageContentRequest>();
+            var request = InstantiateClassGenerator.Execute<ValidateSolNetworkPackageContentRequest>(operation);
             var marshaller = new ValidateSolNetworkPackageContentRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -6095,7 +6095,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ValidateSolNetworkPackageContent");
 
-            var request = InstantiateClassGenerator.Execute<ValidateSolNetworkPackageContentRequest>();
+            var request = InstantiateClassGenerator.Execute<ValidateSolNetworkPackageContentRequest>(operation);
             var marshaller = new ValidateSolNetworkPackageContentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6127,7 +6127,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ValidateSolNetworkPackageContent");
 
-            var request = InstantiateClassGenerator.Execute<ValidateSolNetworkPackageContentRequest>();
+            var request = InstantiateClassGenerator.Execute<ValidateSolNetworkPackageContentRequest>(operation);
             var marshaller = new ValidateSolNetworkPackageContentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6159,7 +6159,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ValidateSolNetworkPackageContent");
 
-            var request = InstantiateClassGenerator.Execute<ValidateSolNetworkPackageContentRequest>();
+            var request = InstantiateClassGenerator.Execute<ValidateSolNetworkPackageContentRequest>(operation);
             var marshaller = new ValidateSolNetworkPackageContentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6191,7 +6191,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ValidateSolNetworkPackageContent");
 
-            var request = InstantiateClassGenerator.Execute<ValidateSolNetworkPackageContentRequest>();
+            var request = InstantiateClassGenerator.Execute<ValidateSolNetworkPackageContentRequest>(operation);
             var marshaller = new ValidateSolNetworkPackageContentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -6223,7 +6223,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ValidateSolNetworkPackageContent");
 
-            var request = InstantiateClassGenerator.Execute<ValidateSolNetworkPackageContentRequest>();
+            var request = InstantiateClassGenerator.Execute<ValidateSolNetworkPackageContentRequest>(operation);
             var marshaller = new ValidateSolNetworkPackageContentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 

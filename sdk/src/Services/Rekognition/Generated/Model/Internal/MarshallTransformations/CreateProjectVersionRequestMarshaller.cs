@@ -67,6 +67,17 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetFeatureConfig())
+                {
+                    context.Writer.WritePropertyName("FeatureConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CustomizationFeatureConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.FeatureConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetKmsKeyId())
                 {
                     context.Writer.WritePropertyName("KmsKeyId");
@@ -124,6 +135,12 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                     marshaller.Marshall(publicRequest.TrainingData, context);
 
                     context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetVersionDescription())
+                {
+                    context.Writer.WritePropertyName("VersionDescription");
+                    context.Writer.Write(publicRequest.VersionDescription);
                 }
 
                 if(publicRequest.IsSetVersionName())

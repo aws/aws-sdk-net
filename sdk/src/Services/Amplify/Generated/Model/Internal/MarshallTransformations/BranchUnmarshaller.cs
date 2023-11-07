@@ -76,6 +76,12 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
                     unmarshalledObject.AssociatedResources = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("backend", targetDepth))
+                {
+                    var unmarshaller = BackendUnmarshaller.Instance;
+                    unmarshalledObject.Backend = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("backendEnvironmentArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

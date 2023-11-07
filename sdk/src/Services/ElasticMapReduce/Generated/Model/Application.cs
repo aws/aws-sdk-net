@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// With Amazon EMR release version 4.0 and later, the only accepted parameter is the
+    /// With Amazon EMR release version 4.0 and higher, the only accepted parameter is the
     /// application name. To pass arguments to applications, you use configuration classifications
     /// specified using configuration JSON objects. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-configure-apps.html">Configuring
     /// Applications</a>.

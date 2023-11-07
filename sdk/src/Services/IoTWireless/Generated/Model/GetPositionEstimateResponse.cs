@@ -39,8 +39,11 @@ namespace Amazon.IoTWireless.Model
         /// Gets and sets the property GeoJsonPayload. 
         /// <para>
         /// The position information of the resource, displayed as a JSON payload. The payload
-        /// uses the GeoJSON format, which a format that's used to encode geographic data structures.
-        /// For more information, see <a href="https://geojson.org/">GeoJSON</a>.
+        /// is of type blob and uses the <a href="https://geojson.org/">GeoJSON</a> format, which
+        /// a format that's used to encode geographic data structures. A sample payload contains
+        /// the timestamp information, the WGS84 coordinates of the location, and the accuracy
+        /// and confidence level. For more information and examples, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/location-resolve-console.html">Resolve
+        /// device location (console)</a>.
         /// </para>
         /// </summary>
         public MemoryStream GeoJsonPayload

@@ -46,7 +46,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         public void CancelQueryEndpointDiscoveryMarshallTest()
         {
             var operation = service_model.FindOperation("CancelQuery");
-            var request = InstantiateClassGenerator.Execute<CancelQueryRequest>();
+            var request = InstantiateClassGenerator.Execute<CancelQueryRequest>(operation);
             var marshaller = new CancelQueryEndpointDiscoveryMarshaller();
 
             var internalData = marshaller.Marshall(request);
@@ -61,7 +61,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         public void CreateScheduledQueryEndpointDiscoveryMarshallTest()
         {
             var operation = service_model.FindOperation("CreateScheduledQuery");
-            var request = InstantiateClassGenerator.Execute<CreateScheduledQueryRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateScheduledQueryRequest>(operation);
             var marshaller = new CreateScheduledQueryEndpointDiscoveryMarshaller();
 
             var internalData = marshaller.Marshall(request);
@@ -76,7 +76,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         public void DeleteScheduledQueryEndpointDiscoveryMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteScheduledQuery");
-            var request = InstantiateClassGenerator.Execute<DeleteScheduledQueryRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteScheduledQueryRequest>(operation);
             var marshaller = new DeleteScheduledQueryEndpointDiscoveryMarshaller();
 
             var internalData = marshaller.Marshall(request);
@@ -91,7 +91,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         public void DescribeScheduledQueryEndpointDiscoveryMarshallTest()
         {
             var operation = service_model.FindOperation("DescribeScheduledQuery");
-            var request = InstantiateClassGenerator.Execute<DescribeScheduledQueryRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeScheduledQueryRequest>(operation);
             var marshaller = new DescribeScheduledQueryEndpointDiscoveryMarshaller();
 
             var internalData = marshaller.Marshall(request);
@@ -106,7 +106,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         public void ExecuteScheduledQueryEndpointDiscoveryMarshallTest()
         {
             var operation = service_model.FindOperation("ExecuteScheduledQuery");
-            var request = InstantiateClassGenerator.Execute<ExecuteScheduledQueryRequest>();
+            var request = InstantiateClassGenerator.Execute<ExecuteScheduledQueryRequest>(operation);
             var marshaller = new ExecuteScheduledQueryEndpointDiscoveryMarshaller();
 
             var internalData = marshaller.Marshall(request);
@@ -121,7 +121,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         public void ListScheduledQueriesEndpointDiscoveryMarshallTest()
         {
             var operation = service_model.FindOperation("ListScheduledQueries");
-            var request = InstantiateClassGenerator.Execute<ListScheduledQueriesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListScheduledQueriesRequest>(operation);
             var marshaller = new ListScheduledQueriesEndpointDiscoveryMarshaller();
 
             var internalData = marshaller.Marshall(request);
@@ -136,7 +136,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         public void ListTagsForResourceEndpointDiscoveryMarshallTest()
         {
             var operation = service_model.FindOperation("ListTagsForResource");
-            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>(operation);
             var marshaller = new ListTagsForResourceEndpointDiscoveryMarshaller();
 
             var internalData = marshaller.Marshall(request);
@@ -151,7 +151,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         public void PrepareQueryEndpointDiscoveryMarshallTest()
         {
             var operation = service_model.FindOperation("PrepareQuery");
-            var request = InstantiateClassGenerator.Execute<PrepareQueryRequest>();
+            var request = InstantiateClassGenerator.Execute<PrepareQueryRequest>(operation);
             var marshaller = new PrepareQueryEndpointDiscoveryMarshaller();
 
             var internalData = marshaller.Marshall(request);
@@ -166,7 +166,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         public void QueryEndpointDiscoveryMarshallTest()
         {
             var operation = service_model.FindOperation("Query");
-            var request = InstantiateClassGenerator.Execute<QueryRequest>();
+            var request = InstantiateClassGenerator.Execute<QueryRequest>(operation);
             var marshaller = new QueryEndpointDiscoveryMarshaller();
 
             var internalData = marshaller.Marshall(request);
@@ -181,7 +181,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         public void TagResourceEndpointDiscoveryMarshallTest()
         {
             var operation = service_model.FindOperation("TagResource");
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceEndpointDiscoveryMarshaller();
 
             var internalData = marshaller.Marshall(request);
@@ -196,7 +196,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         public void UntagResourceEndpointDiscoveryMarshallTest()
         {
             var operation = service_model.FindOperation("UntagResource");
-            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>(operation);
             var marshaller = new UntagResourceEndpointDiscoveryMarshaller();
 
             var internalData = marshaller.Marshall(request);
@@ -211,7 +211,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         public void UpdateScheduledQueryEndpointDiscoveryMarshallTest()
         {
             var operation = service_model.FindOperation("UpdateScheduledQuery");
-            var request = InstantiateClassGenerator.Execute<UpdateScheduledQueryRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateScheduledQueryRequest>(operation);
             var marshaller = new UpdateScheduledQueryEndpointDiscoveryMarshaller();
 
             var internalData = marshaller.Marshall(request);

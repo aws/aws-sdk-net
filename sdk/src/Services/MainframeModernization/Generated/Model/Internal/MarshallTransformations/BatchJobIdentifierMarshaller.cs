@@ -56,6 +56,17 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetS3BatchJobIdentifier())
+            {
+                context.Writer.WritePropertyName("s3BatchJobIdentifier");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = S3BatchJobIdentifierMarshaller.Instance;
+                marshaller.Marshall(requestObject.S3BatchJobIdentifier, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetScriptBatchJobIdentifier())
             {
                 context.Writer.WritePropertyName("scriptBatchJobIdentifier");

@@ -42,6 +42,7 @@ namespace Amazon.NetworkManager.Model
         private string _coreNetworkAddress;
         private List<string> _insideCidrBlocks = new List<string>();
         private string _peerAddress;
+        private string _subnetArn;
         private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
@@ -125,7 +126,6 @@ namespace Amazon.NetworkManager.Model
         /// The inside IP addresses used for BGP peering.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public List<string> InsideCidrBlocks
         {
             get { return this._insideCidrBlocks; }
@@ -155,6 +155,25 @@ namespace Amazon.NetworkManager.Model
         internal bool IsSetPeerAddress()
         {
             return this._peerAddress != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SubnetArn. 
+        /// <para>
+        /// The subnet ARN for the Connect peer.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=500)]
+        public string SubnetArn
+        {
+            get { return this._subnetArn; }
+            set { this._subnetArn = value; }
+        }
+
+        // Check to see if SubnetArn property is set
+        internal bool IsSetSubnetArn()
+        {
+            return this._subnetArn != null;
         }
 
         /// <summary>

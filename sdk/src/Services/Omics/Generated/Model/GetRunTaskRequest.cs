@@ -40,7 +40,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The task's ID.
+        /// The workflow run ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=18)]

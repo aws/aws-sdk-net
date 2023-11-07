@@ -74,17 +74,9 @@ namespace Amazon.Pricing
     /// </para>
     ///  
     /// <para>
-    /// You can use the following endpoints for the Amazon Web Services Price List API:
+    /// For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/price-changes.html">Using
+    /// the Amazon Web Services Price List API</a> in the <i>Billing User Guide</i>.
     /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    /// https://api.pricing.us-east-1.amazonaws.com
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// https://api.pricing.ap-south-1.amazonaws.com
-    /// </para>
-    ///  </li> </ul>
     /// </summary>
     public partial class AmazonPricingClient : AmazonServiceClient, IAmazonPricing
     {
@@ -442,8 +434,8 @@ namespace Amazon.Pricing
         /// <para>
         /// This returns the URL that you can retrieve your Price List file from. This URL is
         /// based on the <code>PriceListArn</code> and <code>FileFormat</code> that you retrieve
-        /// from the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_ListPriceLists.html">
-        /// <code>ListPriceLists</code> </a> response. 
+        /// from the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_ListPriceLists.html">ListPriceLists</a>
+        /// response. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPriceListFileUrl service method.</param>
@@ -552,8 +544,8 @@ namespace Amazon.Pricing
         /// available Amazon Web Services Regions. Use with a <code>RegionCode</code> filter to
         /// get the Price List reference that's specific to a specific Amazon Web Services Region.
         /// You can use the <code>PriceListArn</code> from the response to get your preferred
-        /// Price List files through the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_GetPriceListFileUrl.html">
-        /// <code>GetPriceListFileUrl</code> </a> API.
+        /// Price List files through the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_GetPriceListFileUrl.html">GetPriceListFileUrl</a>
+        /// API.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPriceLists service method.</param>

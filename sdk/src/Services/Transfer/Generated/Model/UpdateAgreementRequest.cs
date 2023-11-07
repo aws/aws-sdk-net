@@ -130,7 +130,7 @@ namespace Amazon.Transfer.Model
         /// </code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string BaseDirectory
         {
             get { return this._baseDirectory; }

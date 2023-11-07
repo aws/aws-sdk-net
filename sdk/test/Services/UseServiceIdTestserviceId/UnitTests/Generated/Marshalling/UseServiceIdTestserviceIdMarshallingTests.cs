@@ -49,7 +49,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("NoPayload");
 
-            var request = InstantiateClassGenerator.Execute<NoPayloadRequest>();
+            var request = InstantiateClassGenerator.Execute<NoPayloadRequest>(operation);
             var marshaller = new NoPayloadRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);

@@ -84,6 +84,22 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
+                if(publicRequest.IsSetVariables())
+                {
+                    context.Writer.WritePropertyName("variables");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestVariablesListValue in publicRequest.Variables)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = PipelineVariableMarshaller.Instance;
+                        marshaller.Marshall(publicRequestVariablesListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

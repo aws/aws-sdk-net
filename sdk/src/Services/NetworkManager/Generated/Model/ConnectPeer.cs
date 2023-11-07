@@ -40,6 +40,7 @@ namespace Amazon.NetworkManager.Model
         private DateTime? _createdAt;
         private string _edgeLocation;
         private ConnectPeerState _state;
+        private string _subnetArn;
         private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
@@ -170,6 +171,25 @@ namespace Amazon.NetworkManager.Model
         internal bool IsSetState()
         {
             return this._state != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SubnetArn. 
+        /// <para>
+        /// The subnet ARN for the Connect peer.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=500)]
+        public string SubnetArn
+        {
+            get { return this._subnetArn; }
+            set { this._subnetArn = value; }
+        }
+
+        // Check to see if SubnetArn property is set
+        internal bool IsSetSubnetArn()
+        {
+            return this._subnetArn != null;
         }
 
         /// <summary>

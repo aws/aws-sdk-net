@@ -2104,6 +2104,9 @@ namespace Amazon.ApplicationInsights
         /// <exception cref="Amazon.ApplicationInsights.Model.InternalServerException">
         /// The server encountered an internal error and is unable to complete the request.
         /// </exception>
+        /// <exception cref="Amazon.ApplicationInsights.Model.ResourceInUseException">
+        /// The resource is already created or in use.
+        /// </exception>
         /// <exception cref="Amazon.ApplicationInsights.Model.ResourceNotFoundException">
         /// The resource does not exist in the customer account.
         /// </exception>
@@ -2134,6 +2137,9 @@ namespace Amazon.ApplicationInsights
         /// <returns>The response from the UpdateComponentConfiguration service method, as returned by ApplicationInsights.</returns>
         /// <exception cref="Amazon.ApplicationInsights.Model.InternalServerException">
         /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationInsights.Model.ResourceInUseException">
+        /// The resource is already created or in use.
         /// </exception>
         /// <exception cref="Amazon.ApplicationInsights.Model.ResourceNotFoundException">
         /// The resource does not exist in the customer account.

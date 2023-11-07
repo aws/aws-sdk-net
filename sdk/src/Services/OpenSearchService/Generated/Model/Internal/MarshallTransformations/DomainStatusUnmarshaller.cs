@@ -166,10 +166,22 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                     unmarshalledObject.Endpoints = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EndpointV2", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EndpointV2 = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("EngineVersion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EngineVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("IPAddressType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.IPAddressType = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("LogPublishingOptions", targetDepth))

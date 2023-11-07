@@ -196,6 +196,14 @@ namespace Amazon.Redshift.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeInboundIntegrations operation
+        ///</summary>
+        public IDescribeInboundIntegrationsPaginator DescribeInboundIntegrations(DescribeInboundIntegrationsRequest request) 
+        {
+            return new DescribeInboundIntegrationsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeNodeConfigurationOptions operation
         ///</summary>
         public IDescribeNodeConfigurationOptionsPaginator DescribeNodeConfigurationOptions(DescribeNodeConfigurationOptionsRequest request) 

@@ -408,7 +408,15 @@ namespace Amazon.Neptune.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ServerlessV2ScalingConfiguration.
+        /// Gets and sets the property ServerlessV2ScalingConfiguration. 
+        /// <para>
+        /// Contains the scaling configuration of a Neptune Serverless DB cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using
+        /// Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.
+        /// </para>
         /// </summary>
         public ServerlessV2ScalingConfiguration ServerlessV2ScalingConfiguration
         {

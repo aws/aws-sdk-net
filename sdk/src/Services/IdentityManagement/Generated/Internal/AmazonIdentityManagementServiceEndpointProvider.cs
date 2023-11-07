@@ -96,6 +96,14 @@ namespace Amazon.IdentityManagement.Internal
                     {
                         return new Endpoint("https://iam.us-isob-east-1.sc2s.sgov.gov", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""iam"",""signingRegion"":""us-isob-east-1""}]}", refs), InterpolateJson(@"", refs));
                     }
+                    if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws-iso-e") && Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], false))
+                    {
+                        return new Endpoint("https://iam.eu-isoe-west-1.cloud.adc-e.uk", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""iam"",""signingRegion"":""eu-isoe-west-1""}]}", refs), InterpolateJson(@"", refs));
+                    }
+                    if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws-iso-f") && Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], false))
+                    {
+                        return new Endpoint("https://iam.us-isof-south-1.csp.hci.ic.gov", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""iam"",""signingRegion"":""us-isof-south-1""}]}", refs), InterpolateJson(@"", refs));
+                    }
                     if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
                     {
                         if (Equals(true, GetAttr(refs["PartitionResult"], "supportsFIPS")) && Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
@@ -106,7 +114,7 @@ namespace Amazon.IdentityManagement.Internal
                     }
                     if (Equals(refs["UseFIPS"], true))
                     {
-                        if (Equals(true, GetAttr(refs["PartitionResult"], "supportsFIPS")))
+                        if (Equals(GetAttr(refs["PartitionResult"], "supportsFIPS"), true))
                         {
                             return new Endpoint(Interpolate(@"https://iam-fips.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                         }

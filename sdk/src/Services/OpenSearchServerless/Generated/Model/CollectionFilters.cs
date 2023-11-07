@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchServerless.Model
 {
     /// <summary>
-    /// List of filter keys that you can use for LIST, UPDATE, and DELETE requests to OpenSearch
+    /// A list of filter keys that you can use for LIST, UPDATE, and DELETE requests to OpenSearch
     /// Serverless collections.
     /// </summary>
     public partial class CollectionFilters

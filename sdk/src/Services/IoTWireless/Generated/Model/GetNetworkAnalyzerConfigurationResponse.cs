@@ -129,7 +129,7 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property WirelessDevices. 
         /// <para>
-        /// List of wireless gateway resources that have been added to the network analyzer configuration.
+        /// List of wireless device resources that have been added to the network analyzer configuration.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=250)]

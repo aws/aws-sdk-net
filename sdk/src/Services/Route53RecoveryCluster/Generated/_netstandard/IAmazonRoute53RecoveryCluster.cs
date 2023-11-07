@@ -41,8 +41,9 @@ namespace Amazon.Route53RecoveryCluster
     /// Regions. Routing controls are simple on/off switches hosted on a highly available
     /// cluster in Route 53 ARC. A cluster provides a set of five redundant Regional endpoints
     /// against which you can run API calls to get or update the state of routing controls.
-    /// To implement failover, you set one routing control On and another one Off, to reroute
-    /// traffic from one Availability Zone or Amazon Web Services Region to another. 
+    /// To implement failover, you set one routing control to ON and another one to OFF, to
+    /// reroute traffic from one Availability Zone or Amazon Web Services Region to another.
+    /// 
     /// </para>
     ///  
     /// <para>
@@ -110,8 +111,8 @@ namespace Amazon.Route53RecoveryCluster
 
         /// <summary>
         /// Get the state for a routing control. A routing control is a simple on/off switch that
-        /// you can use to route traffic to cells. When a routing control state is On, traffic
-        /// flows to a cell. When the state is Off, traffic does not flow. 
+        /// you can use to route traffic to cells. When a routing control state is set to ON,
+        /// traffic flows to a cell. When the state is set to OFF, traffic does not flow. 
         /// 
         ///  
         /// <para>
@@ -192,8 +193,8 @@ namespace Amazon.Route53RecoveryCluster
         ///  
         /// <para>
         /// A routing control is a simple on/off switch in Route 53 ARC that you can use to route
-        /// traffic to cells. When a routing control state is On, traffic flows to a cell. When
-        /// the state is Off, traffic does not flow.
+        /// traffic to cells. When a routing control state is set to ON, traffic flows to a cell.
+        /// When the state is set to OFF, traffic does not flow.
         /// </para>
         ///  
         /// <para>
@@ -260,8 +261,8 @@ namespace Amazon.Route53RecoveryCluster
 
         /// <summary>
         /// Set the state of the routing control to reroute traffic. You can set the value to
-        /// be On or Off. When the state is On, traffic flows to a cell. When the state is Off,
-        /// traffic does not flow.
+        /// ON or OFF. When the state is ON, traffic flows to a cell. When the state is OFF, traffic
+        /// does not flow.
         /// 
         ///  
         /// <para>
@@ -341,8 +342,8 @@ namespace Amazon.Route53RecoveryCluster
 
 
         /// <summary>
-        /// Set multiple routing control states. You can set the value for each state to be On
-        /// or Off. When the state is On, traffic flows to a cell. When it's Off, traffic does
+        /// Set multiple routing control states. You can set the value for each state to be ON
+        /// or OFF. When the state is ON, traffic flows to a cell. When it's OFF, traffic does
         /// not flow.
         /// 
         ///  

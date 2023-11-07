@@ -40,6 +40,11 @@ namespace Amazon.SageMaker.Model
     /// Services Glue database and tables that are automatically created for your <code>OfflineStore</code>
     /// are not deleted. 
     /// </para>
+    ///  
+    /// <para>
+    /// Note that it can take approximately 10-15 minutes to delete an <code>OnlineStore</code>
+    /// <code>FeatureGroup</code> with the <code>InMemory</code> <code>StorageType</code>.
+    /// </para>
     /// </summary>
     public partial class DeleteFeatureGroupRequest : AmazonSageMakerRequest
     {

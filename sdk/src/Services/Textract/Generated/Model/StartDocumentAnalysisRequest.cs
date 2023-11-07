@@ -57,6 +57,7 @@ namespace Amazon.Textract.Model
     /// </summary>
     public partial class StartDocumentAnalysisRequest : AmazonTextractRequest
     {
+        private AdaptersConfig _adaptersConfig;
         private string _clientRequestToken;
         private DocumentLocation _documentLocation;
         private List<string> _featureTypes = new List<string>();
@@ -65,6 +66,24 @@ namespace Amazon.Textract.Model
         private NotificationChannel _notificationChannel;
         private OutputConfig _outputConfig;
         private QueriesConfig _queriesConfig;
+
+        /// <summary>
+        /// Gets and sets the property AdaptersConfig. 
+        /// <para>
+        /// Specifies the adapter to be used when analyzing a document.
+        /// </para>
+        /// </summary>
+        public AdaptersConfig AdaptersConfig
+        {
+            get { return this._adaptersConfig; }
+            set { this._adaptersConfig = value; }
+        }
+
+        // Check to see if AdaptersConfig property is set
+        internal bool IsSetAdaptersConfig()
+        {
+            return this._adaptersConfig != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 

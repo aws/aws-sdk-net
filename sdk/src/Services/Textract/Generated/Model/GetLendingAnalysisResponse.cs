@@ -99,7 +99,7 @@ namespace Amazon.Textract.Model
         /// token in the subsequent request to retrieve the next set of lending results.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=255)]
+        [AWSProperty(Min=1, Max=1024)]
         public string NextToken
         {
             get { return this._nextToken; }

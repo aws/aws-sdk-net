@@ -17,6 +17,9 @@
     <None Include="../ServiceModels/**/*.json">
       <Link>ServiceModels/%(RecursiveDir)/%(FileName)%(Extension)</Link>
     </None>
+    <None Include="../TestServiceModels/**/*.json">
+      <Link>TestServiceModels/%(RecursiveDir)/%(FileName)%(Extension)</Link>
+    </None>
     <None Include="../ServiceModels/*.json">
       <Link>ServiceManifest/%(Filename)%(Extension)</Link>
     </None>

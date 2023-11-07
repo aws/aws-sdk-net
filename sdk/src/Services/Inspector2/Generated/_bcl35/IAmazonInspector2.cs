@@ -30,7 +30,8 @@ namespace Amazon.Inspector2
     /// Interface for accessing Inspector2
     ///
     /// Amazon Inspector is a vulnerability discovery service that automates continuous scanning
-    /// for security vulnerabilities within your Amazon EC2 and Amazon ECR environments.
+    /// for security vulnerabilities within your Amazon EC2, Amazon ECR, and Amazon Web Services
+    /// Lambda environments.
     /// </summary>
     public partial interface IAmazonInspector2 : IAmazonService, IDisposable
     {
@@ -549,7 +550,8 @@ namespace Amazon.Inspector2
 
 
         /// <summary>
-        /// Creates a filter resource using specified filter criteria.
+        /// Creates a filter resource using specified filter criteria. When the filter action
+        /// is set to <code>SUPPRESS</code> this action creates a suppression rule.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateFilter service method.</param>
         /// 

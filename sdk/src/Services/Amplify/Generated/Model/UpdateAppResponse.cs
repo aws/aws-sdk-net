@@ -38,7 +38,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property App. 
         /// <para>
-        ///  Represents the updated Amplify app. 
+        /// Represents the updated Amplify app. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

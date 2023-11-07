@@ -46,7 +46,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("Macie")]
         public void AssociateMemberAccountMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<AssociateMemberAccountRequest>();
+            var operation = service_model.FindOperation("AssociateMemberAccount");
+
+            var request = InstantiateClassGenerator.Execute<AssociateMemberAccountRequest>(operation);
             var marshaller = new AssociateMemberAccountRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -63,7 +65,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("AssociateMemberAccount");
 
-            var request = InstantiateClassGenerator.Execute<AssociateMemberAccountRequest>();
+            var request = InstantiateClassGenerator.Execute<AssociateMemberAccountRequest>(operation);
             var marshaller = new AssociateMemberAccountRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -95,7 +97,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("AssociateMemberAccount");
 
-            var request = InstantiateClassGenerator.Execute<AssociateMemberAccountRequest>();
+            var request = InstantiateClassGenerator.Execute<AssociateMemberAccountRequest>(operation);
             var marshaller = new AssociateMemberAccountRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -127,7 +129,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("AssociateMemberAccount");
 
-            var request = InstantiateClassGenerator.Execute<AssociateMemberAccountRequest>();
+            var request = InstantiateClassGenerator.Execute<AssociateMemberAccountRequest>(operation);
             var marshaller = new AssociateMemberAccountRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -157,7 +159,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("Macie")]
         public void AssociateS3ResourcesMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<AssociateS3ResourcesRequest>();
+            var operation = service_model.FindOperation("AssociateS3Resources");
+
+            var request = InstantiateClassGenerator.Execute<AssociateS3ResourcesRequest>(operation);
             var marshaller = new AssociateS3ResourcesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -171,7 +175,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("AssociateS3Resources").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = AssociateS3ResourcesResponseUnmarshaller.Instance.Unmarshall(context) as AssociateS3ResourcesResponse;
@@ -186,7 +190,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("AssociateS3Resources");
 
-            var request = InstantiateClassGenerator.Execute<AssociateS3ResourcesRequest>();
+            var request = InstantiateClassGenerator.Execute<AssociateS3ResourcesRequest>(operation);
             var marshaller = new AssociateS3ResourcesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -218,7 +222,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("AssociateS3Resources");
 
-            var request = InstantiateClassGenerator.Execute<AssociateS3ResourcesRequest>();
+            var request = InstantiateClassGenerator.Execute<AssociateS3ResourcesRequest>(operation);
             var marshaller = new AssociateS3ResourcesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -250,7 +254,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("AssociateS3Resources");
 
-            var request = InstantiateClassGenerator.Execute<AssociateS3ResourcesRequest>();
+            var request = InstantiateClassGenerator.Execute<AssociateS3ResourcesRequest>(operation);
             var marshaller = new AssociateS3ResourcesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -282,7 +286,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("AssociateS3Resources");
 
-            var request = InstantiateClassGenerator.Execute<AssociateS3ResourcesRequest>();
+            var request = InstantiateClassGenerator.Execute<AssociateS3ResourcesRequest>(operation);
             var marshaller = new AssociateS3ResourcesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -312,7 +316,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("Macie")]
         public void DisassociateMemberAccountMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DisassociateMemberAccountRequest>();
+            var operation = service_model.FindOperation("DisassociateMemberAccount");
+
+            var request = InstantiateClassGenerator.Execute<DisassociateMemberAccountRequest>(operation);
             var marshaller = new DisassociateMemberAccountRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -329,7 +335,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DisassociateMemberAccount");
 
-            var request = InstantiateClassGenerator.Execute<DisassociateMemberAccountRequest>();
+            var request = InstantiateClassGenerator.Execute<DisassociateMemberAccountRequest>(operation);
             var marshaller = new DisassociateMemberAccountRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -361,7 +367,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DisassociateMemberAccount");
 
-            var request = InstantiateClassGenerator.Execute<DisassociateMemberAccountRequest>();
+            var request = InstantiateClassGenerator.Execute<DisassociateMemberAccountRequest>(operation);
             var marshaller = new DisassociateMemberAccountRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -391,7 +397,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("Macie")]
         public void DisassociateS3ResourcesMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DisassociateS3ResourcesRequest>();
+            var operation = service_model.FindOperation("DisassociateS3Resources");
+
+            var request = InstantiateClassGenerator.Execute<DisassociateS3ResourcesRequest>(operation);
             var marshaller = new DisassociateS3ResourcesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -405,7 +413,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DisassociateS3Resources").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DisassociateS3ResourcesResponseUnmarshaller.Instance.Unmarshall(context) as DisassociateS3ResourcesResponse;
@@ -420,7 +428,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DisassociateS3Resources");
 
-            var request = InstantiateClassGenerator.Execute<DisassociateS3ResourcesRequest>();
+            var request = InstantiateClassGenerator.Execute<DisassociateS3ResourcesRequest>(operation);
             var marshaller = new DisassociateS3ResourcesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -452,7 +460,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DisassociateS3Resources");
 
-            var request = InstantiateClassGenerator.Execute<DisassociateS3ResourcesRequest>();
+            var request = InstantiateClassGenerator.Execute<DisassociateS3ResourcesRequest>(operation);
             var marshaller = new DisassociateS3ResourcesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -484,7 +492,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DisassociateS3Resources");
 
-            var request = InstantiateClassGenerator.Execute<DisassociateS3ResourcesRequest>();
+            var request = InstantiateClassGenerator.Execute<DisassociateS3ResourcesRequest>(operation);
             var marshaller = new DisassociateS3ResourcesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -514,7 +522,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("Macie")]
         public void ListMemberAccountsMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ListMemberAccountsRequest>();
+            var operation = service_model.FindOperation("ListMemberAccounts");
+
+            var request = InstantiateClassGenerator.Execute<ListMemberAccountsRequest>(operation);
             var marshaller = new ListMemberAccountsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -528,7 +538,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListMemberAccounts").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ListMemberAccountsResponseUnmarshaller.Instance.Unmarshall(context) as ListMemberAccountsResponse;
@@ -543,7 +553,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListMemberAccounts");
 
-            var request = InstantiateClassGenerator.Execute<ListMemberAccountsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListMemberAccountsRequest>(operation);
             var marshaller = new ListMemberAccountsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -575,7 +585,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListMemberAccounts");
 
-            var request = InstantiateClassGenerator.Execute<ListMemberAccountsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListMemberAccountsRequest>(operation);
             var marshaller = new ListMemberAccountsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -605,7 +615,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("Macie")]
         public void ListS3ResourcesMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ListS3ResourcesRequest>();
+            var operation = service_model.FindOperation("ListS3Resources");
+
+            var request = InstantiateClassGenerator.Execute<ListS3ResourcesRequest>(operation);
             var marshaller = new ListS3ResourcesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -619,7 +631,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListS3Resources").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ListS3ResourcesResponseUnmarshaller.Instance.Unmarshall(context) as ListS3ResourcesResponse;
@@ -634,7 +646,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListS3Resources");
 
-            var request = InstantiateClassGenerator.Execute<ListS3ResourcesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListS3ResourcesRequest>(operation);
             var marshaller = new ListS3ResourcesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -666,7 +678,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListS3Resources");
 
-            var request = InstantiateClassGenerator.Execute<ListS3ResourcesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListS3ResourcesRequest>(operation);
             var marshaller = new ListS3ResourcesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -698,7 +710,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListS3Resources");
 
-            var request = InstantiateClassGenerator.Execute<ListS3ResourcesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListS3ResourcesRequest>(operation);
             var marshaller = new ListS3ResourcesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -728,7 +740,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("Macie")]
         public void UpdateS3ResourcesMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<UpdateS3ResourcesRequest>();
+            var operation = service_model.FindOperation("UpdateS3Resources");
+
+            var request = InstantiateClassGenerator.Execute<UpdateS3ResourcesRequest>(operation);
             var marshaller = new UpdateS3ResourcesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -742,7 +756,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("UpdateS3Resources").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = UpdateS3ResourcesResponseUnmarshaller.Instance.Unmarshall(context) as UpdateS3ResourcesResponse;
@@ -757,7 +771,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateS3Resources");
 
-            var request = InstantiateClassGenerator.Execute<UpdateS3ResourcesRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateS3ResourcesRequest>(operation);
             var marshaller = new UpdateS3ResourcesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -789,7 +803,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateS3Resources");
 
-            var request = InstantiateClassGenerator.Execute<UpdateS3ResourcesRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateS3ResourcesRequest>(operation);
             var marshaller = new UpdateS3ResourcesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -821,7 +835,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateS3Resources");
 
-            var request = InstantiateClassGenerator.Execute<UpdateS3ResourcesRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateS3ResourcesRequest>(operation);
             var marshaller = new UpdateS3ResourcesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);

@@ -69,6 +69,12 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                     response.ModerationModelVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ProjectVersion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ProjectVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;
@@ -123,6 +129,14 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ProvisionedThroughputExceededException"))
                 {
                     return ProvisionedThroughputExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
+                {
+                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotReadyException"))
+                {
+                    return ResourceNotReadyExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
                 {

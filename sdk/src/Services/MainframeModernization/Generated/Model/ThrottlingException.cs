@@ -134,7 +134,7 @@ namespace Amazon.MainframeModernization.Model
         /// <summary>
         /// Gets and sets the property QuotaCode. 
         /// <para>
-        /// The identifier of the throttled reuqest.
+        /// The identifier of the throttled request.
         /// </para>
         /// </summary>
         public string QuotaCode

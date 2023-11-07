@@ -32,7 +32,14 @@ namespace Amazon.Connect.Model
     /// Container for the parameters to the CreateUser operation.
     /// Creates a user account for the specified Amazon Connect instance.
     /// 
-    ///  
+    ///  <important> 
+    /// <para>
+    /// Certain <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UserIdentityInfo.html">UserIdentityInfo</a>
+    /// parameters are required in some situations. For example, <code>Email</code> is required
+    /// if you are using SAML for identity management. <code>FirstName</code> and <code>LastName</code>
+    /// are required if you are using Amazon Connect or SAML for identity management.
+    /// </para>
+    ///  </important> 
     /// <para>
     /// For information about how to create user accounts using the Amazon Connect console,
     /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/user-management.html">Add

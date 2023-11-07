@@ -32,6 +32,14 @@ namespace Amazon.Neptunedata.Model
     /// Container for the parameters to the CancelOpenCypherQuery operation.
     /// Cancels a specified openCypher query. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/access-graph-opencypher-status.html">Neptune
     /// openCypher status endpoint</a> for more information.
+    /// 
+    ///  
+    /// <para>
+    /// When invoking this operation in a Neptune cluster that has IAM authentication enabled,
+    /// the IAM user or role making the request must have a policy attached that allows the
+    /// <a href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#cancelquery">neptune-db:CancelQuery</a>
+    /// IAM action in that cluster.
+    /// </para>
     /// </summary>
     public partial class CancelOpenCypherQueryRequest : AmazonNeptunedataRequest
     {

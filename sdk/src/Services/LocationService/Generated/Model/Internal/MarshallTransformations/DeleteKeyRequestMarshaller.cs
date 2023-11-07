@@ -63,7 +63,7 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
             request.AddPathResource("{KeyName}", StringUtils.FromString(publicRequest.KeyName));
             request.ResourcePath = "/metadata/v0/keys/{KeyName}";
             
-            request.HostPrefix = $"metadata.";
+            request.HostPrefix = $"cp.metadata.";
 
             return request;
         }

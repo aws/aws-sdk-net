@@ -73,7 +73,7 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             {
                 foreach(var kvp in publicRequest.Parameters)
                 {
-                    request.Parameters.Add(kvp.Key, kvp.Value);
+                    request.Parameters.Add(kvp.Key, StringUtils.FromString(kvp.Value));
                 }
             }
             request.ResourcePath = "/restapis/{restapi_id}";

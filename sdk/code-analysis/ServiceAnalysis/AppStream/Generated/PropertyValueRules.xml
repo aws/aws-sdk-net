@@ -470,6 +470,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.DescribeSessionsRequest.FleetName</property>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_.-]{0,100}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.DescribeSessionsRequest.InstanceId</property>
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
@@ -478,7 +482,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.DescribeSessionsRequest.StackName</property>
-    <min>1</min>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_.-]{0,100}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.DescribeSessionsRequest.UserId</property>
@@ -755,7 +759,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.UpdateFleetRequest.Name</property>
-    <min>1</min>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_.-]{0,100}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.UpdateImagePermissionsRequest.Name</property>
@@ -1093,6 +1097,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.Session.Id</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.Session.InstanceId</property>
     <min>1</min>
   </property-value-rule>
   <property-value-rule>

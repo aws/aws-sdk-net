@@ -100,6 +100,18 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
                     unmarshalledObject.StatusSummary = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("trigger", targetDepth))
+                {
+                    var unmarshaller = ExecutionTriggerUnmarshaller.Instance;
+                    unmarshalledObject.Trigger = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("variables", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ResolvedPipelineVariable, ResolvedPipelineVariableUnmarshaller>(ResolvedPipelineVariableUnmarshaller.Instance);
+                    unmarshalledObject.Variables = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

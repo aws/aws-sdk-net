@@ -103,10 +103,12 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property S3Uri. 
         /// <para>
-        /// The URI for the S3 bucket where the prompt is stored.
+        /// The URI for the S3 bucket where the prompt is stored. You can provide S3 pre-signed
+        /// URLs returned by the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_GetPromptFile.html">GetPromptFile</a>
+        /// API instead of providing S3 URIs.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=512)]
+        [AWSProperty(Required=true, Min=1, Max=2000)]
         public string S3Uri
         {
             get { return this._s3Uri; }

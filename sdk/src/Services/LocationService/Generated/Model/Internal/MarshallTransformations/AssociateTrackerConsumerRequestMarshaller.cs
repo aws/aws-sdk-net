@@ -80,7 +80,7 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
             }
 
             
-            request.HostPrefix = $"tracking.";
+            request.HostPrefix = $"cp.tracking.";
 
             return request;
         }

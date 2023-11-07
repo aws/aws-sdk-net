@@ -3587,7 +3587,15 @@ namespace Amazon.Kendra
         /// <summary>
         /// Searches an index given an input query.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// If you are working with large language models (LLMs) or implementing retrieval augmented
+        /// generation (RAG) systems, you can use Amazon Kendra's <a href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_Retrieve.html">Retrieve</a>
+        /// API, which can return longer semantically relevant passages. We recommend using the
+        /// <code>Retrieve</code> API instead of filing a service limit increase to increase the
+        /// <code>Query</code> API document excerpt length.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// You can configure boosting or relevance tuning at the query level to override boosting
         /// at the index level, filter based on document fields/attributes and faceted search,
@@ -3712,7 +3720,17 @@ namespace Amazon.Kendra
         /// <para>
         /// Filter based on the user or their group access to documents
         /// </para>
-        ///  </li> </ul> 
+        ///  </li> <li> 
+        /// <para>
+        /// View the confidence score bucket for a retrieved passage result. The confidence bucket
+        /// provides a relative ranking that indicates how confident Amazon Kendra is that the
+        /// response is relevant to the query.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Confidence score buckets are currently available only for English.
+        /// </para>
+        ///  </note> </li> </ul> 
         /// <para>
         /// You can also include certain fields in the response that might provide useful additional
         /// information.

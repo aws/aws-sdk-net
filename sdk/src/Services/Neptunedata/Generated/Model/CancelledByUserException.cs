@@ -40,8 +40,6 @@ namespace Amazon.Neptunedata.Model
         private string _detailedMessage;
         private string _requestId;
 
-        private RetryableDetails _retryableDetails = new RetryableDetails(false);
-
         /// <summary>
         /// Constructs a new CancelledByUserException with the specified error
         /// message.
@@ -188,16 +186,5 @@ namespace Amazon.Neptunedata.Model
             return this._requestId != null;
         }
 
-        /// <summary>
-        /// Flag indicating if the exception is retryable and the associated retry
-        /// details. A null value indicates that the exception is not retryable.
-        /// </summary>
-        public override RetryableDetails Retryable
-        {
-            get
-            {
-                return _retryableDetails;
-            }
-        }
     }
 }

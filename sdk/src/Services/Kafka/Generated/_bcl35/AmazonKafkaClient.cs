@@ -638,6 +638,84 @@ namespace Amazon.Kafka
 
         #endregion
         
+        #region  CreateReplicator
+
+        /// <summary>
+        /// Creates the replicator.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateReplicator service method.</param>
+        /// 
+        /// <returns>The response from the CreateReplicator service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ConflictException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ServiceUnavailableException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.TooManyRequestsException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnauthorizedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/CreateReplicator">REST API Reference for CreateReplicator Operation</seealso>
+        public virtual CreateReplicatorResponse CreateReplicator(CreateReplicatorRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateReplicatorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateReplicatorResponseUnmarshaller.Instance;
+
+            return Invoke<CreateReplicatorResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateReplicator operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateReplicator operation on AmazonKafkaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateReplicator
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/CreateReplicator">REST API Reference for CreateReplicator Operation</seealso>
+        public virtual IAsyncResult BeginCreateReplicator(CreateReplicatorRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateReplicatorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateReplicatorResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateReplicator operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateReplicator.</param>
+        /// 
+        /// <returns>Returns a  CreateReplicatorResult from Kafka.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/CreateReplicator">REST API Reference for CreateReplicator Operation</seealso>
+        public virtual CreateReplicatorResponse EndCreateReplicator(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateReplicatorResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateVpcConnection
 
         /// <summary>
@@ -905,6 +983,81 @@ namespace Amazon.Kafka
         public virtual DeleteConfigurationResponse EndDeleteConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteReplicator
+
+        /// <summary>
+        /// Deletes a replicator.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteReplicator service method.</param>
+        /// 
+        /// <returns>The response from the DeleteReplicator service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ServiceUnavailableException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.TooManyRequestsException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnauthorizedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DeleteReplicator">REST API Reference for DeleteReplicator Operation</seealso>
+        public virtual DeleteReplicatorResponse DeleteReplicator(DeleteReplicatorRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteReplicatorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteReplicatorResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteReplicatorResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteReplicator operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteReplicator operation on AmazonKafkaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteReplicator
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DeleteReplicator">REST API Reference for DeleteReplicator Operation</seealso>
+        public virtual IAsyncResult BeginDeleteReplicator(DeleteReplicatorRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteReplicatorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteReplicatorResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteReplicator operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteReplicator.</param>
+        /// 
+        /// <returns>Returns a  DeleteReplicatorResult from Kafka.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DeleteReplicator">REST API Reference for DeleteReplicator Operation</seealso>
+        public virtual DeleteReplicatorResponse EndDeleteReplicator(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteReplicatorResponse>(asyncResult);
         }
 
         #endregion
@@ -1399,6 +1552,81 @@ namespace Amazon.Kafka
         public virtual DescribeConfigurationRevisionResponse EndDescribeConfigurationRevision(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeConfigurationRevisionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeReplicator
+
+        /// <summary>
+        /// Describes a replicator.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeReplicator service method.</param>
+        /// 
+        /// <returns>The response from the DescribeReplicator service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ServiceUnavailableException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.TooManyRequestsException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnauthorizedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DescribeReplicator">REST API Reference for DescribeReplicator Operation</seealso>
+        public virtual DescribeReplicatorResponse DescribeReplicator(DescribeReplicatorRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeReplicatorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeReplicatorResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeReplicatorResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeReplicator operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeReplicator operation on AmazonKafkaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeReplicator
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DescribeReplicator">REST API Reference for DescribeReplicator Operation</seealso>
+        public virtual IAsyncResult BeginDescribeReplicator(DescribeReplicatorRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeReplicatorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeReplicatorResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeReplicator operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeReplicator.</param>
+        /// 
+        /// <returns>Returns a  DescribeReplicatorResult from Kafka.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DescribeReplicator">REST API Reference for DescribeReplicator Operation</seealso>
+        public virtual DescribeReplicatorResponse EndDescribeReplicator(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeReplicatorResponse>(asyncResult);
         }
 
         #endregion
@@ -2298,6 +2526,81 @@ namespace Amazon.Kafka
         public virtual ListNodesResponse EndListNodes(IAsyncResult asyncResult)
         {
             return EndInvoke<ListNodesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListReplicators
+
+        /// <summary>
+        /// Lists the replicators.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListReplicators service method.</param>
+        /// 
+        /// <returns>The response from the ListReplicators service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ServiceUnavailableException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.TooManyRequestsException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnauthorizedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListReplicators">REST API Reference for ListReplicators Operation</seealso>
+        public virtual ListReplicatorsResponse ListReplicators(ListReplicatorsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListReplicatorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListReplicatorsResponseUnmarshaller.Instance;
+
+            return Invoke<ListReplicatorsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListReplicators operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListReplicators operation on AmazonKafkaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListReplicators
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListReplicators">REST API Reference for ListReplicators Operation</seealso>
+        public virtual IAsyncResult BeginListReplicators(ListReplicatorsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListReplicatorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListReplicatorsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListReplicators operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListReplicators.</param>
+        /// 
+        /// <returns>Returns a  ListReplicatorsResult from Kafka.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListReplicators">REST API Reference for ListReplicators Operation</seealso>
+        public virtual ListReplicatorsResponse EndListReplicators(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListReplicatorsResponse>(asyncResult);
         }
 
         #endregion
@@ -3414,6 +3717,81 @@ namespace Amazon.Kafka
         public virtual UpdateMonitoringResponse EndUpdateMonitoring(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateMonitoringResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateReplicationInfo
+
+        /// <summary>
+        /// Updates replication info of a replicator.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateReplicationInfo service method.</param>
+        /// 
+        /// <returns>The response from the UpdateReplicationInfo service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ServiceUnavailableException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.TooManyRequestsException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnauthorizedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateReplicationInfo">REST API Reference for UpdateReplicationInfo Operation</seealso>
+        public virtual UpdateReplicationInfoResponse UpdateReplicationInfo(UpdateReplicationInfoRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateReplicationInfoRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateReplicationInfoResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateReplicationInfoResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateReplicationInfo operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateReplicationInfo operation on AmazonKafkaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateReplicationInfo
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateReplicationInfo">REST API Reference for UpdateReplicationInfo Operation</seealso>
+        public virtual IAsyncResult BeginUpdateReplicationInfo(UpdateReplicationInfoRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateReplicationInfoRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateReplicationInfoResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateReplicationInfo operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateReplicationInfo.</param>
+        /// 
+        /// <returns>Returns a  UpdateReplicationInfoResult from Kafka.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateReplicationInfo">REST API Reference for UpdateReplicationInfo Operation</seealso>
+        public virtual UpdateReplicationInfoResponse EndUpdateReplicationInfo(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateReplicationInfoResponse>(asyncResult);
         }
 
         #endregion

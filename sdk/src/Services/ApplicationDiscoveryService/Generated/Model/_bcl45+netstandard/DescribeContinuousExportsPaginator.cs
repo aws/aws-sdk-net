@@ -41,6 +41,12 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// </summary>
         public IPaginatedEnumerable<DescribeContinuousExportsResponse> Responses => new PaginatedResponse<DescribeContinuousExportsResponse>(this);
 
+        /// <summary>
+        /// Enumerable containing all of the Descriptions
+        /// </summary>
+        public IPaginatedEnumerable<ContinuousExportDescription> Descriptions => 
+            new PaginatedResultKeyResponse<DescribeContinuousExportsResponse, ContinuousExportDescription>(this, (i) => i.Descriptions);
+
         internal DescribeContinuousExportsPaginator(IAmazonApplicationDiscoveryService client, DescribeContinuousExportsRequest request)
         {
             this._client = client;

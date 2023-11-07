@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConnectWisdomService.Model
 {
     /// <summary>
-    /// The KMS key used for encryption.
+    /// The configuration information for the customer managed key used for encryption.
     /// </summary>
     public partial class ServerSideEncryptionConfiguration
     {
@@ -38,7 +38,10 @@ namespace Amazon.ConnectWisdomService.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The KMS key. For information about valid ID values, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key
+        /// The customer managed key used for encryption. For more information about setting up
+        /// a customer managed key for Wisdom, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-wisdom.html">Enable
+        /// Amazon Connect Wisdom for your instance</a>. For information about valid ID values,
+        /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key
         /// identifiers (KeyId)</a>.
         /// </para>
         /// </summary>

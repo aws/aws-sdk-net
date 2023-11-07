@@ -61,15 +61,21 @@ namespace Amazon.NetworkFirewall.Model
         /// <summary>
         /// Gets and sets the property RulesString. 
         /// <para>
-        /// Stateful inspection criteria, provided in Suricata compatible intrusion prevention
-        /// system (IPS) rules. Suricata is an open-source network IPS that includes a standard
-        /// rule-based language for network traffic inspection.
+        /// Stateful inspection criteria, provided in Suricata compatible rules. Suricata is an
+        /// open-source threat detection framework that includes a standard rule-based language
+        /// for network traffic inspection.
         /// </para>
         ///  
         /// <para>
         /// These rules contain the inspection criteria and the action to take for traffic that
         /// matches the criteria, so this type of rule group doesn't have a separate action setting.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// You can't use the <code>priority</code> keyword if the <code>RuleOrder</code> option
+        /// in <a>StatefulRuleOptions</a> is set to <code>STRICT_ORDER</code>.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=0, Max=2000000)]
         public string RulesString

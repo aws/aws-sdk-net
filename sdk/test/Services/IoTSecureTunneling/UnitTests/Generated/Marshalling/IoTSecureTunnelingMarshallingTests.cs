@@ -46,7 +46,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("IoTSecureTunneling")]
         public void CloseTunnelMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<CloseTunnelRequest>();
+            var operation = service_model.FindOperation("CloseTunnel");
+
+            var request = InstantiateClassGenerator.Execute<CloseTunnelRequest>(operation);
             var marshaller = new CloseTunnelRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -60,7 +62,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("CloseTunnel").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = CloseTunnelResponseUnmarshaller.Instance.Unmarshall(context) as CloseTunnelResponse;
@@ -75,7 +77,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CloseTunnel");
 
-            var request = InstantiateClassGenerator.Execute<CloseTunnelRequest>();
+            var request = InstantiateClassGenerator.Execute<CloseTunnelRequest>(operation);
             var marshaller = new CloseTunnelRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -105,7 +107,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("IoTSecureTunneling")]
         public void DescribeTunnelMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DescribeTunnelRequest>();
+            var operation = service_model.FindOperation("DescribeTunnel");
+
+            var request = InstantiateClassGenerator.Execute<DescribeTunnelRequest>(operation);
             var marshaller = new DescribeTunnelRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -119,7 +123,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeTunnel").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DescribeTunnelResponseUnmarshaller.Instance.Unmarshall(context) as DescribeTunnelResponse;
@@ -134,7 +138,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeTunnel");
 
-            var request = InstantiateClassGenerator.Execute<DescribeTunnelRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeTunnelRequest>(operation);
             var marshaller = new DescribeTunnelRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -164,7 +168,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("IoTSecureTunneling")]
         public void ListTagsForResourceMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var operation = service_model.FindOperation("ListTagsForResource");
+
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>(operation);
             var marshaller = new ListTagsForResourceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -178,7 +184,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListTagsForResource").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ListTagsForResourceResponseUnmarshaller.Instance.Unmarshall(context) as ListTagsForResourceResponse;
@@ -193,7 +199,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListTagsForResource");
 
-            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>(operation);
             var marshaller = new ListTagsForResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -223,7 +229,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("IoTSecureTunneling")]
         public void ListTunnelsMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ListTunnelsRequest>();
+            var operation = service_model.FindOperation("ListTunnels");
+
+            var request = InstantiateClassGenerator.Execute<ListTunnelsRequest>(operation);
             var marshaller = new ListTunnelsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -237,7 +245,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListTunnels").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ListTunnelsResponseUnmarshaller.Instance.Unmarshall(context) as ListTunnelsResponse;
@@ -250,7 +258,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("IoTSecureTunneling")]
         public void OpenTunnelMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<OpenTunnelRequest>();
+            var operation = service_model.FindOperation("OpenTunnel");
+
+            var request = InstantiateClassGenerator.Execute<OpenTunnelRequest>(operation);
             var marshaller = new OpenTunnelRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -264,7 +274,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("OpenTunnel").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = OpenTunnelResponseUnmarshaller.Instance.Unmarshall(context) as OpenTunnelResponse;
@@ -279,7 +289,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("OpenTunnel");
 
-            var request = InstantiateClassGenerator.Execute<OpenTunnelRequest>();
+            var request = InstantiateClassGenerator.Execute<OpenTunnelRequest>(operation);
             var marshaller = new OpenTunnelRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -309,7 +319,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("IoTSecureTunneling")]
         public void RotateTunnelAccessTokenMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<RotateTunnelAccessTokenRequest>();
+            var operation = service_model.FindOperation("RotateTunnelAccessToken");
+
+            var request = InstantiateClassGenerator.Execute<RotateTunnelAccessTokenRequest>(operation);
             var marshaller = new RotateTunnelAccessTokenRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -323,7 +335,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("RotateTunnelAccessToken").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = RotateTunnelAccessTokenResponseUnmarshaller.Instance.Unmarshall(context) as RotateTunnelAccessTokenResponse;
@@ -338,7 +350,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("RotateTunnelAccessToken");
 
-            var request = InstantiateClassGenerator.Execute<RotateTunnelAccessTokenRequest>();
+            var request = InstantiateClassGenerator.Execute<RotateTunnelAccessTokenRequest>(operation);
             var marshaller = new RotateTunnelAccessTokenRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -368,7 +380,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("IoTSecureTunneling")]
         public void TagResourceMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var operation = service_model.FindOperation("TagResource");
+
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -382,7 +396,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("TagResource").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = TagResourceResponseUnmarshaller.Instance.Unmarshall(context) as TagResourceResponse;
@@ -397,7 +411,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("TagResource");
 
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -427,7 +441,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("IoTSecureTunneling")]
         public void UntagResourceMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var operation = service_model.FindOperation("UntagResource");
+
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>(operation);
             var marshaller = new UntagResourceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -441,7 +457,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("UntagResource").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = UntagResourceResponseUnmarshaller.Instance.Unmarshall(context) as UntagResourceResponse;
@@ -456,7 +472,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UntagResource");
 
-            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>(operation);
             var marshaller = new UntagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);

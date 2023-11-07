@@ -30,7 +30,15 @@ namespace Amazon.Neptunedata.Model
 {
     /// <summary>
     /// Container for the parameters to the GetEngineStatus operation.
-    /// Check the status of the graph database on the host.
+    /// Retrieves the status of the graph database on the host.
+    /// 
+    ///  
+    /// <para>
+    /// When invoking this operation in a Neptune cluster that has IAM authentication enabled,
+    /// the IAM user or role making the request must have a policy attached that allows the
+    /// <a href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#getenginestatus">neptune-db:GetEngineStatus</a>
+    /// IAM action in that cluster.
+    /// </para>
     /// </summary>
     public partial class GetEngineStatusRequest : AmazonNeptunedataRequest
     {

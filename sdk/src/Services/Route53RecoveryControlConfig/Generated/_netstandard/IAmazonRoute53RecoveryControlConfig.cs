@@ -546,6 +546,31 @@ namespace Amazon.Route53RecoveryControlConfig
 
         #endregion
                 
+        #region  GetResourcePolicy
+
+
+
+        /// <summary>
+        /// Get information about the resource policy for a cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourcePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetResourcePolicy service method, as returned by Route53RecoveryControlConfig.</returns>
+        /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.InternalServerException">
+        /// 500 response - InternalServiceError. Temporary service error. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ResourceNotFoundException">
+        /// 404 response - MalformedQueryString. The query string contains a syntax error or resource
+        /// not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
+        Task<GetResourcePolicyResponse> GetResourcePolicyAsync(GetResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListAssociatedRoute53HealthChecks
 
 

@@ -252,7 +252,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>/aws/insight</code> 
+        ///  <code>/aws/insights</code> 
         /// </para>
         ///  
         /// <para>

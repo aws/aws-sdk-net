@@ -81,6 +81,12 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                     response.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Platform", targetDepth))
+                {
+                    var unmarshaller = PlatformUnmarshaller.Instance;
+                    response.Platform = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("PrivateLinkConfig", targetDepth))
                 {
                     var unmarshaller = PrivateLinkConfigUnmarshaller.Instance;

@@ -42,6 +42,7 @@ namespace Amazon.QuickSight.Model
         private List<DatasetParameter> _datasetParameters = new List<DatasetParameter>();
         private DataSetUsageConfiguration _dataSetUsageConfiguration;
         private Dictionary<string, FieldFolder> _fieldFolders = new Dictionary<string, FieldFolder>();
+        private List<string> _folderArns = new List<string>();
         private DataSetImportMode _importMode;
         private Dictionary<string, LogicalTable> _logicalTableMap = new Dictionary<string, LogicalTable>();
         private string _name;
@@ -180,6 +181,25 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetFieldFolders()
         {
             return this._fieldFolders != null && this._fieldFolders.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FolderArns. 
+        /// <para>
+        /// When you create the dataset, Amazon QuickSight adds the dataset to these folders.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1)]
+        public List<string> FolderArns
+        {
+            get { return this._folderArns; }
+            set { this._folderArns = value; }
+        }
+
+        // Check to see if FolderArns property is set
+        internal bool IsSetFolderArns()
+        {
+            return this._folderArns != null && this._folderArns.Count > 0; 
         }
 
         /// <summary>

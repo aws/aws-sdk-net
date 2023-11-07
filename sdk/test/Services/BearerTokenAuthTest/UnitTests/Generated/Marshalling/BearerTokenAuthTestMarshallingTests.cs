@@ -49,7 +49,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("InheritBearerAuthOperation");
 
-            var request = InstantiateClassGenerator.Execute<InheritBearerAuthOperationRequest>();
+            var request = InstantiateClassGenerator.Execute<InheritBearerAuthOperationRequest>(operation);
             var marshaller = new InheritBearerAuthOperationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -79,7 +79,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("OverrideAuthToSigV4Operation");
 
-            var request = InstantiateClassGenerator.Execute<OverrideAuthToSigV4OperationRequest>();
+            var request = InstantiateClassGenerator.Execute<OverrideAuthToSigV4OperationRequest>(operation);
             var marshaller = new OverrideAuthToSigV4OperationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);

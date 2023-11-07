@@ -44,7 +44,8 @@ namespace Amazon.GlobalAccelerator.Model
         /// Gets and sets the property ClientIPPreservationEnabled. 
         /// <para>
         /// Indicates whether client IP address preservation is enabled for an endpoint. The value
-        /// is true or false. The default value is true for new accelerators. 
+        /// is true or false. The default value is true for Application Load Balancers endpoints.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -55,7 +56,7 @@ namespace Amazon.GlobalAccelerator.Model
         /// <para>
         /// Client IP address preservation is supported, in specific Amazon Web Services Regions,
         /// for endpoints that are Application Load Balancers, Amazon EC2 instances, and Network
-        /// Load Balancers with Security Groups. IMPORTANT: You cannot use client IP address preservation
+        /// Load Balancers with security groups. IMPORTANT: You cannot use client IP address preservation
         /// with Network Load Balancers with TLS listeners.
         /// </para>
         ///  

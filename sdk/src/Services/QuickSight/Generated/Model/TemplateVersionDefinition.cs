@@ -38,6 +38,7 @@ namespace Amazon.QuickSight.Model
         private List<ColumnConfiguration> _columnConfigurations = new List<ColumnConfiguration>();
         private List<DataSetConfiguration> _dataSetConfigurations = new List<DataSetConfiguration>();
         private List<FilterGroup> _filterGroups = new List<FilterGroup>();
+        private AssetOptions _options;
         private List<ParameterDeclaration> _parameterDeclarations = new List<ParameterDeclaration>();
         private List<SheetDefinition> _sheets = new List<SheetDefinition>();
 
@@ -137,6 +138,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetFilterGroups()
         {
             return this._filterGroups != null && this._filterGroups.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Options. 
+        /// <para>
+        /// An array of option definitions for a template.
+        /// </para>
+        /// </summary>
+        public AssetOptions Options
+        {
+            get { return this._options; }
+            set { this._options = value; }
+        }
+
+        // Check to see if Options property is set
+        internal bool IsSetOptions()
+        {
+            return this._options != null;
         }
 
         /// <summary>

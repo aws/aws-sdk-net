@@ -37,6 +37,7 @@ namespace Amazon.Redshift.Model
         private string _description;
         private string _subnetGroupStatus;
         private List<Subnet> _subnets = new List<Subnet>();
+        private List<string> _supportedClusterIpAddressTypes = new List<string>();
         private List<Tag> _tags = new List<Tag>();
         private string _vpcId;
 
@@ -114,6 +115,25 @@ namespace Amazon.Redshift.Model
         internal bool IsSetSubnets()
         {
             return this._subnets != null && this._subnets.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportedClusterIpAddressTypes. 
+        /// <para>
+        /// The IP address types supported by this cluster subnet group. Possible values are <code>ipv4</code>
+        /// and <code>dualstack</code>.
+        /// </para>
+        /// </summary>
+        public List<string> SupportedClusterIpAddressTypes
+        {
+            get { return this._supportedClusterIpAddressTypes; }
+            set { this._supportedClusterIpAddressTypes = value; }
+        }
+
+        // Check to see if SupportedClusterIpAddressTypes property is set
+        internal bool IsSetSupportedClusterIpAddressTypes()
+        {
+            return this._supportedClusterIpAddressTypes != null && this._supportedClusterIpAddressTypes.Count > 0; 
         }
 
         /// <summary>

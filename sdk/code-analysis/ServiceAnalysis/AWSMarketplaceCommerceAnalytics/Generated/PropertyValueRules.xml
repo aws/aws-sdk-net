@@ -8,14 +8,17 @@
   <property-value-rule>
     <property>Amazon.AWSMarketplaceCommerceAnalytics.Model.GenerateDataSetRequest.DestinationS3BucketName</property>
     <min>1</min>
+    <max>63</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AWSMarketplaceCommerceAnalytics.Model.GenerateDataSetRequest.RoleNameArn</property>
     <min>1</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AWSMarketplaceCommerceAnalytics.Model.GenerateDataSetRequest.SnsTopicArn</property>
     <min>1</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AWSMarketplaceCommerceAnalytics.Model.StartSupportDataExportRequest.DataSetType</property>
@@ -25,13 +28,16 @@
   <property-value-rule>
     <property>Amazon.AWSMarketplaceCommerceAnalytics.Model.StartSupportDataExportRequest.DestinationS3BucketName</property>
     <min>1</min>
+    <max>63</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AWSMarketplaceCommerceAnalytics.Model.StartSupportDataExportRequest.RoleNameArn</property>
     <min>1</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AWSMarketplaceCommerceAnalytics.Model.StartSupportDataExportRequest.SnsTopicArn</property>
     <min>1</min>
+    <max>256</max>
   </property-value-rule>
 </property-value-rules>

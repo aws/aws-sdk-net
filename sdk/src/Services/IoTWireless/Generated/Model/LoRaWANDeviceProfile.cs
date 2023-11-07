@@ -132,7 +132,7 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property MaxDutyCycle. 
         /// <para>
-        /// The MaxDutyCycle value.
+        /// The MaxDutyCycle value. It ranges from 0 to 15.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]

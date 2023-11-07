@@ -30,13 +30,14 @@ namespace Amazon.Route53RecoveryCluster.Model
 {
     /// <summary>
     /// A routing control, which is a simple on/off switch that you can use to route traffic
-    /// to cells. When a routing control state is On, traffic flows to a cell. When the state
-    /// is Off, traffic does not flow.
+    /// to cells. When a routing control state is set to ON, traffic flows to a cell. When
+    /// the state is set to OFF, traffic does not flow.
     /// </summary>
     public partial class RoutingControl
     {
         private string _controlPanelArn;
         private string _controlPanelName;
+        private string _owner;
         private string _routingControlArn;
         private string _routingControlName;
         private RoutingControlState _routingControlState;
@@ -63,7 +64,8 @@ namespace Amazon.Route53RecoveryCluster.Model
         /// <summary>
         /// Gets and sets the property ControlPanelName. 
         /// <para>
-        /// The name of the control panel where the routing control is located.
+        /// The name of the control panel where the routing control is located. Only ASCII characters
+        /// are supported for control panel names.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -77,6 +79,25 @@ namespace Amazon.Route53RecoveryCluster.Model
         internal bool IsSetControlPanelName()
         {
             return this._controlPanelName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Owner. 
+        /// <para>
+        /// The Amazon Web Services account ID of the routing control owner.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=1024)]
+        public string Owner
+        {
+            get { return this._owner; }
+            set { this._owner = value; }
+        }
+
+        // Check to see if Owner property is set
+        internal bool IsSetOwner()
+        {
+            return this._owner != null;
         }
 
         /// <summary>
@@ -120,8 +141,8 @@ namespace Amazon.Route53RecoveryCluster.Model
         /// <summary>
         /// Gets and sets the property RoutingControlState. 
         /// <para>
-        /// The current state of the routing control. When a routing control state is On, traffic
-        /// flows to a cell. When the state is Off, traffic does not flow. 
+        /// The current state of the routing control. When a routing control state is set to ON,
+        /// traffic flows to a cell. When the state is set to OFF, traffic does not flow. 
         /// </para>
         /// </summary>
         public RoutingControlState RoutingControlState

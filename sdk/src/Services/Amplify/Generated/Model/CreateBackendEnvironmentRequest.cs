@@ -42,7 +42,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property AppId. 
         /// <para>
-        ///  The unique ID for an Amplify app. 
+        /// The unique ID for an Amplify app. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=20)]
@@ -61,7 +61,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property DeploymentArtifacts. 
         /// <para>
-        ///  The name of deployment artifacts. 
+        /// The name of deployment artifacts. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
@@ -80,7 +80,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property EnvironmentName. 
         /// <para>
-        ///  The name for the backend environment. 
+        /// The name for the backend environment. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -99,7 +99,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property StackName. 
         /// <para>
-        ///  The AWS CloudFormation stack name of a backend environment. 
+        /// The AWS CloudFormation stack name of a backend environment. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

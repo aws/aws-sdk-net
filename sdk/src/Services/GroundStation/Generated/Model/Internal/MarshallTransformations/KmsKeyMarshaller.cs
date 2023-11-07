@@ -51,6 +51,12 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.KmsAliasArn);
             }
 
+            if(requestObject.IsSetKmsAliasName())
+            {
+                context.Writer.WritePropertyName("kmsAliasName");
+                context.Writer.Write(requestObject.KmsAliasName);
+            }
+
             if(requestObject.IsSetKmsKeyArn())
             {
                 context.Writer.WritePropertyName("kmsKeyArn");

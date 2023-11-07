@@ -48,7 +48,7 @@ namespace Amazon.Transfer.Model
         /// A <i>partial upload</i> occurs when a file is open when the session disconnects.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1)]
+        [AWSProperty(Min=0, Max=1)]
         public List<WorkflowDetail> OnPartialUpload
         {
             get { return this._onPartialUpload; }
@@ -77,7 +77,7 @@ namespace Amazon.Transfer.Model
         /// '{"OnUpload":[]}'</code> 
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1)]
+        [AWSProperty(Min=0, Max=1)]
         public List<WorkflowDetail> OnUpload
         {
             get { return this._onUpload; }

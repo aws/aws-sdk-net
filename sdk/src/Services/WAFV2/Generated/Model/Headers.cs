@@ -88,7 +88,15 @@ namespace Amazon.WAFV2.Model
         /// Gets and sets the property MatchScope. 
         /// <para>
         /// The parts of the headers to match with the rule inspection criteria. If you specify
-        /// <code>All</code>, WAF inspects both keys and values. 
+        /// <code>ALL</code>, WAF inspects both keys and values. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>All</code> does not require a match to be found in the keys and a match to
+        /// be found in the values. It requires a match to be found in the keys or the values
+        /// or both. To require a match in the keys and in the values, use a logical <code>AND</code>
+        /// statement to combine two match rules, one that inspects the keys and another that
+        /// inspects the values. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

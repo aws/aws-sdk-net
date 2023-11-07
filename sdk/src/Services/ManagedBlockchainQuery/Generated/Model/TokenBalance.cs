@@ -86,7 +86,7 @@ namespace Amazon.ManagedBlockchainQuery.Model
         /// <summary>
         /// Gets and sets the property LastUpdatedTime. 
         /// <para>
-        /// The <code>timestamp</code> of the last transaction at which the balance for the token
+        /// The <code>Timestamp</code> of the last transaction at which the balance for the token
         /// in the wallet was updated.
         /// </para>
         /// </summary>

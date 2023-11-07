@@ -67,6 +67,12 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetCustomDomainName())
+                {
+                    context.Writer.WritePropertyName("customDomainName");
+                    context.Writer.Write(publicRequest.CustomDomainName);
+                }
+
                 if(publicRequest.IsSetDbName())
                 {
                     context.Writer.WritePropertyName("dbName");

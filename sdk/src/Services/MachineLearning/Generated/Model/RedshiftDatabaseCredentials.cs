@@ -40,7 +40,7 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property Password.
         /// </summary>
-        [AWSProperty(Required=true, Min=8, Max=64)]
+        [AWSProperty(Required=true, Sensitive=true, Min=8, Max=64)]
         public string Password
         {
             get { return this._password; }

@@ -172,6 +172,18 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// Web Services WAF. The possible values are <code>true</code> and <code>false</code>.
         /// The default is <code>false</code>.
         /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The following attributes are supported by only Network Load Balancers:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>dns_record.client_routing_policy</code> - Indicates how traffic is distributed
+        /// among the load balancer Availability Zones. The possible values are <code>availability_zone_affinity</code>
+        /// with 100 percent zonal affinity, <code>partial_availability_zone_affinity</code> with
+        /// 85 percent zonal affinity, and <code>any_availability_zone</code> with 0 percent zonal
+        /// affinity.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Max=256)]

@@ -49,7 +49,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("BatchPutMetrics");
 
-            var request = InstantiateClassGenerator.Execute<BatchPutMetricsRequest>();
+            var request = InstantiateClassGenerator.Execute<BatchPutMetricsRequest>(operation);
             var marshaller = new BatchPutMetricsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);

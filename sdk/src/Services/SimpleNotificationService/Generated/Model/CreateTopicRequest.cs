@@ -120,7 +120,14 @@ namespace Amazon.SimpleNotificationService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>FifoTopic</code> – When this is set to <code>true</code>, a FIFO topic is created.
+        ///  <code>ArchivePolicy</code> – Adds or updates an inline policy document to archive
+        /// messages stored in the specified Amazon SNS topic.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>BeginningArchiveTime</code> – The earliest starting point at which a message
+        /// in the topic’s archive can be replayed from. This point in time is based on the configured
+        /// message retention period set by the topic’s message archiving policy.
         /// </para>
         ///  </li> <li> 
         /// <para>

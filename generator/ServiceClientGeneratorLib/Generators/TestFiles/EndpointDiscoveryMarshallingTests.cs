@@ -119,7 +119,7 @@ namespace ServiceClientGenerator.Generators.TestFiles
             
             #line default
             #line hidden
-            this.Write("Request>();\r\n            var marshaller = new ");
+            this.Write("Request>(operation);\r\n            var marshaller = new ");
             
             #line 47 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\EndpointDiscoveryMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));

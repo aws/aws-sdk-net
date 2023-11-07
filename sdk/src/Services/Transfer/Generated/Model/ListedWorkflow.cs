@@ -63,7 +63,7 @@ namespace Amazon.Transfer.Model
         /// Specifies the text description for the workflow.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string Description
         {
             get { return this._description; }

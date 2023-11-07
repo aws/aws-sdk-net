@@ -30,7 +30,7 @@ namespace Amazon.ManagedBlockchainQuery.Model
 {
     /// <summary>
     /// Container for the parameters to the BatchGetTokenBalance operation.
-    /// Gets the token balance for a batch of tokens by using the <code>GetTokenBalance</code>
+    /// Gets the token balance for a batch of tokens by using the <code>BatchGetTokenBalance</code>
     /// action for every token in the request.
     /// 
     ///  <note> 
@@ -47,7 +47,8 @@ namespace Amazon.ManagedBlockchainQuery.Model
         /// <summary>
         /// Gets and sets the property GetTokenBalanceInputs. 
         /// <para>
-        /// An array of <code>GetTokenBalanceInput</code> objects whose balance is being requested.
+        /// An array of <code>BatchGetTokenBalanceInputItem</code> objects whose balance is being
+        /// requested.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]

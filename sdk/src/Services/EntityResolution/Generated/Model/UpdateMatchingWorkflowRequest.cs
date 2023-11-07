@@ -167,7 +167,7 @@ namespace Amazon.EntityResolution.Model
         /// The name of the workflow to be retrieved.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=255)]
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string WorkflowName
         {
             get { return this._workflowName; }

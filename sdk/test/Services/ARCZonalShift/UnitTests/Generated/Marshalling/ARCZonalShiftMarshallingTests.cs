@@ -49,7 +49,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CancelZonalShift");
 
-            var request = InstantiateClassGenerator.Execute<CancelZonalShiftRequest>();
+            var request = InstantiateClassGenerator.Execute<CancelZonalShiftRequest>(operation);
             var marshaller = new CancelZonalShiftRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -79,7 +79,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CancelZonalShift");
 
-            var request = InstantiateClassGenerator.Execute<CancelZonalShiftRequest>();
+            var request = InstantiateClassGenerator.Execute<CancelZonalShiftRequest>(operation);
             var marshaller = new CancelZonalShiftRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -111,7 +111,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CancelZonalShift");
 
-            var request = InstantiateClassGenerator.Execute<CancelZonalShiftRequest>();
+            var request = InstantiateClassGenerator.Execute<CancelZonalShiftRequest>(operation);
             var marshaller = new CancelZonalShiftRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -143,7 +143,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CancelZonalShift");
 
-            var request = InstantiateClassGenerator.Execute<CancelZonalShiftRequest>();
+            var request = InstantiateClassGenerator.Execute<CancelZonalShiftRequest>(operation);
             var marshaller = new CancelZonalShiftRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -175,7 +175,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CancelZonalShift");
 
-            var request = InstantiateClassGenerator.Execute<CancelZonalShiftRequest>();
+            var request = InstantiateClassGenerator.Execute<CancelZonalShiftRequest>(operation);
             var marshaller = new CancelZonalShiftRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -207,7 +207,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CancelZonalShift");
 
-            var request = InstantiateClassGenerator.Execute<CancelZonalShiftRequest>();
+            var request = InstantiateClassGenerator.Execute<CancelZonalShiftRequest>(operation);
             var marshaller = new CancelZonalShiftRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -239,7 +239,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CancelZonalShift");
 
-            var request = InstantiateClassGenerator.Execute<CancelZonalShiftRequest>();
+            var request = InstantiateClassGenerator.Execute<CancelZonalShiftRequest>(operation);
             var marshaller = new CancelZonalShiftRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -271,7 +271,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetManagedResource");
 
-            var request = InstantiateClassGenerator.Execute<GetManagedResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<GetManagedResourceRequest>(operation);
             var marshaller = new GetManagedResourceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -301,7 +301,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetManagedResource");
 
-            var request = InstantiateClassGenerator.Execute<GetManagedResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<GetManagedResourceRequest>(operation);
             var marshaller = new GetManagedResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -333,7 +333,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetManagedResource");
 
-            var request = InstantiateClassGenerator.Execute<GetManagedResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<GetManagedResourceRequest>(operation);
             var marshaller = new GetManagedResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -365,7 +365,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetManagedResource");
 
-            var request = InstantiateClassGenerator.Execute<GetManagedResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<GetManagedResourceRequest>(operation);
             var marshaller = new GetManagedResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -397,7 +397,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetManagedResource");
 
-            var request = InstantiateClassGenerator.Execute<GetManagedResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<GetManagedResourceRequest>(operation);
             var marshaller = new GetManagedResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -429,7 +429,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetManagedResource");
 
-            var request = InstantiateClassGenerator.Execute<GetManagedResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<GetManagedResourceRequest>(operation);
             var marshaller = new GetManagedResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -461,7 +461,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListManagedResources");
 
-            var request = InstantiateClassGenerator.Execute<ListManagedResourcesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListManagedResourcesRequest>(operation);
             var marshaller = new ListManagedResourcesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -491,7 +491,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListManagedResources");
 
-            var request = InstantiateClassGenerator.Execute<ListManagedResourcesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListManagedResourcesRequest>(operation);
             var marshaller = new ListManagedResourcesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -523,7 +523,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListManagedResources");
 
-            var request = InstantiateClassGenerator.Execute<ListManagedResourcesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListManagedResourcesRequest>(operation);
             var marshaller = new ListManagedResourcesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -555,7 +555,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListManagedResources");
 
-            var request = InstantiateClassGenerator.Execute<ListManagedResourcesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListManagedResourcesRequest>(operation);
             var marshaller = new ListManagedResourcesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -587,7 +587,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListManagedResources");
 
-            var request = InstantiateClassGenerator.Execute<ListManagedResourcesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListManagedResourcesRequest>(operation);
             var marshaller = new ListManagedResourcesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -619,7 +619,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListZonalShifts");
 
-            var request = InstantiateClassGenerator.Execute<ListZonalShiftsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListZonalShiftsRequest>(operation);
             var marshaller = new ListZonalShiftsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -649,7 +649,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListZonalShifts");
 
-            var request = InstantiateClassGenerator.Execute<ListZonalShiftsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListZonalShiftsRequest>(operation);
             var marshaller = new ListZonalShiftsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -681,7 +681,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListZonalShifts");
 
-            var request = InstantiateClassGenerator.Execute<ListZonalShiftsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListZonalShiftsRequest>(operation);
             var marshaller = new ListZonalShiftsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -713,7 +713,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListZonalShifts");
 
-            var request = InstantiateClassGenerator.Execute<ListZonalShiftsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListZonalShiftsRequest>(operation);
             var marshaller = new ListZonalShiftsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -745,7 +745,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListZonalShifts");
 
-            var request = InstantiateClassGenerator.Execute<ListZonalShiftsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListZonalShiftsRequest>(operation);
             var marshaller = new ListZonalShiftsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -777,7 +777,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartZonalShift");
 
-            var request = InstantiateClassGenerator.Execute<StartZonalShiftRequest>();
+            var request = InstantiateClassGenerator.Execute<StartZonalShiftRequest>(operation);
             var marshaller = new StartZonalShiftRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -807,7 +807,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartZonalShift");
 
-            var request = InstantiateClassGenerator.Execute<StartZonalShiftRequest>();
+            var request = InstantiateClassGenerator.Execute<StartZonalShiftRequest>(operation);
             var marshaller = new StartZonalShiftRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -839,7 +839,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartZonalShift");
 
-            var request = InstantiateClassGenerator.Execute<StartZonalShiftRequest>();
+            var request = InstantiateClassGenerator.Execute<StartZonalShiftRequest>(operation);
             var marshaller = new StartZonalShiftRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -871,7 +871,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartZonalShift");
 
-            var request = InstantiateClassGenerator.Execute<StartZonalShiftRequest>();
+            var request = InstantiateClassGenerator.Execute<StartZonalShiftRequest>(operation);
             var marshaller = new StartZonalShiftRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -903,7 +903,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartZonalShift");
 
-            var request = InstantiateClassGenerator.Execute<StartZonalShiftRequest>();
+            var request = InstantiateClassGenerator.Execute<StartZonalShiftRequest>(operation);
             var marshaller = new StartZonalShiftRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -935,7 +935,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartZonalShift");
 
-            var request = InstantiateClassGenerator.Execute<StartZonalShiftRequest>();
+            var request = InstantiateClassGenerator.Execute<StartZonalShiftRequest>(operation);
             var marshaller = new StartZonalShiftRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -967,7 +967,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartZonalShift");
 
-            var request = InstantiateClassGenerator.Execute<StartZonalShiftRequest>();
+            var request = InstantiateClassGenerator.Execute<StartZonalShiftRequest>(operation);
             var marshaller = new StartZonalShiftRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -999,7 +999,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateZonalShift");
 
-            var request = InstantiateClassGenerator.Execute<UpdateZonalShiftRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateZonalShiftRequest>(operation);
             var marshaller = new UpdateZonalShiftRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1029,7 +1029,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateZonalShift");
 
-            var request = InstantiateClassGenerator.Execute<UpdateZonalShiftRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateZonalShiftRequest>(operation);
             var marshaller = new UpdateZonalShiftRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1061,7 +1061,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateZonalShift");
 
-            var request = InstantiateClassGenerator.Execute<UpdateZonalShiftRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateZonalShiftRequest>(operation);
             var marshaller = new UpdateZonalShiftRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1093,7 +1093,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateZonalShift");
 
-            var request = InstantiateClassGenerator.Execute<UpdateZonalShiftRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateZonalShiftRequest>(operation);
             var marshaller = new UpdateZonalShiftRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1125,7 +1125,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateZonalShift");
 
-            var request = InstantiateClassGenerator.Execute<UpdateZonalShiftRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateZonalShiftRequest>(operation);
             var marshaller = new UpdateZonalShiftRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1157,7 +1157,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateZonalShift");
 
-            var request = InstantiateClassGenerator.Execute<UpdateZonalShiftRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateZonalShiftRequest>(operation);
             var marshaller = new UpdateZonalShiftRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1189,7 +1189,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateZonalShift");
 
-            var request = InstantiateClassGenerator.Execute<UpdateZonalShiftRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateZonalShiftRequest>(operation);
             var marshaller = new UpdateZonalShiftRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 

@@ -1,0 +1,78 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the kafka-2018-11-14.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+namespace Amazon.Kafka.Model
+{
+    /// <summary>
+    /// Information about Kafka Cluster to be used as source / target for replication.
+    /// </summary>
+    public partial class KafkaCluster
+    {
+        private AmazonMskCluster _amazonMskCluster;
+        private KafkaClusterClientVpcConfig _vpcConfig;
+
+        /// <summary>
+        /// Gets and sets the property AmazonMskCluster. 
+        /// <para>
+        /// Details of an Amazon MSK Cluster.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public AmazonMskCluster AmazonMskCluster
+        {
+            get { return this._amazonMskCluster; }
+            set { this._amazonMskCluster = value; }
+        }
+
+        // Check to see if AmazonMskCluster property is set
+        internal bool IsSetAmazonMskCluster()
+        {
+            return this._amazonMskCluster != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcConfig. 
+        /// <para>
+        /// Details of an Amazon VPC which has network connectivity to the Apache Kafka cluster.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public KafkaClusterClientVpcConfig VpcConfig
+        {
+            get { return this._vpcConfig; }
+            set { this._vpcConfig = value; }
+        }
+
+        // Check to see if VpcConfig property is set
+        internal bool IsSetVpcConfig()
+        {
+            return this._vpcConfig != null;
+        }
+
+    }
+}

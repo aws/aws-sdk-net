@@ -101,6 +101,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("IncludeDeprecated", StringUtils.FromBool(publicRequest.IncludeDeprecated));
                 }
+                if(publicRequest.IsSetIncludeDisabled())
+                {
+                    request.Parameters.Add("IncludeDisabled", StringUtils.FromBool(publicRequest.IncludeDisabled));
+                }
                 if(publicRequest.IsSetMaxResults())
                 {
                     request.Parameters.Add("MaxResults", StringUtils.FromInt(publicRequest.MaxResults));

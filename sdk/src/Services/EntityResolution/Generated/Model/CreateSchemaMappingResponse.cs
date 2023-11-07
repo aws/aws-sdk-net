@@ -103,7 +103,7 @@ namespace Amazon.EntityResolution.Model
         /// The name of the schema.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=255)]
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string SchemaName
         {
             get { return this._schemaName; }

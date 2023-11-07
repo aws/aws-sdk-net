@@ -39,7 +39,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property RpoInSecs. 
         /// <para>
-        /// The Recovery Point Objective (RPO), in seconds.
+        /// Recovery Point Objective (RPO) in seconds.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
@@ -58,7 +58,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property RtoInSecs. 
         /// <para>
-        /// The Recovery Time Objective (RTO), in seconds.
+        /// Recovery Time Objective (RTO) in seconds.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]

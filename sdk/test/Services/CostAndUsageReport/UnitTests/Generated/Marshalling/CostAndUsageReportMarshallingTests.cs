@@ -46,7 +46,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("CostAndUsageReport")]
         public void DeleteReportDefinitionMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DeleteReportDefinitionRequest>();
+            var operation = service_model.FindOperation("DeleteReportDefinition");
+
+            var request = InstantiateClassGenerator.Execute<DeleteReportDefinitionRequest>(operation);
             var marshaller = new DeleteReportDefinitionRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -60,7 +62,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DeleteReportDefinition").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DeleteReportDefinitionResponseUnmarshaller.Instance.Unmarshall(context) as DeleteReportDefinitionResponse;
@@ -75,7 +77,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteReportDefinition");
 
-            var request = InstantiateClassGenerator.Execute<DeleteReportDefinitionRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteReportDefinitionRequest>(operation);
             var marshaller = new DeleteReportDefinitionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -107,7 +109,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteReportDefinition");
 
-            var request = InstantiateClassGenerator.Execute<DeleteReportDefinitionRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteReportDefinitionRequest>(operation);
             var marshaller = new DeleteReportDefinitionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -137,7 +139,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("CostAndUsageReport")]
         public void DescribeReportDefinitionsMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DescribeReportDefinitionsRequest>();
+            var operation = service_model.FindOperation("DescribeReportDefinitions");
+
+            var request = InstantiateClassGenerator.Execute<DescribeReportDefinitionsRequest>(operation);
             var marshaller = new DescribeReportDefinitionsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -151,7 +155,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeReportDefinitions").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DescribeReportDefinitionsResponseUnmarshaller.Instance.Unmarshall(context) as DescribeReportDefinitionsResponse;
@@ -166,7 +170,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeReportDefinitions");
 
-            var request = InstantiateClassGenerator.Execute<DescribeReportDefinitionsRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeReportDefinitionsRequest>(operation);
             var marshaller = new DescribeReportDefinitionsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -196,7 +200,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("CostAndUsageReport")]
         public void ModifyReportDefinitionMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ModifyReportDefinitionRequest>();
+            var operation = service_model.FindOperation("ModifyReportDefinition");
+
+            var request = InstantiateClassGenerator.Execute<ModifyReportDefinitionRequest>(operation);
             var marshaller = new ModifyReportDefinitionRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -210,7 +216,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ModifyReportDefinition").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ModifyReportDefinitionResponseUnmarshaller.Instance.Unmarshall(context) as ModifyReportDefinitionResponse;
@@ -225,7 +231,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ModifyReportDefinition");
 
-            var request = InstantiateClassGenerator.Execute<ModifyReportDefinitionRequest>();
+            var request = InstantiateClassGenerator.Execute<ModifyReportDefinitionRequest>(operation);
             var marshaller = new ModifyReportDefinitionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -257,7 +263,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ModifyReportDefinition");
 
-            var request = InstantiateClassGenerator.Execute<ModifyReportDefinitionRequest>();
+            var request = InstantiateClassGenerator.Execute<ModifyReportDefinitionRequest>(operation);
             var marshaller = new ModifyReportDefinitionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -287,7 +293,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("CostAndUsageReport")]
         public void PutReportDefinitionMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<PutReportDefinitionRequest>();
+            var operation = service_model.FindOperation("PutReportDefinition");
+
+            var request = InstantiateClassGenerator.Execute<PutReportDefinitionRequest>(operation);
             var marshaller = new PutReportDefinitionRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -301,7 +309,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("PutReportDefinition").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = PutReportDefinitionResponseUnmarshaller.Instance.Unmarshall(context) as PutReportDefinitionResponse;
@@ -316,7 +324,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("PutReportDefinition");
 
-            var request = InstantiateClassGenerator.Execute<PutReportDefinitionRequest>();
+            var request = InstantiateClassGenerator.Execute<PutReportDefinitionRequest>(operation);
             var marshaller = new PutReportDefinitionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -348,7 +356,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("PutReportDefinition");
 
-            var request = InstantiateClassGenerator.Execute<PutReportDefinitionRequest>();
+            var request = InstantiateClassGenerator.Execute<PutReportDefinitionRequest>(operation);
             var marshaller = new PutReportDefinitionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -380,7 +388,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("PutReportDefinition");
 
-            var request = InstantiateClassGenerator.Execute<PutReportDefinitionRequest>();
+            var request = InstantiateClassGenerator.Execute<PutReportDefinitionRequest>(operation);
             var marshaller = new PutReportDefinitionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -412,7 +420,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("PutReportDefinition");
 
-            var request = InstantiateClassGenerator.Execute<PutReportDefinitionRequest>();
+            var request = InstantiateClassGenerator.Execute<PutReportDefinitionRequest>(operation);
             var marshaller = new PutReportDefinitionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);

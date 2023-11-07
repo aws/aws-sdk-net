@@ -82,6 +82,12 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
                     unmarshalledObject.ESInstanceDetails = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("MemoryDBInstanceDetails", targetDepth))
+                {
+                    var unmarshaller = MemoryDBInstanceDetailsUnmarshaller.Instance;
+                    unmarshalledObject.MemoryDBInstanceDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RDSInstanceDetails", targetDepth))
                 {
                     var unmarshaller = RDSInstanceDetailsUnmarshaller.Instance;

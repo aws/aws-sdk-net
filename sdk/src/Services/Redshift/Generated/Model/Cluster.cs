@@ -67,11 +67,16 @@ namespace Amazon.Redshift.Model
         private string _expectedNextSnapshotScheduleTimeStatus;
         private HsmStatus _hsmStatus;
         private List<ClusterIamRole> _iamRoles = new List<ClusterIamRole>();
+        private string _ipAddressType;
         private string _kmsKeyId;
         private string _maintenanceTrackName;
         private int? _manualSnapshotRetentionPeriod;
+        private string _masterPasswordSecretArn;
+        private string _masterPasswordSecretKmsKeyId;
         private string _masterUsername;
         private string _modifyStatus;
+        private string _multiAZ;
+        private SecondaryClusterInfo _multiAZSecondary;
         private DateTime? _nextMaintenanceWindowStartTime;
         private string _nodeType;
         private int? _numberOfNodes;
@@ -864,6 +869,25 @@ namespace Amazon.Redshift.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IpAddressType. 
+        /// <para>
+        /// The IP address type for the cluster. Possible values are <code>ipv4</code> and <code>dualstack</code>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=2147483647)]
+        public string IpAddressType
+        {
+            get { return this._ipAddressType; }
+            set { this._ipAddressType = value; }
+        }
+
+        // Check to see if IpAddressType property is set
+        internal bool IsSetIpAddressType()
+        {
+            return this._ipAddressType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
         /// The Key Management Service (KMS) key ID of the encryption key used to encrypt data
@@ -927,6 +951,45 @@ namespace Amazon.Redshift.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MasterPasswordSecretArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) for the cluster's admin user credentials secret.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=2147483647)]
+        public string MasterPasswordSecretArn
+        {
+            get { return this._masterPasswordSecretArn; }
+            set { this._masterPasswordSecretArn = value; }
+        }
+
+        // Check to see if MasterPasswordSecretArn property is set
+        internal bool IsSetMasterPasswordSecretArn()
+        {
+            return this._masterPasswordSecretArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MasterPasswordSecretKmsKeyId. 
+        /// <para>
+        /// The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's
+        /// admin credentials secret.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=2147483647)]
+        public string MasterPasswordSecretKmsKeyId
+        {
+            get { return this._masterPasswordSecretKmsKeyId; }
+            set { this._masterPasswordSecretKmsKeyId = value; }
+        }
+
+        // Check to see if MasterPasswordSecretKmsKeyId property is set
+        internal bool IsSetMasterPasswordSecretKmsKeyId()
+        {
+            return this._masterPasswordSecretKmsKeyId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property MasterUsername. 
         /// <para>
         /// The admin user name for the cluster. This name is used to connect to the database
@@ -963,6 +1026,44 @@ namespace Amazon.Redshift.Model
         internal bool IsSetModifyStatus()
         {
             return this._modifyStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MultiAZ. 
+        /// <para>
+        /// A boolean value that, if true, indicates that the cluster is deployed in two Availability
+        /// Zones.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=2147483647)]
+        public string MultiAZ
+        {
+            get { return this._multiAZ; }
+            set { this._multiAZ = value; }
+        }
+
+        // Check to see if MultiAZ property is set
+        internal bool IsSetMultiAZ()
+        {
+            return this._multiAZ != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MultiAZSecondary. 
+        /// <para>
+        /// The secondary compute unit of a cluster, if Multi-AZ deployment is turned on.
+        /// </para>
+        /// </summary>
+        public SecondaryClusterInfo MultiAZSecondary
+        {
+            get { return this._multiAZSecondary; }
+            set { this._multiAZSecondary = value; }
+        }
+
+        // Check to see if MultiAZSecondary property is set
+        internal bool IsSetMultiAZSecondary()
+        {
+            return this._multiAZSecondary != null;
         }
 
         /// <summary>

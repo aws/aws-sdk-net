@@ -1819,6 +1819,10 @@
     <pattern>[a-fA-F0-9]{32}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoTWireless.Model.OtaaV1_0_x.JoinEui</property>
+    <pattern>[a-fA-F0-9]{16}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoTWireless.Model.OtaaV1_1.AppKey</property>
     <pattern>[a-fA-F0-9]{32}</pattern>
   </property-value-rule>

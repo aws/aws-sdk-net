@@ -46,7 +46,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("SSOAdmin")]
         public void AttachCustomerManagedPolicyReferenceToPermissionSetMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<AttachCustomerManagedPolicyReferenceToPermissionSetRequest>();
+            var operation = service_model.FindOperation("AttachCustomerManagedPolicyReferenceToPermissionSet");
+
+            var request = InstantiateClassGenerator.Execute<AttachCustomerManagedPolicyReferenceToPermissionSetRequest>(operation);
             var marshaller = new AttachCustomerManagedPolicyReferenceToPermissionSetRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -60,7 +62,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("AttachCustomerManagedPolicyReferenceToPermissionSet").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = AttachCustomerManagedPolicyReferenceToPermissionSetResponseUnmarshaller.Instance.Unmarshall(context) as AttachCustomerManagedPolicyReferenceToPermissionSetResponse;
@@ -75,7 +77,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("AttachCustomerManagedPolicyReferenceToPermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<AttachCustomerManagedPolicyReferenceToPermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<AttachCustomerManagedPolicyReferenceToPermissionSetRequest>(operation);
             var marshaller = new AttachCustomerManagedPolicyReferenceToPermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -107,7 +109,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("AttachCustomerManagedPolicyReferenceToPermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<AttachCustomerManagedPolicyReferenceToPermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<AttachCustomerManagedPolicyReferenceToPermissionSetRequest>(operation);
             var marshaller = new AttachCustomerManagedPolicyReferenceToPermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -139,7 +141,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("AttachCustomerManagedPolicyReferenceToPermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<AttachCustomerManagedPolicyReferenceToPermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<AttachCustomerManagedPolicyReferenceToPermissionSetRequest>(operation);
             var marshaller = new AttachCustomerManagedPolicyReferenceToPermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -171,7 +173,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("AttachCustomerManagedPolicyReferenceToPermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<AttachCustomerManagedPolicyReferenceToPermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<AttachCustomerManagedPolicyReferenceToPermissionSetRequest>(operation);
             var marshaller = new AttachCustomerManagedPolicyReferenceToPermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -203,7 +205,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("AttachCustomerManagedPolicyReferenceToPermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<AttachCustomerManagedPolicyReferenceToPermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<AttachCustomerManagedPolicyReferenceToPermissionSetRequest>(operation);
             var marshaller = new AttachCustomerManagedPolicyReferenceToPermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -235,7 +237,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("AttachCustomerManagedPolicyReferenceToPermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<AttachCustomerManagedPolicyReferenceToPermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<AttachCustomerManagedPolicyReferenceToPermissionSetRequest>(operation);
             var marshaller = new AttachCustomerManagedPolicyReferenceToPermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -267,7 +269,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("AttachCustomerManagedPolicyReferenceToPermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<AttachCustomerManagedPolicyReferenceToPermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<AttachCustomerManagedPolicyReferenceToPermissionSetRequest>(operation);
             var marshaller = new AttachCustomerManagedPolicyReferenceToPermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -297,7 +299,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("SSOAdmin")]
         public void AttachManagedPolicyToPermissionSetMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<AttachManagedPolicyToPermissionSetRequest>();
+            var operation = service_model.FindOperation("AttachManagedPolicyToPermissionSet");
+
+            var request = InstantiateClassGenerator.Execute<AttachManagedPolicyToPermissionSetRequest>(operation);
             var marshaller = new AttachManagedPolicyToPermissionSetRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -311,7 +315,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("AttachManagedPolicyToPermissionSet").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = AttachManagedPolicyToPermissionSetResponseUnmarshaller.Instance.Unmarshall(context) as AttachManagedPolicyToPermissionSetResponse;
@@ -326,7 +330,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("AttachManagedPolicyToPermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<AttachManagedPolicyToPermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<AttachManagedPolicyToPermissionSetRequest>(operation);
             var marshaller = new AttachManagedPolicyToPermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -358,7 +362,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("AttachManagedPolicyToPermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<AttachManagedPolicyToPermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<AttachManagedPolicyToPermissionSetRequest>(operation);
             var marshaller = new AttachManagedPolicyToPermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -390,7 +394,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("AttachManagedPolicyToPermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<AttachManagedPolicyToPermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<AttachManagedPolicyToPermissionSetRequest>(operation);
             var marshaller = new AttachManagedPolicyToPermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -422,7 +426,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("AttachManagedPolicyToPermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<AttachManagedPolicyToPermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<AttachManagedPolicyToPermissionSetRequest>(operation);
             var marshaller = new AttachManagedPolicyToPermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -454,7 +458,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("AttachManagedPolicyToPermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<AttachManagedPolicyToPermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<AttachManagedPolicyToPermissionSetRequest>(operation);
             var marshaller = new AttachManagedPolicyToPermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -486,7 +490,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("AttachManagedPolicyToPermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<AttachManagedPolicyToPermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<AttachManagedPolicyToPermissionSetRequest>(operation);
             var marshaller = new AttachManagedPolicyToPermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -518,7 +522,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("AttachManagedPolicyToPermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<AttachManagedPolicyToPermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<AttachManagedPolicyToPermissionSetRequest>(operation);
             var marshaller = new AttachManagedPolicyToPermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -548,7 +552,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("SSOAdmin")]
         public void CreateAccountAssignmentMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<CreateAccountAssignmentRequest>();
+            var operation = service_model.FindOperation("CreateAccountAssignment");
+
+            var request = InstantiateClassGenerator.Execute<CreateAccountAssignmentRequest>(operation);
             var marshaller = new CreateAccountAssignmentRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -562,7 +568,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("CreateAccountAssignment").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = CreateAccountAssignmentResponseUnmarshaller.Instance.Unmarshall(context) as CreateAccountAssignmentResponse;
@@ -577,7 +583,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateAccountAssignment");
 
-            var request = InstantiateClassGenerator.Execute<CreateAccountAssignmentRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateAccountAssignmentRequest>(operation);
             var marshaller = new CreateAccountAssignmentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -609,7 +615,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateAccountAssignment");
 
-            var request = InstantiateClassGenerator.Execute<CreateAccountAssignmentRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateAccountAssignmentRequest>(operation);
             var marshaller = new CreateAccountAssignmentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -641,7 +647,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateAccountAssignment");
 
-            var request = InstantiateClassGenerator.Execute<CreateAccountAssignmentRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateAccountAssignmentRequest>(operation);
             var marshaller = new CreateAccountAssignmentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -673,7 +679,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateAccountAssignment");
 
-            var request = InstantiateClassGenerator.Execute<CreateAccountAssignmentRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateAccountAssignmentRequest>(operation);
             var marshaller = new CreateAccountAssignmentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -705,7 +711,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateAccountAssignment");
 
-            var request = InstantiateClassGenerator.Execute<CreateAccountAssignmentRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateAccountAssignmentRequest>(operation);
             var marshaller = new CreateAccountAssignmentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -737,7 +743,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateAccountAssignment");
 
-            var request = InstantiateClassGenerator.Execute<CreateAccountAssignmentRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateAccountAssignmentRequest>(operation);
             var marshaller = new CreateAccountAssignmentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -769,7 +775,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateAccountAssignment");
 
-            var request = InstantiateClassGenerator.Execute<CreateAccountAssignmentRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateAccountAssignmentRequest>(operation);
             var marshaller = new CreateAccountAssignmentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -799,7 +805,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("SSOAdmin")]
         public void CreateInstanceAccessControlAttributeConfigurationMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<CreateInstanceAccessControlAttributeConfigurationRequest>();
+            var operation = service_model.FindOperation("CreateInstanceAccessControlAttributeConfiguration");
+
+            var request = InstantiateClassGenerator.Execute<CreateInstanceAccessControlAttributeConfigurationRequest>(operation);
             var marshaller = new CreateInstanceAccessControlAttributeConfigurationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -813,7 +821,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("CreateInstanceAccessControlAttributeConfiguration").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = CreateInstanceAccessControlAttributeConfigurationResponseUnmarshaller.Instance.Unmarshall(context) as CreateInstanceAccessControlAttributeConfigurationResponse;
@@ -828,7 +836,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateInstanceAccessControlAttributeConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<CreateInstanceAccessControlAttributeConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateInstanceAccessControlAttributeConfigurationRequest>(operation);
             var marshaller = new CreateInstanceAccessControlAttributeConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -860,7 +868,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateInstanceAccessControlAttributeConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<CreateInstanceAccessControlAttributeConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateInstanceAccessControlAttributeConfigurationRequest>(operation);
             var marshaller = new CreateInstanceAccessControlAttributeConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -892,7 +900,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateInstanceAccessControlAttributeConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<CreateInstanceAccessControlAttributeConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateInstanceAccessControlAttributeConfigurationRequest>(operation);
             var marshaller = new CreateInstanceAccessControlAttributeConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -924,7 +932,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateInstanceAccessControlAttributeConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<CreateInstanceAccessControlAttributeConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateInstanceAccessControlAttributeConfigurationRequest>(operation);
             var marshaller = new CreateInstanceAccessControlAttributeConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -956,7 +964,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateInstanceAccessControlAttributeConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<CreateInstanceAccessControlAttributeConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateInstanceAccessControlAttributeConfigurationRequest>(operation);
             var marshaller = new CreateInstanceAccessControlAttributeConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -988,7 +996,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreateInstanceAccessControlAttributeConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<CreateInstanceAccessControlAttributeConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateInstanceAccessControlAttributeConfigurationRequest>(operation);
             var marshaller = new CreateInstanceAccessControlAttributeConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1018,7 +1026,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("SSOAdmin")]
         public void CreatePermissionSetMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<CreatePermissionSetRequest>();
+            var operation = service_model.FindOperation("CreatePermissionSet");
+
+            var request = InstantiateClassGenerator.Execute<CreatePermissionSetRequest>(operation);
             var marshaller = new CreatePermissionSetRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1032,7 +1042,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("CreatePermissionSet").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = CreatePermissionSetResponseUnmarshaller.Instance.Unmarshall(context) as CreatePermissionSetResponse;
@@ -1047,7 +1057,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreatePermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<CreatePermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<CreatePermissionSetRequest>(operation);
             var marshaller = new CreatePermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1079,7 +1089,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreatePermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<CreatePermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<CreatePermissionSetRequest>(operation);
             var marshaller = new CreatePermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1111,7 +1121,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreatePermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<CreatePermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<CreatePermissionSetRequest>(operation);
             var marshaller = new CreatePermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1143,7 +1153,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreatePermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<CreatePermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<CreatePermissionSetRequest>(operation);
             var marshaller = new CreatePermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1175,7 +1185,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreatePermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<CreatePermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<CreatePermissionSetRequest>(operation);
             var marshaller = new CreatePermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1207,7 +1217,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreatePermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<CreatePermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<CreatePermissionSetRequest>(operation);
             var marshaller = new CreatePermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1239,7 +1249,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("CreatePermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<CreatePermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<CreatePermissionSetRequest>(operation);
             var marshaller = new CreatePermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1269,7 +1279,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("SSOAdmin")]
         public void DeleteAccountAssignmentMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DeleteAccountAssignmentRequest>();
+            var operation = service_model.FindOperation("DeleteAccountAssignment");
+
+            var request = InstantiateClassGenerator.Execute<DeleteAccountAssignmentRequest>(operation);
             var marshaller = new DeleteAccountAssignmentRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1283,7 +1295,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DeleteAccountAssignment").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DeleteAccountAssignmentResponseUnmarshaller.Instance.Unmarshall(context) as DeleteAccountAssignmentResponse;
@@ -1298,7 +1310,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteAccountAssignment");
 
-            var request = InstantiateClassGenerator.Execute<DeleteAccountAssignmentRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteAccountAssignmentRequest>(operation);
             var marshaller = new DeleteAccountAssignmentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1330,7 +1342,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteAccountAssignment");
 
-            var request = InstantiateClassGenerator.Execute<DeleteAccountAssignmentRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteAccountAssignmentRequest>(operation);
             var marshaller = new DeleteAccountAssignmentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1362,7 +1374,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteAccountAssignment");
 
-            var request = InstantiateClassGenerator.Execute<DeleteAccountAssignmentRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteAccountAssignmentRequest>(operation);
             var marshaller = new DeleteAccountAssignmentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1394,7 +1406,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteAccountAssignment");
 
-            var request = InstantiateClassGenerator.Execute<DeleteAccountAssignmentRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteAccountAssignmentRequest>(operation);
             var marshaller = new DeleteAccountAssignmentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1426,7 +1438,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteAccountAssignment");
 
-            var request = InstantiateClassGenerator.Execute<DeleteAccountAssignmentRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteAccountAssignmentRequest>(operation);
             var marshaller = new DeleteAccountAssignmentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1458,7 +1470,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteAccountAssignment");
 
-            var request = InstantiateClassGenerator.Execute<DeleteAccountAssignmentRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteAccountAssignmentRequest>(operation);
             var marshaller = new DeleteAccountAssignmentRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1488,7 +1500,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("SSOAdmin")]
         public void DeleteInlinePolicyFromPermissionSetMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DeleteInlinePolicyFromPermissionSetRequest>();
+            var operation = service_model.FindOperation("DeleteInlinePolicyFromPermissionSet");
+
+            var request = InstantiateClassGenerator.Execute<DeleteInlinePolicyFromPermissionSetRequest>(operation);
             var marshaller = new DeleteInlinePolicyFromPermissionSetRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1502,7 +1516,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DeleteInlinePolicyFromPermissionSet").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DeleteInlinePolicyFromPermissionSetResponseUnmarshaller.Instance.Unmarshall(context) as DeleteInlinePolicyFromPermissionSetResponse;
@@ -1517,7 +1531,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteInlinePolicyFromPermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<DeleteInlinePolicyFromPermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteInlinePolicyFromPermissionSetRequest>(operation);
             var marshaller = new DeleteInlinePolicyFromPermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1549,7 +1563,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteInlinePolicyFromPermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<DeleteInlinePolicyFromPermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteInlinePolicyFromPermissionSetRequest>(operation);
             var marshaller = new DeleteInlinePolicyFromPermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1581,7 +1595,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteInlinePolicyFromPermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<DeleteInlinePolicyFromPermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteInlinePolicyFromPermissionSetRequest>(operation);
             var marshaller = new DeleteInlinePolicyFromPermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1613,7 +1627,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteInlinePolicyFromPermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<DeleteInlinePolicyFromPermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteInlinePolicyFromPermissionSetRequest>(operation);
             var marshaller = new DeleteInlinePolicyFromPermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1645,7 +1659,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteInlinePolicyFromPermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<DeleteInlinePolicyFromPermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteInlinePolicyFromPermissionSetRequest>(operation);
             var marshaller = new DeleteInlinePolicyFromPermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1677,7 +1691,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteInlinePolicyFromPermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<DeleteInlinePolicyFromPermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteInlinePolicyFromPermissionSetRequest>(operation);
             var marshaller = new DeleteInlinePolicyFromPermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1707,7 +1721,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("SSOAdmin")]
         public void DeleteInstanceAccessControlAttributeConfigurationMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DeleteInstanceAccessControlAttributeConfigurationRequest>();
+            var operation = service_model.FindOperation("DeleteInstanceAccessControlAttributeConfiguration");
+
+            var request = InstantiateClassGenerator.Execute<DeleteInstanceAccessControlAttributeConfigurationRequest>(operation);
             var marshaller = new DeleteInstanceAccessControlAttributeConfigurationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1721,7 +1737,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DeleteInstanceAccessControlAttributeConfiguration").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DeleteInstanceAccessControlAttributeConfigurationResponseUnmarshaller.Instance.Unmarshall(context) as DeleteInstanceAccessControlAttributeConfigurationResponse;
@@ -1736,7 +1752,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteInstanceAccessControlAttributeConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<DeleteInstanceAccessControlAttributeConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteInstanceAccessControlAttributeConfigurationRequest>(operation);
             var marshaller = new DeleteInstanceAccessControlAttributeConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1768,7 +1784,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteInstanceAccessControlAttributeConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<DeleteInstanceAccessControlAttributeConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteInstanceAccessControlAttributeConfigurationRequest>(operation);
             var marshaller = new DeleteInstanceAccessControlAttributeConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1800,7 +1816,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteInstanceAccessControlAttributeConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<DeleteInstanceAccessControlAttributeConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteInstanceAccessControlAttributeConfigurationRequest>(operation);
             var marshaller = new DeleteInstanceAccessControlAttributeConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1832,7 +1848,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteInstanceAccessControlAttributeConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<DeleteInstanceAccessControlAttributeConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteInstanceAccessControlAttributeConfigurationRequest>(operation);
             var marshaller = new DeleteInstanceAccessControlAttributeConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1864,7 +1880,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteInstanceAccessControlAttributeConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<DeleteInstanceAccessControlAttributeConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteInstanceAccessControlAttributeConfigurationRequest>(operation);
             var marshaller = new DeleteInstanceAccessControlAttributeConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1896,7 +1912,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeleteInstanceAccessControlAttributeConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<DeleteInstanceAccessControlAttributeConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteInstanceAccessControlAttributeConfigurationRequest>(operation);
             var marshaller = new DeleteInstanceAccessControlAttributeConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1926,7 +1942,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("SSOAdmin")]
         public void DeletePermissionsBoundaryFromPermissionSetMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DeletePermissionsBoundaryFromPermissionSetRequest>();
+            var operation = service_model.FindOperation("DeletePermissionsBoundaryFromPermissionSet");
+
+            var request = InstantiateClassGenerator.Execute<DeletePermissionsBoundaryFromPermissionSetRequest>(operation);
             var marshaller = new DeletePermissionsBoundaryFromPermissionSetRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1940,7 +1958,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DeletePermissionsBoundaryFromPermissionSet").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DeletePermissionsBoundaryFromPermissionSetResponseUnmarshaller.Instance.Unmarshall(context) as DeletePermissionsBoundaryFromPermissionSetResponse;
@@ -1955,7 +1973,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeletePermissionsBoundaryFromPermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<DeletePermissionsBoundaryFromPermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DeletePermissionsBoundaryFromPermissionSetRequest>(operation);
             var marshaller = new DeletePermissionsBoundaryFromPermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -1987,7 +2005,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeletePermissionsBoundaryFromPermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<DeletePermissionsBoundaryFromPermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DeletePermissionsBoundaryFromPermissionSetRequest>(operation);
             var marshaller = new DeletePermissionsBoundaryFromPermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2019,7 +2037,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeletePermissionsBoundaryFromPermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<DeletePermissionsBoundaryFromPermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DeletePermissionsBoundaryFromPermissionSetRequest>(operation);
             var marshaller = new DeletePermissionsBoundaryFromPermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2051,7 +2069,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeletePermissionsBoundaryFromPermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<DeletePermissionsBoundaryFromPermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DeletePermissionsBoundaryFromPermissionSetRequest>(operation);
             var marshaller = new DeletePermissionsBoundaryFromPermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2083,7 +2101,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeletePermissionsBoundaryFromPermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<DeletePermissionsBoundaryFromPermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DeletePermissionsBoundaryFromPermissionSetRequest>(operation);
             var marshaller = new DeletePermissionsBoundaryFromPermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2113,7 +2131,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("SSOAdmin")]
         public void DeletePermissionSetMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DeletePermissionSetRequest>();
+            var operation = service_model.FindOperation("DeletePermissionSet");
+
+            var request = InstantiateClassGenerator.Execute<DeletePermissionSetRequest>(operation);
             var marshaller = new DeletePermissionSetRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -2127,7 +2147,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DeletePermissionSet").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DeletePermissionSetResponseUnmarshaller.Instance.Unmarshall(context) as DeletePermissionSetResponse;
@@ -2142,7 +2162,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeletePermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<DeletePermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DeletePermissionSetRequest>(operation);
             var marshaller = new DeletePermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2174,7 +2194,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeletePermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<DeletePermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DeletePermissionSetRequest>(operation);
             var marshaller = new DeletePermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2206,7 +2226,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeletePermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<DeletePermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DeletePermissionSetRequest>(operation);
             var marshaller = new DeletePermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2238,7 +2258,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeletePermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<DeletePermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DeletePermissionSetRequest>(operation);
             var marshaller = new DeletePermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2270,7 +2290,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeletePermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<DeletePermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DeletePermissionSetRequest>(operation);
             var marshaller = new DeletePermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2302,7 +2322,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DeletePermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<DeletePermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DeletePermissionSetRequest>(operation);
             var marshaller = new DeletePermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2332,7 +2352,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("SSOAdmin")]
         public void DescribeAccountAssignmentCreationStatusMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DescribeAccountAssignmentCreationStatusRequest>();
+            var operation = service_model.FindOperation("DescribeAccountAssignmentCreationStatus");
+
+            var request = InstantiateClassGenerator.Execute<DescribeAccountAssignmentCreationStatusRequest>(operation);
             var marshaller = new DescribeAccountAssignmentCreationStatusRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -2346,7 +2368,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeAccountAssignmentCreationStatus").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DescribeAccountAssignmentCreationStatusResponseUnmarshaller.Instance.Unmarshall(context) as DescribeAccountAssignmentCreationStatusResponse;
@@ -2361,7 +2383,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeAccountAssignmentCreationStatus");
 
-            var request = InstantiateClassGenerator.Execute<DescribeAccountAssignmentCreationStatusRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeAccountAssignmentCreationStatusRequest>(operation);
             var marshaller = new DescribeAccountAssignmentCreationStatusRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2393,7 +2415,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeAccountAssignmentCreationStatus");
 
-            var request = InstantiateClassGenerator.Execute<DescribeAccountAssignmentCreationStatusRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeAccountAssignmentCreationStatusRequest>(operation);
             var marshaller = new DescribeAccountAssignmentCreationStatusRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2425,7 +2447,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeAccountAssignmentCreationStatus");
 
-            var request = InstantiateClassGenerator.Execute<DescribeAccountAssignmentCreationStatusRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeAccountAssignmentCreationStatusRequest>(operation);
             var marshaller = new DescribeAccountAssignmentCreationStatusRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2457,7 +2479,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeAccountAssignmentCreationStatus");
 
-            var request = InstantiateClassGenerator.Execute<DescribeAccountAssignmentCreationStatusRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeAccountAssignmentCreationStatusRequest>(operation);
             var marshaller = new DescribeAccountAssignmentCreationStatusRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2489,7 +2511,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeAccountAssignmentCreationStatus");
 
-            var request = InstantiateClassGenerator.Execute<DescribeAccountAssignmentCreationStatusRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeAccountAssignmentCreationStatusRequest>(operation);
             var marshaller = new DescribeAccountAssignmentCreationStatusRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2519,7 +2541,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("SSOAdmin")]
         public void DescribeAccountAssignmentDeletionStatusMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DescribeAccountAssignmentDeletionStatusRequest>();
+            var operation = service_model.FindOperation("DescribeAccountAssignmentDeletionStatus");
+
+            var request = InstantiateClassGenerator.Execute<DescribeAccountAssignmentDeletionStatusRequest>(operation);
             var marshaller = new DescribeAccountAssignmentDeletionStatusRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -2533,7 +2557,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeAccountAssignmentDeletionStatus").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DescribeAccountAssignmentDeletionStatusResponseUnmarshaller.Instance.Unmarshall(context) as DescribeAccountAssignmentDeletionStatusResponse;
@@ -2548,7 +2572,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeAccountAssignmentDeletionStatus");
 
-            var request = InstantiateClassGenerator.Execute<DescribeAccountAssignmentDeletionStatusRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeAccountAssignmentDeletionStatusRequest>(operation);
             var marshaller = new DescribeAccountAssignmentDeletionStatusRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2580,7 +2604,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeAccountAssignmentDeletionStatus");
 
-            var request = InstantiateClassGenerator.Execute<DescribeAccountAssignmentDeletionStatusRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeAccountAssignmentDeletionStatusRequest>(operation);
             var marshaller = new DescribeAccountAssignmentDeletionStatusRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2612,7 +2636,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeAccountAssignmentDeletionStatus");
 
-            var request = InstantiateClassGenerator.Execute<DescribeAccountAssignmentDeletionStatusRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeAccountAssignmentDeletionStatusRequest>(operation);
             var marshaller = new DescribeAccountAssignmentDeletionStatusRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2644,7 +2668,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeAccountAssignmentDeletionStatus");
 
-            var request = InstantiateClassGenerator.Execute<DescribeAccountAssignmentDeletionStatusRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeAccountAssignmentDeletionStatusRequest>(operation);
             var marshaller = new DescribeAccountAssignmentDeletionStatusRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2676,7 +2700,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeAccountAssignmentDeletionStatus");
 
-            var request = InstantiateClassGenerator.Execute<DescribeAccountAssignmentDeletionStatusRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeAccountAssignmentDeletionStatusRequest>(operation);
             var marshaller = new DescribeAccountAssignmentDeletionStatusRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2706,7 +2730,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("SSOAdmin")]
         public void DescribeInstanceAccessControlAttributeConfigurationMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DescribeInstanceAccessControlAttributeConfigurationRequest>();
+            var operation = service_model.FindOperation("DescribeInstanceAccessControlAttributeConfiguration");
+
+            var request = InstantiateClassGenerator.Execute<DescribeInstanceAccessControlAttributeConfigurationRequest>(operation);
             var marshaller = new DescribeInstanceAccessControlAttributeConfigurationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -2720,7 +2746,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeInstanceAccessControlAttributeConfiguration").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DescribeInstanceAccessControlAttributeConfigurationResponseUnmarshaller.Instance.Unmarshall(context) as DescribeInstanceAccessControlAttributeConfigurationResponse;
@@ -2735,7 +2761,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeInstanceAccessControlAttributeConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<DescribeInstanceAccessControlAttributeConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeInstanceAccessControlAttributeConfigurationRequest>(operation);
             var marshaller = new DescribeInstanceAccessControlAttributeConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2767,7 +2793,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeInstanceAccessControlAttributeConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<DescribeInstanceAccessControlAttributeConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeInstanceAccessControlAttributeConfigurationRequest>(operation);
             var marshaller = new DescribeInstanceAccessControlAttributeConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2799,7 +2825,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeInstanceAccessControlAttributeConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<DescribeInstanceAccessControlAttributeConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeInstanceAccessControlAttributeConfigurationRequest>(operation);
             var marshaller = new DescribeInstanceAccessControlAttributeConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2831,7 +2857,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeInstanceAccessControlAttributeConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<DescribeInstanceAccessControlAttributeConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeInstanceAccessControlAttributeConfigurationRequest>(operation);
             var marshaller = new DescribeInstanceAccessControlAttributeConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2863,7 +2889,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribeInstanceAccessControlAttributeConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<DescribeInstanceAccessControlAttributeConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribeInstanceAccessControlAttributeConfigurationRequest>(operation);
             var marshaller = new DescribeInstanceAccessControlAttributeConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2893,7 +2919,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("SSOAdmin")]
         public void DescribePermissionSetMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DescribePermissionSetRequest>();
+            var operation = service_model.FindOperation("DescribePermissionSet");
+
+            var request = InstantiateClassGenerator.Execute<DescribePermissionSetRequest>(operation);
             var marshaller = new DescribePermissionSetRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -2907,7 +2935,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribePermissionSet").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DescribePermissionSetResponseUnmarshaller.Instance.Unmarshall(context) as DescribePermissionSetResponse;
@@ -2922,7 +2950,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribePermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<DescribePermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribePermissionSetRequest>(operation);
             var marshaller = new DescribePermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2954,7 +2982,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribePermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<DescribePermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribePermissionSetRequest>(operation);
             var marshaller = new DescribePermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -2986,7 +3014,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribePermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<DescribePermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribePermissionSetRequest>(operation);
             var marshaller = new DescribePermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3018,7 +3046,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribePermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<DescribePermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribePermissionSetRequest>(operation);
             var marshaller = new DescribePermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3050,7 +3078,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribePermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<DescribePermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribePermissionSetRequest>(operation);
             var marshaller = new DescribePermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3080,7 +3108,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("SSOAdmin")]
         public void DescribePermissionSetProvisioningStatusMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DescribePermissionSetProvisioningStatusRequest>();
+            var operation = service_model.FindOperation("DescribePermissionSetProvisioningStatus");
+
+            var request = InstantiateClassGenerator.Execute<DescribePermissionSetProvisioningStatusRequest>(operation);
             var marshaller = new DescribePermissionSetProvisioningStatusRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -3094,7 +3124,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribePermissionSetProvisioningStatus").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DescribePermissionSetProvisioningStatusResponseUnmarshaller.Instance.Unmarshall(context) as DescribePermissionSetProvisioningStatusResponse;
@@ -3109,7 +3139,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribePermissionSetProvisioningStatus");
 
-            var request = InstantiateClassGenerator.Execute<DescribePermissionSetProvisioningStatusRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribePermissionSetProvisioningStatusRequest>(operation);
             var marshaller = new DescribePermissionSetProvisioningStatusRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3141,7 +3171,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribePermissionSetProvisioningStatus");
 
-            var request = InstantiateClassGenerator.Execute<DescribePermissionSetProvisioningStatusRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribePermissionSetProvisioningStatusRequest>(operation);
             var marshaller = new DescribePermissionSetProvisioningStatusRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3173,7 +3203,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribePermissionSetProvisioningStatus");
 
-            var request = InstantiateClassGenerator.Execute<DescribePermissionSetProvisioningStatusRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribePermissionSetProvisioningStatusRequest>(operation);
             var marshaller = new DescribePermissionSetProvisioningStatusRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3205,7 +3235,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribePermissionSetProvisioningStatus");
 
-            var request = InstantiateClassGenerator.Execute<DescribePermissionSetProvisioningStatusRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribePermissionSetProvisioningStatusRequest>(operation);
             var marshaller = new DescribePermissionSetProvisioningStatusRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3237,7 +3267,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DescribePermissionSetProvisioningStatus");
 
-            var request = InstantiateClassGenerator.Execute<DescribePermissionSetProvisioningStatusRequest>();
+            var request = InstantiateClassGenerator.Execute<DescribePermissionSetProvisioningStatusRequest>(operation);
             var marshaller = new DescribePermissionSetProvisioningStatusRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3267,7 +3297,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("SSOAdmin")]
         public void DetachCustomerManagedPolicyReferenceFromPermissionSetMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DetachCustomerManagedPolicyReferenceFromPermissionSetRequest>();
+            var operation = service_model.FindOperation("DetachCustomerManagedPolicyReferenceFromPermissionSet");
+
+            var request = InstantiateClassGenerator.Execute<DetachCustomerManagedPolicyReferenceFromPermissionSetRequest>(operation);
             var marshaller = new DetachCustomerManagedPolicyReferenceFromPermissionSetRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -3281,7 +3313,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DetachCustomerManagedPolicyReferenceFromPermissionSet").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DetachCustomerManagedPolicyReferenceFromPermissionSetResponseUnmarshaller.Instance.Unmarshall(context) as DetachCustomerManagedPolicyReferenceFromPermissionSetResponse;
@@ -3296,7 +3328,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DetachCustomerManagedPolicyReferenceFromPermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<DetachCustomerManagedPolicyReferenceFromPermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DetachCustomerManagedPolicyReferenceFromPermissionSetRequest>(operation);
             var marshaller = new DetachCustomerManagedPolicyReferenceFromPermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3328,7 +3360,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DetachCustomerManagedPolicyReferenceFromPermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<DetachCustomerManagedPolicyReferenceFromPermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DetachCustomerManagedPolicyReferenceFromPermissionSetRequest>(operation);
             var marshaller = new DetachCustomerManagedPolicyReferenceFromPermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3360,7 +3392,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DetachCustomerManagedPolicyReferenceFromPermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<DetachCustomerManagedPolicyReferenceFromPermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DetachCustomerManagedPolicyReferenceFromPermissionSetRequest>(operation);
             var marshaller = new DetachCustomerManagedPolicyReferenceFromPermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3392,7 +3424,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DetachCustomerManagedPolicyReferenceFromPermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<DetachCustomerManagedPolicyReferenceFromPermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DetachCustomerManagedPolicyReferenceFromPermissionSetRequest>(operation);
             var marshaller = new DetachCustomerManagedPolicyReferenceFromPermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3424,7 +3456,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DetachCustomerManagedPolicyReferenceFromPermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<DetachCustomerManagedPolicyReferenceFromPermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DetachCustomerManagedPolicyReferenceFromPermissionSetRequest>(operation);
             var marshaller = new DetachCustomerManagedPolicyReferenceFromPermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3456,7 +3488,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DetachCustomerManagedPolicyReferenceFromPermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<DetachCustomerManagedPolicyReferenceFromPermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DetachCustomerManagedPolicyReferenceFromPermissionSetRequest>(operation);
             var marshaller = new DetachCustomerManagedPolicyReferenceFromPermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3486,7 +3518,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("SSOAdmin")]
         public void DetachManagedPolicyFromPermissionSetMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DetachManagedPolicyFromPermissionSetRequest>();
+            var operation = service_model.FindOperation("DetachManagedPolicyFromPermissionSet");
+
+            var request = InstantiateClassGenerator.Execute<DetachManagedPolicyFromPermissionSetRequest>(operation);
             var marshaller = new DetachManagedPolicyFromPermissionSetRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -3500,7 +3534,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DetachManagedPolicyFromPermissionSet").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DetachManagedPolicyFromPermissionSetResponseUnmarshaller.Instance.Unmarshall(context) as DetachManagedPolicyFromPermissionSetResponse;
@@ -3515,7 +3549,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DetachManagedPolicyFromPermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<DetachManagedPolicyFromPermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DetachManagedPolicyFromPermissionSetRequest>(operation);
             var marshaller = new DetachManagedPolicyFromPermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3547,7 +3581,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DetachManagedPolicyFromPermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<DetachManagedPolicyFromPermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DetachManagedPolicyFromPermissionSetRequest>(operation);
             var marshaller = new DetachManagedPolicyFromPermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3579,7 +3613,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DetachManagedPolicyFromPermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<DetachManagedPolicyFromPermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DetachManagedPolicyFromPermissionSetRequest>(operation);
             var marshaller = new DetachManagedPolicyFromPermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3611,7 +3645,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DetachManagedPolicyFromPermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<DetachManagedPolicyFromPermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DetachManagedPolicyFromPermissionSetRequest>(operation);
             var marshaller = new DetachManagedPolicyFromPermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3643,7 +3677,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DetachManagedPolicyFromPermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<DetachManagedPolicyFromPermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DetachManagedPolicyFromPermissionSetRequest>(operation);
             var marshaller = new DetachManagedPolicyFromPermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3675,7 +3709,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("DetachManagedPolicyFromPermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<DetachManagedPolicyFromPermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<DetachManagedPolicyFromPermissionSetRequest>(operation);
             var marshaller = new DetachManagedPolicyFromPermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3705,7 +3739,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("SSOAdmin")]
         public void GetInlinePolicyForPermissionSetMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<GetInlinePolicyForPermissionSetRequest>();
+            var operation = service_model.FindOperation("GetInlinePolicyForPermissionSet");
+
+            var request = InstantiateClassGenerator.Execute<GetInlinePolicyForPermissionSetRequest>(operation);
             var marshaller = new GetInlinePolicyForPermissionSetRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -3719,7 +3755,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetInlinePolicyForPermissionSet").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = GetInlinePolicyForPermissionSetResponseUnmarshaller.Instance.Unmarshall(context) as GetInlinePolicyForPermissionSetResponse;
@@ -3734,7 +3770,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetInlinePolicyForPermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<GetInlinePolicyForPermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<GetInlinePolicyForPermissionSetRequest>(operation);
             var marshaller = new GetInlinePolicyForPermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3766,7 +3802,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetInlinePolicyForPermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<GetInlinePolicyForPermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<GetInlinePolicyForPermissionSetRequest>(operation);
             var marshaller = new GetInlinePolicyForPermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3798,7 +3834,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetInlinePolicyForPermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<GetInlinePolicyForPermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<GetInlinePolicyForPermissionSetRequest>(operation);
             var marshaller = new GetInlinePolicyForPermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3830,7 +3866,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetInlinePolicyForPermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<GetInlinePolicyForPermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<GetInlinePolicyForPermissionSetRequest>(operation);
             var marshaller = new GetInlinePolicyForPermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3862,7 +3898,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetInlinePolicyForPermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<GetInlinePolicyForPermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<GetInlinePolicyForPermissionSetRequest>(operation);
             var marshaller = new GetInlinePolicyForPermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3892,7 +3928,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("SSOAdmin")]
         public void GetPermissionsBoundaryForPermissionSetMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<GetPermissionsBoundaryForPermissionSetRequest>();
+            var operation = service_model.FindOperation("GetPermissionsBoundaryForPermissionSet");
+
+            var request = InstantiateClassGenerator.Execute<GetPermissionsBoundaryForPermissionSetRequest>(operation);
             var marshaller = new GetPermissionsBoundaryForPermissionSetRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -3906,7 +3944,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetPermissionsBoundaryForPermissionSet").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = GetPermissionsBoundaryForPermissionSetResponseUnmarshaller.Instance.Unmarshall(context) as GetPermissionsBoundaryForPermissionSetResponse;
@@ -3921,7 +3959,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetPermissionsBoundaryForPermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<GetPermissionsBoundaryForPermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<GetPermissionsBoundaryForPermissionSetRequest>(operation);
             var marshaller = new GetPermissionsBoundaryForPermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3953,7 +3991,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetPermissionsBoundaryForPermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<GetPermissionsBoundaryForPermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<GetPermissionsBoundaryForPermissionSetRequest>(operation);
             var marshaller = new GetPermissionsBoundaryForPermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -3985,7 +4023,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetPermissionsBoundaryForPermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<GetPermissionsBoundaryForPermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<GetPermissionsBoundaryForPermissionSetRequest>(operation);
             var marshaller = new GetPermissionsBoundaryForPermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4017,7 +4055,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetPermissionsBoundaryForPermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<GetPermissionsBoundaryForPermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<GetPermissionsBoundaryForPermissionSetRequest>(operation);
             var marshaller = new GetPermissionsBoundaryForPermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4049,7 +4087,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("GetPermissionsBoundaryForPermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<GetPermissionsBoundaryForPermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<GetPermissionsBoundaryForPermissionSetRequest>(operation);
             var marshaller = new GetPermissionsBoundaryForPermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4079,7 +4117,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("SSOAdmin")]
         public void ListAccountAssignmentCreationStatusMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ListAccountAssignmentCreationStatusRequest>();
+            var operation = service_model.FindOperation("ListAccountAssignmentCreationStatus");
+
+            var request = InstantiateClassGenerator.Execute<ListAccountAssignmentCreationStatusRequest>(operation);
             var marshaller = new ListAccountAssignmentCreationStatusRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -4093,7 +4133,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListAccountAssignmentCreationStatus").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ListAccountAssignmentCreationStatusResponseUnmarshaller.Instance.Unmarshall(context) as ListAccountAssignmentCreationStatusResponse;
@@ -4108,7 +4148,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListAccountAssignmentCreationStatus");
 
-            var request = InstantiateClassGenerator.Execute<ListAccountAssignmentCreationStatusRequest>();
+            var request = InstantiateClassGenerator.Execute<ListAccountAssignmentCreationStatusRequest>(operation);
             var marshaller = new ListAccountAssignmentCreationStatusRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4140,7 +4180,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListAccountAssignmentCreationStatus");
 
-            var request = InstantiateClassGenerator.Execute<ListAccountAssignmentCreationStatusRequest>();
+            var request = InstantiateClassGenerator.Execute<ListAccountAssignmentCreationStatusRequest>(operation);
             var marshaller = new ListAccountAssignmentCreationStatusRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4172,7 +4212,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListAccountAssignmentCreationStatus");
 
-            var request = InstantiateClassGenerator.Execute<ListAccountAssignmentCreationStatusRequest>();
+            var request = InstantiateClassGenerator.Execute<ListAccountAssignmentCreationStatusRequest>(operation);
             var marshaller = new ListAccountAssignmentCreationStatusRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4204,7 +4244,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListAccountAssignmentCreationStatus");
 
-            var request = InstantiateClassGenerator.Execute<ListAccountAssignmentCreationStatusRequest>();
+            var request = InstantiateClassGenerator.Execute<ListAccountAssignmentCreationStatusRequest>(operation);
             var marshaller = new ListAccountAssignmentCreationStatusRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4236,7 +4276,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListAccountAssignmentCreationStatus");
 
-            var request = InstantiateClassGenerator.Execute<ListAccountAssignmentCreationStatusRequest>();
+            var request = InstantiateClassGenerator.Execute<ListAccountAssignmentCreationStatusRequest>(operation);
             var marshaller = new ListAccountAssignmentCreationStatusRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4266,7 +4306,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("SSOAdmin")]
         public void ListAccountAssignmentDeletionStatusMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ListAccountAssignmentDeletionStatusRequest>();
+            var operation = service_model.FindOperation("ListAccountAssignmentDeletionStatus");
+
+            var request = InstantiateClassGenerator.Execute<ListAccountAssignmentDeletionStatusRequest>(operation);
             var marshaller = new ListAccountAssignmentDeletionStatusRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -4280,7 +4322,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListAccountAssignmentDeletionStatus").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ListAccountAssignmentDeletionStatusResponseUnmarshaller.Instance.Unmarshall(context) as ListAccountAssignmentDeletionStatusResponse;
@@ -4295,7 +4337,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListAccountAssignmentDeletionStatus");
 
-            var request = InstantiateClassGenerator.Execute<ListAccountAssignmentDeletionStatusRequest>();
+            var request = InstantiateClassGenerator.Execute<ListAccountAssignmentDeletionStatusRequest>(operation);
             var marshaller = new ListAccountAssignmentDeletionStatusRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4327,7 +4369,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListAccountAssignmentDeletionStatus");
 
-            var request = InstantiateClassGenerator.Execute<ListAccountAssignmentDeletionStatusRequest>();
+            var request = InstantiateClassGenerator.Execute<ListAccountAssignmentDeletionStatusRequest>(operation);
             var marshaller = new ListAccountAssignmentDeletionStatusRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4359,7 +4401,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListAccountAssignmentDeletionStatus");
 
-            var request = InstantiateClassGenerator.Execute<ListAccountAssignmentDeletionStatusRequest>();
+            var request = InstantiateClassGenerator.Execute<ListAccountAssignmentDeletionStatusRequest>(operation);
             var marshaller = new ListAccountAssignmentDeletionStatusRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4391,7 +4433,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListAccountAssignmentDeletionStatus");
 
-            var request = InstantiateClassGenerator.Execute<ListAccountAssignmentDeletionStatusRequest>();
+            var request = InstantiateClassGenerator.Execute<ListAccountAssignmentDeletionStatusRequest>(operation);
             var marshaller = new ListAccountAssignmentDeletionStatusRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4423,7 +4465,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListAccountAssignmentDeletionStatus");
 
-            var request = InstantiateClassGenerator.Execute<ListAccountAssignmentDeletionStatusRequest>();
+            var request = InstantiateClassGenerator.Execute<ListAccountAssignmentDeletionStatusRequest>(operation);
             var marshaller = new ListAccountAssignmentDeletionStatusRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4453,7 +4495,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("SSOAdmin")]
         public void ListAccountAssignmentsMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ListAccountAssignmentsRequest>();
+            var operation = service_model.FindOperation("ListAccountAssignments");
+
+            var request = InstantiateClassGenerator.Execute<ListAccountAssignmentsRequest>(operation);
             var marshaller = new ListAccountAssignmentsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -4467,7 +4511,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListAccountAssignments").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ListAccountAssignmentsResponseUnmarshaller.Instance.Unmarshall(context) as ListAccountAssignmentsResponse;
@@ -4482,7 +4526,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListAccountAssignments");
 
-            var request = InstantiateClassGenerator.Execute<ListAccountAssignmentsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListAccountAssignmentsRequest>(operation);
             var marshaller = new ListAccountAssignmentsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4514,7 +4558,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListAccountAssignments");
 
-            var request = InstantiateClassGenerator.Execute<ListAccountAssignmentsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListAccountAssignmentsRequest>(operation);
             var marshaller = new ListAccountAssignmentsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4546,7 +4590,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListAccountAssignments");
 
-            var request = InstantiateClassGenerator.Execute<ListAccountAssignmentsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListAccountAssignmentsRequest>(operation);
             var marshaller = new ListAccountAssignmentsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4578,7 +4622,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListAccountAssignments");
 
-            var request = InstantiateClassGenerator.Execute<ListAccountAssignmentsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListAccountAssignmentsRequest>(operation);
             var marshaller = new ListAccountAssignmentsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4610,7 +4654,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListAccountAssignments");
 
-            var request = InstantiateClassGenerator.Execute<ListAccountAssignmentsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListAccountAssignmentsRequest>(operation);
             var marshaller = new ListAccountAssignmentsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4640,7 +4684,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("SSOAdmin")]
         public void ListAccountsForProvisionedPermissionSetMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ListAccountsForProvisionedPermissionSetRequest>();
+            var operation = service_model.FindOperation("ListAccountsForProvisionedPermissionSet");
+
+            var request = InstantiateClassGenerator.Execute<ListAccountsForProvisionedPermissionSetRequest>(operation);
             var marshaller = new ListAccountsForProvisionedPermissionSetRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -4654,7 +4700,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListAccountsForProvisionedPermissionSet").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ListAccountsForProvisionedPermissionSetResponseUnmarshaller.Instance.Unmarshall(context) as ListAccountsForProvisionedPermissionSetResponse;
@@ -4669,7 +4715,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListAccountsForProvisionedPermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<ListAccountsForProvisionedPermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<ListAccountsForProvisionedPermissionSetRequest>(operation);
             var marshaller = new ListAccountsForProvisionedPermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4701,7 +4747,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListAccountsForProvisionedPermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<ListAccountsForProvisionedPermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<ListAccountsForProvisionedPermissionSetRequest>(operation);
             var marshaller = new ListAccountsForProvisionedPermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4733,7 +4779,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListAccountsForProvisionedPermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<ListAccountsForProvisionedPermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<ListAccountsForProvisionedPermissionSetRequest>(operation);
             var marshaller = new ListAccountsForProvisionedPermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4765,7 +4811,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListAccountsForProvisionedPermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<ListAccountsForProvisionedPermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<ListAccountsForProvisionedPermissionSetRequest>(operation);
             var marshaller = new ListAccountsForProvisionedPermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4797,7 +4843,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListAccountsForProvisionedPermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<ListAccountsForProvisionedPermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<ListAccountsForProvisionedPermissionSetRequest>(operation);
             var marshaller = new ListAccountsForProvisionedPermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4827,7 +4873,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("SSOAdmin")]
         public void ListCustomerManagedPolicyReferencesInPermissionSetMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ListCustomerManagedPolicyReferencesInPermissionSetRequest>();
+            var operation = service_model.FindOperation("ListCustomerManagedPolicyReferencesInPermissionSet");
+
+            var request = InstantiateClassGenerator.Execute<ListCustomerManagedPolicyReferencesInPermissionSetRequest>(operation);
             var marshaller = new ListCustomerManagedPolicyReferencesInPermissionSetRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -4841,7 +4889,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListCustomerManagedPolicyReferencesInPermissionSet").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ListCustomerManagedPolicyReferencesInPermissionSetResponseUnmarshaller.Instance.Unmarshall(context) as ListCustomerManagedPolicyReferencesInPermissionSetResponse;
@@ -4856,7 +4904,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListCustomerManagedPolicyReferencesInPermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<ListCustomerManagedPolicyReferencesInPermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<ListCustomerManagedPolicyReferencesInPermissionSetRequest>(operation);
             var marshaller = new ListCustomerManagedPolicyReferencesInPermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4888,7 +4936,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListCustomerManagedPolicyReferencesInPermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<ListCustomerManagedPolicyReferencesInPermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<ListCustomerManagedPolicyReferencesInPermissionSetRequest>(operation);
             var marshaller = new ListCustomerManagedPolicyReferencesInPermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4920,7 +4968,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListCustomerManagedPolicyReferencesInPermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<ListCustomerManagedPolicyReferencesInPermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<ListCustomerManagedPolicyReferencesInPermissionSetRequest>(operation);
             var marshaller = new ListCustomerManagedPolicyReferencesInPermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4952,7 +5000,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListCustomerManagedPolicyReferencesInPermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<ListCustomerManagedPolicyReferencesInPermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<ListCustomerManagedPolicyReferencesInPermissionSetRequest>(operation);
             var marshaller = new ListCustomerManagedPolicyReferencesInPermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -4984,7 +5032,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListCustomerManagedPolicyReferencesInPermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<ListCustomerManagedPolicyReferencesInPermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<ListCustomerManagedPolicyReferencesInPermissionSetRequest>(operation);
             var marshaller = new ListCustomerManagedPolicyReferencesInPermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5014,7 +5062,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("SSOAdmin")]
         public void ListInstancesMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ListInstancesRequest>();
+            var operation = service_model.FindOperation("ListInstances");
+
+            var request = InstantiateClassGenerator.Execute<ListInstancesRequest>(operation);
             var marshaller = new ListInstancesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -5028,7 +5078,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListInstances").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ListInstancesResponseUnmarshaller.Instance.Unmarshall(context) as ListInstancesResponse;
@@ -5043,7 +5093,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListInstances");
 
-            var request = InstantiateClassGenerator.Execute<ListInstancesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListInstancesRequest>(operation);
             var marshaller = new ListInstancesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5075,7 +5125,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListInstances");
 
-            var request = InstantiateClassGenerator.Execute<ListInstancesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListInstancesRequest>(operation);
             var marshaller = new ListInstancesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5107,7 +5157,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListInstances");
 
-            var request = InstantiateClassGenerator.Execute<ListInstancesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListInstancesRequest>(operation);
             var marshaller = new ListInstancesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5139,7 +5189,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListInstances");
 
-            var request = InstantiateClassGenerator.Execute<ListInstancesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListInstancesRequest>(operation);
             var marshaller = new ListInstancesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5169,7 +5219,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("SSOAdmin")]
         public void ListManagedPoliciesInPermissionSetMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ListManagedPoliciesInPermissionSetRequest>();
+            var operation = service_model.FindOperation("ListManagedPoliciesInPermissionSet");
+
+            var request = InstantiateClassGenerator.Execute<ListManagedPoliciesInPermissionSetRequest>(operation);
             var marshaller = new ListManagedPoliciesInPermissionSetRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -5183,7 +5235,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListManagedPoliciesInPermissionSet").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ListManagedPoliciesInPermissionSetResponseUnmarshaller.Instance.Unmarshall(context) as ListManagedPoliciesInPermissionSetResponse;
@@ -5198,7 +5250,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListManagedPoliciesInPermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<ListManagedPoliciesInPermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<ListManagedPoliciesInPermissionSetRequest>(operation);
             var marshaller = new ListManagedPoliciesInPermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5230,7 +5282,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListManagedPoliciesInPermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<ListManagedPoliciesInPermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<ListManagedPoliciesInPermissionSetRequest>(operation);
             var marshaller = new ListManagedPoliciesInPermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5262,7 +5314,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListManagedPoliciesInPermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<ListManagedPoliciesInPermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<ListManagedPoliciesInPermissionSetRequest>(operation);
             var marshaller = new ListManagedPoliciesInPermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5294,7 +5346,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListManagedPoliciesInPermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<ListManagedPoliciesInPermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<ListManagedPoliciesInPermissionSetRequest>(operation);
             var marshaller = new ListManagedPoliciesInPermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5326,7 +5378,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListManagedPoliciesInPermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<ListManagedPoliciesInPermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<ListManagedPoliciesInPermissionSetRequest>(operation);
             var marshaller = new ListManagedPoliciesInPermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5356,7 +5408,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("SSOAdmin")]
         public void ListPermissionSetProvisioningStatusMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ListPermissionSetProvisioningStatusRequest>();
+            var operation = service_model.FindOperation("ListPermissionSetProvisioningStatus");
+
+            var request = InstantiateClassGenerator.Execute<ListPermissionSetProvisioningStatusRequest>(operation);
             var marshaller = new ListPermissionSetProvisioningStatusRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -5370,7 +5424,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListPermissionSetProvisioningStatus").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ListPermissionSetProvisioningStatusResponseUnmarshaller.Instance.Unmarshall(context) as ListPermissionSetProvisioningStatusResponse;
@@ -5385,7 +5439,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListPermissionSetProvisioningStatus");
 
-            var request = InstantiateClassGenerator.Execute<ListPermissionSetProvisioningStatusRequest>();
+            var request = InstantiateClassGenerator.Execute<ListPermissionSetProvisioningStatusRequest>(operation);
             var marshaller = new ListPermissionSetProvisioningStatusRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5417,7 +5471,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListPermissionSetProvisioningStatus");
 
-            var request = InstantiateClassGenerator.Execute<ListPermissionSetProvisioningStatusRequest>();
+            var request = InstantiateClassGenerator.Execute<ListPermissionSetProvisioningStatusRequest>(operation);
             var marshaller = new ListPermissionSetProvisioningStatusRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5449,7 +5503,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListPermissionSetProvisioningStatus");
 
-            var request = InstantiateClassGenerator.Execute<ListPermissionSetProvisioningStatusRequest>();
+            var request = InstantiateClassGenerator.Execute<ListPermissionSetProvisioningStatusRequest>(operation);
             var marshaller = new ListPermissionSetProvisioningStatusRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5481,7 +5535,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListPermissionSetProvisioningStatus");
 
-            var request = InstantiateClassGenerator.Execute<ListPermissionSetProvisioningStatusRequest>();
+            var request = InstantiateClassGenerator.Execute<ListPermissionSetProvisioningStatusRequest>(operation);
             var marshaller = new ListPermissionSetProvisioningStatusRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5513,7 +5567,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListPermissionSetProvisioningStatus");
 
-            var request = InstantiateClassGenerator.Execute<ListPermissionSetProvisioningStatusRequest>();
+            var request = InstantiateClassGenerator.Execute<ListPermissionSetProvisioningStatusRequest>(operation);
             var marshaller = new ListPermissionSetProvisioningStatusRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5543,7 +5597,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("SSOAdmin")]
         public void ListPermissionSetsMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ListPermissionSetsRequest>();
+            var operation = service_model.FindOperation("ListPermissionSets");
+
+            var request = InstantiateClassGenerator.Execute<ListPermissionSetsRequest>(operation);
             var marshaller = new ListPermissionSetsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -5557,7 +5613,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListPermissionSets").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ListPermissionSetsResponseUnmarshaller.Instance.Unmarshall(context) as ListPermissionSetsResponse;
@@ -5572,7 +5628,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListPermissionSets");
 
-            var request = InstantiateClassGenerator.Execute<ListPermissionSetsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListPermissionSetsRequest>(operation);
             var marshaller = new ListPermissionSetsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5604,7 +5660,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListPermissionSets");
 
-            var request = InstantiateClassGenerator.Execute<ListPermissionSetsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListPermissionSetsRequest>(operation);
             var marshaller = new ListPermissionSetsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5636,7 +5692,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListPermissionSets");
 
-            var request = InstantiateClassGenerator.Execute<ListPermissionSetsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListPermissionSetsRequest>(operation);
             var marshaller = new ListPermissionSetsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5668,7 +5724,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListPermissionSets");
 
-            var request = InstantiateClassGenerator.Execute<ListPermissionSetsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListPermissionSetsRequest>(operation);
             var marshaller = new ListPermissionSetsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5700,7 +5756,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListPermissionSets");
 
-            var request = InstantiateClassGenerator.Execute<ListPermissionSetsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListPermissionSetsRequest>(operation);
             var marshaller = new ListPermissionSetsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5730,7 +5786,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("SSOAdmin")]
         public void ListPermissionSetsProvisionedToAccountMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ListPermissionSetsProvisionedToAccountRequest>();
+            var operation = service_model.FindOperation("ListPermissionSetsProvisionedToAccount");
+
+            var request = InstantiateClassGenerator.Execute<ListPermissionSetsProvisionedToAccountRequest>(operation);
             var marshaller = new ListPermissionSetsProvisionedToAccountRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -5744,7 +5802,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListPermissionSetsProvisionedToAccount").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ListPermissionSetsProvisionedToAccountResponseUnmarshaller.Instance.Unmarshall(context) as ListPermissionSetsProvisionedToAccountResponse;
@@ -5759,7 +5817,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListPermissionSetsProvisionedToAccount");
 
-            var request = InstantiateClassGenerator.Execute<ListPermissionSetsProvisionedToAccountRequest>();
+            var request = InstantiateClassGenerator.Execute<ListPermissionSetsProvisionedToAccountRequest>(operation);
             var marshaller = new ListPermissionSetsProvisionedToAccountRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5791,7 +5849,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListPermissionSetsProvisionedToAccount");
 
-            var request = InstantiateClassGenerator.Execute<ListPermissionSetsProvisionedToAccountRequest>();
+            var request = InstantiateClassGenerator.Execute<ListPermissionSetsProvisionedToAccountRequest>(operation);
             var marshaller = new ListPermissionSetsProvisionedToAccountRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5823,7 +5881,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListPermissionSetsProvisionedToAccount");
 
-            var request = InstantiateClassGenerator.Execute<ListPermissionSetsProvisionedToAccountRequest>();
+            var request = InstantiateClassGenerator.Execute<ListPermissionSetsProvisionedToAccountRequest>(operation);
             var marshaller = new ListPermissionSetsProvisionedToAccountRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5855,7 +5913,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListPermissionSetsProvisionedToAccount");
 
-            var request = InstantiateClassGenerator.Execute<ListPermissionSetsProvisionedToAccountRequest>();
+            var request = InstantiateClassGenerator.Execute<ListPermissionSetsProvisionedToAccountRequest>(operation);
             var marshaller = new ListPermissionSetsProvisionedToAccountRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5887,7 +5945,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListPermissionSetsProvisionedToAccount");
 
-            var request = InstantiateClassGenerator.Execute<ListPermissionSetsProvisionedToAccountRequest>();
+            var request = InstantiateClassGenerator.Execute<ListPermissionSetsProvisionedToAccountRequest>(operation);
             var marshaller = new ListPermissionSetsProvisionedToAccountRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5917,7 +5975,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("SSOAdmin")]
         public void ListTagsForResourceMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var operation = service_model.FindOperation("ListTagsForResource");
+
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>(operation);
             var marshaller = new ListTagsForResourceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -5931,7 +5991,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListTagsForResource").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ListTagsForResourceResponseUnmarshaller.Instance.Unmarshall(context) as ListTagsForResourceResponse;
@@ -5946,7 +6006,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListTagsForResource");
 
-            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>(operation);
             var marshaller = new ListTagsForResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -5978,7 +6038,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListTagsForResource");
 
-            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>(operation);
             var marshaller = new ListTagsForResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6010,7 +6070,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListTagsForResource");
 
-            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>(operation);
             var marshaller = new ListTagsForResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6042,7 +6102,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListTagsForResource");
 
-            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>(operation);
             var marshaller = new ListTagsForResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6074,7 +6134,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ListTagsForResource");
 
-            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>(operation);
             var marshaller = new ListTagsForResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6104,7 +6164,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("SSOAdmin")]
         public void ProvisionPermissionSetMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ProvisionPermissionSetRequest>();
+            var operation = service_model.FindOperation("ProvisionPermissionSet");
+
+            var request = InstantiateClassGenerator.Execute<ProvisionPermissionSetRequest>(operation);
             var marshaller = new ProvisionPermissionSetRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -6118,7 +6180,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ProvisionPermissionSet").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ProvisionPermissionSetResponseUnmarshaller.Instance.Unmarshall(context) as ProvisionPermissionSetResponse;
@@ -6133,7 +6195,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ProvisionPermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<ProvisionPermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<ProvisionPermissionSetRequest>(operation);
             var marshaller = new ProvisionPermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6165,7 +6227,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ProvisionPermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<ProvisionPermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<ProvisionPermissionSetRequest>(operation);
             var marshaller = new ProvisionPermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6197,7 +6259,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ProvisionPermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<ProvisionPermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<ProvisionPermissionSetRequest>(operation);
             var marshaller = new ProvisionPermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6229,7 +6291,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ProvisionPermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<ProvisionPermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<ProvisionPermissionSetRequest>(operation);
             var marshaller = new ProvisionPermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6261,7 +6323,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ProvisionPermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<ProvisionPermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<ProvisionPermissionSetRequest>(operation);
             var marshaller = new ProvisionPermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6293,7 +6355,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("ProvisionPermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<ProvisionPermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<ProvisionPermissionSetRequest>(operation);
             var marshaller = new ProvisionPermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6323,7 +6385,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("SSOAdmin")]
         public void PutInlinePolicyToPermissionSetMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<PutInlinePolicyToPermissionSetRequest>();
+            var operation = service_model.FindOperation("PutInlinePolicyToPermissionSet");
+
+            var request = InstantiateClassGenerator.Execute<PutInlinePolicyToPermissionSetRequest>(operation);
             var marshaller = new PutInlinePolicyToPermissionSetRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -6337,7 +6401,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("PutInlinePolicyToPermissionSet").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = PutInlinePolicyToPermissionSetResponseUnmarshaller.Instance.Unmarshall(context) as PutInlinePolicyToPermissionSetResponse;
@@ -6352,7 +6416,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("PutInlinePolicyToPermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<PutInlinePolicyToPermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<PutInlinePolicyToPermissionSetRequest>(operation);
             var marshaller = new PutInlinePolicyToPermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6384,7 +6448,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("PutInlinePolicyToPermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<PutInlinePolicyToPermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<PutInlinePolicyToPermissionSetRequest>(operation);
             var marshaller = new PutInlinePolicyToPermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6416,7 +6480,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("PutInlinePolicyToPermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<PutInlinePolicyToPermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<PutInlinePolicyToPermissionSetRequest>(operation);
             var marshaller = new PutInlinePolicyToPermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6448,7 +6512,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("PutInlinePolicyToPermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<PutInlinePolicyToPermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<PutInlinePolicyToPermissionSetRequest>(operation);
             var marshaller = new PutInlinePolicyToPermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6480,7 +6544,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("PutInlinePolicyToPermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<PutInlinePolicyToPermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<PutInlinePolicyToPermissionSetRequest>(operation);
             var marshaller = new PutInlinePolicyToPermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6512,7 +6576,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("PutInlinePolicyToPermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<PutInlinePolicyToPermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<PutInlinePolicyToPermissionSetRequest>(operation);
             var marshaller = new PutInlinePolicyToPermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6544,7 +6608,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("PutInlinePolicyToPermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<PutInlinePolicyToPermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<PutInlinePolicyToPermissionSetRequest>(operation);
             var marshaller = new PutInlinePolicyToPermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6574,7 +6638,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("SSOAdmin")]
         public void PutPermissionsBoundaryToPermissionSetMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<PutPermissionsBoundaryToPermissionSetRequest>();
+            var operation = service_model.FindOperation("PutPermissionsBoundaryToPermissionSet");
+
+            var request = InstantiateClassGenerator.Execute<PutPermissionsBoundaryToPermissionSetRequest>(operation);
             var marshaller = new PutPermissionsBoundaryToPermissionSetRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -6588,7 +6654,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("PutPermissionsBoundaryToPermissionSet").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = PutPermissionsBoundaryToPermissionSetResponseUnmarshaller.Instance.Unmarshall(context) as PutPermissionsBoundaryToPermissionSetResponse;
@@ -6603,7 +6669,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("PutPermissionsBoundaryToPermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<PutPermissionsBoundaryToPermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<PutPermissionsBoundaryToPermissionSetRequest>(operation);
             var marshaller = new PutPermissionsBoundaryToPermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6635,7 +6701,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("PutPermissionsBoundaryToPermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<PutPermissionsBoundaryToPermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<PutPermissionsBoundaryToPermissionSetRequest>(operation);
             var marshaller = new PutPermissionsBoundaryToPermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6667,7 +6733,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("PutPermissionsBoundaryToPermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<PutPermissionsBoundaryToPermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<PutPermissionsBoundaryToPermissionSetRequest>(operation);
             var marshaller = new PutPermissionsBoundaryToPermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6699,7 +6765,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("PutPermissionsBoundaryToPermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<PutPermissionsBoundaryToPermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<PutPermissionsBoundaryToPermissionSetRequest>(operation);
             var marshaller = new PutPermissionsBoundaryToPermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6731,7 +6797,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("PutPermissionsBoundaryToPermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<PutPermissionsBoundaryToPermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<PutPermissionsBoundaryToPermissionSetRequest>(operation);
             var marshaller = new PutPermissionsBoundaryToPermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6763,7 +6829,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("PutPermissionsBoundaryToPermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<PutPermissionsBoundaryToPermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<PutPermissionsBoundaryToPermissionSetRequest>(operation);
             var marshaller = new PutPermissionsBoundaryToPermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6793,7 +6859,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("SSOAdmin")]
         public void TagResourceMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var operation = service_model.FindOperation("TagResource");
+
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -6807,7 +6875,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("TagResource").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = TagResourceResponseUnmarshaller.Instance.Unmarshall(context) as TagResourceResponse;
@@ -6822,7 +6890,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("TagResource");
 
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6854,7 +6922,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("TagResource");
 
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6886,7 +6954,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("TagResource");
 
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6918,7 +6986,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("TagResource");
 
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6950,7 +7018,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("TagResource");
 
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -6982,7 +7050,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("TagResource");
 
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -7014,7 +7082,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("TagResource");
 
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -7044,7 +7112,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("SSOAdmin")]
         public void UntagResourceMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var operation = service_model.FindOperation("UntagResource");
+
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>(operation);
             var marshaller = new UntagResourceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -7058,7 +7128,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("UntagResource").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = UntagResourceResponseUnmarshaller.Instance.Unmarshall(context) as UntagResourceResponse;
@@ -7073,7 +7143,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UntagResource");
 
-            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>(operation);
             var marshaller = new UntagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -7105,7 +7175,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UntagResource");
 
-            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>(operation);
             var marshaller = new UntagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -7137,7 +7207,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UntagResource");
 
-            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>(operation);
             var marshaller = new UntagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -7169,7 +7239,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UntagResource");
 
-            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>(operation);
             var marshaller = new UntagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -7201,7 +7271,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UntagResource");
 
-            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>(operation);
             var marshaller = new UntagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -7233,7 +7303,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UntagResource");
 
-            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>(operation);
             var marshaller = new UntagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -7263,7 +7333,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("SSOAdmin")]
         public void UpdateInstanceAccessControlAttributeConfigurationMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<UpdateInstanceAccessControlAttributeConfigurationRequest>();
+            var operation = service_model.FindOperation("UpdateInstanceAccessControlAttributeConfiguration");
+
+            var request = InstantiateClassGenerator.Execute<UpdateInstanceAccessControlAttributeConfigurationRequest>(operation);
             var marshaller = new UpdateInstanceAccessControlAttributeConfigurationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -7277,7 +7349,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("UpdateInstanceAccessControlAttributeConfiguration").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = UpdateInstanceAccessControlAttributeConfigurationResponseUnmarshaller.Instance.Unmarshall(context) as UpdateInstanceAccessControlAttributeConfigurationResponse;
@@ -7292,7 +7364,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateInstanceAccessControlAttributeConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<UpdateInstanceAccessControlAttributeConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateInstanceAccessControlAttributeConfigurationRequest>(operation);
             var marshaller = new UpdateInstanceAccessControlAttributeConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -7324,7 +7396,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateInstanceAccessControlAttributeConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<UpdateInstanceAccessControlAttributeConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateInstanceAccessControlAttributeConfigurationRequest>(operation);
             var marshaller = new UpdateInstanceAccessControlAttributeConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -7356,7 +7428,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateInstanceAccessControlAttributeConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<UpdateInstanceAccessControlAttributeConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateInstanceAccessControlAttributeConfigurationRequest>(operation);
             var marshaller = new UpdateInstanceAccessControlAttributeConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -7388,7 +7460,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateInstanceAccessControlAttributeConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<UpdateInstanceAccessControlAttributeConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateInstanceAccessControlAttributeConfigurationRequest>(operation);
             var marshaller = new UpdateInstanceAccessControlAttributeConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -7420,7 +7492,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateInstanceAccessControlAttributeConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<UpdateInstanceAccessControlAttributeConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateInstanceAccessControlAttributeConfigurationRequest>(operation);
             var marshaller = new UpdateInstanceAccessControlAttributeConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -7452,7 +7524,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdateInstanceAccessControlAttributeConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<UpdateInstanceAccessControlAttributeConfigurationRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateInstanceAccessControlAttributeConfigurationRequest>(operation);
             var marshaller = new UpdateInstanceAccessControlAttributeConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -7482,7 +7554,9 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("SSOAdmin")]
         public void UpdatePermissionSetMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<UpdatePermissionSetRequest>();
+            var operation = service_model.FindOperation("UpdatePermissionSet");
+
+            var request = InstantiateClassGenerator.Execute<UpdatePermissionSetRequest>(operation);
             var marshaller = new UpdatePermissionSetRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -7496,7 +7570,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("UpdatePermissionSet").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = UpdatePermissionSetResponseUnmarshaller.Instance.Unmarshall(context) as UpdatePermissionSetResponse;
@@ -7511,7 +7585,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdatePermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<UpdatePermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdatePermissionSetRequest>(operation);
             var marshaller = new UpdatePermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -7543,7 +7617,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdatePermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<UpdatePermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdatePermissionSetRequest>(operation);
             var marshaller = new UpdatePermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -7575,7 +7649,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdatePermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<UpdatePermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdatePermissionSetRequest>(operation);
             var marshaller = new UpdatePermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -7607,7 +7681,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdatePermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<UpdatePermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdatePermissionSetRequest>(operation);
             var marshaller = new UpdatePermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -7639,7 +7713,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdatePermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<UpdatePermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdatePermissionSetRequest>(operation);
             var marshaller = new UpdatePermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
@@ -7671,7 +7745,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation =  service_model.FindOperation("UpdatePermissionSet");
 
-            var request = InstantiateClassGenerator.Execute<UpdatePermissionSetRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdatePermissionSetRequest>(operation);
             var marshaller = new UpdatePermissionSetRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);

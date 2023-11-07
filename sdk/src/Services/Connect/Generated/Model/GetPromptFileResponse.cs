@@ -33,7 +33,45 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class GetPromptFileResponse : AmazonWebServiceResponse
     {
+        private string _lastModifiedRegion;
+        private DateTime? _lastModifiedTime;
         private string _promptPresignedUrl;
+
+        /// <summary>
+        /// Gets and sets the property LastModifiedRegion. 
+        /// <para>
+        /// The Amazon Web Services Region where this resource was last modified.
+        /// </para>
+        /// </summary>
+        public string LastModifiedRegion
+        {
+            get { return this._lastModifiedRegion; }
+            set { this._lastModifiedRegion = value; }
+        }
+
+        // Check to see if LastModifiedRegion property is set
+        internal bool IsSetLastModifiedRegion()
+        {
+            return this._lastModifiedRegion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastModifiedTime. 
+        /// <para>
+        /// The timestamp when this resource was last modified.
+        /// </para>
+        /// </summary>
+        public DateTime LastModifiedTime
+        {
+            get { return this._lastModifiedTime.GetValueOrDefault(); }
+            set { this._lastModifiedTime = value; }
+        }
+
+        // Check to see if LastModifiedTime property is set
+        internal bool IsSetLastModifiedTime()
+        {
+            return this._lastModifiedTime.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property PromptPresignedUrl. 

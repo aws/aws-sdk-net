@@ -49,7 +49,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetIceServerConfig");
 
-            var request = InstantiateClassGenerator.Execute<GetIceServerConfigRequest>();
+            var request = InstantiateClassGenerator.Execute<GetIceServerConfigRequest>(operation);
             var marshaller = new GetIceServerConfigRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -79,7 +79,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetIceServerConfig");
 
-            var request = InstantiateClassGenerator.Execute<GetIceServerConfigRequest>();
+            var request = InstantiateClassGenerator.Execute<GetIceServerConfigRequest>(operation);
             var marshaller = new GetIceServerConfigRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -111,7 +111,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetIceServerConfig");
 
-            var request = InstantiateClassGenerator.Execute<GetIceServerConfigRequest>();
+            var request = InstantiateClassGenerator.Execute<GetIceServerConfigRequest>(operation);
             var marshaller = new GetIceServerConfigRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -143,7 +143,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetIceServerConfig");
 
-            var request = InstantiateClassGenerator.Execute<GetIceServerConfigRequest>();
+            var request = InstantiateClassGenerator.Execute<GetIceServerConfigRequest>(operation);
             var marshaller = new GetIceServerConfigRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -175,7 +175,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetIceServerConfig");
 
-            var request = InstantiateClassGenerator.Execute<GetIceServerConfigRequest>();
+            var request = InstantiateClassGenerator.Execute<GetIceServerConfigRequest>(operation);
             var marshaller = new GetIceServerConfigRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -207,7 +207,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetIceServerConfig");
 
-            var request = InstantiateClassGenerator.Execute<GetIceServerConfigRequest>();
+            var request = InstantiateClassGenerator.Execute<GetIceServerConfigRequest>(operation);
             var marshaller = new GetIceServerConfigRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -239,7 +239,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetIceServerConfig");
 
-            var request = InstantiateClassGenerator.Execute<GetIceServerConfigRequest>();
+            var request = InstantiateClassGenerator.Execute<GetIceServerConfigRequest>(operation);
             var marshaller = new GetIceServerConfigRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -271,7 +271,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("SendAlexaOfferToMaster");
 
-            var request = InstantiateClassGenerator.Execute<SendAlexaOfferToMasterRequest>();
+            var request = InstantiateClassGenerator.Execute<SendAlexaOfferToMasterRequest>(operation);
             var marshaller = new SendAlexaOfferToMasterRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -301,7 +301,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("SendAlexaOfferToMaster");
 
-            var request = InstantiateClassGenerator.Execute<SendAlexaOfferToMasterRequest>();
+            var request = InstantiateClassGenerator.Execute<SendAlexaOfferToMasterRequest>(operation);
             var marshaller = new SendAlexaOfferToMasterRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -333,7 +333,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("SendAlexaOfferToMaster");
 
-            var request = InstantiateClassGenerator.Execute<SendAlexaOfferToMasterRequest>();
+            var request = InstantiateClassGenerator.Execute<SendAlexaOfferToMasterRequest>(operation);
             var marshaller = new SendAlexaOfferToMasterRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -365,7 +365,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("SendAlexaOfferToMaster");
 
-            var request = InstantiateClassGenerator.Execute<SendAlexaOfferToMasterRequest>();
+            var request = InstantiateClassGenerator.Execute<SendAlexaOfferToMasterRequest>(operation);
             var marshaller = new SendAlexaOfferToMasterRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -397,7 +397,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("SendAlexaOfferToMaster");
 
-            var request = InstantiateClassGenerator.Execute<SendAlexaOfferToMasterRequest>();
+            var request = InstantiateClassGenerator.Execute<SendAlexaOfferToMasterRequest>(operation);
             var marshaller = new SendAlexaOfferToMasterRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 

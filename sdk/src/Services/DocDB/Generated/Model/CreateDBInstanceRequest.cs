@@ -36,6 +36,7 @@ namespace Amazon.DocDB.Model
     {
         private bool? _autoMinorVersionUpgrade;
         private string _availabilityZone;
+        private string _caCertificateIdentifier;
         private bool? _copyTagsToSnapshot;
         private string _dbClusterIdentifier;
         private string _dbInstanceClass;
@@ -95,6 +96,30 @@ namespace Amazon.DocDB.Model
         internal bool IsSetAvailabilityZone()
         {
             return this._availabilityZone != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CACertificateIdentifier. 
+        /// <para>
+        /// The CA certificate identifier to use for the DB instance's server certificate.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/ca_cert_rotation.html">Updating
+        /// Your Amazon DocumentDB TLS Certificates</a> and <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/security.encryption.ssl.html">
+        /// Encrypting Data in Transit</a> in the <i>Amazon DocumentDB Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        public string CACertificateIdentifier
+        {
+            get { return this._caCertificateIdentifier; }
+            set { this._caCertificateIdentifier = value; }
+        }
+
+        // Check to see if CACertificateIdentifier property is set
+        internal bool IsSetCACertificateIdentifier()
+        {
+            return this._caCertificateIdentifier != null;
         }
 
         /// <summary>

@@ -49,7 +49,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListRealtimeContactAnalysisSegments");
 
-            var request = InstantiateClassGenerator.Execute<ListRealtimeContactAnalysisSegmentsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListRealtimeContactAnalysisSegmentsRequest>(operation);
             var marshaller = new ListRealtimeContactAnalysisSegmentsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -79,7 +79,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListRealtimeContactAnalysisSegments");
 
-            var request = InstantiateClassGenerator.Execute<ListRealtimeContactAnalysisSegmentsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListRealtimeContactAnalysisSegmentsRequest>(operation);
             var marshaller = new ListRealtimeContactAnalysisSegmentsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -111,7 +111,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListRealtimeContactAnalysisSegments");
 
-            var request = InstantiateClassGenerator.Execute<ListRealtimeContactAnalysisSegmentsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListRealtimeContactAnalysisSegmentsRequest>(operation);
             var marshaller = new ListRealtimeContactAnalysisSegmentsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -143,7 +143,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListRealtimeContactAnalysisSegments");
 
-            var request = InstantiateClassGenerator.Execute<ListRealtimeContactAnalysisSegmentsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListRealtimeContactAnalysisSegmentsRequest>(operation);
             var marshaller = new ListRealtimeContactAnalysisSegmentsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -175,7 +175,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListRealtimeContactAnalysisSegments");
 
-            var request = InstantiateClassGenerator.Execute<ListRealtimeContactAnalysisSegmentsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListRealtimeContactAnalysisSegmentsRequest>(operation);
             var marshaller = new ListRealtimeContactAnalysisSegmentsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -207,7 +207,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListRealtimeContactAnalysisSegments");
 
-            var request = InstantiateClassGenerator.Execute<ListRealtimeContactAnalysisSegmentsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListRealtimeContactAnalysisSegmentsRequest>(operation);
             var marshaller = new ListRealtimeContactAnalysisSegmentsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 

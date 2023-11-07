@@ -73,7 +73,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// Gets and sets the property AmiVersion. 
         /// <para>
         /// Applies only to Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases 4.0 and
-        /// later, <code>ReleaseLabel</code> is used. To specify a custom AMI, use <code>CustomAmiID</code>.
+        /// higher, <code>ReleaseLabel</code> is used. To specify a custom AMI, use <code>CustomAmiID</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]
@@ -209,7 +209,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// Gets and sets the property LogEncryptionKmsKeyId. 
         /// <para>
         /// The KMS key used for encrypting log files. This attribute is only available with Amazon
-        /// EMR 5.30.0 and later, excluding 6.0.0.
+        /// EMR 5.30.0 and higher, excluding 6.0.0.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10280)]
@@ -270,13 +270,13 @@ namespace Amazon.ElasticMapReduce.Model
         /// activity occurs or an instance group is resized. <code>TERMINATE_AT_INSTANCE_HOUR</code>
         /// indicates that Amazon EMR terminates nodes at the instance-hour boundary, regardless
         /// of when the request to terminate the instance was submitted. This option is only available
-        /// with Amazon EMR 5.1.0 and later and is the default for clusters created using that
+        /// with Amazon EMR 5.1.0 and higher and is the default for clusters created using that
         /// version. <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds
         /// nodes to a deny list and drains tasks from nodes before terminating the Amazon EC2
         /// instances, regardless of the instance-hour boundary. With either behavior, Amazon
         /// EMR removes the least active nodes first and blocks instance termination if it could
         /// lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> available only
-        /// in Amazon EMR releases 4.1.0 and later, and is the default for releases of Amazon
+        /// in Amazon EMR releases 4.1.0 and higher, and is the default for releases of Amazon
         /// EMR earlier than 5.1.0.
         /// </para>
         /// </summary>

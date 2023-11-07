@@ -135,7 +135,7 @@ namespace Amazon.Drs.Model
         /// <summary>
         /// Gets and sets the property Description.
         /// </summary>
-        [AWSProperty(Min=0, Max=1024)]
+        [AWSProperty(Required=true, Min=0, Max=1024)]
         public string Description
         {
             get { return this._description; }

@@ -89,11 +89,11 @@ namespace Amazon.Transfer.Model
         ///  <note> 
         /// <para>
         /// The <code>HomeDirectory</code> parameter is only used if <code>HomeDirectoryType</code>
-        /// is set to <code>LOGICAL</code>.
+        /// is set to <code>PATH</code>.
         /// </para>
         ///  </note>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string HomeDirectory
         {
             get { return this._homeDirectory; }

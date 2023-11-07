@@ -76,6 +76,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName("ClientToken");
                     context.Writer.Write(Guid.NewGuid().ToString());
                 }
+                if(publicRequest.IsSetInstanceId())
+                {
+                    context.Writer.WritePropertyName("InstanceId");
+                    context.Writer.Write(publicRequest.InstanceId);
+                }
+
                 if(publicRequest.IsSetPhoneNumber())
                 {
                     context.Writer.WritePropertyName("PhoneNumber");

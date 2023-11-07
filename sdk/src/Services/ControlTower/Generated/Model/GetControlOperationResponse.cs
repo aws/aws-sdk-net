@@ -36,7 +36,10 @@ namespace Amazon.ControlTower.Model
         private ControlOperation _controlOperation;
 
         /// <summary>
-        /// Gets and sets the property ControlOperation.
+        /// Gets and sets the property ControlOperation. 
+        /// <para>
+        /// An operation performed by the control.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public ControlOperation ControlOperation

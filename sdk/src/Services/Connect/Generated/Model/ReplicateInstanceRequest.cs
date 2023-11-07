@@ -30,7 +30,9 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the ReplicateInstance operation.
-    /// Replicates an Amazon Connect instance in the specified Amazon Web Services Region.
+    /// Replicates an Amazon Connect instance in the specified Amazon Web Services Region
+    /// and copies configuration information for Amazon Connect resources across Amazon Web
+    /// Services Regions. 
     /// 
     ///  
     /// <para>

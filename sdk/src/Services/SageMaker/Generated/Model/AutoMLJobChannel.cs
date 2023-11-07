@@ -112,6 +112,11 @@ namespace Amazon.SageMaker.Model
         /// For time-series forecasting: <code>text/csv;header=present</code> or <code>x-application/vnd.amazon+parquet</code>.
         /// The default value is <code>text/csv;header=present</code>.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For text generation (LLMs fine-tuning): <code>text/csv;header=present</code> or <code>x-application/vnd.amazon+parquet</code>.
+        /// The default value is <code>text/csv;header=present</code>.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Max=256)]

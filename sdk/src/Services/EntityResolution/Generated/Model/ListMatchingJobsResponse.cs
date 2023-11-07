@@ -58,7 +58,7 @@ namespace Amazon.EntityResolution.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The pagination token from the previous <code>ListSchemaMappings</code> API call.
+        /// The pagination token from the previous API call.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

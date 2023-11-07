@@ -45,8 +45,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// groups associated with the cluster cannot have rules that allow inbound traffic from
         /// 0.0.0.0/0 or ::/0 on a port, unless the port is specified as an exception using <code>PermittedPublicSecurityGroupRuleRanges</code>
         /// in the <code>BlockPublicAccessConfiguration</code>. By default, Port 22 (SSH) is an
-        /// exception, and public access is allowed on this port. You can change this by updating
-        /// the block public access configuration to remove the exception.
+        /// exception, and public access is allowed on this port. To change this, update the block
+        /// public access configuration to remove the exception.
         /// </para>
         ///  <note> 
         /// <para>

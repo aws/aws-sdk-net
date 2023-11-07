@@ -165,7 +165,8 @@ namespace Amazon.ServiceCatalog.Model
         /// Gets and sets the property ProvisionedProductType. 
         /// <para>
         /// The type of provisioned product. The supported values are <code>CFN_STACK</code>,
-        /// <code>CFN_STACKSET</code>, <code>TERRAFORM_OPEN_SOURCE</code>, and <code>TERRAFORM_CLOUD</code>.
+        /// <code>CFN_STACKSET</code>, <code>TERRAFORM_OPEN_SOURCE</code>, <code>TERRAFORM_CLOUD</code>,
+        /// and <code>EXTERNAL</code>.
         /// </para>
         /// </summary>
         public string ProvisionedProductType

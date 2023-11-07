@@ -34,6 +34,7 @@ namespace Amazon.MainframeModernization.Model
     public partial class BatchJobIdentifier
     {
         private FileBatchJobIdentifier _fileBatchJobIdentifier;
+        private S3BatchJobIdentifier _s3BatchJobIdentifier;
         private ScriptBatchJobIdentifier _scriptBatchJobIdentifier;
 
         /// <summary>
@@ -52,6 +53,25 @@ namespace Amazon.MainframeModernization.Model
         internal bool IsSetFileBatchJobIdentifier()
         {
             return this._fileBatchJobIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3BatchJobIdentifier. 
+        /// <para>
+        /// Specifies an Amazon S3 location that identifies the batch jobs that you want to run.
+        /// Use this identifier to run ad hoc batch jobs.
+        /// </para>
+        /// </summary>
+        public S3BatchJobIdentifier S3BatchJobIdentifier
+        {
+            get { return this._s3BatchJobIdentifier; }
+            set { this._s3BatchJobIdentifier = value; }
+        }
+
+        // Check to see if S3BatchJobIdentifier property is set
+        internal bool IsSetS3BatchJobIdentifier()
+        {
+            return this._s3BatchJobIdentifier != null;
         }
 
         /// <summary>

@@ -67,6 +67,12 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAdminPasswordSecretKmsKeyId())
+                {
+                    context.Writer.WritePropertyName("adminPasswordSecretKmsKeyId");
+                    context.Writer.Write(publicRequest.AdminPasswordSecretKmsKeyId);
+                }
+
                 if(publicRequest.IsSetAdminUsername())
                 {
                     context.Writer.WritePropertyName("adminUsername");
@@ -111,6 +117,12 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
                             context.Writer.Write(publicRequestLogExportsListValue);
                     }
                     context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetManageAdminPassword())
+                {
+                    context.Writer.WritePropertyName("manageAdminPassword");
+                    context.Writer.Write(publicRequest.ManageAdminPassword);
                 }
 
                 if(publicRequest.IsSetNamespaceName())

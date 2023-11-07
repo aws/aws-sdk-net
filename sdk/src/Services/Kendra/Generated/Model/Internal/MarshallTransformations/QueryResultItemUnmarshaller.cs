@@ -70,6 +70,12 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                     unmarshalledObject.AdditionalAttributes = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CollapsedResultDetail", targetDepth))
+                {
+                    var unmarshaller = CollapsedResultDetailUnmarshaller.Instance;
+                    unmarshalledObject.CollapsedResultDetail = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DocumentAttributes", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<DocumentAttribute, DocumentAttributeUnmarshaller>(DocumentAttributeUnmarshaller.Instance);

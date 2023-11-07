@@ -70,6 +70,12 @@ namespace Amazon.SsmSap.Model.Internal.MarshallTransformations
                     unmarshalledObject.ClusterStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EnqueueReplication", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.EnqueueReplication = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("HsrOperationMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

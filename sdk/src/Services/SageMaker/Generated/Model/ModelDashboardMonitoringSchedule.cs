@@ -33,6 +33,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class ModelDashboardMonitoringSchedule
     {
+        private BatchTransformInput _batchTransformInput;
         private DateTime? _creationTime;
         private string _endpointName;
         private string _failureReason;
@@ -44,6 +45,21 @@ namespace Amazon.SageMaker.Model
         private string _monitoringScheduleName;
         private ScheduleStatus _monitoringScheduleStatus;
         private MonitoringType _monitoringType;
+
+        /// <summary>
+        /// Gets and sets the property BatchTransformInput.
+        /// </summary>
+        public BatchTransformInput BatchTransformInput
+        {
+            get { return this._batchTransformInput; }
+            set { this._batchTransformInput = value; }
+        }
+
+        // Check to see if BatchTransformInput property is set
+        internal bool IsSetBatchTransformInput()
+        {
+            return this._batchTransformInput != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CreationTime. 

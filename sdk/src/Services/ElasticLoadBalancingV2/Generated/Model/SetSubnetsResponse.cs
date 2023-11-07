@@ -59,6 +59,10 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <para>
         /// [Network Load Balancers] The IP address type.
         /// </para>
+        ///  
+        /// <para>
+        /// [Gateway Load Balancers] The IP address type.
+        /// </para>
         /// </summary>
         public IpAddressType IpAddressType
         {

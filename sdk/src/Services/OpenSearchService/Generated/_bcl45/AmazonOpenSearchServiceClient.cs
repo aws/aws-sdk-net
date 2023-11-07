@@ -2487,6 +2487,77 @@ namespace Amazon.OpenSearchService
 
         #endregion
         
+        #region  GetDomainMaintenanceStatus
+
+
+        /// <summary>
+        /// The status of the maintenance action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDomainMaintenanceStatus service method.</param>
+        /// 
+        /// <returns>The response from the GetDomainMaintenanceStatus service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/GetDomainMaintenanceStatus">REST API Reference for GetDomainMaintenanceStatus Operation</seealso>
+        public virtual GetDomainMaintenanceStatusResponse GetDomainMaintenanceStatus(GetDomainMaintenanceStatusRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDomainMaintenanceStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDomainMaintenanceStatusResponseUnmarshaller.Instance;
+
+            return Invoke<GetDomainMaintenanceStatusResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// The status of the maintenance action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDomainMaintenanceStatus service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDomainMaintenanceStatus service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/GetDomainMaintenanceStatus">REST API Reference for GetDomainMaintenanceStatus Operation</seealso>
+        public virtual Task<GetDomainMaintenanceStatusResponse> GetDomainMaintenanceStatusAsync(GetDomainMaintenanceStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDomainMaintenanceStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDomainMaintenanceStatusResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetDomainMaintenanceStatusResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetPackageVersionHistory
 
 
@@ -2706,6 +2777,77 @@ namespace Amazon.OpenSearchService
             options.ResponseUnmarshaller = GetUpgradeStatusResponseUnmarshaller.Instance;
             
             return InvokeAsync<GetUpgradeStatusResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListDomainMaintenances
+
+
+        /// <summary>
+        /// A list of maintenance actions for the domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDomainMaintenances service method.</param>
+        /// 
+        /// <returns>The response from the ListDomainMaintenances service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListDomainMaintenances">REST API Reference for ListDomainMaintenances Operation</seealso>
+        public virtual ListDomainMaintenancesResponse ListDomainMaintenances(ListDomainMaintenancesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDomainMaintenancesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDomainMaintenancesResponseUnmarshaller.Instance;
+
+            return Invoke<ListDomainMaintenancesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// A list of maintenance actions for the domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDomainMaintenances service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDomainMaintenances service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListDomainMaintenances">REST API Reference for ListDomainMaintenances Operation</seealso>
+        public virtual Task<ListDomainMaintenancesResponse> ListDomainMaintenancesAsync(ListDomainMaintenancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDomainMaintenancesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDomainMaintenancesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListDomainMaintenancesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3660,6 +3802,81 @@ namespace Amazon.OpenSearchService
 
         #endregion
         
+        #region  StartDomainMaintenance
+
+
+        /// <summary>
+        /// Starts the node maintenance process on the data node. These processes can include
+        /// a node reboot, an Opensearch or Elasticsearch process restart, or a Dashboard or Kibana
+        /// restart.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartDomainMaintenance service method.</param>
+        /// 
+        /// <returns>The response from the StartDomainMaintenance service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/StartDomainMaintenance">REST API Reference for StartDomainMaintenance Operation</seealso>
+        public virtual StartDomainMaintenanceResponse StartDomainMaintenance(StartDomainMaintenanceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartDomainMaintenanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartDomainMaintenanceResponseUnmarshaller.Instance;
+
+            return Invoke<StartDomainMaintenanceResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Starts the node maintenance process on the data node. These processes can include
+        /// a node reboot, an Opensearch or Elasticsearch process restart, or a Dashboard or Kibana
+        /// restart.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartDomainMaintenance service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartDomainMaintenance service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/StartDomainMaintenance">REST API Reference for StartDomainMaintenance Operation</seealso>
+        public virtual Task<StartDomainMaintenanceResponse> StartDomainMaintenanceAsync(StartDomainMaintenanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartDomainMaintenanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartDomainMaintenanceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartDomainMaintenanceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StartServiceSoftwareUpdate
 
 
@@ -3733,7 +3950,7 @@ namespace Amazon.OpenSearchService
 
 
         /// <summary>
-        /// Modifies the cluster configuration of the specified Amazon OpenSearch Service domain.sl
+        /// Modifies the cluster configuration of the specified Amazon OpenSearch Service domain.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDomainConfig service method.</param>
         /// 
@@ -3769,7 +3986,7 @@ namespace Amazon.OpenSearchService
 
 
         /// <summary>
-        /// Modifies the cluster configuration of the specified Amazon OpenSearch Service domain.sl
+        /// Modifies the cluster configuration of the specified Amazon OpenSearch Service domain.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDomainConfig service method.</param>
         /// <param name="cancellationToken">

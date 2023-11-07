@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EntityResolution.Model
 {
     /// <summary>
-    /// An object containing <code>FieldField</code>, <code>Type</code>, <code>GroupName</code>,
+    /// An object containing <code>FieldName</code>, <code>Type</code>, <code>GroupName</code>,
     /// and <code>MatchKey</code>.
     /// </summary>
     public partial class SchemaInputAttribute
@@ -37,6 +37,7 @@ namespace Amazon.EntityResolution.Model
         private string _fieldName;
         private string _groupName;
         private string _matchKey;
+        private string _subType;
         private SchemaAttributeType _type;
 
         /// <summary>
@@ -85,11 +86,11 @@ namespace Amazon.EntityResolution.Model
         /// <para>
         /// A key that allows grouping of multiple input attributes into a unified matching group.
         /// For example, let's consider a scenario where the source table contains various addresses,
-        /// such as business_address and shipping_address. By assigning the <code>MatchKey</code>
-        /// <i>Address</i> to both attributes, Entity Resolution will match records across these
-        /// fields to create a consolidated matching group. If no <code>MatchKey</code> is specified
-        /// for a column, it won't be utilized for matching purposes but will still be included
-        /// in the output table.
+        /// such as <code>business_address</code> and <code>shipping_address</code>. By assigning
+        /// the <code>MatchKey</code> <i>Address</i> to both attributes, Entity Resolution will
+        /// match records across these fields to create a consolidated matching group. If no <code>MatchKey</code>
+        /// is specified for a column, it won't be utilized for matching purposes but will still
+        /// be included in the output table.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=255)]
@@ -103,6 +104,25 @@ namespace Amazon.EntityResolution.Model
         internal bool IsSetMatchKey()
         {
             return this._matchKey != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SubType. 
+        /// <para>
+        /// The subtype of the attribute, selected from a list of values.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=255)]
+        public string SubType
+        {
+            get { return this._subType; }
+            set { this._subType = value; }
+        }
+
+        // Check to see if SubType property is set
+        internal bool IsSetSubType()
+        {
+            return this._subType != null;
         }
 
         /// <summary>

@@ -164,7 +164,7 @@ namespace Amazon.NetworkFirewall
         /// 
         /// <returns>The response from the AssociateFirewallPolicy service method, as returned by NetworkFirewall.</returns>
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
         /// of a system problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InvalidOperationException">
@@ -221,7 +221,7 @@ namespace Amazon.NetworkFirewall
         /// 
         /// <returns>The response from the AssociateFirewallPolicy service method, as returned by NetworkFirewall.</returns>
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
         /// of a system problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InvalidOperationException">
@@ -283,7 +283,7 @@ namespace Amazon.NetworkFirewall
         /// request. Try your request later.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
         /// of a system problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InvalidOperationException">
@@ -345,7 +345,7 @@ namespace Amazon.NetworkFirewall
         /// request. Try your request later.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
         /// of a system problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InvalidOperationException">
@@ -427,7 +427,7 @@ namespace Amazon.NetworkFirewall
         /// request. Try your request later.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
         /// of a system problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InvalidOperationException">
@@ -506,7 +506,7 @@ namespace Amazon.NetworkFirewall
         /// request. Try your request later.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
         /// of a system problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InvalidOperationException">
@@ -563,7 +563,7 @@ namespace Amazon.NetworkFirewall
         /// request. Try your request later.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
         /// of a system problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
@@ -616,7 +616,7 @@ namespace Amazon.NetworkFirewall
         /// request. Try your request later.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
         /// of a system problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
@@ -669,7 +669,7 @@ namespace Amazon.NetworkFirewall
         /// request. Try your request later.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
         /// of a system problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
@@ -722,7 +722,7 @@ namespace Amazon.NetworkFirewall
         /// request. Try your request later.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
         /// of a system problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
@@ -759,12 +759,13 @@ namespace Amazon.NetworkFirewall
 
         /// <summary>
         /// Creates an Network Firewall TLS inspection configuration. A TLS inspection configuration
-        /// contains the Certificate Manager certificate references that Network Firewall uses
-        /// to decrypt and re-encrypt inbound traffic.
+        /// contains Certificate Manager certificate associations between and the scope configurations
+        /// that Network Firewall uses to decrypt and re-encrypt traffic traveling through your
+        /// firewall.
         /// 
         ///  
         /// <para>
-        /// After you create a TLS inspection configuration, you associate it with a new firewall
+        /// After you create a TLS inspection configuration, you can associate it with a new firewall
         /// policy.
         /// </para>
         ///  
@@ -783,7 +784,7 @@ namespace Amazon.NetworkFirewall
         /// </para>
         ///  
         /// <para>
-        ///  For more information about TLS inspection configurations, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/tls-inspection.html">Decrypting
+        ///  For more information about TLS inspection configurations, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/tls-inspection.html">Inspecting
         /// SSL/TLS traffic with TLS inspection configurations</a> in the <i>Network Firewall
         /// Developer Guide</i>. 
         /// </para>
@@ -796,7 +797,7 @@ namespace Amazon.NetworkFirewall
         /// request. Try your request later.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
         /// of a system problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
@@ -830,12 +831,13 @@ namespace Amazon.NetworkFirewall
 
         /// <summary>
         /// Creates an Network Firewall TLS inspection configuration. A TLS inspection configuration
-        /// contains the Certificate Manager certificate references that Network Firewall uses
-        /// to decrypt and re-encrypt inbound traffic.
+        /// contains Certificate Manager certificate associations between and the scope configurations
+        /// that Network Firewall uses to decrypt and re-encrypt traffic traveling through your
+        /// firewall.
         /// 
         ///  
         /// <para>
-        /// After you create a TLS inspection configuration, you associate it with a new firewall
+        /// After you create a TLS inspection configuration, you can associate it with a new firewall
         /// policy.
         /// </para>
         ///  
@@ -854,7 +856,7 @@ namespace Amazon.NetworkFirewall
         /// </para>
         ///  
         /// <para>
-        ///  For more information about TLS inspection configurations, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/tls-inspection.html">Decrypting
+        ///  For more information about TLS inspection configurations, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/tls-inspection.html">Inspecting
         /// SSL/TLS traffic with TLS inspection configurations</a> in the <i>Network Firewall
         /// Developer Guide</i>. 
         /// </para>
@@ -870,7 +872,7 @@ namespace Amazon.NetworkFirewall
         /// request. Try your request later.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
         /// of a system problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
@@ -929,7 +931,7 @@ namespace Amazon.NetworkFirewall
         /// 
         /// <returns>The response from the DeleteFirewall service method, as returned by NetworkFirewall.</returns>
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
         /// of a system problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InvalidOperationException">
@@ -995,7 +997,7 @@ namespace Amazon.NetworkFirewall
         /// 
         /// <returns>The response from the DeleteFirewall service method, as returned by NetworkFirewall.</returns>
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
         /// of a system problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InvalidOperationException">
@@ -1044,7 +1046,7 @@ namespace Amazon.NetworkFirewall
         /// 
         /// <returns>The response from the DeleteFirewallPolicy service method, as returned by NetworkFirewall.</returns>
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
         /// of a system problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InvalidOperationException">
@@ -1093,7 +1095,7 @@ namespace Amazon.NetworkFirewall
         /// 
         /// <returns>The response from the DeleteFirewallPolicy service method, as returned by NetworkFirewall.</returns>
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
         /// of a system problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InvalidOperationException">
@@ -1142,7 +1144,7 @@ namespace Amazon.NetworkFirewall
         /// 
         /// <returns>The response from the DeleteResourcePolicy service method, as returned by NetworkFirewall.</returns>
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
         /// of a system problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
@@ -1187,7 +1189,7 @@ namespace Amazon.NetworkFirewall
         /// 
         /// <returns>The response from the DeleteResourcePolicy service method, as returned by NetworkFirewall.</returns>
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
         /// of a system problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
@@ -1232,7 +1234,7 @@ namespace Amazon.NetworkFirewall
         /// 
         /// <returns>The response from the DeleteRuleGroup service method, as returned by NetworkFirewall.</returns>
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
         /// of a system problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InvalidOperationException">
@@ -1281,7 +1283,7 @@ namespace Amazon.NetworkFirewall
         /// 
         /// <returns>The response from the DeleteRuleGroup service method, as returned by NetworkFirewall.</returns>
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
         /// of a system problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InvalidOperationException">
@@ -1330,7 +1332,7 @@ namespace Amazon.NetworkFirewall
         /// 
         /// <returns>The response from the DeleteTLSInspectionConfiguration service method, as returned by NetworkFirewall.</returns>
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
         /// of a system problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InvalidOperationException">
@@ -1376,7 +1378,7 @@ namespace Amazon.NetworkFirewall
         /// 
         /// <returns>The response from the DeleteTLSInspectionConfiguration service method, as returned by NetworkFirewall.</returns>
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
         /// of a system problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InvalidOperationException">
@@ -1422,7 +1424,7 @@ namespace Amazon.NetworkFirewall
         /// 
         /// <returns>The response from the DescribeFirewall service method, as returned by NetworkFirewall.</returns>
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
         /// of a system problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
@@ -1464,7 +1466,7 @@ namespace Amazon.NetworkFirewall
         /// 
         /// <returns>The response from the DescribeFirewall service method, as returned by NetworkFirewall.</returns>
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
         /// of a system problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
@@ -1506,7 +1508,7 @@ namespace Amazon.NetworkFirewall
         /// 
         /// <returns>The response from the DescribeFirewallPolicy service method, as returned by NetworkFirewall.</returns>
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
         /// of a system problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
@@ -1548,7 +1550,7 @@ namespace Amazon.NetworkFirewall
         /// 
         /// <returns>The response from the DescribeFirewallPolicy service method, as returned by NetworkFirewall.</returns>
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
         /// of a system problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
@@ -1590,7 +1592,7 @@ namespace Amazon.NetworkFirewall
         /// 
         /// <returns>The response from the DescribeLoggingConfiguration service method, as returned by NetworkFirewall.</returns>
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
         /// of a system problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
@@ -1632,7 +1634,7 @@ namespace Amazon.NetworkFirewall
         /// 
         /// <returns>The response from the DescribeLoggingConfiguration service method, as returned by NetworkFirewall.</returns>
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
         /// of a system problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
@@ -1674,7 +1676,7 @@ namespace Amazon.NetworkFirewall
         /// 
         /// <returns>The response from the DescribeResourcePolicy service method, as returned by NetworkFirewall.</returns>
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
         /// of a system problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
@@ -1716,7 +1718,7 @@ namespace Amazon.NetworkFirewall
         /// 
         /// <returns>The response from the DescribeResourcePolicy service method, as returned by NetworkFirewall.</returns>
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
         /// of a system problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
@@ -1758,7 +1760,7 @@ namespace Amazon.NetworkFirewall
         /// 
         /// <returns>The response from the DescribeRuleGroup service method, as returned by NetworkFirewall.</returns>
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
         /// of a system problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
@@ -1800,7 +1802,7 @@ namespace Amazon.NetworkFirewall
         /// 
         /// <returns>The response from the DescribeRuleGroup service method, as returned by NetworkFirewall.</returns>
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
         /// of a system problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
@@ -1844,7 +1846,7 @@ namespace Amazon.NetworkFirewall
         /// 
         /// <returns>The response from the DescribeRuleGroupMetadata service method, as returned by NetworkFirewall.</returns>
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
         /// of a system problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
@@ -1888,7 +1890,7 @@ namespace Amazon.NetworkFirewall
         /// 
         /// <returns>The response from the DescribeRuleGroupMetadata service method, as returned by NetworkFirewall.</returns>
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
         /// of a system problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
@@ -1930,7 +1932,7 @@ namespace Amazon.NetworkFirewall
         /// 
         /// <returns>The response from the DescribeTLSInspectionConfiguration service method, as returned by NetworkFirewall.</returns>
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
         /// of a system problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
@@ -1972,7 +1974,7 @@ namespace Amazon.NetworkFirewall
         /// 
         /// <returns>The response from the DescribeTLSInspectionConfiguration service method, as returned by NetworkFirewall.</returns>
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
         /// of a system problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
@@ -2016,7 +2018,7 @@ namespace Amazon.NetworkFirewall
         /// 
         /// <returns>The response from the DisassociateSubnets service method, as returned by NetworkFirewall.</returns>
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
         /// of a system problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InvalidOperationException">
@@ -2067,7 +2069,7 @@ namespace Amazon.NetworkFirewall
         /// 
         /// <returns>The response from the DisassociateSubnets service method, as returned by NetworkFirewall.</returns>
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
         /// of a system problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InvalidOperationException">
@@ -2118,7 +2120,7 @@ namespace Amazon.NetworkFirewall
         /// 
         /// <returns>The response from the ListFirewallPolicies service method, as returned by NetworkFirewall.</returns>
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
         /// of a system problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
@@ -2159,7 +2161,7 @@ namespace Amazon.NetworkFirewall
         /// 
         /// <returns>The response from the ListFirewallPolicies service method, as returned by NetworkFirewall.</returns>
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
         /// of a system problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
@@ -2205,7 +2207,7 @@ namespace Amazon.NetworkFirewall
         /// 
         /// <returns>The response from the ListFirewalls service method, as returned by NetworkFirewall.</returns>
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
         /// of a system problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
@@ -2251,7 +2253,7 @@ namespace Amazon.NetworkFirewall
         /// 
         /// <returns>The response from the ListFirewalls service method, as returned by NetworkFirewall.</returns>
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
         /// of a system problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
@@ -2292,7 +2294,7 @@ namespace Amazon.NetworkFirewall
         /// 
         /// <returns>The response from the ListRuleGroups service method, as returned by NetworkFirewall.</returns>
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
         /// of a system problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
@@ -2333,7 +2335,7 @@ namespace Amazon.NetworkFirewall
         /// 
         /// <returns>The response from the ListRuleGroups service method, as returned by NetworkFirewall.</returns>
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
         /// of a system problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
@@ -2382,7 +2384,7 @@ namespace Amazon.NetworkFirewall
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by NetworkFirewall.</returns>
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
         /// of a system problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
@@ -2434,7 +2436,7 @@ namespace Amazon.NetworkFirewall
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by NetworkFirewall.</returns>
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
         /// of a system problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
@@ -2478,7 +2480,7 @@ namespace Amazon.NetworkFirewall
         /// 
         /// <returns>The response from the ListTLSInspectionConfigurations service method, as returned by NetworkFirewall.</returns>
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
         /// of a system problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
@@ -2519,7 +2521,7 @@ namespace Amazon.NetworkFirewall
         /// 
         /// <returns>The response from the ListTLSInspectionConfigurations service method, as returned by NetworkFirewall.</returns>
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
         /// of a system problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
@@ -2589,7 +2591,7 @@ namespace Amazon.NetworkFirewall
         /// 
         /// <returns>The response from the PutResourcePolicy service method, as returned by NetworkFirewall.</returns>
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
         /// of a system problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
@@ -2665,7 +2667,7 @@ namespace Amazon.NetworkFirewall
         /// 
         /// <returns>The response from the PutResourcePolicy service method, as returned by NetworkFirewall.</returns>
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
         /// of a system problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
@@ -2720,7 +2722,7 @@ namespace Amazon.NetworkFirewall
         /// 
         /// <returns>The response from the TagResource service method, as returned by NetworkFirewall.</returns>
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
         /// of a system problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
@@ -2772,7 +2774,7 @@ namespace Amazon.NetworkFirewall
         /// 
         /// <returns>The response from the TagResource service method, as returned by NetworkFirewall.</returns>
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
         /// of a system problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
@@ -2824,7 +2826,7 @@ namespace Amazon.NetworkFirewall
         /// 
         /// <returns>The response from the UntagResource service method, as returned by NetworkFirewall.</returns>
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
         /// of a system problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
@@ -2876,7 +2878,7 @@ namespace Amazon.NetworkFirewall
         /// 
         /// <returns>The response from the UntagResource service method, as returned by NetworkFirewall.</returns>
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
         /// of a system problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
@@ -2921,7 +2923,7 @@ namespace Amazon.NetworkFirewall
         /// 
         /// <returns>The response from the UpdateFirewallDeleteProtection service method, as returned by NetworkFirewall.</returns>
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
         /// of a system problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
@@ -2972,7 +2974,7 @@ namespace Amazon.NetworkFirewall
         /// 
         /// <returns>The response from the UpdateFirewallDeleteProtection service method, as returned by NetworkFirewall.</returns>
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
         /// of a system problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
@@ -3021,7 +3023,7 @@ namespace Amazon.NetworkFirewall
         /// 
         /// <returns>The response from the UpdateFirewallDescription service method, as returned by NetworkFirewall.</returns>
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
         /// of a system problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
@@ -3067,7 +3069,7 @@ namespace Amazon.NetworkFirewall
         /// 
         /// <returns>The response from the UpdateFirewallDescription service method, as returned by NetworkFirewall.</returns>
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
         /// of a system problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
@@ -3112,7 +3114,7 @@ namespace Amazon.NetworkFirewall
         /// 
         /// <returns>The response from the UpdateFirewallEncryptionConfiguration service method, as returned by NetworkFirewall.</returns>
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
         /// of a system problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
@@ -3160,7 +3162,7 @@ namespace Amazon.NetworkFirewall
         /// 
         /// <returns>The response from the UpdateFirewallEncryptionConfiguration service method, as returned by NetworkFirewall.</returns>
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
         /// of a system problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
@@ -3208,7 +3210,7 @@ namespace Amazon.NetworkFirewall
         /// 
         /// <returns>The response from the UpdateFirewallPolicy service method, as returned by NetworkFirewall.</returns>
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
         /// of a system problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
@@ -3253,7 +3255,7 @@ namespace Amazon.NetworkFirewall
         /// 
         /// <returns>The response from the UpdateFirewallPolicy service method, as returned by NetworkFirewall.</returns>
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
         /// of a system problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
@@ -3301,7 +3303,7 @@ namespace Amazon.NetworkFirewall
         /// 
         /// <returns>The response from the UpdateFirewallPolicyChangeProtection service method, as returned by NetworkFirewall.</returns>
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
         /// of a system problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
@@ -3352,7 +3354,7 @@ namespace Amazon.NetworkFirewall
         /// 
         /// <returns>The response from the UpdateFirewallPolicyChangeProtection service method, as returned by NetworkFirewall.</returns>
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
         /// of a system problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
@@ -3434,7 +3436,7 @@ namespace Amazon.NetworkFirewall
         /// 
         /// <returns>The response from the UpdateLoggingConfiguration service method, as returned by NetworkFirewall.</returns>
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
         /// of a system problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
@@ -3516,7 +3518,7 @@ namespace Amazon.NetworkFirewall
         /// 
         /// <returns>The response from the UpdateLoggingConfiguration service method, as returned by NetworkFirewall.</returns>
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
         /// of a system problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
@@ -3573,7 +3575,7 @@ namespace Amazon.NetworkFirewall
         /// 
         /// <returns>The response from the UpdateRuleGroup service method, as returned by NetworkFirewall.</returns>
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
         /// of a system problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
@@ -3627,7 +3629,7 @@ namespace Amazon.NetworkFirewall
         /// 
         /// <returns>The response from the UpdateRuleGroup service method, as returned by NetworkFirewall.</returns>
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
         /// of a system problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
@@ -3672,7 +3674,7 @@ namespace Amazon.NetworkFirewall
         /// 
         /// <returns>The response from the UpdateSubnetChangeProtection service method, as returned by NetworkFirewall.</returns>
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
         /// of a system problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
@@ -3720,7 +3722,7 @@ namespace Amazon.NetworkFirewall
         /// 
         /// <returns>The response from the UpdateSubnetChangeProtection service method, as returned by NetworkFirewall.</returns>
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
         /// of a system problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
@@ -3763,9 +3765,9 @@ namespace Amazon.NetworkFirewall
 
         /// <summary>
         /// Updates the TLS inspection configuration settings for the specified TLS inspection
-        /// configuration. You use a TLS inspection configuration by reference in one or more
-        /// firewall policies. When you modify a TLS inspection configuration, you modify all
-        /// firewall policies that use the TLS inspection configuration. 
+        /// configuration. You use a TLS inspection configuration by referencing it in one or
+        /// more firewall policies. When you modify a TLS inspection configuration, you modify
+        /// all firewall policies that use the TLS inspection configuration. 
         /// 
         ///  
         /// <para>
@@ -3778,7 +3780,7 @@ namespace Amazon.NetworkFirewall
         /// 
         /// <returns>The response from the UpdateTLSInspectionConfiguration service method, as returned by NetworkFirewall.</returns>
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
         /// of a system problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
@@ -3815,9 +3817,9 @@ namespace Amazon.NetworkFirewall
 
         /// <summary>
         /// Updates the TLS inspection configuration settings for the specified TLS inspection
-        /// configuration. You use a TLS inspection configuration by reference in one or more
-        /// firewall policies. When you modify a TLS inspection configuration, you modify all
-        /// firewall policies that use the TLS inspection configuration. 
+        /// configuration. You use a TLS inspection configuration by referencing it in one or
+        /// more firewall policies. When you modify a TLS inspection configuration, you modify
+        /// all firewall policies that use the TLS inspection configuration. 
         /// 
         ///  
         /// <para>
@@ -3833,7 +3835,7 @@ namespace Amazon.NetworkFirewall
         /// 
         /// <returns>The response from the UpdateTLSInspectionConfiguration service method, as returned by NetworkFirewall.</returns>
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
-        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
         /// of a system problem. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">

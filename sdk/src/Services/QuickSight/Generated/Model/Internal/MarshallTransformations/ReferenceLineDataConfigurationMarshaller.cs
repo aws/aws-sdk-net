@@ -62,6 +62,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetSeriesType())
+            {
+                context.Writer.WritePropertyName("SeriesType");
+                context.Writer.Write(requestObject.SeriesType);
+            }
+
             if(requestObject.IsSetStaticConfiguration())
             {
                 context.Writer.WritePropertyName("StaticConfiguration");

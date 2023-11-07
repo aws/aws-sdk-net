@@ -76,6 +76,12 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Platform", targetDepth))
+                {
+                    var unmarshaller = PlatformUnmarshaller.Instance;
+                    unmarshalledObject.Platform = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

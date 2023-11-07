@@ -45,6 +45,22 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
+        /// For Spot Instances, if you set <code>Configured</code> to <code>true</code>, either
+        /// omit the <code>InstanceInterruptionBehavior</code> parameter (for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotMarketOptions.html">
+        /// <code>SpotMarketOptions</code> </a>), or set it to <code>hibernate</code>. When <code>Configured</code>
+        /// is true:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If you omit <code>InstanceInterruptionBehavior</code>, it defaults to <code>hibernate</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you set <code>InstanceInterruptionBehavior</code> to a value other than <code>hibernate</code>,
+        /// you'll get an error.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
         /// Default: <code>false</code> 
         /// </para>
         /// </summary>

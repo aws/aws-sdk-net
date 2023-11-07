@@ -788,6 +788,12 @@
     <max>5000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodePipeline.Model.GitConfiguration.SourceActionName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[A-Za-z0-9.@\-_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodePipeline.Model.InputArtifact.Name</property>
     <min>1</min>
     <max>100</max>
@@ -896,6 +902,36 @@
   <property-value-rule>
     <property>Amazon.CodePipeline.Model.PipelineSummary.Version</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodePipeline.Model.PipelineVariable.Name</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[A-Za-z0-9@\-_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodePipeline.Model.PipelineVariable.Value</property>
+    <min>1</min>
+    <max>1000</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodePipeline.Model.PipelineVariableDeclaration.DefaultValue</property>
+    <min>1</min>
+    <max>1000</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodePipeline.Model.PipelineVariableDeclaration.Description</property>
+    <min>0</min>
+    <max>200</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodePipeline.Model.PipelineVariableDeclaration.Name</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[A-Za-z0-9@\-_]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodePipeline.Model.S3Location.Bucket</property>

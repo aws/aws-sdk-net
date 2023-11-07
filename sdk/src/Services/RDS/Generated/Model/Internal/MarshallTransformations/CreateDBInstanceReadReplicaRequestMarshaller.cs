@@ -94,6 +94,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DBSubnetGroupName", StringUtils.FromString(publicRequest.DBSubnetGroupName));
                 }
+                if(publicRequest.IsSetDedicatedLogVolume())
+                {
+                    request.Parameters.Add("DedicatedLogVolume", StringUtils.FromBool(publicRequest.DedicatedLogVolume));
+                }
                 if(publicRequest.IsSetDeletionProtection())
                 {
                     request.Parameters.Add("DeletionProtection", StringUtils.FromBool(publicRequest.DeletionProtection));
@@ -251,6 +255,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         }
                         publicRequestlistValueIndex++;
                     }
+                }
+                if(publicRequest.IsSetUpgradeStorageConfig())
+                {
+                    request.Parameters.Add("UpgradeStorageConfig", StringUtils.FromBool(publicRequest.UpgradeStorageConfig));
                 }
                 if(publicRequest.IsSetUseDefaultProcessorFeatures())
                 {

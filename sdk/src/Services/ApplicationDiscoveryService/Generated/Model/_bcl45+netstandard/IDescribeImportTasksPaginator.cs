@@ -29,5 +29,10 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// Enumerable containing all full responses for the operation
         /// </summary>
         IPaginatedEnumerable<DescribeImportTasksResponse> Responses { get; }
+
+        /// <summary>
+        /// Enumerable containing all of the Tasks
+        /// </summary>
+        IPaginatedEnumerable<ImportTask> Tasks { get; }
     }
 }

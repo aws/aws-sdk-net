@@ -36,6 +36,8 @@ namespace Amazon.RedshiftServerless.Model
         private List<string> _accountsWithProvisionedRestoreAccess = new List<string>();
         private List<string> _accountsWithRestoreAccess = new List<string>();
         private double? _actualIncrementalBackupSizeInMegaBytes;
+        private string _adminPasswordSecretArn;
+        private string _adminPasswordSecretKmsKeyId;
         private string _adminUsername;
         private double? _backupProgressInMegaBytes;
         private double? _currentBackupRateInMegaBytesPerSecond;
@@ -108,6 +110,43 @@ namespace Amazon.RedshiftServerless.Model
         internal bool IsSetActualIncrementalBackupSizeInMegaBytes()
         {
             return this._actualIncrementalBackupSizeInMegaBytes.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AdminPasswordSecretArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) for the namespace's admin user credentials secret.
+        /// </para>
+        /// </summary>
+        public string AdminPasswordSecretArn
+        {
+            get { return this._adminPasswordSecretArn; }
+            set { this._adminPasswordSecretArn = value; }
+        }
+
+        // Check to see if AdminPasswordSecretArn property is set
+        internal bool IsSetAdminPasswordSecretArn()
+        {
+            return this._adminPasswordSecretArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AdminPasswordSecretKmsKeyId. 
+        /// <para>
+        /// The ID of the Key Management Service (KMS) key used to encrypt and store the namespace's
+        /// admin credentials secret.
+        /// </para>
+        /// </summary>
+        public string AdminPasswordSecretKmsKeyId
+        {
+            get { return this._adminPasswordSecretKmsKeyId; }
+            set { this._adminPasswordSecretKmsKeyId = value; }
+        }
+
+        // Check to see if AdminPasswordSecretKmsKeyId property is set
+        internal bool IsSetAdminPasswordSecretKmsKeyId()
+        {
+            return this._adminPasswordSecretKmsKeyId != null;
         }
 
         /// <summary>

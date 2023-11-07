@@ -49,7 +49,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("BatchGetTokenBalance");
 
-            var request = InstantiateClassGenerator.Execute<BatchGetTokenBalanceRequest>();
+            var request = InstantiateClassGenerator.Execute<BatchGetTokenBalanceRequest>(operation);
             var marshaller = new BatchGetTokenBalanceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -79,7 +79,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("BatchGetTokenBalance");
 
-            var request = InstantiateClassGenerator.Execute<BatchGetTokenBalanceRequest>();
+            var request = InstantiateClassGenerator.Execute<BatchGetTokenBalanceRequest>(operation);
             var marshaller = new BatchGetTokenBalanceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -111,7 +111,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("BatchGetTokenBalance");
 
-            var request = InstantiateClassGenerator.Execute<BatchGetTokenBalanceRequest>();
+            var request = InstantiateClassGenerator.Execute<BatchGetTokenBalanceRequest>(operation);
             var marshaller = new BatchGetTokenBalanceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -143,7 +143,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("BatchGetTokenBalance");
 
-            var request = InstantiateClassGenerator.Execute<BatchGetTokenBalanceRequest>();
+            var request = InstantiateClassGenerator.Execute<BatchGetTokenBalanceRequest>(operation);
             var marshaller = new BatchGetTokenBalanceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -175,7 +175,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("BatchGetTokenBalance");
 
-            var request = InstantiateClassGenerator.Execute<BatchGetTokenBalanceRequest>();
+            var request = InstantiateClassGenerator.Execute<BatchGetTokenBalanceRequest>(operation);
             var marshaller = new BatchGetTokenBalanceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -207,7 +207,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("BatchGetTokenBalance");
 
-            var request = InstantiateClassGenerator.Execute<BatchGetTokenBalanceRequest>();
+            var request = InstantiateClassGenerator.Execute<BatchGetTokenBalanceRequest>(operation);
             var marshaller = new BatchGetTokenBalanceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -239,7 +239,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("BatchGetTokenBalance");
 
-            var request = InstantiateClassGenerator.Execute<BatchGetTokenBalanceRequest>();
+            var request = InstantiateClassGenerator.Execute<BatchGetTokenBalanceRequest>(operation);
             var marshaller = new BatchGetTokenBalanceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -267,11 +267,233 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("ManagedBlockchainQuery")]
+        public void GetAssetContractMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetAssetContract");
+
+            var request = InstantiateClassGenerator.Execute<GetAssetContractRequest>(operation);
+            var marshaller = new GetAssetContractRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetAssetContract", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetAssetContractResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as GetAssetContractResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ManagedBlockchainQuery")]
+        public void GetAssetContract_AccessDeniedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetAssetContract");
+
+            var request = InstantiateClassGenerator.Execute<GetAssetContractRequest>(operation);
+            var marshaller = new GetAssetContractRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("GetAssetContract", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","AccessDeniedException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = GetAssetContractResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ManagedBlockchainQuery")]
+        public void GetAssetContract_InternalServerExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetAssetContract");
+
+            var request = InstantiateClassGenerator.Execute<GetAssetContractRequest>(operation);
+            var marshaller = new GetAssetContractRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("GetAssetContract", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InternalServerException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InternalServerException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = GetAssetContractResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ManagedBlockchainQuery")]
+        public void GetAssetContract_ResourceNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetAssetContract");
+
+            var request = InstantiateClassGenerator.Execute<GetAssetContractRequest>(operation);
+            var marshaller = new GetAssetContractRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("GetAssetContract", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceNotFoundException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = GetAssetContractResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ManagedBlockchainQuery")]
+        public void GetAssetContract_ServiceQuotaExceededExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetAssetContract");
+
+            var request = InstantiateClassGenerator.Execute<GetAssetContractRequest>(operation);
+            var marshaller = new GetAssetContractRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("GetAssetContract", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ServiceQuotaExceededException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ServiceQuotaExceededException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = GetAssetContractResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ManagedBlockchainQuery")]
+        public void GetAssetContract_ThrottlingExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetAssetContract");
+
+            var request = InstantiateClassGenerator.Execute<GetAssetContractRequest>(operation);
+            var marshaller = new GetAssetContractRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("GetAssetContract", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottlingException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ThrottlingException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = GetAssetContractResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ManagedBlockchainQuery")]
+        public void GetAssetContract_ValidationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetAssetContract");
+
+            var request = InstantiateClassGenerator.Execute<GetAssetContractRequest>(operation);
+            var marshaller = new GetAssetContractRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("GetAssetContract", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ValidationException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = GetAssetContractResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ManagedBlockchainQuery")]
         public void GetTokenBalanceMarshallTest()
         {
             var operation = service_model.FindOperation("GetTokenBalance");
 
-            var request = InstantiateClassGenerator.Execute<GetTokenBalanceRequest>();
+            var request = InstantiateClassGenerator.Execute<GetTokenBalanceRequest>(operation);
             var marshaller = new GetTokenBalanceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -301,7 +523,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetTokenBalance");
 
-            var request = InstantiateClassGenerator.Execute<GetTokenBalanceRequest>();
+            var request = InstantiateClassGenerator.Execute<GetTokenBalanceRequest>(operation);
             var marshaller = new GetTokenBalanceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -333,7 +555,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetTokenBalance");
 
-            var request = InstantiateClassGenerator.Execute<GetTokenBalanceRequest>();
+            var request = InstantiateClassGenerator.Execute<GetTokenBalanceRequest>(operation);
             var marshaller = new GetTokenBalanceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -365,7 +587,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetTokenBalance");
 
-            var request = InstantiateClassGenerator.Execute<GetTokenBalanceRequest>();
+            var request = InstantiateClassGenerator.Execute<GetTokenBalanceRequest>(operation);
             var marshaller = new GetTokenBalanceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -397,7 +619,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetTokenBalance");
 
-            var request = InstantiateClassGenerator.Execute<GetTokenBalanceRequest>();
+            var request = InstantiateClassGenerator.Execute<GetTokenBalanceRequest>(operation);
             var marshaller = new GetTokenBalanceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -429,7 +651,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetTokenBalance");
 
-            var request = InstantiateClassGenerator.Execute<GetTokenBalanceRequest>();
+            var request = InstantiateClassGenerator.Execute<GetTokenBalanceRequest>(operation);
             var marshaller = new GetTokenBalanceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -461,7 +683,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetTokenBalance");
 
-            var request = InstantiateClassGenerator.Execute<GetTokenBalanceRequest>();
+            var request = InstantiateClassGenerator.Execute<GetTokenBalanceRequest>(operation);
             var marshaller = new GetTokenBalanceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -493,7 +715,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetTransaction");
 
-            var request = InstantiateClassGenerator.Execute<GetTransactionRequest>();
+            var request = InstantiateClassGenerator.Execute<GetTransactionRequest>(operation);
             var marshaller = new GetTransactionRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -523,7 +745,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetTransaction");
 
-            var request = InstantiateClassGenerator.Execute<GetTransactionRequest>();
+            var request = InstantiateClassGenerator.Execute<GetTransactionRequest>(operation);
             var marshaller = new GetTransactionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -555,7 +777,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetTransaction");
 
-            var request = InstantiateClassGenerator.Execute<GetTransactionRequest>();
+            var request = InstantiateClassGenerator.Execute<GetTransactionRequest>(operation);
             var marshaller = new GetTransactionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -587,7 +809,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetTransaction");
 
-            var request = InstantiateClassGenerator.Execute<GetTransactionRequest>();
+            var request = InstantiateClassGenerator.Execute<GetTransactionRequest>(operation);
             var marshaller = new GetTransactionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -619,7 +841,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetTransaction");
 
-            var request = InstantiateClassGenerator.Execute<GetTransactionRequest>();
+            var request = InstantiateClassGenerator.Execute<GetTransactionRequest>(operation);
             var marshaller = new GetTransactionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -651,7 +873,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetTransaction");
 
-            var request = InstantiateClassGenerator.Execute<GetTransactionRequest>();
+            var request = InstantiateClassGenerator.Execute<GetTransactionRequest>(operation);
             var marshaller = new GetTransactionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -683,7 +905,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetTransaction");
 
-            var request = InstantiateClassGenerator.Execute<GetTransactionRequest>();
+            var request = InstantiateClassGenerator.Execute<GetTransactionRequest>(operation);
             var marshaller = new GetTransactionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -711,11 +933,201 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("ManagedBlockchainQuery")]
+        public void ListAssetContractsMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListAssetContracts");
+
+            var request = InstantiateClassGenerator.Execute<ListAssetContractsRequest>(operation);
+            var marshaller = new ListAssetContractsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("ListAssetContracts", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = ListAssetContractsResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as ListAssetContractsResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ManagedBlockchainQuery")]
+        public void ListAssetContracts_AccessDeniedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListAssetContracts");
+
+            var request = InstantiateClassGenerator.Execute<ListAssetContractsRequest>(operation);
+            var marshaller = new ListAssetContractsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListAssetContracts", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","AccessDeniedException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListAssetContractsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ManagedBlockchainQuery")]
+        public void ListAssetContracts_InternalServerExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListAssetContracts");
+
+            var request = InstantiateClassGenerator.Execute<ListAssetContractsRequest>(operation);
+            var marshaller = new ListAssetContractsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListAssetContracts", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InternalServerException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InternalServerException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListAssetContractsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ManagedBlockchainQuery")]
+        public void ListAssetContracts_ServiceQuotaExceededExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListAssetContracts");
+
+            var request = InstantiateClassGenerator.Execute<ListAssetContractsRequest>(operation);
+            var marshaller = new ListAssetContractsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListAssetContracts", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ServiceQuotaExceededException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ServiceQuotaExceededException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListAssetContractsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ManagedBlockchainQuery")]
+        public void ListAssetContracts_ThrottlingExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListAssetContracts");
+
+            var request = InstantiateClassGenerator.Execute<ListAssetContractsRequest>(operation);
+            var marshaller = new ListAssetContractsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListAssetContracts", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottlingException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ThrottlingException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListAssetContractsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ManagedBlockchainQuery")]
+        public void ListAssetContracts_ValidationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListAssetContracts");
+
+            var request = InstantiateClassGenerator.Execute<ListAssetContractsRequest>(operation);
+            var marshaller = new ListAssetContractsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListAssetContracts", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ValidationException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListAssetContractsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ManagedBlockchainQuery")]
         public void ListTokenBalancesMarshallTest()
         {
             var operation = service_model.FindOperation("ListTokenBalances");
 
-            var request = InstantiateClassGenerator.Execute<ListTokenBalancesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTokenBalancesRequest>(operation);
             var marshaller = new ListTokenBalancesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -745,7 +1157,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListTokenBalances");
 
-            var request = InstantiateClassGenerator.Execute<ListTokenBalancesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTokenBalancesRequest>(operation);
             var marshaller = new ListTokenBalancesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -777,7 +1189,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListTokenBalances");
 
-            var request = InstantiateClassGenerator.Execute<ListTokenBalancesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTokenBalancesRequest>(operation);
             var marshaller = new ListTokenBalancesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -809,7 +1221,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListTokenBalances");
 
-            var request = InstantiateClassGenerator.Execute<ListTokenBalancesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTokenBalancesRequest>(operation);
             var marshaller = new ListTokenBalancesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -841,7 +1253,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListTokenBalances");
 
-            var request = InstantiateClassGenerator.Execute<ListTokenBalancesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTokenBalancesRequest>(operation);
             var marshaller = new ListTokenBalancesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -873,7 +1285,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListTokenBalances");
 
-            var request = InstantiateClassGenerator.Execute<ListTokenBalancesRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTokenBalancesRequest>(operation);
             var marshaller = new ListTokenBalancesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -905,7 +1317,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListTransactionEvents");
 
-            var request = InstantiateClassGenerator.Execute<ListTransactionEventsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTransactionEventsRequest>(operation);
             var marshaller = new ListTransactionEventsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -935,7 +1347,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListTransactionEvents");
 
-            var request = InstantiateClassGenerator.Execute<ListTransactionEventsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTransactionEventsRequest>(operation);
             var marshaller = new ListTransactionEventsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -967,7 +1379,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListTransactionEvents");
 
-            var request = InstantiateClassGenerator.Execute<ListTransactionEventsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTransactionEventsRequest>(operation);
             var marshaller = new ListTransactionEventsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -999,7 +1411,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListTransactionEvents");
 
-            var request = InstantiateClassGenerator.Execute<ListTransactionEventsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTransactionEventsRequest>(operation);
             var marshaller = new ListTransactionEventsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1031,7 +1443,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListTransactionEvents");
 
-            var request = InstantiateClassGenerator.Execute<ListTransactionEventsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTransactionEventsRequest>(operation);
             var marshaller = new ListTransactionEventsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1063,7 +1475,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListTransactionEvents");
 
-            var request = InstantiateClassGenerator.Execute<ListTransactionEventsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTransactionEventsRequest>(operation);
             var marshaller = new ListTransactionEventsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1095,7 +1507,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListTransactions");
 
-            var request = InstantiateClassGenerator.Execute<ListTransactionsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTransactionsRequest>(operation);
             var marshaller = new ListTransactionsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1125,7 +1537,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListTransactions");
 
-            var request = InstantiateClassGenerator.Execute<ListTransactionsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTransactionsRequest>(operation);
             var marshaller = new ListTransactionsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1157,7 +1569,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListTransactions");
 
-            var request = InstantiateClassGenerator.Execute<ListTransactionsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTransactionsRequest>(operation);
             var marshaller = new ListTransactionsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1189,7 +1601,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListTransactions");
 
-            var request = InstantiateClassGenerator.Execute<ListTransactionsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTransactionsRequest>(operation);
             var marshaller = new ListTransactionsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1221,7 +1633,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListTransactions");
 
-            var request = InstantiateClassGenerator.Execute<ListTransactionsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTransactionsRequest>(operation);
             var marshaller = new ListTransactionsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1253,7 +1665,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListTransactions");
 
-            var request = InstantiateClassGenerator.Execute<ListTransactionsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTransactionsRequest>(operation);
             var marshaller = new ListTransactionsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 

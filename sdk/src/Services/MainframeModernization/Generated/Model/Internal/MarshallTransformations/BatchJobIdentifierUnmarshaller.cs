@@ -70,6 +70,12 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
                     unmarshalledObject.FileBatchJobIdentifier = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("s3BatchJobIdentifier", targetDepth))
+                {
+                    var unmarshaller = S3BatchJobIdentifierUnmarshaller.Instance;
+                    unmarshalledObject.S3BatchJobIdentifier = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("scriptBatchJobIdentifier", targetDepth))
                 {
                     var unmarshaller = ScriptBatchJobIdentifierUnmarshaller.Instance;

@@ -45,11 +45,233 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("EntityResolution")]
+        public void CreateIdMappingWorkflowMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateIdMappingWorkflow");
+
+            var request = InstantiateClassGenerator.Execute<CreateIdMappingWorkflowRequest>(operation);
+            var marshaller = new CreateIdMappingWorkflowRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("CreateIdMappingWorkflow", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = CreateIdMappingWorkflowResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as CreateIdMappingWorkflowResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("EntityResolution")]
+        public void CreateIdMappingWorkflow_AccessDeniedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateIdMappingWorkflow");
+
+            var request = InstantiateClassGenerator.Execute<CreateIdMappingWorkflowRequest>(operation);
+            var marshaller = new CreateIdMappingWorkflowRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateIdMappingWorkflow", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","AccessDeniedException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateIdMappingWorkflowResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("EntityResolution")]
+        public void CreateIdMappingWorkflow_ConflictExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateIdMappingWorkflow");
+
+            var request = InstantiateClassGenerator.Execute<CreateIdMappingWorkflowRequest>(operation);
+            var marshaller = new CreateIdMappingWorkflowRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateIdMappingWorkflow", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ConflictException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ConflictException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateIdMappingWorkflowResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("EntityResolution")]
+        public void CreateIdMappingWorkflow_ExceedsLimitExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateIdMappingWorkflow");
+
+            var request = InstantiateClassGenerator.Execute<CreateIdMappingWorkflowRequest>(operation);
+            var marshaller = new CreateIdMappingWorkflowRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateIdMappingWorkflow", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ExceedsLimitException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ExceedsLimitException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateIdMappingWorkflowResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("EntityResolution")]
+        public void CreateIdMappingWorkflow_InternalServerExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateIdMappingWorkflow");
+
+            var request = InstantiateClassGenerator.Execute<CreateIdMappingWorkflowRequest>(operation);
+            var marshaller = new CreateIdMappingWorkflowRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateIdMappingWorkflow", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InternalServerException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InternalServerException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateIdMappingWorkflowResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("EntityResolution")]
+        public void CreateIdMappingWorkflow_ThrottlingExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateIdMappingWorkflow");
+
+            var request = InstantiateClassGenerator.Execute<CreateIdMappingWorkflowRequest>(operation);
+            var marshaller = new CreateIdMappingWorkflowRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateIdMappingWorkflow", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottlingException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ThrottlingException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateIdMappingWorkflowResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("EntityResolution")]
+        public void CreateIdMappingWorkflow_ValidationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateIdMappingWorkflow");
+
+            var request = InstantiateClassGenerator.Execute<CreateIdMappingWorkflowRequest>(operation);
+            var marshaller = new CreateIdMappingWorkflowRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateIdMappingWorkflow", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ValidationException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateIdMappingWorkflowResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("EntityResolution")]
         public void CreateMatchingWorkflowMarshallTest()
         {
             var operation = service_model.FindOperation("CreateMatchingWorkflow");
 
-            var request = InstantiateClassGenerator.Execute<CreateMatchingWorkflowRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateMatchingWorkflowRequest>(operation);
             var marshaller = new CreateMatchingWorkflowRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -79,7 +301,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateMatchingWorkflow");
 
-            var request = InstantiateClassGenerator.Execute<CreateMatchingWorkflowRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateMatchingWorkflowRequest>(operation);
             var marshaller = new CreateMatchingWorkflowRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -111,7 +333,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateMatchingWorkflow");
 
-            var request = InstantiateClassGenerator.Execute<CreateMatchingWorkflowRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateMatchingWorkflowRequest>(operation);
             var marshaller = new CreateMatchingWorkflowRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -143,7 +365,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateMatchingWorkflow");
 
-            var request = InstantiateClassGenerator.Execute<CreateMatchingWorkflowRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateMatchingWorkflowRequest>(operation);
             var marshaller = new CreateMatchingWorkflowRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -175,7 +397,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateMatchingWorkflow");
 
-            var request = InstantiateClassGenerator.Execute<CreateMatchingWorkflowRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateMatchingWorkflowRequest>(operation);
             var marshaller = new CreateMatchingWorkflowRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -207,7 +429,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateMatchingWorkflow");
 
-            var request = InstantiateClassGenerator.Execute<CreateMatchingWorkflowRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateMatchingWorkflowRequest>(operation);
             var marshaller = new CreateMatchingWorkflowRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -239,7 +461,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateMatchingWorkflow");
 
-            var request = InstantiateClassGenerator.Execute<CreateMatchingWorkflowRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateMatchingWorkflowRequest>(operation);
             var marshaller = new CreateMatchingWorkflowRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -271,7 +493,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateSchemaMapping");
 
-            var request = InstantiateClassGenerator.Execute<CreateSchemaMappingRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateSchemaMappingRequest>(operation);
             var marshaller = new CreateSchemaMappingRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -301,7 +523,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateSchemaMapping");
 
-            var request = InstantiateClassGenerator.Execute<CreateSchemaMappingRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateSchemaMappingRequest>(operation);
             var marshaller = new CreateSchemaMappingRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -333,7 +555,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateSchemaMapping");
 
-            var request = InstantiateClassGenerator.Execute<CreateSchemaMappingRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateSchemaMappingRequest>(operation);
             var marshaller = new CreateSchemaMappingRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -365,7 +587,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateSchemaMapping");
 
-            var request = InstantiateClassGenerator.Execute<CreateSchemaMappingRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateSchemaMappingRequest>(operation);
             var marshaller = new CreateSchemaMappingRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -397,7 +619,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateSchemaMapping");
 
-            var request = InstantiateClassGenerator.Execute<CreateSchemaMappingRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateSchemaMappingRequest>(operation);
             var marshaller = new CreateSchemaMappingRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -429,7 +651,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateSchemaMapping");
 
-            var request = InstantiateClassGenerator.Execute<CreateSchemaMappingRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateSchemaMappingRequest>(operation);
             var marshaller = new CreateSchemaMappingRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -461,7 +683,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("CreateSchemaMapping");
 
-            var request = InstantiateClassGenerator.Execute<CreateSchemaMappingRequest>();
+            var request = InstantiateClassGenerator.Execute<CreateSchemaMappingRequest>(operation);
             var marshaller = new CreateSchemaMappingRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -489,11 +711,169 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("EntityResolution")]
+        public void DeleteIdMappingWorkflowMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteIdMappingWorkflow");
+
+            var request = InstantiateClassGenerator.Execute<DeleteIdMappingWorkflowRequest>(operation);
+            var marshaller = new DeleteIdMappingWorkflowRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DeleteIdMappingWorkflow", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = DeleteIdMappingWorkflowResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as DeleteIdMappingWorkflowResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("EntityResolution")]
+        public void DeleteIdMappingWorkflow_AccessDeniedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteIdMappingWorkflow");
+
+            var request = InstantiateClassGenerator.Execute<DeleteIdMappingWorkflowRequest>(operation);
+            var marshaller = new DeleteIdMappingWorkflowRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeleteIdMappingWorkflow", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","AccessDeniedException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeleteIdMappingWorkflowResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("EntityResolution")]
+        public void DeleteIdMappingWorkflow_InternalServerExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteIdMappingWorkflow");
+
+            var request = InstantiateClassGenerator.Execute<DeleteIdMappingWorkflowRequest>(operation);
+            var marshaller = new DeleteIdMappingWorkflowRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeleteIdMappingWorkflow", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InternalServerException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InternalServerException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeleteIdMappingWorkflowResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("EntityResolution")]
+        public void DeleteIdMappingWorkflow_ThrottlingExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteIdMappingWorkflow");
+
+            var request = InstantiateClassGenerator.Execute<DeleteIdMappingWorkflowRequest>(operation);
+            var marshaller = new DeleteIdMappingWorkflowRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeleteIdMappingWorkflow", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottlingException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ThrottlingException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeleteIdMappingWorkflowResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("EntityResolution")]
+        public void DeleteIdMappingWorkflow_ValidationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteIdMappingWorkflow");
+
+            var request = InstantiateClassGenerator.Execute<DeleteIdMappingWorkflowRequest>(operation);
+            var marshaller = new DeleteIdMappingWorkflowRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeleteIdMappingWorkflow", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ValidationException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeleteIdMappingWorkflowResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("EntityResolution")]
         public void DeleteMatchingWorkflowMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteMatchingWorkflow");
 
-            var request = InstantiateClassGenerator.Execute<DeleteMatchingWorkflowRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteMatchingWorkflowRequest>(operation);
             var marshaller = new DeleteMatchingWorkflowRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -523,7 +903,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteMatchingWorkflow");
 
-            var request = InstantiateClassGenerator.Execute<DeleteMatchingWorkflowRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteMatchingWorkflowRequest>(operation);
             var marshaller = new DeleteMatchingWorkflowRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -555,7 +935,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteMatchingWorkflow");
 
-            var request = InstantiateClassGenerator.Execute<DeleteMatchingWorkflowRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteMatchingWorkflowRequest>(operation);
             var marshaller = new DeleteMatchingWorkflowRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -587,7 +967,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteMatchingWorkflow");
 
-            var request = InstantiateClassGenerator.Execute<DeleteMatchingWorkflowRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteMatchingWorkflowRequest>(operation);
             var marshaller = new DeleteMatchingWorkflowRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -619,7 +999,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteMatchingWorkflow");
 
-            var request = InstantiateClassGenerator.Execute<DeleteMatchingWorkflowRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteMatchingWorkflowRequest>(operation);
             var marshaller = new DeleteMatchingWorkflowRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -651,7 +1031,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteSchemaMapping");
 
-            var request = InstantiateClassGenerator.Execute<DeleteSchemaMappingRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteSchemaMappingRequest>(operation);
             var marshaller = new DeleteSchemaMappingRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -681,7 +1061,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteSchemaMapping");
 
-            var request = InstantiateClassGenerator.Execute<DeleteSchemaMappingRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteSchemaMappingRequest>(operation);
             var marshaller = new DeleteSchemaMappingRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -713,7 +1093,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteSchemaMapping");
 
-            var request = InstantiateClassGenerator.Execute<DeleteSchemaMappingRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteSchemaMappingRequest>(operation);
             var marshaller = new DeleteSchemaMappingRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -745,7 +1125,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteSchemaMapping");
 
-            var request = InstantiateClassGenerator.Execute<DeleteSchemaMappingRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteSchemaMappingRequest>(operation);
             var marshaller = new DeleteSchemaMappingRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -777,7 +1157,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteSchemaMapping");
 
-            var request = InstantiateClassGenerator.Execute<DeleteSchemaMappingRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteSchemaMappingRequest>(operation);
             var marshaller = new DeleteSchemaMappingRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -809,7 +1189,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DeleteSchemaMapping");
 
-            var request = InstantiateClassGenerator.Execute<DeleteSchemaMappingRequest>();
+            var request = InstantiateClassGenerator.Execute<DeleteSchemaMappingRequest>(operation);
             var marshaller = new DeleteSchemaMappingRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -837,11 +1217,391 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("EntityResolution")]
+        public void GetIdMappingJobMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetIdMappingJob");
+
+            var request = InstantiateClassGenerator.Execute<GetIdMappingJobRequest>(operation);
+            var marshaller = new GetIdMappingJobRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetIdMappingJob", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetIdMappingJobResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as GetIdMappingJobResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("EntityResolution")]
+        public void GetIdMappingJob_AccessDeniedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetIdMappingJob");
+
+            var request = InstantiateClassGenerator.Execute<GetIdMappingJobRequest>(operation);
+            var marshaller = new GetIdMappingJobRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("GetIdMappingJob", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","AccessDeniedException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = GetIdMappingJobResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("EntityResolution")]
+        public void GetIdMappingJob_InternalServerExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetIdMappingJob");
+
+            var request = InstantiateClassGenerator.Execute<GetIdMappingJobRequest>(operation);
+            var marshaller = new GetIdMappingJobRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("GetIdMappingJob", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InternalServerException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InternalServerException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = GetIdMappingJobResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("EntityResolution")]
+        public void GetIdMappingJob_ResourceNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetIdMappingJob");
+
+            var request = InstantiateClassGenerator.Execute<GetIdMappingJobRequest>(operation);
+            var marshaller = new GetIdMappingJobRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("GetIdMappingJob", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceNotFoundException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = GetIdMappingJobResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("EntityResolution")]
+        public void GetIdMappingJob_ThrottlingExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetIdMappingJob");
+
+            var request = InstantiateClassGenerator.Execute<GetIdMappingJobRequest>(operation);
+            var marshaller = new GetIdMappingJobRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("GetIdMappingJob", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottlingException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ThrottlingException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = GetIdMappingJobResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("EntityResolution")]
+        public void GetIdMappingJob_ValidationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetIdMappingJob");
+
+            var request = InstantiateClassGenerator.Execute<GetIdMappingJobRequest>(operation);
+            var marshaller = new GetIdMappingJobRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("GetIdMappingJob", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ValidationException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = GetIdMappingJobResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("EntityResolution")]
+        public void GetIdMappingWorkflowMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetIdMappingWorkflow");
+
+            var request = InstantiateClassGenerator.Execute<GetIdMappingWorkflowRequest>(operation);
+            var marshaller = new GetIdMappingWorkflowRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetIdMappingWorkflow", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetIdMappingWorkflowResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as GetIdMappingWorkflowResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("EntityResolution")]
+        public void GetIdMappingWorkflow_AccessDeniedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetIdMappingWorkflow");
+
+            var request = InstantiateClassGenerator.Execute<GetIdMappingWorkflowRequest>(operation);
+            var marshaller = new GetIdMappingWorkflowRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("GetIdMappingWorkflow", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","AccessDeniedException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = GetIdMappingWorkflowResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("EntityResolution")]
+        public void GetIdMappingWorkflow_InternalServerExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetIdMappingWorkflow");
+
+            var request = InstantiateClassGenerator.Execute<GetIdMappingWorkflowRequest>(operation);
+            var marshaller = new GetIdMappingWorkflowRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("GetIdMappingWorkflow", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InternalServerException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InternalServerException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = GetIdMappingWorkflowResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("EntityResolution")]
+        public void GetIdMappingWorkflow_ResourceNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetIdMappingWorkflow");
+
+            var request = InstantiateClassGenerator.Execute<GetIdMappingWorkflowRequest>(operation);
+            var marshaller = new GetIdMappingWorkflowRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("GetIdMappingWorkflow", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceNotFoundException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = GetIdMappingWorkflowResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("EntityResolution")]
+        public void GetIdMappingWorkflow_ThrottlingExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetIdMappingWorkflow");
+
+            var request = InstantiateClassGenerator.Execute<GetIdMappingWorkflowRequest>(operation);
+            var marshaller = new GetIdMappingWorkflowRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("GetIdMappingWorkflow", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottlingException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ThrottlingException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = GetIdMappingWorkflowResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("EntityResolution")]
+        public void GetIdMappingWorkflow_ValidationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetIdMappingWorkflow");
+
+            var request = InstantiateClassGenerator.Execute<GetIdMappingWorkflowRequest>(operation);
+            var marshaller = new GetIdMappingWorkflowRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("GetIdMappingWorkflow", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ValidationException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = GetIdMappingWorkflowResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("EntityResolution")]
         public void GetMatchIdMarshallTest()
         {
             var operation = service_model.FindOperation("GetMatchId");
 
-            var request = InstantiateClassGenerator.Execute<GetMatchIdRequest>();
+            var request = InstantiateClassGenerator.Execute<GetMatchIdRequest>(operation);
             var marshaller = new GetMatchIdRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -871,7 +1631,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetMatchId");
 
-            var request = InstantiateClassGenerator.Execute<GetMatchIdRequest>();
+            var request = InstantiateClassGenerator.Execute<GetMatchIdRequest>(operation);
             var marshaller = new GetMatchIdRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -903,7 +1663,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetMatchId");
 
-            var request = InstantiateClassGenerator.Execute<GetMatchIdRequest>();
+            var request = InstantiateClassGenerator.Execute<GetMatchIdRequest>(operation);
             var marshaller = new GetMatchIdRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -935,7 +1695,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetMatchId");
 
-            var request = InstantiateClassGenerator.Execute<GetMatchIdRequest>();
+            var request = InstantiateClassGenerator.Execute<GetMatchIdRequest>(operation);
             var marshaller = new GetMatchIdRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -967,7 +1727,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetMatchId");
 
-            var request = InstantiateClassGenerator.Execute<GetMatchIdRequest>();
+            var request = InstantiateClassGenerator.Execute<GetMatchIdRequest>(operation);
             var marshaller = new GetMatchIdRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -999,7 +1759,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetMatchId");
 
-            var request = InstantiateClassGenerator.Execute<GetMatchIdRequest>();
+            var request = InstantiateClassGenerator.Execute<GetMatchIdRequest>(operation);
             var marshaller = new GetMatchIdRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1031,7 +1791,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetMatchingJob");
 
-            var request = InstantiateClassGenerator.Execute<GetMatchingJobRequest>();
+            var request = InstantiateClassGenerator.Execute<GetMatchingJobRequest>(operation);
             var marshaller = new GetMatchingJobRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1061,7 +1821,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetMatchingJob");
 
-            var request = InstantiateClassGenerator.Execute<GetMatchingJobRequest>();
+            var request = InstantiateClassGenerator.Execute<GetMatchingJobRequest>(operation);
             var marshaller = new GetMatchingJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1093,7 +1853,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetMatchingJob");
 
-            var request = InstantiateClassGenerator.Execute<GetMatchingJobRequest>();
+            var request = InstantiateClassGenerator.Execute<GetMatchingJobRequest>(operation);
             var marshaller = new GetMatchingJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1125,7 +1885,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetMatchingJob");
 
-            var request = InstantiateClassGenerator.Execute<GetMatchingJobRequest>();
+            var request = InstantiateClassGenerator.Execute<GetMatchingJobRequest>(operation);
             var marshaller = new GetMatchingJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1157,7 +1917,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetMatchingJob");
 
-            var request = InstantiateClassGenerator.Execute<GetMatchingJobRequest>();
+            var request = InstantiateClassGenerator.Execute<GetMatchingJobRequest>(operation);
             var marshaller = new GetMatchingJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1189,7 +1949,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetMatchingJob");
 
-            var request = InstantiateClassGenerator.Execute<GetMatchingJobRequest>();
+            var request = InstantiateClassGenerator.Execute<GetMatchingJobRequest>(operation);
             var marshaller = new GetMatchingJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1221,7 +1981,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetMatchingWorkflow");
 
-            var request = InstantiateClassGenerator.Execute<GetMatchingWorkflowRequest>();
+            var request = InstantiateClassGenerator.Execute<GetMatchingWorkflowRequest>(operation);
             var marshaller = new GetMatchingWorkflowRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1251,7 +2011,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetMatchingWorkflow");
 
-            var request = InstantiateClassGenerator.Execute<GetMatchingWorkflowRequest>();
+            var request = InstantiateClassGenerator.Execute<GetMatchingWorkflowRequest>(operation);
             var marshaller = new GetMatchingWorkflowRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1283,7 +2043,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetMatchingWorkflow");
 
-            var request = InstantiateClassGenerator.Execute<GetMatchingWorkflowRequest>();
+            var request = InstantiateClassGenerator.Execute<GetMatchingWorkflowRequest>(operation);
             var marshaller = new GetMatchingWorkflowRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1315,7 +2075,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetMatchingWorkflow");
 
-            var request = InstantiateClassGenerator.Execute<GetMatchingWorkflowRequest>();
+            var request = InstantiateClassGenerator.Execute<GetMatchingWorkflowRequest>(operation);
             var marshaller = new GetMatchingWorkflowRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1347,7 +2107,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetMatchingWorkflow");
 
-            var request = InstantiateClassGenerator.Execute<GetMatchingWorkflowRequest>();
+            var request = InstantiateClassGenerator.Execute<GetMatchingWorkflowRequest>(operation);
             var marshaller = new GetMatchingWorkflowRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1379,7 +2139,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetMatchingWorkflow");
 
-            var request = InstantiateClassGenerator.Execute<GetMatchingWorkflowRequest>();
+            var request = InstantiateClassGenerator.Execute<GetMatchingWorkflowRequest>(operation);
             var marshaller = new GetMatchingWorkflowRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1407,11 +2167,201 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("EntityResolution")]
+        public void GetProviderServiceMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetProviderService");
+
+            var request = InstantiateClassGenerator.Execute<GetProviderServiceRequest>(operation);
+            var marshaller = new GetProviderServiceRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetProviderService", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetProviderServiceResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as GetProviderServiceResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("EntityResolution")]
+        public void GetProviderService_AccessDeniedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetProviderService");
+
+            var request = InstantiateClassGenerator.Execute<GetProviderServiceRequest>(operation);
+            var marshaller = new GetProviderServiceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("GetProviderService", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","AccessDeniedException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = GetProviderServiceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("EntityResolution")]
+        public void GetProviderService_InternalServerExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetProviderService");
+
+            var request = InstantiateClassGenerator.Execute<GetProviderServiceRequest>(operation);
+            var marshaller = new GetProviderServiceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("GetProviderService", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InternalServerException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InternalServerException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = GetProviderServiceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("EntityResolution")]
+        public void GetProviderService_ResourceNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetProviderService");
+
+            var request = InstantiateClassGenerator.Execute<GetProviderServiceRequest>(operation);
+            var marshaller = new GetProviderServiceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("GetProviderService", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceNotFoundException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = GetProviderServiceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("EntityResolution")]
+        public void GetProviderService_ThrottlingExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetProviderService");
+
+            var request = InstantiateClassGenerator.Execute<GetProviderServiceRequest>(operation);
+            var marshaller = new GetProviderServiceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("GetProviderService", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottlingException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ThrottlingException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = GetProviderServiceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("EntityResolution")]
+        public void GetProviderService_ValidationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetProviderService");
+
+            var request = InstantiateClassGenerator.Execute<GetProviderServiceRequest>(operation);
+            var marshaller = new GetProviderServiceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("GetProviderService", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ValidationException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = GetProviderServiceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("EntityResolution")]
         public void GetSchemaMappingMarshallTest()
         {
             var operation = service_model.FindOperation("GetSchemaMapping");
 
-            var request = InstantiateClassGenerator.Execute<GetSchemaMappingRequest>();
+            var request = InstantiateClassGenerator.Execute<GetSchemaMappingRequest>(operation);
             var marshaller = new GetSchemaMappingRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1441,7 +2391,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetSchemaMapping");
 
-            var request = InstantiateClassGenerator.Execute<GetSchemaMappingRequest>();
+            var request = InstantiateClassGenerator.Execute<GetSchemaMappingRequest>(operation);
             var marshaller = new GetSchemaMappingRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1473,7 +2423,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetSchemaMapping");
 
-            var request = InstantiateClassGenerator.Execute<GetSchemaMappingRequest>();
+            var request = InstantiateClassGenerator.Execute<GetSchemaMappingRequest>(operation);
             var marshaller = new GetSchemaMappingRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1505,7 +2455,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetSchemaMapping");
 
-            var request = InstantiateClassGenerator.Execute<GetSchemaMappingRequest>();
+            var request = InstantiateClassGenerator.Execute<GetSchemaMappingRequest>(operation);
             var marshaller = new GetSchemaMappingRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1537,7 +2487,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetSchemaMapping");
 
-            var request = InstantiateClassGenerator.Execute<GetSchemaMappingRequest>();
+            var request = InstantiateClassGenerator.Execute<GetSchemaMappingRequest>(operation);
             var marshaller = new GetSchemaMappingRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1569,7 +2519,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetSchemaMapping");
 
-            var request = InstantiateClassGenerator.Execute<GetSchemaMappingRequest>();
+            var request = InstantiateClassGenerator.Execute<GetSchemaMappingRequest>(operation);
             var marshaller = new GetSchemaMappingRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1597,11 +2547,359 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("EntityResolution")]
+        public void ListIdMappingJobsMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListIdMappingJobs");
+
+            var request = InstantiateClassGenerator.Execute<ListIdMappingJobsRequest>(operation);
+            var marshaller = new ListIdMappingJobsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("ListIdMappingJobs", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = ListIdMappingJobsResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as ListIdMappingJobsResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("EntityResolution")]
+        public void ListIdMappingJobs_AccessDeniedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListIdMappingJobs");
+
+            var request = InstantiateClassGenerator.Execute<ListIdMappingJobsRequest>(operation);
+            var marshaller = new ListIdMappingJobsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListIdMappingJobs", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","AccessDeniedException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListIdMappingJobsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("EntityResolution")]
+        public void ListIdMappingJobs_InternalServerExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListIdMappingJobs");
+
+            var request = InstantiateClassGenerator.Execute<ListIdMappingJobsRequest>(operation);
+            var marshaller = new ListIdMappingJobsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListIdMappingJobs", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InternalServerException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InternalServerException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListIdMappingJobsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("EntityResolution")]
+        public void ListIdMappingJobs_ResourceNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListIdMappingJobs");
+
+            var request = InstantiateClassGenerator.Execute<ListIdMappingJobsRequest>(operation);
+            var marshaller = new ListIdMappingJobsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListIdMappingJobs", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceNotFoundException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListIdMappingJobsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("EntityResolution")]
+        public void ListIdMappingJobs_ThrottlingExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListIdMappingJobs");
+
+            var request = InstantiateClassGenerator.Execute<ListIdMappingJobsRequest>(operation);
+            var marshaller = new ListIdMappingJobsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListIdMappingJobs", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottlingException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ThrottlingException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListIdMappingJobsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("EntityResolution")]
+        public void ListIdMappingJobs_ValidationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListIdMappingJobs");
+
+            var request = InstantiateClassGenerator.Execute<ListIdMappingJobsRequest>(operation);
+            var marshaller = new ListIdMappingJobsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListIdMappingJobs", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ValidationException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListIdMappingJobsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("EntityResolution")]
+        public void ListIdMappingWorkflowsMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListIdMappingWorkflows");
+
+            var request = InstantiateClassGenerator.Execute<ListIdMappingWorkflowsRequest>(operation);
+            var marshaller = new ListIdMappingWorkflowsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("ListIdMappingWorkflows", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = ListIdMappingWorkflowsResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as ListIdMappingWorkflowsResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("EntityResolution")]
+        public void ListIdMappingWorkflows_AccessDeniedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListIdMappingWorkflows");
+
+            var request = InstantiateClassGenerator.Execute<ListIdMappingWorkflowsRequest>(operation);
+            var marshaller = new ListIdMappingWorkflowsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListIdMappingWorkflows", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","AccessDeniedException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListIdMappingWorkflowsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("EntityResolution")]
+        public void ListIdMappingWorkflows_InternalServerExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListIdMappingWorkflows");
+
+            var request = InstantiateClassGenerator.Execute<ListIdMappingWorkflowsRequest>(operation);
+            var marshaller = new ListIdMappingWorkflowsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListIdMappingWorkflows", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InternalServerException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InternalServerException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListIdMappingWorkflowsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("EntityResolution")]
+        public void ListIdMappingWorkflows_ThrottlingExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListIdMappingWorkflows");
+
+            var request = InstantiateClassGenerator.Execute<ListIdMappingWorkflowsRequest>(operation);
+            var marshaller = new ListIdMappingWorkflowsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListIdMappingWorkflows", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottlingException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ThrottlingException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListIdMappingWorkflowsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("EntityResolution")]
+        public void ListIdMappingWorkflows_ValidationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListIdMappingWorkflows");
+
+            var request = InstantiateClassGenerator.Execute<ListIdMappingWorkflowsRequest>(operation);
+            var marshaller = new ListIdMappingWorkflowsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListIdMappingWorkflows", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ValidationException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListIdMappingWorkflowsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("EntityResolution")]
         public void ListMatchingJobsMarshallTest()
         {
             var operation = service_model.FindOperation("ListMatchingJobs");
 
-            var request = InstantiateClassGenerator.Execute<ListMatchingJobsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListMatchingJobsRequest>(operation);
             var marshaller = new ListMatchingJobsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1631,7 +2929,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListMatchingJobs");
 
-            var request = InstantiateClassGenerator.Execute<ListMatchingJobsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListMatchingJobsRequest>(operation);
             var marshaller = new ListMatchingJobsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1663,7 +2961,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListMatchingJobs");
 
-            var request = InstantiateClassGenerator.Execute<ListMatchingJobsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListMatchingJobsRequest>(operation);
             var marshaller = new ListMatchingJobsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1695,7 +2993,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListMatchingJobs");
 
-            var request = InstantiateClassGenerator.Execute<ListMatchingJobsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListMatchingJobsRequest>(operation);
             var marshaller = new ListMatchingJobsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1727,7 +3025,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListMatchingJobs");
 
-            var request = InstantiateClassGenerator.Execute<ListMatchingJobsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListMatchingJobsRequest>(operation);
             var marshaller = new ListMatchingJobsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1759,7 +3057,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListMatchingJobs");
 
-            var request = InstantiateClassGenerator.Execute<ListMatchingJobsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListMatchingJobsRequest>(operation);
             var marshaller = new ListMatchingJobsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1791,7 +3089,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListMatchingWorkflows");
 
-            var request = InstantiateClassGenerator.Execute<ListMatchingWorkflowsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListMatchingWorkflowsRequest>(operation);
             var marshaller = new ListMatchingWorkflowsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1821,7 +3119,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListMatchingWorkflows");
 
-            var request = InstantiateClassGenerator.Execute<ListMatchingWorkflowsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListMatchingWorkflowsRequest>(operation);
             var marshaller = new ListMatchingWorkflowsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1853,7 +3151,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListMatchingWorkflows");
 
-            var request = InstantiateClassGenerator.Execute<ListMatchingWorkflowsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListMatchingWorkflowsRequest>(operation);
             var marshaller = new ListMatchingWorkflowsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1885,7 +3183,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListMatchingWorkflows");
 
-            var request = InstantiateClassGenerator.Execute<ListMatchingWorkflowsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListMatchingWorkflowsRequest>(operation);
             var marshaller = new ListMatchingWorkflowsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1917,7 +3215,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListMatchingWorkflows");
 
-            var request = InstantiateClassGenerator.Execute<ListMatchingWorkflowsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListMatchingWorkflowsRequest>(operation);
             var marshaller = new ListMatchingWorkflowsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -1945,11 +3243,169 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("EntityResolution")]
+        public void ListProviderServicesMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListProviderServices");
+
+            var request = InstantiateClassGenerator.Execute<ListProviderServicesRequest>(operation);
+            var marshaller = new ListProviderServicesRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("ListProviderServices", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = ListProviderServicesResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as ListProviderServicesResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("EntityResolution")]
+        public void ListProviderServices_AccessDeniedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListProviderServices");
+
+            var request = InstantiateClassGenerator.Execute<ListProviderServicesRequest>(operation);
+            var marshaller = new ListProviderServicesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListProviderServices", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","AccessDeniedException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListProviderServicesResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("EntityResolution")]
+        public void ListProviderServices_InternalServerExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListProviderServices");
+
+            var request = InstantiateClassGenerator.Execute<ListProviderServicesRequest>(operation);
+            var marshaller = new ListProviderServicesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListProviderServices", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InternalServerException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InternalServerException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListProviderServicesResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("EntityResolution")]
+        public void ListProviderServices_ThrottlingExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListProviderServices");
+
+            var request = InstantiateClassGenerator.Execute<ListProviderServicesRequest>(operation);
+            var marshaller = new ListProviderServicesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListProviderServices", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottlingException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ThrottlingException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListProviderServicesResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("EntityResolution")]
+        public void ListProviderServices_ValidationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListProviderServices");
+
+            var request = InstantiateClassGenerator.Execute<ListProviderServicesRequest>(operation);
+            var marshaller = new ListProviderServicesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListProviderServices", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ValidationException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListProviderServicesResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("EntityResolution")]
         public void ListSchemaMappingsMarshallTest()
         {
             var operation = service_model.FindOperation("ListSchemaMappings");
 
-            var request = InstantiateClassGenerator.Execute<ListSchemaMappingsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListSchemaMappingsRequest>(operation);
             var marshaller = new ListSchemaMappingsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -1979,7 +3435,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListSchemaMappings");
 
-            var request = InstantiateClassGenerator.Execute<ListSchemaMappingsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListSchemaMappingsRequest>(operation);
             var marshaller = new ListSchemaMappingsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2011,7 +3467,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListSchemaMappings");
 
-            var request = InstantiateClassGenerator.Execute<ListSchemaMappingsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListSchemaMappingsRequest>(operation);
             var marshaller = new ListSchemaMappingsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2043,7 +3499,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListSchemaMappings");
 
-            var request = InstantiateClassGenerator.Execute<ListSchemaMappingsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListSchemaMappingsRequest>(operation);
             var marshaller = new ListSchemaMappingsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2075,7 +3531,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListSchemaMappings");
 
-            var request = InstantiateClassGenerator.Execute<ListSchemaMappingsRequest>();
+            var request = InstantiateClassGenerator.Execute<ListSchemaMappingsRequest>(operation);
             var marshaller = new ListSchemaMappingsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2107,7 +3563,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListTagsForResource");
 
-            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>(operation);
             var marshaller = new ListTagsForResourceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -2137,7 +3593,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListTagsForResource");
 
-            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>(operation);
             var marshaller = new ListTagsForResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2169,7 +3625,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListTagsForResource");
 
-            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>(operation);
             var marshaller = new ListTagsForResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2201,7 +3657,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("ListTagsForResource");
 
-            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>(operation);
             var marshaller = new ListTagsForResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2229,11 +3685,265 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("EntityResolution")]
+        public void StartIdMappingJobMarshallTest()
+        {
+            var operation = service_model.FindOperation("StartIdMappingJob");
+
+            var request = InstantiateClassGenerator.Execute<StartIdMappingJobRequest>(operation);
+            var marshaller = new StartIdMappingJobRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("StartIdMappingJob", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = StartIdMappingJobResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as StartIdMappingJobResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("EntityResolution")]
+        public void StartIdMappingJob_AccessDeniedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("StartIdMappingJob");
+
+            var request = InstantiateClassGenerator.Execute<StartIdMappingJobRequest>(operation);
+            var marshaller = new StartIdMappingJobRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("StartIdMappingJob", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","AccessDeniedException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = StartIdMappingJobResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("EntityResolution")]
+        public void StartIdMappingJob_ConflictExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("StartIdMappingJob");
+
+            var request = InstantiateClassGenerator.Execute<StartIdMappingJobRequest>(operation);
+            var marshaller = new StartIdMappingJobRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("StartIdMappingJob", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ConflictException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ConflictException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = StartIdMappingJobResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("EntityResolution")]
+        public void StartIdMappingJob_ExceedsLimitExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("StartIdMappingJob");
+
+            var request = InstantiateClassGenerator.Execute<StartIdMappingJobRequest>(operation);
+            var marshaller = new StartIdMappingJobRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("StartIdMappingJob", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ExceedsLimitException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ExceedsLimitException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = StartIdMappingJobResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("EntityResolution")]
+        public void StartIdMappingJob_InternalServerExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("StartIdMappingJob");
+
+            var request = InstantiateClassGenerator.Execute<StartIdMappingJobRequest>(operation);
+            var marshaller = new StartIdMappingJobRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("StartIdMappingJob", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InternalServerException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InternalServerException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = StartIdMappingJobResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("EntityResolution")]
+        public void StartIdMappingJob_ResourceNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("StartIdMappingJob");
+
+            var request = InstantiateClassGenerator.Execute<StartIdMappingJobRequest>(operation);
+            var marshaller = new StartIdMappingJobRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("StartIdMappingJob", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceNotFoundException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = StartIdMappingJobResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("EntityResolution")]
+        public void StartIdMappingJob_ThrottlingExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("StartIdMappingJob");
+
+            var request = InstantiateClassGenerator.Execute<StartIdMappingJobRequest>(operation);
+            var marshaller = new StartIdMappingJobRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("StartIdMappingJob", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottlingException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ThrottlingException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = StartIdMappingJobResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("EntityResolution")]
+        public void StartIdMappingJob_ValidationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("StartIdMappingJob");
+
+            var request = InstantiateClassGenerator.Execute<StartIdMappingJobRequest>(operation);
+            var marshaller = new StartIdMappingJobRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("StartIdMappingJob", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ValidationException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = StartIdMappingJobResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("EntityResolution")]
         public void StartMatchingJobMarshallTest()
         {
             var operation = service_model.FindOperation("StartMatchingJob");
 
-            var request = InstantiateClassGenerator.Execute<StartMatchingJobRequest>();
+            var request = InstantiateClassGenerator.Execute<StartMatchingJobRequest>(operation);
             var marshaller = new StartMatchingJobRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -2263,7 +3973,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartMatchingJob");
 
-            var request = InstantiateClassGenerator.Execute<StartMatchingJobRequest>();
+            var request = InstantiateClassGenerator.Execute<StartMatchingJobRequest>(operation);
             var marshaller = new StartMatchingJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2295,7 +4005,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartMatchingJob");
 
-            var request = InstantiateClassGenerator.Execute<StartMatchingJobRequest>();
+            var request = InstantiateClassGenerator.Execute<StartMatchingJobRequest>(operation);
             var marshaller = new StartMatchingJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2327,7 +4037,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartMatchingJob");
 
-            var request = InstantiateClassGenerator.Execute<StartMatchingJobRequest>();
+            var request = InstantiateClassGenerator.Execute<StartMatchingJobRequest>(operation);
             var marshaller = new StartMatchingJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2359,7 +4069,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartMatchingJob");
 
-            var request = InstantiateClassGenerator.Execute<StartMatchingJobRequest>();
+            var request = InstantiateClassGenerator.Execute<StartMatchingJobRequest>(operation);
             var marshaller = new StartMatchingJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2391,7 +4101,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartMatchingJob");
 
-            var request = InstantiateClassGenerator.Execute<StartMatchingJobRequest>();
+            var request = InstantiateClassGenerator.Execute<StartMatchingJobRequest>(operation);
             var marshaller = new StartMatchingJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2423,7 +4133,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartMatchingJob");
 
-            var request = InstantiateClassGenerator.Execute<StartMatchingJobRequest>();
+            var request = InstantiateClassGenerator.Execute<StartMatchingJobRequest>(operation);
             var marshaller = new StartMatchingJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2455,7 +4165,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("StartMatchingJob");
 
-            var request = InstantiateClassGenerator.Execute<StartMatchingJobRequest>();
+            var request = InstantiateClassGenerator.Execute<StartMatchingJobRequest>(operation);
             var marshaller = new StartMatchingJobRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2487,7 +4197,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("TagResource");
 
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -2517,7 +4227,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("TagResource");
 
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2549,7 +4259,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("TagResource");
 
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2581,7 +4291,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("TagResource");
 
-            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>(operation);
             var marshaller = new TagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2613,7 +4323,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UntagResource");
 
-            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>(operation);
             var marshaller = new UntagResourceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -2643,7 +4353,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UntagResource");
 
-            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>(operation);
             var marshaller = new UntagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2675,7 +4385,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UntagResource");
 
-            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>(operation);
             var marshaller = new UntagResourceRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2703,11 +4413,201 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("EntityResolution")]
+        public void UpdateIdMappingWorkflowMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateIdMappingWorkflow");
+
+            var request = InstantiateClassGenerator.Execute<UpdateIdMappingWorkflowRequest>(operation);
+            var marshaller = new UpdateIdMappingWorkflowRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("UpdateIdMappingWorkflow", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = UpdateIdMappingWorkflowResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as UpdateIdMappingWorkflowResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("EntityResolution")]
+        public void UpdateIdMappingWorkflow_AccessDeniedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateIdMappingWorkflow");
+
+            var request = InstantiateClassGenerator.Execute<UpdateIdMappingWorkflowRequest>(operation);
+            var marshaller = new UpdateIdMappingWorkflowRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("UpdateIdMappingWorkflow", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","AccessDeniedException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = UpdateIdMappingWorkflowResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("EntityResolution")]
+        public void UpdateIdMappingWorkflow_InternalServerExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateIdMappingWorkflow");
+
+            var request = InstantiateClassGenerator.Execute<UpdateIdMappingWorkflowRequest>(operation);
+            var marshaller = new UpdateIdMappingWorkflowRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("UpdateIdMappingWorkflow", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InternalServerException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InternalServerException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = UpdateIdMappingWorkflowResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("EntityResolution")]
+        public void UpdateIdMappingWorkflow_ResourceNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateIdMappingWorkflow");
+
+            var request = InstantiateClassGenerator.Execute<UpdateIdMappingWorkflowRequest>(operation);
+            var marshaller = new UpdateIdMappingWorkflowRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("UpdateIdMappingWorkflow", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceNotFoundException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = UpdateIdMappingWorkflowResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("EntityResolution")]
+        public void UpdateIdMappingWorkflow_ThrottlingExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateIdMappingWorkflow");
+
+            var request = InstantiateClassGenerator.Execute<UpdateIdMappingWorkflowRequest>(operation);
+            var marshaller = new UpdateIdMappingWorkflowRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("UpdateIdMappingWorkflow", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottlingException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ThrottlingException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = UpdateIdMappingWorkflowResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("EntityResolution")]
+        public void UpdateIdMappingWorkflow_ValidationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateIdMappingWorkflow");
+
+            var request = InstantiateClassGenerator.Execute<UpdateIdMappingWorkflowRequest>(operation);
+            var marshaller = new UpdateIdMappingWorkflowRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("UpdateIdMappingWorkflow", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ValidationException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = UpdateIdMappingWorkflowResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("EntityResolution")]
         public void UpdateMatchingWorkflowMarshallTest()
         {
             var operation = service_model.FindOperation("UpdateMatchingWorkflow");
 
-            var request = InstantiateClassGenerator.Execute<UpdateMatchingWorkflowRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateMatchingWorkflowRequest>(operation);
             var marshaller = new UpdateMatchingWorkflowRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -2737,7 +4637,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateMatchingWorkflow");
 
-            var request = InstantiateClassGenerator.Execute<UpdateMatchingWorkflowRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateMatchingWorkflowRequest>(operation);
             var marshaller = new UpdateMatchingWorkflowRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2769,7 +4669,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateMatchingWorkflow");
 
-            var request = InstantiateClassGenerator.Execute<UpdateMatchingWorkflowRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateMatchingWorkflowRequest>(operation);
             var marshaller = new UpdateMatchingWorkflowRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2801,7 +4701,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateMatchingWorkflow");
 
-            var request = InstantiateClassGenerator.Execute<UpdateMatchingWorkflowRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateMatchingWorkflowRequest>(operation);
             var marshaller = new UpdateMatchingWorkflowRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2833,7 +4733,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateMatchingWorkflow");
 
-            var request = InstantiateClassGenerator.Execute<UpdateMatchingWorkflowRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateMatchingWorkflowRequest>(operation);
             var marshaller = new UpdateMatchingWorkflowRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2865,7 +4765,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("UpdateMatchingWorkflow");
 
-            var request = InstantiateClassGenerator.Execute<UpdateMatchingWorkflowRequest>();
+            var request = InstantiateClassGenerator.Execute<UpdateMatchingWorkflowRequest>(operation);
             var marshaller = new UpdateMatchingWorkflowRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -2885,6 +4785,228 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
             var response = UpdateMatchingWorkflowResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("EntityResolution")]
+        public void UpdateSchemaMappingMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateSchemaMapping");
+
+            var request = InstantiateClassGenerator.Execute<UpdateSchemaMappingRequest>(operation);
+            var marshaller = new UpdateSchemaMappingRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("UpdateSchemaMapping", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = UpdateSchemaMappingResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as UpdateSchemaMappingResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("EntityResolution")]
+        public void UpdateSchemaMapping_AccessDeniedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateSchemaMapping");
+
+            var request = InstantiateClassGenerator.Execute<UpdateSchemaMappingRequest>(operation);
+            var marshaller = new UpdateSchemaMappingRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("UpdateSchemaMapping", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","AccessDeniedException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = UpdateSchemaMappingResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("EntityResolution")]
+        public void UpdateSchemaMapping_ConflictExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateSchemaMapping");
+
+            var request = InstantiateClassGenerator.Execute<UpdateSchemaMappingRequest>(operation);
+            var marshaller = new UpdateSchemaMappingRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("UpdateSchemaMapping", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ConflictException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ConflictException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = UpdateSchemaMappingResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("EntityResolution")]
+        public void UpdateSchemaMapping_InternalServerExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateSchemaMapping");
+
+            var request = InstantiateClassGenerator.Execute<UpdateSchemaMappingRequest>(operation);
+            var marshaller = new UpdateSchemaMappingRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("UpdateSchemaMapping", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InternalServerException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InternalServerException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = UpdateSchemaMappingResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("EntityResolution")]
+        public void UpdateSchemaMapping_ResourceNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateSchemaMapping");
+
+            var request = InstantiateClassGenerator.Execute<UpdateSchemaMappingRequest>(operation);
+            var marshaller = new UpdateSchemaMappingRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("UpdateSchemaMapping", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceNotFoundException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = UpdateSchemaMappingResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("EntityResolution")]
+        public void UpdateSchemaMapping_ThrottlingExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateSchemaMapping");
+
+            var request = InstantiateClassGenerator.Execute<UpdateSchemaMappingRequest>(operation);
+            var marshaller = new UpdateSchemaMappingRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("UpdateSchemaMapping", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottlingException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ThrottlingException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = UpdateSchemaMappingResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("EntityResolution")]
+        public void UpdateSchemaMapping_ValidationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateSchemaMapping");
+
+            var request = InstantiateClassGenerator.Execute<UpdateSchemaMappingRequest>(operation);
+            var marshaller = new UpdateSchemaMappingRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("UpdateSchemaMapping", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ValidationException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = UpdateSchemaMappingResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }

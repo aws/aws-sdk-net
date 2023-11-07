@@ -42,7 +42,7 @@ namespace Amazon.Transfer.Model
         /// The name of the step, used as an identifier.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=30)]
+        [AWSProperty(Min=0, Max=30)]
         public string Name
         {
             get { return this._name; }
@@ -73,7 +73,7 @@ namespace Amazon.Transfer.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string SourceFileLocation
         {
             get { return this._sourceFileLocation; }

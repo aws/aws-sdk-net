@@ -45,6 +45,12 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CustomRoutingEndpointConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAttachmentArn())
+            {
+                context.Writer.WritePropertyName("AttachmentArn");
+                context.Writer.Write(requestObject.AttachmentArn);
+            }
+
             if(requestObject.IsSetEndpointId())
             {
                 context.Writer.WritePropertyName("EndpointId");

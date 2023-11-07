@@ -246,6 +246,10 @@
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Redshift.Model.CreateClusterRequest.IpAddressType</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Redshift.Model.CreateClusterRequest.KmsKeyId</property>
     <max>2147483647</max>
   </property-value-rule>
@@ -258,11 +262,11 @@
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Redshift.Model.CreateClusterRequest.MasterUsername</property>
+    <property>Amazon.Redshift.Model.CreateClusterRequest.MasterPasswordSecretKmsKeyId</property>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Redshift.Model.CreateClusterRequest.MasterUserPassword</property>
+    <property>Amazon.Redshift.Model.CreateClusterRequest.MasterUsername</property>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
@@ -639,6 +643,10 @@
     <pattern>^[a-zA-Z0-9\-_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Redshift.Model.DeleteResourcePolicyRequest.ResourceArn</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Redshift.Model.DeleteScheduledActionRequest.ScheduledActionName</property>
     <max>2147483647</max>
   </property-value-rule>
@@ -949,6 +957,22 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeHsmConfigurationsResponse.Marker</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.DescribeInboundIntegrationsRequest.IntegrationArn</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.DescribeInboundIntegrationsRequest.Marker</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.DescribeInboundIntegrationsRequest.TargetArn</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.DescribeInboundIntegrationsResponse.Marker</property>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
@@ -1265,6 +1289,10 @@
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Redshift.Model.FailoverPrimaryComputeRequest.ClusterIdentifier</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Redshift.Model.GetClusterCredentialsRequest.ClusterIdentifier</property>
     <max>2147483647</max>
   </property-value-rule>
@@ -1329,6 +1357,10 @@
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Redshift.Model.GetResourcePolicyRequest.ResourceArn</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyAquaConfigurationRequest.ClusterIdentifier</property>
     <max>2147483647</max>
   </property-value-rule>
@@ -1383,6 +1415,10 @@
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Redshift.Model.ModifyClusterRequest.IpAddressType</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyClusterRequest.KmsKeyId</property>
     <max>2147483647</max>
   </property-value-rule>
@@ -1391,7 +1427,7 @@
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Redshift.Model.ModifyClusterRequest.MasterUserPassword</property>
+    <property>Amazon.Redshift.Model.ModifyClusterRequest.MasterPasswordSecretKmsKeyId</property>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
@@ -1611,6 +1647,14 @@
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Redshift.Model.PutResourcePolicyRequest.Policy</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.PutResourcePolicyRequest.ResourceArn</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Redshift.Model.RebootClusterRequest.ClusterIdentifier</property>
     <max>2147483647</max>
   </property-value-rule>
@@ -1699,11 +1743,19 @@
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Redshift.Model.RestoreFromClusterSnapshotRequest.IpAddressType</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Redshift.Model.RestoreFromClusterSnapshotRequest.KmsKeyId</property>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.RestoreFromClusterSnapshotRequest.MaintenanceTrackName</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.RestoreFromClusterSnapshotRequest.MasterPasswordSecretKmsKeyId</property>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
@@ -1980,6 +2032,10 @@
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Redshift.Model.Cluster.IpAddressType</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Redshift.Model.Cluster.KmsKeyId</property>
     <max>2147483647</max>
   </property-value-rule>
@@ -1988,11 +2044,23 @@
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Redshift.Model.Cluster.MasterPasswordSecretArn</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.Cluster.MasterPasswordSecretKmsKeyId</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Redshift.Model.Cluster.MasterUsername</property>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Cluster.ModifyStatus</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.Cluster.MultiAZ</property>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
@@ -2268,6 +2336,26 @@
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Redshift.Model.InboundIntegration.IntegrationArn</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.InboundIntegration.SourceArn</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.InboundIntegration.TargetArn</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.IntegrationError.ErrorCode</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.IntegrationError.ErrorMessage</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Redshift.Model.IPRange.CIDRIP</property>
     <max>2147483647</max>
   </property-value-rule>
@@ -2285,6 +2373,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.NetworkInterface.AvailabilityZone</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.NetworkInterface.Ipv6Address</property>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
@@ -2379,10 +2471,6 @@
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Redshift.Model.PendingModifiedValues.MasterUserPassword</property>
-    <max>2147483647</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.Redshift.Model.PendingModifiedValues.NodeType</property>
     <max>2147483647</max>
   </property-value-rule>
@@ -2455,6 +2543,14 @@
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Redshift.Model.ResourcePolicy.Policy</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.ResourcePolicy.ResourceArn</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Redshift.Model.RestoreStatus.Status</property>
     <max>2147483647</max>
   </property-value-rule>
@@ -2464,6 +2560,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.RevisionTarget.Description</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.SecondaryClusterInfo.AvailabilityZone</property>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
@@ -2492,6 +2592,14 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Snapshot.MaintenanceTrackName</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.Snapshot.MasterPasswordSecretArn</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.Snapshot.MasterPasswordSecretKmsKeyId</property>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>

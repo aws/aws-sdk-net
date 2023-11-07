@@ -49,7 +49,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("PutAuditEvents");
 
-            var request = InstantiateClassGenerator.Execute<PutAuditEventsRequest>();
+            var request = InstantiateClassGenerator.Execute<PutAuditEventsRequest>(operation);
             var marshaller = new PutAuditEventsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
@@ -79,7 +79,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("PutAuditEvents");
 
-            var request = InstantiateClassGenerator.Execute<PutAuditEventsRequest>();
+            var request = InstantiateClassGenerator.Execute<PutAuditEventsRequest>(operation);
             var marshaller = new PutAuditEventsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -111,7 +111,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("PutAuditEvents");
 
-            var request = InstantiateClassGenerator.Execute<PutAuditEventsRequest>();
+            var request = InstantiateClassGenerator.Execute<PutAuditEventsRequest>(operation);
             var marshaller = new PutAuditEventsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -143,7 +143,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("PutAuditEvents");
 
-            var request = InstantiateClassGenerator.Execute<PutAuditEventsRequest>();
+            var request = InstantiateClassGenerator.Execute<PutAuditEventsRequest>(operation);
             var marshaller = new PutAuditEventsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -175,7 +175,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("PutAuditEvents");
 
-            var request = InstantiateClassGenerator.Execute<PutAuditEventsRequest>();
+            var request = InstantiateClassGenerator.Execute<PutAuditEventsRequest>(operation);
             var marshaller = new PutAuditEventsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -207,7 +207,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("PutAuditEvents");
 
-            var request = InstantiateClassGenerator.Execute<PutAuditEventsRequest>();
+            var request = InstantiateClassGenerator.Execute<PutAuditEventsRequest>(operation);
             var marshaller = new PutAuditEventsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -239,7 +239,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("PutAuditEvents");
 
-            var request = InstantiateClassGenerator.Execute<PutAuditEventsRequest>();
+            var request = InstantiateClassGenerator.Execute<PutAuditEventsRequest>(operation);
             var marshaller = new PutAuditEventsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 

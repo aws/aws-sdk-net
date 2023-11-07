@@ -30,7 +30,7 @@ namespace Amazon.MedicalImaging.Model
 {
     /// <summary>
     /// Container for the parameters to the ListDatastores operation.
-    /// List data stores created by this AWS account.
+    /// List data stores.
     /// </summary>
     public partial class ListDatastoresRequest : AmazonMedicalImagingRequest
     {

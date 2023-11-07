@@ -100,6 +100,12 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.DriftStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("lastAppComplianceEvaluationTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.LastAppComplianceEvaluationTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -110,6 +116,18 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = DoubleUnmarshaller.Instance;
                     unmarshalledObject.ResiliencyScore = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("rpoInSecs", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.RpoInSecs = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("rtoInSecs", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.RtoInSecs = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("status", targetDepth))

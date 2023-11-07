@@ -34,6 +34,7 @@ namespace Amazon.NetworkFirewall.Model
     /// </summary>
     public partial class RuleGroupResponse
     {
+        private List<AnalysisResult> _analysisResults = new List<AnalysisResult>();
         private int? _capacity;
         private int? _consumedCapacity;
         private string _description;
@@ -48,6 +49,29 @@ namespace Amazon.NetworkFirewall.Model
         private SourceMetadata _sourceMetadata;
         private List<Tag> _tags = new List<Tag>();
         private RuleGroupType _type;
+
+        /// <summary>
+        /// Gets and sets the property AnalysisResults. 
+        /// <para>
+        /// The list of analysis results for <code>AnalyzeRuleGroup</code>. If you set <code>AnalyzeRuleGroup</code>
+        /// to <code>TRUE</code> in <a>CreateRuleGroup</a>, <a>UpdateRuleGroup</a>, or <a>DescribeRuleGroup</a>,
+        /// Network Firewall analyzes the rule group and identifies the rules that might adversely
+        /// effect your firewall's functionality. For example, if Network Firewall detects a rule
+        /// that's routing traffic asymmetrically, which impacts the service's ability to properly
+        /// process traffic, the service includes the rule in the list of analysis results.
+        /// </para>
+        /// </summary>
+        public List<AnalysisResult> AnalysisResults
+        {
+            get { return this._analysisResults; }
+            set { this._analysisResults = value; }
+        }
+
+        // Check to see if AnalysisResults property is set
+        internal bool IsSetAnalysisResults()
+        {
+            return this._analysisResults != null && this._analysisResults.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property Capacity. 

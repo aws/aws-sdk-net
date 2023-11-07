@@ -354,6 +354,78 @@ namespace Amazon.RedshiftServerless
 
         #endregion
         
+        #region  CreateCustomDomainAssociation
+
+        /// <summary>
+        /// Creates a custom domain association for Amazon Redshift Serverless.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCustomDomainAssociation service method.</param>
+        /// 
+        /// <returns>The response from the CreateCustomDomainAssociation service method, as returned by RedshiftServerless.</returns>
+        /// <exception cref="Amazon.RedshiftServerless.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ConflictException">
+        /// The submitted action has conflicts.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/CreateCustomDomainAssociation">REST API Reference for CreateCustomDomainAssociation Operation</seealso>
+        public virtual CreateCustomDomainAssociationResponse CreateCustomDomainAssociation(CreateCustomDomainAssociationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateCustomDomainAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCustomDomainAssociationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateCustomDomainAssociationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateCustomDomainAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateCustomDomainAssociation operation on AmazonRedshiftServerlessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateCustomDomainAssociation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/CreateCustomDomainAssociation">REST API Reference for CreateCustomDomainAssociation Operation</seealso>
+        public virtual IAsyncResult BeginCreateCustomDomainAssociation(CreateCustomDomainAssociationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateCustomDomainAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCustomDomainAssociationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateCustomDomainAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateCustomDomainAssociation.</param>
+        /// 
+        /// <returns>Returns a  CreateCustomDomainAssociationResult from RedshiftServerless.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/CreateCustomDomainAssociation">REST API Reference for CreateCustomDomainAssociation Operation</seealso>
+        public virtual CreateCustomDomainAssociationResponse EndCreateCustomDomainAssociation(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateCustomDomainAssociationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateEndpointAccess
 
         /// <summary>
@@ -704,6 +776,78 @@ namespace Amazon.RedshiftServerless
         public virtual CreateWorkgroupResponse EndCreateWorkgroup(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateWorkgroupResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteCustomDomainAssociation
+
+        /// <summary>
+        /// Deletes a custom domain association for Amazon Redshift Serverless.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCustomDomainAssociation service method.</param>
+        /// 
+        /// <returns>The response from the DeleteCustomDomainAssociation service method, as returned by RedshiftServerless.</returns>
+        /// <exception cref="Amazon.RedshiftServerless.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ConflictException">
+        /// The submitted action has conflicts.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/DeleteCustomDomainAssociation">REST API Reference for DeleteCustomDomainAssociation Operation</seealso>
+        public virtual DeleteCustomDomainAssociationResponse DeleteCustomDomainAssociation(DeleteCustomDomainAssociationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCustomDomainAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCustomDomainAssociationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteCustomDomainAssociationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteCustomDomainAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCustomDomainAssociation operation on AmazonRedshiftServerlessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteCustomDomainAssociation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/DeleteCustomDomainAssociation">REST API Reference for DeleteCustomDomainAssociation Operation</seealso>
+        public virtual IAsyncResult BeginDeleteCustomDomainAssociation(DeleteCustomDomainAssociationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCustomDomainAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCustomDomainAssociationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteCustomDomainAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteCustomDomainAssociation.</param>
+        /// 
+        /// <returns>Returns a  DeleteCustomDomainAssociationResult from RedshiftServerless.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/DeleteCustomDomainAssociation">REST API Reference for DeleteCustomDomainAssociation Operation</seealso>
+        public virtual DeleteCustomDomainAssociationResponse EndDeleteCustomDomainAssociation(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteCustomDomainAssociationResponse>(asyncResult);
         }
 
         #endregion
@@ -1173,6 +1317,78 @@ namespace Amazon.RedshiftServerless
         public virtual GetCredentialsResponse EndGetCredentials(IAsyncResult asyncResult)
         {
             return EndInvoke<GetCredentialsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetCustomDomainAssociation
+
+        /// <summary>
+        /// Gets information about a specific custom domain association.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCustomDomainAssociation service method.</param>
+        /// 
+        /// <returns>The response from the GetCustomDomainAssociation service method, as returned by RedshiftServerless.</returns>
+        /// <exception cref="Amazon.RedshiftServerless.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ConflictException">
+        /// The submitted action has conflicts.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetCustomDomainAssociation">REST API Reference for GetCustomDomainAssociation Operation</seealso>
+        public virtual GetCustomDomainAssociationResponse GetCustomDomainAssociation(GetCustomDomainAssociationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCustomDomainAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCustomDomainAssociationResponseUnmarshaller.Instance;
+
+            return Invoke<GetCustomDomainAssociationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetCustomDomainAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetCustomDomainAssociation operation on AmazonRedshiftServerlessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetCustomDomainAssociation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetCustomDomainAssociation">REST API Reference for GetCustomDomainAssociation Operation</seealso>
+        public virtual IAsyncResult BeginGetCustomDomainAssociation(GetCustomDomainAssociationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCustomDomainAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCustomDomainAssociationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetCustomDomainAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetCustomDomainAssociation.</param>
+        /// 
+        /// <returns>Returns a  GetCustomDomainAssociationResult from RedshiftServerless.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetCustomDomainAssociation">REST API Reference for GetCustomDomainAssociation Operation</seealso>
+        public virtual GetCustomDomainAssociationResponse EndGetCustomDomainAssociation(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetCustomDomainAssociationResponse>(asyncResult);
         }
 
         #endregion
@@ -1683,6 +1899,75 @@ namespace Amazon.RedshiftServerless
         public virtual GetWorkgroupResponse EndGetWorkgroup(IAsyncResult asyncResult)
         {
             return EndInvoke<GetWorkgroupResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListCustomDomainAssociations
+
+        /// <summary>
+        /// Lists custom domain associations for Amazon Redshift Serverless.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCustomDomainAssociations service method.</param>
+        /// 
+        /// <returns>The response from the ListCustomDomainAssociations service method, as returned by RedshiftServerless.</returns>
+        /// <exception cref="Amazon.RedshiftServerless.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.InvalidPaginationException">
+        /// The provided pagination token is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListCustomDomainAssociations">REST API Reference for ListCustomDomainAssociations Operation</seealso>
+        public virtual ListCustomDomainAssociationsResponse ListCustomDomainAssociations(ListCustomDomainAssociationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCustomDomainAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCustomDomainAssociationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListCustomDomainAssociationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListCustomDomainAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListCustomDomainAssociations operation on AmazonRedshiftServerlessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListCustomDomainAssociations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListCustomDomainAssociations">REST API Reference for ListCustomDomainAssociations Operation</seealso>
+        public virtual IAsyncResult BeginListCustomDomainAssociations(ListCustomDomainAssociationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCustomDomainAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCustomDomainAssociationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListCustomDomainAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListCustomDomainAssociations.</param>
+        /// 
+        /// <returns>Returns a  ListCustomDomainAssociationsResult from RedshiftServerless.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListCustomDomainAssociations">REST API Reference for ListCustomDomainAssociations Operation</seealso>
+        public virtual ListCustomDomainAssociationsResponse EndListCustomDomainAssociations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListCustomDomainAssociationsResponse>(asyncResult);
         }
 
         #endregion
@@ -2598,6 +2883,78 @@ namespace Amazon.RedshiftServerless
         public virtual UntagResourceResponse EndUntagResource(IAsyncResult asyncResult)
         {
             return EndInvoke<UntagResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateCustomDomainAssociation
+
+        /// <summary>
+        /// Updates an Amazon Redshift Serverless certificate associated with a custom domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCustomDomainAssociation service method.</param>
+        /// 
+        /// <returns>The response from the UpdateCustomDomainAssociation service method, as returned by RedshiftServerless.</returns>
+        /// <exception cref="Amazon.RedshiftServerless.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ConflictException">
+        /// The submitted action has conflicts.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/UpdateCustomDomainAssociation">REST API Reference for UpdateCustomDomainAssociation Operation</seealso>
+        public virtual UpdateCustomDomainAssociationResponse UpdateCustomDomainAssociation(UpdateCustomDomainAssociationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateCustomDomainAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCustomDomainAssociationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateCustomDomainAssociationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateCustomDomainAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCustomDomainAssociation operation on AmazonRedshiftServerlessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateCustomDomainAssociation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/UpdateCustomDomainAssociation">REST API Reference for UpdateCustomDomainAssociation Operation</seealso>
+        public virtual IAsyncResult BeginUpdateCustomDomainAssociation(UpdateCustomDomainAssociationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateCustomDomainAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCustomDomainAssociationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateCustomDomainAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateCustomDomainAssociation.</param>
+        /// 
+        /// <returns>Returns a  UpdateCustomDomainAssociationResult from RedshiftServerless.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/UpdateCustomDomainAssociation">REST API Reference for UpdateCustomDomainAssociation Operation</seealso>
+        public virtual UpdateCustomDomainAssociationResponse EndUpdateCustomDomainAssociation(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateCustomDomainAssociationResponse>(asyncResult);
         }
 
         #endregion

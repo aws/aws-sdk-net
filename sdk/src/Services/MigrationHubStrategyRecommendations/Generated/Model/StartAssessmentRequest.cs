@@ -34,9 +34,28 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
     /// </summary>
     public partial class StartAssessmentRequest : AmazonMigrationHubStrategyRecommendationsRequest
     {
+        private AssessmentDataSourceType _assessmentDataSourceType;
         private List<AssessmentTarget> _assessmentTargets = new List<AssessmentTarget>();
         private string _s3bucketForAnalysisData;
         private string _s3bucketForReportData;
+
+        /// <summary>
+        /// Gets and sets the property AssessmentDataSourceType. 
+        /// <para>
+        /// The data source type of an assessment to be started.
+        /// </para>
+        /// </summary>
+        public AssessmentDataSourceType AssessmentDataSourceType
+        {
+            get { return this._assessmentDataSourceType; }
+            set { this._assessmentDataSourceType = value; }
+        }
+
+        // Check to see if AssessmentDataSourceType property is set
+        internal bool IsSetAssessmentDataSourceType()
+        {
+            return this._assessmentDataSourceType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AssessmentTargets. 

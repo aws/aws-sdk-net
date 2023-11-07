@@ -120,7 +120,7 @@ namespace Amazon.Transfer.Model
         /// A <code>BaseDirectory</code> example is <code>/DOC-EXAMPLE-BUCKET/home/mydirectory</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=1024)]
+        [AWSProperty(Required=true, Min=0, Max=1024)]
         public string BaseDirectory
         {
             get { return this._baseDirectory; }

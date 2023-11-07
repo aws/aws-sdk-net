@@ -104,7 +104,20 @@ namespace Amazon.ConnectWisdomService.Model
         /// <summary>
         /// Gets and sets the property ServerSideEncryptionConfiguration. 
         /// <para>
-        /// The KMS key used for encryption.
+        /// The configuration information for the customer managed key used for encryption. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The customer managed key must have a policy that allows <code>kms:CreateGrant</code>
+        /// and <code> kms:DescribeKey</code> permissions to the IAM identity using the key to
+        /// invoke Wisdom. To use Wisdom with chat, the key policy must also allow <code>kms:Decrypt</code>,
+        /// <code>kms:GenerateDataKey*</code>, and <code>kms:DescribeKey</code> permissions to
+        /// the <code>connect.amazonaws.com</code> service principal. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about setting up a customer managed key for Wisdom, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-wisdom.html">Enable
+        /// Amazon Connect Wisdom for your instance</a>.
         /// </para>
         /// </summary>
         public ServerSideEncryptionConfiguration ServerSideEncryptionConfiguration

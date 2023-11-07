@@ -60,6 +60,7 @@ namespace Amazon.OpenSearchService.Model
         /// A non-empty list of values for the specified filter field.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public List<string> Value
         {
             get { return this._value; }

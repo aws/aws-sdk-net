@@ -51,7 +51,7 @@ namespace Amazon.Transfer.Model
         /// Represents an entry for <code>HomeDirectoryMappings</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=1024)]
+        [AWSProperty(Required=true, Min=0, Max=1024)]
         public string Entry
         {
             get { return this._entry; }
@@ -70,7 +70,7 @@ namespace Amazon.Transfer.Model
         /// Represents the map target that is used in a <code>HomeDirectorymapEntry</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=1024)]
+        [AWSProperty(Required=true, Min=0, Max=1024)]
         public string Target
         {
             get { return this._target; }

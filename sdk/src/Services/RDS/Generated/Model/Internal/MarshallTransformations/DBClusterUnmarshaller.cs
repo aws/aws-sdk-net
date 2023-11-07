@@ -445,6 +445,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.PubliclyAccessible = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("RdsCustomClusterConfiguration", targetDepth))
+                    {
+                        var unmarshaller = RdsCustomClusterConfigurationUnmarshaller.Instance;
+                        unmarshalledObject.RdsCustomClusterConfiguration = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("ReaderEndpoint", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

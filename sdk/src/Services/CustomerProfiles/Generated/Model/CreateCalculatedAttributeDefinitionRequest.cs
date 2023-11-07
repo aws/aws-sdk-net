@@ -111,7 +111,7 @@ namespace Amazon.CustomerProfiles.Model
         /// The description of the calculated attribute.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1000)]
+        [AWSProperty(Sensitive=true, Min=1, Max=1000)]
         public string Description
         {
             get { return this._description; }

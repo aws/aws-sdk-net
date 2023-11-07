@@ -38,6 +38,7 @@ namespace Amazon.Drs.Model
         private bool? _copyTags;
         private string _exportBucketArn;
         private LaunchDisposition _launchDisposition;
+        private bool? _launchIntoSourceInstance;
         private Licensing _licensing;
         private bool? _postLaunchEnabled;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
@@ -114,6 +115,26 @@ namespace Amazon.Drs.Model
         internal bool IsSetLaunchDisposition()
         {
             return this._launchDisposition != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LaunchIntoSourceInstance. 
+        /// <para>
+        /// DRS will set the 'launch into instance ID' of any source server when performing a
+        /// drill, recovery or failback to the previous region or availability zone, using the
+        /// instance ID of the source instance.
+        /// </para>
+        /// </summary>
+        public bool LaunchIntoSourceInstance
+        {
+            get { return this._launchIntoSourceInstance.GetValueOrDefault(); }
+            set { this._launchIntoSourceInstance = value; }
+        }
+
+        // Check to see if LaunchIntoSourceInstance property is set
+        internal bool IsSetLaunchIntoSourceInstance()
+        {
+            return this._launchIntoSourceInstance.HasValue; 
         }
 
         /// <summary>

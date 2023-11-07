@@ -63,10 +63,14 @@ namespace Amazon.Redshift.Model
         private bool? _enhancedVpcRouting;
         private string _hsmClientCertificateIdentifier;
         private string _hsmConfigurationIdentifier;
+        private string _ipAddressType;
         private string _kmsKeyId;
         private string _maintenanceTrackName;
+        private bool? _manageMasterPassword;
         private int? _manualSnapshotRetentionPeriod;
+        private string _masterPasswordSecretKmsKeyId;
         private string _masterUserPassword;
+        private bool? _multiAZ;
         private string _newClusterIdentifier;
         private string _nodeType;
         private int? _numberOfNodes;
@@ -454,6 +458,26 @@ namespace Amazon.Redshift.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IpAddressType. 
+        /// <para>
+        /// The IP address types that the cluster supports. Possible values are <code>ipv4</code>
+        /// and <code>dualstack</code>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=2147483647)]
+        public string IpAddressType
+        {
+            get { return this._ipAddressType; }
+            set { this._ipAddressType = value; }
+        }
+
+        // Check to see if IpAddressType property is set
+        internal bool IsSetIpAddressType()
+        {
+            return this._ipAddressType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
         /// The Key Management Service (KMS) key ID of the encryption key that you want to use
@@ -497,6 +521,27 @@ namespace Amazon.Redshift.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ManageMasterPassword. 
+        /// <para>
+        /// If <code>true</code>, Amazon Redshift uses Secrets Manager to manage this cluster's
+        /// admin credentials. You can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code>
+        /// is true. If <code>ManageMasterPassword</code> is false or not set, Amazon Redshift
+        /// uses <code>MasterUserPassword</code> for the admin user account's password. 
+        /// </para>
+        /// </summary>
+        public bool ManageMasterPassword
+        {
+            get { return this._manageMasterPassword.GetValueOrDefault(); }
+            set { this._manageMasterPassword = value; }
+        }
+
+        // Check to see if ManageMasterPassword property is set
+        internal bool IsSetManageMasterPassword()
+        {
+            return this._manageMasterPassword.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ManualSnapshotRetentionPeriod. 
         /// <para>
         /// The default for number of days that a newly created manual snapshot is retained. If
@@ -525,12 +570,38 @@ namespace Amazon.Redshift.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MasterPasswordSecretKmsKeyId. 
+        /// <para>
+        /// The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's
+        /// admin credentials secret. You can only use this parameter if <code>ManageMasterPassword</code>
+        /// is true.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=2147483647)]
+        public string MasterPasswordSecretKmsKeyId
+        {
+            get { return this._masterPasswordSecretKmsKeyId; }
+            set { this._masterPasswordSecretKmsKeyId = value; }
+        }
+
+        // Check to see if MasterPasswordSecretKmsKeyId property is set
+        internal bool IsSetMasterPasswordSecretKmsKeyId()
+        {
+            return this._masterPasswordSecretKmsKeyId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property MasterUserPassword. 
         /// <para>
         /// The new password for the cluster admin user. This change is asynchronously applied
         /// as soon as possible. Between the time of the request and the completion of the request,
         /// the <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code>
         /// element of the operation response. 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code>
+        /// is <code>true</code>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -568,7 +639,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Max=2147483647)]
+        [AWSProperty(Sensitive=true)]
         public string MasterUserPassword
         {
             get { return this._masterUserPassword; }
@@ -579,6 +650,25 @@ namespace Amazon.Redshift.Model
         internal bool IsSetMasterUserPassword()
         {
             return this._masterUserPassword != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MultiAZ. 
+        /// <para>
+        /// If true and the cluster is currently only deployed in a single Availability Zone,
+        /// the cluster will be modified to be deployed in two Availability Zones.
+        /// </para>
+        /// </summary>
+        public bool MultiAZ
+        {
+            get { return this._multiAZ.GetValueOrDefault(); }
+            set { this._multiAZ = value; }
+        }
+
+        // Check to see if MultiAZ property is set
+        internal bool IsSetMultiAZ()
+        {
+            return this._multiAZ.HasValue; 
         }
 
         /// <summary>

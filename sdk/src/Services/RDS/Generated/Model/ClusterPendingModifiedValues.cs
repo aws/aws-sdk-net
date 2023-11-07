@@ -42,6 +42,7 @@ namespace Amazon.RDS.Model
         private int? _iops;
         private string _masterUserPassword;
         private PendingCloudwatchLogsExports _pendingCloudwatchLogsExports;
+        private RdsCustomClusterConfiguration _rdsCustomClusterConfiguration;
         private string _storageType;
 
         /// <summary>
@@ -187,6 +188,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetPendingCloudwatchLogsExports()
         {
             return this._pendingCloudwatchLogsExports != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RdsCustomClusterConfiguration. 
+        /// <para>
+        /// Reserved for future use.
+        /// </para>
+        /// </summary>
+        public RdsCustomClusterConfiguration RdsCustomClusterConfiguration
+        {
+            get { return this._rdsCustomClusterConfiguration; }
+            set { this._rdsCustomClusterConfiguration = value; }
+        }
+
+        // Check to see if RdsCustomClusterConfiguration property is set
+        internal bool IsSetRdsCustomClusterConfiguration()
+        {
+            return this._rdsCustomClusterConfiguration != null;
         }
 
         /// <summary>

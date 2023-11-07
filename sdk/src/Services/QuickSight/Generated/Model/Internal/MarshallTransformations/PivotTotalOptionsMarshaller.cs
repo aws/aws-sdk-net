@@ -74,6 +74,22 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ScrollStatus);
             }
 
+            if(requestObject.IsSetTotalAggregationOptions())
+            {
+                context.Writer.WritePropertyName("TotalAggregationOptions");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectTotalAggregationOptionsListValue in requestObject.TotalAggregationOptions)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = TotalAggregationOptionMarshaller.Instance;
+                    marshaller.Marshall(requestObjectTotalAggregationOptionsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetTotalCellStyle())
             {
                 context.Writer.WritePropertyName("TotalCellStyle");

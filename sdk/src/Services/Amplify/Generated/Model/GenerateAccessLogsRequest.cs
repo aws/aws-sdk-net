@@ -42,7 +42,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property AppId. 
         /// <para>
-        ///  The unique ID for an Amplify app. 
+        /// The unique ID for an Amplify app. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=20)]
@@ -61,7 +61,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
-        ///  The name of the domain. 
+        /// The name of the domain. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=64)]
@@ -80,7 +80,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        ///  The time at which the logs should end. The time range specified is inclusive of the
+        /// The time at which the logs should end. The time range specified is inclusive of the
         /// end time. 
         /// </para>
         /// </summary>
@@ -99,7 +99,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        ///  The time at which the logs should start. The time range specified is inclusive of
+        /// The time at which the logs should start. The time range specified is inclusive of
         /// the start time. 
         /// </para>
         /// </summary>

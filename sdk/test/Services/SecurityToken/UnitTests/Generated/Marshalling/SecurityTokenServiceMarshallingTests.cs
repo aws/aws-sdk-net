@@ -48,7 +48,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("AssumeRole");
 
-            var request = InstantiateClassGenerator.Execute<AssumeRoleRequest>();
+            var request = InstantiateClassGenerator.Execute<AssumeRoleRequest>(operation);
             var marshaller = new AssumeRoleRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
@@ -70,7 +70,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("AssumeRole");
 
-            var request = InstantiateClassGenerator.Execute<AssumeRoleRequest>();
+            var request = InstantiateClassGenerator.Execute<AssumeRoleRequest>(operation);
             var marshaller = new AssumeRoleRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -93,7 +93,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("AssumeRole");
 
-            var request = InstantiateClassGenerator.Execute<AssumeRoleRequest>();
+            var request = InstantiateClassGenerator.Execute<AssumeRoleRequest>(operation);
             var marshaller = new AssumeRoleRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -116,7 +116,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("AssumeRole");
 
-            var request = InstantiateClassGenerator.Execute<AssumeRoleRequest>();
+            var request = InstantiateClassGenerator.Execute<AssumeRoleRequest>(operation);
             var marshaller = new AssumeRoleRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -139,7 +139,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("AssumeRole");
 
-            var request = InstantiateClassGenerator.Execute<AssumeRoleRequest>();
+            var request = InstantiateClassGenerator.Execute<AssumeRoleRequest>(operation);
             var marshaller = new AssumeRoleRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -162,7 +162,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("AssumeRoleWithSAML");
 
-            var request = InstantiateClassGenerator.Execute<AssumeRoleWithSAMLRequest>();
+            var request = InstantiateClassGenerator.Execute<AssumeRoleWithSAMLRequest>(operation);
             var marshaller = new AssumeRoleWithSAMLRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
@@ -184,7 +184,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("AssumeRoleWithSAML");
 
-            var request = InstantiateClassGenerator.Execute<AssumeRoleWithSAMLRequest>();
+            var request = InstantiateClassGenerator.Execute<AssumeRoleWithSAMLRequest>(operation);
             var marshaller = new AssumeRoleWithSAMLRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -207,7 +207,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("AssumeRoleWithSAML");
 
-            var request = InstantiateClassGenerator.Execute<AssumeRoleWithSAMLRequest>();
+            var request = InstantiateClassGenerator.Execute<AssumeRoleWithSAMLRequest>(operation);
             var marshaller = new AssumeRoleWithSAMLRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -230,7 +230,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("AssumeRoleWithSAML");
 
-            var request = InstantiateClassGenerator.Execute<AssumeRoleWithSAMLRequest>();
+            var request = InstantiateClassGenerator.Execute<AssumeRoleWithSAMLRequest>(operation);
             var marshaller = new AssumeRoleWithSAMLRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -253,7 +253,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("AssumeRoleWithSAML");
 
-            var request = InstantiateClassGenerator.Execute<AssumeRoleWithSAMLRequest>();
+            var request = InstantiateClassGenerator.Execute<AssumeRoleWithSAMLRequest>(operation);
             var marshaller = new AssumeRoleWithSAMLRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -276,7 +276,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("AssumeRoleWithSAML");
 
-            var request = InstantiateClassGenerator.Execute<AssumeRoleWithSAMLRequest>();
+            var request = InstantiateClassGenerator.Execute<AssumeRoleWithSAMLRequest>(operation);
             var marshaller = new AssumeRoleWithSAMLRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -299,7 +299,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("AssumeRoleWithSAML");
 
-            var request = InstantiateClassGenerator.Execute<AssumeRoleWithSAMLRequest>();
+            var request = InstantiateClassGenerator.Execute<AssumeRoleWithSAMLRequest>(operation);
             var marshaller = new AssumeRoleWithSAMLRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -322,7 +322,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("AssumeRoleWithWebIdentity");
 
-            var request = InstantiateClassGenerator.Execute<AssumeRoleWithWebIdentityRequest>();
+            var request = InstantiateClassGenerator.Execute<AssumeRoleWithWebIdentityRequest>(operation);
             var marshaller = new AssumeRoleWithWebIdentityRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
@@ -344,7 +344,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("AssumeRoleWithWebIdentity");
 
-            var request = InstantiateClassGenerator.Execute<AssumeRoleWithWebIdentityRequest>();
+            var request = InstantiateClassGenerator.Execute<AssumeRoleWithWebIdentityRequest>(operation);
             var marshaller = new AssumeRoleWithWebIdentityRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -367,7 +367,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("AssumeRoleWithWebIdentity");
 
-            var request = InstantiateClassGenerator.Execute<AssumeRoleWithWebIdentityRequest>();
+            var request = InstantiateClassGenerator.Execute<AssumeRoleWithWebIdentityRequest>(operation);
             var marshaller = new AssumeRoleWithWebIdentityRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -390,7 +390,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("AssumeRoleWithWebIdentity");
 
-            var request = InstantiateClassGenerator.Execute<AssumeRoleWithWebIdentityRequest>();
+            var request = InstantiateClassGenerator.Execute<AssumeRoleWithWebIdentityRequest>(operation);
             var marshaller = new AssumeRoleWithWebIdentityRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -413,7 +413,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("AssumeRoleWithWebIdentity");
 
-            var request = InstantiateClassGenerator.Execute<AssumeRoleWithWebIdentityRequest>();
+            var request = InstantiateClassGenerator.Execute<AssumeRoleWithWebIdentityRequest>(operation);
             var marshaller = new AssumeRoleWithWebIdentityRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -436,7 +436,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("AssumeRoleWithWebIdentity");
 
-            var request = InstantiateClassGenerator.Execute<AssumeRoleWithWebIdentityRequest>();
+            var request = InstantiateClassGenerator.Execute<AssumeRoleWithWebIdentityRequest>(operation);
             var marshaller = new AssumeRoleWithWebIdentityRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -459,7 +459,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("AssumeRoleWithWebIdentity");
 
-            var request = InstantiateClassGenerator.Execute<AssumeRoleWithWebIdentityRequest>();
+            var request = InstantiateClassGenerator.Execute<AssumeRoleWithWebIdentityRequest>(operation);
             var marshaller = new AssumeRoleWithWebIdentityRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -482,7 +482,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("AssumeRoleWithWebIdentity");
 
-            var request = InstantiateClassGenerator.Execute<AssumeRoleWithWebIdentityRequest>();
+            var request = InstantiateClassGenerator.Execute<AssumeRoleWithWebIdentityRequest>(operation);
             var marshaller = new AssumeRoleWithWebIdentityRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -505,7 +505,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DecodeAuthorizationMessage");
 
-            var request = InstantiateClassGenerator.Execute<DecodeAuthorizationMessageRequest>();
+            var request = InstantiateClassGenerator.Execute<DecodeAuthorizationMessageRequest>(operation);
             var marshaller = new DecodeAuthorizationMessageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
@@ -527,7 +527,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("DecodeAuthorizationMessage");
 
-            var request = InstantiateClassGenerator.Execute<DecodeAuthorizationMessageRequest>();
+            var request = InstantiateClassGenerator.Execute<DecodeAuthorizationMessageRequest>(operation);
             var marshaller = new DecodeAuthorizationMessageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -550,7 +550,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetAccessKeyInfo");
 
-            var request = InstantiateClassGenerator.Execute<GetAccessKeyInfoRequest>();
+            var request = InstantiateClassGenerator.Execute<GetAccessKeyInfoRequest>(operation);
             var marshaller = new GetAccessKeyInfoRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
@@ -572,7 +572,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetCallerIdentity");
 
-            var request = InstantiateClassGenerator.Execute<GetCallerIdentityRequest>();
+            var request = InstantiateClassGenerator.Execute<GetCallerIdentityRequest>(operation);
             var marshaller = new GetCallerIdentityRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
@@ -594,7 +594,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetFederationToken");
 
-            var request = InstantiateClassGenerator.Execute<GetFederationTokenRequest>();
+            var request = InstantiateClassGenerator.Execute<GetFederationTokenRequest>(operation);
             var marshaller = new GetFederationTokenRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
@@ -616,7 +616,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetFederationToken");
 
-            var request = InstantiateClassGenerator.Execute<GetFederationTokenRequest>();
+            var request = InstantiateClassGenerator.Execute<GetFederationTokenRequest>(operation);
             var marshaller = new GetFederationTokenRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -639,7 +639,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetFederationToken");
 
-            var request = InstantiateClassGenerator.Execute<GetFederationTokenRequest>();
+            var request = InstantiateClassGenerator.Execute<GetFederationTokenRequest>(operation);
             var marshaller = new GetFederationTokenRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -662,7 +662,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetFederationToken");
 
-            var request = InstantiateClassGenerator.Execute<GetFederationTokenRequest>();
+            var request = InstantiateClassGenerator.Execute<GetFederationTokenRequest>(operation);
             var marshaller = new GetFederationTokenRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
@@ -685,7 +685,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetSessionToken");
 
-            var request = InstantiateClassGenerator.Execute<GetSessionTokenRequest>();
+            var request = InstantiateClassGenerator.Execute<GetSessionTokenRequest>(operation);
             var marshaller = new GetSessionTokenRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
@@ -707,7 +707,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var operation = service_model.FindOperation("GetSessionToken");
 
-            var request = InstantiateClassGenerator.Execute<GetSessionTokenRequest>();
+            var request = InstantiateClassGenerator.Execute<GetSessionTokenRequest>(operation);
             var marshaller = new GetSessionTokenRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 

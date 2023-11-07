@@ -71,6 +71,17 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetBackend())
+                {
+                    context.Writer.WritePropertyName("backend");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = BackendMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Backend, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetBackendEnvironmentArn())
                 {
                     context.Writer.WritePropertyName("backendEnvironmentArn");

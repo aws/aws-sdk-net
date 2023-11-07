@@ -66,7 +66,7 @@ namespace Amazon.Transfer.Model
         /// Specifies the name of the security policy that is attached to the server.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=100)]
+        [AWSProperty(Required=true, Min=0, Max=100)]
         public string SecurityPolicyName
         {
             get { return this._securityPolicyName; }

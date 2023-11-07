@@ -33,6 +33,14 @@ namespace Amazon.Neptunedata.Model
     /// Starts a Neptune bulk loader job to load data from an Amazon S3 bucket into a Neptune
     /// DB instance. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load.html">Using
     /// the Amazon Neptune Bulk Loader to Ingest Data</a>.
+    /// 
+    ///  
+    /// <para>
+    /// When invoking this operation in a Neptune cluster that has IAM authentication enabled,
+    /// the IAM user or role making the request must have a policy attached that allows the
+    /// <a href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#startloaderjob">neptune-db:StartLoaderJob</a>
+    /// IAM action in that cluster.
+    /// </para>
     /// </summary>
     public partial class StartLoaderJobRequest : AmazonNeptunedataRequest
     {
@@ -405,7 +413,8 @@ namespace Amazon.Neptunedata.Model
         /// <para>
         /// You don't have to wait for one load job to complete before issuing the next one, because
         /// Neptune can queue up as many as 64 jobs at a time, provided that their <code>queueRequest</code>
-        /// parameters are all set to <code>"TRUE"</code>.
+        /// parameters are all set to <code>"TRUE"</code>. The queue order of the jobs will be
+        /// first-in-first-out (FIFO).
         /// </para>
         ///  
         /// <para>

@@ -34,9 +34,30 @@ namespace Amazon.NetworkFirewall.Model
     /// </summary>
     public partial class DescribeRuleGroupRequest : AmazonNetworkFirewallRequest
     {
+        private bool? _analyzeRuleGroup;
         private string _ruleGroupArn;
         private string _ruleGroupName;
         private RuleGroupType _type;
+
+        /// <summary>
+        /// Gets and sets the property AnalyzeRuleGroup. 
+        /// <para>
+        /// Indicates whether you want Network Firewall to analyze the stateless rules in the
+        /// rule group for rule behavior such as asymmetric routing. If set to <code>TRUE</code>,
+        /// Network Firewall runs the analysis.
+        /// </para>
+        /// </summary>
+        public bool AnalyzeRuleGroup
+        {
+            get { return this._analyzeRuleGroup.GetValueOrDefault(); }
+            set { this._analyzeRuleGroup = value; }
+        }
+
+        // Check to see if AnalyzeRuleGroup property is set
+        internal bool IsSetAnalyzeRuleGroup()
+        {
+            return this._analyzeRuleGroup.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property RuleGroupArn. 

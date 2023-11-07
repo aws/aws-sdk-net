@@ -491,6 +491,10 @@ namespace Amazon.OpenSearchService
     {
 
         /// <summary>
+        /// Constant EngineVersion for DescribePackagesFilterName
+        /// </summary>
+        public static readonly DescribePackagesFilterName EngineVersion = new DescribePackagesFilterName("EngineVersion");
+        /// <summary>
         /// Constant PackageID for DescribePackagesFilterName
         /// </summary>
         public static readonly DescribePackagesFilterName PackageID = new DescribePackagesFilterName("PackageID");
@@ -502,6 +506,10 @@ namespace Amazon.OpenSearchService
         /// Constant PackageStatus for DescribePackagesFilterName
         /// </summary>
         public static readonly DescribePackagesFilterName PackageStatus = new DescribePackagesFilterName("PackageStatus");
+        /// <summary>
+        /// Constant PackageType for DescribePackagesFilterName
+        /// </summary>
+        public static readonly DescribePackagesFilterName PackageType = new DescribePackagesFilterName("PackageType");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -887,6 +895,56 @@ namespace Amazon.OpenSearchService
 
 
     /// <summary>
+    /// Constants used for properties of type IPAddressType.
+    /// </summary>
+    public class IPAddressType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Dualstack for IPAddressType
+        /// </summary>
+        public static readonly IPAddressType Dualstack = new IPAddressType("dualstack");
+        /// <summary>
+        /// Constant Ipv4 for IPAddressType
+        /// </summary>
+        public static readonly IPAddressType Ipv4 = new IPAddressType("ipv4");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IPAddressType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IPAddressType FindValue(string value)
+        {
+            return FindValue<IPAddressType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IPAddressType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type LogType.
     /// </summary>
     public class LogType : ConstantClass
@@ -938,6 +996,122 @@ namespace Amazon.OpenSearchService
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator LogType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MaintenanceStatus.
+    /// </summary>
+    public class MaintenanceStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETED for MaintenanceStatus
+        /// </summary>
+        public static readonly MaintenanceStatus COMPLETED = new MaintenanceStatus("COMPLETED");
+        /// <summary>
+        /// Constant FAILED for MaintenanceStatus
+        /// </summary>
+        public static readonly MaintenanceStatus FAILED = new MaintenanceStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for MaintenanceStatus
+        /// </summary>
+        public static readonly MaintenanceStatus IN_PROGRESS = new MaintenanceStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant PENDING for MaintenanceStatus
+        /// </summary>
+        public static readonly MaintenanceStatus PENDING = new MaintenanceStatus("PENDING");
+        /// <summary>
+        /// Constant TIMED_OUT for MaintenanceStatus
+        /// </summary>
+        public static readonly MaintenanceStatus TIMED_OUT = new MaintenanceStatus("TIMED_OUT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MaintenanceStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MaintenanceStatus FindValue(string value)
+        {
+            return FindValue<MaintenanceStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MaintenanceStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MaintenanceType.
+    /// </summary>
+    public class MaintenanceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant REBOOT_NODE for MaintenanceType
+        /// </summary>
+        public static readonly MaintenanceType REBOOT_NODE = new MaintenanceType("REBOOT_NODE");
+        /// <summary>
+        /// Constant RESTART_DASHBOARD for MaintenanceType
+        /// </summary>
+        public static readonly MaintenanceType RESTART_DASHBOARD = new MaintenanceType("RESTART_DASHBOARD");
+        /// <summary>
+        /// Constant RESTART_SEARCH_PROCESS for MaintenanceType
+        /// </summary>
+        public static readonly MaintenanceType RESTART_SEARCH_PROCESS = new MaintenanceType("RESTART_SEARCH_PROCESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MaintenanceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MaintenanceType FindValue(string value)
+        {
+            return FindValue<MaintenanceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MaintenanceType(string value)
         {
             return FindValue(value);
         }
@@ -1856,6 +2030,10 @@ namespace Amazon.OpenSearchService
         /// Constant TXTDICTIONARY for PackageType
         /// </summary>
         public static readonly PackageType TXTDICTIONARY = new PackageType("TXT-DICTIONARY");
+        /// <summary>
+        /// Constant ZIPPLUGIN for PackageType
+        /// </summary>
+        public static readonly PackageType ZIPPLUGIN = new PackageType("ZIP-PLUGIN");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
