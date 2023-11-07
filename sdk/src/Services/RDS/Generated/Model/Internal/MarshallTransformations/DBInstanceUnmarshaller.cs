@@ -396,6 +396,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.MultiAZ = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("MultiTenant", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.MultiTenant = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("NcharCharacterSetName", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

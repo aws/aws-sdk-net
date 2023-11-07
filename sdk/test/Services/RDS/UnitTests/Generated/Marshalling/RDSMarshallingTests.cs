@@ -485,6 +485,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("RDS")]
+        public void AddTagsToResource_DBSnapshotTenantDatabaseNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("AddTagsToResource");
+
+            var request = InstantiateClassGenerator.Execute<AddTagsToResourceRequest>(operation);
+            var marshaller = new AddTagsToResourceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("DBSnapshotTenantDatabaseNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = AddTagsToResourceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
         public void AddTagsToResource_IntegrationNotFoundExceptionMarshallTest()
         {
             var operation = service_model.FindOperation("AddTagsToResource");
@@ -497,6 +520,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             validator.Validate();
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("IntegrationNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = AddTagsToResourceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void AddTagsToResource_TenantDatabaseNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("AddTagsToResource");
+
+            var request = InstantiateClassGenerator.Execute<AddTagsToResourceRequest>(operation);
+            var marshaller = new AddTagsToResourceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("TenantDatabaseNotFoundException"));
             var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
             var response = AddTagsToResourceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
@@ -3160,6 +3206,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("RDS")]
+        public void CreateDBInstance_TenantDatabaseQuotaExceededExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateDBInstance");
+
+            var request = InstantiateClassGenerator.Execute<CreateDBInstanceRequest>(operation);
+            var marshaller = new CreateDBInstanceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("TenantDatabaseQuotaExceededException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CreateDBInstanceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
         public void CreateDBInstanceReadReplicaMarshallTest()
         {
             var operation = service_model.FindOperation("CreateDBInstanceReadReplica");
@@ -3677,6 +3746,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             validator.Validate();
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("StorageTypeNotSupportedException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CreateDBInstanceReadReplicaResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void CreateDBInstanceReadReplica_TenantDatabaseQuotaExceededExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateDBInstanceReadReplica");
+
+            var request = InstantiateClassGenerator.Execute<CreateDBInstanceReadReplicaRequest>(operation);
+            var marshaller = new CreateDBInstanceReadReplicaRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("TenantDatabaseQuotaExceededException"));
             var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
             var response = CreateDBInstanceReadReplicaResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
@@ -4843,6 +4935,120 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
             var response = CreateOptionGroupResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void CreateTenantDatabaseMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateTenantDatabase");
+
+            var request = InstantiateClassGenerator.Execute<CreateTenantDatabaseRequest>(operation);
+            var marshaller = new CreateTenantDatabaseRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = CreateTenantDatabaseResponseUnmarshaller.Instance.Unmarshall(context)
+                as CreateTenantDatabaseResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void CreateTenantDatabase_DBInstanceNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateTenantDatabase");
+
+            var request = InstantiateClassGenerator.Execute<CreateTenantDatabaseRequest>(operation);
+            var marshaller = new CreateTenantDatabaseRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("DBInstanceNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CreateTenantDatabaseResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void CreateTenantDatabase_InvalidDBInstanceStateExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateTenantDatabase");
+
+            var request = InstantiateClassGenerator.Execute<CreateTenantDatabaseRequest>(operation);
+            var marshaller = new CreateTenantDatabaseRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidDBInstanceStateException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CreateTenantDatabaseResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void CreateTenantDatabase_TenantDatabaseAlreadyExistsExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateTenantDatabase");
+
+            var request = InstantiateClassGenerator.Execute<CreateTenantDatabaseRequest>(operation);
+            var marshaller = new CreateTenantDatabaseRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("TenantDatabaseAlreadyExistsException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CreateTenantDatabaseResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void CreateTenantDatabase_TenantDatabaseQuotaExceededExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateTenantDatabase");
+
+            var request = InstantiateClassGenerator.Execute<CreateTenantDatabaseRequest>(operation);
+            var marshaller = new CreateTenantDatabaseRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("TenantDatabaseQuotaExceededException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CreateTenantDatabaseResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -6371,6 +6577,97 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("RDS")]
+        public void DeleteTenantDatabaseMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteTenantDatabase");
+
+            var request = InstantiateClassGenerator.Execute<DeleteTenantDatabaseRequest>(operation);
+            var marshaller = new DeleteTenantDatabaseRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DeleteTenantDatabaseResponseUnmarshaller.Instance.Unmarshall(context)
+                as DeleteTenantDatabaseResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void DeleteTenantDatabase_DBInstanceNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteTenantDatabase");
+
+            var request = InstantiateClassGenerator.Execute<DeleteTenantDatabaseRequest>(operation);
+            var marshaller = new DeleteTenantDatabaseRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("DBInstanceNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DeleteTenantDatabaseResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void DeleteTenantDatabase_InvalidDBInstanceStateExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteTenantDatabase");
+
+            var request = InstantiateClassGenerator.Execute<DeleteTenantDatabaseRequest>(operation);
+            var marshaller = new DeleteTenantDatabaseRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidDBInstanceStateException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DeleteTenantDatabaseResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void DeleteTenantDatabase_TenantDatabaseNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteTenantDatabase");
+
+            var request = InstantiateClassGenerator.Execute<DeleteTenantDatabaseRequest>(operation);
+            var marshaller = new DeleteTenantDatabaseRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("TenantDatabaseNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DeleteTenantDatabaseResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
         public void DeregisterDBProxyTargetsMarshallTest()
         {
             var operation = service_model.FindOperation("DeregisterDBProxyTargets");
@@ -7680,6 +7977,51 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("RDS")]
+        public void DescribeDBSnapshotTenantDatabasesMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeDBSnapshotTenantDatabases");
+
+            var request = InstantiateClassGenerator.Execute<DescribeDBSnapshotTenantDatabasesRequest>(operation);
+            var marshaller = new DescribeDBSnapshotTenantDatabasesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DescribeDBSnapshotTenantDatabasesResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeDBSnapshotTenantDatabasesResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void DescribeDBSnapshotTenantDatabases_DBSnapshotNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeDBSnapshotTenantDatabases");
+
+            var request = InstantiateClassGenerator.Execute<DescribeDBSnapshotTenantDatabasesRequest>(operation);
+            var marshaller = new DescribeDBSnapshotTenantDatabasesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("DBSnapshotNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DescribeDBSnapshotTenantDatabasesResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
         public void DescribeDBSubnetGroupsMarshallTest()
         {
             var operation = service_model.FindOperation("DescribeDBSubnetGroups");
@@ -8239,6 +8581,51 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("RDS")]
+        public void DescribeTenantDatabasesMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeTenantDatabases");
+
+            var request = InstantiateClassGenerator.Execute<DescribeTenantDatabasesRequest>(operation);
+            var marshaller = new DescribeTenantDatabasesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DescribeTenantDatabasesResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeTenantDatabasesResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void DescribeTenantDatabases_DBInstanceNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeTenantDatabases");
+
+            var request = InstantiateClassGenerator.Execute<DescribeTenantDatabasesRequest>(operation);
+            var marshaller = new DescribeTenantDatabasesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("DBInstanceNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DescribeTenantDatabasesResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
         public void DescribeValidDBInstanceModificationsMarshallTest()
         {
             var operation = service_model.FindOperation("DescribeValidDBInstanceModifications");
@@ -8740,6 +9127,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("RDS")]
+        public void ListTagsForResource_DBSnapshotTenantDatabaseNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListTagsForResource");
+
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>(operation);
+            var marshaller = new ListTagsForResourceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("DBSnapshotTenantDatabaseNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = ListTagsForResourceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
         public void ListTagsForResource_IntegrationNotFoundExceptionMarshallTest()
         {
             var operation = service_model.FindOperation("ListTagsForResource");
@@ -8752,6 +9162,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             validator.Validate();
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("IntegrationNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = ListTagsForResourceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void ListTagsForResource_TenantDatabaseNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListTagsForResource");
+
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>(operation);
+            var marshaller = new ListTagsForResourceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("TenantDatabaseNotFoundException"));
             var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
             var response = ListTagsForResourceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
@@ -10180,6 +10613,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("RDS")]
+        public void ModifyDBInstance_TenantDatabaseQuotaExceededExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyDBInstance");
+
+            var request = InstantiateClassGenerator.Execute<ModifyDBInstanceRequest>(operation);
+            var marshaller = new ModifyDBInstanceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("TenantDatabaseQuotaExceededException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = ModifyDBInstanceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
         public void ModifyDBParameterGroupMarshallTest()
         {
             var operation = service_model.FindOperation("ModifyDBParameterGroup");
@@ -11151,6 +11607,120 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
             var response = ModifyOptionGroupResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void ModifyTenantDatabaseMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyTenantDatabase");
+
+            var request = InstantiateClassGenerator.Execute<ModifyTenantDatabaseRequest>(operation);
+            var marshaller = new ModifyTenantDatabaseRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = ModifyTenantDatabaseResponseUnmarshaller.Instance.Unmarshall(context)
+                as ModifyTenantDatabaseResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void ModifyTenantDatabase_DBInstanceNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyTenantDatabase");
+
+            var request = InstantiateClassGenerator.Execute<ModifyTenantDatabaseRequest>(operation);
+            var marshaller = new ModifyTenantDatabaseRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("DBInstanceNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = ModifyTenantDatabaseResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void ModifyTenantDatabase_InvalidDBInstanceStateExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyTenantDatabase");
+
+            var request = InstantiateClassGenerator.Execute<ModifyTenantDatabaseRequest>(operation);
+            var marshaller = new ModifyTenantDatabaseRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidDBInstanceStateException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = ModifyTenantDatabaseResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void ModifyTenantDatabase_TenantDatabaseAlreadyExistsExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyTenantDatabase");
+
+            var request = InstantiateClassGenerator.Execute<ModifyTenantDatabaseRequest>(operation);
+            var marshaller = new ModifyTenantDatabaseRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("TenantDatabaseAlreadyExistsException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = ModifyTenantDatabaseResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void ModifyTenantDatabase_TenantDatabaseNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyTenantDatabase");
+
+            var request = InstantiateClassGenerator.Execute<ModifyTenantDatabaseRequest>(operation);
+            var marshaller = new ModifyTenantDatabaseRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("TenantDatabaseNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = ModifyTenantDatabaseResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -12260,6 +12830,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("RDS")]
+        public void RemoveTagsFromResource_DBSnapshotTenantDatabaseNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("RemoveTagsFromResource");
+
+            var request = InstantiateClassGenerator.Execute<RemoveTagsFromResourceRequest>(operation);
+            var marshaller = new RemoveTagsFromResourceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("DBSnapshotTenantDatabaseNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = RemoveTagsFromResourceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
         public void RemoveTagsFromResource_IntegrationNotFoundExceptionMarshallTest()
         {
             var operation = service_model.FindOperation("RemoveTagsFromResource");
@@ -12272,6 +12865,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             validator.Validate();
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("IntegrationNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = RemoveTagsFromResourceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void RemoveTagsFromResource_TenantDatabaseNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("RemoveTagsFromResource");
+
+            var request = InstantiateClassGenerator.Execute<RemoveTagsFromResourceRequest>(operation);
+            var marshaller = new RemoveTagsFromResourceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("TenantDatabaseNotFoundException"));
             var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
             var response = RemoveTagsFromResourceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
@@ -14232,6 +14848,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("RDS")]
+        public void RestoreDBInstanceFromDBSnapshot_TenantDatabaseQuotaExceededExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("RestoreDBInstanceFromDBSnapshot");
+
+            var request = InstantiateClassGenerator.Execute<RestoreDBInstanceFromDBSnapshotRequest>(operation);
+            var marshaller = new RestoreDBInstanceFromDBSnapshotRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("TenantDatabaseQuotaExceededException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = RestoreDBInstanceFromDBSnapshotResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
         public void RestoreDBInstanceFromS3MarshallTest()
         {
             var operation = service_model.FindOperation("RestoreDBInstanceFromS3");
@@ -15208,6 +15847,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             validator.Validate();
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("StorageTypeNotSupportedException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = RestoreDBInstanceToPointInTimeResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void RestoreDBInstanceToPointInTime_TenantDatabaseQuotaExceededExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("RestoreDBInstanceToPointInTime");
+
+            var request = InstantiateClassGenerator.Execute<RestoreDBInstanceToPointInTimeRequest>(operation);
+            var marshaller = new RestoreDBInstanceToPointInTimeRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("TenantDatabaseQuotaExceededException"));
             var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
             var response = RestoreDBInstanceToPointInTimeResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);

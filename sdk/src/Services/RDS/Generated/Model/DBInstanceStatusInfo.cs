@@ -60,8 +60,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Normal. 
         /// <para>
-        /// A Boolean value that is true if the instance is operating normally, or false if the
-        /// instance is in an error state.
+        /// Indicates whether the instance is operating normally (TRUE) or is in an error state
+        /// (FALSE).
         /// </para>
         /// </summary>
         public bool Normal

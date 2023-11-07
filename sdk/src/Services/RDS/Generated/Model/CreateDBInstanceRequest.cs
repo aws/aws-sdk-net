@@ -94,6 +94,7 @@ namespace Amazon.RDS.Model
         private int? _monitoringInterval;
         private string _monitoringRoleArn;
         private bool? _multiAZ;
+        private bool? _multiTenant;
         private string _ncharCharacterSetName;
         private string _networkType;
         private string _optionGroupName;
@@ -2003,6 +2004,42 @@ namespace Amazon.RDS.Model
         internal bool IsSetMultiAZ()
         {
             return this._multiAZ.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MultiTenant. 
+        /// <para>
+        /// Specifies whether to use the multi-tenant configuration or the single-tenant configuration
+        /// (default). This parameter only applies to RDS for Oracle container database (CDB)
+        /// engines.
+        /// </para>
+        ///  
+        /// <para>
+        /// Note the following restrictions: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The DB engine that you specify in the request must support the multi-tenant configuration.
+        /// If you attempt to enable the multi-tenant configuration on a DB engine that doesn't
+        /// support it, the request fails.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you specify the multi-tenant configuration when you create your DB instance, you
+        /// can't later modify this DB instance to use the single-tenant configuration.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public bool MultiTenant
+        {
+            get { return this._multiTenant.GetValueOrDefault(); }
+            set { this._multiTenant = value; }
+        }
+
+        // Check to see if MultiTenant property is set
+        internal bool IsSetMultiTenant()
+        {
+            return this._multiTenant.HasValue; 
         }
 
         /// <summary>

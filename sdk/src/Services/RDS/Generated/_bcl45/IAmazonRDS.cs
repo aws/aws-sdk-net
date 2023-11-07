@@ -319,8 +319,14 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBSnapshotNotFoundException">
         /// <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBSnapshotTenantDatabaseNotFoundException">
+        /// The specified snapshot tenant database wasn't found.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.IntegrationNotFoundException">
         /// The specified integration could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.TenantDatabaseNotFoundException">
+        /// The specified tenant database wasn't found in the DB instance.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AddTagsToResource">REST API Reference for AddTagsToResource Operation</seealso>
         AddTagsToResourceResponse AddTagsToResource(AddTagsToResourceRequest request);
@@ -365,8 +371,14 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBSnapshotNotFoundException">
         /// <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBSnapshotTenantDatabaseNotFoundException">
+        /// The specified snapshot tenant database wasn't found.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.IntegrationNotFoundException">
         /// The specified integration could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.TenantDatabaseNotFoundException">
+        /// The specified tenant database wasn't found in the DB instance.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AddTagsToResource">REST API Reference for AddTagsToResource Operation</seealso>
         Task<AddTagsToResourceResponse> AddTagsToResourceAsync(AddTagsToResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1846,6 +1858,10 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.StorageTypeNotSupportedException">
         /// The specified <code>StorageType</code> can't be associated with the DB instance.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.TenantDatabaseQuotaExceededException">
+        /// You attempted to create more tenant databases than are permitted in your Amazon Web
+        /// Services account.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBInstance">REST API Reference for CreateDBInstance Operation</seealso>
         CreateDBInstanceResponse CreateDBInstance(CreateDBInstanceRequest request);
 
@@ -1951,6 +1967,10 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.StorageTypeNotSupportedException">
         /// The specified <code>StorageType</code> can't be associated with the DB instance.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.TenantDatabaseQuotaExceededException">
+        /// You attempted to create more tenant databases than are permitted in your Amazon Web
+        /// Services account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBInstance">REST API Reference for CreateDBInstance Operation</seealso>
         Task<CreateDBInstanceResponse> CreateDBInstanceAsync(CreateDBInstanceRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2062,6 +2082,10 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.StorageTypeNotSupportedException">
         /// The specified <code>StorageType</code> can't be associated with the DB instance.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.TenantDatabaseQuotaExceededException">
+        /// You attempted to create more tenant databases than are permitted in your Amazon Web
+        /// Services account.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBInstanceReadReplica">REST API Reference for CreateDBInstanceReadReplica Operation</seealso>
         CreateDBInstanceReadReplicaResponse CreateDBInstanceReadReplica(CreateDBInstanceReadReplicaRequest request);
 
@@ -2171,6 +2195,10 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.StorageTypeNotSupportedException">
         /// The specified <code>StorageType</code> can't be associated with the DB instance.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.TenantDatabaseQuotaExceededException">
+        /// You attempted to create more tenant databases than are permitted in your Amazon Web
+        /// Services account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBInstanceReadReplica">REST API Reference for CreateDBInstanceReadReplica Operation</seealso>
         Task<CreateDBInstanceReadReplicaResponse> CreateDBInstanceReadReplicaAsync(CreateDBInstanceReadReplicaRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2942,6 +2970,64 @@ namespace Amazon.RDS
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateOptionGroup">REST API Reference for CreateOptionGroup Operation</seealso>
         Task<CreateOptionGroupResponse> CreateOptionGroupAsync(CreateOptionGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateTenantDatabase
+
+
+        /// <summary>
+        /// Creates a tenant database in a DB instance that uses the multi-tenant configuration.
+        /// Only RDS for Oracle container database (CDB) instances are supported.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTenantDatabase service method.</param>
+        /// 
+        /// <returns>The response from the CreateTenantDatabase service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
+        /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
+        /// The DB instance isn't in a valid state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.TenantDatabaseAlreadyExistsException">
+        /// You attempted to either create a tenant database that already exists or modify a tenant
+        /// database to use the name of an existing tenant database.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.TenantDatabaseQuotaExceededException">
+        /// You attempted to create more tenant databases than are permitted in your Amazon Web
+        /// Services account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateTenantDatabase">REST API Reference for CreateTenantDatabase Operation</seealso>
+        CreateTenantDatabaseResponse CreateTenantDatabase(CreateTenantDatabaseRequest request);
+
+
+
+        /// <summary>
+        /// Creates a tenant database in a DB instance that uses the multi-tenant configuration.
+        /// Only RDS for Oracle container database (CDB) instances are supported.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTenantDatabase service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateTenantDatabase service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
+        /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
+        /// The DB instance isn't in a valid state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.TenantDatabaseAlreadyExistsException">
+        /// You attempted to either create a tenant database that already exists or modify a tenant
+        /// database to use the name of an existing tenant database.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.TenantDatabaseQuotaExceededException">
+        /// You attempted to create more tenant databases than are permitted in your Amazon Web
+        /// Services account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateTenantDatabase">REST API Reference for CreateTenantDatabase Operation</seealso>
+        Task<CreateTenantDatabaseResponse> CreateTenantDatabaseAsync(CreateTenantDatabaseRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -4162,6 +4248,64 @@ namespace Amazon.RDS
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteOptionGroup">REST API Reference for DeleteOptionGroup Operation</seealso>
         Task<DeleteOptionGroupResponse> DeleteOptionGroupAsync(DeleteOptionGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteTenantDatabase
+
+
+        /// <summary>
+        /// Deletes a tenant database from your DB instance. This command only applies to RDS
+        /// for Oracle container database (CDB) instances.
+        /// 
+        ///  
+        /// <para>
+        /// You can't delete a tenant database when it is the only tenant in the DB instance.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTenantDatabase service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTenantDatabase service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
+        /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
+        /// The DB instance isn't in a valid state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.TenantDatabaseNotFoundException">
+        /// The specified tenant database wasn't found in the DB instance.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteTenantDatabase">REST API Reference for DeleteTenantDatabase Operation</seealso>
+        DeleteTenantDatabaseResponse DeleteTenantDatabase(DeleteTenantDatabaseRequest request);
+
+
+
+        /// <summary>
+        /// Deletes a tenant database from your DB instance. This command only applies to RDS
+        /// for Oracle container database (CDB) instances.
+        /// 
+        ///  
+        /// <para>
+        /// You can't delete a tenant database when it is the only tenant in the DB instance.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTenantDatabase service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteTenantDatabase service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
+        /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
+        /// The DB instance isn't in a valid state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.TenantDatabaseNotFoundException">
+        /// The specified tenant database wasn't found in the DB instance.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteTenantDatabase">REST API Reference for DeleteTenantDatabase Operation</seealso>
+        Task<DeleteTenantDatabaseResponse> DeleteTenantDatabaseAsync(DeleteTenantDatabaseRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -5647,6 +5791,58 @@ namespace Amazon.RDS
 
         #endregion
         
+        #region  DescribeDBSnapshotTenantDatabases
+
+
+        /// <summary>
+        /// Describes the tenant databases that exist in a DB snapshot. This command only applies
+        /// to RDS for Oracle DB instances in the multi-tenant configuration.
+        /// 
+        ///  
+        /// <para>
+        /// You can use this command to inspect the tenant databases within a snapshot before
+        /// restoring it. You can't directly interact with the tenant databases in a DB snapshot.
+        /// If you restore a snapshot that was taken from DB instance using the multi-tenant configuration,
+        /// you restore all its tenant databases.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDBSnapshotTenantDatabases service method.</param>
+        /// 
+        /// <returns>The response from the DescribeDBSnapshotTenantDatabases service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBSnapshotNotFoundException">
+        /// <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBSnapshotTenantDatabases">REST API Reference for DescribeDBSnapshotTenantDatabases Operation</seealso>
+        DescribeDBSnapshotTenantDatabasesResponse DescribeDBSnapshotTenantDatabases(DescribeDBSnapshotTenantDatabasesRequest request);
+
+
+
+        /// <summary>
+        /// Describes the tenant databases that exist in a DB snapshot. This command only applies
+        /// to RDS for Oracle DB instances in the multi-tenant configuration.
+        /// 
+        ///  
+        /// <para>
+        /// You can use this command to inspect the tenant databases within a snapshot before
+        /// restoring it. You can't directly interact with the tenant databases in a DB snapshot.
+        /// If you restore a snapshot that was taken from DB instance using the multi-tenant configuration,
+        /// you restore all its tenant databases.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDBSnapshotTenantDatabases service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeDBSnapshotTenantDatabases service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBSnapshotNotFoundException">
+        /// <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBSnapshotTenantDatabases">REST API Reference for DescribeDBSnapshotTenantDatabases Operation</seealso>
+        Task<DescribeDBSnapshotTenantDatabasesResponse> DescribeDBSnapshotTenantDatabasesAsync(DescribeDBSnapshotTenantDatabasesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeDBSubnetGroups
 
 
@@ -6548,6 +6744,42 @@ namespace Amazon.RDS
 
         #endregion
         
+        #region  DescribeTenantDatabases
+
+
+        /// <summary>
+        /// Describes the tenant databases in a DB instance that uses the multi-tenant configuration.
+        /// Only RDS for Oracle CDB instances are supported.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTenantDatabases service method.</param>
+        /// 
+        /// <returns>The response from the DescribeTenantDatabases service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
+        /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeTenantDatabases">REST API Reference for DescribeTenantDatabases Operation</seealso>
+        DescribeTenantDatabasesResponse DescribeTenantDatabases(DescribeTenantDatabasesRequest request);
+
+
+
+        /// <summary>
+        /// Describes the tenant databases in a DB instance that uses the multi-tenant configuration.
+        /// Only RDS for Oracle CDB instances are supported.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTenantDatabases service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeTenantDatabases service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
+        /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeTenantDatabases">REST API Reference for DescribeTenantDatabases Operation</seealso>
+        Task<DescribeTenantDatabasesResponse> DescribeTenantDatabasesAsync(DescribeTenantDatabasesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeValidDBInstanceModifications
 
 
@@ -6980,8 +7212,14 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBSnapshotNotFoundException">
         /// <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBSnapshotTenantDatabaseNotFoundException">
+        /// The specified snapshot tenant database wasn't found.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.IntegrationNotFoundException">
         /// The specified integration could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.TenantDatabaseNotFoundException">
+        /// The specified tenant database wasn't found in the DB instance.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
@@ -7024,8 +7262,14 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBSnapshotNotFoundException">
         /// <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBSnapshotTenantDatabaseNotFoundException">
+        /// The specified snapshot tenant database wasn't found.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.IntegrationNotFoundException">
         /// The specified integration could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.TenantDatabaseNotFoundException">
+        /// The specified tenant database wasn't found in the DB instance.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -7909,6 +8153,10 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.StorageTypeNotSupportedException">
         /// The specified <code>StorageType</code> can't be associated with the DB instance.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.TenantDatabaseQuotaExceededException">
+        /// You attempted to create more tenant databases than are permitted in your Amazon Web
+        /// Services account.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBInstance">REST API Reference for ModifyDBInstance Operation</seealso>
         ModifyDBInstanceResponse ModifyDBInstance(ModifyDBInstanceRequest request);
 
@@ -7994,6 +8242,10 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.StorageTypeNotSupportedException">
         /// The specified <code>StorageType</code> can't be associated with the DB instance.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.TenantDatabaseQuotaExceededException">
+        /// You attempted to create more tenant databases than are permitted in your Amazon Web
+        /// Services account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBInstance">REST API Reference for ModifyDBInstance Operation</seealso>
         Task<ModifyDBInstanceResponse> ModifyDBInstanceAsync(ModifyDBInstanceRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -8643,6 +8895,64 @@ namespace Amazon.RDS
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyOptionGroup">REST API Reference for ModifyOptionGroup Operation</seealso>
         Task<ModifyOptionGroupResponse> ModifyOptionGroupAsync(ModifyOptionGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ModifyTenantDatabase
+
+
+        /// <summary>
+        /// Modifies an existing tenant database in a DB instance. You can change the tenant database
+        /// name or the master user password. This operation is supported only for RDS for Oracle
+        /// CDB instances using the multi-tenant configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyTenantDatabase service method.</param>
+        /// 
+        /// <returns>The response from the ModifyTenantDatabase service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
+        /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
+        /// The DB instance isn't in a valid state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.TenantDatabaseAlreadyExistsException">
+        /// You attempted to either create a tenant database that already exists or modify a tenant
+        /// database to use the name of an existing tenant database.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.TenantDatabaseNotFoundException">
+        /// The specified tenant database wasn't found in the DB instance.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyTenantDatabase">REST API Reference for ModifyTenantDatabase Operation</seealso>
+        ModifyTenantDatabaseResponse ModifyTenantDatabase(ModifyTenantDatabaseRequest request);
+
+
+
+        /// <summary>
+        /// Modifies an existing tenant database in a DB instance. You can change the tenant database
+        /// name or the master user password. This operation is supported only for RDS for Oracle
+        /// CDB instances using the multi-tenant configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyTenantDatabase service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyTenantDatabase service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
+        /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
+        /// The DB instance isn't in a valid state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.TenantDatabaseAlreadyExistsException">
+        /// You attempted to either create a tenant database that already exists or modify a tenant
+        /// database to use the name of an existing tenant database.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.TenantDatabaseNotFoundException">
+        /// The specified tenant database wasn't found in the DB instance.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyTenantDatabase">REST API Reference for ModifyTenantDatabase Operation</seealso>
+        Task<ModifyTenantDatabaseResponse> ModifyTenantDatabaseAsync(ModifyTenantDatabaseRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -9318,8 +9628,14 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBSnapshotNotFoundException">
         /// <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBSnapshotTenantDatabaseNotFoundException">
+        /// The specified snapshot tenant database wasn't found.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.IntegrationNotFoundException">
         /// The specified integration could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.TenantDatabaseNotFoundException">
+        /// The specified tenant database wasn't found in the DB instance.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RemoveTagsFromResource">REST API Reference for RemoveTagsFromResource Operation</seealso>
         RemoveTagsFromResourceResponse RemoveTagsFromResource(RemoveTagsFromResourceRequest request);
@@ -9362,8 +9678,14 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBSnapshotNotFoundException">
         /// <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBSnapshotTenantDatabaseNotFoundException">
+        /// The specified snapshot tenant database wasn't found.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.IntegrationNotFoundException">
         /// The specified integration could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.TenantDatabaseNotFoundException">
+        /// The specified tenant database wasn't found in the DB instance.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RemoveTagsFromResource">REST API Reference for RemoveTagsFromResource Operation</seealso>
         Task<RemoveTagsFromResourceResponse> RemoveTagsFromResourceAsync(RemoveTagsFromResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -10226,6 +10548,10 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.StorageTypeNotSupportedException">
         /// The specified <code>StorageType</code> can't be associated with the DB instance.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.TenantDatabaseQuotaExceededException">
+        /// You attempted to create more tenant databases than are permitted in your Amazon Web
+        /// Services account.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceFromDBSnapshot">REST API Reference for RestoreDBInstanceFromDBSnapshot Operation</seealso>
         RestoreDBInstanceFromDBSnapshotResponse RestoreDBInstanceFromDBSnapshot(RestoreDBInstanceFromDBSnapshotRequest request);
 
@@ -10344,6 +10670,10 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.StorageTypeNotSupportedException">
         /// The specified <code>StorageType</code> can't be associated with the DB instance.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.TenantDatabaseQuotaExceededException">
+        /// You attempted to create more tenant databases than are permitted in your Amazon Web
+        /// Services account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceFromDBSnapshot">REST API Reference for RestoreDBInstanceFromDBSnapshot Operation</seealso>
         Task<RestoreDBInstanceFromDBSnapshotResponse> RestoreDBInstanceFromDBSnapshotAsync(RestoreDBInstanceFromDBSnapshotRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -10641,6 +10971,10 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.StorageTypeNotSupportedException">
         /// The specified <code>StorageType</code> can't be associated with the DB instance.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.TenantDatabaseQuotaExceededException">
+        /// You attempted to create more tenant databases than are permitted in your Amazon Web
+        /// Services account.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceToPointInTime">REST API Reference for RestoreDBInstanceToPointInTime Operation</seealso>
         RestoreDBInstanceToPointInTimeResponse RestoreDBInstanceToPointInTime(RestoreDBInstanceToPointInTimeRequest request);
 
@@ -10754,6 +11088,10 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.StorageTypeNotSupportedException">
         /// The specified <code>StorageType</code> can't be associated with the DB instance.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.TenantDatabaseQuotaExceededException">
+        /// You attempted to create more tenant databases than are permitted in your Amazon Web
+        /// Services account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceToPointInTime">REST API Reference for RestoreDBInstanceToPointInTime Operation</seealso>
         Task<RestoreDBInstanceToPointInTimeResponse> RestoreDBInstanceToPointInTimeAsync(RestoreDBInstanceToPointInTimeRequest request, CancellationToken cancellationToken = default(CancellationToken));

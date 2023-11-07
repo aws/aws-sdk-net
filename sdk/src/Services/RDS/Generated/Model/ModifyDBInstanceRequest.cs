@@ -77,6 +77,7 @@ namespace Amazon.RDS.Model
         private int? _monitoringInterval;
         private string _monitoringRoleArn;
         private bool? _multiAZ;
+        private bool? _multiTenant;
         private string _networkType;
         private string _newDBInstanceIdentifier;
         private string _optionGroupName;
@@ -507,8 +508,8 @@ namespace Amazon.RDS.Model
         /// If you are modifying the DB instance class and upgrading the engine version at the
         /// same time, the currently running engine version must be supported on the specified
         /// DB instance class. Otherwise, the operation returns an error. In this case, first
-        /// run the operation to modify the DB instance class, and then run it again to upgrade
-        /// the engine version.
+        /// run the operation to upgrade the engine version, and then run it again to modify the
+        /// DB instance class.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1168,8 +1169,8 @@ namespace Amazon.RDS.Model
         /// If you are upgrading the engine version and modifying the DB instance class at the
         /// same time, the currently running engine version must be supported on the specified
         /// DB instance class. Otherwise, the operation returns an error. In this case, first
-        /// run the operation to modify the DB instance class, and then run it again to upgrade
-        /// the engine version.
+        /// run the operation to upgrade the engine version, and then run it again to modify the
+        /// DB instance class.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1597,6 +1598,41 @@ namespace Amazon.RDS.Model
         internal bool IsSetMultiAZ()
         {
             return this._multiAZ.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MultiTenant. 
+        /// <para>
+        /// Specifies whether the to convert your DB instance from the single-tenant conﬁguration
+        /// to the multi-tenant conﬁguration. This parameter is supported only for RDS for Oracle
+        /// CDB instances.
+        /// </para>
+        ///  
+        /// <para>
+        /// During the conversion, RDS creates an initial tenant database and associates the DB
+        /// name, master user name, character set, and national character set metadata with this
+        /// database. The tags associated with the instance also propagate to the initial tenant
+        /// database. You can add more tenant databases to your DB instance by using the <code>CreateTenantDatabase</code>
+        /// operation.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// The conversion to the multi-tenant configuration is permanent and irreversible, so
+        /// you can't later convert back to the single-tenant configuration. When you specify
+        /// this parameter, you must also specify <code>ApplyImmediately</code>.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        public bool MultiTenant
+        {
+            get { return this._multiTenant.GetValueOrDefault(); }
+            set { this._multiTenant = value; }
+        }
+
+        // Check to see if MultiTenant property is set
+        internal bool IsSetMultiTenant()
+        {
+            return this._multiTenant.HasValue; 
         }
 
         /// <summary>

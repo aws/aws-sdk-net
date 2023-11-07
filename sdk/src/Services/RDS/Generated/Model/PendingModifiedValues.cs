@@ -49,6 +49,7 @@ namespace Amazon.RDS.Model
         private string _licenseModel;
         private string _masterUserPassword;
         private bool? _multiAZ;
+        private bool? _multiTenant;
         private PendingCloudwatchLogsExports _pendingCloudwatchLogsExports;
         private int? _port;
         private List<ProcessorFeature> _processorFeatures = new List<ProcessorFeature>();
@@ -346,6 +347,25 @@ namespace Amazon.RDS.Model
         internal bool IsSetMultiAZ()
         {
             return this._multiAZ.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MultiTenant. 
+        /// <para>
+        /// Indicates whether the DB instance will change to the multi-tenant configuration (TRUE)
+        /// or the single-tenant configuration (FALSE). 
+        /// </para>
+        /// </summary>
+        public bool MultiTenant
+        {
+            get { return this._multiTenant.GetValueOrDefault(); }
+            set { this._multiTenant = value; }
+        }
+
+        // Check to see if MultiTenant property is set
+        internal bool IsSetMultiTenant()
+        {
+            return this._multiTenant.HasValue; 
         }
 
         /// <summary>
