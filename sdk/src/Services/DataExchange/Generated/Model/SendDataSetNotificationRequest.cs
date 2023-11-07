@@ -67,7 +67,7 @@ namespace Amazon.DataExchange.Model
         /// Free-form text field for providers to add information about their notifications.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=16384)]
+        [AWSProperty(Min=0, Max=4096)]
         public string Comment
         {
             get { return this._comment; }
