@@ -194,7 +194,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// Type of resource.
+        /// The type of resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

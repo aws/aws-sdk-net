@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ResiliencyScore Object
+    /// Response Unmarshaller for ScoringComponentResiliencyScore Object
     /// </summary>  
-    public class ResiliencyScoreUnmarshaller : IUnmarshaller<ResiliencyScore, XmlUnmarshallerContext>, IUnmarshaller<ResiliencyScore, JsonUnmarshallerContext>
+    public class ScoringComponentResiliencyScoreUnmarshaller : IUnmarshaller<ScoringComponentResiliencyScore, XmlUnmarshallerContext>, IUnmarshaller<ScoringComponentResiliencyScore, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ResiliencyScore IUnmarshaller<ResiliencyScore, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ScoringComponentResiliencyScore IUnmarshaller<ScoringComponentResiliencyScore, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,33 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ResiliencyScore Unmarshall(JsonUnmarshallerContext context)
+        public ScoringComponentResiliencyScore Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ResiliencyScore unmarshalledObject = new ResiliencyScore();
+            ScoringComponentResiliencyScore unmarshalledObject = new ScoringComponentResiliencyScore();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("componentScore", targetDepth))
+                if (context.TestExpression("excludedCount", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, ScoringComponentResiliencyScore, StringUnmarshaller, ScoringComponentResiliencyScoreUnmarshaller>(StringUnmarshaller.Instance, ScoringComponentResiliencyScoreUnmarshaller.Instance);
-                    unmarshalledObject.ComponentScore = unmarshaller.Unmarshall(context);
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.ExcludedCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("disruptionScore", targetDepth))
+                if (context.TestExpression("outstandingCount", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, double, StringUnmarshaller, DoubleUnmarshaller>(StringUnmarshaller.Instance, DoubleUnmarshaller.Instance);
-                    unmarshalledObject.DisruptionScore = unmarshaller.Unmarshall(context);
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.OutstandingCount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("possibleScore", targetDepth))
+                {
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.PossibleScore = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("score", targetDepth))
@@ -88,12 +94,12 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
         }
 
 
-        private static ResiliencyScoreUnmarshaller _instance = new ResiliencyScoreUnmarshaller();        
+        private static ScoringComponentResiliencyScoreUnmarshaller _instance = new ScoringComponentResiliencyScoreUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ResiliencyScoreUnmarshaller Instance
+        public static ScoringComponentResiliencyScoreUnmarshaller Instance
         {
             get
             {

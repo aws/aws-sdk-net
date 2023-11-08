@@ -39,6 +39,7 @@ namespace Amazon.ResilienceHub.Model
         private string _name;
         private string _prerequisite;
         private string _recommendationId;
+        private RecommendationStatus _recommendationStatus;
         private string _referenceId;
         private SopServiceType _serviceType;
 
@@ -152,6 +153,24 @@ namespace Amazon.ResilienceHub.Model
         internal bool IsSetRecommendationId()
         {
             return this._recommendationId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RecommendationStatus. 
+        /// <para>
+        /// Status of the recommended standard operating procedure.
+        /// </para>
+        /// </summary>
+        public RecommendationStatus RecommendationStatus
+        {
+            get { return this._recommendationStatus; }
+            set { this._recommendationStatus = value; }
+        }
+
+        // Check to see if RecommendationStatus property is set
+        internal bool IsSetRecommendationStatus()
+        {
+            return this._recommendationStatus != null;
         }
 
         /// <summary>
