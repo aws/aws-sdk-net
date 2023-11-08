@@ -41,6 +41,7 @@ namespace Amazon.RedshiftServerless.Model
         private string _customDomainName;
         private Endpoint _endpoint;
         private bool? _enhancedVpcRouting;
+        private int? _maxCapacity;
         private string _namespaceName;
         private string _patchVersion;
         private int? _port;
@@ -203,6 +204,25 @@ namespace Amazon.RedshiftServerless.Model
         internal bool IsSetEnhancedVpcRouting()
         {
             return this._enhancedVpcRouting.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxCapacity. 
+        /// <para>
+        /// The maximum data-warehouse capacity Amazon Redshift Serverless uses to serve queries.
+        /// The max capacity is specified in RPUs.
+        /// </para>
+        /// </summary>
+        public int MaxCapacity
+        {
+            get { return this._maxCapacity.GetValueOrDefault(); }
+            set { this._maxCapacity = value; }
+        }
+
+        // Check to see if MaxCapacity property is set
+        internal bool IsSetMaxCapacity()
+        {
+            return this._maxCapacity.HasValue; 
         }
 
         /// <summary>
