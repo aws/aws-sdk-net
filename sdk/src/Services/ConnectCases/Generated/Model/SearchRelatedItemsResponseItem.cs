@@ -35,6 +35,7 @@ namespace Amazon.ConnectCases.Model
     {
         private DateTime? _associationTime;
         private RelatedItemContent _content;
+        private UserUnion _performedBy;
         private string _relatedItemId;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private RelatedItemType _type;
@@ -75,6 +76,24 @@ namespace Amazon.ConnectCases.Model
         internal bool IsSetContent()
         {
             return this._content != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PerformedBy. 
+        /// <para>
+        /// Represents the creator of the related item.
+        /// </para>
+        /// </summary>
+        public UserUnion PerformedBy
+        {
+            get { return this._performedBy; }
+            set { this._performedBy = value; }
+        }
+
+        // Check to see if PerformedBy property is set
+        internal bool IsSetPerformedBy()
+        {
+            return this._performedBy != null;
         }
 
         /// <summary>

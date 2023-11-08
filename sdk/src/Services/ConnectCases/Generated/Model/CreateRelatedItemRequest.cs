@@ -32,20 +32,27 @@ namespace Amazon.ConnectCases.Model
     /// Container for the parameters to the CreateRelatedItem operation.
     /// Creates a related item (comments, tasks, and contacts) and associates it with a case.
     /// 
-    ///  <note> 
+    ///  <note> <ul> <li> 
     /// <para>
     /// A Related Item is a resource that is associated with a case. It may or may not have
     /// an external identifier linking it to an external resource (for example, a <code>contactArn</code>).
     /// All Related Items have their own internal identifier, the <code>relatedItemArn</code>.
     /// Examples of related items include <code>comments</code> and <code>contacts</code>.
     /// </para>
-    ///  </note>
+    ///  </li> <li> 
+    /// <para>
+    /// If you provide a value for <code>performedBy.userArn</code> you must also have <a
+    /// href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">DescribeUser</a>
+    /// permission on the ARN of the user that you provide.
+    /// </para>
+    ///  </li> </ul> <pre><code> &lt;/note&gt; </code></pre>
     /// </summary>
     public partial class CreateRelatedItemRequest : AmazonConnectCasesRequest
     {
         private string _caseId;
         private RelatedItemInputContent _content;
         private string _domainId;
+        private UserUnion _performedBy;
         private RelatedItemType _type;
 
         /// <summary>
@@ -103,6 +110,24 @@ namespace Amazon.ConnectCases.Model
         internal bool IsSetDomainId()
         {
             return this._domainId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PerformedBy. 
+        /// <para>
+        /// Represents the creator of the related item.
+        /// </para>
+        /// </summary>
+        public UserUnion PerformedBy
+        {
+            get { return this._performedBy; }
+            set { this._performedBy = value; }
+        }
+
+        // Check to see if PerformedBy property is set
+        internal bool IsSetPerformedBy()
+        {
+            return this._performedBy != null;
         }
 
         /// <summary>

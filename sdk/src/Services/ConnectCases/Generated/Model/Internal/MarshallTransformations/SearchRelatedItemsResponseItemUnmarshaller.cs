@@ -76,6 +76,12 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
                     unmarshalledObject.Content = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("performedBy", targetDepth))
+                {
+                    var unmarshaller = UserUnionUnmarshaller.Instance;
+                    unmarshalledObject.PerformedBy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("relatedItemId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
