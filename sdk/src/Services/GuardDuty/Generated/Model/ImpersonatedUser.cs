@@ -29,48 +29,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// Container security context.
+    /// Contains information about the impersonated user.
     /// </summary>
-    public partial class SecurityContext
+    public partial class ImpersonatedUser
     {
-        private bool? _allowPrivilegeEscalation;
-        private bool? _privileged;
+        private List<string> _groups = new List<string>();
+        private string _username;
 
         /// <summary>
-        /// Gets and sets the property AllowPrivilegeEscalation. 
+        /// Gets and sets the property Groups. 
         /// <para>
-        /// Whether or not a container or a Kubernetes pod is allowed to gain more privileges
-        /// than its parent process.
+        /// The <code>group</code> to which the user name belongs.
         /// </para>
         /// </summary>
-        public bool AllowPrivilegeEscalation
+        public List<string> Groups
         {
-            get { return this._allowPrivilegeEscalation.GetValueOrDefault(); }
-            set { this._allowPrivilegeEscalation = value; }
+            get { return this._groups; }
+            set { this._groups = value; }
         }
 
-        // Check to see if AllowPrivilegeEscalation property is set
-        internal bool IsSetAllowPrivilegeEscalation()
+        // Check to see if Groups property is set
+        internal bool IsSetGroups()
         {
-            return this._allowPrivilegeEscalation.HasValue; 
+            return this._groups != null && this._groups.Count > 0; 
         }
 
         /// <summary>
-        /// Gets and sets the property Privileged. 
+        /// Gets and sets the property Username. 
         /// <para>
-        /// Whether the container is privileged.
+        /// Information about the <code>username</code> that was being impersonated.
         /// </para>
         /// </summary>
-        public bool Privileged
+        public string Username
         {
-            get { return this._privileged.GetValueOrDefault(); }
-            set { this._privileged = value; }
+            get { return this._username; }
+            set { this._username = value; }
         }
 
-        // Check to see if Privileged property is set
-        internal bool IsSetPrivileged()
+        // Check to see if Username property is set
+        internal bool IsSetUsername()
         {
-            return this._privileged.HasValue; 
+            return this._username != null;
         }
 
     }

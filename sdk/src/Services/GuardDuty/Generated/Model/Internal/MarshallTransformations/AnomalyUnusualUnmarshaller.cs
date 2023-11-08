@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for KubernetesUserDetails Object
+    /// Response Unmarshaller for AnomalyUnusual Object
     /// </summary>  
-    public class KubernetesUserDetailsUnmarshaller : IUnmarshaller<KubernetesUserDetails, XmlUnmarshallerContext>, IUnmarshaller<KubernetesUserDetails, JsonUnmarshallerContext>
+    public class AnomalyUnusualUnmarshaller : IUnmarshaller<AnomalyUnusual, XmlUnmarshallerContext>, IUnmarshaller<AnomalyUnusual, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        KubernetesUserDetails IUnmarshaller<KubernetesUserDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AnomalyUnusual IUnmarshaller<AnomalyUnusual, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,21 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public KubernetesUserDetails Unmarshall(JsonUnmarshallerContext context)
+        public AnomalyUnusual Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            KubernetesUserDetails unmarshalledObject = new KubernetesUserDetails();
+            AnomalyUnusual unmarshalledObject = new AnomalyUnusual();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("groups", targetDepth))
+                if (context.TestExpression("behavior", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.Groups = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("impersonatedUser", targetDepth))
-                {
-                    var unmarshaller = ImpersonatedUserUnmarshaller.Instance;
-                    unmarshalledObject.ImpersonatedUser = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("sessionName", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.SessionName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("uid", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Uid = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("username", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Username = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new DictionaryUnmarshaller<string, Dictionary<string, AnomalyObject>, StringUnmarshaller, DictionaryUnmarshaller<string, AnomalyObject, StringUnmarshaller, AnomalyObjectUnmarshaller>>(StringUnmarshaller.Instance, new DictionaryUnmarshaller<string, AnomalyObject, StringUnmarshaller, AnomalyObjectUnmarshaller>(StringUnmarshaller.Instance, AnomalyObjectUnmarshaller.Instance));
+                    unmarshalledObject.Behavior = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +76,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         }
 
 
-        private static KubernetesUserDetailsUnmarshaller _instance = new KubernetesUserDetailsUnmarshaller();        
+        private static AnomalyUnusualUnmarshaller _instance = new AnomalyUnusualUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static KubernetesUserDetailsUnmarshaller Instance
+        public static AnomalyUnusualUnmarshaller Instance
         {
             get
             {

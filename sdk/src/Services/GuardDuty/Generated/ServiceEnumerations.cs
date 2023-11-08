@@ -1621,6 +1621,110 @@ namespace Amazon.GuardDuty
 
 
     /// <summary>
+    /// Constants used for properties of type ProfileSubtype.
+    /// </summary>
+    public class ProfileSubtype : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FREQUENT for ProfileSubtype
+        /// </summary>
+        public static readonly ProfileSubtype FREQUENT = new ProfileSubtype("FREQUENT");
+        /// <summary>
+        /// Constant INFREQUENT for ProfileSubtype
+        /// </summary>
+        public static readonly ProfileSubtype INFREQUENT = new ProfileSubtype("INFREQUENT");
+        /// <summary>
+        /// Constant RARE for ProfileSubtype
+        /// </summary>
+        public static readonly ProfileSubtype RARE = new ProfileSubtype("RARE");
+        /// <summary>
+        /// Constant UNSEEN for ProfileSubtype
+        /// </summary>
+        public static readonly ProfileSubtype UNSEEN = new ProfileSubtype("UNSEEN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ProfileSubtype(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ProfileSubtype FindValue(string value)
+        {
+            return FindValue<ProfileSubtype>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ProfileSubtype(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ProfileType.
+    /// </summary>
+    public class ProfileType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FREQUENCY for ProfileType
+        /// </summary>
+        public static readonly ProfileType FREQUENCY = new ProfileType("FREQUENCY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ProfileType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ProfileType FindValue(string value)
+        {
+            return FindValue<ProfileType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ProfileType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type PublishingStatus.
     /// </summary>
     public class PublishingStatus : ConstantClass

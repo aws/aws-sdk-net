@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for KubernetesUserDetails Object
+    /// Response Unmarshaller for KubernetesRoleDetails Object
     /// </summary>  
-    public class KubernetesUserDetailsUnmarshaller : IUnmarshaller<KubernetesUserDetails, XmlUnmarshallerContext>, IUnmarshaller<KubernetesUserDetails, JsonUnmarshallerContext>
+    public class KubernetesRoleDetailsUnmarshaller : IUnmarshaller<KubernetesRoleDetails, XmlUnmarshallerContext>, IUnmarshaller<KubernetesRoleDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        KubernetesUserDetails IUnmarshaller<KubernetesUserDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        KubernetesRoleDetails IUnmarshaller<KubernetesRoleDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,27 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public KubernetesUserDetails Unmarshall(JsonUnmarshallerContext context)
+        public KubernetesRoleDetails Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            KubernetesUserDetails unmarshalledObject = new KubernetesUserDetails();
+            KubernetesRoleDetails unmarshalledObject = new KubernetesRoleDetails();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("groups", targetDepth))
+                if (context.TestExpression("kind", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.Groups = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Kind = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("impersonatedUser", targetDepth))
+                if (context.TestExpression("name", targetDepth))
                 {
-                    var unmarshaller = ImpersonatedUserUnmarshaller.Instance;
-                    unmarshalledObject.ImpersonatedUser = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("sessionName", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.SessionName = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("uid", targetDepth))
@@ -88,24 +82,18 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                     unmarshalledObject.Uid = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("username", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Username = unmarshaller.Unmarshall(context);
-                    continue;
-                }
             }
           
             return unmarshalledObject;
         }
 
 
-        private static KubernetesUserDetailsUnmarshaller _instance = new KubernetesUserDetailsUnmarshaller();        
+        private static KubernetesRoleDetailsUnmarshaller _instance = new KubernetesRoleDetailsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static KubernetesUserDetailsUnmarshaller Instance
+        public static KubernetesRoleDetailsUnmarshaller Instance
         {
             get
             {

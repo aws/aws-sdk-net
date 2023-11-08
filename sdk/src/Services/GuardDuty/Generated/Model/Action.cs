@@ -37,6 +37,9 @@ namespace Amazon.GuardDuty.Model
         private AwsApiCallAction _awsApiCallAction;
         private DnsRequestAction _dnsRequestAction;
         private KubernetesApiCallAction _kubernetesApiCallAction;
+        private KubernetesPermissionCheckedDetails _kubernetesPermissionCheckedDetails;
+        private KubernetesRoleBindingDetails _kubernetesRoleBindingDetails;
+        private KubernetesRoleDetails _kubernetesRoleDetails;
         private NetworkConnectionAction _networkConnectionAction;
         private PortProbeAction _portProbeAction;
         private RdsLoginAttemptAction _rdsLoginAttemptAction;
@@ -111,6 +114,61 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetKubernetesApiCallAction()
         {
             return this._kubernetesApiCallAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KubernetesPermissionCheckedDetails. 
+        /// <para>
+        /// Information whether the user has the permission to use a specific Kubernetes API.
+        /// </para>
+        /// </summary>
+        public KubernetesPermissionCheckedDetails KubernetesPermissionCheckedDetails
+        {
+            get { return this._kubernetesPermissionCheckedDetails; }
+            set { this._kubernetesPermissionCheckedDetails = value; }
+        }
+
+        // Check to see if KubernetesPermissionCheckedDetails property is set
+        internal bool IsSetKubernetesPermissionCheckedDetails()
+        {
+            return this._kubernetesPermissionCheckedDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KubernetesRoleBindingDetails. 
+        /// <para>
+        /// Information about the role binding that grants the permission defined in a Kubernetes
+        /// role.
+        /// </para>
+        /// </summary>
+        public KubernetesRoleBindingDetails KubernetesRoleBindingDetails
+        {
+            get { return this._kubernetesRoleBindingDetails; }
+            set { this._kubernetesRoleBindingDetails = value; }
+        }
+
+        // Check to see if KubernetesRoleBindingDetails property is set
+        internal bool IsSetKubernetesRoleBindingDetails()
+        {
+            return this._kubernetesRoleBindingDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KubernetesRoleDetails. 
+        /// <para>
+        /// Information about the Kubernetes role name and role type.
+        /// </para>
+        /// </summary>
+        public KubernetesRoleDetails KubernetesRoleDetails
+        {
+            get { return this._kubernetesRoleDetails; }
+            set { this._kubernetesRoleDetails = value; }
+        }
+
+        // Check to see if KubernetesRoleDetails property is set
+        internal bool IsSetKubernetesRoleDetails()
+        {
+            return this._kubernetesRoleDetails != null;
         }
 
         /// <summary>

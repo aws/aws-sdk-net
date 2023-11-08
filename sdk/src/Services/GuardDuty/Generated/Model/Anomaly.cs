@@ -29,48 +29,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// Container security context.
+    /// Contains information about the anomalies.
     /// </summary>
-    public partial class SecurityContext
+    public partial class Anomaly
     {
-        private bool? _allowPrivilegeEscalation;
-        private bool? _privileged;
+        private Dictionary<string, Dictionary<string, List<AnomalyObject>>> _profiles = new Dictionary<string, Dictionary<string, List<AnomalyObject>>>();
+        private AnomalyUnusual _unusual;
 
         /// <summary>
-        /// Gets and sets the property AllowPrivilegeEscalation. 
+        /// Gets and sets the property Profiles. 
         /// <para>
-        /// Whether or not a container or a Kubernetes pod is allowed to gain more privileges
-        /// than its parent process.
+        /// Information about the types of profiles.
         /// </para>
         /// </summary>
-        public bool AllowPrivilegeEscalation
+        public Dictionary<string, Dictionary<string, List<AnomalyObject>>> Profiles
         {
-            get { return this._allowPrivilegeEscalation.GetValueOrDefault(); }
-            set { this._allowPrivilegeEscalation = value; }
+            get { return this._profiles; }
+            set { this._profiles = value; }
         }
 
-        // Check to see if AllowPrivilegeEscalation property is set
-        internal bool IsSetAllowPrivilegeEscalation()
+        // Check to see if Profiles property is set
+        internal bool IsSetProfiles()
         {
-            return this._allowPrivilegeEscalation.HasValue; 
+            return this._profiles != null && this._profiles.Count > 0; 
         }
 
         /// <summary>
-        /// Gets and sets the property Privileged. 
+        /// Gets and sets the property Unusual. 
         /// <para>
-        /// Whether the container is privileged.
+        /// Information about the behavior of the anomalies.
         /// </para>
         /// </summary>
-        public bool Privileged
+        public AnomalyUnusual Unusual
         {
-            get { return this._privileged.GetValueOrDefault(); }
-            set { this._privileged = value; }
+            get { return this._unusual; }
+            set { this._unusual = value; }
         }
 
-        // Check to see if Privileged property is set
-        internal bool IsSetPrivileged()
+        // Check to see if Unusual property is set
+        internal bool IsSetUnusual()
         {
-            return this._privileged.HasValue; 
+            return this._unusual != null;
         }
 
     }

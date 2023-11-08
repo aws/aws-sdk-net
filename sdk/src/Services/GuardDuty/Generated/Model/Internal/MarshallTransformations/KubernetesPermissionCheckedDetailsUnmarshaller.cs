@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for KubernetesUserDetails Object
+    /// Response Unmarshaller for KubernetesPermissionCheckedDetails Object
     /// </summary>  
-    public class KubernetesUserDetailsUnmarshaller : IUnmarshaller<KubernetesUserDetails, XmlUnmarshallerContext>, IUnmarshaller<KubernetesUserDetails, JsonUnmarshallerContext>
+    public class KubernetesPermissionCheckedDetailsUnmarshaller : IUnmarshaller<KubernetesPermissionCheckedDetails, XmlUnmarshallerContext>, IUnmarshaller<KubernetesPermissionCheckedDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        KubernetesUserDetails IUnmarshaller<KubernetesUserDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        KubernetesPermissionCheckedDetails IUnmarshaller<KubernetesPermissionCheckedDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,39 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public KubernetesUserDetails Unmarshall(JsonUnmarshallerContext context)
+        public KubernetesPermissionCheckedDetails Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            KubernetesUserDetails unmarshalledObject = new KubernetesUserDetails();
+            KubernetesPermissionCheckedDetails unmarshalledObject = new KubernetesPermissionCheckedDetails();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("groups", targetDepth))
+                if (context.TestExpression("allowed", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.Groups = unmarshaller.Unmarshall(context);
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.Allowed = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("impersonatedUser", targetDepth))
-                {
-                    var unmarshaller = ImpersonatedUserUnmarshaller.Instance;
-                    unmarshalledObject.ImpersonatedUser = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("sessionName", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.SessionName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("uid", targetDepth))
+                if (context.TestExpression("namespace", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Uid = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Namespace = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("username", targetDepth))
+                if (context.TestExpression("resource", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Username = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Resource = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("verb", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Verb = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +94,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         }
 
 
-        private static KubernetesUserDetailsUnmarshaller _instance = new KubernetesUserDetailsUnmarshaller();        
+        private static KubernetesPermissionCheckedDetailsUnmarshaller _instance = new KubernetesPermissionCheckedDetailsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static KubernetesUserDetailsUnmarshaller Instance
+        public static KubernetesPermissionCheckedDetailsUnmarshaller Instance
         {
             get
             {

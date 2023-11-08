@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for KubernetesWorkloadDetails Object
+    /// Response Unmarshaller for KubernetesRoleBindingDetails Object
     /// </summary>  
-    public class KubernetesWorkloadDetailsUnmarshaller : IUnmarshaller<KubernetesWorkloadDetails, XmlUnmarshallerContext>, IUnmarshaller<KubernetesWorkloadDetails, JsonUnmarshallerContext>
+    public class KubernetesRoleBindingDetailsUnmarshaller : IUnmarshaller<KubernetesRoleBindingDetails, XmlUnmarshallerContext>, IUnmarshaller<KubernetesRoleBindingDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        KubernetesWorkloadDetails IUnmarshaller<KubernetesWorkloadDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        KubernetesRoleBindingDetails IUnmarshaller<KubernetesRoleBindingDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,21 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public KubernetesWorkloadDetails Unmarshall(JsonUnmarshallerContext context)
+        public KubernetesRoleBindingDetails Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            KubernetesWorkloadDetails unmarshalledObject = new KubernetesWorkloadDetails();
+            KubernetesRoleBindingDetails unmarshalledObject = new KubernetesRoleBindingDetails();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("containers", targetDepth))
+                if (context.TestExpression("kind", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Container, ContainerUnmarshaller>(ContainerUnmarshaller.Instance);
-                    unmarshalledObject.Containers = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("hostIPC", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.HostIPC = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("hostNetwork", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.HostNetwork = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("hostPID", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.HostPID = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Kind = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("name", targetDepth))
@@ -94,22 +76,16 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("namespace", targetDepth))
+                if (context.TestExpression("roleRefKind", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Namespace = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RoleRefKind = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("serviceAccountName", targetDepth))
+                if (context.TestExpression("roleRefName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ServiceAccountName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("type", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RoleRefName = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("uid", targetDepth))
@@ -118,24 +94,18 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                     unmarshalledObject.Uid = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("volumes", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<Volume, VolumeUnmarshaller>(VolumeUnmarshaller.Instance);
-                    unmarshalledObject.Volumes = unmarshaller.Unmarshall(context);
-                    continue;
-                }
             }
           
             return unmarshalledObject;
         }
 
 
-        private static KubernetesWorkloadDetailsUnmarshaller _instance = new KubernetesWorkloadDetailsUnmarshaller();        
+        private static KubernetesRoleBindingDetailsUnmarshaller _instance = new KubernetesRoleBindingDetailsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static KubernetesWorkloadDetailsUnmarshaller Instance
+        public static KubernetesRoleBindingDetailsUnmarshaller Instance
         {
             get
             {

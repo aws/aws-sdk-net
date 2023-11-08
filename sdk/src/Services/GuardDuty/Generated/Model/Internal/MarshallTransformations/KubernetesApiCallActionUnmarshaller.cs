@@ -64,6 +64,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("namespace", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Namespace = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("parameters", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -82,6 +88,18 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                     unmarshalledObject.RequestUri = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("resource", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Resource = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("resourceName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ResourceName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("sourceIps", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
@@ -92,6 +110,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
                     unmarshalledObject.StatusCode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("subresource", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Subresource = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("userAgent", targetDepth))

@@ -34,6 +34,7 @@ namespace Amazon.GuardDuty.Model
     public partial class KubernetesUserDetails
     {
         private List<string> _groups = new List<string>();
+        private ImpersonatedUser _impersonatedUser;
         private List<string> _sessionName = new List<string>();
         private string _uid;
         private string _username;
@@ -54,6 +55,24 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetGroups()
         {
             return this._groups != null && this._groups.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImpersonatedUser. 
+        /// <para>
+        /// Information about the impersonated user.
+        /// </para>
+        /// </summary>
+        public ImpersonatedUser ImpersonatedUser
+        {
+            get { return this._impersonatedUser; }
+            set { this._impersonatedUser = value; }
+        }
+
+        // Check to see if ImpersonatedUser property is set
+        internal bool IsSetImpersonatedUser()
+        {
+            return this._impersonatedUser != null;
         }
 
         /// <summary>

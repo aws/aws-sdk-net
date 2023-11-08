@@ -34,9 +34,12 @@ namespace Amazon.GuardDuty.Model
     public partial class KubernetesWorkloadDetails
     {
         private List<Container> _containers = new List<Container>();
+        private bool? _hostIPC;
         private bool? _hostNetwork;
+        private bool? _hostPID;
         private string _name;
         private string _awsNamespace;
+        private string _serviceAccountName;
         private string _type;
         private string _uid;
         private List<Volume> _volumes = new List<Volume>();
@@ -60,6 +63,24 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
+        /// Gets and sets the property HostIPC. 
+        /// <para>
+        /// Whether the host IPC flag is enabled for the pods in the workload.
+        /// </para>
+        /// </summary>
+        public bool HostIPC
+        {
+            get { return this._hostIPC.GetValueOrDefault(); }
+            set { this._hostIPC = value; }
+        }
+
+        // Check to see if HostIPC property is set
+        internal bool IsSetHostIPC()
+        {
+            return this._hostIPC.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property HostNetwork. 
         /// <para>
         /// Whether the hostNetwork flag is enabled for the pods included in the workload.
@@ -75,6 +96,24 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetHostNetwork()
         {
             return this._hostNetwork.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property HostPID. 
+        /// <para>
+        /// Whether the host PID flag is enabled for the pods in the workload. 
+        /// </para>
+        /// </summary>
+        public bool HostPID
+        {
+            get { return this._hostPID.GetValueOrDefault(); }
+            set { this._hostPID = value; }
+        }
+
+        // Check to see if HostPID property is set
+        internal bool IsSetHostPID()
+        {
+            return this._hostPID.HasValue; 
         }
 
         /// <summary>
@@ -111,6 +150,24 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetNamespace()
         {
             return this._awsNamespace != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServiceAccountName. 
+        /// <para>
+        /// The service account name that is associated with a Kubernetes workload.
+        /// </para>
+        /// </summary>
+        public string ServiceAccountName
+        {
+            get { return this._serviceAccountName; }
+            set { this._serviceAccountName = value; }
+        }
+
+        // Check to see if ServiceAccountName property is set
+        internal bool IsSetServiceAccountName()
+        {
+            return this._serviceAccountName != null;
         }
 
         /// <summary>
