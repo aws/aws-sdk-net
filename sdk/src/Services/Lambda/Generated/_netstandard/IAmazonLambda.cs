@@ -1610,8 +1610,11 @@ namespace Amazon.Lambda
 
         /// <summary>
         /// Invokes a Lambda function. You can invoke a function synchronously (and wait for the
-        /// response), or asynchronously. To invoke a function asynchronously, set <code>InvocationType</code>
-        /// to <code>Event</code>.
+        /// response), or asynchronously. By default, Lambda invokes your function synchronously
+        /// (i.e. the<code>InvocationType</code> is <code>RequestResponse</code>). To invoke a
+        /// function asynchronously, set <code>InvocationType</code> to <code>Event</code>. Lambda
+        /// passes the <code>ClientContext</code> object to your function for synchronous invocations
+        /// only.
         /// 
         ///  
         /// <para>
@@ -1797,6 +1800,13 @@ namespace Amazon.Lambda
         /// <para>
         /// Invokes a function asynchronously.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you do use the InvokeAsync action, note that it doesn't support the use of X-Ray
+        /// active tracing. Trace ID is not propagated to the function, even if X-Ray active tracing
+        /// is turned on.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the InvokeAsync service method.</param>
         /// <param name="cancellationToken">
