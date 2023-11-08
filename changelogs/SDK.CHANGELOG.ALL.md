@@ -1,3 +1,31 @@
+### 3.7.680.0 (2023-11-08 19:25 UTC)
+* Connect (3.7.214.0)
+	* This release clarifies in our public documentation that InstanceId is a requirement for SearchUsers API requests.
+* ConnectCases (3.7.203.0)
+	* This release adds the ability to add/view comment authors through CreateRelatedItem and SearchRelatedItems API. For more information see https://docs.aws.amazon.com/cases/latest/APIReference/Welcome.html
+* DataSync (3.7.205.0)
+	* This change allows for 0 length access keys and secret keys for object storage locations. Users can now pass in empty string credentials.
+* GuardDuty (3.7.205.0)
+	* Added API support for new GuardDuty EKS Audit Log finding types.
+* Lambda (3.7.203.0)
+	* Add Node 20 (nodejs20.x) support to AWS Lambda.
+* LexModelsV2 (3.7.204.0)
+	* AWS Lex now supports selective log capture in conversation logs. When you enable this option within the conversation log settings, only the utterances that trigger intents and slots specified in session attributes will be logged.
+* Omics (3.7.207.0)
+	* Adding Run UUID and Run Output URI: GetRun and StartRun API response has two new fields "uuid" and "runOutputUri".
+* RDS (3.7.214.1)
+	* This Amazon RDS release adds support for patching the OS of an RDS Custom for Oracle DB instance. You can now upgrade the database or operating system using the modify-db-instance command.
+* RedshiftServerless (3.7.204.0)
+	* Added a new parameter in the workgroup that helps you control your cost for compute resources. This feature provides a ceiling for RPUs that Amazon Redshift Serverless can scale up to. When automatic compute scaling is required, having a higher value for MaxRPU can enhance query throughput.
+* ResilienceHub (3.7.203.0)
+	* AWS Resilience Hub enhances Resiliency Score, providing actionable recommendations to improve application resilience. Amazon Elastic Kubernetes Service (EKS) operational recommendations have been added to help improve the resilience posture of your applications.
+* SQS (3.7.201.0)
+	* This release enables customers to call SQS using AWS JSON-1.0 protocol.
+* Core 3.7.204.15
+	* Bulk sync endpoint rules and tests
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.679.0 (2023-11-07 19:45 UTC)
 * DataExchange (3.7.202.0)
 	* Updated SendDataSetNotificationRequest Comment to be maximum length 4096.

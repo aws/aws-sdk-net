@@ -32,7 +32,7 @@ namespace Amazon.SecurityLake
     public partial class AmazonSecurityLakeConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.202.39");
+            InternalSDKUtils.BuildUserAgentString("3.7.202.40");
 
         private string _userAgent = UserAgentString;
         ///<summary>
