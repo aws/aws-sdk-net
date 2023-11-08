@@ -29,6 +29,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
 namespace Amazon.SQS.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -41,91 +43,84 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ListMessageMoveTasksResultEntry Unmarshall(XmlUnmarshallerContext context)
+        ListMessageMoveTasksResultEntry IUnmarshaller<ListMessageMoveTasksResultEntry, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-            ListMessageMoveTasksResultEntry unmarshalledObject = new ListMessageMoveTasksResultEntry();
-            int originalDepth = context.CurrentDepth;
-            int targetDepth = originalDepth + 1;
-            
-            if (context.IsStartOfDocument) 
-               targetDepth += 2;
-            
-            while (context.ReadAtDepth(originalDepth))
-            {
-                if (context.IsStartElement || context.IsAttribute)
-                {
-                    if (context.TestExpression("ApproximateNumberOfMessagesMoved", targetDepth))
-                    {
-                        var unmarshaller = LongUnmarshaller.Instance;
-                        unmarshalledObject.ApproximateNumberOfMessagesMoved = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("ApproximateNumberOfMessagesToMove", targetDepth))
-                    {
-                        var unmarshaller = LongUnmarshaller.Instance;
-                        unmarshalledObject.ApproximateNumberOfMessagesToMove = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("DestinationArn", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.DestinationArn = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("FailureReason", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.FailureReason = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("MaxNumberOfMessagesPerSecond", targetDepth))
-                    {
-                        var unmarshaller = IntUnmarshaller.Instance;
-                        unmarshalledObject.MaxNumberOfMessagesPerSecond = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("SourceArn", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.SourceArn = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("StartedTimestamp", targetDepth))
-                    {
-                        var unmarshaller = LongUnmarshaller.Instance;
-                        unmarshalledObject.StartedTimestamp = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("Status", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Status = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("TaskHandle", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.TaskHandle = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                }
-                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
-                {
-                    return unmarshalledObject;
-                }
-            }
-
-            return unmarshalledObject;
+            throw new NotImplementedException();
         }
 
         /// <summary>
-        /// Unmarshaller error response to exception.
+        /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
         public ListMessageMoveTasksResultEntry Unmarshall(JsonUnmarshallerContext context)
         {
-            return null;
+            context.Read();
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            ListMessageMoveTasksResultEntry unmarshalledObject = new ListMessageMoveTasksResultEntry();
+        
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
+            {
+                if (context.TestExpression("ApproximateNumberOfMessagesMoved", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.ApproximateNumberOfMessagesMoved = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ApproximateNumberOfMessagesToMove", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.ApproximateNumberOfMessagesToMove = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DestinationArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DestinationArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("FailureReason", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FailureReason = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("MaxNumberOfMessagesPerSecond", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.MaxNumberOfMessagesPerSecond = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SourceArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SourceArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StartedTimestamp", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.StartedTimestamp = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Status", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TaskHandle", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TaskHandle = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+            }
+          
+            return unmarshalledObject;
         }
 
 

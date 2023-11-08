@@ -28,6 +28,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
 namespace Amazon.SQS.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -44,7 +46,7 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
         {
             return this.Marshall((DeleteMessageBatchRequest)input);
         }
-    
+
         /// <summary>
         /// Marshaller the request object to the HTTP request.
         /// </summary>  
@@ -53,35 +55,49 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
         public IRequest Marshall(DeleteMessageBatchRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SQS");
-            request.Parameters.Add("Action", "DeleteMessageBatch");
-            request.Parameters.Add("Version", "2012-11-05");
+            string target = "AmazonSQS.DeleteMessageBatch";
+            request.Headers["X-Amz-Target"] = target;
+            request.Headers["Content-Type"] = "application/x-amz-json-1.0";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2012-11-05";
+            request.HttpMethod = "POST";
 
-            if(publicRequest != null)
+            request.ResourcePath = "/";
+            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetEntries())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.Entries)
+                    context.Writer.WritePropertyName("Entries");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestEntriesListValue in publicRequest.Entries)
                     {
-                        if(publicRequestlistValue.IsSetId())
-                        {
-                            request.Parameters.Add("DeleteMessageBatchRequestEntry" + "." + publicRequestlistValueIndex + "." + "Id", StringUtils.FromString(publicRequestlistValue.Id));
-                        }
-                        if(publicRequestlistValue.IsSetReceiptHandle())
-                        {
-                            request.Parameters.Add("DeleteMessageBatchRequestEntry" + "." + publicRequestlistValueIndex + "." + "ReceiptHandle", StringUtils.FromString(publicRequestlistValue.ReceiptHandle));
-                        }
-                        publicRequestlistValueIndex++;
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = DeleteMessageBatchRequestEntryMarshaller.Instance;
+                        marshaller.Marshall(publicRequestEntriesListValue, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
+                    context.Writer.WriteArrayEnd();
                 }
+
                 if(publicRequest.IsSetQueueUrl())
                 {
-                    request.Parameters.Add("QueueUrl", StringUtils.FromString(publicRequest.QueueUrl));
+                    context.Writer.WritePropertyName("QueueUrl");
+                    context.Writer.Write(publicRequest.QueueUrl);
                 }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
+
+
             return request;
         }
-                    private static DeleteMessageBatchRequestMarshaller _instance = new DeleteMessageBatchRequestMarshaller();        
+        private static DeleteMessageBatchRequestMarshaller _instance = new DeleteMessageBatchRequestMarshaller();        
 
         internal static DeleteMessageBatchRequestMarshaller GetInstance()
         {

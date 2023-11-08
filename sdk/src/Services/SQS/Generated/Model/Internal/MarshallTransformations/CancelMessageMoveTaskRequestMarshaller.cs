@@ -28,6 +28,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
 namespace Amazon.SQS.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -44,7 +46,7 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
         {
             return this.Marshall((CancelMessageMoveTaskRequest)input);
         }
-    
+
         /// <summary>
         /// Marshaller the request object to the HTTP request.
         /// </summary>  
@@ -53,19 +55,33 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
         public IRequest Marshall(CancelMessageMoveTaskRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SQS");
-            request.Parameters.Add("Action", "CancelMessageMoveTask");
-            request.Parameters.Add("Version", "2012-11-05");
+            string target = "AmazonSQS.CancelMessageMoveTask";
+            request.Headers["X-Amz-Target"] = target;
+            request.Headers["Content-Type"] = "application/x-amz-json-1.0";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2012-11-05";
+            request.HttpMethod = "POST";
 
-            if(publicRequest != null)
+            request.ResourcePath = "/";
+            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetTaskHandle())
                 {
-                    request.Parameters.Add("TaskHandle", StringUtils.FromString(publicRequest.TaskHandle));
+                    context.Writer.WritePropertyName("TaskHandle");
+                    context.Writer.Write(publicRequest.TaskHandle);
                 }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
+
+
             return request;
         }
-                    private static CancelMessageMoveTaskRequestMarshaller _instance = new CancelMessageMoveTaskRequestMarshaller();        
+        private static CancelMessageMoveTaskRequestMarshaller _instance = new CancelMessageMoveTaskRequestMarshaller();        
 
         internal static CancelMessageMoveTaskRequestMarshaller GetInstance()
         {
