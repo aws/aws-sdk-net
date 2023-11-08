@@ -40,8 +40,6 @@ namespace Amazon.Kinesis.Internal
             if (parameters == null) 
                 throw new ArgumentNullException("parameters");
 
-            if (parameters["Region"] == null)
-                throw new AmazonClientException("Region parameter must be set for endpoint resolution");
             if (parameters["UseDualStack"] == null)
                 throw new AmazonClientException("UseDualStack parameter must be set for endpoint resolution");
             if (parameters["UseFIPS"] == null)
@@ -57,186 +55,182 @@ namespace Amazon.Kinesis.Internal
                 ["OperationType"] = parameters["OperationType"],
                 ["ConsumerARN"] = parameters["ConsumerARN"],
             };
-            if ((refs["PartitionResult"] = Partition((string)refs["Region"])) != null)
+            if (IsSet(refs["StreamARN"]) && !IsSet(refs["Endpoint"]) && IsSet(refs["Region"]) && (refs["PartitionResult"] = Partition((string)refs["Region"])) != null && !Equals(GetAttr(refs["PartitionResult"], "name"), "aws-iso") && !Equals(GetAttr(refs["PartitionResult"], "name"), "aws-iso-b"))
             {
-                if (IsSet(refs["StreamARN"]) && !IsSet(refs["Endpoint"]) && !Equals(GetAttr(refs["PartitionResult"], "name"), "aws-iso") && !Equals(GetAttr(refs["PartitionResult"], "name"), "aws-iso-b"))
+                if ((refs["arn"] = ParseArn((string)refs["StreamARN"])) != null)
                 {
-                    if ((refs["arn"] = ParseArn((string)refs["StreamARN"])) != null)
+                    if (IsValidHostLabel((string)GetAttr(refs["arn"], "accountId"), false))
                     {
-                        if (IsValidHostLabel((string)GetAttr(refs["arn"], "accountId"), false))
+                        if (IsValidHostLabel((string)GetAttr(refs["arn"], "region"), false))
                         {
-                            if (IsValidHostLabel((string)GetAttr(refs["arn"], "region"), false))
+                            if (Equals(GetAttr(refs["arn"], "service"), "kinesis"))
                             {
-                                if (Equals(GetAttr(refs["arn"], "service"), "kinesis"))
+                                if ((refs["arnType"] = GetAttr(refs["arn"], "resourceId[0]")) != null && !Equals(refs["arnType"], ""))
                                 {
-                                    if ((refs["arnType"] = GetAttr(refs["arn"], "resourceId[0]")) != null && !Equals(refs["arnType"], ""))
+                                    if (Equals(refs["arnType"], "stream"))
                                     {
-                                        if (Equals(refs["arnType"], "stream"))
+                                        if (Equals(GetAttr(refs["PartitionResult"], "name"), Interpolate(@"{arn#partition}", refs)))
                                         {
-                                            if (Equals(GetAttr(refs["PartitionResult"], "name"), Interpolate(@"{arn#partition}", refs)))
+                                            if (IsSet(refs["OperationType"]))
                                             {
-                                                if (IsSet(refs["OperationType"]))
+                                                if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
                                                 {
-                                                    if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
-                                                    {
-                                                        if (Equals(GetAttr(refs["PartitionResult"], "supportsFIPS"), true))
-                                                        {
-                                                            if (Equals(GetAttr(refs["PartitionResult"], "supportsDualStack"), true))
-                                                            {
-                                                                return new Endpoint(Interpolate(@"https://{arn#accountId}.{OperationType}-kinesis-fips.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                                                            }
-                                                            throw new AmazonClientException("DualStack is enabled, but this partition does not support DualStack.");
-                                                        }
-                                                        throw new AmazonClientException("FIPS is enabled, but this partition does not support FIPS.");
-                                                    }
-                                                    if (Equals(refs["UseFIPS"], true))
-                                                    {
-                                                        if (Equals(GetAttr(refs["PartitionResult"], "supportsFIPS"), true))
-                                                        {
-                                                            return new Endpoint(Interpolate(@"https://{arn#accountId}.{OperationType}-kinesis-fips.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                                                        }
-                                                        throw new AmazonClientException("FIPS is enabled but this partition does not support FIPS");
-                                                    }
-                                                    if (Equals(refs["UseDualStack"], true))
+                                                    if (Equals(GetAttr(refs["PartitionResult"], "supportsFIPS"), true))
                                                     {
                                                         if (Equals(GetAttr(refs["PartitionResult"], "supportsDualStack"), true))
                                                         {
-                                                            return new Endpoint(Interpolate(@"https://{arn#accountId}.{OperationType}-kinesis.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                                                            return new Endpoint(Interpolate(@"https://{arn#accountId}.{OperationType}-kinesis-fips.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                                                         }
-                                                        throw new AmazonClientException("DualStack is enabled but this partition does not support DualStack");
+                                                        throw new AmazonClientException("DualStack is enabled, but this partition does not support DualStack.");
                                                     }
-                                                    return new Endpoint(Interpolate(@"https://{arn#accountId}.{OperationType}-kinesis.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                                                    throw new AmazonClientException("FIPS is enabled, but this partition does not support FIPS.");
                                                 }
-                                                throw new AmazonClientException("Operation Type is not set. Please contact service team for resolution.");
-                                            }
-                                            throw new AmazonClientException(Interpolate(@"Partition: {arn#partition} from ARN doesn't match with partition name: {PartitionResult#name}.", refs));
-                                        }
-                                        throw new AmazonClientException(Interpolate(@"Invalid ARN: Kinesis ARNs don't support `{arnType}` arn types.", refs));
-                                    }
-                                    throw new AmazonClientException("Invalid ARN: No ARN type specified");
-                                }
-                                throw new AmazonClientException(Interpolate(@"Invalid ARN: The ARN was not for the Kinesis service, found: {arn#service}.", refs));
-                            }
-                            throw new AmazonClientException("Invalid ARN: Invalid region.");
-                        }
-                        throw new AmazonClientException("Invalid ARN: Invalid account id.");
-                    }
-                    throw new AmazonClientException("Invalid ARN: Failed to parse ARN.");
-                }
-                if (IsSet(refs["ConsumerARN"]) && !IsSet(refs["Endpoint"]) && !Equals(GetAttr(refs["PartitionResult"], "name"), "aws-iso") && !Equals(GetAttr(refs["PartitionResult"], "name"), "aws-iso-b"))
-                {
-                    if ((refs["arn"] = ParseArn((string)refs["ConsumerARN"])) != null)
-                    {
-                        if (IsValidHostLabel((string)GetAttr(refs["arn"], "accountId"), false))
-                        {
-                            if (IsValidHostLabel((string)GetAttr(refs["arn"], "region"), false))
-                            {
-                                if (Equals(GetAttr(refs["arn"], "service"), "kinesis"))
-                                {
-                                    if ((refs["arnType"] = GetAttr(refs["arn"], "resourceId[0]")) != null && !Equals(refs["arnType"], ""))
-                                    {
-                                        if (Equals(refs["arnType"], "stream"))
-                                        {
-                                            if (Equals(GetAttr(refs["PartitionResult"], "name"), Interpolate(@"{arn#partition}", refs)))
-                                            {
-                                                if (IsSet(refs["OperationType"]))
+                                                if (Equals(refs["UseFIPS"], true))
                                                 {
-                                                    if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
+                                                    if (Equals(GetAttr(refs["PartitionResult"], "supportsFIPS"), true))
                                                     {
-                                                        if (Equals(GetAttr(refs["PartitionResult"], "supportsFIPS"), true))
-                                                        {
-                                                            if (Equals(GetAttr(refs["PartitionResult"], "supportsDualStack"), true))
-                                                            {
-                                                                return new Endpoint(Interpolate(@"https://{arn#accountId}.{OperationType}-kinesis-fips.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                                                            }
-                                                            throw new AmazonClientException("DualStack is enabled, but this partition does not support DualStack.");
-                                                        }
-                                                        throw new AmazonClientException("FIPS is enabled, but this partition does not support FIPS.");
+                                                        return new Endpoint(Interpolate(@"https://{arn#accountId}.{OperationType}-kinesis-fips.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                                                     }
-                                                    if (Equals(refs["UseFIPS"], true))
+                                                    throw new AmazonClientException("FIPS is enabled but this partition does not support FIPS");
+                                                }
+                                                if (Equals(refs["UseDualStack"], true))
+                                                {
+                                                    if (Equals(GetAttr(refs["PartitionResult"], "supportsDualStack"), true))
                                                     {
-                                                        if (Equals(GetAttr(refs["PartitionResult"], "supportsFIPS"), true))
-                                                        {
-                                                            return new Endpoint(Interpolate(@"https://{arn#accountId}.{OperationType}-kinesis-fips.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                                                        }
-                                                        throw new AmazonClientException("FIPS is enabled but this partition does not support FIPS");
+                                                        return new Endpoint(Interpolate(@"https://{arn#accountId}.{OperationType}-kinesis.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                                                     }
-                                                    if (Equals(refs["UseDualStack"], true))
+                                                    throw new AmazonClientException("DualStack is enabled but this partition does not support DualStack");
+                                                }
+                                                return new Endpoint(Interpolate(@"https://{arn#accountId}.{OperationType}-kinesis.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                                            }
+                                            throw new AmazonClientException("Operation Type is not set. Please contact service team for resolution.");
+                                        }
+                                        throw new AmazonClientException(Interpolate(@"Partition: {arn#partition} from ARN doesn't match with partition name: {PartitionResult#name}.", refs));
+                                    }
+                                    throw new AmazonClientException(Interpolate(@"Invalid ARN: Kinesis ARNs don't support `{arnType}` arn types.", refs));
+                                }
+                                throw new AmazonClientException("Invalid ARN: No ARN type specified");
+                            }
+                            throw new AmazonClientException(Interpolate(@"Invalid ARN: The ARN was not for the Kinesis service, found: {arn#service}.", refs));
+                        }
+                        throw new AmazonClientException("Invalid ARN: Invalid region.");
+                    }
+                    throw new AmazonClientException("Invalid ARN: Invalid account id.");
+                }
+                throw new AmazonClientException("Invalid ARN: Failed to parse ARN.");
+            }
+            if (IsSet(refs["ConsumerARN"]) && !IsSet(refs["Endpoint"]) && IsSet(refs["Region"]) && (refs["PartitionResult"] = Partition((string)refs["Region"])) != null && !Equals(GetAttr(refs["PartitionResult"], "name"), "aws-iso") && !Equals(GetAttr(refs["PartitionResult"], "name"), "aws-iso-b"))
+            {
+                if ((refs["arn"] = ParseArn((string)refs["ConsumerARN"])) != null)
+                {
+                    if (IsValidHostLabel((string)GetAttr(refs["arn"], "accountId"), false))
+                    {
+                        if (IsValidHostLabel((string)GetAttr(refs["arn"], "region"), false))
+                        {
+                            if (Equals(GetAttr(refs["arn"], "service"), "kinesis"))
+                            {
+                                if ((refs["arnType"] = GetAttr(refs["arn"], "resourceId[0]")) != null && !Equals(refs["arnType"], ""))
+                                {
+                                    if (Equals(refs["arnType"], "stream"))
+                                    {
+                                        if (Equals(GetAttr(refs["PartitionResult"], "name"), Interpolate(@"{arn#partition}", refs)))
+                                        {
+                                            if (IsSet(refs["OperationType"]))
+                                            {
+                                                if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
+                                                {
+                                                    if (Equals(GetAttr(refs["PartitionResult"], "supportsFIPS"), true))
                                                     {
                                                         if (Equals(GetAttr(refs["PartitionResult"], "supportsDualStack"), true))
                                                         {
-                                                            return new Endpoint(Interpolate(@"https://{arn#accountId}.{OperationType}-kinesis.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                                                            return new Endpoint(Interpolate(@"https://{arn#accountId}.{OperationType}-kinesis-fips.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                                                         }
-                                                        throw new AmazonClientException("DualStack is enabled but this partition does not support DualStack");
+                                                        throw new AmazonClientException("DualStack is enabled, but this partition does not support DualStack.");
                                                     }
-                                                    return new Endpoint(Interpolate(@"https://{arn#accountId}.{OperationType}-kinesis.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                                                    throw new AmazonClientException("FIPS is enabled, but this partition does not support FIPS.");
                                                 }
-                                                throw new AmazonClientException("Operation Type is not set. Please contact service team for resolution.");
+                                                if (Equals(refs["UseFIPS"], true))
+                                                {
+                                                    if (Equals(GetAttr(refs["PartitionResult"], "supportsFIPS"), true))
+                                                    {
+                                                        return new Endpoint(Interpolate(@"https://{arn#accountId}.{OperationType}-kinesis-fips.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                                                    }
+                                                    throw new AmazonClientException("FIPS is enabled but this partition does not support FIPS");
+                                                }
+                                                if (Equals(refs["UseDualStack"], true))
+                                                {
+                                                    if (Equals(GetAttr(refs["PartitionResult"], "supportsDualStack"), true))
+                                                    {
+                                                        return new Endpoint(Interpolate(@"https://{arn#accountId}.{OperationType}-kinesis.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                                                    }
+                                                    throw new AmazonClientException("DualStack is enabled but this partition does not support DualStack");
+                                                }
+                                                return new Endpoint(Interpolate(@"https://{arn#accountId}.{OperationType}-kinesis.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                                             }
-                                            throw new AmazonClientException(Interpolate(@"Partition: {arn#partition} from ARN doesn't match with partition name: {PartitionResult#name}.", refs));
+                                            throw new AmazonClientException("Operation Type is not set. Please contact service team for resolution.");
                                         }
-                                        throw new AmazonClientException(Interpolate(@"Invalid ARN: Kinesis ARNs don't support `{arnType}` arn types.", refs));
+                                        throw new AmazonClientException(Interpolate(@"Partition: {arn#partition} from ARN doesn't match with partition name: {PartitionResult#name}.", refs));
                                     }
-                                    throw new AmazonClientException("Invalid ARN: No ARN type specified");
+                                    throw new AmazonClientException(Interpolate(@"Invalid ARN: Kinesis ARNs don't support `{arnType}` arn types.", refs));
                                 }
-                                throw new AmazonClientException(Interpolate(@"Invalid ARN: The ARN was not for the Kinesis service, found: {arn#service}.", refs));
+                                throw new AmazonClientException("Invalid ARN: No ARN type specified");
                             }
-                            throw new AmazonClientException("Invalid ARN: Invalid region.");
+                            throw new AmazonClientException(Interpolate(@"Invalid ARN: The ARN was not for the Kinesis service, found: {arn#service}.", refs));
                         }
-                        throw new AmazonClientException("Invalid ARN: Invalid account id.");
+                        throw new AmazonClientException("Invalid ARN: Invalid region.");
                     }
-                    throw new AmazonClientException("Invalid ARN: Failed to parse ARN.");
+                    throw new AmazonClientException("Invalid ARN: Invalid account id.");
                 }
-                if (IsSet(refs["Endpoint"]))
-                {
-                    if (Equals(refs["UseFIPS"], true))
-                    {
-                        throw new AmazonClientException("Invalid Configuration: FIPS and custom endpoint are not supported");
-                    }
-                    if (Equals(refs["UseDualStack"], true))
-                    {
-                        throw new AmazonClientException("Invalid Configuration: Dualstack and custom endpoint are not supported");
-                    }
-                    return new Endpoint((string)refs["Endpoint"], InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                }
-                if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
-                {
-                    if (Equals(true, GetAttr(refs["PartitionResult"], "supportsFIPS")) && Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
-                    {
-                        return new Endpoint(Interpolate(@"https://kinesis-fips.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                    }
-                    throw new AmazonClientException("FIPS and DualStack are enabled, but this partition does not support one or both");
-                }
+                throw new AmazonClientException("Invalid ARN: Failed to parse ARN.");
+            }
+            if (IsSet(refs["Endpoint"]))
+            {
                 if (Equals(refs["UseFIPS"], true))
                 {
-                    if (Equals(true, GetAttr(refs["PartitionResult"], "supportsFIPS")))
-                    {
-                        if (Equals("aws-us-gov", GetAttr(refs["PartitionResult"], "name")))
-                        {
-                            return new Endpoint(Interpolate(@"https://kinesis.{Region}.amazonaws.com", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                        }
-                        return new Endpoint(Interpolate(@"https://kinesis-fips.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                    }
-                    throw new AmazonClientException("FIPS is enabled but this partition does not support FIPS");
+                    throw new AmazonClientException("Invalid Configuration: FIPS and custom endpoint are not supported");
                 }
                 if (Equals(refs["UseDualStack"], true))
                 {
-                    if (Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
-                    {
-                        return new Endpoint(Interpolate(@"https://kinesis.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                    }
-                    throw new AmazonClientException("DualStack is enabled but this partition does not support DualStack");
+                    throw new AmazonClientException("Invalid Configuration: Dualstack and custom endpoint are not supported");
                 }
-                if (Equals(refs["Region"], "us-gov-east-1"))
-                {
-                    return new Endpoint("https://kinesis.us-gov-east-1.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                }
-                if (Equals(refs["Region"], "us-gov-west-1"))
-                {
-                    return new Endpoint("https://kinesis.us-gov-west-1.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                }
-                return new Endpoint(Interpolate(@"https://kinesis.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                return new Endpoint((string)refs["Endpoint"], InterpolateJson(@"", refs), InterpolateJson(@"", refs));
             }
+            if (IsSet(refs["Region"]))
+            {
+                if ((refs["PartitionResult"] = Partition((string)refs["Region"])) != null)
+                {
+                    if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
+                    {
+                        if (Equals(true, GetAttr(refs["PartitionResult"], "supportsFIPS")) && Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
+                        {
+                            return new Endpoint(Interpolate(@"https://kinesis-fips.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                        }
+                        throw new AmazonClientException("FIPS and DualStack are enabled, but this partition does not support one or both");
+                    }
+                    if (Equals(refs["UseFIPS"], true))
+                    {
+                        if (Equals(GetAttr(refs["PartitionResult"], "supportsFIPS"), true))
+                        {
+                            if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws-us-gov"))
+                            {
+                                return new Endpoint(Interpolate(@"https://kinesis.{Region}.amazonaws.com", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                            }
+                            return new Endpoint(Interpolate(@"https://kinesis-fips.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                        }
+                        throw new AmazonClientException("FIPS is enabled but this partition does not support FIPS");
+                    }
+                    if (Equals(refs["UseDualStack"], true))
+                    {
+                        if (Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
+                        {
+                            return new Endpoint(Interpolate(@"https://kinesis.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                        }
+                        throw new AmazonClientException("DualStack is enabled but this partition does not support DualStack");
+                    }
+                    return new Endpoint(Interpolate(@"https://kinesis.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                }
+            }
+            throw new AmazonClientException("Invalid Configuration: Missing Region");
 
             throw new AmazonClientException("Cannot resolve endpoint");
         }

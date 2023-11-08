@@ -78,8 +78,12 @@ namespace Amazon.TimestreamWrite.Internal
                     }
                     if (Equals(refs["UseFIPS"], true))
                     {
-                        if (Equals(true, GetAttr(refs["PartitionResult"], "supportsFIPS")))
+                        if (Equals(GetAttr(refs["PartitionResult"], "supportsFIPS"), true))
                         {
+                            if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws-us-gov"))
+                            {
+                                return new Endpoint(Interpolate(@"https://ingest.timestream.{Region}.amazonaws.com", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                            }
                             return new Endpoint(Interpolate(@"https://ingest.timestream-fips.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                         }
                         throw new AmazonClientException("FIPS is enabled but this partition does not support FIPS");
