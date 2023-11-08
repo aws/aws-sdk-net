@@ -837,20 +837,5 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             var endpoint = new AmazonRDSEndpointProvider().ResolveEndpoint(parameters);
         }
 
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("RDS")]
-        [Description("Partition doesn't support DualStack")]
-        [ExpectedException(typeof(AmazonClientException), @"DualStack is enabled but this partition does not support DualStack")]
-        public void Partition_doesnt_support_DualStack_Test()
-        {
-            var parameters = new RDSEndpointParameters();
-            parameters["Region"] = "us-isob-east-1";
-            parameters["UseFIPS"] = false;
-            parameters["UseDualStack"] = true;
-            var endpoint = new AmazonRDSEndpointProvider().ResolveEndpoint(parameters);
-        }
-
     }
 }
