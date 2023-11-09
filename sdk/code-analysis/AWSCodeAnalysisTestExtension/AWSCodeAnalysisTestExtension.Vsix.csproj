@@ -872,10 +872,6 @@
       <Project>{BFEE58EE-DF58-4F52-A99B-01D05FB251AF}</Project>
       <Name>AWSSDK.MachineLearning.CodeAnalysis</Name>
     </ProjectReference>
-    <ProjectReference Include="../ServiceAnalysis/Macie/AWSSDK.Macie.CodeAnalysis.csproj">
-      <Project>{D0FFC9AF-C480-4E92-BD03-2DCBD4BABA72}</Project>
-      <Name>AWSSDK.Macie.CodeAnalysis</Name>
-    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/Macie2/AWSSDK.Macie2.CodeAnalysis.csproj">
       <Project>{D774395B-8CE5-4430-9EE3-9C6E3D299326}</Project>
       <Name>AWSSDK.Macie2.CodeAnalysis</Name>

@@ -935,11 +935,6 @@
     "service_envvar_name": "AWS_ENDPOINT_URL_MACHINE_LEARNING"
   },
   {
-    "service_id": "Macie",
-    "services_section_name": "macie",
-    "service_envvar_name": "AWS_ENDPOINT_URL_MACIE"
-  },
-  {
     "service_id": "Macie2",
     "services_section_name": "macie2",
     "service_envvar_name": "AWS_ENDPOINT_URL_MACIE2"

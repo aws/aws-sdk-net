@@ -538,8 +538,6 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Amazon Lookout for Metrics is now generally available. You can use Lookout for Metrics to monitor your data for anomalies. For more information, see the Amazon Lookout for Metrics Developer Guide.
 * [AWSSDK.MachineLearning](https://www.nuget.org/packages/AWSSDK.MachineLearning/)
 	* Amazon Machine Learning is a service that makes it easy for developers of all skill levels to use machine learning technology.
-* [AWSSDK.Macie](https://www.nuget.org/packages/AWSSDK.Macie/)
-	* Amazon Macie is a security service that uses machine learning to automatically discover, classify, and protect sensitive data in AWS. With this release, we are launching the following Macie HTTPS API operations: AssociateMemberAccount, AssociateS3Resources, DisassociateMemberAccount, DisassociateS3Resources, ListMemberAccounts, ListS3Resources, and UpdateS3Resources. With these API operations you can issue HTTPS requests directly to the service.
 * [AWSSDK.Macie2](https://www.nuget.org/packages/AWSSDK.Macie2/)
 	* This release introduces a new major version of the Amazon Macie API. You can use this version of the API to develop tools and applications that interact with the new Amazon Macie.
 * [AWSSDK.MainframeModernization](https://www.nuget.org/packages/AWSSDK.MainframeModernization/)
