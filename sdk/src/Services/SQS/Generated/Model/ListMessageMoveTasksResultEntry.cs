@@ -40,7 +40,7 @@ namespace Amazon.SQS.Model
         private int? _maxNumberOfMessagesPerSecond;
         private string _sourceArn;
         private long? _startedTimestamp;
-        private TaskStatus _status;
+        private string _status;
         private string _taskHandle;
 
         /// <summary>
@@ -182,7 +182,7 @@ namespace Amazon.SQS.Model
         /// CANCELLING, CANCELLED, and FAILED.
         /// </para>
         /// </summary>
-        public TaskStatus Status
+        public string Status
         {
             get { return this._status; }
             set { this._status = value; }
