@@ -2245,4 +2245,74 @@ namespace Amazon.Comprehend
         }
     }
 
+
+    /// <summary>
+    /// Constants used for properties of type ToxicContentType.
+    /// </summary>
+    public class ToxicContentType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant GRAPHIC for ToxicContentType
+        /// </summary>
+        public static readonly ToxicContentType GRAPHIC = new ToxicContentType("GRAPHIC");
+        /// <summary>
+        /// Constant HARASSMENT_OR_ABUSE for ToxicContentType
+        /// </summary>
+        public static readonly ToxicContentType HARASSMENT_OR_ABUSE = new ToxicContentType("HARASSMENT_OR_ABUSE");
+        /// <summary>
+        /// Constant HATE_SPEECH for ToxicContentType
+        /// </summary>
+        public static readonly ToxicContentType HATE_SPEECH = new ToxicContentType("HATE_SPEECH");
+        /// <summary>
+        /// Constant INSULT for ToxicContentType
+        /// </summary>
+        public static readonly ToxicContentType INSULT = new ToxicContentType("INSULT");
+        /// <summary>
+        /// Constant PROFANITY for ToxicContentType
+        /// </summary>
+        public static readonly ToxicContentType PROFANITY = new ToxicContentType("PROFANITY");
+        /// <summary>
+        /// Constant SEXUAL for ToxicContentType
+        /// </summary>
+        public static readonly ToxicContentType SEXUAL = new ToxicContentType("SEXUAL");
+        /// <summary>
+        /// Constant VIOLENCE_OR_THREAT for ToxicContentType
+        /// </summary>
+        public static readonly ToxicContentType VIOLENCE_OR_THREAT = new ToxicContentType("VIOLENCE_OR_THREAT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ToxicContentType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ToxicContentType FindValue(string value)
+        {
+            return FindValue<ToxicContentType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ToxicContentType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
 }

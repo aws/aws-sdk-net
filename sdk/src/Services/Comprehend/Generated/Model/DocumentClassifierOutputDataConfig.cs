@@ -30,7 +30,7 @@ namespace Amazon.Comprehend.Model
 {
     /// <summary>
     /// Provide the location for output data from a custom classifier job. This field is mandatory
-    /// if you are training a native classifier model.
+    /// if you are training a native document model.
     /// </summary>
     public partial class DocumentClassifierOutputDataConfig
     {

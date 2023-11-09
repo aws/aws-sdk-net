@@ -40,8 +40,12 @@ namespace Amazon.Comprehend.Model
         /// Gets and sets the property KmsKeyId. 
         /// <para>
         /// ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend
-        /// uses to encrypt the output results from an analysis job. The KmsKeyId can be one of
-        /// the following formats:
+        /// uses to encrypt the output results from an analysis job. Specify the Key Id of a symmetric
+        /// key, because you cannot use an asymmetric key for uploading data to S3.
+        /// </para>
+        ///  
+        /// <para>
+        /// The KmsKeyId can be one of the following formats:
         /// </para>
         ///  <ul> <li> 
         /// <para>

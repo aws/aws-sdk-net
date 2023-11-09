@@ -29,44 +29,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Comprehend.Model
 {
     /// <summary>
-    /// Container for the parameters to the DetectTargetedSentiment operation.
-    /// Inspects the input text and returns a sentiment analysis for each entity identified
-    /// in the text.
-    /// 
-    ///  
-    /// <para>
-    /// For more information about targeted sentiment, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-targeted-sentiment.html">Targeted
-    /// sentiment</a> in the <i>Amazon Comprehend Developer Guide</i>.
-    /// </para>
+    /// One of the of text strings. Each string has a size limit of 1KB.
     /// </summary>
-    public partial class DetectTargetedSentimentRequest : AmazonComprehendRequest
+    public partial class TextSegment
     {
-        private LanguageCode _languageCode;
         private string _text;
-
-        /// <summary>
-        /// Gets and sets the property LanguageCode. 
-        /// <para>
-        /// The language of the input documents. Currently, English is the only supported language.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public LanguageCode LanguageCode
-        {
-            get { return this._languageCode; }
-            set { this._languageCode = value; }
-        }
-
-        // Check to see if LanguageCode property is set
-        internal bool IsSetLanguageCode()
-        {
-            return this._languageCode != null;
-        }
 
         /// <summary>
         /// Gets and sets the property Text. 
         /// <para>
-        /// A UTF-8 text string. The maximum string length is 5 KB.
+        /// The text content.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1)]

@@ -29,25 +29,22 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Comprehend.Model
 {
     /// <summary>
-    /// Container for the parameters to the DetectTargetedSentiment operation.
-    /// Inspects the input text and returns a sentiment analysis for each entity identified
-    /// in the text.
-    /// 
-    ///  
-    /// <para>
-    /// For more information about targeted sentiment, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-targeted-sentiment.html">Targeted
-    /// sentiment</a> in the <i>Amazon Comprehend Developer Guide</i>.
-    /// </para>
+    /// Container for the parameters to the DetectToxicContent operation.
+    /// Performs toxicity analysis on the list of text strings that you provide as input.
+    /// The analysis uses the order of strings in the list to determine context when predicting
+    /// toxicity. The API response contains a results list that matches the size of the input
+    /// list. For more information about toxicity detection, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/toxicity-detection.html">Toxicity
+    /// detection</a> in the <i>Amazon Comprehend Developer Guide</i>
     /// </summary>
-    public partial class DetectTargetedSentimentRequest : AmazonComprehendRequest
+    public partial class DetectToxicContentRequest : AmazonComprehendRequest
     {
         private LanguageCode _languageCode;
-        private string _text;
+        private List<TextSegment> _textSegments = new List<TextSegment>();
 
         /// <summary>
         /// Gets and sets the property LanguageCode. 
         /// <para>
-        /// The language of the input documents. Currently, English is the only supported language.
+        /// The language of the input text. Currently, English is the only supported language.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -64,22 +61,22 @@ namespace Amazon.Comprehend.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Text. 
+        /// Gets and sets the property TextSegments. 
         /// <para>
-        /// A UTF-8 text string. The maximum string length is 5 KB.
+        /// A list of up to 10 text strings. The maximum size for the list is 10 KB.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1)]
-        public string Text
+        public List<TextSegment> TextSegments
         {
-            get { return this._text; }
-            set { this._text = value; }
+            get { return this._textSegments; }
+            set { this._textSegments = value; }
         }
 
-        // Check to see if Text property is set
-        internal bool IsSetText()
+        // Check to see if TextSegments property is set
+        internal bool IsSetTextSegments()
         {
-            return this._text != null;
+            return this._textSegments != null && this._textSegments.Count > 0; 
         }
 
     }

@@ -29,51 +29,50 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Comprehend.Model
 {
     /// <summary>
-    /// The location of the training documents. This parameter is required in a request to
-    /// create a semi-structured document classification model.
+    /// Toxic content analysis result for one string. For more information about toxicity
+    /// detection, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/toxicity-detection.html">Toxicity
+    /// detection</a> in the <i>Amazon Comprehend Developer Guide</i>
     /// </summary>
-    public partial class DocumentClassifierDocuments
+    public partial class ToxicContent
     {
-        private string _s3Uri;
-        private string _testS3Uri;
+        private ToxicContentType _name;
+        private float? _score;
 
         /// <summary>
-        /// Gets and sets the property S3Uri. 
+        /// Gets and sets the property Name. 
         /// <para>
-        /// The S3 URI location of the training documents specified in the S3Uri CSV file.
+        /// The name of the toxic content type.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=1024)]
-        public string S3Uri
+        public ToxicContentType Name
         {
-            get { return this._s3Uri; }
-            set { this._s3Uri = value; }
+            get { return this._name; }
+            set { this._name = value; }
         }
 
-        // Check to see if S3Uri property is set
-        internal bool IsSetS3Uri()
+        // Check to see if Name property is set
+        internal bool IsSetName()
         {
-            return this._s3Uri != null;
+            return this._name != null;
         }
 
         /// <summary>
-        /// Gets and sets the property TestS3Uri. 
+        /// Gets and sets the property Score. 
         /// <para>
-        /// The S3 URI location of the test documents included in the TestS3Uri CSV file. This
-        /// field is not required if you do not specify a test CSV file.
+        ///  Model confidence in the detected content type. Value range is zero to one, where
+        /// one is highest confidence.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
-        public string TestS3Uri
+        public float Score
         {
-            get { return this._testS3Uri; }
-            set { this._testS3Uri = value; }
+            get { return this._score.GetValueOrDefault(); }
+            set { this._score = value; }
         }
 
-        // Check to see if TestS3Uri property is set
-        internal bool IsSetTestS3Uri()
+        // Check to see if Score property is set
+        internal bool IsSetScore()
         {
-            return this._testS3Uri != null;
+            return this._score.HasValue; 
         }
 
     }

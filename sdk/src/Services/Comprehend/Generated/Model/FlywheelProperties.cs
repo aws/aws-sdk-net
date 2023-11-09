@@ -253,7 +253,7 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property TaskConfig. 
         /// <para>
-        /// Configuration about the custom classifier associated with the flywheel.
+        /// Configuration about the model associated with a flywheel.
         /// </para>
         /// </summary>
         public TaskConfig TaskConfig

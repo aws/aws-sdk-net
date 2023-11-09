@@ -36,7 +36,7 @@ namespace Amazon.Comprehend.Model
     ///  
     /// <para>
     /// For more information about targeted sentiment, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-targeted-sentiment.html">Targeted
-    /// sentiment</a>.
+    /// sentiment</a> in the <i>Amazon Comprehend Developer Guide</i>.
     /// </para>
     /// </summary>
     public partial class BatchDetectTargetedSentimentRequest : AmazonComprehendRequest

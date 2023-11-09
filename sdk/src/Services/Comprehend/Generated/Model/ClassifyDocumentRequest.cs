@@ -30,15 +30,25 @@ namespace Amazon.Comprehend.Model
 {
     /// <summary>
     /// Container for the parameters to the ClassifyDocument operation.
-    /// Creates a new document classification request to analyze a single document in real-time,
-    /// using a previously created and trained custom model and an endpoint.
+    /// Creates a classification request to analyze a single document in real-time. <code>ClassifyDocument</code>
+    /// supports the following model types:
     /// 
-    ///  
+    ///  <ul> <li> 
     /// <para>
-    /// You can input plain text or you can upload a single-page input document (text, PDF,
-    /// Word, or image). 
+    /// Custom classifier - a custom model that you have created and trained. For input, you
+    /// can provide plain text, a single-page document (PDF, Word, or image), or Textract
+    /// API output. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-document-classification.html">Custom
+    /// classification</a> in the <i>Amazon Comprehend Developer Guide</i>.
     /// </para>
-    ///  
+    ///  </li> <li> 
+    /// <para>
+    /// Prompt classifier - Amazon Comprehend provides a model for classifying prompts. For
+    /// input, you provide English plain text input. For prompt classification, the response
+    /// includes only the <code>Classes</code> field. For more information about prompt classifiers,
+    /// see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/prompt-classification.html">Prompt
+    /// classifiers</a> in the <i>Amazon Comprehend Developer Guide</i>.
+    /// </para>
+    ///  </li> </ul> 
     /// <para>
     /// If the system detects errors while processing a page in the input document, the API
     /// response includes an entry in <code>Errors</code> that describes the errors.
@@ -61,9 +71,18 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property Bytes. 
         /// <para>
-        /// Use the <code>Bytes</code> parameter to input a text, PDF, Word or image file. You
-        /// can also use the <code>Bytes</code> parameter to input an Amazon Textract <code>DetectDocumentText</code>
-        /// or <code>AnalyzeDocument</code> output file.
+        /// Use the <code>Bytes</code> parameter to input a text, PDF, Word or image file.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you classify a document using a custom model, you can also use the <code>Bytes</code>
+        /// parameter to input an Amazon Textract <code>DetectDocumentText</code> or <code>AnalyzeDocument</code>
+        /// output file.
+        /// </para>
+        ///  
+        /// <para>
+        /// To classify a document using the prompt classifier, use the <code>Text</code> parameter
+        /// for input.
         /// </para>
         ///  
         /// <para>
@@ -117,9 +136,17 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property EndpointArn. 
         /// <para>
-        /// The Amazon Resource Number (ARN) of the endpoint. For information about endpoints,
-        /// see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing
-        /// endpoints</a>.
+        /// The Amazon Resource Number (ARN) of the endpoint. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For prompt classification, Amazon Comprehend provides the endpoint ARN: <code>zzz</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For custom classification, you create an endpoint for your custom model. For more
+        /// information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/using-endpoints.html">Using
+        /// Amazon Comprehend endpoints</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=256)]

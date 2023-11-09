@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Comprehend.Model
 {
     /// <summary>
-    /// Configuration required for a custom classification model.
+    /// Configuration required for a document classification model.
     /// </summary>
     public partial class DocumentClassificationConfig
     {
