@@ -22,6 +22,12 @@
     <max>512</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.CreateDeliveryRequest.DeliverySourceName</property>
+    <min>1</min>
+    <max>60</max>
+    <pattern>[\w-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.CreateExportTaskRequest.Destination</property>
     <min>1</min>
     <max>512</max>
@@ -85,6 +91,30 @@
     <pattern>[\w#+=/:,.@-]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.DeleteDeliveryRequest.Id</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[0-9A-Za-z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.DeleteDeliveryDestinationRequest.Name</property>
+    <min>1</min>
+    <max>60</max>
+    <pattern>[\w-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.DeleteDeliveryDestinationPolicyRequest.DeliveryDestinationName</property>
+    <min>1</min>
+    <max>60</max>
+    <pattern>[\w-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.DeleteDeliverySourceRequest.Name</property>
+    <min>1</min>
+    <max>60</max>
+    <pattern>[\w-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.DeleteDestinationRequest.DestinationName</property>
     <min>1</min>
     <max>512</max>
@@ -142,6 +172,45 @@
     <min>1</min>
     <max>512</max>
     <pattern>[\.\-_/#A-Za-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.DescribeDeliveriesRequest.Limit</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.DescribeDeliveriesRequest.NextToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.DescribeDeliveriesResponse.NextToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.DescribeDeliveryDestinationsRequest.Limit</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.DescribeDeliveryDestinationsRequest.NextToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.DescribeDeliveryDestinationsResponse.NextToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.DescribeDeliverySourcesRequest.Limit</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.DescribeDeliverySourcesRequest.NextToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.DescribeDeliverySourcesResponse.NextToken</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.DescribeDestinationsRequest.DestinationNamePrefix</property>
@@ -419,6 +488,30 @@
     <pattern>[\w#+=/:,.@-]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.GetDeliveryRequest.Id</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[0-9A-Za-z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.GetDeliveryDestinationRequest.Name</property>
+    <min>1</min>
+    <max>60</max>
+    <pattern>[\w-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.GetDeliveryDestinationPolicyRequest.DeliveryDestinationName</property>
+    <min>1</min>
+    <max>60</max>
+    <pattern>[\w-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.GetDeliverySourceRequest.Name</property>
+    <min>1</min>
+    <max>60</max>
+    <pattern>[\w-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.GetLogEventsRequest.EndTime</property>
     <min>0</min>
   </property-value-rule>
@@ -513,6 +606,35 @@
     <min>1</min>
     <max>2048</max>
     <pattern>[\w#+=/:,.@-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.PutDeliveryDestinationRequest.Name</property>
+    <min>1</min>
+    <max>60</max>
+    <pattern>[\w-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.PutDeliveryDestinationPolicyRequest.DeliveryDestinationName</property>
+    <min>1</min>
+    <max>60</max>
+    <pattern>[\w-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.PutDeliveryDestinationPolicyRequest.DeliveryDestinationPolicy</property>
+    <min>1</min>
+    <max>51200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.PutDeliverySourceRequest.LogType</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[\w]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.PutDeliverySourceRequest.Name</property>
+    <min>1</min>
+    <max>60</max>
+    <pattern>[\w-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.PutDestinationRequest.DestinationName</property>
@@ -715,6 +837,42 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.Delivery.DeliverySourceName</property>
+    <min>1</min>
+    <max>60</max>
+    <pattern>[\w-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.Delivery.Id</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[0-9A-Za-z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.DeliveryDestination.Name</property>
+    <min>1</min>
+    <max>60</max>
+    <pattern>[\w-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.DeliverySource.LogType</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[\w]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.DeliverySource.Name</property>
+    <min>1</min>
+    <max>60</max>
+    <pattern>[\w-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.DeliverySource.Service</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[\w]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.Destination.AccessPolicy</property>
     <min>1</min>
   </property-value-rule>
@@ -906,6 +1064,11 @@
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.OutputLogEvent.Timestamp</property>
     <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.Policy.DeliveryDestinationPolicy</property>
+    <min>1</min>
+    <max>51200</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.QueryDefinition.LastModified</property>

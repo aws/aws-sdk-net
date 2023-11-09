@@ -29,6 +29,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
 namespace Amazon.SQS.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -41,81 +43,72 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Message Unmarshall(XmlUnmarshallerContext context)
+        Message IUnmarshaller<Message, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-            Message unmarshalledObject = new Message();
-            int originalDepth = context.CurrentDepth;
-            int targetDepth = originalDepth + 1;
-            
-            if (context.IsStartOfDocument) 
-               targetDepth += 2;
-            
-            while (context.ReadAtDepth(originalDepth))
-            {
-                if (context.IsStartElement || context.IsAttribute)
-                {
-                    if (context.TestExpression("Attribute", targetDepth))
-                    {
-                        var unmarshaller = new KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.Attributes.Add(item);
-                        continue;
-                    }
-                    if (context.TestExpression("Body", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Body = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("MD5OfBody", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.MD5OfBody = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("MD5OfMessageAttributes", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.MD5OfMessageAttributes = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("MessageAttribute", targetDepth))
-                    {
-                        var unmarshaller = new KeyValueUnmarshaller<string, MessageAttributeValue, StringUnmarshaller, MessageAttributeValueUnmarshaller>(StringUnmarshaller.Instance, MessageAttributeValueUnmarshaller.Instance);
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.MessageAttributes.Add(item);
-                        continue;
-                    }
-                    if (context.TestExpression("MessageId", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.MessageId = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("ReceiptHandle", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.ReceiptHandle = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                }
-                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
-                {
-                    return unmarshalledObject;
-                }
-            }
-
-            return unmarshalledObject;
+            throw new NotImplementedException();
         }
 
         /// <summary>
-        /// Unmarshaller error response to exception.
+        /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
         public Message Unmarshall(JsonUnmarshallerContext context)
         {
-            return null;
+            context.Read();
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            Message unmarshalledObject = new Message();
+        
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
+            {
+                if (context.TestExpression("Attributes", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.Attributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Body", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Body = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("MD5OfBody", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MD5OfBody = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("MD5OfMessageAttributes", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MD5OfMessageAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("MessageAttributes", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, MessageAttributeValue, StringUnmarshaller, MessageAttributeValueUnmarshaller>(StringUnmarshaller.Instance, MessageAttributeValueUnmarshaller.Instance);
+                    unmarshalledObject.MessageAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("MessageId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MessageId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ReceiptHandle", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ReceiptHandle = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+            }
+          
+            return unmarshalledObject;
         }
 
 

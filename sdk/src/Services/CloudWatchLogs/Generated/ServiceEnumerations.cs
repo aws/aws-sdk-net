@@ -83,6 +83,60 @@ namespace Amazon.CloudWatchLogs
 
 
     /// <summary>
+    /// Constants used for properties of type DeliveryDestinationType.
+    /// </summary>
+    public class DeliveryDestinationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CWL for DeliveryDestinationType
+        /// </summary>
+        public static readonly DeliveryDestinationType CWL = new DeliveryDestinationType("CWL");
+        /// <summary>
+        /// Constant FH for DeliveryDestinationType
+        /// </summary>
+        public static readonly DeliveryDestinationType FH = new DeliveryDestinationType("FH");
+        /// <summary>
+        /// Constant S3 for DeliveryDestinationType
+        /// </summary>
+        public static readonly DeliveryDestinationType S3 = new DeliveryDestinationType("S3");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DeliveryDestinationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DeliveryDestinationType FindValue(string value)
+        {
+            return FindValue<DeliveryDestinationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DeliveryDestinationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Distribution.
     /// </summary>
     public class Distribution : ConstantClass
@@ -288,6 +342,68 @@ namespace Amazon.CloudWatchLogs
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator OrderBy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OutputFormat.
+    /// </summary>
+    public class OutputFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Json for OutputFormat
+        /// </summary>
+        public static readonly OutputFormat Json = new OutputFormat("json");
+        /// <summary>
+        /// Constant Parquet for OutputFormat
+        /// </summary>
+        public static readonly OutputFormat Parquet = new OutputFormat("parquet");
+        /// <summary>
+        /// Constant Plain for OutputFormat
+        /// </summary>
+        public static readonly OutputFormat Plain = new OutputFormat("plain");
+        /// <summary>
+        /// Constant Raw for OutputFormat
+        /// </summary>
+        public static readonly OutputFormat Raw = new OutputFormat("raw");
+        /// <summary>
+        /// Constant W3c for OutputFormat
+        /// </summary>
+        public static readonly OutputFormat W3c = new OutputFormat("w3c");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OutputFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OutputFormat FindValue(string value)
+        {
+            return FindValue<OutputFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OutputFormat(string value)
         {
             return FindValue(value);
         }

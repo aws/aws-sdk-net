@@ -723,4 +723,9 @@
     <min>1</min>
     <max>500</max>
   </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectCases.Model.UserUnion.UserArn</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
 </property-value-rules>

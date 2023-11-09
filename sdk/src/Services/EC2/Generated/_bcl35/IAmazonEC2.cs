@@ -18803,6 +18803,61 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DisableSnapshotBlockPublicAccess
+
+
+        /// <summary>
+        /// Disables the <i>block public access for snapshots</i> setting at the account level
+        /// for the specified Amazon Web Services Region. After you disable block public access
+        /// for snapshots in a Region, users can publicly share snapshots in that Region.
+        /// 
+        ///  
+        /// <para>
+        /// If block public access is enabled in <code>block-all-sharing</code> mode, and you
+        /// disable block public access, all snapshots that were previously publicly shared are
+        /// no longer treated as private and they become publicly accessible again.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-public-access-snapshots.html">
+        /// Block public access for snapshots</a> in the <i>Amazon Elastic Compute Cloud User
+        /// Guide</i> .
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableSnapshotBlockPublicAccess service method.</param>
+        /// 
+        /// <returns>The response from the DisableSnapshotBlockPublicAccess service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableSnapshotBlockPublicAccess">REST API Reference for DisableSnapshotBlockPublicAccess Operation</seealso>
+        DisableSnapshotBlockPublicAccessResponse DisableSnapshotBlockPublicAccess(DisableSnapshotBlockPublicAccessRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisableSnapshotBlockPublicAccess operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisableSnapshotBlockPublicAccess operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisableSnapshotBlockPublicAccess
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableSnapshotBlockPublicAccess">REST API Reference for DisableSnapshotBlockPublicAccess Operation</seealso>
+        IAsyncResult BeginDisableSnapshotBlockPublicAccess(DisableSnapshotBlockPublicAccessRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisableSnapshotBlockPublicAccess operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisableSnapshotBlockPublicAccess.</param>
+        /// 
+        /// <returns>Returns a  DisableSnapshotBlockPublicAccessResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableSnapshotBlockPublicAccess">REST API Reference for DisableSnapshotBlockPublicAccess Operation</seealso>
+        DisableSnapshotBlockPublicAccessResponse EndDisableSnapshotBlockPublicAccess(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DisableTransitGatewayRouteTablePropagation
 
 
@@ -20168,6 +20223,64 @@ namespace Amazon.EC2
         /// <returns>Returns a  EnableSerialConsoleAccessResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableSerialConsoleAccess">REST API Reference for EnableSerialConsoleAccess Operation</seealso>
         EnableSerialConsoleAccessResponse EndEnableSerialConsoleAccess(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  EnableSnapshotBlockPublicAccess
+
+
+        /// <summary>
+        /// Enables or modifies the <i>block public access for snapshots</i> setting at the account
+        /// level for the specified Amazon Web Services Region. After you enable block public
+        /// access for snapshots in a Region, users can no longer request public sharing for snapshots
+        /// in that Region. Snapshots that are already publicly shared are either treated as private
+        /// or they remain publicly shared, depending on the <b>State</b> that you specify.
+        /// 
+        ///  
+        /// <para>
+        /// If block public access is enabled in <code>block-all-sharing</code> mode, and you
+        /// change the mode to <code>block-new-sharing</code>, all snapshots that were previously
+        /// publicly shared are no longer treated as private and they become publicly accessible
+        /// again.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-public-access-snapshots.html">
+        /// Block public access for snapshots</a> in the <i>Amazon Elastic Compute Cloud User
+        /// Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableSnapshotBlockPublicAccess service method.</param>
+        /// 
+        /// <returns>The response from the EnableSnapshotBlockPublicAccess service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableSnapshotBlockPublicAccess">REST API Reference for EnableSnapshotBlockPublicAccess Operation</seealso>
+        EnableSnapshotBlockPublicAccessResponse EnableSnapshotBlockPublicAccess(EnableSnapshotBlockPublicAccessRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the EnableSnapshotBlockPublicAccess operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the EnableSnapshotBlockPublicAccess operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndEnableSnapshotBlockPublicAccess
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableSnapshotBlockPublicAccess">REST API Reference for EnableSnapshotBlockPublicAccess Operation</seealso>
+        IAsyncResult BeginEnableSnapshotBlockPublicAccess(EnableSnapshotBlockPublicAccessRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  EnableSnapshotBlockPublicAccess operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginEnableSnapshotBlockPublicAccess.</param>
+        /// 
+        /// <returns>Returns a  EnableSnapshotBlockPublicAccessResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableSnapshotBlockPublicAccess">REST API Reference for EnableSnapshotBlockPublicAccess Operation</seealso>
+        EnableSnapshotBlockPublicAccessResponse EndEnableSnapshotBlockPublicAccess(IAsyncResult asyncResult);
 
         #endregion
         
@@ -22010,6 +22123,54 @@ namespace Amazon.EC2
         /// <returns>Returns a  GetSerialConsoleAccessStatusResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetSerialConsoleAccessStatus">REST API Reference for GetSerialConsoleAccessStatus Operation</seealso>
         GetSerialConsoleAccessStatusResponse EndGetSerialConsoleAccessStatus(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetSnapshotBlockPublicAccessState
+
+
+        /// <summary>
+        /// Gets the current state of <i>block public access for snapshots</i> setting for the
+        /// account and Region.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-public-access-snapshots.html">
+        /// Block public access for snapshots</a> in the <i>Amazon Elastic Compute Cloud User
+        /// Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSnapshotBlockPublicAccessState service method.</param>
+        /// 
+        /// <returns>The response from the GetSnapshotBlockPublicAccessState service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetSnapshotBlockPublicAccessState">REST API Reference for GetSnapshotBlockPublicAccessState Operation</seealso>
+        GetSnapshotBlockPublicAccessStateResponse GetSnapshotBlockPublicAccessState(GetSnapshotBlockPublicAccessStateRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSnapshotBlockPublicAccessState operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSnapshotBlockPublicAccessState operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSnapshotBlockPublicAccessState
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetSnapshotBlockPublicAccessState">REST API Reference for GetSnapshotBlockPublicAccessState Operation</seealso>
+        IAsyncResult BeginGetSnapshotBlockPublicAccessState(GetSnapshotBlockPublicAccessStateRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetSnapshotBlockPublicAccessState operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSnapshotBlockPublicAccessState.</param>
+        /// 
+        /// <returns>Returns a  GetSnapshotBlockPublicAccessStateResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetSnapshotBlockPublicAccessState">REST API Reference for GetSnapshotBlockPublicAccessState Operation</seealso>
+        GetSnapshotBlockPublicAccessStateResponse EndGetSnapshotBlockPublicAccessState(IAsyncResult asyncResult);
 
         #endregion
         

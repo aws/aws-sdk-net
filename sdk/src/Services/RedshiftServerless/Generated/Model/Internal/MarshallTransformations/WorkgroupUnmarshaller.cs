@@ -112,6 +112,12 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
                     unmarshalledObject.EnhancedVpcRouting = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("maxCapacity", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.MaxCapacity = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("namespaceName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

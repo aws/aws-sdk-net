@@ -33,15 +33,55 @@ namespace Amazon.CloudTrail.Model
     /// </summary>
     public partial class GetInsightSelectorsResponse : AmazonWebServiceResponse
     {
+        private string _eventDataStoreArn;
+        private string _insightsDestination;
         private List<InsightSelector> _insightSelectors = new List<InsightSelector>();
         private string _trailARN;
 
         /// <summary>
+        /// Gets and sets the property EventDataStoreArn. 
+        /// <para>
+        ///  The ARN of the source event data store that enabled Insights events. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=3, Max=256)]
+        public string EventDataStoreArn
+        {
+            get { return this._eventDataStoreArn; }
+            set { this._eventDataStoreArn = value; }
+        }
+
+        // Check to see if EventDataStoreArn property is set
+        internal bool IsSetEventDataStoreArn()
+        {
+            return this._eventDataStoreArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InsightsDestination. 
+        /// <para>
+        ///  The ARN of the destination event data store that logs Insights events. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=3, Max=256)]
+        public string InsightsDestination
+        {
+            get { return this._insightsDestination; }
+            set { this._insightsDestination = value; }
+        }
+
+        // Check to see if InsightsDestination property is set
+        internal bool IsSetInsightsDestination()
+        {
+            return this._insightsDestination != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property InsightSelectors. 
         /// <para>
-        /// A JSON string that contains the insight types you want to log on a trail. In this
-        /// release, <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code> are
-        /// supported as insight types.
+        /// A JSON string that contains the Insight types you want to log on a trail or event
+        /// data store. <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code> are
+        /// supported as Insights types.
         /// </para>
         /// </summary>
         public List<InsightSelector> InsightSelectors

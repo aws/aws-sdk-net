@@ -70,6 +70,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                     unmarshalledObject.Groups = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("impersonatedUser", targetDepth))
+                {
+                    var unmarshaller = ImpersonatedUserUnmarshaller.Instance;
+                    unmarshalledObject.ImpersonatedUser = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("sessionName", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

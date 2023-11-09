@@ -326,7 +326,7 @@ namespace Amazon.Comprehend.Model
         /// <para>
         ///  Configuration parameters for a private Virtual Private Cloud (VPC) containing the
         /// resources you are using for your document classification job. For more information,
-        /// see <a href="https://docs.aws.amazon.com/vppc/latest/userguide/what-is-amazon-vpc.html">Amazon
+        /// see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
         /// VPC</a>. 
         /// </para>
         /// </summary>

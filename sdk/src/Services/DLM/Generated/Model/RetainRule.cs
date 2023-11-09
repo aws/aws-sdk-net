@@ -34,9 +34,9 @@ namespace Amazon.DLM.Model
     /// 
     ///  <note> 
     /// <para>
-    /// For snapshot policies that have an <a>ArchiveRule</a>, this retention rule applies
-    /// to standard tier retention. When the retention threshold is met, snapshots are moved
-    /// from the standard to the archive tier.
+    /// For snapshot policies that have an <a href="https://docs.aws.amazon.com/dlm/latest/APIReference/API_ArchiveRule.html">ArchiveRule</a>,
+    /// this retention rule applies to standard tier retention. When the retention threshold
+    /// is met, snapshots are moved from the standard to the archive tier.
     /// </para>
     ///  
     /// <para>
@@ -53,9 +53,11 @@ namespace Amazon.DLM.Model
     /// </para>
     ///  
     /// <para>
-    /// You must specify <b>Count</b>. If you specify an <a>ArchiveRule</a> for the schedule,
-    /// then you can specify a retention count of <code>0</code> to archive snapshots immediately
-    /// after creation. If you specify a <a>FastRestoreRule</a>, <a>ShareRule</a>, or a <a>CrossRegionCopyRule</a>,
+    /// You must specify <b>Count</b>. If you specify an <a href="https://docs.aws.amazon.com/dlm/latest/APIReference/API_ArchiveRule.html">ArchiveRule</a>
+    /// for the schedule, then you can specify a retention count of <code>0</code> to archive
+    /// snapshots immediately after creation. If you specify a <a href="https://docs.aws.amazon.com/dlm/latest/APIReference/API_FastRestoreRule.html">FastRestoreRule</a>,
+    /// <a href="https://docs.aws.amazon.com/dlm/latest/APIReference/API_ShareRule.html">ShareRule</a>,
+    /// or a <a href="https://docs.aws.amazon.com/dlm/latest/APIReference/API_CrossRegionCopyRule.html">CrossRegionCopyRule</a>,
     /// then you must specify a retention count of <code>1</code> or more.
     /// </para>
     ///  </li> <li> 
@@ -64,11 +66,12 @@ namespace Amazon.DLM.Model
     /// </para>
     ///  
     /// <para>
-    /// You must specify <b>Interval</b> and <b>IntervalUnit</b>. If you specify an <a>ArchiveRule</a>
+    /// You must specify <b>Interval</b> and <b>IntervalUnit</b>. If you specify an <a href="https://docs.aws.amazon.com/dlm/latest/APIReference/API_ArchiveRule.html">ArchiveRule</a>
     /// for the schedule, then you can specify a retention interval of <code>0</code> days
-    /// to archive snapshots immediately after creation. If you specify a <a>FastRestoreRule</a>,
-    /// <a>ShareRule</a>, or a <a>CrossRegionCopyRule</a>, then you must specify a retention
-    /// interval of <code>1</code> day or more.
+    /// to archive snapshots immediately after creation. If you specify a <a href="https://docs.aws.amazon.com/dlm/latest/APIReference/API_FastRestoreRule.html">FastRestoreRule</a>,
+    /// <a href="https://docs.aws.amazon.com/dlm/latest/APIReference/API_ShareRule.html">ShareRule</a>,
+    /// or a <a href="https://docs.aws.amazon.com/dlm/latest/APIReference/API_CrossRegionCopyRule.html">CrossRegionCopyRule</a>,
+    /// then you must specify a retention interval of <code>1</code> day or more.
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -84,7 +87,7 @@ namespace Amazon.DLM.Model
         /// The number of snapshots to retain for each volume, up to a maximum of 1000. For example
         /// if you want to retain a maximum of three snapshots, specify <code>3</code>. When the
         /// fourth snapshot is created, the oldest retained snapshot is deleted, or it is moved
-        /// to the archive tier if you have specified an <a>ArchiveRule</a>.
+        /// to the archive tier if you have specified an <a href="https://docs.aws.amazon.com/dlm/latest/APIReference/API_ArchiveRule.html">ArchiveRule</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000)]
@@ -126,7 +129,7 @@ namespace Amazon.DLM.Model
         /// The unit of time for time-based retention. For example, to retain snapshots for 3
         /// months, specify <code>Interval=3</code> and <code>IntervalUnit=MONTHS</code>. Once
         /// the snapshot has been retained for 3 months, it is deleted, or it is moved to the
-        /// archive tier if you have specified an <a>ArchiveRule</a>.
+        /// archive tier if you have specified an <a href="https://docs.aws.amazon.com/dlm/latest/APIReference/API_ArchiveRule.html">ArchiveRule</a>.
         /// </para>
         /// </summary>
         public RetentionIntervalUnitValues IntervalUnit

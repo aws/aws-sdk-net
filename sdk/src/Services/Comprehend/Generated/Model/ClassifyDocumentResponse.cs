@@ -48,6 +48,12 @@ namespace Amazon.Comprehend.Model
         /// have only a single class assigned to it. For example, an animal can be a dog or a
         /// cat, but not both at the same time. 
         /// </para>
+        ///  
+        /// <para>
+        /// For prompt classification, the response includes a single class (<code>UNDESIRED_PROMPT</code>),
+        /// along with a confidence score. A higher confidence score indicates that the input
+        /// prompt is undesired in nature.
+        /// </para>
         /// </summary>
         public List<DocumentClass> Classes
         {

@@ -78,7 +78,7 @@ namespace Amazon.StepFunctions.Internal
                     }
                     if (Equals(refs["UseFIPS"], true))
                     {
-                        if (Equals(true, GetAttr(refs["PartitionResult"], "supportsFIPS")))
+                        if (Equals(GetAttr(refs["PartitionResult"], "supportsFIPS"), true))
                         {
                             if (Equals(refs["Region"], "us-gov-west-1"))
                             {

@@ -156,6 +156,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.MasterUsername = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("MultiTenant", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.MultiTenant = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("OptionGroupName", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

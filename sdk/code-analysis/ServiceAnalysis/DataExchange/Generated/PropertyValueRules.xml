@@ -74,7 +74,7 @@
   <property-value-rule>
     <property>Amazon.DataExchange.Model.SendDataSetNotificationRequest.Comment</property>
     <min>0</min>
-    <max>16384</max>
+    <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataExchange.Model.UpdateRevisionRequest.Comment</property>

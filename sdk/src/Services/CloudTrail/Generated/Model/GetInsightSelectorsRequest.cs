@@ -31,20 +31,52 @@ namespace Amazon.CloudTrail.Model
     /// <summary>
     /// Container for the parameters to the GetInsightSelectors operation.
     /// Describes the settings for the Insights event selectors that you configured for your
-    /// trail. <code>GetInsightSelectors</code> shows if CloudTrail Insights event logging
-    /// is enabled on the trail, and if it is, which insight types are enabled. If you run
-    /// <code>GetInsightSelectors</code> on a trail that does not have Insights events enabled,
-    /// the operation throws the exception <code>InsightNotEnabledException</code> 
+    /// trail or event data store. <code>GetInsightSelectors</code> shows if CloudTrail Insights
+    /// event logging is enabled on the trail or event data store, and if it is, which Insights
+    /// types are enabled. If you run <code>GetInsightSelectors</code> on a trail or event
+    /// data store that does not have Insights events enabled, the operation throws the exception
+    /// <code>InsightNotEnabledException</code> 
     /// 
     ///  
     /// <para>
+    /// Specify either the <code>EventDataStore</code> parameter to get Insights event selectors
+    /// for an event data store, or the <code>TrailName</code> parameter to the get Insights
+    /// event selectors for a trail. You cannot specify these parameters together.
+    /// </para>
+    ///  
+    /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-insights-events-with-cloudtrail.html">Logging
-    /// CloudTrail Insights Events for Trails </a> in the <i>CloudTrail User Guide</i>.
+    /// CloudTrail Insights events</a> in the <i>CloudTrail User Guide</i>.
     /// </para>
     /// </summary>
     public partial class GetInsightSelectorsRequest : AmazonCloudTrailRequest
     {
+        private string _eventDataStore;
         private string _trailName;
+
+        /// <summary>
+        /// Gets and sets the property EventDataStore. 
+        /// <para>
+        ///  Specifies the ARN (or ID suffix of the ARN) of the event data store for which you
+        /// want to get Insights selectors. 
+        /// </para>
+        ///  
+        /// <para>
+        /// You cannot use this parameter with the <code>TrailName</code> parameter.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=3, Max=256)]
+        public string EventDataStore
+        {
+            get { return this._eventDataStore; }
+            set { this._eventDataStore = value; }
+        }
+
+        // Check to see if EventDataStore property is set
+        internal bool IsSetEventDataStore()
+        {
+            return this._eventDataStore != null;
+        }
 
         /// <summary>
         /// Gets and sets the property TrailName. 
@@ -82,8 +114,11 @@ namespace Amazon.CloudTrail.Model
         /// <para>
         ///  <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> 
         /// </para>
+        ///  
+        /// <para>
+        /// You cannot use this parameter with the <code>EventDataStore</code> parameter.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string TrailName
         {
             get { return this._trailName; }

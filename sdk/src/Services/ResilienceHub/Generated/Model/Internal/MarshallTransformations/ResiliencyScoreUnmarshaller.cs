@@ -64,6 +64,12 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("componentScore", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, ScoringComponentResiliencyScore, StringUnmarshaller, ScoringComponentResiliencyScoreUnmarshaller>(StringUnmarshaller.Instance, ScoringComponentResiliencyScoreUnmarshaller.Instance);
+                    unmarshalledObject.ComponentScore = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("disruptionScore", targetDepth))
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, double, StringUnmarshaller, DoubleUnmarshaller>(StringUnmarshaller.Instance, DoubleUnmarshaller.Instance);

@@ -574,8 +574,14 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBSnapshotNotFoundException">
         /// <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBSnapshotTenantDatabaseNotFoundException">
+        /// The specified snapshot tenant database wasn't found.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.IntegrationNotFoundException">
         /// The specified integration could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.TenantDatabaseNotFoundException">
+        /// The specified tenant database wasn't found in the DB instance.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AddTagsToResource">REST API Reference for AddTagsToResource Operation</seealso>
         public virtual AddTagsToResourceResponse AddTagsToResource(AddTagsToResourceRequest request)
@@ -2009,6 +2015,10 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.StorageTypeNotSupportedException">
         /// The specified <code>StorageType</code> can't be associated with the DB instance.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.TenantDatabaseQuotaExceededException">
+        /// You attempted to create more tenant databases than are permitted in your Amazon Web
+        /// Services account.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBInstance">REST API Reference for CreateDBInstance Operation</seealso>
         public virtual CreateDBInstanceResponse CreateDBInstance(CreateDBInstanceRequest request)
         {
@@ -2158,6 +2168,10 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.StorageTypeNotSupportedException">
         /// The specified <code>StorageType</code> can't be associated with the DB instance.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.TenantDatabaseQuotaExceededException">
+        /// You attempted to create more tenant databases than are permitted in your Amazon Web
+        /// Services account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBInstanceReadReplica">REST API Reference for CreateDBInstanceReadReplica Operation</seealso>
         public virtual CreateDBInstanceReadReplicaResponse CreateDBInstanceReadReplica(CreateDBInstanceReadReplicaRequest request)
@@ -2985,6 +2999,75 @@ namespace Amazon.RDS
         public virtual CreateOptionGroupResponse EndCreateOptionGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateOptionGroupResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateTenantDatabase
+
+        /// <summary>
+        /// Creates a tenant database in a DB instance that uses the multi-tenant configuration.
+        /// Only RDS for Oracle container database (CDB) instances are supported.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTenantDatabase service method.</param>
+        /// 
+        /// <returns>The response from the CreateTenantDatabase service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
+        /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
+        /// The DB instance isn't in a valid state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.TenantDatabaseAlreadyExistsException">
+        /// You attempted to either create a tenant database that already exists or modify a tenant
+        /// database to use the name of an existing tenant database.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.TenantDatabaseQuotaExceededException">
+        /// You attempted to create more tenant databases than are permitted in your Amazon Web
+        /// Services account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateTenantDatabase">REST API Reference for CreateTenantDatabase Operation</seealso>
+        public virtual CreateTenantDatabaseResponse CreateTenantDatabase(CreateTenantDatabaseRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTenantDatabaseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTenantDatabaseResponseUnmarshaller.Instance;
+
+            return Invoke<CreateTenantDatabaseResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTenantDatabase operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTenantDatabase operation on AmazonRDSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateTenantDatabase
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateTenantDatabase">REST API Reference for CreateTenantDatabase Operation</seealso>
+        public virtual IAsyncResult BeginCreateTenantDatabase(CreateTenantDatabaseRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTenantDatabaseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTenantDatabaseResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateTenantDatabase operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateTenantDatabase.</param>
+        /// 
+        /// <returns>Returns a  CreateTenantDatabaseResult from RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateTenantDatabase">REST API Reference for CreateTenantDatabase Operation</seealso>
+        public virtual CreateTenantDatabaseResponse EndCreateTenantDatabase(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateTenantDatabaseResponse>(asyncResult);
         }
 
         #endregion
@@ -4355,6 +4438,75 @@ namespace Amazon.RDS
         public virtual DeleteOptionGroupResponse EndDeleteOptionGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteOptionGroupResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteTenantDatabase
+
+        /// <summary>
+        /// Deletes a tenant database from your DB instance. This command only applies to RDS
+        /// for Oracle container database (CDB) instances.
+        /// 
+        ///  
+        /// <para>
+        /// You can't delete a tenant database when it is the only tenant in the DB instance.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTenantDatabase service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTenantDatabase service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
+        /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
+        /// The DB instance isn't in a valid state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.TenantDatabaseNotFoundException">
+        /// The specified tenant database wasn't found in the DB instance.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteTenantDatabase">REST API Reference for DeleteTenantDatabase Operation</seealso>
+        public virtual DeleteTenantDatabaseResponse DeleteTenantDatabase(DeleteTenantDatabaseRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTenantDatabaseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTenantDatabaseResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteTenantDatabaseResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteTenantDatabase operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTenantDatabase operation on AmazonRDSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteTenantDatabase
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteTenantDatabase">REST API Reference for DeleteTenantDatabase Operation</seealso>
+        public virtual IAsyncResult BeginDeleteTenantDatabase(DeleteTenantDatabaseRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTenantDatabaseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTenantDatabaseResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteTenantDatabase operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteTenantDatabase.</param>
+        /// 
+        /// <returns>Returns a  DeleteTenantDatabaseResult from RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteTenantDatabase">REST API Reference for DeleteTenantDatabase Operation</seealso>
+        public virtual DeleteTenantDatabaseResponse EndDeleteTenantDatabase(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteTenantDatabaseResponse>(asyncResult);
         }
 
         #endregion
@@ -6103,6 +6255,72 @@ namespace Amazon.RDS
 
         #endregion
         
+        #region  DescribeDBSnapshotTenantDatabases
+
+        /// <summary>
+        /// Describes the tenant databases that exist in a DB snapshot. This command only applies
+        /// to RDS for Oracle DB instances in the multi-tenant configuration.
+        /// 
+        ///  
+        /// <para>
+        /// You can use this command to inspect the tenant databases within a snapshot before
+        /// restoring it. You can't directly interact with the tenant databases in a DB snapshot.
+        /// If you restore a snapshot that was taken from DB instance using the multi-tenant configuration,
+        /// you restore all its tenant databases.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDBSnapshotTenantDatabases service method.</param>
+        /// 
+        /// <returns>The response from the DescribeDBSnapshotTenantDatabases service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBSnapshotNotFoundException">
+        /// <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBSnapshotTenantDatabases">REST API Reference for DescribeDBSnapshotTenantDatabases Operation</seealso>
+        public virtual DescribeDBSnapshotTenantDatabasesResponse DescribeDBSnapshotTenantDatabases(DescribeDBSnapshotTenantDatabasesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDBSnapshotTenantDatabasesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDBSnapshotTenantDatabasesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeDBSnapshotTenantDatabasesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeDBSnapshotTenantDatabases operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDBSnapshotTenantDatabases operation on AmazonRDSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeDBSnapshotTenantDatabases
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBSnapshotTenantDatabases">REST API Reference for DescribeDBSnapshotTenantDatabases Operation</seealso>
+        public virtual IAsyncResult BeginDescribeDBSnapshotTenantDatabases(DescribeDBSnapshotTenantDatabasesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDBSnapshotTenantDatabasesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDBSnapshotTenantDatabasesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeDBSnapshotTenantDatabases operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeDBSnapshotTenantDatabases.</param>
+        /// 
+        /// <returns>Returns a  DescribeDBSnapshotTenantDatabasesResult from RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBSnapshotTenantDatabases">REST API Reference for DescribeDBSnapshotTenantDatabases Operation</seealso>
+        public virtual DescribeDBSnapshotTenantDatabasesResponse EndDescribeDBSnapshotTenantDatabases(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeDBSnapshotTenantDatabasesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeDBSubnetGroups
 
         /// <summary>
@@ -7197,6 +7415,64 @@ namespace Amazon.RDS
 
         #endregion
         
+        #region  DescribeTenantDatabases
+
+        /// <summary>
+        /// Describes the tenant databases in a DB instance that uses the multi-tenant configuration.
+        /// Only RDS for Oracle CDB instances are supported.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTenantDatabases service method.</param>
+        /// 
+        /// <returns>The response from the DescribeTenantDatabases service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
+        /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeTenantDatabases">REST API Reference for DescribeTenantDatabases Operation</seealso>
+        public virtual DescribeTenantDatabasesResponse DescribeTenantDatabases(DescribeTenantDatabasesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTenantDatabasesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTenantDatabasesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeTenantDatabasesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeTenantDatabases operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTenantDatabases operation on AmazonRDSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeTenantDatabases
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeTenantDatabases">REST API Reference for DescribeTenantDatabases Operation</seealso>
+        public virtual IAsyncResult BeginDescribeTenantDatabases(DescribeTenantDatabasesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTenantDatabasesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTenantDatabasesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeTenantDatabases operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeTenantDatabases.</param>
+        /// 
+        /// <returns>Returns a  DescribeTenantDatabasesResult from RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeTenantDatabases">REST API Reference for DescribeTenantDatabases Operation</seealso>
+        public virtual DescribeTenantDatabasesResponse EndDescribeTenantDatabases(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeTenantDatabasesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeValidDBInstanceModifications
 
         /// <summary>
@@ -7590,8 +7866,14 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBSnapshotNotFoundException">
         /// <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBSnapshotTenantDatabaseNotFoundException">
+        /// The specified snapshot tenant database wasn't found.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.IntegrationNotFoundException">
         /// The specified integration could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.TenantDatabaseNotFoundException">
+        /// The specified tenant database wasn't found in the DB instance.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
@@ -8437,6 +8719,10 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.StorageTypeNotSupportedException">
         /// The specified <code>StorageType</code> can't be associated with the DB instance.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.TenantDatabaseQuotaExceededException">
+        /// You attempted to create more tenant databases than are permitted in your Amazon Web
+        /// Services account.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBInstance">REST API Reference for ModifyDBInstance Operation</seealso>
         public virtual ModifyDBInstanceResponse ModifyDBInstance(ModifyDBInstanceRequest request)
         {
@@ -9206,6 +9492,75 @@ namespace Amazon.RDS
 
         #endregion
         
+        #region  ModifyTenantDatabase
+
+        /// <summary>
+        /// Modifies an existing tenant database in a DB instance. You can change the tenant database
+        /// name or the master user password. This operation is supported only for RDS for Oracle
+        /// CDB instances using the multi-tenant configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyTenantDatabase service method.</param>
+        /// 
+        /// <returns>The response from the ModifyTenantDatabase service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
+        /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
+        /// The DB instance isn't in a valid state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.TenantDatabaseAlreadyExistsException">
+        /// You attempted to either create a tenant database that already exists or modify a tenant
+        /// database to use the name of an existing tenant database.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.TenantDatabaseNotFoundException">
+        /// The specified tenant database wasn't found in the DB instance.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyTenantDatabase">REST API Reference for ModifyTenantDatabase Operation</seealso>
+        public virtual ModifyTenantDatabaseResponse ModifyTenantDatabase(ModifyTenantDatabaseRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyTenantDatabaseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyTenantDatabaseResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyTenantDatabaseResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyTenantDatabase operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyTenantDatabase operation on AmazonRDSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyTenantDatabase
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyTenantDatabase">REST API Reference for ModifyTenantDatabase Operation</seealso>
+        public virtual IAsyncResult BeginModifyTenantDatabase(ModifyTenantDatabaseRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyTenantDatabaseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyTenantDatabaseResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyTenantDatabase operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyTenantDatabase.</param>
+        /// 
+        /// <returns>Returns a  ModifyTenantDatabaseResult from RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyTenantDatabase">REST API Reference for ModifyTenantDatabase Operation</seealso>
+        public virtual ModifyTenantDatabaseResponse EndModifyTenantDatabase(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ModifyTenantDatabaseResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  PromoteReadReplica
 
         /// <summary>
@@ -9959,8 +10314,14 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBSnapshotNotFoundException">
         /// <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBSnapshotTenantDatabaseNotFoundException">
+        /// The specified snapshot tenant database wasn't found.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.IntegrationNotFoundException">
         /// The specified integration could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.TenantDatabaseNotFoundException">
+        /// The specified tenant database wasn't found in the DB instance.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RemoveTagsFromResource">REST API Reference for RemoveTagsFromResource Operation</seealso>
         public virtual RemoveTagsFromResourceResponse RemoveTagsFromResource(RemoveTagsFromResourceRequest request)
@@ -10692,6 +11053,10 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.StorageTypeNotSupportedException">
         /// The specified <code>StorageType</code> can't be associated with the DB instance.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.TenantDatabaseQuotaExceededException">
+        /// You attempted to create more tenant databases than are permitted in your Amazon Web
+        /// Services account.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceFromDBSnapshot">REST API Reference for RestoreDBInstanceFromDBSnapshot Operation</seealso>
         public virtual RestoreDBInstanceFromDBSnapshotResponse RestoreDBInstanceFromDBSnapshot(RestoreDBInstanceFromDBSnapshotRequest request)
         {
@@ -10976,6 +11341,10 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.StorageTypeNotSupportedException">
         /// The specified <code>StorageType</code> can't be associated with the DB instance.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.TenantDatabaseQuotaExceededException">
+        /// You attempted to create more tenant databases than are permitted in your Amazon Web
+        /// Services account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceToPointInTime">REST API Reference for RestoreDBInstanceToPointInTime Operation</seealso>
         public virtual RestoreDBInstanceToPointInTimeResponse RestoreDBInstanceToPointInTime(RestoreDBInstanceToPointInTimeRequest request)

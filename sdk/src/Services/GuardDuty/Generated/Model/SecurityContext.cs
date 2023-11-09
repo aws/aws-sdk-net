@@ -33,7 +33,27 @@ namespace Amazon.GuardDuty.Model
     /// </summary>
     public partial class SecurityContext
     {
+        private bool? _allowPrivilegeEscalation;
         private bool? _privileged;
+
+        /// <summary>
+        /// Gets and sets the property AllowPrivilegeEscalation. 
+        /// <para>
+        /// Whether or not a container or a Kubernetes pod is allowed to gain more privileges
+        /// than its parent process.
+        /// </para>
+        /// </summary>
+        public bool AllowPrivilegeEscalation
+        {
+            get { return this._allowPrivilegeEscalation.GetValueOrDefault(); }
+            set { this._allowPrivilegeEscalation = value; }
+        }
+
+        // Check to see if AllowPrivilegeEscalation property is set
+        internal bool IsSetAllowPrivilegeEscalation()
+        {
+            return this._allowPrivilegeEscalation.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Privileged. 

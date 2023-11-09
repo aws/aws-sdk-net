@@ -82,6 +82,12 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                     unmarshalledObject.NodegroupName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("subscriptionId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SubscriptionId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

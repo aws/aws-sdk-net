@@ -34,7 +34,7 @@ namespace Amazon.DLM.Model
     /// 
     ///  
     /// <para>
-    /// To get complete information about a policy, use <a>GetLifecyclePolicy</a>.
+    /// To get complete information about a policy, use <a href="https://docs.aws.amazon.com/dlm/latest/APIReference/API_GetLifecyclePolicy.html">GetLifecyclePolicy</a>.
     /// </para>
     /// </summary>
     public partial class GetLifecyclePoliciesRequest : AmazonDLMRequest

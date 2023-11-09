@@ -308,6 +308,10 @@ namespace Amazon.Omics
         /// Constant FASTQ for FileType
         /// </summary>
         public static readonly FileType FASTQ = new FileType("FASTQ");
+        /// <summary>
+        /// Constant UBAM for FileType
+        /// </summary>
+        public static readonly FileType UBAM = new FileType("UBAM");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

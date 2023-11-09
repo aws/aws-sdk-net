@@ -82,6 +82,17 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetPerformedBy())
+                {
+                    context.Writer.WritePropertyName("performedBy");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = UserUnionMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.PerformedBy, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetType())
                 {
                     context.Writer.WritePropertyName("type");

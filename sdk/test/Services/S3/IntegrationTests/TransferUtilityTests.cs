@@ -135,6 +135,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 TestDownloadedFile(downloadPath);
             }
         }
+
         [TestMethod]
         [TestCategory("S3")]
         public void UploadUnSeekableStreamTest()
@@ -170,6 +171,57 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 UtilityMethods.CompareFiles(path, downloadPath);
             }
         }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void UploadUnSeekableStreamWithMetadataAndHeadersTest()
+        {
+            var client = Client;
+            var fileName = UtilityMethods.GenerateName(@"SimpleUploadTest\SmallFile");
+            var path = Path.Combine(BasePath, fileName);
+            var fileSize = 20 * MEG_SIZE;
+            UtilityMethods.GenerateFile(path, fileSize);
+            //take the generated file and turn it into an unseekable stream
+
+            var stream = GenerateUnseekableStreamFromFile(path);
+            using (var tu = new Amazon.S3.Transfer.TransferUtility(client))
+            {
+                TransferUtilityUploadRequest transferUtilityUploadRequest = new TransferUtilityUploadRequest()
+                {
+                    BucketName = bucketName,
+                    Key = fileName,
+                    InputStream = stream
+                };
+
+                transferUtilityUploadRequest.Metadata.Add("testmetadata", "testmetadatavalue");
+                transferUtilityUploadRequest.Headers["Content-Disposition"] = "attachment; filename=\"" + fileName + "\"";
+
+                tu.Upload(transferUtilityUploadRequest);
+
+                var metadata = Client.GetObjectMetadata(new GetObjectMetadataRequest
+                {
+                    BucketName = bucketName,
+                    Key = fileName
+                });
+                Assert.AreEqual(fileSize, metadata.ContentLength);
+                Assert.IsTrue(metadata.Metadata.Count > 0);
+                Assert.AreEqual("testmetadatavalue", metadata.Metadata["testmetadata"]);
+                Assert.IsTrue(metadata.Headers.Count > 0);
+                Assert.AreEqual("attachment; filename=\"" + fileName + "\"", metadata.Headers["Content-Disposition"]);
+
+                //Download the file and validate content of downloaded file is equal.
+                var downloadPath = path + ".download";
+                var downloadRequest = new TransferUtilityDownloadRequest
+                {
+                    BucketName = bucketName,
+                    Key = fileName,
+                    FilePath = downloadPath
+                };
+                tu.Download(downloadRequest);
+                UtilityMethods.CompareFiles(path, downloadPath);
+            }
+        }
+
         private UnseekableStream GenerateUnseekableStreamFromFile(string filePath)
         {
             try

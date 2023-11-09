@@ -28,6 +28,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
 namespace Amazon.SQS.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -44,7 +46,7 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
         {
             return this.Marshall((ChangeMessageVisibilityRequest)input);
         }
-    
+
         /// <summary>
         /// Marshaller the request object to the HTTP request.
         /// </summary>  
@@ -53,27 +55,45 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
         public IRequest Marshall(ChangeMessageVisibilityRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SQS");
-            request.Parameters.Add("Action", "ChangeMessageVisibility");
-            request.Parameters.Add("Version", "2012-11-05");
+            string target = "AmazonSQS.ChangeMessageVisibility";
+            request.Headers["X-Amz-Target"] = target;
+            request.Headers["Content-Type"] = "application/x-amz-json-1.0";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2012-11-05";
+            request.HttpMethod = "POST";
 
-            if(publicRequest != null)
+            request.ResourcePath = "/";
+            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetQueueUrl())
                 {
-                    request.Parameters.Add("QueueUrl", StringUtils.FromString(publicRequest.QueueUrl));
+                    context.Writer.WritePropertyName("QueueUrl");
+                    context.Writer.Write(publicRequest.QueueUrl);
                 }
+
                 if(publicRequest.IsSetReceiptHandle())
                 {
-                    request.Parameters.Add("ReceiptHandle", StringUtils.FromString(publicRequest.ReceiptHandle));
+                    context.Writer.WritePropertyName("ReceiptHandle");
+                    context.Writer.Write(publicRequest.ReceiptHandle);
                 }
+
                 if(publicRequest.IsSetVisibilityTimeout())
                 {
-                    request.Parameters.Add("VisibilityTimeout", StringUtils.FromInt(publicRequest.VisibilityTimeout));
+                    context.Writer.WritePropertyName("VisibilityTimeout");
+                    context.Writer.Write(publicRequest.VisibilityTimeout);
                 }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
+
+
             return request;
         }
-                    private static ChangeMessageVisibilityRequestMarshaller _instance = new ChangeMessageVisibilityRequestMarshaller();        
+        private static ChangeMessageVisibilityRequestMarshaller _instance = new ChangeMessageVisibilityRequestMarshaller();        
 
         internal static ChangeMessageVisibilityRequestMarshaller GetInstance()
         {

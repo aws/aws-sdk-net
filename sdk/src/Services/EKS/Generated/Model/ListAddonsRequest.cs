@@ -30,7 +30,7 @@ namespace Amazon.EKS.Model
 {
     /// <summary>
     /// Container for the parameters to the ListAddons operation.
-    /// Lists the available add-ons.
+    /// Lists the installed add-ons.
     /// </summary>
     public partial class ListAddonsRequest : AmazonEKSRequest
     {

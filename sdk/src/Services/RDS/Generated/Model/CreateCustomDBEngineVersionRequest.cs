@@ -258,7 +258,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SourceCustomDbEngineVersionIdentifier. 
         /// <para>
-        /// Reserved for future use.
+        /// The ARN of a CEV to use as a source for creating a new CEV. You can specify a different
+        /// Amazon Machine Imagine (AMI) by using either <code>Source</code> or <code>UseAwsProvidedLatestImage</code>.
+        /// You can't specify a different JSON manifest when you specify <code>SourceCustomDbEngineVersionIdentifier</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -292,7 +294,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property UseAwsProvidedLatestImage. 
         /// <para>
-        /// Reserved for future use.
+        /// Specifies whether to use the latest service-provided Amazon Machine Image (AMI) for
+        /// the CEV. If you specify <code>UseAwsProvidedLatestImage</code>, you can't also specify
+        /// <code>ImageId</code>.
         /// </para>
         /// </summary>
         public bool UseAwsProvidedLatestImage

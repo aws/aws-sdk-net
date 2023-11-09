@@ -33,13 +33,35 @@ namespace Amazon.GuardDuty.Model
     /// </summary>
     public partial class KubernetesApiCallAction
     {
+        private string _awsNamespace;
         private string _parameters;
         private RemoteIpDetails _remoteIpDetails;
         private string _requestUri;
+        private string _resource;
+        private string _resourceName;
         private List<string> _sourceIps = new List<string>();
         private int? _statusCode;
+        private string _subresource;
         private string _userAgent;
         private string _verb;
+
+        /// <summary>
+        /// Gets and sets the property Namespace. 
+        /// <para>
+        /// The name of the namespace where the Kubernetes API call action takes place.
+        /// </para>
+        /// </summary>
+        public string Namespace
+        {
+            get { return this._awsNamespace; }
+            set { this._awsNamespace = value; }
+        }
+
+        // Check to see if Namespace property is set
+        internal bool IsSetNamespace()
+        {
+            return this._awsNamespace != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Parameters. 
@@ -93,6 +115,42 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Resource. 
+        /// <para>
+        /// The resource component in the Kubernetes API call action.
+        /// </para>
+        /// </summary>
+        public string Resource
+        {
+            get { return this._resource; }
+            set { this._resource = value; }
+        }
+
+        // Check to see if Resource property is set
+        internal bool IsSetResource()
+        {
+            return this._resource != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceName. 
+        /// <para>
+        /// The name of the resource in the Kubernetes API call action.
+        /// </para>
+        /// </summary>
+        public string ResourceName
+        {
+            get { return this._resourceName; }
+            set { this._resourceName = value; }
+        }
+
+        // Check to see if ResourceName property is set
+        internal bool IsSetResourceName()
+        {
+            return this._resourceName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SourceIps. 
         /// <para>
         /// The IP of the Kubernetes API caller and the IPs of any proxies or load balancers between
@@ -127,6 +185,24 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetStatusCode()
         {
             return this._statusCode.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Subresource. 
+        /// <para>
+        /// The name of the sub-resource in the Kubernetes API call action.
+        /// </para>
+        /// </summary>
+        public string Subresource
+        {
+            get { return this._subresource; }
+            set { this._subresource = value; }
+        }
+
+        // Check to see if Subresource property is set
+        internal bool IsSetSubresource()
+        {
+            return this._subresource != null;
         }
 
         /// <summary>

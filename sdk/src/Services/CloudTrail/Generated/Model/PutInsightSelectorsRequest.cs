@@ -31,29 +31,104 @@ namespace Amazon.CloudTrail.Model
     /// <summary>
     /// Container for the parameters to the PutInsightSelectors operation.
     /// Lets you enable Insights event logging by specifying the Insights selectors that you
-    /// want to enable on an existing trail. You also use <code>PutInsightSelectors</code>
-    /// to turn off Insights event logging, by passing an empty list of insight types. The
-    /// valid Insights event types in this release are <code>ApiErrorRateInsight</code> and
-    /// <code>ApiCallRateInsight</code>.
+    /// want to enable on an existing trail or event data store. You also use <code>PutInsightSelectors</code>
+    /// to turn off Insights event logging, by passing an empty list of Insights types. The
+    /// valid Insights event types are <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code>.
     /// 
     ///  
     /// <para>
-    /// To log CloudTrail Insights events on API call volume, the trail must log <code>write</code>
-    /// management events. To log CloudTrail Insights events on API error rate, the trail
-    /// must log <code>read</code> or <code>write</code> management events. You can call <code>GetEventSelectors</code>
-    /// on a trail to check whether the trail logs management events.
+    /// To enable Insights on an event data store, you must specify the ARNs (or ID suffix
+    /// of the ARNs) for the source event data store (<code>EventDataStore</code>) and the
+    /// destination event data store (<code>InsightsDestination</code>). The source event
+    /// data store logs management events and enables Insights. The destination event data
+    /// store logs Insights events based upon the management event activity of the source
+    /// event data store. The source and destination event data stores must belong to the
+    /// same Amazon Web Services account.
+    /// </para>
+    ///  
+    /// <para>
+    /// To log Insights events for a trail, you must specify the name (<code>TrailName</code>)
+    /// of the CloudTrail trail for which you want to change or add Insights selectors.
+    /// </para>
+    ///  
+    /// <para>
+    /// To log CloudTrail Insights events on API call volume, the trail or event data store
+    /// must log <code>write</code> management events. To log CloudTrail Insights events on
+    /// API error rate, the trail or event data store must log <code>read</code> or <code>write</code>
+    /// management events. You can call <code>GetEventSelectors</code> on a trail to check
+    /// whether the trail logs management events. You can call <code>GetEventDataStore</code>
+    /// on an event data store to check whether the event data store logs management events.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-insights-events-with-cloudtrail.html">Logging
+    /// CloudTrail Insights events</a> in the <i>CloudTrail User Guide</i>.
     /// </para>
     /// </summary>
     public partial class PutInsightSelectorsRequest : AmazonCloudTrailRequest
     {
+        private string _eventDataStore;
+        private string _insightsDestination;
         private List<InsightSelector> _insightSelectors = new List<InsightSelector>();
         private string _trailName;
 
         /// <summary>
+        /// Gets and sets the property EventDataStore. 
+        /// <para>
+        /// The ARN (or ID suffix of the ARN) of the source event data store for which you want
+        /// to change or add Insights selectors. To enable Insights on an event data store, you
+        /// must provide both the <code>EventDataStore</code> and <code>InsightsDestination</code>
+        /// parameters.
+        /// </para>
+        ///  
+        /// <para>
+        /// You cannot use this parameter with the <code>TrailName</code> parameter.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=3, Max=256)]
+        public string EventDataStore
+        {
+            get { return this._eventDataStore; }
+            set { this._eventDataStore = value; }
+        }
+
+        // Check to see if EventDataStore property is set
+        internal bool IsSetEventDataStore()
+        {
+            return this._eventDataStore != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InsightsDestination. 
+        /// <para>
+        ///  The ARN (or ID suffix of the ARN) of the destination event data store that logs Insights
+        /// events. To enable Insights on an event data store, you must provide both the <code>EventDataStore</code>
+        /// and <code>InsightsDestination</code> parameters. 
+        /// </para>
+        ///  
+        /// <para>
+        /// You cannot use this parameter with the <code>TrailName</code> parameter.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=3, Max=256)]
+        public string InsightsDestination
+        {
+            get { return this._insightsDestination; }
+            set { this._insightsDestination = value; }
+        }
+
+        // Check to see if InsightsDestination property is set
+        internal bool IsSetInsightsDestination()
+        {
+            return this._insightsDestination != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property InsightSelectors. 
         /// <para>
-        /// A JSON string that contains the insight types you want to log on a trail. <code>ApiCallRateInsight</code>
-        /// and <code>ApiErrorRateInsight</code> are valid Insight types.
+        /// A JSON string that contains the Insights types you want to log on a trail or event
+        /// data store. <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are
+        /// valid Insight types.
         /// </para>
         ///  
         /// <para>
@@ -84,8 +159,12 @@ namespace Amazon.CloudTrail.Model
         /// <para>
         /// The name of the CloudTrail trail for which you want to change or add Insights selectors.
         /// </para>
+        ///  
+        /// <para>
+        /// You cannot use this parameter with the <code>EventDataStore</code> and <code>InsightsDestination</code>
+        /// parameters.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string TrailName
         {
             get { return this._trailName; }

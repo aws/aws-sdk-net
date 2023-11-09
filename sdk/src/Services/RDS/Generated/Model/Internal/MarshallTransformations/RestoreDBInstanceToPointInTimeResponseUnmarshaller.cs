@@ -204,6 +204,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     return StorageTypeNotSupportedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("TenantDatabaseQuotaExceeded"))
+                {
+                    return TenantDatabaseQuotaExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
             }
             return new AmazonRDSException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }

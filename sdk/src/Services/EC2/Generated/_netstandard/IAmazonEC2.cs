@@ -10615,6 +10615,39 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  DisableSnapshotBlockPublicAccess
+
+
+
+        /// <summary>
+        /// Disables the <i>block public access for snapshots</i> setting at the account level
+        /// for the specified Amazon Web Services Region. After you disable block public access
+        /// for snapshots in a Region, users can publicly share snapshots in that Region.
+        /// 
+        ///  
+        /// <para>
+        /// If block public access is enabled in <code>block-all-sharing</code> mode, and you
+        /// disable block public access, all snapshots that were previously publicly shared are
+        /// no longer treated as private and they become publicly accessible again.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-public-access-snapshots.html">
+        /// Block public access for snapshots</a> in the <i>Amazon Elastic Compute Cloud User
+        /// Guide</i> .
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableSnapshotBlockPublicAccess service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisableSnapshotBlockPublicAccess service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableSnapshotBlockPublicAccess">REST API Reference for DisableSnapshotBlockPublicAccess Operation</seealso>
+        Task<DisableSnapshotBlockPublicAccessResponse> DisableSnapshotBlockPublicAccessAsync(DisableSnapshotBlockPublicAccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DisableTransitGatewayRouteTablePropagation
 
 
@@ -11342,6 +11375,42 @@ namespace Amazon.EC2
         /// <returns>The response from the EnableSerialConsoleAccess service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableSerialConsoleAccess">REST API Reference for EnableSerialConsoleAccess Operation</seealso>
         Task<EnableSerialConsoleAccessResponse> EnableSerialConsoleAccessAsync(EnableSerialConsoleAccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  EnableSnapshotBlockPublicAccess
+
+
+
+        /// <summary>
+        /// Enables or modifies the <i>block public access for snapshots</i> setting at the account
+        /// level for the specified Amazon Web Services Region. After you enable block public
+        /// access for snapshots in a Region, users can no longer request public sharing for snapshots
+        /// in that Region. Snapshots that are already publicly shared are either treated as private
+        /// or they remain publicly shared, depending on the <b>State</b> that you specify.
+        /// 
+        ///  
+        /// <para>
+        /// If block public access is enabled in <code>block-all-sharing</code> mode, and you
+        /// change the mode to <code>block-new-sharing</code>, all snapshots that were previously
+        /// publicly shared are no longer treated as private and they become publicly accessible
+        /// again.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-public-access-snapshots.html">
+        /// Block public access for snapshots</a> in the <i>Amazon Elastic Compute Cloud User
+        /// Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableSnapshotBlockPublicAccess service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the EnableSnapshotBlockPublicAccess service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableSnapshotBlockPublicAccess">REST API Reference for EnableSnapshotBlockPublicAccess Operation</seealso>
+        Task<EnableSnapshotBlockPublicAccessResponse> EnableSnapshotBlockPublicAccessAsync(EnableSnapshotBlockPublicAccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -12304,6 +12373,32 @@ namespace Amazon.EC2
         /// <returns>The response from the GetSerialConsoleAccessStatus service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetSerialConsoleAccessStatus">REST API Reference for GetSerialConsoleAccessStatus Operation</seealso>
         Task<GetSerialConsoleAccessStatusResponse> GetSerialConsoleAccessStatusAsync(GetSerialConsoleAccessStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetSnapshotBlockPublicAccessState
+
+
+
+        /// <summary>
+        /// Gets the current state of <i>block public access for snapshots</i> setting for the
+        /// account and Region.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-public-access-snapshots.html">
+        /// Block public access for snapshots</a> in the <i>Amazon Elastic Compute Cloud User
+        /// Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSnapshotBlockPublicAccessState service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetSnapshotBlockPublicAccessState service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetSnapshotBlockPublicAccessState">REST API Reference for GetSnapshotBlockPublicAccessState Operation</seealso>
+        Task<GetSnapshotBlockPublicAccessStateResponse> GetSnapshotBlockPublicAccessStateAsync(GetSnapshotBlockPublicAccessStateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

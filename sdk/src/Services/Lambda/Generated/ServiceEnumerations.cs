@@ -975,6 +975,10 @@ namespace Amazon.Lambda
         /// </summary>
         public static readonly Runtime Nodejs18X = new Runtime("nodejs18.x");
         /// <summary>
+        /// Constant Nodejs20X for Runtime
+        /// </summary>
+        public static readonly Runtime Nodejs20X = new Runtime("nodejs20.x");
+        /// <summary>
         /// Constant Nodejs43 for Runtime
         /// </summary>
         public static readonly Runtime Nodejs43 = new Runtime("nodejs4.3");
@@ -998,6 +1002,10 @@ namespace Amazon.Lambda
         /// Constant ProvidedAl2 for Runtime
         /// </summary>
         public static readonly Runtime ProvidedAl2 = new Runtime("provided.al2");
+        /// <summary>
+        /// Constant ProvidedAl2023 for Runtime
+        /// </summary>
+        public static readonly Runtime ProvidedAl2023 = new Runtime("provided.al2023");
         /// <summary>
         /// Constant Python27 for Runtime
         /// </summary>

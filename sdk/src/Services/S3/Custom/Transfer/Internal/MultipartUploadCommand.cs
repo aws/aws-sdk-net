@@ -154,10 +154,18 @@ namespace Amazon.S3.Transfer.Internal
 
         private CompleteMultipartUploadRequest ConstructCompleteMultipartUploadRequest(InitiateMultipartUploadResponse initResponse)
         {
-            if(this._uploadResponses.Count != this._totalNumberOfParts)
+            return ConstructCompleteMultipartUploadRequest(initResponse, false, null);
+        }
+
+        private CompleteMultipartUploadRequest ConstructCompleteMultipartUploadRequest(InitiateMultipartUploadResponse initResponse, bool skipPartValidation, RequestEventHandler requestEventHandler)
+        {
+            if (!skipPartValidation)
             {
-                throw new InvalidOperationException($"Cannot complete multipart upload request. The total number of completed parts ({this._uploadResponses.Count}) " +
-                    $"does not equal the total number of parts created ({this._totalNumberOfParts}).");
+                if (this._uploadResponses.Count != this._totalNumberOfParts)
+                {
+                    throw new InvalidOperationException($"Cannot complete multipart upload request. The total number of completed parts ({this._uploadResponses.Count}) " +
+                        $"does not equal the total number of parts created ({this._totalNumberOfParts}).");
+                }
             }
 
             var compRequest = new CompleteMultipartUploadRequest()
@@ -174,63 +182,95 @@ namespace Amazon.S3.Transfer.Internal
             }
 
             compRequest.AddPartETags(this._uploadResponses);
-            ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)compRequest).AddBeforeRequestHandler(this.RequestEventHandler);
+
+            if (requestEventHandler != null)
+            {
+                ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)compRequest).AddBeforeRequestHandler(requestEventHandler);
+            }
+            else
+            {
+                ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)compRequest).AddBeforeRequestHandler(this.RequestEventHandler);
+            }
+
             return compRequest;
         }
 
-        private UploadPartRequest ConstructUploadPartRequest(int partNumber, long filePosition, InitiateMultipartUploadResponse initResponse)
+        private UploadPartRequest ConstructUploadPartRequest(int partNumber, long filePosition, InitiateMultipartUploadResponse initiateResponse)
         {
-            var uploadRequest = new UploadPartRequest()
+            UploadPartRequest uploadPartRequest = ConstructGenericUploadPartRequest(initiateResponse);
+
+            uploadPartRequest.PartNumber = partNumber;
+            uploadPartRequest.PartSize = this._partSize;
+
+            if ((filePosition + this._partSize >= this._contentLength)
+                && _s3Client is Amazon.S3.Internal.IAmazonS3Encryption)
+            {
+                uploadPartRequest.IsLastPart = true;
+                uploadPartRequest.PartSize = 0;
+            }
+
+            var progressHandler = new ProgressHandler(this.UploadPartProgressEventCallback);
+            ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)uploadPartRequest).StreamUploadProgressCallback += progressHandler.OnTransferProgress;
+            ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)uploadPartRequest).AddBeforeRequestHandler(this.RequestEventHandler);
+
+            if (this._fileTransporterRequest.IsSetFilePath())
+            {
+                uploadPartRequest.FilePosition = filePosition;
+                uploadPartRequest.FilePath = this._fileTransporterRequest.FilePath;
+            }
+            else
+            {
+                uploadPartRequest.InputStream = this._fileTransporterRequest.InputStream;
+            }
+
+            return uploadPartRequest;
+        }
+
+        private UploadPartRequest ConstructGenericUploadPartRequest(InitiateMultipartUploadResponse initiateResponse)
+        {
+            UploadPartRequest uploadPartRequest = new UploadPartRequest()
             {
                 BucketName = this._fileTransporterRequest.BucketName,
                 Key = this._fileTransporterRequest.Key,
-                UploadId = initResponse.UploadId,
-                PartNumber = partNumber,
-                PartSize = this._partSize,
+                UploadId = initiateResponse.UploadId,
                 ServerSideEncryptionCustomerMethod = this._fileTransporterRequest.ServerSideEncryptionCustomerMethod,
                 ServerSideEncryptionCustomerProvidedKey = this._fileTransporterRequest.ServerSideEncryptionCustomerProvidedKey,
                 ServerSideEncryptionCustomerProvidedKeyMD5 = this._fileTransporterRequest.ServerSideEncryptionCustomerProvidedKeyMD5,
 #if (BCL && !BCL45)
                 Timeout = ClientConfig.GetTimeoutValue(this._config.DefaultTimeout, this._fileTransporterRequest.Timeout),
-#endif                
+#endif
                 DisableMD5Stream = this._fileTransporterRequest.DisableMD5Stream,
                 DisablePayloadSigning = this._fileTransporterRequest.DisablePayloadSigning,
-                ChecksumAlgorithm = this._fileTransporterRequest.ChecksumAlgorithm
+                ChecksumAlgorithm = this._fileTransporterRequest.ChecksumAlgorithm,
+                CalculateContentMD5Header = this._fileTransporterRequest.CalculateContentMD5Header
             };
 
-            if ((filePosition + this._partSize >= this._contentLength)
-                && _s3Client is Amazon.S3.Internal.IAmazonS3Encryption)
-            {
-                uploadRequest.IsLastPart = true;
-                uploadRequest.PartSize = 0;
-            }
-
-            var progressHandler = new ProgressHandler(this.UploadPartProgressEventCallback);
-            ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)uploadRequest).StreamUploadProgressCallback += progressHandler.OnTransferProgress;
-            ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)uploadRequest).AddBeforeRequestHandler(this.RequestEventHandler);
-
-            if (this._fileTransporterRequest.IsSetFilePath())
-            {
-                uploadRequest.FilePosition = filePosition;
-                uploadRequest.FilePath = this._fileTransporterRequest.FilePath;
-            }
-            else
-            {
-                uploadRequest.InputStream = this._fileTransporterRequest.InputStream;
-            }
-
-            // If the InitiateMultipartUploadResponse indicates that this upload is
-            // using KMS, force SigV4 for each UploadPart request
-            bool useSigV4 = initResponse.ServerSideEncryptionMethod == ServerSideEncryptionMethod.AWSKMS || initResponse.ServerSideEncryptionMethod == ServerSideEncryptionMethod.AWSKMSDSSE;
+            // If the InitiateMultipartUploadResponse indicates that this upload is using KMS, force SigV4 for each UploadPart request
+            bool useSigV4 = initiateResponse.ServerSideEncryptionMethod == ServerSideEncryptionMethod.AWSKMS || initiateResponse.ServerSideEncryptionMethod == ServerSideEncryptionMethod.AWSKMSDSSE;
             if (useSigV4)
-                ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)uploadRequest).SignatureVersion = SignatureVersion.SigV4;
+                ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)uploadPartRequest).SignatureVersion = SignatureVersion.SigV4;
 
-            uploadRequest.CalculateContentMD5Header = this._fileTransporterRequest.CalculateContentMD5Header;
+            return uploadPartRequest;
+        }
 
-            return uploadRequest;
+        private UploadPartRequest ConstructUploadPartRequestForNonSeekableStream(Stream inputStream, int partNumber, long partSize, bool isLastPart, InitiateMultipartUploadResponse initiateResponse)
+        {
+            UploadPartRequest uploadPartRequest = ConstructGenericUploadPartRequest(initiateResponse);
+            
+            uploadPartRequest.InputStream = inputStream;
+            uploadPartRequest.PartNumber = partNumber;
+            uploadPartRequest.PartSize = partSize;
+            uploadPartRequest.IsLastPart = isLastPart;
+
+            return uploadPartRequest;
         }
 
         private InitiateMultipartUploadRequest ConstructInitiateMultipartUploadRequest()
+        {
+            return this.ConstructInitiateMultipartUploadRequest(null);
+        }
+
+        private InitiateMultipartUploadRequest ConstructInitiateMultipartUploadRequest(RequestEventHandler requestEventHandler)
         {
             var initRequest = new InitiateMultipartUploadRequest()
             {
@@ -253,7 +293,14 @@ namespace Amazon.S3.Transfer.Internal
             if (this._fileTransporterRequest.IsSetObjectLockRetainUntilDate())
                 initRequest.ObjectLockRetainUntilDate = this._fileTransporterRequest.ObjectLockRetainUntilDate;
 
-            ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)initRequest).AddBeforeRequestHandler(this.RequestEventHandler);
+            if (requestEventHandler != null)
+            {
+                ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)initRequest).AddBeforeRequestHandler(requestEventHandler);
+            }
+            else
+            {
+                ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)initRequest).AddBeforeRequestHandler(this.RequestEventHandler);
+            }
 
             if (this._fileTransporterRequest.Metadata != null && this._fileTransporterRequest.Metadata.Count > 0)
                 initRequest.Metadata = this._fileTransporterRequest.Metadata;

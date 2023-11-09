@@ -76,8 +76,9 @@ namespace Amazon.EKS
         /// <returns>The response from the AssociateEncryptionConfig service method, as returned by EKS.</returns>
         /// <exception cref="Amazon.EKS.Model.ClientException">
         /// These errors are usually caused by a client action. Actions can include using an action
-        /// or resource on behalf of a user that doesn't have permissions to use the action or
-        /// resource or specifying an identifier that is not valid.
+        /// or resource on behalf of an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html">IAM
+        /// principal</a> that doesn't have permissions to use the action or resource or specifying
+        /// an identifier that is not valid.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
         /// The specified parameter is invalid. Review the available parameters for the API request.
@@ -150,8 +151,9 @@ namespace Amazon.EKS
         /// <returns>The response from the AssociateIdentityProviderConfig service method, as returned by EKS.</returns>
         /// <exception cref="Amazon.EKS.Model.ClientException">
         /// These errors are usually caused by a client action. Actions can include using an action
-        /// or resource on behalf of a user that doesn't have permissions to use the action or
-        /// resource or specifying an identifier that is not valid.
+        /// or resource on behalf of an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html">IAM
+        /// principal</a> that doesn't have permissions to use the action or resource or specifying
+        /// an identifier that is not valid.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
         /// The specified parameter is invalid. Review the available parameters for the API request.
@@ -220,8 +222,9 @@ namespace Amazon.EKS
         /// <returns>The response from the CreateAddon service method, as returned by EKS.</returns>
         /// <exception cref="Amazon.EKS.Model.ClientException">
         /// These errors are usually caused by a client action. Actions can include using an action
-        /// or resource on behalf of a user that doesn't have permissions to use the action or
-        /// resource or specifying an identifier that is not valid.
+        /// or resource on behalf of an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html">IAM
+        /// principal</a> that doesn't have permissions to use the action or resource or specifying
+        /// an identifier that is not valid.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
         /// The specified parameter is invalid. Review the available parameters for the API request.
@@ -314,8 +317,9 @@ namespace Amazon.EKS
         /// <returns>The response from the CreateCluster service method, as returned by EKS.</returns>
         /// <exception cref="Amazon.EKS.Model.ClientException">
         /// These errors are usually caused by a client action. Actions can include using an action
-        /// or resource on behalf of a user that doesn't have permissions to use the action or
-        /// resource or specifying an identifier that is not valid.
+        /// or resource on behalf of an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html">IAM
+        /// principal</a> that doesn't have permissions to use the action or resource or specifying
+        /// an identifier that is not valid.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
         /// The specified parameter is invalid. Review the available parameters for the API request.
@@ -368,6 +372,67 @@ namespace Amazon.EKS
 
         #endregion
         
+        #region  CreateEksAnywhereSubscription
+
+
+        /// <summary>
+        /// Creates an EKS Anywhere subscription. When a subscription is created, it is a contract
+        /// agreement for the length of the term specified in the request. Licenses that are used
+        /// to validate support are provisioned in Amazon Web Services License Manager and the
+        /// caller account is granted access to EKS Anywhere Curated Packages.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateEksAnywhereSubscription service method.</param>
+        /// 
+        /// <returns>The response from the CreateEksAnywhereSubscription service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.ClientException">
+        /// These errors are usually caused by a client action. Actions can include using an action
+        /// or resource on behalf of an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html">IAM
+        /// principal</a> that doesn't have permissions to use the action or resource or specifying
+        /// an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceLimitExceededException">
+        /// You have encountered a service limit on the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServiceUnavailableException">
+        /// The service is unavailable. Back off and retry the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreateEksAnywhereSubscription">REST API Reference for CreateEksAnywhereSubscription Operation</seealso>
+        CreateEksAnywhereSubscriptionResponse CreateEksAnywhereSubscription(CreateEksAnywhereSubscriptionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateEksAnywhereSubscription operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateEksAnywhereSubscription operation on AmazonEKSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateEksAnywhereSubscription
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreateEksAnywhereSubscription">REST API Reference for CreateEksAnywhereSubscription Operation</seealso>
+        IAsyncResult BeginCreateEksAnywhereSubscription(CreateEksAnywhereSubscriptionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateEksAnywhereSubscription operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateEksAnywhereSubscription.</param>
+        /// 
+        /// <returns>Returns a  CreateEksAnywhereSubscriptionResult from EKS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreateEksAnywhereSubscription">REST API Reference for CreateEksAnywhereSubscription Operation</seealso>
+        CreateEksAnywhereSubscriptionResponse EndCreateEksAnywhereSubscription(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateFargateProfile
 
 
@@ -389,9 +454,9 @@ namespace Amazon.EKS
         /// <para>
         /// When you create a Fargate profile, you must specify a pod execution role to use with
         /// the pods that are scheduled with the profile. This role is added to the cluster's
-        /// Kubernetes <a href="https://kubernetes.io/docs/admin/authorization/rbac/">Role Based
-        /// Access Control</a> (RBAC) for authorization so that the <code>kubelet</code> that
-        /// is running on the Fargate infrastructure can register with your Amazon EKS cluster
+        /// Kubernetes <a href="https://kubernetes.io/docs/reference/access-authn-authz/rbac/">Role
+        /// Based Access Control</a> (RBAC) for authorization so that the <code>kubelet</code>
+        /// that is running on the Fargate infrastructure can register with your Amazon EKS cluster
         /// so that it can appear in your cluster as a node. The pod execution role also provides
         /// IAM permissions to the Fargate infrastructure to allow read access to Amazon ECR image
         /// repositories. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html">Pod
@@ -420,8 +485,9 @@ namespace Amazon.EKS
         /// <returns>The response from the CreateFargateProfile service method, as returned by EKS.</returns>
         /// <exception cref="Amazon.EKS.Model.ClientException">
         /// These errors are usually caused by a client action. Actions can include using an action
-        /// or resource on behalf of a user that doesn't have permissions to use the action or
-        /// resource or specifying an identifier that is not valid.
+        /// or resource on behalf of an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html">IAM
+        /// principal</a> that doesn't have permissions to use the action or resource or specifying
+        /// an identifier that is not valid.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
         /// The specified parameter is invalid. Review the available parameters for the API request.
@@ -478,10 +544,6 @@ namespace Amazon.EKS
         /// <summary>
         /// Creates a managed node group for an Amazon EKS cluster. You can only create a node
         /// group for your cluster that is equal to the current Kubernetes version for the cluster.
-        /// All node groups are created with the latest AMI release version for the respective
-        /// minor Kubernetes version of the cluster, unless you deploy a custom AMI using a launch
-        /// template. For more information about using launch templates, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
-        /// template support</a>.
         /// 
         ///  
         /// <para>
@@ -502,8 +564,9 @@ namespace Amazon.EKS
         /// <returns>The response from the CreateNodegroup service method, as returned by EKS.</returns>
         /// <exception cref="Amazon.EKS.Model.ClientException">
         /// These errors are usually caused by a client action. Actions can include using an action
-        /// or resource on behalf of a user that doesn't have permissions to use the action or
-        /// resource or specifying an identifier that is not valid.
+        /// or resource on behalf of an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html">IAM
+        /// principal</a> that doesn't have permissions to use the action or resource or specifying
+        /// an identifier that is not valid.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
         /// The specified parameter is invalid. Review the available parameters for the API request.
@@ -572,8 +635,9 @@ namespace Amazon.EKS
         /// <returns>The response from the DeleteAddon service method, as returned by EKS.</returns>
         /// <exception cref="Amazon.EKS.Model.ClientException">
         /// These errors are usually caused by a client action. Actions can include using an action
-        /// or resource on behalf of a user that doesn't have permissions to use the action or
-        /// resource or specifying an identifier that is not valid.
+        /// or resource on behalf of an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html">IAM
+        /// principal</a> that doesn't have permissions to use the action or resource or specifying
+        /// an identifier that is not valid.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
         /// The specified parameter is invalid. Review the available parameters for the API request.
@@ -646,8 +710,9 @@ namespace Amazon.EKS
         /// <returns>The response from the DeleteCluster service method, as returned by EKS.</returns>
         /// <exception cref="Amazon.EKS.Model.ClientException">
         /// These errors are usually caused by a client action. Actions can include using an action
-        /// or resource on behalf of a user that doesn't have permissions to use the action or
-        /// resource or specifying an identifier that is not valid.
+        /// or resource on behalf of an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html">IAM
+        /// principal</a> that doesn't have permissions to use the action or resource or specifying
+        /// an identifier that is not valid.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceInUseException">
         /// The specified resource is in use.
@@ -694,6 +759,67 @@ namespace Amazon.EKS
 
         #endregion
         
+        #region  DeleteEksAnywhereSubscription
+
+
+        /// <summary>
+        /// Deletes an expired / inactive subscription. Deleting inactive subscriptions removes
+        /// them from the Amazon Web Services Management Console view and from list/describe API
+        /// responses. Subscriptions can only be cancelled within 7 days of creation, and are
+        /// cancelled by creating a ticket in the Amazon Web Services Support Center.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEksAnywhereSubscription service method.</param>
+        /// 
+        /// <returns>The response from the DeleteEksAnywhereSubscription service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.ClientException">
+        /// These errors are usually caused by a client action. Actions can include using an action
+        /// or resource on behalf of an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html">IAM
+        /// principal</a> that doesn't have permissions to use the action or resource or specifying
+        /// an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidRequestException">
+        /// The request is invalid given the state of the cluster. Check the state of the cluster
+        /// and the associated operations.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
+        /// Amazon EKS clusters and node groups are Region-specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeleteEksAnywhereSubscription">REST API Reference for DeleteEksAnywhereSubscription Operation</seealso>
+        DeleteEksAnywhereSubscriptionResponse DeleteEksAnywhereSubscription(DeleteEksAnywhereSubscriptionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteEksAnywhereSubscription operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEksAnywhereSubscription operation on AmazonEKSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteEksAnywhereSubscription
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeleteEksAnywhereSubscription">REST API Reference for DeleteEksAnywhereSubscription Operation</seealso>
+        IAsyncResult BeginDeleteEksAnywhereSubscription(DeleteEksAnywhereSubscriptionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteEksAnywhereSubscription operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteEksAnywhereSubscription.</param>
+        /// 
+        /// <returns>Returns a  DeleteEksAnywhereSubscriptionResult from EKS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeleteEksAnywhereSubscription">REST API Reference for DeleteEksAnywhereSubscription Operation</seealso>
+        DeleteEksAnywhereSubscriptionResponse EndDeleteEksAnywhereSubscription(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteFargateProfile
 
 
@@ -719,8 +845,9 @@ namespace Amazon.EKS
         /// <returns>The response from the DeleteFargateProfile service method, as returned by EKS.</returns>
         /// <exception cref="Amazon.EKS.Model.ClientException">
         /// These errors are usually caused by a client action. Actions can include using an action
-        /// or resource on behalf of a user that doesn't have permissions to use the action or
-        /// resource or specifying an identifier that is not valid.
+        /// or resource on behalf of an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html">IAM
+        /// principal</a> that doesn't have permissions to use the action or resource or specifying
+        /// an identifier that is not valid.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
         /// The specified parameter is invalid. Review the available parameters for the API request.
@@ -775,8 +902,9 @@ namespace Amazon.EKS
         /// <returns>The response from the DeleteNodegroup service method, as returned by EKS.</returns>
         /// <exception cref="Amazon.EKS.Model.ClientException">
         /// These errors are usually caused by a client action. Actions can include using an action
-        /// or resource on behalf of a user that doesn't have permissions to use the action or
-        /// resource or specifying an identifier that is not valid.
+        /// or resource on behalf of an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html">IAM
+        /// principal</a> that doesn't have permissions to use the action or resource or specifying
+        /// an identifier that is not valid.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
         /// The specified parameter is invalid. Review the available parameters for the API request.
@@ -836,15 +964,16 @@ namespace Amazon.EKS
         /// 
         /// <returns>The response from the DeregisterCluster service method, as returned by EKS.</returns>
         /// <exception cref="Amazon.EKS.Model.AccessDeniedException">
-        /// You don't have permissions to perform the requested operation. The user or role that
-        /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
-        /// Management</a> in the <i>IAM User Guide</i>.
+        /// You don't have permissions to perform the requested operation. The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html">IAM
+        /// principal</a> making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ClientException">
         /// These errors are usually caused by a client action. Actions can include using an action
-        /// or resource on behalf of a user that doesn't have permissions to use the action or
-        /// resource or specifying an identifier that is not valid.
+        /// or resource on behalf of an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html">IAM
+        /// principal</a> that doesn't have permissions to use the action or resource or specifying
+        /// an identifier that is not valid.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceInUseException">
         /// The specified resource is in use.
@@ -902,8 +1031,9 @@ namespace Amazon.EKS
         /// <returns>The response from the DescribeAddon service method, as returned by EKS.</returns>
         /// <exception cref="Amazon.EKS.Model.ClientException">
         /// These errors are usually caused by a client action. Actions can include using an action
-        /// or resource on behalf of a user that doesn't have permissions to use the action or
-        /// resource or specifying an identifier that is not valid.
+        /// or resource on behalf of an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html">IAM
+        /// principal</a> that doesn't have permissions to use the action or resource or specifying
+        /// an identifier that is not valid.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
         /// The specified parameter is invalid. Review the available parameters for the API request.
@@ -1080,8 +1210,9 @@ namespace Amazon.EKS
         /// <returns>The response from the DescribeCluster service method, as returned by EKS.</returns>
         /// <exception cref="Amazon.EKS.Model.ClientException">
         /// These errors are usually caused by a client action. Actions can include using an action
-        /// or resource on behalf of a user that doesn't have permissions to use the action or
-        /// resource or specifying an identifier that is not valid.
+        /// or resource on behalf of an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html">IAM
+        /// principal</a> that doesn't have permissions to use the action or resource or specifying
+        /// an identifier that is not valid.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
@@ -1125,6 +1256,63 @@ namespace Amazon.EKS
 
         #endregion
         
+        #region  DescribeEksAnywhereSubscription
+
+
+        /// <summary>
+        /// Returns descriptive information about a subscription.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEksAnywhereSubscription service method.</param>
+        /// 
+        /// <returns>The response from the DescribeEksAnywhereSubscription service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.ClientException">
+        /// These errors are usually caused by a client action. Actions can include using an action
+        /// or resource on behalf of an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html">IAM
+        /// principal</a> that doesn't have permissions to use the action or resource or specifying
+        /// an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
+        /// Amazon EKS clusters and node groups are Region-specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServiceUnavailableException">
+        /// The service is unavailable. Back off and retry the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeEksAnywhereSubscription">REST API Reference for DescribeEksAnywhereSubscription Operation</seealso>
+        DescribeEksAnywhereSubscriptionResponse DescribeEksAnywhereSubscription(DescribeEksAnywhereSubscriptionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeEksAnywhereSubscription operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEksAnywhereSubscription operation on AmazonEKSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeEksAnywhereSubscription
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeEksAnywhereSubscription">REST API Reference for DescribeEksAnywhereSubscription Operation</seealso>
+        IAsyncResult BeginDescribeEksAnywhereSubscription(DescribeEksAnywhereSubscriptionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeEksAnywhereSubscription operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeEksAnywhereSubscription.</param>
+        /// 
+        /// <returns>Returns a  DescribeEksAnywhereSubscriptionResult from EKS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeEksAnywhereSubscription">REST API Reference for DescribeEksAnywhereSubscription Operation</seealso>
+        DescribeEksAnywhereSubscriptionResponse EndDescribeEksAnywhereSubscription(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeFargateProfile
 
 
@@ -1136,8 +1324,9 @@ namespace Amazon.EKS
         /// <returns>The response from the DescribeFargateProfile service method, as returned by EKS.</returns>
         /// <exception cref="Amazon.EKS.Model.ClientException">
         /// These errors are usually caused by a client action. Actions can include using an action
-        /// or resource on behalf of a user that doesn't have permissions to use the action or
-        /// resource or specifying an identifier that is not valid.
+        /// or resource on behalf of an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html">IAM
+        /// principal</a> that doesn't have permissions to use the action or resource or specifying
+        /// an identifier that is not valid.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
         /// The specified parameter is invalid. Review the available parameters for the API request.
@@ -1192,8 +1381,9 @@ namespace Amazon.EKS
         /// <returns>The response from the DescribeIdentityProviderConfig service method, as returned by EKS.</returns>
         /// <exception cref="Amazon.EKS.Model.ClientException">
         /// These errors are usually caused by a client action. Actions can include using an action
-        /// or resource on behalf of a user that doesn't have permissions to use the action or
-        /// resource or specifying an identifier that is not valid.
+        /// or resource on behalf of an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html">IAM
+        /// principal</a> that doesn't have permissions to use the action or resource or specifying
+        /// an identifier that is not valid.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
         /// The specified parameter is invalid. Review the available parameters for the API request.
@@ -1251,8 +1441,9 @@ namespace Amazon.EKS
         /// <returns>The response from the DescribeNodegroup service method, as returned by EKS.</returns>
         /// <exception cref="Amazon.EKS.Model.ClientException">
         /// These errors are usually caused by a client action. Actions can include using an action
-        /// or resource on behalf of a user that doesn't have permissions to use the action or
-        /// resource or specifying an identifier that is not valid.
+        /// or resource on behalf of an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html">IAM
+        /// principal</a> that doesn't have permissions to use the action or resource or specifying
+        /// an identifier that is not valid.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
         /// The specified parameter is invalid. Review the available parameters for the API request.
@@ -1318,8 +1509,9 @@ namespace Amazon.EKS
         /// <returns>The response from the DescribeUpdate service method, as returned by EKS.</returns>
         /// <exception cref="Amazon.EKS.Model.ClientException">
         /// These errors are usually caused by a client action. Actions can include using an action
-        /// or resource on behalf of a user that doesn't have permissions to use the action or
-        /// resource or specifying an identifier that is not valid.
+        /// or resource on behalf of an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html">IAM
+        /// principal</a> that doesn't have permissions to use the action or resource or specifying
+        /// an identifier that is not valid.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
         /// The specified parameter is invalid. Review the available parameters for the API request.
@@ -1369,16 +1561,17 @@ namespace Amazon.EKS
         /// <summary>
         /// Disassociates an identity provider configuration from a cluster. If you disassociate
         /// an identity provider from your cluster, users included in the provider can no longer
-        /// access the cluster. However, you can still access the cluster with Amazon Web Services
-        /// IAM users.
+        /// access the cluster. However, you can still access the cluster with <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html">IAM
+        /// principals</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateIdentityProviderConfig service method.</param>
         /// 
         /// <returns>The response from the DisassociateIdentityProviderConfig service method, as returned by EKS.</returns>
         /// <exception cref="Amazon.EKS.Model.ClientException">
         /// These errors are usually caused by a client action. Actions can include using an action
-        /// or resource on behalf of a user that doesn't have permissions to use the action or
-        /// resource or specifying an identifier that is not valid.
+        /// or resource on behalf of an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html">IAM
+        /// principal</a> that doesn't have permissions to use the action or resource or specifying
+        /// an identifier that is not valid.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
         /// The specified parameter is invalid. Review the available parameters for the API request.
@@ -1433,15 +1626,16 @@ namespace Amazon.EKS
 
 
         /// <summary>
-        /// Lists the available add-ons.
+        /// Lists the installed add-ons.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAddons service method.</param>
         /// 
         /// <returns>The response from the ListAddons service method, as returned by EKS.</returns>
         /// <exception cref="Amazon.EKS.Model.ClientException">
         /// These errors are usually caused by a client action. Actions can include using an action
-        /// or resource on behalf of a user that doesn't have permissions to use the action or
-        /// resource or specifying an identifier that is not valid.
+        /// or resource on behalf of an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html">IAM
+        /// principal</a> that doesn't have permissions to use the action or resource or specifying
+        /// an identifier that is not valid.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
         /// The specified parameter is invalid. Review the available parameters for the API request.
@@ -1501,8 +1695,9 @@ namespace Amazon.EKS
         /// <returns>The response from the ListClusters service method, as returned by EKS.</returns>
         /// <exception cref="Amazon.EKS.Model.ClientException">
         /// These errors are usually caused by a client action. Actions can include using an action
-        /// or resource on behalf of a user that doesn't have permissions to use the action or
-        /// resource or specifying an identifier that is not valid.
+        /// or resource on behalf of an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html">IAM
+        /// principal</a> that doesn't have permissions to use the action or resource or specifying
+        /// an identifier that is not valid.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
         /// The specified parameter is invalid. Review the available parameters for the API request.
@@ -1544,6 +1739,61 @@ namespace Amazon.EKS
 
         #endregion
         
+        #region  ListEksAnywhereSubscriptions
+
+
+        /// <summary>
+        /// Displays the full description of the subscription.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEksAnywhereSubscriptions service method.</param>
+        /// 
+        /// <returns>The response from the ListEksAnywhereSubscriptions service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.ClientException">
+        /// These errors are usually caused by a client action. Actions can include using an action
+        /// or resource on behalf of an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html">IAM
+        /// principal</a> that doesn't have permissions to use the action or resource or specifying
+        /// an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServiceUnavailableException">
+        /// The service is unavailable. Back off and retry the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListEksAnywhereSubscriptions">REST API Reference for ListEksAnywhereSubscriptions Operation</seealso>
+        ListEksAnywhereSubscriptionsResponse ListEksAnywhereSubscriptions(ListEksAnywhereSubscriptionsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListEksAnywhereSubscriptions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListEksAnywhereSubscriptions operation on AmazonEKSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListEksAnywhereSubscriptions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListEksAnywhereSubscriptions">REST API Reference for ListEksAnywhereSubscriptions Operation</seealso>
+        IAsyncResult BeginListEksAnywhereSubscriptions(ListEksAnywhereSubscriptionsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListEksAnywhereSubscriptions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListEksAnywhereSubscriptions.</param>
+        /// 
+        /// <returns>Returns a  ListEksAnywhereSubscriptionsResult from EKS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListEksAnywhereSubscriptions">REST API Reference for ListEksAnywhereSubscriptions Operation</seealso>
+        ListEksAnywhereSubscriptionsResponse EndListEksAnywhereSubscriptions(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListFargateProfiles
 
 
@@ -1556,8 +1806,9 @@ namespace Amazon.EKS
         /// <returns>The response from the ListFargateProfiles service method, as returned by EKS.</returns>
         /// <exception cref="Amazon.EKS.Model.ClientException">
         /// These errors are usually caused by a client action. Actions can include using an action
-        /// or resource on behalf of a user that doesn't have permissions to use the action or
-        /// resource or specifying an identifier that is not valid.
+        /// or resource on behalf of an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html">IAM
+        /// principal</a> that doesn't have permissions to use the action or resource or specifying
+        /// an identifier that is not valid.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
         /// The specified parameter is invalid. Review the available parameters for the API request.
@@ -1612,8 +1863,9 @@ namespace Amazon.EKS
         /// <returns>The response from the ListIdentityProviderConfigs service method, as returned by EKS.</returns>
         /// <exception cref="Amazon.EKS.Model.ClientException">
         /// These errors are usually caused by a client action. Actions can include using an action
-        /// or resource on behalf of a user that doesn't have permissions to use the action or
-        /// resource or specifying an identifier that is not valid.
+        /// or resource on behalf of an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html">IAM
+        /// principal</a> that doesn't have permissions to use the action or resource or specifying
+        /// an identifier that is not valid.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
         /// The specified parameter is invalid. Review the available parameters for the API request.
@@ -1673,8 +1925,9 @@ namespace Amazon.EKS
         /// <returns>The response from the ListNodegroups service method, as returned by EKS.</returns>
         /// <exception cref="Amazon.EKS.Model.ClientException">
         /// These errors are usually caused by a client action. Actions can include using an action
-        /// or resource on behalf of a user that doesn't have permissions to use the action or
-        /// resource or specifying an identifier that is not valid.
+        /// or resource on behalf of an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html">IAM
+        /// principal</a> that doesn't have permissions to use the action or resource or specifying
+        /// an identifier that is not valid.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
         /// The specified parameter is invalid. Review the available parameters for the API request.
@@ -1781,8 +2034,9 @@ namespace Amazon.EKS
         /// <returns>The response from the ListUpdates service method, as returned by EKS.</returns>
         /// <exception cref="Amazon.EKS.Model.ClientException">
         /// These errors are usually caused by a client action. Actions can include using an action
-        /// or resource on behalf of a user that doesn't have permissions to use the action or
-        /// resource or specifying an identifier that is not valid.
+        /// or resource on behalf of an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html">IAM
+        /// principal</a> that doesn't have permissions to use the action or resource or specifying
+        /// an identifier that is not valid.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
         /// The specified parameter is invalid. Review the available parameters for the API request.
@@ -1859,15 +2113,16 @@ namespace Amazon.EKS
         /// 
         /// <returns>The response from the RegisterCluster service method, as returned by EKS.</returns>
         /// <exception cref="Amazon.EKS.Model.AccessDeniedException">
-        /// You don't have permissions to perform the requested operation. The user or role that
-        /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
-        /// Management</a> in the <i>IAM User Guide</i>.
+        /// You don't have permissions to perform the requested operation. The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html">IAM
+        /// principal</a> making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ClientException">
         /// These errors are usually caused by a client action. Actions can include using an action
-        /// or resource on behalf of a user that doesn't have permissions to use the action or
-        /// resource or specifying an identifier that is not valid.
+        /// or resource on behalf of an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html">IAM
+        /// principal</a> that doesn't have permissions to use the action or resource or specifying
+        /// an identifier that is not valid.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
         /// The specified parameter is invalid. Review the available parameters for the API request.
@@ -2032,8 +2287,9 @@ namespace Amazon.EKS
         /// <returns>The response from the UpdateAddon service method, as returned by EKS.</returns>
         /// <exception cref="Amazon.EKS.Model.ClientException">
         /// These errors are usually caused by a client action. Actions can include using an action
-        /// or resource on behalf of a user that doesn't have permissions to use the action or
-        /// resource or specifying an identifier that is not valid.
+        /// or resource on behalf of an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html">IAM
+        /// principal</a> that doesn't have permissions to use the action or resource or specifying
+        /// an identifier that is not valid.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
         /// The specified parameter is invalid. Review the available parameters for the API request.
@@ -2130,8 +2386,9 @@ namespace Amazon.EKS
         /// <returns>The response from the UpdateClusterConfig service method, as returned by EKS.</returns>
         /// <exception cref="Amazon.EKS.Model.ClientException">
         /// These errors are usually caused by a client action. Actions can include using an action
-        /// or resource on behalf of a user that doesn't have permissions to use the action or
-        /// resource or specifying an identifier that is not valid.
+        /// or resource on behalf of an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html">IAM
+        /// principal</a> that doesn't have permissions to use the action or resource or specifying
+        /// an identifier that is not valid.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
         /// The specified parameter is invalid. Review the available parameters for the API request.
@@ -2210,8 +2467,9 @@ namespace Amazon.EKS
         /// <returns>The response from the UpdateClusterVersion service method, as returned by EKS.</returns>
         /// <exception cref="Amazon.EKS.Model.ClientException">
         /// These errors are usually caused by a client action. Actions can include using an action
-        /// or resource on behalf of a user that doesn't have permissions to use the action or
-        /// resource or specifying an identifier that is not valid.
+        /// or resource on behalf of an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html">IAM
+        /// principal</a> that doesn't have permissions to use the action or resource or specifying
+        /// an identifier that is not valid.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
         /// The specified parameter is invalid. Review the available parameters for the API request.
@@ -2262,6 +2520,68 @@ namespace Amazon.EKS
 
         #endregion
         
+        #region  UpdateEksAnywhereSubscription
+
+
+        /// <summary>
+        /// Update an EKS Anywhere Subscription. Only auto renewal and tags can be updated after
+        /// subscription creation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEksAnywhereSubscription service method.</param>
+        /// 
+        /// <returns>The response from the UpdateEksAnywhereSubscription service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.ClientException">
+        /// These errors are usually caused by a client action. Actions can include using an action
+        /// or resource on behalf of an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html">IAM
+        /// principal</a> that doesn't have permissions to use the action or resource or specifying
+        /// an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidRequestException">
+        /// The request is invalid given the state of the cluster. Check the state of the cluster
+        /// and the associated operations.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
+        /// Amazon EKS clusters and node groups are Region-specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateEksAnywhereSubscription">REST API Reference for UpdateEksAnywhereSubscription Operation</seealso>
+        UpdateEksAnywhereSubscriptionResponse UpdateEksAnywhereSubscription(UpdateEksAnywhereSubscriptionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateEksAnywhereSubscription operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEksAnywhereSubscription operation on AmazonEKSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateEksAnywhereSubscription
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateEksAnywhereSubscription">REST API Reference for UpdateEksAnywhereSubscription Operation</seealso>
+        IAsyncResult BeginUpdateEksAnywhereSubscription(UpdateEksAnywhereSubscriptionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateEksAnywhereSubscription operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateEksAnywhereSubscription.</param>
+        /// 
+        /// <returns>Returns a  UpdateEksAnywhereSubscriptionResult from EKS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateEksAnywhereSubscription">REST API Reference for UpdateEksAnywhereSubscription Operation</seealso>
+        UpdateEksAnywhereSubscriptionResponse EndUpdateEksAnywhereSubscription(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  UpdateNodegroupConfig
 
 
@@ -2277,8 +2597,9 @@ namespace Amazon.EKS
         /// <returns>The response from the UpdateNodegroupConfig service method, as returned by EKS.</returns>
         /// <exception cref="Amazon.EKS.Model.ClientException">
         /// These errors are usually caused by a client action. Actions can include using an action
-        /// or resource on behalf of a user that doesn't have permissions to use the action or
-        /// resource or specifying an identifier that is not valid.
+        /// or resource on behalf of an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html">IAM
+        /// principal</a> that doesn't have permissions to use the action or resource or specifying
+        /// an identifier that is not valid.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
         /// The specified parameter is invalid. Review the available parameters for the API request.
@@ -2371,8 +2692,9 @@ namespace Amazon.EKS
         /// <returns>The response from the UpdateNodegroupVersion service method, as returned by EKS.</returns>
         /// <exception cref="Amazon.EKS.Model.ClientException">
         /// These errors are usually caused by a client action. Actions can include using an action
-        /// or resource on behalf of a user that doesn't have permissions to use the action or
-        /// resource or specifying an identifier that is not valid.
+        /// or resource on behalf of an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html">IAM
+        /// principal</a> that doesn't have permissions to use the action or resource or specifying
+        /// an identifier that is not valid.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
         /// The specified parameter is invalid. Review the available parameters for the API request.

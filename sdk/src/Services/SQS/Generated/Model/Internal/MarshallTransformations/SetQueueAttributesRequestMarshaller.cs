@@ -28,6 +28,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
 namespace Amazon.SQS.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -44,7 +46,7 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
         {
             return this.Marshall((SetQueueAttributesRequest)input);
         }
-    
+
         /// <summary>
         /// Marshaller the request object to the HTTP request.
         /// </summary>  
@@ -53,34 +55,47 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
         public IRequest Marshall(SetQueueAttributesRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SQS");
-            request.Parameters.Add("Action", "SetQueueAttributes");
-            request.Parameters.Add("Version", "2012-11-05");
+            string target = "AmazonSQS.SetQueueAttributes";
+            request.Headers["X-Amz-Target"] = target;
+            request.Headers["Content-Type"] = "application/x-amz-json-1.0";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2012-11-05";
+            request.HttpMethod = "POST";
 
-            if(publicRequest != null)
+            request.ResourcePath = "/";
+            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetAttributes())
                 {
-                    int mapIndex = 1;
-                    foreach(var key in publicRequest.Attributes.Keys)
+                    context.Writer.WritePropertyName("Attributes");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestAttributesKvp in publicRequest.Attributes)
                     {
-                        String value;
-                        bool hasValue = publicRequest.Attributes.TryGetValue(key, out value);
-                        request.Parameters.Add("Attribute" + "." + mapIndex + "." + "Name", StringUtils.FromString(key));
-                        if (hasValue)
-                        {
-                            request.Parameters.Add("Attribute" + "." + mapIndex + "." + "Value", StringUtils.FromString(value));
-                        }
-                        mapIndex++;
+                        context.Writer.WritePropertyName(publicRequestAttributesKvp.Key);
+                        var publicRequestAttributesValue = publicRequestAttributesKvp.Value;
+
+                            context.Writer.Write(publicRequestAttributesValue);
                     }
+                    context.Writer.WriteObjectEnd();
                 }
+
                 if(publicRequest.IsSetQueueUrl())
                 {
-                    request.Parameters.Add("QueueUrl", StringUtils.FromString(publicRequest.QueueUrl));
+                    context.Writer.WritePropertyName("QueueUrl");
+                    context.Writer.Write(publicRequest.QueueUrl);
                 }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
+
+
             return request;
         }
-                    private static SetQueueAttributesRequestMarshaller _instance = new SetQueueAttributesRequestMarshaller();        
+        private static SetQueueAttributesRequestMarshaller _instance = new SetQueueAttributesRequestMarshaller();        
 
         internal static SetQueueAttributesRequestMarshaller GetInstance()
         {

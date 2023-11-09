@@ -30,7 +30,8 @@ namespace Amazon.CloudTrail.Model
 {
     /// <summary>
     /// Container for the parameters to the RegisterOrganizationDelegatedAdmin operation.
-    /// Registers an organization’s member account as the CloudTrail delegated administrator.
+    /// Registers an organization’s member account as the CloudTrail <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-delegated-administrator.html">delegated
+    /// administrator</a>.
     /// </summary>
     public partial class RegisterOrganizationDelegatedAdminRequest : AmazonCloudTrailRequest
     {

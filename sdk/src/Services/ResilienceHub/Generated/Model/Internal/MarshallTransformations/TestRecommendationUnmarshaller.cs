@@ -112,6 +112,12 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.RecommendationId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("recommendationStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RecommendationStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("referenceId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

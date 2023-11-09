@@ -54,6 +54,12 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("ConcurrencyMode", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ConcurrencyMode = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("FailureToleranceCount", targetDepth))
                     {
                         var unmarshaller = IntUnmarshaller.Instance;

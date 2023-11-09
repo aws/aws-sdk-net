@@ -241,6 +241,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("MultiAZ", StringUtils.FromBool(publicRequest.MultiAZ));
                 }
+                if(publicRequest.IsSetMultiTenant())
+                {
+                    request.Parameters.Add("MultiTenant", StringUtils.FromBool(publicRequest.MultiTenant));
+                }
                 if(publicRequest.IsSetNcharCharacterSetName())
                 {
                     request.Parameters.Add("NcharCharacterSetName", StringUtils.FromString(publicRequest.NcharCharacterSetName));

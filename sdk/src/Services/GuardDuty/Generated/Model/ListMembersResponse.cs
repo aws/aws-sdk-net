@@ -41,6 +41,12 @@ namespace Amazon.GuardDuty.Model
         /// <para>
         /// A list of members.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The values for <code>email</code> and <code>invitedAt</code> are available only if
+        /// the member accounts are added by invitation.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
         public List<Member> Members

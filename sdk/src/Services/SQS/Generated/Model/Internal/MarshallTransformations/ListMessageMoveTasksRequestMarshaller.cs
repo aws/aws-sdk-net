@@ -28,6 +28,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
 namespace Amazon.SQS.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -44,7 +46,7 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
         {
             return this.Marshall((ListMessageMoveTasksRequest)input);
         }
-    
+
         /// <summary>
         /// Marshaller the request object to the HTTP request.
         /// </summary>  
@@ -53,23 +55,39 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListMessageMoveTasksRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SQS");
-            request.Parameters.Add("Action", "ListMessageMoveTasks");
-            request.Parameters.Add("Version", "2012-11-05");
+            string target = "AmazonSQS.ListMessageMoveTasks";
+            request.Headers["X-Amz-Target"] = target;
+            request.Headers["Content-Type"] = "application/x-amz-json-1.0";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2012-11-05";
+            request.HttpMethod = "POST";
 
-            if(publicRequest != null)
+            request.ResourcePath = "/";
+            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetMaxResults())
                 {
-                    request.Parameters.Add("MaxResults", StringUtils.FromInt(publicRequest.MaxResults));
+                    context.Writer.WritePropertyName("MaxResults");
+                    context.Writer.Write(publicRequest.MaxResults);
                 }
+
                 if(publicRequest.IsSetSourceArn())
                 {
-                    request.Parameters.Add("SourceArn", StringUtils.FromString(publicRequest.SourceArn));
+                    context.Writer.WritePropertyName("SourceArn");
+                    context.Writer.Write(publicRequest.SourceArn);
                 }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
+
+
             return request;
         }
-                    private static ListMessageMoveTasksRequestMarshaller _instance = new ListMessageMoveTasksRequestMarshaller();        
+        private static ListMessageMoveTasksRequestMarshaller _instance = new ListMessageMoveTasksRequestMarshaller();        
 
         internal static ListMessageMoveTasksRequestMarshaller GetInstance()
         {

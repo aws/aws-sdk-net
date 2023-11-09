@@ -965,6 +965,12 @@
     <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Omics.Model.GetRunResponse.RunOutputUri</property>
+    <min>1</min>
+    <max>750</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Omics.Model.GetRunResponse.StartedBy</property>
     <min>1</min>
     <max>128</max>
@@ -982,6 +988,12 @@
     <property>Amazon.Omics.Model.GetRunResponse.StorageCapacity</property>
     <min>0</min>
     <max>100000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.GetRunResponse.Uuid</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetRunResponse.WorkflowId</property>
@@ -1880,9 +1892,21 @@
     <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Omics.Model.StartRunResponse.RunOutputUri</property>
+    <min>1</min>
+    <max>750</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Omics.Model.StartRunResponse.Status</property>
     <min>1</min>
     <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.StartRunResponse.Uuid</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.StartVariantImportJobRequest.DestinationName</property>
@@ -2389,9 +2413,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ReadSetFilter.ReferenceArn</property>
-    <min>1</min>
+    <min>0</min>
     <max>127</max>
-    <pattern>arn:.+</pattern>
+    <pattern>$|^arn:.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ReadSetFilter.SampleId</property>

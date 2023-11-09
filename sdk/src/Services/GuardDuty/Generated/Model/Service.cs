@@ -37,6 +37,7 @@ namespace Amazon.GuardDuty.Model
         private ServiceAdditionalInfo _additionalInfo;
         private bool? _archived;
         private int? _count;
+        private Detection _detection;
         private string _detectorId;
         private EbsVolumeScanDetails _ebsVolumeScanDetails;
         private string _eventFirstSeen;
@@ -118,6 +119,24 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetCount()
         {
             return this._count.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Detection. 
+        /// <para>
+        /// Contains information about the detected unusual behavior.
+        /// </para>
+        /// </summary>
+        public Detection Detection
+        {
+            get { return this._detection; }
+            set { this._detection = value; }
+        }
+
+        // Check to see if Detection property is set
+        internal bool IsSetDetection()
+        {
+            return this._detection != null;
         }
 
         /// <summary>

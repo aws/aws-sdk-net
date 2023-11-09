@@ -31,733 +31,13 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("RDSDataService")]
-        [Description("For region ap-south-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_apsouth1_with_FIPS_enabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new RDSDataServiceEndpointParameters();
-            parameters["Region"] = "ap-south-1";
-            parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = true;
-            var endpoint = new AmazonRDSDataServiceEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://rds-data-fips.ap-south-1.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("RDSDataService")]
-        [Description("For region ap-south-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_apsouth1_with_FIPS_enabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new RDSDataServiceEndpointParameters();
-            parameters["Region"] = "ap-south-1";
-            parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = true;
-            var endpoint = new AmazonRDSDataServiceEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://rds-data-fips.ap-south-1.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("RDSDataService")]
-        [Description("For region ap-south-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_apsouth1_with_FIPS_disabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new RDSDataServiceEndpointParameters();
-            parameters["Region"] = "ap-south-1";
-            parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = false;
-            var endpoint = new AmazonRDSDataServiceEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://rds-data.ap-south-1.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("RDSDataService")]
-        [Description("For region ap-south-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_apsouth1_with_FIPS_disabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new RDSDataServiceEndpointParameters();
-            parameters["Region"] = "ap-south-1";
-            parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = false;
-            var endpoint = new AmazonRDSDataServiceEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://rds-data.ap-south-1.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("RDSDataService")]
-        [Description("For region ca-central-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_cacentral1_with_FIPS_enabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new RDSDataServiceEndpointParameters();
-            parameters["Region"] = "ca-central-1";
-            parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = true;
-            var endpoint = new AmazonRDSDataServiceEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://rds-data-fips.ca-central-1.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("RDSDataService")]
-        [Description("For region ca-central-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_cacentral1_with_FIPS_enabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new RDSDataServiceEndpointParameters();
-            parameters["Region"] = "ca-central-1";
-            parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = true;
-            var endpoint = new AmazonRDSDataServiceEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://rds-data-fips.ca-central-1.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("RDSDataService")]
-        [Description("For region ca-central-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_cacentral1_with_FIPS_disabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new RDSDataServiceEndpointParameters();
-            parameters["Region"] = "ca-central-1";
-            parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = false;
-            var endpoint = new AmazonRDSDataServiceEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://rds-data.ca-central-1.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("RDSDataService")]
-        [Description("For region ca-central-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_cacentral1_with_FIPS_disabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new RDSDataServiceEndpointParameters();
-            parameters["Region"] = "ca-central-1";
-            parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = false;
-            var endpoint = new AmazonRDSDataServiceEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://rds-data.ca-central-1.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("RDSDataService")]
-        [Description("For region eu-central-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_eucentral1_with_FIPS_enabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new RDSDataServiceEndpointParameters();
-            parameters["Region"] = "eu-central-1";
-            parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = true;
-            var endpoint = new AmazonRDSDataServiceEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://rds-data-fips.eu-central-1.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("RDSDataService")]
-        [Description("For region eu-central-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_eucentral1_with_FIPS_enabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new RDSDataServiceEndpointParameters();
-            parameters["Region"] = "eu-central-1";
-            parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = true;
-            var endpoint = new AmazonRDSDataServiceEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://rds-data-fips.eu-central-1.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("RDSDataService")]
-        [Description("For region eu-central-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_eucentral1_with_FIPS_disabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new RDSDataServiceEndpointParameters();
-            parameters["Region"] = "eu-central-1";
-            parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = false;
-            var endpoint = new AmazonRDSDataServiceEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://rds-data.eu-central-1.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("RDSDataService")]
-        [Description("For region eu-central-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_eucentral1_with_FIPS_disabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new RDSDataServiceEndpointParameters();
-            parameters["Region"] = "eu-central-1";
-            parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = false;
-            var endpoint = new AmazonRDSDataServiceEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://rds-data.eu-central-1.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("RDSDataService")]
-        [Description("For region us-west-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_uswest1_with_FIPS_enabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new RDSDataServiceEndpointParameters();
-            parameters["Region"] = "us-west-1";
-            parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = true;
-            var endpoint = new AmazonRDSDataServiceEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://rds-data-fips.us-west-1.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("RDSDataService")]
-        [Description("For region us-west-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_uswest1_with_FIPS_enabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new RDSDataServiceEndpointParameters();
-            parameters["Region"] = "us-west-1";
-            parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = true;
-            var endpoint = new AmazonRDSDataServiceEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://rds-data-fips.us-west-1.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("RDSDataService")]
-        [Description("For region us-west-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_uswest1_with_FIPS_disabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new RDSDataServiceEndpointParameters();
-            parameters["Region"] = "us-west-1";
-            parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = false;
-            var endpoint = new AmazonRDSDataServiceEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://rds-data.us-west-1.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("RDSDataService")]
-        [Description("For region us-west-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_uswest1_with_FIPS_disabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new RDSDataServiceEndpointParameters();
-            parameters["Region"] = "us-west-1";
-            parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = false;
-            var endpoint = new AmazonRDSDataServiceEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://rds-data.us-west-1.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("RDSDataService")]
-        [Description("For region us-west-2 with FIPS enabled and DualStack enabled")]
-        public void For_region_uswest2_with_FIPS_enabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new RDSDataServiceEndpointParameters();
-            parameters["Region"] = "us-west-2";
-            parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = true;
-            var endpoint = new AmazonRDSDataServiceEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://rds-data-fips.us-west-2.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("RDSDataService")]
-        [Description("For region us-west-2 with FIPS enabled and DualStack disabled")]
-        public void For_region_uswest2_with_FIPS_enabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new RDSDataServiceEndpointParameters();
-            parameters["Region"] = "us-west-2";
-            parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = true;
-            var endpoint = new AmazonRDSDataServiceEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://rds-data-fips.us-west-2.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("RDSDataService")]
-        [Description("For region us-west-2 with FIPS disabled and DualStack enabled")]
-        public void For_region_uswest2_with_FIPS_disabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new RDSDataServiceEndpointParameters();
-            parameters["Region"] = "us-west-2";
-            parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = false;
-            var endpoint = new AmazonRDSDataServiceEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://rds-data.us-west-2.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("RDSDataService")]
-        [Description("For region us-west-2 with FIPS disabled and DualStack disabled")]
-        public void For_region_uswest2_with_FIPS_disabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new RDSDataServiceEndpointParameters();
-            parameters["Region"] = "us-west-2";
-            parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = false;
-            var endpoint = new AmazonRDSDataServiceEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://rds-data.us-west-2.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("RDSDataService")]
-        [Description("For region eu-west-3 with FIPS enabled and DualStack enabled")]
-        public void For_region_euwest3_with_FIPS_enabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new RDSDataServiceEndpointParameters();
-            parameters["Region"] = "eu-west-3";
-            parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = true;
-            var endpoint = new AmazonRDSDataServiceEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://rds-data-fips.eu-west-3.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("RDSDataService")]
-        [Description("For region eu-west-3 with FIPS enabled and DualStack disabled")]
-        public void For_region_euwest3_with_FIPS_enabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new RDSDataServiceEndpointParameters();
-            parameters["Region"] = "eu-west-3";
-            parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = true;
-            var endpoint = new AmazonRDSDataServiceEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://rds-data-fips.eu-west-3.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("RDSDataService")]
-        [Description("For region eu-west-3 with FIPS disabled and DualStack enabled")]
-        public void For_region_euwest3_with_FIPS_disabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new RDSDataServiceEndpointParameters();
-            parameters["Region"] = "eu-west-3";
-            parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = false;
-            var endpoint = new AmazonRDSDataServiceEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://rds-data.eu-west-3.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("RDSDataService")]
-        [Description("For region eu-west-3 with FIPS disabled and DualStack disabled")]
-        public void For_region_euwest3_with_FIPS_disabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new RDSDataServiceEndpointParameters();
-            parameters["Region"] = "eu-west-3";
-            parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = false;
-            var endpoint = new AmazonRDSDataServiceEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://rds-data.eu-west-3.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("RDSDataService")]
-        [Description("For region eu-west-2 with FIPS enabled and DualStack enabled")]
-        public void For_region_euwest2_with_FIPS_enabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new RDSDataServiceEndpointParameters();
-            parameters["Region"] = "eu-west-2";
-            parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = true;
-            var endpoint = new AmazonRDSDataServiceEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://rds-data-fips.eu-west-2.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("RDSDataService")]
-        [Description("For region eu-west-2 with FIPS enabled and DualStack disabled")]
-        public void For_region_euwest2_with_FIPS_enabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new RDSDataServiceEndpointParameters();
-            parameters["Region"] = "eu-west-2";
-            parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = true;
-            var endpoint = new AmazonRDSDataServiceEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://rds-data-fips.eu-west-2.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("RDSDataService")]
-        [Description("For region eu-west-2 with FIPS disabled and DualStack enabled")]
-        public void For_region_euwest2_with_FIPS_disabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new RDSDataServiceEndpointParameters();
-            parameters["Region"] = "eu-west-2";
-            parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = false;
-            var endpoint = new AmazonRDSDataServiceEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://rds-data.eu-west-2.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("RDSDataService")]
-        [Description("For region eu-west-2 with FIPS disabled and DualStack disabled")]
-        public void For_region_euwest2_with_FIPS_disabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new RDSDataServiceEndpointParameters();
-            parameters["Region"] = "eu-west-2";
-            parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = false;
-            var endpoint = new AmazonRDSDataServiceEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://rds-data.eu-west-2.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("RDSDataService")]
-        [Description("For region eu-west-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_euwest1_with_FIPS_enabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new RDSDataServiceEndpointParameters();
-            parameters["Region"] = "eu-west-1";
-            parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = true;
-            var endpoint = new AmazonRDSDataServiceEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://rds-data-fips.eu-west-1.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("RDSDataService")]
-        [Description("For region eu-west-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_euwest1_with_FIPS_enabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new RDSDataServiceEndpointParameters();
-            parameters["Region"] = "eu-west-1";
-            parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = true;
-            var endpoint = new AmazonRDSDataServiceEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://rds-data-fips.eu-west-1.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("RDSDataService")]
-        [Description("For region eu-west-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_euwest1_with_FIPS_disabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new RDSDataServiceEndpointParameters();
-            parameters["Region"] = "eu-west-1";
-            parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = false;
-            var endpoint = new AmazonRDSDataServiceEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://rds-data.eu-west-1.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("RDSDataService")]
-        [Description("For region eu-west-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_euwest1_with_FIPS_disabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new RDSDataServiceEndpointParameters();
-            parameters["Region"] = "eu-west-1";
-            parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = false;
-            var endpoint = new AmazonRDSDataServiceEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://rds-data.eu-west-1.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("RDSDataService")]
-        [Description("For region ap-northeast-2 with FIPS enabled and DualStack enabled")]
-        public void For_region_apnortheast2_with_FIPS_enabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new RDSDataServiceEndpointParameters();
-            parameters["Region"] = "ap-northeast-2";
-            parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = true;
-            var endpoint = new AmazonRDSDataServiceEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://rds-data-fips.ap-northeast-2.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("RDSDataService")]
-        [Description("For region ap-northeast-2 with FIPS enabled and DualStack disabled")]
-        public void For_region_apnortheast2_with_FIPS_enabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new RDSDataServiceEndpointParameters();
-            parameters["Region"] = "ap-northeast-2";
-            parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = true;
-            var endpoint = new AmazonRDSDataServiceEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://rds-data-fips.ap-northeast-2.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("RDSDataService")]
-        [Description("For region ap-northeast-2 with FIPS disabled and DualStack enabled")]
-        public void For_region_apnortheast2_with_FIPS_disabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new RDSDataServiceEndpointParameters();
-            parameters["Region"] = "ap-northeast-2";
-            parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = false;
-            var endpoint = new AmazonRDSDataServiceEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://rds-data.ap-northeast-2.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("RDSDataService")]
-        [Description("For region ap-northeast-2 with FIPS disabled and DualStack disabled")]
-        public void For_region_apnortheast2_with_FIPS_disabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new RDSDataServiceEndpointParameters();
-            parameters["Region"] = "ap-northeast-2";
-            parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = false;
-            var endpoint = new AmazonRDSDataServiceEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://rds-data.ap-northeast-2.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("RDSDataService")]
-        [Description("For region ap-northeast-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_apnortheast1_with_FIPS_enabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new RDSDataServiceEndpointParameters();
-            parameters["Region"] = "ap-northeast-1";
-            parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = true;
-            var endpoint = new AmazonRDSDataServiceEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://rds-data-fips.ap-northeast-1.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("RDSDataService")]
-        [Description("For region ap-northeast-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_apnortheast1_with_FIPS_enabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new RDSDataServiceEndpointParameters();
-            parameters["Region"] = "ap-northeast-1";
-            parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = true;
-            var endpoint = new AmazonRDSDataServiceEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://rds-data-fips.ap-northeast-1.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("RDSDataService")]
-        [Description("For region ap-northeast-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_apnortheast1_with_FIPS_disabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new RDSDataServiceEndpointParameters();
-            parameters["Region"] = "ap-northeast-1";
-            parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = false;
-            var endpoint = new AmazonRDSDataServiceEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://rds-data.ap-northeast-1.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("RDSDataService")]
-        [Description("For region ap-northeast-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_apnortheast1_with_FIPS_disabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new RDSDataServiceEndpointParameters();
-            parameters["Region"] = "ap-northeast-1";
-            parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = false;
-            var endpoint = new AmazonRDSDataServiceEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://rds-data.ap-northeast-1.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("RDSDataService")]
-        [Description("For region ap-southeast-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_apsoutheast1_with_FIPS_enabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new RDSDataServiceEndpointParameters();
-            parameters["Region"] = "ap-southeast-1";
-            parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = true;
-            var endpoint = new AmazonRDSDataServiceEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://rds-data-fips.ap-southeast-1.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("RDSDataService")]
-        [Description("For region ap-southeast-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_apsoutheast1_with_FIPS_enabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new RDSDataServiceEndpointParameters();
-            parameters["Region"] = "ap-southeast-1";
-            parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = true;
-            var endpoint = new AmazonRDSDataServiceEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://rds-data-fips.ap-southeast-1.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("RDSDataService")]
-        [Description("For region ap-southeast-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_apsoutheast1_with_FIPS_disabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new RDSDataServiceEndpointParameters();
-            parameters["Region"] = "ap-southeast-1";
-            parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = false;
-            var endpoint = new AmazonRDSDataServiceEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://rds-data.ap-southeast-1.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("RDSDataService")]
-        [Description("For region ap-southeast-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_apsoutheast1_with_FIPS_disabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new RDSDataServiceEndpointParameters();
-            parameters["Region"] = "ap-southeast-1";
-            parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = false;
-            var endpoint = new AmazonRDSDataServiceEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://rds-data.ap-southeast-1.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("RDSDataService")]
-        [Description("For region ap-southeast-2 with FIPS enabled and DualStack enabled")]
-        public void For_region_apsoutheast2_with_FIPS_enabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new RDSDataServiceEndpointParameters();
-            parameters["Region"] = "ap-southeast-2";
-            parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = true;
-            var endpoint = new AmazonRDSDataServiceEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://rds-data-fips.ap-southeast-2.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("RDSDataService")]
-        [Description("For region ap-southeast-2 with FIPS enabled and DualStack disabled")]
-        public void For_region_apsoutheast2_with_FIPS_enabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new RDSDataServiceEndpointParameters();
-            parameters["Region"] = "ap-southeast-2";
-            parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = true;
-            var endpoint = new AmazonRDSDataServiceEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://rds-data-fips.ap-southeast-2.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("RDSDataService")]
-        [Description("For region ap-southeast-2 with FIPS disabled and DualStack enabled")]
-        public void For_region_apsoutheast2_with_FIPS_disabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new RDSDataServiceEndpointParameters();
-            parameters["Region"] = "ap-southeast-2";
-            parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = false;
-            var endpoint = new AmazonRDSDataServiceEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://rds-data.ap-southeast-2.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("RDSDataService")]
-        [Description("For region ap-southeast-2 with FIPS disabled and DualStack disabled")]
-        public void For_region_apsoutheast2_with_FIPS_disabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new RDSDataServiceEndpointParameters();
-            parameters["Region"] = "ap-southeast-2";
-            parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = false;
-            var endpoint = new AmazonRDSDataServiceEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://rds-data.ap-southeast-2.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("RDSDataService")]
         [Description("For region us-east-1 with FIPS enabled and DualStack enabled")]
         public void For_region_useast1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new RDSDataServiceEndpointParameters();
             parameters["Region"] = "us-east-1";
-            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
             var endpoint = new AmazonRDSDataServiceEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://rds-data-fips.us-east-1.api.aws", endpoint.URL);
         }
@@ -771,8 +51,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new RDSDataServiceEndpointParameters();
             parameters["Region"] = "us-east-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonRDSDataServiceEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://rds-data-fips.us-east-1.amazonaws.com", endpoint.URL);
         }
@@ -786,8 +66,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new RDSDataServiceEndpointParameters();
             parameters["Region"] = "us-east-1";
-            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
             var endpoint = new AmazonRDSDataServiceEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://rds-data.us-east-1.api.aws", endpoint.URL);
         }
@@ -801,8 +81,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new RDSDataServiceEndpointParameters();
             parameters["Region"] = "us-east-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonRDSDataServiceEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://rds-data.us-east-1.amazonaws.com", endpoint.URL);
         }
@@ -811,73 +91,268 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("RDSDataService")]
-        [Description("For region us-east-2 with FIPS enabled and DualStack enabled")]
-        public void For_region_useast2_with_FIPS_enabled_and_DualStack_enabled_Test()
+        [Description("For region cn-north-1 with FIPS enabled and DualStack enabled")]
+        public void For_region_cnnorth1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new RDSDataServiceEndpointParameters();
-            parameters["Region"] = "us-east-2";
-            parameters["UseDualStack"] = true;
+            parameters["Region"] = "cn-north-1";
             parameters["UseFIPS"] = true;
-            var endpoint = new AmazonRDSDataServiceEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://rds-data-fips.us-east-2.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("RDSDataService")]
-        [Description("For region us-east-2 with FIPS enabled and DualStack disabled")]
-        public void For_region_useast2_with_FIPS_enabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new RDSDataServiceEndpointParameters();
-            parameters["Region"] = "us-east-2";
-            parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = true;
-            var endpoint = new AmazonRDSDataServiceEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://rds-data-fips.us-east-2.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("RDSDataService")]
-        [Description("For region us-east-2 with FIPS disabled and DualStack enabled")]
-        public void For_region_useast2_with_FIPS_disabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new RDSDataServiceEndpointParameters();
-            parameters["Region"] = "us-east-2";
             parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = false;
             var endpoint = new AmazonRDSDataServiceEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://rds-data.us-east-2.api.aws", endpoint.URL);
+            Assert.AreEqual("https://rds-data-fips.cn-north-1.api.amazonwebservices.com.cn", endpoint.URL);
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("RDSDataService")]
-        [Description("For region us-east-2 with FIPS disabled and DualStack disabled")]
-        public void For_region_useast2_with_FIPS_disabled_and_DualStack_disabled_Test()
+        [Description("For region cn-north-1 with FIPS enabled and DualStack disabled")]
+        public void For_region_cnnorth1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new RDSDataServiceEndpointParameters();
-            parameters["Region"] = "us-east-2";
+            parameters["Region"] = "cn-north-1";
+            parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = false;
             var endpoint = new AmazonRDSDataServiceEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://rds-data.us-east-2.amazonaws.com", endpoint.URL);
+            Assert.AreEqual("https://rds-data-fips.cn-north-1.amazonaws.com.cn", endpoint.URL);
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("RDSDataService")]
-        [Description("For custom endpoint with fips disabled and dualstack disabled")]
-        public void For_custom_endpoint_with_fips_disabled_and_dualstack_disabled_Test()
+        [Description("For region cn-north-1 with FIPS disabled and DualStack enabled")]
+        public void For_region_cnnorth1_with_FIPS_disabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new RDSDataServiceEndpointParameters();
+            parameters["Region"] = "cn-north-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
+            var endpoint = new AmazonRDSDataServiceEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://rds-data.cn-north-1.api.amazonwebservices.com.cn", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("RDSDataService")]
+        [Description("For region cn-north-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_cnnorth1_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new RDSDataServiceEndpointParameters();
+            parameters["Region"] = "cn-north-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonRDSDataServiceEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://rds-data.cn-north-1.amazonaws.com.cn", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("RDSDataService")]
+        [Description("For region us-gov-east-1 with FIPS enabled and DualStack enabled")]
+        public void For_region_usgoveast1_with_FIPS_enabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new RDSDataServiceEndpointParameters();
+            parameters["Region"] = "us-gov-east-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
+            var endpoint = new AmazonRDSDataServiceEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://rds-data-fips.us-gov-east-1.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("RDSDataService")]
+        [Description("For region us-gov-east-1 with FIPS enabled and DualStack disabled")]
+        public void For_region_usgoveast1_with_FIPS_enabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new RDSDataServiceEndpointParameters();
+            parameters["Region"] = "us-gov-east-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonRDSDataServiceEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://rds-data-fips.us-gov-east-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("RDSDataService")]
+        [Description("For region us-gov-east-1 with FIPS disabled and DualStack enabled")]
+        public void For_region_usgoveast1_with_FIPS_disabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new RDSDataServiceEndpointParameters();
+            parameters["Region"] = "us-gov-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
+            var endpoint = new AmazonRDSDataServiceEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://rds-data.us-gov-east-1.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("RDSDataService")]
+        [Description("For region us-gov-east-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_usgoveast1_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new RDSDataServiceEndpointParameters();
+            parameters["Region"] = "us-gov-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonRDSDataServiceEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://rds-data.us-gov-east-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("RDSDataService")]
+        [Description("For region us-iso-east-1 with FIPS enabled and DualStack enabled")]
+        [ExpectedException(typeof(AmazonClientException), @"FIPS and DualStack are enabled, but this partition does not support one or both")]
+        public void For_region_usisoeast1_with_FIPS_enabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new RDSDataServiceEndpointParameters();
+            parameters["Region"] = "us-iso-east-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
+            var endpoint = new AmazonRDSDataServiceEndpointProvider().ResolveEndpoint(parameters);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("RDSDataService")]
+        [Description("For region us-iso-east-1 with FIPS enabled and DualStack disabled")]
+        public void For_region_usisoeast1_with_FIPS_enabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new RDSDataServiceEndpointParameters();
+            parameters["Region"] = "us-iso-east-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonRDSDataServiceEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://rds-data-fips.us-iso-east-1.c2s.ic.gov", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("RDSDataService")]
+        [Description("For region us-iso-east-1 with FIPS disabled and DualStack enabled")]
+        [ExpectedException(typeof(AmazonClientException), @"DualStack is enabled but this partition does not support DualStack")]
+        public void For_region_usisoeast1_with_FIPS_disabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new RDSDataServiceEndpointParameters();
+            parameters["Region"] = "us-iso-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
+            var endpoint = new AmazonRDSDataServiceEndpointProvider().ResolveEndpoint(parameters);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("RDSDataService")]
+        [Description("For region us-iso-east-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_usisoeast1_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new RDSDataServiceEndpointParameters();
+            parameters["Region"] = "us-iso-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonRDSDataServiceEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://rds-data.us-iso-east-1.c2s.ic.gov", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("RDSDataService")]
+        [Description("For region us-isob-east-1 with FIPS enabled and DualStack enabled")]
+        [ExpectedException(typeof(AmazonClientException), @"FIPS and DualStack are enabled, but this partition does not support one or both")]
+        public void For_region_usisobeast1_with_FIPS_enabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new RDSDataServiceEndpointParameters();
+            parameters["Region"] = "us-isob-east-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
+            var endpoint = new AmazonRDSDataServiceEndpointProvider().ResolveEndpoint(parameters);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("RDSDataService")]
+        [Description("For region us-isob-east-1 with FIPS enabled and DualStack disabled")]
+        public void For_region_usisobeast1_with_FIPS_enabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new RDSDataServiceEndpointParameters();
+            parameters["Region"] = "us-isob-east-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonRDSDataServiceEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://rds-data-fips.us-isob-east-1.sc2s.sgov.gov", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("RDSDataService")]
+        [Description("For region us-isob-east-1 with FIPS disabled and DualStack enabled")]
+        [ExpectedException(typeof(AmazonClientException), @"DualStack is enabled but this partition does not support DualStack")]
+        public void For_region_usisobeast1_with_FIPS_disabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new RDSDataServiceEndpointParameters();
+            parameters["Region"] = "us-isob-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
+            var endpoint = new AmazonRDSDataServiceEndpointProvider().ResolveEndpoint(parameters);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("RDSDataService")]
+        [Description("For region us-isob-east-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_usisobeast1_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new RDSDataServiceEndpointParameters();
+            parameters["Region"] = "us-isob-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonRDSDataServiceEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://rds-data.us-isob-east-1.sc2s.sgov.gov", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("RDSDataService")]
+        [Description("For custom endpoint with region set and fips disabled and dualstack disabled")]
+        public void For_custom_endpoint_with_region_set_and_fips_disabled_and_dualstack_disabled_Test()
         {
             var parameters = new RDSDataServiceEndpointParameters();
             parameters["Region"] = "us-east-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["Endpoint"] = "https://example.com";
+            var endpoint = new AmazonRDSDataServiceEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://example.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("RDSDataService")]
+        [Description("For custom endpoint with region not set and fips disabled and dualstack disabled")]
+        public void For_custom_endpoint_with_region_not_set_and_fips_disabled_and_dualstack_disabled_Test()
+        {
+            var parameters = new RDSDataServiceEndpointParameters();
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonRDSDataServiceEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://example.com", endpoint.URL);
@@ -893,8 +368,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new RDSDataServiceEndpointParameters();
             parameters["Region"] = "us-east-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonRDSDataServiceEndpointProvider().ResolveEndpoint(parameters);
         }
@@ -909,9 +384,21 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new RDSDataServiceEndpointParameters();
             parameters["Region"] = "us-east-1";
-            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
             parameters["Endpoint"] = "https://example.com";
+            var endpoint = new AmazonRDSDataServiceEndpointProvider().ResolveEndpoint(parameters);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("RDSDataService")]
+        [Description("Missing region")]
+        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: Missing Region")]
+        public void Missing_region_Test()
+        {
+            var parameters = new RDSDataServiceEndpointParameters();
             var endpoint = new AmazonRDSDataServiceEndpointProvider().ResolveEndpoint(parameters);
         }
 

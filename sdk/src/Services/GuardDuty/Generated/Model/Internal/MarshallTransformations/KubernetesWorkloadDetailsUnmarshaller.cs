@@ -70,10 +70,22 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                     unmarshalledObject.Containers = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("hostIPC", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.HostIPC = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("hostNetwork", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
                     unmarshalledObject.HostNetwork = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("hostPID", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.HostPID = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("name", targetDepth))
@@ -86,6 +98,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Namespace = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("serviceAccountName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ServiceAccountName = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("type", targetDepth))

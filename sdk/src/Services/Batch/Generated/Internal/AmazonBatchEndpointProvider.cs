@@ -78,13 +78,13 @@ namespace Amazon.Batch.Internal
                     }
                     if (Equals(refs["UseFIPS"], true))
                     {
-                        if (Equals(true, GetAttr(refs["PartitionResult"], "supportsFIPS")))
+                        if (Equals(GetAttr(refs["PartitionResult"], "supportsFIPS"), true))
                         {
-                            if (Equals("aws", GetAttr(refs["PartitionResult"], "name")))
+                            if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws"))
                             {
                                 return new Endpoint(Interpolate(@"https://fips.batch.{Region}.amazonaws.com", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                             }
-                            if (Equals("aws-us-gov", GetAttr(refs["PartitionResult"], "name")))
+                            if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws-us-gov"))
                             {
                                 return new Endpoint(Interpolate(@"https://batch.{Region}.amazonaws.com", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                             }

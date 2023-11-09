@@ -151,6 +151,36 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("TimestreamWrite")]
+        [Description("For region us-gov-west-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_usgovwest1_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new TimestreamWriteEndpointParameters();
+            parameters["Region"] = "us-gov-west-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonTimestreamWriteEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://ingest.timestream.us-gov-west-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("TimestreamWrite")]
+        [Description("For region us-gov-west-1 with FIPS enabled and DualStack disabled")]
+        public void For_region_usgovwest1_with_FIPS_enabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new TimestreamWriteEndpointParameters();
+            parameters["Region"] = "us-gov-west-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonTimestreamWriteEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://ingest.timestream.us-gov-west-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("TimestreamWrite")]
         [Description("For region us-gov-east-1 with FIPS enabled and DualStack enabled")]
         public void For_region_usgoveast1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
@@ -174,7 +204,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = false;
             var endpoint = new AmazonTimestreamWriteEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://ingest.timestream-fips.us-gov-east-1.amazonaws.com", endpoint.URL);
+            Assert.AreEqual("https://ingest.timestream.us-gov-east-1.amazonaws.com", endpoint.URL);
         }
 
         [TestMethod]

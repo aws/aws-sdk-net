@@ -56,6 +56,7 @@ namespace Amazon.RDS.Model
         private string _kmsKeyId;
         private string _licenseModel;
         private string _masterUsername;
+        private bool? _multiTenant;
         private string _optionGroupName;
         private DateTime? _originalSnapshotCreateTime;
         private int? _percentProgress;
@@ -392,6 +393,25 @@ namespace Amazon.RDS.Model
         internal bool IsSetMasterUsername()
         {
             return this._masterUsername != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MultiTenant. 
+        /// <para>
+        /// Indicates whether the snapshot is of a DB instance using the multi-tenant configuration
+        /// (TRUE) or the single-tenant configuration (FALSE).
+        /// </para>
+        /// </summary>
+        public bool MultiTenant
+        {
+            get { return this._multiTenant.GetValueOrDefault(); }
+            set { this._multiTenant = value; }
+        }
+
+        // Check to see if MultiTenant property is set
+        internal bool IsSetMultiTenant()
+        {
+            return this._multiTenant.HasValue; 
         }
 
         /// <summary>

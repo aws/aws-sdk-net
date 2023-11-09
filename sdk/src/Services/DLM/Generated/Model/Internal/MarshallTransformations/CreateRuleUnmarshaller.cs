@@ -88,6 +88,12 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
                     unmarshalledObject.Location = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Scripts", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Script, ScriptUnmarshaller>(ScriptUnmarshaller.Instance);
+                    unmarshalledObject.Scripts = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Times", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

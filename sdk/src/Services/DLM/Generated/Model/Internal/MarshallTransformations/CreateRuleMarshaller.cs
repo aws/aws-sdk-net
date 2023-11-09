@@ -69,6 +69,22 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Location);
             }
 
+            if(requestObject.IsSetScripts())
+            {
+                context.Writer.WritePropertyName("Scripts");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectScriptsListValue in requestObject.Scripts)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ScriptMarshaller.Instance;
+                    marshaller.Marshall(requestObjectScriptsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetTimes())
             {
                 context.Writer.WritePropertyName("Times");

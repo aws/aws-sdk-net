@@ -51,6 +51,7 @@ namespace Amazon.Omics.Model
         private string _roleArn;
         private string _runGroupId;
         private string _runId;
+        private string _runOutputUri;
         private string _startedBy;
         private DateTime? _startTime;
         private RunStatus _status;
@@ -58,6 +59,7 @@ namespace Amazon.Omics.Model
         private DateTime? _stopTime;
         private int? _storageCapacity;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private string _uuid;
         private string _workflowId;
         private WorkflowType _workflowType;
 
@@ -400,6 +402,25 @@ namespace Amazon.Omics.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RunOutputUri. 
+        /// <para>
+        ///  The destination for workflow outputs. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=750)]
+        public string RunOutputUri
+        {
+            get { return this._runOutputUri; }
+            set { this._runOutputUri = value; }
+        }
+
+        // Check to see if RunOutputUri property is set
+        internal bool IsSetRunOutputUri()
+        {
+            return this._runOutputUri != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property StartedBy. 
         /// <para>
         /// Who started the run.
@@ -526,6 +547,25 @@ namespace Amazon.Omics.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Uuid. 
+        /// <para>
+        ///  The universally unique identifier for a run. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string Uuid
+        {
+            get { return this._uuid; }
+            set { this._uuid = value; }
+        }
+
+        // Check to see if Uuid property is set
+        internal bool IsSetUuid()
+        {
+            return this._uuid != null;
         }
 
         /// <summary>

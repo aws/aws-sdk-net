@@ -62,6 +62,9 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 throw new AmazonConnectException("Request object does not have required field InstanceId set");
             request.AddPathResource("{InstanceId}", StringUtils.FromString(publicRequest.InstanceId));
             
+            if (publicRequest.IsSetIntegrationArn())
+                request.Parameters.Add("integrationArn", StringUtils.FromString(publicRequest.IntegrationArn));
+            
             if (publicRequest.IsSetIntegrationType())
                 request.Parameters.Add("integrationType", StringUtils.FromString(publicRequest.IntegrationType));
             

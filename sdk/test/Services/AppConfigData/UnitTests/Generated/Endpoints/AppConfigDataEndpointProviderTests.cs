@@ -36,8 +36,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new AppConfigDataEndpointParameters();
             parameters["Region"] = "af-south-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonAppConfigDataEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://appconfigdata.af-south-1.amazonaws.com", endpoint.URL);
         }
@@ -51,8 +51,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new AppConfigDataEndpointParameters();
             parameters["Region"] = "ap-east-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonAppConfigDataEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://appconfigdata.ap-east-1.amazonaws.com", endpoint.URL);
         }
@@ -66,8 +66,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new AppConfigDataEndpointParameters();
             parameters["Region"] = "ap-northeast-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonAppConfigDataEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://appconfigdata.ap-northeast-1.amazonaws.com", endpoint.URL);
         }
@@ -81,8 +81,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new AppConfigDataEndpointParameters();
             parameters["Region"] = "ap-northeast-2";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonAppConfigDataEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://appconfigdata.ap-northeast-2.amazonaws.com", endpoint.URL);
         }
@@ -96,8 +96,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new AppConfigDataEndpointParameters();
             parameters["Region"] = "ap-northeast-3";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonAppConfigDataEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://appconfigdata.ap-northeast-3.amazonaws.com", endpoint.URL);
         }
@@ -111,8 +111,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new AppConfigDataEndpointParameters();
             parameters["Region"] = "ap-south-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonAppConfigDataEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://appconfigdata.ap-south-1.amazonaws.com", endpoint.URL);
         }
@@ -126,8 +126,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new AppConfigDataEndpointParameters();
             parameters["Region"] = "ap-southeast-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonAppConfigDataEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://appconfigdata.ap-southeast-1.amazonaws.com", endpoint.URL);
         }
@@ -141,8 +141,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new AppConfigDataEndpointParameters();
             parameters["Region"] = "ap-southeast-2";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonAppConfigDataEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://appconfigdata.ap-southeast-2.amazonaws.com", endpoint.URL);
         }
@@ -156,8 +156,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new AppConfigDataEndpointParameters();
             parameters["Region"] = "ca-central-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonAppConfigDataEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://appconfigdata.ca-central-1.amazonaws.com", endpoint.URL);
         }
@@ -171,8 +171,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new AppConfigDataEndpointParameters();
             parameters["Region"] = "eu-central-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonAppConfigDataEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://appconfigdata.eu-central-1.amazonaws.com", endpoint.URL);
         }
@@ -186,8 +186,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new AppConfigDataEndpointParameters();
             parameters["Region"] = "eu-north-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonAppConfigDataEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://appconfigdata.eu-north-1.amazonaws.com", endpoint.URL);
         }
@@ -201,8 +201,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new AppConfigDataEndpointParameters();
             parameters["Region"] = "eu-south-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonAppConfigDataEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://appconfigdata.eu-south-1.amazonaws.com", endpoint.URL);
         }
@@ -216,8 +216,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new AppConfigDataEndpointParameters();
             parameters["Region"] = "eu-west-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonAppConfigDataEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://appconfigdata.eu-west-1.amazonaws.com", endpoint.URL);
         }
@@ -231,8 +231,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new AppConfigDataEndpointParameters();
             parameters["Region"] = "eu-west-2";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonAppConfigDataEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://appconfigdata.eu-west-2.amazonaws.com", endpoint.URL);
         }
@@ -246,8 +246,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new AppConfigDataEndpointParameters();
             parameters["Region"] = "eu-west-3";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonAppConfigDataEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://appconfigdata.eu-west-3.amazonaws.com", endpoint.URL);
         }
@@ -261,8 +261,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new AppConfigDataEndpointParameters();
             parameters["Region"] = "me-south-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonAppConfigDataEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://appconfigdata.me-south-1.amazonaws.com", endpoint.URL);
         }
@@ -276,8 +276,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new AppConfigDataEndpointParameters();
             parameters["Region"] = "sa-east-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonAppConfigDataEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://appconfigdata.sa-east-1.amazonaws.com", endpoint.URL);
         }
@@ -291,8 +291,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new AppConfigDataEndpointParameters();
             parameters["Region"] = "us-east-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonAppConfigDataEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://appconfigdata.us-east-1.amazonaws.com", endpoint.URL);
         }
@@ -306,8 +306,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new AppConfigDataEndpointParameters();
             parameters["Region"] = "us-east-2";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonAppConfigDataEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://appconfigdata.us-east-2.amazonaws.com", endpoint.URL);
         }
@@ -321,8 +321,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new AppConfigDataEndpointParameters();
             parameters["Region"] = "us-west-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonAppConfigDataEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://appconfigdata.us-west-1.amazonaws.com", endpoint.URL);
         }
@@ -336,8 +336,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new AppConfigDataEndpointParameters();
             parameters["Region"] = "us-west-2";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonAppConfigDataEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://appconfigdata.us-west-2.amazonaws.com", endpoint.URL);
         }
@@ -351,8 +351,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new AppConfigDataEndpointParameters();
             parameters["Region"] = "us-east-1";
-            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
             var endpoint = new AmazonAppConfigDataEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://appconfigdata-fips.us-east-1.api.aws", endpoint.URL);
         }
@@ -366,8 +366,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new AppConfigDataEndpointParameters();
             parameters["Region"] = "us-east-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonAppConfigDataEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://appconfigdata-fips.us-east-1.amazonaws.com", endpoint.URL);
         }
@@ -381,8 +381,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new AppConfigDataEndpointParameters();
             parameters["Region"] = "us-east-1";
-            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
             var endpoint = new AmazonAppConfigDataEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://appconfigdata.us-east-1.api.aws", endpoint.URL);
         }
@@ -396,8 +396,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new AppConfigDataEndpointParameters();
             parameters["Region"] = "cn-north-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonAppConfigDataEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://appconfigdata.cn-north-1.amazonaws.com.cn", endpoint.URL);
         }
@@ -411,8 +411,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new AppConfigDataEndpointParameters();
             parameters["Region"] = "cn-northwest-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonAppConfigDataEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://appconfigdata.cn-northwest-1.amazonaws.com.cn", endpoint.URL);
         }
@@ -426,8 +426,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new AppConfigDataEndpointParameters();
             parameters["Region"] = "cn-north-1";
-            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
             var endpoint = new AmazonAppConfigDataEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://appconfigdata-fips.cn-north-1.api.amazonwebservices.com.cn", endpoint.URL);
         }
@@ -441,8 +441,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new AppConfigDataEndpointParameters();
             parameters["Region"] = "cn-north-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonAppConfigDataEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://appconfigdata-fips.cn-north-1.amazonaws.com.cn", endpoint.URL);
         }
@@ -456,8 +456,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new AppConfigDataEndpointParameters();
             parameters["Region"] = "cn-north-1";
-            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
             var endpoint = new AmazonAppConfigDataEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://appconfigdata.cn-north-1.api.amazonwebservices.com.cn", endpoint.URL);
         }
@@ -471,8 +471,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new AppConfigDataEndpointParameters();
             parameters["Region"] = "us-gov-east-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonAppConfigDataEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://appconfigdata.us-gov-east-1.amazonaws.com", endpoint.URL);
         }
@@ -486,8 +486,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new AppConfigDataEndpointParameters();
             parameters["Region"] = "us-gov-west-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonAppConfigDataEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://appconfigdata.us-gov-west-1.amazonaws.com", endpoint.URL);
         }
@@ -501,8 +501,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new AppConfigDataEndpointParameters();
             parameters["Region"] = "us-gov-east-1";
-            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
             var endpoint = new AmazonAppConfigDataEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://appconfigdata-fips.us-gov-east-1.api.aws", endpoint.URL);
         }
@@ -516,8 +516,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new AppConfigDataEndpointParameters();
             parameters["Region"] = "us-gov-east-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonAppConfigDataEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://appconfigdata-fips.us-gov-east-1.amazonaws.com", endpoint.URL);
         }
@@ -531,8 +531,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new AppConfigDataEndpointParameters();
             parameters["Region"] = "us-gov-east-1";
-            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
             var endpoint = new AmazonAppConfigDataEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://appconfigdata.us-gov-east-1.api.aws", endpoint.URL);
         }
@@ -546,10 +546,25 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new AppConfigDataEndpointParameters();
             parameters["Region"] = "us-iso-west-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonAppConfigDataEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://appconfigdata.us-iso-west-1.c2s.ic.gov", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("AppConfigData")]
+        [Description("For region us-iso-east-1 with FIPS enabled and DualStack enabled")]
+        [ExpectedException(typeof(AmazonClientException), @"FIPS and DualStack are enabled, but this partition does not support one or both")]
+        public void For_region_usisoeast1_with_FIPS_enabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new AppConfigDataEndpointParameters();
+            parameters["Region"] = "us-iso-east-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
+            var endpoint = new AmazonAppConfigDataEndpointProvider().ResolveEndpoint(parameters);
         }
 
         [TestMethod]
@@ -561,10 +576,25 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new AppConfigDataEndpointParameters();
             parameters["Region"] = "us-iso-east-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonAppConfigDataEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://appconfigdata-fips.us-iso-east-1.c2s.ic.gov", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("AppConfigData")]
+        [Description("For region us-iso-east-1 with FIPS disabled and DualStack enabled")]
+        [ExpectedException(typeof(AmazonClientException), @"DualStack is enabled but this partition does not support DualStack")]
+        public void For_region_usisoeast1_with_FIPS_disabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new AppConfigDataEndpointParameters();
+            parameters["Region"] = "us-iso-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
+            var endpoint = new AmazonAppConfigDataEndpointProvider().ResolveEndpoint(parameters);
         }
 
         [TestMethod]
@@ -576,10 +606,25 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new AppConfigDataEndpointParameters();
             parameters["Region"] = "us-iso-east-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonAppConfigDataEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://appconfigdata.us-iso-east-1.c2s.ic.gov", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("AppConfigData")]
+        [Description("For region us-isob-east-1 with FIPS enabled and DualStack enabled")]
+        [ExpectedException(typeof(AmazonClientException), @"FIPS and DualStack are enabled, but this partition does not support one or both")]
+        public void For_region_usisobeast1_with_FIPS_enabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new AppConfigDataEndpointParameters();
+            parameters["Region"] = "us-isob-east-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
+            var endpoint = new AmazonAppConfigDataEndpointProvider().ResolveEndpoint(parameters);
         }
 
         [TestMethod]
@@ -591,10 +636,25 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new AppConfigDataEndpointParameters();
             parameters["Region"] = "us-isob-east-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonAppConfigDataEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://appconfigdata-fips.us-isob-east-1.sc2s.sgov.gov", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("AppConfigData")]
+        [Description("For region us-isob-east-1 with FIPS disabled and DualStack enabled")]
+        [ExpectedException(typeof(AmazonClientException), @"DualStack is enabled but this partition does not support DualStack")]
+        public void For_region_usisobeast1_with_FIPS_disabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new AppConfigDataEndpointParameters();
+            parameters["Region"] = "us-isob-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
+            var endpoint = new AmazonAppConfigDataEndpointProvider().ResolveEndpoint(parameters);
         }
 
         [TestMethod]
@@ -606,8 +666,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new AppConfigDataEndpointParameters();
             parameters["Region"] = "us-isob-east-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonAppConfigDataEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://appconfigdata.us-isob-east-1.sc2s.sgov.gov", endpoint.URL);
         }
@@ -621,8 +681,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new AppConfigDataEndpointParameters();
             parameters["Region"] = "us-east-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonAppConfigDataEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://example.com", endpoint.URL);
@@ -636,8 +696,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_custom_endpoint_with_region_not_set_and_fips_disabled_and_dualstack_disabled_Test()
         {
             var parameters = new AppConfigDataEndpointParameters();
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonAppConfigDataEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://example.com", endpoint.URL);
@@ -653,8 +713,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new AppConfigDataEndpointParameters();
             parameters["Region"] = "us-east-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonAppConfigDataEndpointProvider().ResolveEndpoint(parameters);
         }
@@ -669,9 +729,21 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new AppConfigDataEndpointParameters();
             parameters["Region"] = "us-east-1";
-            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
             parameters["Endpoint"] = "https://example.com";
+            var endpoint = new AmazonAppConfigDataEndpointProvider().ResolveEndpoint(parameters);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("AppConfigData")]
+        [Description("Missing region")]
+        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: Missing Region")]
+        public void Missing_region_Test()
+        {
+            var parameters = new AppConfigDataEndpointParameters();
             var endpoint = new AmazonAppConfigDataEndpointProvider().ResolveEndpoint(parameters);
         }
 

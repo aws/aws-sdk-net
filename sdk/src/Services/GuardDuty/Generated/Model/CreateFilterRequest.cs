@@ -329,6 +329,10 @@ namespace Amazon.GuardDuty.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// service.action.dnsRequestAction.domainWithSuffix
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// service.action.networkConnectionAction.blocked
         /// </para>
         ///  </li> <li> 
@@ -377,7 +381,19 @@ namespace Amazon.GuardDuty.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// service.action.kubernetesApiCallAction.namespace
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// service.action.kubernetesApiCallAction.remoteIpDetails.organization.asn
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// service.action.kubernetesApiCallAction.requestUri
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// service.action.kubernetesApiCallAction.statusCode
         /// </para>
         ///  </li> <li> 
         /// <para>

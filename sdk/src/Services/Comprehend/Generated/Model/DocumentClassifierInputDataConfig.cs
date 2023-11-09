@@ -131,7 +131,7 @@ namespace Amazon.Comprehend.Model
         /// Gets and sets the property Documents. 
         /// <para>
         /// The S3 location of the training documents. This parameter is required in a request
-        /// to create a native classifier model.
+        /// to create a native document model.
         /// </para>
         /// </summary>
         public DocumentClassifierDocuments Documents
@@ -151,7 +151,7 @@ namespace Amazon.Comprehend.Model
         /// <para>
         /// The type of input documents for training the model. Provide plain-text documents to
         /// create a plain-text model, and provide semi-structured documents to create a native
-        /// model.
+        /// document model.
         /// </para>
         /// </summary>
         public DocumentClassifierDocumentTypeFormat DocumentType
@@ -224,8 +224,8 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property TestS3Uri. 
         /// <para>
-        /// This specifies the Amazon S3 location where the test annotations for an entity recognizer
-        /// are located. The URI must be in the same Amazon Web Services Region as the API endpoint
+        /// This specifies the Amazon S3 location that contains the test annotations for the document
+        /// classifier. The URI must be in the same Amazon Web Services Region as the API endpoint
         /// that you are calling. 
         /// </para>
         /// </summary>

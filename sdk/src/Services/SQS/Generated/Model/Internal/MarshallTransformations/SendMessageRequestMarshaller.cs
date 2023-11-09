@@ -28,6 +28,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
 namespace Amazon.SQS.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -44,7 +46,7 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
         {
             return this.Marshall((SendMessageRequest)input);
         }
-    
+
         /// <summary>
         /// Marshaller the request object to the HTTP request.
         /// </summary>  
@@ -53,123 +55,95 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
         public IRequest Marshall(SendMessageRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SQS");
-            request.Parameters.Add("Action", "SendMessage");
-            request.Parameters.Add("Version", "2012-11-05");
+            string target = "AmazonSQS.SendMessage";
+            request.Headers["X-Amz-Target"] = target;
+            request.Headers["Content-Type"] = "application/x-amz-json-1.0";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2012-11-05";
+            request.HttpMethod = "POST";
 
-            if(publicRequest != null)
+            request.ResourcePath = "/";
+            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetDelaySeconds())
                 {
-                    request.Parameters.Add("DelaySeconds", StringUtils.FromInt(publicRequest.DelaySeconds));
+                    context.Writer.WritePropertyName("DelaySeconds");
+                    context.Writer.Write(publicRequest.DelaySeconds);
                 }
+
                 if(publicRequest.IsSetMessageAttributes())
                 {
-                    int mapIndex = 1;
-                    foreach(var key in publicRequest.MessageAttributes.Keys)
+                    context.Writer.WritePropertyName("MessageAttributes");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestMessageAttributesKvp in publicRequest.MessageAttributes)
                     {
-                        MessageAttributeValue value;
-                        bool hasValue = publicRequest.MessageAttributes.TryGetValue(key, out value);
-                        request.Parameters.Add("MessageAttribute" + "." + mapIndex + "." + "Name", StringUtils.FromString(key));
-                        if (hasValue)
-                        {
-                            if(value.IsSetBinaryListValues())
-                            {
-                                int valuelistValueIndex = 1;
-                                foreach(var valuelistValue in value.BinaryListValues)
-                                {
-                                    request.Parameters.Add("MessageAttribute" + "." + mapIndex + "." + "Value" + "." + "BinaryListValue" + "." + "member" + "." + valuelistValueIndex, StringUtils.FromMemoryStream(valuelistValue));
-                                    valuelistValueIndex++;
-                                }
-                            }
-                            if(value.IsSetBinaryValue())
-                            {
-                                request.Parameters.Add("MessageAttribute" + "." + mapIndex + "." + "Value" + "." + "BinaryValue", StringUtils.FromMemoryStream(value.BinaryValue));
-                            }
-                            if(value.IsSetDataType())
-                            {
-                                request.Parameters.Add("MessageAttribute" + "." + mapIndex + "." + "Value" + "." + "DataType", StringUtils.FromString(value.DataType));
-                            }
-                            if(value.IsSetStringListValues())
-                            {
-                                int valuelistValueIndex = 1;
-                                foreach(var valuelistValue in value.StringListValues)
-                                {
-                                    request.Parameters.Add("MessageAttribute" + "." + mapIndex + "." + "Value" + "." + "StringListValue" + "." + "member" + "." + valuelistValueIndex, StringUtils.FromString(valuelistValue));
-                                    valuelistValueIndex++;
-                                }
-                            }
-                            if(value.IsSetStringValue())
-                            {
-                                request.Parameters.Add("MessageAttribute" + "." + mapIndex + "." + "Value" + "." + "StringValue", StringUtils.FromString(value.StringValue));
-                            }
-                        }
-                        mapIndex++;
+                        context.Writer.WritePropertyName(publicRequestMessageAttributesKvp.Key);
+                        var publicRequestMessageAttributesValue = publicRequestMessageAttributesKvp.Value;
+
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = MessageAttributeValueMarshaller.Instance;
+                        marshaller.Marshall(publicRequestMessageAttributesValue, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
+                    context.Writer.WriteObjectEnd();
                 }
+
                 if(publicRequest.IsSetMessageBody())
                 {
-                    request.Parameters.Add("MessageBody", StringUtils.FromString(publicRequest.MessageBody));
+                    context.Writer.WritePropertyName("MessageBody");
+                    context.Writer.Write(publicRequest.MessageBody);
                 }
+
                 if(publicRequest.IsSetMessageDeduplicationId())
                 {
-                    request.Parameters.Add("MessageDeduplicationId", StringUtils.FromString(publicRequest.MessageDeduplicationId));
+                    context.Writer.WritePropertyName("MessageDeduplicationId");
+                    context.Writer.Write(publicRequest.MessageDeduplicationId);
                 }
+
                 if(publicRequest.IsSetMessageGroupId())
                 {
-                    request.Parameters.Add("MessageGroupId", StringUtils.FromString(publicRequest.MessageGroupId));
+                    context.Writer.WritePropertyName("MessageGroupId");
+                    context.Writer.Write(publicRequest.MessageGroupId);
                 }
+
                 if(publicRequest.IsSetMessageSystemAttributes())
                 {
-                    int mapIndex = 1;
-                    foreach(var key in publicRequest.MessageSystemAttributes.Keys)
+                    context.Writer.WritePropertyName("MessageSystemAttributes");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestMessageSystemAttributesKvp in publicRequest.MessageSystemAttributes)
                     {
-                        MessageSystemAttributeValue value;
-                        bool hasValue = publicRequest.MessageSystemAttributes.TryGetValue(key, out value);
-                        request.Parameters.Add("MessageSystemAttribute" + "." + mapIndex + "." + "Name", StringUtils.FromString(key));
-                        if (hasValue)
-                        {
-                            if(value.IsSetBinaryListValues())
-                            {
-                                int valuelistValueIndex = 1;
-                                foreach(var valuelistValue in value.BinaryListValues)
-                                {
-                                    request.Parameters.Add("MessageSystemAttribute" + "." + mapIndex + "." + "Value" + "." + "BinaryListValue" + "." + "member" + "." + valuelistValueIndex, StringUtils.FromMemoryStream(valuelistValue));
-                                    valuelistValueIndex++;
-                                }
-                            }
-                            if(value.IsSetBinaryValue())
-                            {
-                                request.Parameters.Add("MessageSystemAttribute" + "." + mapIndex + "." + "Value" + "." + "BinaryValue", StringUtils.FromMemoryStream(value.BinaryValue));
-                            }
-                            if(value.IsSetDataType())
-                            {
-                                request.Parameters.Add("MessageSystemAttribute" + "." + mapIndex + "." + "Value" + "." + "DataType", StringUtils.FromString(value.DataType));
-                            }
-                            if(value.IsSetStringListValues())
-                            {
-                                int valuelistValueIndex = 1;
-                                foreach(var valuelistValue in value.StringListValues)
-                                {
-                                    request.Parameters.Add("MessageSystemAttribute" + "." + mapIndex + "." + "Value" + "." + "StringListValue" + "." + "member" + "." + valuelistValueIndex, StringUtils.FromString(valuelistValue));
-                                    valuelistValueIndex++;
-                                }
-                            }
-                            if(value.IsSetStringValue())
-                            {
-                                request.Parameters.Add("MessageSystemAttribute" + "." + mapIndex + "." + "Value" + "." + "StringValue", StringUtils.FromString(value.StringValue));
-                            }
-                        }
-                        mapIndex++;
+                        context.Writer.WritePropertyName(publicRequestMessageSystemAttributesKvp.Key);
+                        var publicRequestMessageSystemAttributesValue = publicRequestMessageSystemAttributesKvp.Value;
+
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = MessageSystemAttributeValueMarshaller.Instance;
+                        marshaller.Marshall(publicRequestMessageSystemAttributesValue, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
+                    context.Writer.WriteObjectEnd();
                 }
+
                 if(publicRequest.IsSetQueueUrl())
                 {
-                    request.Parameters.Add("QueueUrl", StringUtils.FromString(publicRequest.QueueUrl));
+                    context.Writer.WritePropertyName("QueueUrl");
+                    context.Writer.Write(publicRequest.QueueUrl);
                 }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
+
+
             return request;
         }
-                    private static SendMessageRequestMarshaller _instance = new SendMessageRequestMarshaller();        
+        private static SendMessageRequestMarshaller _instance = new SendMessageRequestMarshaller();        
 
         internal static SendMessageRequestMarshaller GetInstance()
         {

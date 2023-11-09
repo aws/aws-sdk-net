@@ -33,7 +33,7 @@ namespace Amazon.Comprehend.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    /// The document to classify is plain text, but the classifier is a native model.
+    /// The document to classify is plain text, but the classifier is a native document model.
     /// </para>
     ///  </li> <li> 
     /// <para>

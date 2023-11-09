@@ -2031,6 +2031,10 @@ namespace Amazon.Connect
         /// </summary>
         public static readonly IntegrationType EVENT = new IntegrationType("EVENT");
         /// <summary>
+        /// Constant FILE_SCANNER for IntegrationType
+        /// </summary>
+        public static readonly IntegrationType FILE_SCANNER = new IntegrationType("FILE_SCANNER");
+        /// <summary>
         /// Constant PINPOINT_APP for IntegrationType
         /// </summary>
         public static readonly IntegrationType PINPOINT_APP = new IntegrationType("PINPOINT_APP");

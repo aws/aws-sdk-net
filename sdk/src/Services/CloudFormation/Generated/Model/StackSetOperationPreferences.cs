@@ -40,12 +40,51 @@ namespace Amazon.CloudFormation.Model
     /// </summary>
     public partial class StackSetOperationPreferences
     {
+        private ConcurrencyMode _concurrencyMode;
         private int? _failureToleranceCount;
         private int? _failureTolerancePercentage;
         private int? _maxConcurrentCount;
         private int? _maxConcurrentPercentage;
         private RegionConcurrencyType _regionConcurrencyType;
         private List<string> _regionOrder = new List<string>();
+
+        /// <summary>
+        /// Gets and sets the property ConcurrencyMode. 
+        /// <para>
+        /// Specifies how the concurrency level behaves during the operation execution.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>STRICT_FAILURE_TOLERANCE</code>: Dynamically lowers the concurrency level to
+        /// ensure the number of failed accounts never exceeds the <code>FailureToleranceCount</code>
+        /// +1. StackSets will set the actual concurrency of your deployment as the minimum value
+        /// between the <code>MaxConcurrentCount</code> and the <code>FailureToleranceCount</code>
+        /// +1. This is the default behavior.
+        /// </para>
+        ///  
+        /// <para>
+        /// If failure tolerance or Maximum concurrent accounts are set to percentages, the behavior
+        /// is similar.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>SOFT_FAILURE_TOLERANCE</code>: Always run at the concurrency level set by the
+        /// user in the <code>MaxConcurrentCount</code> or <code>MaxConcurrentPercentage</code>,
+        /// regardless of the number of failures.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public ConcurrencyMode ConcurrencyMode
+        {
+            get { return this._concurrencyMode; }
+            set { this._concurrencyMode = value; }
+        }
+
+        // Check to see if ConcurrencyMode property is set
+        internal bool IsSetConcurrencyMode()
+        {
+            return this._concurrencyMode != null;
+        }
 
         /// <summary>
         /// Gets and sets the property FailureToleranceCount. 
@@ -116,8 +155,9 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property MaxConcurrentCount. 
         /// <para>
         /// The maximum number of accounts in which to perform this operation at one time. This
-        /// is dependent on the value of <code>FailureToleranceCount</code>.<code>MaxConcurrentCount</code>
-        /// is at most one more than the <code>FailureToleranceCount</code>.
+        /// can depend on the value of <code>FailureToleranceCount</code> depending on your <code>ConcurrencyMode</code>.
+        /// <code>MaxConcurrentCount</code> is at most one more than the <code>FailureToleranceCount</code>
+        /// if you're using <code>STRICT_FAILURE_TOLERANCE</code>.
         /// </para>
         ///  
         /// <para>

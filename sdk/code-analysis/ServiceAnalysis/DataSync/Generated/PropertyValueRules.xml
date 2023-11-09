@@ -223,9 +223,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.CreateLocationObjectStorageRequest.AccessKey</property>
-    <min>1</min>
+    <min>0</min>
     <max>200</max>
-    <pattern>^.+$</pattern>
+    <pattern>^.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.CreateLocationObjectStorageRequest.BucketName</property>
@@ -570,9 +570,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.DescribeLocationObjectStorageResponse.AccessKey</property>
-    <min>1</min>
+    <min>0</min>
     <max>200</max>
-    <pattern>^.+$</pattern>
+    <pattern>^.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.DescribeLocationObjectStorageResponse.LocationArn</property>
@@ -1017,9 +1017,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.UpdateLocationObjectStorageRequest.AccessKey</property>
-    <min>1</min>
+    <min>0</min>
     <max>200</max>
-    <pattern>^.+$</pattern>
+    <pattern>^.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.UpdateLocationObjectStorageRequest.LocationArn</property>

@@ -155,5 +155,17 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             var endpoint = new AmazonResourceExplorer2EndpointProvider().ResolveEndpoint(parameters);
         }
 
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("ResourceExplorer2")]
+        [Description("Missing region")]
+        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: Missing Region")]
+        public void Missing_region_Test()
+        {
+            var parameters = new ResourceExplorer2EndpointParameters();
+            var endpoint = new AmazonResourceExplorer2EndpointProvider().ResolveEndpoint(parameters);
+        }
+
     }
 }

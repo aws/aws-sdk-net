@@ -88,6 +88,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                     unmarshalledObject.Count = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("detection", targetDepth))
+                {
+                    var unmarshaller = DetectionUnmarshaller.Instance;
+                    unmarshalledObject.Detection = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("detectorId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

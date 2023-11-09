@@ -88,6 +88,24 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                     unmarshalledObject.KubernetesApiCallAction = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("kubernetesPermissionCheckedDetails", targetDepth))
+                {
+                    var unmarshaller = KubernetesPermissionCheckedDetailsUnmarshaller.Instance;
+                    unmarshalledObject.KubernetesPermissionCheckedDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("kubernetesRoleBindingDetails", targetDepth))
+                {
+                    var unmarshaller = KubernetesRoleBindingDetailsUnmarshaller.Instance;
+                    unmarshalledObject.KubernetesRoleBindingDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("kubernetesRoleDetails", targetDepth))
+                {
+                    var unmarshaller = KubernetesRoleDetailsUnmarshaller.Instance;
+                    unmarshalledObject.KubernetesRoleDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("networkConnectionAction", targetDepth))
                 {
                     var unmarshaller = NetworkConnectionActionUnmarshaller.Instance;

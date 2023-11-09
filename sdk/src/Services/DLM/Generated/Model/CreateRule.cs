@@ -39,8 +39,8 @@ namespace Amazon.DLM.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// If you need to specify an <a>ArchiveRule</a> for the schedule, then you must specify
-    /// a creation frequency of at least 28 days.
+    /// If you need to specify an <a href="https://docs.aws.amazon.com/dlm/latest/APIReference/API_ArchiveRule.html">ArchiveRule</a>
+    /// for the schedule, then you must specify a creation frequency of at least 28 days.
     /// </para>
     ///  </li> </ul> </note>
     /// </summary>
@@ -50,6 +50,7 @@ namespace Amazon.DLM.Model
         private int? _interval;
         private IntervalUnitValues _intervalUnit;
         private LocationValues _location;
+        private List<Script> _scripts = new List<Script>();
         private List<string> _times = new List<string>();
 
         /// <summary>
@@ -138,6 +139,33 @@ namespace Amazon.DLM.Model
         internal bool IsSetLocation()
         {
             return this._location != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Scripts. 
+        /// <para>
+        ///  <b>[Snapshot policies that target instances only]</b> Specifies pre and/or post scripts
+        /// for a snapshot lifecycle policy that targets instances. This is useful for creating
+        /// application-consistent snapshots, or for performing specific administrative tasks
+        /// before or after Amazon Data Lifecycle Manager initiates snapshot creation.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/automate-app-consistent-backups.html">Automating
+        /// application-consistent snapshots with pre and post scripts</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1)]
+        public List<Script> Scripts
+        {
+            get { return this._scripts; }
+            set { this._scripts = value; }
+        }
+
+        // Check to see if Scripts property is set
+        internal bool IsSetScripts()
+        {
+            return this._scripts != null && this._scripts.Count > 0; 
         }
 
         /// <summary>

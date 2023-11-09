@@ -246,7 +246,7 @@ namespace Amazon.Comprehend.Model
         /// Gets and sets the property OutputDataConfig. 
         /// <para>
         /// Specifies the location for the output files from a custom classifier job. This parameter
-        /// is required for a request that creates a native classifier model.
+        /// is required for a request that creates a native document model.
         /// </para>
         /// </summary>
         public DocumentClassifierOutputDataConfig OutputDataConfig

@@ -219,6 +219,22 @@
     <pattern>[0-9A-Za-z _-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DLM.Model.Script.ExecutionHandler</property>
+    <min>0</min>
+    <max>200</max>
+    <pattern>^([a-zA-Z0-9_\-.]{3,128}|[a-zA-Z0-9_\-.:/]{3,200}|[A-Z0-9_]+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DLM.Model.Script.ExecutionTimeout</property>
+    <min>10</min>
+    <max>120</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DLM.Model.Script.MaximumRetryCount</property>
+    <min>0</min>
+    <max>3</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DLM.Model.ShareRule.UnshareInterval</property>
     <min>1</min>
   </property-value-rule>

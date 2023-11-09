@@ -98,6 +98,7 @@ namespace Amazon.RDS.Model
         private int? _monitoringInterval;
         private string _monitoringRoleArn;
         private bool? _multiAZ;
+        private bool? _multiTenant;
         private string _ncharCharacterSetName;
         private string _networkType;
         private List<OptionGroupMembership> _optionGroupMemberships = new List<OptionGroupMembership>();
@@ -723,9 +724,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBName. 
         /// <para>
-        /// Contains the initial database name that you provided (if required) when you created
-        /// the DB instance. This name is returned for the life of your DB instance. For an RDS
-        /// for Oracle CDB instance, the name identifies the PDB rather than the CDB.
+        /// The initial database name that you provided (if required) when you created the DB
+        /// instance. This name is returned for the life of your DB instance. For an RDS for Oracle
+        /// CDB instance, the name identifies the PDB rather than the CDB.
         /// </para>
         /// </summary>
         public string DBName
@@ -1253,6 +1254,25 @@ namespace Amazon.RDS.Model
         internal bool IsSetMultiAZ()
         {
             return this._multiAZ.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MultiTenant. 
+        /// <para>
+        /// Specifies whether the DB instance is in the multi-tenant configuration (TRUE) or the
+        /// single-tenant configuration (FALSE).
+        /// </para>
+        /// </summary>
+        public bool MultiTenant
+        {
+            get { return this._multiTenant.GetValueOrDefault(); }
+            set { this._multiTenant = value; }
+        }
+
+        // Check to see if MultiTenant property is set
+        internal bool IsSetMultiTenant()
+        {
+            return this._multiTenant.HasValue; 
         }
 
         /// <summary>

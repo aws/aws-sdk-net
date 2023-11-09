@@ -106,7 +106,7 @@ namespace Amazon.Omics.Model
         /// The source's reference ARN.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=127)]
+        [AWSProperty(Min=1, Max=127)]
         public string ReferenceArn
         {
             get { return this._referenceArn; }

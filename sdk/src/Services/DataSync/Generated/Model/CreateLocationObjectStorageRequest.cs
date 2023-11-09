@@ -54,7 +54,7 @@ namespace Amazon.DataSync.Model
         /// authenticate with the object storage server.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=200)]
+        [AWSProperty(Min=0, Max=200)]
         public string AccessKey
         {
             get { return this._accessKey; }

@@ -141,7 +141,7 @@ namespace Amazon.Omics.Model
         /// A genome reference ARN to filter on.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=127)]
+        [AWSProperty(Min=0, Max=127)]
         public string ReferenceArn
         {
             get { return this._referenceArn; }

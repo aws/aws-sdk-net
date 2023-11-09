@@ -32,7 +32,7 @@ namespace Amazon.ApplicationCostProfiler
     public partial class AmazonApplicationCostProfilerConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.200.65");
+            InternalSDKUtils.BuildUserAgentString("3.7.200.67");
 
         private string _userAgent = UserAgentString;
         ///<summary>

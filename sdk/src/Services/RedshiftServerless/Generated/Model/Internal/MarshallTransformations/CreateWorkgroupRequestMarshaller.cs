@@ -95,6 +95,12 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.EnhancedVpcRouting);
                 }
 
+                if(publicRequest.IsSetMaxCapacity())
+                {
+                    context.Writer.WritePropertyName("maxCapacity");
+                    context.Writer.Write(publicRequest.MaxCapacity);
+                }
+
                 if(publicRequest.IsSetNamespaceName())
                 {
                     context.Writer.WritePropertyName("namespaceName");

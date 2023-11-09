@@ -62,6 +62,12 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Enabled);
             }
 
+            if(requestObject.IsSetSelectiveLoggingEnabled())
+            {
+                context.Writer.WritePropertyName("selectiveLoggingEnabled");
+                context.Writer.Write(requestObject.SelectiveLoggingEnabled);
+            }
+
         }
 
         /// <summary>

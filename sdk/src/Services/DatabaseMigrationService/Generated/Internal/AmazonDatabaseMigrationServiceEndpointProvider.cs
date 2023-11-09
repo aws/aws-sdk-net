@@ -78,17 +78,17 @@ namespace Amazon.DatabaseMigrationService.Internal
                     }
                     if (Equals(refs["UseFIPS"], true))
                     {
-                        if (Equals(true, GetAttr(refs["PartitionResult"], "supportsFIPS")))
+                        if (Equals(GetAttr(refs["PartitionResult"], "supportsFIPS"), true))
                         {
-                            if (Equals("aws-us-gov", GetAttr(refs["PartitionResult"], "name")))
+                            if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws-us-gov"))
                             {
                                 return new Endpoint(Interpolate(@"https://dms.{Region}.amazonaws.com", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                             }
-                            if (Equals("aws-iso", GetAttr(refs["PartitionResult"], "name")))
+                            if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws-iso"))
                             {
                                 return new Endpoint(Interpolate(@"https://dms.{Region}.c2s.ic.gov", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                             }
-                            if (Equals("aws-iso-b", GetAttr(refs["PartitionResult"], "name")))
+                            if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws-iso-b"))
                             {
                                 return new Endpoint(Interpolate(@"https://dms.{Region}.sc2s.sgov.gov", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                             }

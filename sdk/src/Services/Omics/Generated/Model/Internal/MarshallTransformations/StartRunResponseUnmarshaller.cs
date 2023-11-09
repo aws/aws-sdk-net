@@ -63,6 +63,12 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                     response.Id = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("runOutputUri", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.RunOutputUri = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -73,6 +79,12 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     response.Tags = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("uuid", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Uuid = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
