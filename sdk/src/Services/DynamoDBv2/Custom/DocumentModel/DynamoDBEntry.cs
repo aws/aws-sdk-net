@@ -609,6 +609,16 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             throw new InvalidCastException();
         }
+
+        /// <summary>
+        /// Explicitly convert DynamoDBEntry to DateTime in UTC
+        /// </summary>
+        /// <returns>DateTime value of this object in UTC</returns>
+        public virtual DateTime AsDateTimeUtc()
+        {
+            throw new InvalidCastException();
+        }
+
         /// <summary>
         /// Implicitly convert DateTime to DynamoDBEntry
         /// </summary>
@@ -1150,6 +1160,15 @@ namespace Amazon.DynamoDBv2.DocumentModel
         public override DateTime AsDateTime()
         {
             return (DateTime)System.Convert.ChangeType(Value, typeof(DateTime), CultureInfo.InvariantCulture);
+        }
+
+        /// <summary>
+        /// Return the value as a DateTime in UTC.
+        /// </summary>
+        /// <returns>DateTime value of this object in UTC</returns>
+        public override DateTime AsDateTimeUtc()
+        {
+            return AsDateTime().ToUniversalTime();
         }
 
         /// <summary>

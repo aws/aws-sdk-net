@@ -168,6 +168,11 @@ namespace Amazon.Util
         public bool? DisableFetchingTableMetadata { get; set; }
 
         /// <summary>
+        /// If true, all <see cref="DateTime"/> properties are retrieved in UTC timezone while reading data from DynamoDB. Else, the local timezone is used.
+        /// </summary>
+        public bool? RetrieveDateTimeInUtc { get; set; }
+
+        /// <summary>
         /// Adds a TableAlias to the TableAliases property.
         /// An exception is thrown if there is already a TableAlias with the same FromTable configured.
         /// </summary>
@@ -203,6 +208,7 @@ namespace Amazon.Util
                 TableNamePrefix = section.TableNamePrefix;
                 MetadataCachingMode = section.MetadataCachingMode;
                 DisableFetchingTableMetadata = section.DisableFetchingTableMetadata;
+                RetrieveDateTimeInUtc = section.RetrieveDateTimeInUtc;
 
                 InternalSDKUtils.FillDictionary(section.TypeMappings.Items, t => t.Type, t => new TypeMapping(t), TypeMappings);
                 InternalSDKUtils.FillDictionary(section.TableAliases.Items, t => t.FromTable, t => t.ToTable, TableAliases);
@@ -422,6 +428,7 @@ namespace Amazon.Util
         private const string mappingsKey = "mappings";
         private const string metadataCachingModeKey = "metadataCachingMode";
         private const string disableFetchingTableMetadataKey = "disableFetchingTableMetadata";
+        private const string retrieveDateTimeInUtcKey = "retrieveDateTimeInUtc";
 
         [ConfigurationProperty(tableNamePrefixKey)]
         public string TableNamePrefix
@@ -458,6 +465,12 @@ namespace Amazon.Util
             set { this[disableFetchingTableMetadataKey] = value; }
         }
 
+        [ConfigurationProperty(retrieveDateTimeInUtcKey)]
+        public bool? RetrieveDateTimeInUtc
+        {
+            get { return (bool?)this[retrieveDateTimeInUtcKey]; }
+            set { this[retrieveDateTimeInUtcKey] = value; }
+        }
     }
 
     /// <summary>

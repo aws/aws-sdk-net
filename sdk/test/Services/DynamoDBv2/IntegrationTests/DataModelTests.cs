@@ -158,6 +158,74 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             Assert.AreEqual(employee.Age, storedEmployee.Age);
         }
 
+        /// <summary>
+        /// Tests that the DynamoDB operations can be invoked successfully based on a Datetime attribute as the hash key that is stored as epoch.
+        /// </summary>
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        [DataRow(true)]
+        [DataRow(false)]
+        public void TestContext_RetrieveDateTimeInUtc(bool retrieveDateTimeInUtc)
+        {
+            TableCache.Clear();
+            CleanupTables();
+            TableCache.Clear();
+
+            var config = new DynamoDBContextConfig
+            {
+                Conversion = DynamoDBEntryConversion.V2,
+                RetrieveDateTimeInUtc = retrieveDateTimeInUtc
+            };
+            Context = new DynamoDBContext(Client, config);
+
+            var currTime = DateTime.Now;
+
+            var employee = new AnnotatedNumericEpochEmployee
+            {
+                Name = "Bob",
+                Age = 45,
+                CreationTime = currTime,
+                EpochDate2 = currTime,
+                NonEpochDate1 = currTime,
+                NonEpochDate2 = currTime
+            };
+
+            Context.Save(employee);
+            var expectedCurrTime = retrieveDateTimeInUtc ? currTime.ToUniversalTime() : currTime.ToLocalTime();
+
+            // Load 
+            var storedEmployee = Context.Load<AnnotatedNumericEpochEmployee>(employee.CreationTime, employee.Name);
+            Assert.IsNotNull(storedEmployee);
+            ApproximatelyEqual(expectedCurrTime, storedEmployee.CreationTime);
+            ApproximatelyEqual(expectedCurrTime, storedEmployee.EpochDate2);
+            ApproximatelyEqual(expectedCurrTime, storedEmployee.NonEpochDate1);
+            ApproximatelyEqual(expectedCurrTime, storedEmployee.NonEpochDate2);
+            Assert.AreEqual(employee.Name, storedEmployee.Name);
+            Assert.AreEqual(employee.Age, storedEmployee.Age);
+
+            // Query
+            QueryFilter filter = new QueryFilter();
+            filter.AddCondition("CreationTime", QueryOperator.Equal, currTime);
+            storedEmployee = Context.FromQuery<AnnotatedNumericEpochEmployee>(new QueryOperationConfig { Filter = filter }).First();
+            Assert.IsNotNull(storedEmployee);
+            ApproximatelyEqual(expectedCurrTime, storedEmployee.CreationTime);
+            ApproximatelyEqual(expectedCurrTime, storedEmployee.EpochDate2);
+            ApproximatelyEqual(expectedCurrTime, storedEmployee.NonEpochDate1);
+            ApproximatelyEqual(expectedCurrTime, storedEmployee.NonEpochDate2);
+            Assert.AreEqual(employee.Name, storedEmployee.Name);
+            Assert.AreEqual(employee.Age, storedEmployee.Age);
+
+            // Scan
+            storedEmployee = Context.Scan<AnnotatedNumericEpochEmployee>().First();
+            Assert.IsNotNull(storedEmployee);
+            ApproximatelyEqual(expectedCurrTime, storedEmployee.CreationTime);
+            ApproximatelyEqual(expectedCurrTime, storedEmployee.EpochDate2);
+            ApproximatelyEqual(expectedCurrTime, storedEmployee.NonEpochDate1);
+            ApproximatelyEqual(expectedCurrTime, storedEmployee.NonEpochDate2);
+            Assert.AreEqual(employee.Name, storedEmployee.Name);
+            Assert.AreEqual(employee.Age, storedEmployee.Age);
+        }
+
 
         /// <summary>
         /// Runs the same object-mapper integration tests as <see cref="TestContextWithEmptyStringEnabled"/>,

@@ -463,7 +463,14 @@ namespace Amazon.DynamoDBv2.DataModel
             var targetType = propertyStorage.MemberType;
             
             if (conversion.HasConverter(targetType))
-                return conversion.ConvertFromEntry(targetType, entry);
+            {
+                var output = conversion.ConvertFromEntry(targetType, entry);
+                if (targetType == typeof(DateTime) && flatConfig.RetrieveDateTimeInUtc)
+                {
+                    return ((DateTime)output).ToUniversalTime();
+                }
+                return output;
+            }
             else
             {
                 if (entry is DynamoDBNull)

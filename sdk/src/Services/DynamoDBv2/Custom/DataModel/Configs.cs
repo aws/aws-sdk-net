@@ -62,6 +62,7 @@ namespace Amazon.DynamoDBv2.DataModel
             Conversion = DynamoDBEntryConversion.CurrentConversion;
             MetadataCachingMode = AWSConfigsDynamoDB.Context.MetadataCachingMode;
             DisableFetchingTableMetadata = AWSConfigsDynamoDB.Context.DisableFetchingTableMetadata;
+            RetrieveDateTimeInUtc = AWSConfigsDynamoDB.Context.RetrieveDateTimeInUtc;
         }
 
         /// <summary>
@@ -130,6 +131,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// otherwise exceptions may be thrown and/or the results of certain DynamoDB operations may change.
         /// </remarks>
         public bool? DisableFetchingTableMetadata { get; set; }
+
+        /// <summary>
+        /// If true, all <see cref="DateTime"/> properties are retrieved in UTC timezone while reading data from DynamoDB. Else, the local timezone is used.
+        /// </summary>
+        public bool? RetrieveDateTimeInUtc { get; set; }
     }
 
     /// <summary>
@@ -334,6 +340,7 @@ namespace Amazon.DynamoDBv2.DataModel
             bool skipVersionCheck = operationConfig.SkipVersionCheck ?? contextConfig.SkipVersionCheck ?? false;
             bool ignoreNullValues = operationConfig.IgnoreNullValues ?? contextConfig.IgnoreNullValues ?? false;
             bool disableFetchingTableMetadata = contextConfig.DisableFetchingTableMetadata ?? false;
+            bool retrieveDateTimeInUtc = contextConfig.RetrieveDateTimeInUtc ?? false;
 
             bool isEmptyStringValueEnabled = operationConfig.IsEmptyStringValueEnabled ?? contextConfig.IsEmptyStringValueEnabled ?? false;
             string overrideTableName =
@@ -362,6 +369,7 @@ namespace Amazon.DynamoDBv2.DataModel
             Conversion = conversion;
             MetadataCachingMode = metadataCachingMode;
             DisableFetchingTableMetadata = disableFetchingTableMetadata;
+            RetrieveDateTimeInUtc = retrieveDateTimeInUtc;
 
             State = new OperationState();
         }
@@ -453,6 +461,9 @@ namespace Amazon.DynamoDBv2.DataModel
 
         /// <inheritdoc cref="DynamoDBContextConfig.DisableFetchingTableMetadata"/>
         public bool DisableFetchingTableMetadata { get; set; }
+
+        /// <inheritdoc cref="DynamoDBContextConfig.RetrieveDateTimeInUtc"/>
+        public bool RetrieveDateTimeInUtc { get; set; }
 
         // Checks if the IndexName is set on the config
         internal bool IsIndexOperation { get { return !string.IsNullOrEmpty(IndexName); } }

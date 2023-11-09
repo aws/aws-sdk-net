@@ -605,6 +605,16 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             return V1Conversion.ConvertFromEntry<DateTime>(this);
         }
+
+        /// <summary>
+        /// Explicitly convert Primitive to DateTime in UTC
+        /// </summary>
+        /// <returns>DateTime value of this object in UTC</returns>
+        public override DateTime AsDateTimeUtc()
+        {
+            return AsDateTime().ToUniversalTime();
+        }
+
         /// <summary>
         /// Implicitly convert DateTime to Primitive
         /// </summary>
