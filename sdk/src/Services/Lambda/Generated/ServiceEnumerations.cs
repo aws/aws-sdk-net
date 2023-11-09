@@ -1003,6 +1003,10 @@ namespace Amazon.Lambda
         /// </summary>
         public static readonly Runtime ProvidedAl2 = new Runtime("provided.al2");
         /// <summary>
+        /// Constant ProvidedAl2023 for Runtime
+        /// </summary>
+        public static readonly Runtime ProvidedAl2023 = new Runtime("provided.al2023");
+        /// <summary>
         /// Constant Python27 for Runtime
         /// </summary>
         public static readonly Runtime Python27 = new Runtime("python2.7");
