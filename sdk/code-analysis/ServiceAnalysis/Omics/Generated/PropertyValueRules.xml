@@ -2413,9 +2413,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ReadSetFilter.ReferenceArn</property>
-    <min>1</min>
+    <min>0</min>
     <max>127</max>
-    <pattern>arn:.+</pattern>
+    <pattern>$|^arn:.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ReadSetFilter.SampleId</property>
