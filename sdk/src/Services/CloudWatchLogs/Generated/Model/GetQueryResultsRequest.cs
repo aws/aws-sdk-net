@@ -43,6 +43,9 @@ namespace Amazon.CloudWatchLogs.Model
     /// <para>
     ///  <code>GetQueryResults</code> does not start running a query. To run a query, use
     /// <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartQuery.html">StartQuery</a>.
+    /// For more information about how long results of previous queries are available, see
+    /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/cloudwatch_limits_cwl.html">CloudWatch
+    /// Logs quotas</a>.
     /// </para>
     ///  
     /// <para>

@@ -26,6 +26,21 @@ namespace Amazon.CloudWatchLogs.Model
     {
 
         /// <summary>
+        /// Paginator for DescribeDeliveries operation
+        ///</summary>
+        IDescribeDeliveriesPaginator DescribeDeliveries(DescribeDeliveriesRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeDeliveryDestinations operation
+        ///</summary>
+        IDescribeDeliveryDestinationsPaginator DescribeDeliveryDestinations(DescribeDeliveryDestinationsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeDeliverySources operation
+        ///</summary>
+        IDescribeDeliverySourcesPaginator DescribeDeliverySources(DescribeDeliverySourcesRequest request);
+
+        /// <summary>
         /// Paginator for DescribeDestinations operation
         ///</summary>
         IDescribeDestinationsPaginator DescribeDestinations(DescribeDestinationsRequest request);
