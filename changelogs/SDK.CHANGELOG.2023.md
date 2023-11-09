@@ -1,3 +1,7 @@
+### 3.7.681.0 (2023-11-09 01:25 UTC)
+* SQS (3.7.202.0)
+	* This release enables customers to call SQS using AWS JSON-1.0 protocol and bug fix.
+
 ### 3.7.680.0 (2023-11-08 19:25 UTC)
 * Connect (3.7.214.0)
 	* This release clarifies in our public documentation that InstanceId is a requirement for SearchUsers API requests.
