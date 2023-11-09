@@ -8991,6 +8991,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void DisableSnapshotBlockPublicAccessMarshallTest()
+        {
+            var operation = service_model.FindOperation("DisableSnapshotBlockPublicAccess");
+
+            var request = InstantiateClassGenerator.Execute<DisableSnapshotBlockPublicAccessRequest>(operation);
+            var marshaller = new DisableSnapshotBlockPublicAccessRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DisableSnapshotBlockPublicAccessResponseUnmarshaller.Instance.Unmarshall(context)
+                as DisableSnapshotBlockPublicAccessResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void DisableTransitGatewayRouteTablePropagationMarshallTest()
         {
             var operation = service_model.FindOperation("DisableTransitGatewayRouteTablePropagation");
@@ -9663,6 +9687,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
             var response = EnableSerialConsoleAccessResponseUnmarshaller.Instance.Unmarshall(context)
                 as EnableSerialConsoleAccessResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void EnableSnapshotBlockPublicAccessMarshallTest()
+        {
+            var operation = service_model.FindOperation("EnableSnapshotBlockPublicAccess");
+
+            var request = InstantiateClassGenerator.Execute<EnableSnapshotBlockPublicAccessRequest>(operation);
+            var marshaller = new EnableSnapshotBlockPublicAccessRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = EnableSnapshotBlockPublicAccessResponseUnmarshaller.Instance.Unmarshall(context)
+                as EnableSnapshotBlockPublicAccessResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
@@ -10613,6 +10661,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
             var response = GetSerialConsoleAccessStatusResponseUnmarshaller.Instance.Unmarshall(context)
                 as GetSerialConsoleAccessStatusResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void GetSnapshotBlockPublicAccessStateMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetSnapshotBlockPublicAccessState");
+
+            var request = InstantiateClassGenerator.Execute<GetSnapshotBlockPublicAccessStateRequest>(operation);
+            var marshaller = new GetSnapshotBlockPublicAccessStateRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = GetSnapshotBlockPublicAccessStateResponseUnmarshaller.Instance.Unmarshall(context)
+                as GetSnapshotBlockPublicAccessStateResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
