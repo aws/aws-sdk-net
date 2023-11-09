@@ -176,6 +176,10 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                 {
                     return InvalidEventSelectorsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidInsightSelectorsException"))
+                {
+                    return InvalidInsightSelectorsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidKmsKeyIdException"))
                 {
                     return InvalidKmsKeyIdExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

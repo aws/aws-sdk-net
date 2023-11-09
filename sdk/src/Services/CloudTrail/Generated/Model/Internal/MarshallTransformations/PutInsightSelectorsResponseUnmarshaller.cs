@@ -51,6 +51,18 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("EventDataStoreArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.EventDataStoreArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("InsightsDestination", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.InsightsDestination = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("InsightSelectors", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<InsightSelector, InsightSelectorUnmarshaller>(InsightSelectorUnmarshaller.Instance);
@@ -105,6 +117,14 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidInsightSelectorsException"))
                 {
                     return InvalidInsightSelectorsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterCombinationException"))
+                {
+                    return InvalidParameterCombinationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterException"))
+                {
+                    return InvalidParameterExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidTrailNameException"))
                 {

@@ -136,6 +136,10 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>AWS::CodeWhisperer::Customization</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>AWS::CodeWhisperer::Profile</code> 
         /// </para>
         ///  </li> <li> 
@@ -172,6 +176,10 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>AWS::KinesisVideo::Stream</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>AWS::ManagedBlockchain::Network</code> 
         /// </para>
         ///  </li> <li> 
@@ -184,11 +192,27 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>AWS::PCAConnectorAD::Connector</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::SageMaker::Endpoint</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>AWS::SageMaker::ExperimentTrialComponent</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>AWS::SageMaker::FeatureGroup</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::SNS::PlatformEndpoint</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::SNS::Topic</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -205,6 +229,14 @@ namespace Amazon.CloudTrail.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>AWS::SSMMessages::ControlChannel</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::Timestream::Database</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::Timestream::Table</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>

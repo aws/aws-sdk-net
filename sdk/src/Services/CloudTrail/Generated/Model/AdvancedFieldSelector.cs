@@ -114,7 +114,8 @@ namespace Amazon.CloudTrail.Model
         ///  </li> <li> 
         /// <para>
         ///  <b> <code>eventSource</code> </b> - For filtering management events only. This can
-        /// be set only to <code>NotEquals</code> <code>kms.amazonaws.com</code>.
+        /// be set to <code>NotEquals</code> <code>kms.amazonaws.com</code> or <code>NotEquals</code>
+        /// <code>rdsdata.amazonaws.com</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -132,6 +133,10 @@ namespace Amazon.CloudTrail.Model
         /// <para>
         ///  For CloudTrail event records, the value must be <code>Management</code> or <code>Data</code>.
         /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  For CloudTrail Insights event records, the value must be <code>Insight</code>. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -171,6 +176,10 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>AWS::CodeWhisperer::Customization</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>AWS::CodeWhisperer::Profile</code> 
         /// </para>
         ///  </li> <li> 
@@ -207,6 +216,10 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>AWS::KinesisVideo::Stream</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>AWS::ManagedBlockchain::Network</code> 
         /// </para>
         ///  </li> <li> 
@@ -219,11 +232,27 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>AWS::PCAConnectorAD::Connector</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::SageMaker::Endpoint</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>AWS::SageMaker::ExperimentTrialComponent</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>AWS::SageMaker::FeatureGroup</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::SNS::PlatformEndpoint</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::SNS::Topic</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -240,6 +269,14 @@ namespace Amazon.CloudTrail.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>AWS::SSMMessages::ControlChannel</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::Timestream::Database</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::Timestream::Table</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -305,6 +342,17 @@ namespace Amazon.CloudTrail.Model
         ///  <ul> <li> 
         /// <para>
         ///  <code>arn:&lt;partition&gt;:cloudtrail:&lt;region&gt;:&lt;account_ID&gt;:channel/&lt;channel_UUID&gt;</code>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When resources.type equals <code>AWS::CodeWhisperer::Customization</code>, and the
+        /// operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be
+        /// in the following format:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>arn:&lt;partition&gt;:codewhisperer:&lt;region&gt;:&lt;account_ID&gt;:customization/&lt;customization_ID&gt;</code>
         /// 
         /// </para>
         ///  </li> </ul> 
@@ -408,6 +456,17 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
+        /// When <code>resources.type</code> equals <code>AWS::KinesisVideo::Stream</code>, and
+        /// the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must
+        /// be in the following format:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>arn:&lt;partition&gt;:kinesisvideo:&lt;region&gt;:&lt;account_ID&gt;:stream/&lt;stream_name/&lt;creation_time&gt;</code>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
         /// When <code>resources.type</code> equals <code>AWS::ManagedBlockchain::Network</code>,
         /// and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN
         /// must be in the following format:
@@ -441,6 +500,28 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
+        /// When <code>resources.type</code> equals <code>AWS::PCAConnectorAD::Connector</code>,
+        /// and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN
+        /// must be in the following format:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>arn:&lt;partition&gt;:pca-connector-ad:&lt;region&gt;:&lt;account_ID&gt;:connector/&lt;connector_ID&gt;</code>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When <code>resources.type</code> equals <code>AWS::SageMaker::Endpoint</code>, and
+        /// the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must
+        /// be in the following format:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>arn:&lt;partition&gt;:sagemaker:&lt;region&gt;:&lt;account_ID&gt;:endpoint/&lt;endpoint_name&gt;</code>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
         /// When <code>resources.type</code> equals <code>AWS::SageMaker::ExperimentTrialComponent</code>,
         /// and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN
         /// must be in the following format:
@@ -459,6 +540,28 @@ namespace Amazon.CloudTrail.Model
         ///  <ul> <li> 
         /// <para>
         ///  <code>arn:&lt;partition&gt;:sagemaker:&lt;region&gt;:&lt;account_ID&gt;:feature-group/&lt;feature_group_name&gt;</code>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When <code>resources.type</code> equals <code>AWS::SNS::PlatformEndpoint</code>, and
+        /// the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must
+        /// be in the following format:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>arn:&lt;partition&gt;:sns:&lt;region&gt;:&lt;account_ID&gt;:endpoint/&lt;endpoint_type&gt;/&lt;endpoint_name&gt;/&lt;endpoint_ID&gt;</code>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When <code>resources.type</code> equals <code>AWS::SNS::Topic</code>, and the operator
+        /// is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+        /// format:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>arn:&lt;partition&gt;:sns:&lt;region&gt;:&lt;account_ID&gt;:&lt;topic_name&gt;</code>
         /// 
         /// </para>
         ///  </li> </ul> 
@@ -510,6 +613,28 @@ namespace Amazon.CloudTrail.Model
         ///  <ul> <li> 
         /// <para>
         ///  <code>arn:&lt;partition&gt;:ssmmessages:&lt;region&gt;:&lt;account_ID&gt;:control-channel/&lt;channel_ID&gt;</code>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When <code>resources.type</code> equals <code>AWS::Timestream::Database</code>, and
+        /// the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must
+        /// be in the following format:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>arn:&lt;partition&gt;:timestream:&lt;region&gt;:&lt;account_ID&gt;:database/&lt;database_name&gt;</code>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When <code>resources.type</code> equals <code>AWS::Timestream::Table</code>, and the
+        /// operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be
+        /// in the following format:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>arn:&lt;partition&gt;:timestream:&lt;region&gt;:&lt;account_ID&gt;:database/&lt;database_name&gt;/table/&lt;table_name&gt;</code>
         /// 
         /// </para>
         ///  </li> </ul> 

@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudTrail.Model
 {
     /// <summary>
-    /// A JSON string that contains a list of Insights types that are logged on a trail.
+    /// A JSON string that contains a list of Insights types that are logged on a trail or
+    /// event data store.
     /// </summary>
     public partial class InsightSelector
     {
@@ -38,8 +39,8 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property InsightType. 
         /// <para>
-        /// The type of Insights events to log on a trail. <code>ApiCallRateInsight</code> and
-        /// <code>ApiErrorRateInsight</code> are valid Insight types.
+        /// The type of Insights events to log on a trail or event data store. <code>ApiCallRateInsight</code>
+        /// and <code>ApiErrorRateInsight</code> are valid Insight types.
         /// </para>
         ///  
         /// <para>
