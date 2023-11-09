@@ -29,31 +29,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EKS.Model
 {
     /// <summary>
-    /// The placement configuration for all the control plane instances of your local Amazon
-    /// EKS cluster on an Amazon Web Services Outpost. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html">Capacity
-    /// considerations</a> in the Amazon EKS User Guide.
+    /// This is the response object from the CreateEksAnywhereSubscription operation.
     /// </summary>
-    public partial class ControlPlanePlacementRequest
+    public partial class CreateEksAnywhereSubscriptionResponse : AmazonWebServiceResponse
     {
-        private string _groupName;
+        private EksAnywhereSubscription _subscription;
 
         /// <summary>
-        /// Gets and sets the property GroupName. 
+        /// Gets and sets the property Subscription. 
         /// <para>
-        /// The name of the placement group for the Kubernetes control plane instances. This setting
-        /// can't be changed after cluster creation. 
+        /// The full description of the subscription.
         /// </para>
         /// </summary>
-        public string GroupName
+        public EksAnywhereSubscription Subscription
         {
-            get { return this._groupName; }
-            set { this._groupName = value; }
+            get { return this._subscription; }
+            set { this._subscription = value; }
         }
 
-        // Check to see if GroupName property is set
-        internal bool IsSetGroupName()
+        // Check to see if Subscription property is set
+        internal bool IsSetSubscription()
         {
-            return this._groupName != null;
+            return this._subscription != null;
         }
 
     }

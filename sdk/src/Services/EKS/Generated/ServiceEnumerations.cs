@@ -629,6 +629,164 @@ namespace Amazon.EKS
 
 
     /// <summary>
+    /// Constants used for properties of type EksAnywhereSubscriptionLicenseType.
+    /// </summary>
+    public class EksAnywhereSubscriptionLicenseType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Cluster for EksAnywhereSubscriptionLicenseType
+        /// </summary>
+        public static readonly EksAnywhereSubscriptionLicenseType Cluster = new EksAnywhereSubscriptionLicenseType("Cluster");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EksAnywhereSubscriptionLicenseType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EksAnywhereSubscriptionLicenseType FindValue(string value)
+        {
+            return FindValue<EksAnywhereSubscriptionLicenseType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EksAnywhereSubscriptionLicenseType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EksAnywhereSubscriptionStatus.
+    /// </summary>
+    public class EksAnywhereSubscriptionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for EksAnywhereSubscriptionStatus
+        /// </summary>
+        public static readonly EksAnywhereSubscriptionStatus ACTIVE = new EksAnywhereSubscriptionStatus("ACTIVE");
+        /// <summary>
+        /// Constant CREATING for EksAnywhereSubscriptionStatus
+        /// </summary>
+        public static readonly EksAnywhereSubscriptionStatus CREATING = new EksAnywhereSubscriptionStatus("CREATING");
+        /// <summary>
+        /// Constant DELETING for EksAnywhereSubscriptionStatus
+        /// </summary>
+        public static readonly EksAnywhereSubscriptionStatus DELETING = new EksAnywhereSubscriptionStatus("DELETING");
+        /// <summary>
+        /// Constant EXPIRED for EksAnywhereSubscriptionStatus
+        /// </summary>
+        public static readonly EksAnywhereSubscriptionStatus EXPIRED = new EksAnywhereSubscriptionStatus("EXPIRED");
+        /// <summary>
+        /// Constant EXPIRING for EksAnywhereSubscriptionStatus
+        /// </summary>
+        public static readonly EksAnywhereSubscriptionStatus EXPIRING = new EksAnywhereSubscriptionStatus("EXPIRING");
+        /// <summary>
+        /// Constant UPDATING for EksAnywhereSubscriptionStatus
+        /// </summary>
+        public static readonly EksAnywhereSubscriptionStatus UPDATING = new EksAnywhereSubscriptionStatus("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EksAnywhereSubscriptionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EksAnywhereSubscriptionStatus FindValue(string value)
+        {
+            return FindValue<EksAnywhereSubscriptionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EksAnywhereSubscriptionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EksAnywhereSubscriptionTermUnit.
+    /// </summary>
+    public class EksAnywhereSubscriptionTermUnit : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MONTHS for EksAnywhereSubscriptionTermUnit
+        /// </summary>
+        public static readonly EksAnywhereSubscriptionTermUnit MONTHS = new EksAnywhereSubscriptionTermUnit("MONTHS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EksAnywhereSubscriptionTermUnit(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EksAnywhereSubscriptionTermUnit FindValue(string value)
+        {
+            return FindValue<EksAnywhereSubscriptionTermUnit>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EksAnywhereSubscriptionTermUnit(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ErrorCode.
     /// </summary>
     public class ErrorCode : ConstantClass

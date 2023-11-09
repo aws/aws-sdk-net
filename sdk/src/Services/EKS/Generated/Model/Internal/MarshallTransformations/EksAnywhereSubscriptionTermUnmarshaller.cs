@@ -34,58 +34,46 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.EKS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ClientException Object
+    /// Response Unmarshaller for EksAnywhereSubscriptionTerm Object
     /// </summary>  
-    public class ClientExceptionUnmarshaller : IErrorResponseUnmarshaller<ClientException, JsonUnmarshallerContext>
+    public class EksAnywhereSubscriptionTermUnmarshaller : IUnmarshaller<EksAnywhereSubscriptionTerm, XmlUnmarshallerContext>, IUnmarshaller<EksAnywhereSubscriptionTerm, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ClientException Unmarshall(JsonUnmarshallerContext context)
+        EksAnywhereSubscriptionTerm IUnmarshaller<EksAnywhereSubscriptionTerm, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse());
+            throw new NotImplementedException();
         }
 
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public ClientException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
+        public EksAnywhereSubscriptionTerm Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
 
-            ClientException unmarshalledObject = new ClientException(errorResponse.Message, errorResponse.InnerException,
-                errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
+            EksAnywhereSubscriptionTerm unmarshalledObject = new EksAnywhereSubscriptionTerm();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("addonName", targetDepth))
+                if (context.TestExpression("duration", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AddonName = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.Duration = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("clusterName", targetDepth))
+                if (context.TestExpression("unit", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ClusterName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("nodegroupName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.NodegroupName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("subscriptionId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SubscriptionId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Unit = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -93,12 +81,13 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
-        private static ClientExceptionUnmarshaller _instance = new ClientExceptionUnmarshaller();        
+
+        private static EksAnywhereSubscriptionTermUnmarshaller _instance = new EksAnywhereSubscriptionTermUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ClientExceptionUnmarshaller Instance
+        public static EksAnywhereSubscriptionTermUnmarshaller Instance
         {
             get
             {

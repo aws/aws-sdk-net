@@ -29,44 +29,43 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EKS.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListAddons operation.
-    /// Lists the installed add-ons.
+    /// Container for the parameters to the ListEksAnywhereSubscriptions operation.
+    /// Displays the full description of the subscription.
     /// </summary>
-    public partial class ListAddonsRequest : AmazonEKSRequest
+    public partial class ListEksAnywhereSubscriptionsRequest : AmazonEKSRequest
     {
-        private string _clusterName;
+        private List<string> _includeStatus = new List<string>();
         private int? _maxResults;
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property ClusterName. 
+        /// Gets and sets the property IncludeStatus. 
         /// <para>
-        /// The name of the cluster.
+        /// An array of subscription statuses to filter on.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100)]
-        public string ClusterName
+        public List<string> IncludeStatus
         {
-            get { return this._clusterName; }
-            set { this._clusterName = value; }
+            get { return this._includeStatus; }
+            set { this._includeStatus = value; }
         }
 
-        // Check to see if ClusterName property is set
-        internal bool IsSetClusterName()
+        // Check to see if IncludeStatus property is set
+        internal bool IsSetIncludeStatus()
         {
-            return this._clusterName != null;
+            return this._includeStatus != null && this._includeStatus.Count > 0; 
         }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of add-on results returned by <code>ListAddonsRequest</code> in
-        /// paginated output. When you use this parameter, <code>ListAddonsRequest</code> returns
-        /// only <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. You can see the remaining results of the initial request by sending
-        /// another <code>ListAddonsRequest</code> request with the returned <code>nextToken</code>
-        /// value. This value can be between 1 and 100. If you don't use this parameter, <code>ListAddonsRequest</code>
-        /// returns up to 100 results and a <code>nextToken</code> value, if applicable.
+        /// The maximum number of cluster results returned by ListEksAnywhereSubscriptions in
+        /// paginated output. When you use this parameter, ListEksAnywhereSubscriptions returns
+        /// only maxResults results in a single page along with a nextToken response element.
+        /// You can see the remaining results of the initial request by sending another ListEksAnywhereSubscriptions
+        /// request with the returned nextToken value. This value can be between 1 and 100. If
+        /// you don't use this parameter, ListEksAnywhereSubscriptions returns up to 10 results
+        /// and a nextToken value if applicable.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -85,17 +84,11 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The <code>nextToken</code> value returned from a previous paginated <code>ListAddonsRequest</code>
-        /// where <code>maxResults</code> was used and the results exceeded the value of that
-        /// parameter. Pagination continues from the end of the previous results that returned
-        /// the <code>nextToken</code> value.
+        /// The nextToken value to include in a future ListEksAnywhereSubscriptions request. When
+        /// the results of a ListEksAnywhereSubscriptions request exceed maxResults, you can use
+        /// this value to retrieve the next page of results. This value is null when there are
+        /// no more results to return.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// This token should be treated as an opaque identifier that is used only to retrieve
-        /// the next items in a list and not for other programmatic purposes.
-        /// </para>
-        ///  </note>
         /// </summary>
         public string NextToken
         {

@@ -39,7 +39,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property Addons. 
         /// <para>
-        /// A list of available add-ons.
+        /// A list of installed add-ons.
         /// </para>
         /// </summary>
         public List<string> Addons
