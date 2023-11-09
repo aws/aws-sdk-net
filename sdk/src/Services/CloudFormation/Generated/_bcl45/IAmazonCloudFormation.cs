@@ -1657,7 +1657,7 @@ namespace Amazon.CloudFormation
         /// 
         ///  <note> 
         /// <para>
-        /// If the stack doesn't exist, an <code>ValidationError</code> is returned.
+        /// If the stack doesn't exist, a <code>ValidationError</code> is returned.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1673,7 +1673,7 @@ namespace Amazon.CloudFormation
         /// 
         ///  <note> 
         /// <para>
-        /// If the stack doesn't exist, an <code>ValidationError</code> is returned.
+        /// If the stack doesn't exist, a <code>ValidationError</code> is returned.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1690,7 +1690,7 @@ namespace Amazon.CloudFormation
         /// 
         ///  <note> 
         /// <para>
-        /// If the stack doesn't exist, an <code>ValidationError</code> is returned.
+        /// If the stack doesn't exist, a <code>ValidationError</code> is returned.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1710,7 +1710,7 @@ namespace Amazon.CloudFormation
         /// 
         ///  <note> 
         /// <para>
-        /// If the stack doesn't exist, an <code>ValidationError</code> is returned.
+        /// If the stack doesn't exist, a <code>ValidationError</code> is returned.
         /// </para>
         ///  </note>
         /// </summary>

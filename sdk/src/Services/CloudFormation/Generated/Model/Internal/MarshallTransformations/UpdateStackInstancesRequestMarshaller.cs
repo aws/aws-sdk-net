@@ -110,6 +110,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetOperationPreferences())
                 {
+                    if(publicRequest.OperationPreferences.IsSetConcurrencyMode())
+                    {
+                        request.Parameters.Add("OperationPreferences" + "." + "ConcurrencyMode", StringUtils.FromString(publicRequest.OperationPreferences.ConcurrencyMode));
+                    }
                     if(publicRequest.OperationPreferences.IsSetFailureToleranceCount())
                     {
                         request.Parameters.Add("OperationPreferences" + "." + "FailureToleranceCount", StringUtils.FromInt(publicRequest.OperationPreferences.FailureToleranceCount));

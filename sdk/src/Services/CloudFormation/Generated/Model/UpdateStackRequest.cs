@@ -185,7 +185,12 @@ namespace Amazon.CloudFormation.Model
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
         /// CloudFormation Macros to Perform Custom Processing on Templates</a>.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// Only one of the <code>Capabilities</code> and <code>ResourceType</code> parameters
+        /// can be specified.
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<string> Capabilities
         {
@@ -313,6 +318,12 @@ namespace Amazon.CloudFormation.Model
         /// condition keys in IAM policies. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
         /// Access with Identity and Access Management</a>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Only one of the <code>Capabilities</code> and <code>ResourceType</code> parameters
+        /// can be specified.
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<string> ResourceTypes
         {
