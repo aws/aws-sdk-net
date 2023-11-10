@@ -84,6 +84,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetFollowSource())
+            {
+                context.Writer.WritePropertyName("followSource");
+                context.Writer.Write(requestObject.FollowSource);
+            }
+
             if(requestObject.IsSetInputs())
             {
                 context.Writer.WritePropertyName("inputs");

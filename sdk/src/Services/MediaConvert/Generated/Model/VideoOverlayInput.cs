@@ -75,8 +75,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TimecodeSource. Specify the starting timecode for your
-        /// video overlay. To use the timecode present in your video overlay: Choose Embedded.
+        /// Gets and sets the property TimecodeSource. Specify the timecode source for your video
+        /// overlay input clips. To use the timecode present in your video overlay: Choose Embedded.
         /// To use a zerobased timecode: Choose Start at 0. To choose a timecode: Choose Specified
         /// start. When you do, enter the starting timecode in Start timecode. If you don't specify
         /// a value for Timecode source, MediaConvert uses Embedded by default.

@@ -73,7 +73,7 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SampleRate. Sample rate in hz.
+        /// Gets and sets the property SampleRate. Sample rate in Hz.
         /// </summary>
         [AWSProperty(Min=8000, Max=192000)]
         public int SampleRate

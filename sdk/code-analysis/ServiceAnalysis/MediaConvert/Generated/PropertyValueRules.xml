@@ -1135,6 +1135,11 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaConvert.Model.JobSettings.FollowSource</property>
+    <min>1</min>
+    <max>150</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaConvert.Model.JobTemplate.Priority</property>
     <min>-50</min>
     <max>50</max>
@@ -1143,6 +1148,11 @@
     <property>Amazon.MediaConvert.Model.JobTemplateSettings.AdAvailOffset</property>
     <min>-1000</min>
     <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.JobTemplateSettings.FollowSource</property>
+    <min>1</min>
+    <max>150</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.KantarWatermarkSettings.ChannelName</property>

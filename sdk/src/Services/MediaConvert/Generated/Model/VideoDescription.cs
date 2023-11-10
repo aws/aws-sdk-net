@@ -235,11 +235,9 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ScalingBehavior. Specify how the service handles outputs
-        /// that have a different aspect ratio from the input aspect ratio. Choose Stretch to
-        /// output to have the service stretch your video image to fit. Keep the setting Default
-        /// to have the service letterbox your video instead. This setting overrides any value
-        /// that you specify for the setting Selection placement in this output.
+        /// Gets and sets the property ScalingBehavior. Specify the video Scaling behavior when
+        /// your output has a different resolution than your input. For more information, see
+        /// https://docs.aws.amazon.com/mediaconvert/latest/ug/video-scaling.html
         /// </summary>
         public ScalingBehavior ScalingBehavior
         {

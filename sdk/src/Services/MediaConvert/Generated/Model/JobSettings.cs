@@ -37,6 +37,7 @@ namespace Amazon.MediaConvert.Model
         private AvailBlanking _availBlanking;
         private EsamSettings _esam;
         private ExtendedDataServices _extendedDataServices;
+        private int? _followSource;
         private List<Input> _inputs = new List<Input>();
         private KantarWatermarkSettings _kantarWatermark;
         private MotionImageInserter _motionImageInserter;
@@ -113,6 +114,29 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetExtendedDataServices()
         {
             return this._extendedDataServices != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FollowSource. Specify the input that MediaConvert references
+        /// for your default output settings.  MediaConvert uses this input's Resolution, Frame
+        /// rate, and Pixel aspect ratio for all  outputs that you don't manually specify different
+        /// output settings for. Enabling this setting will disable "Follow source" for all other
+        /// inputs.  If MediaConvert cannot follow your source, for example if you specify an
+        /// audio-only input,  MediaConvert uses the first followable input instead. In your JSON
+        /// job specification, enter an integer from 1 to 150 corresponding  to the order of your
+        /// inputs.
+        /// </summary>
+        [AWSProperty(Min=1, Max=150)]
+        public int FollowSource
+        {
+            get { return this._followSource.GetValueOrDefault(); }
+            set { this._followSource = value; }
+        }
+
+        // Check to see if FollowSource property is set
+        internal bool IsSetFollowSource()
+        {
+            return this._followSource.HasValue; 
         }
 
         /// <summary>

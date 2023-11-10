@@ -51,6 +51,17 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ChannelTag);
             }
 
+            if(requestObject.IsSetChannelTags())
+            {
+                context.Writer.WritePropertyName("channelTags");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectChannelTagsListValue in requestObject.ChannelTags)
+                {
+                        context.Writer.Write(requestObjectChannelTagsListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
         }
 
         /// <summary>

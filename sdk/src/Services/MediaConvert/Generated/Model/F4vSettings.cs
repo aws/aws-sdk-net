@@ -36,9 +36,9 @@ namespace Amazon.MediaConvert.Model
         private F4vMoovPlacement _moovPlacement;
 
         /// <summary>
-        /// Gets and sets the property MoovPlacement. If set to PROGRESSIVE_DOWNLOAD, the MOOV
-        /// atom is relocated to the beginning of the archive as required for progressive downloading.
-        /// Otherwise it is placed normally at the end.
+        /// Gets and sets the property MoovPlacement. To place the MOOV atom at the beginning
+        /// of your output, which is useful for progressive downloading: Leave blank or choose
+        /// Progressive download. To place the MOOV at the end of your output: Choose Normal.
         /// </summary>
         public F4vMoovPlacement MoovPlacement
         {

@@ -29,22 +29,23 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
-    /// When you mimic a multi-channel audio layout with multiple mono-channel tracks, you
-    /// can tag each channel layout manually. For example, you would tag the tracks that contain
-    /// your left, right, and center audio with Left (L), Right (R), and Center (C), respectively.
-    /// When you don't specify a value, MediaConvert labels your track as Center (C) by default.
-    /// To use audio layout tagging, your output must be in a QuickTime (.mov) container;
-    /// your audio codec must be AAC, WAV, or AIFF; and you must set up your audio track to
-    /// have only one channel.
+    /// Specify the QuickTime audio channel layout tags for the audio channels in this audio
+    /// track. When you don't specify a value, MediaConvert labels your track as Center (C)
+    /// by default. To use Audio layout tagging, your output must be in a QuickTime (MOV)
+    /// container and your audio codec must be AAC, WAV, or AIFF.
     /// </summary>
     public partial class AudioChannelTaggingSettings
     {
         private AudioChannelTag _channelTag;
+        private List<string> _channelTags = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property ChannelTag. You can add a tag for this mono-channel audio
-        /// track to mimic its placement in a multi-channel layout. For example, if this track
-        /// is the left surround channel, choose Left surround (LS).
+        /// Gets and sets the property ChannelTag. Specify the QuickTime audio channel layout
+        /// tags for the audio channels in this audio track. Enter channel layout tags in the
+        /// same order as your output's audio channel order. For example, if your output audio
+        /// track has a left and a right channel, enter Left (L) for the first channel and Right
+        /// (R) for the second. If your output has multiple single-channel audio tracks, enter
+        /// a single channel layout tag for each track.
         /// </summary>
         public AudioChannelTag ChannelTag
         {
@@ -56,6 +57,26 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetChannelTag()
         {
             return this._channelTag != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChannelTags. Specify the QuickTime audio channel layout
+        /// tags for the audio channels in this audio track. Enter channel layout tags in the
+        /// same order as your output's audio channel order. For example, if your output audio
+        /// track has a left and a right channel, enter Left (L) for the first channel and Right
+        /// (R) for the second. If your output has multiple single-channel audio tracks, enter
+        /// a single channel layout tag for each track.
+        /// </summary>
+        public List<string> ChannelTags
+        {
+            get { return this._channelTags; }
+            set { this._channelTags = value; }
+        }
+
+        // Check to see if ChannelTags property is set
+        internal bool IsSetChannelTags()
+        {
+            return this._channelTags != null && this._channelTags.Count > 0; 
         }
 
     }

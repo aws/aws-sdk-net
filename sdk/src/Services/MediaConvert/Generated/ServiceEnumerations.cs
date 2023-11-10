@@ -20053,6 +20053,18 @@ namespace Amazon.MediaConvert
         /// </summary>
         public static readonly ScalingBehavior DEFAULT = new ScalingBehavior("DEFAULT");
         /// <summary>
+        /// Constant FILL for ScalingBehavior
+        /// </summary>
+        public static readonly ScalingBehavior FILL = new ScalingBehavior("FILL");
+        /// <summary>
+        /// Constant FIT for ScalingBehavior
+        /// </summary>
+        public static readonly ScalingBehavior FIT = new ScalingBehavior("FIT");
+        /// <summary>
+        /// Constant FIT_NO_UPSCALE for ScalingBehavior
+        /// </summary>
+        public static readonly ScalingBehavior FIT_NO_UPSCALE = new ScalingBehavior("FIT_NO_UPSCALE");
+        /// <summary>
         /// Constant STRETCH_TO_OUTPUT for ScalingBehavior
         /// </summary>
         public static readonly ScalingBehavior STRETCH_TO_OUTPUT = new ScalingBehavior("STRETCH_TO_OUTPUT");
