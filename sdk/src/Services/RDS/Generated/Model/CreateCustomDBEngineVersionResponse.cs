@@ -590,8 +590,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SupportsIntegrations. 
         /// <para>
-        /// Indicates whether the DB engine version supports Aurora zero-ETL integrations with
-        /// Amazon Redshift.
+        /// Indicates whether the DB engine version supports zero-ETL integrations with Amazon
+        /// Redshift.
         /// </para>
         /// </summary>
         public bool SupportsIntegrations

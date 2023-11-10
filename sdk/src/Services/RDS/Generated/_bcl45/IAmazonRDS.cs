@@ -2853,10 +2853,7 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Creates a zero-ETL integration with Amazon Redshift. For more information, see <a
-        /// href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/zero-etl.html">Working
-        /// with Amazon Aurora zero-ETL integrations with Amazon Redshift</a> in the <i>Amazon
-        /// Aurora User Guide</i>.
+        /// Creates a zero-ETL integration with Amazon Redshift.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateIntegration service method.</param>
         /// 
@@ -2887,10 +2884,7 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Creates a zero-ETL integration with Amazon Redshift. For more information, see <a
-        /// href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/zero-etl.html">Working
-        /// with Amazon Aurora zero-ETL integrations with Amazon Redshift</a> in the <i>Amazon
-        /// Aurora User Guide</i>.
+        /// Creates a zero-ETL integration with Amazon Redshift.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateIntegration service method.</param>
         /// <param name="cancellationToken">
@@ -4159,10 +4153,7 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Deletes a zero-ETL integration with Amazon Redshift. For more information, see <a
-        /// href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/zero-etl.deleting.html">Deleting
-        /// Amazon Aurora zero-ETL integrations with Amazon Redshift</a> in the <i>Amazon Aurora
-        /// User Guide</i>
+        /// Deletes a zero-ETL integration with Amazon Redshift.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteIntegration service method.</param>
         /// 
@@ -4184,10 +4175,7 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Deletes a zero-ETL integration with Amazon Redshift. For more information, see <a
-        /// href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/zero-etl.deleting.html">Deleting
-        /// Amazon Aurora zero-ETL integrations with Amazon Redshift</a> in the <i>Amazon Aurora
-        /// User Guide</i>
+        /// Deletes a zero-ETL integration with Amazon Redshift.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteIntegration service method.</param>
         /// <param name="cancellationToken">
@@ -6369,10 +6357,7 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Describe one or more zero-ETL integration with Amazon Redshift. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/zero-etl.describingmonitoring.html">Viewing
-        /// and monitoring Amazon Aurora zero-ETL integrations with Amazon Redshift</a> in the
-        /// <i>Amazon Aurora User Guide</i>
+        /// Describe one or more zero-ETL integrations with Amazon Redshift.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeIntegrations service method.</param>
         /// 
@@ -6386,10 +6371,7 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Describe one or more zero-ETL integration with Amazon Redshift. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/zero-etl.describingmonitoring.html">Viewing
-        /// and monitoring Amazon Aurora zero-ETL integrations with Amazon Redshift</a> in the
-        /// <i>Amazon Aurora User Guide</i>
+        /// Describe one or more zero-ETL integrations with Amazon Redshift.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeIntegrations service method.</param>
         /// <param name="cancellationToken">

@@ -29,10 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// An Aurora zero-ETL integration with Amazon Redshift. For more information, see <a
-    /// href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/zero-etl.html">Working
-    /// with Amazon Aurora zero-ETL integrations with Amazon Redshift</a> in the <i>Amazon
-    /// Aurora User Guide</i>.
+    /// A zero-ETL integration with Amazon Redshift.
     /// </summary>
     public partial class Integration
     {
@@ -162,7 +159,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Aurora DB cluster used as the source for replication.
+        /// The Amazon Resource Name (ARN) of the database used as the source for replication.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

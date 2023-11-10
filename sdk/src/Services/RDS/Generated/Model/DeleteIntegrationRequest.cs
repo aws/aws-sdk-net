@@ -30,10 +30,7 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteIntegration operation.
-    /// Deletes a zero-ETL integration with Amazon Redshift. For more information, see <a
-    /// href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/zero-etl.deleting.html">Deleting
-    /// Amazon Aurora zero-ETL integrations with Amazon Redshift</a> in the <i>Amazon Aurora
-    /// User Guide</i>
+    /// Deletes a zero-ETL integration with Amazon Redshift.
     /// </summary>
     public partial class DeleteIntegrationRequest : AmazonRDSRequest
     {

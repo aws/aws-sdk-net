@@ -30,10 +30,7 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateIntegration operation.
-    /// Creates a zero-ETL integration with Amazon Redshift. For more information, see <a
-    /// href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/zero-etl.html">Working
-    /// with Amazon Aurora zero-ETL integrations with Amazon Redshift</a> in the <i>Amazon
-    /// Aurora User Guide</i>.
+    /// Creates a zero-ETL integration with Amazon Redshift.
     /// </summary>
     public partial class CreateIntegrationRequest : AmazonRDSRequest
     {
@@ -92,7 +89,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The Amazon Web Services Key Management System (Amazon Web Services KMS) key identifier
         /// for the key to use to encrypt the integration. If you don't specify an encryption
-        /// key, Aurora uses a default Amazon Web Services owned key. 
+        /// key, RDS uses a default Amazon Web Services owned key. 
         /// </para>
         /// </summary>
         public string KMSKeyId
@@ -110,7 +107,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Aurora DB cluster to use as the source for replication.
+        /// The Amazon Resource Name (ARN) of the database to use as the source for replication.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
