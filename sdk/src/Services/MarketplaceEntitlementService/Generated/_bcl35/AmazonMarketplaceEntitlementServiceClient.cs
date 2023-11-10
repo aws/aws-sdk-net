@@ -60,6 +60,24 @@ namespace Amazon.MarketplaceEntitlementService
     {
         private static IServiceMetadata serviceMetadata = new AmazonMarketplaceEntitlementServiceMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private IMarketplaceEntitlementServicePaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IMarketplaceEntitlementServicePaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new MarketplaceEntitlementServicePaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

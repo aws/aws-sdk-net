@@ -54,6 +54,12 @@ namespace Amazon.MarketplaceEntitlementService
     /// </summary>
     public partial interface IAmazonMarketplaceEntitlementService : IAmazonService, IDisposable
     {
+#if AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IMarketplaceEntitlementServicePaginatorFactory Paginators { get; }
+#endif
                 
         #region  GetEntitlements
 

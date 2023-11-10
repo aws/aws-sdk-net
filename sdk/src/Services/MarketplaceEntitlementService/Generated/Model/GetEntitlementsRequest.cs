@@ -67,6 +67,7 @@ namespace Amazon.MarketplaceEntitlementService.Model
         /// use the NextToken field in subsequent calls to GetEntitlements.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=25)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
