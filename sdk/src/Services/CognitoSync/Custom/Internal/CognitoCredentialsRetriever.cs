@@ -38,6 +38,9 @@ namespace Amazon.CognitoSync.Internal
     /// the service client is using the CognitoAWSCredentials credentials object it makes sure that all
     /// CognitoSync calls have the latest identity id and identity pool id.
     /// </summary>
+#if NET8_0_OR_GREATER
+    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("Amazon CognitoSync has not been updated to support Native AOT compilations.")]
+#endif
     public class CognitoCredentialsRetriever : CredentialsRetriever
     {
         /// <summary>
@@ -96,21 +99,27 @@ namespace Amazon.CognitoSync.Internal
         /// A cache of objects that store the reflection objects. This is done so that reflection is only used once in order to 
         /// set the fields on the request.
         /// </summary>
+#if NET8_0_OR_GREATER
+        [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("CognitoSync has not been updated to support Native AOT compilations.")]
+#endif
         private static class CSRequestCache
         {
             /// <summary>
             /// This class holds on to the reflection objects to invoke the setters for IdentityId and IdentityPoolId for the given type.
             /// </summary>
+#if NET8_0_OR_GREATER
+            [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("CognitoSync has not been updated to support Native AOT compilations.")]
+#endif
             private class CSRequest
             {
-                private ITypeInfo requestType;
+                private Type requestType;
                 private PropertyInfo identityPoolIdProperty;
                 private PropertyInfo identityIdProperty;
-                public static ITypeInfo SyncRequestType = TypeFactory.GetTypeInfo(typeof(AmazonCognitoSyncRequest));
+                public static Type SyncRequestType = typeof(AmazonCognitoSyncRequest);
 
                 public CSRequest(Type requestType)
                 {
-                    this.requestType = TypeFactory.GetTypeInfo(requestType);
+                    this.requestType = requestType;
 
                     if (!SyncRequestType.IsAssignableFrom(this.requestType))
                         throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture, "Unable to assign {0} from {1}",
@@ -143,7 +152,7 @@ namespace Amazon.CognitoSync.Internal
                 // Look up all CognitoSync request objects for caching.
                 foreach (var type in allTypes)
                 {
-                    var typeInfo = TypeFactory.GetTypeInfo(type);
+                    var typeInfo = type;
                     if (CSRequest.SyncRequestType.IsAssignableFrom(typeInfo) && !typeInfo.Equals(CSRequest.SyncRequestType))
                     {
                         var csRequest = new CSRequest(type);

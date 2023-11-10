@@ -322,11 +322,11 @@ namespace Amazon.Internal
 
             static void LoadEndpointDefinitionsFromEmbeddedResource()
             {
-                using (var stream = Amazon.Util.Internal.TypeFactory.GetTypeInfo(typeof(RegionEndpoint)).Assembly.GetManifestResourceStream(REGIONS_FILE))
+                using (var stream = typeof(RegionEndpoint).Assembly.GetManifestResourceStream(REGIONS_FILE))
                 {
                     ReadEndpointFile(stream);
                 }
-                using (var stream = Amazon.Util.Internal.TypeFactory.GetTypeInfo(typeof(RegionEndpoint)).Assembly.GetManifestResourceStream(REGIONS_CUSTOMIZATIONS_FILE))
+                using (var stream = typeof(RegionEndpoint).Assembly.GetManifestResourceStream(REGIONS_CUSTOMIZATIONS_FILE))
                 {
                     ReadEndpointFile(stream);
                 }
@@ -337,6 +337,10 @@ namespace Amazon.Internal
                 string endpointsFile;
                 try
                 {
+#if NET8_0_OR_GREATER
+                    var dirPath = System.AppContext.BaseDirectory;
+                    var dirInfo = new DirectoryInfo(dirPath);
+#else
                     var assembly = typeof(Amazon.RegionEndpoint).Assembly;
                     var codeBase = assembly.CodeBase;
                     if (string.IsNullOrEmpty(codeBase))
@@ -347,7 +351,7 @@ namespace Amazon.Internal
                     var dirInfo = new DirectoryInfo(dirPath);
                     if (!dirInfo.Exists)
                         return false;
-
+#endif
                     var files = dirInfo.GetFiles(REGIONS_FILE, SearchOption.TopDirectoryOnly);
                     if (files.Length != 1)
                         return false;
@@ -412,7 +416,7 @@ namespace Amazon.Internal
                     RegionEndpoint.loaded = false;
                 }
             }
-            #endregion
+#endregion
 
             internal RegionEndpoint(string systemName, string displayName)
             {
@@ -453,6 +457,6 @@ namespace Amazon.Internal
                 return string.Format(CultureInfo.InvariantCulture, "{0} ({1})", this.DisplayName, this.SystemName);
             }
         }
-        #endregion
+#endregion
     }
 }

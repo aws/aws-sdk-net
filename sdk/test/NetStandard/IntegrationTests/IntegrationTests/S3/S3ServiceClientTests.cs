@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Net.Http;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -53,5 +54,54 @@ namespace Amazon.DNXCore.IntegrationTests.S3
                 Assert.Equal(putObjectRequest.ContentBody, content);
             }
         }
+
+#if NET8_0_OR_GREATER
+        [Fact]
+        public async Task TestDisableCanonicalization()
+        {
+            string key = $"/path/../{Guid.NewGuid().ToString()}.txt";
+
+            var putObjectRequest = new PutObjectRequest
+            {
+                BucketName = bucketName,
+                ContentBody = "Hello World",
+                Key = key
+            };
+            var putObjectResponse = await Client.PutObjectAsync(putObjectRequest);
+
+            var getObjectRequest = new GetObjectRequest
+            {
+                BucketName = bucketName,
+                Key = key
+            };
+            using (var getObjectResponse = await Client.GetObjectAsync(getObjectRequest))
+            using (var reader = new StreamReader(getObjectResponse.ResponseStream))
+            {
+                var content = reader.ReadToEnd();
+                Assert.Equal(putObjectRequest.ContentBody, content);
+            }
+
+            var presignedUrlRequest = new GetPreSignedUrlRequest
+            {
+                BucketName = bucketName,
+                Key = key,
+                Verb = HttpVerb.GET,
+                Expires = DateTime.Now.AddDays(1)
+            };
+
+            var presignedUrl = Client.GetPreSignedURL(presignedUrlRequest);
+            using var httpClient = new HttpClient();
+            var uri = new Uri(presignedUrl, new UriCreationOptions { DangerousDisablePathAndQueryCanonicalization = true });
+            var presignedData = await httpClient.GetStringAsync(uri);
+            Assert.Equal(putObjectRequest.ContentBody, presignedData);
+
+            var deleteRequest = new DeleteObjectRequest
+            {
+                BucketName = bucketName,
+                Key = key
+            };
+            await Client.DeleteObjectAsync(deleteRequest);
+        }
+#endif
     }
 }

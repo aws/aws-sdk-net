@@ -15,6 +15,8 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - AWS License Manager User Subscriptions. This release supports user based subscription for Microsoft Visual Studio Professional and Enterprise on EC2.")]
 #elif NETCOREAPP3_1
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Core 3.1) - AWS License Manager User Subscriptions. This release supports user based subscription for Microsoft Visual Studio Professional and Enterprise on EC2.")]
+#elif NET8_0
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET 8.0) - AWS License Manager User Subscriptions. This release supports user based subscription for Microsoft Visual Studio Professional and Enterprise on EC2.")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif

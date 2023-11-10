@@ -69,7 +69,7 @@ namespace ServiceClientGenerator
                         "endpoints.json",
                     };
                     projectProperties.KeyFilePath = Utils.PathCombineAlt("..", "..", "awssdk.dll.snk");
-                    projectProperties.SupressWarnings = "419,1570,1591";
+                    projectProperties.SupressWarnings = "419,1570,1591;CA1822";
                     projectProperties.NugetPackagesLocation = Utils.PathCombineAlt("..", "..", "packages");
                     projectProperties.FxcopAnalyzerRuleSetFilePath = Utils.PathCombineAlt("..", "..", "AWSDotNetSDK.ruleset");
                     projectProperties.FxcopAnalyzerRuleSetFilePathForBuild = Utils.PathCombineAlt("..", "..", "AWSDotNetSDKForBuild.ruleset");
@@ -160,6 +160,7 @@ namespace ServiceClientGenerator
                 projectProperties.ProjectGuid = projectGuid;
                 projectProperties.RootNamespace = serviceConfiguration.Namespace;
                 projectProperties.AssemblyName = assemblyName;
+                projectProperties.SupressWarnings = "CA1822";
                 projectProperties.SourceDirectories = GetProjectSourceFolders(projectFileConfiguration, serviceFilesRoot);
                 projectProperties.NugetPackagesLocation = Utils.PathCombineAlt("..", "..", "..", "packages");
                 projectProperties.FxcopAnalyzerRuleSetFilePath = Utils.PathCombineAlt("..", "..", "..", "AWSDotNetSDK.ruleset");
@@ -268,7 +269,7 @@ namespace ServiceClientGenerator
             }
             projectProperties.FrameworkPathOverride = projectFileConfiguration.FrameworkPathOverride;
             projectProperties.ReferenceDependencies = projectFileConfiguration.DllReferences;
-            projectProperties.SupressWarnings       = projectFileConfiguration.NoWarn;
+            projectProperties.SupressWarnings       = "CA1822";
             projectProperties.SignBinaries          = true;
             projectProperties.PackageReferences = projectFileConfiguration.PackageReferences;
             projectProperties.FxcopAnalyzerRuleSetFilePath = Utils.PathCombineAlt("..", "..", "..", "AWSDotNetSDK.ruleset");

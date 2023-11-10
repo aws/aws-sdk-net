@@ -21,6 +21,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
     /// <summary>
     /// Configuration for the Table.PutItem operation
     /// </summary>
+#if NET8_0_OR_GREATER
+    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+#endif
     public class TableConfig
     {
         /// <summary>

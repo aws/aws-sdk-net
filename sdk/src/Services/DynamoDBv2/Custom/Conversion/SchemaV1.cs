@@ -30,6 +30,9 @@ namespace Amazon.DynamoDBv2
 {
     #region Basic converters
 
+#if NET8_0_OR_GREATER
+    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+#endif
     internal class ByteConverterV1 : Converter<byte>
     {
         protected override bool TryTo(byte value, out Primitive p)
@@ -43,6 +46,9 @@ namespace Amazon.DynamoDBv2
         }
     }
 
+#if NET8_0_OR_GREATER
+    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+#endif
     internal class SByteConverterV1 : Converter<SByte>
     {
         protected override bool TryTo(sbyte value, out Primitive p)
@@ -56,6 +62,9 @@ namespace Amazon.DynamoDBv2
         }
     }
 
+#if NET8_0_OR_GREATER
+    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+#endif
     internal class UInt16ConverterV1 : Converter<UInt16>
     {
         protected override bool TryTo(ushort value, out Primitive p)
@@ -69,6 +78,9 @@ namespace Amazon.DynamoDBv2
         }
     }
 
+#if NET8_0_OR_GREATER
+    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+#endif
     internal class Int16ConverterV1 : Converter<Int16>
     {
         protected override bool TryTo(short value, out Primitive p)
@@ -82,6 +94,9 @@ namespace Amazon.DynamoDBv2
         }
     }
 
+#if NET8_0_OR_GREATER
+    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+#endif
     internal class UInt32ConverterV1 : Converter<UInt32>
     {
         protected override bool TryTo(uint value, out Primitive p)
@@ -95,6 +110,9 @@ namespace Amazon.DynamoDBv2
         }
     }
 
+#if NET8_0_OR_GREATER
+    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+#endif
     internal class Int32ConverterV1 : Converter<Int32>
     {
         protected override bool TryTo(int value, out Primitive p)
@@ -108,6 +126,9 @@ namespace Amazon.DynamoDBv2
         }
     }
 
+#if NET8_0_OR_GREATER
+    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+#endif
     internal class UInt64ConverterV1 : Converter<UInt64>
     {
         protected override bool TryTo(ulong value, out Primitive p)
@@ -121,6 +142,9 @@ namespace Amazon.DynamoDBv2
         }
     }
 
+#if NET8_0_OR_GREATER
+    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+#endif
     internal class Int64ConverterV1 : Converter<Int64>
     {
         protected override bool TryTo(long value, out Primitive p)
@@ -134,6 +158,9 @@ namespace Amazon.DynamoDBv2
         }
     }
 
+#if NET8_0_OR_GREATER
+    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+#endif
     internal class SingleConverterV1 : Converter<Single>
     {
         protected override bool TryTo(float value, out Primitive p)
@@ -147,6 +174,9 @@ namespace Amazon.DynamoDBv2
         }
     }
 
+#if NET8_0_OR_GREATER
+    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+#endif
     internal class DoubleConverterV1 : Converter<Double>
     {
         protected override bool TryTo(double value, out Primitive p)
@@ -160,6 +190,9 @@ namespace Amazon.DynamoDBv2
         }
     }
 
+#if NET8_0_OR_GREATER
+    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+#endif
     internal class DecimalConverterV1 : Converter<Decimal>
     {
         protected override bool TryTo(decimal value, out Primitive p)
@@ -173,6 +206,9 @@ namespace Amazon.DynamoDBv2
         }
     }
 
+#if NET8_0_OR_GREATER
+    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+#endif
     internal class CharConverterV1 : Converter<Char>
     {
         protected override bool TryTo(char value, out Primitive p)
@@ -186,6 +222,9 @@ namespace Amazon.DynamoDBv2
         }
     }
 
+#if NET8_0_OR_GREATER
+    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+#endif
     internal class StringConverterV1 : Converter<String>
     {
         protected override bool TryTo(string value, out Primitive p)
@@ -200,6 +239,9 @@ namespace Amazon.DynamoDBv2
         }
     }
 
+#if NET8_0_OR_GREATER
+    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+#endif
     internal class DateTimeConverterV1 : Converter<DateTime>
     {
         protected override bool TryTo(DateTime value, out Primitive p)
@@ -218,6 +260,9 @@ namespace Amazon.DynamoDBv2
         }
     }
 
+#if NET8_0_OR_GREATER
+    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+#endif
     internal class GuidConverterV1 : Converter<Guid>
     {
         protected override bool TryTo(Guid value, out Primitive p)
@@ -232,6 +277,9 @@ namespace Amazon.DynamoDBv2
         }
     }
 
+#if NET8_0_OR_GREATER
+    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+#endif
     internal class BytesConverterV1 : Converter<byte[]>
     {
         protected override bool TryTo(byte[] value, out Primitive p)
@@ -246,6 +294,9 @@ namespace Amazon.DynamoDBv2
         }
     }
 
+#if NET8_0_OR_GREATER
+    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+#endif
     internal class MemoryStreamConverterV1 : Converter<MemoryStream>
     {
         protected override bool TryTo(MemoryStream value, out Primitive p)
@@ -267,6 +318,9 @@ namespace Amazon.DynamoDBv2
         }
     }
 
+#if NET8_0_OR_GREATER
+    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+#endif
     internal class EnumConverterV1 : Converter<Enum>
     {
         protected override bool TryTo(Enum value, out Primitive p)
@@ -347,6 +401,9 @@ namespace Amazon.DynamoDBv2
     /// A boolean converter which reads booleans as N or BOOL types,
     /// but writes out N type (1 if true, 0 if false).
     /// </summary>
+#if NET8_0_OR_GREATER
+    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+#endif
     internal class BoolConverterV1 : Converter<bool>
     {
         protected override bool TryTo(bool value, out Primitive p)
@@ -366,6 +423,9 @@ namespace Amazon.DynamoDBv2
         }
     }
 
+#if NET8_0_OR_GREATER
+    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+#endif
     internal abstract class CollectionConverter : Converter
     {
         private IEnumerable<Type> targetTypes;
@@ -408,6 +468,9 @@ namespace Amazon.DynamoDBv2
     /// A collection converter which reads both sets of collections (sets and lists)
     /// and writes out sets (NS, SS, BS)
     /// </summary>
+#if NET8_0_OR_GREATER
+    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+#endif
     internal class PrimitiveCollectionConverterV1 : CollectionConverter
     {
         public PrimitiveCollectionConverterV1()
@@ -446,6 +509,9 @@ namespace Amazon.DynamoDBv2
     /// Converts from Dictionary{string,object} to DynamoDBEntry.
     /// Does NOT convert from DynamoDBEntry to Dictionary{string,object}.
     /// </summary>
+#if NET8_0_OR_GREATER
+    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+#endif
     internal class DictionaryConverterV1 : Converter
     {
         public override IEnumerable<Type> GetTargetTypes()

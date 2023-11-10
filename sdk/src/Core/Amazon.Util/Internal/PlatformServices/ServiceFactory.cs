@@ -49,7 +49,7 @@ namespace Amazon.Util.Internal.PlatformServices
                 var serviceType = service.Key;
                 if (service.Value == InstantiationModel.Singleton)
                 {
-                    var serviceInstance = Activator.CreateInstance(_mappings[serviceType]);
+                    var serviceInstance = CreateInstance(_mappings[serviceType]);
                     _singletonServices.Add(serviceType, serviceInstance);
                 }
             }
@@ -82,7 +82,7 @@ namespace Amazon.Util.Internal.PlatformServices
             }
 
             var concreteType = GetServiceType<T>();
-            return (T)Activator.CreateInstance(concreteType);
+            return (T)CreateInstance(typeof(T));
         }
 
         private static Type GetServiceType<T>()
@@ -91,6 +91,33 @@ namespace Amazon.Util.Internal.PlatformServices
             {
                 return _mappings[typeof(T)];
             }
+        }
+
+        private static object CreateInstance(Type serviceType)
+        {
+            object service;
+            if (serviceType == typeof(ApplicationSettings))
+            {
+                service = new ApplicationSettings();
+            }
+            else if (serviceType == typeof(NetworkReachability))
+            {
+                service = new NetworkReachability();
+            }
+            else if (serviceType == typeof(ApplicationInfo))
+            {
+                service = new ApplicationInfo();
+            }
+            else if (serviceType == typeof(EnvironmentInfo))
+            {
+                service = new EnvironmentInfo();
+            }
+            else
+            {
+                throw new ArgumentException($"Unknown service {serviceType.FullName}");
+            }
+
+            return service;
         }
     }
 }

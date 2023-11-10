@@ -21,6 +21,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Linq;
 using System.Text;
@@ -87,7 +88,11 @@ namespace Amazon.Runtime
             return map.TryGetValue(this.Value, out foundValue) ? foundValue : this;
         }
 
+#if NET8_0_OR_GREATER
+        protected static T FindValue<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicFields | DynamicallyAccessedMemberTypes.PublicConstructors)] T>(string value) where T : ConstantClass
+#else
         protected static T FindValue<T>(string value) where T : ConstantClass
+#endif
         {
             if (value == null)
                 return null;
@@ -99,29 +104,32 @@ namespace Amazon.Runtime
             ConstantClass foundValue;
             if (!fields.TryGetValue(value, out foundValue))
             {
-                var typeInfo = TypeFactory.GetTypeInfo(typeof(T));
-                var constructor = typeInfo.GetConstructor(new ITypeInfo[] { TypeFactory.GetTypeInfo(typeof(string)) });
+                var type = typeof(T);
+                var constructor = type.GetConstructor(new Type[] { typeof(string) });
                 return constructor.Invoke(new object[] { value }) as T;
             }
 
             return foundValue as T;
         }
 
-        private static void LoadFields(Type t)
+#if NET8_0_OR_GREATER
+        private static void LoadFields([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicFields)] Type type)
+#else
+        private static void LoadFields(Type type)
+#endif
         {
-            if (staticFields.ContainsKey(t))
+            if (staticFields.ContainsKey(type))
                 return;
 
             lock (staticFieldsLock)
             {
-                if (staticFields.ContainsKey(t)) return;
+                if (staticFields.ContainsKey(type)) return;
 
                 var map = new Dictionary<string, ConstantClass>(StringComparer.OrdinalIgnoreCase);
 
-                var typeInfo = TypeFactory.GetTypeInfo(t);
-                foreach (var fieldInfo in typeInfo.GetFields())
+                foreach (var fieldInfo in type.GetFields())
                 {
-                    if (fieldInfo.IsStatic && fieldInfo.FieldType == t)
+                    if (fieldInfo.IsStatic && fieldInfo.FieldType == type)
                     {
                         var cc = fieldInfo.GetValue(null) as ConstantClass;
                         map[cc.Value] = cc;
@@ -130,7 +138,7 @@ namespace Amazon.Runtime
 
                 // create copy of dictionary with new value
                 var newDictionary = new Dictionary<Type, Dictionary<string, ConstantClass>>(staticFields);
-                newDictionary[t] = map;
+                newDictionary[type] = map;
 
                 // swap in the new dictionary
                 staticFields = newDictionary;

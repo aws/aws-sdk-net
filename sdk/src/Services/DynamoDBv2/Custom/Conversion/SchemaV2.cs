@@ -110,9 +110,12 @@ namespace Amazon.DynamoDBv2
     /// HashSet input - converts to a DynamoDB set (NS, SS, BS)
     /// Any other IEnumerable input - converts to a DynamoDB list (L)
     /// </summary>
+#if NET8_0_OR_GREATER
+    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+#endif
     internal class CollectionConverterV2 : PrimitiveCollectionConverterV1
     {
-        private static ITypeInfo setTypeInfo = TypeFactory.GetTypeInfo(typeof(HashSet<>));
+        private static Type setTypeInfo = typeof(HashSet<>);
         private static Type enumerableType = typeof(IEnumerable<>);
 
         /// <summary>
@@ -124,12 +127,11 @@ namespace Amazon.DynamoDBv2
         public override bool TryTo(object value, out PrimitiveList pl)
         {
             var inputType = value.GetType();
-            var inputTypeInfo = TypeFactory.GetTypeInfo(inputType);
 
-            if (inputTypeInfo.IsGenericType)
+            if (inputType.IsGenericType)
             {
-                var genericTypeInfo = TypeFactory.GetTypeInfo(inputTypeInfo.GetGenericTypeDefinition());
-                if (setTypeInfo.IsAssignableFrom(genericTypeInfo))
+                var genericType = inputType.GetGenericTypeDefinition();
+                if (setTypeInfo.IsAssignableFrom(genericType))
                 {
                     pl = Conversion.ItemsToPrimitiveList(value as IEnumerable);
                     return true;
@@ -164,6 +166,9 @@ namespace Amazon.DynamoDBv2
         }
     }
 
+#if NET8_0_OR_GREATER
+    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+#endif
     internal class DynamoDBListConverter : CollectionConverter
     {
         public DynamoDBListConverter()

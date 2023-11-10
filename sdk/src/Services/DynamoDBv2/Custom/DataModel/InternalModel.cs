@@ -35,6 +35,9 @@ namespace Amazon.DynamoDBv2.DataModel
     /// <summary>
     /// Basic property storage information
     /// </summary>
+#if NET8_0_OR_GREATER
+    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+#endif
     internal class SimplePropertyStorage
     {
         // local property name
@@ -72,6 +75,9 @@ namespace Amazon.DynamoDBv2.DataModel
     /// <summary>
     /// DynamoDB property storage information
     /// </summary>
+#if NET8_0_OR_GREATER
+    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+#endif
     internal class PropertyStorage : SimplePropertyStorage
     {
         // flags
@@ -188,6 +194,9 @@ namespace Amazon.DynamoDBv2.DataModel
     /// <summary>
     /// Storage information for a single item
     /// </summary>
+#if NET8_0_OR_GREATER
+    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+#endif
     internal class ItemStorage
     {
         public Document Document { get; set; }
@@ -224,13 +233,16 @@ namespace Amazon.DynamoDBv2.DataModel
     /// <summary>
     /// Storage information for a specific class
     /// </summary>
+#if NET8_0_OR_GREATER
+    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+#endif
     internal class StorageConfig
     {
         // normalized PropertyStorage objects
         public List<PropertyStorage> Properties { get; private set; }
 
         // target type
-        public ITypeInfo TargetTypeInfo { get; private set; }
+        public Type TargetType { get; private set; }
 
         // target type members
         public Dictionary<string, MemberInfo> TargetTypeMembers { get; private set; }
@@ -306,11 +318,11 @@ namespace Amazon.DynamoDBv2.DataModel
             return true;
         }
 
-        private static Dictionary<string, MemberInfo> GetMembersDictionary(ITypeInfo typeInfo)
+        private static Dictionary<string, MemberInfo> GetMembersDictionary(Type type)
         {
             Dictionary<string, MemberInfo> dictionary = new Dictionary<string, MemberInfo>(StringComparer.Ordinal);
 
-            var members = typeInfo
+            var members = type
                 .GetMembers()
                 .Where(IsValidMemberInfo)
                 .ToList();
@@ -324,27 +336,29 @@ namespace Amazon.DynamoDBv2.DataModel
 
         
         // constructor
-        public StorageConfig(ITypeInfo targetTypeInfo)
+        public StorageConfig(Type targetType)
         {
-            var type = targetTypeInfo.Type;
-            if (!Utils.CanInstantiate(type))
+            if (!Utils.CanInstantiate(targetType))
                 throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture,
-                    "Type {0} is unsupported, it cannot be instantiated", targetTypeInfo.FullName));
+                    "Type {0} is unsupported, it cannot be instantiated", targetType.FullName));
 
-            TargetTypeInfo = targetTypeInfo;
+            TargetType = targetType;
             Properties = new List<PropertyStorage>();
             PropertyToPropertyStorageMapping = new Dictionary<string, PropertyStorage>(StringComparer.Ordinal);
-            TargetTypeMembers = GetMembersDictionary(targetTypeInfo);
+            TargetTypeMembers = GetMembersDictionary(targetType);
 
             if (TargetTypeMembers.Count == 0)
                 throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture,
-                    "Type {0} is unsupported, it has no supported members", targetTypeInfo.FullName));
+                    "Type {0} is unsupported, it has no supported members", targetType.FullName));
         }
     }
-    
+
     /// <summary>
     /// Storage information for a specific class that is associated with a table
     /// </summary>
+#if NET8_0_OR_GREATER
+    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+#endif
     internal class ItemStorageConfig : StorageConfig
     {
         // table
@@ -479,7 +493,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
             if (this.Properties.Count == 0)
                 throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture,
-                    "Type {0} is unsupported, it has no supported members", TargetTypeInfo.FullName));
+                    "Type {0} is unsupported, it has no supported members", TargetType.FullName));
         }
 
         private void AddPropertyStorage(PropertyStorage value)
@@ -554,8 +568,8 @@ namespace Amazon.DynamoDBv2.DataModel
 
 
         // constructor
-        public ItemStorageConfig(ITypeInfo targetTypeInfo)
-            : base(targetTypeInfo)
+        public ItemStorageConfig(Type targetType)
+            : base(targetType)
         {
             AttributeToIndexesNameMapping = new Dictionary<string, List<string>>(StringComparer.Ordinal);
             IndexNameToLSIRangePropertiesMapping = new Dictionary<string, List<string>>(StringComparer.Ordinal);
@@ -571,6 +585,9 @@ namespace Amazon.DynamoDBv2.DataModel
     /// <summary>
     /// Cache of ItemStorageConfig objects
     /// </summary>
+#if NET8_0_OR_GREATER
+    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+#endif
     internal class ItemStorageConfigCache : IDisposable
     {
         // Cache of ItemStorageConfig objects per table and the
@@ -692,11 +709,12 @@ namespace Amazon.DynamoDBv2.DataModel
 
         private ItemStorageConfig CreateStorageConfig(Type baseType, string actualTableName, DynamoDBFlatConfig flatConfig)
         {
-            if (baseType == null) throw new ArgumentNullException("baseType");
-            ITypeInfo typeInfo = TypeFactory.GetTypeInfo(baseType);
-            ItemStorageConfig config = new ItemStorageConfig(typeInfo);
+            if (baseType == null) 
+                throw new ArgumentNullException("baseType");
 
-            PopulateConfigFromType(config, typeInfo);
+            ItemStorageConfig config = new ItemStorageConfig(baseType);
+
+            PopulateConfigFromType(config, baseType);
             PopulateConfigFromMappings(config, AWSConfigsDynamoDB.Context.TypeMappings);
 
             // try to populate config from table definition only if actual table name is known
@@ -737,12 +755,12 @@ namespace Amazon.DynamoDBv2.DataModel
             return config;
         }
 
-        private static void PopulateConfigFromType(ItemStorageConfig config, ITypeInfo typeInfo)
+        private static void PopulateConfigFromType(ItemStorageConfig config, Type type)
         {
-            DynamoDBTableAttribute tableAttribute = Utils.GetTableAttribute(typeInfo);
+            DynamoDBTableAttribute tableAttribute = Utils.GetTableAttribute(type);
             if (tableAttribute == null)
             {
-                config.TableName = typeInfo.Name;
+                config.TableName = type.Name;
             }
             else
             {
@@ -755,7 +773,7 @@ namespace Amazon.DynamoDBv2.DataModel
             if (AWSConfigsDynamoDB.Context.TableAliases.TryGetValue(config.TableName, out tableAlias))
                 config.TableName = tableAlias;
 
-            foreach (var member in typeInfo.GetMembers())
+            foreach (var member in type.GetMembers())
             {
                 if (!StorageConfig.IsValidMemberInfo(member))
                     continue;
@@ -891,7 +909,7 @@ namespace Amazon.DynamoDBv2.DataModel
         }
         private static void PopulateConfigFromMappings(ItemStorageConfig config, Dictionary<Type, TypeMapping> typeMappings)
         {
-            var baseType = config.TargetTypeInfo.Type;
+            var baseType = config.TargetType;
             TypeMapping typeMapping;
             if (typeMappings.TryGetValue(baseType, out typeMapping))
             {

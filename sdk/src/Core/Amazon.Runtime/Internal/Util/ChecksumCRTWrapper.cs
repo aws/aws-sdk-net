@@ -12,10 +12,14 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using Amazon;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.SharedInterfaces.Internal;
+using Amazon.RuntimeDependencies;
 using Amazon.Util.Internal;
+using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.IO;
 
@@ -26,13 +30,20 @@ namespace AWSSDK.Runtime.Internal.Util
     /// </summary>
     public static class ChecksumCRTWrapper
     {
-        private const string CRT_WRAPPER_ASSEMBLY_NAME = "AWSSDK.Extensions.CrtIntegration";
+        internal const string CRT_WRAPPER_ASSEMBLY_NAME = "AWSSDK.Extensions.CrtIntegration";
         private const string CRT_WRAPPER_NUGET_PACKAGE_NAME = "AWSSDK.Extensions.CrtIntegration";
-        private const string CRT_WRAPPER_CLASS_NAME = "AWSSDK.Extensions.CrtIntegration.CrtChecksums";
+        internal const string CRT_WRAPPER_CLASS_NAME = "AWSSDK.Extensions.CrtIntegration.CrtChecksums";
 
         private static readonly object _lock = new object();
         private static volatile IChecksumProvider _instance;
 
+
+#if NET8_0_OR_GREATER
+        [System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessage("ReflectionAnalysis", "IL2026",
+            Justification = "Reflection code is only used as a fallback in case the SDK was not trimmed. Trimmed scenarios should register dependencies with Amazon.RuntimeDependencyRegistry.GlobalRuntimeDependencyRegistry")]
+        [System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessage("ReflectionAnalysis", "IL2075",
+            Justification = "Reflection code is only used as a fallback in case the SDK was not trimmed. Trimmed scenarios should register dependencies with Amazon.RuntimeDependencyRegistry.GlobalRuntimeDependencyRegistry")]
+#endif
         private static IChecksumProvider Instance
         {
             get
@@ -44,21 +55,36 @@ namespace AWSSDK.Runtime.Internal.Util
                 {
                     if (_instance == null)
                     {
+                        _instance = GlobalRuntimeDependencyRegistry.Instance.GetInstance<IChecksumProvider>(CRT_WRAPPER_ASSEMBLY_NAME, CRT_WRAPPER_CLASS_NAME, new CreateInstanceContext(new CheckSumProviderContext()));
+                        if(_instance != null)
+                        {
+                            return _instance;
+                        }
+
                         try
                         {
-                            var crtWrapperTypeInfo = ServiceClientHelpers.LoadTypeFromAssembly(CRT_WRAPPER_ASSEMBLY_NAME, CRT_WRAPPER_CLASS_NAME);
-                            var constructor = crtWrapperTypeInfo.GetConstructor(new ITypeInfo[] { });
+                            var crtWrapperType = ServiceClientHelpers.LoadTypeFromAssembly(CRT_WRAPPER_ASSEMBLY_NAME, CRT_WRAPPER_CLASS_NAME);
+                            var constructor = crtWrapperType.GetConstructor(new Type[] { });
 
                             _instance = constructor.Invoke(null) as IChecksumProvider;
                         }
-                        catch (FileNotFoundException)
+                        catch(Exception e)
                         {
-                            throw new AWSCommonRuntimeException
-                            (
-                                string.Format(CultureInfo.InvariantCulture,
-                                    "Attempting to handle a request that requires additional checksums. Add a reference " +
-                                    $"to the {CRT_WRAPPER_NUGET_PACKAGE_NAME} NuGet package to your project to include the AWS Common Runtime checksum implementation.")
-                            );
+                            if(InternalSDKUtils.IsRunningNativeAot())
+                            {
+                                throw new MissingRuntimeDependencyException(CRT_WRAPPER_NUGET_PACKAGE_NAME, CRT_WRAPPER_CLASS_NAME, nameof(GlobalRuntimeDependencyRegistry.RegisterChecksumProvider));
+                            }
+                            else if(e is FileNotFoundException)
+                            {
+                                throw new AWSCommonRuntimeException
+                                  (
+                                      string.Format(CultureInfo.InvariantCulture,
+                                          "Attempting to handle a request that requires additional checksums. Add a reference " +
+                                          $"to the {CRT_WRAPPER_NUGET_PACKAGE_NAME} NuGet package to your project to include the AWS Common Runtime checksum implementation.")
+                                  );
+                            }
+
+                            throw;
                         }
                     }
                 }

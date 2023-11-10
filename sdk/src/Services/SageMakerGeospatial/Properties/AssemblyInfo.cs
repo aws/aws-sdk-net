@@ -15,6 +15,8 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Amazon SageMaker geospatial capabilities. This release provides Amazon SageMaker geospatial APIs to build, train, deploy and visualize geospatial models.")]
 #elif NETCOREAPP3_1
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Core 3.1) - Amazon SageMaker geospatial capabilities. This release provides Amazon SageMaker geospatial APIs to build, train, deploy and visualize geospatial models.")]
+#elif NET8_0
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET 8.0) - Amazon SageMaker geospatial capabilities. This release provides Amazon SageMaker geospatial APIs to build, train, deploy and visualize geospatial models.")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif

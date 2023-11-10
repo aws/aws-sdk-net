@@ -15,6 +15,8 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Amazon Bedrock Runtime. Run Inference: Added support to run the inference on models.  Includes set of APIs for running inference in streaming and non-streaming mode.")]
 #elif NETCOREAPP3_1
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Core 3.1) - Amazon Bedrock Runtime. Run Inference: Added support to run the inference on models.  Includes set of APIs for running inference in streaming and non-streaming mode.")]
+#elif NET8_0
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET 8.0) - Amazon Bedrock Runtime. Run Inference: Added support to run the inference on models.  Includes set of APIs for running inference in streaming and non-streaming mode.")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif

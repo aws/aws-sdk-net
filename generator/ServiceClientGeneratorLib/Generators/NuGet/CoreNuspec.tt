@@ -24,6 +24,8 @@
       </group>
       <group targetFramework="netcoreapp3.1">
       </group>
+      <group targetFramework="net8.0">
+      </group>		
     </dependencies>
   </metadata> 
   <files>
@@ -45,5 +47,9 @@
     <file src=".\bin\Release\netcoreapp3.1\AWSSDK.Core.dll" target="lib\netcoreapp3.1"/>
     <file src=".\bin\Release\netcoreapp3.1\AWSSDK.Core.xml" target="lib\netcoreapp3.1"/>
     <file src=".\bin\Release\netcoreapp3.1\AWSSDK.Core.pdb" target="lib\netcoreapp3.1"/>
+
+    <file src=".\bin\Release\net8.0\AWSSDK.Core.dll" target="lib\net8.0"/>
+    <file src=".\bin\Release\net8.0\AWSSDK.Core.xml" target="lib\net8.0"/>
+    <file src=".\bin\Release\net8.0\AWSSDK.Core.pdb" target="lib\net8.0"/>
   </files>
 </package>

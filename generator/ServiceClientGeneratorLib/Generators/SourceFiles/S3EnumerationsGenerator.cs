@@ -16,7 +16,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\S3EnumerationsGenerator.tt"
+    #line 1 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\S3EnumerationsGenerator.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "17.0.0.0")]
     public partial class S3EnumerationsGenerator : S3EnumerationsGeneratorBase
     {
@@ -52,35 +52,35 @@ namespace Amazon.S3
     {
 ");
             
-            #line 27 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\S3EnumerationsGenerator.tt"
+            #line 27 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\S3EnumerationsGenerator.tt"
  foreach (var endpoint in Endpoints) { 
             
             #line default
             #line hidden
             this.Write("        /// <summary>\r\n        /// Specifies that the S3 Bucket should use the ");
             
-            #line 29 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\S3EnumerationsGenerator.tt"
+            #line 29 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\S3EnumerationsGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(endpoint.RegionCode));
             
             #line default
             #line hidden
             this.Write(" locality.\r\n        /// </summary>\r\n        public static readonly S3Region ");
             
-            #line 31 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\S3EnumerationsGenerator.tt"
+            #line 31 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\S3EnumerationsGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(endpoint.Name));
             
             #line default
             #line hidden
             this.Write(" = new S3Region(\"");
             
-            #line 31 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\S3EnumerationsGenerator.tt"
+            #line 31 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\S3EnumerationsGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(endpoint.ConvertedRegionCode));
             
             #line default
             #line hidden
             this.Write("\");\r\n\r\n");
             
-            #line 33 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\S3EnumerationsGenerator.tt"
+            #line 33 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\S3EnumerationsGenerator.tt"
  } 
             
             #line default
@@ -89,7 +89,7 @@ namespace Amazon.S3
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 37 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\S3EnumerationsGenerator.tt"
+        #line 37 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\S3EnumerationsGenerator.tt"
 
 public System.Collections.Generic.List<ServiceClientGenerator.EndpointConstant> Endpoints { get; set; }
 
@@ -119,7 +119,7 @@ public System.Collections.Generic.List<ServiceClientGenerator.EndpointConstant> 
         /// <summary>
         /// The string builder that generation-time code is using to assemble generated output
         /// </summary>
-        protected System.Text.StringBuilder GenerationEnvironment
+        public System.Text.StringBuilder GenerationEnvironment
         {
             get
             {

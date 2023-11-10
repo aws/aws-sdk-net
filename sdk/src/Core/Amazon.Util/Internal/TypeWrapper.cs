@@ -20,12 +20,14 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Reflection;
 using System.Text;
 
 namespace Amazon.Util.Internal
 {
+    [Obsolete("The TypeFactory abstraction should not be used. This was needed when the SDK targeted .NET Standard 1.3 which was removed as part of version 3.7. Type information should be accessed directly from the System.Type class.")]
     public interface ITypeInfo
     {
         Type BaseType { get; }
@@ -68,11 +70,7 @@ namespace Amazon.Util.Internal
 
         object EnumToObject(object value);
 
-        ITypeInfo EnumGetUnderlyingType();
-
         object CreateInstance();
-
-        ITypeInfo GetElementType();
 
         bool IsType(Type type);
 
@@ -90,22 +88,38 @@ namespace Amazon.Util.Internal
 
     }
 
+    [Obsolete("The TypeFactory abstraction should not be used. This was needed when the SDK targeted .NET Standard 1.3 which was removed as part of version 3.7. Type information should be accessed directly from the System.Type class.")]
     public static partial class TypeFactory
     {
         public static readonly ITypeInfo[] EmptyTypes = new ITypeInfo[] { };
+
+#if NET8_0_OR_GREATER
+        
+        public static ITypeInfo GetTypeInfo([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)]  Type type)
+#else
         public static ITypeInfo GetTypeInfo(Type type)
+#endif
+
         {
             if (type == null)
                 return null;
+
 
             return new TypeInfoWrapper(type);
         }
 
         abstract class AbstractTypeInfo : ITypeInfo
         {
+#if NET8_0_OR_GREATER
+            [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)]
+#endif
             protected Type _type;
 
+#if NET8_0_OR_GREATER
+            internal AbstractTypeInfo([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] Type type)
+#else
             internal AbstractTypeInfo(Type type)
+#endif
             {
                 this._type = type;
             }
@@ -174,11 +188,6 @@ namespace Amazon.Util.Internal
                 return Enum.ToObject(this._type, value);
             }
 
-            public ITypeInfo EnumGetUnderlyingType()
-            {
-                return TypeFactory.GetTypeInfo(Enum.GetUnderlyingType(this._type));
-            }
-
             public object CreateInstance()
             {
                 return Activator.CreateInstance(this._type);
@@ -187,11 +196,6 @@ namespace Amazon.Util.Internal
             public Array ArrayCreateInstance(int length)
             {
                 return Array.CreateInstance(this._type, length);
-            }
-
-            public ITypeInfo GetElementType()
-            {
-                return TypeFactory.GetTypeInfo(this._type.GetElementType());
             }
 
             public string FullName 

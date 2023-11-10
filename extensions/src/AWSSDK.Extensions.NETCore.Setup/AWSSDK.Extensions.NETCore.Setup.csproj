@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;netcoreapp3.1</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;netcoreapp3.1;net8.0</TargetFrameworks>
     <AssemblyName>AWSSDK.Extensions.NETCore.Setup</AssemblyName>
     <PackageId>AWSSDK.Extensions.NETCore.Setup</PackageId>
     <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
@@ -13,6 +13,11 @@
     <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
     <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
   </PropertyGroup>
+	
+  <PropertyGroup Condition="'$(TargetFramework)' == 'net8.0'">
+    <WarningsAsErrors>IL2026,IL2075</WarningsAsErrors>
+    <IsTrimmable>true</IsTrimmable>
+  </PropertyGroup>  
 
   <Choose>
     <When Condition=" '$(AWSKeyFile)' == '' ">

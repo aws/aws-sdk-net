@@ -27,6 +27,9 @@ namespace Amazon.Runtime.Internal.Util
     /// <summary>
     /// Logger wrapper for reflected log4net logging methods.
     /// </summary>
+#if NET8_0_OR_GREATER
+    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("SDK logging to Log4net is not supported when trimming is enabled.")]
+#endif
     internal class InternalLog4netLogger : InternalLogger
     {
         enum LoadState { Uninitialized, Failed, Loading, Success };
@@ -37,15 +40,12 @@ namespace Amazon.Runtime.Internal.Util
         static readonly object LOCK = new object();
 
         static Type logMangerType;
-        static ITypeInfo logMangerTypeInfo;
         static MethodInfo getLoggerWithTypeMethod;
 
         static Type logType;
-        static ITypeInfo logTypeInfo;
         static MethodInfo logMethod;
 
         static Type levelType;
-        static ITypeInfo levelTypeInfo;
         static object debugLevelPropertyValue;
         static object infoLevelPropertyValue;
         static object errorLevelPropertyValue;
@@ -80,30 +80,27 @@ namespace Amazon.Runtime.Internal.Util
 
                     // The LogManager and its methods
                     logMangerType = Type.GetType("log4net.Core.LoggerManager, log4net");
-                    logMangerTypeInfo = TypeFactory.GetTypeInfo(logMangerType);
                     if (logMangerType == null)
                     {
                         loadState = LoadState.Failed;
                         return;
                     }
 
-                    getLoggerWithTypeMethod = logMangerTypeInfo.GetMethod("GetLogger", new ITypeInfo[] { TypeFactory.GetTypeInfo(typeof(Assembly)), TypeFactory.GetTypeInfo(typeof(Type)) });
+                    getLoggerWithTypeMethod = logMangerType.GetMethod("GetLogger", new Type[] { typeof(Assembly), typeof(Type) });
 
-                    // The ILog and its methdods
+                    // The ILog and its methods
                     logType = Type.GetType("log4net.Core.ILogger, log4net");
-                    logTypeInfo = TypeFactory.GetTypeInfo(logType);
 
                     levelType = Type.GetType("log4net.Core.Level, log4net");
-                    levelTypeInfo = TypeFactory.GetTypeInfo(levelType);
 
-                    debugLevelPropertyValue = levelTypeInfo.GetField("Debug").GetValue(null);
-                    infoLevelPropertyValue = levelTypeInfo.GetField("Info").GetValue(null);
-                    errorLevelPropertyValue = levelTypeInfo.GetField("Error").GetValue(null);
+                    debugLevelPropertyValue = levelType.GetField("Debug").GetValue(null);
+                    infoLevelPropertyValue = levelType.GetField("Info").GetValue(null);
+                    errorLevelPropertyValue = levelType.GetField("Error").GetValue(null);
 
                     systemStringFormatType = Type.GetType("log4net.Util.SystemStringFormat, log4net");
 
-                    logMethod = logTypeInfo.GetMethod("Log", new ITypeInfo[] { TypeFactory.GetTypeInfo(typeof(Type)), levelTypeInfo, TypeFactory.GetTypeInfo(typeof(object)), TypeFactory.GetTypeInfo(typeof(Exception)) });
-                    isEnabledForMethod = logTypeInfo.GetMethod("IsEnabledFor", new ITypeInfo[] { levelTypeInfo });
+                    logMethod = logType.GetMethod("Log", new Type[] { typeof(Type), levelType, typeof(object), typeof(Exception) });
+                    isEnabledForMethod = logType.GetMethod("IsEnabledFor", new Type[] { levelType });
 
                     if (getLoggerWithTypeMethod == null ||
                         isEnabledForMethod == null ||
@@ -122,10 +119,10 @@ namespace Amazon.Runtime.Internal.Util
                     if (log4netSectionPresent &&
                         (AWSConfigs.LoggingConfig.LogTo & LoggingOptions.Log4Net) == LoggingOptions.Log4Net)
                     {
-                        ITypeInfo xmlConfiguratorType = TypeFactory.GetTypeInfo(Type.GetType("log4net.Config.XmlConfigurator, log4net"));
+                        Type xmlConfiguratorType = Type.GetType("log4net.Config.XmlConfigurator, log4net");
                         if (xmlConfiguratorType != null)
                         {
-                            MethodInfo configureMethod = xmlConfiguratorType.GetMethod("Configure", new ITypeInfo[0]);
+                            MethodInfo configureMethod = xmlConfiguratorType.GetMethod("Configure", new Type[0]);
                             if (configureMethod != null)
                             {
                                 configureMethod.Invoke(null, null);
@@ -154,7 +151,7 @@ namespace Amazon.Runtime.Internal.Util
             if (logMangerType == null)
                 return;
 
-            this.internalLogger = getLoggerWithTypeMethod.Invoke(null, new object[] { TypeFactory.GetTypeInfo(declaringType).Assembly, declaringType }); //Assembly.GetCallingAssembly()
+            this.internalLogger = getLoggerWithTypeMethod.Invoke(null, new object[] { declaringType.Assembly, declaringType }); //Assembly.GetCallingAssembly()
         }
 
         #region Overrides

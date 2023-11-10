@@ -18,7 +18,7 @@ namespace ServiceClientGenerator.Generators.Endpoints
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointParameters.tt"
+    #line 1 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointParameters.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "17.0.0.0")]
     public partial class EndpointParameters : BaseGenerator
     {
@@ -29,7 +29,7 @@ namespace ServiceClientGenerator.Generators.Endpoints
         public override string TransformText()
         {
             
-            #line 6 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointParameters.tt"
+            #line 6 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointParameters.tt"
 
     AddLicenseHeader();
 
@@ -38,7 +38,7 @@ namespace ServiceClientGenerator.Generators.Endpoints
             #line hidden
             this.Write("\r\nusing Amazon.Runtime;\r\nusing Amazon.Runtime.Endpoints;\r\n\r\nnamespace ");
             
-            #line 13 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointParameters.tt"
+            #line 13 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointParameters.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
@@ -46,7 +46,7 @@ namespace ServiceClientGenerator.Generators.Endpoints
             this.Write(".Endpoints\r\n{\r\n    /// <summary>\r\n    /// Contains parameters used for resolving " +
                     "");
             
-            #line 16 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointParameters.tt"
+            #line 16 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointParameters.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
@@ -54,14 +54,14 @@ namespace ServiceClientGenerator.Generators.Endpoints
             this.Write(" endpoints\r\n    /// Parameters can be sourced from client config and service oper" +
                     "ations\r\n    /// Used by internal ");
             
-            #line 18 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointParameters.tt"
+            #line 18 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointParameters.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
             this.Write("EndpointProvider and ");
             
-            #line 18 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointParameters.tt"
+            #line 18 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointParameters.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Config.ClassName));
             
             #line default
@@ -69,7 +69,7 @@ namespace ServiceClientGenerator.Generators.Endpoints
             this.Write("EndpointResolver\r\n    /// Can be used by custom EndpointProvider, see ClientConfi" +
                     "g.EndpointProvider\r\n    /// </summary>\r\n    public class ");
             
-            #line 21 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointParameters.tt"
+            #line 21 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointParameters.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
@@ -77,21 +77,21 @@ namespace ServiceClientGenerator.Generators.Endpoints
             this.Write("EndpointParameters : EndpointParameters\r\n    {\r\n        /// <summary>\r\n        //" +
                     "/ ");
             
-            #line 24 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointParameters.tt"
+            #line 24 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointParameters.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
             this.Write("EndpointParameters constructor\r\n        /// </summary>\r\n        public ");
             
-            #line 26 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointParameters.tt"
+            #line 26 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointParameters.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
             this.Write("EndpointParameters()\r\n        {\r\n");
             
-            #line 28 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointParameters.tt"
+            #line 28 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointParameters.tt"
  foreach(var param in this.Config.EndpointsRuleSet.parameters) {
        if (param.Value.DefaultValue != null) {
 
@@ -100,21 +100,21 @@ namespace ServiceClientGenerator.Generators.Endpoints
             #line hidden
             this.Write("            ");
             
-            #line 31 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointParameters.tt"
+            #line 31 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointParameters.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(param.Key));
             
             #line default
             #line hidden
             this.Write(" = ");
             
-            #line 31 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointParameters.tt"
+            #line 31 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointParameters.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(param.Value.DefaultValue));
             
             #line default
             #line hidden
             this.Write(";\r\n");
             
-            #line 32 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointParameters.tt"
+            #line 32 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointParameters.tt"
      }
    } 
             
@@ -122,7 +122,7 @@ namespace ServiceClientGenerator.Generators.Endpoints
             #line hidden
             this.Write("        }\r\n");
             
-            #line 35 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointParameters.tt"
+            #line 35 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointParameters.tt"
  foreach(var param in this.Config.EndpointsRuleSet.parameters) {
         var paramType = param.Value.type.ToNativeType(true);
         var paramName = param.Key;
@@ -132,14 +132,14 @@ namespace ServiceClientGenerator.Generators.Endpoints
             #line hidden
             this.Write("\r\n        /// <summary>\r\n        /// ");
             
-            #line 41 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointParameters.tt"
+            #line 41 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointParameters.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(param.Key));
             
             #line default
             #line hidden
             this.Write(" parameter\r\n        /// </summary>\r\n");
             
-            #line 43 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointParameters.tt"
+            #line 43 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointParameters.tt"
  if (param.Value.deprecated != null) { 
         var message = $@"{param.Value.deprecated.message}";
         if (param.Value.deprecated.since != null)
@@ -152,56 +152,56 @@ namespace ServiceClientGenerator.Generators.Endpoints
             #line hidden
             this.Write("        [Obsolete(\"");
             
-            #line 50 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointParameters.tt"
+            #line 50 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointParameters.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(message));
             
             #line default
             #line hidden
             this.Write("\")]\r\n");
             
-            #line 51 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointParameters.tt"
+            #line 51 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointParameters.tt"
  } 
             
             #line default
             #line hidden
             this.Write("        public ");
             
-            #line 52 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointParameters.tt"
+            #line 52 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointParameters.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(paramType));
             
             #line default
             #line hidden
             this.Write(" ");
             
-            #line 52 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointParameters.tt"
+            #line 52 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointParameters.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(paramName));
             
             #line default
             #line hidden
             this.Write(" \r\n        { \r\n            get { return (");
             
-            #line 54 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointParameters.tt"
+            #line 54 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointParameters.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(paramType));
             
             #line default
             #line hidden
             this.Write(")this[\"");
             
-            #line 54 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointParameters.tt"
+            #line 54 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointParameters.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(paramName));
             
             #line default
             #line hidden
             this.Write("\"]; }\r\n            set { this[\"");
             
-            #line 55 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointParameters.tt"
+            #line 55 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointParameters.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(paramName));
             
             #line default
             #line hidden
             this.Write("\"] = value; } \r\n        }\r\n");
             
-            #line 57 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointParameters.tt"
+            #line 57 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointParameters.tt"
  } 
             
             #line default

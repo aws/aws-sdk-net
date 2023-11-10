@@ -9,6 +9,9 @@ using Amazon.Runtime.SharedInterfaces;
 
 namespace Amazon.DynamoDBv2.DataModel
 {
+#if NET8_0_OR_GREATER
+    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+#endif
     internal class S3ClientCache
     {
         private AmazonDynamoDBClient ddbClient;

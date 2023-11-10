@@ -24,6 +24,7 @@ using System.Threading.Tasks;
 #endif
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Util.Internal;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Linq;
@@ -174,7 +175,7 @@ namespace Amazon.Runtime
                         ProcessCredentialVersion1 processCredentialDataV1 = null;            
                         try
                         {
-                            processCredentialDataV1 = JsonMapper.ToObject<ProcessCredentialVersion1>(processInfo.StandardOutput);
+                            processCredentialDataV1 = JsonSerializerHelper.Deserialize<ProcessCredentialVersion1>(processInfo.StandardOutput, ProcessCredentialVersion1JsonSerializerContexts.Default);
                         }
                         catch (Exception e)
                         {

@@ -24,6 +24,7 @@ using Amazon.Runtime.Internal.Util;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Util;
 using System.Collections;
+using Amazon.Util.Internal;
 
 namespace Amazon.Runtime.Internal
 {
@@ -60,7 +61,7 @@ namespace Amazon.Runtime.Internal
                 return spv.Value;
             else if (slpv != null)
             {
-                var json = ThirdParty.Json.LitJson.JsonMapper.ToJson(slpv.Value);
+                var json = JsonSerializerHelper.Serialize<List<string>>(slpv.Value, ListStringJsonSerializerContexts.Default);
                 return json;
             }
             else
@@ -81,7 +82,7 @@ namespace Amazon.Runtime.Internal
             }
             else if (slpv != null)
             {
-                var stringList = ThirdParty.Json.LitJson.JsonMapper.ToObject<List<string>>(newValue);
+                var stringList = JsonSerializerHelper.Deserialize<List<string>>(newValue, ListStringJsonSerializerContexts.Default);
                 slpv.Value = stringList;
             }
             else

@@ -29,6 +29,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
     /// <summary>
     /// Abstract class representing an arbitrary DynamoDB attribute value
     /// </summary>
+#if NET8_0_OR_GREATER
+    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+#endif
     public abstract class DynamoDBEntry : ICloneable
     {
         internal class AttributeConversionConfig

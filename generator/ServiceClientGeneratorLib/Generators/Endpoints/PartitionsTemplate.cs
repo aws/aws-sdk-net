@@ -16,7 +16,7 @@ namespace ServiceClientGenerator.Generators.Endpoints
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\CodeBase\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Endpoints\PartitionsTemplate.tt"
+    #line 1 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\PartitionsTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "17.0.0.0")]
     public partial class PartitionsTemplate : PartitionsTemplateBase
     {
@@ -58,105 +58,105 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
         {
 ");
             
-            #line 33 "C:\CodeBase\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Endpoints\PartitionsTemplate.tt"
+            #line 33 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\PartitionsTemplate.tt"
  foreach(var partition in Partitions.partitions) { 
             
             #line default
             #line hidden
             this.Write("            var ");
             
-            #line 34 "C:\CodeBase\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Endpoints\PartitionsTemplate.tt"
+            #line 34 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\PartitionsTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(partition.id.ToVariableName()));
             
             #line default
             #line hidden
             this.Write(" = new PartitionAttributesShape\r\n            {\r\n                name = \"");
             
-            #line 36 "C:\CodeBase\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Endpoints\PartitionsTemplate.tt"
+            #line 36 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\PartitionsTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(partition.outputs.name));
             
             #line default
             #line hidden
             this.Write("\",\r\n                dnsSuffix = \"");
             
-            #line 37 "C:\CodeBase\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Endpoints\PartitionsTemplate.tt"
+            #line 37 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\PartitionsTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(partition.outputs.dnsSuffix));
             
             #line default
             #line hidden
             this.Write("\",\r\n                dualStackDnsSuffix = \"");
             
-            #line 38 "C:\CodeBase\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Endpoints\PartitionsTemplate.tt"
+            #line 38 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\PartitionsTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(partition.outputs.dualStackDnsSuffix));
             
             #line default
             #line hidden
             this.Write("\",\r\n                supportsFIPS = ");
             
-            #line 39 "C:\CodeBase\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Endpoints\PartitionsTemplate.tt"
+            #line 39 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\PartitionsTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(partition.outputs.supportsFIPS.ToString().ToLower()));
             
             #line default
             #line hidden
             this.Write(",\r\n                supportsDualStack = ");
             
-            #line 40 "C:\CodeBase\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Endpoints\PartitionsTemplate.tt"
+            #line 40 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\PartitionsTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(partition.outputs.supportsDualStack.ToString().ToLower()));
             
             #line default
             #line hidden
             this.Write(",\r\n                implicitGlobalRegion = \"");
             
-            #line 41 "C:\CodeBase\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Endpoints\PartitionsTemplate.tt"
+            #line 41 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\PartitionsTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(partition.outputs.implicitGlobalRegion));
             
             #line default
             #line hidden
             this.Write("\"\r\n            };\r\n            _partitionsByRegex.Add(@\"");
             
-            #line 43 "C:\CodeBase\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Endpoints\PartitionsTemplate.tt"
+            #line 43 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\PartitionsTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(partition.regionRegex));
             
             #line default
             #line hidden
             this.Write("\", ");
             
-            #line 43 "C:\CodeBase\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Endpoints\PartitionsTemplate.tt"
+            #line 43 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\PartitionsTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(partition.id.ToVariableName()));
             
             #line default
             #line hidden
             this.Write(");\r\n");
             
-            #line 44 "C:\CodeBase\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Endpoints\PartitionsTemplate.tt"
+            #line 44 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\PartitionsTemplate.tt"
      foreach(var region in partition.regions.Keys) { 
             
             #line default
             #line hidden
             this.Write("            _partitionsByRegionName.Add(\"");
             
-            #line 45 "C:\CodeBase\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Endpoints\PartitionsTemplate.tt"
+            #line 45 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\PartitionsTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(region));
             
             #line default
             #line hidden
             this.Write("\", ");
             
-            #line 45 "C:\CodeBase\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Endpoints\PartitionsTemplate.tt"
+            #line 45 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\PartitionsTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(partition.id.ToVariableName()));
             
             #line default
             #line hidden
             this.Write(");\r\n");
             
-            #line 46 "C:\CodeBase\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Endpoints\PartitionsTemplate.tt"
+            #line 46 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\PartitionsTemplate.tt"
      } 
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 48 "C:\CodeBase\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Endpoints\PartitionsTemplate.tt"
+            #line 48 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\PartitionsTemplate.tt"
  } 
             
             #line default
@@ -165,7 +165,7 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 54 "C:\CodeBase\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Endpoints\PartitionsTemplate.tt"
+        #line 54 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\PartitionsTemplate.tt"
 
 public ServiceClientGenerator.Endpoints.Partitions.Partitions Partitions { get; set; }
 

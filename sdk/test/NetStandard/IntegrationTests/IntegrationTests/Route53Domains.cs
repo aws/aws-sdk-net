@@ -45,11 +45,11 @@ namespace Amazon.DNXCore.IntegrationTests
             var domains = (await Client.ListDomainsAsync()).Domains;
             if (domains.Count > 0)
             {
-                await TestTagging(Client, domains[0].DomainName);
+                await TestTaggingAsync(Client, domains[0].DomainName);
             }
         }
 
-        private async Task TestTagging(AmazonRoute53DomainsClient client, string domain)
+        private async Task TestTaggingAsync(AmazonRoute53DomainsClient client, string domain)
         {
             var existingTags = (await client.ListTagsForDomainAsync(domain)).TagList;
 

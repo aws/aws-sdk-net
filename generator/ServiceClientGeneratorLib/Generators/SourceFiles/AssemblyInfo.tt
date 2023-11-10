@@ -18,6 +18,8 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("<#=this.Config.AssemblyDescription(versionIdentifier: "NetStandard 2.0") #>")]
 #elif NETCOREAPP3_1
 [assembly: AssemblyDescription("<#=this.Config.AssemblyDescription(versionIdentifier: ".NET Core 3.1") #>")]
+#elif NET8_0
+[assembly: AssemblyDescription("<#=this.Config.AssemblyDescription(versionIdentifier: ".NET 8.0") #>")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif

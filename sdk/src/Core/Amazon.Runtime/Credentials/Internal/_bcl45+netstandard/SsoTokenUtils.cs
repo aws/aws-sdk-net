@@ -14,11 +14,16 @@
  */
 
 using System;
+using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Xml;
 using Amazon.Util;
+using Amazon.Util.Internal;
 using ThirdParty.Json.LitJson;
+
+#if NET8_0_OR_GREATER
+using System.Text.Json;
+#endif
 
 namespace Amazon.Runtime.Credentials.Internal
 {
@@ -115,26 +120,19 @@ namespace Amazon.Runtime.Credentials.Internal
         /// <param name="token">Token to serialize</param>
         public static string ToJson(SsoToken token)
         {
-            var json = new StringBuilder();
-            var writer = new JsonWriter(json)
+            var jsonData = new Dictionary<string, string>
             {
-                PrettyPrint = true,
+                [JsonPropertyNames.AccessToken] = token.AccessToken,
+                [JsonPropertyNames.ExpiresAt] = XmlConvert.ToString(token.ExpiresAt, XmlDateTimeSerializationMode.Utc),
+                [JsonPropertyNames.RefreshToken] = token.RefreshToken,
+                [JsonPropertyNames.ClientId] = token.ClientId,
+                [JsonPropertyNames.ClientSecret] = token.ClientSecret,
+                [JsonPropertyNames.RegistrationExpiresAt] = token.RegistrationExpiresAt,
+                [JsonPropertyNames.Region] = token.Region,
+                [JsonPropertyNames.StartUrl] = token.StartUrl
             };
 
-            var jsonData = new JsonData
-            {
-                [JsonPropertyNames.AccessToken] = new JsonData(token.AccessToken),
-                [JsonPropertyNames.ExpiresAt] = new JsonData(XmlConvert.ToString(token.ExpiresAt, XmlDateTimeSerializationMode.Utc)),
-                [JsonPropertyNames.RefreshToken] = new JsonData(token.RefreshToken),
-                [JsonPropertyNames.ClientId] = new JsonData(token.ClientId),
-                [JsonPropertyNames.ClientSecret] = new JsonData(token.ClientSecret),
-                [JsonPropertyNames.RegistrationExpiresAt] = new JsonData(token.RegistrationExpiresAt),
-                [JsonPropertyNames.Region] = new JsonData(token.Region),
-                [JsonPropertyNames.StartUrl] = new JsonData(token.StartUrl)
-            };
-
-            JsonMapper.ToJson(jsonData, writer);
-            return json.ToString();
+            return JsonSerializerHelper.Serialize<Dictionary<string, string>>(jsonData, new DictionaryStringStringJsonSerializerContexts(new JsonSerializerOptions { WriteIndented = true }));
         }
 
         /// <summary>

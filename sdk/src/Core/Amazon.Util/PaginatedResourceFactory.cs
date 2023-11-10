@@ -27,6 +27,7 @@ using System.Globalization;
 
 using Amazon.Util.Internal;
 
+#if BCL
 namespace Amazon.Util
 {
     public static class PaginatedResourceFactory
@@ -41,8 +42,8 @@ namespace Amazon.Util
         private static PaginatedResource<ItemType> Create<ItemType, TRequestType, TResponseType>
             (object client, string methodName, object request, string tokenRequestPropertyPath, string tokenResponsePropertyPath, string itemListPropertyPath)
         {
-            ITypeInfo clientType = TypeFactory.GetTypeInfo(client.GetType());
-            MethodInfo fetcherMethod = clientType.GetMethod(methodName, new ITypeInfo[] { TypeFactory.GetTypeInfo(typeof(TRequestType)) });
+            Type clientType = client.GetType();
+            MethodInfo fetcherMethod = clientType.GetMethod(methodName, new Type[] { typeof(TRequestType) });
 
             Type funcType = GetFuncType<TRequestType, TResponseType>();
             Func<TRequestType, TResponseType> call = (req) =>
@@ -84,11 +85,11 @@ namespace Amazon.Util
             for (; i < propPath.Length - 1; i++)
             {
                 string property = propPath[i];
-                currentProperty = TypeFactory.GetTypeInfo(currentType).GetProperty(property);
+                currentProperty = currentType.GetProperty(property);
                 currentValue = currentProperty.GetValue(currentValue, null);
                 currentType = currentProperty.PropertyType;
             }
-            currentProperty = TypeFactory.GetTypeInfo(currentType).GetProperty(propPath[i]);
+            currentProperty = currentType.GetProperty(propPath[i]);
             currentProperty.SetValue(currentValue, value, null);
         }
         private static T GetPropertyValueFromPath<T>(object instance, string path)
@@ -100,7 +101,7 @@ namespace Amazon.Util
 
             foreach (string property in propPath)
             {
-                currentProperty = TypeFactory.GetTypeInfo(currentType).GetProperty(property);
+                currentProperty = currentType.GetProperty(property);
                 currentValue = currentProperty.GetValue(currentValue, null);
                 currentType = currentProperty.PropertyType;
             }
@@ -113,7 +114,7 @@ namespace Amazon.Util
             PropertyInfo currentProperty = null;
             foreach (string property in propPath)
             {
-                currentProperty = TypeFactory.GetTypeInfo(currentType).GetProperty(property);
+                currentProperty = currentType.GetProperty(property);
                 currentType = currentProperty.PropertyType;
             }
             return currentType;
@@ -172,7 +173,7 @@ namespace Amazon.Util
                     ret = "{0}";
                     if (Client != null && !String.IsNullOrEmpty(MethodName))
                     {
-                        MethodInfo mi = TypeFactory.GetTypeInfo(Client.GetType()).GetMethod(MethodName);
+                        MethodInfo mi = Client.GetType().GetMethod(MethodName);
                         if (mi != null)
                         {
                             Type responseType = mi.ReturnType;
@@ -181,7 +182,7 @@ namespace Amazon.Util
                             {
                                 baseName = baseName.Substring(0, baseName.Length - 8);
                             }
-                            if (TypeFactory.GetTypeInfo(responseType).GetProperty(string.Format(CultureInfo.InvariantCulture, "{0}Result", baseName)) != null)
+                            if (responseType.GetProperty(string.Format(CultureInfo.InvariantCulture, "{0}Result", baseName)) != null)
                             {
                                 ret = string.Format(CultureInfo.InvariantCulture, ret, string.Format(CultureInfo.InvariantCulture, "{0}Result.{1}", baseName, "{0}"));
                             }
@@ -245,7 +246,7 @@ namespace Amazon.Util
 
             //MethodName exists on Client and takes one argument of the declared request type
             Type clientType = Client.GetType();
-            MethodInfo mi = TypeFactory.GetTypeInfo(clientType).GetMethod(MethodName, new ITypeInfo[] { TypeFactory.GetTypeInfo(Request.GetType()) });
+            MethodInfo mi = clientType.GetMethod(MethodName, new Type[] { Request.GetType() });
             if (mi == null)
             {
                 throw new ArgumentException(string.Format(CultureInfo.InvariantCulture, "{0} has no method called {1}", clientType.Name, MethodName));
@@ -294,3 +295,4 @@ namespace Amazon.Util
         }
     }
 }
+#endif

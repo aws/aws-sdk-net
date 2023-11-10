@@ -38,6 +38,9 @@ using ThirdParty.Json.LitJson;
 
 namespace Amazon.Glacier.Transfer.Internal
 {
+#if NET8_0_OR_GREATER
+    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("ArchiveTransferManager has not been updated to support Native AOT compilations.")]
+#endif
     internal partial class DownloadFileCommand : IDisposable
     {
         internal const int MAX_OPERATION_RETRY = 5;

@@ -34,6 +34,12 @@
     <DefineConstants Condition="'$(TargetFramework)' == 'netcoreapp3.1'">$(DefineConstants);AWS_ASYNC_ENUMERABLES_API</DefineConstants>
 <#
     }
+    if (this.Project.TargetFrameworks.Contains("net8.0"))
+    {
+#>
+    <DefineConstants Condition="'$(TargetFramework)' == 'net8.0'">$(DefineConstants);AWS_ASYNC_ENUMERABLES_API</DefineConstants>
+<#
+    }
 #>
     <DebugType>portable</DebugType>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
@@ -90,6 +96,16 @@
   <!-- Async Enumerable Compatibility -->
   <PropertyGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
     <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+<#
+    }
+
+    if (this.Project.TargetFrameworks.Contains("net8.0"))
+    {
+#>
+  <PropertyGroup Condition="'$(TargetFramework)' == 'net8.0'">
+    <WarningsAsErrors>IL2026,IL2075</WarningsAsErrors>
+    <IsTrimmable>true</IsTrimmable>
   </PropertyGroup>
 <#
     }

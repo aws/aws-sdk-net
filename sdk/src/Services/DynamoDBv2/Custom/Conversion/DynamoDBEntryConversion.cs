@@ -71,6 +71,9 @@ namespace Amazon.DynamoDBv2
     /// A collection of converters capable of converting between
     /// .NET and DynamoDB objects.
     /// </summary>
+#if NET8_0_OR_GREATER
+    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+#endif
     public class DynamoDBEntryConversion
     {
         #region Static members
@@ -383,16 +386,10 @@ namespace Amazon.DynamoDBv2
 
         private void AddConverters(string suffix)
         {
-            var typedConverterTypeInfo = TypeFactory.GetTypeInfo(typeof(Converter));
-            var assembly = TypeFactory.GetTypeInfo(typeof(DynamoDBEntryConversion)).Assembly;
-#if NETSTANDARD
-            var allTypeInfos = assembly.DefinedTypes;
-            var allTypes = new List<Type>();
-            foreach (var typeInfo in allTypeInfos)
-                allTypes.Add(typeInfo.AsType());
-#else
+            var typedConverterType = typeof(Converter);
+            var assembly = typeof(DynamoDBEntryConversion).Assembly;
+
             var allTypes = assembly.GetTypes();
-#endif
 
             foreach (var type in allTypes)
             {
@@ -401,14 +398,13 @@ namespace Amazon.DynamoDBv2
                 //if (type.Namespace != typedConverterType.Namespace)
                 //    continue;
 
-                var typeInfo = TypeFactory.GetTypeInfo(type);
-                if (typeInfo.IsAbstract)
+                if (type.IsAbstract)
                     continue;
 
                 if (!type.Name.EndsWith(suffix, StringComparison.Ordinal))
                     continue;
 
-                if (!typedConverterTypeInfo.IsAssignableFrom(typeInfo))
+                if (!typedConverterType.IsAssignableFrom(type))
                     continue;
 
                 AddConverter(type);
@@ -418,7 +414,12 @@ namespace Amazon.DynamoDBv2
         {
             ConverterCache.AddConverter(converter, this);
         }
+
+#if NET8_0_OR_GREATER
+        internal void AddConverter([System.Diagnostics.CodeAnalysis.DynamicallyAccessedMembers(System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicParameterlessConstructor)] Type type)
+#else
         internal void AddConverter(Type type)
+#endif
         {
             var converter = Activator.CreateInstance(type) as Converter;
             AddConverter(converter);
@@ -459,7 +460,7 @@ namespace Amazon.DynamoDBv2
             }
         }
 
-        #endregion
+#endregion
     }
 
     internal abstract class Converter
@@ -650,8 +651,7 @@ namespace Amazon.DynamoDBv2
             var type = typeof(T);
             yield return type;
 
-            var typeInfo = TypeFactory.GetTypeInfo(type);
-            if (typeInfo.IsValueType)
+            if (type.IsValueType)
             {
                 //yield return typeof(Nullable<T>);
                 var nullableType = typeof(Nullable<>).MakeGenericType(type);
@@ -811,9 +811,8 @@ namespace Amazon.DynamoDBv2
                 throw new ArgumentNullException("type");
 
             // all enums use the same converter, one for Enum
-            var ti = TypeFactory.GetTypeInfo(type);
-            if (ti.IsEnum)
-                type = EnumType;
+            if (type.IsEnum)
+                return Cache.TryGetValue(EnumType, out converter);
 
             return Cache.TryGetValue(type, out converter);
         }

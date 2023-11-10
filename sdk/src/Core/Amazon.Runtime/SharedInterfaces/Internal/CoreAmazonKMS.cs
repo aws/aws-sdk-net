@@ -14,6 +14,8 @@
  */
 
  using Amazon.Runtime.Internal;
+using Amazon.RuntimeDependencies;
+using Amazon.Util.Internal;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -85,9 +87,18 @@ namespace Amazon.Runtime.SharedInterfaces.Internal
             }
         }
 
+#if NET8_0_OR_GREATER
+        [System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessage("ReflectionAnalysis", "IL2026",
+            Justification = "Reflection code is only used as a fallback in case the SDK was not trimmed. Trimmed scenarios should register dependencies with Amazon.RuntimeDependencyRegistry.GlobalRuntimeDependencyRegistry")]
+#endif
         private static ICoreAmazonKMS CreateFromExistingClient(AmazonServiceClient existingClient, string feature)
         {
-            ICoreAmazonKMS coreKMSClient = null;
+            ICoreAmazonKMS coreKMSClient = GlobalRuntimeDependencyRegistry.Instance.GetInstance<ICoreAmazonKMS>(ServiceClientHelpers.KMS_ASSEMBLY_NAME, ServiceClientHelpers.KMS_SERVICE_CLASS_NAME, new CreateInstanceContext(new KeyManagementServiceClientContext { ParentServiceClient = existingClient }));
+            if(coreKMSClient != null)
+            {
+                return coreKMSClient;
+            }
+
             try
             {
                 coreKMSClient = ServiceClientHelpers.CreateServiceFromAssembly<ICoreAmazonKMS>(
@@ -96,6 +107,11 @@ namespace Amazon.Runtime.SharedInterfaces.Internal
             }
             catch (Exception e)
             {
+                if (InternalSDKUtils.IsRunningNativeAot())
+                {
+                    throw new MissingRuntimeDependencyException(ServiceClientHelpers.KMS_ASSEMBLY_NAME, ServiceClientHelpers.KMS_SERVICE_CLASS_NAME, nameof(GlobalRuntimeDependencyRegistry.RegisterKeyManagementServiceClient));
+                }
+
                 var msg = string.Format(CultureInfo.CurrentCulture,
                     "Error instantiating {0} from assembly {1}.  " +
                     "The assembly and class must be available at runtime in order to use {2}.",

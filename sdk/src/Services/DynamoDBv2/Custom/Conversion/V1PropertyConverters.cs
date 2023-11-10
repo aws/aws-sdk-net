@@ -38,6 +38,9 @@ namespace Amazon.DynamoDBv2
     /// to use a different conversion scheme for converting individual elements.
     /// The default value for this field is the standard V1 conversion.
     /// </summary>
+#if NET8_0_OR_GREATER
+    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+#endif
     public class SetPropertyConverter<TCollection, TElement> : IPropertyConverter
         where TCollection : ICollection<TElement>, new()
     {
@@ -147,6 +150,9 @@ namespace Amazon.DynamoDBv2
     /// Use this converter to bypass the default schema behavior for a particular
     /// property.
     /// </summary>
+#if NET8_0_OR_GREATER
+    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+#endif
     public class BoolAsNConverter : IPropertyConverter
     {
         private static BoolConverterV1 v1Converter = new BoolConverterV1();

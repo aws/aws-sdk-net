@@ -19,6 +19,8 @@ using Amazon.Runtime.CredentialManagement.Internal;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Runtime.SharedInterfaces;
 using Amazon.Util;
+using Amazon.RuntimeDependencies;
+using Amazon.Util.Internal;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -175,6 +177,10 @@ namespace Amazon.Runtime
             return newState;
         }
 
+#if NET8_0_OR_GREATER
+        [System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessage("ReflectionAnalysis", "IL2026",
+            Justification = "Reflection code is only used as a fallback in case the SDK was not trimmed. Trimmed scenarios should register dependencies with Amazon.RuntimeDependencyRegistry.GlobalRuntimeDependencyRegistry")]
+#endif
         private CredentialsRefreshState Authenticate(ICredentials userCredential)
         {
             CredentialsRefreshState state;
@@ -189,28 +195,37 @@ namespace Amazon.Runtime
                 region = DefaultSTSClientRegion;
             }
 
-            ICoreAmazonSTS coreSTSClient = null;
-            try
+            ICoreAmazonSTS coreSTSClient = GlobalRuntimeDependencyRegistry.Instance.GetInstance<ICoreAmazonSTS>(ServiceClientHelpers.STS_ASSEMBLY_NAME, ServiceClientHelpers.STS_SERVICE_CLASS_NAME,
+                new CreateInstanceContext(new SecurityTokenServiceClientContext { Action = SecurityTokenServiceClientContext.ActionContext.AssumeRoleAWSCredentials, Region = region, ProxySettings = Options?.ProxySettings }));
+            if(coreSTSClient == null)
             {
-                var stsConfig = ServiceClientHelpers.CreateServiceConfig(
-                    ServiceClientHelpers.STS_ASSEMBLY_NAME, ServiceClientHelpers.STS_SERVICE_CONFIG_NAME);
-
-                stsConfig.RegionEndpoint = region;
-                if (Options.ProxySettings != null)
+                try
                 {
-                    stsConfig.SetWebProxy(Options.ProxySettings);
-                }
+                    var stsConfig = ServiceClientHelpers.CreateServiceConfig(
+                        ServiceClientHelpers.STS_ASSEMBLY_NAME, ServiceClientHelpers.STS_SERVICE_CONFIG_NAME);
 
-                coreSTSClient = ServiceClientHelpers.CreateServiceFromAssembly<ICoreAmazonSTS>(
-                    ServiceClientHelpers.STS_ASSEMBLY_NAME, ServiceClientHelpers.STS_SERVICE_CLASS_NAME,
-                    new AnonymousAWSCredentials(), stsConfig);
-            }
-            catch (Exception e)
-            {
-                var msg = string.Format(CultureInfo.CurrentCulture,
-                    "Assembly {0} could not be found or loaded. This assembly must be available at runtime to use this profile class.",
-                    ServiceClientHelpers.STS_ASSEMBLY_NAME);
-                throw new InvalidOperationException(msg, e);
+                    stsConfig.RegionEndpoint = region;
+                    if (Options.ProxySettings != null)
+                    {
+                        stsConfig.SetWebProxy(Options.ProxySettings);
+                    }
+
+                    coreSTSClient = ServiceClientHelpers.CreateServiceFromAssembly<ICoreAmazonSTS>(
+                        ServiceClientHelpers.STS_ASSEMBLY_NAME, ServiceClientHelpers.STS_SERVICE_CLASS_NAME,
+                        new AnonymousAWSCredentials(), stsConfig);
+                }
+                catch (Exception e)
+                {
+                    if (InternalSDKUtils.IsRunningNativeAot())
+                    {
+                        throw new MissingRuntimeDependencyException(ServiceClientHelpers.STS_ASSEMBLY_NAME, ServiceClientHelpers.STS_SERVICE_CLASS_NAME, nameof(GlobalRuntimeDependencyRegistry.RegisterSecurityTokenServiceClient));
+                    }
+
+                    var msg = string.Format(CultureInfo.CurrentCulture,
+                        "Assembly {0} could not be found or loaded. This assembly must be available at runtime to use this profile class.",
+                        ServiceClientHelpers.STS_ASSEMBLY_NAME);
+                    throw new InvalidOperationException(msg, e);
+                }
             }
 
             var samlCoreSTSClient

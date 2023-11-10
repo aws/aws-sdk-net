@@ -18,6 +18,7 @@
     <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
     <SignAssembly>true</SignAssembly>
 
+    <NoWarn>CA1822</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(RuleSetFileForBuild)' == 'false' Or '$(RuleSetFileForBuild)' == '' ">
     <CodeAnalysisRuleSet>../../../AWSDotNetSDK.ruleset</CodeAnalysisRuleSet>

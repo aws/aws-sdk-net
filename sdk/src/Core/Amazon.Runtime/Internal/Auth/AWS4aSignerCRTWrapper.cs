@@ -14,7 +14,9 @@
  */
 using Amazon.Runtime.Internal.Util;
 using Amazon.Runtime.SharedInterfaces;
+using Amazon.RuntimeDependencies;
 using Amazon.Util.Internal;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
@@ -26,9 +28,9 @@ namespace Amazon.Runtime.Internal.Auth
     /// </summary>
     public class AWS4aSignerCRTWrapper : AbstractAWSSigner
     {
-        private const string CRT_WRAPPER_ASSEMBLY_NAME = "AWSSDK.Extensions.CrtIntegration";
-        private const string CRT_WRAPPER_NUGET_PACKGE_NAME = "AWSSDK.Extensions.CrtIntegration";
-        private const string CRT_WRAPPER_CLASS_NAME = "Amazon.Extensions.CrtIntegration.CrtAWS4aSigner";
+        internal const string CRT_WRAPPER_ASSEMBLY_NAME = "AWSSDK.Extensions.CrtIntegration";
+        internal const string CRT_WRAPPER_NUGET_PACKGE_NAME = "AWSSDK.Extensions.CrtIntegration";
+        internal const string CRT_WRAPPER_CLASS_NAME = "Amazon.Extensions.CrtIntegration.CrtAWS4aSigner";
 
         private static IAWSSigV4aProvider _awsSigV4AProvider;
         private static object _lock = new object();
@@ -44,26 +46,40 @@ namespace Amazon.Runtime.Internal.Auth
         /// Instantiates an SigV4a signer using CRT's SigV4a implementation
         /// </summary>
         /// <param name="signPayload">Whether to sign the request's payload</param>
+#if NET8_0_OR_GREATER
+        [System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessage("ReflectionAnalysis", "IL2026", 
+            Justification = "Reflection code is only used as a fallback in case the SDK was not trimmed. Trimmed scenarios should register dependencies with Amazon.RuntimeDependencyRegistry.GlobalRuntimeDependencyRegistry")]
+        [System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessage("ReflectionAnalysis", "IL2075",
+            Justification = "Reflection code is only used as a fallback in case the SDK was not trimmed. Trimmed scenarios should register dependencies with Amazon.RuntimeDependencyRegistry.GlobalRuntimeDependencyRegistry")]
+#endif
         public AWS4aSignerCRTWrapper(bool signPayload)
         {
             if (_awsSigV4AProvider == null)
             {
                 lock(_lock)
                 {
+                    _awsSigV4AProvider = GlobalRuntimeDependencyRegistry.Instance.GetInstance<IAWSSigV4aProvider>(CRT_WRAPPER_ASSEMBLY_NAME, CRT_WRAPPER_CLASS_NAME,
+                            new CreateInstanceContext(new SigV4aCrtSignerContext(signPayload)));
+
                     if (_awsSigV4AProvider == null)
                     {
                         try
                         {
-                            var crtWrapperTypeInfo = ServiceClientHelpers.LoadTypeFromAssembly(CRT_WRAPPER_ASSEMBLY_NAME, CRT_WRAPPER_CLASS_NAME);
-                            var constructor = crtWrapperTypeInfo.GetConstructor(new ITypeInfo[]
+                            var crtWrapperType = ServiceClientHelpers.LoadTypeFromAssembly(CRT_WRAPPER_ASSEMBLY_NAME, CRT_WRAPPER_CLASS_NAME);
+                            var constructor = crtWrapperType.GetConstructor(new Type[]
                             {
-                                TypeFactory.GetTypeInfo(typeof(bool))
+                                typeof(bool)
                             });
-
                             _awsSigV4AProvider = constructor.Invoke(new object[] { signPayload }) as IAWSSigV4aProvider;
+
                         }
-                        catch (FileNotFoundException)
+                        catch (Exception)
                         {
+                            if (InternalSDKUtils.IsRunningNativeAot())
+                            {
+                                throw new MissingRuntimeDependencyException(CRT_WRAPPER_NUGET_PACKGE_NAME, CRT_WRAPPER_CLASS_NAME, nameof(GlobalRuntimeDependencyRegistry.RegisterSigV4aProvider));
+                            }
+
                             throw new AWSCommonRuntimeException
                             (
                                 string.Format(CultureInfo.InvariantCulture, "Attempting to make a request that requires an implementation of AWS Signature V4a. " +

@@ -34,7 +34,8 @@ namespace Amazon.Runtime
     public abstract class AmazonServiceClient : IDisposable
     {
         private static volatile bool _isProtocolUpdated;
-        
+        private readonly object _lock = new object();
+
         private bool _disposed;
         private Logger _logger;
         protected EndpointDiscoveryResolverBase EndpointDiscoveryResolver { get; private set; }
@@ -60,14 +61,14 @@ namespace Amazon.Runtime
         {
             add
             {
-                lock (this)
+                lock (_lock)
                 {
                     mBeforeMarshallingEvent += value;
                 }
             }
             remove
             {
-                lock (this)
+                lock (_lock)
                 {
                     mBeforeMarshallingEvent -= value;
                 }
@@ -84,14 +85,14 @@ namespace Amazon.Runtime
         {
             add
             {
-                lock (this)
+                lock (_lock)
                 {
                     mBeforeRequestEvent += value;
                 }
             }
             remove
             {
-                lock (this)
+                lock (_lock)
                 {
                     mBeforeRequestEvent -= value;
                 }
@@ -107,14 +108,14 @@ namespace Amazon.Runtime
         {
             add
             {
-                lock (this)
+                lock (_lock)
                 {
                     mAfterResponseEvent += value;
                 }
             }
             remove
             {
-                lock (this)
+                lock (_lock)
                 {
                     mAfterResponseEvent -= value;
                 }
@@ -130,14 +131,14 @@ namespace Amazon.Runtime
         {
             add
             {
-                lock (this)
+                lock (_lock)
                 {
                     mExceptionEvent += value;
                 }
             }
             remove
             {
-                lock (this)
+                lock (_lock)
                 {
                     mExceptionEvent -= value;
                 }
@@ -635,9 +636,21 @@ namespace Amazon.Runtime
             }
             
             var hasSlash = url.AbsoluteUri.EndsWith("/", StringComparison.Ordinal) || parameterizedPath.StartsWith("/", StringComparison.Ordinal);
-            var uri = hasSlash
-                ? new Uri(url.AbsoluteUri + parameterizedPath)
-                : new Uri(url.AbsoluteUri + "/" + parameterizedPath);
+
+            var strUri = hasSlash
+                ? url.AbsoluteUri + parameterizedPath
+                : url.AbsoluteUri + "/" + parameterizedPath;
+
+#if NET8_0_OR_GREATER
+            // The UriCreationOptions and DangerousDisablePathAndQueryCanonicalization were added in .NET 6 and allows
+            // us to turn off the Uri behavior of canonicalizing Uri. For example if the resource path was "foo/../bar.txt"
+            // the URI class will change the canonicalize path to bar.txt. This behavior of changing the Uri after the 
+            // request has been signed will trigger a signature mismatch error. It is valid especially for S3 for the resource
+            // path to contain ".." segments.
+            var uri = new Uri(strUri, new UriCreationOptions { DangerousDisablePathAndQueryCanonicalization = true });
+#else
+            var uri = new Uri(strUri);
+#endif
             DontUnescapePathDotsAndSlashes(uri);
             return uri;
         }

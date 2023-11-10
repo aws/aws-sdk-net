@@ -20,6 +20,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -30,9 +31,16 @@ namespace Amazon.Util.Internal
     {
         class TypeInfoWrapper : AbstractTypeInfo
         {
+#if NET8_0_OR_GREATER
+            [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)]
+#endif
             TypeInfo _typeInfo;
 
+#if NET8_0_OR_GREATER
+            internal TypeInfoWrapper([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] Type type)
+#else
             internal TypeInfoWrapper(Type type)
+#endif
                 : base(type)
             {
                 this._typeInfo = type.GetTypeInfo();
@@ -79,7 +87,13 @@ namespace Amazon.Util.Internal
                 var isBackingField = mi.Name.IndexOf("k__BackingField", StringComparison.Ordinal) >= 0;
                 return isBackingField;
             }
+
+#if NET8_0_OR_GREATER
+            private static IEnumerable<MemberInfo> GetMembers_Helper([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] TypeInfo ti)
+#else
             private static IEnumerable<MemberInfo> GetMembers_Helper(TypeInfo ti)
+#endif
+
             {
                 // Keep track of properties already returned. This makes sure properties that are overridden in sub classes are not returned back multiple times.
                 var processedProperties = new HashSet<string>();

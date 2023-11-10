@@ -522,7 +522,7 @@ namespace Amazon
 
         private static T GetConfigEnum<T>(string name)
         {
-            var type = TypeFactory.GetTypeInfo(typeof(T));
+            var type = typeof(T);
             if (!type.IsEnum) throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture, "Type {0} must be enum", type.FullName));
 
             string value = GetConfig(name);

@@ -6,7 +6,7 @@ This project file should not be used as part of a release pipeline.
 -->
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <TargetFrameworks>netstandard2.0;netcoreapp3.1</TargetFrameworks>
+        <TargetFrameworks>netstandard2.0;netcoreapp3.1;net8.0</TargetFrameworks>
         <DefineConstants>$(DefineConstants);NETSTANDARD;AWS_ASYNC_API</DefineConstants>
         <DebugType>portable</DebugType>
         <PackageId>UnitTests</PackageId>
@@ -41,10 +41,13 @@ This project file should not be used as part of a release pipeline.
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.0.0" />
-        <PackageReference Include="xunit.runner.visualstudio" Version="2.2.0" />
-        <PackageReference Include="xunit" Version="2.2.0" />
-        <PackageReference Include="Moq" Version="4.8.3" />
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.7.2" />
+        <PackageReference Include="xunit.runner.visualstudio" Version="2.4.5">
+          <PrivateAssets>all</PrivateAssets>
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="xunit" Version="2.4.2" />
+        <PackageReference Include="Moq" Version="4.18.4" />
     </ItemGroup>
 
     <ItemGroup>

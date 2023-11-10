@@ -18,7 +18,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles.Exceptions
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\Exceptions\EventStreamExceptions.tt"
+    #line 1 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\Exceptions\EventStreamExceptions.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "17.0.0.0")]
     public partial class EventStreamExceptions : BaseGenerator
     {
@@ -30,7 +30,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles.Exceptions
         {
             this.Write("\r\nusing Amazon.Runtime.EventStreams.Internal;\r\nusing System;\r\n\r\nnamespace ");
             
-            #line 10 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\Exceptions\EventStreamExceptions.tt"
+            #line 10 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\Exceptions\EventStreamExceptions.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
@@ -46,7 +46,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles.Exceptions
 #endif
 	public class ");
             
-            #line 19 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\Exceptions\EventStreamExceptions.tt"
+            #line 19 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\Exceptions\EventStreamExceptions.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
@@ -54,21 +54,21 @@ namespace ServiceClientGenerator.Generators.SourceFiles.Exceptions
             this.Write("EventStreamException : EventStreamException\r\n\t{\r\n\t\t/// <summary>\r\n        /// Cre" +
                     "ates a new ");
             
-            #line 22 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\Exceptions\EventStreamExceptions.tt"
+            #line 22 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\Exceptions\EventStreamExceptions.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
             this.Write("EventStreamException\r\n        /// </summary>\r\n\t\tpublic ");
             
-            #line 24 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\Exceptions\EventStreamExceptions.tt"
+            #line 24 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\Exceptions\EventStreamExceptions.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
             this.Write("EventStreamException()\r\n\t\t{\r\n\t\t}\r\n\r\n\t\t/// <summary>\r\n        /// Creates a new ");
             
-            #line 29 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\Exceptions\EventStreamExceptions.tt"
+            #line 29 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\Exceptions\EventStreamExceptions.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
@@ -76,7 +76,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles.Exceptions
             this.Write("EventStreamException\r\n        /// </summary>\r\n        /// <param name=\"message\"><" +
                     "/param>\r\n\r\n\t\tpublic ");
             
-            #line 33 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\Exceptions\EventStreamExceptions.tt"
+            #line 33 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\Exceptions\EventStreamExceptions.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
@@ -84,7 +84,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles.Exceptions
             this.Write("EventStreamException(string message) : base (message)\r\n\t\t{\r\n\t\t}\r\n\r\n        /// <s" +
                     "ummary>\r\n        /// Creates a new ");
             
-            #line 38 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\Exceptions\EventStreamExceptions.tt"
+            #line 38 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\Exceptions\EventStreamExceptions.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
@@ -92,7 +92,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles.Exceptions
             this.Write("EventStreamException\r\n        /// </summary>\r\n        /// <param name=\"message\"><" +
                     "/param>\r\n        /// <param name=\"innerException\"></param>\r\n\t\tpublic ");
             
-            #line 42 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\Exceptions\EventStreamExceptions.tt"
+            #line 42 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\Exceptions\EventStreamExceptions.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
@@ -101,7 +101,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles.Exceptions
                     "nerException)\r\n\t\t{\r\n\t\t}\r\n#if !NETSTANDARD\r\n        /// <summary>\r\n        /// Co" +
                     "nstructs a new instance of the ");
             
-            #line 47 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\Exceptions\EventStreamExceptions.tt"
+            #line 47 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\Exceptions\EventStreamExceptions.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
@@ -114,7 +114,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles.Exceptions
         /// <exception cref=""T:System.Runtime.Serialization.SerializationException"">The class name is null or <see cref=""P:System.Exception.HResult"" /> is zero (0). </exception>
         protected ");
             
-            #line 53 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\Exceptions\EventStreamExceptions.tt"
+            #line 53 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\Exceptions\EventStreamExceptions.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default

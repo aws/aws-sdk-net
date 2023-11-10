@@ -28,6 +28,9 @@ using System.Globalization;
 
 namespace Amazon.DynamoDBv2.DataModel
 {
+#if NET8_0_OR_GREATER
+    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+#endif
     public partial class DynamoDBContext
     {
         #region Versioning
@@ -59,15 +62,14 @@ namespace Amazon.DynamoDBv2.DataModel
         }
         private static void IncrementVersion(Type memberType, ref Primitive version)
         {
-            var memberTypeWrapper = TypeFactory.GetTypeInfo(memberType);
-            if (memberTypeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(Byte)))) version = version.AsByte() + 1;
-            else if (memberTypeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(SByte)))) version = version.AsSByte() + 1;
-            else if (memberTypeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(int)))) version = version.AsInt() + 1;
-            else if (memberTypeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(uint)))) version = version.AsUInt() + 1;
-            else if (memberTypeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(long)))) version = version.AsLong() + 1;
-            else if (memberTypeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(ulong)))) version = version.AsULong() + 1;
-            else if (memberTypeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(short)))) version = version.AsShort() + 1;
-            else if (memberTypeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(ushort)))) version = version.AsUShort() + 1;
+            if (memberType.IsAssignableFrom(typeof(Byte))) version = version.AsByte() + 1;
+            else if (memberType.IsAssignableFrom(typeof(SByte))) version = version.AsSByte() + 1;
+            else if (memberType.IsAssignableFrom(typeof(int))) version = version.AsInt() + 1;
+            else if (memberType.IsAssignableFrom(typeof(uint))) version = version.AsUInt() + 1;
+            else if (memberType.IsAssignableFrom(typeof(long))) version = version.AsLong() + 1;
+            else if (memberType.IsAssignableFrom(typeof(ulong))) version = version.AsULong() + 1;
+            else if (memberType.IsAssignableFrom(typeof(short))) version = version.AsShort() + 1;
+            else if (memberType.IsAssignableFrom(typeof(ushort))) version = version.AsUShort() + 1;
         }
         private static Document CreateExpectedDocumentForVersion(ItemStorage storage)
         {
@@ -276,14 +278,14 @@ namespace Amazon.DynamoDBv2.DataModel
             if (attributes.Count != properties.Count)
                 throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture, 
                     "Number of {0} keys on table {1} does not match number of hash keys on type {2}",
-                    keyType, table.TableName, config.TargetTypeInfo.FullName));
+                    keyType, table.TableName, config.TargetType.FullName));
             foreach (string hashProperty in properties)
             {
                 PropertyStorage property = config.GetPropertyStorage(hashProperty);
                 if (!attributes.Contains(property.AttributeName))
                     throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture, 
                         "Key property {0} on type {1} does not correspond to a {2} key on table {3}",
-                        hashProperty, config.TargetTypeInfo.FullName, keyType, table.TableName));
+                        hashProperty, config.TargetType.FullName, keyType, table.TableName));
             }
         }
 
@@ -493,15 +495,13 @@ namespace Amazon.DynamoDBv2.DataModel
         }
         private bool TryFromList(Type targetType, DynamoDBList list, DynamoDBFlatConfig flatConfig, out object output)
         {
-            var targetTypeWrapper = TypeFactory.GetTypeInfo(targetType);
-            return targetTypeWrapper.IsArray ?
+            return targetType.IsArray ?
                  TryFromListToArray(targetType, list, flatConfig, out output) : //targetType is Array
                  TryFromListToIList(targetType, list, flatConfig, out output) ; //targetType is IList or has Add method.
         }
 
         private bool TryFromListToIList(Type targetType, DynamoDBList list, DynamoDBFlatConfig flatConfig, out object output)
         {
-            var targetTypeWrapper = TypeFactory.GetTypeInfo(targetType);
             if ((!Utils.ImplementsInterface(targetType, typeof(ICollection<>)) &&
                 !Utils.ImplementsInterface(targetType, typeof(IList))) ||
                 !Utils.CanInstantiate(targetType))
@@ -510,7 +510,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 return false;
             }
 
-            var elementType = targetTypeWrapper.GetGenericArguments()[0];
+            var elementType = targetType.GetGenericArguments()[0];
             var collection = Utils.Instantiate(targetType);
             IList ilist = collection as IList;
             bool useIListInterface = ilist != null;
@@ -519,7 +519,7 @@ namespace Amazon.DynamoDBv2.DataModel
             MethodInfo collectionAdd = null;
             if (!useIListInterface)
             {
-                collectionAdd = targetTypeWrapper.GetMethod("Add");
+                collectionAdd = targetType.GetMethod("Add");
             }
 
             foreach (DynamoDBEntry entry in list.Entries)
@@ -635,9 +635,8 @@ namespace Amazon.DynamoDBv2.DataModel
         {
             output = null;
 
-            ITypeInfo typeWrapper;
             Type keyType, valueType;
-            if (!IsSupportedDictionaryType(type, out typeWrapper, out keyType, out valueType))
+            if (!IsSupportedDictionaryType(type, out keyType, out valueType))
                 return false;
 
             var idictionary = value as IDictionary;
@@ -698,7 +697,6 @@ namespace Amazon.DynamoDBv2.DataModel
         }
         private bool TryToScalar(object value, Type type, DynamoDBFlatConfig flatConfig, ref DynamoDBEntry entry)
         {
-            var typeWrapper = TypeFactory.GetTypeInfo(type);
             var elementType = Utils.GetElementType(type);
             if (elementType != null)
             {
@@ -708,7 +706,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 if (enumerable == null || value is string)
                 {
                     // Only convert if value matches collection element type
-                    if (TypeFactory.GetTypeInfo(value.GetType()).IsAssignableFrom(TypeFactory.GetTypeInfo(elementType)))
+                    if (value.GetType().IsAssignableFrom(elementType))
                     {
                         DynamoDBEntryConversion conversion = flatConfig.Conversion;
                         if (conversion.HasConverter(elementType))
@@ -734,22 +732,19 @@ namespace Amazon.DynamoDBv2.DataModel
 
         private static bool IsSupportedDictionaryType(Type type, out Type valueType)
         {
-            ITypeInfo typeWrapper;
             Type keyType;
-            return IsSupportedDictionaryType(type, out typeWrapper, out keyType, out valueType);
+            return IsSupportedDictionaryType(type, out keyType, out valueType);
         }
-        private static bool IsSupportedDictionaryType(Type type, out ITypeInfo typeWrapper, out Type keyType, out Type valueType)
+        private static bool IsSupportedDictionaryType(Type type, out Type keyType, out Type valueType)
         {
             keyType = valueType = null;
-            typeWrapper = null;
 
             // Type must implement both IDictionary<TKey,TValue> and IDictionary
             if (!(Utils.ImplementsInterface(type, typeof(IDictionary<,>)) &&
                  Utils.ImplementsInterface(type, typeof(IDictionary))))
                 return false;
 
-            typeWrapper = TypeFactory.GetTypeInfo(type);
-            var genericArguments = typeWrapper.GetGenericArguments();
+            var genericArguments = type.GetGenericArguments();
             if (genericArguments.Length != 2)
                 return false;
             keyType = genericArguments[0];

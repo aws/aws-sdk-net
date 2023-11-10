@@ -439,7 +439,7 @@ namespace Amazon.S3.Encryption
                 }
 
                 metadata.Add(XAmzIV, base64EncodedIV);
-                metadata.Add(XAmzMatDesc, JsonMapper.ToJson(instructions.MaterialsDescription));
+                metadata.Add(XAmzMatDesc, Amazon.Util.Internal.JsonSerializerHelper.Serialize<Dictionary<string, string>>(instructions.MaterialsDescription, Amazon.Util.Internal.DictionaryStringStringJsonSerializerContexts.Default));
             }
         }
 

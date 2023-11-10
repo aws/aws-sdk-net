@@ -14,6 +14,7 @@
  */
 
 using Amazon.Util;
+using Amazon.Util.Internal;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -90,7 +91,7 @@ namespace Amazon.Runtime
                     // If this variable is set the SDK will set the Authorization header on the HTTP request with the environment variable's value.
                     var headers = CreateAuthorizationHeader();
 
-                    credentials = GetObjectFromResponse<SecurityCredentials>(ecsEndpointUri, Proxy, headers);
+                    credentials = GetObjectFromResponse<SecurityCredentials, SecurityCredentialsJsonSerializerContexts>(ecsEndpointUri, Proxy, headers);
                     if (credentials != null)
                     {
                         break;

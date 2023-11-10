@@ -26,6 +26,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
     /// <summary>
     /// A DynamoDBEntry that represents a DynamoDB list (L) type.
     /// </summary>
+#if NET8_0_OR_GREATER
+    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+#endif
     public class DynamoDBList : DynamoDBEntry
     {
         private static DynamoDBEntryConversion conversion = CreateConversion();

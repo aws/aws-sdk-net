@@ -15,6 +15,8 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Amazon Interactive Video Service RealTime. Initial release of the Amazon Interactive Video Service RealTime API.")]
 #elif NETCOREAPP3_1
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Core 3.1) - Amazon Interactive Video Service RealTime. Initial release of the Amazon Interactive Video Service RealTime API.")]
+#elif NET8_0
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET 8.0) - Amazon Interactive Video Service RealTime. Initial release of the Amazon Interactive Video Service RealTime API.")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif

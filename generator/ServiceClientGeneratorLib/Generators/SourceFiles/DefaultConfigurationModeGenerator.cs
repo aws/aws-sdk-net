@@ -16,7 +16,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfigurationModeGenerator.tt"
+    #line 1 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfigurationModeGenerator.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "17.0.0.0")]
     public partial class DefaultConfigurationModeGenerator : DefaultConfigurationModeGeneratorBase
     {
@@ -60,7 +60,7 @@ namespace Amazon.Runtime
     {
 ");
             
-            #line 35 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfigurationModeGenerator.tt"
+            #line 35 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfigurationModeGenerator.tt"
  foreach (var mode in DefaultConfigurationModel.Modes) 
 { 
     var trailingComma = DefaultConfigurationModel.Modes.Last() == mode ? "" : ",";
@@ -70,27 +70,27 @@ namespace Amazon.Runtime
             #line hidden
             this.Write("        /// <summary>\r\n        /// ");
             
-            #line 40 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfigurationModeGenerator.tt"
+            #line 40 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfigurationModeGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(mode.Documentation));
             
             #line default
             #line hidden
             this.Write("\r\n        /// </summary>\r\n        ");
             
-            #line 42 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfigurationModeGenerator.tt"
+            #line 42 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfigurationModeGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(mode.Name));
             
             #line default
             #line hidden
             
-            #line 42 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfigurationModeGenerator.tt"
+            #line 42 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfigurationModeGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(trailingComma));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 43 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfigurationModeGenerator.tt"
+            #line 43 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfigurationModeGenerator.tt"
  } 
             
             #line default
@@ -99,7 +99,7 @@ namespace Amazon.Runtime
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 47 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfigurationModeGenerator.tt"
+        #line 47 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfigurationModeGenerator.tt"
 
 public ServiceClientGenerator.DefaultConfiguration.DefaultConfigurationModel DefaultConfigurationModel { get; set; }
 
@@ -129,7 +129,7 @@ public ServiceClientGenerator.DefaultConfiguration.DefaultConfigurationModel Def
         /// <summary>
         /// The string builder that generation-time code is using to assemble generated output
         /// </summary>
-        protected System.Text.StringBuilder GenerationEnvironment
+        public System.Text.StringBuilder GenerationEnvironment
         {
             get
             {

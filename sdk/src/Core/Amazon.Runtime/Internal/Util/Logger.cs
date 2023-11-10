@@ -21,6 +21,7 @@ using System.Reflection;
 using System.Text;
 using System.ComponentModel;
 using Amazon.Runtime;
+using Amazon.Util.Internal;
 
 namespace Amazon.Runtime.Internal.Util
 {
@@ -38,12 +39,23 @@ namespace Amazon.Runtime.Internal.Util
         {
             loggers = new List<InternalLogger>();
         }
+
+#if NET8_0_OR_GREATER
+        [System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessage("ReflectionAnalysis", "IL2026",
+            Justification = "Constructor looks to see if running in a NativeAOT environment and if so skips the Log4net internal logger which is not Native AOT complaint.")]
+#endif
         private Logger(Type type)
         {
             loggers = new List<InternalLogger>();
 
-            InternalLog4netLogger log4netLogger = new InternalLog4netLogger(type);
-            loggers.Add(log4netLogger);
+            if(!InternalSDKUtils.IsRunningNativeAot())
+            {
+#pragma warning disable
+                InternalLog4netLogger log4netLogger = new InternalLog4netLogger(type);
+                loggers.Add(log4netLogger);
+#pragma warning restore
+            }
+
             loggers.Add(new InternalConsoleLogger(type));
             InternalSystemDiagnosticsLogger sdLogger = new InternalSystemDiagnosticsLogger(type);
             loggers.Add(sdLogger);

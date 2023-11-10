@@ -442,7 +442,11 @@ namespace Amazon.Internal
             //
             // If the endpoints.json file has been provided next to the assembly:
             //
+#if NET8_0_OR_GREATER
+            string assemblyLocation = System.AppContext.BaseDirectory;
+#else
             string assemblyLocation = typeof(RegionEndpointProviderV3).Assembly.Location;
+#endif
             if (!string.IsNullOrEmpty(assemblyLocation))
             {
                 string endpointsPath = Path.Combine(Path.GetDirectoryName(assemblyLocation), ENDPOINT_JSON);
@@ -455,7 +459,7 @@ namespace Amazon.Internal
             //
             // Default to endpoints.json file provided in the resource manifest:
             //
-            return Amazon.Util.Internal.TypeFactory.GetTypeInfo(typeof(RegionEndpointProviderV3)).Assembly.GetManifestResourceStream(ENDPOINT_JSON_RESOURCE);
+            return typeof(RegionEndpointProviderV3).Assembly.GetManifestResourceStream(ENDPOINT_JSON_RESOURCE);
         }
 
         private IEnumerable<IRegionEndpoint> _allRegionEndpoints;
