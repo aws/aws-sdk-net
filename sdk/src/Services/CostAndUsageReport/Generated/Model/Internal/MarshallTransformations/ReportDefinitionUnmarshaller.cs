@@ -106,6 +106,12 @@ namespace Amazon.CostAndUsageReport.Model.Internal.MarshallTransformations
                     unmarshalledObject.ReportName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ReportStatus", targetDepth))
+                {
+                    var unmarshaller = ReportStatusUnmarshaller.Instance;
+                    unmarshalledObject.ReportStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ReportVersioning", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

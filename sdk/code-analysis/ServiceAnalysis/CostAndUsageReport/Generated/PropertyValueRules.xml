@@ -21,7 +21,22 @@
     <pattern>[A-Za-z0-9_\.\-=]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CostAndUsageReport.Model.ListTagsForResourceRequest.ReportName</property>
+    <max>256</max>
+    <pattern>[0-9A-Za-z!\-_.*\'()]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CostAndUsageReport.Model.ModifyReportDefinitionRequest.ReportName</property>
+    <max>256</max>
+    <pattern>[0-9A-Za-z!\-_.*\'()]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostAndUsageReport.Model.TagResourceRequest.ReportName</property>
+    <max>256</max>
+    <pattern>[0-9A-Za-z!\-_.*\'()]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostAndUsageReport.Model.UntagResourceRequest.ReportName</property>
     <max>256</max>
     <pattern>[0-9A-Za-z!\-_.*\'()]+</pattern>
   </property-value-rule>
@@ -44,5 +59,23 @@
     <property>Amazon.CostAndUsageReport.Model.ReportDefinition.S3Prefix</property>
     <max>256</max>
     <pattern>[0-9A-Za-z!\-_.*\'()/]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostAndUsageReport.Model.ReportStatus.LastDelivery</property>
+    <min>16</min>
+    <max>20</max>
+    <pattern>[0-9]{8}[T][0-9]{6}([Z]|[+-][0-9]{4})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostAndUsageReport.Model.Tag.Key</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostAndUsageReport.Model.Tag.Value</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>.*</pattern>
   </property-value-rule>
 </property-value-rules>

@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostAndUsageReport.Model
 {
     /// <summary>
-    /// The definition of AWS Cost and Usage Report. You can specify the report name, time
-    /// unit, report format, compression format, S3 bucket, additional artifacts, and schema
-    /// elements in the definition.
+    /// The definition of Amazon Web Services Cost and Usage Report. You can specify the report
+    /// name, time unit, report format, compression format, S3 bucket, additional artifacts,
+    /// and schema elements in the definition.
     /// </summary>
     public partial class ReportDefinition
     {
@@ -42,6 +42,7 @@ namespace Amazon.CostAndUsageReport.Model
         private ReportFormat _format;
         private bool? _refreshClosedReports;
         private string _reportName;
+        private ReportStatus _reportStatus;
         private ReportVersioning _reportVersioning;
         private string _s3Bucket;
         private string _s3Prefix;
@@ -89,8 +90,11 @@ namespace Amazon.CostAndUsageReport.Model
         /// <summary>
         /// Gets and sets the property BillingViewArn. 
         /// <para>
-        ///  The Amazon resource name of the billing view. You can get this value by using the
-        /// billing view service public APIs. 
+        ///  The Amazon resource name of the billing view. The <code>BillingViewArn</code> is
+        /// needed to create Amazon Web Services Cost and Usage Report for each billing group
+        /// maintained in the Amazon Web Services Billing Conductor service. The <code>BillingViewArn</code>
+        /// for a billing group can be constructed as: <code>arn:aws:billing::payer-account-id:billingview/billing-group-primary-account-id</code>
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Max=128)]
@@ -172,6 +176,24 @@ namespace Amazon.CostAndUsageReport.Model
         internal bool IsSetReportName()
         {
             return this._reportName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReportStatus. 
+        /// <para>
+        /// The status of the report.
+        /// </para>
+        /// </summary>
+        public ReportStatus ReportStatus
+        {
+            get { return this._reportStatus; }
+            set { this._reportStatus = value; }
+        }
+
+        // Check to see if ReportStatus property is set
+        internal bool IsSetReportStatus()
+        {
+            return this._reportStatus != null;
         }
 
         /// <summary>

@@ -29,32 +29,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostAndUsageReport.Model
 {
     /// <summary>
-    /// Container for the parameters to the ModifyReportDefinition operation.
-    /// Allows you to programmatically update your report preferences.
+    /// Container for the parameters to the ListTagsForResource operation.
+    /// Lists the tags associated with the specified report definition.
     /// </summary>
-    public partial class ModifyReportDefinitionRequest : AmazonCostAndUsageReportRequest
+    public partial class ListTagsForResourceRequest : AmazonCostAndUsageReportRequest
     {
-        private ReportDefinition _reportDefinition;
         private string _reportName;
 
         /// <summary>
-        /// Gets and sets the property ReportDefinition.
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public ReportDefinition ReportDefinition
-        {
-            get { return this._reportDefinition; }
-            set { this._reportDefinition = value; }
-        }
-
-        // Check to see if ReportDefinition property is set
-        internal bool IsSetReportDefinition()
-        {
-            return this._reportDefinition != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ReportName.
+        /// Gets and sets the property ReportName. 
+        /// <para>
+        /// The report name of the report definition that tags are to be returned for.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=256)]
         public string ReportName

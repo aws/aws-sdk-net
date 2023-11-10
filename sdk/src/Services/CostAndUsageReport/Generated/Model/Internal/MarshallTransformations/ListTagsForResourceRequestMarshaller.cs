@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CostAndUsageReport.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// PutReportDefinition Request Marshaller
+    /// ListTagsForResource Request Marshaller
     /// </summary>       
-    public class PutReportDefinitionRequestMarshaller : IMarshaller<IRequest, PutReportDefinitionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ListTagsForResourceRequestMarshaller : IMarshaller<IRequest, ListTagsForResourceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.CostAndUsageReport.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((PutReportDefinitionRequest)input);
+            return this.Marshall((ListTagsForResourceRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.CostAndUsageReport.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(PutReportDefinitionRequest publicRequest)
+        public IRequest Marshall(ListTagsForResourceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CostAndUsageReport");
-            string target = "AWSOrigamiServiceGatewayService.PutReportDefinition";
+            string target = "AWSOrigamiServiceGatewayService.ListTagsForResource";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-01-06";
@@ -67,31 +67,10 @@ namespace Amazon.CostAndUsageReport.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetReportDefinition())
+                if(publicRequest.IsSetReportName())
                 {
-                    context.Writer.WritePropertyName("ReportDefinition");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ReportDefinitionMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ReportDefinition, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WritePropertyName("ReportName");
+                    context.Writer.Write(publicRequest.ReportName);
                 }
 
                 writer.WriteObjectEnd();
@@ -102,9 +81,9 @@ namespace Amazon.CostAndUsageReport.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static PutReportDefinitionRequestMarshaller _instance = new PutReportDefinitionRequestMarshaller();        
+        private static ListTagsForResourceRequestMarshaller _instance = new ListTagsForResourceRequestMarshaller();        
 
-        internal static PutReportDefinitionRequestMarshaller GetInstance()
+        internal static ListTagsForResourceRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -112,7 +91,7 @@ namespace Amazon.CostAndUsageReport.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PutReportDefinitionRequestMarshaller Instance
+        public static ListTagsForResourceRequestMarshaller Instance
         {
             get
             {

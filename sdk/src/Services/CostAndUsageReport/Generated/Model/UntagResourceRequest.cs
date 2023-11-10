@@ -29,18 +29,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostAndUsageReport.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteReportDefinition operation.
-    /// Deletes the specified report. Any tags associated with the report are also deleted.
+    /// Container for the parameters to the UntagResource operation.
+    /// Disassociates a set of tags from a report definition.
     /// </summary>
-    public partial class DeleteReportDefinitionRequest : AmazonCostAndUsageReportRequest
+    public partial class UntagResourceRequest : AmazonCostAndUsageReportRequest
     {
         private string _reportName;
+        private List<string> _tagKeys = new List<string>();
 
         /// <summary>
         /// Gets and sets the property ReportName. 
         /// <para>
-        /// The name of the report that you want to delete. The name must be unique, is case sensitive,
-        /// and can't include spaces.
+        /// The report name of the report definition that tags are to be disassociated from.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=256)]
@@ -54,6 +54,25 @@ namespace Amazon.CostAndUsageReport.Model
         internal bool IsSetReportName()
         {
             return this._reportName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TagKeys. 
+        /// <para>
+        /// The tags to be disassociated from the report definition resource.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=200)]
+        public List<string> TagKeys
+        {
+            get { return this._tagKeys; }
+            set { this._tagKeys = value; }
+        }
+
+        // Check to see if TagKeys property is set
+        internal bool IsSetTagKeys()
+        {
+            return this._tagKeys != null && this._tagKeys.Count > 0; 
         }
 
     }

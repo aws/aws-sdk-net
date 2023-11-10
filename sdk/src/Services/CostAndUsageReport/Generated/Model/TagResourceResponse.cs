@@ -29,32 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostAndUsageReport.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteReportDefinition operation.
-    /// Deletes the specified report. Any tags associated with the report are also deleted.
+    /// This is the response object from the TagResource operation.
     /// </summary>
-    public partial class DeleteReportDefinitionRequest : AmazonCostAndUsageReportRequest
+    public partial class TagResourceResponse : AmazonWebServiceResponse
     {
-        private string _reportName;
-
-        /// <summary>
-        /// Gets and sets the property ReportName. 
-        /// <para>
-        /// The name of the report that you want to delete. The name must be unique, is case sensitive,
-        /// and can't include spaces.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Max=256)]
-        public string ReportName
-        {
-            get { return this._reportName; }
-            set { this._reportName = value; }
-        }
-
-        // Check to see if ReportName property is set
-        internal bool IsSetReportName()
-        {
-            return this._reportName != null;
-        }
 
     }
 }

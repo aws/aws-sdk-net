@@ -31,16 +31,17 @@ namespace Amazon.CostAndUsageReport
     /// <summary>
     /// Interface for accessing CostAndUsageReport
     ///
-    /// The AWS Cost and Usage Report API enables you to programmatically create, query, and
-    /// delete AWS Cost and Usage report definitions.
+    /// You can use the Amazon Web Services Cost and Usage Report API to programmatically
+    /// create, query, and delete Amazon Web Services Cost and Usage Report definitions.
     /// 
     ///  
     /// <para>
-    /// AWS Cost and Usage reports track the monthly AWS costs and usage associated with your
-    /// AWS account. The report contains line items for each unique combination of AWS product,
-    /// usage type, and operation that your AWS account uses. You can configure the AWS Cost
-    /// and Usage report to show only the data that you want, using the AWS Cost and Usage
-    /// API.
+    /// Amazon Web Services Cost and Usage Report track the monthly Amazon Web Services costs
+    /// and usage associated with your Amazon Web Services account. The report contains line
+    /// items for each unique combination of Amazon Web Services product, usage type, and
+    /// operation that your Amazon Web Services account uses. You can configure the Amazon
+    /// Web Services Cost and Usage Report to show only the data that you want, using the
+    /// Amazon Web Services Cost and Usage Report API.
     /// </para>
     ///  
     /// <para>
@@ -48,7 +49,7 @@ namespace Amazon.CostAndUsageReport
     /// </para>
     ///  
     /// <para>
-    /// The AWS Cost and Usage Report API provides the following endpoint:
+    /// The Amazon Web Services Cost and Usage Report API provides the following endpoint:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -69,7 +70,7 @@ namespace Amazon.CostAndUsageReport
 
 
         /// <summary>
-        /// Deletes the specified report.
+        /// Deletes the specified report. Any tags associated with the report are also deleted.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteReportDefinition service method.</param>
         /// 
@@ -78,7 +79,7 @@ namespace Amazon.CostAndUsageReport
         /// An error on the server occurred during the processing of your request. Try again later.
         /// </exception>
         /// <exception cref="Amazon.CostAndUsageReport.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/DeleteReportDefinition">REST API Reference for DeleteReportDefinition Operation</seealso>
         DeleteReportDefinitionResponse DeleteReportDefinition(DeleteReportDefinitionRequest request);
@@ -86,7 +87,7 @@ namespace Amazon.CostAndUsageReport
 
 
         /// <summary>
-        /// Deletes the specified report.
+        /// Deletes the specified report. Any tags associated with the report are also deleted.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteReportDefinition service method.</param>
         /// <param name="cancellationToken">
@@ -98,7 +99,7 @@ namespace Amazon.CostAndUsageReport
         /// An error on the server occurred during the processing of your request. Try again later.
         /// </exception>
         /// <exception cref="Amazon.CostAndUsageReport.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/DeleteReportDefinition">REST API Reference for DeleteReportDefinition Operation</seealso>
         Task<DeleteReportDefinitionResponse> DeleteReportDefinitionAsync(DeleteReportDefinitionRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -109,7 +110,7 @@ namespace Amazon.CostAndUsageReport
 
 
         /// <summary>
-        /// Lists the AWS Cost and Usage reports available to this account.
+        /// Lists the Amazon Web Services Cost and Usage Report available to this account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeReportDefinitions service method.</param>
         /// 
@@ -123,7 +124,7 @@ namespace Amazon.CostAndUsageReport
 
 
         /// <summary>
-        /// Lists the AWS Cost and Usage reports available to this account.
+        /// Lists the Amazon Web Services Cost and Usage Report available to this account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeReportDefinitions service method.</param>
         /// <param name="cancellationToken">
@@ -139,11 +140,57 @@ namespace Amazon.CostAndUsageReport
 
         #endregion
         
+        #region  ListTagsForResource
+
+
+        /// <summary>
+        /// Lists the tags associated with the specified report definition.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by CostAndUsageReport.</returns>
+        /// <exception cref="Amazon.CostAndUsageReport.Model.InternalErrorException">
+        /// An error on the server occurred during the processing of your request. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CostAndUsageReport.Model.ResourceNotFoundException">
+        /// The specified report (<code>ReportName</code>) in the request doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CostAndUsageReport.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
+
+
+
+        /// <summary>
+        /// Lists the tags associated with the specified report definition.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by CostAndUsageReport.</returns>
+        /// <exception cref="Amazon.CostAndUsageReport.Model.InternalErrorException">
+        /// An error on the server occurred during the processing of your request. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CostAndUsageReport.Model.ResourceNotFoundException">
+        /// The specified report (<code>ReportName</code>) in the request doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CostAndUsageReport.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ModifyReportDefinition
 
 
         /// <summary>
-        /// Allows you to programatically update your report preferences.
+        /// Allows you to programmatically update your report preferences.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyReportDefinition service method.</param>
         /// 
@@ -152,7 +199,7 @@ namespace Amazon.CostAndUsageReport
         /// An error on the server occurred during the processing of your request. Try again later.
         /// </exception>
         /// <exception cref="Amazon.CostAndUsageReport.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/ModifyReportDefinition">REST API Reference for ModifyReportDefinition Operation</seealso>
         ModifyReportDefinitionResponse ModifyReportDefinition(ModifyReportDefinitionRequest request);
@@ -160,7 +207,7 @@ namespace Amazon.CostAndUsageReport
 
 
         /// <summary>
-        /// Allows you to programatically update your report preferences.
+        /// Allows you to programmatically update your report preferences.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyReportDefinition service method.</param>
         /// <param name="cancellationToken">
@@ -172,7 +219,7 @@ namespace Amazon.CostAndUsageReport
         /// An error on the server occurred during the processing of your request. Try again later.
         /// </exception>
         /// <exception cref="Amazon.CostAndUsageReport.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/ModifyReportDefinition">REST API Reference for ModifyReportDefinition Operation</seealso>
         Task<ModifyReportDefinitionResponse> ModifyReportDefinitionAsync(ModifyReportDefinitionRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -199,8 +246,11 @@ namespace Amazon.CostAndUsageReport
         /// This account already has five reports defined. To define a new report, you must delete
         /// an existing report.
         /// </exception>
+        /// <exception cref="Amazon.CostAndUsageReport.Model.ResourceNotFoundException">
+        /// The specified report (<code>ReportName</code>) in the request doesn't exist.
+        /// </exception>
         /// <exception cref="Amazon.CostAndUsageReport.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/PutReportDefinition">REST API Reference for PutReportDefinition Operation</seealso>
         PutReportDefinitionResponse PutReportDefinition(PutReportDefinitionRequest request);
@@ -227,11 +277,106 @@ namespace Amazon.CostAndUsageReport
         /// This account already has five reports defined. To define a new report, you must delete
         /// an existing report.
         /// </exception>
+        /// <exception cref="Amazon.CostAndUsageReport.Model.ResourceNotFoundException">
+        /// The specified report (<code>ReportName</code>) in the request doesn't exist.
+        /// </exception>
         /// <exception cref="Amazon.CostAndUsageReport.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/PutReportDefinition">REST API Reference for PutReportDefinition Operation</seealso>
         Task<PutReportDefinitionResponse> PutReportDefinitionAsync(PutReportDefinitionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  TagResource
+
+
+        /// <summary>
+        /// Associates a set of tags with a report definition.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by CostAndUsageReport.</returns>
+        /// <exception cref="Amazon.CostAndUsageReport.Model.InternalErrorException">
+        /// An error on the server occurred during the processing of your request. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CostAndUsageReport.Model.ResourceNotFoundException">
+        /// The specified report (<code>ReportName</code>) in the request doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CostAndUsageReport.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/TagResource">REST API Reference for TagResource Operation</seealso>
+        TagResourceResponse TagResource(TagResourceRequest request);
+
+
+
+        /// <summary>
+        /// Associates a set of tags with a report definition.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by CostAndUsageReport.</returns>
+        /// <exception cref="Amazon.CostAndUsageReport.Model.InternalErrorException">
+        /// An error on the server occurred during the processing of your request. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CostAndUsageReport.Model.ResourceNotFoundException">
+        /// The specified report (<code>ReportName</code>) in the request doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CostAndUsageReport.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/TagResource">REST API Reference for TagResource Operation</seealso>
+        Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UntagResource
+
+
+        /// <summary>
+        /// Disassociates a set of tags from a report definition.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by CostAndUsageReport.</returns>
+        /// <exception cref="Amazon.CostAndUsageReport.Model.InternalErrorException">
+        /// An error on the server occurred during the processing of your request. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CostAndUsageReport.Model.ResourceNotFoundException">
+        /// The specified report (<code>ReportName</code>) in the request doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CostAndUsageReport.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        UntagResourceResponse UntagResource(UntagResourceRequest request);
+
+
+
+        /// <summary>
+        /// Disassociates a set of tags from a report definition.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by CostAndUsageReport.</returns>
+        /// <exception cref="Amazon.CostAndUsageReport.Model.InternalErrorException">
+        /// An error on the server occurred during the processing of your request. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CostAndUsageReport.Model.ResourceNotFoundException">
+        /// The specified report (<code>ReportName</code>) in the request doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CostAndUsageReport.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

@@ -29,38 +29,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostAndUsageReport.Model
 {
     /// <summary>
-    /// Container for the parameters to the PutReportDefinition operation.
-    /// Creates a new report using the description that you provide.
+    /// This is the response object from the ListTagsForResource operation.
     /// </summary>
-    public partial class PutReportDefinitionRequest : AmazonCostAndUsageReportRequest
+    public partial class ListTagsForResourceResponse : AmazonWebServiceResponse
     {
-        private ReportDefinition _reportDefinition;
         private List<Tag> _tags = new List<Tag>();
-
-        /// <summary>
-        /// Gets and sets the property ReportDefinition. 
-        /// <para>
-        /// Represents the output of the PutReportDefinition operation. The content consists of
-        /// the detailed metadata and data file information. 
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public ReportDefinition ReportDefinition
-        {
-            get { return this._reportDefinition; }
-            set { this._reportDefinition = value; }
-        }
-
-        // Check to see if ReportDefinition property is set
-        internal bool IsSetReportDefinition()
-        {
-            return this._reportDefinition != null;
-        }
 
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags to be assigned to the report definition resource.
+        /// The tags assigned to the report definition resource.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=200)]

@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CostAndUsageReport.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for PutReportDefinition operation
+    /// Response Unmarshaller for UntagResource operation
     /// </summary>  
-    public class PutReportDefinitionResponseUnmarshaller : JsonResponseUnmarshaller
+    public class UntagResourceResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,7 +45,7 @@ namespace Amazon.CostAndUsageReport.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            PutReportDefinitionResponse response = new PutReportDefinitionResponse();
+            UntagResourceResponse response = new UntagResourceResponse();
 
 
             return response;
@@ -69,17 +69,9 @@ namespace Amazon.CostAndUsageReport.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
             {
-                if (errorResponse.Code != null && errorResponse.Code.Equals("DuplicateReportNameException"))
-                {
-                    return DuplicateReportNameExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalErrorException"))
                 {
                     return InternalErrorExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ReportLimitReachedException"))
-                {
-                    return ReportLimitReachedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {
@@ -93,9 +85,9 @@ namespace Amazon.CostAndUsageReport.Model.Internal.MarshallTransformations
             return new AmazonCostAndUsageReportException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static PutReportDefinitionResponseUnmarshaller _instance = new PutReportDefinitionResponseUnmarshaller();        
+        private static UntagResourceResponseUnmarshaller _instance = new UntagResourceResponseUnmarshaller();        
 
-        internal static PutReportDefinitionResponseUnmarshaller GetInstance()
+        internal static UntagResourceResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -103,7 +95,7 @@ namespace Amazon.CostAndUsageReport.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PutReportDefinitionResponseUnmarshaller Instance
+        public static UntagResourceResponseUnmarshaller Instance
         {
             get
             {

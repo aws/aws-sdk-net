@@ -55,7 +55,7 @@ namespace Amazon.CostAndUsageReport.Model
         /// <summary>
         /// Gets and sets the property ReportDefinitions. 
         /// <para>
-        /// A list of AWS Cost and Usage reports owned by the account.
+        /// An Amazon Web Services Cost and Usage Report list owned by the account.
         /// </para>
         /// </summary>
         public List<ReportDefinition> ReportDefinitions

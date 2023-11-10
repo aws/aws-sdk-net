@@ -29,32 +29,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostAndUsageReport.Model
 {
     /// <summary>
-    /// Container for the parameters to the PutReportDefinition operation.
-    /// Creates a new report using the description that you provide.
+    /// Container for the parameters to the TagResource operation.
+    /// Associates a set of tags with a report definition.
     /// </summary>
-    public partial class PutReportDefinitionRequest : AmazonCostAndUsageReportRequest
+    public partial class TagResourceRequest : AmazonCostAndUsageReportRequest
     {
-        private ReportDefinition _reportDefinition;
+        private string _reportName;
         private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
-        /// Gets and sets the property ReportDefinition. 
+        /// Gets and sets the property ReportName. 
         /// <para>
-        /// Represents the output of the PutReportDefinition operation. The content consists of
-        /// the detailed metadata and data file information. 
+        /// The report name of the report definition that tags are to be associated with.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public ReportDefinition ReportDefinition
+        [AWSProperty(Required=true, Max=256)]
+        public string ReportName
         {
-            get { return this._reportDefinition; }
-            set { this._reportDefinition = value; }
+            get { return this._reportName; }
+            set { this._reportName = value; }
         }
 
-        // Check to see if ReportDefinition property is set
-        internal bool IsSetReportDefinition()
+        // Check to see if ReportName property is set
+        internal bool IsSetReportName()
         {
-            return this._reportDefinition != null;
+            return this._reportName != null;
         }
 
         /// <summary>
@@ -63,7 +62,7 @@ namespace Amazon.CostAndUsageReport.Model
         /// The tags to be assigned to the report definition resource.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=200)]
+        [AWSProperty(Required=true, Min=0, Max=200)]
         public List<Tag> Tags
         {
             get { return this._tags; }

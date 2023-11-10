@@ -97,6 +97,17 @@ namespace Amazon.CostAndUsageReport.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ReportName);
             }
 
+            if(requestObject.IsSetReportStatus())
+            {
+                context.Writer.WritePropertyName("ReportStatus");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ReportStatusMarshaller.Instance;
+                marshaller.Marshall(requestObject.ReportStatus, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetReportVersioning())
             {
                 context.Writer.WritePropertyName("ReportVersioning");
