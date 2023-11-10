@@ -32,7 +32,7 @@ namespace Amazon.SimpleWorkflow
     public partial class AmazonSimpleWorkflowConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.201.51");
+            InternalSDKUtils.BuildUserAgentString("3.7.300.0");
 
         private string _userAgent = UserAgentString;
         ///<summary>

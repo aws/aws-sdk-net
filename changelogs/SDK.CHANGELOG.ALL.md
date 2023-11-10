@@ -1,3 +1,10 @@
+### 3.7.683.0 (2023-11-10 02:08 UTC)
+* Core 3.7.300.0
+	* Add .NET 8 framework target for core and service projects.
+	* For .NET 8 mark all SDK assemblies as trimmable and address all trim warnings.
+	* For .NET 8 prevent the System.Uri class from canonicalizing the resource path. This broke scenarios with S3 object keys like `foo/../bar.txt`.
+	* For .NET 8 the System.Net.Http.HttpClient's synchronous `Send` method is used when the internal synchronous service request methods are invoked. This replaces the SDK blocking on the SendAsync method.
+
 ### 3.7.682.0 (2023-11-09 19:22 UTC)
 * CloudFormation (3.7.205.0)
 	* Added new ConcurrencyMode feature for AWS CloudFormation StackSets for faster deployments to target accounts.
