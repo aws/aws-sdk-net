@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ControlTower.Model
 {
     /// <summary>
-    /// A summary of enabled controls.
+    /// Returns a summary of information about an enabled control.
     /// </summary>
     public partial class EnabledControlSummary
     {
@@ -42,7 +42,7 @@ namespace Amazon.ControlTower.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        ///  The ARN of the enabled control. 
+        /// The ARN of the enabled control.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -61,10 +61,7 @@ namespace Amazon.ControlTower.Model
         /// <summary>
         /// Gets and sets the property ControlIdentifier. 
         /// <para>
-        /// The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls
-        /// are permitted, with the exception of the <b>Region deny</b> control. For information
-        /// on how to find the <code>controlIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the
-        /// overview page</a>.
+        /// The <code>controlIdentifier</code> of the enabled control.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -83,7 +80,7 @@ namespace Amazon.ControlTower.Model
         /// <summary>
         /// Gets and sets the property DriftStatusSummary. 
         /// <para>
-        ///  The drift status of the enabled control. 
+        /// The drift status of the enabled control.
         /// </para>
         /// </summary>
         public DriftStatusSummary DriftStatusSummary
@@ -99,7 +96,10 @@ namespace Amazon.ControlTower.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StatusSummary. <zonbook></zonbook><xhtml></xhtml>
+        /// Gets and sets the property StatusSummary. 
+        /// <para>
+        /// A short description of the status of the enabled control.
+        /// </para>
         /// </summary>
         public EnablementStatusSummary StatusSummary
         {

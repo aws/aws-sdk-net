@@ -33,7 +33,7 @@ namespace Amazon.ControlTower
     ///
     /// These interfaces allow you to apply the AWS library of pre-defined <i>controls</i>
     /// to your organizational units, programmatically. In AWS Control Tower, the terms "control"
-    /// and "guardrail" are synonyms. .
+    /// and "guardrail" are synonyms.
     /// 
     ///  
     /// <para>
@@ -46,6 +46,10 @@ namespace Amazon.ControlTower
     ///  </li> <li> 
     /// <para>
     /// the ARN associated with the target organizational unit (OU), which we call the <code>targetIdentifier</code>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// the ARN associated with a resource that you wish to tag or untag.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -69,7 +73,7 @@ namespace Amazon.ControlTower
     /// <para>
     /// A quick-reference list of control identifers for the AWS Control Tower legacy <i>Strongly
     /// recommended</i> and <i>Elective</i> controls is given in <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-identifiers.html.html">Resource
-    /// identifiers for APIs and guardrails</a> in the <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-identifiers.html">Controls
+    /// identifiers for APIs and controls</a> in the <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-identifiers.html">Controls
     /// reference guide section</a> of the <i>AWS Control Tower User Guide</i>. Remember that
     /// <i>Mandatory</i> controls cannot be added or removed.
     /// </para>
@@ -264,7 +268,7 @@ namespace Amazon.ControlTower
         /// AWS resources on the specified organizational unit and the accounts it contains. The
         /// resources created will vary according to the control that you specify. For usage examples,
         /// see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
-        /// <i>the AWS Control Tower User Guide</i> </a>
+        /// <i>the AWS Control Tower User Guide</i> </a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableControl service method.</param>
         /// 
@@ -300,7 +304,7 @@ namespace Amazon.ControlTower
         /// AWS resources on the specified organizational unit and the accounts it contains. The
         /// resources created will vary according to the control that you specify. For usage examples,
         /// see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
-        /// <i>the AWS Control Tower User Guide</i> </a>
+        /// <i>the AWS Control Tower User Guide</i> </a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableControl service method.</param>
         /// <param name="cancellationToken">
@@ -341,7 +345,7 @@ namespace Amazon.ControlTower
         /// Returns the status of a particular <code>EnableControl</code> or <code>DisableControl</code>
         /// operation. Displays a message in case of error. Details for an operation are available
         /// for 90 days. For usage examples, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
-        /// <i>the AWS Control Tower User Guide</i> </a>
+        /// <i>the AWS Control Tower User Guide</i> </a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetControlOperation service method.</param>
         /// 
@@ -370,7 +374,7 @@ namespace Amazon.ControlTower
         /// Returns the status of a particular <code>EnableControl</code> or <code>DisableControl</code>
         /// operation. Displays a message in case of error. Details for an operation are available
         /// for 90 days. For usage examples, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
-        /// <i>the AWS Control Tower User Guide</i> </a>
+        /// <i>the AWS Control Tower User Guide</i> </a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetControlOperation service method.</param>
         /// <param name="cancellationToken">
@@ -402,27 +406,8 @@ namespace Amazon.ControlTower
 
 
         /// <summary>
-        /// Provides details about the enabled control. For usage examples, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
+        /// Retrieves details about an enabled control. For usage examples, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
         /// <i>the AWS Control Tower User Guide</i> </a>.
-        /// 
-        ///  
-        /// <para>
-        ///  <b>Returned values</b> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// TargetRegions: Shows target AWS Regions where the enabled control is available to
-        /// be deployed.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// StatusSummary: Provides a detailed summary of the deployment status.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// DriftSummary: Provides a detailed summary of the drifted status.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEnabledControl service method.</param>
         /// 
@@ -448,27 +433,8 @@ namespace Amazon.ControlTower
 
 
         /// <summary>
-        /// Provides details about the enabled control. For usage examples, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
+        /// Retrieves details about an enabled control. For usage examples, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
         /// <i>the AWS Control Tower User Guide</i> </a>.
-        /// 
-        ///  
-        /// <para>
-        ///  <b>Returned values</b> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// TargetRegions: Shows target AWS Regions where the enabled control is available to
-        /// be deployed.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// StatusSummary: Provides a detailed summary of the deployment status.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// DriftSummary: Provides a detailed summary of the drifted status.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEnabledControl service method.</param>
         /// <param name="cancellationToken">
@@ -502,7 +468,7 @@ namespace Amazon.ControlTower
         /// <summary>
         /// Lists the controls enabled by AWS Control Tower on the specified organizational unit
         /// and the accounts it contains. For usage examples, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
-        /// <i>the AWS Control Tower User Guide</i> </a>
+        /// <i>the AWS Control Tower User Guide</i> </a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListEnabledControls service method.</param>
         /// 
@@ -530,7 +496,7 @@ namespace Amazon.ControlTower
         /// <summary>
         /// Lists the controls enabled by AWS Control Tower on the specified organizational unit
         /// and the accounts it contains. For usage examples, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
-        /// <i>the AWS Control Tower User Guide</i> </a>
+        /// <i>the AWS Control Tower User Guide</i> </a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListEnabledControls service method.</param>
         /// <param name="cancellationToken">
@@ -555,6 +521,150 @@ namespace Amazon.ControlTower
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/ListEnabledControls">REST API Reference for ListEnabledControls Operation</seealso>
         Task<ListEnabledControlsResponse> ListEnabledControlsAsync(ListEnabledControlsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListTagsForResource
+
+
+        /// <summary>
+        /// Returns a list of tags associated with the resource. For usage examples, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
+        /// <i>the AWS Control Tower User Guide</i> </a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by ControlTower.</returns>
+        /// <exception cref="Amazon.ControlTower.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
+
+
+
+        /// <summary>
+        /// Returns a list of tags associated with the resource. For usage examples, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
+        /// <i>the AWS Control Tower User Guide</i> </a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by ControlTower.</returns>
+        /// <exception cref="Amazon.ControlTower.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  TagResource
+
+
+        /// <summary>
+        /// Applies tags to a resource. For usage examples, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
+        /// <i>the AWS Control Tower User Guide</i> </a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by ControlTower.</returns>
+        /// <exception cref="Amazon.ControlTower.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
+        TagResourceResponse TagResource(TagResourceRequest request);
+
+
+
+        /// <summary>
+        /// Applies tags to a resource. For usage examples, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
+        /// <i>the AWS Control Tower User Guide</i> </a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by ControlTower.</returns>
+        /// <exception cref="Amazon.ControlTower.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
+        Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UntagResource
+
+
+        /// <summary>
+        /// Removes tags from a resource. For usage examples, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
+        /// <i>the AWS Control Tower User Guide</i> </a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by ControlTower.</returns>
+        /// <exception cref="Amazon.ControlTower.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        UntagResourceResponse UntagResource(UntagResourceRequest request);
+
+
+
+        /// <summary>
+        /// Removes tags from a resource. For usage examples, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
+        /// <i>the AWS Control Tower User Guide</i> </a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by ControlTower.</returns>
+        /// <exception cref="Amazon.ControlTower.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

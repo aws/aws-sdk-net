@@ -43,7 +43,7 @@ namespace Amazon.ControlTower.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        ///  The ARN of the enabled control. 
+        /// The ARN of the enabled control.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -62,9 +62,9 @@ namespace Amazon.ControlTower.Model
         /// <summary>
         /// Gets and sets the property ControlIdentifier. 
         /// <para>
-        ///  The control identifier of the enabled control. For information on how to find the
+        /// The control identifier of the enabled control. For information on how to find the
         /// <code>controlIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the
-        /// overview page</a>. 
+        /// overview page</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -83,7 +83,7 @@ namespace Amazon.ControlTower.Model
         /// <summary>
         /// Gets and sets the property DriftStatusSummary. 
         /// <para>
-        ///  The drift status of the enabled control. 
+        /// The drift status of the enabled control.
         /// </para>
         /// </summary>
         public DriftStatusSummary DriftStatusSummary
@@ -101,7 +101,7 @@ namespace Amazon.ControlTower.Model
         /// <summary>
         /// Gets and sets the property StatusSummary. 
         /// <para>
-        ///  The deployment summary of the enabled control. 
+        /// The deployment summary of the enabled control.
         /// </para>
         /// </summary>
         public EnablementStatusSummary StatusSummary
@@ -119,9 +119,9 @@ namespace Amazon.ControlTower.Model
         /// <summary>
         /// Gets and sets the property TargetIdentifier. 
         /// <para>
-        ///  The ARN of the organizational unit. For information on how to find the <code>targetIdentifier</code>,
+        /// The ARN of the organizational unit. For information on how to find the <code>targetIdentifier</code>,
         /// see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the
-        /// overview page</a>. 
+        /// overview page</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -140,7 +140,7 @@ namespace Amazon.ControlTower.Model
         /// <summary>
         /// Gets and sets the property TargetRegions. 
         /// <para>
-        ///  Target AWS Regions for the enabled control. 
+        /// Target AWS Regions for the enabled control.
         /// </para>
         /// </summary>
         public List<Region> TargetRegions

@@ -32,7 +32,7 @@ namespace Amazon.ControlTower.Model
     /// Container for the parameters to the ListEnabledControls operation.
     /// Lists the controls enabled by AWS Control Tower on the specified organizational unit
     /// and the accounts it contains. For usage examples, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
-    /// <i>the AWS Control Tower User Guide</i> </a>
+    /// <i>the AWS Control Tower User Guide</i> </a>.
     /// </summary>
     public partial class ListEnabledControlsRequest : AmazonControlTowerRequest
     {

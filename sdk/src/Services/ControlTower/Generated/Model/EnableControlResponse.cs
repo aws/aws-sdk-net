@@ -33,7 +33,27 @@ namespace Amazon.ControlTower.Model
     /// </summary>
     public partial class EnableControlResponse : AmazonWebServiceResponse
     {
+        private string _arn;
         private string _operationIdentifier;
+
+        /// <summary>
+        /// Gets and sets the property Arn. 
+        /// <para>
+        /// The ARN of the <code>EnabledControl</code> resource.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string Arn
+        {
+            get { return this._arn; }
+            set { this._arn = value; }
+        }
+
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
+        {
+            return this._arn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property OperationIdentifier. 

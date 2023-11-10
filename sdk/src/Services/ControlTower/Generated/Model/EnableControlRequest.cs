@@ -34,11 +34,12 @@ namespace Amazon.ControlTower.Model
     /// AWS resources on the specified organizational unit and the accounts it contains. The
     /// resources created will vary according to the control that you specify. For usage examples,
     /// see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
-    /// <i>the AWS Control Tower User Guide</i> </a>
+    /// <i>the AWS Control Tower User Guide</i> </a>.
     /// </summary>
     public partial class EnableControlRequest : AmazonControlTowerRequest
     {
         private string _controlIdentifier;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private string _targetIdentifier;
 
         /// <summary>
@@ -61,6 +62,25 @@ namespace Amazon.ControlTower.Model
         internal bool IsSetControlIdentifier()
         {
             return this._controlIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Tags to be applied to the <code>EnabledControl</code> resource.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=200)]
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

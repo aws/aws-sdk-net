@@ -39,7 +39,7 @@ namespace Amazon.ControlTower.Model
         /// <summary>
         /// Gets and sets the property LastOperationIdentifier. 
         /// <para>
-        ///  The last operation identifier for the enabled control. 
+        /// The last operation identifier for the enabled control.
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]

@@ -29,30 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ControlTower.Model
 {
     /// <summary>
-    /// This is the response object from the GetEnabledControl operation.
+    /// This is the response object from the TagResource operation.
     /// </summary>
-    public partial class GetEnabledControlResponse : AmazonWebServiceResponse
+    public partial class TagResourceResponse : AmazonWebServiceResponse
     {
-        private EnabledControlDetails _enabledControlDetails;
-
-        /// <summary>
-        /// Gets and sets the property EnabledControlDetails. 
-        /// <para>
-        /// Information about the enabled control.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public EnabledControlDetails EnabledControlDetails
-        {
-            get { return this._enabledControlDetails; }
-            set { this._enabledControlDetails = value; }
-        }
-
-        // Check to see if EnabledControlDetails property is set
-        internal bool IsSetEnabledControlDetails()
-        {
-            return this._enabledControlDetails != null;
-        }
 
     }
 }

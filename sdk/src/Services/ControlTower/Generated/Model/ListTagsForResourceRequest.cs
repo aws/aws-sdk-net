@@ -29,37 +29,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ControlTower.Model
 {
     /// <summary>
-    /// An AWS Region in which AWS Control Tower expects to find the control deployed. 
-    /// 
-    ///  
-    /// <para>
-    /// The expected Regions are based on the Regions that are governed by the landing zone.
-    /// In certain cases, a control is not actually enabled in the Region as expected, such
-    /// as during drift, or <a href="https://docs.aws.amazon.com/controltower/latest/userguide/region-how.html#mixed-governance">mixed
-    /// governance</a>.
-    /// </para>
+    /// Container for the parameters to the ListTagsForResource operation.
+    /// Returns a list of tags associated with the resource. For usage examples, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
+    /// <i>the AWS Control Tower User Guide</i> </a>.
     /// </summary>
-    public partial class Region
+    public partial class ListTagsForResourceRequest : AmazonControlTowerRequest
     {
-        private string _name;
+        private string _resourceArn;
 
         /// <summary>
-        /// Gets and sets the property Name. 
+        /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The AWS Region name.
+        ///  The ARN of the resource.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=50)]
-        public string Name
+        [AWSProperty(Required=true, Min=20, Max=2048)]
+        public string ResourceArn
         {
-            get { return this._name; }
-            set { this._name = value; }
+            get { return this._resourceArn; }
+            set { this._resourceArn = value; }
         }
 
-        // Check to see if Name property is set
-        internal bool IsSetName()
+        // Check to see if ResourceArn property is set
+        internal bool IsSetResourceArn()
         {
-            return this._name != null;
+            return this._resourceArn != null;
         }
 
     }

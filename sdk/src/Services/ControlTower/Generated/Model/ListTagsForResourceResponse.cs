@@ -29,37 +29,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ControlTower.Model
 {
     /// <summary>
-    /// An AWS Region in which AWS Control Tower expects to find the control deployed. 
-    /// 
-    ///  
-    /// <para>
-    /// The expected Regions are based on the Regions that are governed by the landing zone.
-    /// In certain cases, a control is not actually enabled in the Region as expected, such
-    /// as during drift, or <a href="https://docs.aws.amazon.com/controltower/latest/userguide/region-how.html#mixed-governance">mixed
-    /// governance</a>.
-    /// </para>
+    /// This is the response object from the ListTagsForResource operation.
     /// </summary>
-    public partial class Region
+    public partial class ListTagsForResourceResponse : AmazonWebServiceResponse
     {
-        private string _name;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
-        /// Gets and sets the property Name. 
+        /// Gets and sets the property Tags. 
         /// <para>
-        /// The AWS Region name.
+        /// A list of tags, as <code>key:value</code> strings.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=50)]
-        public string Name
+        [AWSProperty(Required=true, Min=0, Max=200)]
+        public Dictionary<string, string> Tags
         {
-            get { return this._name; }
-            set { this._name = value; }
+            get { return this._tags; }
+            set { this._tags = value; }
         }
 
-        // Check to see if Name property is set
-        internal bool IsSetName()
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
         {
-            return this._name != null;
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

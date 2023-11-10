@@ -31,6 +31,12 @@
     <pattern>^arn:aws[0-9a-zA-Z_\-:\/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ControlTower.Model.EnableControlResponse.Arn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws[0-9a-zA-Z_\-:\/]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ControlTower.Model.EnableControlResponse.OperationIdentifier</property>
     <min>36</min>
     <max>36</max>
@@ -55,6 +61,24 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlTower.Model.ListEnabledControlsRequest.TargetIdentifier</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws[0-9a-zA-Z_\-:\/]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ControlTower.Model.ListTagsForResourceRequest.ResourceArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws[0-9a-zA-Z_\-:\/]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ControlTower.Model.TagResourceRequest.ResourceArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws[0-9a-zA-Z_\-:\/]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ControlTower.Model.UntagResourceRequest.ResourceArn</property>
     <min>20</min>
     <max>2048</max>
     <pattern>^arn:aws[0-9a-zA-Z_\-:\/]+$</pattern>
