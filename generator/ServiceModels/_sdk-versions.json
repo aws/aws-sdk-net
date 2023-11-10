@@ -1,7 +1,7 @@
 
 {
     "NewServiceVersion" : "3.7.300.0",
-    "ProductVersion"    : "3.7.683.0",
+    "ProductVersion"    : "3.7.684.0",
     "CoreVersion"       : "3.7.300.0",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
@@ -153,7 +153,7 @@
             "InPreview"               : false
         },
         "EC2"               : {
-            "Version" : "3.7.300.0",
+            "Version" : "3.7.301.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.300.0"
@@ -283,7 +283,7 @@
             "InPreview"               : false
         },
         "RDS"                  : {
-            "Version" : "3.7.300.0",
+            "Version" : "3.7.300.1",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.300.0"
@@ -715,7 +715,7 @@
             "InPreview"               : false
         },
         "CostAndUsageReport"              : {
-            "Version" : "3.7.300.0",
+            "Version" : "3.7.301.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.300.0"
@@ -787,7 +787,7 @@
             "InPreview"               : false
         },
         "MarketplaceEntitlementService"   : {
-            "Version" : "3.7.300.0",
+            "Version" : "3.7.301.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.300.0"
@@ -899,7 +899,7 @@
             "InPreview"               : false
         },
         "MediaConvert"                    : {
-            "Version" : "3.7.300.0",
+            "Version" : "3.7.301.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.300.0"
@@ -1067,7 +1067,7 @@
             "InPreview"               : false
         },
         "FMS"                             : {
-            "Version" : "3.7.300.0",
+            "Version" : "3.7.300.1",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.300.0"
@@ -2515,7 +2515,7 @@
             "InPreview"               : false
         },
         "ControlTower"                        : {
-            "Version" : "3.7.300.0",
+            "Version" : "3.7.301.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.300.0"

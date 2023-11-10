@@ -1,3 +1,19 @@
+### 3.7.684.0 (2023-11-10 19:38 UTC)
+* ControlTower (3.7.301.0)
+	* AWS Control Tower supports tagging for enabled controls. This release introduces TagResource, UntagResource and ListTagsForResource APIs to manage tags in existing enabled controls. It updates EnabledControl API to tag resources at creation time.
+* CostAndUsageReport (3.7.301.0)
+	* This release adds support for tagging and customers can now tag report definitions. Additionally, ReportStatus is now added to report definition to show when the last delivered time stamp and if it succeeded or not.
+* EC2 (3.7.301.0)
+	* EC2 adds API updates to enable ENA Express at instance launch time.
+* FMS (3.7.300.1)
+	* Adds optimizeUnassociatedWebACL flag to ManagedServiceData, updates third-party firewall examples, and other minor documentation updates.
+* MarketplaceEntitlementService (3.7.301.0)
+	* Add paginators to GetEntitlements.
+* MediaConvert (3.7.301.0)
+	* This release includes the ability to specify any input source as the primary input for corresponding follow modes, and allows users to specify fit and fill behaviors without resizing content.
+* RDS (3.7.300.1)
+	* Updates Amazon RDS documentation for zero-ETL integrations.
+
 ### 3.7.683.0 (2023-11-10 02:08 UTC)
 * Core 3.7.300.0
 	* Add .NET 8 framework target for core and service projects.
