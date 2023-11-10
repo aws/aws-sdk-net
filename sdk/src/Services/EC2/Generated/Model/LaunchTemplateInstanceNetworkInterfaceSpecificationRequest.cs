@@ -38,6 +38,7 @@ namespace Amazon.EC2.Model
         private bool? _deleteOnTermination;
         private string _description;
         private int? _deviceIndex;
+        private EnaSrdSpecificationRequest _enaSrdSpecification;
         private List<string> _groups = new List<string>();
         private string _interfaceType;
         private int? _ipv4PrefixCount;
@@ -149,6 +150,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetDeviceIndex()
         {
             return this._deviceIndex.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnaSrdSpecification. 
+        /// <para>
+        /// Configure ENA Express settings for your launch template.
+        /// </para>
+        /// </summary>
+        public EnaSrdSpecificationRequest EnaSrdSpecification
+        {
+            get { return this._enaSrdSpecification; }
+            set { this._enaSrdSpecification = value; }
+        }
+
+        // Check to see if EnaSrdSpecification property is set
+        internal bool IsSetEnaSrdSpecification()
+        {
+            return this._enaSrdSpecification != null;
         }
 
         /// <summary>

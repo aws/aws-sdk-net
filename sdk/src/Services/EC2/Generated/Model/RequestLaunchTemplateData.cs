@@ -718,7 +718,6 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property SecurityGroupIds. 
         /// <para>
         /// One or more security group IDs. You can create a security group using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.
-        /// You cannot specify both a security group ID and security name in the same request.
         /// </para>
         /// </summary>
         public List<string> SecurityGroupIds
@@ -737,8 +736,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property SecurityGroups. 
         /// <para>
         /// One or more security group names. For a nondefault VPC, you must use security group
-        /// IDs instead. You cannot specify both a security group ID and security name in the
-        /// same request.
+        /// IDs instead.
         /// </para>
         /// </summary>
         public List<string> SecurityGroups

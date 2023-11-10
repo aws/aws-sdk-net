@@ -402,6 +402,20 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "DeviceIndex", StringUtils.FromInt(publicRequestlistValue.DeviceIndex));
                         }
+                        if(publicRequestlistValue.IsSetEnaSrdSpecification())
+                        {
+                            if(publicRequestlistValue.EnaSrdSpecification.IsSetEnaSrdEnabled())
+                            {
+                                request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "EnaSrdSpecification" + "." + "EnaSrdEnabled", StringUtils.FromBool(publicRequestlistValue.EnaSrdSpecification.EnaSrdEnabled));
+                            }
+                            if(publicRequestlistValue.EnaSrdSpecification.IsSetEnaSrdUdpSpecification())
+                            {
+                                if(publicRequestlistValue.EnaSrdSpecification.EnaSrdUdpSpecification.IsSetEnaSrdUdpEnabled())
+                                {
+                                    request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "EnaSrdSpecification" + "." + "EnaSrdUdpSpecification" + "." + "EnaSrdUdpEnabled", StringUtils.FromBool(publicRequestlistValue.EnaSrdSpecification.EnaSrdUdpSpecification.EnaSrdUdpEnabled));
+                                }
+                            }
+                        }
                         if(publicRequestlistValue.IsSetGroups())
                         {
                             int publicRequestlistValuelistValueIndex = 1;

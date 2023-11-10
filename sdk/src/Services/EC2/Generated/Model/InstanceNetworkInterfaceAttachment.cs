@@ -37,6 +37,7 @@ namespace Amazon.EC2.Model
         private DateTime? _attachTime;
         private bool? _deleteOnTermination;
         private int? _deviceIndex;
+        private InstanceAttachmentEnaSrdSpecification _enaSrdSpecification;
         private int? _networkCardIndex;
         private AttachmentStatus _status;
 
@@ -110,6 +111,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetDeviceIndex()
         {
             return this._deviceIndex.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnaSrdSpecification. 
+        /// <para>
+        /// Contains the ENA Express settings for the network interface that's attached to the
+        /// instance.
+        /// </para>
+        /// </summary>
+        public InstanceAttachmentEnaSrdSpecification EnaSrdSpecification
+        {
+            get { return this._enaSrdSpecification; }
+            set { this._enaSrdSpecification = value; }
+        }
+
+        // Check to see if EnaSrdSpecification property is set
+        internal bool IsSetEnaSrdSpecification()
+        {
+            return this._enaSrdSpecification != null;
         }
 
         /// <summary>

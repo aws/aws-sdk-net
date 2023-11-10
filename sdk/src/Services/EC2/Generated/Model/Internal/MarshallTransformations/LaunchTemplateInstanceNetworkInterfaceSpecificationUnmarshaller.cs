@@ -84,6 +84,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.DeviceIndex = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("enaSrdSpecification", targetDepth))
+                    {
+                        var unmarshaller = LaunchTemplateEnaSrdSpecificationUnmarshaller.Instance;
+                        unmarshalledObject.EnaSrdSpecification = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("groupSet/groupId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

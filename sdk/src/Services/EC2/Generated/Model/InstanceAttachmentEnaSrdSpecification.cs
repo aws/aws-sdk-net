@@ -44,10 +44,10 @@ namespace Amazon.EC2.Model
     /// whether UDP network traffic uses it.
     /// </para>
     /// </summary>
-    public partial class AttachmentEnaSrdSpecification
+    public partial class InstanceAttachmentEnaSrdSpecification
     {
         private bool? _enaSrdEnabled;
-        private AttachmentEnaSrdUdpSpecification _enaSrdUdpSpecification;
+        private InstanceAttachmentEnaSrdUdpSpecification _enaSrdUdpSpecification;
 
         /// <summary>
         /// Gets and sets the property EnaSrdEnabled. 
@@ -73,7 +73,7 @@ namespace Amazon.EC2.Model
         /// Configures ENA Express for UDP network traffic.
         /// </para>
         /// </summary>
-        public AttachmentEnaSrdUdpSpecification EnaSrdUdpSpecification
+        public InstanceAttachmentEnaSrdUdpSpecification EnaSrdUdpSpecification
         {
             get { return this._enaSrdUdpSpecification; }
             set { this._enaSrdUdpSpecification = value; }

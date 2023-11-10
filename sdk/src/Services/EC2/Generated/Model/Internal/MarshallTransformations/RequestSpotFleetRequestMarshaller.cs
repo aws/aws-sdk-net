@@ -421,6 +421,20 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                     {
                                         request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "NetworkInterfaceSet" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "DeviceIndex", StringUtils.FromInt(publicRequestSpotFleetRequestConfiglistValuelistValue.DeviceIndex));
                                     }
+                                    if(publicRequestSpotFleetRequestConfiglistValuelistValue.IsSetEnaSrdSpecification())
+                                    {
+                                        if(publicRequestSpotFleetRequestConfiglistValuelistValue.EnaSrdSpecification.IsSetEnaSrdEnabled())
+                                        {
+                                            request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "NetworkInterfaceSet" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "EnaSrdSpecification" + "." + "EnaSrdEnabled", StringUtils.FromBool(publicRequestSpotFleetRequestConfiglistValuelistValue.EnaSrdSpecification.EnaSrdEnabled));
+                                        }
+                                        if(publicRequestSpotFleetRequestConfiglistValuelistValue.EnaSrdSpecification.IsSetEnaSrdUdpSpecification())
+                                        {
+                                            if(publicRequestSpotFleetRequestConfiglistValuelistValue.EnaSrdSpecification.EnaSrdUdpSpecification.IsSetEnaSrdUdpEnabled())
+                                            {
+                                                request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "NetworkInterfaceSet" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "EnaSrdSpecification" + "." + "EnaSrdUdpSpecification" + "." + "EnaSrdUdpEnabled", StringUtils.FromBool(publicRequestSpotFleetRequestConfiglistValuelistValue.EnaSrdSpecification.EnaSrdUdpSpecification.EnaSrdUdpEnabled));
+                                            }
+                                        }
+                                    }
                                     if(publicRequestSpotFleetRequestConfiglistValuelistValue.IsSetGroups())
                                     {
                                         int publicRequestSpotFleetRequestConfiglistValuelistValuelistValueIndex = 1;

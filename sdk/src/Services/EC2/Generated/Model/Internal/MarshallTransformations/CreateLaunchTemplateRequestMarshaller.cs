@@ -546,6 +546,20 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             {
                                 request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "DeviceIndex", StringUtils.FromInt(publicRequestLaunchTemplateDatalistValue.DeviceIndex));
                             }
+                            if(publicRequestLaunchTemplateDatalistValue.IsSetEnaSrdSpecification())
+                            {
+                                if(publicRequestLaunchTemplateDatalistValue.EnaSrdSpecification.IsSetEnaSrdEnabled())
+                                {
+                                    request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "EnaSrdSpecification" + "." + "EnaSrdEnabled", StringUtils.FromBool(publicRequestLaunchTemplateDatalistValue.EnaSrdSpecification.EnaSrdEnabled));
+                                }
+                                if(publicRequestLaunchTemplateDatalistValue.EnaSrdSpecification.IsSetEnaSrdUdpSpecification())
+                                {
+                                    if(publicRequestLaunchTemplateDatalistValue.EnaSrdSpecification.EnaSrdUdpSpecification.IsSetEnaSrdUdpEnabled())
+                                    {
+                                        request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "EnaSrdSpecification" + "." + "EnaSrdUdpSpecification" + "." + "EnaSrdUdpEnabled", StringUtils.FromBool(publicRequestLaunchTemplateDatalistValue.EnaSrdSpecification.EnaSrdUdpSpecification.EnaSrdUdpEnabled));
+                                    }
+                                }
+                            }
                             if(publicRequestLaunchTemplateDatalistValue.IsSetGroups())
                             {
                                 int publicRequestLaunchTemplateDatalistValuelistValueIndex = 1;

@@ -36,7 +36,7 @@ namespace Amazon.EC2.Model
     /// you can specify whether to use ENA Express, based on your application environment
     /// needs.
     /// </summary>
-    public partial class EnaSrdUdpSpecification
+    public partial class InstanceAttachmentEnaSrdUdpSpecification
     {
         private bool? _enaSrdUdpEnabled;
 

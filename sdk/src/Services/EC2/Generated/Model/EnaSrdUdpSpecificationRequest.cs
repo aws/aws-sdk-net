@@ -29,22 +29,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// ENA Express is compatible with both TCP and UDP transport protocols. When it's enabled,
-    /// TCP traffic automatically uses it. However, some UDP-based applications are designed
-    /// to handle network packets that are out of order, without a need for retransmission,
-    /// such as live video broadcasting or other near-real-time applications. For UDP traffic,
-    /// you can specify whether to use ENA Express, based on your application environment
-    /// needs.
+    /// Configures ENA Express for UDP network traffic from your launch template.
     /// </summary>
-    public partial class EnaSrdUdpSpecification
+    public partial class EnaSrdUdpSpecificationRequest
     {
         private bool? _enaSrdUdpEnabled;
 
         /// <summary>
         /// Gets and sets the property EnaSrdUdpEnabled. 
         /// <para>
-        /// Indicates whether UDP traffic to and from the instance uses ENA Express. To specify
-        /// this setting, you must first enable ENA Express.
+        /// Indicates whether UDP traffic uses ENA Express for your instance. To ensure that UDP
+        /// traffic can use ENA Express when you launch an instance, you must also set <b>EnaSrdEnabled</b>
+        /// in the <b>EnaSrdSpecificationRequest</b> to <code>true</code> in your launch template.
         /// </para>
         /// </summary>
         public bool EnaSrdUdpEnabled

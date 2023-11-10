@@ -207,6 +207,20 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             {
                                 request.Parameters.Add("LaunchSpecification" + "." + "NetworkInterface" + "." + publicRequestLaunchSpecificationlistValueIndex + "." + "DeviceIndex", StringUtils.FromInt(publicRequestLaunchSpecificationlistValue.DeviceIndex));
                             }
+                            if(publicRequestLaunchSpecificationlistValue.IsSetEnaSrdSpecification())
+                            {
+                                if(publicRequestLaunchSpecificationlistValue.EnaSrdSpecification.IsSetEnaSrdEnabled())
+                                {
+                                    request.Parameters.Add("LaunchSpecification" + "." + "NetworkInterface" + "." + publicRequestLaunchSpecificationlistValueIndex + "." + "EnaSrdSpecification" + "." + "EnaSrdEnabled", StringUtils.FromBool(publicRequestLaunchSpecificationlistValue.EnaSrdSpecification.EnaSrdEnabled));
+                                }
+                                if(publicRequestLaunchSpecificationlistValue.EnaSrdSpecification.IsSetEnaSrdUdpSpecification())
+                                {
+                                    if(publicRequestLaunchSpecificationlistValue.EnaSrdSpecification.EnaSrdUdpSpecification.IsSetEnaSrdUdpEnabled())
+                                    {
+                                        request.Parameters.Add("LaunchSpecification" + "." + "NetworkInterface" + "." + publicRequestLaunchSpecificationlistValueIndex + "." + "EnaSrdSpecification" + "." + "EnaSrdUdpSpecification" + "." + "EnaSrdUdpEnabled", StringUtils.FromBool(publicRequestLaunchSpecificationlistValue.EnaSrdSpecification.EnaSrdUdpSpecification.EnaSrdUdpEnabled));
+                                    }
+                                }
+                            }
                             if(publicRequestLaunchSpecificationlistValue.IsSetGroups())
                             {
                                 int publicRequestLaunchSpecificationlistValuelistValueIndex = 1;
