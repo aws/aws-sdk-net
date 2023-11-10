@@ -376,15 +376,37 @@ namespace Amazon.FMS.Model
         /// </para>
         ///  
         /// <para>
-        /// For WAF and Shield Advanced, resource types include <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>,
-        /// <code>AWS::ElasticLoadBalancing::LoadBalancer</code>, <code>AWS::EC2::EIP</code>,
-        /// and <code>AWS::CloudFront::Distribution</code>. For a security group common policy,
-        /// valid values are <code>AWS::EC2::NetworkInterface</code> and <code>AWS::EC2::Instance</code>.
-        /// For a security group content audit policy, valid values are <code>AWS::EC2::SecurityGroup</code>,
-        /// <code>AWS::EC2::NetworkInterface</code>, and <code>AWS::EC2::Instance</code>. For
-        /// a security group usage audit policy, the value is <code>AWS::EC2::SecurityGroup</code>.
-        /// For an Network Firewall policy or DNS Firewall policy, the value is <code>AWS::EC2::VPC</code>.
+        /// The following are valid resource types for each Firewall Manager policy type:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Amazon Web Services WAF Classic - <code>AWS::ApiGateway::Stage</code>, <code>AWS::CloudFront::Distribution</code>,
+        /// and <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// WAF - <code>AWS::ApiGateway::Stage</code>, <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>,
+        /// and <code>AWS::CloudFront::Distribution</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  DNS Firewall, Network Firewall, and third-party firewall - <code>AWS::EC2::VPC</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Shield Advanced - <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>, <code>AWS::ElasticLoadBalancing::LoadBalancer</code>,
+        /// <code>AWS::EC2::EIP</code>, and <code>AWS::CloudFront::Distribution</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Security group content audit - <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>,
+        /// and <code>AWS::EC2::Instance</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Security group usage audit - <code>AWS::EC2::SecurityGroup</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
         public string ResourceType

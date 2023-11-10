@@ -62,9 +62,30 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property PolicyId. 
         /// <para>
-        /// The ID of the Firewall Manager policy that you want the details for. This currently
-        /// only supports security group content audit policies.
+        /// The ID of the Firewall Manager policy that you want the details for. You can get violation
+        /// details for the following policy types:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// DNS Firewall
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Imported Network Firewall
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Network Firewall
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Security group content audit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Third-party firewall
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]
         public string PolicyId
