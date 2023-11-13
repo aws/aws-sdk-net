@@ -85,6 +85,7 @@ namespace Amazon.ECS.Model
     public partial class RunTaskRequest : AmazonECSRequest
     {
         private List<CapacityProviderStrategyItem> _capacityProviderStrategy = new List<CapacityProviderStrategyItem>();
+        private string _clientToken;
         private string _cluster;
         private int? _count;
         private bool? _enableecsManagedTags;
@@ -134,6 +135,27 @@ namespace Amazon.ECS.Model
         internal bool IsSetCapacityProviderStrategy()
         {
             return this._capacityProviderStrategy != null && this._capacityProviderStrategy.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ClientToken. 
+        /// <para>
+        /// An identifier that you provide to ensure the idempotency of the request. It must be
+        /// unique and is case sensitive. Up to 64 characters are allowed. The valid characters
+        /// are characters in the range of 33-126, inclusive. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/ECS_Idempotency.html">Ensuring
+        /// idempotency</a>.
+        /// </para>
+        /// </summary>
+        public string ClientToken
+        {
+            get { return this._clientToken; }
+            set { this._clientToken = value; }
+        }
+
+        // Check to see if ClientToken property is set
+        internal bool IsSetClientToken()
+        {
+            return this._clientToken != null;
         }
 
         /// <summary>
@@ -451,7 +473,7 @@ namespace Amazon.ECS.Model
         /// trigger a task to run a batch process job, you could apply a unique identifier for
         /// that job to your task with the <code>startedBy</code> parameter. You can then identify
         /// which tasks belong to that job by filtering the results of a <a>ListTasks</a> call
-        /// with the <code>startedBy</code> value. Up to 36 letters (uppercase and lowercase),
+        /// with the <code>startedBy</code> value. Up to 128 letters (uppercase and lowercase),
         /// numbers, hyphens (-), and underscores (_) are allowed.
         /// </para>
         ///  

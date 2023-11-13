@@ -85,6 +85,11 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
+        ///  <code>appProtocol</code> is immutable in a Service Connect service. Updating this
+        /// field requires a service deletion and redeployment.
+        /// </para>
+        ///  
+        /// <para>
         /// Tasks that run in a namespace can use short names to connect to services in the namespace.
         /// Tasks can connect to services across all of the clusters in the namespace. Tasks connect
         /// through a managed proxy container that collects logs and metrics for increased visibility.
@@ -337,7 +342,8 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Protocol. 
         /// <para>
         /// The protocol used for the port mapping. Valid values are <code>tcp</code> and <code>udp</code>.
-        /// The default is <code>tcp</code>.
+        /// The default is <code>tcp</code>. <code>protocol</code> is immutable in a Service Connect
+        /// service. Updating this field requires a service deletion and redeployment. 
         /// </para>
         /// </summary>
         public TransportProtocol Protocol

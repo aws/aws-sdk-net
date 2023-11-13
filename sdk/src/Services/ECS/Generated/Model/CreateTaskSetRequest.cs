@@ -105,8 +105,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// The identifier that you provide to ensure the idempotency of the request. It's case
-        /// sensitive and must be unique. It can be up to 32 ASCII characters are allowed.
+        /// An identifier that you provide to ensure the idempotency of the request. It must be
+        /// unique and is case sensitive. Up to 36 ASCII characters in the range of 33-126 (inclusive)
+        /// are allowed.
         /// </para>
         /// </summary>
         public string ClientToken

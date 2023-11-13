@@ -29,43 +29,60 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// These errors are usually caused by a client action. This client action might be using
-    /// an action or resource on behalf of a user that doesn't have permissions to use the
-    /// action or resource. Or, it might be specifying an identifier that isn't valid.
+    /// The <code>RunTask</code> request could not be processed due to conflicts. The provided
+    /// <code>clientToken</code> is already in use with a different <code>RunTask</code> request.
+    /// The <code>resourceIds</code> are the existing task ARNs which are already associated
+    /// with the <code>clientToken</code>. 
+    /// 
+    ///  
+    /// <para>
+    /// To fix this issue:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Run <code>RunTask</code> with a unique <code>clientToken</code>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Run <code>RunTask</code> with the <code>clientToken</code> and the original set of
+    /// parameters
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
-    public partial class ClientException : AmazonECSException
+    public partial class ConflictException : AmazonECSException
     {
+        private List<string> _resourceIds = new List<string>();
 
         /// <summary>
-        /// Constructs a new ClientException with the specified error
+        /// Constructs a new ConflictException with the specified error
         /// message.
         /// </summary>
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        public ClientException(string message) 
+        public ConflictException(string message) 
             : base(message) {}
 
         /// <summary>
-        /// Construct instance of ClientException
+        /// Construct instance of ConflictException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
-        public ClientException(string message, Exception innerException) 
+        public ConflictException(string message, Exception innerException) 
             : base(message, innerException) {}
 
         /// <summary>
-        /// Construct instance of ClientException
+        /// Construct instance of ConflictException
         /// </summary>
         /// <param name="innerException"></param>
-        public ClientException(Exception innerException) 
+        public ConflictException(Exception innerException) 
             : base(innerException) {}
 
         /// <summary>
-        /// Construct instance of ClientException
+        /// Construct instance of ConflictException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
@@ -73,32 +90,33 @@ namespace Amazon.ECS.Model
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public ClientException(string message, Exception innerException, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public ConflictException(string message, Exception innerException, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, requestId, statusCode) {}
 
         /// <summary>
-        /// Construct instance of ClientException
+        /// Construct instance of ConflictException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="errorType"></param>
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public ClientException(string message, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public ConflictException(string message, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
 #if !NETSTANDARD
         /// <summary>
-        /// Constructs a new instance of the ClientException class with serialized data.
+        /// Constructs a new instance of the ConflictException class with serialized data.
         /// </summary>
         /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
         /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
         /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is null. </exception>
         /// <exception cref="T:System.Runtime.Serialization.SerializationException">The class name is null or <see cref="P:System.Exception.HResult" /> is zero (0). </exception>
-        protected ClientException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        protected ConflictException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.ResourceIds = (List<string>)info.GetValue("ResourceIds", typeof(List<string>));
         }
 
         /// <summary>
@@ -119,8 +137,27 @@ namespace Amazon.ECS.Model
         public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
         {
             base.GetObjectData(info, context);
+            info.AddValue("ResourceIds", this.ResourceIds);
         }
 #endif
+
+        /// <summary>
+        /// Gets and sets the property ResourceIds. 
+        /// <para>
+        /// The existing task ARNs which are already associated with the <code>clientToken</code>.
+        /// </para>
+        /// </summary>
+        public List<string> ResourceIds
+        {
+            get { return this._resourceIds; }
+            set { this._resourceIds = value; }
+        }
+
+        // Check to see if ResourceIds property is set
+        internal bool IsSetResourceIds()
+        {
+            return this._resourceIds != null && this._resourceIds.Count > 0; 
+        }
 
     }
 }

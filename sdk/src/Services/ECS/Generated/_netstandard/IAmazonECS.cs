@@ -89,7 +89,7 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
-        /// action or resource,. Or, it might be specifying an identifier that isn't valid.
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
@@ -142,7 +142,7 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
-        /// action or resource,. Or, it might be specifying an identifier that isn't valid.
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
@@ -293,7 +293,7 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
-        /// action or resource,. Or, it might be specifying an identifier that isn't valid.
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
         /// The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>.
@@ -345,7 +345,7 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
-        /// action or resource,. Or, it might be specifying an identifier that isn't valid.
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
         /// The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>.
@@ -399,7 +399,7 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
-        /// action or resource,. Or, it might be specifying an identifier that isn't valid.
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
@@ -477,7 +477,7 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
-        /// action or resource,. Or, it might be specifying an identifier that isn't valid.
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
@@ -516,7 +516,7 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
-        /// action or resource,. Or, it might be specifying an identifier that isn't valid.
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterContainsContainerInstancesException">
         /// You can't delete a cluster that has registered container instances. First, deregister
@@ -591,7 +591,7 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
-        /// action or resource,. Or, it might be specifying an identifier that isn't valid.
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
         /// The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>.
@@ -666,7 +666,7 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
-        /// action or resource,. Or, it might be specifying an identifier that isn't valid.
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
@@ -700,7 +700,7 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
-        /// action or resource,. Or, it might be specifying an identifier that isn't valid.
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
         /// The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>.
@@ -769,7 +769,7 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
-        /// action or resource,. Or, it might be specifying an identifier that isn't valid.
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
         /// The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>.
@@ -827,7 +827,7 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
-        /// action or resource,. Or, it might be specifying an identifier that isn't valid.
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
@@ -856,7 +856,7 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
-        /// action or resource,. Or, it might be specifying an identifier that isn't valid.
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
@@ -885,7 +885,7 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
-        /// action or resource,. Or, it might be specifying an identifier that isn't valid.
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
@@ -915,7 +915,7 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
-        /// action or resource,. Or, it might be specifying an identifier that isn't valid.
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
         /// The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>.
@@ -948,7 +948,7 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
-        /// action or resource,. Or, it might be specifying an identifier that isn't valid.
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
         /// The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>.
@@ -990,7 +990,7 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
-        /// action or resource,. Or, it might be specifying an identifier that isn't valid.
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
@@ -1030,7 +1030,7 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
-        /// action or resource,. Or, it might be specifying an identifier that isn't valid.
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
         /// The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>.
@@ -1069,7 +1069,7 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
-        /// action or resource,. Or, it might be specifying an identifier that isn't valid.
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
         /// The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>.
@@ -1129,7 +1129,7 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
-        /// action or resource,. Or, it might be specifying an identifier that isn't valid.
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
         /// The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>.
@@ -1188,7 +1188,7 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
-        /// action or resource,. Or, it might be specifying an identifier that isn't valid.
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
         /// The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>.
@@ -1227,7 +1227,7 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
-        /// action or resource,. Or, it might be specifying an identifier that isn't valid.
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
@@ -1287,7 +1287,7 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
-        /// action or resource,. Or, it might be specifying an identifier that isn't valid.
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
@@ -1319,7 +1319,7 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
-        /// action or resource,. Or, it might be specifying an identifier that isn't valid.
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
         /// The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>.
@@ -1353,7 +1353,7 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
-        /// action or resource,. Or, it might be specifying an identifier that isn't valid.
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
         /// The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>.
@@ -1391,7 +1391,7 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
-        /// action or resource,. Or, it might be specifying an identifier that isn't valid.
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
@@ -1423,7 +1423,7 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
-        /// action or resource,. Or, it might be specifying an identifier that isn't valid.
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
         /// The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>.
@@ -1465,7 +1465,7 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
-        /// action or resource,. Or, it might be specifying an identifier that isn't valid.
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
@@ -1496,7 +1496,7 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
-        /// action or resource,. Or, it might be specifying an identifier that isn't valid.
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
@@ -1532,7 +1532,7 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
-        /// action or resource,. Or, it might be specifying an identifier that isn't valid.
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
         /// The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>.
@@ -1624,7 +1624,7 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
-        /// action or resource,. Or, it might be specifying an identifier that isn't valid.
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
@@ -1654,7 +1654,7 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
-        /// action or resource,. Or, it might be specifying an identifier that isn't valid.
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
@@ -1742,7 +1742,7 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
-        /// action or resource,. Or, it might be specifying an identifier that isn't valid.
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
         /// The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>.
@@ -1810,7 +1810,7 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
-        /// action or resource,. Or, it might be specifying an identifier that isn't valid.
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
@@ -1896,11 +1896,32 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
-        /// action or resource,. Or, it might be specifying an identifier that isn't valid.
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
         /// The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>.
         /// Amazon ECS clusters are Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ConflictException">
+        /// The <code>RunTask</code> request could not be processed due to conflicts. The provided
+        /// <code>clientToken</code> is already in use with a different <code>RunTask</code> request.
+        /// The <code>resourceIds</code> are the existing task ARNs which are already associated
+        /// with the <code>clientToken</code>. 
+        /// 
+        ///  
+        /// <para>
+        /// To fix this issue:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Run <code>RunTask</code> with a unique <code>clientToken</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Run <code>RunTask</code> with the <code>clientToken</code> and the original set of
+        /// parameters
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
@@ -1957,7 +1978,7 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
-        /// action or resource,. Or, it might be specifying an identifier that isn't valid.
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
         /// The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>.
@@ -2009,7 +2030,7 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
-        /// action or resource,. Or, it might be specifying an identifier that isn't valid.
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
         /// The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>.
@@ -2053,7 +2074,7 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
-        /// action or resource,. Or, it might be specifying an identifier that isn't valid.
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
@@ -2085,7 +2106,7 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
-        /// action or resource,. Or, it might be specifying an identifier that isn't valid.
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
         /// The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>.
@@ -2121,7 +2142,7 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
-        /// action or resource,. Or, it might be specifying an identifier that isn't valid.
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
         /// The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>.
@@ -2157,7 +2178,7 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
-        /// action or resource,. Or, it might be specifying an identifier that isn't valid.
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
@@ -2186,7 +2207,7 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
-        /// action or resource,. Or, it might be specifying an identifier that isn't valid.
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
         /// The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>.
@@ -2222,7 +2243,7 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
-        /// action or resource,. Or, it might be specifying an identifier that isn't valid.
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
         /// The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>.
@@ -2283,7 +2304,7 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
-        /// action or resource,. Or, it might be specifying an identifier that isn't valid.
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
         /// The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>.
@@ -2399,7 +2420,7 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
-        /// action or resource,. Or, it might be specifying an identifier that isn't valid.
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
         /// The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>.
@@ -2582,7 +2603,7 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
-        /// action or resource,. Or, it might be specifying an identifier that isn't valid.
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
         /// The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>.
@@ -2640,7 +2661,7 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
-        /// action or resource,. Or, it might be specifying an identifier that isn't valid.
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
         /// The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>.
@@ -2730,7 +2751,7 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
-        /// action or resource,. Or, it might be specifying an identifier that isn't valid.
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
         /// The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>.
@@ -2774,7 +2795,7 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
-        /// action or resource,. Or, it might be specifying an identifier that isn't valid.
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
         /// The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>.
