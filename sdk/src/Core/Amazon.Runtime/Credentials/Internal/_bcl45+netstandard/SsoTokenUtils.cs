@@ -49,7 +49,7 @@ namespace Amazon.Runtime.Credentials.Internal
         public static bool IsExpired(this SsoToken token)
         {
             if (null == token)
-                throw new ArgumentNullException(nameof(token));
+                return true;
 
 #pragma warning disable CS0618 // Type or member is obsolete
             var currentTime = AWSSDKUtils.CorrectedUtcNow;
@@ -99,6 +99,8 @@ namespace Amazon.Runtime.Credentials.Internal
 
         /// <summary>
         /// This determines whether the <seealso cref="SsoToken.RegistrationExpiresAt"/> field is 5 minutes within expiration
+        /// Existing cached tokens, or tokens written out by other systems may contain null values for the RegistrationExpiresAt field.
+        /// In these cases we treat the client registration as expired and generate a new token.
         /// </summary>
         /// <param name="token">The sso token</param>
         /// <returns>This returns true if <seealso cref="SsoToken.RegistrationExpiresAt"/> is within 5 minutes of expiration. False otherwise</returns>
@@ -106,6 +108,8 @@ namespace Amazon.Runtime.Credentials.Internal
         {
             if (null == token)
                 throw new ArgumentNullException(nameof(token));
+            if (string.IsNullOrEmpty(token.RegistrationExpiresAt))
+                    return true;
             DateTime dateTime = ConvertRFC3339StringToDateTime(token.RegistrationExpiresAt);
 #pragma warning disable CS0618 // Type or member is obsolete
             return AWSSDKUtils.CorrectedUtcNow >= dateTime.AddMinutes(-5);

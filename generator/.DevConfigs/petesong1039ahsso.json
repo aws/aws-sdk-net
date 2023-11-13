@@ -1,0 +1,7 @@
+{
+    "core":{
+      "changeLogMessages":["SSO Token manager will register a new client device if the RegistrationExpiresAt field is null"],
+      "type": "patch",
+      "updateMinimum":true
+    }
+  }
