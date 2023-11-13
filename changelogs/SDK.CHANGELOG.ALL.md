@@ -1,3 +1,20 @@
+### 3.7.685.0 (2023-11-13 19:52 UTC)
+* AppRegistry (3.7.301.0)
+	* When the customer associates a resource collection to their application with this new feature, then a new application tag will be applied to all supported resources that are part of that collection. This allows customers to more easily find the application that is associated with those resources.
+* DatabaseMigrationService (3.7.301.0)
+	* Added new Db2 LUW Target endpoint with related endpoint settings. New executeTimeout endpoint setting for mysql endpoint. New ReplicationDeprovisionTime field for serverless describe-replications.
+* DataExchange (3.7.301.0)
+	* Removed Required trait for DataSet.OriginDetails.ProductId.
+* EC2 (3.7.302.0)
+	* Adds the new EC2 DescribeInstanceTopology API, which you can use to retrieve the network topology of your running instances on select platform types to determine their relative proximity to each other.
+* ECS (3.7.301.0)
+	* Adds a Client Token parameter to the ECS RunTask API. The Client Token parameter allows for idempotent RunTask requests.
+* ElasticMapReduce (3.7.301.0)
+	* Updated GetClusterSessionCredentials API  to allow Amazon SageMaker Studio to connect to EMR on EC2 clusters to support IdentityCenter/PEZ integration.
+* Core 3.7.300.1
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.684.0 (2023-11-10 19:38 UTC)
 * ControlTower (3.7.301.0)
 	* AWS Control Tower supports tagging for enabled controls. This release introduces TagResource, UntagResource and ListTagsForResource APIs to manage tags in existing enabled controls. It updates EnabledControl API to tag resources at creation time.
