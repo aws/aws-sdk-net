@@ -25,6 +25,110 @@ namespace Amazon.AppRegistry
 {
 
     /// <summary>
+    /// Constants used for properties of type ApplicationTagStatus.
+    /// </summary>
+    public class ApplicationTagStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILURE for ApplicationTagStatus
+        /// </summary>
+        public static readonly ApplicationTagStatus FAILURE = new ApplicationTagStatus("FAILURE");
+        /// <summary>
+        /// Constant IN_PROGRESS for ApplicationTagStatus
+        /// </summary>
+        public static readonly ApplicationTagStatus IN_PROGRESS = new ApplicationTagStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant SUCCESS for ApplicationTagStatus
+        /// </summary>
+        public static readonly ApplicationTagStatus SUCCESS = new ApplicationTagStatus("SUCCESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ApplicationTagStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ApplicationTagStatus FindValue(string value)
+        {
+            return FindValue<ApplicationTagStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ApplicationTagStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AssociationOption.
+    /// </summary>
+    public class AssociationOption : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant APPLY_APPLICATION_TAG for AssociationOption
+        /// </summary>
+        public static readonly AssociationOption APPLY_APPLICATION_TAG = new AssociationOption("APPLY_APPLICATION_TAG");
+        /// <summary>
+        /// Constant SKIP_APPLICATION_TAG for AssociationOption
+        /// </summary>
+        public static readonly AssociationOption SKIP_APPLICATION_TAG = new AssociationOption("SKIP_APPLICATION_TAG");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AssociationOption(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AssociationOption FindValue(string value)
+        {
+            return FindValue<AssociationOption>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AssociationOption(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ResourceGroupState.
     /// </summary>
     public class ResourceGroupState : ConstantClass
@@ -84,6 +188,64 @@ namespace Amazon.AppRegistry
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ResourceGroupState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ResourceItemStatus.
+    /// </summary>
+    public class ResourceItemStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for ResourceItemStatus
+        /// </summary>
+        public static readonly ResourceItemStatus FAILED = new ResourceItemStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for ResourceItemStatus
+        /// </summary>
+        public static readonly ResourceItemStatus IN_PROGRESS = new ResourceItemStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant SKIPPED for ResourceItemStatus
+        /// </summary>
+        public static readonly ResourceItemStatus SKIPPED = new ResourceItemStatus("SKIPPED");
+        /// <summary>
+        /// Constant SUCCESS for ResourceItemStatus
+        /// </summary>
+        public static readonly ResourceItemStatus SUCCESS = new ResourceItemStatus("SUCCESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResourceItemStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourceItemStatus FindValue(string value)
+        {
+            return FindValue<ResourceItemStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourceItemStatus(string value)
         {
             return FindValue(value);
         }

@@ -105,7 +105,6 @@ namespace Amazon.AppRegistry.Model
         ///  The name of the attribute group. 
         /// </para>
         /// </summary>
-        [Obsolete("This field is deprecated. We recommend not using the field when using ListAttributeGroupsForApplication.")]
         [AWSProperty(Min=1, Max=256)]
         public string Name
         {

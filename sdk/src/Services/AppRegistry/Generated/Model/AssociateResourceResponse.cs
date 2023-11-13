@@ -34,6 +34,7 @@ namespace Amazon.AppRegistry.Model
     public partial class AssociateResourceResponse : AmazonWebServiceResponse
     {
         private string _applicationArn;
+        private List<string> _options = new List<string>();
         private string _resourceArn;
 
         /// <summary>
@@ -52,6 +53,24 @@ namespace Amazon.AppRegistry.Model
         internal bool IsSetApplicationArn()
         {
             return this._applicationArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Options. 
+        /// <para>
+        ///  Determines whether an application tag is applied or skipped. 
+        /// </para>
+        /// </summary>
+        public List<string> Options
+        {
+            get { return this._options; }
+            set { this._options = value; }
+        }
+
+        // Check to see if Options property is set
+        internal bool IsSetOptions()
+        {
+            return this._options != null && this._options.Count > 0; 
         }
 
         /// <summary>

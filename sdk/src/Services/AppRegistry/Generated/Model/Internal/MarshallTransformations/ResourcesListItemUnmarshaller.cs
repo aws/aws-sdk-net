@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AppRegistry.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Integrations Object
+    /// Response Unmarshaller for ResourcesListItem Object
     /// </summary>  
-    public class IntegrationsUnmarshaller : IUnmarshaller<Integrations, XmlUnmarshallerContext>, IUnmarshaller<Integrations, JsonUnmarshallerContext>
+    public class ResourcesListItemUnmarshaller : IUnmarshaller<ResourcesListItem, XmlUnmarshallerContext>, IUnmarshaller<ResourcesListItem, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Integrations IUnmarshaller<Integrations, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ResourcesListItem IUnmarshaller<ResourcesListItem, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,39 @@ namespace Amazon.AppRegistry.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Integrations Unmarshall(JsonUnmarshallerContext context)
+        public ResourcesListItem Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Integrations unmarshalledObject = new Integrations();
+            ResourcesListItem unmarshalledObject = new ResourcesListItem();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("applicationTagResourceGroup", targetDepth))
+                if (context.TestExpression("errorMessage", targetDepth))
                 {
-                    var unmarshaller = ResourceGroupUnmarshaller.Instance;
-                    unmarshalledObject.ApplicationTagResourceGroup = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ErrorMessage = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("resourceGroup", targetDepth))
+                if (context.TestExpression("resourceArn", targetDepth))
                 {
-                    var unmarshaller = ResourceGroupUnmarshaller.Instance;
-                    unmarshalledObject.ResourceGroup = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ResourceArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("resourceType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("status", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +94,12 @@ namespace Amazon.AppRegistry.Model.Internal.MarshallTransformations
         }
 
 
-        private static IntegrationsUnmarshaller _instance = new IntegrationsUnmarshaller();        
+        private static ResourcesListItemUnmarshaller _instance = new ResourcesListItemUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static IntegrationsUnmarshaller Instance
+        public static ResourcesListItemUnmarshaller Instance
         {
             get
             {

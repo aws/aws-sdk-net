@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AppRegistry.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Integrations Object
+    /// Response Unmarshaller for ApplicationTagResult Object
     /// </summary>  
-    public class IntegrationsUnmarshaller : IUnmarshaller<Integrations, XmlUnmarshallerContext>, IUnmarshaller<Integrations, JsonUnmarshallerContext>
+    public class ApplicationTagResultUnmarshaller : IUnmarshaller<ApplicationTagResult, XmlUnmarshallerContext>, IUnmarshaller<ApplicationTagResult, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Integrations IUnmarshaller<Integrations, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ApplicationTagResult IUnmarshaller<ApplicationTagResult, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,39 @@ namespace Amazon.AppRegistry.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Integrations Unmarshall(JsonUnmarshallerContext context)
+        public ApplicationTagResult Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Integrations unmarshalledObject = new Integrations();
+            ApplicationTagResult unmarshalledObject = new ApplicationTagResult();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("applicationTagResourceGroup", targetDepth))
+                if (context.TestExpression("applicationTagStatus", targetDepth))
                 {
-                    var unmarshaller = ResourceGroupUnmarshaller.Instance;
-                    unmarshalledObject.ApplicationTagResourceGroup = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ApplicationTagStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("resourceGroup", targetDepth))
+                if (context.TestExpression("errorMessage", targetDepth))
                 {
-                    var unmarshaller = ResourceGroupUnmarshaller.Instance;
-                    unmarshalledObject.ResourceGroup = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ErrorMessage = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("nextToken", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.NextToken = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("resources", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ResourcesListItem, ResourcesListItemUnmarshaller>(ResourcesListItemUnmarshaller.Instance);
+                    unmarshalledObject.Resources = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +94,12 @@ namespace Amazon.AppRegistry.Model.Internal.MarshallTransformations
         }
 
 
-        private static IntegrationsUnmarshaller _instance = new IntegrationsUnmarshaller();        
+        private static ApplicationTagResultUnmarshaller _instance = new ApplicationTagResultUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static IntegrationsUnmarshaller Instance
+        public static ApplicationTagResultUnmarshaller Instance
         {
             get
             {

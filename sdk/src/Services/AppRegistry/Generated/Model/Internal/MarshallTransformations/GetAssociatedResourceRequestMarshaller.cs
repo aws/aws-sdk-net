@@ -67,7 +67,17 @@ namespace Amazon.AppRegistry.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetResourceType())
                 throw new AmazonAppRegistryException("Request object does not have required field ResourceType set");
             request.AddPathResource("{resourceType}", StringUtils.FromString(publicRequest.ResourceType));
+            
+            if (publicRequest.IsSetMaxResults())
+                request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
+            
+            if (publicRequest.IsSetNextToken())
+                request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
+            
+            if (publicRequest.IsSetResourceTagStatus())
+                request.ParameterCollection.Add("resourceTagStatus", publicRequest.ResourceTagStatus);
             request.ResourcePath = "/applications/{application}/resources/{resourceType}/{resource}";
+            request.UseQueryString = true;
 
             return request;
         }

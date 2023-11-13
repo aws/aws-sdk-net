@@ -76,6 +76,12 @@ namespace Amazon.AppRegistry.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("options", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Options = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("resourceDetails", targetDepth))
                 {
                     var unmarshaller = ResourceDetailsUnmarshaller.Instance;

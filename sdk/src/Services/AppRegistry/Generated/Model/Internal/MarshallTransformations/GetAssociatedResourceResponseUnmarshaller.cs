@@ -51,6 +51,18 @@ namespace Amazon.AppRegistry.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("applicationTagResult", targetDepth))
+                {
+                    var unmarshaller = ApplicationTagResultUnmarshaller.Instance;
+                    response.ApplicationTagResult = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("options", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.Options = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("resource", targetDepth))
                 {
                     var unmarshaller = ResourceUnmarshaller.Instance;

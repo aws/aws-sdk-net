@@ -33,7 +33,45 @@ namespace Amazon.AppRegistry.Model
     /// </summary>
     public partial class GetAssociatedResourceResponse : AmazonWebServiceResponse
     {
+        private ApplicationTagResult _applicationTagResult;
+        private List<string> _options = new List<string>();
         private Resource _resource;
+
+        /// <summary>
+        /// Gets and sets the property ApplicationTagResult. 
+        /// <para>
+        ///  The result of the application that's tag applied to a resource. 
+        /// </para>
+        /// </summary>
+        public ApplicationTagResult ApplicationTagResult
+        {
+            get { return this._applicationTagResult; }
+            set { this._applicationTagResult = value; }
+        }
+
+        // Check to see if ApplicationTagResult property is set
+        internal bool IsSetApplicationTagResult()
+        {
+            return this._applicationTagResult != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Options. 
+        /// <para>
+        ///  Determines whether an application tag is applied or skipped. 
+        /// </para>
+        /// </summary>
+        public List<string> Options
+        {
+            get { return this._options; }
+            set { this._options = value; }
+        }
+
+        // Check to see if Options property is set
+        internal bool IsSetOptions()
+        {
+            return this._options != null && this._options.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property Resource. 

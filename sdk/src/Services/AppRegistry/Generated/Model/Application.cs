@@ -34,6 +34,7 @@ namespace Amazon.AppRegistry.Model
     /// </summary>
     public partial class Application
     {
+        private Dictionary<string, string> _applicationTag = new Dictionary<string, string>();
         private string _arn;
         private DateTime? _creationTime;
         private string _description;
@@ -41,6 +42,24 @@ namespace Amazon.AppRegistry.Model
         private DateTime? _lastUpdateTime;
         private string _name;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
+
+        /// <summary>
+        /// Gets and sets the property ApplicationTag. 
+        /// <para>
+        ///  A key-value pair that identifies an associated resource. 
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> ApplicationTag
+        {
+            get { return this._applicationTag; }
+            set { this._applicationTag = value; }
+        }
+
+        // Check to see if ApplicationTag property is set
+        internal bool IsSetApplicationTag()
+        {
+            return this._applicationTag != null && this._applicationTag.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property Arn. 

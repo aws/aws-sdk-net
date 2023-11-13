@@ -31,11 +31,55 @@ namespace Amazon.AppRegistry.Model
     /// <summary>
     /// Container for the parameters to the AssociateResource operation.
     /// Associates a resource with an application. The resource can be specified by its ARN
-    /// or name. The application can be specified by ARN, ID, or name.
+    /// or name. The application can be specified by ARN, ID, or name. 
+    /// 
+    ///  
+    /// <para>
+    ///  <b>Minimum permissions</b> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  You must have the following permissions to associate a resource using the <code>OPTIONS</code>
+    /// parameter set to <code>APPLY_APPLICATION_TAG</code>. 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <code>tag:GetResources</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>tag:TagResources</code> 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    ///  You must also have these additional permissions if you don't use the <code>AWSServiceCatalogAppRegistryFullAccess</code>
+    /// policy. For more information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/arguide/full.html">AWSServiceCatalogAppRegistryFullAccess</a>
+    /// in the AppRegistry Administrator Guide. 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <code>resource-groups:DisassociateResource</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>cloudformation:UpdateStack</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>cloudformation:DescribeStacks</code> 
+    /// </para>
+    ///  </li> </ul> <note> 
+    /// <para>
+    ///  In addition, you must have the tagging permission defined by the Amazon Web Services
+    /// service that creates the resource. For more information, see <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_TagResources.html">TagResources</a>
+    /// in the <i>Resource Groups Tagging API Reference</i>. 
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class AssociateResourceRequest : AmazonAppRegistryRequest
     {
         private string _application;
+        private List<string> _options = new List<string>();
         private string _resource;
         private ResourceType _resourceType;
 
@@ -56,6 +100,24 @@ namespace Amazon.AppRegistry.Model
         internal bool IsSetApplication()
         {
             return this._application != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Options. 
+        /// <para>
+        ///  Determines whether an application tag is applied or skipped. 
+        /// </para>
+        /// </summary>
+        public List<string> Options
+        {
+            get { return this._options; }
+            set { this._options = value; }
+        }
+
+        // Check to see if Options property is set
+        internal bool IsSetOptions()
+        {
+            return this._options != null && this._options.Count > 0; 
         }
 
         /// <summary>

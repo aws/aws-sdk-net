@@ -35,7 +35,10 @@ namespace Amazon.AppRegistry.Model
     public partial class GetAssociatedResourceRequest : AmazonAppRegistryRequest
     {
         private string _application;
+        private int? _maxResults;
+        private string _nextToken;
         private string _resource;
+        private List<string> _resourceTagStatus = new List<string>();
         private ResourceType _resourceType;
 
         /// <summary>
@@ -58,6 +61,46 @@ namespace Amazon.AppRegistry.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        ///  The maximum number of results to return. If the parameter is omitted, it defaults
+        /// to 25. The value is optional. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=100)]
+        public int MaxResults
+        {
+            get { return this._maxResults.GetValueOrDefault(); }
+            set { this._maxResults = value; }
+        }
+
+        // Check to see if MaxResults property is set
+        internal bool IsSetMaxResults()
+        {
+            return this._maxResults.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        ///  A unique pagination token for each page of results. Make the call again with the
+        /// returned token to retrieve the next page of results. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2024)]
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Resource. 
         /// <para>
         /// The name or ID of the resource associated with the application.
@@ -74,6 +117,26 @@ namespace Amazon.AppRegistry.Model
         internal bool IsSetResource()
         {
             return this._resource != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceTagStatus. 
+        /// <para>
+        ///  States whether an application tag is applied, not applied, in the process of being
+        /// applied, or skipped. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=4)]
+        public List<string> ResourceTagStatus
+        {
+            get { return this._resourceTagStatus; }
+            set { this._resourceTagStatus = value; }
+        }
+
+        // Check to see if ResourceTagStatus property is set
+        internal bool IsSetResourceTagStatus()
+        {
+            return this._resourceTagStatus != null && this._resourceTagStatus.Count > 0; 
         }
 
         /// <summary>

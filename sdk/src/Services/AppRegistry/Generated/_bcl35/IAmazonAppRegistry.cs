@@ -110,7 +110,50 @@ namespace Amazon.AppRegistry
 
         /// <summary>
         /// Associates a resource with an application. The resource can be specified by its ARN
-        /// or name. The application can be specified by ARN, ID, or name.
+        /// or name. The application can be specified by ARN, ID, or name. 
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Minimum permissions</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  You must have the following permissions to associate a resource using the <code>OPTIONS</code>
+        /// parameter set to <code>APPLY_APPLICATION_TAG</code>. 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>tag:GetResources</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>tag:TagResources</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  You must also have these additional permissions if you don't use the <code>AWSServiceCatalogAppRegistryFullAccess</code>
+        /// policy. For more information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/arguide/full.html">AWSServiceCatalogAppRegistryFullAccess</a>
+        /// in the AppRegistry Administrator Guide. 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>resource-groups:DisassociateResource</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>cloudformation:UpdateStack</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>cloudformation:DescribeStacks</code> 
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        ///  In addition, you must have the tagging permission defined by the Amazon Web Services
+        /// service that creates the resource. For more information, see <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_TagResources.html">TagResources</a>
+        /// in the <i>Resource Groups Tagging API Reference</i>. 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateResource service method.</param>
         /// 
@@ -433,8 +476,52 @@ namespace Amazon.AppRegistry
 
 
         /// <summary>
-        /// Disassociates a resource from application. Both the resource and the application can
-        /// be specified either by ID or name.
+        /// Disassociates a resource from application. Both the resource and the application
+        /// can be specified either by ID or name. 
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Minimum permissions</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  You must have the following permissions to remove a resource that's been associated
+        /// with an application using the <code>APPLY_APPLICATION_TAG</code> option for <a href="https://docs.aws.amazon.com/servicecatalog/latest/dg/API_app-registry_AssociateResource.html">AssociateResource</a>.
+        /// 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>tag:GetResources</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>tag:UntagResources</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  You must also have the following permissions if you don't use the <code>AWSServiceCatalogAppRegistryFullAccess</code>
+        /// policy. For more information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/arguide/full.html">AWSServiceCatalogAppRegistryFullAccess</a>
+        /// in the AppRegistry Administrator Guide. 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>resource-groups:DisassociateResource</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>cloudformation:UpdateStack</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>cloudformation:DescribeStacks</code> 
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        ///  In addition, you must have the tagging permission defined by the Amazon Web Services
+        /// service that creates the resource. For more information, see <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_UntTagResources.html">UntagResources</a>
+        /// in the <i>Resource Groups Tagging API Reference</i>. 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateResource service method.</param>
         /// 
