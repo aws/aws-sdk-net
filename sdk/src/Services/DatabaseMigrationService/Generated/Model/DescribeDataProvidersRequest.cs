@@ -43,6 +43,10 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <para>
         /// Filters applied to the data providers described in the form of key-value pairs.
         /// </para>
+        ///  
+        /// <para>
+        /// Valid filter names: data-provider-identifier
+        /// </para>
         /// </summary>
         public List<Filter> Filters
         {

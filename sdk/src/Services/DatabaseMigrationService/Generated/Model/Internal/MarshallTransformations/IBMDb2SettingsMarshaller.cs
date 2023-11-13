@@ -57,6 +57,24 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.DatabaseName);
             }
 
+            if(requestObject.IsSetKeepCsvFiles())
+            {
+                context.Writer.WritePropertyName("KeepCsvFiles");
+                context.Writer.Write(requestObject.KeepCsvFiles);
+            }
+
+            if(requestObject.IsSetLoadTimeout())
+            {
+                context.Writer.WritePropertyName("LoadTimeout");
+                context.Writer.Write(requestObject.LoadTimeout);
+            }
+
+            if(requestObject.IsSetMaxFileSize())
+            {
+                context.Writer.WritePropertyName("MaxFileSize");
+                context.Writer.Write(requestObject.MaxFileSize);
+            }
+
             if(requestObject.IsSetMaxKBytesPerRead())
             {
                 context.Writer.WritePropertyName("MaxKBytesPerRead");
@@ -103,6 +121,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("Username");
                 context.Writer.Write(requestObject.Username);
+            }
+
+            if(requestObject.IsSetWriteBufferSize())
+            {
+                context.Writer.WritePropertyName("WriteBufferSize");
+                context.Writer.Write(requestObject.WriteBufferSize);
             }
 
         }

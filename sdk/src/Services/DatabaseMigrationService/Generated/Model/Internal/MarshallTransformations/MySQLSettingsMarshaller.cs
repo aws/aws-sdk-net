@@ -69,6 +69,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.EventsPollInterval);
             }
 
+            if(requestObject.IsSetExecuteTimeout())
+            {
+                context.Writer.WritePropertyName("ExecuteTimeout");
+                context.Writer.Write(requestObject.ExecuteTimeout);
+            }
+
             if(requestObject.IsSetMaxFileSize())
             {
                 context.Writer.WritePropertyName("MaxFileSize");

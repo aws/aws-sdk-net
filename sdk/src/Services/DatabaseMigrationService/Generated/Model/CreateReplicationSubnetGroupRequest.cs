@@ -104,7 +104,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property SubnetIds. 
         /// <para>
-        /// One or more subnet IDs to be assigned to the subnet group.
+        /// Two or more subnet IDs to be assigned to the subnet group.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -118,6 +118,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.ReplicationCreateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ReplicationDeprovisionTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.ReplicationDeprovisionTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ReplicationLastStopTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

@@ -37,6 +37,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private bool? _cleanSourceMetadataOnMismatch;
         private string _databaseName;
         private int? _eventsPollInterval;
+        private int? _executeTimeout;
         private int? _maxFileSize;
         private int? _parallelLoadThreads;
         private string _password;
@@ -141,6 +142,24 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetEventsPollInterval()
         {
             return this._eventsPollInterval.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExecuteTimeout. 
+        /// <para>
+        /// Sets the client statement timeout (in seconds) for a MySQL source endpoint.
+        /// </para>
+        /// </summary>
+        public int ExecuteTimeout
+        {
+            get { return this._executeTimeout.GetValueOrDefault(); }
+            set { this._executeTimeout = value; }
+        }
+
+        // Check to see if ExecuteTimeout property is set
+        internal bool IsSetExecuteTimeout()
+        {
+            return this._executeTimeout.HasValue; 
         }
 
         /// <summary>

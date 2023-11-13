@@ -88,6 +88,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.EventsPollInterval = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ExecuteTimeout", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.ExecuteTimeout = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("MaxFileSize", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

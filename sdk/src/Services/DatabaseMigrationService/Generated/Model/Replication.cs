@@ -43,6 +43,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private string _replicationConfigArn;
         private string _replicationConfigIdentifier;
         private DateTime? _replicationCreateTime;
+        private DateTime? _replicationDeprovisionTime;
         private DateTime? _replicationLastStopTime;
         private ReplicationStats _replicationStats;
         private MigrationTypeValue _replicationType;
@@ -221,6 +222,24 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetReplicationCreateTime()
         {
             return this._replicationCreateTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReplicationDeprovisionTime. 
+        /// <para>
+        /// The timestamp when DMS will deprovision the replication.
+        /// </para>
+        /// </summary>
+        public DateTime ReplicationDeprovisionTime
+        {
+            get { return this._replicationDeprovisionTime.GetValueOrDefault(); }
+            set { this._replicationDeprovisionTime = value; }
+        }
+
+        // Check to see if ReplicationDeprovisionTime property is set
+        internal bool IsSetReplicationDeprovisionTime()
+        {
+            return this._replicationDeprovisionTime.HasValue; 
         }
 
         /// <summary>

@@ -76,6 +76,24 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.DatabaseName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("KeepCsvFiles", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.KeepCsvFiles = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LoadTimeout", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.LoadTimeout = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("MaxFileSize", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.MaxFileSize = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("MaxKBytesPerRead", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
@@ -122,6 +140,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Username = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("WriteBufferSize", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.WriteBufferSize = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
