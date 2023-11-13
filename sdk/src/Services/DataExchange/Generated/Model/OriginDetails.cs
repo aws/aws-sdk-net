@@ -41,7 +41,6 @@ namespace Amazon.DataExchange.Model
         /// The product ID of the origin of the data set.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string ProductId
         {
             get { return this._productId; }
