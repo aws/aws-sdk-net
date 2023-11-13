@@ -84,7 +84,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property DPDTimeoutSeconds. 
         /// <para>
-        /// The number of seconds after which a DPD timeout occurs.
+        /// The number of seconds after which a DPD timeout occurs. A DPD timeout of 40 seconds
+        /// means that the VPN endpoint will consider the peer dead 30 seconds after the first
+        /// failed keep-alive.
         /// </para>
         ///  
         /// <para>
@@ -92,7 +94,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>30</code> 
+        /// Default: <code>40</code> 
         /// </para>
         /// </summary>
         public int DPDTimeoutSeconds

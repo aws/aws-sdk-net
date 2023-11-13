@@ -10170,7 +10170,7 @@ namespace Amazon.EC2
         /// of the accepter VPC can delete the VPC peering connection if it's in the <code>active</code>
         /// state. The owner of the requester VPC can delete a VPC peering connection in the <code>pending-acceptance</code>
         /// state. You cannot delete a VPC peering connection that's in the <code>failed</code>
-        /// state.
+        /// or <code>rejected</code> state.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteVpcPeeringConnection service method.</param>
         /// 
@@ -12011,7 +12011,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describe details for Windows AMIs that are configured for faster launching.
+        /// Describe details for Windows AMIs that are configured for Windows fast launch.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeFastLaunchImages service method.</param>
         /// 
@@ -13327,6 +13327,92 @@ namespace Amazon.EC2
         /// <returns>Returns a  DescribeInstanceStatusResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceStatus">REST API Reference for DescribeInstanceStatus Operation</seealso>
         DescribeInstanceStatusResponse EndDescribeInstanceStatus(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeInstanceTopology
+
+
+        /// <summary>
+        /// Describes a tree-based hierarchy that represents the physical host placement of your
+        /// EC2 instances within an Availability Zone or Local Zone. You can use this information
+        /// to determine the relative proximity of your EC2 instances within the Amazon Web Services
+        /// network to support your tightly coupled workloads.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Limitations</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Supported zones
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Availability Zone
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Local Zone
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Supported instance types
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>hpc6a.48xlarge</code> | <code>hpc6id.32xlarge</code> | <code>hpc7a.12xlarge</code>
+        /// | <code>hpc7a.24xlarge</code> | <code>hpc7a.48xlarge</code> | <code>hpc7a.96xlarge</code>
+        /// | <code>hpc7g.4xlarge</code> | <code>hpc7g.8xlarge</code> | <code>hpc7g.16xlarge</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>p3dn.24xlarge</code> | <code>p4d.24xlarge</code> | <code>p4de.24xlarge</code>
+        /// | <code>p5.48xlarge</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>trn1.2xlarge</code> | <code>trn1.32xlarge</code> | <code>trn1n.32xlarge</code>
+        /// 
+        /// </para>
+        ///  </li> </ul> </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-topology.html">Amazon
+        /// EC2 instance topology</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceTopology service method.</param>
+        /// 
+        /// <returns>The response from the DescribeInstanceTopology service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceTopology">REST API Reference for DescribeInstanceTopology Operation</seealso>
+        DescribeInstanceTopologyResponse DescribeInstanceTopology(DescribeInstanceTopologyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeInstanceTopology operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceTopology operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeInstanceTopology
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceTopology">REST API Reference for DescribeInstanceTopology Operation</seealso>
+        IAsyncResult BeginDescribeInstanceTopology(DescribeInstanceTopologyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeInstanceTopology operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeInstanceTopology.</param>
+        /// 
+        /// <returns>Returns a  DescribeInstanceTopologyResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceTopology">REST API Reference for DescribeInstanceTopology Operation</seealso>
+        DescribeInstanceTopologyResponse EndDescribeInstanceTopology(IAsyncResult asyncResult);
 
         #endregion
         
@@ -18465,14 +18551,15 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Discontinue faster launching for a Windows AMI, and clean up existing pre-provisioned
-        /// snapshots. When you disable faster launching, the AMI uses the standard launch process
-        /// for each instance. All pre-provisioned snapshots must be removed before you can enable
-        /// faster launching again.
+        /// Discontinue Windows fast launch for a Windows AMI, and clean up existing pre-provisioned
+        /// snapshots. After you disable Windows fast launch, the AMI uses the standard launch
+        /// process for each new instance. Amazon EC2 must remove all pre-provisioned snapshots
+        /// before you can enable Windows fast launch again.
         /// 
         ///  <note> 
         /// <para>
-        /// To change these settings, you must own the AMI.
+        /// You can only change these settings for Windows AMIs that you own or that have been
+        /// shared with you.
         /// </para>
         ///  </note>
         /// </summary>
@@ -18560,9 +18647,9 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// A disabled AMI can't be shared. If a public or shared AMI was previously shared, it
-        /// is made private. If an AMI was shared with an Amazon Web Services account, organization,
-        /// or Organizational Unit, they lose access to the disabled AMI. 
+        /// A disabled AMI can't be shared. If an AMI was public or previously shared, it is made
+        /// private. If an AMI was shared with an Amazon Web Services account, organization, or
+        /// Organizational Unit, they lose access to the disabled AMI. 
         /// </para>
         ///  
         /// <para>
@@ -19837,16 +19924,17 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// When you enable faster launching for a Windows AMI, images are pre-provisioned, using
-        /// snapshots to launch instances up to 65% faster. To create the optimized Windows image,
-        /// Amazon EC2 launches an instance and runs through Sysprep steps, rebooting as required.
-        /// Then it creates a set of reserved snapshots that are used for subsequent launches.
-        /// The reserved snapshots are automatically replenished as they are used, depending on
-        /// your settings for launch frequency.
+        /// When you enable Windows fast launch for a Windows AMI, images are pre-provisioned,
+        /// using snapshots to launch instances up to 65% faster. To create the optimized Windows
+        /// image, Amazon EC2 launches an instance and runs through Sysprep steps, rebooting as
+        /// required. Then it creates a set of reserved snapshots that are used for subsequent
+        /// launches. The reserved snapshots are automatically replenished as they are used, depending
+        /// on your settings for launch frequency.
         /// 
         ///  <note> 
         /// <para>
-        /// To change these settings, you must own the AMI.
+        /// You can only change these settings for Windows AMIs that you own or that have been
+        /// shared with you.
         /// </para>
         ///  </note>
         /// </summary>

@@ -35,9 +35,9 @@ namespace Amazon.EC2.Model
     /// 
     ///  
     /// <para>
-    /// A disabled AMI can't be shared. If a public or shared AMI was previously shared, it
-    /// is made private. If an AMI was shared with an Amazon Web Services account, organization,
-    /// or Organizational Unit, they lose access to the disabled AMI. 
+    /// A disabled AMI can't be shared. If an AMI was public or previously shared, it is made
+    /// private. If an AMI was shared with an Amazon Web Services account, organization, or
+    /// Organizational Unit, they lose access to the disabled AMI. 
     /// </para>
     ///  
     /// <para>

@@ -32,89 +32,97 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetCoipPoolUsage operation
+    /// Response Unmarshaller for InstanceTopology Object
     /// </summary>  
-    public class GetCoipPoolUsageResponseUnmarshaller : EC2ResponseUnmarshaller
+    public class InstanceTopologyUnmarshaller : IUnmarshaller<InstanceTopology, XmlUnmarshallerContext>, IUnmarshaller<InstanceTopology, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
-        /// </summary>
+        /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
+        public InstanceTopology Unmarshall(XmlUnmarshallerContext context)
         {
-            GetCoipPoolUsageResponse response = new GetCoipPoolUsageResponse();
-
+            InstanceTopology unmarshalledObject = new InstanceTopology();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
-               targetDepth = 2;
-
+               targetDepth += 2;
+            
             while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-
-                    if (context.TestExpression("coipAddressUsageSet/item", targetDepth))
+                    if (context.TestExpression("availabilityZone", targetDepth))
                     {
-                        var unmarshaller = CoipAddressUsageUnmarshaller.Instance;
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AvailabilityZone = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("groupName", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.GroupName = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("instanceId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.InstanceId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("instanceType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("networkNodeSet/item", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
                         var item = unmarshaller.Unmarshall(context);
-                        response.CoipAddressUsages.Add(item);
+                        unmarshalledObject.NetworkNodes.Add(item);
                         continue;
                     }
-                    if (context.TestExpression("coipPoolId", targetDepth))
+                    if (context.TestExpression("zoneId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        response.CoipPoolId = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.ZoneId = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("localGatewayRouteTableId", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        response.LocalGatewayRouteTableId = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("nextToken", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        response.NextToken = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                } 
+                }
+                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
+                {
+                    return unmarshalledObject;
+                }
             }
 
-            return response;
+            return unmarshalledObject;
         }
 
         /// <summary>
         /// Unmarshaller error response to exception.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="innerException"></param>
-        /// <param name="statusCode"></param>
         /// <returns></returns>
-        public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        public InstanceTopology Unmarshall(JsonUnmarshallerContext context)
         {
-            ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            return new AmazonEC2Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            return null;
         }
-        private static GetCoipPoolUsageResponseUnmarshaller _instance = new GetCoipPoolUsageResponseUnmarshaller();        
 
-        internal static GetCoipPoolUsageResponseUnmarshaller GetInstance()
-        {
-            return _instance;
-        }
+
+        private static InstanceTopologyUnmarshaller _instance = new InstanceTopologyUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetCoipPoolUsageResponseUnmarshaller Instance
+        public static InstanceTopologyUnmarshaller Instance
         {
             get
             {
                 return _instance;
             }
         }
-
     }
 }

@@ -29,36 +29,36 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeVerifiedAccessInstanceLoggingConfigurations operation.
+    /// This is the response object from the DescribeInstanceTopology operation.
     /// </summary>
-    public partial class DescribeVerifiedAccessInstanceLoggingConfigurationsResponse : AmazonWebServiceResponse
+    public partial class DescribeInstanceTopologyResponse : AmazonWebServiceResponse
     {
-        private List<VerifiedAccessInstanceLoggingConfiguration> _loggingConfigurations = new List<VerifiedAccessInstanceLoggingConfiguration>();
+        private List<InstanceTopology> _instances = new List<InstanceTopology>();
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property LoggingConfigurations. 
+        /// Gets and sets the property Instances. 
         /// <para>
-        /// The logging configuration for the Verified Access instances.
+        /// Information about the topology of each instance.
         /// </para>
         /// </summary>
-        public List<VerifiedAccessInstanceLoggingConfiguration> LoggingConfigurations
+        public List<InstanceTopology> Instances
         {
-            get { return this._loggingConfigurations; }
-            set { this._loggingConfigurations = value; }
+            get { return this._instances; }
+            set { this._instances = value; }
         }
 
-        // Check to see if LoggingConfigurations property is set
-        internal bool IsSetLoggingConfigurations()
+        // Check to see if Instances property is set
+        internal bool IsSetInstances()
         {
-            return this._loggingConfigurations != null && this._loggingConfigurations.Count > 0; 
+            return this._instances != null && this._instances.Count > 0; 
         }
 
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token to use to retrieve the next page of results. This value is <code>null</code>
-        /// when there are no more results to return.
+        /// The token to include in another request to get the next page of items. This value
+        /// is <code>null</code> when there are no more items to return.
         /// </para>
         /// </summary>
         public string NextToken

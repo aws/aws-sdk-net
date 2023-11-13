@@ -58,7 +58,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property VerifiedAccessGroups. 
         /// <para>
-        /// The ID of the Verified Access group.
+        /// Details about the Verified Access groups.
         /// </para>
         /// </summary>
         public List<VerifiedAccessGroup> VerifiedAccessGroups

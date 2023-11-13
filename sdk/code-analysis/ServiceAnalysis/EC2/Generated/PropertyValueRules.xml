@@ -220,6 +220,11 @@
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeInstanceTopologyRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.DescribeInstanceTypeOfferingsRequest.MaxResults</property>
     <min>5</min>
     <max>1000</max>

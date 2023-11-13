@@ -30,14 +30,15 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DisableFastLaunch operation.
-    /// Discontinue faster launching for a Windows AMI, and clean up existing pre-provisioned
-    /// snapshots. When you disable faster launching, the AMI uses the standard launch process
-    /// for each instance. All pre-provisioned snapshots must be removed before you can enable
-    /// faster launching again.
+    /// Discontinue Windows fast launch for a Windows AMI, and clean up existing pre-provisioned
+    /// snapshots. After you disable Windows fast launch, the AMI uses the standard launch
+    /// process for each new instance. Amazon EC2 must remove all pre-provisioned snapshots
+    /// before you can enable Windows fast launch again.
     /// 
     ///  <note> 
     /// <para>
-    /// To change these settings, you must own the AMI.
+    /// You can only change these settings for Windows AMIs that you own or that have been
+    /// shared with you.
     /// </para>
     ///  </note>
     /// </summary>
@@ -49,7 +50,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Force. 
         /// <para>
-        /// Forces the image settings to turn off faster launching for your Windows AMI. This
+        /// Forces the image settings to turn off Windows fast launch for your Windows AMI. This
         /// parameter overrides any errors that are encountered while cleaning up resources in
         /// your account.
         /// </para>
@@ -69,8 +70,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ImageId. 
         /// <para>
-        /// The ID of the image for which you’re turning off faster launching, and removing pre-provisioned
-        /// snapshots.
+        /// Specify the ID of the image for which to disable Windows fast launch.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

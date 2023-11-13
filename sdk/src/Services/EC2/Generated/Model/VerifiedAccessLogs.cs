@@ -60,7 +60,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property IncludeTrustContext. 
         /// <para>
-        ///  Describes current setting for including trust data into the logs. 
+        /// Indicates whether trust data is included in the logs.
         /// </para>
         /// </summary>
         public bool IncludeTrustContext
@@ -96,7 +96,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property LogVersion. 
         /// <para>
-        ///  Describes current setting for the logging version. 
+        /// The log version.
         /// </para>
         /// </summary>
         public string LogVersion

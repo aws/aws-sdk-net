@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes the options in use for server side encryption.
+    /// The options in use for server side encryption.
     /// </summary>
     public partial class VerifiedAccessSseSpecificationResponse
     {
@@ -39,7 +39,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property CustomerManagedKeyEnabled. 
         /// <para>
-        ///  Describes the use of customer managed KMS keys for server side encryption. 
+        /// Indicates whether customer managed KMS keys are in use for server side encryption.
         /// </para>
         ///  
         /// <para>
@@ -61,7 +61,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property KmsKeyArn. 
         /// <para>
-        ///  Describes the ARN of the KMS key. 
+        /// The ARN of the KMS key.
         /// </para>
         /// </summary>
         public string KmsKeyArn

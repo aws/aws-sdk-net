@@ -58,7 +58,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property VerifiedAccessInstances. 
         /// <para>
-        /// The IDs of the Verified Access instances.
+        /// Details about the Verified Access instances.
         /// </para>
         /// </summary>
         public List<VerifiedAccessInstance> VerifiedAccessInstances

@@ -30,7 +30,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeFastLaunchImages operation.
-    /// Describe details for Windows AMIs that are configured for faster launching.
+    /// Describe details for Windows AMIs that are configured for Windows fast launch.
     /// </summary>
     public partial class DescribeFastLaunchImagesRequest : AmazonEC2Request
     {
@@ -47,11 +47,6 @@ namespace Amazon.EC2.Model
         ///  <ul> <li> 
         /// <para>
         ///  <code>resource-type</code> - The resource type for pre-provisioning.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>launch-template</code> - The launch template that is associated with the pre-provisioned
-        /// Windows AMI.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -78,7 +73,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ImageIds. 
         /// <para>
-        /// Details for one or more Windows AMI image IDs.
+        /// Specify one or more Windows AMI image IDs for the request.
         /// </para>
         /// </summary>
         public List<string> ImageIds

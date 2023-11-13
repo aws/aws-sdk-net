@@ -38,7 +38,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property VerifiedAccessTrustProvider. 
         /// <para>
-        /// The ID of the Verified Access trust provider.
+        /// Details about the Verified Access trust provider.
         /// </para>
         /// </summary>
         public VerifiedAccessTrustProvider VerifiedAccessTrustProvider

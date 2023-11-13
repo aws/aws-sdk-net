@@ -30,16 +30,17 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the EnableFastLaunch operation.
-    /// When you enable faster launching for a Windows AMI, images are pre-provisioned, using
-    /// snapshots to launch instances up to 65% faster. To create the optimized Windows image,
-    /// Amazon EC2 launches an instance and runs through Sysprep steps, rebooting as required.
-    /// Then it creates a set of reserved snapshots that are used for subsequent launches.
-    /// The reserved snapshots are automatically replenished as they are used, depending on
-    /// your settings for launch frequency.
+    /// When you enable Windows fast launch for a Windows AMI, images are pre-provisioned,
+    /// using snapshots to launch instances up to 65% faster. To create the optimized Windows
+    /// image, Amazon EC2 launches an instance and runs through Sysprep steps, rebooting as
+    /// required. Then it creates a set of reserved snapshots that are used for subsequent
+    /// launches. The reserved snapshots are automatically replenished as they are used, depending
+    /// on your settings for launch frequency.
     /// 
     ///  <note> 
     /// <para>
-    /// To change these settings, you must own the AMI.
+    /// You can only change these settings for Windows AMIs that you own or that have been
+    /// shared with you.
     /// </para>
     ///  </note>
     /// </summary>
@@ -54,7 +55,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ImageId. 
         /// <para>
-        /// The ID of the image for which you’re enabling faster launching.
+        /// Specify the ID of the image for which to enable Windows fast launch.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -94,8 +95,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property MaxParallelLaunches. 
         /// <para>
         /// The maximum number of instances that Amazon EC2 can launch at the same time to create
-        /// pre-provisioned snapshots for Windows faster launching. Value must be <code>6</code>
-        /// or greater.
+        /// pre-provisioned snapshots for Windows fast launch. Value must be <code>6</code> or
+        /// greater.
         /// </para>
         /// </summary>
         public int MaxParallelLaunches
@@ -113,7 +114,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The type of resource to use for pre-provisioning the Windows AMI for faster launching.
+        /// The type of resource to use for pre-provisioning the AMI for Windows fast launch.
         /// Supported values include: <code>snapshot</code>, which is the default value.
         /// </para>
         /// </summary>
@@ -133,8 +134,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property SnapshotConfiguration. 
         /// <para>
         /// Configuration settings for creating and managing the snapshots that are used for pre-provisioning
-        /// the Windows AMI for faster launching. The associated <code>ResourceType</code> must
-        /// be <code>snapshot</code>.
+        /// the AMI for Windows fast launch. The associated <code>ResourceType</code> must be
+        /// <code>snapshot</code>.
         /// </para>
         /// </summary>
         public FastLaunchSnapshotConfigurationRequest SnapshotConfiguration

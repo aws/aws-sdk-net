@@ -46,7 +46,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ImageId. 
         /// <para>
-        /// The ID of the image for which faster-launching has been turned off.
+        /// The ID of the image for which Windows fast launch was disabled.
         /// </para>
         /// </summary>
         public string ImageId
@@ -84,7 +84,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property MaxParallelLaunches. 
         /// <para>
         /// The maximum number of instances that Amazon EC2 can launch at the same time to create
-        /// pre-provisioned snapshots for Windows faster launching.
+        /// pre-provisioned snapshots for Windows fast launch.
         /// </para>
         /// </summary>
         public int MaxParallelLaunches
@@ -102,7 +102,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property OwnerId. 
         /// <para>
-        /// The owner of the Windows AMI for which faster launching was turned off.
+        /// The owner of the Windows AMI for which Windows fast launch was disabled.
         /// </para>
         /// </summary>
         public string OwnerId
@@ -120,8 +120,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The pre-provisioning resource type that must be cleaned after turning off faster launching
-        /// for the Windows AMI. Supported values include: <code>snapshot</code>.
+        /// The pre-provisioning resource type that must be cleaned after turning off Windows
+        /// fast launch for the Windows AMI. Supported values include: <code>snapshot</code>.
         /// </para>
         /// </summary>
         public FastLaunchResourceType ResourceType
@@ -139,8 +139,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SnapshotConfiguration. 
         /// <para>
-        /// Parameters that were used for faster launching for the Windows AMI before faster launching
-        /// was turned off. This informs the clean-up process.
+        /// Parameters that were used for Windows fast launch for the Windows AMI before Windows
+        /// fast launch was disabled. This informs the clean-up process.
         /// </para>
         /// </summary>
         public FastLaunchSnapshotConfigurationResponse SnapshotConfiguration
@@ -158,7 +158,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The current state of faster launching for the specified Windows AMI.
+        /// The current state of Windows fast launch for the specified Windows AMI.
         /// </para>
         /// </summary>
         public FastLaunchStateCode State
@@ -176,7 +176,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property StateTransitionReason. 
         /// <para>
-        /// The reason that the state changed for faster launching for the Windows AMI.
+        /// The reason that the state changed for Windows fast launch for the Windows AMI.
         /// </para>
         /// </summary>
         public string StateTransitionReason
@@ -194,7 +194,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property StateTransitionTime. 
         /// <para>
-        /// The time that the state changed for faster launching for the Windows AMI.
+        /// The time that the state changed for Windows fast launch for the Windows AMI.
         /// </para>
         /// </summary>
         public DateTime StateTransitionTime

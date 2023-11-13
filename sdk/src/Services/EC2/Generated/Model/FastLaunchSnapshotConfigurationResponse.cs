@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Configuration settings for creating and managing pre-provisioned snapshots for a fast-launch
-    /// enabled Windows AMI.
+    /// Configuration settings for creating and managing pre-provisioned snapshots for a Windows
+    /// fast launch enabled Windows AMI.
     /// </summary>
     public partial class FastLaunchSnapshotConfigurationResponse
     {
@@ -39,8 +39,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property TargetResourceCount. 
         /// <para>
-        /// The number of pre-provisioned snapshots requested to keep on hand for a fast-launch
-        /// enabled Windows AMI.
+        /// The number of pre-provisioned snapshots requested to keep on hand for a Windows fast
+        /// launch enabled AMI.
         /// </para>
         /// </summary>
         public int TargetResourceCount

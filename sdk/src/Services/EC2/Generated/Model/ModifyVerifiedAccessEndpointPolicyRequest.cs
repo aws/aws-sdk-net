@@ -99,7 +99,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SseSpecification. 
         /// <para>
-        ///  Options for server side encryption. 
+        /// The options for server side encryption.
         /// </para>
         /// </summary>
         public VerifiedAccessSseSpecificationRequest SseSpecification

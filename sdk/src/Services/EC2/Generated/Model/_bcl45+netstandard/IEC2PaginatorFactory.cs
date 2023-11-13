@@ -201,6 +201,11 @@ namespace Amazon.EC2.Model
         IDescribeInstanceStatusPaginator DescribeInstanceStatus(DescribeInstanceStatusRequest request);
 
         /// <summary>
+        /// Paginator for DescribeInstanceTopology operation
+        ///</summary>
+        IDescribeInstanceTopologyPaginator DescribeInstanceTopology(DescribeInstanceTopologyRequest request);
+
+        /// <summary>
         /// Paginator for DescribeInstanceTypeOfferings operation
         ///</summary>
         IDescribeInstanceTypeOfferingsPaginator DescribeInstanceTypeOfferings(DescribeInstanceTypeOfferingsRequest request);

@@ -243,7 +243,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SecurityGroupIds. 
         /// <para>
-        /// The IDs of the security groups to associate with the Verified Access endpoint.
+        /// The IDs of the security groups to associate with the Verified Access endpoint. Required
+        /// if <code>AttachmentType</code> is set to <code>vpc</code>.
         /// </para>
         /// </summary>
         public List<string> SecurityGroupIds
@@ -261,7 +262,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SseSpecification. 
         /// <para>
-        ///  Options for server side encryption. 
+        /// The options for server side encryption.
         /// </para>
         /// </summary>
         public VerifiedAccessSseSpecificationRequest SseSpecification

@@ -316,6 +316,14 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeInstanceTopology operation
+        ///</summary>
+        public IDescribeInstanceTopologyPaginator DescribeInstanceTopology(DescribeInstanceTopologyRequest request) 
+        {
+            return new DescribeInstanceTopologyPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeInstanceTypeOfferings operation
         ///</summary>
         public IDescribeInstanceTypeOfferingsPaginator DescribeInstanceTypeOfferings(DescribeInstanceTypeOfferingsRequest request) 

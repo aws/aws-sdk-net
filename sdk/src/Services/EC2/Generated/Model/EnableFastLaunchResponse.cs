@@ -46,7 +46,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ImageId. 
         /// <para>
-        /// The image ID that identifies the Windows AMI for which faster launching was enabled.
+        /// The image ID that identifies the AMI for which Windows fast launch was enabled.
         /// </para>
         /// </summary>
         public string ImageId
@@ -84,7 +84,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property MaxParallelLaunches. 
         /// <para>
         /// The maximum number of instances that Amazon EC2 can launch at the same time to create
-        /// pre-provisioned snapshots for Windows faster launching.
+        /// pre-provisioned snapshots for Windows fast launch.
         /// </para>
         /// </summary>
         public int MaxParallelLaunches
@@ -102,7 +102,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property OwnerId. 
         /// <para>
-        /// The owner ID for the Windows AMI for which faster launching was enabled.
+        /// The owner ID for the AMI for which Windows fast launch was enabled.
         /// </para>
         /// </summary>
         public string OwnerId
@@ -120,8 +120,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The type of resource that was defined for pre-provisioning the Windows AMI for faster
-        /// launching.
+        /// The type of resource that was defined for pre-provisioning the AMI for Windows fast
+        /// launch.
         /// </para>
         /// </summary>
         public FastLaunchResourceType ResourceType
@@ -159,7 +159,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The current state of faster launching for the specified Windows AMI.
+        /// The current state of Windows fast launch for the specified AMI.
         /// </para>
         /// </summary>
         public FastLaunchStateCode State
@@ -177,7 +177,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property StateTransitionReason. 
         /// <para>
-        /// The reason that the state changed for faster launching for the Windows AMI.
+        /// The reason that the state changed for Windows fast launch for the AMI.
         /// </para>
         /// </summary>
         public string StateTransitionReason
@@ -195,7 +195,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property StateTransitionTime. 
         /// <para>
-        /// The time that the state changed for faster launching for the Windows AMI.
+        /// The time that the state changed for Windows fast launch for the AMI.
         /// </para>
         /// </summary>
         public DateTime StateTransitionTime

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Identifies the launch template to use for faster launching of the Windows AMI.
+    /// Identifies the launch template that the AMI uses for Windows fast launch.
     /// </summary>
     public partial class FastLaunchLaunchTemplateSpecificationResponse
     {
@@ -40,7 +40,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property LaunchTemplateId. 
         /// <para>
-        /// The ID of the launch template for faster launching of the associated Windows AMI.
+        /// The ID of the launch template that the AMI uses for Windows fast launch.
         /// </para>
         /// </summary>
         public string LaunchTemplateId
@@ -58,7 +58,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property LaunchTemplateName. 
         /// <para>
-        /// The name of the launch template for faster launching of the associated Windows AMI.
+        /// The name of the launch template that the AMI uses for Windows fast launch.
         /// </para>
         /// </summary>
         public string LaunchTemplateName
@@ -76,8 +76,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        /// The version of the launch template for faster launching of the associated Windows
-        /// AMI.
+        /// The version of the launch template that the AMI uses for Windows fast launch.
         /// </para>
         /// </summary>
         public string Version

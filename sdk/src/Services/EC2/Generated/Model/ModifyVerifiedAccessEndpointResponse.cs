@@ -38,7 +38,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property VerifiedAccessEndpoint. 
         /// <para>
-        /// The Verified Access endpoint details.
+        /// Details about the Verified Access endpoint.
         /// </para>
         /// </summary>
         public VerifiedAccessEndpoint VerifiedAccessEndpoint
