@@ -1,3 +1,34 @@
+### 3.7.686.0 (2023-11-14 19:25 UTC)
+* Backup (3.7.301.0)
+	* AWS Backup - Features: Provide Job Summary for your backup activity.
+* CleanRooms (3.7.301.0)
+	* This feature provides the ability for the collaboration creator to configure either the member who can run queries or a different member in the collaboration to be billed for query compute costs.
+* Connect (3.7.301.0)
+	* Introducing SegmentAttributes parameter for StartChatContact API
+* DynamoDBv2 (3.7.300.2)
+	* Expose IsLimitSet and IsSegmentSet properties for Scan and Query operations.
+* Glue (3.7.301.0)
+	* Introduces new storage optimization APIs to support automatic compaction of Apache Iceberg tables.
+* IoT (3.7.301.0)
+	* This release introduces new attributes in API CreateSecurityProfile, UpdateSecurityProfile and DescribeSecurityProfile to support management of Metrics Export for AWS IoT Device Defender Detect.
+* Lambda (3.7.301.0)
+	* Add Python 3.12 (python3.12) support to AWS Lambda
+* MediaTailor (3.7.301.0)
+	* Removed unnecessary default values.
+* Pipes (3.7.301.0)
+	* Added support (via new LogConfiguration field in CreatePipe and UpdatePipe APIs) for logging to Amazon CloudWatch Logs, Amazon Simple Storage Service (Amazon S3), and Amazon Kinesis Data Firehose
+* ResourceExplorer2 (3.7.301.0)
+	* Resource Explorer supports multi-account search. You can now use Resource Explorer to search and discover resources across AWS accounts within your organization or organizational unit.
+* SageMaker (3.7.301.0)
+	* This release makes Model Registry Inference Specification fields as not required.
+* Signer (3.7.300.2)
+	* Documentation updates for AWS Signer
+* StepFunctions (3.7.301.0)
+	* This release adds support to redrive executions in AWS Step Functions with a new RedriveExecution operation.
+* Core 3.7.300.2
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.685.0 (2023-11-13 19:52 UTC)
 * AppRegistry (3.7.301.0)
 	* When the customer associates a resource collection to their application with this new feature, then a new application tag will be applied to all supported resources that are part of that collection. This allows customers to more easily find the application that is associated with those resources.
