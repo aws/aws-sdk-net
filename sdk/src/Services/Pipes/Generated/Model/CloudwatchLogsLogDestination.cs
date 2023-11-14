@@ -29,35 +29,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pipes.Model
 {
     /// <summary>
-    /// A <code>DeadLetterConfig</code> object that contains information about a dead-letter
-    /// queue configuration.
+    /// The Amazon CloudWatch Logs logging configuration settings for the pipe.
     /// </summary>
-    public partial class DeadLetterConfig
+    public partial class CloudwatchLogsLogDestination
     {
-        private string _arn;
+        private string _logGroupArn;
 
         /// <summary>
-        /// Gets and sets the property Arn. 
+        /// Gets and sets the property LogGroupArn. 
         /// <para>
-        /// The ARN of the specified target for the dead-letter queue. 
-        /// </para>
-        ///  
-        /// <para>
-        /// For Amazon Kinesis stream and Amazon DynamoDB stream sources, specify either an Amazon
-        /// SNS topic or Amazon SQS queue ARN.
+        /// The Amazon Web Services Resource Name (ARN) for the CloudWatch log group to which
+        /// EventBridge sends the log records.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1600)]
-        public string Arn
+        public string LogGroupArn
         {
-            get { return this._arn; }
-            set { this._arn = value; }
+            get { return this._logGroupArn; }
+            set { this._logGroupArn = value; }
         }
 
-        // Check to see if Arn property is set
-        internal bool IsSetArn()
+        // Check to see if LogGroupArn property is set
+        internal bool IsSetLogGroupArn()
         {
-            return this._arn != null;
+            return this._logGroupArn != null;
         }
 
     }

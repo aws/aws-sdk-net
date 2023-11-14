@@ -30,7 +30,7 @@ namespace Amazon.Pipes.Model
 {
     /// <summary>
     /// These are custom parameters to be used when the target is a Amazon Redshift cluster
-    /// to invoke the Amazon Redshift Data API ExecuteStatement.
+    /// to invoke the Amazon Redshift Data API BatchExecuteStatement.
     /// </summary>
     public partial class PipeTargetRedshiftDataParameters
     {
@@ -83,7 +83,7 @@ namespace Amazon.Pipes.Model
         /// Gets and sets the property SecretManagerArn. 
         /// <para>
         /// The name or ARN of the secret that enables access to the database. Required when authenticating
-        /// using SageMaker.
+        /// using Secrets Manager.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1600)]
@@ -105,7 +105,7 @@ namespace Amazon.Pipes.Model
         /// The SQL statement text to run.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Required=true, Min=1, Max=40)]
         public List<string> Sqls
         {
             get { return this._sqls; }

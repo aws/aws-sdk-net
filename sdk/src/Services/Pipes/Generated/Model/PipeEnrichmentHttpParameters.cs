@@ -65,7 +65,6 @@ namespace Amazon.Pipes.Model
         /// ApiDestination path wildcards ("*").
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=1)]
         public List<string> PathParameterValues
         {
             get { return this._pathParameterValues; }

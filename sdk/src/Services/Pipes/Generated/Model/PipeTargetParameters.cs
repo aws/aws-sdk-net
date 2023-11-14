@@ -30,6 +30,13 @@ namespace Amazon.Pipes.Model
 {
     /// <summary>
     /// The parameters required to set up a target for your pipe.
+    /// 
+    ///  
+    /// <para>
+    /// For more information about pipe target parameters, including how to use dynamic path
+    /// parameters, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes-event-target.html">Target
+    /// parameters</a> in the <i>Amazon EventBridge User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class PipeTargetParameters
     {
@@ -144,6 +151,10 @@ namespace Amazon.Pipes.Model
         /// is passed to the target. For more information, see <a href="http://www.rfc-editor.org/rfc/rfc7159.txt">The
         /// JavaScript Object Notation (JSON) Data Interchange Format</a>.
         /// </para>
+        ///  
+        /// <para>
+        /// To remove an input template, specify an empty string.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=8192)]
         public string InputTemplate
@@ -161,7 +172,7 @@ namespace Amazon.Pipes.Model
         /// <summary>
         /// Gets and sets the property KinesisStreamParameters. 
         /// <para>
-        /// The parameters for using a Kinesis stream as a source.
+        /// The parameters for using a Kinesis stream as a target.
         /// </para>
         /// </summary>
         public PipeTargetKinesisStreamParameters KinesisStreamParameters
@@ -198,7 +209,7 @@ namespace Amazon.Pipes.Model
         /// Gets and sets the property RedshiftDataParameters. 
         /// <para>
         /// These are custom parameters to be used when the target is a Amazon Redshift cluster
-        /// to invoke the Amazon Redshift Data API ExecuteStatement.
+        /// to invoke the Amazon Redshift Data API BatchExecuteStatement.
         /// </para>
         /// </summary>
         public PipeTargetRedshiftDataParameters RedshiftDataParameters
@@ -234,7 +245,7 @@ namespace Amazon.Pipes.Model
         /// <summary>
         /// Gets and sets the property SqsQueueParameters. 
         /// <para>
-        /// The parameters for using a Amazon SQS stream as a source.
+        /// The parameters for using a Amazon SQS stream as a target.
         /// </para>
         /// </summary>
         public PipeTargetSqsQueueParameters SqsQueueParameters

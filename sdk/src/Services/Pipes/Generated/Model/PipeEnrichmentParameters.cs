@@ -70,6 +70,10 @@ namespace Amazon.Pipes.Model
         /// is passed to the enrichment. For more information, see <a href="http://www.rfc-editor.org/rfc/rfc7159.txt">The
         /// JavaScript Object Notation (JSON) Data Interchange Format</a>.
         /// </para>
+        ///  
+        /// <para>
+        /// To remove an input template, specify an empty string.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=8192)]
         public string InputTemplate

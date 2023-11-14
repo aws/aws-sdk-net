@@ -273,6 +273,18 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Pipes.Model.CloudwatchLogsLogDestination.LogGroupArn</property>
+    <min>1</min>
+    <max>1600</max>
+    <pattern>^(^arn:aws([a-z]|\-)*:logs:([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}):(\d{12}):log-group:.+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Pipes.Model.CloudwatchLogsLogDestinationParameters.LogGroupArn</property>
+    <min>1</min>
+    <max>1600</max>
+    <pattern>^(^arn:aws([a-z]|\-)*:logs:([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}):(\d{12}):log-group:.+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Pipes.Model.DeadLetterConfig.Arn</property>
     <min>1</min>
     <max>1600</max>
@@ -299,6 +311,18 @@
     <property>Amazon.Pipes.Model.Filter.Pattern</property>
     <min>0</min>
     <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Pipes.Model.FirehoseLogDestination.DeliveryStreamArn</property>
+    <min>1</min>
+    <max>1600</max>
+    <pattern>^(^arn:aws([a-z]|\-)*:firehose:([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}):(\d{12}):deliverystream/.+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Pipes.Model.FirehoseLogDestinationParameters.DeliveryStreamArn</property>
+    <min>1</min>
+    <max>1600</max>
+    <pattern>^(^arn:aws([a-z]|\-)*:firehose:([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}):(\d{12}):deliverystream/.+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Pipes.Model.MQBrokerAccessCredentials.BasicAuth</property>
@@ -606,6 +630,20 @@
     <property>Amazon.Pipes.Model.PlacementStrategy.Field</property>
     <min>0</min>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Pipes.Model.S3LogDestinationParameters.BucketName</property>
+    <min>3</min>
+    <max>63</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Pipes.Model.S3LogDestinationParameters.BucketOwner</property>
+    <pattern>^\d{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Pipes.Model.S3LogDestinationParameters.Prefix</property>
+    <min>0</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Pipes.Model.SageMakerPipelineParameter.Name</property>

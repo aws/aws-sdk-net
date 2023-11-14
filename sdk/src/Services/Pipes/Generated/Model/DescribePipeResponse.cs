@@ -41,6 +41,7 @@ namespace Amazon.Pipes.Model
         private string _enrichment;
         private PipeEnrichmentParameters _enrichmentParameters;
         private DateTime? _lastModifiedTime;
+        private PipeLogConfiguration _logConfiguration;
         private string _name;
         private string _roleArn;
         private string _source;
@@ -199,6 +200,24 @@ namespace Amazon.Pipes.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LogConfiguration. 
+        /// <para>
+        /// The logging configuration settings for the pipe.
+        /// </para>
+        /// </summary>
+        public PipeLogConfiguration LogConfiguration
+        {
+            get { return this._logConfiguration; }
+            set { this._logConfiguration = value; }
+        }
+
+        // Check to see if LogConfiguration property is set
+        internal bool IsSetLogConfiguration()
+        {
+            return this._logConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of the pipe.
@@ -334,6 +353,12 @@ namespace Amazon.Pipes.Model
         /// Gets and sets the property TargetParameters. 
         /// <para>
         /// The parameters required to set up a target for your pipe.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about pipe target parameters, including how to use dynamic path
+        /// parameters, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes-event-target.html">Target
+        /// parameters</a> in the <i>Amazon EventBridge User Guide</i>.
         /// </para>
         /// </summary>
         public PipeTargetParameters TargetParameters

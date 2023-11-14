@@ -65,11 +65,6 @@ namespace Amazon.Pipes.Model
         /// The URL subdomain of the endpoint. For example, if the URL for Endpoint is https://abcde.veo.endpoints.event.amazonaws.com,
         /// then the EndpointId is <code>abcde.veo</code>.
         /// </para>
-        ///  <important> 
-        /// <para>
-        /// When using Java, you must include <code>auth-crt</code> on the class path.
-        /// </para>
-        ///  </important>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=50)]
         public string EndpointId

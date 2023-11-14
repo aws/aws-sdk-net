@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pipes.Model
 {
     /// <summary>
-    /// The parameters for using a Kinesis stream as a source.
+    /// The parameters for using a Kinesis stream as a target.
     /// </summary>
     public partial class PipeTargetKinesisStreamParameters
     {

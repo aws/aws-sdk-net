@@ -29,35 +29,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pipes.Model
 {
     /// <summary>
-    /// A <code>DeadLetterConfig</code> object that contains information about a dead-letter
-    /// queue configuration.
+    /// The Amazon Kinesis Data Firehose logging configuration settings for the pipe.
     /// </summary>
-    public partial class DeadLetterConfig
+    public partial class FirehoseLogDestination
     {
-        private string _arn;
+        private string _deliveryStreamArn;
 
         /// <summary>
-        /// Gets and sets the property Arn. 
+        /// Gets and sets the property DeliveryStreamArn. 
         /// <para>
-        /// The ARN of the specified target for the dead-letter queue. 
-        /// </para>
-        ///  
-        /// <para>
-        /// For Amazon Kinesis stream and Amazon DynamoDB stream sources, specify either an Amazon
-        /// SNS topic or Amazon SQS queue ARN.
+        /// The Amazon Resource Name (ARN) of the Kinesis Data Firehose delivery stream to which
+        /// EventBridge delivers the pipe log records.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1600)]
-        public string Arn
+        public string DeliveryStreamArn
         {
-            get { return this._arn; }
-            set { this._arn = value; }
+            get { return this._deliveryStreamArn; }
+            set { this._deliveryStreamArn = value; }
         }
 
-        // Check to see if Arn property is set
-        internal bool IsSetArn()
+        // Check to see if DeliveryStreamArn property is set
+        internal bool IsSetDeliveryStreamArn()
         {
-            return this._arn != null;
+            return this._deliveryStreamArn != null;
         }
 
     }

@@ -30,13 +30,15 @@ namespace Amazon.Pipes.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdatePipe operation.
-    /// Update an existing pipe. When you call <code>UpdatePipe</code>, only the fields that
-    /// are included in the request are changed, the rest are unchanged. The exception to
-    /// this is if you modify any Amazon Web Services-service specific fields in the <code>SourceParameters</code>,
-    /// <code>EnrichmentParameters</code>, or <code>TargetParameters</code> objects. The fields
-    /// in these objects are updated atomically as one and override existing values. This
-    /// is by design and means that if you don't specify an optional field in one of these
-    /// Parameters objects, that field will be set to its system-default value after the update.
+    /// Update an existing pipe. When you call <code>UpdatePipe</code>, EventBridge only the
+    /// updates fields you have specified in the request; the rest remain unchanged. The exception
+    /// to this is if you modify any Amazon Web Services-service specific fields in the <code>SourceParameters</code>,
+    /// <code>EnrichmentParameters</code>, or <code>TargetParameters</code> objects. For example,
+    /// <code>DynamoDBStreamParameters</code> or <code>EventBridgeEventBusParameters</code>.
+    /// EventBridge updates the fields in these objects atomically as one and overrides existing
+    /// values. This is by design, and means that if you don't specify an optional field in
+    /// one of these <code>Parameters</code> objects, EventBridge sets that field to its system-default
+    /// value during the update.
     /// 
     ///  
     /// <para>
@@ -50,6 +52,7 @@ namespace Amazon.Pipes.Model
         private RequestedPipeState _desiredState;
         private string _enrichment;
         private PipeEnrichmentParameters _enrichmentParameters;
+        private PipeLogConfigurationParameters _logConfiguration;
         private string _name;
         private string _roleArn;
         private UpdatePipeSourceParameters _sourceParameters;
@@ -131,6 +134,24 @@ namespace Amazon.Pipes.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LogConfiguration. 
+        /// <para>
+        /// The logging configuration settings for the pipe.
+        /// </para>
+        /// </summary>
+        public PipeLogConfigurationParameters LogConfiguration
+        {
+            get { return this._logConfiguration; }
+            set { this._logConfiguration = value; }
+        }
+
+        // Check to see if LogConfiguration property is set
+        internal bool IsSetLogConfiguration()
+        {
+            return this._logConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of the pipe.
@@ -209,6 +230,12 @@ namespace Amazon.Pipes.Model
         /// Gets and sets the property TargetParameters. 
         /// <para>
         /// The parameters required to set up a target for your pipe.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about pipe target parameters, including how to use dynamic path
+        /// parameters, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes-event-target.html">Target
+        /// parameters</a> in the <i>Amazon EventBridge User Guide</i>.
         /// </para>
         /// </summary>
         public PipeTargetParameters TargetParameters

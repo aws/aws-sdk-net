@@ -97,6 +97,17 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetLogConfiguration())
+                {
+                    context.Writer.WritePropertyName("LogConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = PipeLogConfigurationParametersMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.LogConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetRoleArn())
                 {
                     context.Writer.WritePropertyName("RoleArn");

@@ -325,6 +325,52 @@ namespace Amazon.Pipes
 
 
     /// <summary>
+    /// Constants used for properties of type IncludeExecutionDataOption.
+    /// </summary>
+    public class IncludeExecutionDataOption : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL for IncludeExecutionDataOption
+        /// </summary>
+        public static readonly IncludeExecutionDataOption ALL = new IncludeExecutionDataOption("ALL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IncludeExecutionDataOption(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IncludeExecutionDataOption FindValue(string value)
+        {
+            return FindValue<IncludeExecutionDataOption>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IncludeExecutionDataOption(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type KinesisStreamStartPosition.
     /// </summary>
     public class KinesisStreamStartPosition : ConstantClass
@@ -426,6 +472,64 @@ namespace Amazon.Pipes
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator LaunchType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LogLevel.
+    /// </summary>
+    public class LogLevel : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ERROR for LogLevel
+        /// </summary>
+        public static readonly LogLevel ERROR = new LogLevel("ERROR");
+        /// <summary>
+        /// Constant INFO for LogLevel
+        /// </summary>
+        public static readonly LogLevel INFO = new LogLevel("INFO");
+        /// <summary>
+        /// Constant OFF for LogLevel
+        /// </summary>
+        public static readonly LogLevel OFF = new LogLevel("OFF");
+        /// <summary>
+        /// Constant TRACE for LogLevel
+        /// </summary>
+        public static readonly LogLevel TRACE = new LogLevel("TRACE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LogLevel(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LogLevel FindValue(string value)
+        {
+            return FindValue<LogLevel>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LogLevel(string value)
         {
             return FindValue(value);
         }
@@ -539,9 +643,21 @@ namespace Amazon.Pipes
         /// </summary>
         public static readonly PipeState CREATE_FAILED = new PipeState("CREATE_FAILED");
         /// <summary>
+        /// Constant CREATE_ROLLBACK_FAILED for PipeState
+        /// </summary>
+        public static readonly PipeState CREATE_ROLLBACK_FAILED = new PipeState("CREATE_ROLLBACK_FAILED");
+        /// <summary>
         /// Constant CREATING for PipeState
         /// </summary>
         public static readonly PipeState CREATING = new PipeState("CREATING");
+        /// <summary>
+        /// Constant DELETE_FAILED for PipeState
+        /// </summary>
+        public static readonly PipeState DELETE_FAILED = new PipeState("DELETE_FAILED");
+        /// <summary>
+        /// Constant DELETE_ROLLBACK_FAILED for PipeState
+        /// </summary>
+        public static readonly PipeState DELETE_ROLLBACK_FAILED = new PipeState("DELETE_ROLLBACK_FAILED");
         /// <summary>
         /// Constant DELETING for PipeState
         /// </summary>
@@ -574,6 +690,10 @@ namespace Amazon.Pipes
         /// Constant UPDATE_FAILED for PipeState
         /// </summary>
         public static readonly PipeState UPDATE_FAILED = new PipeState("UPDATE_FAILED");
+        /// <summary>
+        /// Constant UPDATE_ROLLBACK_FAILED for PipeState
+        /// </summary>
+        public static readonly PipeState UPDATE_ROLLBACK_FAILED = new PipeState("UPDATE_ROLLBACK_FAILED");
         /// <summary>
         /// Constant UPDATING for PipeState
         /// </summary>
@@ -912,6 +1032,60 @@ namespace Amazon.Pipes
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RequestedPipeStateDescribeResponse(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type S3OutputFormat.
+    /// </summary>
+    public class S3OutputFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Json for S3OutputFormat
+        /// </summary>
+        public static readonly S3OutputFormat Json = new S3OutputFormat("json");
+        /// <summary>
+        /// Constant Plain for S3OutputFormat
+        /// </summary>
+        public static readonly S3OutputFormat Plain = new S3OutputFormat("plain");
+        /// <summary>
+        /// Constant W3c for S3OutputFormat
+        /// </summary>
+        public static readonly S3OutputFormat W3c = new S3OutputFormat("w3c");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public S3OutputFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static S3OutputFormat FindValue(string value)
+        {
+            return FindValue<S3OutputFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator S3OutputFormat(string value)
         {
             return FindValue(value);
         }

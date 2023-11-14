@@ -99,6 +99,12 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
                     response.LastModifiedTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LogConfiguration", targetDepth))
+                {
+                    var unmarshaller = PipeLogConfigurationUnmarshaller.Instance;
+                    response.LogConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
