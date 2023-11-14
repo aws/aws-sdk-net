@@ -423,10 +423,32 @@ namespace Amazon.DynamoDBv2.Model
             set { this._limit = value; }
         }
 
+        /// <summary>
+        /// This property is set to true if the property <seealso cref="Limit"/>
+        /// is set; false otherwise.
+        /// This property can be used to determine if the related property
+        /// was returned by a service response or if the related property
+        /// should be sent to the service during a service call.
+        /// </summary>
+        /// <returns>
+        /// True if the related property was set or will be sent to a service; false otherwise.
+        /// </returns>
+        public bool IsLimitSet
+        {
+            get
+            {
+                return Amazon.Util.Internal.InternalSDKUtils.GetIsSet(this._limit);
+            }
+            set
+            {
+                Amazon.Util.Internal.InternalSDKUtils.SetIsSet(value, ref this._limit);
+            }
+        }
+
         // Check to see if Limit property is set
         internal bool IsSetLimit()
         {
-            return this._limit.HasValue; 
+            return this.IsLimitSet; 
         }
 
         /// <summary>
@@ -530,10 +552,32 @@ namespace Amazon.DynamoDBv2.Model
             set { this._segment = value; }
         }
 
+        /// <summary>
+        /// This property is set to true if the property <seealso cref="Segment"/>
+        /// is set; false otherwise.
+        /// This property can be used to determine if the related property
+        /// was returned by a service response or if the related property
+        /// should be sent to the service during a service call.
+        /// </summary>
+        /// <returns>
+        /// True if the related property was set or will be sent to a service; false otherwise.
+        /// </returns>
+        public bool IsSegmentSet
+        {
+            get
+            {
+                return Amazon.Util.Internal.InternalSDKUtils.GetIsSet(this._segment);
+            }
+            set
+            {
+                Amazon.Util.Internal.InternalSDKUtils.SetIsSet(value, ref this._segment);
+            }
+        }
+
         // Check to see if Segment property is set
         internal bool IsSetSegment()
         {
-            return this._segment.HasValue; 
+            return this.IsSegmentSet; 
         }
 
         /// <summary>
@@ -660,10 +704,32 @@ namespace Amazon.DynamoDBv2.Model
             set { this._totalSegments = value; }
         }
 
+        /// <summary>
+        /// This property is set to true if the property <seealso cref="TotalSegments"/>
+        /// is set; false otherwise.
+        /// This property can be used to determine if the related property
+        /// was returned by a service response or if the related property
+        /// should be sent to the service during a service call.
+        /// </summary>
+        /// <returns>
+        /// True if the related property was set or will be sent to a service; false otherwise.
+        /// </returns>
+        public bool IsTotalSegmentsSet
+        {
+            get
+            {
+                return Amazon.Util.Internal.InternalSDKUtils.GetIsSet(this._totalSegments);
+            }
+            set
+            {
+                Amazon.Util.Internal.InternalSDKUtils.SetIsSet(value, ref this._totalSegments);
+            }
+        }
+
         // Check to see if TotalSegments property is set
         internal bool IsSetTotalSegments()
         {
-            return this._totalSegments.HasValue; 
+            return this.IsTotalSegmentsSet; 
         }
 
     }

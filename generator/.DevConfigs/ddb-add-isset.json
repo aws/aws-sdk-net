@@ -1,0 +1,11 @@
+{
+	"services": [
+		{
+			"serviceName": "DynamoDBv2",
+			"type": "patch",
+			"changeLogMessages": [
+				"Expose IsLimitSet and IsSegmentSet properties for Scan and Query operations."
+			]
+		}
+	]
+}

@@ -21,6 +21,14 @@
         ],
         "GetItemOutput" : [
             "Item"
+        ],
+        "QueryInput" : [
+            "Limit"
+        ],
+        "ScanInput" : [
+            "Limit",
+            "Segment",
+            "TotalSegments"
         ]
     }
 }
