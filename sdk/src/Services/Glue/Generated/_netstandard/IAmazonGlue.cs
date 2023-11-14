@@ -431,6 +431,27 @@ namespace Amazon.Glue
 
         #endregion
                 
+        #region  BatchGetTableOptimizer
+
+
+
+        /// <summary>
+        /// Returns the configuration for the specified table optimizers.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetTableOptimizer service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchGetTableOptimizer service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchGetTableOptimizer">REST API Reference for BatchGetTableOptimizer Operation</seealso>
+        Task<BatchGetTableOptimizerResponse> BatchGetTableOptimizerAsync(BatchGetTableOptimizerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  BatchGetTriggers
 
 
@@ -1418,6 +1439,40 @@ namespace Amazon.Glue
 
         #endregion
                 
+        #region  CreateTableOptimizer
+
+
+
+        /// <summary>
+        /// Creates a new table optimizer for a specific function. <code>compaction</code> is
+        /// the only currently supported optimizer type.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTableOptimizer service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateTableOptimizer service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.AlreadyExistsException">
+        /// A resource to be created or added already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateTableOptimizer">REST API Reference for CreateTableOptimizer Operation</seealso>
+        Task<CreateTableOptimizerResponse> CreateTableOptimizerAsync(CreateTableOptimizerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateTrigger
 
 
@@ -2257,6 +2312,37 @@ namespace Amazon.Glue
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteTable">REST API Reference for DeleteTable Operation</seealso>
         Task<DeleteTableResponse> DeleteTableAsync(DeleteTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteTableOptimizer
+
+
+
+        /// <summary>
+        /// Deletes an optimizer and all associated metadata for a table. The optimization will
+        /// no longer be performed on the table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTableOptimizer service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteTableOptimizer service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteTableOptimizer">REST API Reference for DeleteTableOptimizer Operation</seealso>
+        Task<DeleteTableOptimizerResponse> DeleteTableOptimizerAsync(DeleteTableOptimizerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -3979,6 +4065,36 @@ namespace Amazon.Glue
 
         #endregion
                 
+        #region  GetTableOptimizer
+
+
+
+        /// <summary>
+        /// Returns the configuration of all optimizers associated with a specified table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTableOptimizer service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetTableOptimizer service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetTableOptimizer">REST API Reference for GetTableOptimizer Operation</seealso>
+        Task<GetTableOptimizerResponse> GetTableOptimizerAsync(GetTableOptimizerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetTables
 
 
@@ -5050,6 +5166,36 @@ namespace Amazon.Glue
 
         #endregion
                 
+        #region  ListTableOptimizerRuns
+
+
+
+        /// <summary>
+        /// Lists the history of previous optimizer runs for a specific table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTableOptimizerRuns service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTableOptimizerRuns service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListTableOptimizerRuns">REST API Reference for ListTableOptimizerRuns Operation</seealso>
+        Task<ListTableOptimizerRunsResponse> ListTableOptimizerRunsAsync(ListTableOptimizerRunsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListTriggers
 
 
@@ -5637,6 +5783,11 @@ namespace Amazon.Glue
         /// rules to write. Glue Data Quality analyzes the data and comes up with recommendations
         /// for a potential ruleset. You can then triage the ruleset and modify the generated
         /// ruleset to your liking.
+        /// 
+        ///  
+        /// <para>
+        /// Recommendation runs are automatically deleted after 90 days.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartDataQualityRuleRecommendationRun service method.</param>
         /// <param name="cancellationToken">
@@ -6912,6 +7063,36 @@ namespace Amazon.Glue
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateTable">REST API Reference for UpdateTable Operation</seealso>
         Task<UpdateTableResponse> UpdateTableAsync(UpdateTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateTableOptimizer
+
+
+
+        /// <summary>
+        /// Updates the configuration for an existing table optimizer.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTableOptimizer service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateTableOptimizer service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateTableOptimizer">REST API Reference for UpdateTableOptimizer Operation</seealso>
+        Task<UpdateTableOptimizerResponse> UpdateTableOptimizerAsync(UpdateTableOptimizerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

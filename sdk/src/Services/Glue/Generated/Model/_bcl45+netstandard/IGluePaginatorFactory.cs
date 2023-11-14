@@ -201,6 +201,11 @@ namespace Amazon.Glue.Model
         IListSessionsPaginator ListSessions(ListSessionsRequest request);
 
         /// <summary>
+        /// Paginator for ListTableOptimizerRuns operation
+        ///</summary>
+        IListTableOptimizerRunsPaginator ListTableOptimizerRuns(ListTableOptimizerRunsRequest request);
+
+        /// <summary>
         /// Paginator for ListTriggers operation
         ///</summary>
         IListTriggersPaginator ListTriggers(ListTriggersRequest request);

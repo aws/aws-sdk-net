@@ -697,6 +697,49 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  BatchGetTableOptimizer
+
+
+        /// <summary>
+        /// Returns the configuration for the specified table optimizers.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetTableOptimizer service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetTableOptimizer service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchGetTableOptimizer">REST API Reference for BatchGetTableOptimizer Operation</seealso>
+        BatchGetTableOptimizerResponse BatchGetTableOptimizer(BatchGetTableOptimizerRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchGetTableOptimizer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetTableOptimizer operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchGetTableOptimizer
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchGetTableOptimizer">REST API Reference for BatchGetTableOptimizer Operation</seealso>
+        IAsyncResult BeginBatchGetTableOptimizer(BatchGetTableOptimizerRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchGetTableOptimizer operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchGetTableOptimizer.</param>
+        /// 
+        /// <returns>Returns a  BatchGetTableOptimizerResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchGetTableOptimizer">REST API Reference for BatchGetTableOptimizer Operation</seealso>
+        BatchGetTableOptimizerResponse EndBatchGetTableOptimizer(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  BatchGetTriggers
 
 
@@ -2278,6 +2321,62 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  CreateTableOptimizer
+
+
+        /// <summary>
+        /// Creates a new table optimizer for a specific function. <code>compaction</code> is
+        /// the only currently supported optimizer type.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTableOptimizer service method.</param>
+        /// 
+        /// <returns>The response from the CreateTableOptimizer service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.AlreadyExistsException">
+        /// A resource to be created or added already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateTableOptimizer">REST API Reference for CreateTableOptimizer Operation</seealso>
+        CreateTableOptimizerResponse CreateTableOptimizer(CreateTableOptimizerRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTableOptimizer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTableOptimizer operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateTableOptimizer
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateTableOptimizer">REST API Reference for CreateTableOptimizer Operation</seealso>
+        IAsyncResult BeginCreateTableOptimizer(CreateTableOptimizerRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateTableOptimizer operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateTableOptimizer.</param>
+        /// 
+        /// <returns>Returns a  CreateTableOptimizerResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateTableOptimizer">REST API Reference for CreateTableOptimizer Operation</seealso>
+        CreateTableOptimizerResponse EndCreateTableOptimizer(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateTrigger
 
 
@@ -3645,6 +3744,59 @@ namespace Amazon.Glue
         /// <returns>Returns a  DeleteTableResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteTable">REST API Reference for DeleteTable Operation</seealso>
         DeleteTableResponse EndDeleteTable(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteTableOptimizer
+
+
+        /// <summary>
+        /// Deletes an optimizer and all associated metadata for a table. The optimization will
+        /// no longer be performed on the table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTableOptimizer service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTableOptimizer service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteTableOptimizer">REST API Reference for DeleteTableOptimizer Operation</seealso>
+        DeleteTableOptimizerResponse DeleteTableOptimizer(DeleteTableOptimizerRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteTableOptimizer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTableOptimizer operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteTableOptimizer
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteTableOptimizer">REST API Reference for DeleteTableOptimizer Operation</seealso>
+        IAsyncResult BeginDeleteTableOptimizer(DeleteTableOptimizerRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteTableOptimizer operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteTableOptimizer.</param>
+        /// 
+        /// <returns>Returns a  DeleteTableOptimizerResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteTableOptimizer">REST API Reference for DeleteTableOptimizer Operation</seealso>
+        DeleteTableOptimizerResponse EndDeleteTableOptimizer(IAsyncResult asyncResult);
 
         #endregion
         
@@ -6555,6 +6707,58 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  GetTableOptimizer
+
+
+        /// <summary>
+        /// Returns the configuration of all optimizers associated with a specified table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTableOptimizer service method.</param>
+        /// 
+        /// <returns>The response from the GetTableOptimizer service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetTableOptimizer">REST API Reference for GetTableOptimizer Operation</seealso>
+        GetTableOptimizerResponse GetTableOptimizer(GetTableOptimizerRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetTableOptimizer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetTableOptimizer operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetTableOptimizer
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetTableOptimizer">REST API Reference for GetTableOptimizer Operation</seealso>
+        IAsyncResult BeginGetTableOptimizer(GetTableOptimizerRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetTableOptimizer operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetTableOptimizer.</param>
+        /// 
+        /// <returns>Returns a  GetTableOptimizerResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetTableOptimizer">REST API Reference for GetTableOptimizer Operation</seealso>
+        GetTableOptimizerResponse EndGetTableOptimizer(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetTables
 
 
@@ -8330,6 +8534,58 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  ListTableOptimizerRuns
+
+
+        /// <summary>
+        /// Lists the history of previous optimizer runs for a specific table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTableOptimizerRuns service method.</param>
+        /// 
+        /// <returns>The response from the ListTableOptimizerRuns service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListTableOptimizerRuns">REST API Reference for ListTableOptimizerRuns Operation</seealso>
+        ListTableOptimizerRunsResponse ListTableOptimizerRuns(ListTableOptimizerRunsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTableOptimizerRuns operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTableOptimizerRuns operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTableOptimizerRuns
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListTableOptimizerRuns">REST API Reference for ListTableOptimizerRuns Operation</seealso>
+        IAsyncResult BeginListTableOptimizerRuns(ListTableOptimizerRunsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTableOptimizerRuns operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTableOptimizerRuns.</param>
+        /// 
+        /// <returns>Returns a  ListTableOptimizerRunsResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListTableOptimizerRuns">REST API Reference for ListTableOptimizerRuns Operation</seealso>
+        ListTableOptimizerRunsResponse EndListTableOptimizerRuns(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListTriggers
 
 
@@ -9268,6 +9524,11 @@ namespace Amazon.Glue
         /// rules to write. Glue Data Quality analyzes the data and comes up with recommendations
         /// for a potential ruleset. You can then triage the ruleset and modify the generated
         /// ruleset to your liking.
+        /// 
+        ///  
+        /// <para>
+        /// Recommendation runs are automatically deleted after 90 days.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartDataQualityRuleRecommendationRun service method.</param>
         /// 
@@ -11292,6 +11553,58 @@ namespace Amazon.Glue
         /// <returns>Returns a  UpdateTableResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateTable">REST API Reference for UpdateTable Operation</seealso>
         UpdateTableResponse EndUpdateTable(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateTableOptimizer
+
+
+        /// <summary>
+        /// Updates the configuration for an existing table optimizer.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTableOptimizer service method.</param>
+        /// 
+        /// <returns>The response from the UpdateTableOptimizer service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateTableOptimizer">REST API Reference for UpdateTableOptimizer Operation</seealso>
+        UpdateTableOptimizerResponse UpdateTableOptimizer(UpdateTableOptimizerRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateTableOptimizer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTableOptimizer operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateTableOptimizer
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateTableOptimizer">REST API Reference for UpdateTableOptimizer Operation</seealso>
+        IAsyncResult BeginUpdateTableOptimizer(UpdateTableOptimizerRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateTableOptimizer operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateTableOptimizer.</param>
+        /// 
+        /// <returns>Returns a  UpdateTableOptimizerResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateTableOptimizer">REST API Reference for UpdateTableOptimizer Operation</seealso>
+        UpdateTableOptimizerResponse EndUpdateTableOptimizer(IAsyncResult asyncResult);
 
         #endregion
         

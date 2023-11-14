@@ -4565,6 +4565,110 @@ namespace Amazon.Glue
 
 
     /// <summary>
+    /// Constants used for properties of type TableOptimizerEventType.
+    /// </summary>
+    public class TableOptimizerEventType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Completed for TableOptimizerEventType
+        /// </summary>
+        public static readonly TableOptimizerEventType Completed = new TableOptimizerEventType("completed");
+        /// <summary>
+        /// Constant Failed for TableOptimizerEventType
+        /// </summary>
+        public static readonly TableOptimizerEventType Failed = new TableOptimizerEventType("failed");
+        /// <summary>
+        /// Constant In_progress for TableOptimizerEventType
+        /// </summary>
+        public static readonly TableOptimizerEventType In_progress = new TableOptimizerEventType("in_progress");
+        /// <summary>
+        /// Constant Starting for TableOptimizerEventType
+        /// </summary>
+        public static readonly TableOptimizerEventType Starting = new TableOptimizerEventType("starting");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TableOptimizerEventType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TableOptimizerEventType FindValue(string value)
+        {
+            return FindValue<TableOptimizerEventType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TableOptimizerEventType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TableOptimizerType.
+    /// </summary>
+    public class TableOptimizerType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Compaction for TableOptimizerType
+        /// </summary>
+        public static readonly TableOptimizerType Compaction = new TableOptimizerType("compaction");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TableOptimizerType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TableOptimizerType FindValue(string value)
+        {
+            return FindValue<TableOptimizerType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TableOptimizerType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type TargetFormat.
     /// </summary>
     public class TargetFormat : ConstantClass

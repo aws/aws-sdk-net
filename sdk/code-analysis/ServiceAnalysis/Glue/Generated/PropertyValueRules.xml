@@ -527,6 +527,21 @@
     <pattern>[\p{L}\p{N}\p{P}]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.CreateTableOptimizerRequest.CatalogId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.CreateTableOptimizerRequest.DatabaseName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.CreateTableOptimizerRequest.TableName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.CreateTriggerRequest.Description</property>
     <min>0</min>
     <max>2048</max>
@@ -798,6 +813,21 @@
     <min>1</min>
     <max>255</max>
     <pattern>[\p{L}\p{N}\p{P}]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.DeleteTableOptimizerRequest.CatalogId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.DeleteTableOptimizerRequest.DatabaseName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.DeleteTableOptimizerRequest.TableName</property>
+    <min>1</min>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.DeleteTableVersionRequest.CatalogId</property>
@@ -1447,6 +1477,36 @@
     <pattern>[\p{L}\p{N}\p{P}]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.GetTableOptimizerRequest.CatalogId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.GetTableOptimizerRequest.DatabaseName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.GetTableOptimizerRequest.TableName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.GetTableOptimizerResponse.CatalogId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.GetTableOptimizerResponse.DatabaseName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.GetTableOptimizerResponse.TableName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.GetTablesRequest.CatalogId</property>
     <min>1</min>
     <max>255</max>
@@ -1775,6 +1835,36 @@
   <property-value-rule>
     <property>Amazon.Glue.Model.ListStatementsResponse.NextToken</property>
     <max>400000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.ListTableOptimizerRunsRequest.CatalogId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.ListTableOptimizerRunsRequest.DatabaseName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.ListTableOptimizerRunsRequest.TableName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.ListTableOptimizerRunsResponse.CatalogId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.ListTableOptimizerRunsResponse.DatabaseName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.ListTableOptimizerRunsResponse.TableName</property>
+    <min>1</min>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.ListTriggersRequest.DependentJobName</property>
@@ -2533,6 +2623,21 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.UpdateTableOptimizerRequest.CatalogId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.UpdateTableOptimizerRequest.DatabaseName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.UpdateTableOptimizerRequest.TableName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.UpdateTriggerRequest.Name</property>
     <min>1</min>
     <max>255</max>
@@ -2653,6 +2758,32 @@
     <property>Amazon.Glue.Model.BasicCatalogTarget.Table</property>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.BatchGetTableOptimizerEntry.CatalogId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.BatchGetTableOptimizerEntry.DatabaseName</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.BatchGetTableOptimizerEntry.TableName</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.BatchGetTableOptimizerError.CatalogId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.BatchGetTableOptimizerError.DatabaseName</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.BatchGetTableOptimizerError.TableName</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.BatchStopJobRunError.JobName</property>
     <min>1</min>
     <max>255</max>
@@ -2671,6 +2802,19 @@
     <property>Amazon.Glue.Model.BatchStopJobRunSuccessfulSubmission.JobRunId</property>
     <min>1</min>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.BatchTableOptimizer.CatalogId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.BatchTableOptimizer.DatabaseName</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.BatchTableOptimizer.TableName</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.BinaryColumnStatisticsData.AverageLength</property>
@@ -4905,6 +5049,11 @@
   <property-value-rule>
     <property>Amazon.Glue.Model.TableInput.ViewOriginalText</property>
     <max>409600</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.TableOptimizerConfiguration.RoleArn</property>
+    <min>20</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.TableVersion.VersionId</property>

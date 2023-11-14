@@ -316,6 +316,14 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
+        /// Paginator for ListTableOptimizerRuns operation
+        ///</summary>
+        public IListTableOptimizerRunsPaginator ListTableOptimizerRuns(ListTableOptimizerRunsRequest request) 
+        {
+            return new ListTableOptimizerRunsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListTriggers operation
         ///</summary>
         public IListTriggersPaginator ListTriggers(ListTriggersRequest request) 
