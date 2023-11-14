@@ -39,6 +39,7 @@ namespace Amazon.IoT.Model
         private List<Behavior> _behaviors = new List<Behavior>();
         private DateTime? _creationDate;
         private DateTime? _lastModifiedDate;
+        private MetricsExportConfig _metricsExportConfig;
         private string _securityProfileArn;
         private string _securityProfileDescription;
         private string _securityProfileName;
@@ -161,6 +162,24 @@ namespace Amazon.IoT.Model
         internal bool IsSetLastModifiedDate()
         {
             return this._lastModifiedDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MetricsExportConfig. 
+        /// <para>
+        /// Specifies the MQTT topic and role ARN required for metric export.
+        /// </para>
+        /// </summary>
+        public MetricsExportConfig MetricsExportConfig
+        {
+            get { return this._metricsExportConfig; }
+            set { this._metricsExportConfig = value; }
+        }
+
+        // Check to see if MetricsExportConfig property is set
+        internal bool IsSetMetricsExportConfig()
+        {
+            return this._metricsExportConfig != null;
         }
 
         /// <summary>

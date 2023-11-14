@@ -47,7 +47,9 @@ namespace Amazon.IoT.Model
         private bool? _deleteAdditionalMetricsToRetain;
         private bool? _deleteAlertTargets;
         private bool? _deleteBehaviors;
+        private bool? _deleteMetricsExportConfig;
         private long? _expectedVersion;
+        private MetricsExportConfig _metricsExportConfig;
         private string _securityProfileDescription;
         private string _securityProfileName;
 
@@ -194,6 +196,24 @@ namespace Amazon.IoT.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DeleteMetricsExportConfig. 
+        /// <para>
+        /// Set the value as true to delete metrics export related configurations.
+        /// </para>
+        /// </summary>
+        public bool DeleteMetricsExportConfig
+        {
+            get { return this._deleteMetricsExportConfig.GetValueOrDefault(); }
+            set { this._deleteMetricsExportConfig = value; }
+        }
+
+        // Check to see if DeleteMetricsExportConfig property is set
+        internal bool IsSetDeleteMetricsExportConfig()
+        {
+            return this._deleteMetricsExportConfig.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ExpectedVersion. 
         /// <para>
         /// The expected version of the security profile. A new version is generated whenever
@@ -211,6 +231,24 @@ namespace Amazon.IoT.Model
         internal bool IsSetExpectedVersion()
         {
             return this._expectedVersion.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MetricsExportConfig. 
+        /// <para>
+        /// Specifies the MQTT topic and role ARN required for metric export.
+        /// </para>
+        /// </summary>
+        public MetricsExportConfig MetricsExportConfig
+        {
+            get { return this._metricsExportConfig; }
+            set { this._metricsExportConfig = value; }
+        }
+
+        // Check to see if MetricsExportConfig property is set
+        internal bool IsSetMetricsExportConfig()
+        {
+            return this._metricsExportConfig != null;
         }
 
         /// <summary>

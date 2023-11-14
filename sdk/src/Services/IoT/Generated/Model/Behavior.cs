@@ -34,6 +34,7 @@ namespace Amazon.IoT.Model
     public partial class Behavior
     {
         private BehaviorCriteria _criteria;
+        private bool? _exportMetric;
         private string _metric;
         private MetricDimension _metricDimension;
         private string _name;
@@ -61,6 +62,24 @@ namespace Amazon.IoT.Model
         internal bool IsSetCriteria()
         {
             return this._criteria != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExportMetric. 
+        /// <para>
+        /// Value indicates exporting metrics related to the behavior when it is true.
+        /// </para>
+        /// </summary>
+        public bool ExportMetric
+        {
+            get { return this._exportMetric.GetValueOrDefault(); }
+            set { this._exportMetric = value; }
+        }
+
+        // Check to see if ExportMetric property is set
+        internal bool IsSetExportMetric()
+        {
+            return this._exportMetric.HasValue; 
         }
 
         /// <summary>

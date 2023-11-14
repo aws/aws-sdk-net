@@ -33,8 +33,28 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class MetricToRetain
     {
+        private bool? _exportMetric;
         private string _metric;
         private MetricDimension _metricDimension;
+
+        /// <summary>
+        /// Gets and sets the property ExportMetric. 
+        /// <para>
+        /// Value added in both Behavior and AdditionalMetricsToRetainV2 to indicate if Device
+        /// Defender Detect should export the corresponding metrics.
+        /// </para>
+        /// </summary>
+        public bool ExportMetric
+        {
+            get { return this._exportMetric.GetValueOrDefault(); }
+            set { this._exportMetric = value; }
+        }
+
+        // Check to see if ExportMetric property is set
+        internal bool IsSetExportMetric()
+        {
+            return this._exportMetric.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Metric. 

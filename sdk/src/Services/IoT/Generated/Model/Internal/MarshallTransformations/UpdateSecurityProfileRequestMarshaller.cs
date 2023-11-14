@@ -151,6 +151,23 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DeleteBehaviors);
                 }
 
+                if(publicRequest.IsSetDeleteMetricsExportConfig())
+                {
+                    context.Writer.WritePropertyName("deleteMetricsExportConfig");
+                    context.Writer.Write(publicRequest.DeleteMetricsExportConfig);
+                }
+
+                if(publicRequest.IsSetMetricsExportConfig())
+                {
+                    context.Writer.WritePropertyName("metricsExportConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = MetricsExportConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.MetricsExportConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetSecurityProfileDescription())
                 {
                     context.Writer.WritePropertyName("securityProfileDescription");

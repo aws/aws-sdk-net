@@ -117,8 +117,14 @@ namespace Amazon.IoT.Model
         /// Gets and sets the property ManagedFields. 
         /// <para>
         /// Contains fields that are indexed and whose types are already known by the Fleet Indexing
-        /// service.
+        /// service. This is an optional field. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/managing-fleet-index.html#managed-field">Managed
+        /// fields</a> in the <i>Amazon Web Services IoT Core Developer Guide</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// You can't modify managed fields by updating fleet indexing configuration.
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<Field> ManagedFields
         {

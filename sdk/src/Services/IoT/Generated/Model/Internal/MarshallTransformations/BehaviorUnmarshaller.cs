@@ -70,6 +70,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     unmarshalledObject.Criteria = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("exportMetric", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.ExportMetric = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("metric", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

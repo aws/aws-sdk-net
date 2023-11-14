@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for MetricToRetain Object
+    /// Response Unmarshaller for MetricsExportConfig Object
     /// </summary>  
-    public class MetricToRetainUnmarshaller : IUnmarshaller<MetricToRetain, XmlUnmarshallerContext>, IUnmarshaller<MetricToRetain, JsonUnmarshallerContext>
+    public class MetricsExportConfigUnmarshaller : IUnmarshaller<MetricsExportConfig, XmlUnmarshallerContext>, IUnmarshaller<MetricsExportConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        MetricToRetain IUnmarshaller<MetricToRetain, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        MetricsExportConfig IUnmarshaller<MetricsExportConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,27 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public MetricToRetain Unmarshall(JsonUnmarshallerContext context)
+        public MetricsExportConfig Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            MetricToRetain unmarshalledObject = new MetricToRetain();
+            MetricsExportConfig unmarshalledObject = new MetricsExportConfig();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("exportMetric", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.ExportMetric = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("metric", targetDepth))
+                if (context.TestExpression("mqttTopic", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Metric = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MqttTopic = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("metricDimension", targetDepth))
+                if (context.TestExpression("roleArn", targetDepth))
                 {
-                    var unmarshaller = MetricDimensionUnmarshaller.Instance;
-                    unmarshalledObject.MetricDimension = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RoleArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +82,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         }
 
 
-        private static MetricToRetainUnmarshaller _instance = new MetricToRetainUnmarshaller();        
+        private static MetricsExportConfigUnmarshaller _instance = new MetricsExportConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static MetricToRetainUnmarshaller Instance
+        public static MetricsExportConfigUnmarshaller Instance
         {
             get
             {

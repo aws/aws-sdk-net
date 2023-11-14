@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// MetricToRetain Marshaller
+    /// MetricsExportConfig Marshaller
     /// </summary>
-    public class MetricToRetainMarshaller : IRequestMarshaller<MetricToRetain, JsonMarshallerContext> 
+    public class MetricsExportConfigMarshaller : IRequestMarshaller<MetricsExportConfig, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,29 +43,18 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(MetricToRetain requestObject, JsonMarshallerContext context)
+        public void Marshall(MetricsExportConfig requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetExportMetric())
+            if(requestObject.IsSetMqttTopic())
             {
-                context.Writer.WritePropertyName("exportMetric");
-                context.Writer.Write(requestObject.ExportMetric);
+                context.Writer.WritePropertyName("mqttTopic");
+                context.Writer.Write(requestObject.MqttTopic);
             }
 
-            if(requestObject.IsSetMetric())
+            if(requestObject.IsSetRoleArn())
             {
-                context.Writer.WritePropertyName("metric");
-                context.Writer.Write(requestObject.Metric);
-            }
-
-            if(requestObject.IsSetMetricDimension())
-            {
-                context.Writer.WritePropertyName("metricDimension");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = MetricDimensionMarshaller.Instance;
-                marshaller.Marshall(requestObject.MetricDimension, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("roleArn");
+                context.Writer.Write(requestObject.RoleArn);
             }
 
         }
@@ -73,7 +62,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static MetricToRetainMarshaller Instance = new MetricToRetainMarshaller();
+        public readonly static MetricsExportConfigMarshaller Instance = new MetricsExportConfigMarshaller();
 
     }
 }

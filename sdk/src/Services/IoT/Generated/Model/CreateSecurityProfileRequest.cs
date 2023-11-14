@@ -44,6 +44,7 @@ namespace Amazon.IoT.Model
         private List<MetricToRetain> _additionalMetricsToRetainV2 = new List<MetricToRetain>();
         private Dictionary<string, AlertTarget> _alertTargets = new Dictionary<string, AlertTarget>();
         private List<Behavior> _behaviors = new List<Behavior>();
+        private MetricsExportConfig _metricsExportConfig;
         private string _securityProfileDescription;
         private string _securityProfileName;
         private List<Tag> _tags = new List<Tag>();
@@ -130,6 +131,24 @@ namespace Amazon.IoT.Model
         internal bool IsSetBehaviors()
         {
             return this._behaviors != null && this._behaviors.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MetricsExportConfig. 
+        /// <para>
+        /// Specifies the MQTT topic and role ARN required for metric export.
+        /// </para>
+        /// </summary>
+        public MetricsExportConfig MetricsExportConfig
+        {
+            get { return this._metricsExportConfig; }
+            set { this._metricsExportConfig = value; }
+        }
+
+        // Check to see if MetricsExportConfig property is set
+        internal bool IsSetMetricsExportConfig()
+        {
+            return this._metricsExportConfig != null;
         }
 
         /// <summary>

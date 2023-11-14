@@ -87,6 +87,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     response.LastModifiedDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("metricsExportConfig", targetDepth))
+                {
+                    var unmarshaller = MetricsExportConfigUnmarshaller.Instance;
+                    response.MetricsExportConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("securityProfileArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
