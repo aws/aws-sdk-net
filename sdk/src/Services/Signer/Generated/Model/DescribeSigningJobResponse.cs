@@ -295,7 +295,7 @@ namespace Amazon.Signer.Model
         /// <summary>
         /// Gets and sets the property SignedObject. 
         /// <para>
-        /// Name of the S3 bucket where the signed code image is saved by code signing.
+        /// Name of the S3 bucket where the signed code image is saved by AWS Signer.
         /// </para>
         /// </summary>
         public SignedObject SignedObject

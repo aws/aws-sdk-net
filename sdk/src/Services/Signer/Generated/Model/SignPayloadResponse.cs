@@ -78,9 +78,7 @@ namespace Amazon.Signer.Model
         /// <summary>
         /// Gets and sets the property Metadata. 
         /// <para>
-        /// Information including the signing profile ARN and the signing job ID. Clients use
-        /// metadata to signature records, for example, as annotations added to the signature
-        /// manifest inside an OCI registry.
+        /// Information including the signing profile ARN and the signing job ID.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Metadata

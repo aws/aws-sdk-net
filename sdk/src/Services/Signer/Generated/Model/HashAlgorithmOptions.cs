@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Signer.Model
 {
     /// <summary>
-    /// The hash algorithms that are available to a code signing job.
+    /// The hash algorithms that are available to a code-signing job.
     /// </summary>
     public partial class HashAlgorithmOptions
     {
@@ -39,7 +39,7 @@ namespace Amazon.Signer.Model
         /// <summary>
         /// Gets and sets the property AllowedValues. 
         /// <para>
-        /// The set of accepted hash algorithms allowed in a code signing job.
+        /// The set of accepted hash algorithms allowed in a code-signing job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -58,7 +58,7 @@ namespace Amazon.Signer.Model
         /// <summary>
         /// Gets and sets the property DefaultValue. 
         /// <para>
-        /// The default hash algorithm that is used in a code signing job.
+        /// The default hash algorithm that is used in a code-signing job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

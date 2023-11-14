@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Signer.Model
 {
     /// <summary>
-    /// Information about the S3 bucket where you saved your unsigned code.
+    /// Information about the Amazon S3 bucket where you saved your unsigned code.
     /// </summary>
     public partial class S3Source
     {

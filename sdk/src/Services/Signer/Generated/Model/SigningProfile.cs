@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Signer.Model
 {
     /// <summary>
-    /// Contains information about the ACM certificates and code signing configuration parameters
+    /// Contains information about the ACM certificates and signing configuration parameters
     /// that can be used by a given code signing user.
     /// </summary>
     public partial class SigningProfile
@@ -196,7 +196,7 @@ namespace Amazon.Signer.Model
         /// <summary>
         /// Gets and sets the property SigningParameters. 
         /// <para>
-        /// The parameters that are available for use by a code signing user.
+        /// The parameters that are available for use by a Signer user.
         /// </para>
         /// </summary>
         public Dictionary<string, string> SigningParameters
@@ -214,7 +214,7 @@ namespace Amazon.Signer.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of a code signing profile.
+        /// The status of a signing profile.
         /// </para>
         /// </summary>
         public SigningProfileStatus Status

@@ -30,7 +30,7 @@ namespace Amazon.Signer.Model
 {
     /// <summary>
     /// Container for the parameters to the PutSigningProfile operation.
-    /// Creates a signing profile. A signing profile is a code signing template that can be
+    /// Creates a signing profile. A signing profile is a code-signing template that can be
     /// used to carry out a pre-defined signing job.
     /// </summary>
     public partial class PutSigningProfileRequest : AmazonSignerRequest

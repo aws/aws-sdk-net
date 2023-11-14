@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Signer.Model
 {
     /// <summary>
-    /// The encryption algorithm options that are available to a code signing job.
+    /// The encryption algorithm options that are available to a code-signing job.
     /// </summary>
     public partial class EncryptionAlgorithmOptions
     {
@@ -39,7 +39,7 @@ namespace Amazon.Signer.Model
         /// <summary>
         /// Gets and sets the property AllowedValues. 
         /// <para>
-        /// The set of accepted encryption algorithms that are allowed in a code signing job.
+        /// The set of accepted encryption algorithms that are allowed in a code-signing job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -58,7 +58,7 @@ namespace Amazon.Signer.Model
         /// <summary>
         /// Gets and sets the property DefaultValue. 
         /// <para>
-        /// The default encryption algorithm that is used by a code signing job.
+        /// The default encryption algorithm that is used by a code-signing job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

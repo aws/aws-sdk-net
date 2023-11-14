@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Signer.Model
 {
     /// <summary>
-    /// Any overrides that are applied to the signing configuration of a code signing platform.
+    /// Any overrides that are applied to the signing configuration of a signing platform.
     /// </summary>
     public partial class SigningPlatformOverrides
     {

@@ -38,8 +38,8 @@ namespace Amazon.Signer.Model
         /// <summary>
         /// Gets and sets the property RevokedEntities. 
         /// <para>
-        /// A list of revoked entities (including one or more of the signing profile ARN, signing
-        /// job ID, and certificate hash) supplied as input to the API.
+        /// A list of revoked entities (including zero or more of the signing profile ARN, signing
+        /// job ARN, and certificate hashes) supplied as input to the API.
         /// </para>
         /// </summary>
         public List<string> RevokedEntities

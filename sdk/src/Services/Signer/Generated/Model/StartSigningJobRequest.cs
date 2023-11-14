@@ -45,7 +45,7 @@ namespace Amazon.Signer.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// You must create an S3 destination bucket. Code signing uses your S3 destination bucket
+    /// You must create an S3 destination bucket. AWS Signer uses your S3 destination bucket
     /// to write your signed code.
     /// </para>
     ///  </li> <li> 
@@ -55,7 +55,7 @@ namespace Amazon.Signer.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// You must also specify a request token that identifies your request to code signing.
+    /// You must also specify a request token that identifies your request to Signer.
     /// </para>
     ///  </li> </ul> 
     /// <para>
