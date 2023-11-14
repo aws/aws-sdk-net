@@ -29,31 +29,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ResourceExplorer2.Model
 {
     /// <summary>
-    /// This is the response object from the Search operation.
+    /// This is the response object from the ListIndexesForMembers operation.
     /// </summary>
-    public partial class SearchResponse : AmazonWebServiceResponse
+    public partial class ListIndexesForMembersResponse : AmazonWebServiceResponse
     {
-        private ResourceCount _count;
+        private List<MemberIndex> _indexes = new List<MemberIndex>();
         private string _nextToken;
-        private List<Resource> _resources = new List<Resource>();
-        private string _viewArn;
 
         /// <summary>
-        /// Gets and sets the property Count. 
+        /// Gets and sets the property Indexes. 
         /// <para>
-        /// The number of resources that match the query.
+        /// A structure that contains the details and status of each index.
         /// </para>
         /// </summary>
-        public ResourceCount Count
+        public List<MemberIndex> Indexes
         {
-            get { return this._count; }
-            set { this._count = value; }
+            get { return this._indexes; }
+            set { this._indexes = value; }
         }
 
-        // Check to see if Count property is set
-        internal bool IsSetCount()
+        // Check to see if Indexes property is set
+        internal bool IsSetIndexes()
         {
-            return this._count != null;
+            return this._indexes != null && this._indexes.Count > 0; 
         }
 
         /// <summary>
@@ -66,7 +64,6 @@ namespace Amazon.ResourceExplorer2.Model
         /// tokens expire after 24 hours.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2048)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -77,44 +74,6 @@ namespace Amazon.ResourceExplorer2.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Resources. 
-        /// <para>
-        /// The list of structures that describe the resources that match the query.
-        /// </para>
-        /// </summary>
-        public List<Resource> Resources
-        {
-            get { return this._resources; }
-            set { this._resources = value; }
-        }
-
-        // Check to see if Resources property is set
-        internal bool IsSetResources()
-        {
-            return this._resources != null && this._resources.Count > 0; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property ViewArn. 
-        /// <para>
-        /// The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// resource name (ARN)</a> of the view that this operation used to perform the search.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=1011)]
-        public string ViewArn
-        {
-            get { return this._viewArn; }
-            set { this._viewArn = value; }
-        }
-
-        // Check to see if ViewArn property is set
-        internal bool IsSetViewArn()
-        {
-            return this._viewArn != null;
         }
 
     }

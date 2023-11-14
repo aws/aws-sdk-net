@@ -30,25 +30,32 @@ namespace Amazon.ResourceExplorer2.Model
 {
     /// <summary>
     /// An index is the data store used by Amazon Web Services Resource Explorer to hold information
-    /// about your Amazon Web Services resources that the service discovers. Creating an index
-    /// in an Amazon Web Services Region turns on Resource Explorer and lets it discover your
-    /// resources.
-    /// 
-    ///  
-    /// <para>
-    /// By default, an index is <i>local</i>, meaning that it contains information about resources
-    /// in only the same Region as the index. However, you can promote the index of one Region
-    /// in the account by calling <a>UpdateIndexType</a> to convert it into an aggregator
-    /// index. The aggregator index receives a replicated copy of the index information from
-    /// all other Regions where Resource Explorer is turned on. This allows search operations
-    /// in that Region to return results from all Regions in the account.
-    /// </para>
+    /// about your Amazon Web Services resources that the service discovers.
     /// </summary>
-    public partial class Index
+    public partial class MemberIndex
     {
+        private string _accountId;
         private string _arn;
         private string _region;
         private IndexType _type;
+
+        /// <summary>
+        /// Gets and sets the property AccountId. 
+        /// <para>
+        /// The account ID for the index.
+        /// </para>
+        /// </summary>
+        public string AccountId
+        {
+            get { return this._accountId; }
+            set { this._accountId = value; }
+        }
+
+        // Check to see if AccountId property is set
+        internal bool IsSetAccountId()
+        {
+            return this._accountId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -90,7 +97,7 @@ namespace Amazon.ResourceExplorer2.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of index. It can be one of the following values:
+        /// The type of index. It can be one of the following values: 
         /// </para>
         ///  <ul> <li> 
         /// <para>

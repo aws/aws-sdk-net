@@ -30,7 +30,7 @@ namespace Amazon.ResourceExplorer2.Model
 {
     /// <summary>
     /// The request failed because you exceeded a rate limit for this operation. For more
-    /// information, see <a href="https://docs.aws.amazon.com/arexug/mainline/quotas.html">Quotas
+    /// information, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/quotas.html">Quotas
     /// for Resource Explorer</a>.
     /// </summary>
     #if !NETSTANDARD

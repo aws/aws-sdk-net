@@ -112,7 +112,7 @@ namespace Amazon.ResourceExplorer2
         /// </exception>
         /// <exception cref="Amazon.ResourceExplorer2.Model.ThrottlingException">
         /// The request failed because you exceeded a rate limit for this operation. For more
-        /// information, see <a href="https://docs.aws.amazon.com/arexug/mainline/quotas.html">Quotas
+        /// information, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/quotas.html">Quotas
         /// for Resource Explorer</a>.
         /// </exception>
         /// <exception cref="Amazon.ResourceExplorer2.Model.ValidationException">
@@ -146,7 +146,7 @@ namespace Amazon.ResourceExplorer2
         /// </exception>
         /// <exception cref="Amazon.ResourceExplorer2.Model.ThrottlingException">
         /// The request failed because you exceeded a rate limit for this operation. For more
-        /// information, see <a href="https://docs.aws.amazon.com/arexug/mainline/quotas.html">Quotas
+        /// information, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/quotas.html">Quotas
         /// for Resource Explorer</a>.
         /// </exception>
         /// <exception cref="Amazon.ResourceExplorer2.Model.UnauthorizedException">
@@ -245,16 +245,29 @@ namespace Amazon.ResourceExplorer2
         /// permissions.
         /// </exception>
         /// <exception cref="Amazon.ResourceExplorer2.Model.ConflictException">
-        /// The request failed because either you specified parameters that didn’t match the original
-        /// request, or you attempted to create a view with a name that already exists in this
-        /// Amazon Web Services Region.
+        /// If you attempted to create a view, then the request failed because either you specified
+        /// parameters that didn’t match the original request, or you attempted to create a view
+        /// with a name that already exists in this Amazon Web Services Region.
+        /// 
+        ///  
+        /// <para>
+        /// If you attempted to create an index, then the request failed because either you specified
+        /// parameters that didn't match the original request, or an index already exists in the
+        /// current Amazon Web Services Region.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you attempted to update an index type to <code>AGGREGATOR</code>, then the request
+        /// failed because you already have an <code>AGGREGATOR</code> index in a different Amazon
+        /// Web Services Region.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.ResourceExplorer2.Model.InternalServerException">
         /// The request failed because of internal service error. Try your request again later.
         /// </exception>
         /// <exception cref="Amazon.ResourceExplorer2.Model.ThrottlingException">
         /// The request failed because you exceeded a rate limit for this operation. For more
-        /// information, see <a href="https://docs.aws.amazon.com/arexug/mainline/quotas.html">Quotas
+        /// information, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/quotas.html">Quotas
         /// for Resource Explorer</a>.
         /// </exception>
         /// <exception cref="Amazon.ResourceExplorer2.Model.ValidationException">
@@ -296,9 +309,22 @@ namespace Amazon.ResourceExplorer2
         /// permissions.
         /// </exception>
         /// <exception cref="Amazon.ResourceExplorer2.Model.ConflictException">
-        /// The request failed because either you specified parameters that didn’t match the original
-        /// request, or you attempted to create a view with a name that already exists in this
-        /// Amazon Web Services Region.
+        /// If you attempted to create a view, then the request failed because either you specified
+        /// parameters that didn’t match the original request, or you attempted to create a view
+        /// with a name that already exists in this Amazon Web Services Region.
+        /// 
+        ///  
+        /// <para>
+        /// If you attempted to create an index, then the request failed because either you specified
+        /// parameters that didn't match the original request, or an index already exists in the
+        /// current Amazon Web Services Region.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you attempted to update an index type to <code>AGGREGATOR</code>, then the request
+        /// failed because you already have an <code>AGGREGATOR</code> index in a different Amazon
+        /// Web Services Region.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.ResourceExplorer2.Model.InternalServerException">
         /// The request failed because of internal service error. Try your request again later.
@@ -308,7 +334,7 @@ namespace Amazon.ResourceExplorer2
         /// </exception>
         /// <exception cref="Amazon.ResourceExplorer2.Model.ThrottlingException">
         /// The request failed because you exceeded a rate limit for this operation. For more
-        /// information, see <a href="https://docs.aws.amazon.com/arexug/mainline/quotas.html">Quotas
+        /// information, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/quotas.html">Quotas
         /// for Resource Explorer</a>.
         /// </exception>
         /// <exception cref="Amazon.ResourceExplorer2.Model.UnauthorizedException">
@@ -363,7 +389,7 @@ namespace Amazon.ResourceExplorer2
         /// </exception>
         /// <exception cref="Amazon.ResourceExplorer2.Model.ThrottlingException">
         /// The request failed because you exceeded a rate limit for this operation. For more
-        /// information, see <a href="https://docs.aws.amazon.com/arexug/mainline/quotas.html">Quotas
+        /// information, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/quotas.html">Quotas
         /// for Resource Explorer</a>.
         /// </exception>
         /// <exception cref="Amazon.ResourceExplorer2.Model.ValidationException">
@@ -408,7 +434,7 @@ namespace Amazon.ResourceExplorer2
         /// </exception>
         /// <exception cref="Amazon.ResourceExplorer2.Model.ThrottlingException">
         /// The request failed because you exceeded a rate limit for this operation. For more
-        /// information, see <a href="https://docs.aws.amazon.com/arexug/mainline/quotas.html">Quotas
+        /// information, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/quotas.html">Quotas
         /// for Resource Explorer</a>.
         /// </exception>
         /// <exception cref="Amazon.ResourceExplorer2.Model.UnauthorizedException">
@@ -453,9 +479,13 @@ namespace Amazon.ResourceExplorer2
         /// <exception cref="Amazon.ResourceExplorer2.Model.InternalServerException">
         /// The request failed because of internal service error. Try your request again later.
         /// </exception>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.ResourceNotFoundException">
+        /// You specified a resource that doesn't exist. Check the ID or ARN that you used to
+        /// identity the resource, and try again.
+        /// </exception>
         /// <exception cref="Amazon.ResourceExplorer2.Model.ThrottlingException">
         /// The request failed because you exceeded a rate limit for this operation. For more
-        /// information, see <a href="https://docs.aws.amazon.com/arexug/mainline/quotas.html">Quotas
+        /// information, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/quotas.html">Quotas
         /// for Resource Explorer</a>.
         /// </exception>
         /// <exception cref="Amazon.ResourceExplorer2.Model.ValidationException">
@@ -464,6 +494,43 @@ namespace Amazon.ResourceExplorer2
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/DisassociateDefaultView">REST API Reference for DisassociateDefaultView Operation</seealso>
         Task<DisassociateDefaultViewResponse> DisassociateDefaultViewAsync(DisassociateDefaultViewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetAccountLevelServiceConfiguration
+
+
+
+        /// <summary>
+        /// Retrieves the status of your account's Amazon Web Services service access, and validates
+        /// the service linked role required to access the multi-account search feature. Only
+        /// the management account or a delegated administrator with service access enabled can
+        /// invoke this API call.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAccountLevelServiceConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAccountLevelServiceConfiguration service method, as returned by ResourceExplorer2.</returns>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.AccessDeniedException">
+        /// The credentials that you used to call this operation don't have the minimum required
+        /// permissions.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.InternalServerException">
+        /// The request failed because of internal service error. Try your request again later.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.ResourceNotFoundException">
+        /// You specified a resource that doesn't exist. Check the ID or ARN that you used to
+        /// identity the resource, and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.ThrottlingException">
+        /// The request failed because you exceeded a rate limit for this operation. For more
+        /// information, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/quotas.html">Quotas
+        /// for Resource Explorer</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/GetAccountLevelServiceConfiguration">REST API Reference for GetAccountLevelServiceConfiguration Operation</seealso>
+        Task<GetAccountLevelServiceConfigurationResponse> GetAccountLevelServiceConfigurationAsync(GetAccountLevelServiceConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -495,7 +562,7 @@ namespace Amazon.ResourceExplorer2
         /// </exception>
         /// <exception cref="Amazon.ResourceExplorer2.Model.ThrottlingException">
         /// The request failed because you exceeded a rate limit for this operation. For more
-        /// information, see <a href="https://docs.aws.amazon.com/arexug/mainline/quotas.html">Quotas
+        /// information, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/quotas.html">Quotas
         /// for Resource Explorer</a>.
         /// </exception>
         /// <exception cref="Amazon.ResourceExplorer2.Model.ValidationException">
@@ -534,7 +601,7 @@ namespace Amazon.ResourceExplorer2
         /// </exception>
         /// <exception cref="Amazon.ResourceExplorer2.Model.ThrottlingException">
         /// The request failed because you exceeded a rate limit for this operation. For more
-        /// information, see <a href="https://docs.aws.amazon.com/arexug/mainline/quotas.html">Quotas
+        /// information, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/quotas.html">Quotas
         /// for Resource Explorer</a>.
         /// </exception>
         /// <exception cref="Amazon.ResourceExplorer2.Model.ValidationException">
@@ -572,7 +639,7 @@ namespace Amazon.ResourceExplorer2
         /// </exception>
         /// <exception cref="Amazon.ResourceExplorer2.Model.ThrottlingException">
         /// The request failed because you exceeded a rate limit for this operation. For more
-        /// information, see <a href="https://docs.aws.amazon.com/arexug/mainline/quotas.html">Quotas
+        /// information, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/quotas.html">Quotas
         /// for Resource Explorer</a>.
         /// </exception>
         /// <exception cref="Amazon.ResourceExplorer2.Model.UnauthorizedException">
@@ -610,7 +677,7 @@ namespace Amazon.ResourceExplorer2
         /// </exception>
         /// <exception cref="Amazon.ResourceExplorer2.Model.ThrottlingException">
         /// The request failed because you exceeded a rate limit for this operation. For more
-        /// information, see <a href="https://docs.aws.amazon.com/arexug/mainline/quotas.html">Quotas
+        /// information, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/quotas.html">Quotas
         /// for Resource Explorer</a>.
         /// </exception>
         /// <exception cref="Amazon.ResourceExplorer2.Model.ValidationException">
@@ -619,6 +686,43 @@ namespace Amazon.ResourceExplorer2
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/ListIndexes">REST API Reference for ListIndexes Operation</seealso>
         Task<ListIndexesResponse> ListIndexesAsync(ListIndexesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListIndexesForMembers
+
+
+
+        /// <summary>
+        /// Retrieves a list of a member's indexes in all Amazon Web Services Regions that are
+        /// currently collecting resource information for Amazon Web Services Resource Explorer.
+        /// Only the management account or a delegated administrator with service access enabled
+        /// can invoke this API call.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListIndexesForMembers service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListIndexesForMembers service method, as returned by ResourceExplorer2.</returns>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.AccessDeniedException">
+        /// The credentials that you used to call this operation don't have the minimum required
+        /// permissions.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.InternalServerException">
+        /// The request failed because of internal service error. Try your request again later.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.ThrottlingException">
+        /// The request failed because you exceeded a rate limit for this operation. For more
+        /// information, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/quotas.html">Quotas
+        /// for Resource Explorer</a>.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.ValidationException">
+        /// You provided an invalid value for one of the operation's parameters. Check the syntax
+        /// for the operation, and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/ListIndexesForMembers">REST API Reference for ListIndexesForMembers Operation</seealso>
+        Task<ListIndexesForMembersResponse> ListIndexesForMembersAsync(ListIndexesForMembersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -645,7 +749,7 @@ namespace Amazon.ResourceExplorer2
         /// </exception>
         /// <exception cref="Amazon.ResourceExplorer2.Model.ThrottlingException">
         /// The request failed because you exceeded a rate limit for this operation. For more
-        /// information, see <a href="https://docs.aws.amazon.com/arexug/mainline/quotas.html">Quotas
+        /// information, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/quotas.html">Quotas
         /// for Resource Explorer</a>.
         /// </exception>
         /// <exception cref="Amazon.ResourceExplorer2.Model.ValidationException">
@@ -683,7 +787,7 @@ namespace Amazon.ResourceExplorer2
         /// </exception>
         /// <exception cref="Amazon.ResourceExplorer2.Model.ThrottlingException">
         /// The request failed because you exceeded a rate limit for this operation. For more
-        /// information, see <a href="https://docs.aws.amazon.com/arexug/mainline/quotas.html">Quotas
+        /// information, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/quotas.html">Quotas
         /// for Resource Explorer</a>.
         /// </exception>
         /// <exception cref="Amazon.ResourceExplorer2.Model.UnauthorizedException">
@@ -732,7 +836,7 @@ namespace Amazon.ResourceExplorer2
         /// </exception>
         /// <exception cref="Amazon.ResourceExplorer2.Model.ThrottlingException">
         /// The request failed because you exceeded a rate limit for this operation. For more
-        /// information, see <a href="https://docs.aws.amazon.com/arexug/mainline/quotas.html">Quotas
+        /// information, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/quotas.html">Quotas
         /// for Resource Explorer</a>.
         /// </exception>
         /// <exception cref="Amazon.ResourceExplorer2.Model.ValidationException">
@@ -792,7 +896,7 @@ namespace Amazon.ResourceExplorer2
         /// </exception>
         /// <exception cref="Amazon.ResourceExplorer2.Model.ThrottlingException">
         /// The request failed because you exceeded a rate limit for this operation. For more
-        /// information, see <a href="https://docs.aws.amazon.com/arexug/mainline/quotas.html">Quotas
+        /// information, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/quotas.html">Quotas
         /// for Resource Explorer</a>.
         /// </exception>
         /// <exception cref="Amazon.ResourceExplorer2.Model.UnauthorizedException">
@@ -826,16 +930,29 @@ namespace Amazon.ResourceExplorer2
         /// permissions.
         /// </exception>
         /// <exception cref="Amazon.ResourceExplorer2.Model.ConflictException">
-        /// The request failed because either you specified parameters that didn’t match the original
-        /// request, or you attempted to create a view with a name that already exists in this
-        /// Amazon Web Services Region.
+        /// If you attempted to create a view, then the request failed because either you specified
+        /// parameters that didn’t match the original request, or you attempted to create a view
+        /// with a name that already exists in this Amazon Web Services Region.
+        /// 
+        ///  
+        /// <para>
+        /// If you attempted to create an index, then the request failed because either you specified
+        /// parameters that didn't match the original request, or an index already exists in the
+        /// current Amazon Web Services Region.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you attempted to update an index type to <code>AGGREGATOR</code>, then the request
+        /// failed because you already have an <code>AGGREGATOR</code> index in a different Amazon
+        /// Web Services Region.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.ResourceExplorer2.Model.InternalServerException">
         /// The request failed because of internal service error. Try your request again later.
         /// </exception>
         /// <exception cref="Amazon.ResourceExplorer2.Model.ThrottlingException">
         /// The request failed because you exceeded a rate limit for this operation. For more
-        /// information, see <a href="https://docs.aws.amazon.com/arexug/mainline/quotas.html">Quotas
+        /// information, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/quotas.html">Quotas
         /// for Resource Explorer</a>.
         /// </exception>
         /// <exception cref="Amazon.ResourceExplorer2.Model.UnauthorizedException">
@@ -877,7 +994,7 @@ namespace Amazon.ResourceExplorer2
         /// </exception>
         /// <exception cref="Amazon.ResourceExplorer2.Model.ThrottlingException">
         /// The request failed because you exceeded a rate limit for this operation. For more
-        /// information, see <a href="https://docs.aws.amazon.com/arexug/mainline/quotas.html">Quotas
+        /// information, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/quotas.html">Quotas
         /// for Resource Explorer</a>.
         /// </exception>
         /// <exception cref="Amazon.ResourceExplorer2.Model.UnauthorizedException">
@@ -975,9 +1092,22 @@ namespace Amazon.ResourceExplorer2
         /// permissions.
         /// </exception>
         /// <exception cref="Amazon.ResourceExplorer2.Model.ConflictException">
-        /// The request failed because either you specified parameters that didn’t match the original
-        /// request, or you attempted to create a view with a name that already exists in this
-        /// Amazon Web Services Region.
+        /// If you attempted to create a view, then the request failed because either you specified
+        /// parameters that didn’t match the original request, or you attempted to create a view
+        /// with a name that already exists in this Amazon Web Services Region.
+        /// 
+        ///  
+        /// <para>
+        /// If you attempted to create an index, then the request failed because either you specified
+        /// parameters that didn't match the original request, or an index already exists in the
+        /// current Amazon Web Services Region.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you attempted to update an index type to <code>AGGREGATOR</code>, then the request
+        /// failed because you already have an <code>AGGREGATOR</code> index in a different Amazon
+        /// Web Services Region.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.ResourceExplorer2.Model.InternalServerException">
         /// The request failed because of internal service error. Try your request again later.
@@ -991,7 +1121,7 @@ namespace Amazon.ResourceExplorer2
         /// </exception>
         /// <exception cref="Amazon.ResourceExplorer2.Model.ThrottlingException">
         /// The request failed because you exceeded a rate limit for this operation. For more
-        /// information, see <a href="https://docs.aws.amazon.com/arexug/mainline/quotas.html">Quotas
+        /// information, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/quotas.html">Quotas
         /// for Resource Explorer</a>.
         /// </exception>
         /// <exception cref="Amazon.ResourceExplorer2.Model.ValidationException">
@@ -1029,7 +1159,7 @@ namespace Amazon.ResourceExplorer2
         /// </exception>
         /// <exception cref="Amazon.ResourceExplorer2.Model.ThrottlingException">
         /// The request failed because you exceeded a rate limit for this operation. For more
-        /// information, see <a href="https://docs.aws.amazon.com/arexug/mainline/quotas.html">Quotas
+        /// information, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/quotas.html">Quotas
         /// for Resource Explorer</a>.
         /// </exception>
         /// <exception cref="Amazon.ResourceExplorer2.Model.UnauthorizedException">

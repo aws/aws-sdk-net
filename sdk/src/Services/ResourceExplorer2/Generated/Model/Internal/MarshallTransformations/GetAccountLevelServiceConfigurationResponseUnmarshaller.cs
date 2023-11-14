@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ResourceExplorer2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DisassociateDefaultView operation
+    /// Response Unmarshaller for GetAccountLevelServiceConfiguration operation
     /// </summary>  
-    public class DisassociateDefaultViewResponseUnmarshaller : JsonResponseUnmarshaller
+    public class GetAccountLevelServiceConfigurationResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,8 +45,19 @@ namespace Amazon.ResourceExplorer2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DisassociateDefaultViewResponse response = new DisassociateDefaultViewResponse();
+            GetAccountLevelServiceConfigurationResponse response = new GetAccountLevelServiceConfigurationResponse();
 
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
+            {
+                if (context.TestExpression("OrgConfiguration", targetDepth))
+                {
+                    var unmarshaller = OrgConfigurationUnmarshaller.Instance;
+                    response.OrgConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+            }
 
             return response;
         }
@@ -85,17 +96,13 @@ namespace Amazon.ResourceExplorer2.Model.Internal.MarshallTransformations
                 {
                     return ThrottlingExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ValidationException"))
-                {
-                    return ValidationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
             }
             return new AmazonResourceExplorer2Exception(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static DisassociateDefaultViewResponseUnmarshaller _instance = new DisassociateDefaultViewResponseUnmarshaller();        
+        private static GetAccountLevelServiceConfigurationResponseUnmarshaller _instance = new GetAccountLevelServiceConfigurationResponseUnmarshaller();        
 
-        internal static DisassociateDefaultViewResponseUnmarshaller GetInstance()
+        internal static GetAccountLevelServiceConfigurationResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -103,7 +110,7 @@ namespace Amazon.ResourceExplorer2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DisassociateDefaultViewResponseUnmarshaller Instance
+        public static GetAccountLevelServiceConfigurationResponseUnmarshaller Instance
         {
             get
             {

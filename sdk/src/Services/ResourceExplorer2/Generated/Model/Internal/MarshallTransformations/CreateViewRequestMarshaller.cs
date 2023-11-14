@@ -103,6 +103,12 @@ namespace Amazon.ResourceExplorer2.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetScope())
+                {
+                    context.Writer.WritePropertyName("Scope");
+                    context.Writer.Write(publicRequest.Scope);
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("Tags");

@@ -42,7 +42,8 @@ namespace Amazon.ResourceExplorer2.Model
         /// If present, indicates that more output is available than is included in the current
         /// response. Use this value in the <code>NextToken</code> request parameter in a subsequent
         /// call to the operation to get the next part of the output. You should repeat this until
-        /// the <code>NextToken</code> response element comes back as <code>null</code>.
+        /// the <code>NextToken</code> response element comes back as <code>null</code>. The pagination
+        /// tokens expire after 24 hours.
         /// </para>
         /// </summary>
         public string NextToken

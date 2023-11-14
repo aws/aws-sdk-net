@@ -29,9 +29,22 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ResourceExplorer2.Model
 {
     /// <summary>
-    /// The request failed because either you specified parameters that didn’t match the original
-    /// request, or you attempted to create a view with a name that already exists in this
-    /// Amazon Web Services Region.
+    /// If you attempted to create a view, then the request failed because either you specified
+    /// parameters that didn’t match the original request, or you attempted to create a view
+    /// with a name that already exists in this Amazon Web Services Region.
+    /// 
+    ///  
+    /// <para>
+    /// If you attempted to create an index, then the request failed because either you specified
+    /// parameters that didn't match the original request, or an index already exists in the
+    /// current Amazon Web Services Region.
+    /// </para>
+    ///  
+    /// <para>
+    /// If you attempted to update an index type to <code>AGGREGATOR</code>, then the request
+    /// failed because you already have an <code>AGGREGATOR</code> index in a different Amazon
+    /// Web Services Region.
+    /// </para>
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

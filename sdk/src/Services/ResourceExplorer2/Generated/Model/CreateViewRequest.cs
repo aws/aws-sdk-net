@@ -49,6 +49,7 @@ namespace Amazon.ResourceExplorer2.Model
         private string _clientToken;
         private SearchFilter _filters;
         private List<IncludedProperty> _includedProperties = new List<IncludedProperty>();
+        private string _scope;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private string _viewName;
 
@@ -136,11 +137,32 @@ namespace Amazon.ResourceExplorer2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Scope. 
+        /// <para>
+        /// The root ARN of the account, an organizational unit (OU), or an organization ARN.
+        /// If left empty, the default is account.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string Scope
+        {
+            get { return this._scope; }
+            set { this._scope = value; }
+        }
+
+        // Check to see if Scope property is set
+        internal bool IsSetScope()
+        {
+            return this._scope != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
         /// Tag key and value pairs that are attached to the view.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }

@@ -44,6 +44,14 @@ namespace Amazon.ResourceExplorer2.Model
         }
 
         /// <summary>
+        /// Paginator for ListIndexesForMembers operation
+        ///</summary>
+        public IListIndexesForMembersPaginator ListIndexesForMembers(ListIndexesForMembersRequest request) 
+        {
+            return new ListIndexesForMembersPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListSupportedResourceTypes operation
         ///</summary>
         public IListSupportedResourceTypesPaginator ListSupportedResourceTypes(ListSupportedResourceTypesRequest request) 

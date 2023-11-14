@@ -67,7 +67,7 @@ namespace Amazon.ResourceExplorer2.Model
         /// </para>
         ///  </note>
         /// </summary>
-        [AWSProperty(Min=1, Max=20)]
+        [AWSProperty(Min=1, Max=50)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -86,7 +86,8 @@ namespace Amazon.ResourceExplorer2.Model
         /// The parameter for receiving additional results if you receive a <code>NextToken</code>
         /// response in a previous request. A <code>NextToken</code> response indicates that more
         /// output is available. Set this parameter to the value of the previous call's <code>NextToken</code>
-        /// response to indicate where the output should continue from.
+        /// response to indicate where the output should continue from. The pagination tokens
+        /// expire after 24 hours.
         /// </para>
         /// </summary>
         public string NextToken

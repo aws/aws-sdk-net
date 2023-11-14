@@ -29,30 +29,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ResourceExplorer2.Model
 {
     /// <summary>
-    /// This is the response object from the ListTagsForResource operation.
+    /// Container for the parameters to the GetAccountLevelServiceConfiguration operation.
+    /// Retrieves the status of your account's Amazon Web Services service access, and validates
+    /// the service linked role required to access the multi-account search feature. Only
+    /// the management account or a delegated administrator with service access enabled can
+    /// invoke this API call.
     /// </summary>
-    public partial class ListTagsForResourceResponse : AmazonWebServiceResponse
+    public partial class GetAccountLevelServiceConfigurationRequest : AmazonResourceExplorer2Request
     {
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
-
-        /// <summary>
-        /// Gets and sets the property Tags. 
-        /// <para>
-        /// The tag key and value pairs that you want to attach to the specified view or index.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Sensitive=true)]
-        public Dictionary<string, string> Tags
-        {
-            get { return this._tags; }
-            set { this._tags = value; }
-        }
-
-        // Check to see if Tags property is set
-        internal bool IsSetTags()
-        {
-            return this._tags != null && this._tags.Count > 0; 
-        }
 
     }
 }

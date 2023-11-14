@@ -109,7 +109,7 @@ namespace Amazon.ResourceExplorer2.Model
         /// This value helps ensure idempotency. Resource Explorer uses this value to prevent
         /// the accidental creation of duplicate versions. We recommend that you generate a <a
         /// href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type value</a>
-        /// to ensure the uniqueness of your views.
+        /// to ensure the uniqueness of your index.
         /// </para>
         /// </summary>
         public string ClientToken
@@ -131,6 +131,7 @@ namespace Amazon.ResourceExplorer2.Model
         /// Region. The tags aren't attached to any of the resources listed in the index.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }

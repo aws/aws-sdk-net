@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ResourceExplorer2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DisassociateDefaultView operation
+    /// Response Unmarshaller for ListIndexesForMembers operation
     /// </summary>  
-    public class DisassociateDefaultViewResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ListIndexesForMembersResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,8 +45,25 @@ namespace Amazon.ResourceExplorer2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DisassociateDefaultViewResponse response = new DisassociateDefaultViewResponse();
+            ListIndexesForMembersResponse response = new ListIndexesForMembersResponse();
 
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
+            {
+                if (context.TestExpression("Indexes", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<MemberIndex, MemberIndexUnmarshaller>(MemberIndexUnmarshaller.Instance);
+                    response.Indexes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("NextToken", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.NextToken = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+            }
 
             return response;
         }
@@ -77,10 +94,6 @@ namespace Amazon.ResourceExplorer2.Model.Internal.MarshallTransformations
                 {
                     return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
-                {
-                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
                 {
                     return ThrottlingExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -93,9 +106,9 @@ namespace Amazon.ResourceExplorer2.Model.Internal.MarshallTransformations
             return new AmazonResourceExplorer2Exception(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static DisassociateDefaultViewResponseUnmarshaller _instance = new DisassociateDefaultViewResponseUnmarshaller();        
+        private static ListIndexesForMembersResponseUnmarshaller _instance = new ListIndexesForMembersResponseUnmarshaller();        
 
-        internal static DisassociateDefaultViewResponseUnmarshaller GetInstance()
+        internal static ListIndexesForMembersResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -103,7 +116,7 @@ namespace Amazon.ResourceExplorer2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DisassociateDefaultViewResponseUnmarshaller Instance
+        public static ListIndexesForMembersResponseUnmarshaller Instance
         {
             get
             {

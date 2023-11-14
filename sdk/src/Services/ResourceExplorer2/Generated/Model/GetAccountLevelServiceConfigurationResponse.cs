@@ -29,29 +29,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ResourceExplorer2.Model
 {
     /// <summary>
-    /// This is the response object from the ListTagsForResource operation.
+    /// This is the response object from the GetAccountLevelServiceConfiguration operation.
     /// </summary>
-    public partial class ListTagsForResourceResponse : AmazonWebServiceResponse
+    public partial class GetAccountLevelServiceConfigurationResponse : AmazonWebServiceResponse
     {
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private OrgConfiguration _orgConfiguration;
 
         /// <summary>
-        /// Gets and sets the property Tags. 
+        /// Gets and sets the property OrgConfiguration. 
         /// <para>
-        /// The tag key and value pairs that you want to attach to the specified view or index.
+        /// Details about the organization, and whether configuration is <code>ENABLED</code>
+        /// or <code>DISABLED</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true)]
-        public Dictionary<string, string> Tags
+        public OrgConfiguration OrgConfiguration
         {
-            get { return this._tags; }
-            set { this._tags = value; }
+            get { return this._orgConfiguration; }
+            set { this._orgConfiguration = value; }
         }
 
-        // Check to see if Tags property is set
-        internal bool IsSetTags()
+        // Check to see if OrgConfiguration property is set
+        internal bool IsSetOrgConfiguration()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._orgConfiguration != null;
         }
 
     }

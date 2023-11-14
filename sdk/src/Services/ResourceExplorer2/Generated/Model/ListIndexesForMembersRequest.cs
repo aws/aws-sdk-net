@@ -29,16 +29,36 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ResourceExplorer2.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListIndexes operation.
-    /// Retrieves a list of all of the indexes in Amazon Web Services Regions that are currently
-    /// collecting resource information for Amazon Web Services Resource Explorer.
+    /// Container for the parameters to the ListIndexesForMembers operation.
+    /// Retrieves a list of a member's indexes in all Amazon Web Services Regions that are
+    /// currently collecting resource information for Amazon Web Services Resource Explorer.
+    /// Only the management account or a delegated administrator with service access enabled
+    /// can invoke this API call.
     /// </summary>
-    public partial class ListIndexesRequest : AmazonResourceExplorer2Request
+    public partial class ListIndexesForMembersRequest : AmazonResourceExplorer2Request
     {
+        private List<string> _accountIdList = new List<string>();
         private int? _maxResults;
         private string _nextToken;
-        private List<string> _regions = new List<string>();
-        private IndexType _type;
+
+        /// <summary>
+        /// Gets and sets the property AccountIdList. 
+        /// <para>
+        /// The account IDs will limit the output to only indexes from these accounts.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=10)]
+        public List<string> AccountIdList
+        {
+            get { return this._accountIdList; }
+            set { this._accountIdList = value; }
+        }
+
+        // Check to see if AccountIdList property is set
+        internal bool IsSetAccountIdList()
+        {
+            return this._accountIdList != null && this._accountIdList.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
@@ -58,7 +78,7 @@ namespace Amazon.ResourceExplorer2.Model
         /// </para>
         ///  </note>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
+        [AWSProperty(Min=1, Max=10)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -92,49 +112,6 @@ namespace Amazon.ResourceExplorer2.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Regions. 
-        /// <para>
-        /// If specified, limits the response to only information about the index in the specified
-        /// list of Amazon Web Services Regions.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=0, Max=20)]
-        public List<string> Regions
-        {
-            get { return this._regions; }
-            set { this._regions = value; }
-        }
-
-        // Check to see if Regions property is set
-        internal bool IsSetRegions()
-        {
-            return this._regions != null && this._regions.Count > 0; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property Type. 
-        /// <para>
-        /// If specified, limits the output to only indexes of the specified Type, either <code>LOCAL</code>
-        /// or <code>AGGREGATOR</code>.
-        /// </para>
-        ///  
-        /// <para>
-        /// Use this option to discover the aggregator index for your account.
-        /// </para>
-        /// </summary>
-        public IndexType Type
-        {
-            get { return this._type; }
-            set { this._type = value; }
-        }
-
-        // Check to see if Type property is set
-        internal bool IsSetType()
-        {
-            return this._type != null;
         }
 
     }

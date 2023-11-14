@@ -42,6 +42,7 @@ namespace Amazon.ResourceExplorer2.Model
         /// Tag key and value pairs that are attached to the view.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }
