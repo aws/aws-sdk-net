@@ -3582,6 +3582,11 @@
     <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.SegmentAttributeValue.ValueString</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.SendNotificationActionDefinition.Content</property>
     <min>1</min>
     <max>1024</max>

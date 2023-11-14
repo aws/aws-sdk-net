@@ -78,6 +78,7 @@ namespace Amazon.Connect.Model
         private ParticipantDetails _participantDetails;
         private PersistentChat _persistentChat;
         private string _relatedContactId;
+        private Dictionary<string, SegmentAttributeValue> _segmentAttributes = new Dictionary<string, SegmentAttributeValue>();
         private List<string> _supportedMessagingContentTypes = new List<string>();
 
         /// <summary>
@@ -276,6 +277,42 @@ namespace Amazon.Connect.Model
         internal bool IsSetRelatedContactId()
         {
             return this._relatedContactId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SegmentAttributes. 
+        /// <para>
+        /// A set of system defined key-value pairs stored on individual contact segments using
+        /// an attribute map. The attributes are standard Amazon Connect attributes. They can
+        /// be accessed in flows.
+        /// </para>
+        ///  
+        /// <para>
+        /// Attribute keys can include only alphanumeric, -, and _.
+        /// </para>
+        ///  
+        /// <para>
+        /// This field can be used to show channel subtype, such as <code>connect:Guide</code>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The types <code>application/vnd.amazonaws.connect.message.interactive</code> and <code>application/vnd.amazonaws.connect.message.interactive.response</code>
+        /// must be present in the SupportedMessagingContentTypes field of this API in order to
+        /// set <code>SegmentAttributes</code> as {<code> "connect:Subtype": {"valueString" :
+        /// "connect:Guide" }}</code>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public Dictionary<string, SegmentAttributeValue> SegmentAttributes
+        {
+            get { return this._segmentAttributes; }
+            set { this._segmentAttributes = value; }
+        }
+
+        // Check to see if SegmentAttributes property is set
+        internal bool IsSetSegmentAttributes()
+        {
+            return this._segmentAttributes != null && this._segmentAttributes.Count > 0; 
         }
 
         /// <summary>
