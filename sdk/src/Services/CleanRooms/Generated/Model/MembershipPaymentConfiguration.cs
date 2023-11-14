@@ -29,29 +29,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CleanRooms.Model
 {
     /// <summary>
-    /// The structure that defines the body of the analysis template.
+    /// An object representing the payment responsibilities accepted by the collaboration
+    /// member.
     /// </summary>
-    public partial class AnalysisSource
+    public partial class MembershipPaymentConfiguration
     {
-        private string _text;
+        private MembershipQueryComputePaymentConfig _queryCompute;
 
         /// <summary>
-        /// Gets and sets the property Text. 
+        /// Gets and sets the property QueryCompute. 
         /// <para>
-        /// The query text.
+        /// The payment responsibilities accepted by the collaboration member for query compute
+        /// costs.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=90000)]
-        public string Text
+        [AWSProperty(Required=true)]
+        public MembershipQueryComputePaymentConfig QueryCompute
         {
-            get { return this._text; }
-            set { this._text = value; }
+            get { return this._queryCompute; }
+            set { this._queryCompute = value; }
         }
 
-        // Check to see if Text property is set
-        internal bool IsSetText()
+        // Check to see if QueryCompute property is set
+        internal bool IsSetQueryCompute()
         {
-            return this._text != null;
+            return this._queryCompute != null;
         }
 
     }

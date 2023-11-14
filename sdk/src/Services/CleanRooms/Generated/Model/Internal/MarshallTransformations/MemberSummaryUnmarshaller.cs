@@ -100,6 +100,12 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                     unmarshalledObject.MembershipId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("paymentConfiguration", targetDepth))
+                {
+                    var unmarshaller = PaymentConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.PaymentConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

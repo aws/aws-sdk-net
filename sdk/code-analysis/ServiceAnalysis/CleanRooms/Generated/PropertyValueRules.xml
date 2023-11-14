@@ -4,13 +4,13 @@
     <property>Amazon.CleanRooms.Model.BatchGetCollaborationAnalysisTemplateRequest.CollaborationIdentifier</property>
     <min>36</min>
     <max>36</max>
-    <pattern>.*[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}.*</pattern>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.BatchGetSchemaRequest.CollaborationIdentifier</property>
     <min>36</min>
     <max>36</max>
-    <pattern>.*[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}.*</pattern>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.CreateAnalysisTemplateRequest.Description</property>
@@ -22,7 +22,7 @@
     <property>Amazon.CleanRooms.Model.CreateAnalysisTemplateRequest.MembershipIdentifier</property>
     <min>36</min>
     <max>36</max>
-    <pattern>.*[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}.*</pattern>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.CreateAnalysisTemplateRequest.Name</property>
@@ -64,13 +64,13 @@
     <property>Amazon.CleanRooms.Model.CreateConfiguredTableAnalysisRuleRequest.ConfiguredTableIdentifier</property>
     <min>36</min>
     <max>36</max>
-    <pattern>.*[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}.*</pattern>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.CreateConfiguredTableAssociationRequest.ConfiguredTableIdentifier</property>
     <min>36</min>
     <max>36</max>
-    <pattern>.*[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}.*</pattern>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.CreateConfiguredTableAssociationRequest.Description</property>
@@ -82,7 +82,7 @@
     <property>Amazon.CleanRooms.Model.CreateConfiguredTableAssociationRequest.MembershipIdentifier</property>
     <min>36</min>
     <max>36</max>
-    <pattern>.*[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}.*</pattern>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.CreateConfiguredTableAssociationRequest.Name</property>
@@ -94,55 +94,55 @@
     <property>Amazon.CleanRooms.Model.CreateConfiguredTableAssociationRequest.RoleArn</property>
     <min>32</min>
     <max>512</max>
-    <pattern>arn:aws:iam::[\w]+:role/[\w+=,./@-]+</pattern>
+    <pattern>arn:aws:iam::[\w]+:role/[\w+=./@-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.CreateMembershipRequest.CollaborationIdentifier</property>
     <min>36</min>
     <max>36</max>
-    <pattern>.*[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}.*</pattern>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.DeleteAnalysisTemplateRequest.AnalysisTemplateIdentifier</property>
     <min>36</min>
     <max>36</max>
-    <pattern>.*[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}.*</pattern>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.DeleteAnalysisTemplateRequest.MembershipIdentifier</property>
     <min>36</min>
     <max>36</max>
-    <pattern>.*[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}.*</pattern>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.DeleteCollaborationRequest.CollaborationIdentifier</property>
     <min>36</min>
     <max>36</max>
-    <pattern>.*[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}.*</pattern>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.DeleteConfiguredTableRequest.ConfiguredTableIdentifier</property>
     <min>36</min>
     <max>36</max>
-    <pattern>.*[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}.*</pattern>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.DeleteConfiguredTableAnalysisRuleRequest.ConfiguredTableIdentifier</property>
     <min>36</min>
     <max>36</max>
-    <pattern>.*[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}.*</pattern>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.DeleteConfiguredTableAssociationRequest.ConfiguredTableAssociationIdentifier</property>
     <min>36</min>
     <max>36</max>
-    <pattern>.*[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}.*</pattern>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.DeleteConfiguredTableAssociationRequest.MembershipIdentifier</property>
     <min>36</min>
     <max>36</max>
-    <pattern>.*[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}.*</pattern>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.DeleteMemberRequest.AccountId</property>
@@ -154,31 +154,31 @@
     <property>Amazon.CleanRooms.Model.DeleteMemberRequest.CollaborationIdentifier</property>
     <min>36</min>
     <max>36</max>
-    <pattern>.*[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}.*</pattern>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.DeleteMembershipRequest.MembershipIdentifier</property>
     <min>36</min>
     <max>36</max>
-    <pattern>.*[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}.*</pattern>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.GetAnalysisTemplateRequest.AnalysisTemplateIdentifier</property>
     <min>36</min>
     <max>36</max>
-    <pattern>.*[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}.*</pattern>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.GetAnalysisTemplateRequest.MembershipIdentifier</property>
     <min>36</min>
     <max>36</max>
-    <pattern>.*[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}.*</pattern>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.GetCollaborationRequest.CollaborationIdentifier</property>
     <min>36</min>
     <max>36</max>
-    <pattern>.*[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}.*</pattern>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.GetCollaborationAnalysisTemplateRequest.AnalysisTemplateArn</property>
@@ -190,55 +190,55 @@
     <property>Amazon.CleanRooms.Model.GetCollaborationAnalysisTemplateRequest.CollaborationIdentifier</property>
     <min>36</min>
     <max>36</max>
-    <pattern>.*[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}.*</pattern>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.GetConfiguredTableRequest.ConfiguredTableIdentifier</property>
     <min>36</min>
     <max>36</max>
-    <pattern>.*[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}.*</pattern>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.GetConfiguredTableAnalysisRuleRequest.ConfiguredTableIdentifier</property>
     <min>36</min>
     <max>36</max>
-    <pattern>.*[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}.*</pattern>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.GetConfiguredTableAssociationRequest.ConfiguredTableAssociationIdentifier</property>
     <min>36</min>
     <max>36</max>
-    <pattern>.*[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}.*</pattern>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.GetConfiguredTableAssociationRequest.MembershipIdentifier</property>
     <min>36</min>
     <max>36</max>
-    <pattern>.*[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}.*</pattern>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.GetMembershipRequest.MembershipIdentifier</property>
     <min>36</min>
     <max>36</max>
-    <pattern>.*[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}.*</pattern>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.GetProtectedQueryRequest.MembershipIdentifier</property>
     <min>36</min>
     <max>36</max>
-    <pattern>.*[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}.*</pattern>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.GetProtectedQueryRequest.ProtectedQueryIdentifier</property>
-    <min>1</min>
+    <min>36</min>
     <max>36</max>
-    <pattern>.*[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}.*</pattern>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.GetSchemaRequest.CollaborationIdentifier</property>
     <min>36</min>
     <max>36</max>
-    <pattern>.*[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}.*</pattern>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.GetSchemaRequest.Name</property>
@@ -250,7 +250,7 @@
     <property>Amazon.CleanRooms.Model.GetSchemaAnalysisRuleRequest.CollaborationIdentifier</property>
     <min>36</min>
     <max>36</max>
-    <pattern>.*[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}.*</pattern>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.GetSchemaAnalysisRuleRequest.Name</property>
@@ -267,7 +267,7 @@
     <property>Amazon.CleanRooms.Model.ListAnalysisTemplatesRequest.MembershipIdentifier</property>
     <min>36</min>
     <max>36</max>
-    <pattern>.*[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}.*</pattern>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.ListAnalysisTemplatesRequest.NextToken</property>
@@ -283,7 +283,7 @@
     <property>Amazon.CleanRooms.Model.ListCollaborationAnalysisTemplatesRequest.CollaborationIdentifier</property>
     <min>36</min>
     <max>36</max>
-    <pattern>.*[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}.*</pattern>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.ListCollaborationAnalysisTemplatesRequest.MaxResults</property>
@@ -324,7 +324,7 @@
     <property>Amazon.CleanRooms.Model.ListConfiguredTableAssociationsRequest.MembershipIdentifier</property>
     <min>36</min>
     <max>36</max>
-    <pattern>.*[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}.*</pattern>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.ListConfiguredTableAssociationsRequest.NextToken</property>
@@ -355,7 +355,7 @@
     <property>Amazon.CleanRooms.Model.ListMembersRequest.CollaborationIdentifier</property>
     <min>36</min>
     <max>36</max>
-    <pattern>.*[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}.*</pattern>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.ListMembersRequest.MaxResults</property>
@@ -396,7 +396,7 @@
     <property>Amazon.CleanRooms.Model.ListProtectedQueriesRequest.MembershipIdentifier</property>
     <min>36</min>
     <max>36</max>
-    <pattern>.*[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}.*</pattern>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.ListProtectedQueriesRequest.NextToken</property>
@@ -412,7 +412,7 @@
     <property>Amazon.CleanRooms.Model.ListSchemasRequest.CollaborationIdentifier</property>
     <min>36</min>
     <max>36</max>
-    <pattern>.*[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}.*</pattern>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.ListSchemasRequest.MaxResults</property>
@@ -439,7 +439,7 @@
     <property>Amazon.CleanRooms.Model.StartProtectedQueryRequest.MembershipIdentifier</property>
     <min>36</min>
     <max>36</max>
-    <pattern>.*[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}.*</pattern>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.TagResourceRequest.ResourceArn</property>
@@ -457,7 +457,7 @@
     <property>Amazon.CleanRooms.Model.UpdateAnalysisTemplateRequest.AnalysisTemplateIdentifier</property>
     <min>36</min>
     <max>36</max>
-    <pattern>.*[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}.*</pattern>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.UpdateAnalysisTemplateRequest.Description</property>
@@ -469,13 +469,13 @@
     <property>Amazon.CleanRooms.Model.UpdateAnalysisTemplateRequest.MembershipIdentifier</property>
     <min>36</min>
     <max>36</max>
-    <pattern>.*[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}.*</pattern>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.UpdateCollaborationRequest.CollaborationIdentifier</property>
     <min>36</min>
     <max>36</max>
-    <pattern>.*[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}.*</pattern>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.UpdateCollaborationRequest.Description</property>
@@ -493,7 +493,7 @@
     <property>Amazon.CleanRooms.Model.UpdateConfiguredTableRequest.ConfiguredTableIdentifier</property>
     <min>36</min>
     <max>36</max>
-    <pattern>.*[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}.*</pattern>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.UpdateConfiguredTableRequest.Description</property>
@@ -511,13 +511,13 @@
     <property>Amazon.CleanRooms.Model.UpdateConfiguredTableAnalysisRuleRequest.ConfiguredTableIdentifier</property>
     <min>36</min>
     <max>36</max>
-    <pattern>.*[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}.*</pattern>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.UpdateConfiguredTableAssociationRequest.ConfiguredTableAssociationIdentifier</property>
     <min>36</min>
     <max>36</max>
-    <pattern>.*[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}.*</pattern>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.UpdateConfiguredTableAssociationRequest.Description</property>
@@ -529,31 +529,31 @@
     <property>Amazon.CleanRooms.Model.UpdateConfiguredTableAssociationRequest.MembershipIdentifier</property>
     <min>36</min>
     <max>36</max>
-    <pattern>.*[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}.*</pattern>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.UpdateConfiguredTableAssociationRequest.RoleArn</property>
     <min>32</min>
     <max>512</max>
-    <pattern>arn:aws:iam::[\w]+:role/[\w+=,./@-]+</pattern>
+    <pattern>arn:aws:iam::[\w]+:role/[\w+=./@-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.UpdateMembershipRequest.MembershipIdentifier</property>
     <min>36</min>
     <max>36</max>
-    <pattern>.*[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}.*</pattern>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.UpdateProtectedQueryRequest.MembershipIdentifier</property>
     <min>36</min>
     <max>36</max>
-    <pattern>.*[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}.*</pattern>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.UpdateProtectedQueryRequest.ProtectedQueryIdentifier</property>
-    <min>1</min>
+    <min>36</min>
     <max>36</max>
-    <pattern>.*[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}.*</pattern>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.AggregationConstraint.ColumnName</property>
@@ -581,7 +581,7 @@
     <property>Amazon.CleanRooms.Model.AnalysisRule.CollaborationId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>.*[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}.*</pattern>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.AnalysisRule.Name</property>
@@ -592,7 +592,7 @@
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.AnalysisSource.Text</property>
     <min>0</min>
-    <max>15000</max>
+    <max>90000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.AnalysisTemplate.Arn</property>
@@ -610,7 +610,7 @@
     <property>Amazon.CleanRooms.Model.AnalysisTemplate.CollaborationId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>.*[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}.*</pattern>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.AnalysisTemplate.Description</property>
@@ -622,7 +622,7 @@
     <property>Amazon.CleanRooms.Model.AnalysisTemplate.Id</property>
     <min>36</min>
     <max>36</max>
-    <pattern>.*[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}.*</pattern>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.AnalysisTemplate.MembershipArn</property>
@@ -634,7 +634,7 @@
     <property>Amazon.CleanRooms.Model.AnalysisTemplate.MembershipId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>.*[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}.*</pattern>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.AnalysisTemplate.Name</property>
@@ -658,7 +658,7 @@
     <property>Amazon.CleanRooms.Model.AnalysisTemplateSummary.CollaborationId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>.*[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}.*</pattern>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.AnalysisTemplateSummary.Description</property>
@@ -670,7 +670,7 @@
     <property>Amazon.CleanRooms.Model.AnalysisTemplateSummary.Id</property>
     <min>36</min>
     <max>36</max>
-    <pattern>.*[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}.*</pattern>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.AnalysisTemplateSummary.MembershipArn</property>
@@ -682,7 +682,7 @@
     <property>Amazon.CleanRooms.Model.AnalysisTemplateSummary.MembershipId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>.*[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}.*</pattern>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.AnalysisTemplateSummary.Name</property>
@@ -730,7 +730,7 @@
     <property>Amazon.CleanRooms.Model.Collaboration.Id</property>
     <min>36</min>
     <max>36</max>
-    <pattern>.*[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}.*</pattern>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.Collaboration.MembershipArn</property>
@@ -742,7 +742,7 @@
     <property>Amazon.CleanRooms.Model.Collaboration.MembershipId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>.*[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}.*</pattern>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.Collaboration.Name</property>
@@ -766,7 +766,7 @@
     <property>Amazon.CleanRooms.Model.CollaborationAnalysisTemplate.CollaborationId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>.*[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}.*</pattern>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.CollaborationAnalysisTemplate.CreatorAccountId</property>
@@ -784,7 +784,7 @@
     <property>Amazon.CleanRooms.Model.CollaborationAnalysisTemplate.Id</property>
     <min>36</min>
     <max>36</max>
-    <pattern>.*[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}.*</pattern>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.CollaborationAnalysisTemplate.Name</property>
@@ -808,7 +808,7 @@
     <property>Amazon.CleanRooms.Model.CollaborationAnalysisTemplateSummary.CollaborationId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>.*[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}.*</pattern>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.CollaborationAnalysisTemplateSummary.CreatorAccountId</property>
@@ -826,7 +826,7 @@
     <property>Amazon.CleanRooms.Model.CollaborationAnalysisTemplateSummary.Id</property>
     <min>36</min>
     <max>36</max>
-    <pattern>.*[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}.*</pattern>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.CollaborationAnalysisTemplateSummary.Name</property>
@@ -856,7 +856,7 @@
     <property>Amazon.CleanRooms.Model.CollaborationSummary.Id</property>
     <min>36</min>
     <max>36</max>
-    <pattern>.*[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}.*</pattern>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.CollaborationSummary.MembershipArn</property>
@@ -868,7 +868,7 @@
     <property>Amazon.CleanRooms.Model.CollaborationSummary.MembershipId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>.*[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}.*</pattern>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.CollaborationSummary.Name</property>
@@ -904,7 +904,7 @@
     <property>Amazon.CleanRooms.Model.ConfiguredTable.Id</property>
     <min>36</min>
     <max>36</max>
-    <pattern>.*[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}.*</pattern>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.ConfiguredTable.Name</property>
@@ -922,7 +922,7 @@
     <property>Amazon.CleanRooms.Model.ConfiguredTableAnalysisRule.ConfiguredTableId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>.*[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}.*</pattern>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.ConfiguredTableAssociation.Arn</property>
@@ -940,7 +940,7 @@
     <property>Amazon.CleanRooms.Model.ConfiguredTableAssociation.ConfiguredTableId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>.*[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}.*</pattern>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.ConfiguredTableAssociation.Description</property>
@@ -952,7 +952,7 @@
     <property>Amazon.CleanRooms.Model.ConfiguredTableAssociation.Id</property>
     <min>36</min>
     <max>36</max>
-    <pattern>.*[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}.*</pattern>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.ConfiguredTableAssociation.MembershipArn</property>
@@ -964,7 +964,7 @@
     <property>Amazon.CleanRooms.Model.ConfiguredTableAssociation.MembershipId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>.*[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}.*</pattern>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.ConfiguredTableAssociation.Name</property>
@@ -976,7 +976,7 @@
     <property>Amazon.CleanRooms.Model.ConfiguredTableAssociation.RoleArn</property>
     <min>32</min>
     <max>512</max>
-    <pattern>arn:aws:iam::[\w]+:role/[\w+=,./@-]+</pattern>
+    <pattern>arn:aws:iam::[\w]+:role/[\w+=./@-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.ConfiguredTableAssociationSummary.Arn</property>
@@ -988,13 +988,13 @@
     <property>Amazon.CleanRooms.Model.ConfiguredTableAssociationSummary.ConfiguredTableId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>.*[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}.*</pattern>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.ConfiguredTableAssociationSummary.Id</property>
     <min>36</min>
     <max>36</max>
-    <pattern>.*[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}.*</pattern>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.ConfiguredTableAssociationSummary.MembershipArn</property>
@@ -1006,7 +1006,7 @@
     <property>Amazon.CleanRooms.Model.ConfiguredTableAssociationSummary.MembershipId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>.*[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}.*</pattern>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.ConfiguredTableAssociationSummary.Name</property>
@@ -1024,7 +1024,7 @@
     <property>Amazon.CleanRooms.Model.ConfiguredTableSummary.Id</property>
     <min>36</min>
     <max>36</max>
-    <pattern>.*[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}.*</pattern>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.ConfiguredTableSummary.Name</property>
@@ -1072,7 +1072,7 @@
     <property>Amazon.CleanRooms.Model.Membership.CollaborationId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>.*[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}.*</pattern>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.Membership.CollaborationName</property>
@@ -1084,13 +1084,13 @@
     <property>Amazon.CleanRooms.Model.Membership.Id</property>
     <min>36</min>
     <max>36</max>
-    <pattern>.*[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}.*</pattern>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.MembershipProtectedQueryResultConfiguration.RoleArn</property>
     <min>32</min>
     <max>512</max>
-    <pattern>arn:aws:iam::[\w]+:role/[\w+=,./@-]+</pattern>
+    <pattern>arn:aws:iam::[\w]+:role/[\w+=./@-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.MembershipSummary.Arn</property>
@@ -1120,7 +1120,7 @@
     <property>Amazon.CleanRooms.Model.MembershipSummary.CollaborationId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>.*[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}.*</pattern>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.MembershipSummary.CollaborationName</property>
@@ -1132,7 +1132,7 @@
     <property>Amazon.CleanRooms.Model.MembershipSummary.Id</property>
     <min>36</min>
     <max>36</max>
-    <pattern>.*[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}.*</pattern>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.MemberSpecification.AccountId</property>
@@ -1168,13 +1168,13 @@
     <property>Amazon.CleanRooms.Model.MemberSummary.MembershipId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>.*[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}.*</pattern>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.ProtectedQuery.Id</property>
     <min>36</min>
     <max>36</max>
-    <pattern>.*[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}.*</pattern>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.ProtectedQuery.MembershipArn</property>
@@ -1186,7 +1186,7 @@
     <property>Amazon.CleanRooms.Model.ProtectedQuery.MembershipId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>.*[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}.*</pattern>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.ProtectedQueryS3OutputConfiguration.Bucket</property>
@@ -1215,13 +1215,13 @@
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.ProtectedQuerySQLParameters.QueryString</property>
     <min>0</min>
-    <max>15000</max>
+    <max>90000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.ProtectedQuerySummary.Id</property>
     <min>36</min>
     <max>36</max>
-    <pattern>.*[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}.*</pattern>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.ProtectedQuerySummary.MembershipArn</property>
@@ -1233,7 +1233,7 @@
     <property>Amazon.CleanRooms.Model.ProtectedQuerySummary.MembershipId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>.*[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}.*</pattern>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.Schema.CollaborationArn</property>
@@ -1245,7 +1245,7 @@
     <property>Amazon.CleanRooms.Model.Schema.CollaborationId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>.*[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}.*</pattern>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.Schema.CreatorAccountId</property>
@@ -1275,7 +1275,7 @@
     <property>Amazon.CleanRooms.Model.SchemaSummary.CollaborationId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>.*[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}.*</pattern>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.SchemaSummary.CreatorAccountId</property>

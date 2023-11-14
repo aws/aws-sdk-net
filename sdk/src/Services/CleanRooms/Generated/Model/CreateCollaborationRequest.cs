@@ -36,6 +36,7 @@ namespace Amazon.CleanRooms.Model
     {
         private string _creatorDisplayName;
         private List<string> _creatorMemberAbilities = new List<string>();
+        private PaymentConfiguration _creatorPaymentConfiguration;
         private DataEncryptionMetadata _dataEncryptionMetadata;
         private string _description;
         private List<MemberSpecification> _members = new List<MemberSpecification>();
@@ -79,6 +80,30 @@ namespace Amazon.CleanRooms.Model
         internal bool IsSetCreatorMemberAbilities()
         {
             return this._creatorMemberAbilities != null && this._creatorMemberAbilities.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreatorPaymentConfiguration. 
+        /// <para>
+        /// The collaboration creator's payment responsibilities set by the collaboration creator.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// If the collaboration creator hasn't specified anyone as the member paying for query
+        /// compute costs, then the member who can query is the default payer.
+        /// </para>
+        /// </summary>
+        public PaymentConfiguration CreatorPaymentConfiguration
+        {
+            get { return this._creatorPaymentConfiguration; }
+            set { this._creatorPaymentConfiguration = value; }
+        }
+
+        // Check to see if CreatorPaymentConfiguration property is set
+        internal bool IsSetCreatorPaymentConfiguration()
+        {
+            return this._creatorPaymentConfiguration != null;
         }
 
         /// <summary>

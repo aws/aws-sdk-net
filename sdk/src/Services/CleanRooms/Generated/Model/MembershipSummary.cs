@@ -42,6 +42,7 @@ namespace Amazon.CleanRooms.Model
         private DateTime? _createTime;
         private string _id;
         private List<string> _memberAbilities = new List<string>();
+        private MembershipPaymentConfiguration _paymentConfiguration;
         private MembershipStatus _status;
         private DateTime? _updateTime;
 
@@ -218,9 +219,28 @@ namespace Amazon.CleanRooms.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PaymentConfiguration. 
+        /// <para>
+        /// The payment responsibilities accepted by the collaboration member.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public MembershipPaymentConfiguration PaymentConfiguration
+        {
+            get { return this._paymentConfiguration; }
+            set { this._paymentConfiguration = value; }
+        }
+
+        // Check to see if PaymentConfiguration property is set
+        internal bool IsSetPaymentConfiguration()
+        {
+            return this._paymentConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the membership. Valid values are `ACTIVE`, `REMOVED`, and `COLLABORATION_DELETED`.
+        /// The status of the membership.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

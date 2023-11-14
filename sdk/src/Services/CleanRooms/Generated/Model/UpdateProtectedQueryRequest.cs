@@ -63,7 +63,7 @@ namespace Amazon.CleanRooms.Model
         /// The identifier for a protected query instance.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=36)]
+        [AWSProperty(Required=true, Min=36, Max=36)]
         public string ProtectedQueryIdentifier
         {
             get { return this._protectedQueryIdentifier; }

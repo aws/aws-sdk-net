@@ -39,6 +39,7 @@ namespace Amazon.CleanRooms.Model
         private string _displayName;
         private string _membershipArn;
         private string _membershipId;
+        private PaymentConfiguration _paymentConfiguration;
         private MemberStatus _status;
         private DateTime? _updateTime;
 
@@ -158,9 +159,29 @@ namespace Amazon.CleanRooms.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PaymentConfiguration. 
+        /// <para>
+        /// The collaboration member's payment responsibilities set by the collaboration creator.
+        /// 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public PaymentConfiguration PaymentConfiguration
+        {
+            get { return this._paymentConfiguration; }
+            set { this._paymentConfiguration = value; }
+        }
+
+        // Check to see if PaymentConfiguration property is set
+        internal bool IsSetPaymentConfiguration()
+        {
+            return this._paymentConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the member. Valid values are `INVITED`, `ACTIVE`, `LEFT`, and `REMOVED`.
+        /// The status of the member. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

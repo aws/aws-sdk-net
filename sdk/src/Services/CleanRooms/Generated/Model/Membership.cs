@@ -43,6 +43,7 @@ namespace Amazon.CleanRooms.Model
         private MembershipProtectedQueryResultConfiguration _defaultResultConfiguration;
         private string _id;
         private List<string> _memberAbilities = new List<string>();
+        private MembershipPaymentConfiguration _paymentConfiguration;
         private MembershipQueryLogStatus _queryLogStatus;
         private MembershipStatus _status;
         private DateTime? _updateTime;
@@ -239,9 +240,28 @@ namespace Amazon.CleanRooms.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PaymentConfiguration. 
+        /// <para>
+        /// The payment responsibilities accepted by the collaboration member.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public MembershipPaymentConfiguration PaymentConfiguration
+        {
+            get { return this._paymentConfiguration; }
+            set { this._paymentConfiguration = value; }
+        }
+
+        // Check to see if PaymentConfiguration property is set
+        internal bool IsSetPaymentConfiguration()
+        {
+            return this._paymentConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property QueryLogStatus. 
         /// <para>
-        /// An indicator as to whether query logging has been enabled or disabled for the collaboration.
+        /// An indicator as to whether query logging has been enabled or disabled for the membership.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -260,7 +280,7 @@ namespace Amazon.CleanRooms.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the membership. Valid values are `ACTIVE`, `REMOVED`, and `COLLABORATION_DELETED`.
+        /// The status of the membership.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

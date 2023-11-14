@@ -82,6 +82,17 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetCreatorPaymentConfiguration())
+                {
+                    context.Writer.WritePropertyName("creatorPaymentConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = PaymentConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.CreatorPaymentConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetDataEncryptionMetadata())
                 {
                     context.Writer.WritePropertyName("dataEncryptionMetadata");
