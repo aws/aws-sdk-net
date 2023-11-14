@@ -64,7 +64,6 @@ namespace Amazon.SageMaker.Model
         /// The supported MIME types for the input data.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public List<string> SupportedContentTypes
         {
             get { return this._supportedContentTypes; }
@@ -105,7 +104,6 @@ namespace Amazon.SageMaker.Model
         /// The supported MIME types for the output data.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public List<string> SupportedResponseMIMETypes
         {
             get { return this._supportedResponseMIMETypes; }
