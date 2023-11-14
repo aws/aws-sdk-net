@@ -2352,6 +2352,55 @@ namespace Amazon.Backup
 
         #endregion
         
+        #region  ListBackupJobSummaries
+
+        internal virtual ListBackupJobSummariesResponse ListBackupJobSummaries(ListBackupJobSummariesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListBackupJobSummariesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListBackupJobSummariesResponseUnmarshaller.Instance;
+
+            return Invoke<ListBackupJobSummariesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// This is a request for a summary of backup jobs created or running within the most
+        /// recent 30 days. You can include parameters AccountID, State, ResourceType, MessageCategory,
+        /// AggregationPeriod, MaxResults, or NextToken to filter results.
+        /// 
+        ///  
+        /// <para>
+        /// This request returns a summary that contains Region, Account, State, ResourceType,
+        /// MessageCategory, StartTime, EndTime, and Count of included jobs.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListBackupJobSummaries service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListBackupJobSummaries service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListBackupJobSummaries">REST API Reference for ListBackupJobSummaries Operation</seealso>
+        public virtual Task<ListBackupJobSummariesResponse> ListBackupJobSummariesAsync(ListBackupJobSummariesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListBackupJobSummariesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListBackupJobSummariesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListBackupJobSummariesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListBackupPlans
 
         internal virtual ListBackupPlansResponse ListBackupPlans(ListBackupPlansRequest request)
@@ -2629,6 +2678,55 @@ namespace Amazon.Backup
             options.ResponseUnmarshaller = ListCopyJobsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListCopyJobsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListCopyJobSummaries
+
+        internal virtual ListCopyJobSummariesResponse ListCopyJobSummaries(ListCopyJobSummariesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCopyJobSummariesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCopyJobSummariesResponseUnmarshaller.Instance;
+
+            return Invoke<ListCopyJobSummariesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// This request obtains a list of copy jobs created or running within the the most recent
+        /// 30 days. You can include parameters AccountID, State, ResourceType, MessageCategory,
+        /// AggregationPeriod, MaxResults, or NextToken to filter results.
+        /// 
+        ///  
+        /// <para>
+        /// This request returns a summary that contains Region, Account, State, RestourceType,
+        /// MessageCategory, StartTime, EndTime, and Count of included jobs.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCopyJobSummaries service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCopyJobSummaries service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListCopyJobSummaries">REST API Reference for ListCopyJobSummaries Operation</seealso>
+        public virtual Task<ListCopyJobSummariesResponse> ListCopyJobSummariesAsync(ListCopyJobSummariesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCopyJobSummariesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCopyJobSummariesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListCopyJobSummariesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3079,6 +3177,55 @@ namespace Amazon.Backup
             options.ResponseUnmarshaller = ListRestoreJobsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListRestoreJobsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListRestoreJobSummaries
+
+        internal virtual ListRestoreJobSummariesResponse ListRestoreJobSummaries(ListRestoreJobSummariesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRestoreJobSummariesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRestoreJobSummariesResponseUnmarshaller.Instance;
+
+            return Invoke<ListRestoreJobSummariesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// This request obtains a summary of restore jobs created or running within the the most
+        /// recent 30 days. You can include parameters AccountID, State, ResourceType, AggregationPeriod,
+        /// MaxResults, or NextToken to filter results.
+        /// 
+        ///  
+        /// <para>
+        /// This request returns a summary that contains Region, Account, State, RestourceType,
+        /// MessageCategory, StartTime, EndTime, and Count of included jobs.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRestoreJobSummaries service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListRestoreJobSummaries service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListRestoreJobSummaries">REST API Reference for ListRestoreJobSummaries Operation</seealso>
+        public virtual Task<ListRestoreJobSummariesResponse> ListRestoreJobSummariesAsync(ListRestoreJobSummariesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRestoreJobSummariesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRestoreJobSummariesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListRestoreJobSummariesResponse>(request, options, cancellationToken);
         }
 
         #endregion

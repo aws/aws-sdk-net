@@ -1,0 +1,112 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the backup-2018-11-15.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+namespace Amazon.Backup.Model
+{
+    /// <summary>
+    /// This is the response object from the ListCopyJobSummaries operation.
+    /// </summary>
+    public partial class ListCopyJobSummariesResponse : AmazonWebServiceResponse
+    {
+        private string _aggregationPeriod;
+        private List<CopyJobSummary> _copyJobSummaries = new List<CopyJobSummary>();
+        private string _nextToken;
+
+        /// <summary>
+        /// Gets and sets the property AggregationPeriod. 
+        /// <para>
+        /// This is the period that sets the boundaries for returned results.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>ONE_DAY</code> for daily job count for the prior 14 days.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>SEVEN_DAYS</code> for the aggregated job count for the prior 7 days.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>FOURTEEN_DAYS</code> for aggregated job count for prior 14 days.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public string AggregationPeriod
+        {
+            get { return this._aggregationPeriod; }
+            set { this._aggregationPeriod = value; }
+        }
+
+        // Check to see if AggregationPeriod property is set
+        internal bool IsSetAggregationPeriod()
+        {
+            return this._aggregationPeriod != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CopyJobSummaries. 
+        /// <para>
+        /// This return shows a summary that contains Region, Account, State, ResourceType, MessageCategory,
+        /// StartTime, EndTime, and Count of included jobs.
+        /// </para>
+        /// </summary>
+        public List<CopyJobSummary> CopyJobSummaries
+        {
+            get { return this._copyJobSummaries; }
+            set { this._copyJobSummaries = value; }
+        }
+
+        // Check to see if CopyJobSummaries property is set
+        internal bool IsSetCopyJobSummaries()
+        {
+            return this._copyJobSummaries != null && this._copyJobSummaries.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The next item following a partial list of returned resources. For example, if a request
+        /// is made to return <code>maxResults</code> number of resources, <code>NextToken</code>
+        /// allows you to return more items in your list starting at the location pointed to by
+        /// the next token.
+        /// </para>
+        /// </summary>
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
+        }
+
+    }
+}

@@ -40,6 +40,7 @@ namespace Amazon.Backup.Model
         private DateTime? _byCreatedAfter;
         private DateTime? _byCreatedBefore;
         private string _byDestinationVaultArn;
+        private string _byMessageCategory;
         private string _byParentJobId;
         private string _byResourceArn;
         private string _byResourceType;
@@ -158,6 +159,39 @@ namespace Amazon.Backup.Model
         internal bool IsSetByDestinationVaultArn()
         {
             return this._byDestinationVaultArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ByMessageCategory. 
+        /// <para>
+        /// This parameter returns the job count for the specified message category.
+        /// </para>
+        ///  
+        /// <para>
+        /// Example accepted strings include <code>AccessDenied</code>, <code>Success</code>,
+        /// and <code>InvalidParameters</code>. See <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a>
+        /// for a list of accepted MessageCategory strings.
+        /// </para>
+        ///  
+        /// <para>
+        /// The the value ANY returns count of all message categories.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns
+        /// the sum.
+        /// </para>
+        /// </summary>
+        public string ByMessageCategory
+        {
+            get { return this._byMessageCategory; }
+            set { this._byMessageCategory = value; }
+        }
+
+        // Check to see if ByMessageCategory property is set
+        internal bool IsSetByMessageCategory()
+        {
+            return this._byMessageCategory != null;
         }
 
         /// <summary>

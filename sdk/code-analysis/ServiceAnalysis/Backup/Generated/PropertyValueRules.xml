@@ -170,6 +170,18 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Backup.Model.ListBackupJobSummariesRequest.AccountId</property>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.ListBackupJobSummariesRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.ListBackupJobSummariesRequest.ResourceType</property>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Backup.Model.ListBackupPlansRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
@@ -205,6 +217,18 @@
     <property>Amazon.Backup.Model.ListCopyJobsRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.ListCopyJobSummariesRequest.AccountId</property>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.ListCopyJobSummariesRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.ListCopyJobSummariesRequest.ResourceType</property>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Backup.Model.ListFrameworksRequest.MaxResults</property>
@@ -282,6 +306,18 @@
     <property>Amazon.Backup.Model.ListRestoreJobsRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.ListRestoreJobSummariesRequest.AccountId</property>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.ListRestoreJobSummariesRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.ListRestoreJobSummariesRequest.ResourceType</property>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Backup.Model.ListTagsRequest.MaxResults</property>
@@ -365,6 +401,13 @@
     <property>Amazon.Backup.Model.BackupJob.ResourceType</property>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Backup.Model.BackupJobSummary.AccountId</property>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.BackupJobSummary.ResourceType</property>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Backup.Model.BackupRule.RuleName</property>
   </property-value-rule>
   <property-value-rule>
@@ -391,6 +434,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Backup.Model.CopyJob.ResourceType</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.CopyJobSummary.AccountId</property>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.CopyJobSummary.ResourceType</property>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Backup.Model.Framework.FrameworkDescription</property>
@@ -440,5 +490,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Backup.Model.RestoreJobsListMember.ResourceType</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.RestoreJobSummary.AccountId</property>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.RestoreJobSummary.ResourceType</property>
   </property-value-rule>
 </property-value-rules>

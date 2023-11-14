@@ -136,6 +136,12 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                     unmarshalledObject.IsParent = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("MessageCategory", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MessageCategory = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("NumberOfChildJobs", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;

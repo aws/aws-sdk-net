@@ -45,6 +45,7 @@ namespace Amazon.Backup.Model
         private string _destinationRecoveryPointArn;
         private string _iamRoleArn;
         private bool? _isParent;
+        private string _messageCategory;
         private long? _numberOfChildJobs;
         private string _parentJobId;
         private string _resourceArn;
@@ -276,6 +277,39 @@ namespace Amazon.Backup.Model
         internal bool IsSetIsParent()
         {
             return this._isParent.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MessageCategory. 
+        /// <para>
+        /// This parameter is the job count for the specified message category.
+        /// </para>
+        ///  
+        /// <para>
+        /// Example strings include <code>AccessDenied</code>, <code>Success</code>, and <code>InvalidParameters</code>.
+        /// See <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a>
+        /// for a list of MessageCategory strings.
+        /// </para>
+        ///  
+        /// <para>
+        /// The the value ANY returns count of all message categories.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns
+        /// the sum
+        /// </para>
+        /// </summary>
+        public string MessageCategory
+        {
+            get { return this._messageCategory; }
+            set { this._messageCategory = value; }
+        }
+
+        // Check to see if MessageCategory property is set
+        internal bool IsSetMessageCategory()
+        {
+            return this._messageCategory != null;
         }
 
         /// <summary>

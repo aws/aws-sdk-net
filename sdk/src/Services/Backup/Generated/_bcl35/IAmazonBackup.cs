@@ -2375,6 +2375,61 @@ namespace Amazon.Backup
 
         #endregion
         
+        #region  ListBackupJobSummaries
+
+
+        /// <summary>
+        /// This is a request for a summary of backup jobs created or running within the most
+        /// recent 30 days. You can include parameters AccountID, State, ResourceType, MessageCategory,
+        /// AggregationPeriod, MaxResults, or NextToken to filter results.
+        /// 
+        ///  
+        /// <para>
+        /// This request returns a summary that contains Region, Account, State, ResourceType,
+        /// MessageCategory, StartTime, EndTime, and Count of included jobs.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListBackupJobSummaries service method.</param>
+        /// 
+        /// <returns>The response from the ListBackupJobSummaries service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListBackupJobSummaries">REST API Reference for ListBackupJobSummaries Operation</seealso>
+        ListBackupJobSummariesResponse ListBackupJobSummaries(ListBackupJobSummariesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListBackupJobSummaries operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListBackupJobSummaries operation on AmazonBackupClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListBackupJobSummaries
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListBackupJobSummaries">REST API Reference for ListBackupJobSummaries Operation</seealso>
+        IAsyncResult BeginListBackupJobSummaries(ListBackupJobSummariesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListBackupJobSummaries operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListBackupJobSummaries.</param>
+        /// 
+        /// <returns>Returns a  ListBackupJobSummariesResult from Backup.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListBackupJobSummaries">REST API Reference for ListBackupJobSummaries Operation</seealso>
+        ListBackupJobSummariesResponse EndListBackupJobSummaries(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListBackupPlans
 
 
@@ -2689,6 +2744,61 @@ namespace Amazon.Backup
         /// <returns>Returns a  ListCopyJobsResult from Backup.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListCopyJobs">REST API Reference for ListCopyJobs Operation</seealso>
         ListCopyJobsResponse EndListCopyJobs(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListCopyJobSummaries
+
+
+        /// <summary>
+        /// This request obtains a list of copy jobs created or running within the the most recent
+        /// 30 days. You can include parameters AccountID, State, ResourceType, MessageCategory,
+        /// AggregationPeriod, MaxResults, or NextToken to filter results.
+        /// 
+        ///  
+        /// <para>
+        /// This request returns a summary that contains Region, Account, State, RestourceType,
+        /// MessageCategory, StartTime, EndTime, and Count of included jobs.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCopyJobSummaries service method.</param>
+        /// 
+        /// <returns>The response from the ListCopyJobSummaries service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListCopyJobSummaries">REST API Reference for ListCopyJobSummaries Operation</seealso>
+        ListCopyJobSummariesResponse ListCopyJobSummaries(ListCopyJobSummariesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListCopyJobSummaries operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListCopyJobSummaries operation on AmazonBackupClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListCopyJobSummaries
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListCopyJobSummaries">REST API Reference for ListCopyJobSummaries Operation</seealso>
+        IAsyncResult BeginListCopyJobSummaries(ListCopyJobSummariesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListCopyJobSummaries operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListCopyJobSummaries.</param>
+        /// 
+        /// <returns>Returns a  ListCopyJobSummariesResult from Backup.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListCopyJobSummaries">REST API Reference for ListCopyJobSummaries Operation</seealso>
+        ListCopyJobSummariesResponse EndListCopyJobSummaries(IAsyncResult asyncResult);
 
         #endregion
         
@@ -3199,6 +3309,61 @@ namespace Amazon.Backup
         /// <returns>Returns a  ListRestoreJobsResult from Backup.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListRestoreJobs">REST API Reference for ListRestoreJobs Operation</seealso>
         ListRestoreJobsResponse EndListRestoreJobs(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListRestoreJobSummaries
+
+
+        /// <summary>
+        /// This request obtains a summary of restore jobs created or running within the the most
+        /// recent 30 days. You can include parameters AccountID, State, ResourceType, AggregationPeriod,
+        /// MaxResults, or NextToken to filter results.
+        /// 
+        ///  
+        /// <para>
+        /// This request returns a summary that contains Region, Account, State, RestourceType,
+        /// MessageCategory, StartTime, EndTime, and Count of included jobs.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRestoreJobSummaries service method.</param>
+        /// 
+        /// <returns>The response from the ListRestoreJobSummaries service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListRestoreJobSummaries">REST API Reference for ListRestoreJobSummaries Operation</seealso>
+        ListRestoreJobSummariesResponse ListRestoreJobSummaries(ListRestoreJobSummariesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListRestoreJobSummaries operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListRestoreJobSummaries operation on AmazonBackupClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListRestoreJobSummaries
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListRestoreJobSummaries">REST API Reference for ListRestoreJobSummaries Operation</seealso>
+        IAsyncResult BeginListRestoreJobSummaries(ListRestoreJobSummariesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListRestoreJobSummaries operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListRestoreJobSummaries.</param>
+        /// 
+        /// <returns>Returns a  ListRestoreJobSummariesResult from Backup.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListRestoreJobSummaries">REST API Reference for ListRestoreJobSummaries Operation</seealso>
+        ListRestoreJobSummariesResponse EndListRestoreJobSummaries(IAsyncResult asyncResult);
 
         #endregion
         

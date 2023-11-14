@@ -77,6 +77,9 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetByDestinationVaultArn())
                 request.Parameters.Add("destinationVaultArn", StringUtils.FromString(publicRequest.ByDestinationVaultArn));
             
+            if (publicRequest.IsSetByMessageCategory())
+                request.Parameters.Add("messageCategory", StringUtils.FromString(publicRequest.ByMessageCategory));
+            
             if (publicRequest.IsSetByParentJobId())
                 request.Parameters.Add("parentJobId", StringUtils.FromString(publicRequest.ByParentJobId));
             
