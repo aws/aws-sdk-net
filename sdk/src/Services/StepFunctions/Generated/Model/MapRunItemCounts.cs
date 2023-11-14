@@ -36,7 +36,9 @@ namespace Amazon.StepFunctions.Model
     {
         private long? _aborted;
         private long? _failed;
+        private long? _failuresNotRedrivable;
         private long? _pending;
+        private long? _pendingRedrive;
         private long? _resultsWritten;
         private long? _running;
         private long? _succeeded;
@@ -83,6 +85,28 @@ namespace Amazon.StepFunctions.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FailuresNotRedrivable. 
+        /// <para>
+        /// The number of <code>FAILED</code>, <code>ABORTED</code>, or <code>TIMED_OUT</code>
+        /// items in child workflow executions that cannot be redriven because the execution status
+        /// of those child workflows is terminal. For example, if your execution event history
+        /// contains 25,000 entries, or the <code>toleratedFailureCount</code> or <code>toleratedFailurePercentage</code>
+        /// for the Distributed Map has exceeded.
+        /// </para>
+        /// </summary>
+        public long FailuresNotRedrivable
+        {
+            get { return this._failuresNotRedrivable.GetValueOrDefault(); }
+            set { this._failuresNotRedrivable = value; }
+        }
+
+        // Check to see if FailuresNotRedrivable property is set
+        internal bool IsSetFailuresNotRedrivable()
+        {
+            return this._failuresNotRedrivable.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Pending. 
         /// <para>
         /// The total number of items to process in child workflow executions that haven't started
@@ -100,6 +124,25 @@ namespace Amazon.StepFunctions.Model
         internal bool IsSetPending()
         {
             return this._pending.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PendingRedrive. 
+        /// <para>
+        /// The number of unsuccessful items in child workflow executions currently waiting to
+        /// be redriven.
+        /// </para>
+        /// </summary>
+        public long PendingRedrive
+        {
+            get { return this._pendingRedrive.GetValueOrDefault(); }
+            set { this._pendingRedrive = value; }
+        }
+
+        // Check to see if PendingRedrive property is set
+        internal bool IsSetPendingRedrive()
+        {
+            return this._pendingRedrive.HasValue; 
         }
 
         /// <summary>

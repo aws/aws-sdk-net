@@ -25,6 +25,110 @@ namespace Amazon.StepFunctions
 {
 
     /// <summary>
+    /// Constants used for properties of type ExecutionRedriveFilter.
+    /// </summary>
+    public class ExecutionRedriveFilter : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NOT_REDRIVEN for ExecutionRedriveFilter
+        /// </summary>
+        public static readonly ExecutionRedriveFilter NOT_REDRIVEN = new ExecutionRedriveFilter("NOT_REDRIVEN");
+        /// <summary>
+        /// Constant REDRIVEN for ExecutionRedriveFilter
+        /// </summary>
+        public static readonly ExecutionRedriveFilter REDRIVEN = new ExecutionRedriveFilter("REDRIVEN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ExecutionRedriveFilter(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExecutionRedriveFilter FindValue(string value)
+        {
+            return FindValue<ExecutionRedriveFilter>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExecutionRedriveFilter(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ExecutionRedriveStatus.
+    /// </summary>
+    public class ExecutionRedriveStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NOT_REDRIVABLE for ExecutionRedriveStatus
+        /// </summary>
+        public static readonly ExecutionRedriveStatus NOT_REDRIVABLE = new ExecutionRedriveStatus("NOT_REDRIVABLE");
+        /// <summary>
+        /// Constant REDRIVABLE for ExecutionRedriveStatus
+        /// </summary>
+        public static readonly ExecutionRedriveStatus REDRIVABLE = new ExecutionRedriveStatus("REDRIVABLE");
+        /// <summary>
+        /// Constant REDRIVABLE_BY_MAP_RUN for ExecutionRedriveStatus
+        /// </summary>
+        public static readonly ExecutionRedriveStatus REDRIVABLE_BY_MAP_RUN = new ExecutionRedriveStatus("REDRIVABLE_BY_MAP_RUN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ExecutionRedriveStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExecutionRedriveStatus FindValue(string value)
+        {
+            return FindValue<ExecutionRedriveStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExecutionRedriveStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ExecutionStatus.
     /// </summary>
     public class ExecutionStatus : ConstantClass
@@ -38,6 +142,10 @@ namespace Amazon.StepFunctions
         /// Constant FAILED for ExecutionStatus
         /// </summary>
         public static readonly ExecutionStatus FAILED = new ExecutionStatus("FAILED");
+        /// <summary>
+        /// Constant PENDING_REDRIVE for ExecutionStatus
+        /// </summary>
+        public static readonly ExecutionStatus PENDING_REDRIVE = new ExecutionStatus("PENDING_REDRIVE");
         /// <summary>
         /// Constant RUNNING for ExecutionStatus
         /// </summary>
@@ -133,6 +241,10 @@ namespace Amazon.StepFunctions
         /// </summary>
         public static readonly HistoryEventType ExecutionFailed = new HistoryEventType("ExecutionFailed");
         /// <summary>
+        /// Constant ExecutionRedriven for HistoryEventType
+        /// </summary>
+        public static readonly HistoryEventType ExecutionRedriven = new HistoryEventType("ExecutionRedriven");
+        /// <summary>
         /// Constant ExecutionStarted for HistoryEventType
         /// </summary>
         public static readonly HistoryEventType ExecutionStarted = new HistoryEventType("ExecutionStarted");
@@ -200,6 +312,10 @@ namespace Amazon.StepFunctions
         /// Constant MapRunFailed for HistoryEventType
         /// </summary>
         public static readonly HistoryEventType MapRunFailed = new HistoryEventType("MapRunFailed");
+        /// <summary>
+        /// Constant MapRunRedriven for HistoryEventType
+        /// </summary>
+        public static readonly HistoryEventType MapRunRedriven = new HistoryEventType("MapRunRedriven");
         /// <summary>
         /// Constant MapRunStarted for HistoryEventType
         /// </summary>

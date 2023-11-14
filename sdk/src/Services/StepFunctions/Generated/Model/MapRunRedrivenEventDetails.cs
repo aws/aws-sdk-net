@@ -29,24 +29,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StepFunctions.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeMapRun operation.
-    /// Provides information about a Map Run's configuration, progress, and results. If you've
-    /// <a href="https://docs.aws.amazon.com/step-functions/latest/dg/redrive-map-run.html">redriven</a>
-    /// a Map Run, this API action also returns information about the redrives of that Map
-    /// Run. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-examine-map-run.html">Examining
-    /// Map Run</a> in the <i>Step Functions Developer Guide</i>.
+    /// Contains details about a Map Run that was redriven.
     /// </summary>
-    public partial class DescribeMapRunRequest : AmazonStepFunctionsRequest
+    public partial class MapRunRedrivenEventDetails
     {
         private string _mapRunArn;
+        private int? _redriveCount;
 
         /// <summary>
         /// Gets and sets the property MapRunArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) that identifies a Map Run.
+        /// The Amazon Resource Name (ARN) of a Map Run that was redriven.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=2000)]
+        [AWSProperty(Min=1, Max=2000)]
         public string MapRunArn
         {
             get { return this._mapRunArn; }
@@ -57,6 +53,26 @@ namespace Amazon.StepFunctions.Model
         internal bool IsSetMapRunArn()
         {
             return this._mapRunArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RedriveCount. 
+        /// <para>
+        /// The number of times the Map Run has been redriven at this point in the execution's
+        /// history including this event. The redrive count for a redriven Map Run is always greater
+        /// than 0.
+        /// </para>
+        /// </summary>
+        public int RedriveCount
+        {
+            get { return this._redriveCount.GetValueOrDefault(); }
+            set { this._redriveCount = value; }
+        }
+
+        // Check to see if RedriveCount property is set
+        internal bool IsSetRedriveCount()
+        {
+            return this._redriveCount.HasValue; 
         }
 
     }

@@ -32,7 +32,9 @@ namespace Amazon.StepFunctions.Model
     /// Container for the parameters to the ListExecutions operation.
     /// Lists all executions of a state machine or a Map Run. You can list all executions
     /// related to a state machine by specifying a state machine Amazon Resource Name (ARN),
-    /// or those related to a Map Run by specifying a Map Run ARN.
+    /// or those related to a Map Run by specifying a Map Run ARN. Using this API action,
+    /// you can also list all <a href="https://docs.aws.amazon.com/step-functions/latest/dg/redrive-executions.html">redriven</a>
+    /// executions.
     /// 
     ///  
     /// <para>
@@ -67,6 +69,7 @@ namespace Amazon.StepFunctions.Model
         private string _mapRunArn;
         private int? _maxResults;
         private string _nextToken;
+        private ExecutionRedriveFilter _redriveFilter;
         private string _stateMachineArn;
         private ExecutionStatus _statusFilter;
 
@@ -144,6 +147,39 @@ namespace Amazon.StepFunctions.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RedriveFilter. 
+        /// <para>
+        /// Sets a filter to list executions based on whether or not they have been redriven.
+        /// </para>
+        ///  
+        /// <para>
+        /// For a Distributed Map, <code>redriveFilter</code> sets a filter to list child workflow
+        /// executions based on whether or not they have been redriven.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you do not provide a <code>redriveFilter</code>, Step Functions returns a list
+        /// of both redriven and non-redriven executions.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you provide a state machine ARN in <code>redriveFilter</code>, the API returns
+        /// a validation exception.
+        /// </para>
+        /// </summary>
+        public ExecutionRedriveFilter RedriveFilter
+        {
+            get { return this._redriveFilter; }
+            set { this._redriveFilter = value; }
+        }
+
+        // Check to see if RedriveFilter property is set
+        internal bool IsSetRedriveFilter()
+        {
+            return this._redriveFilter != null;
         }
 
         /// <summary>

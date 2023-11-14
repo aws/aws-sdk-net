@@ -112,6 +112,12 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
                     unmarshalledObject.ExecutionFailedEventDetails = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("executionRedrivenEventDetails", targetDepth))
+                {
+                    var unmarshaller = ExecutionRedrivenEventDetailsUnmarshaller.Instance;
+                    unmarshalledObject.ExecutionRedrivenEventDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("executionStartedEventDetails", targetDepth))
                 {
                     var unmarshaller = ExecutionStartedEventDetailsUnmarshaller.Instance;
@@ -200,6 +206,12 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = MapRunFailedEventDetailsUnmarshaller.Instance;
                     unmarshalledObject.MapRunFailedEventDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("mapRunRedrivenEventDetails", targetDepth))
+                {
+                    var unmarshaller = MapRunRedrivenEventDetailsUnmarshaller.Instance;
+                    unmarshalledObject.MapRunRedrivenEventDetails = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("mapRunStartedEventDetails", targetDepth))

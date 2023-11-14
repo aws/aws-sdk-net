@@ -30,8 +30,9 @@ namespace Amazon.StepFunctions.Model
 {
     /// <summary>
     /// Container for the parameters to the SendTaskFailure operation.
-    /// Used by activity workers and task states using the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html#connect-wait-token">callback</a>
-    /// pattern to report that the task identified by the <code>taskToken</code> failed.
+    /// Used by activity workers, Task states using the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html#connect-wait-token">callback</a>
+    /// pattern, and optionally Task states using the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html#connect-sync">job
+    /// run</a> pattern to report that the task identified by the <code>taskToken</code> failed.
     /// </summary>
     public partial class SendTaskFailureRequest : AmazonStepFunctionsRequest
     {

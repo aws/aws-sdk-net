@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ListExecutions Request Marshaller
+    /// RedriveExecution Request Marshaller
     /// </summary>       
-    public class ListExecutionsRequestMarshaller : IMarshaller<IRequest, ListExecutionsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class RedriveExecutionRequestMarshaller : IMarshaller<IRequest, RedriveExecutionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((ListExecutionsRequest)input);
+            return this.Marshall((RedriveExecutionRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(ListExecutionsRequest publicRequest)
+        public IRequest Marshall(RedriveExecutionRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.StepFunctions");
-            string target = "AWSStepFunctions.ListExecutions";
+            string target = "AWSStepFunctions.RedriveExecution";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-11-23";
@@ -67,40 +67,21 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetMapRunArn())
+                if(publicRequest.IsSetClientToken())
                 {
-                    context.Writer.WritePropertyName("mapRunArn");
-                    context.Writer.Write(publicRequest.MapRunArn);
+                    context.Writer.WritePropertyName("clientToken");
+                    context.Writer.Write(publicRequest.ClientToken);
                 }
 
-                if(publicRequest.IsSetMaxResults())
+                else if(!(publicRequest.IsSetClientToken()))
                 {
-                    context.Writer.WritePropertyName("maxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
+                    context.Writer.WritePropertyName("clientToken");
+                    context.Writer.Write(Guid.NewGuid().ToString());
                 }
-
-                if(publicRequest.IsSetNextToken())
+                if(publicRequest.IsSetExecutionArn())
                 {
-                    context.Writer.WritePropertyName("nextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetRedriveFilter())
-                {
-                    context.Writer.WritePropertyName("redriveFilter");
-                    context.Writer.Write(publicRequest.RedriveFilter);
-                }
-
-                if(publicRequest.IsSetStateMachineArn())
-                {
-                    context.Writer.WritePropertyName("stateMachineArn");
-                    context.Writer.Write(publicRequest.StateMachineArn);
-                }
-
-                if(publicRequest.IsSetStatusFilter())
-                {
-                    context.Writer.WritePropertyName("statusFilter");
-                    context.Writer.Write(publicRequest.StatusFilter);
+                    context.Writer.WritePropertyName("executionArn");
+                    context.Writer.Write(publicRequest.ExecutionArn);
                 }
 
                 writer.WriteObjectEnd();
@@ -111,9 +92,9 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static ListExecutionsRequestMarshaller _instance = new ListExecutionsRequestMarshaller();        
+        private static RedriveExecutionRequestMarshaller _instance = new RedriveExecutionRequestMarshaller();        
 
-        internal static ListExecutionsRequestMarshaller GetInstance()
+        internal static RedriveExecutionRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -121,7 +102,7 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListExecutionsRequestMarshaller Instance
+        public static RedriveExecutionRequestMarshaller Instance
         {
             get
             {

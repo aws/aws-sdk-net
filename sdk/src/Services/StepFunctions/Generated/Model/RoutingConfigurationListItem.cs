@@ -66,8 +66,8 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property Weight. 
         /// <para>
-        /// The percentage of traffic you want to route to the second state machine version. The
-        /// sum of the weights in the routing configuration must be equal to 100.
+        /// The percentage of traffic you want to route to a state machine version. The sum of
+        /// the weights in the routing configuration must be equal to 100.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=100)]

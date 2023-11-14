@@ -35,7 +35,9 @@ namespace Amazon.StepFunctions.Model
     {
         private long? _aborted;
         private long? _failed;
+        private long? _failuresNotRedrivable;
         private long? _pending;
+        private long? _pendingRedrive;
         private long? _resultsWritten;
         private long? _running;
         private long? _succeeded;
@@ -84,6 +86,28 @@ namespace Amazon.StepFunctions.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FailuresNotRedrivable. 
+        /// <para>
+        /// The number of <code>FAILED</code>, <code>ABORTED</code>, or <code>TIMED_OUT</code>
+        /// child workflow executions that cannot be redriven because their execution status is
+        /// terminal. For example, if your execution event history contains 25,000 entries, or
+        /// the <code>toleratedFailureCount</code> or <code>toleratedFailurePercentage</code>
+        /// for the Distributed Map has exceeded.
+        /// </para>
+        /// </summary>
+        public long FailuresNotRedrivable
+        {
+            get { return this._failuresNotRedrivable.GetValueOrDefault(); }
+            set { this._failuresNotRedrivable = value; }
+        }
+
+        // Check to see if FailuresNotRedrivable property is set
+        internal bool IsSetFailuresNotRedrivable()
+        {
+            return this._failuresNotRedrivable.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Pending. 
         /// <para>
         /// The total number of child workflow executions that were started by a Map Run, but
@@ -101,6 +125,27 @@ namespace Amazon.StepFunctions.Model
         internal bool IsSetPending()
         {
             return this._pending.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PendingRedrive. 
+        /// <para>
+        /// The number of unsuccessful child workflow executions currently waiting to be redriven.
+        /// The status of these child workflow executions could be <code>FAILED</code>, <code>ABORTED</code>,
+        /// or <code>TIMED_OUT</code> in the original execution attempt or a previous redrive
+        /// attempt.
+        /// </para>
+        /// </summary>
+        public long PendingRedrive
+        {
+            get { return this._pendingRedrive.GetValueOrDefault(); }
+            set { this._pendingRedrive = value; }
+        }
+
+        // Check to see if PendingRedrive property is set
+        internal bool IsSetPendingRedrive()
+        {
+            return this._pendingRedrive.HasValue; 
         }
 
         /// <summary>

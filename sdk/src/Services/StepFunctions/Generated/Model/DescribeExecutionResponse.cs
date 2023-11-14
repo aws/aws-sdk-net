@@ -42,6 +42,10 @@ namespace Amazon.StepFunctions.Model
         private string _name;
         private string _output;
         private CloudWatchEventsExecutionDataDetails _outputDetails;
+        private int? _redriveCount;
+        private DateTime? _redriveDate;
+        private ExecutionRedriveStatus _redriveStatus;
+        private string _redriveStatusReason;
         private DateTime? _startDate;
         private string _stateMachineAliasArn;
         private string _stateMachineArn;
@@ -248,6 +252,154 @@ namespace Amazon.StepFunctions.Model
         internal bool IsSetOutputDetails()
         {
             return this._outputDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RedriveCount. 
+        /// <para>
+        /// The number of times you've redriven an execution. If you have not yet redriven an
+        /// execution, the <code>redriveCount</code> is 0. This count is not updated for redrives
+        /// that failed to start or are pending to be redriven.
+        /// </para>
+        /// </summary>
+        public int RedriveCount
+        {
+            get { return this._redriveCount.GetValueOrDefault(); }
+            set { this._redriveCount = value; }
+        }
+
+        // Check to see if RedriveCount property is set
+        internal bool IsSetRedriveCount()
+        {
+            return this._redriveCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RedriveDate. 
+        /// <para>
+        /// The date the execution was last redriven. If you have not yet redriven an execution,
+        /// the <code>redriveDate</code> is null.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <code>redriveDate</code> is unavailable if you redrive a Map Run that starts child
+        /// workflow executions of type <code>EXPRESS</code>.
+        /// </para>
+        /// </summary>
+        public DateTime RedriveDate
+        {
+            get { return this._redriveDate.GetValueOrDefault(); }
+            set { this._redriveDate = value; }
+        }
+
+        // Check to see if RedriveDate property is set
+        internal bool IsSetRedriveDate()
+        {
+            return this._redriveDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RedriveStatus. 
+        /// <para>
+        /// Indicates whether or not an execution can be redriven at a given point in time.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// For executions of type <code>STANDARD</code>, <code>redriveStatus</code> is <code>NOT_REDRIVABLE</code>
+        /// if calling the <a>RedriveExecution</a> API action would return the <code>ExecutionNotRedrivable</code>
+        /// error.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For a Distributed Map that includes child workflows of type <code>STANDARD</code>,
+        /// <code>redriveStatus</code> indicates whether or not the Map Run can redrive child
+        /// workflow executions.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For a Distributed Map that includes child workflows of type <code>EXPRESS</code>,
+        /// <code>redriveStatus</code> indicates whether or not the Map Run can redrive child
+        /// workflow executions.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can redrive failed or timed out <code>EXPRESS</code> workflows <i>only if</i>
+        /// they're a part of a Map Run. When you <a href="https://docs.aws.amazon.com/step-functions/latest/dg/redrive-map-run.html">redrive</a>
+        /// the Map Run, these workflows are restarted using the <a>StartExecution</a> API action.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public ExecutionRedriveStatus RedriveStatus
+        {
+            get { return this._redriveStatus; }
+            set { this._redriveStatus = value; }
+        }
+
+        // Check to see if RedriveStatus property is set
+        internal bool IsSetRedriveStatus()
+        {
+            return this._redriveStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RedriveStatusReason. 
+        /// <para>
+        /// When <code>redriveStatus</code> is <code>NOT_REDRIVABLE</code>, <code>redriveStatusReason</code>
+        /// specifies the reason why an execution cannot be redriven.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// For executions of type <code>STANDARD</code>, or for a Distributed Map that includes
+        /// child workflows of type <code>STANDARD</code>, <code>redriveStatusReason</code> can
+        /// include one of the following reasons:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>State machine is in DELETING status</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Execution is RUNNING and cannot be redriven</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Execution is SUCCEEDED and cannot be redriven</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Execution was started before the launch of RedriveExecution</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Execution history event limit exceeded</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Execution has exceeded the max execution time</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Execution redrivable period exceeded</code>.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// For a Distributed Map that includes child workflows of type <code>EXPRESS</code>,
+        /// <code>redriveStatusReason</code> is only returned if the child workflows are not redrivable.
+        /// This happens when the child workflow executions have completed successfully.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Max=262144)]
+        public string RedriveStatusReason
+        {
+            get { return this._redriveStatusReason; }
+            set { this._redriveStatusReason = value; }
+        }
+
+        // Check to see if RedriveStatusReason property is set
+        internal bool IsSetRedriveStatusReason()
+        {
+            return this._redriveStatusReason != null;
         }
 
         /// <summary>

@@ -81,6 +81,18 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
                     response.MaxConcurrency = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("redriveCount", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    response.RedriveCount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("redriveDate", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    response.RedriveDate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("startDate", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

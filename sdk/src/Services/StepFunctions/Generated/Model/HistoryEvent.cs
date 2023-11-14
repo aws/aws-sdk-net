@@ -41,6 +41,7 @@ namespace Amazon.StepFunctions.Model
         private ActivityTimedOutEventDetails _activityTimedOutEventDetails;
         private ExecutionAbortedEventDetails _executionAbortedEventDetails;
         private ExecutionFailedEventDetails _executionFailedEventDetails;
+        private ExecutionRedrivenEventDetails _executionRedrivenEventDetails;
         private ExecutionStartedEventDetails _executionStartedEventDetails;
         private ExecutionSucceededEventDetails _executionSucceededEventDetails;
         private ExecutionTimedOutEventDetails _executionTimedOutEventDetails;
@@ -56,6 +57,7 @@ namespace Amazon.StepFunctions.Model
         private MapIterationEventDetails _mapIterationStartedEventDetails;
         private MapIterationEventDetails _mapIterationSucceededEventDetails;
         private MapRunFailedEventDetails _mapRunFailedEventDetails;
+        private MapRunRedrivenEventDetails _mapRunRedrivenEventDetails;
         private MapRunStartedEventDetails _mapRunStartedEventDetails;
         private MapStateStartedEventDetails _mapStateStartedEventDetails;
         private long? _previousEventId;
@@ -193,6 +195,24 @@ namespace Amazon.StepFunctions.Model
         internal bool IsSetExecutionFailedEventDetails()
         {
             return this._executionFailedEventDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExecutionRedrivenEventDetails. 
+        /// <para>
+        /// Contains details about the redrive attempt of an execution.
+        /// </para>
+        /// </summary>
+        public ExecutionRedrivenEventDetails ExecutionRedrivenEventDetails
+        {
+            get { return this._executionRedrivenEventDetails; }
+            set { this._executionRedrivenEventDetails = value; }
+        }
+
+        // Check to see if ExecutionRedrivenEventDetails property is set
+        internal bool IsSetExecutionRedrivenEventDetails()
+        {
+            return this._executionRedrivenEventDetails != null;
         }
 
         /// <summary>
@@ -443,6 +463,24 @@ namespace Amazon.StepFunctions.Model
         internal bool IsSetMapRunFailedEventDetails()
         {
             return this._mapRunFailedEventDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MapRunRedrivenEventDetails. 
+        /// <para>
+        /// Contains details about the redrive attempt of a Map Run.
+        /// </para>
+        /// </summary>
+        public MapRunRedrivenEventDetails MapRunRedrivenEventDetails
+        {
+            get { return this._mapRunRedrivenEventDetails; }
+            set { this._mapRunRedrivenEventDetails = value; }
+        }
+
+        // Check to see if MapRunRedrivenEventDetails property is set
+        internal bool IsSetMapRunRedrivenEventDetails()
+        {
+            return this._mapRunRedrivenEventDetails != null;
         }
 
         /// <summary>

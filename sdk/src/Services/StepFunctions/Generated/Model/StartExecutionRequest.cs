@@ -156,6 +156,11 @@ namespace Amazon.StepFunctions.Model
         /// </para>
         ///  
         /// <para>
+        /// If you don't provide a name for the execution, Step Functions automatically generates
+        /// a universally unique identifier (UUID) as the execution name.
+        /// </para>
+        ///  
+        /// <para>
         /// A name must <i>not</i> contain:
         /// </para>
         ///  <ul> <li> 

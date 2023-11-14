@@ -88,6 +88,18 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("redriveCount", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.RedriveCount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("redriveDate", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.RedriveDate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("startDate", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

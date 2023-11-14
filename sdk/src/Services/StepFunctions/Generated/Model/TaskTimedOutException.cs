@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StepFunctions.Model
 {
     /// <summary>
-    /// 
+    /// The task token has either expired or the task associated with the token has already
+    /// been closed.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

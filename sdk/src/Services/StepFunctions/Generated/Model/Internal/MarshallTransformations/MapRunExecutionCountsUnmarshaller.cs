@@ -76,10 +76,22 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
                     unmarshalledObject.Failed = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("failuresNotRedrivable", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.FailuresNotRedrivable = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("pending", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;
                     unmarshalledObject.Pending = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("pendingRedrive", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.PendingRedrive = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("resultsWritten", targetDepth))

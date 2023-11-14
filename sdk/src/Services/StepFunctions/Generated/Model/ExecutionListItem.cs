@@ -37,6 +37,8 @@ namespace Amazon.StepFunctions.Model
         private int? _itemCount;
         private string _mapRunArn;
         private string _name;
+        private int? _redriveCount;
+        private DateTime? _redriveDate;
         private DateTime? _startDate;
         private string _stateMachineAliasArn;
         private string _stateMachineArn;
@@ -152,6 +154,44 @@ namespace Amazon.StepFunctions.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RedriveCount. 
+        /// <para>
+        /// The number of times you've redriven an execution. If you have not yet redriven an
+        /// execution, the <code>redriveCount</code> is 0. This count is not updated for redrives
+        /// that failed to start or are pending to be redriven.
+        /// </para>
+        /// </summary>
+        public int RedriveCount
+        {
+            get { return this._redriveCount.GetValueOrDefault(); }
+            set { this._redriveCount = value; }
+        }
+
+        // Check to see if RedriveCount property is set
+        internal bool IsSetRedriveCount()
+        {
+            return this._redriveCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RedriveDate. 
+        /// <para>
+        /// The date the execution was last redriven.
+        /// </para>
+        /// </summary>
+        public DateTime RedriveDate
+        {
+            get { return this._redriveDate.GetValueOrDefault(); }
+            set { this._redriveDate = value; }
+        }
+
+        // Check to see if RedriveDate property is set
+        internal bool IsSetRedriveDate()
+        {
+            return this._redriveDate.HasValue; 
         }
 
         /// <summary>
