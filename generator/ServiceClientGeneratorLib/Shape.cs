@@ -39,6 +39,8 @@ namespace ServiceClientGenerator
         public const string TimestampFormatKey = "timestampFormat";
         public const string DocumentKey = "document";
         public const string EventKey = "event";
+        public const string EventPayloadKey = "eventpayload";
+        public const string EventHeaderKey = "eventheader";
 
         public static readonly HashSet<string> NullableTypes = new HashSet<string> {
             "bool",
@@ -130,7 +132,7 @@ namespace ServiceClientGenerator
         /// </summary>
         /// <returns>The name of the shape as a string</returns>
         public override string ToString()
-        {   
+        {
             return this.Name;
         }
 
@@ -329,7 +331,7 @@ namespace ServiceClientGenerator
                     return map;
                 else
                     return map.OrderBy(x => x.PropertyName).ToList();
-                
+
             }
         }
 
@@ -383,7 +385,7 @@ namespace ServiceClientGenerator
                 var isEventStream = data[EventStreamKey];
                 if (isEventStream != null && isEventStream.IsBoolean)
                 {
-                    return (bool) isEventStream;
+                    return (bool)isEventStream;
                 }
 
                 return false;
@@ -578,8 +580,8 @@ namespace ServiceClientGenerator
             get
             {
                 var value = data[MinKey];
-                
-                if(value != null)
+
+                if (value != null)
                 {
                     long min;
                     if (!long.TryParse(value.ToString(), out min))
@@ -853,6 +855,55 @@ namespace ServiceClientGenerator
             {
                 return this.data.PropertyNames.Contains(EventKey);
             }
+        }
+        public bool IsException
+        {
+            get
+            {
+                var exceptionNode = data[ExceptionKey];
+                if (exceptionNode == null)
+                {
+                    return false;
+                }
+                return (bool)exceptionNode;
+            }
+        }
+        /// <summary>
+        /// Returns the list of members who are not marked with the event header or eventPayload trait
+        /// </summary>
+        /// <returns></returns>
+        public List<Member> GetUnboundEventMembers()
+        {
+            if (Members == null)
+                return new List<Member>();
+            return Members.Where(m => !m.IsEventPayload && !m.IsEventHeader).ToList();
+
+        }
+
+        public bool HasImplicitEventPayloadMembers()
+        {
+            return IsEvent && GetUnboundEventMembers().Count > 0;
+        }
+        /// <summary>
+        /// An explicity payload member must have the "eventpayload" trait and can be the only
+        /// member marked as such. 
+        /// </summary>
+        /// <returns>The member marked with the "eventpayload" trait. Null if none found</returns>
+        public Member GetExplicitEventPayloadMember()
+        {
+            if (Members == null)
+            {
+                return null;
+            }
+            return Members.Where(m => m.IsEventPayload).FirstOrDefault();
+        }
+        /// <summary>
+        /// If all members of an event are marked with eventheader then there is no event payload
+        /// </summary>
+        /// <returns></returns>
+        public bool HasNoEventPayload()
+        {
+            return Members == null || Members.All(m => m.IsEventHeader);
         }
     }
 }

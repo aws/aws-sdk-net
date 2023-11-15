@@ -24,6 +24,7 @@ namespace ServiceClientGenerator
         public const string DeprecatedMessageKey = "deprecatedMessage";
         public const string HostLabelKey = "hostLabel";
         public const string EventPayloadKey = "eventpayload";
+        public const string EventHeaderKey = "eventheader";
         private const string UnhandledTypeDecimalErrorMessage = "Unhandled type 'decimal' : using .net's decimal type for modeled decimal type may result in loss of data.  decimal type members should explicitly opt-in via shape customization.";
 
         private const string BackwardsCompatibleDateTimePropertySuffix = "Utc";
@@ -509,7 +510,7 @@ namespace ServiceClientGenerator
             }
 
             var documentTrait = memberShape[Shape.DocumentKey];
-            if (documentTrait?.IsBoolean == true && (bool) documentTrait)
+            if (documentTrait?.IsBoolean == true && (bool)documentTrait)
                 return "Amazon.Runtime.Documents.Document";
 
             if (typeNode == null)
@@ -626,7 +627,7 @@ namespace ServiceClientGenerator
                     {
                         shapeName = renamedShape;
                     }
-                    else if(!string.IsNullOrWhiteSpace(substitutedShape))
+                    else if (!string.IsNullOrWhiteSpace(substitutedShape))
                     {
                         shapeName = substitutedShape;
                     }
@@ -688,7 +689,7 @@ namespace ServiceClientGenerator
                 : this.model.DocumentRoot[ServiceModel.ShapesKey][extendsNode.ToString()];
 
             var document = memberShape[Shape.DocumentKey];
-            if (document?.IsBoolean == true && (bool) document)
+            if (document?.IsBoolean == true && (bool)document)
                 return "Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller.Instance";
 
             var typeNode = memberShape[Shape.TypeKey];
@@ -773,12 +774,12 @@ namespace ServiceClientGenerator
                     var substituteData = this.model.Customizations.GetSubstituteShapeData(this.ModelShape.Name);
                     if (substituteData != null && substituteData[CustomizationsModel.EmitAsShapeKey] != null)
                     {
-                        var shape = this.model.FindShape((string) substituteData[CustomizationsModel.EmitAsShapeKey]);
+                        var shape = this.model.FindShape((string)substituteData[CustomizationsModel.EmitAsShapeKey]);
                         emittingShapeType = shape.Type;
                     }
                 }
                 return emittingShapeType != null
-                ? Shape.NullableTypes.Contains(emittingShapeType, StringComparer.Ordinal) 
+                ? Shape.NullableTypes.Contains(emittingShapeType, StringComparer.Ordinal)
                 : this.Shape.IsNullable;
             }
         }
@@ -874,6 +875,13 @@ namespace ServiceClientGenerator
                 return this.Shape.IsDocument;
             }
         }
+        public bool IsException
+        {
+            get
+            {
+                return this.Shape.IsException;
+            }
+        }
 
         /// <summary>
         /// Determines if the member is deprecated
@@ -929,6 +937,19 @@ namespace ServiceClientGenerator
             {
                 if (data[EventPayloadKey] != null && data[EventPayloadKey].IsBoolean)
                     return (bool)data[EventPayloadKey];
+                return false;
+            }
+        }
+        /// <summary>
+        /// Determines if a member is an event header type
+        /// </summary>
+        public bool IsEventHeader
+        {
+            get
+            {
+                //return this.Shape.IsEventHeader;
+                if (data[EventHeaderKey] != null && data[EventHeaderKey].IsBoolean)
+                    return (bool)data[EventHeaderKey];
                 return false;
             }
         }

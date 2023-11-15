@@ -84,7 +84,7 @@ namespace ServiceClientGenerator
 
         private const string Bcl35SubFolder = "_bcl35";
         private const string Bcl45SubFolder = "_bcl45";
-        private const string NetStandardSubFolder = "_netstandard";        
+        private const string NetStandardSubFolder = "_netstandard";
         private string PaginatorsSubFolder = string.Format("Model{0}_bcl45+netstandard", Path.AltDirectorySeparatorChar);
         private string GeneratedTestsSubFolder = string.Format("UnitTests{0}Generated", Path.AltDirectorySeparatorChar);
         private string CustomizationTestsSubFolder = string.Format("UnitTests{0}Generated{0}Customizations", Path.AltDirectorySeparatorChar);
@@ -204,7 +204,7 @@ namespace ServiceClientGenerator
                 ExecuteProjectFileGenerators();
                 return;
             }
-            
+
             // The top level request that all operation requests are children of
             ExecuteGenerator(new BaseRequest(), "Amazon" + Configuration.ClassName + "Request.cs", "Model");
 
@@ -272,7 +272,7 @@ namespace ServiceClientGenerator
                 ExecuteTestGenerator(new RestMarshallingTests(), fileName, "Marshalling");
 
             //Generate endpoint discovery tests for classes that have an endpoint operation
-            if(Configuration.ServiceModel.FindEndpointOperation() != null)
+            if (Configuration.ServiceModel.FindEndpointOperation() != null)
             {
                 fileName = string.Format("{0}EndpointDiscoveryMarshallingTests.cs", Configuration.ClassName);
                 ExecuteTestGenerator(new EndpointDiscoveryMarshallingTests(), fileName, "Marshalling");
@@ -580,7 +580,7 @@ namespace ServiceClientGenerator
                 this.ExecuteGenerator(paginatorInterfaceGenerator, $"I{operation.Name}Paginator.cs", PaginatorsSubFolder);
 
             }
-            
+
         }
 
         /// <summary>
@@ -629,29 +629,29 @@ namespace ServiceClientGenerator
                 lookup.SearchForNestedStructures(operation.ResponseStructure);
                 //Do not generate an unmarshaller for the response's payload if it is of type EventStream
                 //This is because we attach the payload to the generic response and unmarshall it from there.
-                if (operation.IsEventStreamOutput)
-                {
-                    if (!((operation.Name == "InvokeWithResponseStream" && operation.model.ServiceId == "Lambda") ||
-                          (operation.Name == "InvokeEndpointWithResponseStream" && operation.model.ServiceId == "SageMaker Runtime") ||
-                          (operation.Name == "InvokeModelWithResponseStream" && operation.model.ServiceId == "Bedrock Runtime")))
-                    {
-                        throw new Exception("Event streams may not be fully supported until internal ticket DOTNET-7200 is implemented. " +
-                            "We can remove this check once that ticket is resolved. Until then, manually test that the new operation " +
-                            "behaves correctly and then add it to the above allowlist.");
-                    }
+                //if (operation.IsEventStreamOutput)
+                //{
+                //    //if (!((operation.Name == "InvokeWithResponseStream" && operation.model.ServiceId == "Lambda") ||
+                //    //      (operation.Name == "InvokeEndpointWithResponseStream" && operation.model.ServiceId == "SageMaker Runtime") ||
+                //    //      (operation.Name == "InvokeModelWithResponseStream" && operation.model.ServiceId == "Bedrock Runtime")))
+                //    //{
+                //    //    throw new Exception("Event streams may not be fully supported until internal ticket DOTNET-7200 is implemented. " +
+                //    //        "We can remove this check once that ticket is resolved. Until then, manually test that the new operation " +
+                //    //        "behaves correctly and then add it to the above allowlist.");
+                //    //}
 
-                    if (operation.ResponsePayloadMember.ModelShape.IsEventStream)
-                    {
-                        //If the file was already generated incorrectly delete it
-                        var unmarshallerName = operation.ResponsePayloadMember.ModelShape.Name + "Unmarshaller.cs";
-                        var unmarshallerPath = Utils.PathCombineAlt(GeneratedFilesRoot, "Model","Internal", "MarshallTransformations", unmarshallerName);
-                        if (File.Exists(unmarshallerPath))
-                        {
-                            File.Delete(unmarshallerPath);
-                        }
-                        return;
-                    }
-                }
+                //    if (operation.ResponsePayloadMember.ModelShape.IsEventStream)
+                //    {
+                //        //If the file was already generated incorrectly delete it
+                //        var unmarshallerName = operation.ResponsePayloadMember.ModelShape.Name + "Unmarshaller.cs";
+                //        var unmarshallerPath = Utils.PathCombineAlt(GeneratedFilesRoot, "Model", "Internal", "MarshallTransformations", unmarshallerName);
+                //        if (File.Exists(unmarshallerPath))
+                //        {
+                //            File.Delete(unmarshallerPath);
+                //        }
+                //    }
+                //    //return;
+                //}
 
                 foreach (var nestedStructure in lookup.NestedStructures)
                 {
@@ -675,6 +675,29 @@ namespace ServiceClientGenerator
 
                         this.ExecuteGenerator(generator, nestedStructure.Name + "Unmarshaller.cs", "Model.Internal.MarshallTransformations");
                         this._processedUnmarshallers.Add(nestedStructure.Name);
+                    }
+                    if (operation.IsEventStreamOutput)
+                    {
+                        //if (!((operation.Name == "InvokeWithResponseStream" && operation.model.ServiceId == "Lambda") ||
+                        //      (operation.Name == "InvokeEndpointWithResponseStream" && operation.model.ServiceId == "SageMaker Runtime") ||
+                        //      (operation.Name == "InvokeModelWithResponseStream" && operation.model.ServiceId == "Bedrock Runtime")))
+                        //{
+                        //    throw new Exception("Event streams may not be fully supported until internal ticket DOTNET-7200 is implemented. " +
+                        //        "We can remove this check once that ticket is resolved. Until then, manually test that the new operation " +
+                        //        "behaves correctly and then add it to the above allowlist.");
+                        //}
+
+                        if (operation.ResponsePayloadMember.ModelShape.IsEventStream)
+                        {
+                            //If the file was already generated incorrectly delete it
+                            var unmarshallerName = operation.ResponsePayloadMember.ModelShape.Name + "Unmarshaller.cs";
+                            var unmarshallerPath = Utils.PathCombineAlt(GeneratedFilesRoot, "Model", "Internal", "MarshallTransformations", unmarshallerName);
+                            if (File.Exists(unmarshallerPath))
+                            {
+                                File.Delete(unmarshallerPath);
+                            }
+                        }
+                        //return;
                     }
                     else
                     {
@@ -748,7 +771,7 @@ namespace ServiceClientGenerator
         /// <param name="operation">The operation to generate endpoint discovery marshaller for</param>
         void GenerateEndpointDiscoveryMarshaller(Operation operation)
         {
-            if(operation.IsEndpointOperation || !operation.EndpointDiscoveryEnabled)
+            if (operation.IsEndpointOperation || !operation.EndpointDiscoveryEnabled)
             {
                 return;
             }
@@ -758,7 +781,7 @@ namespace ServiceClientGenerator
                 Operation = operation
             };
 
-            this.ExecuteGenerator(generator, operation.Name + "EndpointDiscoveryMarshaller.cs", "Model.Internal.MarshallTransformations");            
+            this.ExecuteGenerator(generator, operation.Name + "EndpointDiscoveryMarshaller.cs", "Model.Internal.MarshallTransformations");
         }
 
         private void GenerateExceptions(Operation operation)
@@ -768,7 +791,7 @@ namespace ServiceClientGenerator
             if (operation.IsEventStreamOutput && !Configuration.GeneratedEventStreamException)
             {
                 var eventStreamExceptionGenerator = new EventStreamExceptionGenerator();
-                this.ExecuteGenerator(eventStreamExceptionGenerator, this.Configuration.ClassName + "EventStreamException.cs","Model");
+                this.ExecuteGenerator(eventStreamExceptionGenerator, this.Configuration.ClassName + "EventStreamException.cs", "Model");
                 Configuration.GeneratedEventStreamException = true;
             }
 
@@ -1303,7 +1326,7 @@ namespace ServiceClientGenerator
                                 .FirstOrDefault(x => string.Equals(x.Name, outputFilePathFi.Name, StringComparison.OrdinalIgnoreCase));
 
                 // Compare the casing on disk versus the computed value.
-                if(fi.FullName != new FileInfo(outputFilePath).FullName)
+                if (fi.FullName != new FileInfo(outputFilePath).FullName)
                 {
                     // Casing is different so delete the on disk file so we can create a new file with the correct casing.
                     File.Delete(outputFilePath);
@@ -1399,7 +1422,7 @@ namespace ServiceClientGenerator
                     throw new Exception("No structure unmarshaller for service type: " + this.Configuration.ServiceModel.Type);
             }
         }
-        
+
         /// <summary>
         /// Determines the Unmarshaller for structures based on the service model type
         /// </summary>
@@ -1418,7 +1441,7 @@ namespace ServiceClientGenerator
                 default:
                     throw new Exception("No structure unmarshaller for service type: " + this.Configuration.ServiceModel.Type);
             }
-        }     
+        }
 
         void GenerateCodeAnalysisProject()
         {
@@ -1502,11 +1525,11 @@ namespace ServiceClientGenerator
                 {
                     var regionName = regions[regionCode]["description"].ToString();
                     endpoints.Add(new EndpointConstant
-                    { 
-                        Name = nameConverter(regionCode), 
-                        RegionCode = regionCode, 
-                        ConvertedRegionCode = codeConverter == null ? regionCode : codeConverter(regionCode), 
-                        RegionName = regionName 
+                    {
+                        Name = nameConverter(regionCode),
+                        RegionCode = regionCode,
+                        ConvertedRegionCode = codeConverter == null ? regionCode : codeConverter(regionCode),
+                        RegionName = regionName
                     });
                 }
             }
@@ -1531,7 +1554,7 @@ namespace ServiceClientGenerator
             var text = generator.TransformText();
             WriteFile(endpointsFilesRoot, null, fileName, text);
         }
-        
+
         /// <summary>
         /// Converts region code to maintain backward compatibility with S3
         /// </summary>
@@ -1562,7 +1585,7 @@ namespace ServiceClientGenerator
             {
                 Endpoints = endpoints
             };
-            
+
             var text = generator.TransformText();
             WriteFile(generatedFileRoot, null, fileName, text);
         }
