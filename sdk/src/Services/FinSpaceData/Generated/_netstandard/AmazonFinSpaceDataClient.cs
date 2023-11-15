@@ -269,6 +269,7 @@ namespace Amazon.FinSpaceData
 
         #region  AssociateUserToPermissionGroup
 
+        [Obsolete("This method will be discontinued.")]
         internal virtual AssociateUserToPermissionGroupResponse AssociateUserToPermissionGroup(AssociateUserToPermissionGroupRequest request)
         {
             var options = new InvokeOptions();
@@ -309,6 +310,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/AssociateUserToPermissionGroup">REST API Reference for AssociateUserToPermissionGroup Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         public virtual Task<AssociateUserToPermissionGroupResponse> AssociateUserToPermissionGroupAsync(AssociateUserToPermissionGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -322,6 +324,7 @@ namespace Amazon.FinSpaceData
         
         #region  CreateChangeset
 
+        [Obsolete("This method will be discontinued.")]
         internal virtual CreateChangesetResponse CreateChangeset(CreateChangesetRequest request)
         {
             var options = new InvokeOptions();
@@ -364,6 +367,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/CreateChangeset">REST API Reference for CreateChangeset Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         public virtual Task<CreateChangesetResponse> CreateChangesetAsync(CreateChangesetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -377,6 +381,7 @@ namespace Amazon.FinSpaceData
         
         #region  CreateDataset
 
+        [Obsolete("This method will be discontinued.")]
         internal virtual CreateDatasetResponse CreateDataset(CreateDatasetRequest request)
         {
             var options = new InvokeOptions();
@@ -419,6 +424,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/CreateDataset">REST API Reference for CreateDataset Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         public virtual Task<CreateDatasetResponse> CreateDatasetAsync(CreateDatasetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -432,6 +438,7 @@ namespace Amazon.FinSpaceData
         
         #region  CreateDataView
 
+        [Obsolete("This method will be discontinued.")]
         internal virtual CreateDataViewResponse CreateDataView(CreateDataViewRequest request)
         {
             var options = new InvokeOptions();
@@ -471,6 +478,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/CreateDataView">REST API Reference for CreateDataView Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         public virtual Task<CreateDataViewResponse> CreateDataViewAsync(CreateDataViewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -484,6 +492,7 @@ namespace Amazon.FinSpaceData
         
         #region  CreatePermissionGroup
 
+        [Obsolete("This method will be discontinued.")]
         internal virtual CreatePermissionGroupResponse CreatePermissionGroup(CreatePermissionGroupRequest request)
         {
             var options = new InvokeOptions();
@@ -523,6 +532,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/CreatePermissionGroup">REST API Reference for CreatePermissionGroup Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         public virtual Task<CreatePermissionGroupResponse> CreatePermissionGroupAsync(CreatePermissionGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -536,6 +546,7 @@ namespace Amazon.FinSpaceData
         
         #region  CreateUser
 
+        [Obsolete("This method will be discontinued.")]
         internal virtual CreateUserResponse CreateUser(CreateUserRequest request)
         {
             var options = new InvokeOptions();
@@ -575,6 +586,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/CreateUser">REST API Reference for CreateUser Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         public virtual Task<CreateUserResponse> CreateUserAsync(CreateUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -588,6 +600,7 @@ namespace Amazon.FinSpaceData
         
         #region  DeleteDataset
 
+        [Obsolete("This method will be discontinued.")]
         internal virtual DeleteDatasetResponse DeleteDataset(DeleteDatasetRequest request)
         {
             var options = new InvokeOptions();
@@ -630,6 +643,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/DeleteDataset">REST API Reference for DeleteDataset Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         public virtual Task<DeleteDatasetResponse> DeleteDatasetAsync(DeleteDatasetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -643,6 +657,7 @@ namespace Amazon.FinSpaceData
         
         #region  DeletePermissionGroup
 
+        [Obsolete("This method will be discontinued.")]
         internal virtual DeletePermissionGroupResponse DeletePermissionGroup(DeletePermissionGroupRequest request)
         {
             var options = new InvokeOptions();
@@ -685,6 +700,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/DeletePermissionGroup">REST API Reference for DeletePermissionGroup Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         public virtual Task<DeletePermissionGroupResponse> DeletePermissionGroupAsync(DeletePermissionGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -698,6 +714,7 @@ namespace Amazon.FinSpaceData
         
         #region  DisableUser
 
+        [Obsolete("This method will be discontinued.")]
         internal virtual DisableUserResponse DisableUser(DisableUserRequest request)
         {
             var options = new InvokeOptions();
@@ -737,6 +754,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/DisableUser">REST API Reference for DisableUser Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         public virtual Task<DisableUserResponse> DisableUserAsync(DisableUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -750,6 +768,7 @@ namespace Amazon.FinSpaceData
         
         #region  DisassociateUserFromPermissionGroup
 
+        [Obsolete("This method will be discontinued.")]
         internal virtual DisassociateUserFromPermissionGroupResponse DisassociateUserFromPermissionGroup(DisassociateUserFromPermissionGroupRequest request)
         {
             var options = new InvokeOptions();
@@ -789,6 +808,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/DisassociateUserFromPermissionGroup">REST API Reference for DisassociateUserFromPermissionGroup Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         public virtual Task<DisassociateUserFromPermissionGroupResponse> DisassociateUserFromPermissionGroupAsync(DisassociateUserFromPermissionGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -802,6 +822,7 @@ namespace Amazon.FinSpaceData
         
         #region  EnableUser
 
+        [Obsolete("This method will be discontinued.")]
         internal virtual EnableUserResponse EnableUser(EnableUserRequest request)
         {
             var options = new InvokeOptions();
@@ -844,6 +865,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/EnableUser">REST API Reference for EnableUser Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         public virtual Task<EnableUserResponse> EnableUserAsync(EnableUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -857,6 +879,7 @@ namespace Amazon.FinSpaceData
         
         #region  GetChangeset
 
+        [Obsolete("This method will be discontinued.")]
         internal virtual GetChangesetResponse GetChangeset(GetChangesetRequest request)
         {
             var options = new InvokeOptions();
@@ -896,6 +919,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/GetChangeset">REST API Reference for GetChangeset Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         public virtual Task<GetChangesetResponse> GetChangesetAsync(GetChangesetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -909,6 +933,7 @@ namespace Amazon.FinSpaceData
         
         #region  GetDataset
 
+        [Obsolete("This method will be discontinued.")]
         internal virtual GetDatasetResponse GetDataset(GetDatasetRequest request)
         {
             var options = new InvokeOptions();
@@ -948,6 +973,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/GetDataset">REST API Reference for GetDataset Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         public virtual Task<GetDatasetResponse> GetDatasetAsync(GetDatasetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -961,6 +987,7 @@ namespace Amazon.FinSpaceData
         
         #region  GetDataView
 
+        [Obsolete("This method will be discontinued.")]
         internal virtual GetDataViewResponse GetDataView(GetDataViewRequest request)
         {
             var options = new InvokeOptions();
@@ -997,6 +1024,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/GetDataView">REST API Reference for GetDataView Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         public virtual Task<GetDataViewResponse> GetDataViewAsync(GetDataViewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1010,6 +1038,7 @@ namespace Amazon.FinSpaceData
         
         #region  GetExternalDataViewAccessDetails
 
+        [Obsolete("This method will be discontinued.")]
         internal virtual GetExternalDataViewAccessDetailsResponse GetExternalDataViewAccessDetails(GetExternalDataViewAccessDetailsRequest request)
         {
             var options = new InvokeOptions();
@@ -1058,6 +1087,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/GetExternalDataViewAccessDetails">REST API Reference for GetExternalDataViewAccessDetails Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         public virtual Task<GetExternalDataViewAccessDetailsResponse> GetExternalDataViewAccessDetailsAsync(GetExternalDataViewAccessDetailsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1071,6 +1101,7 @@ namespace Amazon.FinSpaceData
         
         #region  GetPermissionGroup
 
+        [Obsolete("This method will be discontinued.")]
         internal virtual GetPermissionGroupResponse GetPermissionGroup(GetPermissionGroupRequest request)
         {
             var options = new InvokeOptions();
@@ -1107,6 +1138,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/GetPermissionGroup">REST API Reference for GetPermissionGroup Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         public virtual Task<GetPermissionGroupResponse> GetPermissionGroupAsync(GetPermissionGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1120,6 +1152,7 @@ namespace Amazon.FinSpaceData
         
         #region  GetProgrammaticAccessCredentials
 
+        [Obsolete("This method will be discontinued.")]
         internal virtual GetProgrammaticAccessCredentialsResponse GetProgrammaticAccessCredentials(GetProgrammaticAccessCredentialsRequest request)
         {
             var options = new InvokeOptions();
@@ -1155,6 +1188,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/GetProgrammaticAccessCredentials">REST API Reference for GetProgrammaticAccessCredentials Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         public virtual Task<GetProgrammaticAccessCredentialsResponse> GetProgrammaticAccessCredentialsAsync(GetProgrammaticAccessCredentialsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1168,6 +1202,7 @@ namespace Amazon.FinSpaceData
         
         #region  GetUser
 
+        [Obsolete("This method will be discontinued.")]
         internal virtual GetUserResponse GetUser(GetUserRequest request)
         {
             var options = new InvokeOptions();
@@ -1204,6 +1239,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/GetUser">REST API Reference for GetUser Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         public virtual Task<GetUserResponse> GetUserAsync(GetUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1217,6 +1253,7 @@ namespace Amazon.FinSpaceData
         
         #region  GetWorkingLocation
 
+        [Obsolete("This method will be discontinued.")]
         internal virtual GetWorkingLocationResponse GetWorkingLocation(GetWorkingLocationRequest request)
         {
             var options = new InvokeOptions();
@@ -1251,6 +1288,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/GetWorkingLocation">REST API Reference for GetWorkingLocation Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         public virtual Task<GetWorkingLocationResponse> GetWorkingLocationAsync(GetWorkingLocationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1264,6 +1302,7 @@ namespace Amazon.FinSpaceData
         
         #region  ListChangesets
 
+        [Obsolete("This method will be discontinued.")]
         internal virtual ListChangesetsResponse ListChangesets(ListChangesetsRequest request)
         {
             var options = new InvokeOptions();
@@ -1303,6 +1342,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ListChangesets">REST API Reference for ListChangesets Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         public virtual Task<ListChangesetsResponse> ListChangesetsAsync(ListChangesetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1316,6 +1356,7 @@ namespace Amazon.FinSpaceData
         
         #region  ListDatasets
 
+        [Obsolete("This method will be discontinued.")]
         internal virtual ListDatasetsResponse ListDatasets(ListDatasetsRequest request)
         {
             var options = new InvokeOptions();
@@ -1352,6 +1393,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ListDatasets">REST API Reference for ListDatasets Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         public virtual Task<ListDatasetsResponse> ListDatasetsAsync(ListDatasetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1365,6 +1407,7 @@ namespace Amazon.FinSpaceData
         
         #region  ListDataViews
 
+        [Obsolete("This method will be discontinued.")]
         internal virtual ListDataViewsResponse ListDataViews(ListDataViewsRequest request)
         {
             var options = new InvokeOptions();
@@ -1401,6 +1444,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ListDataViews">REST API Reference for ListDataViews Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         public virtual Task<ListDataViewsResponse> ListDataViewsAsync(ListDataViewsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1414,6 +1458,7 @@ namespace Amazon.FinSpaceData
         
         #region  ListPermissionGroups
 
+        [Obsolete("This method will be discontinued.")]
         internal virtual ListPermissionGroupsResponse ListPermissionGroups(ListPermissionGroupsRequest request)
         {
             var options = new InvokeOptions();
@@ -1447,6 +1492,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ListPermissionGroups">REST API Reference for ListPermissionGroups Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         public virtual Task<ListPermissionGroupsResponse> ListPermissionGroupsAsync(ListPermissionGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1460,6 +1506,7 @@ namespace Amazon.FinSpaceData
         
         #region  ListPermissionGroupsByUser
 
+        [Obsolete("This method will be discontinued.")]
         internal virtual ListPermissionGroupsByUserResponse ListPermissionGroupsByUser(ListPermissionGroupsByUserRequest request)
         {
             var options = new InvokeOptions();
@@ -1496,6 +1543,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ListPermissionGroupsByUser">REST API Reference for ListPermissionGroupsByUser Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         public virtual Task<ListPermissionGroupsByUserResponse> ListPermissionGroupsByUserAsync(ListPermissionGroupsByUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1509,6 +1557,7 @@ namespace Amazon.FinSpaceData
         
         #region  ListUsers
 
+        [Obsolete("This method will be discontinued.")]
         internal virtual ListUsersResponse ListUsers(ListUsersRequest request)
         {
             var options = new InvokeOptions();
@@ -1542,6 +1591,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ListUsers">REST API Reference for ListUsers Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         public virtual Task<ListUsersResponse> ListUsersAsync(ListUsersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1555,6 +1605,7 @@ namespace Amazon.FinSpaceData
         
         #region  ListUsersByPermissionGroup
 
+        [Obsolete("This method will be discontinued.")]
         internal virtual ListUsersByPermissionGroupResponse ListUsersByPermissionGroup(ListUsersByPermissionGroupRequest request)
         {
             var options = new InvokeOptions();
@@ -1591,6 +1642,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ListUsersByPermissionGroup">REST API Reference for ListUsersByPermissionGroup Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         public virtual Task<ListUsersByPermissionGroupResponse> ListUsersByPermissionGroupAsync(ListUsersByPermissionGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1604,6 +1656,7 @@ namespace Amazon.FinSpaceData
         
         #region  ResetUserPassword
 
+        [Obsolete("This method will be discontinued.")]
         internal virtual ResetUserPasswordResponse ResetUserPassword(ResetUserPasswordRequest request)
         {
             var options = new InvokeOptions();
@@ -1645,6 +1698,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ResetUserPassword">REST API Reference for ResetUserPassword Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         public virtual Task<ResetUserPasswordResponse> ResetUserPasswordAsync(ResetUserPasswordRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1658,6 +1712,7 @@ namespace Amazon.FinSpaceData
         
         #region  UpdateChangeset
 
+        [Obsolete("This method will be discontinued.")]
         internal virtual UpdateChangesetResponse UpdateChangeset(UpdateChangesetRequest request)
         {
             var options = new InvokeOptions();
@@ -1697,6 +1752,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/UpdateChangeset">REST API Reference for UpdateChangeset Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         public virtual Task<UpdateChangesetResponse> UpdateChangesetAsync(UpdateChangesetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1710,6 +1766,7 @@ namespace Amazon.FinSpaceData
         
         #region  UpdateDataset
 
+        [Obsolete("This method will be discontinued.")]
         internal virtual UpdateDatasetResponse UpdateDataset(UpdateDatasetRequest request)
         {
             var options = new InvokeOptions();
@@ -1749,6 +1806,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/UpdateDataset">REST API Reference for UpdateDataset Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         public virtual Task<UpdateDatasetResponse> UpdateDatasetAsync(UpdateDatasetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1762,6 +1820,7 @@ namespace Amazon.FinSpaceData
         
         #region  UpdatePermissionGroup
 
+        [Obsolete("This method will be discontinued.")]
         internal virtual UpdatePermissionGroupResponse UpdatePermissionGroup(UpdatePermissionGroupRequest request)
         {
             var options = new InvokeOptions();
@@ -1801,6 +1860,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/UpdatePermissionGroup">REST API Reference for UpdatePermissionGroup Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         public virtual Task<UpdatePermissionGroupResponse> UpdatePermissionGroupAsync(UpdatePermissionGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1814,6 +1874,7 @@ namespace Amazon.FinSpaceData
         
         #region  UpdateUser
 
+        [Obsolete("This method will be discontinued.")]
         internal virtual UpdateUserResponse UpdateUser(UpdateUserRequest request)
         {
             var options = new InvokeOptions();
@@ -1854,6 +1915,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/UpdateUser">REST API Reference for UpdateUser Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         public virtual Task<UpdateUserResponse> UpdateUserAsync(UpdateUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();

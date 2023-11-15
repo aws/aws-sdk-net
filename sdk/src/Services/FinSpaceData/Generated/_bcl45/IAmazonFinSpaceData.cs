@@ -71,6 +71,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/AssociateUserToPermissionGroup">REST API Reference for AssociateUserToPermissionGroup Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         AssociateUserToPermissionGroupResponse AssociateUserToPermissionGroup(AssociateUserToPermissionGroupRequest request);
 
 
@@ -104,6 +105,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/AssociateUserToPermissionGroup">REST API Reference for AssociateUserToPermissionGroup Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         Task<AssociateUserToPermissionGroupResponse> AssociateUserToPermissionGroupAsync(AssociateUserToPermissionGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -139,6 +141,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/CreateChangeset">REST API Reference for CreateChangeset Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         CreateChangesetResponse CreateChangeset(CreateChangesetRequest request);
 
 
@@ -174,6 +177,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/CreateChangeset">REST API Reference for CreateChangeset Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         Task<CreateChangesetResponse> CreateChangesetAsync(CreateChangesetRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -209,6 +213,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/CreateDataset">REST API Reference for CreateDataset Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         CreateDatasetResponse CreateDataset(CreateDatasetRequest request);
 
 
@@ -244,6 +249,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/CreateDataset">REST API Reference for CreateDataset Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         Task<CreateDatasetResponse> CreateDatasetAsync(CreateDatasetRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -276,6 +282,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/CreateDataView">REST API Reference for CreateDataView Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         CreateDataViewResponse CreateDataView(CreateDataViewRequest request);
 
 
@@ -308,6 +315,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/CreateDataView">REST API Reference for CreateDataView Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         Task<CreateDataViewResponse> CreateDataViewAsync(CreateDataViewRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -340,6 +348,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/CreatePermissionGroup">REST API Reference for CreatePermissionGroup Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         CreatePermissionGroupResponse CreatePermissionGroup(CreatePermissionGroupRequest request);
 
 
@@ -372,6 +381,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/CreatePermissionGroup">REST API Reference for CreatePermissionGroup Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         Task<CreatePermissionGroupResponse> CreatePermissionGroupAsync(CreatePermissionGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -404,6 +414,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/CreateUser">REST API Reference for CreateUser Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         CreateUserResponse CreateUser(CreateUserRequest request);
 
 
@@ -436,6 +447,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/CreateUser">REST API Reference for CreateUser Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         Task<CreateUserResponse> CreateUserAsync(CreateUserRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -471,6 +483,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/DeleteDataset">REST API Reference for DeleteDataset Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         DeleteDatasetResponse DeleteDataset(DeleteDatasetRequest request);
 
 
@@ -506,6 +519,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/DeleteDataset">REST API Reference for DeleteDataset Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         Task<DeleteDatasetResponse> DeleteDatasetAsync(DeleteDatasetRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -541,6 +555,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/DeletePermissionGroup">REST API Reference for DeletePermissionGroup Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         DeletePermissionGroupResponse DeletePermissionGroup(DeletePermissionGroupRequest request);
 
 
@@ -576,6 +591,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/DeletePermissionGroup">REST API Reference for DeletePermissionGroup Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         Task<DeletePermissionGroupResponse> DeletePermissionGroupAsync(DeletePermissionGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -608,6 +624,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/DisableUser">REST API Reference for DisableUser Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         DisableUserResponse DisableUser(DisableUserRequest request);
 
 
@@ -640,6 +657,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/DisableUser">REST API Reference for DisableUser Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         Task<DisableUserResponse> DisableUserAsync(DisableUserRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -672,6 +690,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/DisassociateUserFromPermissionGroup">REST API Reference for DisassociateUserFromPermissionGroup Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         DisassociateUserFromPermissionGroupResponse DisassociateUserFromPermissionGroup(DisassociateUserFromPermissionGroupRequest request);
 
 
@@ -704,6 +723,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/DisassociateUserFromPermissionGroup">REST API Reference for DisassociateUserFromPermissionGroup Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         Task<DisassociateUserFromPermissionGroupResponse> DisassociateUserFromPermissionGroupAsync(DisassociateUserFromPermissionGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -739,6 +759,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/EnableUser">REST API Reference for EnableUser Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         EnableUserResponse EnableUser(EnableUserRequest request);
 
 
@@ -774,6 +795,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/EnableUser">REST API Reference for EnableUser Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         Task<EnableUserResponse> EnableUserAsync(EnableUserRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -806,6 +828,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/GetChangeset">REST API Reference for GetChangeset Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         GetChangesetResponse GetChangeset(GetChangesetRequest request);
 
 
@@ -838,6 +861,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/GetChangeset">REST API Reference for GetChangeset Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         Task<GetChangesetResponse> GetChangesetAsync(GetChangesetRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -870,6 +894,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/GetDataset">REST API Reference for GetDataset Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         GetDatasetResponse GetDataset(GetDatasetRequest request);
 
 
@@ -902,6 +927,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/GetDataset">REST API Reference for GetDataset Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         Task<GetDatasetResponse> GetDatasetAsync(GetDatasetRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -931,6 +957,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/GetDataView">REST API Reference for GetDataView Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         GetDataViewResponse GetDataView(GetDataViewRequest request);
 
 
@@ -960,6 +987,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/GetDataView">REST API Reference for GetDataView Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         Task<GetDataViewResponse> GetDataViewAsync(GetDataViewRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1001,6 +1029,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/GetExternalDataViewAccessDetails">REST API Reference for GetExternalDataViewAccessDetails Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         GetExternalDataViewAccessDetailsResponse GetExternalDataViewAccessDetails(GetExternalDataViewAccessDetailsRequest request);
 
 
@@ -1042,6 +1071,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/GetExternalDataViewAccessDetails">REST API Reference for GetExternalDataViewAccessDetails Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         Task<GetExternalDataViewAccessDetailsResponse> GetExternalDataViewAccessDetailsAsync(GetExternalDataViewAccessDetailsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1071,6 +1101,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/GetPermissionGroup">REST API Reference for GetPermissionGroup Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         GetPermissionGroupResponse GetPermissionGroup(GetPermissionGroupRequest request);
 
 
@@ -1100,6 +1131,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/GetPermissionGroup">REST API Reference for GetPermissionGroup Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         Task<GetPermissionGroupResponse> GetPermissionGroupAsync(GetPermissionGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1128,6 +1160,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/GetProgrammaticAccessCredentials">REST API Reference for GetProgrammaticAccessCredentials Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         GetProgrammaticAccessCredentialsResponse GetProgrammaticAccessCredentials(GetProgrammaticAccessCredentialsRequest request);
 
 
@@ -1156,6 +1189,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/GetProgrammaticAccessCredentials">REST API Reference for GetProgrammaticAccessCredentials Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         Task<GetProgrammaticAccessCredentialsResponse> GetProgrammaticAccessCredentialsAsync(GetProgrammaticAccessCredentialsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1185,6 +1219,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/GetUser">REST API Reference for GetUser Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         GetUserResponse GetUser(GetUserRequest request);
 
 
@@ -1214,6 +1249,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/GetUser">REST API Reference for GetUser Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         Task<GetUserResponse> GetUserAsync(GetUserRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1241,6 +1277,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/GetWorkingLocation">REST API Reference for GetWorkingLocation Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         GetWorkingLocationResponse GetWorkingLocation(GetWorkingLocationRequest request);
 
 
@@ -1268,6 +1305,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/GetWorkingLocation">REST API Reference for GetWorkingLocation Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         Task<GetWorkingLocationResponse> GetWorkingLocationAsync(GetWorkingLocationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1300,6 +1338,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ListChangesets">REST API Reference for ListChangesets Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         ListChangesetsResponse ListChangesets(ListChangesetsRequest request);
 
 
@@ -1332,6 +1371,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ListChangesets">REST API Reference for ListChangesets Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         Task<ListChangesetsResponse> ListChangesetsAsync(ListChangesetsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1361,6 +1401,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ListDatasets">REST API Reference for ListDatasets Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         ListDatasetsResponse ListDatasets(ListDatasetsRequest request);
 
 
@@ -1390,6 +1431,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ListDatasets">REST API Reference for ListDatasets Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         Task<ListDatasetsResponse> ListDatasetsAsync(ListDatasetsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1419,6 +1461,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ListDataViews">REST API Reference for ListDataViews Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         ListDataViewsResponse ListDataViews(ListDataViewsRequest request);
 
 
@@ -1448,6 +1491,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ListDataViews">REST API Reference for ListDataViews Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         Task<ListDataViewsResponse> ListDataViewsAsync(ListDataViewsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1474,6 +1518,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ListPermissionGroups">REST API Reference for ListPermissionGroups Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         ListPermissionGroupsResponse ListPermissionGroups(ListPermissionGroupsRequest request);
 
 
@@ -1500,6 +1545,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ListPermissionGroups">REST API Reference for ListPermissionGroups Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         Task<ListPermissionGroupsResponse> ListPermissionGroupsAsync(ListPermissionGroupsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1529,6 +1575,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ListPermissionGroupsByUser">REST API Reference for ListPermissionGroupsByUser Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         ListPermissionGroupsByUserResponse ListPermissionGroupsByUser(ListPermissionGroupsByUserRequest request);
 
 
@@ -1558,6 +1605,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ListPermissionGroupsByUser">REST API Reference for ListPermissionGroupsByUser Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         Task<ListPermissionGroupsByUserResponse> ListPermissionGroupsByUserAsync(ListPermissionGroupsByUserRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1584,6 +1632,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ListUsers">REST API Reference for ListUsers Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         ListUsersResponse ListUsers(ListUsersRequest request);
 
 
@@ -1610,6 +1659,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ListUsers">REST API Reference for ListUsers Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         Task<ListUsersResponse> ListUsersAsync(ListUsersRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1639,6 +1689,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ListUsersByPermissionGroup">REST API Reference for ListUsersByPermissionGroup Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         ListUsersByPermissionGroupResponse ListUsersByPermissionGroup(ListUsersByPermissionGroupRequest request);
 
 
@@ -1668,6 +1719,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ListUsersByPermissionGroup">REST API Reference for ListUsersByPermissionGroup Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         Task<ListUsersByPermissionGroupResponse> ListUsersByPermissionGroupAsync(ListUsersByPermissionGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1702,6 +1754,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ResetUserPassword">REST API Reference for ResetUserPassword Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         ResetUserPasswordResponse ResetUserPassword(ResetUserPasswordRequest request);
 
 
@@ -1736,6 +1789,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ResetUserPassword">REST API Reference for ResetUserPassword Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         Task<ResetUserPasswordResponse> ResetUserPasswordAsync(ResetUserPasswordRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1768,6 +1822,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/UpdateChangeset">REST API Reference for UpdateChangeset Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         UpdateChangesetResponse UpdateChangeset(UpdateChangesetRequest request);
 
 
@@ -1800,6 +1855,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/UpdateChangeset">REST API Reference for UpdateChangeset Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         Task<UpdateChangesetResponse> UpdateChangesetAsync(UpdateChangesetRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1832,6 +1888,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/UpdateDataset">REST API Reference for UpdateDataset Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         UpdateDatasetResponse UpdateDataset(UpdateDatasetRequest request);
 
 
@@ -1864,6 +1921,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/UpdateDataset">REST API Reference for UpdateDataset Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         Task<UpdateDatasetResponse> UpdateDatasetAsync(UpdateDatasetRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1896,6 +1954,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/UpdatePermissionGroup">REST API Reference for UpdatePermissionGroup Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         UpdatePermissionGroupResponse UpdatePermissionGroup(UpdatePermissionGroupRequest request);
 
 
@@ -1928,6 +1987,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/UpdatePermissionGroup">REST API Reference for UpdatePermissionGroup Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         Task<UpdatePermissionGroupResponse> UpdatePermissionGroupAsync(UpdatePermissionGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1961,6 +2021,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/UpdateUser">REST API Reference for UpdateUser Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         UpdateUserResponse UpdateUser(UpdateUserRequest request);
 
 
@@ -1994,6 +2055,7 @@ namespace Amazon.FinSpaceData
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/UpdateUser">REST API Reference for UpdateUser Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         Task<UpdateUserResponse> UpdateUserAsync(UpdateUserRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
