@@ -3330,6 +3330,9 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.CustomCnameAssociationException">
         /// An error occurred when an attempt was made to change the custom domain association.
         /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.CustomDomainAssociationNotFoundException">
+        /// An error occurred. The custom domain name couldn't be found.
+        /// </exception>
         /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
         /// The requested operation isn't supported.
         /// </exception>
@@ -3358,6 +3361,9 @@ namespace Amazon.Redshift
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.CustomCnameAssociationException">
         /// An error occurred when an attempt was made to change the custom domain association.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.CustomDomainAssociationNotFoundException">
+        /// An error occurred. The custom domain name couldn't be found.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
         /// The requested operation isn't supported.
@@ -9198,6 +9204,9 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.CustomCnameAssociationException">
         /// An error occurred when an attempt was made to change the custom domain association.
         /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.CustomDomainAssociationNotFoundException">
+        /// An error occurred. The custom domain name couldn't be found.
+        /// </exception>
         /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
         /// The requested operation isn't supported.
         /// </exception>
@@ -9226,6 +9235,9 @@ namespace Amazon.Redshift
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.CustomCnameAssociationException">
         /// An error occurred when an attempt was made to change the custom domain association.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.CustomDomainAssociationNotFoundException">
+        /// An error occurred. The custom domain name couldn't be found.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
         /// The requested operation isn't supported.

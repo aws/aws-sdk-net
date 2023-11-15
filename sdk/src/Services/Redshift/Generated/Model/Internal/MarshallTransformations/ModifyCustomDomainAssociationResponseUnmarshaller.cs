@@ -138,6 +138,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 {
                     return CustomCnameAssociationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("CustomDomainAssociationNotFoundFault"))
+                {
+                    return CustomDomainAssociationNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("UnsupportedOperation"))
                 {
                     return UnsupportedOperationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

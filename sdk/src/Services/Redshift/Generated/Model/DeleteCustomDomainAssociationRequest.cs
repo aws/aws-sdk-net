@@ -35,6 +35,7 @@ namespace Amazon.Redshift.Model
     public partial class DeleteCustomDomainAssociationRequest : AmazonRedshiftRequest
     {
         private string _clusterIdentifier;
+        private string _customDomainName;
 
         /// <summary>
         /// Gets and sets the property ClusterIdentifier. 
@@ -53,6 +54,25 @@ namespace Amazon.Redshift.Model
         internal bool IsSetClusterIdentifier()
         {
             return this._clusterIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomDomainName. 
+        /// <para>
+        /// The custom domain name for the custom domain association.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=253)]
+        public string CustomDomainName
+        {
+            get { return this._customDomainName; }
+            set { this._customDomainName = value; }
+        }
+
+        // Check to see if CustomDomainName property is set
+        internal bool IsSetCustomDomainName()
+        {
+            return this._customDomainName != null;
         }
 
     }

@@ -63,7 +63,7 @@ namespace Amazon.Redshift.Model
         /// The certificate Amazon Resource Name (ARN) for the changed custom domain association.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=20, Max=2048)]
+        [AWSProperty(Required=true, Min=20, Max=2048)]
         public string CustomDomainCertificateArn
         {
             get { return this._customDomainCertificateArn; }
@@ -82,7 +82,7 @@ namespace Amazon.Redshift.Model
         /// The custom domain name for a changed custom domain association.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=253)]
+        [AWSProperty(Required=true, Min=1, Max=253)]
         public string CustomDomainName
         {
             get { return this._customDomainName; }
