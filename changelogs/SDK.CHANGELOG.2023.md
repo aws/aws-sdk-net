@@ -1,3 +1,33 @@
+### 3.7.687.0 (2023-11-15 19:30 UTC)
+* AutoScaling (3.7.301.0)
+	* This release introduces Instance Maintenance Policy, a new EC2 Auto Scaling capability that allows customers to define whether instances are launched before or after existing instances are terminated during instance replacement operations.
+* CloudTrail (3.7.301.0)
+	* The Lake Repricing feature lets customers configure a BillingMode for an event data store. The BillingMode determines the cost for ingesting and storing events and the default and maximum retention period for the event data store.
+* CodeCatalyst (3.7.301.0)
+	* This release adds functionality for retrieving information about workflows and workflow runs and starting workflow runs in Amazon CodeCatalyst.
+* EC2 (3.7.303.0)
+	* AWS EBS now supports Snapshot Lock, giving users the ability to lock an EBS Snapshot to prohibit deletion of the snapshot. This release introduces the LockSnapshot, UnlockSnapshot & DescribeLockedSnapshots APIs to manage lock configuration for snapshots. The release also includes the dl2q_24xlarge.
+* Finspace (3.7.301.0)
+	* Adding deprecated trait on Dataset Browser Environment APIs
+* FinSpaceData (3.7.301.0)
+	* Adding deprecated trait to APIs in this name space.
+* Lambda (3.7.302.0)
+	* Add Java 21 (java21) support to AWS Lambda
+* MWAA (3.7.301.0)
+	* This Amazon MWAA release adds support for customer-managed VPC endpoints. This lets you choose whether to create, and manage your environment's VPC endpoints, or to have Amazon MWAA create, and manage them for you.
+* RDS (3.7.300.4)
+	* Updates Amazon RDS documentation for support for upgrading RDS for MySQL snapshots from version 5.7 to version 8.0.
+* Redshift (3.7.301.0)
+	* The custom domain name SDK for Amazon Redshift provisioned clusters is updated with additional required parameters for modify and delete operations. Additionally, users can provide domain names with longer top-level domains.
+* S3Control (3.7.301.0)
+	* Add 5 APIs to create, update, get, list, delete S3 Storage Lens group(eg. CreateStorageLensGroup), 3 APIs for tagging(TagResource,UntagResource,ListTagsForResource), and update to StorageLensConfiguration to allow metrics to be aggregated on Storage Lens groups.
+* SsmSap (3.7.301.0)
+	* Update the default value of MaxResult to 50.
+* Core 3.7.300.3
+	* Update .NET 8 targeted versions of AWSSDK.Extensions.CrtIntegration and AWSSDK.Extensions.NETCore.Setup to have a dependency on AWSSDK.Core version 3.7.300.
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.686.0 (2023-11-14 19:25 UTC)
 * Backup (3.7.301.0)
 	* AWS Backup - Features: Provide Job Summary for your backup activity.

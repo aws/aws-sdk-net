@@ -1,9 +1,0 @@
-{
-  "core": {
-    "changeLogMessages": [
-      "Update .NET 8 targeted versions of AWSSDK.Extensions.CrtIntegration and AWSSDK.Extensions.NETCore.Setup to have a dependency on AWSSDK.Core version 3.7.300."
-    ],
-    "type": "patch",
-    "updateMinimum": false
-  }
-}
