@@ -64,5 +64,15 @@ namespace Amazon.CodeCatalyst.Model
         /// Paginator for ListSpaces operation
         ///</summary>
         IListSpacesPaginator ListSpaces(ListSpacesRequest request);
+
+        /// <summary>
+        /// Paginator for ListWorkflowRuns operation
+        ///</summary>
+        IListWorkflowRunsPaginator ListWorkflowRuns(ListWorkflowRunsRequest request);
+
+        /// <summary>
+        /// Paginator for ListWorkflows operation
+        ///</summary>
+        IListWorkflowsPaginator ListWorkflows(ListWorkflowsRequest request);
     }
 }

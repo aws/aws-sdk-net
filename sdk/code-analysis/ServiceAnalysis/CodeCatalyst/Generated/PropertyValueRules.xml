@@ -453,6 +453,83 @@
     <pattern>[a-zA-Z0-9]{3,100}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodeCatalyst.Model.GetWorkflowRequest.Id</property>
+    <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeCatalyst.Model.GetWorkflowRequest.ProjectName</property>
+    <min>1</min>
+    <pattern>[a-zA-Z0-9]+(?:[-_\.][a-zA-Z0-9]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeCatalyst.Model.GetWorkflowRequest.SpaceName</property>
+    <min>3</min>
+    <max>63</max>
+    <pattern>[a-zA-Z0-9]+(?:[-_\.][a-zA-Z0-9]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeCatalyst.Model.GetWorkflowResponse.Id</property>
+    <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeCatalyst.Model.GetWorkflowResponse.ProjectName</property>
+    <min>3</min>
+    <max>63</max>
+    <pattern>[a-zA-Z0-9]+(?:[-_\.][a-zA-Z0-9]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeCatalyst.Model.GetWorkflowResponse.SourceBranchName</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeCatalyst.Model.GetWorkflowResponse.SourceRepositoryName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>(?!.*[.]git$)[\w\-.]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeCatalyst.Model.GetWorkflowResponse.SpaceName</property>
+    <min>3</min>
+    <max>63</max>
+    <pattern>[a-zA-Z0-9]+(?:[-_\.][a-zA-Z0-9]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeCatalyst.Model.GetWorkflowRunRequest.Id</property>
+    <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeCatalyst.Model.GetWorkflowRunRequest.ProjectName</property>
+    <min>1</min>
+    <pattern>[a-zA-Z0-9]+(?:[-_\.][a-zA-Z0-9]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeCatalyst.Model.GetWorkflowRunRequest.SpaceName</property>
+    <min>3</min>
+    <max>63</max>
+    <pattern>[a-zA-Z0-9]+(?:[-_\.][a-zA-Z0-9]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeCatalyst.Model.GetWorkflowRunResponse.Id</property>
+    <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeCatalyst.Model.GetWorkflowRunResponse.ProjectName</property>
+    <min>3</min>
+    <max>63</max>
+    <pattern>[a-zA-Z0-9]+(?:[-_\.][a-zA-Z0-9]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeCatalyst.Model.GetWorkflowRunResponse.SpaceName</property>
+    <min>3</min>
+    <max>63</max>
+    <pattern>[a-zA-Z0-9]+(?:[-_\.][a-zA-Z0-9]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeCatalyst.Model.GetWorkflowRunResponse.WorkflowId</property>
+    <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodeCatalyst.Model.ListAccessTokensRequest.MaxResults</property>
     <max>10</max>
   </property-value-rule>
@@ -597,6 +674,52 @@
     <max>10000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodeCatalyst.Model.ListWorkflowRunsRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeCatalyst.Model.ListWorkflowRunsRequest.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeCatalyst.Model.ListWorkflowRunsRequest.ProjectName</property>
+    <min>1</min>
+    <pattern>[a-zA-Z0-9]+(?:[-_\.][a-zA-Z0-9]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeCatalyst.Model.ListWorkflowRunsRequest.SpaceName</property>
+    <min>3</min>
+    <max>63</max>
+    <pattern>[a-zA-Z0-9]+(?:[-_\.][a-zA-Z0-9]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeCatalyst.Model.ListWorkflowRunsRequest.WorkflowId</property>
+    <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeCatalyst.Model.ListWorkflowsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeCatalyst.Model.ListWorkflowsRequest.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeCatalyst.Model.ListWorkflowsRequest.ProjectName</property>
+    <min>3</min>
+    <max>63</max>
+    <pattern>[a-zA-Z0-9]+(?:[-_\.][a-zA-Z0-9]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeCatalyst.Model.ListWorkflowsRequest.SpaceName</property>
+    <min>1</min>
+    <pattern>[a-zA-Z0-9]+(?:[-_\.][a-zA-Z0-9]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodeCatalyst.Model.StartDevEnvironmentRequest.Id</property>
     <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
   </property-value-rule>
@@ -669,6 +792,46 @@
     <min>3</min>
     <max>63</max>
     <pattern>[a-zA-Z0-9]+(?:[-_\.][a-zA-Z0-9]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeCatalyst.Model.StartWorkflowRunRequest.ClientToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9]+(?:[-_\.][a-zA-Z0-9]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeCatalyst.Model.StartWorkflowRunRequest.ProjectName</property>
+    <min>1</min>
+    <pattern>[a-zA-Z0-9]+(?:[-_\.][a-zA-Z0-9]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeCatalyst.Model.StartWorkflowRunRequest.SpaceName</property>
+    <min>1</min>
+    <pattern>[a-zA-Z0-9]+(?:[-_\.][a-zA-Z0-9]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeCatalyst.Model.StartWorkflowRunRequest.WorkflowId</property>
+    <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeCatalyst.Model.StartWorkflowRunResponse.Id</property>
+    <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeCatalyst.Model.StartWorkflowRunResponse.ProjectName</property>
+    <min>3</min>
+    <max>63</max>
+    <pattern>[a-zA-Z0-9]+(?:[-_\.][a-zA-Z0-9]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeCatalyst.Model.StartWorkflowRunResponse.SpaceName</property>
+    <min>3</min>
+    <max>63</max>
+    <pattern>[a-zA-Z0-9]+(?:[-_\.][a-zA-Z0-9]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeCatalyst.Model.StartWorkflowRunResponse.WorkflowId</property>
+    <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCatalyst.Model.StopDevEnvironmentRequest.Id</property>
@@ -1021,5 +1184,28 @@
     <min>3</min>
     <max>16</max>
     <pattern>(us(?:-gov)?|af|ap|ca|cn|eu|sa)-(central|(?:north|south)?(?:east|west)?)-(\d+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeCatalyst.Model.WorkflowRunSummary.Id</property>
+    <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeCatalyst.Model.WorkflowRunSummary.WorkflowId</property>
+    <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeCatalyst.Model.WorkflowSummary.Id</property>
+    <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeCatalyst.Model.WorkflowSummary.SourceBranchName</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeCatalyst.Model.WorkflowSummary.SourceRepositoryName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>(?!.*[.]git$)[\w\-.]*</pattern>
   </property-value-rule>
 </property-value-rules>

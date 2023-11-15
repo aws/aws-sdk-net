@@ -56,7 +56,7 @@ namespace Amazon.CodeCatalyst
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>UpdateSpace</a>, which hanges one or more values for a space.
+    ///  <a>UpdateSpace</a>, which changes one or more values for a space.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -166,6 +166,30 @@ namespace Amazon.CodeCatalyst
     ///  </li> <li> 
     /// <para>
     ///  <a>UpdateDevEnvironment</a>, which changes one or more values for a Dev Environment.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// Workflows, by calling the following:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>GetWorkflow</a>, which returns information about a workflow.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>GetWorkflowRun</a>, which returns information about a specified run of a workflow.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ListWorkflowRuns</a>, which retrieves a list of runs of a specified workflow.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ListWorkflows</a>, which retrieves a list of workflows in a specified project.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>StartWorkflowRun</a>, which starts a run of a specified workflow.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -1377,6 +1401,138 @@ namespace Amazon.CodeCatalyst
 
         #endregion
         
+        #region  GetWorkflow
+
+
+        /// <summary>
+        /// Returns information about a workflow.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetWorkflow service method.</param>
+        /// 
+        /// <returns>The response from the GetWorkflow service method, as returned by CodeCatalyst.</returns>
+        /// <exception cref="Amazon.CodeCatalyst.Model.AccessDeniedException">
+        /// The request was denied because you don't have sufficient access to perform this action.
+        /// Verify that you are a member of a role that allows this action.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ConflictException">
+        /// The request was denied because the requested operation would cause a conflict with
+        /// the current state of a service resource associated with the request. Another user
+        /// might have updated the resource. Reload, make sure you have the latest data, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ResourceNotFoundException">
+        /// The request was denied because the specified resource was not found. Verify that the
+        /// spelling is correct and that you have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ServiceQuotaExceededException">
+        /// The request was denied because one or more resources has reached its limits for the
+        /// tier the space belongs to. Either reduce the number of resources, or change the tier
+        /// if applicable.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ValidationException">
+        /// The request was denied because an input failed to satisfy the constraints specified
+        /// by the service. Check the spelling and input requirements, and then try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/GetWorkflow">REST API Reference for GetWorkflow Operation</seealso>
+        GetWorkflowResponse GetWorkflow(GetWorkflowRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetWorkflow operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetWorkflow operation on AmazonCodeCatalystClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetWorkflow
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/GetWorkflow">REST API Reference for GetWorkflow Operation</seealso>
+        IAsyncResult BeginGetWorkflow(GetWorkflowRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetWorkflow operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetWorkflow.</param>
+        /// 
+        /// <returns>Returns a  GetWorkflowResult from CodeCatalyst.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/GetWorkflow">REST API Reference for GetWorkflow Operation</seealso>
+        GetWorkflowResponse EndGetWorkflow(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetWorkflowRun
+
+
+        /// <summary>
+        /// Returns information about a specified run of a workflow.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetWorkflowRun service method.</param>
+        /// 
+        /// <returns>The response from the GetWorkflowRun service method, as returned by CodeCatalyst.</returns>
+        /// <exception cref="Amazon.CodeCatalyst.Model.AccessDeniedException">
+        /// The request was denied because you don't have sufficient access to perform this action.
+        /// Verify that you are a member of a role that allows this action.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ConflictException">
+        /// The request was denied because the requested operation would cause a conflict with
+        /// the current state of a service resource associated with the request. Another user
+        /// might have updated the resource. Reload, make sure you have the latest data, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ResourceNotFoundException">
+        /// The request was denied because the specified resource was not found. Verify that the
+        /// spelling is correct and that you have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ServiceQuotaExceededException">
+        /// The request was denied because one or more resources has reached its limits for the
+        /// tier the space belongs to. Either reduce the number of resources, or change the tier
+        /// if applicable.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ValidationException">
+        /// The request was denied because an input failed to satisfy the constraints specified
+        /// by the service. Check the spelling and input requirements, and then try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/GetWorkflowRun">REST API Reference for GetWorkflowRun Operation</seealso>
+        GetWorkflowRunResponse GetWorkflowRun(GetWorkflowRunRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetWorkflowRun operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetWorkflowRun operation on AmazonCodeCatalystClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetWorkflowRun
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/GetWorkflowRun">REST API Reference for GetWorkflowRun Operation</seealso>
+        IAsyncResult BeginGetWorkflowRun(GetWorkflowRunRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetWorkflowRun operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetWorkflowRun.</param>
+        /// 
+        /// <returns>Returns a  GetWorkflowRunResult from CodeCatalyst.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/GetWorkflowRun">REST API Reference for GetWorkflowRun Operation</seealso>
+        GetWorkflowRunResponse EndGetWorkflowRun(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListAccessTokens
 
 
@@ -1580,8 +1736,22 @@ namespace Amazon.CodeCatalyst
 
 
         /// <summary>
-        /// Retrieves a list of events that occurred during a specified time period in a space.
-        /// You can use these events to audit user and system activity in a space.
+        /// Retrieves a list of events that occurred during a specific time in a space. You can
+        /// use these events to audit user and system activity in a space. For more information,
+        /// see <a href="https://docs.aws.amazon.com/codecatalyst/latest/userguide/ipa-monitoring.html">Monitoring</a>
+        /// in the <i>Amazon CodeCatalyst User Guide</i>.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// ListEventLogs guarantees events for the last 30 days in a given space. You can also
+        /// view and retrieve a list of management events over the last 90 days for Amazon CodeCatalyst
+        /// in the CloudTrail console by viewing Event history, or by creating a trail to create
+        /// and maintain a record of events that extends past 90 days. For more information, see
+        /// <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/view-cloudtrail-events.html">Working
+        /// with CloudTrail Event History</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-getting-started.html">Working
+        /// with CloudTrail trails</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListEventLogs service method.</param>
         /// 
@@ -1907,6 +2077,138 @@ namespace Amazon.CodeCatalyst
 
         #endregion
         
+        #region  ListWorkflowRuns
+
+
+        /// <summary>
+        /// Retrieves a list of workflow runs of a specified workflow.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListWorkflowRuns service method.</param>
+        /// 
+        /// <returns>The response from the ListWorkflowRuns service method, as returned by CodeCatalyst.</returns>
+        /// <exception cref="Amazon.CodeCatalyst.Model.AccessDeniedException">
+        /// The request was denied because you don't have sufficient access to perform this action.
+        /// Verify that you are a member of a role that allows this action.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ConflictException">
+        /// The request was denied because the requested operation would cause a conflict with
+        /// the current state of a service resource associated with the request. Another user
+        /// might have updated the resource. Reload, make sure you have the latest data, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ResourceNotFoundException">
+        /// The request was denied because the specified resource was not found. Verify that the
+        /// spelling is correct and that you have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ServiceQuotaExceededException">
+        /// The request was denied because one or more resources has reached its limits for the
+        /// tier the space belongs to. Either reduce the number of resources, or change the tier
+        /// if applicable.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ValidationException">
+        /// The request was denied because an input failed to satisfy the constraints specified
+        /// by the service. Check the spelling and input requirements, and then try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/ListWorkflowRuns">REST API Reference for ListWorkflowRuns Operation</seealso>
+        ListWorkflowRunsResponse ListWorkflowRuns(ListWorkflowRunsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListWorkflowRuns operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListWorkflowRuns operation on AmazonCodeCatalystClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListWorkflowRuns
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/ListWorkflowRuns">REST API Reference for ListWorkflowRuns Operation</seealso>
+        IAsyncResult BeginListWorkflowRuns(ListWorkflowRunsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListWorkflowRuns operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListWorkflowRuns.</param>
+        /// 
+        /// <returns>Returns a  ListWorkflowRunsResult from CodeCatalyst.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/ListWorkflowRuns">REST API Reference for ListWorkflowRuns Operation</seealso>
+        ListWorkflowRunsResponse EndListWorkflowRuns(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListWorkflows
+
+
+        /// <summary>
+        /// Retrieves a list of workflows in a specified project.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListWorkflows service method.</param>
+        /// 
+        /// <returns>The response from the ListWorkflows service method, as returned by CodeCatalyst.</returns>
+        /// <exception cref="Amazon.CodeCatalyst.Model.AccessDeniedException">
+        /// The request was denied because you don't have sufficient access to perform this action.
+        /// Verify that you are a member of a role that allows this action.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ConflictException">
+        /// The request was denied because the requested operation would cause a conflict with
+        /// the current state of a service resource associated with the request. Another user
+        /// might have updated the resource. Reload, make sure you have the latest data, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ResourceNotFoundException">
+        /// The request was denied because the specified resource was not found. Verify that the
+        /// spelling is correct and that you have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ServiceQuotaExceededException">
+        /// The request was denied because one or more resources has reached its limits for the
+        /// tier the space belongs to. Either reduce the number of resources, or change the tier
+        /// if applicable.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ValidationException">
+        /// The request was denied because an input failed to satisfy the constraints specified
+        /// by the service. Check the spelling and input requirements, and then try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/ListWorkflows">REST API Reference for ListWorkflows Operation</seealso>
+        ListWorkflowsResponse ListWorkflows(ListWorkflowsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListWorkflows operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListWorkflows operation on AmazonCodeCatalystClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListWorkflows
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/ListWorkflows">REST API Reference for ListWorkflows Operation</seealso>
+        IAsyncResult BeginListWorkflows(ListWorkflowsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListWorkflows operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListWorkflows.</param>
+        /// 
+        /// <returns>Returns a  ListWorkflowsResult from CodeCatalyst.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/ListWorkflows">REST API Reference for ListWorkflows Operation</seealso>
+        ListWorkflowsResponse EndListWorkflows(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  StartDevEnvironment
 
 
@@ -2036,6 +2338,72 @@ namespace Amazon.CodeCatalyst
         /// <returns>Returns a  StartDevEnvironmentSessionResult from CodeCatalyst.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/StartDevEnvironmentSession">REST API Reference for StartDevEnvironmentSession Operation</seealso>
         StartDevEnvironmentSessionResponse EndStartDevEnvironmentSession(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  StartWorkflowRun
+
+
+        /// <summary>
+        /// Begins a run of a specified workflow.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartWorkflowRun service method.</param>
+        /// 
+        /// <returns>The response from the StartWorkflowRun service method, as returned by CodeCatalyst.</returns>
+        /// <exception cref="Amazon.CodeCatalyst.Model.AccessDeniedException">
+        /// The request was denied because you don't have sufficient access to perform this action.
+        /// Verify that you are a member of a role that allows this action.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ConflictException">
+        /// The request was denied because the requested operation would cause a conflict with
+        /// the current state of a service resource associated with the request. Another user
+        /// might have updated the resource. Reload, make sure you have the latest data, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ResourceNotFoundException">
+        /// The request was denied because the specified resource was not found. Verify that the
+        /// spelling is correct and that you have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ServiceQuotaExceededException">
+        /// The request was denied because one or more resources has reached its limits for the
+        /// tier the space belongs to. Either reduce the number of resources, or change the tier
+        /// if applicable.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ValidationException">
+        /// The request was denied because an input failed to satisfy the constraints specified
+        /// by the service. Check the spelling and input requirements, and then try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/StartWorkflowRun">REST API Reference for StartWorkflowRun Operation</seealso>
+        StartWorkflowRunResponse StartWorkflowRun(StartWorkflowRunRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartWorkflowRun operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartWorkflowRun operation on AmazonCodeCatalystClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartWorkflowRun
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/StartWorkflowRun">REST API Reference for StartWorkflowRun Operation</seealso>
+        IAsyncResult BeginStartWorkflowRun(StartWorkflowRunRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartWorkflowRun operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartWorkflowRun.</param>
+        /// 
+        /// <returns>Returns a  StartWorkflowRunResult from CodeCatalyst.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/StartWorkflowRun">REST API Reference for StartWorkflowRun Operation</seealso>
+        StartWorkflowRunResponse EndStartWorkflowRun(IAsyncResult asyncResult);
 
         #endregion
         

@@ -29,34 +29,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeCatalyst.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListDevEnvironments operation.
-    /// Retrieves a list of Dev Environments in a project.
+    /// Container for the parameters to the ListWorkflows operation.
+    /// Retrieves a list of workflows in a specified project.
     /// </summary>
-    public partial class ListDevEnvironmentsRequest : AmazonCodeCatalystRequest
+    public partial class ListWorkflowsRequest : AmazonCodeCatalystRequest
     {
-        private List<Filter> _filters = new List<Filter>();
         private int? _maxResults;
         private string _nextToken;
         private string _projectName;
+        private List<WorkflowSortCriteria> _sortBy = new List<WorkflowSortCriteria>();
         private string _spaceName;
-
-        /// <summary>
-        /// Gets and sets the property Filters. 
-        /// <para>
-        /// Information about filters to apply to narrow the results returned in the list.
-        /// </para>
-        /// </summary>
-        public List<Filter> Filters
-        {
-            get { return this._filters; }
-            set { this._filters = value; }
-        }
-
-        // Check to see if Filters property is set
-        internal bool IsSetFilters()
-        {
-            return this._filters != null && this._filters.Count > 0; 
-        }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
@@ -66,7 +48,7 @@ namespace Amazon.CodeCatalyst.Model
         /// element, which you can use to obtain additional results.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=50)]
+        [AWSProperty(Min=1, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -86,7 +68,7 @@ namespace Amazon.CodeCatalyst.Model
         /// return, if any.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=10000)]
+        [AWSProperty(Min=1, Max=2048)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -105,7 +87,7 @@ namespace Amazon.CodeCatalyst.Model
         /// The name of the project in the space.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=3, Max=63)]
+        [AWSProperty(Required=true, Min=3, Max=63)]
         public string ProjectName
         {
             get { return this._projectName; }
@@ -119,12 +101,31 @@ namespace Amazon.CodeCatalyst.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SortBy. 
+        /// <para>
+        /// Information used to sort the items in the returned list.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1)]
+        public List<WorkflowSortCriteria> SortBy
+        {
+            get { return this._sortBy; }
+            set { this._sortBy = value; }
+        }
+
+        // Check to see if SortBy property is set
+        internal bool IsSetSortBy()
+        {
+            return this._sortBy != null && this._sortBy.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property SpaceName. 
         /// <para>
         /// The name of the space.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=3, Max=63)]
+        [AWSProperty(Required=true, Min=1)]
         public string SpaceName
         {
             get { return this._spaceName; }

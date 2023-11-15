@@ -31,6 +31,10 @@ namespace Amazon.CodeCatalyst
     {
 
         /// <summary>
+        /// Constant BEGINS_WITH for ComparisonOperator
+        /// </summary>
+        public static readonly ComparisonOperator BEGINS_WITH = new ComparisonOperator("BEGINS_WITH");
+        /// <summary>
         /// Constant EQ for ComparisonOperator
         /// </summary>
         public static readonly ComparisonOperator EQ = new ComparisonOperator("EQ");
@@ -220,6 +224,10 @@ namespace Amazon.CodeCatalyst
         /// Constant HasAccessTo for FilterKey
         /// </summary>
         public static readonly FilterKey HasAccessTo = new FilterKey("hasAccessTo");
+        /// <summary>
+        /// Constant Name for FilterKey
+        /// </summary>
+        public static readonly FilterKey Name = new FilterKey("name");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -412,6 +420,196 @@ namespace Amazon.CodeCatalyst
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator UserType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type WorkflowRunMode.
+    /// </summary>
+    public class WorkflowRunMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PARALLEL for WorkflowRunMode
+        /// </summary>
+        public static readonly WorkflowRunMode PARALLEL = new WorkflowRunMode("PARALLEL");
+        /// <summary>
+        /// Constant QUEUED for WorkflowRunMode
+        /// </summary>
+        public static readonly WorkflowRunMode QUEUED = new WorkflowRunMode("QUEUED");
+        /// <summary>
+        /// Constant SUPERSEDED for WorkflowRunMode
+        /// </summary>
+        public static readonly WorkflowRunMode SUPERSEDED = new WorkflowRunMode("SUPERSEDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public WorkflowRunMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WorkflowRunMode FindValue(string value)
+        {
+            return FindValue<WorkflowRunMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WorkflowRunMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type WorkflowRunStatus.
+    /// </summary>
+    public class WorkflowRunStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ABANDONED for WorkflowRunStatus
+        /// </summary>
+        public static readonly WorkflowRunStatus ABANDONED = new WorkflowRunStatus("ABANDONED");
+        /// <summary>
+        /// Constant CANCELLED for WorkflowRunStatus
+        /// </summary>
+        public static readonly WorkflowRunStatus CANCELLED = new WorkflowRunStatus("CANCELLED");
+        /// <summary>
+        /// Constant FAILED for WorkflowRunStatus
+        /// </summary>
+        public static readonly WorkflowRunStatus FAILED = new WorkflowRunStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for WorkflowRunStatus
+        /// </summary>
+        public static readonly WorkflowRunStatus IN_PROGRESS = new WorkflowRunStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant NOT_RUN for WorkflowRunStatus
+        /// </summary>
+        public static readonly WorkflowRunStatus NOT_RUN = new WorkflowRunStatus("NOT_RUN");
+        /// <summary>
+        /// Constant PROVISIONING for WorkflowRunStatus
+        /// </summary>
+        public static readonly WorkflowRunStatus PROVISIONING = new WorkflowRunStatus("PROVISIONING");
+        /// <summary>
+        /// Constant STOPPED for WorkflowRunStatus
+        /// </summary>
+        public static readonly WorkflowRunStatus STOPPED = new WorkflowRunStatus("STOPPED");
+        /// <summary>
+        /// Constant STOPPING for WorkflowRunStatus
+        /// </summary>
+        public static readonly WorkflowRunStatus STOPPING = new WorkflowRunStatus("STOPPING");
+        /// <summary>
+        /// Constant SUCCEEDED for WorkflowRunStatus
+        /// </summary>
+        public static readonly WorkflowRunStatus SUCCEEDED = new WorkflowRunStatus("SUCCEEDED");
+        /// <summary>
+        /// Constant SUPERSEDED for WorkflowRunStatus
+        /// </summary>
+        public static readonly WorkflowRunStatus SUPERSEDED = new WorkflowRunStatus("SUPERSEDED");
+        /// <summary>
+        /// Constant VALIDATING for WorkflowRunStatus
+        /// </summary>
+        public static readonly WorkflowRunStatus VALIDATING = new WorkflowRunStatus("VALIDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public WorkflowRunStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WorkflowRunStatus FindValue(string value)
+        {
+            return FindValue<WorkflowRunStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WorkflowRunStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type WorkflowStatus.
+    /// </summary>
+    public class WorkflowStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for WorkflowStatus
+        /// </summary>
+        public static readonly WorkflowStatus ACTIVE = new WorkflowStatus("ACTIVE");
+        /// <summary>
+        /// Constant INVALID for WorkflowStatus
+        /// </summary>
+        public static readonly WorkflowStatus INVALID = new WorkflowStatus("INVALID");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public WorkflowStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WorkflowStatus FindValue(string value)
+        {
+            return FindValue<WorkflowStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WorkflowStatus(string value)
         {
             return FindValue(value);
         }

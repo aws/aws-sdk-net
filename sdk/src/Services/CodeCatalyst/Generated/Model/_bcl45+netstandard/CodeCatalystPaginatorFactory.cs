@@ -98,5 +98,21 @@ namespace Amazon.CodeCatalyst.Model
         {
             return new ListSpacesPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for ListWorkflowRuns operation
+        ///</summary>
+        public IListWorkflowRunsPaginator ListWorkflowRuns(ListWorkflowRunsRequest request) 
+        {
+            return new ListWorkflowRunsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListWorkflows operation
+        ///</summary>
+        public IListWorkflowsPaginator ListWorkflows(ListWorkflowsRequest request) 
+        {
+            return new ListWorkflowsPaginator(this.client, request);
+        }
     }
 }

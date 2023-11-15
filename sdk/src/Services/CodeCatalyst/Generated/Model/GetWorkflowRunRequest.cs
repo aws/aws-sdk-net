@@ -29,74 +29,32 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeCatalyst.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListDevEnvironments operation.
-    /// Retrieves a list of Dev Environments in a project.
+    /// Container for the parameters to the GetWorkflowRun operation.
+    /// Returns information about a specified run of a workflow.
     /// </summary>
-    public partial class ListDevEnvironmentsRequest : AmazonCodeCatalystRequest
+    public partial class GetWorkflowRunRequest : AmazonCodeCatalystRequest
     {
-        private List<Filter> _filters = new List<Filter>();
-        private int? _maxResults;
-        private string _nextToken;
+        private string _id;
         private string _projectName;
         private string _spaceName;
 
         /// <summary>
-        /// Gets and sets the property Filters. 
+        /// Gets and sets the property Id. 
         /// <para>
-        /// Information about filters to apply to narrow the results returned in the list.
+        /// The ID of the workflow run. To retrieve a list of workflow run IDs, use <a>ListWorkflowRuns</a>.
         /// </para>
         /// </summary>
-        public List<Filter> Filters
+        [AWSProperty(Required=true)]
+        public string Id
         {
-            get { return this._filters; }
-            set { this._filters = value; }
+            get { return this._id; }
+            set { this._id = value; }
         }
 
-        // Check to see if Filters property is set
-        internal bool IsSetFilters()
+        // Check to see if Id property is set
+        internal bool IsSetId()
         {
-            return this._filters != null && this._filters.Count > 0; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property MaxResults. 
-        /// <para>
-        /// The maximum number of results to show in a single call to this API. If the number
-        /// of results is larger than the number you specified, the response will include a <code>NextToken</code>
-        /// element, which you can use to obtain additional results.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=50)]
-        public int MaxResults
-        {
-            get { return this._maxResults.GetValueOrDefault(); }
-            set { this._maxResults = value; }
-        }
-
-        // Check to see if MaxResults property is set
-        internal bool IsSetMaxResults()
-        {
-            return this._maxResults.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property NextToken. 
-        /// <para>
-        /// A token returned from a call to this API to indicate the next batch of results to
-        /// return, if any.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=10000)]
-        public string NextToken
-        {
-            get { return this._nextToken; }
-            set { this._nextToken = value; }
-        }
-
-        // Check to see if NextToken property is set
-        internal bool IsSetNextToken()
-        {
-            return this._nextToken != null;
+            return this._id != null;
         }
 
         /// <summary>
@@ -105,7 +63,7 @@ namespace Amazon.CodeCatalyst.Model
         /// The name of the project in the space.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=3, Max=63)]
+        [AWSProperty(Required=true, Min=1)]
         public string ProjectName
         {
             get { return this._projectName; }

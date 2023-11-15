@@ -29,34 +29,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeCatalyst.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListDevEnvironments operation.
-    /// Retrieves a list of Dev Environments in a project.
+    /// Container for the parameters to the ListWorkflowRuns operation.
+    /// Retrieves a list of workflow runs of a specified workflow.
     /// </summary>
-    public partial class ListDevEnvironmentsRequest : AmazonCodeCatalystRequest
+    public partial class ListWorkflowRunsRequest : AmazonCodeCatalystRequest
     {
-        private List<Filter> _filters = new List<Filter>();
         private int? _maxResults;
         private string _nextToken;
         private string _projectName;
+        private List<WorkflowRunSortCriteria> _sortBy = new List<WorkflowRunSortCriteria>();
         private string _spaceName;
-
-        /// <summary>
-        /// Gets and sets the property Filters. 
-        /// <para>
-        /// Information about filters to apply to narrow the results returned in the list.
-        /// </para>
-        /// </summary>
-        public List<Filter> Filters
-        {
-            get { return this._filters; }
-            set { this._filters = value; }
-        }
-
-        // Check to see if Filters property is set
-        internal bool IsSetFilters()
-        {
-            return this._filters != null && this._filters.Count > 0; 
-        }
+        private string _workflowId;
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
@@ -86,7 +69,7 @@ namespace Amazon.CodeCatalyst.Model
         /// return, if any.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=10000)]
+        [AWSProperty(Min=1, Max=2048)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -105,7 +88,7 @@ namespace Amazon.CodeCatalyst.Model
         /// The name of the project in the space.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=3, Max=63)]
+        [AWSProperty(Required=true, Min=1)]
         public string ProjectName
         {
             get { return this._projectName; }
@@ -116,6 +99,25 @@ namespace Amazon.CodeCatalyst.Model
         internal bool IsSetProjectName()
         {
             return this._projectName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SortBy. 
+        /// <para>
+        /// Information used to sort the items in the returned list.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1)]
+        public List<WorkflowRunSortCriteria> SortBy
+        {
+            get { return this._sortBy; }
+            set { this._sortBy = value; }
+        }
+
+        // Check to see if SortBy property is set
+        internal bool IsSetSortBy()
+        {
+            return this._sortBy != null && this._sortBy.Count > 0; 
         }
 
         /// <summary>
@@ -135,6 +137,24 @@ namespace Amazon.CodeCatalyst.Model
         internal bool IsSetSpaceName()
         {
             return this._spaceName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkflowId. 
+        /// <para>
+        /// The ID of the workflow. To retrieve a list of workflow IDs, use <a>ListWorkflows</a>.
+        /// </para>
+        /// </summary>
+        public string WorkflowId
+        {
+            get { return this._workflowId; }
+            set { this._workflowId = value; }
+        }
+
+        // Check to see if WorkflowId property is set
+        internal bool IsSetWorkflowId()
+        {
+            return this._workflowId != null;
         }
 
     }

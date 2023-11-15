@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CodeCatalyst.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ListDevEnvironments Request Marshaller
+    /// ListWorkflowRuns Request Marshaller
     /// </summary>       
-    public class ListDevEnvironmentsRequestMarshaller : IMarshaller<IRequest, ListDevEnvironmentsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ListWorkflowRunsRequestMarshaller : IMarshaller<IRequest, ListWorkflowRunsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.CodeCatalyst.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((ListDevEnvironmentsRequest)input);
+            return this.Marshall((ListWorkflowRunsRequest)input);
         }
 
         /// <summary>
@@ -52,54 +52,48 @@ namespace Amazon.CodeCatalyst.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(ListDevEnvironmentsRequest publicRequest)
+        public IRequest Marshall(ListWorkflowRunsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CodeCatalyst");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2022-09-28";
             request.HttpMethod = "POST";
 
+            if (!publicRequest.IsSetProjectName())
+                throw new AmazonCodeCatalystException("Request object does not have required field ProjectName set");
+            request.AddPathResource("{projectName}", StringUtils.FromString(publicRequest.ProjectName));
             if (!publicRequest.IsSetSpaceName())
                 throw new AmazonCodeCatalystException("Request object does not have required field SpaceName set");
             request.AddPathResource("{spaceName}", StringUtils.FromString(publicRequest.SpaceName));
-            request.ResourcePath = "/v1/spaces/{spaceName}/devEnvironments";
+            
+            if (publicRequest.IsSetMaxResults())
+                request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
+            
+            if (publicRequest.IsSetNextToken())
+                request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
+            
+            if (publicRequest.IsSetWorkflowId())
+                request.Parameters.Add("workflowId", StringUtils.FromString(publicRequest.WorkflowId));
+            request.ResourcePath = "/v1/spaces/{spaceName}/projects/{projectName}/workflowRuns";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetFilters())
+                if(publicRequest.IsSetSortBy())
                 {
-                    context.Writer.WritePropertyName("filters");
+                    context.Writer.WritePropertyName("sortBy");
                     context.Writer.WriteArrayStart();
-                    foreach(var publicRequestFiltersListValue in publicRequest.Filters)
+                    foreach(var publicRequestSortByListValue in publicRequest.SortBy)
                     {
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = FilterMarshaller.Instance;
-                        marshaller.Marshall(publicRequestFiltersListValue, context);
+                        var marshaller = WorkflowRunSortCriteriaMarshaller.Instance;
+                        marshaller.Marshall(publicRequestSortByListValue, context);
 
                         context.Writer.WriteObjectEnd();
                     }
                     context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("maxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("nextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetProjectName())
-                {
-                    context.Writer.WritePropertyName("projectName");
-                    context.Writer.Write(publicRequest.ProjectName);
                 }
 
                 writer.WriteObjectEnd();
@@ -107,12 +101,13 @@ namespace Amazon.CodeCatalyst.Model.Internal.MarshallTransformations
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
 
+            request.UseQueryString = true;
 
             return request;
         }
-        private static ListDevEnvironmentsRequestMarshaller _instance = new ListDevEnvironmentsRequestMarshaller();        
+        private static ListWorkflowRunsRequestMarshaller _instance = new ListWorkflowRunsRequestMarshaller();        
 
-        internal static ListDevEnvironmentsRequestMarshaller GetInstance()
+        internal static ListWorkflowRunsRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -120,7 +115,7 @@ namespace Amazon.CodeCatalyst.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListDevEnvironmentsRequestMarshaller Instance
+        public static ListWorkflowRunsRequestMarshaller Instance
         {
             get
             {

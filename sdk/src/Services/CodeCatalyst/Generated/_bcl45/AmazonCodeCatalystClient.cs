@@ -65,7 +65,7 @@ namespace Amazon.CodeCatalyst
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>UpdateSpace</a>, which hanges one or more values for a space.
+    ///  <a>UpdateSpace</a>, which changes one or more values for a space.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -175,6 +175,30 @@ namespace Amazon.CodeCatalyst
     ///  </li> <li> 
     /// <para>
     ///  <a>UpdateDevEnvironment</a>, which changes one or more values for a Dev Environment.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// Workflows, by calling the following:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>GetWorkflow</a>, which returns information about a workflow.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>GetWorkflowRun</a>, which returns information about a specified run of a workflow.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ListWorkflowRuns</a>, which retrieves a list of runs of a specified workflow.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ListWorkflows</a>, which retrieves a list of workflows in a specified project.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>StartWorkflowRun</a>, which starts a run of a specified workflow.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -2091,6 +2115,192 @@ namespace Amazon.CodeCatalyst
 
         #endregion
         
+        #region  GetWorkflow
+
+
+        /// <summary>
+        /// Returns information about a workflow.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetWorkflow service method.</param>
+        /// 
+        /// <returns>The response from the GetWorkflow service method, as returned by CodeCatalyst.</returns>
+        /// <exception cref="Amazon.CodeCatalyst.Model.AccessDeniedException">
+        /// The request was denied because you don't have sufficient access to perform this action.
+        /// Verify that you are a member of a role that allows this action.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ConflictException">
+        /// The request was denied because the requested operation would cause a conflict with
+        /// the current state of a service resource associated with the request. Another user
+        /// might have updated the resource. Reload, make sure you have the latest data, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ResourceNotFoundException">
+        /// The request was denied because the specified resource was not found. Verify that the
+        /// spelling is correct and that you have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ServiceQuotaExceededException">
+        /// The request was denied because one or more resources has reached its limits for the
+        /// tier the space belongs to. Either reduce the number of resources, or change the tier
+        /// if applicable.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ValidationException">
+        /// The request was denied because an input failed to satisfy the constraints specified
+        /// by the service. Check the spelling and input requirements, and then try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/GetWorkflow">REST API Reference for GetWorkflow Operation</seealso>
+        public virtual GetWorkflowResponse GetWorkflow(GetWorkflowRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetWorkflowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetWorkflowResponseUnmarshaller.Instance;
+
+            return Invoke<GetWorkflowResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns information about a workflow.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetWorkflow service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetWorkflow service method, as returned by CodeCatalyst.</returns>
+        /// <exception cref="Amazon.CodeCatalyst.Model.AccessDeniedException">
+        /// The request was denied because you don't have sufficient access to perform this action.
+        /// Verify that you are a member of a role that allows this action.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ConflictException">
+        /// The request was denied because the requested operation would cause a conflict with
+        /// the current state of a service resource associated with the request. Another user
+        /// might have updated the resource. Reload, make sure you have the latest data, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ResourceNotFoundException">
+        /// The request was denied because the specified resource was not found. Verify that the
+        /// spelling is correct and that you have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ServiceQuotaExceededException">
+        /// The request was denied because one or more resources has reached its limits for the
+        /// tier the space belongs to. Either reduce the number of resources, or change the tier
+        /// if applicable.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ValidationException">
+        /// The request was denied because an input failed to satisfy the constraints specified
+        /// by the service. Check the spelling and input requirements, and then try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/GetWorkflow">REST API Reference for GetWorkflow Operation</seealso>
+        public virtual Task<GetWorkflowResponse> GetWorkflowAsync(GetWorkflowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetWorkflowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetWorkflowResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetWorkflowResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetWorkflowRun
+
+
+        /// <summary>
+        /// Returns information about a specified run of a workflow.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetWorkflowRun service method.</param>
+        /// 
+        /// <returns>The response from the GetWorkflowRun service method, as returned by CodeCatalyst.</returns>
+        /// <exception cref="Amazon.CodeCatalyst.Model.AccessDeniedException">
+        /// The request was denied because you don't have sufficient access to perform this action.
+        /// Verify that you are a member of a role that allows this action.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ConflictException">
+        /// The request was denied because the requested operation would cause a conflict with
+        /// the current state of a service resource associated with the request. Another user
+        /// might have updated the resource. Reload, make sure you have the latest data, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ResourceNotFoundException">
+        /// The request was denied because the specified resource was not found. Verify that the
+        /// spelling is correct and that you have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ServiceQuotaExceededException">
+        /// The request was denied because one or more resources has reached its limits for the
+        /// tier the space belongs to. Either reduce the number of resources, or change the tier
+        /// if applicable.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ValidationException">
+        /// The request was denied because an input failed to satisfy the constraints specified
+        /// by the service. Check the spelling and input requirements, and then try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/GetWorkflowRun">REST API Reference for GetWorkflowRun Operation</seealso>
+        public virtual GetWorkflowRunResponse GetWorkflowRun(GetWorkflowRunRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetWorkflowRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetWorkflowRunResponseUnmarshaller.Instance;
+
+            return Invoke<GetWorkflowRunResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns information about a specified run of a workflow.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetWorkflowRun service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetWorkflowRun service method, as returned by CodeCatalyst.</returns>
+        /// <exception cref="Amazon.CodeCatalyst.Model.AccessDeniedException">
+        /// The request was denied because you don't have sufficient access to perform this action.
+        /// Verify that you are a member of a role that allows this action.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ConflictException">
+        /// The request was denied because the requested operation would cause a conflict with
+        /// the current state of a service resource associated with the request. Another user
+        /// might have updated the resource. Reload, make sure you have the latest data, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ResourceNotFoundException">
+        /// The request was denied because the specified resource was not found. Verify that the
+        /// spelling is correct and that you have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ServiceQuotaExceededException">
+        /// The request was denied because one or more resources has reached its limits for the
+        /// tier the space belongs to. Either reduce the number of resources, or change the tier
+        /// if applicable.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ValidationException">
+        /// The request was denied because an input failed to satisfy the constraints specified
+        /// by the service. Check the spelling and input requirements, and then try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/GetWorkflowRun">REST API Reference for GetWorkflowRun Operation</seealso>
+        public virtual Task<GetWorkflowRunResponse> GetWorkflowRunAsync(GetWorkflowRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetWorkflowRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetWorkflowRunResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetWorkflowRunResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListAccessTokens
 
 
@@ -2376,8 +2586,22 @@ namespace Amazon.CodeCatalyst
 
 
         /// <summary>
-        /// Retrieves a list of events that occurred during a specified time period in a space.
-        /// You can use these events to audit user and system activity in a space.
+        /// Retrieves a list of events that occurred during a specific time in a space. You can
+        /// use these events to audit user and system activity in a space. For more information,
+        /// see <a href="https://docs.aws.amazon.com/codecatalyst/latest/userguide/ipa-monitoring.html">Monitoring</a>
+        /// in the <i>Amazon CodeCatalyst User Guide</i>.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// ListEventLogs guarantees events for the last 30 days in a given space. You can also
+        /// view and retrieve a list of management events over the last 90 days for Amazon CodeCatalyst
+        /// in the CloudTrail console by viewing Event history, or by creating a trail to create
+        /// and maintain a record of events that extends past 90 days. For more information, see
+        /// <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/view-cloudtrail-events.html">Working
+        /// with CloudTrail Event History</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-getting-started.html">Working
+        /// with CloudTrail trails</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListEventLogs service method.</param>
         /// 
@@ -2420,8 +2644,22 @@ namespace Amazon.CodeCatalyst
 
 
         /// <summary>
-        /// Retrieves a list of events that occurred during a specified time period in a space.
-        /// You can use these events to audit user and system activity in a space.
+        /// Retrieves a list of events that occurred during a specific time in a space. You can
+        /// use these events to audit user and system activity in a space. For more information,
+        /// see <a href="https://docs.aws.amazon.com/codecatalyst/latest/userguide/ipa-monitoring.html">Monitoring</a>
+        /// in the <i>Amazon CodeCatalyst User Guide</i>.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// ListEventLogs guarantees events for the last 30 days in a given space. You can also
+        /// view and retrieve a list of management events over the last 90 days for Amazon CodeCatalyst
+        /// in the CloudTrail console by viewing Event history, or by creating a trail to create
+        /// and maintain a record of events that extends past 90 days. For more information, see
+        /// <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/view-cloudtrail-events.html">Working
+        /// with CloudTrail Event History</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-getting-started.html">Working
+        /// with CloudTrail trails</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListEventLogs service method.</param>
         /// <param name="cancellationToken">
@@ -2839,6 +3077,192 @@ namespace Amazon.CodeCatalyst
 
         #endregion
         
+        #region  ListWorkflowRuns
+
+
+        /// <summary>
+        /// Retrieves a list of workflow runs of a specified workflow.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListWorkflowRuns service method.</param>
+        /// 
+        /// <returns>The response from the ListWorkflowRuns service method, as returned by CodeCatalyst.</returns>
+        /// <exception cref="Amazon.CodeCatalyst.Model.AccessDeniedException">
+        /// The request was denied because you don't have sufficient access to perform this action.
+        /// Verify that you are a member of a role that allows this action.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ConflictException">
+        /// The request was denied because the requested operation would cause a conflict with
+        /// the current state of a service resource associated with the request. Another user
+        /// might have updated the resource. Reload, make sure you have the latest data, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ResourceNotFoundException">
+        /// The request was denied because the specified resource was not found. Verify that the
+        /// spelling is correct and that you have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ServiceQuotaExceededException">
+        /// The request was denied because one or more resources has reached its limits for the
+        /// tier the space belongs to. Either reduce the number of resources, or change the tier
+        /// if applicable.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ValidationException">
+        /// The request was denied because an input failed to satisfy the constraints specified
+        /// by the service. Check the spelling and input requirements, and then try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/ListWorkflowRuns">REST API Reference for ListWorkflowRuns Operation</seealso>
+        public virtual ListWorkflowRunsResponse ListWorkflowRuns(ListWorkflowRunsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListWorkflowRunsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListWorkflowRunsResponseUnmarshaller.Instance;
+
+            return Invoke<ListWorkflowRunsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves a list of workflow runs of a specified workflow.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListWorkflowRuns service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListWorkflowRuns service method, as returned by CodeCatalyst.</returns>
+        /// <exception cref="Amazon.CodeCatalyst.Model.AccessDeniedException">
+        /// The request was denied because you don't have sufficient access to perform this action.
+        /// Verify that you are a member of a role that allows this action.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ConflictException">
+        /// The request was denied because the requested operation would cause a conflict with
+        /// the current state of a service resource associated with the request. Another user
+        /// might have updated the resource. Reload, make sure you have the latest data, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ResourceNotFoundException">
+        /// The request was denied because the specified resource was not found. Verify that the
+        /// spelling is correct and that you have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ServiceQuotaExceededException">
+        /// The request was denied because one or more resources has reached its limits for the
+        /// tier the space belongs to. Either reduce the number of resources, or change the tier
+        /// if applicable.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ValidationException">
+        /// The request was denied because an input failed to satisfy the constraints specified
+        /// by the service. Check the spelling and input requirements, and then try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/ListWorkflowRuns">REST API Reference for ListWorkflowRuns Operation</seealso>
+        public virtual Task<ListWorkflowRunsResponse> ListWorkflowRunsAsync(ListWorkflowRunsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListWorkflowRunsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListWorkflowRunsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListWorkflowRunsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListWorkflows
+
+
+        /// <summary>
+        /// Retrieves a list of workflows in a specified project.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListWorkflows service method.</param>
+        /// 
+        /// <returns>The response from the ListWorkflows service method, as returned by CodeCatalyst.</returns>
+        /// <exception cref="Amazon.CodeCatalyst.Model.AccessDeniedException">
+        /// The request was denied because you don't have sufficient access to perform this action.
+        /// Verify that you are a member of a role that allows this action.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ConflictException">
+        /// The request was denied because the requested operation would cause a conflict with
+        /// the current state of a service resource associated with the request. Another user
+        /// might have updated the resource. Reload, make sure you have the latest data, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ResourceNotFoundException">
+        /// The request was denied because the specified resource was not found. Verify that the
+        /// spelling is correct and that you have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ServiceQuotaExceededException">
+        /// The request was denied because one or more resources has reached its limits for the
+        /// tier the space belongs to. Either reduce the number of resources, or change the tier
+        /// if applicable.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ValidationException">
+        /// The request was denied because an input failed to satisfy the constraints specified
+        /// by the service. Check the spelling and input requirements, and then try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/ListWorkflows">REST API Reference for ListWorkflows Operation</seealso>
+        public virtual ListWorkflowsResponse ListWorkflows(ListWorkflowsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListWorkflowsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListWorkflowsResponseUnmarshaller.Instance;
+
+            return Invoke<ListWorkflowsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves a list of workflows in a specified project.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListWorkflows service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListWorkflows service method, as returned by CodeCatalyst.</returns>
+        /// <exception cref="Amazon.CodeCatalyst.Model.AccessDeniedException">
+        /// The request was denied because you don't have sufficient access to perform this action.
+        /// Verify that you are a member of a role that allows this action.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ConflictException">
+        /// The request was denied because the requested operation would cause a conflict with
+        /// the current state of a service resource associated with the request. Another user
+        /// might have updated the resource. Reload, make sure you have the latest data, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ResourceNotFoundException">
+        /// The request was denied because the specified resource was not found. Verify that the
+        /// spelling is correct and that you have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ServiceQuotaExceededException">
+        /// The request was denied because one or more resources has reached its limits for the
+        /// tier the space belongs to. Either reduce the number of resources, or change the tier
+        /// if applicable.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ValidationException">
+        /// The request was denied because an input failed to satisfy the constraints specified
+        /// by the service. Check the spelling and input requirements, and then try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/ListWorkflows">REST API Reference for ListWorkflows Operation</seealso>
+        public virtual Task<ListWorkflowsResponse> ListWorkflowsAsync(ListWorkflowsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListWorkflowsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListWorkflowsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListWorkflowsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StartDevEnvironment
 
 
@@ -3021,6 +3445,99 @@ namespace Amazon.CodeCatalyst
             options.ResponseUnmarshaller = StartDevEnvironmentSessionResponseUnmarshaller.Instance;
             
             return InvokeAsync<StartDevEnvironmentSessionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartWorkflowRun
+
+
+        /// <summary>
+        /// Begins a run of a specified workflow.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartWorkflowRun service method.</param>
+        /// 
+        /// <returns>The response from the StartWorkflowRun service method, as returned by CodeCatalyst.</returns>
+        /// <exception cref="Amazon.CodeCatalyst.Model.AccessDeniedException">
+        /// The request was denied because you don't have sufficient access to perform this action.
+        /// Verify that you are a member of a role that allows this action.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ConflictException">
+        /// The request was denied because the requested operation would cause a conflict with
+        /// the current state of a service resource associated with the request. Another user
+        /// might have updated the resource. Reload, make sure you have the latest data, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ResourceNotFoundException">
+        /// The request was denied because the specified resource was not found. Verify that the
+        /// spelling is correct and that you have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ServiceQuotaExceededException">
+        /// The request was denied because one or more resources has reached its limits for the
+        /// tier the space belongs to. Either reduce the number of resources, or change the tier
+        /// if applicable.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ValidationException">
+        /// The request was denied because an input failed to satisfy the constraints specified
+        /// by the service. Check the spelling and input requirements, and then try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/StartWorkflowRun">REST API Reference for StartWorkflowRun Operation</seealso>
+        public virtual StartWorkflowRunResponse StartWorkflowRun(StartWorkflowRunRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartWorkflowRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartWorkflowRunResponseUnmarshaller.Instance;
+
+            return Invoke<StartWorkflowRunResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Begins a run of a specified workflow.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartWorkflowRun service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartWorkflowRun service method, as returned by CodeCatalyst.</returns>
+        /// <exception cref="Amazon.CodeCatalyst.Model.AccessDeniedException">
+        /// The request was denied because you don't have sufficient access to perform this action.
+        /// Verify that you are a member of a role that allows this action.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ConflictException">
+        /// The request was denied because the requested operation would cause a conflict with
+        /// the current state of a service resource associated with the request. Another user
+        /// might have updated the resource. Reload, make sure you have the latest data, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ResourceNotFoundException">
+        /// The request was denied because the specified resource was not found. Verify that the
+        /// spelling is correct and that you have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ServiceQuotaExceededException">
+        /// The request was denied because one or more resources has reached its limits for the
+        /// tier the space belongs to. Either reduce the number of resources, or change the tier
+        /// if applicable.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ValidationException">
+        /// The request was denied because an input failed to satisfy the constraints specified
+        /// by the service. Check the spelling and input requirements, and then try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/StartWorkflowRun">REST API Reference for StartWorkflowRun Operation</seealso>
+        public virtual Task<StartWorkflowRunResponse> StartWorkflowRunAsync(StartWorkflowRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartWorkflowRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartWorkflowRunResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartWorkflowRunResponse>(request, options, cancellationToken);
         }
 
         #endregion
