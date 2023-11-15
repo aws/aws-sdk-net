@@ -36,8 +36,11 @@ namespace Amazon.MWAA.Model
         private Dictionary<string, string> _airflowConfigurationOptions = new Dictionary<string, string>();
         private string _airflowVersion;
         private string _arn;
+        private string _celeryExecutorQueue;
         private DateTime? _createdAt;
         private string _dagS3Path;
+        private string _databaseVpcEndpointService;
+        private EndpointManagement _endpointManagement;
         private string _environmentClass;
         private string _executionRoleArn;
         private string _kmsKey;
@@ -60,6 +63,7 @@ namespace Amazon.MWAA.Model
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private WebserverAccessMode _webserverAccessMode;
         private string _webserverUrl;
+        private string _webserverVpcEndpointService;
         private string _weeklyMaintenanceWindowStart;
 
         /// <summary>
@@ -127,6 +131,28 @@ namespace Amazon.MWAA.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CeleryExecutorQueue. 
+        /// <para>
+        /// The queue ARN for the environment's <a href="https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/executor/celery.html">Celery
+        /// Executor</a>. Amazon MWAA uses a Celery Executor to distribute tasks across multiple
+        /// workers. When you create an environment in a shared VPC, you must provide access to
+        /// the Celery Executor queue from your VPC.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1224)]
+        public string CeleryExecutorQueue
+        {
+            get { return this._celeryExecutorQueue; }
+            set { this._celeryExecutorQueue = value; }
+        }
+
+        // Check to see if CeleryExecutorQueue property is set
+        internal bool IsSetCeleryExecutorQueue()
+        {
+            return this._celeryExecutorQueue != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
         /// The day and time the environment was created.
@@ -163,6 +189,46 @@ namespace Amazon.MWAA.Model
         internal bool IsSetDagS3Path()
         {
             return this._dagS3Path != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DatabaseVpcEndpointService. 
+        /// <para>
+        /// The VPC endpoint for the environment's Amazon RDS database.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1224)]
+        public string DatabaseVpcEndpointService
+        {
+            get { return this._databaseVpcEndpointService; }
+            set { this._databaseVpcEndpointService = value; }
+        }
+
+        // Check to see if DatabaseVpcEndpointService property is set
+        internal bool IsSetDatabaseVpcEndpointService()
+        {
+            return this._databaseVpcEndpointService != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EndpointManagement. 
+        /// <para>
+        /// Defines whether the VPC endpoints configured for the environment are created, and
+        /// managed, by the customer or by Amazon MWAA. If set to <code>SERVICE</code>, Amazon
+        /// MWAA will create and manage the required VPC endpoints in your VPC. If set to <code>CUSTOMER</code>,
+        /// you must create, and manage, the VPC endpoints in your VPC.
+        /// </para>
+        /// </summary>
+        public EndpointManagement EndpointManagement
+        {
+            get { return this._endpointManagement; }
+            set { this._endpointManagement = value; }
+        }
+
+        // Check to see if EndpointManagement property is set
+        internal bool IsSetEndpointManagement()
+        {
+            return this._endpointManagement != null;
         }
 
         /// <summary>
@@ -581,7 +647,11 @@ namespace Amazon.MWAA.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the Amazon MWAA environment. Valid values:
+        /// The status of the Amazon MWAA environment.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -605,6 +675,12 @@ namespace Amazon.MWAA.Model
         /// <para>
         ///  <code>AVAILABLE</code> - Indicates the request was successful and the environment
         /// is ready to use.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>PENDING</code> - Indicates the request was successful, but the process to create
+        /// the environment is paused until you create the required VPC endpoints in your VPC.
+        /// After you create the VPC endpoints, the process resumes.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -678,7 +754,7 @@ namespace Amazon.MWAA.Model
         /// <summary>
         /// Gets and sets the property WebserverAccessMode. 
         /// <para>
-        /// The Apache Airflow <i>Web server</i> access mode. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-networking.html">Apache
+        /// The Apache Airflow <i>web server</i> access mode. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-networking.html">Apache
         /// Airflow access modes</a>.
         /// </para>
         /// </summary>
@@ -713,6 +789,25 @@ namespace Amazon.MWAA.Model
         internal bool IsSetWebserverUrl()
         {
             return this._webserverUrl != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WebserverVpcEndpointService. 
+        /// <para>
+        /// The VPC endpoint for the environment's web server.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1224)]
+        public string WebserverVpcEndpointService
+        {
+            get { return this._webserverVpcEndpointService; }
+            set { this._webserverVpcEndpointService = value; }
+        }
+
+        // Check to see if WebserverVpcEndpointService property is set
+        internal bool IsSetWebserverVpcEndpointService()
+        {
+            return this._webserverVpcEndpointService != null;
         }
 
         /// <summary>

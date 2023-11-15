@@ -278,10 +278,22 @@
     <pattern>^arn:aws(-[a-z]+)?:airflow:[a-z0-9\-]+:\d{12}:environment/\w+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MWAA.Model.Environment.CeleryExecutorQueue</property>
+    <min>1</min>
+    <max>1224</max>
+    <pattern>^arn:aws(-[a-z]+)?:sqs:[a-z0-9\-]+:\d{12}:[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MWAA.Model.Environment.DagS3Path</property>
     <min>1</min>
     <max>1024</max>
     <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MWAA.Model.Environment.DatabaseVpcEndpointService</property>
+    <min>1</min>
+    <max>1224</max>
+    <pattern>^([a-z.-]+)?com\.amazonaws\.vpce\.[a-z0-9\-]+\.[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MWAA.Model.Environment.EnvironmentClass</property>
@@ -357,6 +369,12 @@
     <min>1</min>
     <max>256</max>
     <pattern>^https://.+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MWAA.Model.Environment.WebserverVpcEndpointService</property>
+    <min>1</min>
+    <max>1224</max>
+    <pattern>^([a-z.-]+)?com\.amazonaws\.vpce\.[a-z0-9\-]+\.[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MWAA.Model.Environment.WeeklyMaintenanceWindowStart</property>

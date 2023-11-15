@@ -94,6 +94,12 @@ namespace Amazon.MWAA.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DagS3Path);
                 }
 
+                if(publicRequest.IsSetEndpointManagement())
+                {
+                    context.Writer.WritePropertyName("EndpointManagement");
+                    context.Writer.Write(publicRequest.EndpointManagement);
+                }
+
                 if(publicRequest.IsSetEnvironmentClass())
                 {
                     context.Writer.WritePropertyName("EnvironmentClass");

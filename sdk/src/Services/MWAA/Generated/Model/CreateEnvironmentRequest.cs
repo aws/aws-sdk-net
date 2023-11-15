@@ -37,6 +37,7 @@ namespace Amazon.MWAA.Model
         private Dictionary<string, string> _airflowConfigurationOptions = new Dictionary<string, string>();
         private string _airflowVersion;
         private string _dagS3Path;
+        private EndpointManagement _endpointManagement;
         private string _environmentClass;
         private string _executionRoleArn;
         private string _kmsKey;
@@ -88,7 +89,7 @@ namespace Amazon.MWAA.Model
         ///  
         /// <para>
         /// Valid values: <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>, <code>2.4.3</code>,
-        /// <code>2.5.1</code>, <code>2.6.3</code>, <code>2.7.2</code>.
+        /// <code>2.5.1</code>, <code>2.6.3</code>, <code>2.7.2</code> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=32)]
@@ -123,6 +124,32 @@ namespace Amazon.MWAA.Model
         internal bool IsSetDagS3Path()
         {
             return this._dagS3Path != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EndpointManagement. 
+        /// <para>
+        /// Defines whether the VPC endpoints configured for the environment are created, and
+        /// managed, by the customer or by Amazon MWAA. If set to <code>SERVICE</code>, Amazon
+        /// MWAA will create and manage the required VPC endpoints in your VPC. If set to <code>CUSTOMER</code>,
+        /// you must create, and manage, the VPC endpoints for your VPC. If you choose to create
+        /// an environment in a shared VPC, you must set this value to <code>CUSTOMER</code>.
+        /// In a shared VPC deployment, the environment will remain in <code>PENDING</code> status
+        /// until you create the VPC endpoints. If you do not take action to create the endpoints
+        /// within 72 hours, the status will change to <code>CREATE_FAILED</code>. You can delete
+        /// the failed environment and create a new one.
+        /// </para>
+        /// </summary>
+        public EndpointManagement EndpointManagement
+        {
+            get { return this._endpointManagement; }
+            set { this._endpointManagement = value; }
+        }
+
+        // Check to see if EndpointManagement property is set
+        internal bool IsSetEndpointManagement()
+        {
+            return this._endpointManagement != null;
         }
 
         /// <summary>
@@ -520,7 +547,8 @@ namespace Amazon.MWAA.Model
         /// <summary>
         /// Gets and sets the property WebserverAccessMode. 
         /// <para>
-        /// The Apache Airflow <i>Web server</i> access mode. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-networking.html">Apache
+        /// Defines the access mode for the Apache Airflow <i>web server</i>. For more information,
+        /// see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-networking.html">Apache
         /// Airflow access modes</a>.
         /// </para>
         /// </summary>

@@ -82,6 +82,12 @@ namespace Amazon.MWAA.Model.Internal.MarshallTransformations
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CeleryExecutorQueue", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CeleryExecutorQueue = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CreatedAt", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
@@ -92,6 +98,18 @@ namespace Amazon.MWAA.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DagS3Path = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DatabaseVpcEndpointService", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DatabaseVpcEndpointService = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("EndpointManagement", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EndpointManagement = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("EnvironmentClass", targetDepth))
@@ -224,6 +242,12 @@ namespace Amazon.MWAA.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.WebserverUrl = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("WebserverVpcEndpointService", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.WebserverVpcEndpointService = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("WeeklyMaintenanceWindowStart", targetDepth))
