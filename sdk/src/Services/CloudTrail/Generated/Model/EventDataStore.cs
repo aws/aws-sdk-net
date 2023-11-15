@@ -30,9 +30,8 @@ namespace Amazon.CloudTrail.Model
 {
     /// <summary>
     /// A storage lake of event data against which you can run complex SQL-based queries.
-    /// An event data store can include events that you have logged on your account from the
-    /// last 90 to 2557 days (about three months to up to seven years). To select events for
-    /// an event data store, use <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html#creating-data-event-selectors-advanced">advanced
+    /// An event data store can include events that you have logged on your account. To select
+    /// events for an event data store, use <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html#creating-data-event-selectors-advanced">advanced
     /// event selectors</a>.
     /// </summary>
     public partial class EventDataStore
@@ -170,7 +169,7 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         /// </summary>
         [Obsolete("RetentionPeriod is no longer returned by ListEventDataStores")]
-        [AWSProperty(Min=7, Max=2557)]
+        [AWSProperty(Min=7, Max=3653)]
         public int RetentionPeriod
         {
             get { return this._retentionPeriod.GetValueOrDefault(); }

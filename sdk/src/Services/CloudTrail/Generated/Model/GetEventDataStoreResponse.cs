@@ -34,6 +34,7 @@ namespace Amazon.CloudTrail.Model
     public partial class GetEventDataStoreResponse : AmazonWebServiceResponse
     {
         private List<AdvancedEventSelector> _advancedEventSelectors = new List<AdvancedEventSelector>();
+        private BillingMode _billingMode;
         private DateTime? _createdTimestamp;
         private string _eventDataStoreArn;
         private string _kmsKeyId;
@@ -61,6 +62,24 @@ namespace Amazon.CloudTrail.Model
         internal bool IsSetAdvancedEventSelectors()
         {
             return this._advancedEventSelectors != null && this._advancedEventSelectors.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property BillingMode. 
+        /// <para>
+        /// The billing mode for the event data store.
+        /// </para>
+        /// </summary>
+        public BillingMode BillingMode
+        {
+            get { return this._billingMode; }
+            set { this._billingMode = value; }
+        }
+
+        // Check to see if BillingMode property is set
+        internal bool IsSetBillingMode()
+        {
+            return this._billingMode != null;
         }
 
         /// <summary>
@@ -188,7 +207,7 @@ namespace Amazon.CloudTrail.Model
         /// The retention period of the event data store, in days.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=7, Max=2557)]
+        [AWSProperty(Min=7, Max=3653)]
         public int RetentionPeriod
         {
             get { return this._retentionPeriod.GetValueOrDefault(); }

@@ -57,6 +57,12 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                     response.AdvancedEventSelectors = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("BillingMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.BillingMode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CreatedTimestamp", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

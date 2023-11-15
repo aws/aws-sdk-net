@@ -35,6 +35,7 @@ namespace Amazon.CloudTrail.Model
     public partial class CreateEventDataStoreRequest : AmazonCloudTrailRequest
     {
         private List<AdvancedEventSelector> _advancedEventSelectors = new List<AdvancedEventSelector>();
+        private BillingMode _billingMode;
         private string _kmsKeyId;
         private bool? _multiRegionEnabled;
         private string _name;
@@ -80,6 +81,52 @@ namespace Amazon.CloudTrail.Model
         internal bool IsSetAdvancedEventSelectors()
         {
             return this._advancedEventSelectors != null && this._advancedEventSelectors.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property BillingMode. 
+        /// <para>
+        /// The billing mode for the event data store determines the cost for ingesting events
+        /// and the default and maximum retention period for the event data store.
+        /// </para>
+        ///  
+        /// <para>
+        /// The following are the possible values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>EXTENDABLE_RETENTION_PRICING</code> - This billing mode is generally recommended
+        /// if you want a flexible retention period of up to 3653 days (about 10 years). The default
+        /// retention period for this billing mode is 366 days.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>FIXED_RETENTION_PRICING</code> - This billing mode is recommended if you expect
+        /// to ingest more than 25 TB of event data per month and need a retention period of up
+        /// to 2557 days (about 7 years). The default retention period for this billing mode is
+        /// 2557 days.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The default value is <code>EXTENDABLE_RETENTION_PRICING</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about CloudTrail pricing, see <a href="http://aws.amazon.com/cloudtrail/pricing/">CloudTrail
+        /// Pricing</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-manage-costs.html">Managing
+        /// CloudTrail Lake costs</a>.
+        /// </para>
+        /// </summary>
+        public BillingMode BillingMode
+        {
+            get { return this._billingMode; }
+            set { this._billingMode = value; }
+        }
+
+        // Check to see if BillingMode property is set
+        internal bool IsSetBillingMode()
+        {
+            return this._billingMode != null;
         }
 
         /// <summary>
@@ -200,11 +247,18 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property RetentionPeriod. 
         /// <para>
-        /// The retention period of the event data store, in days. You can set a retention period
-        /// of up to 2557 days, the equivalent of seven years. CloudTrail Lake determines whether
-        /// to retain an event by checking if the <code>eventTime</code> of the event is within
-        /// the specified retention period. For example, if you set a retention period of 90 days,
-        /// CloudTrail will remove events when the <code>eventTime</code> is older than 90 days.
+        /// The retention period of the event data store, in days. If <code>BillingMode</code>
+        /// is set to <code>EXTENDABLE_RETENTION_PRICING</code>, you can set a retention period
+        /// of up to 3653 days, the equivalent of 10 years. If <code>BillingMode</code> is set
+        /// to <code>FIXED_RETENTION_PRICING</code>, you can set a retention period of up to 2557
+        /// days, the equivalent of seven years.
+        /// </para>
+        ///  
+        /// <para>
+        /// CloudTrail Lake determines whether to retain an event by checking if the <code>eventTime</code>
+        /// of the event is within the specified retention period. For example, if you set a retention
+        /// period of 90 days, CloudTrail will remove events when the <code>eventTime</code> is
+        /// older than 90 days.
         /// </para>
         ///  <note> 
         /// <para>
@@ -216,7 +270,7 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  </note>
         /// </summary>
-        [AWSProperty(Min=7, Max=2557)]
+        [AWSProperty(Min=7, Max=3653)]
         public int RetentionPeriod
         {
             get { return this._retentionPeriod.GetValueOrDefault(); }

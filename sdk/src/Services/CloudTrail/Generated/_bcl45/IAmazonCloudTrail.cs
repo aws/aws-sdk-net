@@ -6364,7 +6364,9 @@ namespace Amazon.CloudTrail
         /// Updates an event data store. The required <code>EventDataStore</code> value is an
         /// ARN or the ID portion of the ARN. Other parameters are optional, but at least one
         /// optional parameter must be specified, or CloudTrail throws an error. <code>RetentionPeriod</code>
-        /// is in days, and valid values are integers between 90 and 2557. By default, <code>TerminationProtection</code>
+        /// is in days, and valid values are integers between 7 and 3653 if the <code>BillingMode</code>
+        /// is set to <code>EXTENDABLE_RETENTION_PRICING</code>, or between 7 and 2557 if <code>BillingMode</code>
+        /// is set to <code>FIXED_RETENTION_PRICING</code>. By default, <code>TerminationProtection</code>
         /// is enabled.
         /// 
         ///  
@@ -6524,7 +6526,9 @@ namespace Amazon.CloudTrail
         /// Updates an event data store. The required <code>EventDataStore</code> value is an
         /// ARN or the ID portion of the ARN. Other parameters are optional, but at least one
         /// optional parameter must be specified, or CloudTrail throws an error. <code>RetentionPeriod</code>
-        /// is in days, and valid values are integers between 90 and 2557. By default, <code>TerminationProtection</code>
+        /// is in days, and valid values are integers between 7 and 3653 if the <code>BillingMode</code>
+        /// is set to <code>EXTENDABLE_RETENTION_PRICING</code>, or between 7 and 2557 if <code>BillingMode</code>
+        /// is set to <code>FIXED_RETENTION_PRICING</code>. By default, <code>TerminationProtection</code>
         /// is enabled.
         /// 
         ///  
