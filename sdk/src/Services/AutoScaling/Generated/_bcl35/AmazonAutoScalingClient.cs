@@ -5281,10 +5281,7 @@ namespace Amazon.AutoScaling
         #region  StartInstanceRefresh
 
         /// <summary>
-        /// Starts an instance refresh. During an instance refresh, Amazon EC2 Auto Scaling performs
-        /// a rolling update of instances in an Auto Scaling group. Instances are terminated first
-        /// and then replaced, which temporarily reduces the capacity available within your Auto
-        /// Scaling group.
+        /// Starts an instance refresh.
         /// 
         ///  
         /// <para>

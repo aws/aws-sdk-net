@@ -46,6 +46,7 @@ namespace Amazon.AutoScaling.Model
         private List<EnabledMetric> _enabledMetrics = new List<EnabledMetric>();
         private int? _healthCheckGracePeriod;
         private string _healthCheckType;
+        private InstanceMaintenancePolicy _instanceMaintenancePolicy;
         private List<Instance> _instances = new List<Instance>();
         private string _launchConfigurationName;
         private LaunchTemplateSpecification _launchTemplate;
@@ -310,6 +311,24 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetHealthCheckType()
         {
             return this._healthCheckType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceMaintenancePolicy. 
+        /// <para>
+        /// An instance maintenance policy.
+        /// </para>
+        /// </summary>
+        public InstanceMaintenancePolicy InstanceMaintenancePolicy
+        {
+            get { return this._instanceMaintenancePolicy; }
+            set { this._instanceMaintenancePolicy = value; }
+        }
+
+        // Check to see if InstanceMaintenancePolicy property is set
+        internal bool IsSetInstanceMaintenancePolicy()
+        {
+            return this._instanceMaintenancePolicy != null;
         }
 
         /// <summary>

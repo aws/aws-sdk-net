@@ -1103,6 +1103,7 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
                     } },
                     AutoRollback = true,
                     InstanceWarmup = 200,
+                    MaxHealthyPercentage = 120,
                     MinHealthyPercentage = 90
                 }
             });

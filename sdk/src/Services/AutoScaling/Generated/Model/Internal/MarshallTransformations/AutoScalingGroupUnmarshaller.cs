@@ -134,6 +134,12 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                         unmarshalledObject.HealthCheckType = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("InstanceMaintenancePolicy", targetDepth))
+                    {
+                        var unmarshaller = InstanceMaintenancePolicyUnmarshaller.Instance;
+                        unmarshalledObject.InstanceMaintenancePolicy = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Instances/member", targetDepth))
                     {
                         var unmarshaller = InstanceUnmarshaller.Instance;

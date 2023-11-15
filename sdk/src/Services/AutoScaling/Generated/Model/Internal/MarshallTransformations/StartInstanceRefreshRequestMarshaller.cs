@@ -392,6 +392,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     {
                         request.Parameters.Add("Preferences" + "." + "InstanceWarmup", StringUtils.FromInt(publicRequest.Preferences.InstanceWarmup));
                     }
+                    if(publicRequest.Preferences.IsSetMaxHealthyPercentage())
+                    {
+                        request.Parameters.Add("Preferences" + "." + "MaxHealthyPercentage", StringUtils.FromInt(publicRequest.Preferences.MaxHealthyPercentage));
+                    }
                     if(publicRequest.Preferences.IsSetMinHealthyPercentage())
                     {
                         request.Parameters.Add("Preferences" + "." + "MinHealthyPercentage", StringUtils.FromInt(publicRequest.Preferences.MinHealthyPercentage));

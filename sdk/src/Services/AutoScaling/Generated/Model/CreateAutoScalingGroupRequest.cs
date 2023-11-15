@@ -74,6 +74,7 @@ namespace Amazon.AutoScaling.Model
         private int? _healthCheckGracePeriod;
         private string _healthCheckType;
         private string _instanceId;
+        private InstanceMaintenancePolicy _instanceMaintenancePolicy;
         private string _launchConfigurationName;
         private LaunchTemplateSpecification _launchTemplate;
         private List<LifecycleHookSpecification> _lifecycleHookSpecificationList = new List<LifecycleHookSpecification>();
@@ -389,6 +390,25 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetInstanceId()
         {
             return this._instanceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceMaintenancePolicy. 
+        /// <para>
+        /// An instance maintenance policy. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-instance-maintenance-policy.html">Set
+        /// instance maintenance policy</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+        /// </para>
+        /// </summary>
+        public InstanceMaintenancePolicy InstanceMaintenancePolicy
+        {
+            get { return this._instanceMaintenancePolicy; }
+            set { this._instanceMaintenancePolicy = value; }
+        }
+
+        // Check to see if InstanceMaintenancePolicy property is set
+        internal bool IsSetInstanceMaintenancePolicy()
+        {
+            return this._instanceMaintenancePolicy != null;
         }
 
         /// <summary>

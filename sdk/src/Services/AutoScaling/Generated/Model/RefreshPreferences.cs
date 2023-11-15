@@ -38,6 +38,7 @@ namespace Amazon.AutoScaling.Model
         private int? _checkpointDelay;
         private List<int> _checkpointPercentages = new List<int>();
         private int? _instanceWarmup;
+        private int? _maxHealthyPercentage;
         private int? _minHealthyPercentage;
         private ScaleInProtectedInstances _scaleInProtectedInstances;
         private bool? _skipMatching;
@@ -188,18 +189,50 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MinHealthyPercentage. 
+        /// Gets and sets the property MaxHealthyPercentage. 
         /// <para>
-        /// The amount of capacity in the Auto Scaling group that must pass your group's health
-        /// checks to allow the operation to continue. The value is expressed as a percentage
-        /// of the desired capacity of the Auto Scaling group (rounded up to the nearest integer).
-        /// The default is <code>90</code>.
+        /// Specifies the maximum percentage of the group that can be in service and healthy,
+        /// or pending, to support your workload when replacing instances. The value is expressed
+        /// as a percentage of the desired capacity of the Auto Scaling group. Value range is
+        /// 100 to 200.
         /// </para>
         ///  
         /// <para>
-        /// Setting the minimum healthy percentage to 100 percent limits the rate of replacement
-        /// to one instance at a time. In contrast, setting it to 0 percent has the effect of
-        /// replacing all instances at the same time. 
+        /// If you specify <code>MaxHealthyPercentage</code>, you must also specify <code>MinHealthyPercentage</code>,
+        /// and the difference between them cannot be greater than 100. A larger range increases
+        /// the number of instances that can be replaced at the same time.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you do not specify this property, the default is 100 percent, or the percentage
+        /// set in the instance maintenance policy for the Auto Scaling group, if defined.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=100, Max=200)]
+        public int MaxHealthyPercentage
+        {
+            get { return this._maxHealthyPercentage.GetValueOrDefault(); }
+            set { this._maxHealthyPercentage = value; }
+        }
+
+        // Check to see if MaxHealthyPercentage property is set
+        internal bool IsSetMaxHealthyPercentage()
+        {
+            return this._maxHealthyPercentage.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MinHealthyPercentage. 
+        /// <para>
+        /// Specifies the minimum percentage of the group to keep in service, healthy, and ready
+        /// to use to support your workload to allow the operation to continue. The value is expressed
+        /// as a percentage of the desired capacity of the Auto Scaling group. Value range is
+        /// 0 to 100.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you do not specify this property, the default is 90 percent, or the percentage
+        /// set in the instance maintenance policy for the Auto Scaling group, if defined.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]

@@ -103,6 +103,17 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("HealthCheckType", StringUtils.FromString(publicRequest.HealthCheckType));
                 }
+                if(publicRequest.IsSetInstanceMaintenancePolicy())
+                {
+                    if(publicRequest.InstanceMaintenancePolicy.IsSetMaxHealthyPercentage())
+                    {
+                        request.Parameters.Add("InstanceMaintenancePolicy" + "." + "MaxHealthyPercentage", StringUtils.FromInt(publicRequest.InstanceMaintenancePolicy.MaxHealthyPercentage));
+                    }
+                    if(publicRequest.InstanceMaintenancePolicy.IsSetMinHealthyPercentage())
+                    {
+                        request.Parameters.Add("InstanceMaintenancePolicy" + "." + "MinHealthyPercentage", StringUtils.FromInt(publicRequest.InstanceMaintenancePolicy.MinHealthyPercentage));
+                    }
+                }
                 if(publicRequest.IsSetLaunchConfigurationName())
                 {
                     request.Parameters.Add("LaunchConfigurationName", StringUtils.FromString(publicRequest.LaunchConfigurationName));

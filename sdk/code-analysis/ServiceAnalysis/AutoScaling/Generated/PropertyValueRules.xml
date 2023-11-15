@@ -870,6 +870,16 @@
     <max>32</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AutoScaling.Model.InstanceMaintenancePolicy.MaxHealthyPercentage</property>
+    <min>-1</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScaling.Model.InstanceMaintenancePolicy.MinHealthyPercentage</property>
+    <min>-1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AutoScaling.Model.InstanceMetadataOptions.HttpPutResponseHopLimit</property>
     <min>1</min>
     <max>64</max>
@@ -1207,6 +1217,11 @@
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.RefreshPreferences.InstanceWarmup</property>
     <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScaling.Model.RefreshPreferences.MaxHealthyPercentage</property>
+    <min>100</min>
+    <max>200</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.RefreshPreferences.MinHealthyPercentage</property>
