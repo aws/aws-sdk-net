@@ -323,7 +323,7 @@ namespace Amazon.DynamoDBv2.DataModel
             Dictionary<string, MemberInfo> dictionary = new Dictionary<string, MemberInfo>(StringComparer.Ordinal);
 
             var members = type
-                .GetMembers()
+                .GetMembers(BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public)
                 .Where(IsValidMemberInfo)
                 .ToList();
             foreach (var member in members)
@@ -773,7 +773,7 @@ namespace Amazon.DynamoDBv2.DataModel
             if (AWSConfigsDynamoDB.Context.TableAliases.TryGetValue(config.TableName, out tableAlias))
                 config.TableName = tableAlias;
 
-            foreach (var member in type.GetMembers())
+            foreach (var member in type.GetMembers(BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public))
             {
                 if (!StorageConfig.IsValidMemberInfo(member))
                     continue;

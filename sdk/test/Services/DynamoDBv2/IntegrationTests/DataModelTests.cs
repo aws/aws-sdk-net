@@ -1563,7 +1563,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             public virtual string Name { get; set; }
             public string MiddleName { get; set; }
             // Range key
-            public virtual int Age { get; set; }
+            internal virtual int Age { get; set; }
 
             public virtual string CompanyName { get; set; }
             public virtual int Score { get; set; }
@@ -1587,7 +1587,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
             // Range key
             [DynamoDBRangeKey]
-            public override int Age { get; set; }
+            internal override int Age { get; set; }
 
             [DynamoDBGlobalSecondaryIndexHashKey("GlobalIndex", AttributeName = "Company")]
             public override string CompanyName { get; set; }
@@ -1610,7 +1610,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
             // Range key
             [DynamoDBRangeKey]
-            public override int Age { get; set; }
+            internal override int Age { get; set; }
 
             [DynamoDBGlobalSecondaryIndexHashKey("GlobalIndex")]
             public override string CompanyName { get; set; }
