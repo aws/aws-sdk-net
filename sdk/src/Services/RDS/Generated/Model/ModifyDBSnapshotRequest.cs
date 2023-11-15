@@ -78,11 +78,14 @@ namespace Amazon.RDS.Model
         /// <para>
         ///  <b>MySQL</b> 
         /// </para>
-        ///  <ul> <li> 
+        ///  
         /// <para>
-        ///  <code>5.5.46</code> (supported for 5.1 DB snapshots)
+        /// For the list of engine versions that are available for upgrading a DB snapshot, see
+        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/mysql-upgrade-snapshot.html">
+        /// Upgrading a MySQL DB snapshot engine version</a> in the <i>Amazon RDS User Guide.</i>
+        /// 
         /// </para>
-        ///  </li> </ul> 
+        ///  
         /// <para>
         ///  <b>Oracle</b> 
         /// </para>
@@ -113,8 +116,9 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// For the list of engine versions that are available for upgrading a DB snapshot, see
-        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.PostgreSQL.html#USER_UpgradeDBInstance.PostgreSQL.MajorVersion">
-        /// Upgrading the PostgreSQL DB Engine for Amazon RDS</a>.
+        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBSnapshot.PostgreSQL.html">
+        /// Upgrading a PostgreSQL DB snapshot engine version</a> in the <i>Amazon RDS User Guide.</i>
+        /// 
         /// </para>
         /// </summary>
         public string EngineVersion
