@@ -943,6 +943,10 @@ namespace Amazon.Lambda
         /// </summary>
         public static readonly Runtime Java17 = new Runtime("java17");
         /// <summary>
+        /// Constant Java21 for Runtime
+        /// </summary>
+        public static readonly Runtime Java21 = new Runtime("java21");
+        /// <summary>
         /// Constant Java8 for Runtime
         /// </summary>
         public static readonly Runtime Java8 = new Runtime("java8");
