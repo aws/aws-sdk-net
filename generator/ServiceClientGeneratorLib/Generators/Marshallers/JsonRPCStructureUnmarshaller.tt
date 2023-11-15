@@ -31,20 +31,52 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public <#=this.UnmarshallerBaseName #> Unmarshall(JsonUnmarshallerContext context)
         {
+            <#=this.UnmarshallerBaseName #> unmarshalledObject = new <#=this.UnmarshallerBaseName #>();
+<#
+    //HasImplicitEventPayloadMembers means that the structure does not have a member with the EventPayload trait
+    if(this.Structure != null && this.Structure.IsEvent && !this.Structure.HasImplicitEventPayloadMembers())
+    {
+    Member eventPayloadMember = this.Structure.GetExplicitEventPayloadMember();
+        if(eventPayloadMember.ModelShape.IsString)
+        {
+#>
+            using (var sr = new StreamReader(context.Stream))
+            {
+                unmarshalledObject.<#=eventPayloadMember.PropertyName#> = sr.ReadToEnd();
+            }
+<#
+        }
+#>
+<#
+        else
+        {
+#>
+            unmarshalledObject.<#=eventPayloadMember.PropertyName#> = context.Stream as MemoryStream;
+<#
+        }
+#>
+<#
+    }
+#>
+<#
+    if(this.Structure != null && (this.Structure.HasImplicitEventPayloadMembers() || !this.Structure.IsEvent))
+    {
+#>
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            <#=this.UnmarshallerBaseName #> unmarshalledObject = new <#=this.UnmarshallerBaseName #>();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
 <#
-    if(this.Structure != null)
+    }
+#>
+<#
+    if(this.Structure != null && (!this.Structure.IsEvent ||  this.Structure.HasImplicitEventPayloadMembers()))
     {
         foreach (var member in this.Structure.Members)
         {
@@ -59,8 +91,14 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
         }
     }
 #>
+<#
+    if(this.Structure != null && (!this.Structure.IsEvent || this.Structure.HasImplicitEventPayloadMembers()))
+    {
+#>
             }
-          
+<#
+    }
+#>
             return unmarshalledObject;
         }
 

@@ -37,16 +37,6 @@ namespace Amazon.SageMakerRuntime.Model
     public partial class PayloadPart
         : IEventStreamEvent
     {
-    public PayloadPart()
-    {
-    }
-
-    public PayloadPart(IEventStreamMessage message)
-    {
-        Bytes = new MemoryStream(message.Payload);
-    }
-
-    partial void Deserialize(IEventStreamMessage message);
         private MemoryStream _bytes;
 
         /// <summary>

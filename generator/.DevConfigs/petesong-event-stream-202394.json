@@ -1,0 +1,24 @@
+{
+    "services":[
+      {
+        "serviceName": "Lambda",
+        "type":"patch",
+        "changeLogMessages":["Deprecate constructors that take in IEventStreamMessage for InvokeWithResponseStreamCompleteEvent and InvokeWithResponseStreamUpdate. This was used internally in the SDK and there is no customer impact."]
+      },
+      {
+        "serviceName":"BedrockRuntime",
+        "type":"patch",
+        "changeLogMessages":["Remove custom code for PayloadPart and add integration tests for event stream apis."]
+      },
+      {
+        "serviceName":"SageMakerRuntime",
+        "type":"patch",
+        "changeLogMessages":["Deprecate constructor for PayloadPart that takes in IEventStreamMessage. This was used internally in the SDK and there is no customer impact."]
+      }
+    ],
+    "core": {
+      "changeLogMessages": ["Update code generation for event streams to work with non-blob/string payloads and add support for streaming exceptions from event stream responses"],
+      "type": "patch",
+      "updateMinimum": true
+    }
+  }

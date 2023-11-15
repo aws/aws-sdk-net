@@ -27,6 +27,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.EventStreams;
 using Amazon.Runtime.EventStreams.Internal;
+using Amazon.Lambda.Model.Internal.MarshallTransformations;
+using Amazon.Runtime.EventStreams.Utils;
 
 namespace Amazon.Lambda.Model
 {
@@ -36,16 +38,6 @@ namespace Amazon.Lambda.Model
     public partial class InvokeWithResponseStreamCompleteEvent
         : IEventStreamEvent
     {
-    public InvokeWithResponseStreamCompleteEvent()
-    {
-    }
-
-    public InvokeWithResponseStreamCompleteEvent(IEventStreamMessage message)
-    {
-        Deserialize(message);
-    }
-
-    partial void Deserialize(IEventStreamMessage message);
         private string _errorCode;
         private string _errorDetails;
         private string _logResult;

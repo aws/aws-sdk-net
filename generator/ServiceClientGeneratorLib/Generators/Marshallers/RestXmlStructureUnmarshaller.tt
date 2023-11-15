@@ -24,7 +24,33 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
         public <#=this.UnmarshallerBaseName #> Unmarshall(XmlUnmarshallerContext context)
         {
             <#=this.UnmarshallerBaseName #> unmarshalledObject = new <#=this.UnmarshallerBaseName #>();
-			int originalDepth = context.CurrentDepth;
+<#
+    if(this.Structure != null && this.Structure.IsEvent && !this.Structure.HasImplicitEventPayloadMembers())
+    {
+        Member eventPayloadMember = this.Structure.GetExplicitEventPayloadMember();
+        if(eventPayloadMember.ModelShape.IsString)
+        {
+#>
+            using (var sr = new StreamReader(context.Stream))
+            {
+                unmarshalledObject.<#=eventPayloadMember.PropertyName#> = sr.ReadToEnd();
+            }
+<#
+        }
+        else
+        {
+#>
+            unmarshalledObject.<#=eventPayloadMember.PropertyName#> = context.Stream as MemoryStream;
+<#
+        }
+    }
+#>
+<#
+     //HasImplicitEventPayloadMembers means that the structure does not have a member with the EventPayload trait
+     if(this.Structure != null && (this.Structure.HasImplicitEventPayloadMembers() || !this.Structure.IsEvent))
+     {
+#>
+            int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
@@ -35,7 +61,10 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 <#
-    if(this.Structure != null)
+    }
+#>
+<#
+    if(this.Structure != null && (!this.Structure.IsEvent ||  this.Structure.HasImplicitEventPayloadMembers()))
     {
         // For every member, generate code to add the unmarshalled member to the response object
         foreach (var member in this.Structure.Members)
