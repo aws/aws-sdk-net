@@ -82,5 +82,13 @@ namespace Amazon.S3Control.Model
         {
             return new ListStorageLensConfigurationsPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for ListStorageLensGroups operation
+        ///</summary>
+        public IListStorageLensGroupsPaginator ListStorageLensGroups(ListStorageLensGroupsRequest request) 
+        {
+            return new ListStorageLensGroupsPaginator(this.client, request);
+        }
     }
 }

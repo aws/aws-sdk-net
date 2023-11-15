@@ -47,7 +47,7 @@ namespace Amazon.S3Control.Model
     /// </para>
     ///  
     /// <para>
-    /// To use this action, you must have permission to perform the <code>s3-outposts:DeleteLifecycleConfiguration</code>
+    /// To use this operation, you must have permission to perform the <code>s3-outposts:PutLifecycleConfiguration</code>
     /// action. By default, the bucket owner has this permission and the Outposts bucket owner
     /// can grant this permission to others.
     /// </para>

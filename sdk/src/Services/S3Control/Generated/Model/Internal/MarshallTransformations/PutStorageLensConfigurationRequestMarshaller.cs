@@ -186,6 +186,42 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
 
                             xmlWriter.WriteEndElement();
                         }
+                
+                        if (publicRequest.StorageLensConfiguration.AccountLevel.StorageLensGroupLevel != null) 
+                        {
+                            xmlWriter.WriteStartElement("StorageLensGroupLevel", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
+                
+                            if (publicRequest.StorageLensConfiguration.AccountLevel.StorageLensGroupLevel.SelectionCriteria != null) 
+                            {
+                                xmlWriter.WriteStartElement("SelectionCriteria", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
+                                var publicRequestStorageLensConfigurationAccountLevelStorageLensGroupLevelSelectionCriteriaExclude = publicRequest.StorageLensConfiguration.AccountLevel.StorageLensGroupLevel.SelectionCriteria.Exclude;
+                                if (publicRequestStorageLensConfigurationAccountLevelStorageLensGroupLevelSelectionCriteriaExclude != null && publicRequestStorageLensConfigurationAccountLevelStorageLensGroupLevelSelectionCriteriaExclude.Count > 0) 
+                                {                        
+                                    xmlWriter.WriteStartElement("Exclude", "http://awss3control.amazonaws.com/doc/2018-08-20/");
+                                    foreach (var publicRequestStorageLensConfigurationAccountLevelStorageLensGroupLevelSelectionCriteriaExcludeValue in publicRequestStorageLensConfigurationAccountLevelStorageLensGroupLevelSelectionCriteriaExclude) 
+                                    {
+                                        xmlWriter.WriteStartElement("Arn", "http://awss3control.amazonaws.com/doc/2018-08-20/");
+                                        xmlWriter.WriteValue(publicRequestStorageLensConfigurationAccountLevelStorageLensGroupLevelSelectionCriteriaExcludeValue);
+                                        xmlWriter.WriteEndElement();
+                                    }            
+                                    xmlWriter.WriteEndElement();            
+                                }
+                                var publicRequestStorageLensConfigurationAccountLevelStorageLensGroupLevelSelectionCriteriaInclude = publicRequest.StorageLensConfiguration.AccountLevel.StorageLensGroupLevel.SelectionCriteria.Include;
+                                if (publicRequestStorageLensConfigurationAccountLevelStorageLensGroupLevelSelectionCriteriaInclude != null && publicRequestStorageLensConfigurationAccountLevelStorageLensGroupLevelSelectionCriteriaInclude.Count > 0) 
+                                {                        
+                                    xmlWriter.WriteStartElement("Include", "http://awss3control.amazonaws.com/doc/2018-08-20/");
+                                    foreach (var publicRequestStorageLensConfigurationAccountLevelStorageLensGroupLevelSelectionCriteriaIncludeValue in publicRequestStorageLensConfigurationAccountLevelStorageLensGroupLevelSelectionCriteriaInclude) 
+                                    {
+                                        xmlWriter.WriteStartElement("Arn", "http://awss3control.amazonaws.com/doc/2018-08-20/");
+                                        xmlWriter.WriteValue(publicRequestStorageLensConfigurationAccountLevelStorageLensGroupLevelSelectionCriteriaIncludeValue);
+                                        xmlWriter.WriteEndElement();
+                                    }            
+                                    xmlWriter.WriteEndElement();            
+                                }
+                                xmlWriter.WriteEndElement();
+                            }
+                            xmlWriter.WriteEndElement();
+                        }
                         xmlWriter.WriteEndElement();
                     }
                 

@@ -770,6 +770,80 @@ namespace Amazon.S3Control
 
         #endregion
         
+        #region  CreateStorageLensGroup
+
+        /// <summary>
+        /// Creates a new S3 Storage Lens group and associates it with the specified Amazon Web
+        /// Services account ID. An S3 Storage Lens group is a custom grouping of objects based
+        /// on prefix, suffix, object tags, object size, object age, or a combination of these
+        /// filters. For each Storage Lens group that you’ve created, you can also optionally
+        /// add Amazon Web Services resource tags. For more information about S3 Storage Lens
+        /// groups, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-lens-groups-overview.html">Working
+        /// with S3 Storage Lens groups</a>.
+        /// 
+        ///  
+        /// <para>
+        /// To use this operation, you must have the permission to perform the <code>s3:CreateStorageLensGroup</code>
+        /// action. If you’re trying to create a Storage Lens group with Amazon Web Services resource
+        /// tags, you must also have permission to perform the <code>s3:TagResource</code> action.
+        /// For more information about the required Storage Lens Groups permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions">Setting
+        /// account permissions to use S3 Storage Lens groups</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about Storage Lens groups errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3LensErrorCodeList">List
+        /// of Amazon S3 Storage Lens error codes</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateStorageLensGroup service method.</param>
+        /// 
+        /// <returns>The response from the CreateStorageLensGroup service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateStorageLensGroup">REST API Reference for CreateStorageLensGroup Operation</seealso>
+        public virtual CreateStorageLensGroupResponse CreateStorageLensGroup(CreateStorageLensGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateStorageLensGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateStorageLensGroupResponseUnmarshaller.Instance;
+
+            return Invoke<CreateStorageLensGroupResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateStorageLensGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateStorageLensGroup operation on AmazonS3ControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateStorageLensGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateStorageLensGroup">REST API Reference for CreateStorageLensGroup Operation</seealso>
+        public virtual IAsyncResult BeginCreateStorageLensGroup(CreateStorageLensGroupRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateStorageLensGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateStorageLensGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateStorageLensGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateStorageLensGroup.</param>
+        /// 
+        /// <returns>Returns a  CreateStorageLensGroupResult from S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateStorageLensGroup">REST API Reference for CreateStorageLensGroup Operation</seealso>
+        public virtual CreateStorageLensGroupResponse EndCreateStorageLensGroup(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateStorageLensGroupResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteAccessPoint
 
         /// <summary>
@@ -1196,7 +1270,7 @@ namespace Amazon.S3Control
         /// </para>
         ///  
         /// <para>
-        /// To use this action, you must have permission to perform the <code>s3-outposts:DeleteLifecycleConfiguration</code>
+        /// To use this operation, you must have permission to perform the <code>s3-outposts:PutLifecycleConfiguration</code>
         /// action. By default, the bucket owner has this permission and the Outposts bucket owner
         /// can grant this permission to others.
         /// </para>
@@ -1975,6 +2049,73 @@ namespace Amazon.S3Control
         public virtual DeleteStorageLensConfigurationTaggingResponse EndDeleteStorageLensConfigurationTagging(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteStorageLensConfigurationTaggingResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteStorageLensGroup
+
+        /// <summary>
+        /// Deletes an existing S3 Storage Lens group.
+        /// 
+        ///  
+        /// <para>
+        /// To use this operation, you must have the permission to perform the <code>s3:DeleteStorageLensGroup</code>
+        /// action. For more information about the required Storage Lens Groups permissions, see
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions">Setting
+        /// account permissions to use S3 Storage Lens groups</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about Storage Lens groups errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3LensErrorCodeList">List
+        /// of Amazon S3 Storage Lens error codes</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteStorageLensGroup service method.</param>
+        /// 
+        /// <returns>The response from the DeleteStorageLensGroup service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteStorageLensGroup">REST API Reference for DeleteStorageLensGroup Operation</seealso>
+        public virtual DeleteStorageLensGroupResponse DeleteStorageLensGroup(DeleteStorageLensGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteStorageLensGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteStorageLensGroupResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteStorageLensGroupResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteStorageLensGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteStorageLensGroup operation on AmazonS3ControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteStorageLensGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteStorageLensGroup">REST API Reference for DeleteStorageLensGroup Operation</seealso>
+        public virtual IAsyncResult BeginDeleteStorageLensGroup(DeleteStorageLensGroupRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteStorageLensGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteStorageLensGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteStorageLensGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteStorageLensGroup.</param>
+        /// 
+        /// <returns>Returns a  DeleteStorageLensGroupResult from S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteStorageLensGroup">REST API Reference for DeleteStorageLensGroup Operation</seealso>
+        public virtual DeleteStorageLensGroupResponse EndDeleteStorageLensGroup(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteStorageLensGroupResponse>(asyncResult);
         }
 
         #endregion
@@ -3926,6 +4067,73 @@ namespace Amazon.S3Control
 
         #endregion
         
+        #region  GetStorageLensGroup
+
+        /// <summary>
+        /// Retrieves the Storage Lens group configuration details.
+        /// 
+        ///  
+        /// <para>
+        /// To use this operation, you must have the permission to perform the <code>s3:GetStorageLensGroup</code>
+        /// action. For more information about the required Storage Lens Groups permissions, see
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions">Setting
+        /// account permissions to use S3 Storage Lens groups</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about Storage Lens groups errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3LensErrorCodeList">List
+        /// of Amazon S3 Storage Lens error codes</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetStorageLensGroup service method.</param>
+        /// 
+        /// <returns>The response from the GetStorageLensGroup service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetStorageLensGroup">REST API Reference for GetStorageLensGroup Operation</seealso>
+        public virtual GetStorageLensGroupResponse GetStorageLensGroup(GetStorageLensGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetStorageLensGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetStorageLensGroupResponseUnmarshaller.Instance;
+
+            return Invoke<GetStorageLensGroupResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetStorageLensGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetStorageLensGroup operation on AmazonS3ControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetStorageLensGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetStorageLensGroup">REST API Reference for GetStorageLensGroup Operation</seealso>
+        public virtual IAsyncResult BeginGetStorageLensGroup(GetStorageLensGroupRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetStorageLensGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetStorageLensGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetStorageLensGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetStorageLensGroup.</param>
+        /// 
+        /// <returns>Returns a  GetStorageLensGroupResult from S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetStorageLensGroup">REST API Reference for GetStorageLensGroup Operation</seealso>
+        public virtual GetStorageLensGroupResponse EndGetStorageLensGroup(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetStorageLensGroupResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListAccessPoints
 
         /// <summary>
@@ -4399,6 +4607,147 @@ namespace Amazon.S3Control
         public virtual ListStorageLensConfigurationsResponse EndListStorageLensConfigurations(IAsyncResult asyncResult)
         {
             return EndInvoke<ListStorageLensConfigurationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListStorageLensGroups
+
+        /// <summary>
+        /// Lists all the Storage Lens groups in the specified home Region. 
+        /// 
+        ///  
+        /// <para>
+        /// To use this operation, you must have the permission to perform the <code>s3:ListStorageLensGroups</code>
+        /// action. For more information about the required Storage Lens Groups permissions, see
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions">Setting
+        /// account permissions to use S3 Storage Lens groups</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about Storage Lens groups errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3LensErrorCodeList">List
+        /// of Amazon S3 Storage Lens error codes</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListStorageLensGroups service method.</param>
+        /// 
+        /// <returns>The response from the ListStorageLensGroups service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListStorageLensGroups">REST API Reference for ListStorageLensGroups Operation</seealso>
+        public virtual ListStorageLensGroupsResponse ListStorageLensGroups(ListStorageLensGroupsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListStorageLensGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListStorageLensGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<ListStorageLensGroupsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListStorageLensGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListStorageLensGroups operation on AmazonS3ControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListStorageLensGroups
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListStorageLensGroups">REST API Reference for ListStorageLensGroups Operation</seealso>
+        public virtual IAsyncResult BeginListStorageLensGroups(ListStorageLensGroupsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListStorageLensGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListStorageLensGroupsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListStorageLensGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListStorageLensGroups.</param>
+        /// 
+        /// <returns>Returns a  ListStorageLensGroupsResult from S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListStorageLensGroups">REST API Reference for ListStorageLensGroups Operation</seealso>
+        public virtual ListStorageLensGroupsResponse EndListStorageLensGroups(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListStorageLensGroupsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListTagsForResource
+
+        /// <summary>
+        /// This operation allows you to list all the Amazon Web Services resource tags for the
+        /// specified resource. 
+        /// 
+        ///  
+        /// <para>
+        /// To use this operation, you must have the permission to perform the <code>s3:ListTagsForResource</code>
+        /// action. For more information about the required Storage Lens Groups permissions, see
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions">Setting
+        /// account permissions to use S3 Storage Lens groups</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about S3 Tagging errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3TaggingErrorCodeList">List
+        /// of Amazon S3 Tagging error codes</a>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This operation is only supported for <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-lens-groups.html">S3
+        /// Storage Lens groups</a>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return Invoke<ListTagsForResourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource operation on AmazonS3ControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTagsForResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTagsForResource.</param>
+        /// 
+        /// <returns>Returns a  ListTagsForResourceResult from S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListTagsForResourceResponse>(asyncResult);
         }
 
         #endregion
@@ -5817,6 +6166,154 @@ namespace Amazon.S3Control
 
         #endregion
         
+        #region  TagResource
+
+        /// <summary>
+        /// Creates a new Amazon Web Services resource tag or updates an existing resource tag.
+        /// You can add up to 50 Amazon Web Services resource tags for each S3 resource. 
+        /// 
+        ///  
+        /// <para>
+        /// To use this operation, you must have the permission to perform the <code>s3:TagResource</code>
+        /// action. For more information about the required Storage Lens Groups permissions, see
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions">Setting
+        /// account permissions to use S3 Storage Lens groups</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about S3 Tagging errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3TaggingErrorCodeList">List
+        /// of Amazon S3 Tagging error codes</a>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This operation is only supported for <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-lens-groups.html">S3
+        /// Storage Lens groups</a>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual TagResourceResponse TagResource(TagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<TagResourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TagResource operation on AmazonS3ControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTagResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTagResource.</param>
+        /// 
+        /// <returns>Returns a  TagResourceResult from S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual TagResourceResponse EndTagResource(IAsyncResult asyncResult)
+        {
+            return EndInvoke<TagResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UntagResource
+
+        /// <summary>
+        /// This operation removes the specified Amazon Web Services resource tags from an S3
+        /// resource. 
+        /// 
+        ///  
+        /// <para>
+        /// To use this operation, you must have the permission to perform the <code>s3:UntagResource</code>
+        /// action. For more information about the required Storage Lens Groups permissions, see
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions">Setting
+        /// account permissions to use S3 Storage Lens groups</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about S3 Tagging errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3TaggingErrorCodeList">List
+        /// of Amazon S3 Tagging error codes</a>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This operation is only supported for <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-lens-groups.html">S3
+        /// Storage Lens groups</a>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<UntagResourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource operation on AmazonS3ControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUntagResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUntagResource.</param>
+        /// 
+        /// <returns>Returns a  UntagResourceResult from S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual UntagResourceResponse EndUntagResource(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UntagResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UpdateJobPriority
 
         /// <summary>
@@ -6004,6 +6501,73 @@ namespace Amazon.S3Control
         public virtual UpdateJobStatusResponse EndUpdateJobStatus(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateJobStatusResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateStorageLensGroup
+
+        /// <summary>
+        /// Updates the existing Storage Lens group.
+        /// 
+        ///  
+        /// <para>
+        /// To use this operation, you must have the permission to perform the <code>s3:UpdateStorageLensGroup</code>
+        /// action. For more information about the required Storage Lens Groups permissions, see
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions">Setting
+        /// account permissions to use S3 Storage Lens groups</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about Storage Lens groups errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3LensErrorCodeList">List
+        /// of Amazon S3 Storage Lens error codes</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateStorageLensGroup service method.</param>
+        /// 
+        /// <returns>The response from the UpdateStorageLensGroup service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/UpdateStorageLensGroup">REST API Reference for UpdateStorageLensGroup Operation</seealso>
+        public virtual UpdateStorageLensGroupResponse UpdateStorageLensGroup(UpdateStorageLensGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateStorageLensGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateStorageLensGroupResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateStorageLensGroupResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateStorageLensGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateStorageLensGroup operation on AmazonS3ControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateStorageLensGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/UpdateStorageLensGroup">REST API Reference for UpdateStorageLensGroup Operation</seealso>
+        public virtual IAsyncResult BeginUpdateStorageLensGroup(UpdateStorageLensGroupRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateStorageLensGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateStorageLensGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateStorageLensGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateStorageLensGroup.</param>
+        /// 
+        /// <returns>Returns a  UpdateStorageLensGroupResult from S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/UpdateStorageLensGroup">REST API Reference for UpdateStorageLensGroup Operation</seealso>
+        public virtual UpdateStorageLensGroupResponse EndUpdateStorageLensGroup(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateStorageLensGroupResponse>(asyncResult);
         }
 
         #endregion

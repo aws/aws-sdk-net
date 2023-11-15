@@ -39,7 +39,7 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property Key.
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1024)]
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string Key
         {
             get { return this._key; }
@@ -55,7 +55,7 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property Value.
         /// </summary>
-        [AWSProperty(Required=true, Max=1024)]
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string Value
         {
             get { return this._value; }

@@ -110,6 +110,11 @@
     <pattern>arn:.+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.S3Control.Model.CreateStorageLensGroupRequest.AccountId</property>
+    <max>64</max>
+    <pattern>^\d{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.S3Control.Model.DeleteAccessPointRequest.AccountId</property>
     <max>64</max>
     <pattern>^\d{12}$</pattern>
@@ -249,6 +254,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Control.Model.DeleteStorageLensConfigurationTaggingRequest.ConfigId</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.DeleteStorageLensGroupRequest.AccountId</property>
+    <max>64</max>
+    <pattern>^\d{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.DeleteStorageLensGroupRequest.Name</property>
     <min>1</min>
     <max>64</max>
   </property-value-rule>
@@ -524,6 +539,16 @@
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.S3Control.Model.GetStorageLensGroupRequest.AccountId</property>
+    <max>64</max>
+    <pattern>^\d{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.GetStorageLensGroupRequest.Name</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.S3Control.Model.ListAccessPointsRequest.AccountId</property>
     <max>64</max>
     <pattern>^\d{12}$</pattern>
@@ -639,6 +664,21 @@
     <property>Amazon.S3Control.Model.ListStorageLensConfigurationsRequest.AccountId</property>
     <max>64</max>
     <pattern>^\d{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.ListStorageLensGroupsRequest.AccountId</property>
+    <max>64</max>
+    <pattern>^\d{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.ListTagsForResourceRequest.AccountId</property>
+    <max>64</max>
+    <pattern>^\d{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.ListTagsForResourceRequest.ResourceArn</property>
+    <max>1011</max>
+    <pattern>arn:[^:]+:s3:[^:].*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Control.Model.PutAccessPointConfigurationForObjectLambdaRequest.AccountId</property>
@@ -784,6 +824,26 @@
     <pattern>^[a-zA-Z0-9\:.-]{3,200}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.S3Control.Model.TagResourceRequest.AccountId</property>
+    <max>64</max>
+    <pattern>^\d{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.TagResourceRequest.ResourceArn</property>
+    <max>1011</max>
+    <pattern>arn:[^:]+:s3:[^:].*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.UntagResourceRequest.AccountId</property>
+    <max>64</max>
+    <pattern>^\d{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.UntagResourceRequest.ResourceArn</property>
+    <max>1011</max>
+    <pattern>arn:[^:]+:s3:[^:].*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.S3Control.Model.UpdateJobPriorityRequest.AccountId</property>
     <max>64</max>
     <pattern>^\d{12}$</pattern>
@@ -832,6 +892,16 @@
     <property>Amazon.S3Control.Model.UpdateJobStatusResponse.StatusUpdateReason</property>
     <min>1</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.UpdateStorageLensGroupRequest.AccountId</property>
+    <max>64</max>
+    <pattern>^\d{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.UpdateStorageLensGroupRequest.Name</property>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Control.Model.AccessPoint.AccessPointArn</property>
@@ -1028,6 +1098,23 @@
     <min>1</min>
     <max>1024</max>
     <pattern>arn:[a-z\-]+:s3:[a-z0-9\-]+:\d{12}:storage\-lens\/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.ListStorageLensGroupEntry.HomeRegion</property>
+    <min>5</min>
+    <max>30</max>
+    <pattern>[a-z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.ListStorageLensGroupEntry.Name</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.ListStorageLensGroupEntry.StorageLensGroupArn</property>
+    <min>4</min>
+    <max>1024</max>
+    <pattern>arn:[a-z\-]+:s3:[a-z0-9\-]+:\d{12}:storage\-lens\-group\/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Control.Model.MultiRegionAccessPointRegionalResponse.Name</property>
@@ -1253,12 +1340,13 @@
   <property-value-rule>
     <property>Amazon.S3Control.Model.S3Tag.Key</property>
     <min>1</min>
-    <max>1024</max>
+    <max>128</max>
     <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Control.Model.S3Tag.Value</property>
-    <max>1024</max>
+    <min>0</min>
+    <max>256</max>
     <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1297,14 +1385,38 @@
     <pattern>arn:[a-z\-]+:s3:[a-z0-9\-]+:\d{12}:storage\-lens\/.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.S3Control.Model.StorageLensGroup.Name</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.StorageLensGroup.StorageLensGroupArn</property>
+    <min>4</min>
+    <max>1024</max>
+    <pattern>arn:[a-z\-]+:s3:[a-z0-9\-]+:\d{12}:storage\-lens\-group\/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.S3Control.Model.StorageLensTag.Key</property>
     <min>1</min>
-    <max>1024</max>
+    <max>128</max>
     <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Control.Model.StorageLensTag.Value</property>
-    <max>1024</max>
+    <min>0</min>
+    <max>256</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.Tag.Key</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.Tag.Value</property>
+    <min>0</min>
+    <max>256</max>
     <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
   </property-value-rule>
   <property-value-rule>

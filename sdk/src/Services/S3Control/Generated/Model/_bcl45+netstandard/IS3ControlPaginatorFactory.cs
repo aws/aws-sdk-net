@@ -54,5 +54,10 @@ namespace Amazon.S3Control.Model
         /// Paginator for ListStorageLensConfigurations operation
         ///</summary>
         IListStorageLensConfigurationsPaginator ListStorageLensConfigurations(ListStorageLensConfigurationsRequest request);
+
+        /// <summary>
+        /// Paginator for ListStorageLensGroups operation
+        ///</summary>
+        IListStorageLensGroupsPaginator ListStorageLensGroups(ListStorageLensGroupsRequest request);
     }
 }

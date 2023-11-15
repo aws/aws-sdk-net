@@ -652,6 +652,74 @@ namespace Amazon.S3Control
 
         #endregion
         
+        #region  CreateStorageLensGroup
+
+
+        /// <summary>
+        /// Creates a new S3 Storage Lens group and associates it with the specified Amazon Web
+        /// Services account ID. An S3 Storage Lens group is a custom grouping of objects based
+        /// on prefix, suffix, object tags, object size, object age, or a combination of these
+        /// filters. For each Storage Lens group that you’ve created, you can also optionally
+        /// add Amazon Web Services resource tags. For more information about S3 Storage Lens
+        /// groups, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-lens-groups-overview.html">Working
+        /// with S3 Storage Lens groups</a>.
+        /// 
+        ///  
+        /// <para>
+        /// To use this operation, you must have the permission to perform the <code>s3:CreateStorageLensGroup</code>
+        /// action. If you’re trying to create a Storage Lens group with Amazon Web Services resource
+        /// tags, you must also have permission to perform the <code>s3:TagResource</code> action.
+        /// For more information about the required Storage Lens Groups permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions">Setting
+        /// account permissions to use S3 Storage Lens groups</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about Storage Lens groups errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3LensErrorCodeList">List
+        /// of Amazon S3 Storage Lens error codes</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateStorageLensGroup service method.</param>
+        /// 
+        /// <returns>The response from the CreateStorageLensGroup service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateStorageLensGroup">REST API Reference for CreateStorageLensGroup Operation</seealso>
+        CreateStorageLensGroupResponse CreateStorageLensGroup(CreateStorageLensGroupRequest request);
+
+
+
+        /// <summary>
+        /// Creates a new S3 Storage Lens group and associates it with the specified Amazon Web
+        /// Services account ID. An S3 Storage Lens group is a custom grouping of objects based
+        /// on prefix, suffix, object tags, object size, object age, or a combination of these
+        /// filters. For each Storage Lens group that you’ve created, you can also optionally
+        /// add Amazon Web Services resource tags. For more information about S3 Storage Lens
+        /// groups, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-lens-groups-overview.html">Working
+        /// with S3 Storage Lens groups</a>.
+        /// 
+        ///  
+        /// <para>
+        /// To use this operation, you must have the permission to perform the <code>s3:CreateStorageLensGroup</code>
+        /// action. If you’re trying to create a Storage Lens group with Amazon Web Services resource
+        /// tags, you must also have permission to perform the <code>s3:TagResource</code> action.
+        /// For more information about the required Storage Lens Groups permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions">Setting
+        /// account permissions to use S3 Storage Lens groups</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about Storage Lens groups errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3LensErrorCodeList">List
+        /// of Amazon S3 Storage Lens error codes</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateStorageLensGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateStorageLensGroup service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateStorageLensGroup">REST API Reference for CreateStorageLensGroup Operation</seealso>
+        Task<CreateStorageLensGroupResponse> CreateStorageLensGroupAsync(CreateStorageLensGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteAccessPoint
 
 
@@ -1085,7 +1153,7 @@ namespace Amazon.S3Control
         /// </para>
         ///  
         /// <para>
-        /// To use this action, you must have permission to perform the <code>s3-outposts:DeleteLifecycleConfiguration</code>
+        /// To use this operation, you must have permission to perform the <code>s3-outposts:PutLifecycleConfiguration</code>
         /// action. By default, the bucket owner has this permission and the Outposts bucket owner
         /// can grant this permission to others.
         /// </para>
@@ -1146,7 +1214,7 @@ namespace Amazon.S3Control
         /// </para>
         ///  
         /// <para>
-        /// To use this action, you must have permission to perform the <code>s3-outposts:DeleteLifecycleConfiguration</code>
+        /// To use this operation, you must have permission to perform the <code>s3-outposts:PutLifecycleConfiguration</code>
         /// action. By default, the bucket owner has this permission and the Outposts bucket owner
         /// can grant this permission to others.
         /// </para>
@@ -1947,6 +2015,60 @@ namespace Amazon.S3Control
         /// <returns>The response from the DeleteStorageLensConfigurationTagging service method, as returned by S3Control.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteStorageLensConfigurationTagging">REST API Reference for DeleteStorageLensConfigurationTagging Operation</seealso>
         Task<DeleteStorageLensConfigurationTaggingResponse> DeleteStorageLensConfigurationTaggingAsync(DeleteStorageLensConfigurationTaggingRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteStorageLensGroup
+
+
+        /// <summary>
+        /// Deletes an existing S3 Storage Lens group.
+        /// 
+        ///  
+        /// <para>
+        /// To use this operation, you must have the permission to perform the <code>s3:DeleteStorageLensGroup</code>
+        /// action. For more information about the required Storage Lens Groups permissions, see
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions">Setting
+        /// account permissions to use S3 Storage Lens groups</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about Storage Lens groups errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3LensErrorCodeList">List
+        /// of Amazon S3 Storage Lens error codes</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteStorageLensGroup service method.</param>
+        /// 
+        /// <returns>The response from the DeleteStorageLensGroup service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteStorageLensGroup">REST API Reference for DeleteStorageLensGroup Operation</seealso>
+        DeleteStorageLensGroupResponse DeleteStorageLensGroup(DeleteStorageLensGroupRequest request);
+
+
+
+        /// <summary>
+        /// Deletes an existing S3 Storage Lens group.
+        /// 
+        ///  
+        /// <para>
+        /// To use this operation, you must have the permission to perform the <code>s3:DeleteStorageLensGroup</code>
+        /// action. For more information about the required Storage Lens Groups permissions, see
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions">Setting
+        /// account permissions to use S3 Storage Lens groups</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about Storage Lens groups errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3LensErrorCodeList">List
+        /// of Amazon S3 Storage Lens error codes</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteStorageLensGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteStorageLensGroup service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteStorageLensGroup">REST API Reference for DeleteStorageLensGroup Operation</seealso>
+        Task<DeleteStorageLensGroupResponse> DeleteStorageLensGroupAsync(DeleteStorageLensGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -4004,6 +4126,60 @@ namespace Amazon.S3Control
 
         #endregion
         
+        #region  GetStorageLensGroup
+
+
+        /// <summary>
+        /// Retrieves the Storage Lens group configuration details.
+        /// 
+        ///  
+        /// <para>
+        /// To use this operation, you must have the permission to perform the <code>s3:GetStorageLensGroup</code>
+        /// action. For more information about the required Storage Lens Groups permissions, see
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions">Setting
+        /// account permissions to use S3 Storage Lens groups</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about Storage Lens groups errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3LensErrorCodeList">List
+        /// of Amazon S3 Storage Lens error codes</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetStorageLensGroup service method.</param>
+        /// 
+        /// <returns>The response from the GetStorageLensGroup service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetStorageLensGroup">REST API Reference for GetStorageLensGroup Operation</seealso>
+        GetStorageLensGroupResponse GetStorageLensGroup(GetStorageLensGroupRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves the Storage Lens group configuration details.
+        /// 
+        ///  
+        /// <para>
+        /// To use this operation, you must have the permission to perform the <code>s3:GetStorageLensGroup</code>
+        /// action. For more information about the required Storage Lens Groups permissions, see
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions">Setting
+        /// account permissions to use S3 Storage Lens groups</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about Storage Lens groups errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3LensErrorCodeList">List
+        /// of Amazon S3 Storage Lens error codes</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetStorageLensGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetStorageLensGroup service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetStorageLensGroup">REST API Reference for GetStorageLensGroup Operation</seealso>
+        Task<GetStorageLensGroupResponse> GetStorageLensGroupAsync(GetStorageLensGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListAccessPoints
 
 
@@ -4475,6 +4651,128 @@ namespace Amazon.S3Control
         /// <returns>The response from the ListStorageLensConfigurations service method, as returned by S3Control.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListStorageLensConfigurations">REST API Reference for ListStorageLensConfigurations Operation</seealso>
         Task<ListStorageLensConfigurationsResponse> ListStorageLensConfigurationsAsync(ListStorageLensConfigurationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListStorageLensGroups
+
+
+        /// <summary>
+        /// Lists all the Storage Lens groups in the specified home Region. 
+        /// 
+        ///  
+        /// <para>
+        /// To use this operation, you must have the permission to perform the <code>s3:ListStorageLensGroups</code>
+        /// action. For more information about the required Storage Lens Groups permissions, see
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions">Setting
+        /// account permissions to use S3 Storage Lens groups</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about Storage Lens groups errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3LensErrorCodeList">List
+        /// of Amazon S3 Storage Lens error codes</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListStorageLensGroups service method.</param>
+        /// 
+        /// <returns>The response from the ListStorageLensGroups service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListStorageLensGroups">REST API Reference for ListStorageLensGroups Operation</seealso>
+        ListStorageLensGroupsResponse ListStorageLensGroups(ListStorageLensGroupsRequest request);
+
+
+
+        /// <summary>
+        /// Lists all the Storage Lens groups in the specified home Region. 
+        /// 
+        ///  
+        /// <para>
+        /// To use this operation, you must have the permission to perform the <code>s3:ListStorageLensGroups</code>
+        /// action. For more information about the required Storage Lens Groups permissions, see
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions">Setting
+        /// account permissions to use S3 Storage Lens groups</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about Storage Lens groups errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3LensErrorCodeList">List
+        /// of Amazon S3 Storage Lens error codes</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListStorageLensGroups service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListStorageLensGroups service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListStorageLensGroups">REST API Reference for ListStorageLensGroups Operation</seealso>
+        Task<ListStorageLensGroupsResponse> ListStorageLensGroupsAsync(ListStorageLensGroupsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListTagsForResource
+
+
+        /// <summary>
+        /// This operation allows you to list all the Amazon Web Services resource tags for the
+        /// specified resource. 
+        /// 
+        ///  
+        /// <para>
+        /// To use this operation, you must have the permission to perform the <code>s3:ListTagsForResource</code>
+        /// action. For more information about the required Storage Lens Groups permissions, see
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions">Setting
+        /// account permissions to use S3 Storage Lens groups</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about S3 Tagging errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3TaggingErrorCodeList">List
+        /// of Amazon S3 Tagging error codes</a>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This operation is only supported for <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-lens-groups.html">S3
+        /// Storage Lens groups</a>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
+
+
+
+        /// <summary>
+        /// This operation allows you to list all the Amazon Web Services resource tags for the
+        /// specified resource. 
+        /// 
+        ///  
+        /// <para>
+        /// To use this operation, you must have the permission to perform the <code>s3:ListTagsForResource</code>
+        /// action. For more information about the required Storage Lens Groups permissions, see
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions">Setting
+        /// account permissions to use S3 Storage Lens groups</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about S3 Tagging errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3TaggingErrorCodeList">List
+        /// of Amazon S3 Tagging error codes</a>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This operation is only supported for <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-lens-groups.html">S3
+        /// Storage Lens groups</a>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -6186,6 +6484,142 @@ namespace Amazon.S3Control
 
         #endregion
         
+        #region  TagResource
+
+
+        /// <summary>
+        /// Creates a new Amazon Web Services resource tag or updates an existing resource tag.
+        /// You can add up to 50 Amazon Web Services resource tags for each S3 resource. 
+        /// 
+        ///  
+        /// <para>
+        /// To use this operation, you must have the permission to perform the <code>s3:TagResource</code>
+        /// action. For more information about the required Storage Lens Groups permissions, see
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions">Setting
+        /// account permissions to use S3 Storage Lens groups</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about S3 Tagging errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3TaggingErrorCodeList">List
+        /// of Amazon S3 Tagging error codes</a>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This operation is only supported for <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-lens-groups.html">S3
+        /// Storage Lens groups</a>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/TagResource">REST API Reference for TagResource Operation</seealso>
+        TagResourceResponse TagResource(TagResourceRequest request);
+
+
+
+        /// <summary>
+        /// Creates a new Amazon Web Services resource tag or updates an existing resource tag.
+        /// You can add up to 50 Amazon Web Services resource tags for each S3 resource. 
+        /// 
+        ///  
+        /// <para>
+        /// To use this operation, you must have the permission to perform the <code>s3:TagResource</code>
+        /// action. For more information about the required Storage Lens Groups permissions, see
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions">Setting
+        /// account permissions to use S3 Storage Lens groups</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about S3 Tagging errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3TaggingErrorCodeList">List
+        /// of Amazon S3 Tagging error codes</a>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This operation is only supported for <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-lens-groups.html">S3
+        /// Storage Lens groups</a>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/TagResource">REST API Reference for TagResource Operation</seealso>
+        Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UntagResource
+
+
+        /// <summary>
+        /// This operation removes the specified Amazon Web Services resource tags from an S3
+        /// resource. 
+        /// 
+        ///  
+        /// <para>
+        /// To use this operation, you must have the permission to perform the <code>s3:UntagResource</code>
+        /// action. For more information about the required Storage Lens Groups permissions, see
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions">Setting
+        /// account permissions to use S3 Storage Lens groups</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about S3 Tagging errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3TaggingErrorCodeList">List
+        /// of Amazon S3 Tagging error codes</a>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This operation is only supported for <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-lens-groups.html">S3
+        /// Storage Lens groups</a>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        UntagResourceResponse UntagResource(UntagResourceRequest request);
+
+
+
+        /// <summary>
+        /// This operation removes the specified Amazon Web Services resource tags from an S3
+        /// resource. 
+        /// 
+        ///  
+        /// <para>
+        /// To use this operation, you must have the permission to perform the <code>s3:UntagResource</code>
+        /// action. For more information about the required Storage Lens Groups permissions, see
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions">Setting
+        /// account permissions to use S3 Storage Lens groups</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about S3 Tagging errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3TaggingErrorCodeList">List
+        /// of Amazon S3 Tagging error codes</a>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This operation is only supported for <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-lens-groups.html">S3
+        /// Storage Lens groups</a>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  UpdateJobPriority
 
 
@@ -6405,6 +6839,60 @@ namespace Amazon.S3Control
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/UpdateJobStatus">REST API Reference for UpdateJobStatus Operation</seealso>
         Task<UpdateJobStatusResponse> UpdateJobStatusAsync(UpdateJobStatusRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateStorageLensGroup
+
+
+        /// <summary>
+        /// Updates the existing Storage Lens group.
+        /// 
+        ///  
+        /// <para>
+        /// To use this operation, you must have the permission to perform the <code>s3:UpdateStorageLensGroup</code>
+        /// action. For more information about the required Storage Lens Groups permissions, see
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions">Setting
+        /// account permissions to use S3 Storage Lens groups</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about Storage Lens groups errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3LensErrorCodeList">List
+        /// of Amazon S3 Storage Lens error codes</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateStorageLensGroup service method.</param>
+        /// 
+        /// <returns>The response from the UpdateStorageLensGroup service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/UpdateStorageLensGroup">REST API Reference for UpdateStorageLensGroup Operation</seealso>
+        UpdateStorageLensGroupResponse UpdateStorageLensGroup(UpdateStorageLensGroupRequest request);
+
+
+
+        /// <summary>
+        /// Updates the existing Storage Lens group.
+        /// 
+        ///  
+        /// <para>
+        /// To use this operation, you must have the permission to perform the <code>s3:UpdateStorageLensGroup</code>
+        /// action. For more information about the required Storage Lens Groups permissions, see
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions">Setting
+        /// account permissions to use S3 Storage Lens groups</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about Storage Lens groups errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3LensErrorCodeList">List
+        /// of Amazon S3 Storage Lens error codes</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateStorageLensGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateStorageLensGroup service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/UpdateStorageLensGroup">REST API Reference for UpdateStorageLensGroup Operation</seealso>
+        Task<UpdateStorageLensGroupResponse> UpdateStorageLensGroupAsync(UpdateStorageLensGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

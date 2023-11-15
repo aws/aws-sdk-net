@@ -107,6 +107,12 @@ namespace Amazon.S3Control.Internal
                 result.AccountId = request.AccountId;
                 return result;
             }
+            if (requestContext.RequestName == "CreateStorageLensGroupRequest") {
+                result.RequiresAccountId = true;
+                var request = (CreateStorageLensGroupRequest)requestContext.OriginalRequest;
+                result.AccountId = request.AccountId;
+                return result;
+            }
             if (requestContext.RequestName == "DeleteAccessPointRequest") {
                 result.RequiresAccountId = true;
                 var request = (DeleteAccessPointRequest)requestContext.OriginalRequest;
@@ -195,6 +201,12 @@ namespace Amazon.S3Control.Internal
             if (requestContext.RequestName == "DeleteStorageLensConfigurationTaggingRequest") {
                 result.RequiresAccountId = true;
                 var request = (DeleteStorageLensConfigurationTaggingRequest)requestContext.OriginalRequest;
+                result.AccountId = request.AccountId;
+                return result;
+            }
+            if (requestContext.RequestName == "DeleteStorageLensGroupRequest") {
+                result.RequiresAccountId = true;
+                var request = (DeleteStorageLensGroupRequest)requestContext.OriginalRequest;
                 result.AccountId = request.AccountId;
                 return result;
             }
@@ -345,6 +357,12 @@ namespace Amazon.S3Control.Internal
                 result.AccountId = request.AccountId;
                 return result;
             }
+            if (requestContext.RequestName == "GetStorageLensGroupRequest") {
+                result.RequiresAccountId = true;
+                var request = (GetStorageLensGroupRequest)requestContext.OriginalRequest;
+                result.AccountId = request.AccountId;
+                return result;
+            }
             if (requestContext.RequestName == "ListAccessPointsRequest") {
                 result.RequiresAccountId = true;
                 var request = (ListAccessPointsRequest)requestContext.OriginalRequest;
@@ -380,6 +398,18 @@ namespace Amazon.S3Control.Internal
             if (requestContext.RequestName == "ListStorageLensConfigurationsRequest") {
                 result.RequiresAccountId = true;
                 var request = (ListStorageLensConfigurationsRequest)requestContext.OriginalRequest;
+                result.AccountId = request.AccountId;
+                return result;
+            }
+            if (requestContext.RequestName == "ListStorageLensGroupsRequest") {
+                result.RequiresAccountId = true;
+                var request = (ListStorageLensGroupsRequest)requestContext.OriginalRequest;
+                result.AccountId = request.AccountId;
+                return result;
+            }
+            if (requestContext.RequestName == "ListTagsForResourceRequest") {
+                result.RequiresAccountId = true;
+                var request = (ListTagsForResourceRequest)requestContext.OriginalRequest;
                 result.AccountId = request.AccountId;
                 return result;
             }
@@ -473,6 +503,18 @@ namespace Amazon.S3Control.Internal
                 result.AccountId = request.AccountId;
                 return result;
             }
+            if (requestContext.RequestName == "TagResourceRequest") {
+                result.RequiresAccountId = true;
+                var request = (TagResourceRequest)requestContext.OriginalRequest;
+                result.AccountId = request.AccountId;
+                return result;
+            }
+            if (requestContext.RequestName == "UntagResourceRequest") {
+                result.RequiresAccountId = true;
+                var request = (UntagResourceRequest)requestContext.OriginalRequest;
+                result.AccountId = request.AccountId;
+                return result;
+            }
             if (requestContext.RequestName == "UpdateJobPriorityRequest") {
                 result.RequiresAccountId = true;
                 var request = (UpdateJobPriorityRequest)requestContext.OriginalRequest;
@@ -482,6 +524,12 @@ namespace Amazon.S3Control.Internal
             if (requestContext.RequestName == "UpdateJobStatusRequest") {
                 result.RequiresAccountId = true;
                 var request = (UpdateJobStatusRequest)requestContext.OriginalRequest;
+                result.AccountId = request.AccountId;
+                return result;
+            }
+            if (requestContext.RequestName == "UpdateStorageLensGroupRequest") {
+                result.RequiresAccountId = true;
+                var request = (UpdateStorageLensGroupRequest)requestContext.OriginalRequest;
                 result.AccountId = request.AccountId;
                 return result;
             }

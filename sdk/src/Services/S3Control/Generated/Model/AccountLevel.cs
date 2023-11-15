@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3Control.Model
 {
     /// <summary>
-    /// A container for the account-level Amazon S3 Storage Lens configuration.
+    /// A container element for the account-level Amazon S3 Storage Lens configuration.
     /// 
     ///  
     /// <para>
@@ -46,11 +46,12 @@ namespace Amazon.S3Control.Model
         private AdvancedDataProtectionMetrics _advancedDataProtectionMetrics;
         private BucketLevel _bucketLevel;
         private DetailedStatusCodesMetrics _detailedStatusCodesMetrics;
+        private StorageLensGroupLevel _storageLensGroupLevel;
 
         /// <summary>
         /// Gets and sets the property ActivityMetrics. 
         /// <para>
-        /// A container for S3 Storage Lens activity metrics.
+        /// A container element for S3 Storage Lens activity metrics.
         /// </para>
         /// </summary>
         public ActivityMetrics ActivityMetrics
@@ -68,7 +69,7 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property AdvancedCostOptimizationMetrics. 
         /// <para>
-        /// A container for S3 Storage Lens advanced cost-optimization metrics.
+        /// A container element for S3 Storage Lens advanced cost-optimization metrics.
         /// </para>
         /// </summary>
         public AdvancedCostOptimizationMetrics AdvancedCostOptimizationMetrics
@@ -86,7 +87,7 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property AdvancedDataProtectionMetrics. 
         /// <para>
-        /// A container for S3 Storage Lens advanced data-protection metrics.
+        /// A container element for S3 Storage Lens advanced data-protection metrics.
         /// </para>
         /// </summary>
         public AdvancedDataProtectionMetrics AdvancedDataProtectionMetrics
@@ -104,7 +105,7 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property BucketLevel. 
         /// <para>
-        /// A container for the S3 Storage Lens bucket-level configuration.
+        /// A container element for the S3 Storage Lens bucket-level configuration.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -123,7 +124,7 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property DetailedStatusCodesMetrics. 
         /// <para>
-        /// A container for detailed status code metrics. 
+        /// A container element for detailed status code metrics. 
         /// </para>
         /// </summary>
         public DetailedStatusCodesMetrics DetailedStatusCodesMetrics
@@ -136,6 +137,24 @@ namespace Amazon.S3Control.Model
         internal bool IsSetDetailedStatusCodesMetrics()
         {
             return this._detailedStatusCodesMetrics != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StorageLensGroupLevel. 
+        /// <para>
+        ///  A container element for S3 Storage Lens groups metrics. 
+        /// </para>
+        /// </summary>
+        public StorageLensGroupLevel StorageLensGroupLevel
+        {
+            get { return this._storageLensGroupLevel; }
+            set { this._storageLensGroupLevel = value; }
+        }
+
+        // Check to see if StorageLensGroupLevel property is set
+        internal bool IsSetStorageLensGroupLevel()
+        {
+            return this._storageLensGroupLevel != null;
         }
 
     }

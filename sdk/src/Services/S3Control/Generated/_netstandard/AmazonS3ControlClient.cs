@@ -674,6 +674,60 @@ namespace Amazon.S3Control
 
         #endregion
         
+        #region  CreateStorageLensGroup
+
+        internal virtual CreateStorageLensGroupResponse CreateStorageLensGroup(CreateStorageLensGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateStorageLensGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateStorageLensGroupResponseUnmarshaller.Instance;
+
+            return Invoke<CreateStorageLensGroupResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a new S3 Storage Lens group and associates it with the specified Amazon Web
+        /// Services account ID. An S3 Storage Lens group is a custom grouping of objects based
+        /// on prefix, suffix, object tags, object size, object age, or a combination of these
+        /// filters. For each Storage Lens group that you’ve created, you can also optionally
+        /// add Amazon Web Services resource tags. For more information about S3 Storage Lens
+        /// groups, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-lens-groups-overview.html">Working
+        /// with S3 Storage Lens groups</a>.
+        /// 
+        ///  
+        /// <para>
+        /// To use this operation, you must have the permission to perform the <code>s3:CreateStorageLensGroup</code>
+        /// action. If you’re trying to create a Storage Lens group with Amazon Web Services resource
+        /// tags, you must also have permission to perform the <code>s3:TagResource</code> action.
+        /// For more information about the required Storage Lens Groups permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions">Setting
+        /// account permissions to use S3 Storage Lens groups</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about Storage Lens groups errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3LensErrorCodeList">List
+        /// of Amazon S3 Storage Lens error codes</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateStorageLensGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateStorageLensGroup service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateStorageLensGroup">REST API Reference for CreateStorageLensGroup Operation</seealso>
+        public virtual Task<CreateStorageLensGroupResponse> CreateStorageLensGroupAsync(CreateStorageLensGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateStorageLensGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateStorageLensGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateStorageLensGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteAccessPoint
 
         internal virtual DeleteAccessPointResponse DeleteAccessPoint(DeleteAccessPointRequest request)
@@ -1011,7 +1065,7 @@ namespace Amazon.S3Control
         /// </para>
         ///  
         /// <para>
-        /// To use this action, you must have permission to perform the <code>s3-outposts:DeleteLifecycleConfiguration</code>
+        /// To use this operation, you must have permission to perform the <code>s3-outposts:PutLifecycleConfiguration</code>
         /// action. By default, the bucket owner has this permission and the Outposts bucket owner
         /// can grant this permission to others.
         /// </para>
@@ -1599,6 +1653,53 @@ namespace Amazon.S3Control
             options.ResponseUnmarshaller = DeleteStorageLensConfigurationTaggingResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteStorageLensConfigurationTaggingResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteStorageLensGroup
+
+        internal virtual DeleteStorageLensGroupResponse DeleteStorageLensGroup(DeleteStorageLensGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteStorageLensGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteStorageLensGroupResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteStorageLensGroupResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes an existing S3 Storage Lens group.
+        /// 
+        ///  
+        /// <para>
+        /// To use this operation, you must have the permission to perform the <code>s3:DeleteStorageLensGroup</code>
+        /// action. For more information about the required Storage Lens Groups permissions, see
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions">Setting
+        /// account permissions to use S3 Storage Lens groups</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about Storage Lens groups errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3LensErrorCodeList">List
+        /// of Amazon S3 Storage Lens error codes</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteStorageLensGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteStorageLensGroup service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteStorageLensGroup">REST API Reference for DeleteStorageLensGroup Operation</seealso>
+        public virtual Task<DeleteStorageLensGroupResponse> DeleteStorageLensGroupAsync(DeleteStorageLensGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteStorageLensGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteStorageLensGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteStorageLensGroupResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3090,6 +3191,53 @@ namespace Amazon.S3Control
 
         #endregion
         
+        #region  GetStorageLensGroup
+
+        internal virtual GetStorageLensGroupResponse GetStorageLensGroup(GetStorageLensGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetStorageLensGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetStorageLensGroupResponseUnmarshaller.Instance;
+
+            return Invoke<GetStorageLensGroupResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves the Storage Lens group configuration details.
+        /// 
+        ///  
+        /// <para>
+        /// To use this operation, you must have the permission to perform the <code>s3:GetStorageLensGroup</code>
+        /// action. For more information about the required Storage Lens Groups permissions, see
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions">Setting
+        /// account permissions to use S3 Storage Lens groups</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about Storage Lens groups errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3LensErrorCodeList">List
+        /// of Amazon S3 Storage Lens error codes</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetStorageLensGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetStorageLensGroup service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetStorageLensGroup">REST API Reference for GetStorageLensGroup Operation</seealso>
+        public virtual Task<GetStorageLensGroupResponse> GetStorageLensGroupAsync(GetStorageLensGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetStorageLensGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetStorageLensGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetStorageLensGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListAccessPoints
 
         internal virtual ListAccessPointsResponse ListAccessPoints(ListAccessPointsRequest request)
@@ -3443,6 +3591,107 @@ namespace Amazon.S3Control
             options.ResponseUnmarshaller = ListStorageLensConfigurationsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListStorageLensConfigurationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListStorageLensGroups
+
+        internal virtual ListStorageLensGroupsResponse ListStorageLensGroups(ListStorageLensGroupsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListStorageLensGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListStorageLensGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<ListStorageLensGroupsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists all the Storage Lens groups in the specified home Region. 
+        /// 
+        ///  
+        /// <para>
+        /// To use this operation, you must have the permission to perform the <code>s3:ListStorageLensGroups</code>
+        /// action. For more information about the required Storage Lens Groups permissions, see
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions">Setting
+        /// account permissions to use S3 Storage Lens groups</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about Storage Lens groups errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3LensErrorCodeList">List
+        /// of Amazon S3 Storage Lens error codes</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListStorageLensGroups service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListStorageLensGroups service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListStorageLensGroups">REST API Reference for ListStorageLensGroups Operation</seealso>
+        public virtual Task<ListStorageLensGroupsResponse> ListStorageLensGroupsAsync(ListStorageLensGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListStorageLensGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListStorageLensGroupsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListStorageLensGroupsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListTagsForResource
+
+        internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return Invoke<ListTagsForResourceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// This operation allows you to list all the Amazon Web Services resource tags for the
+        /// specified resource. 
+        /// 
+        ///  
+        /// <para>
+        /// To use this operation, you must have the permission to perform the <code>s3:ListTagsForResource</code>
+        /// action. For more information about the required Storage Lens Groups permissions, see
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions">Setting
+        /// account permissions to use S3 Storage Lens groups</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about S3 Tagging errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3TaggingErrorCodeList">List
+        /// of Amazon S3 Tagging error codes</a>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This operation is only supported for <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-lens-groups.html">S3
+        /// Storage Lens groups</a>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4581,6 +4830,114 @@ namespace Amazon.S3Control
 
         #endregion
         
+        #region  TagResource
+
+        internal virtual TagResourceResponse TagResource(TagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<TagResourceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a new Amazon Web Services resource tag or updates an existing resource tag.
+        /// You can add up to 50 Amazon Web Services resource tags for each S3 resource. 
+        /// 
+        ///  
+        /// <para>
+        /// To use this operation, you must have the permission to perform the <code>s3:TagResource</code>
+        /// action. For more information about the required Storage Lens Groups permissions, see
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions">Setting
+        /// account permissions to use S3 Storage Lens groups</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about S3 Tagging errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3TaggingErrorCodeList">List
+        /// of Amazon S3 Tagging error codes</a>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This operation is only supported for <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-lens-groups.html">S3
+        /// Storage Lens groups</a>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UntagResource
+
+        internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<UntagResourceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// This operation removes the specified Amazon Web Services resource tags from an S3
+        /// resource. 
+        /// 
+        ///  
+        /// <para>
+        /// To use this operation, you must have the permission to perform the <code>s3:UntagResource</code>
+        /// action. For more information about the required Storage Lens Groups permissions, see
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions">Setting
+        /// account permissions to use S3 Storage Lens groups</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about S3 Tagging errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3TaggingErrorCodeList">List
+        /// of Amazon S3 Tagging error codes</a>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This operation is only supported for <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-lens-groups.html">S3
+        /// Storage Lens groups</a>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateJobPriority
 
         internal virtual UpdateJobPriorityResponse UpdateJobPriority(UpdateJobPriorityRequest request)
@@ -4728,6 +5085,53 @@ namespace Amazon.S3Control
             options.ResponseUnmarshaller = UpdateJobStatusResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateJobStatusResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateStorageLensGroup
+
+        internal virtual UpdateStorageLensGroupResponse UpdateStorageLensGroup(UpdateStorageLensGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateStorageLensGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateStorageLensGroupResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateStorageLensGroupResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the existing Storage Lens group.
+        /// 
+        ///  
+        /// <para>
+        /// To use this operation, you must have the permission to perform the <code>s3:UpdateStorageLensGroup</code>
+        /// action. For more information about the required Storage Lens Groups permissions, see
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions">Setting
+        /// account permissions to use S3 Storage Lens groups</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about Storage Lens groups errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3LensErrorCodeList">List
+        /// of Amazon S3 Storage Lens error codes</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateStorageLensGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateStorageLensGroup service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/UpdateStorageLensGroup">REST API Reference for UpdateStorageLensGroup Operation</seealso>
+        public virtual Task<UpdateStorageLensGroupResponse> UpdateStorageLensGroupAsync(UpdateStorageLensGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateStorageLensGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateStorageLensGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateStorageLensGroupResponse>(request, options, cancellationToken);
         }
 
         #endregion

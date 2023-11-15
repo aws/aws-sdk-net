@@ -114,7 +114,7 @@ namespace Amazon.S3Control.Model
         /// Gets and sets the property ChecksumAlgorithm. 
         /// <para>
         /// Indicates the algorithm that you want Amazon S3 to use to create the checksum. For
-        /// more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CheckingObjectIntegrity.xml">
+        /// more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
         /// Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         /// </summary>

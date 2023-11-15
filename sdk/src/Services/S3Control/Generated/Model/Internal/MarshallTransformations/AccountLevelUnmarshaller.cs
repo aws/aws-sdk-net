@@ -85,6 +85,12 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         unmarshalledObject.DetailedStatusCodesMetrics = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("StorageLensGroupLevel", targetDepth))
+                    {
+                        var unmarshaller = StorageLensGroupLevelUnmarshaller.Instance;
+                        unmarshalledObject.StorageLensGroupLevel = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
