@@ -17442,6 +17442,47 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeLockedSnapshots
+
+
+        /// <summary>
+        /// Describes the lock status for a snapshot.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLockedSnapshots service method.</param>
+        /// 
+        /// <returns>The response from the DescribeLockedSnapshots service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLockedSnapshots">REST API Reference for DescribeLockedSnapshots Operation</seealso>
+        public virtual DescribeLockedSnapshotsResponse DescribeLockedSnapshots(DescribeLockedSnapshotsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeLockedSnapshotsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeLockedSnapshotsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeLockedSnapshotsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Describes the lock status for a snapshot.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLockedSnapshots service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeLockedSnapshots service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLockedSnapshots">REST API Reference for DescribeLockedSnapshots Operation</seealso>
+        public virtual Task<DescribeLockedSnapshotsResponse> DescribeLockedSnapshotsAsync(DescribeLockedSnapshotsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeLockedSnapshotsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeLockedSnapshotsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeLockedSnapshotsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeManagedPrefixLists
 
 
@@ -28552,6 +28593,95 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  LockSnapshot
+
+
+        /// <summary>
+        /// Locks an Amazon EBS snapshot in either <i>governance</i> or <i>compliance</i> mode
+        /// to protect it against accidental or malicious deletions for a specific duration. A
+        /// locked snapshot can't be deleted.
+        /// 
+        ///  
+        /// <para>
+        /// You can also use this action to modify the lock settings for a snapshot that is already
+        /// locked. The allowed modifications depend on the lock mode and lock state:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If the snapshot is locked in governance mode, you can modify the lock mode and the
+        /// lock duration or lock expiration date.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the snapshot is locked in compliance mode and it is in the cooling-off period,
+        /// you can modify the lock mode and the lock duration or lock expiration date.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the snapshot is locked in compliance mode and the cooling-off period has lapsed,
+        /// you can only increase the lock duration or extend the lock expiration date.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the LockSnapshot service method.</param>
+        /// 
+        /// <returns>The response from the LockSnapshot service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/LockSnapshot">REST API Reference for LockSnapshot Operation</seealso>
+        public virtual LockSnapshotResponse LockSnapshot(LockSnapshotRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = LockSnapshotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = LockSnapshotResponseUnmarshaller.Instance;
+
+            return Invoke<LockSnapshotResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Locks an Amazon EBS snapshot in either <i>governance</i> or <i>compliance</i> mode
+        /// to protect it against accidental or malicious deletions for a specific duration. A
+        /// locked snapshot can't be deleted.
+        /// 
+        ///  
+        /// <para>
+        /// You can also use this action to modify the lock settings for a snapshot that is already
+        /// locked. The allowed modifications depend on the lock mode and lock state:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If the snapshot is locked in governance mode, you can modify the lock mode and the
+        /// lock duration or lock expiration date.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the snapshot is locked in compliance mode and it is in the cooling-off period,
+        /// you can modify the lock mode and the lock duration or lock expiration date.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the snapshot is locked in compliance mode and the cooling-off period has lapsed,
+        /// you can only increase the lock duration or extend the lock expiration date.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the LockSnapshot service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the LockSnapshot service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/LockSnapshot">REST API Reference for LockSnapshot Operation</seealso>
+        public virtual Task<LockSnapshotResponse> LockSnapshotAsync(LockSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = LockSnapshotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = LockSnapshotResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<LockSnapshotResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ModifyAddressAttribute
 
 
@@ -36616,6 +36746,51 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = UnassignPrivateNatGatewayAddressResponseUnmarshaller.Instance;
             
             return InvokeAsync<UnassignPrivateNatGatewayAddressResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UnlockSnapshot
+
+
+        /// <summary>
+        /// Unlocks a snapshot that is locked in governance mode or that is locked in compliance
+        /// mode but still in the cooling-off period. You can't unlock a snapshot that is locked
+        /// in compliance mode after the cooling-off period has expired.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UnlockSnapshot service method.</param>
+        /// 
+        /// <returns>The response from the UnlockSnapshot service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnlockSnapshot">REST API Reference for UnlockSnapshot Operation</seealso>
+        public virtual UnlockSnapshotResponse UnlockSnapshot(UnlockSnapshotRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UnlockSnapshotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UnlockSnapshotResponseUnmarshaller.Instance;
+
+            return Invoke<UnlockSnapshotResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Unlocks a snapshot that is locked in governance mode or that is locked in compliance
+        /// mode but still in the cooling-off period. You can't unlock a snapshot that is locked
+        /// in compliance mode after the cooling-off period has expired.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UnlockSnapshot service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UnlockSnapshot service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnlockSnapshot">REST API Reference for UnlockSnapshot Operation</seealso>
+        public virtual Task<UnlockSnapshotResponse> UnlockSnapshotAsync(UnlockSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UnlockSnapshotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UnlockSnapshotResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UnlockSnapshotResponse>(request, options, cancellationToken);
         }
 
         #endregion

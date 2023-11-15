@@ -18494,6 +18494,60 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeLockedSnapshots
+
+        /// <summary>
+        /// Describes the lock status for a snapshot.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLockedSnapshots service method.</param>
+        /// 
+        /// <returns>The response from the DescribeLockedSnapshots service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLockedSnapshots">REST API Reference for DescribeLockedSnapshots Operation</seealso>
+        public virtual DescribeLockedSnapshotsResponse DescribeLockedSnapshots(DescribeLockedSnapshotsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeLockedSnapshotsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeLockedSnapshotsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeLockedSnapshotsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeLockedSnapshots operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLockedSnapshots operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeLockedSnapshots
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLockedSnapshots">REST API Reference for DescribeLockedSnapshots Operation</seealso>
+        public virtual IAsyncResult BeginDescribeLockedSnapshots(DescribeLockedSnapshotsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeLockedSnapshotsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeLockedSnapshotsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeLockedSnapshots operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeLockedSnapshots.</param>
+        /// 
+        /// <returns>Returns a  DescribeLockedSnapshotsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLockedSnapshots">REST API Reference for DescribeLockedSnapshots Operation</seealso>
+        public virtual DescribeLockedSnapshotsResponse EndDescribeLockedSnapshots(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeLockedSnapshotsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeManagedPrefixLists
 
         /// <summary>
@@ -30236,6 +30290,84 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  LockSnapshot
+
+        /// <summary>
+        /// Locks an Amazon EBS snapshot in either <i>governance</i> or <i>compliance</i> mode
+        /// to protect it against accidental or malicious deletions for a specific duration. A
+        /// locked snapshot can't be deleted.
+        /// 
+        ///  
+        /// <para>
+        /// You can also use this action to modify the lock settings for a snapshot that is already
+        /// locked. The allowed modifications depend on the lock mode and lock state:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If the snapshot is locked in governance mode, you can modify the lock mode and the
+        /// lock duration or lock expiration date.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the snapshot is locked in compliance mode and it is in the cooling-off period,
+        /// you can modify the lock mode and the lock duration or lock expiration date.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the snapshot is locked in compliance mode and the cooling-off period has lapsed,
+        /// you can only increase the lock duration or extend the lock expiration date.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the LockSnapshot service method.</param>
+        /// 
+        /// <returns>The response from the LockSnapshot service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/LockSnapshot">REST API Reference for LockSnapshot Operation</seealso>
+        public virtual LockSnapshotResponse LockSnapshot(LockSnapshotRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = LockSnapshotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = LockSnapshotResponseUnmarshaller.Instance;
+
+            return Invoke<LockSnapshotResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the LockSnapshot operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the LockSnapshot operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndLockSnapshot
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/LockSnapshot">REST API Reference for LockSnapshot Operation</seealso>
+        public virtual IAsyncResult BeginLockSnapshot(LockSnapshotRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = LockSnapshotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = LockSnapshotResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  LockSnapshot operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginLockSnapshot.</param>
+        /// 
+        /// <returns>Returns a  LockSnapshotResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/LockSnapshot">REST API Reference for LockSnapshot Operation</seealso>
+        public virtual LockSnapshotResponse EndLockSnapshot(IAsyncResult asyncResult)
+        {
+            return EndInvoke<LockSnapshotResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ModifyAddressAttribute
 
         /// <summary>
@@ -38554,6 +38686,62 @@ namespace Amazon.EC2
         public virtual UnassignPrivateNatGatewayAddressResponse EndUnassignPrivateNatGatewayAddress(IAsyncResult asyncResult)
         {
             return EndInvoke<UnassignPrivateNatGatewayAddressResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UnlockSnapshot
+
+        /// <summary>
+        /// Unlocks a snapshot that is locked in governance mode or that is locked in compliance
+        /// mode but still in the cooling-off period. You can't unlock a snapshot that is locked
+        /// in compliance mode after the cooling-off period has expired.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UnlockSnapshot service method.</param>
+        /// 
+        /// <returns>The response from the UnlockSnapshot service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnlockSnapshot">REST API Reference for UnlockSnapshot Operation</seealso>
+        public virtual UnlockSnapshotResponse UnlockSnapshot(UnlockSnapshotRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UnlockSnapshotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UnlockSnapshotResponseUnmarshaller.Instance;
+
+            return Invoke<UnlockSnapshotResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UnlockSnapshot operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UnlockSnapshot operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUnlockSnapshot
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnlockSnapshot">REST API Reference for UnlockSnapshot Operation</seealso>
+        public virtual IAsyncResult BeginUnlockSnapshot(UnlockSnapshotRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UnlockSnapshotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UnlockSnapshotResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UnlockSnapshot operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUnlockSnapshot.</param>
+        /// 
+        /// <returns>Returns a  UnlockSnapshotResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnlockSnapshot">REST API Reference for UnlockSnapshot Operation</seealso>
+        public virtual UnlockSnapshotResponse EndUnlockSnapshot(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UnlockSnapshotResponse>(asyncResult);
         }
 
         #endregion

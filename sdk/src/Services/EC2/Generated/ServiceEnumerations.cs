@@ -8353,6 +8353,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType Dl124xlarge = new InstanceType("dl1.24xlarge");
         /// <summary>
+        /// Constant Dl2q24xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType Dl2q24xlarge = new InstanceType("dl2q.24xlarge");
+        /// <summary>
         /// Constant F116xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType F116xlarge = new InstanceType("f1.16xlarge");
@@ -13022,6 +13026,114 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator LocationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LockMode.
+    /// </summary>
+    public class LockMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Compliance for LockMode
+        /// </summary>
+        public static readonly LockMode Compliance = new LockMode("compliance");
+        /// <summary>
+        /// Constant Governance for LockMode
+        /// </summary>
+        public static readonly LockMode Governance = new LockMode("governance");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LockMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LockMode FindValue(string value)
+        {
+            return FindValue<LockMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LockMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LockState.
+    /// </summary>
+    public class LockState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Compliance for LockState
+        /// </summary>
+        public static readonly LockState Compliance = new LockState("compliance");
+        /// <summary>
+        /// Constant ComplianceCooloff for LockState
+        /// </summary>
+        public static readonly LockState ComplianceCooloff = new LockState("compliance-cooloff");
+        /// <summary>
+        /// Constant Expired for LockState
+        /// </summary>
+        public static readonly LockState Expired = new LockState("expired");
+        /// <summary>
+        /// Constant Governance for LockState
+        /// </summary>
+        public static readonly LockState Governance = new LockState("governance");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LockState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LockState FindValue(string value)
+        {
+            return FindValue<LockState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LockState(string value)
         {
             return FindValue(value);
         }

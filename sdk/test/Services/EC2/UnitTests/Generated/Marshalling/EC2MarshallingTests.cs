@@ -6822,6 +6822,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void DescribeLockedSnapshotsMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeLockedSnapshots");
+
+            var request = InstantiateClassGenerator.Execute<DescribeLockedSnapshotsRequest>(operation);
+            var marshaller = new DescribeLockedSnapshotsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DescribeLockedSnapshotsResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeLockedSnapshotsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void DescribeManagedPrefixListsMarshallTest()
         {
             var operation = service_model.FindOperation("DescribeManagedPrefixLists");
@@ -11246,6 +11270,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void LockSnapshotMarshallTest()
+        {
+            var operation = service_model.FindOperation("LockSnapshot");
+
+            var request = InstantiateClassGenerator.Execute<LockSnapshotRequest>(operation);
+            var marshaller = new LockSnapshotRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = LockSnapshotResponseUnmarshaller.Instance.Unmarshall(context)
+                as LockSnapshotResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void ModifyAddressAttributeMarshallTest()
         {
             var operation = service_model.FindOperation("ModifyAddressAttribute");
@@ -14209,6 +14257,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
             var response = UnassignPrivateNatGatewayAddressResponseUnmarshaller.Instance.Unmarshall(context)
                 as UnassignPrivateNatGatewayAddressResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void UnlockSnapshotMarshallTest()
+        {
+            var operation = service_model.FindOperation("UnlockSnapshot");
+
+            var request = InstantiateClassGenerator.Execute<UnlockSnapshotRequest>(operation);
+            var marshaller = new UnlockSnapshotRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = UnlockSnapshotResponseUnmarshaller.Instance.Unmarshall(context)
+                as UnlockSnapshotResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 

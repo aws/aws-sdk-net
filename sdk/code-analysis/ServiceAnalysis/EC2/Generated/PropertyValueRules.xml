@@ -311,6 +311,11 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeLockedSnapshotsRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.DescribeManagedPrefixListsRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
@@ -684,6 +689,16 @@
     <property>Amazon.EC2.Model.ListSnapshotsInRecycleBinRequest.MaxResults</property>
     <min>5</min>
     <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.LockSnapshotRequest.CoolOffPeriod</property>
+    <min>1</min>
+    <max>72</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.LockSnapshotRequest.LockDuration</property>
+    <min>1</min>
+    <max>36500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.ModifyIpamPoolRequest.AllocationDefaultNetmaskLength</property>
