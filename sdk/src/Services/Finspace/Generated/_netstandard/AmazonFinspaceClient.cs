@@ -269,6 +269,7 @@ namespace Amazon.Finspace
 
         #region  CreateEnvironment
 
+        [Obsolete("This method will be discontinued.")]
         internal virtual CreateEnvironmentResponse CreateEnvironment(CreateEnvironmentRequest request)
         {
             var options = new InvokeOptions();
@@ -309,6 +310,7 @@ namespace Amazon.Finspace
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/CreateEnvironment">REST API Reference for CreateEnvironment Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         public virtual Task<CreateEnvironmentResponse> CreateEnvironmentAsync(CreateEnvironmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -605,6 +607,7 @@ namespace Amazon.Finspace
         
         #region  DeleteEnvironment
 
+        [Obsolete("This method will be discontinued.")]
         internal virtual DeleteEnvironmentResponse DeleteEnvironment(DeleteEnvironmentRequest request)
         {
             var options = new InvokeOptions();
@@ -641,6 +644,7 @@ namespace Amazon.Finspace
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/DeleteEnvironment">REST API Reference for DeleteEnvironment Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         public virtual Task<DeleteEnvironmentResponse> DeleteEnvironmentAsync(DeleteEnvironmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -862,6 +866,7 @@ namespace Amazon.Finspace
         
         #region  GetEnvironment
 
+        [Obsolete("This method will be discontinued.")]
         internal virtual GetEnvironmentResponse GetEnvironment(GetEnvironmentRequest request)
         {
             var options = new InvokeOptions();
@@ -895,6 +900,7 @@ namespace Amazon.Finspace
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/GetEnvironment">REST API Reference for GetEnvironment Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         public virtual Task<GetEnvironmentResponse> GetEnvironmentAsync(GetEnvironmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1206,6 +1212,7 @@ namespace Amazon.Finspace
         
         #region  ListEnvironments
 
+        [Obsolete("This method will be discontinued.")]
         internal virtual ListEnvironmentsResponse ListEnvironments(ListEnvironmentsRequest request)
         {
             var options = new InvokeOptions();
@@ -1233,6 +1240,7 @@ namespace Amazon.Finspace
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/ListEnvironments">REST API Reference for ListEnvironments Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         public virtual Task<ListEnvironmentsResponse> ListEnvironmentsAsync(ListEnvironmentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1669,6 +1677,7 @@ namespace Amazon.Finspace
         
         #region  UpdateEnvironment
 
+        [Obsolete("This method will be discontinued.")]
         internal virtual UpdateEnvironmentResponse UpdateEnvironment(UpdateEnvironmentRequest request)
         {
             var options = new InvokeOptions();
@@ -1705,6 +1714,7 @@ namespace Amazon.Finspace
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/UpdateEnvironment">REST API Reference for UpdateEnvironment Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         public virtual Task<UpdateEnvironmentResponse> UpdateEnvironmentAsync(UpdateEnvironmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();

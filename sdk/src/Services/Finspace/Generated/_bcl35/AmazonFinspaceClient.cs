@@ -291,6 +291,7 @@ namespace Amazon.Finspace
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/CreateEnvironment">REST API Reference for CreateEnvironment Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         public virtual CreateEnvironmentResponse CreateEnvironment(CreateEnvironmentRequest request)
         {
             var options = new InvokeOptions();
@@ -312,6 +313,7 @@ namespace Amazon.Finspace
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateEnvironment
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/CreateEnvironment">REST API Reference for CreateEnvironment Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         public virtual IAsyncResult BeginCreateEnvironment(CreateEnvironmentRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -329,6 +331,7 @@ namespace Amazon.Finspace
         /// 
         /// <returns>Returns a  CreateEnvironmentResult from Finspace.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/CreateEnvironment">REST API Reference for CreateEnvironment Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         public virtual CreateEnvironmentResponse EndCreateEnvironment(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateEnvironmentResponse>(asyncResult);
@@ -743,6 +746,7 @@ namespace Amazon.Finspace
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/DeleteEnvironment">REST API Reference for DeleteEnvironment Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         public virtual DeleteEnvironmentResponse DeleteEnvironment(DeleteEnvironmentRequest request)
         {
             var options = new InvokeOptions();
@@ -764,6 +768,7 @@ namespace Amazon.Finspace
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteEnvironment
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/DeleteEnvironment">REST API Reference for DeleteEnvironment Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         public virtual IAsyncResult BeginDeleteEnvironment(DeleteEnvironmentRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -781,6 +786,7 @@ namespace Amazon.Finspace
         /// 
         /// <returns>Returns a  DeleteEnvironmentResult from Finspace.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/DeleteEnvironment">REST API Reference for DeleteEnvironment Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         public virtual DeleteEnvironmentResponse EndDeleteEnvironment(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteEnvironmentResponse>(asyncResult);
@@ -1097,6 +1103,7 @@ namespace Amazon.Finspace
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/GetEnvironment">REST API Reference for GetEnvironment Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         public virtual GetEnvironmentResponse GetEnvironment(GetEnvironmentRequest request)
         {
             var options = new InvokeOptions();
@@ -1118,6 +1125,7 @@ namespace Amazon.Finspace
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetEnvironment
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/GetEnvironment">REST API Reference for GetEnvironment Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         public virtual IAsyncResult BeginGetEnvironment(GetEnvironmentRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1135,6 +1143,7 @@ namespace Amazon.Finspace
         /// 
         /// <returns>Returns a  GetEnvironmentResult from Finspace.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/GetEnvironment">REST API Reference for GetEnvironment Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         public virtual GetEnvironmentResponse EndGetEnvironment(IAsyncResult asyncResult)
         {
             return EndInvoke<GetEnvironmentResponse>(asyncResult);
@@ -1575,6 +1584,7 @@ namespace Amazon.Finspace
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/ListEnvironments">REST API Reference for ListEnvironments Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         public virtual ListEnvironmentsResponse ListEnvironments(ListEnvironmentsRequest request)
         {
             var options = new InvokeOptions();
@@ -1596,6 +1606,7 @@ namespace Amazon.Finspace
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListEnvironments
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/ListEnvironments">REST API Reference for ListEnvironments Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         public virtual IAsyncResult BeginListEnvironments(ListEnvironmentsRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1613,6 +1624,7 @@ namespace Amazon.Finspace
         /// 
         /// <returns>Returns a  ListEnvironmentsResult from Finspace.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/ListEnvironments">REST API Reference for ListEnvironments Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         public virtual ListEnvironmentsResponse EndListEnvironments(IAsyncResult asyncResult)
         {
             return EndInvoke<ListEnvironmentsResponse>(asyncResult);
@@ -2247,6 +2259,7 @@ namespace Amazon.Finspace
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/UpdateEnvironment">REST API Reference for UpdateEnvironment Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         public virtual UpdateEnvironmentResponse UpdateEnvironment(UpdateEnvironmentRequest request)
         {
             var options = new InvokeOptions();
@@ -2268,6 +2281,7 @@ namespace Amazon.Finspace
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateEnvironment
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/UpdateEnvironment">REST API Reference for UpdateEnvironment Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         public virtual IAsyncResult BeginUpdateEnvironment(UpdateEnvironmentRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2285,6 +2299,7 @@ namespace Amazon.Finspace
         /// 
         /// <returns>Returns a  UpdateEnvironmentResult from Finspace.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/UpdateEnvironment">REST API Reference for UpdateEnvironment Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         public virtual UpdateEnvironmentResponse EndUpdateEnvironment(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateEnvironmentResponse>(asyncResult);

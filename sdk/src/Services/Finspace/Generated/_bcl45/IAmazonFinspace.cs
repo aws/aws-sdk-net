@@ -71,6 +71,7 @@ namespace Amazon.Finspace
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/CreateEnvironment">REST API Reference for CreateEnvironment Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         CreateEnvironmentResponse CreateEnvironment(CreateEnvironmentRequest request);
 
 
@@ -104,6 +105,7 @@ namespace Amazon.Finspace
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/CreateEnvironment">REST API Reference for CreateEnvironment Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         Task<CreateEnvironmentResponse> CreateEnvironmentAsync(CreateEnvironmentRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -499,6 +501,7 @@ namespace Amazon.Finspace
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/DeleteEnvironment">REST API Reference for DeleteEnvironment Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         DeleteEnvironmentResponse DeleteEnvironment(DeleteEnvironmentRequest request);
 
 
@@ -528,6 +531,7 @@ namespace Amazon.Finspace
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/DeleteEnvironment">REST API Reference for DeleteEnvironment Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         Task<DeleteEnvironmentResponse> DeleteEnvironmentAsync(DeleteEnvironmentRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -810,6 +814,7 @@ namespace Amazon.Finspace
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/GetEnvironment">REST API Reference for GetEnvironment Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         GetEnvironmentResponse GetEnvironment(GetEnvironmentRequest request);
 
 
@@ -836,6 +841,7 @@ namespace Amazon.Finspace
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/GetEnvironment">REST API Reference for GetEnvironment Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         Task<GetEnvironmentResponse> GetEnvironmentAsync(GetEnvironmentRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1212,6 +1218,7 @@ namespace Amazon.Finspace
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/ListEnvironments">REST API Reference for ListEnvironments Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         ListEnvironmentsResponse ListEnvironments(ListEnvironmentsRequest request);
 
 
@@ -1232,6 +1239,7 @@ namespace Amazon.Finspace
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/ListEnvironments">REST API Reference for ListEnvironments Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         Task<ListEnvironmentsResponse> ListEnvironmentsAsync(ListEnvironmentsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1747,6 +1755,7 @@ namespace Amazon.Finspace
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/UpdateEnvironment">REST API Reference for UpdateEnvironment Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         UpdateEnvironmentResponse UpdateEnvironment(UpdateEnvironmentRequest request);
 
 
@@ -1776,6 +1785,7 @@ namespace Amazon.Finspace
         /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/UpdateEnvironment">REST API Reference for UpdateEnvironment Operation</seealso>
+        [Obsolete("This method will be discontinued.")]
         Task<UpdateEnvironmentResponse> UpdateEnvironmentAsync(UpdateEnvironmentRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
