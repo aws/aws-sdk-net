@@ -371,6 +371,10 @@ namespace Amazon.MediaPackage
         /// </summary>
         public static readonly ManifestLayout COMPACT = new ManifestLayout("COMPACT");
         /// <summary>
+        /// Constant DRM_TOP_LEVEL_COMPACT for ManifestLayout
+        /// </summary>
+        public static readonly ManifestLayout DRM_TOP_LEVEL_COMPACT = new ManifestLayout("DRM_TOP_LEVEL_COMPACT");
+        /// <summary>
         /// Constant FULL for ManifestLayout
         /// </summary>
         public static readonly ManifestLayout FULL = new ManifestLayout("FULL");
