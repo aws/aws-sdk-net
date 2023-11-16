@@ -158,6 +158,212 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             Assert.AreEqual(employee.Age, storedEmployee.Age);
         }
 
+        /// <summary>
+        /// Tests that the DynamoDB operations can retrieve <see cref="DateTime"/> attributes in UTC and local timezone.
+        /// </summary>
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        [DataRow(true)]
+        [DataRow(false)]
+        public void TestContext_RetrieveDateTimeInUtc(bool retrieveDateTimeInUtc)
+        {
+            TableCache.Clear();
+            CleanupTables();
+            TableCache.Clear();
+
+            var config = new DynamoDBContextConfig
+            {
+                Conversion = DynamoDBEntryConversion.V2,
+                RetrieveDateTimeInUtc = retrieveDateTimeInUtc
+            };
+            Context = new DynamoDBContext(Client, config);
+
+            var currTime = DateTime.Now;
+
+            var employee = new AnnotatedNumericEpochEmployee
+            {
+                Name = "Bob",
+                Age = 45,
+                CreationTime = currTime,
+                EpochDate2 = currTime,
+                NonEpochDate1 = currTime,
+                NonEpochDate2 = currTime
+            };
+
+            Context.Save(employee);
+            var expectedCurrTime = retrieveDateTimeInUtc ? currTime.ToUniversalTime() : currTime.ToLocalTime();
+
+            // Load 
+            var storedEmployee = Context.Load<AnnotatedNumericEpochEmployee>(employee.CreationTime, employee.Name);
+            Assert.IsNotNull(storedEmployee);
+            ApproximatelyEqual(expectedCurrTime, storedEmployee.CreationTime);
+            ApproximatelyEqual(expectedCurrTime, storedEmployee.EpochDate2);
+            ApproximatelyEqual(expectedCurrTime, storedEmployee.NonEpochDate1);
+            ApproximatelyEqual(expectedCurrTime, storedEmployee.NonEpochDate2);
+            Assert.AreEqual(employee.Name, storedEmployee.Name);
+            Assert.AreEqual(employee.Age, storedEmployee.Age);
+
+            // Query
+            QueryFilter filter = new QueryFilter();
+            filter.AddCondition("CreationTime", QueryOperator.Equal, currTime);
+            storedEmployee = Context.FromQuery<AnnotatedNumericEpochEmployee>(new QueryOperationConfig { Filter = filter }).First();
+            Assert.IsNotNull(storedEmployee);
+            ApproximatelyEqual(expectedCurrTime, storedEmployee.CreationTime);
+            ApproximatelyEqual(expectedCurrTime, storedEmployee.EpochDate2);
+            ApproximatelyEqual(expectedCurrTime, storedEmployee.NonEpochDate1);
+            ApproximatelyEqual(expectedCurrTime, storedEmployee.NonEpochDate2);
+            Assert.AreEqual(employee.Name, storedEmployee.Name);
+            Assert.AreEqual(employee.Age, storedEmployee.Age);
+
+            // Scan
+            storedEmployee = Context.Scan<AnnotatedNumericEpochEmployee>().First();
+            Assert.IsNotNull(storedEmployee);
+            ApproximatelyEqual(expectedCurrTime, storedEmployee.CreationTime);
+            ApproximatelyEqual(expectedCurrTime, storedEmployee.EpochDate2);
+            ApproximatelyEqual(expectedCurrTime, storedEmployee.NonEpochDate1);
+            ApproximatelyEqual(expectedCurrTime, storedEmployee.NonEpochDate2);
+            Assert.AreEqual(employee.Name, storedEmployee.Name);
+            Assert.AreEqual(employee.Age, storedEmployee.Age);
+        }
+
+        /// <summary>
+        /// Tests that if a custom <see cref="DateTime"/> converter is used, then the <see cref="DynamoDBContextConfig.RetrieveDateTimeInUtc"/> is ignored.
+        /// </summary>
+        /// <param name="retrieveDateTimeInUtc"></param>
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        [DataRow(true)]
+        [DataRow(false)]
+        public void TestContext_CustomDateTimeConverter(bool retrieveDateTimeInUtc)
+        {
+            TableCache.Clear();
+            CleanupTables();
+            TableCache.Clear();
+
+            var config = new DynamoDBContextConfig
+            {
+                Conversion = DynamoDBEntryConversion.V2,
+                RetrieveDateTimeInUtc = retrieveDateTimeInUtc
+            };
+            Context = new DynamoDBContext(Client, config);
+
+            // Add a custom DateTime converter
+            Context.ConverterCache.Add(typeof(DateTime), new DateTimeUtcConverter());
+
+            var currTime = DateTime.Now;
+
+            var employee = new AnnotatedNumericEpochEmployee
+            {
+                Name = "Bob",
+                Age = 45,
+                CreationTime = currTime,
+                EpochDate2 = currTime,
+                NonEpochDate1 = currTime,
+                NonEpochDate2 = currTime
+            };
+
+            Context.Save(employee);
+
+            // Since we are adding a custom DateTimeUtcConverter, the expected time will always be in the UTC time zone.
+            // regardless of RetrieveDateTimeInUtc value.
+            var expectedCurrTime = currTime.ToUniversalTime();
+
+            // Load 
+            var storedEmployee = Context.Load<AnnotatedNumericEpochEmployee>(employee.CreationTime, employee.Name);
+            Assert.IsNotNull(storedEmployee);
+            ApproximatelyEqual(expectedCurrTime, storedEmployee.CreationTime);
+            ApproximatelyEqual(expectedCurrTime, storedEmployee.EpochDate2);
+            ApproximatelyEqual(expectedCurrTime, storedEmployee.NonEpochDate1);
+            ApproximatelyEqual(expectedCurrTime, storedEmployee.NonEpochDate2);
+            Assert.AreEqual(employee.Name, storedEmployee.Name);
+            Assert.AreEqual(employee.Age, storedEmployee.Age);
+
+            // Query
+            QueryFilter filter = new QueryFilter();
+            filter.AddCondition("CreationTime", QueryOperator.Equal, currTime);
+            storedEmployee = Context.FromQuery<AnnotatedNumericEpochEmployee>(new QueryOperationConfig { Filter = filter }).First();
+            Assert.IsNotNull(storedEmployee);
+            ApproximatelyEqual(expectedCurrTime, storedEmployee.CreationTime);
+            ApproximatelyEqual(expectedCurrTime, storedEmployee.EpochDate2);
+            ApproximatelyEqual(expectedCurrTime, storedEmployee.NonEpochDate1);
+            ApproximatelyEqual(expectedCurrTime, storedEmployee.NonEpochDate2);
+            Assert.AreEqual(employee.Name, storedEmployee.Name);
+            Assert.AreEqual(employee.Age, storedEmployee.Age);
+
+            // Scan
+            storedEmployee = Context.Scan<AnnotatedNumericEpochEmployee>().First();
+            Assert.IsNotNull(storedEmployee);
+            ApproximatelyEqual(expectedCurrTime, storedEmployee.CreationTime);
+            ApproximatelyEqual(expectedCurrTime, storedEmployee.EpochDate2);
+            ApproximatelyEqual(expectedCurrTime, storedEmployee.NonEpochDate1);
+            ApproximatelyEqual(expectedCurrTime, storedEmployee.NonEpochDate2);
+            Assert.AreEqual(employee.Name, storedEmployee.Name);
+            Assert.AreEqual(employee.Age, storedEmployee.Age);
+        }
+
+        /// <summary>
+        /// Tests that the DynamoDB operations can retrieve <see cref="DateTime"/> attributes in UTC and local timezone using the <see cref="DynamoDBOperationConfig"/>
+        /// </summary>
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        [DataRow(true)]
+        [DataRow(false)]
+        public void TestContext_RetrieveDateTimeInUtc_OperationConfig(bool retrieveDateTimeInUtc)
+        {
+            TableCache.Clear();
+            CleanupTables();
+            TableCache.Clear();
+
+            Context = new DynamoDBContext(Client, new DynamoDBContextConfig { Conversion = DynamoDBEntryConversion.V2 });
+            var operationConfig = new DynamoDBOperationConfig { RetrieveDateTimeInUtc = retrieveDateTimeInUtc };
+
+            var currTime = DateTime.Now;
+
+            var employee = new AnnotatedNumericEpochEmployee
+            {
+                Name = "Bob",
+                Age = 45,
+                CreationTime = currTime,
+                EpochDate2 = currTime,
+                NonEpochDate1 = currTime,
+                NonEpochDate2 = currTime
+            };
+
+            Context.Save(employee);
+            var expectedCurrTime = retrieveDateTimeInUtc ? currTime.ToUniversalTime() : currTime.ToLocalTime();
+
+            // Load 
+            var storedEmployee = Context.Load<AnnotatedNumericEpochEmployee>(employee.CreationTime, employee.Name, operationConfig);
+            Assert.IsNotNull(storedEmployee);
+            ApproximatelyEqual(expectedCurrTime, storedEmployee.CreationTime);
+            ApproximatelyEqual(expectedCurrTime, storedEmployee.EpochDate2);
+            ApproximatelyEqual(expectedCurrTime, storedEmployee.NonEpochDate1);
+            ApproximatelyEqual(expectedCurrTime, storedEmployee.NonEpochDate2);
+            Assert.AreEqual(employee.Name, storedEmployee.Name);
+            Assert.AreEqual(employee.Age, storedEmployee.Age);
+
+            // Query
+            QueryFilter filter = new QueryFilter();
+            filter.AddCondition("CreationTime", QueryOperator.Equal, currTime);
+            storedEmployee = Context.FromQuery<AnnotatedNumericEpochEmployee>(new QueryOperationConfig { Filter = filter }, operationConfig).First();
+            Assert.IsNotNull(storedEmployee);
+            ApproximatelyEqual(expectedCurrTime, storedEmployee.CreationTime);
+            ApproximatelyEqual(expectedCurrTime, storedEmployee.EpochDate2);
+            ApproximatelyEqual(expectedCurrTime, storedEmployee.NonEpochDate1);
+            ApproximatelyEqual(expectedCurrTime, storedEmployee.NonEpochDate2);
+            Assert.AreEqual(employee.Name, storedEmployee.Name);
+            Assert.AreEqual(employee.Age, storedEmployee.Age);
+
+            // Scan
+            storedEmployee = Context.Scan<AnnotatedNumericEpochEmployee>(new List<ScanCondition>(), operationConfig).First();
+            Assert.IsNotNull(storedEmployee);
+            ApproximatelyEqual(expectedCurrTime, storedEmployee.CreationTime);
+            ApproximatelyEqual(expectedCurrTime, storedEmployee.EpochDate2);
+            ApproximatelyEqual(expectedCurrTime, storedEmployee.NonEpochDate1);
+            ApproximatelyEqual(expectedCurrTime, storedEmployee.NonEpochDate2);
+            Assert.AreEqual(employee.Name, storedEmployee.Name);
+            Assert.AreEqual(employee.Age, storedEmployee.Age);
+        }
 
         /// <summary>
         /// Runs the same object-mapper integration tests as <see cref="TestContextWithEmptyStringEnabled"/>,
@@ -1697,6 +1903,17 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
             [DynamoDBRangeKey]
             public override string Name { get; set; }
+        }
+
+        public class DateTimeUtcConverter : IPropertyConverter
+        {
+            public DynamoDBEntry ToEntry(object value) => (DateTime)value;
+
+            public object FromEntry(DynamoDBEntry entry)
+            {
+                var dateTime = entry.AsDateTime();
+                return dateTime.ToUniversalTime();
+            }
         }
 
         #endregion

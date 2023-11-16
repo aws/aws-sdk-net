@@ -383,6 +383,16 @@ namespace AWSSDK_DotNet35.UnitTests
             AWSConfigsDynamoDB.Context.DisableFetchingTableMetadata = false;
         }
 
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public void TestRetrieveDateTimeInUtc_UsingGlobalContext()
+        {
+            AWSConfigsDynamoDB.Context.RetrieveDateTimeInUtc = true;
+            var config = new DynamoDBContextConfig();
+            Assert.AreEqual(true, config.RetrieveDateTimeInUtc);
+            AWSConfigsDynamoDB.Context.RetrieveDateTimeInUtc = false;
+        }
+
         public class Parent
         {
             [DynamoDBProperty("actualPropertyName")]
