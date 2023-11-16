@@ -41,6 +41,7 @@ namespace Amazon.Kafka.Model
         private DateTime? _creationTime;
         private BrokerSoftwareInfo _currentBrokerSoftwareInfo;
         private string _currentVersion;
+        private CustomerActionStatus _customerActionStatus;
         private EncryptionInfo _encryptionInfo;
         private EnhancedMonitoring _enhancedMonitoring;
         private LoggingInfo _loggingInfo;
@@ -196,6 +197,24 @@ namespace Amazon.Kafka.Model
         internal bool IsSetCurrentVersion()
         {
             return this._currentVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomerActionStatus.             
+        /// <para>
+        /// Determines if there is an action required from the customer.
+        /// </para>
+        /// </summary>
+        public CustomerActionStatus CustomerActionStatus
+        {
+            get { return this._customerActionStatus; }
+            set { this._customerActionStatus = value; }
+        }
+
+        // Check to see if CustomerActionStatus property is set
+        internal bool IsSetCustomerActionStatus()
+        {
+            return this._customerActionStatus != null;
         }
 
         /// <summary>

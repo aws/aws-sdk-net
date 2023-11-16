@@ -112,6 +112,12 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
                     unmarshalledObject.CurrentVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("customerActionStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CustomerActionStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("encryptionInfo", targetDepth))
                 {
                     var unmarshaller = EncryptionInfoUnmarshaller.Instance;

@@ -303,6 +303,60 @@ namespace Amazon.Kafka
 
 
     /// <summary>
+    /// Constants used for properties of type CustomerActionStatus.
+    /// </summary>
+    public class CustomerActionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTION_RECOMMENDED for CustomerActionStatus
+        /// </summary>
+        public static readonly CustomerActionStatus ACTION_RECOMMENDED = new CustomerActionStatus("ACTION_RECOMMENDED");
+        /// <summary>
+        /// Constant CRITICAL_ACTION_REQUIRED for CustomerActionStatus
+        /// </summary>
+        public static readonly CustomerActionStatus CRITICAL_ACTION_REQUIRED = new CustomerActionStatus("CRITICAL_ACTION_REQUIRED");
+        /// <summary>
+        /// Constant NONE for CustomerActionStatus
+        /// </summary>
+        public static readonly CustomerActionStatus NONE = new CustomerActionStatus("NONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CustomerActionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CustomerActionStatus FindValue(string value)
+        {
+            return FindValue<CustomerActionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CustomerActionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EnhancedMonitoring.
     /// </summary>
     public class EnhancedMonitoring : ConstantClass
