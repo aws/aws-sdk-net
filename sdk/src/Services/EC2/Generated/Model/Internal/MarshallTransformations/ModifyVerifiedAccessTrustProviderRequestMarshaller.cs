@@ -70,6 +70,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));
                 }
+                if(publicRequest.IsSetDeviceOptions())
+                {
+                    if(publicRequest.DeviceOptions.IsSetPublicSigningKeyUrl())
+                    {
+                        request.Parameters.Add("DeviceOptions" + "." + "PublicSigningKeyUrl", StringUtils.FromString(publicRequest.DeviceOptions.PublicSigningKeyUrl));
+                    }
+                }
                 if(publicRequest.IsSetOidcOptions())
                 {
                     if(publicRequest.OidcOptions.IsSetAuthorizationEndpoint())

@@ -54,6 +54,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("publicSigningKeyUrl", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.PublicSigningKeyUrl = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("tenantId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

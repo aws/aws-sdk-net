@@ -29,13 +29,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes the options when creating an Amazon Web Services Verified Access trust provider
-    /// using the <code>device</code> type.
+    /// Modifies the configuration of the specified device-based Amazon Web Services Verified
+    /// Access trust provider.
     /// </summary>
-    public partial class CreateVerifiedAccessTrustProviderDeviceOptions
+    public partial class ModifyVerifiedAccessTrustProviderDeviceOptions
     {
         private string _publicSigningKeyUrl;
-        private string _tenantId;
 
         /// <summary>
         /// Gets and sets the property PublicSigningKeyUrl. 
@@ -54,24 +53,6 @@ namespace Amazon.EC2.Model
         internal bool IsSetPublicSigningKeyUrl()
         {
             return this._publicSigningKeyUrl != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property TenantId. 
-        /// <para>
-        /// The ID of the tenant application with the device-identity provider.
-        /// </para>
-        /// </summary>
-        public string TenantId
-        {
-            get { return this._tenantId; }
-            set { this._tenantId = value; }
-        }
-
-        // Check to see if TenantId property is set
-        internal bool IsSetTenantId()
-        {
-            return this._tenantId != null;
         }
 
     }

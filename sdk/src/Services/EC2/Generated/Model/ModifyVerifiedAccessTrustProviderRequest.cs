@@ -37,6 +37,7 @@ namespace Amazon.EC2.Model
     {
         private string _clientToken;
         private string _description;
+        private ModifyVerifiedAccessTrustProviderDeviceOptions _deviceOptions;
         private ModifyVerifiedAccessTrustProviderOidcOptions _oidcOptions;
         private VerifiedAccessSseSpecificationRequest _sseSpecification;
         private string _verifiedAccessTrustProviderId;
@@ -77,6 +78,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeviceOptions. 
+        /// <para>
+        /// The options for a device-based trust provider. This parameter is required when the
+        /// provider type is <code>device</code>.
+        /// </para>
+        /// </summary>
+        public ModifyVerifiedAccessTrustProviderDeviceOptions DeviceOptions
+        {
+            get { return this._deviceOptions; }
+            set { this._deviceOptions = value; }
+        }
+
+        // Check to see if DeviceOptions property is set
+        internal bool IsSetDeviceOptions()
+        {
+            return this._deviceOptions != null;
         }
 
         /// <summary>

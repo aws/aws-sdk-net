@@ -72,6 +72,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetDeviceOptions())
                 {
+                    if(publicRequest.DeviceOptions.IsSetPublicSigningKeyUrl())
+                    {
+                        request.Parameters.Add("DeviceOptions" + "." + "PublicSigningKeyUrl", StringUtils.FromString(publicRequest.DeviceOptions.PublicSigningKeyUrl));
+                    }
                     if(publicRequest.DeviceOptions.IsSetTenantId())
                     {
                         request.Parameters.Add("DeviceOptions" + "." + "TenantId", StringUtils.FromString(publicRequest.DeviceOptions.TenantId));

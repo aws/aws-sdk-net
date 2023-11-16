@@ -3684,6 +3684,10 @@ namespace Amazon.EC2
         /// Constant Jamf for DeviceTrustProviderType
         /// </summary>
         public static readonly DeviceTrustProviderType Jamf = new DeviceTrustProviderType("jamf");
+        /// <summary>
+        /// Constant Jumpcloud for DeviceTrustProviderType
+        /// </summary>
+        public static readonly DeviceTrustProviderType Jumpcloud = new DeviceTrustProviderType("jumpcloud");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
