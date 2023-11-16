@@ -46,6 +46,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _onFailure;
         private Dictionary<string, List<string>> _outputs = new Dictionary<string, List<string>>();
         private Dictionary<string, List<string>> _overriddenParameters = new Dictionary<string, List<string>>();
+        private ParentStepDetails _parentStepDetails;
         private string _response;
         private string _responseCode;
         private string _stepExecutionId;
@@ -295,6 +296,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetOverriddenParameters()
         {
             return this._overriddenParameters != null && this._overriddenParameters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ParentStepDetails. 
+        /// <para>
+        /// Information about the parent step.
+        /// </para>
+        /// </summary>
+        public ParentStepDetails ParentStepDetails
+        {
+            get { return this._parentStepDetails; }
+            set { this._parentStepDetails = value; }
+        }
+
+        // Check to see if ParentStepDetails property is set
+        internal bool IsSetParentStepDetails()
+        {
+            return this._parentStepDetails != null;
         }
 
         /// <summary>

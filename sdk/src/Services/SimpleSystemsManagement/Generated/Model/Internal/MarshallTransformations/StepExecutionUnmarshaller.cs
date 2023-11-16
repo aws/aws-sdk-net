@@ -142,6 +142,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     unmarshalledObject.OverriddenParameters = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ParentStepDetails", targetDepth))
+                {
+                    var unmarshaller = ParentStepDetailsUnmarshaller.Instance;
+                    unmarshalledObject.ParentStepDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Response", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

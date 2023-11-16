@@ -3535,6 +3535,10 @@
     <max>10</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.ParentStepDetails.Action</property>
+    <pattern>^aws:[a-zA-Z]{3,25}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.Patch.Id</property>
     <min>1</min>
     <max>100</max>

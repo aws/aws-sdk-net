@@ -651,6 +651,10 @@ namespace Amazon.SimpleSystemsManagement
         /// </summary>
         public static readonly AutomationExecutionStatus CompletedWithSuccess = new AutomationExecutionStatus("CompletedWithSuccess");
         /// <summary>
+        /// Constant Exited for AutomationExecutionStatus
+        /// </summary>
+        public static readonly AutomationExecutionStatus Exited = new AutomationExecutionStatus("Exited");
+        /// <summary>
         /// Constant Failed for AutomationExecutionStatus
         /// </summary>
         public static readonly AutomationExecutionStatus Failed = new AutomationExecutionStatus("Failed");
@@ -5084,6 +5088,18 @@ namespace Amazon.SimpleSystemsManagement
         /// Constant Action for StepExecutionFilterKey
         /// </summary>
         public static readonly StepExecutionFilterKey Action = new StepExecutionFilterKey("Action");
+        /// <summary>
+        /// Constant ParentStepExecutionId for StepExecutionFilterKey
+        /// </summary>
+        public static readonly StepExecutionFilterKey ParentStepExecutionId = new StepExecutionFilterKey("ParentStepExecutionId");
+        /// <summary>
+        /// Constant ParentStepIteration for StepExecutionFilterKey
+        /// </summary>
+        public static readonly StepExecutionFilterKey ParentStepIteration = new StepExecutionFilterKey("ParentStepIteration");
+        /// <summary>
+        /// Constant ParentStepIteratorValue for StepExecutionFilterKey
+        /// </summary>
+        public static readonly StepExecutionFilterKey ParentStepIteratorValue = new StepExecutionFilterKey("ParentStepIteratorValue");
         /// <summary>
         /// Constant StartTimeAfter for StepExecutionFilterKey
         /// </summary>

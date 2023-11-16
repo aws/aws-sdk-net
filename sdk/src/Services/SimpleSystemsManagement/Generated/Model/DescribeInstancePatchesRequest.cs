@@ -82,6 +82,12 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Sample values: <code>Installed</code> | <code>InstalledOther</code> | <code>InstalledPendingReboot</code>
         /// 
         /// </para>
+        ///  
+        /// <para>
+        /// For lists of all <code>State</code> values, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-compliance-states.html">Understanding
+        /// patch compliance state values</a> in the <i>Amazon Web Services Systems Manager User
+        /// Guide</i>.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Min=0, Max=5)]

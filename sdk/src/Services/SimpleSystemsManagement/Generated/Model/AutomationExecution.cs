@@ -66,6 +66,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _targetParameterName;
         private List<Target> _targets = new List<Target>();
         private List<AlarmStateInformation> _triggeredAlarms = new List<AlarmStateInformation>();
+        private Dictionary<string, List<string>> _variables = new Dictionary<string, List<string>>();
 
         /// <summary>
         /// Gets and sets the property AlarmConfiguration. 
@@ -683,6 +684,25 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetTriggeredAlarms()
         {
             return this._triggeredAlarms != null && this._triggeredAlarms.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Variables. 
+        /// <para>
+        /// Variables defined for the automation.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=200)]
+        public Dictionary<string, List<string>> Variables
+        {
+            get { return this._variables; }
+            set { this._variables = value; }
+        }
+
+        // Check to see if Variables property is set
+        internal bool IsSetVariables()
+        {
+            return this._variables != null && this._variables.Count > 0; 
         }
 
     }
