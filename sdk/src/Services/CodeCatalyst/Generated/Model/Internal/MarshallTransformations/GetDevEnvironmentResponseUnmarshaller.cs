@@ -129,6 +129,12 @@ namespace Amazon.CodeCatalyst.Model.Internal.MarshallTransformations
                     response.StatusReason = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("vpcConnectionName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.VpcConnectionName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

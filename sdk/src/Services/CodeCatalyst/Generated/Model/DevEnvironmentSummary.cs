@@ -46,6 +46,7 @@ namespace Amazon.CodeCatalyst.Model
         private string _spaceName;
         private DevEnvironmentStatus _status;
         private string _statusReason;
+        private string _vpcConnectionName;
 
         /// <summary>
         /// Gets and sets the property Alias. 
@@ -297,6 +298,26 @@ namespace Amazon.CodeCatalyst.Model
         internal bool IsSetStatusReason()
         {
             return this._statusReason != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcConnectionName. 
+        /// <para>
+        /// The name of the connection used to connect to Amazon VPC used when the Dev Environment
+        /// was created, if any.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=3, Max=63)]
+        public string VpcConnectionName
+        {
+            get { return this._vpcConnectionName; }
+            set { this._vpcConnectionName = value; }
+        }
+
+        // Check to see if VpcConnectionName property is set
+        internal bool IsSetVpcConnectionName()
+        {
+            return this._vpcConnectionName != null;
         }
 
     }

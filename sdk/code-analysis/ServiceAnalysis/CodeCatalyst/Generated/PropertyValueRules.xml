@@ -49,6 +49,12 @@
     <pattern>[a-zA-Z0-9]+(?:[-_\.][a-zA-Z0-9]+)*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodeCatalyst.Model.CreateDevEnvironmentRequest.VpcConnectionName</property>
+    <min>3</min>
+    <max>63</max>
+    <pattern>[a-zA-Z0-9]+(?:[-_\.][a-zA-Z0-9]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodeCatalyst.Model.CreateDevEnvironmentResponse.Id</property>
     <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
   </property-value-rule>
@@ -60,6 +66,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCatalyst.Model.CreateDevEnvironmentResponse.SpaceName</property>
+    <min>3</min>
+    <max>63</max>
+    <pattern>[a-zA-Z0-9]+(?:[-_\.][a-zA-Z0-9]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeCatalyst.Model.CreateDevEnvironmentResponse.VpcConnectionName</property>
     <min>3</min>
     <max>63</max>
     <pattern>[a-zA-Z0-9]+(?:[-_\.][a-zA-Z0-9]+)*</pattern>
@@ -333,6 +345,12 @@
     <property>Amazon.CodeCatalyst.Model.GetDevEnvironmentResponse.StatusReason</property>
     <min>0</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeCatalyst.Model.GetDevEnvironmentResponse.VpcConnectionName</property>
+    <min>3</min>
+    <max>63</max>
+    <pattern>[a-zA-Z0-9]+(?:[-_\.][a-zA-Z0-9]+)*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCatalyst.Model.GetProjectRequest.Name</property>
@@ -1101,6 +1119,12 @@
     <property>Amazon.CodeCatalyst.Model.DevEnvironmentSummary.StatusReason</property>
     <min>0</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeCatalyst.Model.DevEnvironmentSummary.VpcConnectionName</property>
+    <min>3</min>
+    <max>63</max>
+    <pattern>[a-zA-Z0-9]+(?:[-_\.][a-zA-Z0-9]+)*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCatalyst.Model.ExecuteCommandSessionConfiguration.Command</property>

@@ -138,6 +138,12 @@ namespace Amazon.CodeCatalyst.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetVpcConnectionName())
+                {
+                    context.Writer.WritePropertyName("vpcConnectionName");
+                    context.Writer.Write(publicRequest.VpcConnectionName);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

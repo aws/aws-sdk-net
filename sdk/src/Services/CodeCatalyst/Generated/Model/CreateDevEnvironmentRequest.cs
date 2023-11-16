@@ -53,6 +53,7 @@ namespace Amazon.CodeCatalyst.Model
         private string _projectName;
         private List<RepositoryInput> _repositories = new List<RepositoryInput>();
         private string _spaceName;
+        private string _vpcConnectionName;
 
         /// <summary>
         /// Gets and sets the property Alias. 
@@ -243,6 +244,25 @@ namespace Amazon.CodeCatalyst.Model
         internal bool IsSetSpaceName()
         {
             return this._spaceName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcConnectionName. 
+        /// <para>
+        /// The name of the connection to use connect to a Amazon VPC.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=3, Max=63)]
+        public string VpcConnectionName
+        {
+            get { return this._vpcConnectionName; }
+            set { this._vpcConnectionName = value; }
+        }
+
+        // Check to see if VpcConnectionName property is set
+        internal bool IsSetVpcConnectionName()
+        {
+            return this._vpcConnectionName != null;
         }
 
     }
