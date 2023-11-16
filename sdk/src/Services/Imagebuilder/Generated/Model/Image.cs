@@ -39,6 +39,7 @@ namespace Amazon.Imagebuilder.Model
         private BuildType _buildType;
         private ContainerRecipe _containerRecipe;
         private string _dateCreated;
+        private DateTime? _deprecationTime;
         private DistributionConfiguration _distributionConfiguration;
         private bool? _enhancedImageMetadataEnabled;
         private ImageRecipe _imageRecipe;
@@ -46,6 +47,7 @@ namespace Amazon.Imagebuilder.Model
         private ImageSource _imageSource;
         private ImageTestsConfiguration _imageTestsConfiguration;
         private InfrastructureConfiguration _infrastructureConfiguration;
+        private string _lifecycleExecutionId;
         private string _name;
         private string _osVersion;
         private OutputResources _outputResources;
@@ -165,6 +167,25 @@ namespace Amazon.Imagebuilder.Model
         internal bool IsSetDateCreated()
         {
             return this._dateCreated != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeprecationTime. 
+        /// <para>
+        /// The time when deprecation occurs for an image resource. This can be a past or future
+        /// date.
+        /// </para>
+        /// </summary>
+        public DateTime DeprecationTime
+        {
+            get { return this._deprecationTime.GetValueOrDefault(); }
+            set { this._deprecationTime = value; }
+        }
+
+        // Check to see if DeprecationTime property is set
+        internal bool IsSetDeprecationTime()
+        {
+            return this._deprecationTime.HasValue; 
         }
 
         /// <summary>
@@ -293,6 +314,25 @@ namespace Amazon.Imagebuilder.Model
         internal bool IsSetInfrastructureConfiguration()
         {
             return this._infrastructureConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LifecycleExecutionId. 
+        /// <para>
+        /// Identifies the last runtime instance of the lifecycle policy to take action on the
+        /// image.
+        /// </para>
+        /// </summary>
+        public string LifecycleExecutionId
+        {
+            get { return this._lifecycleExecutionId; }
+            set { this._lifecycleExecutionId = value; }
+        }
+
+        // Check to see if LifecycleExecutionId property is set
+        internal bool IsSetLifecycleExecutionId()
+        {
+            return this._lifecycleExecutionId != null;
         }
 
         /// <summary>

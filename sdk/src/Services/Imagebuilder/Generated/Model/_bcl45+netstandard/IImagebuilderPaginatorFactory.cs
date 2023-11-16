@@ -91,6 +91,21 @@ namespace Amazon.Imagebuilder.Model
         IListInfrastructureConfigurationsPaginator ListInfrastructureConfigurations(ListInfrastructureConfigurationsRequest request);
 
         /// <summary>
+        /// Paginator for ListLifecycleExecutionResources operation
+        ///</summary>
+        IListLifecycleExecutionResourcesPaginator ListLifecycleExecutionResources(ListLifecycleExecutionResourcesRequest request);
+
+        /// <summary>
+        /// Paginator for ListLifecycleExecutions operation
+        ///</summary>
+        IListLifecycleExecutionsPaginator ListLifecycleExecutions(ListLifecycleExecutionsRequest request);
+
+        /// <summary>
+        /// Paginator for ListLifecyclePolicies operation
+        ///</summary>
+        IListLifecyclePoliciesPaginator ListLifecyclePolicies(ListLifecyclePoliciesRequest request);
+
+        /// <summary>
         /// Paginator for ListWorkflowExecutions operation
         ///</summary>
         IListWorkflowExecutionsPaginator ListWorkflowExecutions(ListWorkflowExecutionsRequest request);

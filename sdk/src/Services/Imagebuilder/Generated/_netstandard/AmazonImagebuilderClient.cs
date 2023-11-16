@@ -333,6 +333,68 @@ namespace Amazon.Imagebuilder
 
         #endregion
         
+        #region  CancelLifecycleExecution
+
+        internal virtual CancelLifecycleExecutionResponse CancelLifecycleExecution(CancelLifecycleExecutionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelLifecycleExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelLifecycleExecutionResponseUnmarshaller.Instance;
+
+            return Invoke<CancelLifecycleExecutionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Cancel a specific image lifecycle policy runtime instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelLifecycleExecution service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CancelLifecycleExecution service method, as returned by Imagebuilder.</returns>
+        /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
+        /// You have exceeded the permitted request rate for the specific operation.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an invalid resource identifier.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
+        /// You are not authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.IdempotentParameterMismatchException">
+        /// You have specified a client token for an operation using parameter values that differ
+        /// from a previous request that used the same client token.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
+        /// You have requested an action that that the service doesn't support.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ResourceInUseException">
+        /// The resource that you are trying to operate on is currently in use. Review the message
+        /// details and retry later.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
+        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
+        /// The service is unable to process your request at this time.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CancelLifecycleExecution">REST API Reference for CancelLifecycleExecution Operation</seealso>
+        public virtual Task<CancelLifecycleExecutionResponse> CancelLifecycleExecutionAsync(CancelLifecycleExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelLifecycleExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelLifecycleExecutionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CancelLifecycleExecutionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateComponent
 
         internal virtual CreateComponentResponse CreateComponent(CreateComponentRequest request)
@@ -854,6 +916,76 @@ namespace Amazon.Imagebuilder
 
         #endregion
         
+        #region  CreateLifecyclePolicy
+
+        internal virtual CreateLifecyclePolicyResponse CreateLifecyclePolicy(CreateLifecyclePolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLifecyclePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLifecyclePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<CreateLifecyclePolicyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Create a lifecycle policy resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLifecyclePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateLifecyclePolicy service method, as returned by Imagebuilder.</returns>
+        /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
+        /// You have exceeded the permitted request rate for the specific operation.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an invalid resource identifier.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
+        /// You are not authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.IdempotentParameterMismatchException">
+        /// You have specified a client token for an operation using parameter values that differ
+        /// from a previous request that used the same client token.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
+        /// You have requested an action that that the service doesn't support.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ResourceAlreadyExistsException">
+        /// The resource that you are trying to create already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ResourceInUseException">
+        /// The resource that you are trying to operate on is currently in use. Review the message
+        /// details and retry later.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
+        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ServiceQuotaExceededException">
+        /// You have exceeded the number of permitted resources or operations for this service.
+        /// For service quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/imagebuilder.html#limits_imagebuilder">EC2
+        /// Image Builder endpoints and quotas</a>.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
+        /// The service is unable to process your request at this time.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateLifecyclePolicy">REST API Reference for CreateLifecyclePolicy Operation</seealso>
+        public virtual Task<CreateLifecyclePolicyResponse> CreateLifecyclePolicyAsync(CreateLifecyclePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLifecyclePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLifecyclePolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateLifecyclePolicyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteComponent
 
         internal virtual DeleteComponentResponse DeleteComponent(DeleteComponentRequest request)
@@ -1276,6 +1408,64 @@ namespace Amazon.Imagebuilder
             options.ResponseUnmarshaller = DeleteInfrastructureConfigurationResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteInfrastructureConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteLifecyclePolicy
+
+        internal virtual DeleteLifecyclePolicyResponse DeleteLifecyclePolicy(DeleteLifecyclePolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLifecyclePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLifecyclePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteLifecyclePolicyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Delete the specified lifecycle policy resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLifecyclePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteLifecyclePolicy service method, as returned by Imagebuilder.</returns>
+        /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
+        /// You have exceeded the permitted request rate for the specific operation.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an invalid resource identifier.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
+        /// You are not authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
+        /// You have requested an action that that the service doesn't support.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ResourceDependencyException">
+        /// You have attempted to mutate or delete a resource with a dependency that prohibits
+        /// this action. See the error message for more details.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
+        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
+        /// The service is unable to process your request at this time.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/DeleteLifecyclePolicy">REST API Reference for DeleteLifecyclePolicy Operation</seealso>
+        public virtual Task<DeleteLifecyclePolicyResponse> DeleteLifecyclePolicyAsync(DeleteLifecyclePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLifecyclePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLifecyclePolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteLifecyclePolicyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1862,6 +2052,115 @@ namespace Amazon.Imagebuilder
             options.ResponseUnmarshaller = GetInfrastructureConfigurationResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetInfrastructureConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetLifecycleExecution
+
+        internal virtual GetLifecycleExecutionResponse GetLifecycleExecution(GetLifecycleExecutionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetLifecycleExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetLifecycleExecutionResponseUnmarshaller.Instance;
+
+            return Invoke<GetLifecycleExecutionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Get the runtime information that was logged for a specific runtime instance of the
+        /// lifecycle policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetLifecycleExecution service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetLifecycleExecution service method, as returned by Imagebuilder.</returns>
+        /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
+        /// You have exceeded the permitted request rate for the specific operation.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an invalid resource identifier.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
+        /// You are not authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
+        /// You have requested an action that that the service doesn't support.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
+        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
+        /// The service is unable to process your request at this time.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetLifecycleExecution">REST API Reference for GetLifecycleExecution Operation</seealso>
+        public virtual Task<GetLifecycleExecutionResponse> GetLifecycleExecutionAsync(GetLifecycleExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetLifecycleExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetLifecycleExecutionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetLifecycleExecutionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetLifecyclePolicy
+
+        internal virtual GetLifecyclePolicyResponse GetLifecyclePolicy(GetLifecyclePolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetLifecyclePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetLifecyclePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetLifecyclePolicyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Get details for the specified image lifecycle policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetLifecyclePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetLifecyclePolicy service method, as returned by Imagebuilder.</returns>
+        /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
+        /// You have exceeded the permitted request rate for the specific operation.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an invalid resource identifier.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
+        /// You are not authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
+        /// You have requested an action that that the service doesn't support.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
+        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
+        /// The service is unable to process your request at this time.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetLifecyclePolicy">REST API Reference for GetLifecyclePolicy Operation</seealso>
+        public virtual Task<GetLifecyclePolicyResponse> GetLifecyclePolicyAsync(GetLifecyclePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetLifecyclePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetLifecyclePolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetLifecyclePolicyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2906,6 +3205,178 @@ namespace Amazon.Imagebuilder
 
         #endregion
         
+        #region  ListLifecycleExecutionResources
+
+        internal virtual ListLifecycleExecutionResourcesResponse ListLifecycleExecutionResources(ListLifecycleExecutionResourcesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListLifecycleExecutionResourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLifecycleExecutionResourcesResponseUnmarshaller.Instance;
+
+            return Invoke<ListLifecycleExecutionResourcesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// List resources that the runtime instance of the image lifecycle identified for lifecycle
+        /// actions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListLifecycleExecutionResources service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListLifecycleExecutionResources service method, as returned by Imagebuilder.</returns>
+        /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
+        /// You have exceeded the permitted request rate for the specific operation.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an invalid resource identifier.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
+        /// You are not authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.InvalidPaginationTokenException">
+        /// You have provided an invalid pagination token in your request.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
+        /// You have requested an action that that the service doesn't support.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
+        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
+        /// The service is unable to process your request at this time.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListLifecycleExecutionResources">REST API Reference for ListLifecycleExecutionResources Operation</seealso>
+        public virtual Task<ListLifecycleExecutionResourcesResponse> ListLifecycleExecutionResourcesAsync(ListLifecycleExecutionResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListLifecycleExecutionResourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLifecycleExecutionResourcesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListLifecycleExecutionResourcesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListLifecycleExecutions
+
+        internal virtual ListLifecycleExecutionsResponse ListLifecycleExecutions(ListLifecycleExecutionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListLifecycleExecutionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLifecycleExecutionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListLifecycleExecutionsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Get the lifecycle runtime history for the specified resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListLifecycleExecutions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListLifecycleExecutions service method, as returned by Imagebuilder.</returns>
+        /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
+        /// You have exceeded the permitted request rate for the specific operation.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an invalid resource identifier.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
+        /// You are not authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.InvalidPaginationTokenException">
+        /// You have provided an invalid pagination token in your request.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
+        /// You have requested an action that that the service doesn't support.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
+        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
+        /// The service is unable to process your request at this time.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListLifecycleExecutions">REST API Reference for ListLifecycleExecutions Operation</seealso>
+        public virtual Task<ListLifecycleExecutionsResponse> ListLifecycleExecutionsAsync(ListLifecycleExecutionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListLifecycleExecutionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLifecycleExecutionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListLifecycleExecutionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListLifecyclePolicies
+
+        internal virtual ListLifecyclePoliciesResponse ListLifecyclePolicies(ListLifecyclePoliciesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListLifecyclePoliciesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLifecyclePoliciesResponseUnmarshaller.Instance;
+
+            return Invoke<ListLifecyclePoliciesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Get a list of lifecycle policies in your Amazon Web Services account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListLifecyclePolicies service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListLifecyclePolicies service method, as returned by Imagebuilder.</returns>
+        /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
+        /// You have exceeded the permitted request rate for the specific operation.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an invalid resource identifier.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
+        /// You are not authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.InvalidPaginationTokenException">
+        /// You have provided an invalid pagination token in your request.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
+        /// You have requested an action that that the service doesn't support.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
+        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
+        /// The service is unable to process your request at this time.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListLifecyclePolicies">REST API Reference for ListLifecyclePolicies Operation</seealso>
+        public virtual Task<ListLifecyclePoliciesResponse> ListLifecyclePoliciesAsync(ListLifecyclePoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListLifecyclePoliciesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLifecyclePoliciesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListLifecyclePoliciesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListTagsForResource
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
@@ -3387,6 +3858,72 @@ namespace Amazon.Imagebuilder
 
         #endregion
         
+        #region  StartResourceStateUpdate
+
+        internal virtual StartResourceStateUpdateResponse StartResourceStateUpdate(StartResourceStateUpdateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartResourceStateUpdateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartResourceStateUpdateResponseUnmarshaller.Instance;
+
+            return Invoke<StartResourceStateUpdateResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Begin asynchronous resource state update for lifecycle changes to the specified image
+        /// resources.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartResourceStateUpdate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartResourceStateUpdate service method, as returned by Imagebuilder.</returns>
+        /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
+        /// You have exceeded the permitted request rate for the specific operation.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an invalid resource identifier.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
+        /// You are not authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.IdempotentParameterMismatchException">
+        /// You have specified a client token for an operation using parameter values that differ
+        /// from a previous request that used the same client token.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
+        /// You have requested an action that that the service doesn't support.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ResourceInUseException">
+        /// The resource that you are trying to operate on is currently in use. Review the message
+        /// details and retry later.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ResourceNotFoundException">
+        /// At least one of the resources referenced by your request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
+        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
+        /// The service is unable to process your request at this time.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/StartResourceStateUpdate">REST API Reference for StartResourceStateUpdate Operation</seealso>
+        public virtual Task<StartResourceStateUpdateResponse> StartResourceStateUpdateAsync(StartResourceStateUpdateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartResourceStateUpdateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartResourceStateUpdateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartResourceStateUpdateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  TagResource
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
@@ -3670,6 +4207,72 @@ namespace Amazon.Imagebuilder
             options.ResponseUnmarshaller = UpdateInfrastructureConfigurationResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateInfrastructureConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateLifecyclePolicy
+
+        internal virtual UpdateLifecyclePolicyResponse UpdateLifecyclePolicy(UpdateLifecyclePolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateLifecyclePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateLifecyclePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateLifecyclePolicyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Update the specified lifecycle policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLifecyclePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateLifecyclePolicy service method, as returned by Imagebuilder.</returns>
+        /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
+        /// You have exceeded the permitted request rate for the specific operation.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an invalid resource identifier.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
+        /// You are not authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.IdempotentParameterMismatchException">
+        /// You have specified a client token for an operation using parameter values that differ
+        /// from a previous request that used the same client token.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.InvalidParameterCombinationException">
+        /// You have specified two or more mutually exclusive parameters. Review the error message
+        /// for details.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
+        /// You have requested an action that that the service doesn't support.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ResourceInUseException">
+        /// The resource that you are trying to operate on is currently in use. Review the message
+        /// details and retry later.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
+        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
+        /// The service is unable to process your request at this time.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/UpdateLifecyclePolicy">REST API Reference for UpdateLifecyclePolicy Operation</seealso>
+        public virtual Task<UpdateLifecyclePolicyResponse> UpdateLifecyclePolicyAsync(UpdateLifecyclePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateLifecyclePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateLifecyclePolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateLifecyclePolicyResponse>(request, options, cancellationToken);
         }
 
         #endregion

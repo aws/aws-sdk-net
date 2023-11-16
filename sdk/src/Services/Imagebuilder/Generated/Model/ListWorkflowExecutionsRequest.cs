@@ -81,7 +81,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A token to specify where to start paginating. This is the NextToken from a previously
+        /// A token to specify where to start paginating. This is the nextToken from a previously
         /// truncated response.
         /// </para>
         /// </summary>

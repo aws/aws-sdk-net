@@ -140,6 +140,30 @@ namespace Amazon.Imagebuilder.Model
         }
 
         /// <summary>
+        /// Paginator for ListLifecycleExecutionResources operation
+        ///</summary>
+        public IListLifecycleExecutionResourcesPaginator ListLifecycleExecutionResources(ListLifecycleExecutionResourcesRequest request) 
+        {
+            return new ListLifecycleExecutionResourcesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListLifecycleExecutions operation
+        ///</summary>
+        public IListLifecycleExecutionsPaginator ListLifecycleExecutions(ListLifecycleExecutionsRequest request) 
+        {
+            return new ListLifecycleExecutionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListLifecyclePolicies operation
+        ///</summary>
+        public IListLifecyclePoliciesPaginator ListLifecyclePolicies(ListLifecyclePoliciesRequest request) 
+        {
+            return new ListLifecyclePoliciesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListWorkflowExecutions operation
         ///</summary>
         public IListWorkflowExecutionsPaginator ListWorkflowExecutions(ListWorkflowExecutionsRequest request) 

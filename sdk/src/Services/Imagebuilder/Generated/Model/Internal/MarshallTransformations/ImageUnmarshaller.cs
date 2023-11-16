@@ -88,6 +88,12 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                     unmarshalledObject.DateCreated = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("deprecationTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.DeprecationTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("distributionConfiguration", targetDepth))
                 {
                     var unmarshaller = DistributionConfigurationUnmarshaller.Instance;
@@ -128,6 +134,12 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = InfrastructureConfigurationUnmarshaller.Instance;
                     unmarshalledObject.InfrastructureConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("lifecycleExecutionId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LifecycleExecutionId = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("name", targetDepth))

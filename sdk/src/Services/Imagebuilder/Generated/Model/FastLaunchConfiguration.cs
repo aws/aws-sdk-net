@@ -103,7 +103,7 @@ namespace Amazon.Imagebuilder.Model
         /// The maximum number of parallel instances that are launched for creating resources.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=10000)]
+        [AWSProperty(Min=1)]
         public int MaxParallelLaunches
         {
             get { return this._maxParallelLaunches.GetValueOrDefault(); }

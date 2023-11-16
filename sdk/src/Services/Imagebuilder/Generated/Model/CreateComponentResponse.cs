@@ -40,7 +40,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// The idempotency token used to make this request idempotent.
+        /// The client token that uniquely identifies the request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=36)]
@@ -59,7 +59,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ComponentBuildVersionArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the component that this request created.
+        /// The Amazon Resource Name (ARN) of the component that the request created.
         /// </para>
         /// </summary>
         public string ComponentBuildVersionArn

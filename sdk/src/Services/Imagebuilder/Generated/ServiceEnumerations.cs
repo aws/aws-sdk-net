@@ -595,6 +595,10 @@ namespace Amazon.Imagebuilder
         /// </summary>
         public static readonly ImageStatus DEPRECATED = new ImageStatus("DEPRECATED");
         /// <summary>
+        /// Constant DISABLED for ImageStatus
+        /// </summary>
+        public static readonly ImageStatus DISABLED = new ImageStatus("DISABLED");
+        /// <summary>
         /// Constant DISTRIBUTING for ImageStatus
         /// </summary>
         public static readonly ImageStatus DISTRIBUTING = new ImageStatus("DISTRIBUTING");
@@ -694,6 +698,446 @@ namespace Amazon.Imagebuilder
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ImageType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LifecycleExecutionResourceActionName.
+    /// </summary>
+    public class LifecycleExecutionResourceActionName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AVAILABLE for LifecycleExecutionResourceActionName
+        /// </summary>
+        public static readonly LifecycleExecutionResourceActionName AVAILABLE = new LifecycleExecutionResourceActionName("AVAILABLE");
+        /// <summary>
+        /// Constant DELETE for LifecycleExecutionResourceActionName
+        /// </summary>
+        public static readonly LifecycleExecutionResourceActionName DELETE = new LifecycleExecutionResourceActionName("DELETE");
+        /// <summary>
+        /// Constant DEPRECATE for LifecycleExecutionResourceActionName
+        /// </summary>
+        public static readonly LifecycleExecutionResourceActionName DEPRECATE = new LifecycleExecutionResourceActionName("DEPRECATE");
+        /// <summary>
+        /// Constant DISABLE for LifecycleExecutionResourceActionName
+        /// </summary>
+        public static readonly LifecycleExecutionResourceActionName DISABLE = new LifecycleExecutionResourceActionName("DISABLE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LifecycleExecutionResourceActionName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LifecycleExecutionResourceActionName FindValue(string value)
+        {
+            return FindValue<LifecycleExecutionResourceActionName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LifecycleExecutionResourceActionName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LifecycleExecutionResourceStatus.
+    /// </summary>
+    public class LifecycleExecutionResourceStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for LifecycleExecutionResourceStatus
+        /// </summary>
+        public static readonly LifecycleExecutionResourceStatus FAILED = new LifecycleExecutionResourceStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for LifecycleExecutionResourceStatus
+        /// </summary>
+        public static readonly LifecycleExecutionResourceStatus IN_PROGRESS = new LifecycleExecutionResourceStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant SKIPPED for LifecycleExecutionResourceStatus
+        /// </summary>
+        public static readonly LifecycleExecutionResourceStatus SKIPPED = new LifecycleExecutionResourceStatus("SKIPPED");
+        /// <summary>
+        /// Constant SUCCESS for LifecycleExecutionResourceStatus
+        /// </summary>
+        public static readonly LifecycleExecutionResourceStatus SUCCESS = new LifecycleExecutionResourceStatus("SUCCESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LifecycleExecutionResourceStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LifecycleExecutionResourceStatus FindValue(string value)
+        {
+            return FindValue<LifecycleExecutionResourceStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LifecycleExecutionResourceStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LifecycleExecutionStatus.
+    /// </summary>
+    public class LifecycleExecutionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CANCELLED for LifecycleExecutionStatus
+        /// </summary>
+        public static readonly LifecycleExecutionStatus CANCELLED = new LifecycleExecutionStatus("CANCELLED");
+        /// <summary>
+        /// Constant CANCELLING for LifecycleExecutionStatus
+        /// </summary>
+        public static readonly LifecycleExecutionStatus CANCELLING = new LifecycleExecutionStatus("CANCELLING");
+        /// <summary>
+        /// Constant FAILED for LifecycleExecutionStatus
+        /// </summary>
+        public static readonly LifecycleExecutionStatus FAILED = new LifecycleExecutionStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for LifecycleExecutionStatus
+        /// </summary>
+        public static readonly LifecycleExecutionStatus IN_PROGRESS = new LifecycleExecutionStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant SUCCESS for LifecycleExecutionStatus
+        /// </summary>
+        public static readonly LifecycleExecutionStatus SUCCESS = new LifecycleExecutionStatus("SUCCESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LifecycleExecutionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LifecycleExecutionStatus FindValue(string value)
+        {
+            return FindValue<LifecycleExecutionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LifecycleExecutionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LifecyclePolicyDetailActionType.
+    /// </summary>
+    public class LifecyclePolicyDetailActionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DELETE for LifecyclePolicyDetailActionType
+        /// </summary>
+        public static readonly LifecyclePolicyDetailActionType DELETE = new LifecyclePolicyDetailActionType("DELETE");
+        /// <summary>
+        /// Constant DEPRECATE for LifecyclePolicyDetailActionType
+        /// </summary>
+        public static readonly LifecyclePolicyDetailActionType DEPRECATE = new LifecyclePolicyDetailActionType("DEPRECATE");
+        /// <summary>
+        /// Constant DISABLE for LifecyclePolicyDetailActionType
+        /// </summary>
+        public static readonly LifecyclePolicyDetailActionType DISABLE = new LifecyclePolicyDetailActionType("DISABLE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LifecyclePolicyDetailActionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LifecyclePolicyDetailActionType FindValue(string value)
+        {
+            return FindValue<LifecyclePolicyDetailActionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LifecyclePolicyDetailActionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LifecyclePolicyDetailFilterType.
+    /// </summary>
+    public class LifecyclePolicyDetailFilterType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AGE for LifecyclePolicyDetailFilterType
+        /// </summary>
+        public static readonly LifecyclePolicyDetailFilterType AGE = new LifecyclePolicyDetailFilterType("AGE");
+        /// <summary>
+        /// Constant COUNT for LifecyclePolicyDetailFilterType
+        /// </summary>
+        public static readonly LifecyclePolicyDetailFilterType COUNT = new LifecyclePolicyDetailFilterType("COUNT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LifecyclePolicyDetailFilterType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LifecyclePolicyDetailFilterType FindValue(string value)
+        {
+            return FindValue<LifecyclePolicyDetailFilterType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LifecyclePolicyDetailFilterType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LifecyclePolicyResourceType.
+    /// </summary>
+    public class LifecyclePolicyResourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AMI_IMAGE for LifecyclePolicyResourceType
+        /// </summary>
+        public static readonly LifecyclePolicyResourceType AMI_IMAGE = new LifecyclePolicyResourceType("AMI_IMAGE");
+        /// <summary>
+        /// Constant CONTAINER_IMAGE for LifecyclePolicyResourceType
+        /// </summary>
+        public static readonly LifecyclePolicyResourceType CONTAINER_IMAGE = new LifecyclePolicyResourceType("CONTAINER_IMAGE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LifecyclePolicyResourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LifecyclePolicyResourceType FindValue(string value)
+        {
+            return FindValue<LifecyclePolicyResourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LifecyclePolicyResourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LifecyclePolicyStatus.
+    /// </summary>
+    public class LifecyclePolicyStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for LifecyclePolicyStatus
+        /// </summary>
+        public static readonly LifecyclePolicyStatus DISABLED = new LifecyclePolicyStatus("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for LifecyclePolicyStatus
+        /// </summary>
+        public static readonly LifecyclePolicyStatus ENABLED = new LifecyclePolicyStatus("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LifecyclePolicyStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LifecyclePolicyStatus FindValue(string value)
+        {
+            return FindValue<LifecyclePolicyStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LifecyclePolicyStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LifecyclePolicyTimeUnit.
+    /// </summary>
+    public class LifecyclePolicyTimeUnit : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DAYS for LifecyclePolicyTimeUnit
+        /// </summary>
+        public static readonly LifecyclePolicyTimeUnit DAYS = new LifecyclePolicyTimeUnit("DAYS");
+        /// <summary>
+        /// Constant MONTHS for LifecyclePolicyTimeUnit
+        /// </summary>
+        public static readonly LifecyclePolicyTimeUnit MONTHS = new LifecyclePolicyTimeUnit("MONTHS");
+        /// <summary>
+        /// Constant WEEKS for LifecyclePolicyTimeUnit
+        /// </summary>
+        public static readonly LifecyclePolicyTimeUnit WEEKS = new LifecyclePolicyTimeUnit("WEEKS");
+        /// <summary>
+        /// Constant YEARS for LifecyclePolicyTimeUnit
+        /// </summary>
+        public static readonly LifecyclePolicyTimeUnit YEARS = new LifecyclePolicyTimeUnit("YEARS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LifecyclePolicyTimeUnit(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LifecyclePolicyTimeUnit FindValue(string value)
+        {
+            return FindValue<LifecyclePolicyTimeUnit>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LifecyclePolicyTimeUnit(string value)
         {
             return FindValue(value);
         }
@@ -902,6 +1346,64 @@ namespace Amazon.Imagebuilder
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Platform(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ResourceStatus.
+    /// </summary>
+    public class ResourceStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AVAILABLE for ResourceStatus
+        /// </summary>
+        public static readonly ResourceStatus AVAILABLE = new ResourceStatus("AVAILABLE");
+        /// <summary>
+        /// Constant DELETED for ResourceStatus
+        /// </summary>
+        public static readonly ResourceStatus DELETED = new ResourceStatus("DELETED");
+        /// <summary>
+        /// Constant DEPRECATED for ResourceStatus
+        /// </summary>
+        public static readonly ResourceStatus DEPRECATED = new ResourceStatus("DEPRECATED");
+        /// <summary>
+        /// Constant DISABLED for ResourceStatus
+        /// </summary>
+        public static readonly ResourceStatus DISABLED = new ResourceStatus("DISABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResourceStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourceStatus FindValue(string value)
+        {
+            return FindValue<ResourceStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourceStatus(string value)
         {
             return FindValue(value);
         }

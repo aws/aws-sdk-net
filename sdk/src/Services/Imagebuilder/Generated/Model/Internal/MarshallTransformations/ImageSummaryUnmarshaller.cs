@@ -82,10 +82,22 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                     unmarshalledObject.DateCreated = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("deprecationTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.DeprecationTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("imageSource", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ImageSource = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("lifecycleExecutionId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LifecycleExecutionId = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("name", targetDepth))

@@ -40,7 +40,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// The client token used to make this request idempotent.
+        /// The client token that uniquely identifies the request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=36)]

@@ -1,0 +1,80 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the imagebuilder-2019-12-02.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+namespace Amazon.Imagebuilder.Model
+{
+    /// <summary>
+    /// Resource selection criteria for the lifecycle policy.
+    /// </summary>
+    public partial class LifecyclePolicyResourceSelection
+    {
+        private List<LifecyclePolicyResourceSelectionRecipe> _recipes = new List<LifecyclePolicyResourceSelectionRecipe>();
+        private Dictionary<string, string> _tagMap = new Dictionary<string, string>();
+
+        /// <summary>
+        /// Gets and sets the property Recipes. 
+        /// <para>
+        /// A list of recipes that are used as selection criteria for the output images that the
+        /// lifecycle policy applies to.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=50)]
+        public List<LifecyclePolicyResourceSelectionRecipe> Recipes
+        {
+            get { return this._recipes; }
+            set { this._recipes = value; }
+        }
+
+        // Check to see if Recipes property is set
+        internal bool IsSetRecipes()
+        {
+            return this._recipes != null && this._recipes.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TagMap. 
+        /// <para>
+        /// A list of tags that are used as selection criteria for the resources that the lifecycle
+        /// policy applies to.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=50)]
+        public Dictionary<string, string> TagMap
+        {
+            get { return this._tagMap; }
+            set { this._tagMap = value; }
+        }
+
+        // Check to see if TagMap property is set
+        internal bool IsSetTagMap()
+        {
+            return this._tagMap != null && this._tagMap.Count > 0; 
+        }
+
+    }
+}
