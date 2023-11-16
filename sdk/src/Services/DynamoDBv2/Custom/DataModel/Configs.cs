@@ -135,6 +135,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <summary>
         /// If true, all <see cref="DateTime"/> properties are retrieved in UTC timezone while reading data from DynamoDB. Else, the local timezone is used.
         /// </summary>
+        /// <remarks>This setting is only applicable to the high-level library. Service calls made via <see cref="AmazonDynamoDBClient"/> will always return <see cref="DateTime"/> attributes in UTC.</remarks>
         public bool? RetrieveDateTimeInUtc { get; set; }
     }
 
@@ -340,7 +341,7 @@ namespace Amazon.DynamoDBv2.DataModel
             bool skipVersionCheck = operationConfig.SkipVersionCheck ?? contextConfig.SkipVersionCheck ?? false;
             bool ignoreNullValues = operationConfig.IgnoreNullValues ?? contextConfig.IgnoreNullValues ?? false;
             bool disableFetchingTableMetadata = contextConfig.DisableFetchingTableMetadata ?? false;
-            bool retrieveDateTimeInUtc = contextConfig.RetrieveDateTimeInUtc ?? false;
+            bool retrieveDateTimeInUtc = operationConfig.RetrieveDateTimeInUtc ?? contextConfig.RetrieveDateTimeInUtc ?? false;
 
             bool isEmptyStringValueEnabled = operationConfig.IsEmptyStringValueEnabled ?? contextConfig.IsEmptyStringValueEnabled ?? false;
             string overrideTableName =

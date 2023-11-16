@@ -170,6 +170,7 @@ namespace Amazon.Util
         /// <summary>
         /// If true, all <see cref="DateTime"/> properties are retrieved in UTC timezone while reading data from DynamoDB. Else, the local timezone is used.
         /// </summary>
+        /// <remarks>This setting is only applicable to the high-level library. Service calls made via <see cref="AmazonDynamoDBClient"/> will always return <see cref="DateTime"/> attributes in UTC.</remarks>
         public bool? RetrieveDateTimeInUtc { get; set; }
 
         /// <summary>
