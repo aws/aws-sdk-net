@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SSOAdmin.Model
 {
     /// <summary>
-    /// Filters he operation status list based on the passed attribute value.
+    /// Filters the operation status list based on the passed attribute value.
     /// </summary>
     public partial class OperationStatusFilter
     {

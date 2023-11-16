@@ -41,9 +41,49 @@ namespace Amazon.SSOAdmin.Model
         IListAccountAssignmentsPaginator ListAccountAssignments(ListAccountAssignmentsRequest request);
 
         /// <summary>
+        /// Paginator for ListAccountAssignmentsForPrincipal operation
+        ///</summary>
+        IListAccountAssignmentsForPrincipalPaginator ListAccountAssignmentsForPrincipal(ListAccountAssignmentsForPrincipalRequest request);
+
+        /// <summary>
         /// Paginator for ListAccountsForProvisionedPermissionSet operation
         ///</summary>
         IListAccountsForProvisionedPermissionSetPaginator ListAccountsForProvisionedPermissionSet(ListAccountsForProvisionedPermissionSetRequest request);
+
+        /// <summary>
+        /// Paginator for ListApplicationAccessScopes operation
+        ///</summary>
+        IListApplicationAccessScopesPaginator ListApplicationAccessScopes(ListApplicationAccessScopesRequest request);
+
+        /// <summary>
+        /// Paginator for ListApplicationAssignments operation
+        ///</summary>
+        IListApplicationAssignmentsPaginator ListApplicationAssignments(ListApplicationAssignmentsRequest request);
+
+        /// <summary>
+        /// Paginator for ListApplicationAssignmentsForPrincipal operation
+        ///</summary>
+        IListApplicationAssignmentsForPrincipalPaginator ListApplicationAssignmentsForPrincipal(ListApplicationAssignmentsForPrincipalRequest request);
+
+        /// <summary>
+        /// Paginator for ListApplicationAuthenticationMethods operation
+        ///</summary>
+        IListApplicationAuthenticationMethodsPaginator ListApplicationAuthenticationMethods(ListApplicationAuthenticationMethodsRequest request);
+
+        /// <summary>
+        /// Paginator for ListApplicationGrants operation
+        ///</summary>
+        IListApplicationGrantsPaginator ListApplicationGrants(ListApplicationGrantsRequest request);
+
+        /// <summary>
+        /// Paginator for ListApplicationProviders operation
+        ///</summary>
+        IListApplicationProvidersPaginator ListApplicationProviders(ListApplicationProvidersRequest request);
+
+        /// <summary>
+        /// Paginator for ListApplications operation
+        ///</summary>
+        IListApplicationsPaginator ListApplications(ListApplicationsRequest request);
 
         /// <summary>
         /// Paginator for ListCustomerManagedPolicyReferencesInPermissionSet operation
@@ -79,5 +119,10 @@ namespace Amazon.SSOAdmin.Model
         /// Paginator for ListTagsForResource operation
         ///</summary>
         IListTagsForResourcePaginator ListTagsForResource(ListTagsForResourceRequest request);
+
+        /// <summary>
+        /// Paginator for ListTrustedTokenIssuers operation
+        ///</summary>
+        IListTrustedTokenIssuersPaginator ListTrustedTokenIssuers(ListTrustedTokenIssuersRequest request);
     }
 }

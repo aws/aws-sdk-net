@@ -47,7 +47,7 @@ namespace Amazon.SSOAdmin.Model
         /// Web Services General Reference</i>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=10, Max=1224)]
+        [AWSProperty(Min=10, Max=1224)]
         public string InstanceArn
         {
             get { return this._instanceArn; }

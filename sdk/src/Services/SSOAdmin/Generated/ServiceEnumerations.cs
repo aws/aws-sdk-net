@@ -25,6 +25,260 @@ namespace Amazon.SSOAdmin
 {
 
     /// <summary>
+    /// Constants used for properties of type ApplicationStatus.
+    /// </summary>
+    public class ApplicationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for ApplicationStatus
+        /// </summary>
+        public static readonly ApplicationStatus DISABLED = new ApplicationStatus("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for ApplicationStatus
+        /// </summary>
+        public static readonly ApplicationStatus ENABLED = new ApplicationStatus("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ApplicationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ApplicationStatus FindValue(string value)
+        {
+            return FindValue<ApplicationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ApplicationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ApplicationVisibility.
+    /// </summary>
+    public class ApplicationVisibility : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for ApplicationVisibility
+        /// </summary>
+        public static readonly ApplicationVisibility DISABLED = new ApplicationVisibility("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for ApplicationVisibility
+        /// </summary>
+        public static readonly ApplicationVisibility ENABLED = new ApplicationVisibility("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ApplicationVisibility(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ApplicationVisibility FindValue(string value)
+        {
+            return FindValue<ApplicationVisibility>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ApplicationVisibility(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AuthenticationMethodType.
+    /// </summary>
+    public class AuthenticationMethodType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant IAM for AuthenticationMethodType
+        /// </summary>
+        public static readonly AuthenticationMethodType IAM = new AuthenticationMethodType("IAM");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AuthenticationMethodType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AuthenticationMethodType FindValue(string value)
+        {
+            return FindValue<AuthenticationMethodType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AuthenticationMethodType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FederationProtocol.
+    /// </summary>
+    public class FederationProtocol : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant OAUTH for FederationProtocol
+        /// </summary>
+        public static readonly FederationProtocol OAUTH = new FederationProtocol("OAUTH");
+        /// <summary>
+        /// Constant SAML for FederationProtocol
+        /// </summary>
+        public static readonly FederationProtocol SAML = new FederationProtocol("SAML");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FederationProtocol(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FederationProtocol FindValue(string value)
+        {
+            return FindValue<FederationProtocol>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FederationProtocol(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type GrantType.
+    /// </summary>
+    public class GrantType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Authorization_code for GrantType
+        /// </summary>
+        public static readonly GrantType Authorization_code = new GrantType("authorization_code");
+        /// <summary>
+        /// Constant Refresh_token for GrantType
+        /// </summary>
+        public static readonly GrantType Refresh_token = new GrantType("refresh_token");
+        /// <summary>
+        /// Constant UrnIetfParamsOauthGrantTypeJwtBearer for GrantType
+        /// </summary>
+        public static readonly GrantType UrnIetfParamsOauthGrantTypeJwtBearer = new GrantType("urn:ietf:params:oauth:grant-type:jwt-bearer");
+        /// <summary>
+        /// Constant UrnIetfParamsOauthGrantTypeTokenExchange for GrantType
+        /// </summary>
+        public static readonly GrantType UrnIetfParamsOauthGrantTypeTokenExchange = new GrantType("urn:ietf:params:oauth:grant-type:token-exchange");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GrantType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GrantType FindValue(string value)
+        {
+            return FindValue<GrantType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GrantType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type InstanceAccessControlAttributeConfigurationStatus.
     /// </summary>
     public class InstanceAccessControlAttributeConfigurationStatus : ConstantClass
@@ -72,6 +326,106 @@ namespace Amazon.SSOAdmin
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator InstanceAccessControlAttributeConfigurationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InstanceStatus.
+    /// </summary>
+    public class InstanceStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for InstanceStatus
+        /// </summary>
+        public static readonly InstanceStatus ACTIVE = new InstanceStatus("ACTIVE");
+        /// <summary>
+        /// Constant CREATE_IN_PROGRESS for InstanceStatus
+        /// </summary>
+        public static readonly InstanceStatus CREATE_IN_PROGRESS = new InstanceStatus("CREATE_IN_PROGRESS");
+        /// <summary>
+        /// Constant DELETE_IN_PROGRESS for InstanceStatus
+        /// </summary>
+        public static readonly InstanceStatus DELETE_IN_PROGRESS = new InstanceStatus("DELETE_IN_PROGRESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InstanceStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InstanceStatus FindValue(string value)
+        {
+            return FindValue<InstanceStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InstanceStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type JwksRetrievalOption.
+    /// </summary>
+    public class JwksRetrievalOption : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant OPEN_ID_DISCOVERY for JwksRetrievalOption
+        /// </summary>
+        public static readonly JwksRetrievalOption OPEN_ID_DISCOVERY = new JwksRetrievalOption("OPEN_ID_DISCOVERY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public JwksRetrievalOption(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static JwksRetrievalOption FindValue(string value)
+        {
+            return FindValue<JwksRetrievalOption>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator JwksRetrievalOption(string value)
         {
             return FindValue(value);
         }
@@ -229,6 +583,56 @@ namespace Amazon.SSOAdmin
 
 
     /// <summary>
+    /// Constants used for properties of type SignInOrigin.
+    /// </summary>
+    public class SignInOrigin : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant APPLICATION for SignInOrigin
+        /// </summary>
+        public static readonly SignInOrigin APPLICATION = new SignInOrigin("APPLICATION");
+        /// <summary>
+        /// Constant IDENTITY_CENTER for SignInOrigin
+        /// </summary>
+        public static readonly SignInOrigin IDENTITY_CENTER = new SignInOrigin("IDENTITY_CENTER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SignInOrigin(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SignInOrigin FindValue(string value)
+        {
+            return FindValue<SignInOrigin>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SignInOrigin(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type StatusValues.
     /// </summary>
     public class StatusValues : ConstantClass
@@ -322,6 +726,52 @@ namespace Amazon.SSOAdmin
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TargetType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TrustedTokenIssuerType.
+    /// </summary>
+    public class TrustedTokenIssuerType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant OIDC_JWT for TrustedTokenIssuerType
+        /// </summary>
+        public static readonly TrustedTokenIssuerType OIDC_JWT = new TrustedTokenIssuerType("OIDC_JWT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TrustedTokenIssuerType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TrustedTokenIssuerType FindValue(string value)
+        {
+            return FindValue<TrustedTokenIssuerType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TrustedTokenIssuerType(string value)
         {
             return FindValue(value);
         }

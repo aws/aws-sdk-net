@@ -567,6 +567,260 @@ namespace Amazon.SSOAdmin
 
         #endregion
         
+        #region  CreateApplication
+
+        /// <summary>
+        /// Creates an application in IAM Identity Center for the given application provider.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateApplication service method.</param>
+        /// 
+        /// <returns>The response from the CreateApplication service method, as returned by SSOAdmin.</returns>
+        /// <exception cref="Amazon.SSOAdmin.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ServiceQuotaExceededException">
+        /// Indicates that the principal has crossed the permitted number of resources that can
+        /// be created.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/CreateApplication">REST API Reference for CreateApplication Operation</seealso>
+        public virtual CreateApplicationResponse CreateApplication(CreateApplicationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateApplicationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateApplicationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateApplication operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateApplication operation on AmazonSSOAdminClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateApplication
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/CreateApplication">REST API Reference for CreateApplication Operation</seealso>
+        public virtual IAsyncResult BeginCreateApplication(CreateApplicationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateApplicationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateApplication operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateApplication.</param>
+        /// 
+        /// <returns>Returns a  CreateApplicationResult from SSOAdmin.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/CreateApplication">REST API Reference for CreateApplication Operation</seealso>
+        public virtual CreateApplicationResponse EndCreateApplication(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateApplicationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateApplicationAssignment
+
+        /// <summary>
+        /// Grant application access to a user or group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateApplicationAssignment service method.</param>
+        /// 
+        /// <returns>The response from the CreateApplicationAssignment service method, as returned by SSOAdmin.</returns>
+        /// <exception cref="Amazon.SSOAdmin.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ServiceQuotaExceededException">
+        /// Indicates that the principal has crossed the permitted number of resources that can
+        /// be created.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/CreateApplicationAssignment">REST API Reference for CreateApplicationAssignment Operation</seealso>
+        public virtual CreateApplicationAssignmentResponse CreateApplicationAssignment(CreateApplicationAssignmentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateApplicationAssignmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateApplicationAssignmentResponseUnmarshaller.Instance;
+
+            return Invoke<CreateApplicationAssignmentResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateApplicationAssignment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateApplicationAssignment operation on AmazonSSOAdminClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateApplicationAssignment
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/CreateApplicationAssignment">REST API Reference for CreateApplicationAssignment Operation</seealso>
+        public virtual IAsyncResult BeginCreateApplicationAssignment(CreateApplicationAssignmentRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateApplicationAssignmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateApplicationAssignmentResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateApplicationAssignment operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateApplicationAssignment.</param>
+        /// 
+        /// <returns>Returns a  CreateApplicationAssignmentResult from SSOAdmin.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/CreateApplicationAssignment">REST API Reference for CreateApplicationAssignment Operation</seealso>
+        public virtual CreateApplicationAssignmentResponse EndCreateApplicationAssignment(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateApplicationAssignmentResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateInstance
+
+        /// <summary>
+        /// Creates an instance of IAM Identity Center for a standalone Amazon Web Services account
+        /// that is not managed by Organizations or a member Amazon Web Services account in an
+        /// organization. You can create only one instance per account and across all Amazon Web
+        /// Services Regions.
+        /// 
+        ///  
+        /// <para>
+        /// The CreateInstance request is rejected if the following apply: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The instance is created within the organization management account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// An instance already exists in the same account.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateInstance service method.</param>
+        /// 
+        /// <returns>The response from the CreateInstance service method, as returned by SSOAdmin.</returns>
+        /// <exception cref="Amazon.SSOAdmin.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ServiceQuotaExceededException">
+        /// Indicates that the principal has crossed the permitted number of resources that can
+        /// be created.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/CreateInstance">REST API Reference for CreateInstance Operation</seealso>
+        public virtual CreateInstanceResponse CreateInstance(CreateInstanceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateInstanceResponseUnmarshaller.Instance;
+
+            return Invoke<CreateInstanceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateInstance operation on AmazonSSOAdminClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateInstance
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/CreateInstance">REST API Reference for CreateInstance Operation</seealso>
+        public virtual IAsyncResult BeginCreateInstance(CreateInstanceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateInstanceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateInstance.</param>
+        /// 
+        /// <returns>Returns a  CreateInstanceResult from SSOAdmin.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/CreateInstance">REST API Reference for CreateInstance Operation</seealso>
+        public virtual CreateInstanceResponse EndCreateInstance(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateInstanceResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateInstanceAccessControlAttributeConfiguration
 
         /// <summary>
@@ -740,6 +994,92 @@ namespace Amazon.SSOAdmin
 
         #endregion
         
+        #region  CreateTrustedTokenIssuer
+
+        /// <summary>
+        /// Creates a connection to a trusted token issuer in an instance of IAM Identity Center.
+        /// A trusted token issuer enables trusted identity propagation to be used with applications
+        /// that authenticate outside of Amazon Web Services.
+        /// 
+        ///  
+        /// <para>
+        /// This trusted token issuer describes an external identity provider (IdP) that can generate
+        /// claims or assertions in the form of access tokens for a user. Applications enabled
+        /// for IAM Identity Center can use these tokens for authentication. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTrustedTokenIssuer service method.</param>
+        /// 
+        /// <returns>The response from the CreateTrustedTokenIssuer service method, as returned by SSOAdmin.</returns>
+        /// <exception cref="Amazon.SSOAdmin.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ServiceQuotaExceededException">
+        /// Indicates that the principal has crossed the permitted number of resources that can
+        /// be created.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/CreateTrustedTokenIssuer">REST API Reference for CreateTrustedTokenIssuer Operation</seealso>
+        public virtual CreateTrustedTokenIssuerResponse CreateTrustedTokenIssuer(CreateTrustedTokenIssuerRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTrustedTokenIssuerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTrustedTokenIssuerResponseUnmarshaller.Instance;
+
+            return Invoke<CreateTrustedTokenIssuerResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTrustedTokenIssuer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTrustedTokenIssuer operation on AmazonSSOAdminClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateTrustedTokenIssuer
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/CreateTrustedTokenIssuer">REST API Reference for CreateTrustedTokenIssuer Operation</seealso>
+        public virtual IAsyncResult BeginCreateTrustedTokenIssuer(CreateTrustedTokenIssuerRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTrustedTokenIssuerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTrustedTokenIssuerResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateTrustedTokenIssuer operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateTrustedTokenIssuer.</param>
+        /// 
+        /// <returns>Returns a  CreateTrustedTokenIssuerResult from SSOAdmin.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/CreateTrustedTokenIssuer">REST API Reference for CreateTrustedTokenIssuer Operation</seealso>
+        public virtual CreateTrustedTokenIssuerResponse EndCreateTrustedTokenIssuer(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateTrustedTokenIssuerResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteAccountAssignment
 
         /// <summary>
@@ -824,6 +1164,388 @@ namespace Amazon.SSOAdmin
 
         #endregion
         
+        #region  DeleteApplication
+
+        /// <summary>
+        /// Deletes the association with the application. The connected service resource still
+        /// exists.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteApplication service method.</param>
+        /// 
+        /// <returns>The response from the DeleteApplication service method, as returned by SSOAdmin.</returns>
+        /// <exception cref="Amazon.SSOAdmin.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeleteApplication">REST API Reference for DeleteApplication Operation</seealso>
+        public virtual DeleteApplicationResponse DeleteApplication(DeleteApplicationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteApplicationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteApplicationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteApplication operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteApplication operation on AmazonSSOAdminClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteApplication
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeleteApplication">REST API Reference for DeleteApplication Operation</seealso>
+        public virtual IAsyncResult BeginDeleteApplication(DeleteApplicationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteApplicationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteApplication operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteApplication.</param>
+        /// 
+        /// <returns>Returns a  DeleteApplicationResult from SSOAdmin.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeleteApplication">REST API Reference for DeleteApplication Operation</seealso>
+        public virtual DeleteApplicationResponse EndDeleteApplication(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteApplicationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteApplicationAccessScope
+
+        /// <summary>
+        /// Deletes an IAM Identity Center access scope from an application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteApplicationAccessScope service method.</param>
+        /// 
+        /// <returns>The response from the DeleteApplicationAccessScope service method, as returned by SSOAdmin.</returns>
+        /// <exception cref="Amazon.SSOAdmin.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeleteApplicationAccessScope">REST API Reference for DeleteApplicationAccessScope Operation</seealso>
+        public virtual DeleteApplicationAccessScopeResponse DeleteApplicationAccessScope(DeleteApplicationAccessScopeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteApplicationAccessScopeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteApplicationAccessScopeResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteApplicationAccessScopeResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteApplicationAccessScope operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteApplicationAccessScope operation on AmazonSSOAdminClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteApplicationAccessScope
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeleteApplicationAccessScope">REST API Reference for DeleteApplicationAccessScope Operation</seealso>
+        public virtual IAsyncResult BeginDeleteApplicationAccessScope(DeleteApplicationAccessScopeRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteApplicationAccessScopeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteApplicationAccessScopeResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteApplicationAccessScope operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteApplicationAccessScope.</param>
+        /// 
+        /// <returns>Returns a  DeleteApplicationAccessScopeResult from SSOAdmin.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeleteApplicationAccessScope">REST API Reference for DeleteApplicationAccessScope Operation</seealso>
+        public virtual DeleteApplicationAccessScopeResponse EndDeleteApplicationAccessScope(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteApplicationAccessScopeResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteApplicationAssignment
+
+        /// <summary>
+        /// Revoke application access to an application by deleting application assignments for
+        /// a user or group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteApplicationAssignment service method.</param>
+        /// 
+        /// <returns>The response from the DeleteApplicationAssignment service method, as returned by SSOAdmin.</returns>
+        /// <exception cref="Amazon.SSOAdmin.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeleteApplicationAssignment">REST API Reference for DeleteApplicationAssignment Operation</seealso>
+        public virtual DeleteApplicationAssignmentResponse DeleteApplicationAssignment(DeleteApplicationAssignmentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteApplicationAssignmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteApplicationAssignmentResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteApplicationAssignmentResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteApplicationAssignment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteApplicationAssignment operation on AmazonSSOAdminClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteApplicationAssignment
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeleteApplicationAssignment">REST API Reference for DeleteApplicationAssignment Operation</seealso>
+        public virtual IAsyncResult BeginDeleteApplicationAssignment(DeleteApplicationAssignmentRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteApplicationAssignmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteApplicationAssignmentResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteApplicationAssignment operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteApplicationAssignment.</param>
+        /// 
+        /// <returns>Returns a  DeleteApplicationAssignmentResult from SSOAdmin.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeleteApplicationAssignment">REST API Reference for DeleteApplicationAssignment Operation</seealso>
+        public virtual DeleteApplicationAssignmentResponse EndDeleteApplicationAssignment(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteApplicationAssignmentResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteApplicationAuthenticationMethod
+
+        /// <summary>
+        /// Deletes an authentication method from an application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteApplicationAuthenticationMethod service method.</param>
+        /// 
+        /// <returns>The response from the DeleteApplicationAuthenticationMethod service method, as returned by SSOAdmin.</returns>
+        /// <exception cref="Amazon.SSOAdmin.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeleteApplicationAuthenticationMethod">REST API Reference for DeleteApplicationAuthenticationMethod Operation</seealso>
+        public virtual DeleteApplicationAuthenticationMethodResponse DeleteApplicationAuthenticationMethod(DeleteApplicationAuthenticationMethodRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteApplicationAuthenticationMethodRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteApplicationAuthenticationMethodResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteApplicationAuthenticationMethodResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteApplicationAuthenticationMethod operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteApplicationAuthenticationMethod operation on AmazonSSOAdminClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteApplicationAuthenticationMethod
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeleteApplicationAuthenticationMethod">REST API Reference for DeleteApplicationAuthenticationMethod Operation</seealso>
+        public virtual IAsyncResult BeginDeleteApplicationAuthenticationMethod(DeleteApplicationAuthenticationMethodRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteApplicationAuthenticationMethodRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteApplicationAuthenticationMethodResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteApplicationAuthenticationMethod operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteApplicationAuthenticationMethod.</param>
+        /// 
+        /// <returns>Returns a  DeleteApplicationAuthenticationMethodResult from SSOAdmin.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeleteApplicationAuthenticationMethod">REST API Reference for DeleteApplicationAuthenticationMethod Operation</seealso>
+        public virtual DeleteApplicationAuthenticationMethodResponse EndDeleteApplicationAuthenticationMethod(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteApplicationAuthenticationMethodResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteApplicationGrant
+
+        /// <summary>
+        /// Deletes a grant from an application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteApplicationGrant service method.</param>
+        /// 
+        /// <returns>The response from the DeleteApplicationGrant service method, as returned by SSOAdmin.</returns>
+        /// <exception cref="Amazon.SSOAdmin.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeleteApplicationGrant">REST API Reference for DeleteApplicationGrant Operation</seealso>
+        public virtual DeleteApplicationGrantResponse DeleteApplicationGrant(DeleteApplicationGrantRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteApplicationGrantRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteApplicationGrantResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteApplicationGrantResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteApplicationGrant operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteApplicationGrant operation on AmazonSSOAdminClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteApplicationGrant
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeleteApplicationGrant">REST API Reference for DeleteApplicationGrant Operation</seealso>
+        public virtual IAsyncResult BeginDeleteApplicationGrant(DeleteApplicationGrantRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteApplicationGrantRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteApplicationGrantResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteApplicationGrant operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteApplicationGrant.</param>
+        /// 
+        /// <returns>Returns a  DeleteApplicationGrantResult from SSOAdmin.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeleteApplicationGrant">REST API Reference for DeleteApplicationGrant Operation</seealso>
+        public virtual DeleteApplicationGrantResponse EndDeleteApplicationGrant(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteApplicationGrantResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteInlinePolicyFromPermissionSet
 
         /// <summary>
@@ -896,6 +1618,81 @@ namespace Amazon.SSOAdmin
         public virtual DeleteInlinePolicyFromPermissionSetResponse EndDeleteInlinePolicyFromPermissionSet(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteInlinePolicyFromPermissionSetResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteInstance
+
+        /// <summary>
+        /// Deletes the instance of IAM Identity Center. Only the account that owns the instance
+        /// can call this API. Neither the delegated administrator nor member account can delete
+        /// the organization instance, but those roles can delete their own instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteInstance service method.</param>
+        /// 
+        /// <returns>The response from the DeleteInstance service method, as returned by SSOAdmin.</returns>
+        /// <exception cref="Amazon.SSOAdmin.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeleteInstance">REST API Reference for DeleteInstance Operation</seealso>
+        public virtual DeleteInstanceResponse DeleteInstance(DeleteInstanceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteInstanceResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteInstanceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteInstance operation on AmazonSSOAdminClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteInstance
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeleteInstance">REST API Reference for DeleteInstance Operation</seealso>
+        public virtual IAsyncResult BeginDeleteInstance(DeleteInstanceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteInstanceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteInstance.</param>
+        /// 
+        /// <returns>Returns a  DeleteInstanceResult from SSOAdmin.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeleteInstance">REST API Reference for DeleteInstance Operation</seealso>
+        public virtual DeleteInstanceResponse EndDeleteInstance(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteInstanceResponse>(asyncResult);
         }
 
         #endregion
@@ -991,6 +1788,12 @@ namespace Amazon.SSOAdmin
         /// <returns>The response from the DeletePermissionsBoundaryFromPermissionSet service method, as returned by SSOAdmin.</returns>
         /// <exception cref="Amazon.SSOAdmin.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
         /// </exception>
         /// <exception cref="Amazon.SSOAdmin.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception, or failure
@@ -1123,6 +1926,89 @@ namespace Amazon.SSOAdmin
         public virtual DeletePermissionSetResponse EndDeletePermissionSet(IAsyncResult asyncResult)
         {
             return EndInvoke<DeletePermissionSetResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteTrustedTokenIssuer
+
+        /// <summary>
+        /// Deletes a trusted token issuer configuration from an instance of IAM Identity Center.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Deleting this trusted token issuer configuration will cause users to lose access to
+        /// any applications that are configured to use the trusted token issuer.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTrustedTokenIssuer service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTrustedTokenIssuer service method, as returned by SSOAdmin.</returns>
+        /// <exception cref="Amazon.SSOAdmin.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeleteTrustedTokenIssuer">REST API Reference for DeleteTrustedTokenIssuer Operation</seealso>
+        public virtual DeleteTrustedTokenIssuerResponse DeleteTrustedTokenIssuer(DeleteTrustedTokenIssuerRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTrustedTokenIssuerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTrustedTokenIssuerResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteTrustedTokenIssuerResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteTrustedTokenIssuer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTrustedTokenIssuer operation on AmazonSSOAdminClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteTrustedTokenIssuer
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeleteTrustedTokenIssuer">REST API Reference for DeleteTrustedTokenIssuer Operation</seealso>
+        public virtual IAsyncResult BeginDeleteTrustedTokenIssuer(DeleteTrustedTokenIssuerRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTrustedTokenIssuerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTrustedTokenIssuerResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteTrustedTokenIssuer operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteTrustedTokenIssuer.</param>
+        /// 
+        /// <returns>Returns a  DeleteTrustedTokenIssuerResult from SSOAdmin.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeleteTrustedTokenIssuer">REST API Reference for DeleteTrustedTokenIssuer Operation</seealso>
+        public virtual DeleteTrustedTokenIssuerResponse EndDeleteTrustedTokenIssuer(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteTrustedTokenIssuerResponse>(asyncResult);
         }
 
         #endregion
@@ -1263,6 +2149,307 @@ namespace Amazon.SSOAdmin
         public virtual DescribeAccountAssignmentDeletionStatusResponse EndDescribeAccountAssignmentDeletionStatus(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeAccountAssignmentDeletionStatusResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeApplication
+
+        /// <summary>
+        /// Retrieves the details of an application associated with an instance of IAM Identity
+        /// Center.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeApplication service method.</param>
+        /// 
+        /// <returns>The response from the DescribeApplication service method, as returned by SSOAdmin.</returns>
+        /// <exception cref="Amazon.SSOAdmin.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DescribeApplication">REST API Reference for DescribeApplication Operation</seealso>
+        public virtual DescribeApplicationResponse DescribeApplication(DescribeApplicationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeApplicationResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeApplicationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeApplication operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeApplication operation on AmazonSSOAdminClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeApplication
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DescribeApplication">REST API Reference for DescribeApplication Operation</seealso>
+        public virtual IAsyncResult BeginDescribeApplication(DescribeApplicationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeApplicationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeApplication operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeApplication.</param>
+        /// 
+        /// <returns>Returns a  DescribeApplicationResult from SSOAdmin.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DescribeApplication">REST API Reference for DescribeApplication Operation</seealso>
+        public virtual DescribeApplicationResponse EndDescribeApplication(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeApplicationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeApplicationAssignment
+
+        /// <summary>
+        /// Retrieves a direct assignment of a user or group to an application. If the user doesn’t
+        /// have a direct assignment to the application, the user may still have access to the
+        /// application through a group. Therefore, don’t use this API to test access to an application
+        /// for a user. Instead use <a>ListApplicationAssignmentsForPrincipal</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeApplicationAssignment service method.</param>
+        /// 
+        /// <returns>The response from the DescribeApplicationAssignment service method, as returned by SSOAdmin.</returns>
+        /// <exception cref="Amazon.SSOAdmin.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DescribeApplicationAssignment">REST API Reference for DescribeApplicationAssignment Operation</seealso>
+        public virtual DescribeApplicationAssignmentResponse DescribeApplicationAssignment(DescribeApplicationAssignmentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeApplicationAssignmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeApplicationAssignmentResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeApplicationAssignmentResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeApplicationAssignment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeApplicationAssignment operation on AmazonSSOAdminClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeApplicationAssignment
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DescribeApplicationAssignment">REST API Reference for DescribeApplicationAssignment Operation</seealso>
+        public virtual IAsyncResult BeginDescribeApplicationAssignment(DescribeApplicationAssignmentRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeApplicationAssignmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeApplicationAssignmentResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeApplicationAssignment operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeApplicationAssignment.</param>
+        /// 
+        /// <returns>Returns a  DescribeApplicationAssignmentResult from SSOAdmin.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DescribeApplicationAssignment">REST API Reference for DescribeApplicationAssignment Operation</seealso>
+        public virtual DescribeApplicationAssignmentResponse EndDescribeApplicationAssignment(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeApplicationAssignmentResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeApplicationProvider
+
+        /// <summary>
+        /// Retrieves details about a provider that can be used to connect an Amazon Web Services
+        /// managed application or customer managed application to IAM Identity Center.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeApplicationProvider service method.</param>
+        /// 
+        /// <returns>The response from the DescribeApplicationProvider service method, as returned by SSOAdmin.</returns>
+        /// <exception cref="Amazon.SSOAdmin.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DescribeApplicationProvider">REST API Reference for DescribeApplicationProvider Operation</seealso>
+        public virtual DescribeApplicationProviderResponse DescribeApplicationProvider(DescribeApplicationProviderRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeApplicationProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeApplicationProviderResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeApplicationProviderResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeApplicationProvider operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeApplicationProvider operation on AmazonSSOAdminClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeApplicationProvider
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DescribeApplicationProvider">REST API Reference for DescribeApplicationProvider Operation</seealso>
+        public virtual IAsyncResult BeginDescribeApplicationProvider(DescribeApplicationProviderRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeApplicationProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeApplicationProviderResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeApplicationProvider operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeApplicationProvider.</param>
+        /// 
+        /// <returns>Returns a  DescribeApplicationProviderResult from SSOAdmin.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DescribeApplicationProvider">REST API Reference for DescribeApplicationProvider Operation</seealso>
+        public virtual DescribeApplicationProviderResponse EndDescribeApplicationProvider(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeApplicationProviderResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeInstance
+
+        /// <summary>
+        /// Returns the details of an instance of IAM Identity Center. The status can be one of
+        /// the following:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>CREATE_IN_PROGRESS</code> - The instance is in the process of being created.
+        /// When the instance is ready for use, DescribeInstance returns the status of <code>ACTIVE</code>.
+        /// While the instance is in the <code>CREATE_IN_PROGRESS</code> state, you can call only
+        /// DescribeInstance and DeleteInstance operations.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DELETE_IN_PROGRESS</code> - The instance is being deleted. Returns <code>AccessDeniedException</code>
+        /// after the delete operation completes. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ACTIVE</code> - The instance is active.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstance service method.</param>
+        /// 
+        /// <returns>The response from the DescribeInstance service method, as returned by SSOAdmin.</returns>
+        /// <exception cref="Amazon.SSOAdmin.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DescribeInstance">REST API Reference for DescribeInstance Operation</seealso>
+        public virtual DescribeInstanceResponse DescribeInstance(DescribeInstanceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeInstanceResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeInstanceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstance operation on AmazonSSOAdminClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeInstance
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DescribeInstance">REST API Reference for DescribeInstance Operation</seealso>
+        public virtual IAsyncResult BeginDescribeInstance(DescribeInstanceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeInstanceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeInstance.</param>
+        /// 
+        /// <returns>Returns a  DescribeInstanceResult from SSOAdmin.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DescribeInstance">REST API Reference for DescribeInstance Operation</seealso>
+        public virtual DescribeInstanceResponse EndDescribeInstance(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeInstanceResponse>(asyncResult);
         }
 
         #endregion
@@ -1481,6 +2668,79 @@ namespace Amazon.SSOAdmin
 
         #endregion
         
+        #region  DescribeTrustedTokenIssuer
+
+        /// <summary>
+        /// Retrieves details about a trusted token issuer configuration stored in an instance
+        /// of IAM Identity Center. Details include the name of the trusted token issuer, the
+        /// issuer URL, and the path of the source attribute and the destination attribute for
+        /// a trusted token issuer configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTrustedTokenIssuer service method.</param>
+        /// 
+        /// <returns>The response from the DescribeTrustedTokenIssuer service method, as returned by SSOAdmin.</returns>
+        /// <exception cref="Amazon.SSOAdmin.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DescribeTrustedTokenIssuer">REST API Reference for DescribeTrustedTokenIssuer Operation</seealso>
+        public virtual DescribeTrustedTokenIssuerResponse DescribeTrustedTokenIssuer(DescribeTrustedTokenIssuerRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTrustedTokenIssuerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTrustedTokenIssuerResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeTrustedTokenIssuerResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeTrustedTokenIssuer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTrustedTokenIssuer operation on AmazonSSOAdminClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeTrustedTokenIssuer
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DescribeTrustedTokenIssuer">REST API Reference for DescribeTrustedTokenIssuer Operation</seealso>
+        public virtual IAsyncResult BeginDescribeTrustedTokenIssuer(DescribeTrustedTokenIssuerRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTrustedTokenIssuerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTrustedTokenIssuerResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeTrustedTokenIssuer operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeTrustedTokenIssuer.</param>
+        /// 
+        /// <returns>Returns a  DescribeTrustedTokenIssuerResult from SSOAdmin.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DescribeTrustedTokenIssuer">REST API Reference for DescribeTrustedTokenIssuer Operation</seealso>
+        public virtual DescribeTrustedTokenIssuerResponse EndDescribeTrustedTokenIssuer(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeTrustedTokenIssuerResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DetachCustomerManagedPolicyReferenceFromPermissionSet
 
         /// <summary>
@@ -1630,6 +2890,286 @@ namespace Amazon.SSOAdmin
         public virtual DetachManagedPolicyFromPermissionSetResponse EndDetachManagedPolicyFromPermissionSet(IAsyncResult asyncResult)
         {
             return EndInvoke<DetachManagedPolicyFromPermissionSetResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetApplicationAccessScope
+
+        /// <summary>
+        /// Retrieves the authorized targets for an IAM Identity Center access scope for an application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetApplicationAccessScope service method.</param>
+        /// 
+        /// <returns>The response from the GetApplicationAccessScope service method, as returned by SSOAdmin.</returns>
+        /// <exception cref="Amazon.SSOAdmin.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/GetApplicationAccessScope">REST API Reference for GetApplicationAccessScope Operation</seealso>
+        public virtual GetApplicationAccessScopeResponse GetApplicationAccessScope(GetApplicationAccessScopeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetApplicationAccessScopeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetApplicationAccessScopeResponseUnmarshaller.Instance;
+
+            return Invoke<GetApplicationAccessScopeResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetApplicationAccessScope operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetApplicationAccessScope operation on AmazonSSOAdminClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetApplicationAccessScope
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/GetApplicationAccessScope">REST API Reference for GetApplicationAccessScope Operation</seealso>
+        public virtual IAsyncResult BeginGetApplicationAccessScope(GetApplicationAccessScopeRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetApplicationAccessScopeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetApplicationAccessScopeResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetApplicationAccessScope operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetApplicationAccessScope.</param>
+        /// 
+        /// <returns>Returns a  GetApplicationAccessScopeResult from SSOAdmin.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/GetApplicationAccessScope">REST API Reference for GetApplicationAccessScope Operation</seealso>
+        public virtual GetApplicationAccessScopeResponse EndGetApplicationAccessScope(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetApplicationAccessScopeResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetApplicationAssignmentConfiguration
+
+        /// <summary>
+        /// Retrieves the configuration of <a>PutApplicationAssignmentConfiguration</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetApplicationAssignmentConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetApplicationAssignmentConfiguration service method, as returned by SSOAdmin.</returns>
+        /// <exception cref="Amazon.SSOAdmin.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/GetApplicationAssignmentConfiguration">REST API Reference for GetApplicationAssignmentConfiguration Operation</seealso>
+        public virtual GetApplicationAssignmentConfigurationResponse GetApplicationAssignmentConfiguration(GetApplicationAssignmentConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetApplicationAssignmentConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetApplicationAssignmentConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<GetApplicationAssignmentConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetApplicationAssignmentConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetApplicationAssignmentConfiguration operation on AmazonSSOAdminClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetApplicationAssignmentConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/GetApplicationAssignmentConfiguration">REST API Reference for GetApplicationAssignmentConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginGetApplicationAssignmentConfiguration(GetApplicationAssignmentConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetApplicationAssignmentConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetApplicationAssignmentConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetApplicationAssignmentConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetApplicationAssignmentConfiguration.</param>
+        /// 
+        /// <returns>Returns a  GetApplicationAssignmentConfigurationResult from SSOAdmin.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/GetApplicationAssignmentConfiguration">REST API Reference for GetApplicationAssignmentConfiguration Operation</seealso>
+        public virtual GetApplicationAssignmentConfigurationResponse EndGetApplicationAssignmentConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetApplicationAssignmentConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetApplicationAuthenticationMethod
+
+        /// <summary>
+        /// Retrieves details about an authentication method used by an application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetApplicationAuthenticationMethod service method.</param>
+        /// 
+        /// <returns>The response from the GetApplicationAuthenticationMethod service method, as returned by SSOAdmin.</returns>
+        /// <exception cref="Amazon.SSOAdmin.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/GetApplicationAuthenticationMethod">REST API Reference for GetApplicationAuthenticationMethod Operation</seealso>
+        public virtual GetApplicationAuthenticationMethodResponse GetApplicationAuthenticationMethod(GetApplicationAuthenticationMethodRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetApplicationAuthenticationMethodRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetApplicationAuthenticationMethodResponseUnmarshaller.Instance;
+
+            return Invoke<GetApplicationAuthenticationMethodResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetApplicationAuthenticationMethod operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetApplicationAuthenticationMethod operation on AmazonSSOAdminClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetApplicationAuthenticationMethod
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/GetApplicationAuthenticationMethod">REST API Reference for GetApplicationAuthenticationMethod Operation</seealso>
+        public virtual IAsyncResult BeginGetApplicationAuthenticationMethod(GetApplicationAuthenticationMethodRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetApplicationAuthenticationMethodRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetApplicationAuthenticationMethodResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetApplicationAuthenticationMethod operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetApplicationAuthenticationMethod.</param>
+        /// 
+        /// <returns>Returns a  GetApplicationAuthenticationMethodResult from SSOAdmin.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/GetApplicationAuthenticationMethod">REST API Reference for GetApplicationAuthenticationMethod Operation</seealso>
+        public virtual GetApplicationAuthenticationMethodResponse EndGetApplicationAuthenticationMethod(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetApplicationAuthenticationMethodResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetApplicationGrant
+
+        /// <summary>
+        /// Retrieves details about an application grant.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetApplicationGrant service method.</param>
+        /// 
+        /// <returns>The response from the GetApplicationGrant service method, as returned by SSOAdmin.</returns>
+        /// <exception cref="Amazon.SSOAdmin.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/GetApplicationGrant">REST API Reference for GetApplicationGrant Operation</seealso>
+        public virtual GetApplicationGrantResponse GetApplicationGrant(GetApplicationGrantRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetApplicationGrantRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetApplicationGrantResponseUnmarshaller.Instance;
+
+            return Invoke<GetApplicationGrantResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetApplicationGrant operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetApplicationGrant operation on AmazonSSOAdminClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetApplicationGrant
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/GetApplicationGrant">REST API Reference for GetApplicationGrant Operation</seealso>
+        public virtual IAsyncResult BeginGetApplicationGrant(GetApplicationGrantRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetApplicationGrantRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetApplicationGrantResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetApplicationGrant operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetApplicationGrant.</param>
+        /// 
+        /// <returns>Returns a  GetApplicationGrantResult from SSOAdmin.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/GetApplicationGrant">REST API Reference for GetApplicationGrant Operation</seealso>
+        public virtual GetApplicationGrantResponse EndGetApplicationGrant(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetApplicationGrantResponse>(asyncResult);
         }
 
         #endregion
@@ -1987,6 +3527,77 @@ namespace Amazon.SSOAdmin
 
         #endregion
         
+        #region  ListAccountAssignmentsForPrincipal
+
+        /// <summary>
+        /// Retrieves a list of the IAM Identity Center associated Amazon Web Services accounts
+        /// that the principal has access to.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAccountAssignmentsForPrincipal service method.</param>
+        /// 
+        /// <returns>The response from the ListAccountAssignmentsForPrincipal service method, as returned by SSOAdmin.</returns>
+        /// <exception cref="Amazon.SSOAdmin.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListAccountAssignmentsForPrincipal">REST API Reference for ListAccountAssignmentsForPrincipal Operation</seealso>
+        public virtual ListAccountAssignmentsForPrincipalResponse ListAccountAssignmentsForPrincipal(ListAccountAssignmentsForPrincipalRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAccountAssignmentsForPrincipalRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAccountAssignmentsForPrincipalResponseUnmarshaller.Instance;
+
+            return Invoke<ListAccountAssignmentsForPrincipalResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAccountAssignmentsForPrincipal operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAccountAssignmentsForPrincipal operation on AmazonSSOAdminClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAccountAssignmentsForPrincipal
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListAccountAssignmentsForPrincipal">REST API Reference for ListAccountAssignmentsForPrincipal Operation</seealso>
+        public virtual IAsyncResult BeginListAccountAssignmentsForPrincipal(ListAccountAssignmentsForPrincipalRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAccountAssignmentsForPrincipalRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAccountAssignmentsForPrincipalResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAccountAssignmentsForPrincipal operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAccountAssignmentsForPrincipal.</param>
+        /// 
+        /// <returns>Returns a  ListAccountAssignmentsForPrincipalResult from SSOAdmin.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListAccountAssignmentsForPrincipal">REST API Reference for ListAccountAssignmentsForPrincipal Operation</seealso>
+        public virtual ListAccountAssignmentsForPrincipalResponse EndListAccountAssignmentsForPrincipal(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListAccountAssignmentsForPrincipalResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListAccountsForProvisionedPermissionSet
 
         /// <summary>
@@ -2053,6 +3664,493 @@ namespace Amazon.SSOAdmin
         public virtual ListAccountsForProvisionedPermissionSetResponse EndListAccountsForProvisionedPermissionSet(IAsyncResult asyncResult)
         {
             return EndInvoke<ListAccountsForProvisionedPermissionSetResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListApplicationAccessScopes
+
+        /// <summary>
+        /// Lists the access scopes and authorized targets associated with an application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListApplicationAccessScopes service method.</param>
+        /// 
+        /// <returns>The response from the ListApplicationAccessScopes service method, as returned by SSOAdmin.</returns>
+        /// <exception cref="Amazon.SSOAdmin.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListApplicationAccessScopes">REST API Reference for ListApplicationAccessScopes Operation</seealso>
+        public virtual ListApplicationAccessScopesResponse ListApplicationAccessScopes(ListApplicationAccessScopesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListApplicationAccessScopesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListApplicationAccessScopesResponseUnmarshaller.Instance;
+
+            return Invoke<ListApplicationAccessScopesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListApplicationAccessScopes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListApplicationAccessScopes operation on AmazonSSOAdminClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListApplicationAccessScopes
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListApplicationAccessScopes">REST API Reference for ListApplicationAccessScopes Operation</seealso>
+        public virtual IAsyncResult BeginListApplicationAccessScopes(ListApplicationAccessScopesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListApplicationAccessScopesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListApplicationAccessScopesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListApplicationAccessScopes operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListApplicationAccessScopes.</param>
+        /// 
+        /// <returns>Returns a  ListApplicationAccessScopesResult from SSOAdmin.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListApplicationAccessScopes">REST API Reference for ListApplicationAccessScopes Operation</seealso>
+        public virtual ListApplicationAccessScopesResponse EndListApplicationAccessScopes(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListApplicationAccessScopesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListApplicationAssignments
+
+        /// <summary>
+        /// Lists Amazon Web Services account users that are assigned to an application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListApplicationAssignments service method.</param>
+        /// 
+        /// <returns>The response from the ListApplicationAssignments service method, as returned by SSOAdmin.</returns>
+        /// <exception cref="Amazon.SSOAdmin.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListApplicationAssignments">REST API Reference for ListApplicationAssignments Operation</seealso>
+        public virtual ListApplicationAssignmentsResponse ListApplicationAssignments(ListApplicationAssignmentsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListApplicationAssignmentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListApplicationAssignmentsResponseUnmarshaller.Instance;
+
+            return Invoke<ListApplicationAssignmentsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListApplicationAssignments operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListApplicationAssignments operation on AmazonSSOAdminClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListApplicationAssignments
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListApplicationAssignments">REST API Reference for ListApplicationAssignments Operation</seealso>
+        public virtual IAsyncResult BeginListApplicationAssignments(ListApplicationAssignmentsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListApplicationAssignmentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListApplicationAssignmentsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListApplicationAssignments operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListApplicationAssignments.</param>
+        /// 
+        /// <returns>Returns a  ListApplicationAssignmentsResult from SSOAdmin.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListApplicationAssignments">REST API Reference for ListApplicationAssignments Operation</seealso>
+        public virtual ListApplicationAssignmentsResponse EndListApplicationAssignments(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListApplicationAssignmentsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListApplicationAssignmentsForPrincipal
+
+        /// <summary>
+        /// Lists the applications to which a specified principal is assigned.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListApplicationAssignmentsForPrincipal service method.</param>
+        /// 
+        /// <returns>The response from the ListApplicationAssignmentsForPrincipal service method, as returned by SSOAdmin.</returns>
+        /// <exception cref="Amazon.SSOAdmin.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListApplicationAssignmentsForPrincipal">REST API Reference for ListApplicationAssignmentsForPrincipal Operation</seealso>
+        public virtual ListApplicationAssignmentsForPrincipalResponse ListApplicationAssignmentsForPrincipal(ListApplicationAssignmentsForPrincipalRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListApplicationAssignmentsForPrincipalRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListApplicationAssignmentsForPrincipalResponseUnmarshaller.Instance;
+
+            return Invoke<ListApplicationAssignmentsForPrincipalResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListApplicationAssignmentsForPrincipal operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListApplicationAssignmentsForPrincipal operation on AmazonSSOAdminClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListApplicationAssignmentsForPrincipal
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListApplicationAssignmentsForPrincipal">REST API Reference for ListApplicationAssignmentsForPrincipal Operation</seealso>
+        public virtual IAsyncResult BeginListApplicationAssignmentsForPrincipal(ListApplicationAssignmentsForPrincipalRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListApplicationAssignmentsForPrincipalRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListApplicationAssignmentsForPrincipalResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListApplicationAssignmentsForPrincipal operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListApplicationAssignmentsForPrincipal.</param>
+        /// 
+        /// <returns>Returns a  ListApplicationAssignmentsForPrincipalResult from SSOAdmin.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListApplicationAssignmentsForPrincipal">REST API Reference for ListApplicationAssignmentsForPrincipal Operation</seealso>
+        public virtual ListApplicationAssignmentsForPrincipalResponse EndListApplicationAssignmentsForPrincipal(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListApplicationAssignmentsForPrincipalResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListApplicationAuthenticationMethods
+
+        /// <summary>
+        /// Lists all of the authentication methods supported by the specified application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListApplicationAuthenticationMethods service method.</param>
+        /// 
+        /// <returns>The response from the ListApplicationAuthenticationMethods service method, as returned by SSOAdmin.</returns>
+        /// <exception cref="Amazon.SSOAdmin.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListApplicationAuthenticationMethods">REST API Reference for ListApplicationAuthenticationMethods Operation</seealso>
+        public virtual ListApplicationAuthenticationMethodsResponse ListApplicationAuthenticationMethods(ListApplicationAuthenticationMethodsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListApplicationAuthenticationMethodsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListApplicationAuthenticationMethodsResponseUnmarshaller.Instance;
+
+            return Invoke<ListApplicationAuthenticationMethodsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListApplicationAuthenticationMethods operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListApplicationAuthenticationMethods operation on AmazonSSOAdminClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListApplicationAuthenticationMethods
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListApplicationAuthenticationMethods">REST API Reference for ListApplicationAuthenticationMethods Operation</seealso>
+        public virtual IAsyncResult BeginListApplicationAuthenticationMethods(ListApplicationAuthenticationMethodsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListApplicationAuthenticationMethodsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListApplicationAuthenticationMethodsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListApplicationAuthenticationMethods operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListApplicationAuthenticationMethods.</param>
+        /// 
+        /// <returns>Returns a  ListApplicationAuthenticationMethodsResult from SSOAdmin.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListApplicationAuthenticationMethods">REST API Reference for ListApplicationAuthenticationMethods Operation</seealso>
+        public virtual ListApplicationAuthenticationMethodsResponse EndListApplicationAuthenticationMethods(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListApplicationAuthenticationMethodsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListApplicationGrants
+
+        /// <summary>
+        /// List the grants associated with an application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListApplicationGrants service method.</param>
+        /// 
+        /// <returns>The response from the ListApplicationGrants service method, as returned by SSOAdmin.</returns>
+        /// <exception cref="Amazon.SSOAdmin.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListApplicationGrants">REST API Reference for ListApplicationGrants Operation</seealso>
+        public virtual ListApplicationGrantsResponse ListApplicationGrants(ListApplicationGrantsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListApplicationGrantsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListApplicationGrantsResponseUnmarshaller.Instance;
+
+            return Invoke<ListApplicationGrantsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListApplicationGrants operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListApplicationGrants operation on AmazonSSOAdminClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListApplicationGrants
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListApplicationGrants">REST API Reference for ListApplicationGrants Operation</seealso>
+        public virtual IAsyncResult BeginListApplicationGrants(ListApplicationGrantsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListApplicationGrantsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListApplicationGrantsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListApplicationGrants operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListApplicationGrants.</param>
+        /// 
+        /// <returns>Returns a  ListApplicationGrantsResult from SSOAdmin.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListApplicationGrants">REST API Reference for ListApplicationGrants Operation</seealso>
+        public virtual ListApplicationGrantsResponse EndListApplicationGrants(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListApplicationGrantsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListApplicationProviders
+
+        /// <summary>
+        /// Lists the application providers configured in the IAM Identity Center identity store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListApplicationProviders service method.</param>
+        /// 
+        /// <returns>The response from the ListApplicationProviders service method, as returned by SSOAdmin.</returns>
+        /// <exception cref="Amazon.SSOAdmin.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListApplicationProviders">REST API Reference for ListApplicationProviders Operation</seealso>
+        public virtual ListApplicationProvidersResponse ListApplicationProviders(ListApplicationProvidersRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListApplicationProvidersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListApplicationProvidersResponseUnmarshaller.Instance;
+
+            return Invoke<ListApplicationProvidersResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListApplicationProviders operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListApplicationProviders operation on AmazonSSOAdminClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListApplicationProviders
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListApplicationProviders">REST API Reference for ListApplicationProviders Operation</seealso>
+        public virtual IAsyncResult BeginListApplicationProviders(ListApplicationProvidersRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListApplicationProvidersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListApplicationProvidersResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListApplicationProviders operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListApplicationProviders.</param>
+        /// 
+        /// <returns>Returns a  ListApplicationProvidersResult from SSOAdmin.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListApplicationProviders">REST API Reference for ListApplicationProviders Operation</seealso>
+        public virtual ListApplicationProvidersResponse EndListApplicationProviders(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListApplicationProvidersResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListApplications
+
+        /// <summary>
+        /// Lists all applications associated with the instance of IAM Identity Center. When listing
+        /// applications for an instance in the management account, member accounts must use the
+        /// <code>applicationAccount</code> parameter to filter the list to only applications
+        /// created from that account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListApplications service method.</param>
+        /// 
+        /// <returns>The response from the ListApplications service method, as returned by SSOAdmin.</returns>
+        /// <exception cref="Amazon.SSOAdmin.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListApplications">REST API Reference for ListApplications Operation</seealso>
+        public virtual ListApplicationsResponse ListApplications(ListApplicationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListApplicationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListApplicationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListApplicationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListApplications operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListApplications operation on AmazonSSOAdminClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListApplications
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListApplications">REST API Reference for ListApplications Operation</seealso>
+        public virtual IAsyncResult BeginListApplications(ListApplicationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListApplicationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListApplicationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListApplications operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListApplications.</param>
+        /// 
+        /// <returns>Returns a  ListApplicationsResult from SSOAdmin.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListApplications">REST API Reference for ListApplications Operation</seealso>
+        public virtual ListApplicationsResponse EndListApplications(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListApplicationsResponse>(asyncResult);
         }
 
         #endregion
@@ -2130,7 +4228,8 @@ namespace Amazon.SSOAdmin
         #region  ListInstances
 
         /// <summary>
-        /// Lists the IAM Identity Center instances that the caller has access to.
+        /// Lists the details of the organization and account instances of IAM Identity Center
+        /// that were created in or visible to the account calling this API.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListInstances service method.</param>
         /// 
@@ -2547,6 +4646,73 @@ namespace Amazon.SSOAdmin
 
         #endregion
         
+        #region  ListTrustedTokenIssuers
+
+        /// <summary>
+        /// Lists all the trusted token issuers configured in an instance of IAM Identity Center.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTrustedTokenIssuers service method.</param>
+        /// 
+        /// <returns>The response from the ListTrustedTokenIssuers service method, as returned by SSOAdmin.</returns>
+        /// <exception cref="Amazon.SSOAdmin.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListTrustedTokenIssuers">REST API Reference for ListTrustedTokenIssuers Operation</seealso>
+        public virtual ListTrustedTokenIssuersResponse ListTrustedTokenIssuers(ListTrustedTokenIssuersRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTrustedTokenIssuersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTrustedTokenIssuersResponseUnmarshaller.Instance;
+
+            return Invoke<ListTrustedTokenIssuersResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTrustedTokenIssuers operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTrustedTokenIssuers operation on AmazonSSOAdminClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTrustedTokenIssuers
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListTrustedTokenIssuers">REST API Reference for ListTrustedTokenIssuers Operation</seealso>
+        public virtual IAsyncResult BeginListTrustedTokenIssuers(ListTrustedTokenIssuersRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTrustedTokenIssuersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTrustedTokenIssuersResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTrustedTokenIssuers operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTrustedTokenIssuers.</param>
+        /// 
+        /// <returns>Returns a  ListTrustedTokenIssuersResult from SSOAdmin.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListTrustedTokenIssuers">REST API Reference for ListTrustedTokenIssuers Operation</seealso>
+        public virtual ListTrustedTokenIssuersResponse EndListTrustedTokenIssuers(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListTrustedTokenIssuersResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ProvisionPermissionSet
 
         /// <summary>
@@ -2619,6 +4785,316 @@ namespace Amazon.SSOAdmin
         public virtual ProvisionPermissionSetResponse EndProvisionPermissionSet(IAsyncResult asyncResult)
         {
             return EndInvoke<ProvisionPermissionSetResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  PutApplicationAccessScope
+
+        /// <summary>
+        /// Adds or updates the list of authorized targets for an IAM Identity Center access scope
+        /// for an application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutApplicationAccessScope service method.</param>
+        /// 
+        /// <returns>The response from the PutApplicationAccessScope service method, as returned by SSOAdmin.</returns>
+        /// <exception cref="Amazon.SSOAdmin.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/PutApplicationAccessScope">REST API Reference for PutApplicationAccessScope Operation</seealso>
+        public virtual PutApplicationAccessScopeResponse PutApplicationAccessScope(PutApplicationAccessScopeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutApplicationAccessScopeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutApplicationAccessScopeResponseUnmarshaller.Instance;
+
+            return Invoke<PutApplicationAccessScopeResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutApplicationAccessScope operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutApplicationAccessScope operation on AmazonSSOAdminClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutApplicationAccessScope
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/PutApplicationAccessScope">REST API Reference for PutApplicationAccessScope Operation</seealso>
+        public virtual IAsyncResult BeginPutApplicationAccessScope(PutApplicationAccessScopeRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutApplicationAccessScopeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutApplicationAccessScopeResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutApplicationAccessScope operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutApplicationAccessScope.</param>
+        /// 
+        /// <returns>Returns a  PutApplicationAccessScopeResult from SSOAdmin.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/PutApplicationAccessScope">REST API Reference for PutApplicationAccessScope Operation</seealso>
+        public virtual PutApplicationAccessScopeResponse EndPutApplicationAccessScope(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutApplicationAccessScopeResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  PutApplicationAssignmentConfiguration
+
+        /// <summary>
+        /// Configure how users gain access to an application. If <code>AssignmentsRequired</code>
+        /// is <code>true</code> (default value), users don’t have access to the application unless
+        /// an assignment is created using the <a href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_CreateApplicationAssignment.html">CreateApplicationAssignment
+        /// API</a>. If <code>false</code>, all users have access to the application. If an assignment
+        /// is created using <a href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_CreateApplicationAssignment.html">CreateApplicationAssignment</a>.,
+        /// the user retains access if <code>AssignmentsRequired</code> is set to <code>true</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutApplicationAssignmentConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the PutApplicationAssignmentConfiguration service method, as returned by SSOAdmin.</returns>
+        /// <exception cref="Amazon.SSOAdmin.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/PutApplicationAssignmentConfiguration">REST API Reference for PutApplicationAssignmentConfiguration Operation</seealso>
+        public virtual PutApplicationAssignmentConfigurationResponse PutApplicationAssignmentConfiguration(PutApplicationAssignmentConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutApplicationAssignmentConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutApplicationAssignmentConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<PutApplicationAssignmentConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutApplicationAssignmentConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutApplicationAssignmentConfiguration operation on AmazonSSOAdminClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutApplicationAssignmentConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/PutApplicationAssignmentConfiguration">REST API Reference for PutApplicationAssignmentConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginPutApplicationAssignmentConfiguration(PutApplicationAssignmentConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutApplicationAssignmentConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutApplicationAssignmentConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutApplicationAssignmentConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutApplicationAssignmentConfiguration.</param>
+        /// 
+        /// <returns>Returns a  PutApplicationAssignmentConfigurationResult from SSOAdmin.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/PutApplicationAssignmentConfiguration">REST API Reference for PutApplicationAssignmentConfiguration Operation</seealso>
+        public virtual PutApplicationAssignmentConfigurationResponse EndPutApplicationAssignmentConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutApplicationAssignmentConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  PutApplicationAuthenticationMethod
+
+        /// <summary>
+        /// Adds or updates an authentication method for an application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutApplicationAuthenticationMethod service method.</param>
+        /// 
+        /// <returns>The response from the PutApplicationAuthenticationMethod service method, as returned by SSOAdmin.</returns>
+        /// <exception cref="Amazon.SSOAdmin.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/PutApplicationAuthenticationMethod">REST API Reference for PutApplicationAuthenticationMethod Operation</seealso>
+        public virtual PutApplicationAuthenticationMethodResponse PutApplicationAuthenticationMethod(PutApplicationAuthenticationMethodRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutApplicationAuthenticationMethodRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutApplicationAuthenticationMethodResponseUnmarshaller.Instance;
+
+            return Invoke<PutApplicationAuthenticationMethodResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutApplicationAuthenticationMethod operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutApplicationAuthenticationMethod operation on AmazonSSOAdminClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutApplicationAuthenticationMethod
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/PutApplicationAuthenticationMethod">REST API Reference for PutApplicationAuthenticationMethod Operation</seealso>
+        public virtual IAsyncResult BeginPutApplicationAuthenticationMethod(PutApplicationAuthenticationMethodRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutApplicationAuthenticationMethodRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutApplicationAuthenticationMethodResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutApplicationAuthenticationMethod operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutApplicationAuthenticationMethod.</param>
+        /// 
+        /// <returns>Returns a  PutApplicationAuthenticationMethodResult from SSOAdmin.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/PutApplicationAuthenticationMethod">REST API Reference for PutApplicationAuthenticationMethod Operation</seealso>
+        public virtual PutApplicationAuthenticationMethodResponse EndPutApplicationAuthenticationMethod(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutApplicationAuthenticationMethodResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  PutApplicationGrant
+
+        /// <summary>
+        /// Adds a grant to an application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutApplicationGrant service method.</param>
+        /// 
+        /// <returns>The response from the PutApplicationGrant service method, as returned by SSOAdmin.</returns>
+        /// <exception cref="Amazon.SSOAdmin.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/PutApplicationGrant">REST API Reference for PutApplicationGrant Operation</seealso>
+        public virtual PutApplicationGrantResponse PutApplicationGrant(PutApplicationGrantRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutApplicationGrantRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutApplicationGrantResponseUnmarshaller.Instance;
+
+            return Invoke<PutApplicationGrantResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutApplicationGrant operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutApplicationGrant operation on AmazonSSOAdminClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutApplicationGrant
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/PutApplicationGrant">REST API Reference for PutApplicationGrant Operation</seealso>
+        public virtual IAsyncResult BeginPutApplicationGrant(PutApplicationGrantRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutApplicationGrantRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutApplicationGrantResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutApplicationGrant operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutApplicationGrant.</param>
+        /// 
+        /// <returns>Returns a  PutApplicationGrantResult from SSOAdmin.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/PutApplicationGrant">REST API Reference for PutApplicationGrant Operation</seealso>
+        public virtual PutApplicationGrantResponse EndPutApplicationGrant(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutApplicationGrantResponse>(asyncResult);
         }
 
         #endregion
@@ -2944,6 +5420,156 @@ namespace Amazon.SSOAdmin
 
         #endregion
         
+        #region  UpdateApplication
+
+        /// <summary>
+        /// Updates application properties.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateApplication service method.</param>
+        /// 
+        /// <returns>The response from the UpdateApplication service method, as returned by SSOAdmin.</returns>
+        /// <exception cref="Amazon.SSOAdmin.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/UpdateApplication">REST API Reference for UpdateApplication Operation</seealso>
+        public virtual UpdateApplicationResponse UpdateApplication(UpdateApplicationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateApplicationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateApplicationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateApplication operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateApplication operation on AmazonSSOAdminClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateApplication
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/UpdateApplication">REST API Reference for UpdateApplication Operation</seealso>
+        public virtual IAsyncResult BeginUpdateApplication(UpdateApplicationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateApplicationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateApplication operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateApplication.</param>
+        /// 
+        /// <returns>Returns a  UpdateApplicationResult from SSOAdmin.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/UpdateApplication">REST API Reference for UpdateApplication Operation</seealso>
+        public virtual UpdateApplicationResponse EndUpdateApplication(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateApplicationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateInstance
+
+        /// <summary>
+        /// Update the details for the instance of IAM Identity Center that is owned by the Amazon
+        /// Web Services account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateInstance service method.</param>
+        /// 
+        /// <returns>The response from the UpdateInstance service method, as returned by SSOAdmin.</returns>
+        /// <exception cref="Amazon.SSOAdmin.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/UpdateInstance">REST API Reference for UpdateInstance Operation</seealso>
+        public virtual UpdateInstanceResponse UpdateInstance(UpdateInstanceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateInstanceResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateInstanceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateInstance operation on AmazonSSOAdminClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateInstance
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/UpdateInstance">REST API Reference for UpdateInstance Operation</seealso>
+        public virtual IAsyncResult BeginUpdateInstance(UpdateInstanceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateInstanceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateInstance.</param>
+        /// 
+        /// <returns>Returns a  UpdateInstanceResult from SSOAdmin.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/UpdateInstance">REST API Reference for UpdateInstance Operation</seealso>
+        public virtual UpdateInstanceResponse EndUpdateInstance(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateInstanceResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UpdateInstanceAccessControlAttributeConfiguration
 
         /// <summary>
@@ -3099,6 +5725,90 @@ namespace Amazon.SSOAdmin
         public virtual UpdatePermissionSetResponse EndUpdatePermissionSet(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdatePermissionSetResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateTrustedTokenIssuer
+
+        /// <summary>
+        /// Updates the name of the trusted token issuer, or the path of a source attribute or
+        /// destination attribute for a trusted token issuer configuration.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Updating this trusted token issuer configuration might cause users to lose access
+        /// to any applications that are configured to use the trusted token issuer.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTrustedTokenIssuer service method.</param>
+        /// 
+        /// <returns>The response from the UpdateTrustedTokenIssuer service method, as returned by SSOAdmin.</returns>
+        /// <exception cref="Amazon.SSOAdmin.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/UpdateTrustedTokenIssuer">REST API Reference for UpdateTrustedTokenIssuer Operation</seealso>
+        public virtual UpdateTrustedTokenIssuerResponse UpdateTrustedTokenIssuer(UpdateTrustedTokenIssuerRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateTrustedTokenIssuerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateTrustedTokenIssuerResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateTrustedTokenIssuerResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateTrustedTokenIssuer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTrustedTokenIssuer operation on AmazonSSOAdminClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateTrustedTokenIssuer
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/UpdateTrustedTokenIssuer">REST API Reference for UpdateTrustedTokenIssuer Operation</seealso>
+        public virtual IAsyncResult BeginUpdateTrustedTokenIssuer(UpdateTrustedTokenIssuerRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateTrustedTokenIssuerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateTrustedTokenIssuerResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateTrustedTokenIssuer operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateTrustedTokenIssuer.</param>
+        /// 
+        /// <returns>Returns a  UpdateTrustedTokenIssuerResult from SSOAdmin.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/UpdateTrustedTokenIssuer">REST API Reference for UpdateTrustedTokenIssuer Operation</seealso>
+        public virtual UpdateTrustedTokenIssuerResponse EndUpdateTrustedTokenIssuer(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateTrustedTokenIssuerResponse>(asyncResult);
         }
 
         #endregion

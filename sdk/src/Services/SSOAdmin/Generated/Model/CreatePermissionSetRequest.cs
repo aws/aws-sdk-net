@@ -153,7 +153,7 @@ namespace Amazon.SSOAdmin.Model
         /// The tags to attach to the new <a>PermissionSet</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=50)]
+        [AWSProperty(Min=0, Max=75)]
         public List<Tag> Tags
         {
             get { return this._tags; }

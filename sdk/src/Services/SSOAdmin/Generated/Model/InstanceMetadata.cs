@@ -33,14 +33,35 @@ namespace Amazon.SSOAdmin.Model
     /// </summary>
     public partial class InstanceMetadata
     {
+        private DateTime? _createdDate;
         private string _identityStoreId;
         private string _instanceArn;
+        private string _name;
+        private string _ownerAccountId;
+        private InstanceStatus _status;
+
+        /// <summary>
+        /// Gets and sets the property CreatedDate. 
+        /// <para>
+        /// The date and time that the Identity Center instance was created.
+        /// </para>
+        /// </summary>
+        public DateTime CreatedDate
+        {
+            get { return this._createdDate.GetValueOrDefault(); }
+            set { this._createdDate = value; }
+        }
+
+        // Check to see if CreatedDate property is set
+        internal bool IsSetCreatedDate()
+        {
+            return this._createdDate.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property IdentityStoreId. 
         /// <para>
-        /// The identifier of the identity store that is connected to the IAM Identity Center
-        /// instance.
+        /// The identifier of the identity store that is connected to the Identity Center instance.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -59,7 +80,7 @@ namespace Amazon.SSOAdmin.Model
         /// <summary>
         /// Gets and sets the property InstanceArn. 
         /// <para>
-        /// The ARN of the IAM Identity Center instance under which the operation will be executed.
+        /// The ARN of the Identity Center instance under which the operation will be executed.
         /// For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon
         /// Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon
         /// Web Services General Reference</i>.
@@ -76,6 +97,62 @@ namespace Amazon.SSOAdmin.Model
         internal bool IsSetInstanceArn()
         {
             return this._instanceArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of the Identity Center instance.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=255)]
+        public string Name
+        {
+            get { return this._name; }
+            set { this._name = value; }
+        }
+
+        // Check to see if Name property is set
+        internal bool IsSetName()
+        {
+            return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OwnerAccountId. 
+        /// <para>
+        /// The Amazon Web Services account ID number of the owner of the Identity Center instance.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=12)]
+        public string OwnerAccountId
+        {
+            get { return this._ownerAccountId; }
+            set { this._ownerAccountId = value; }
+        }
+
+        // Check to see if OwnerAccountId property is set
+        internal bool IsSetOwnerAccountId()
+        {
+            return this._ownerAccountId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The current status of this Identity Center instance.
+        /// </para>
+        /// </summary>
+        public InstanceStatus Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
         }
 
     }

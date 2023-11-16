@@ -60,11 +60,75 @@ namespace Amazon.SSOAdmin.Model
         }
 
         /// <summary>
+        /// Paginator for ListAccountAssignmentsForPrincipal operation
+        ///</summary>
+        public IListAccountAssignmentsForPrincipalPaginator ListAccountAssignmentsForPrincipal(ListAccountAssignmentsForPrincipalRequest request) 
+        {
+            return new ListAccountAssignmentsForPrincipalPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListAccountsForProvisionedPermissionSet operation
         ///</summary>
         public IListAccountsForProvisionedPermissionSetPaginator ListAccountsForProvisionedPermissionSet(ListAccountsForProvisionedPermissionSetRequest request) 
         {
             return new ListAccountsForProvisionedPermissionSetPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListApplicationAccessScopes operation
+        ///</summary>
+        public IListApplicationAccessScopesPaginator ListApplicationAccessScopes(ListApplicationAccessScopesRequest request) 
+        {
+            return new ListApplicationAccessScopesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListApplicationAssignments operation
+        ///</summary>
+        public IListApplicationAssignmentsPaginator ListApplicationAssignments(ListApplicationAssignmentsRequest request) 
+        {
+            return new ListApplicationAssignmentsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListApplicationAssignmentsForPrincipal operation
+        ///</summary>
+        public IListApplicationAssignmentsForPrincipalPaginator ListApplicationAssignmentsForPrincipal(ListApplicationAssignmentsForPrincipalRequest request) 
+        {
+            return new ListApplicationAssignmentsForPrincipalPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListApplicationAuthenticationMethods operation
+        ///</summary>
+        public IListApplicationAuthenticationMethodsPaginator ListApplicationAuthenticationMethods(ListApplicationAuthenticationMethodsRequest request) 
+        {
+            return new ListApplicationAuthenticationMethodsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListApplicationGrants operation
+        ///</summary>
+        public IListApplicationGrantsPaginator ListApplicationGrants(ListApplicationGrantsRequest request) 
+        {
+            return new ListApplicationGrantsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListApplicationProviders operation
+        ///</summary>
+        public IListApplicationProvidersPaginator ListApplicationProviders(ListApplicationProvidersRequest request) 
+        {
+            return new ListApplicationProvidersPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListApplications operation
+        ///</summary>
+        public IListApplicationsPaginator ListApplications(ListApplicationsRequest request) 
+        {
+            return new ListApplicationsPaginator(this.client, request);
         }
 
         /// <summary>
@@ -121,6 +185,14 @@ namespace Amazon.SSOAdmin.Model
         public IListTagsForResourcePaginator ListTagsForResource(ListTagsForResourceRequest request) 
         {
             return new ListTagsForResourcePaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListTrustedTokenIssuers operation
+        ///</summary>
+        public IListTrustedTokenIssuersPaginator ListTrustedTokenIssuers(ListTrustedTokenIssuersRequest request) 
+        {
+            return new ListTrustedTokenIssuersPaginator(this.client, request);
         }
     }
 }

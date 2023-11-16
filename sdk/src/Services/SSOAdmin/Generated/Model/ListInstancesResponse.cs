@@ -42,6 +42,7 @@ namespace Amazon.SSOAdmin.Model
         /// Lists the IAM Identity Center instances that the caller has access to.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10)]
         public List<InstanceMetadata> Instances
         {
             get { return this._instances; }

@@ -47,7 +47,7 @@ namespace Amazon.SSOAdmin.Model
         /// Web Services General Reference</i>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=10, Max=1224)]
+        [AWSProperty(Min=10, Max=1224)]
         public string InstanceArn
         {
             get { return this._instanceArn; }
@@ -85,7 +85,7 @@ namespace Amazon.SSOAdmin.Model
         /// A set of key-value pairs that are used to manage the resource.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=50)]
+        [AWSProperty(Required=true, Min=0, Max=75)]
         public List<Tag> Tags
         {
             get { return this._tags; }

@@ -1,0 +1,169 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the sso-admin-2020-07-20.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+namespace Amazon.SSOAdmin.Model
+{
+    /// <summary>
+    /// Container for the parameters to the ListAccountAssignmentsForPrincipal operation.
+    /// Retrieves a list of the IAM Identity Center associated Amazon Web Services accounts
+    /// that the principal has access to.
+    /// </summary>
+    public partial class ListAccountAssignmentsForPrincipalRequest : AmazonSSOAdminRequest
+    {
+        private ListAccountAssignmentsFilter _filter;
+        private string _instanceArn;
+        private int? _maxResults;
+        private string _nextToken;
+        private string _principalId;
+        private PrincipalType _principalType;
+
+        /// <summary>
+        /// Gets and sets the property Filter. 
+        /// <para>
+        /// Specifies an Amazon Web Services account ID number. Results are filtered to only those
+        /// that match this ID number.
+        /// </para>
+        /// </summary>
+        public ListAccountAssignmentsFilter Filter
+        {
+            get { return this._filter; }
+            set { this._filter = value; }
+        }
+
+        // Check to see if Filter property is set
+        internal bool IsSetFilter()
+        {
+            return this._filter != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceArn. 
+        /// <para>
+        /// Specifies the ARN of the instance of IAM Identity Center that contains the principal.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=10, Max=1224)]
+        public string InstanceArn
+        {
+            get { return this._instanceArn; }
+            set { this._instanceArn = value; }
+        }
+
+        // Check to see if InstanceArn property is set
+        internal bool IsSetInstanceArn()
+        {
+            return this._instanceArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// Specifies the total number of results that you want included in each response. If
+        /// additional items exist beyond the number you specify, the <code>NextToken</code> response
+        /// element is returned with a value (not null). Include the specified value as the <code>NextToken</code>
+        /// request parameter in the next call to the operation to get the next set of results.
+        /// Note that the service might return fewer results than the maximum even when there
+        /// are more results available. You should check <code>NextToken</code> after every operation
+        /// to ensure that you receive all of the results.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=100)]
+        public int MaxResults
+        {
+            get { return this._maxResults.GetValueOrDefault(); }
+            set { this._maxResults = value; }
+        }
+
+        // Check to see if MaxResults property is set
+        internal bool IsSetMaxResults()
+        {
+            return this._maxResults.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// Specifies that you want to receive the next page of results. Valid only if you received
+        /// a <code>NextToken</code> response in the previous request. If you did, it indicates
+        /// that more output is available. Set this parameter to the value provided by the previous
+        /// call's <code>NextToken</code> response to request the next page of results.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=2048)]
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrincipalId. 
+        /// <para>
+        /// Specifies the principal for which you want to retrieve the list of account assignments.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=47)]
+        public string PrincipalId
+        {
+            get { return this._principalId; }
+            set { this._principalId = value; }
+        }
+
+        // Check to see if PrincipalId property is set
+        internal bool IsSetPrincipalId()
+        {
+            return this._principalId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrincipalType. 
+        /// <para>
+        /// Specifies the type of the principal.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public PrincipalType PrincipalType
+        {
+            get { return this._principalType; }
+            set { this._principalType = value; }
+        }
+
+        // Check to see if PrincipalType property is set
+        internal bool IsSetPrincipalType()
+        {
+            return this._principalType != null;
+        }
+
+    }
+}
