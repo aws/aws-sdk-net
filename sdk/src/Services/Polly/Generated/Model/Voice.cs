@@ -161,8 +161,8 @@ namespace Amazon.Polly.Model
         /// <summary>
         /// Gets and sets the property SupportedEngines. 
         /// <para>
-        /// Specifies which engines (<code>standard</code> or <code>neural</code>) that are supported
-        /// by a given voice.
+        /// Specifies which engines (<code>standard</code>, <code>neural</code> or <code>long-form</code>)
+        /// are supported by a given voice.
         /// </para>
         /// </summary>
         public List<string> SupportedEngines

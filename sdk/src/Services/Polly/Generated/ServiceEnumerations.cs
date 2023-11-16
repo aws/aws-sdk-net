@@ -31,6 +31,10 @@ namespace Amazon.Polly
     {
 
         /// <summary>
+        /// Constant LongForm for Engine
+        /// </summary>
+        public static readonly Engine LongForm = new Engine("long-form");
+        /// <summary>
         /// Constant Neural for Engine
         /// </summary>
         public static readonly Engine Neural = new Engine("neural");

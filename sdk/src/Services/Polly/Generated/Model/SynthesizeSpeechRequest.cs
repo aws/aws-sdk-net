@@ -51,10 +51,9 @@ namespace Amazon.Polly.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        /// Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly
-        /// to use when processing input text for speech synthesis. For information on Amazon
-        /// Polly voices and which voices are available in standard-only, NTTS-only, and both
-        /// standard and NTTS formats, see <a href="https://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Available
+        /// Specifies the engine (<code>standard</code>, <code>neural</code> or <code>long-form</code>)
+        /// for Amazon Polly to use when processing input text for speech synthesis. For information
+        /// on Amazon Polly voices and which voices are available for each engine, see <a href="https://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Available
         /// Voices</a>.
         /// </para>
         ///  
@@ -69,11 +68,22 @@ namespace Amazon.Polly.Model
         /// </para>
         ///  
         /// <para>
+        ///  <b>long-form-only voices</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// When using long-form-only voices such as Danielle (en-US), this parameter is required
+        /// and must be set to <code>long-form</code>. If the engine is not specified, or is set
+        /// to <code>standard</code> or <code>neural</code>, this will result in an error. 
+        /// </para>
+        ///  
+        /// <para>
         /// Type: String
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>standard</code> | <code>neural</code> 
+        /// Valid Values: <code>standard</code> | <code>neural</code> | <code>long-form</code>
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -185,7 +195,7 @@ namespace Amazon.Polly.Model
         /// <para>
         /// The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050", and "24000".
         /// The default value for standard voices is "22050". The default value for neural voices
-        /// is "24000".
+        /// is "24000". The default value for long-form voices is "24000".
         /// </para>
         ///  
         /// <para>

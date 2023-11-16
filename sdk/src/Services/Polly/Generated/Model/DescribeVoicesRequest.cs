@@ -67,8 +67,8 @@ namespace Amazon.Polly.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        /// Specifies the engine (<code>standard</code> or <code>neural</code>) used by Amazon
-        /// Polly when processing input text for speech synthesis. 
+        /// Specifies the engine (<code>standard</code>, <code>neural</code> or <code>long-form</code>)
+        /// used by Amazon Polly when processing input text for speech synthesis. 
         /// </para>
         /// </summary>
         public Engine Engine
