@@ -62,7 +62,7 @@ namespace Amazon.IVSRealTime.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The first participant to retrieve. This is used for pagination; see the <code>nextToken</code>
+        /// The first participant event to retrieve. This is used for pagination; see the <code>nextToken</code>
         /// response field.
         /// </para>
         /// </summary>
@@ -85,7 +85,7 @@ namespace Amazon.IVSRealTime.Model
         /// Unique identifier for this participant. This is assigned by IVS and returned by <a>CreateParticipantToken</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=0, Max=64)]
         public string ParticipantId
         {
             get { return this._participantId; }

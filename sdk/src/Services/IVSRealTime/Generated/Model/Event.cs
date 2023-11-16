@@ -108,6 +108,7 @@ namespace Amazon.IVSRealTime.Model
         /// IVS.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=64)]
         public string ParticipantId
         {
             get { return this._participantId; }
@@ -127,6 +128,7 @@ namespace Amazon.IVSRealTime.Model
         /// For a publish or join event, this is null. This is assigned by IVS.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=64)]
         public string RemoteParticipantId
         {
             get { return this._remoteParticipantId; }

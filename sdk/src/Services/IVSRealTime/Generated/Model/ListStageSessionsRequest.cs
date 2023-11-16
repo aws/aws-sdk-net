@@ -60,7 +60,7 @@ namespace Amazon.IVSRealTime.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The first stage to retrieve. This is used for pagination; see the <code>nextToken</code>
+        /// The first stage session to retrieve. This is used for pagination; see the <code>nextToken</code>
         /// response field.
         /// </para>
         /// </summary>

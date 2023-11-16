@@ -36,6 +36,22 @@ namespace Amazon.IVSRealTime.Model
         }
 
         /// <summary>
+        /// Paginator for ListCompositions operation
+        ///</summary>
+        public IListCompositionsPaginator ListCompositions(ListCompositionsRequest request) 
+        {
+            return new ListCompositionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListEncoderConfigurations operation
+        ///</summary>
+        public IListEncoderConfigurationsPaginator ListEncoderConfigurations(ListEncoderConfigurationsRequest request) 
+        {
+            return new ListEncoderConfigurationsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListParticipantEvents operation
         ///</summary>
         public IListParticipantEventsPaginator ListParticipantEvents(ListParticipantEventsRequest request) 
@@ -65,6 +81,14 @@ namespace Amazon.IVSRealTime.Model
         public IListStageSessionsPaginator ListStageSessions(ListStageSessionsRequest request) 
         {
             return new ListStageSessionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListStorageConfigurations operation
+        ///</summary>
+        public IListStorageConfigurationsPaginator ListStorageConfigurations(ListStorageConfigurationsRequest request) 
+        {
+            return new ListStorageConfigurationsPaginator(this.client, request);
         }
     }
 }

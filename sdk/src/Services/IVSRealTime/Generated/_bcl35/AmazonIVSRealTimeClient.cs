@@ -61,7 +61,18 @@ namespace Amazon.IVSRealTime
     /// A <i>participant object</i> represents participants (people) in the stage and contains
     /// information about them. When a token is created, it includes a participant ID; when
     /// a participant uses that token to join a stage, the participant is associated with
-    /// that participant ID There is a 1:1 mapping between participant tokens and participants.
+    /// that participant ID. There is a 1:1 mapping between participant tokens and participants.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Server-side composition: The <i>composition</i> process composites participants of
+    /// a stage into a single video and forwards it to a set of outputs (e.g., IVS channels).
+    /// Composition endpoints support this process.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Server-side composition: A <i>composition</i> controls the look of the outputs, including
+    /// how participants are positioned in the video.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -163,6 +174,76 @@ namespace Amazon.IVSRealTime
     ///  </li> <li> 
     /// <para>
     ///  <a>UpdateStage</a> — Updates a stage’s configuration.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    ///  <b>Composition Endpoints</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>GetComposition</a> — Gets information about the specified Composition resource.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ListCompositions</a> — Gets summary information about all Compositions in your
+    /// account, in the AWS region where the API request is processed.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>StartComposition</a> — Starts a Composition from a stage based on the configuration
+    /// provided in the request.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>StopComposition</a> — Stops and deletes a Composition resource. Any broadcast
+    /// from the Composition resource is stopped.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    ///  <b>EncoderConfiguration Endpoints</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>CreateEncoderConfiguration</a> — Creates an EncoderConfiguration object.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DeleteEncoderConfiguration</a> — Deletes an EncoderConfiguration resource. Ensures
+    /// that no Compositions are using this template; otherwise, returns an error.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>GetEncoderConfiguration</a> — Gets information about the specified EncoderConfiguration
+    /// resource.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ListEncoderConfigurations</a> — Gets summary information about all EncoderConfigurations
+    /// in your account, in the AWS region where the API request is processed.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    ///  <b>StorageConfiguration Endpoints</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>CreateStorageConfiguration</a> — Creates a new storage configuration, used to
+    /// enable recording to Amazon S3.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DeleteStorageConfiguration</a> — Deletes the storage configuration for the specified
+    /// ARN.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>GetStorageConfiguration</a> — Gets the storage configuration for the specified
+    /// ARN.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ListStorageConfigurations</a> — Gets summary information about all storage configurations
+    /// in your account, in the AWS region where the API request is processed.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -409,6 +490,81 @@ namespace Amazon.IVSRealTime
         #endregion
 
 
+        #region  CreateEncoderConfiguration
+
+        /// <summary>
+        /// Creates an EncoderConfiguration object.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateEncoderConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the CreateEncoderConfiguration service method, as returned by IVSRealTime.</returns>
+        /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.PendingVerificationException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ServiceQuotaExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/CreateEncoderConfiguration">REST API Reference for CreateEncoderConfiguration Operation</seealso>
+        public virtual CreateEncoderConfigurationResponse CreateEncoderConfiguration(CreateEncoderConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateEncoderConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateEncoderConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateEncoderConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateEncoderConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateEncoderConfiguration operation on AmazonIVSRealTimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateEncoderConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/CreateEncoderConfiguration">REST API Reference for CreateEncoderConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginCreateEncoderConfiguration(CreateEncoderConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateEncoderConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateEncoderConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateEncoderConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateEncoderConfiguration.</param>
+        /// 
+        /// <returns>Returns a  CreateEncoderConfigurationResult from IVSRealTime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/CreateEncoderConfiguration">REST API Reference for CreateEncoderConfiguration Operation</seealso>
+        public virtual CreateEncoderConfigurationResponse EndCreateEncoderConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateEncoderConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateParticipantToken
 
         /// <summary>
@@ -550,6 +706,157 @@ namespace Amazon.IVSRealTime
 
         #endregion
         
+        #region  CreateStorageConfiguration
+
+        /// <summary>
+        /// Creates a new storage configuration, used to enable recording to Amazon S3. When a
+        /// StorageConfiguration is created, IVS will modify the S3 bucketPolicy of the provided
+        /// bucket. This will ensure that IVS has sufficient permissions to write content to the
+        /// provided bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateStorageConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the CreateStorageConfiguration service method, as returned by IVSRealTime.</returns>
+        /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.PendingVerificationException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ServiceQuotaExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/CreateStorageConfiguration">REST API Reference for CreateStorageConfiguration Operation</seealso>
+        public virtual CreateStorageConfigurationResponse CreateStorageConfiguration(CreateStorageConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateStorageConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateStorageConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateStorageConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateStorageConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateStorageConfiguration operation on AmazonIVSRealTimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateStorageConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/CreateStorageConfiguration">REST API Reference for CreateStorageConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginCreateStorageConfiguration(CreateStorageConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateStorageConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateStorageConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateStorageConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateStorageConfiguration.</param>
+        /// 
+        /// <returns>Returns a  CreateStorageConfigurationResult from IVSRealTime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/CreateStorageConfiguration">REST API Reference for CreateStorageConfiguration Operation</seealso>
+        public virtual CreateStorageConfigurationResponse EndCreateStorageConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateStorageConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteEncoderConfiguration
+
+        /// <summary>
+        /// Deletes an EncoderConfiguration resource. Ensures that no Compositions are using this
+        /// template; otherwise, returns an error.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEncoderConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteEncoderConfiguration service method, as returned by IVSRealTime.</returns>
+        /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ServiceQuotaExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/DeleteEncoderConfiguration">REST API Reference for DeleteEncoderConfiguration Operation</seealso>
+        public virtual DeleteEncoderConfigurationResponse DeleteEncoderConfiguration(DeleteEncoderConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEncoderConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEncoderConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteEncoderConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteEncoderConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEncoderConfiguration operation on AmazonIVSRealTimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteEncoderConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/DeleteEncoderConfiguration">REST API Reference for DeleteEncoderConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginDeleteEncoderConfiguration(DeleteEncoderConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEncoderConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEncoderConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteEncoderConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteEncoderConfiguration.</param>
+        /// 
+        /// <returns>Returns a  DeleteEncoderConfigurationResult from IVSRealTime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/DeleteEncoderConfiguration">REST API Reference for DeleteEncoderConfiguration Operation</seealso>
+        public virtual DeleteEncoderConfigurationResponse EndDeleteEncoderConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteEncoderConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteStage
 
         /// <summary>
@@ -619,6 +926,86 @@ namespace Amazon.IVSRealTime
 
         #endregion
         
+        #region  DeleteStorageConfiguration
+
+        /// <summary>
+        /// Deletes the storage configuration for the specified ARN.
+        /// 
+        ///  
+        /// <para>
+        /// If you try to delete a storage configuration that is used by a Composition, you will
+        /// get an error (409 ConflictException). To avoid this, for all Compositions that reference
+        /// the storage configuration, first use <a>StopComposition</a> and wait for it to complete,
+        /// then use DeleteStorageConfiguration.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteStorageConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteStorageConfiguration service method, as returned by IVSRealTime.</returns>
+        /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ServiceQuotaExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/DeleteStorageConfiguration">REST API Reference for DeleteStorageConfiguration Operation</seealso>
+        public virtual DeleteStorageConfigurationResponse DeleteStorageConfiguration(DeleteStorageConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteStorageConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteStorageConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteStorageConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteStorageConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteStorageConfiguration operation on AmazonIVSRealTimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteStorageConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/DeleteStorageConfiguration">REST API Reference for DeleteStorageConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginDeleteStorageConfiguration(DeleteStorageConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteStorageConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteStorageConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteStorageConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteStorageConfiguration.</param>
+        /// 
+        /// <returns>Returns a  DeleteStorageConfigurationResult from IVSRealTime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/DeleteStorageConfiguration">REST API Reference for DeleteStorageConfiguration Operation</seealso>
+        public virtual DeleteStorageConfigurationResponse EndDeleteStorageConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteStorageConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DisconnectParticipant
 
         /// <summary>
@@ -682,6 +1069,150 @@ namespace Amazon.IVSRealTime
         public virtual DisconnectParticipantResponse EndDisconnectParticipant(IAsyncResult asyncResult)
         {
             return EndInvoke<DisconnectParticipantResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetComposition
+
+        /// <summary>
+        /// Get information about the specified Composition resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetComposition service method.</param>
+        /// 
+        /// <returns>The response from the GetComposition service method, as returned by IVSRealTime.</returns>
+        /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ServiceQuotaExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/GetComposition">REST API Reference for GetComposition Operation</seealso>
+        public virtual GetCompositionResponse GetComposition(GetCompositionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCompositionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCompositionResponseUnmarshaller.Instance;
+
+            return Invoke<GetCompositionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetComposition operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetComposition operation on AmazonIVSRealTimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetComposition
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/GetComposition">REST API Reference for GetComposition Operation</seealso>
+        public virtual IAsyncResult BeginGetComposition(GetCompositionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCompositionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCompositionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetComposition operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetComposition.</param>
+        /// 
+        /// <returns>Returns a  GetCompositionResult from IVSRealTime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/GetComposition">REST API Reference for GetComposition Operation</seealso>
+        public virtual GetCompositionResponse EndGetComposition(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetCompositionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetEncoderConfiguration
+
+        /// <summary>
+        /// Gets information about the specified EncoderConfiguration resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEncoderConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetEncoderConfiguration service method, as returned by IVSRealTime.</returns>
+        /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ServiceQuotaExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/GetEncoderConfiguration">REST API Reference for GetEncoderConfiguration Operation</seealso>
+        public virtual GetEncoderConfigurationResponse GetEncoderConfiguration(GetEncoderConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEncoderConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEncoderConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<GetEncoderConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetEncoderConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetEncoderConfiguration operation on AmazonIVSRealTimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetEncoderConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/GetEncoderConfiguration">REST API Reference for GetEncoderConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginGetEncoderConfiguration(GetEncoderConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEncoderConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEncoderConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetEncoderConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetEncoderConfiguration.</param>
+        /// 
+        /// <returns>Returns a  GetEncoderConfigurationResult from IVSRealTime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/GetEncoderConfiguration">REST API Reference for GetEncoderConfiguration Operation</seealso>
+        public virtual GetEncoderConfigurationResponse EndGetEncoderConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetEncoderConfigurationResponse>(asyncResult);
         }
 
         #endregion
@@ -871,6 +1402,218 @@ namespace Amazon.IVSRealTime
         public virtual GetStageSessionResponse EndGetStageSession(IAsyncResult asyncResult)
         {
             return EndInvoke<GetStageSessionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetStorageConfiguration
+
+        /// <summary>
+        /// Gets the storage configuration for the specified ARN.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetStorageConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetStorageConfiguration service method, as returned by IVSRealTime.</returns>
+        /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ServiceQuotaExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/GetStorageConfiguration">REST API Reference for GetStorageConfiguration Operation</seealso>
+        public virtual GetStorageConfigurationResponse GetStorageConfiguration(GetStorageConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetStorageConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetStorageConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<GetStorageConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetStorageConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetStorageConfiguration operation on AmazonIVSRealTimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetStorageConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/GetStorageConfiguration">REST API Reference for GetStorageConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginGetStorageConfiguration(GetStorageConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetStorageConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetStorageConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetStorageConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetStorageConfiguration.</param>
+        /// 
+        /// <returns>Returns a  GetStorageConfigurationResult from IVSRealTime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/GetStorageConfiguration">REST API Reference for GetStorageConfiguration Operation</seealso>
+        public virtual GetStorageConfigurationResponse EndGetStorageConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetStorageConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListCompositions
+
+        /// <summary>
+        /// Gets summary information about all Compositions in your account, in the AWS region
+        /// where the API request is processed.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCompositions service method.</param>
+        /// 
+        /// <returns>The response from the ListCompositions service method, as returned by IVSRealTime.</returns>
+        /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ServiceQuotaExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListCompositions">REST API Reference for ListCompositions Operation</seealso>
+        public virtual ListCompositionsResponse ListCompositions(ListCompositionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCompositionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCompositionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListCompositionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListCompositions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListCompositions operation on AmazonIVSRealTimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListCompositions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListCompositions">REST API Reference for ListCompositions Operation</seealso>
+        public virtual IAsyncResult BeginListCompositions(ListCompositionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCompositionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCompositionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListCompositions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListCompositions.</param>
+        /// 
+        /// <returns>Returns a  ListCompositionsResult from IVSRealTime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListCompositions">REST API Reference for ListCompositions Operation</seealso>
+        public virtual ListCompositionsResponse EndListCompositions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListCompositionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListEncoderConfigurations
+
+        /// <summary>
+        /// Gets summary information about all EncoderConfigurations in your account, in the AWS
+        /// region where the API request is processed.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEncoderConfigurations service method.</param>
+        /// 
+        /// <returns>The response from the ListEncoderConfigurations service method, as returned by IVSRealTime.</returns>
+        /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ServiceQuotaExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListEncoderConfigurations">REST API Reference for ListEncoderConfigurations Operation</seealso>
+        public virtual ListEncoderConfigurationsResponse ListEncoderConfigurations(ListEncoderConfigurationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListEncoderConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEncoderConfigurationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListEncoderConfigurationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListEncoderConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListEncoderConfigurations operation on AmazonIVSRealTimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListEncoderConfigurations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListEncoderConfigurations">REST API Reference for ListEncoderConfigurations Operation</seealso>
+        public virtual IAsyncResult BeginListEncoderConfigurations(ListEncoderConfigurationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListEncoderConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEncoderConfigurationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListEncoderConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListEncoderConfigurations.</param>
+        /// 
+        /// <returns>Returns a  ListEncoderConfigurationsResult from IVSRealTime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListEncoderConfigurations">REST API Reference for ListEncoderConfigurations Operation</seealso>
+        public virtual ListEncoderConfigurationsResponse EndListEncoderConfigurations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListEncoderConfigurationsResponse>(asyncResult);
         }
 
         #endregion
@@ -1119,6 +1862,76 @@ namespace Amazon.IVSRealTime
 
         #endregion
         
+        #region  ListStorageConfigurations
+
+        /// <summary>
+        /// Gets summary information about all storage configurations in your account, in the
+        /// AWS region where the API request is processed.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListStorageConfigurations service method.</param>
+        /// 
+        /// <returns>The response from the ListStorageConfigurations service method, as returned by IVSRealTime.</returns>
+        /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ServiceQuotaExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListStorageConfigurations">REST API Reference for ListStorageConfigurations Operation</seealso>
+        public virtual ListStorageConfigurationsResponse ListStorageConfigurations(ListStorageConfigurationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListStorageConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListStorageConfigurationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListStorageConfigurationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListStorageConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListStorageConfigurations operation on AmazonIVSRealTimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListStorageConfigurations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListStorageConfigurations">REST API Reference for ListStorageConfigurations Operation</seealso>
+        public virtual IAsyncResult BeginListStorageConfigurations(ListStorageConfigurationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListStorageConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListStorageConfigurationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListStorageConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListStorageConfigurations.</param>
+        /// 
+        /// <returns>Returns a  ListStorageConfigurationsResult from IVSRealTime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListStorageConfigurations">REST API Reference for ListStorageConfigurations Operation</seealso>
+        public virtual ListStorageConfigurationsResponse EndListStorageConfigurations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListStorageConfigurationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListTagsForResource
 
         /// <summary>
@@ -1178,6 +1991,182 @@ namespace Amazon.IVSRealTime
         public virtual ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult)
         {
             return EndInvoke<ListTagsForResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StartComposition
+
+        /// <summary>
+        /// Starts a Composition from a stage based on the configuration provided in the request.
+        /// 
+        ///  
+        /// <para>
+        /// A Composition is an ephemeral resource that exists after this endpoint returns successfully.
+        /// Composition stops and the resource is deleted:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// When <a>StopComposition</a> is called.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// After a 1-minute timeout, when all participants are disconnected from the stage.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// After a 1-minute timeout, if there are no participants in the stage when StartComposition
+        /// is called.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When broadcasting to the IVS channel fails and all retries are exhausted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When broadcasting is disconnected and all attempts to reconnect are exhausted.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartComposition service method.</param>
+        /// 
+        /// <returns>The response from the StartComposition service method, as returned by IVSRealTime.</returns>
+        /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.PendingVerificationException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ServiceQuotaExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/StartComposition">REST API Reference for StartComposition Operation</seealso>
+        public virtual StartCompositionResponse StartComposition(StartCompositionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartCompositionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartCompositionResponseUnmarshaller.Instance;
+
+            return Invoke<StartCompositionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartComposition operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartComposition operation on AmazonIVSRealTimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartComposition
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/StartComposition">REST API Reference for StartComposition Operation</seealso>
+        public virtual IAsyncResult BeginStartComposition(StartCompositionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartCompositionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartCompositionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartComposition operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartComposition.</param>
+        /// 
+        /// <returns>Returns a  StartCompositionResult from IVSRealTime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/StartComposition">REST API Reference for StartComposition Operation</seealso>
+        public virtual StartCompositionResponse EndStartComposition(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartCompositionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StopComposition
+
+        /// <summary>
+        /// Stops and deletes a Composition resource. Any broadcast from the Composition resource
+        /// is stopped.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopComposition service method.</param>
+        /// 
+        /// <returns>The response from the StopComposition service method, as returned by IVSRealTime.</returns>
+        /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ServiceQuotaExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/StopComposition">REST API Reference for StopComposition Operation</seealso>
+        public virtual StopCompositionResponse StopComposition(StopCompositionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopCompositionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopCompositionResponseUnmarshaller.Instance;
+
+            return Invoke<StopCompositionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopComposition operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopComposition operation on AmazonIVSRealTimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopComposition
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/StopComposition">REST API Reference for StopComposition Operation</seealso>
+        public virtual IAsyncResult BeginStopComposition(StopCompositionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopCompositionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopCompositionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StopComposition operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopComposition.</param>
+        /// 
+        /// <returns>Returns a  StopCompositionResult from IVSRealTime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/StopComposition">REST API Reference for StopComposition Operation</seealso>
+        public virtual StopCompositionResponse EndStopComposition(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StopCompositionResponse>(asyncResult);
         }
 
         #endregion

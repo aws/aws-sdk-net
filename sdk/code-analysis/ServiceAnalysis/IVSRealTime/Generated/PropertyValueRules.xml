@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.CreateEncoderConfigurationRequest.Name</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9-_]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IVSRealTime.Model.CreateParticipantTokenRequest.Duration</property>
     <min>1</min>
     <max>20160</max>
@@ -23,10 +29,28 @@
     <pattern>^[a-zA-Z0-9-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.CreateStorageConfigurationRequest.Name</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9-_]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.DeleteEncoderConfigurationRequest.Arn</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^arn:aws:ivs:[a-z0-9-]+:[0-9]+:encoder-configuration/[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IVSRealTime.Model.DeleteStageRequest.Arn</property>
     <min>1</min>
     <max>128</max>
     <pattern>^arn:aws:ivs:[a-z0-9-]+:[0-9]+:stage/[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.DeleteStorageConfigurationRequest.Arn</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^arn:aws:ivs:[a-z0-9-]+:[0-9]+:storage-configuration/[a-zA-Z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IVSRealTime.Model.DisconnectParticipantRequest.Reason</property>
@@ -38,6 +62,24 @@
     <min>1</min>
     <max>128</max>
     <pattern>^arn:aws:ivs:[a-z0-9-]+:[0-9]+:stage/[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.GetCompositionRequest.Arn</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^arn:aws:ivs:[a-z0-9-]+:[0-9]+:composition/[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.GetEncoderConfigurationRequest.Arn</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^arn:aws:ivs:[a-z0-9-]+:[0-9]+:encoder-configuration/[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.GetParticipantRequest.ParticipantId</property>
+    <min>0</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IVSRealTime.Model.GetParticipantRequest.SessionId</property>
@@ -70,6 +112,58 @@
     <pattern>^arn:aws:ivs:[a-z0-9-]+:[0-9]+:stage/[a-zA-Z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.GetStorageConfigurationRequest.Arn</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^arn:aws:ivs:[a-z0-9-]+:[0-9]+:storage-configuration/[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.ListCompositionsRequest.FilterByEncoderConfigurationArn</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^arn:aws:ivs:[a-z0-9-]+:[0-9]+:encoder-configuration/[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.ListCompositionsRequest.FilterByStageArn</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^arn:aws:ivs:[a-z0-9-]+:[0-9]+:stage/[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.ListCompositionsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.ListCompositionsRequest.NextToken</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>^[a-zA-Z0-9+/=_-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.ListCompositionsResponse.NextToken</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>^[a-zA-Z0-9+/=_-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.ListEncoderConfigurationsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.ListEncoderConfigurationsRequest.NextToken</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>^[a-zA-Z0-9+/=_-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.ListEncoderConfigurationsResponse.NextToken</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>^[a-zA-Z0-9+/=_-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IVSRealTime.Model.ListParticipantEventsRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
@@ -79,6 +173,12 @@
     <min>0</min>
     <max>1024</max>
     <pattern>^[a-zA-Z0-9+/=_-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.ListParticipantEventsRequest.ParticipantId</property>
+    <min>0</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IVSRealTime.Model.ListParticipantEventsRequest.SessionId</property>
@@ -173,10 +273,45 @@
     <pattern>^[a-zA-Z0-9+/=_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.ListStorageConfigurationsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.ListStorageConfigurationsRequest.NextToken</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>^[a-zA-Z0-9+/=_-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.ListStorageConfigurationsResponse.NextToken</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>^[a-zA-Z0-9+/=_-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IVSRealTime.Model.ListTagsForResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>128</max>
     <pattern>^arn:aws:[is]vs:[a-z0-9-]+:[0-9]+:[a-z-]/[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.StartCompositionRequest.IdempotencyToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9-_]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.StartCompositionRequest.StageArn</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^arn:aws:ivs:[a-z0-9-]+:[0-9]+:stage/[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.StopCompositionRequest.Arn</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^arn:aws:ivs:[a-z0-9-]+:[0-9]+:composition/[a-zA-Z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IVSRealTime.Model.TagResourceRequest.ResourceArn</property>
@@ -198,6 +333,90 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IVSRealTime.Model.UpdateStageRequest.Name</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9-_]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.ChannelDestinationConfiguration.ChannelArn</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^arn:aws:[is]vs:[a-z0-9-]+:[0-9]+:channel/[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.ChannelDestinationConfiguration.EncoderConfigurationArn</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^arn:aws:ivs:[a-z0-9-]+:[0-9]+:encoder-configuration/[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.Composition.Arn</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^arn:aws:ivs:[a-z0-9-]+:[0-9]+:composition/[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.Composition.StageArn</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^arn:aws:ivs:[a-z0-9-]+:[0-9]+:stage/[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.CompositionSummary.Arn</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^arn:aws:ivs:[a-z0-9-]+:[0-9]+:composition/[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.CompositionSummary.StageArn</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^arn:aws:ivs:[a-z0-9-]+:[0-9]+:stage/[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.DestinationConfiguration.Name</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9-_]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.EncoderConfiguration.Arn</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^arn:aws:ivs:[a-z0-9-]+:[0-9]+:encoder-configuration/[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.EncoderConfiguration.Name</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9-_]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.EncoderConfigurationSummary.Arn</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^arn:aws:ivs:[a-z0-9-]+:[0-9]+:encoder-configuration/[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.EncoderConfigurationSummary.Name</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9-_]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.Event.ParticipantId</property>
+    <min>0</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.Event.RemoteParticipantId</property>
+    <min>0</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.GridConfiguration.FeaturedParticipantAttribute</property>
     <min>0</min>
     <max>128</max>
     <pattern>^[a-zA-Z0-9-_]*$</pattern>
@@ -233,6 +452,12 @@
     <pattern>^[a-zA-Z0-9-_.,:;\s]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.Participant.ParticipantId</property>
+    <min>0</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IVSRealTime.Model.Participant.SdkVersion</property>
     <min>0</min>
     <max>128</max>
@@ -242,6 +467,12 @@
     <property>Amazon.IVSRealTime.Model.Participant.UserId</property>
     <min>0</min>
     <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.ParticipantSummary.ParticipantId</property>
+    <min>0</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IVSRealTime.Model.ParticipantSummary.UserId</property>
@@ -267,6 +498,18 @@
     <property>Amazon.IVSRealTime.Model.ParticipantTokenConfiguration.UserId</property>
     <min>0</min>
     <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.S3DestinationConfiguration.StorageConfigurationArn</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^arn:aws:ivs:[a-z0-9-]+:[0-9]+:storage-configuration/[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.S3StorageConfiguration.BucketName</property>
+    <min>3</min>
+    <max>63</max>
+    <pattern>^[a-z0-9-.]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IVSRealTime.Model.Stage.ActiveSessionId</property>
@@ -315,5 +558,49 @@
     <min>0</min>
     <max>128</max>
     <pattern>^[a-zA-Z0-9-_]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.StorageConfiguration.Arn</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^arn:aws:ivs:[a-z0-9-]+:[0-9]+:storage-configuration/[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.StorageConfiguration.Name</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9-_]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.StorageConfigurationSummary.Arn</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^arn:aws:ivs:[a-z0-9-]+:[0-9]+:storage-configuration/[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.StorageConfigurationSummary.Name</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9-_]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.Video.Bitrate</property>
+    <min>1</min>
+    <max>8500000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.Video.Framerate</property>
+    <min>1</min>
+    <max>60</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.Video.Height</property>
+    <min>1</min>
+    <max>1920</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.Video.Width</property>
+    <min>1</min>
+    <max>1920</max>
   </property-value-rule>
 </property-value-rules>

@@ -25,6 +25,134 @@ namespace Amazon.IVSRealTime
 {
 
     /// <summary>
+    /// Constants used for properties of type CompositionState.
+    /// </summary>
+    public class CompositionState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for CompositionState
+        /// </summary>
+        public static readonly CompositionState ACTIVE = new CompositionState("ACTIVE");
+        /// <summary>
+        /// Constant FAILED for CompositionState
+        /// </summary>
+        public static readonly CompositionState FAILED = new CompositionState("FAILED");
+        /// <summary>
+        /// Constant STARTING for CompositionState
+        /// </summary>
+        public static readonly CompositionState STARTING = new CompositionState("STARTING");
+        /// <summary>
+        /// Constant STOPPED for CompositionState
+        /// </summary>
+        public static readonly CompositionState STOPPED = new CompositionState("STOPPED");
+        /// <summary>
+        /// Constant STOPPING for CompositionState
+        /// </summary>
+        public static readonly CompositionState STOPPING = new CompositionState("STOPPING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CompositionState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CompositionState FindValue(string value)
+        {
+            return FindValue<CompositionState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CompositionState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DestinationState.
+    /// </summary>
+    public class DestinationState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for DestinationState
+        /// </summary>
+        public static readonly DestinationState ACTIVE = new DestinationState("ACTIVE");
+        /// <summary>
+        /// Constant FAILED for DestinationState
+        /// </summary>
+        public static readonly DestinationState FAILED = new DestinationState("FAILED");
+        /// <summary>
+        /// Constant RECONNECTING for DestinationState
+        /// </summary>
+        public static readonly DestinationState RECONNECTING = new DestinationState("RECONNECTING");
+        /// <summary>
+        /// Constant STARTING for DestinationState
+        /// </summary>
+        public static readonly DestinationState STARTING = new DestinationState("STARTING");
+        /// <summary>
+        /// Constant STOPPED for DestinationState
+        /// </summary>
+        public static readonly DestinationState STOPPED = new DestinationState("STOPPED");
+        /// <summary>
+        /// Constant STOPPING for DestinationState
+        /// </summary>
+        public static readonly DestinationState STOPPING = new DestinationState("STOPPING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DestinationState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DestinationState FindValue(string value)
+        {
+            return FindValue<DestinationState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DestinationState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EventErrorCode.
     /// </summary>
     public class EventErrorCode : ConstantClass
@@ -250,6 +378,52 @@ namespace Amazon.IVSRealTime
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ParticipantTokenCapability(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RecordingConfigurationFormat.
+    /// </summary>
+    public class RecordingConfigurationFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HLS for RecordingConfigurationFormat
+        /// </summary>
+        public static readonly RecordingConfigurationFormat HLS = new RecordingConfigurationFormat("HLS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RecordingConfigurationFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RecordingConfigurationFormat FindValue(string value)
+        {
+            return FindValue<RecordingConfigurationFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RecordingConfigurationFormat(string value)
         {
             return FindValue(value);
         }

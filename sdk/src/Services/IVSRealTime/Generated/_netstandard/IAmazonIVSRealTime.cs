@@ -57,7 +57,18 @@ namespace Amazon.IVSRealTime
     /// A <i>participant object</i> represents participants (people) in the stage and contains
     /// information about them. When a token is created, it includes a participant ID; when
     /// a participant uses that token to join a stage, the participant is associated with
-    /// that participant ID There is a 1:1 mapping between participant tokens and participants.
+    /// that participant ID. There is a 1:1 mapping between participant tokens and participants.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Server-side composition: The <i>composition</i> process composites participants of
+    /// a stage into a single video and forwards it to a set of outputs (e.g., IVS channels).
+    /// Composition endpoints support this process.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Server-side composition: A <i>composition</i> controls the look of the outputs, including
+    /// how participants are positioned in the video.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -162,6 +173,76 @@ namespace Amazon.IVSRealTime
     /// </para>
     ///  </li> </ul> 
     /// <para>
+    ///  <b>Composition Endpoints</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>GetComposition</a> — Gets information about the specified Composition resource.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ListCompositions</a> — Gets summary information about all Compositions in your
+    /// account, in the AWS region where the API request is processed.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>StartComposition</a> — Starts a Composition from a stage based on the configuration
+    /// provided in the request.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>StopComposition</a> — Stops and deletes a Composition resource. Any broadcast
+    /// from the Composition resource is stopped.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    ///  <b>EncoderConfiguration Endpoints</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>CreateEncoderConfiguration</a> — Creates an EncoderConfiguration object.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DeleteEncoderConfiguration</a> — Deletes an EncoderConfiguration resource. Ensures
+    /// that no Compositions are using this template; otherwise, returns an error.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>GetEncoderConfiguration</a> — Gets information about the specified EncoderConfiguration
+    /// resource.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ListEncoderConfigurations</a> — Gets summary information about all EncoderConfigurations
+    /// in your account, in the AWS region where the API request is processed.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    ///  <b>StorageConfiguration Endpoints</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>CreateStorageConfiguration</a> — Creates a new storage configuration, used to
+    /// enable recording to Amazon S3.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DeleteStorageConfiguration</a> — Deletes the storage configuration for the specified
+    /// ARN.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>GetStorageConfiguration</a> — Gets the storage configuration for the specified
+    /// ARN.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ListStorageConfigurations</a> — Gets summary information about all storage configurations
+    /// in your account, in the AWS region where the API request is processed.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
     ///  <b>Tags Endpoints</b> 
     /// </para>
     ///  <ul> <li> 
@@ -187,6 +268,45 @@ namespace Amazon.IVSRealTime
         /// </summary>
         IIVSRealTimePaginatorFactory Paginators { get; }
 #endif
+                
+        #region  CreateEncoderConfiguration
+
+
+
+        /// <summary>
+        /// Creates an EncoderConfiguration object.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateEncoderConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateEncoderConfiguration service method, as returned by IVSRealTime.</returns>
+        /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.PendingVerificationException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ServiceQuotaExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/CreateEncoderConfiguration">REST API Reference for CreateEncoderConfiguration Operation</seealso>
+        Task<CreateEncoderConfigurationResponse> CreateEncoderConfigurationAsync(CreateEncoderConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
                 
         #region  CreateParticipantToken
 
@@ -257,6 +377,85 @@ namespace Amazon.IVSRealTime
 
         #endregion
                 
+        #region  CreateStorageConfiguration
+
+
+
+        /// <summary>
+        /// Creates a new storage configuration, used to enable recording to Amazon S3. When a
+        /// StorageConfiguration is created, IVS will modify the S3 bucketPolicy of the provided
+        /// bucket. This will ensure that IVS has sufficient permissions to write content to the
+        /// provided bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateStorageConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateStorageConfiguration service method, as returned by IVSRealTime.</returns>
+        /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.PendingVerificationException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ServiceQuotaExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/CreateStorageConfiguration">REST API Reference for CreateStorageConfiguration Operation</seealso>
+        Task<CreateStorageConfigurationResponse> CreateStorageConfigurationAsync(CreateStorageConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteEncoderConfiguration
+
+
+
+        /// <summary>
+        /// Deletes an EncoderConfiguration resource. Ensures that no Compositions are using this
+        /// template; otherwise, returns an error.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEncoderConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteEncoderConfiguration service method, as returned by IVSRealTime.</returns>
+        /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ServiceQuotaExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/DeleteEncoderConfiguration">REST API Reference for DeleteEncoderConfiguration Operation</seealso>
+        Task<DeleteEncoderConfigurationResponse> DeleteEncoderConfigurationAsync(DeleteEncoderConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeleteStage
 
 
@@ -290,6 +489,50 @@ namespace Amazon.IVSRealTime
 
         #endregion
                 
+        #region  DeleteStorageConfiguration
+
+
+
+        /// <summary>
+        /// Deletes the storage configuration for the specified ARN.
+        /// 
+        ///  
+        /// <para>
+        /// If you try to delete a storage configuration that is used by a Composition, you will
+        /// get an error (409 ConflictException). To avoid this, for all Compositions that reference
+        /// the storage configuration, first use <a>StopComposition</a> and wait for it to complete,
+        /// then use DeleteStorageConfiguration.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteStorageConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteStorageConfiguration service method, as returned by IVSRealTime.</returns>
+        /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ServiceQuotaExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/DeleteStorageConfiguration">REST API Reference for DeleteStorageConfiguration Operation</seealso>
+        Task<DeleteStorageConfigurationResponse> DeleteStorageConfigurationAsync(DeleteStorageConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DisconnectParticipant
 
 
@@ -318,6 +561,78 @@ namespace Amazon.IVSRealTime
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/DisconnectParticipant">REST API Reference for DisconnectParticipant Operation</seealso>
         Task<DisconnectParticipantResponse> DisconnectParticipantAsync(DisconnectParticipantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetComposition
+
+
+
+        /// <summary>
+        /// Get information about the specified Composition resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetComposition service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetComposition service method, as returned by IVSRealTime.</returns>
+        /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ServiceQuotaExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/GetComposition">REST API Reference for GetComposition Operation</seealso>
+        Task<GetCompositionResponse> GetCompositionAsync(GetCompositionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetEncoderConfiguration
+
+
+
+        /// <summary>
+        /// Gets information about the specified EncoderConfiguration resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEncoderConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetEncoderConfiguration service method, as returned by IVSRealTime.</returns>
+        /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ServiceQuotaExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/GetEncoderConfiguration">REST API Reference for GetEncoderConfiguration Operation</seealso>
+        Task<GetEncoderConfigurationResponse> GetEncoderConfigurationAsync(GetEncoderConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -399,6 +714,110 @@ namespace Amazon.IVSRealTime
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/GetStageSession">REST API Reference for GetStageSession Operation</seealso>
         Task<GetStageSessionResponse> GetStageSessionAsync(GetStageSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetStorageConfiguration
+
+
+
+        /// <summary>
+        /// Gets the storage configuration for the specified ARN.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetStorageConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetStorageConfiguration service method, as returned by IVSRealTime.</returns>
+        /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ServiceQuotaExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/GetStorageConfiguration">REST API Reference for GetStorageConfiguration Operation</seealso>
+        Task<GetStorageConfigurationResponse> GetStorageConfigurationAsync(GetStorageConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListCompositions
+
+
+
+        /// <summary>
+        /// Gets summary information about all Compositions in your account, in the AWS region
+        /// where the API request is processed.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCompositions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCompositions service method, as returned by IVSRealTime.</returns>
+        /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ServiceQuotaExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListCompositions">REST API Reference for ListCompositions Operation</seealso>
+        Task<ListCompositionsResponse> ListCompositionsAsync(ListCompositionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListEncoderConfigurations
+
+
+
+        /// <summary>
+        /// Gets summary information about all EncoderConfigurations in your account, in the AWS
+        /// region where the API request is processed.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEncoderConfigurations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListEncoderConfigurations service method, as returned by IVSRealTime.</returns>
+        /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ServiceQuotaExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListEncoderConfigurations">REST API Reference for ListEncoderConfigurations Operation</seealso>
+        Task<ListEncoderConfigurationsResponse> ListEncoderConfigurationsAsync(ListEncoderConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -502,6 +921,40 @@ namespace Amazon.IVSRealTime
 
         #endregion
                 
+        #region  ListStorageConfigurations
+
+
+
+        /// <summary>
+        /// Gets summary information about all storage configurations in your account, in the
+        /// AWS region where the API request is processed.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListStorageConfigurations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListStorageConfigurations service method, as returned by IVSRealTime.</returns>
+        /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ServiceQuotaExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListStorageConfigurations">REST API Reference for ListStorageConfigurations Operation</seealso>
+        Task<ListStorageConfigurationsResponse> ListStorageConfigurationsAsync(ListStorageConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListTagsForResource
 
 
@@ -526,6 +979,110 @@ namespace Amazon.IVSRealTime
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  StartComposition
+
+
+
+        /// <summary>
+        /// Starts a Composition from a stage based on the configuration provided in the request.
+        /// 
+        ///  
+        /// <para>
+        /// A Composition is an ephemeral resource that exists after this endpoint returns successfully.
+        /// Composition stops and the resource is deleted:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// When <a>StopComposition</a> is called.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// After a 1-minute timeout, when all participants are disconnected from the stage.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// After a 1-minute timeout, if there are no participants in the stage when StartComposition
+        /// is called.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When broadcasting to the IVS channel fails and all retries are exhausted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When broadcasting is disconnected and all attempts to reconnect are exhausted.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartComposition service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartComposition service method, as returned by IVSRealTime.</returns>
+        /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.PendingVerificationException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ServiceQuotaExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/StartComposition">REST API Reference for StartComposition Operation</seealso>
+        Task<StartCompositionResponse> StartCompositionAsync(StartCompositionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  StopComposition
+
+
+
+        /// <summary>
+        /// Stops and deletes a Composition resource. Any broadcast from the Composition resource
+        /// is stopped.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopComposition service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopComposition service method, as returned by IVSRealTime.</returns>
+        /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ServiceQuotaExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/StopComposition">REST API Reference for StopComposition Operation</seealso>
+        Task<StopCompositionResponse> StopCompositionAsync(StopCompositionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
