@@ -1,9 +1,0 @@
-{
-  "core": {
-    "changeLogMessages": [
-      "Add public setters to ChecksumData properties"
-    ],
-    "type": "patch",
-    "updateMinimum": false
-  }
-}

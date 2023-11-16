@@ -1,9 +1,0 @@
-{
-    "services": [
-      {
-        "serviceName": "DynamoDBv2",
-        "type": "patch",
-        "changeLogMessages": [ "Fix regression in 3.7.300 where the DataModel stop mapping to non public properties." ]
-      }
-    ]
-  }
