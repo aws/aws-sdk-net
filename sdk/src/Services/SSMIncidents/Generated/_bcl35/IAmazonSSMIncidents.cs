@@ -56,6 +56,64 @@ namespace Amazon.SSMIncidents
 
 
         
+        #region  BatchGetIncidentFindings
+
+
+        /// <summary>
+        /// Retrieves details about all specified findings for an incident, including descriptive
+        /// details about each finding. A finding represents a recent application environment
+        /// change made by an CodeDeploy deployment or an CloudFormation stack creation or update
+        /// that can be investigated as a potential cause of the incident.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetIncidentFindings service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetIncidentFindings service method, as returned by SSMIncidents.</returns>
+        /// <exception cref="Amazon.SSMIncidents.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.SSMIncidents.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.SSMIncidents.Model.ResourceNotFoundException">
+        /// Request references a resource which doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SSMIncidents.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SSMIncidents.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/BatchGetIncidentFindings">REST API Reference for BatchGetIncidentFindings Operation</seealso>
+        BatchGetIncidentFindingsResponse BatchGetIncidentFindings(BatchGetIncidentFindingsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchGetIncidentFindings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetIncidentFindings operation on AmazonSSMIncidentsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchGetIncidentFindings
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/BatchGetIncidentFindings">REST API Reference for BatchGetIncidentFindings Operation</seealso>
+        IAsyncResult BeginBatchGetIncidentFindings(BatchGetIncidentFindingsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchGetIncidentFindings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchGetIncidentFindings.</param>
+        /// 
+        /// <returns>Returns a  BatchGetIncidentFindingsResult from SSMIncidents.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/BatchGetIncidentFindings">REST API Reference for BatchGetIncidentFindings Operation</seealso>
+        BatchGetIncidentFindingsResponse EndBatchGetIncidentFindings(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateReplicationSet
 
 
@@ -780,6 +838,64 @@ namespace Amazon.SSMIncidents
 
         #endregion
         
+        #region  ListIncidentFindings
+
+
+        /// <summary>
+        /// Retrieves a list of the IDs of findings, plus their last modified times, that have
+        /// been identified for a specified incident. A finding represents a recent application
+        /// environment change made by an CloudFormation stack creation or update or an CodeDeploy
+        /// deployment that can be investigated as a potential cause of the incident.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListIncidentFindings service method.</param>
+        /// 
+        /// <returns>The response from the ListIncidentFindings service method, as returned by SSMIncidents.</returns>
+        /// <exception cref="Amazon.SSMIncidents.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.SSMIncidents.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.SSMIncidents.Model.ResourceNotFoundException">
+        /// Request references a resource which doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SSMIncidents.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SSMIncidents.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/ListIncidentFindings">REST API Reference for ListIncidentFindings Operation</seealso>
+        ListIncidentFindingsResponse ListIncidentFindings(ListIncidentFindingsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListIncidentFindings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListIncidentFindings operation on AmazonSSMIncidentsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListIncidentFindings
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/ListIncidentFindings">REST API Reference for ListIncidentFindings Operation</seealso>
+        IAsyncResult BeginListIncidentFindings(ListIncidentFindingsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListIncidentFindings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListIncidentFindings.</param>
+        /// 
+        /// <returns>Returns a  ListIncidentFindingsResult from SSMIncidents.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/ListIncidentFindings">REST API Reference for ListIncidentFindings Operation</seealso>
+        ListIncidentFindingsResponse EndListIncidentFindings(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListIncidentRecords
 
 
@@ -993,7 +1109,7 @@ namespace Amazon.SSMIncidents
 
 
         /// <summary>
-        /// Lists the tags that are attached to the specified response plan.
+        /// Lists the tags that are attached to the specified response plan or incident.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 

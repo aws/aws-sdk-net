@@ -31,6 +31,11 @@ namespace Amazon.SSMIncidents.Model
         IGetResourcePoliciesPaginator GetResourcePolicies(GetResourcePoliciesRequest request);
 
         /// <summary>
+        /// Paginator for ListIncidentFindings operation
+        ///</summary>
+        IListIncidentFindingsPaginator ListIncidentFindings(ListIncidentFindingsRequest request);
+
+        /// <summary>
         /// Paginator for ListIncidentRecords operation
         ///</summary>
         IListIncidentRecordsPaginator ListIncidentRecords(ListIncidentRecordsRequest request);

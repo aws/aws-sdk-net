@@ -80,7 +80,8 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The pagination token to continue to the next page of results.
+        /// The pagination token for the next set of items to return. (You received this token
+        /// from a previous call.)
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2000)]

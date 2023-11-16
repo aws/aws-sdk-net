@@ -29,78 +29,45 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SSMIncidents.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListIncidentRecords operation.
-    /// Lists all incident records in your account. Use this command to retrieve the Amazon
-    /// Resource Name (ARN) of the incident record you want to update.
+    /// Container for the parameters to the ListIncidentFindings operation.
+    /// Retrieves a list of the IDs of findings, plus their last modified times, that have
+    /// been identified for a specified incident. A finding represents a recent application
+    /// environment change made by an CloudFormation stack creation or update or an CodeDeploy
+    /// deployment that can be investigated as a potential cause of the incident.
     /// </summary>
-    public partial class ListIncidentRecordsRequest : AmazonSSMIncidentsRequest
+    public partial class ListIncidentFindingsRequest : AmazonSSMIncidentsRequest
     {
-        private List<Filter> _filters = new List<Filter>();
+        private string _incidentRecordArn;
         private int? _maxResults;
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property Filters. 
+        /// Gets and sets the property IncidentRecordArn. 
         /// <para>
-        /// Filters the list of incident records you want to search through. You can filter on
-        /// the following keys:
+        /// The Amazon Resource Name (ARN) of the incident for which you want to view associated
+        /// findings.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>creationTime</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>impact</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>status</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>createdBy</code> 
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// Note the following when when you use Filters:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// If you don't specify a Filter, the response includes all incident records.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// If you specify more than one filter in a single request, the response returns incident
-        /// records that match all filters.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// If you specify a filter with more than one value, the response returns incident records
-        /// that match any of the values provided.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Min=0, Max=5)]
-        public List<Filter> Filters
+        [AWSProperty(Required=true, Min=0, Max=1000)]
+        public string IncidentRecordArn
         {
-            get { return this._filters; }
-            set { this._filters = value; }
+            get { return this._incidentRecordArn; }
+            set { this._incidentRecordArn = value; }
         }
 
-        // Check to see if Filters property is set
-        internal bool IsSetFilters()
+        // Check to see if IncidentRecordArn property is set
+        internal bool IsSetIncidentRecordArn()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._incidentRecordArn != null;
         }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of results per page.
+        /// The maximum number of findings to retrieve per call.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
+        [AWSProperty(Min=1, Max=20)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

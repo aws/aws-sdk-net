@@ -109,7 +109,7 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property EventTime. 
         /// <para>
-        /// The time that the event occurred.
+        /// The timestamp for when the event occurred.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -128,7 +128,14 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property EventType. 
         /// <para>
-        /// The type of event. You can create timeline events of type <code>Custom Event</code>.
+        /// The type of event. You can create timeline events of type <code>Custom Event</code>
+        /// and <code>Note</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To make a Note-type event appear on the <i>Incident notes</i> panel in the console,
+        /// specify <code>eventType</code> as <code>Note</code>and enter the Amazon Resource Name
+        /// (ARN) of the incident as the value for <code>eventReference</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=100)]

@@ -107,7 +107,7 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// The time that Incident Manager created the incident record.
+        /// The timestamp for when Incident Manager created the incident record.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -148,6 +148,31 @@ namespace Amazon.SSMIncidents.Model
         /// <para>
         /// The impact of the incident on customers and applications.
         /// </para>
+        ///  
+        /// <para>
+        ///  <b>Supported impact codes</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>1</code> - Critical
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>2</code> - High
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>3</code> - Medium
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>4</code> - Low
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>5</code> - No Impact
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=5)]
         public int Impact
@@ -203,7 +228,7 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property LastModifiedTime. 
         /// <para>
-        /// The time at which the incident was most recently modified.
+        /// The timestamp for when the incident was most recently modified.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -241,7 +266,7 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property ResolvedTime. 
         /// <para>
-        /// The time at which the incident was resolved. This appears as a timeline event.
+        /// The timestamp for when the incident was resolved. This appears as a timeline event.
         /// </para>
         /// </summary>
         public DateTime ResolvedTime

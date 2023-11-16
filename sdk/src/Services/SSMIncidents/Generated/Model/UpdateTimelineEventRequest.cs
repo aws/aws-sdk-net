@@ -135,7 +135,7 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property EventTime. 
         /// <para>
-        /// The time that the event occurred.
+        /// The timestamp for when the event occurred.
         /// </para>
         /// </summary>
         public DateTime EventTime
@@ -153,7 +153,7 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property EventType. 
         /// <para>
-        /// The type of event. You can update events of type <code>Custom Event</code>.
+        /// The type of event. You can update events of type <code>Custom Event</code> and <code>Note</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]

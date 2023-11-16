@@ -97,8 +97,8 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property StatusUpdateDateTime. 
         /// <para>
-        /// The most recent date and time that Incident Manager updated the Amazon Web Services
-        /// Region's status.
+        /// The timestamp for when Incident Manager updated the status of the Amazon Web Services
+        /// Region.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

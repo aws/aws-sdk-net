@@ -44,6 +44,14 @@ namespace Amazon.SSMIncidents.Model
         }
 
         /// <summary>
+        /// Paginator for ListIncidentFindings operation
+        ///</summary>
+        public IListIncidentFindingsPaginator ListIncidentFindings(ListIncidentFindingsRequest request) 
+        {
+            return new ListIncidentFindingsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListIncidentRecords operation
         ///</summary>
         public IListIncidentRecordsPaginator ListIncidentRecords(ListIncidentRecordsRequest request) 

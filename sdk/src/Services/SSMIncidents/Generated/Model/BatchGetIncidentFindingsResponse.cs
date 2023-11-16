@@ -29,51 +29,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SSMIncidents.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListResponsePlans operation.
-    /// Lists all response plans in your account.
+    /// This is the response object from the BatchGetIncidentFindings operation.
     /// </summary>
-    public partial class ListResponsePlansRequest : AmazonSSMIncidentsRequest
+    public partial class BatchGetIncidentFindingsResponse : AmazonWebServiceResponse
     {
-        private int? _maxResults;
-        private string _nextToken;
+        private List<BatchGetIncidentFindingsError> _errors = new List<BatchGetIncidentFindingsError>();
+        private List<Finding> _findings = new List<Finding>();
 
         /// <summary>
-        /// Gets and sets the property MaxResults. 
+        /// Gets and sets the property Errors. 
         /// <para>
-        /// The maximum number of response plans per page.
+        /// A list of errors encountered during the operation.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
-        public int MaxResults
+        [AWSProperty(Required=true)]
+        public List<BatchGetIncidentFindingsError> Errors
         {
-            get { return this._maxResults.GetValueOrDefault(); }
-            set { this._maxResults = value; }
+            get { return this._errors; }
+            set { this._errors = value; }
         }
 
-        // Check to see if MaxResults property is set
-        internal bool IsSetMaxResults()
+        // Check to see if Errors property is set
+        internal bool IsSetErrors()
         {
-            return this._maxResults.HasValue; 
+            return this._errors != null && this._errors.Count > 0; 
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken. 
+        /// Gets and sets the property Findings. 
         /// <para>
-        /// The pagination token for the next set of items to return. (You received this token
-        /// from a previous call.)
+        /// Information about the requested findings.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=2000)]
-        public string NextToken
+        [AWSProperty(Required=true)]
+        public List<Finding> Findings
         {
-            get { return this._nextToken; }
-            set { this._nextToken = value; }
+            get { return this._findings; }
+            set { this._findings = value; }
         }
 
-        // Check to see if NextToken property is set
-        internal bool IsSetNextToken()
+        // Check to see if Findings property is set
+        internal bool IsSetFindings()
         {
-            return this._nextToken != null;
+            return this._findings != null && this._findings.Count > 0; 
         }
 
     }

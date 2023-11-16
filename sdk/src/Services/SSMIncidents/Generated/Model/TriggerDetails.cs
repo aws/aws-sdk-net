@@ -83,7 +83,7 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property Timestamp. 
         /// <para>
-        /// The time that the incident was detected.
+        /// The timestamp for when the incident was detected.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

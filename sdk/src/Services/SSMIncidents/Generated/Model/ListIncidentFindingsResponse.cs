@@ -29,12 +29,32 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SSMIncidents.Model
 {
     /// <summary>
-    /// This is the response object from the ListRelatedItems operation.
+    /// This is the response object from the ListIncidentFindings operation.
     /// </summary>
-    public partial class ListRelatedItemsResponse : AmazonWebServiceResponse
+    public partial class ListIncidentFindingsResponse : AmazonWebServiceResponse
     {
+        private List<FindingSummary> _findings = new List<FindingSummary>();
         private string _nextToken;
-        private List<RelatedItem> _relatedItems = new List<RelatedItem>();
+
+        /// <summary>
+        /// Gets and sets the property Findings. 
+        /// <para>
+        /// A list of findings that represent deployments that might be the potential cause of
+        /// the incident.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=100)]
+        public List<FindingSummary> Findings
+        {
+            get { return this._findings; }
+            set { this._findings = value; }
+        }
+
+        // Check to see if Findings property is set
+        internal bool IsSetFindings()
+        {
+            return this._findings != null && this._findings.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -54,25 +74,6 @@ namespace Amazon.SSMIncidents.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property RelatedItems. 
-        /// <para>
-        /// Details about each related item.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=100)]
-        public List<RelatedItem> RelatedItems
-        {
-            get { return this._relatedItems; }
-            set { this._relatedItems = value; }
-        }
-
-        // Check to see if RelatedItems property is set
-        internal bool IsSetRelatedItems()
-        {
-            return this._relatedItems != null && this._relatedItems.Count > 0; 
         }
 
     }

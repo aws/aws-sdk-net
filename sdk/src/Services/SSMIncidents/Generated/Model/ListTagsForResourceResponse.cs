@@ -38,7 +38,7 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A list of tags for the response plan.
+        /// A list of tags for the response plan or incident.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=50)]

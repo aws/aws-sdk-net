@@ -81,7 +81,7 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property EventTime. 
         /// <para>
-        /// The time that the event occurred.
+        /// The timestamp for when the event occurred.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -100,7 +100,7 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property EventType. 
         /// <para>
-        /// The type of event. The timeline event must be <code>Custom Event</code>.
+        /// The type of event. The timeline event must be <code>Custom Event</code> or <code>Note</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=100)]
@@ -119,7 +119,7 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property EventUpdatedTime. 
         /// <para>
-        /// The time that the timeline event was last updated.
+        /// The timestamp for when the timeline event was last updated.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

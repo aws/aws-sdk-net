@@ -29,30 +29,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SSMIncidents.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListTagsForResource operation.
-    /// Lists the tags that are attached to the specified response plan or incident.
+    /// Identifying information about the finding.
     /// </summary>
-    public partial class ListTagsForResourceRequest : AmazonSSMIncidentsRequest
+    public partial class FindingSummary
     {
-        private string _resourceArn;
+        private string _id;
+        private DateTime? _lastModifiedTime;
 
         /// <summary>
-        /// Gets and sets the property ResourceArn. 
+        /// Gets and sets the property Id. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the response plan or incident.
+        /// The ID of the finding.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=128)]
+        public string Id
+        {
+            get { return this._id; }
+            set { this._id = value; }
+        }
+
+        // Check to see if Id property is set
+        internal bool IsSetId()
+        {
+            return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastModifiedTime. 
+        /// <para>
+        /// The timestamp for when the finding was last updated.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public string ResourceArn
+        public DateTime LastModifiedTime
         {
-            get { return this._resourceArn; }
-            set { this._resourceArn = value; }
+            get { return this._lastModifiedTime.GetValueOrDefault(); }
+            set { this._lastModifiedTime = value; }
         }
 
-        // Check to see if ResourceArn property is set
-        internal bool IsSetResourceArn()
+        // Check to see if LastModifiedTime property is set
+        internal bool IsSetLastModifiedTime()
         {
-            return this._resourceArn != null;
+            return this._lastModifiedTime.HasValue; 
         }
 
     }
