@@ -228,7 +228,7 @@
     <property>Amazon.SageMaker.Model.CreateDataQualityJobDefinitionRequest.JobDefinitionName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*$</pattern>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.CreateDataQualityJobDefinitionRequest.RoleArn</property>
@@ -245,7 +245,7 @@
     <property>Amazon.SageMaker.Model.CreateDeviceFleetRequest.Description</property>
     <min>1</min>
     <max>800</max>
-    <pattern>[\S\s]+</pattern>
+    <pattern>^[-a-zA-Z0-9_.,;:! ]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.CreateDeviceFleetRequest.DeviceFleetName</property>
@@ -664,7 +664,7 @@
     <property>Amazon.SageMaker.Model.CreateModelBiasJobDefinitionRequest.JobDefinitionName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*$</pattern>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.CreateModelBiasJobDefinitionRequest.RoleArn</property>
@@ -715,7 +715,7 @@
     <property>Amazon.SageMaker.Model.CreateModelExplainabilityJobDefinitionRequest.JobDefinitionName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*$</pattern>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.CreateModelExplainabilityJobDefinitionRequest.RoleArn</property>
@@ -783,7 +783,7 @@
     <property>Amazon.SageMaker.Model.CreateModelQualityJobDefinitionRequest.JobDefinitionName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*$</pattern>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.CreateModelQualityJobDefinitionRequest.RoleArn</property>
@@ -1235,7 +1235,7 @@
     <property>Amazon.SageMaker.Model.DeleteDataQualityJobDefinitionRequest.JobDefinitionName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*$</pattern>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DeleteDeviceFleetRequest.DeviceFleetName</property>
@@ -1367,7 +1367,7 @@
     <property>Amazon.SageMaker.Model.DeleteModelBiasJobDefinitionRequest.JobDefinitionName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*$</pattern>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DeleteModelCardRequest.ModelCardName</property>
@@ -1379,7 +1379,7 @@
     <property>Amazon.SageMaker.Model.DeleteModelExplainabilityJobDefinitionRequest.JobDefinitionName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*$</pattern>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DeleteModelPackageRequest.ModelPackageName</property>
@@ -1403,7 +1403,7 @@
     <property>Amazon.SageMaker.Model.DeleteModelQualityJobDefinitionRequest.JobDefinitionName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*$</pattern>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DeleteMonitoringScheduleRequest.MonitoringScheduleName</property>
@@ -1803,7 +1803,7 @@
     <property>Amazon.SageMaker.Model.DescribeDataQualityJobDefinitionRequest.JobDefinitionName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*$</pattern>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeDataQualityJobDefinitionResponse.JobDefinitionArn</property>
@@ -1814,7 +1814,7 @@
     <property>Amazon.SageMaker.Model.DescribeDataQualityJobDefinitionResponse.JobDefinitionName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*$</pattern>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeDataQualityJobDefinitionResponse.RoleArn</property>
@@ -1848,7 +1848,7 @@
     <property>Amazon.SageMaker.Model.DescribeDeviceResponse.Description</property>
     <min>1</min>
     <max>40</max>
-    <pattern>[\S\s]+</pattern>
+    <pattern>^[-a-zA-Z0-9_.,;:! ]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeDeviceResponse.DeviceArn</property>
@@ -1888,7 +1888,7 @@
     <property>Amazon.SageMaker.Model.DescribeDeviceFleetResponse.Description</property>
     <min>1</min>
     <max>800</max>
-    <pattern>[\S\s]+</pattern>
+    <pattern>^[-a-zA-Z0-9_.,;:! ]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeDeviceFleetResponse.DeviceFleetArn</property>
@@ -1950,6 +1950,10 @@
     <property>Amazon.SageMaker.Model.DescribeDomainResponse.SecurityGroupIdForDomainBoundary</property>
     <max>32</max>
     <pattern>[-0-9a-zA-Z]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeDomainResponse.SingleSignOnApplicationArn</property>
+    <pattern>^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso::[0-9]+:application\/[a-zA-Z0-9-_.]+\/apl-[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeDomainResponse.SingleSignOnManagedApplicationInstanceId</property>
@@ -2649,7 +2653,7 @@
     <property>Amazon.SageMaker.Model.DescribeModelBiasJobDefinitionRequest.JobDefinitionName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*$</pattern>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeModelBiasJobDefinitionResponse.JobDefinitionArn</property>
@@ -2660,7 +2664,7 @@
     <property>Amazon.SageMaker.Model.DescribeModelBiasJobDefinitionResponse.JobDefinitionName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*$</pattern>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeModelBiasJobDefinitionResponse.RoleArn</property>
@@ -2721,7 +2725,7 @@
     <property>Amazon.SageMaker.Model.DescribeModelExplainabilityJobDefinitionRequest.JobDefinitionName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*$</pattern>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeModelExplainabilityJobDefinitionResponse.JobDefinitionArn</property>
@@ -2732,7 +2736,7 @@
     <property>Amazon.SageMaker.Model.DescribeModelExplainabilityJobDefinitionResponse.JobDefinitionName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*$</pattern>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeModelExplainabilityJobDefinitionResponse.RoleArn</property>
@@ -2805,7 +2809,7 @@
     <property>Amazon.SageMaker.Model.DescribeModelQualityJobDefinitionRequest.JobDefinitionName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*$</pattern>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeModelQualityJobDefinitionResponse.JobDefinitionArn</property>
@@ -2816,7 +2820,7 @@
     <property>Amazon.SageMaker.Model.DescribeModelQualityJobDefinitionResponse.JobDefinitionName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*$</pattern>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeModelQualityJobDefinitionResponse.RoleArn</property>
@@ -3375,7 +3379,7 @@
     <property>Amazon.SageMaker.Model.GetDeviceFleetReportResponse.Description</property>
     <min>1</min>
     <max>800</max>
-    <pattern>[\S\s]+</pattern>
+    <pattern>^[-a-zA-Z0-9_.,;:! ]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.GetDeviceFleetReportResponse.DeviceFleetArn</property>
@@ -4597,7 +4601,7 @@
     <property>Amazon.SageMaker.Model.ListMonitoringExecutionsRequest.MonitoringJobDefinitionName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*$</pattern>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ListMonitoringExecutionsRequest.MonitoringScheduleName</property>
@@ -4629,7 +4633,7 @@
     <property>Amazon.SageMaker.Model.ListMonitoringSchedulesRequest.MonitoringJobDefinitionName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*$</pattern>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ListMonitoringSchedulesRequest.NameContains</property>
@@ -5502,7 +5506,7 @@
     <property>Amazon.SageMaker.Model.UpdateDeviceFleetRequest.Description</property>
     <min>1</min>
     <max>800</max>
-    <pattern>[\S\s]+</pattern>
+    <pattern>^[-a-zA-Z0-9_.,;:! ]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.UpdateDeviceFleetRequest.DeviceFleetName</property>
@@ -6955,7 +6959,7 @@
     <property>Amazon.SageMaker.Model.Device.Description</property>
     <min>1</min>
     <max>40</max>
-    <pattern>[\S\s]+</pattern>
+    <pattern>^[-a-zA-Z0-9_.,;:! ]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.Device.DeviceName</property>
@@ -6978,7 +6982,7 @@
     <property>Amazon.SageMaker.Model.DeviceDeploymentSummary.Description</property>
     <min>1</min>
     <max>40</max>
-    <pattern>[\S\s]+</pattern>
+    <pattern>^[-a-zA-Z0-9_.,;:! ]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DeviceDeploymentSummary.DeviceArn</property>
@@ -7045,7 +7049,7 @@
     <property>Amazon.SageMaker.Model.DeviceSummary.Description</property>
     <min>1</min>
     <max>40</max>
-    <pattern>[\S\s]+</pattern>
+    <pattern>^[-a-zA-Z0-9_.,;:! ]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DeviceSummary.DeviceArn</property>
@@ -8804,7 +8808,7 @@
     <property>Amazon.SageMaker.Model.MonitoringExecutionSummary.MonitoringJobDefinitionName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*$</pattern>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.MonitoringExecutionSummary.MonitoringScheduleName</property>
@@ -8842,7 +8846,7 @@
     <property>Amazon.SageMaker.Model.MonitoringJobDefinitionSummary.MonitoringJobDefinitionName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*$</pattern>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.MonitoringOutputConfig.KmsKeyId</property>
@@ -8883,7 +8887,7 @@
     <property>Amazon.SageMaker.Model.MonitoringScheduleConfig.MonitoringJobDefinitionName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*$</pattern>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.MonitoringScheduleSummary.EndpointName</property>
@@ -8894,7 +8898,7 @@
     <property>Amazon.SageMaker.Model.MonitoringScheduleSummary.MonitoringJobDefinitionName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*$</pattern>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.MonitoringScheduleSummary.MonitoringScheduleArn</property>
@@ -9103,7 +9107,7 @@
     <property>Amazon.SageMaker.Model.Parameter.Name</property>
     <min>1</min>
     <max>256</max>
-    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,255}$</pattern>
+    <pattern>^[A-Za-z0-9\-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.Parameter.Value</property>
@@ -10027,6 +10031,11 @@
     <property>Amazon.SageMaker.Model.Stairs.UsersPerStep</property>
     <min>1</min>
     <max>3</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.StoppingCondition.MaxPendingTimeInSeconds</property>
+    <min>7200</min>
+    <max>2419200</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.StoppingCondition.MaxRuntimeInSeconds</property>

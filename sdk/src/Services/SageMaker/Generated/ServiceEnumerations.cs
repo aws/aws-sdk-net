@@ -607,6 +607,18 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly AppInstanceType MlT3Xlarge = new AppInstanceType("ml.t3.xlarge");
         /// <summary>
+        /// Constant MlTrn12xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlTrn12xlarge = new AppInstanceType("ml.trn1.2xlarge");
+        /// <summary>
+        /// Constant MlTrn132xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlTrn132xlarge = new AppInstanceType("ml.trn1.32xlarge");
+        /// <summary>
+        /// Constant MlTrn1n32xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlTrn1n32xlarge = new AppInstanceType("ml.trn1n.32xlarge");
+        /// <summary>
         /// Constant System for AppInstanceType
         /// </summary>
         public static readonly AppInstanceType System = new AppInstanceType("system");

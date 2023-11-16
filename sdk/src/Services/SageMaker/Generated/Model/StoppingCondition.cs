@@ -59,8 +59,28 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class StoppingCondition
     {
+        private int? _maxPendingTimeInSeconds;
         private int? _maxRuntimeInSeconds;
         private int? _maxWaitTimeInSeconds;
+
+        /// <summary>
+        /// Gets and sets the property MaxPendingTimeInSeconds. 
+        /// <para>
+        /// The maximum pending time in seconds.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=7200, Max=2419200)]
+        public int MaxPendingTimeInSeconds
+        {
+            get { return this._maxPendingTimeInSeconds.GetValueOrDefault(); }
+            set { this._maxPendingTimeInSeconds = value; }
+        }
+
+        // Check to see if MaxPendingTimeInSeconds property is set
+        internal bool IsSetMaxPendingTimeInSeconds()
+        {
+            return this._maxPendingTimeInSeconds.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property MaxRuntimeInSeconds. 

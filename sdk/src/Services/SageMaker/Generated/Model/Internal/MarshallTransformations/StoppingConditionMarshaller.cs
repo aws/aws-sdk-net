@@ -45,6 +45,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(StoppingCondition requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetMaxPendingTimeInSeconds())
+            {
+                context.Writer.WritePropertyName("MaxPendingTimeInSeconds");
+                context.Writer.Write(requestObject.MaxPendingTimeInSeconds);
+            }
+
             if(requestObject.IsSetMaxRuntimeInSeconds())
             {
                 context.Writer.WritePropertyName("MaxRuntimeInSeconds");

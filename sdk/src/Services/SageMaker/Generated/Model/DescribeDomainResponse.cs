@@ -49,6 +49,7 @@ namespace Amazon.SageMaker.Model
         private string _kmsKeyId;
         private DateTime? _lastModifiedTime;
         private string _securityGroupIdForDomainBoundary;
+        private string _singleSignOnApplicationArn;
         private string _singleSignOnManagedApplicationInstanceId;
         private DomainStatus _status;
         private List<string> _subnetIds = new List<string>();
@@ -366,6 +367,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetSecurityGroupIdForDomainBoundary()
         {
             return this._securityGroupIdForDomainBoundary != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SingleSignOnApplicationArn. 
+        /// <para>
+        /// The ARN of the associated Amazon Web Services Single Sign-On application for this
+        /// Domain.
+        /// </para>
+        /// </summary>
+        public string SingleSignOnApplicationArn
+        {
+            get { return this._singleSignOnApplicationArn; }
+            set { this._singleSignOnApplicationArn = value; }
+        }
+
+        // Check to see if SingleSignOnApplicationArn property is set
+        internal bool IsSetSingleSignOnApplicationArn()
+        {
+            return this._singleSignOnApplicationArn != null;
         }
 
         /// <summary>

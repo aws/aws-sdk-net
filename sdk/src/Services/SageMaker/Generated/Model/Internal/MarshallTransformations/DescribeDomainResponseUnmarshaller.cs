@@ -147,6 +147,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.SecurityGroupIdForDomainBoundary = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SingleSignOnApplicationArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.SingleSignOnApplicationArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SingleSignOnManagedApplicationInstanceId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
