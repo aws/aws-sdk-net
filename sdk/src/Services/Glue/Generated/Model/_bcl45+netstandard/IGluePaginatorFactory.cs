@@ -36,6 +36,11 @@ namespace Amazon.Glue.Model
         IGetClassifiersPaginator GetClassifiers(GetClassifiersRequest request);
 
         /// <summary>
+        /// Paginator for GetColumnStatisticsTaskRuns operation
+        ///</summary>
+        IGetColumnStatisticsTaskRunsPaginator GetColumnStatisticsTaskRuns(GetColumnStatisticsTaskRunsRequest request);
+
+        /// <summary>
         /// Paginator for GetConnections operation
         ///</summary>
         IGetConnectionsPaginator GetConnections(GetConnectionsRequest request);
@@ -134,6 +139,11 @@ namespace Amazon.Glue.Model
         /// Paginator for ListBlueprints operation
         ///</summary>
         IListBlueprintsPaginator ListBlueprints(ListBlueprintsRequest request);
+
+        /// <summary>
+        /// Paginator for ListColumnStatisticsTaskRuns operation
+        ///</summary>
+        IListColumnStatisticsTaskRunsPaginator ListColumnStatisticsTaskRuns(ListColumnStatisticsTaskRunsRequest request);
 
         /// <summary>
         /// Paginator for ListCrawlers operation

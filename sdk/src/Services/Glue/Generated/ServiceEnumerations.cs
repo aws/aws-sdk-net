@@ -451,6 +451,68 @@ namespace Amazon.Glue
 
 
     /// <summary>
+    /// Constants used for properties of type ColumnStatisticsState.
+    /// </summary>
+    public class ColumnStatisticsState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for ColumnStatisticsState
+        /// </summary>
+        public static readonly ColumnStatisticsState FAILED = new ColumnStatisticsState("FAILED");
+        /// <summary>
+        /// Constant RUNNING for ColumnStatisticsState
+        /// </summary>
+        public static readonly ColumnStatisticsState RUNNING = new ColumnStatisticsState("RUNNING");
+        /// <summary>
+        /// Constant STARTING for ColumnStatisticsState
+        /// </summary>
+        public static readonly ColumnStatisticsState STARTING = new ColumnStatisticsState("STARTING");
+        /// <summary>
+        /// Constant STOPPED for ColumnStatisticsState
+        /// </summary>
+        public static readonly ColumnStatisticsState STOPPED = new ColumnStatisticsState("STOPPED");
+        /// <summary>
+        /// Constant SUCCEEDED for ColumnStatisticsState
+        /// </summary>
+        public static readonly ColumnStatisticsState SUCCEEDED = new ColumnStatisticsState("SUCCEEDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ColumnStatisticsState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ColumnStatisticsState FindValue(string value)
+        {
+            return FindValue<ColumnStatisticsState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ColumnStatisticsState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ColumnStatisticsType.
     /// </summary>
     public class ColumnStatisticsType : ConstantClass

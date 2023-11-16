@@ -4418,6 +4418,98 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  GetColumnStatisticsTaskRun
+
+
+        /// <summary>
+        /// Get the associated metadata/information for a task run, given a task run ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetColumnStatisticsTaskRun service method.</param>
+        /// 
+        /// <returns>The response from the GetColumnStatisticsTaskRun service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetColumnStatisticsTaskRun">REST API Reference for GetColumnStatisticsTaskRun Operation</seealso>
+        GetColumnStatisticsTaskRunResponse GetColumnStatisticsTaskRun(GetColumnStatisticsTaskRunRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetColumnStatisticsTaskRun operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetColumnStatisticsTaskRun operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetColumnStatisticsTaskRun
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetColumnStatisticsTaskRun">REST API Reference for GetColumnStatisticsTaskRun Operation</seealso>
+        IAsyncResult BeginGetColumnStatisticsTaskRun(GetColumnStatisticsTaskRunRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetColumnStatisticsTaskRun operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetColumnStatisticsTaskRun.</param>
+        /// 
+        /// <returns>Returns a  GetColumnStatisticsTaskRunResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetColumnStatisticsTaskRun">REST API Reference for GetColumnStatisticsTaskRun Operation</seealso>
+        GetColumnStatisticsTaskRunResponse EndGetColumnStatisticsTaskRun(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetColumnStatisticsTaskRuns
+
+
+        /// <summary>
+        /// Retrieves information about all runs associated with the specified table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetColumnStatisticsTaskRuns service method.</param>
+        /// 
+        /// <returns>The response from the GetColumnStatisticsTaskRuns service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetColumnStatisticsTaskRuns">REST API Reference for GetColumnStatisticsTaskRuns Operation</seealso>
+        GetColumnStatisticsTaskRunsResponse GetColumnStatisticsTaskRuns(GetColumnStatisticsTaskRunsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetColumnStatisticsTaskRuns operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetColumnStatisticsTaskRuns operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetColumnStatisticsTaskRuns
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetColumnStatisticsTaskRuns">REST API Reference for GetColumnStatisticsTaskRuns Operation</seealso>
+        IAsyncResult BeginGetColumnStatisticsTaskRuns(GetColumnStatisticsTaskRunsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetColumnStatisticsTaskRuns operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetColumnStatisticsTaskRuns.</param>
+        /// 
+        /// <returns>Returns a  GetColumnStatisticsTaskRunsResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetColumnStatisticsTaskRuns">REST API Reference for GetColumnStatisticsTaskRuns Operation</seealso>
+        GetColumnStatisticsTaskRunsResponse EndGetColumnStatisticsTaskRuns(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetConnection
 
 
@@ -7706,6 +7798,49 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  ListColumnStatisticsTaskRuns
+
+
+        /// <summary>
+        /// List all task runs for a particular account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListColumnStatisticsTaskRuns service method.</param>
+        /// 
+        /// <returns>The response from the ListColumnStatisticsTaskRuns service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListColumnStatisticsTaskRuns">REST API Reference for ListColumnStatisticsTaskRuns Operation</seealso>
+        ListColumnStatisticsTaskRunsResponse ListColumnStatisticsTaskRuns(ListColumnStatisticsTaskRunsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListColumnStatisticsTaskRuns operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListColumnStatisticsTaskRuns operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListColumnStatisticsTaskRuns
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListColumnStatisticsTaskRuns">REST API Reference for ListColumnStatisticsTaskRuns Operation</seealso>
+        IAsyncResult BeginListColumnStatisticsTaskRuns(ListColumnStatisticsTaskRunsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListColumnStatisticsTaskRuns operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListColumnStatisticsTaskRuns.</param>
+        /// 
+        /// <returns>Returns a  ListColumnStatisticsTaskRunsResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListColumnStatisticsTaskRuns">REST API Reference for ListColumnStatisticsTaskRuns Operation</seealso>
+        ListColumnStatisticsTaskRunsResponse EndListColumnStatisticsTaskRuns(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListCrawlers
 
 
@@ -9410,6 +9545,65 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  StartColumnStatisticsTaskRun
+
+
+        /// <summary>
+        /// Starts a column statistics task run, for a specified table and columns.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartColumnStatisticsTaskRun service method.</param>
+        /// 
+        /// <returns>The response from the StartColumnStatisticsTaskRun service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ColumnStatisticsTaskRunningException">
+        /// An exception thrown when you try to start another job while running a column stats
+        /// generation job.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartColumnStatisticsTaskRun">REST API Reference for StartColumnStatisticsTaskRun Operation</seealso>
+        StartColumnStatisticsTaskRunResponse StartColumnStatisticsTaskRun(StartColumnStatisticsTaskRunRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartColumnStatisticsTaskRun operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartColumnStatisticsTaskRun operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartColumnStatisticsTaskRun
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartColumnStatisticsTaskRun">REST API Reference for StartColumnStatisticsTaskRun Operation</seealso>
+        IAsyncResult BeginStartColumnStatisticsTaskRun(StartColumnStatisticsTaskRunRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartColumnStatisticsTaskRun operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartColumnStatisticsTaskRun.</param>
+        /// 
+        /// <returns>Returns a  StartColumnStatisticsTaskRunResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartColumnStatisticsTaskRun">REST API Reference for StartColumnStatisticsTaskRun Operation</seealso>
+        StartColumnStatisticsTaskRunResponse EndStartColumnStatisticsTaskRun(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  StartCrawler
 
 
@@ -10098,6 +10292,58 @@ namespace Amazon.Glue
         /// <returns>Returns a  StartWorkflowRunResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartWorkflowRun">REST API Reference for StartWorkflowRun Operation</seealso>
         StartWorkflowRunResponse EndStartWorkflowRun(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  StopColumnStatisticsTaskRun
+
+
+        /// <summary>
+        /// Stops a task run for the specified table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopColumnStatisticsTaskRun service method.</param>
+        /// 
+        /// <returns>The response from the StopColumnStatisticsTaskRun service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.ColumnStatisticsTaskNotRunningException">
+        /// An exception thrown when you try to stop a task run when there is no task running.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ColumnStatisticsTaskStoppingException">
+        /// An exception thrown when you try to stop a task run.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StopColumnStatisticsTaskRun">REST API Reference for StopColumnStatisticsTaskRun Operation</seealso>
+        StopColumnStatisticsTaskRunResponse StopColumnStatisticsTaskRun(StopColumnStatisticsTaskRunRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopColumnStatisticsTaskRun operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopColumnStatisticsTaskRun operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopColumnStatisticsTaskRun
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StopColumnStatisticsTaskRun">REST API Reference for StopColumnStatisticsTaskRun Operation</seealso>
+        IAsyncResult BeginStopColumnStatisticsTaskRun(StopColumnStatisticsTaskRunRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StopColumnStatisticsTaskRun operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopColumnStatisticsTaskRun.</param>
+        /// 
+        /// <returns>Returns a  StopColumnStatisticsTaskRunResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StopColumnStatisticsTaskRun">REST API Reference for StopColumnStatisticsTaskRun Operation</seealso>
+        StopColumnStatisticsTaskRunResponse EndStopColumnStatisticsTaskRun(IAsyncResult asyncResult);
 
         #endregion
         

@@ -4173,6 +4173,86 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  GetColumnStatisticsTaskRun
+
+        internal virtual GetColumnStatisticsTaskRunResponse GetColumnStatisticsTaskRun(GetColumnStatisticsTaskRunRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetColumnStatisticsTaskRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetColumnStatisticsTaskRunResponseUnmarshaller.Instance;
+
+            return Invoke<GetColumnStatisticsTaskRunResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Get the associated metadata/information for a task run, given a task run ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetColumnStatisticsTaskRun service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetColumnStatisticsTaskRun service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetColumnStatisticsTaskRun">REST API Reference for GetColumnStatisticsTaskRun Operation</seealso>
+        public virtual Task<GetColumnStatisticsTaskRunResponse> GetColumnStatisticsTaskRunAsync(GetColumnStatisticsTaskRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetColumnStatisticsTaskRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetColumnStatisticsTaskRunResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetColumnStatisticsTaskRunResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetColumnStatisticsTaskRuns
+
+        internal virtual GetColumnStatisticsTaskRunsResponse GetColumnStatisticsTaskRuns(GetColumnStatisticsTaskRunsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetColumnStatisticsTaskRunsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetColumnStatisticsTaskRunsResponseUnmarshaller.Instance;
+
+            return Invoke<GetColumnStatisticsTaskRunsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves information about all runs associated with the specified table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetColumnStatisticsTaskRuns service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetColumnStatisticsTaskRuns service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetColumnStatisticsTaskRuns">REST API Reference for GetColumnStatisticsTaskRuns Operation</seealso>
+        public virtual Task<GetColumnStatisticsTaskRunsResponse> GetColumnStatisticsTaskRunsAsync(GetColumnStatisticsTaskRunsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetColumnStatisticsTaskRunsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetColumnStatisticsTaskRunsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetColumnStatisticsTaskRunsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetConnection
 
         internal virtual GetConnectionResponse GetConnection(GetConnectionRequest request)
@@ -7101,6 +7181,43 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  ListColumnStatisticsTaskRuns
+
+        internal virtual ListColumnStatisticsTaskRunsResponse ListColumnStatisticsTaskRuns(ListColumnStatisticsTaskRunsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListColumnStatisticsTaskRunsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListColumnStatisticsTaskRunsResponseUnmarshaller.Instance;
+
+            return Invoke<ListColumnStatisticsTaskRunsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// List all task runs for a particular account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListColumnStatisticsTaskRuns service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListColumnStatisticsTaskRuns service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListColumnStatisticsTaskRuns">REST API Reference for ListColumnStatisticsTaskRuns Operation</seealso>
+        public virtual Task<ListColumnStatisticsTaskRunsResponse> ListColumnStatisticsTaskRunsAsync(ListColumnStatisticsTaskRunsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListColumnStatisticsTaskRunsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListColumnStatisticsTaskRunsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListColumnStatisticsTaskRunsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListCrawlers
 
         internal virtual ListCrawlersResponse ListCrawlers(ListCrawlersRequest request)
@@ -8625,6 +8742,59 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  StartColumnStatisticsTaskRun
+
+        internal virtual StartColumnStatisticsTaskRunResponse StartColumnStatisticsTaskRun(StartColumnStatisticsTaskRunRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartColumnStatisticsTaskRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartColumnStatisticsTaskRunResponseUnmarshaller.Instance;
+
+            return Invoke<StartColumnStatisticsTaskRunResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Starts a column statistics task run, for a specified table and columns.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartColumnStatisticsTaskRun service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartColumnStatisticsTaskRun service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ColumnStatisticsTaskRunningException">
+        /// An exception thrown when you try to start another job while running a column stats
+        /// generation job.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartColumnStatisticsTaskRun">REST API Reference for StartColumnStatisticsTaskRun Operation</seealso>
+        public virtual Task<StartColumnStatisticsTaskRunResponse> StartColumnStatisticsTaskRunAsync(StartColumnStatisticsTaskRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartColumnStatisticsTaskRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartColumnStatisticsTaskRunResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartColumnStatisticsTaskRunResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StartCrawler
 
         internal virtual StartCrawlerResponse StartCrawler(StartCrawlerRequest request)
@@ -9246,6 +9416,52 @@ namespace Amazon.Glue
             options.ResponseUnmarshaller = StartWorkflowRunResponseUnmarshaller.Instance;
 
             return InvokeAsync<StartWorkflowRunResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StopColumnStatisticsTaskRun
+
+        internal virtual StopColumnStatisticsTaskRunResponse StopColumnStatisticsTaskRun(StopColumnStatisticsTaskRunRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopColumnStatisticsTaskRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopColumnStatisticsTaskRunResponseUnmarshaller.Instance;
+
+            return Invoke<StopColumnStatisticsTaskRunResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Stops a task run for the specified table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopColumnStatisticsTaskRun service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopColumnStatisticsTaskRun service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.ColumnStatisticsTaskNotRunningException">
+        /// An exception thrown when you try to stop a task run when there is no task running.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ColumnStatisticsTaskStoppingException">
+        /// An exception thrown when you try to stop a task run.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StopColumnStatisticsTaskRun">REST API Reference for StopColumnStatisticsTaskRun Operation</seealso>
+        public virtual Task<StopColumnStatisticsTaskRunResponse> StopColumnStatisticsTaskRunAsync(StopColumnStatisticsTaskRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopColumnStatisticsTaskRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopColumnStatisticsTaskRunResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StopColumnStatisticsTaskRunResponse>(request, options, cancellationToken);
         }
 
         #endregion

@@ -52,6 +52,14 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
+        /// Paginator for GetColumnStatisticsTaskRuns operation
+        ///</summary>
+        public IGetColumnStatisticsTaskRunsPaginator GetColumnStatisticsTaskRuns(GetColumnStatisticsTaskRunsRequest request) 
+        {
+            return new GetColumnStatisticsTaskRunsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for GetConnections operation
         ///</summary>
         public IGetConnectionsPaginator GetConnections(GetConnectionsRequest request) 
@@ -209,6 +217,14 @@ namespace Amazon.Glue.Model
         public IListBlueprintsPaginator ListBlueprints(ListBlueprintsRequest request) 
         {
             return new ListBlueprintsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListColumnStatisticsTaskRuns operation
+        ///</summary>
+        public IListColumnStatisticsTaskRunsPaginator ListColumnStatisticsTaskRuns(ListColumnStatisticsTaskRunsRequest request) 
+        {
+            return new ListColumnStatisticsTaskRunsPaginator(this.client, request);
         }
 
         /// <summary>

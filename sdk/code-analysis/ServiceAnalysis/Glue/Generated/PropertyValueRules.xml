@@ -956,6 +956,21 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.GetColumnStatisticsTaskRunRequest.ColumnStatisticsTaskRunId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.GetColumnStatisticsTaskRunsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.GetColumnStatisticsTaskRunsRequest.TableName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.GetConnectionRequest.CatalogId</property>
     <min>1</min>
     <max>255</max>
@@ -1729,6 +1744,11 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.ListColumnStatisticsTaskRunsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.ListCrawlersRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
@@ -2111,6 +2131,41 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.StartColumnStatisticsTaskRunRequest.CatalogID</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.StartColumnStatisticsTaskRunRequest.DatabaseName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.StartColumnStatisticsTaskRunRequest.Role</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.StartColumnStatisticsTaskRunRequest.SampleSize</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.StartColumnStatisticsTaskRunRequest.SecurityConfiguration</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.StartColumnStatisticsTaskRunRequest.TableName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.StartColumnStatisticsTaskRunResponse.ColumnStatisticsTaskRunId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.StartCrawlerRequest.Name</property>
     <min>1</min>
     <max>255</max>
@@ -2238,6 +2293,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.StartWorkflowRunResponse.RunId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.StopColumnStatisticsTaskRunRequest.TableName</property>
     <min>1</min>
     <max>255</max>
   </property-value-rule>
@@ -3038,6 +3098,49 @@
     <property>Amazon.Glue.Model.ColumnStatistics.ColumnType</property>
     <min>0</min>
     <max>20000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.ColumnStatisticsTaskRun.CatalogID</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.ColumnStatisticsTaskRun.ColumnStatisticsTaskRunId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.ColumnStatisticsTaskRun.CustomerId</property>
+    <min>0</min>
+    <max>12</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.ColumnStatisticsTaskRun.DPUSeconds</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.ColumnStatisticsTaskRun.ErrorMessage</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.ColumnStatisticsTaskRun.NumberOfWorkers</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.ColumnStatisticsTaskRun.SampleSize</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.ColumnStatisticsTaskRun.SecurityConfiguration</property>
+    <min>0</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.ColumnStatisticsTaskRun.WorkerType</property>
+    <min>1</min>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.Condition.CrawlerName</property>
