@@ -121,7 +121,7 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property UpdatedAt. 
         /// <para>
         /// The date and time, in UTC and extended ISO 8601 format, of the most recent change
-        /// to the status of the Amazon Macie account.
+        /// to the status or configuration settings for the Amazon Macie account.
         /// </para>
         /// </summary>
         public DateTime UpdatedAt

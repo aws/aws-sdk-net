@@ -245,9 +245,10 @@ namespace Amazon.Macie2.Model
         ///  
         /// <para>
         /// If the job is a recurring job and you specify ALL or EXCLUDE, each job run automatically
-        /// uses new managed data identifiers that are released. If you specify RECOMMENDED for
-        /// a recurring job, each job run automatically uses all the managed data identifiers
-        /// that are in the recommended set when the run starts.
+        /// uses new managed data identifiers that are released. If you don't specify a value
+        /// for this property or you specify RECOMMENDED for a recurring job, each job run automatically
+        /// uses all the managed data identifiers that are in the recommended set when the run
+        /// starts.
         /// </para>
         ///  
         /// <para>

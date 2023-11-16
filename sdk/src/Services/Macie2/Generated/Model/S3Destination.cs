@@ -81,7 +81,7 @@ namespace Amazon.Macie2.Model
         /// <para>
         /// The Amazon Resource Name (ARN) of the customer managed KMS key to use for encryption
         /// of the results. This must be the ARN of an existing, symmetric encryption KMS key
-        /// that's in the same Amazon Web Services Region as the bucket.
+        /// that's enabled in the same Amazon Web Services Region as the bucket.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

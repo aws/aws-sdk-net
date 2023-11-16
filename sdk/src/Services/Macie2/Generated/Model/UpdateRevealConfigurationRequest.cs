@@ -36,11 +36,13 @@ namespace Amazon.Macie2.Model
     public partial class UpdateRevealConfigurationRequest : AmazonMacie2Request
     {
         private RevealConfiguration _configuration;
+        private UpdateRetrievalConfiguration _retrievalConfiguration;
 
         /// <summary>
         /// Gets and sets the property Configuration. 
         /// <para>
-        /// The new configuration settings and the status of the configuration for the account.
+        /// The KMS key to use to encrypt the sensitive data, and the status of the configuration
+        /// for the Amazon Macie account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -54,6 +56,24 @@ namespace Amazon.Macie2.Model
         internal bool IsSetConfiguration()
         {
             return this._configuration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RetrievalConfiguration. 
+        /// <para>
+        /// The access method and settings to use to retrieve the sensitive data.
+        /// </para>
+        /// </summary>
+        public UpdateRetrievalConfiguration RetrievalConfiguration
+        {
+            get { return this._retrievalConfiguration; }
+            set { this._retrievalConfiguration = value; }
+        }
+
+        // Check to see if RetrievalConfiguration property is set
+        internal bool IsSetRetrievalConfiguration()
+        {
+            return this._retrievalConfiguration != null;
         }
 
     }

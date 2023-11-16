@@ -49,7 +49,7 @@ namespace Amazon.Macie2.Model
         ///  
         /// <para>
         /// If Amazon Macie detects sensitive data in the name of any element in the path, Macie
-        /// omits this field. If the name of an element exceeds 20 characters, Macie truncates
+        /// omits this field. If the name of an element exceeds 240 characters, Macie truncates
         /// the name by removing characters from the beginning of the name. If the resulting full
         /// path exceeds 250 characters, Macie also truncates the path, starting with the first
         /// element in the path, until the path contains 250 or fewer characters.

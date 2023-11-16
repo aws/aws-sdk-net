@@ -1937,6 +1937,56 @@ namespace Amazon.Macie2
 
 
     /// <summary>
+    /// Constants used for properties of type RetrievalMode.
+    /// </summary>
+    public class RetrievalMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ASSUME_ROLE for RetrievalMode
+        /// </summary>
+        public static readonly RetrievalMode ASSUME_ROLE = new RetrievalMode("ASSUME_ROLE");
+        /// <summary>
+        /// Constant CALLER_CREDENTIALS for RetrievalMode
+        /// </summary>
+        public static readonly RetrievalMode CALLER_CREDENTIALS = new RetrievalMode("CALLER_CREDENTIALS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RetrievalMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RetrievalMode FindValue(string value)
+        {
+            return FindValue<RetrievalMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RetrievalMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type RevealRequestStatus.
     /// </summary>
     public class RevealRequestStatus : ConstantClass
@@ -2727,9 +2777,25 @@ namespace Amazon.Macie2
     {
 
         /// <summary>
+        /// Constant ACCOUNT_NOT_IN_ORGANIZATION for UnavailabilityReasonCode
+        /// </summary>
+        public static readonly UnavailabilityReasonCode ACCOUNT_NOT_IN_ORGANIZATION = new UnavailabilityReasonCode("ACCOUNT_NOT_IN_ORGANIZATION");
+        /// <summary>
         /// Constant INVALID_CLASSIFICATION_RESULT for UnavailabilityReasonCode
         /// </summary>
         public static readonly UnavailabilityReasonCode INVALID_CLASSIFICATION_RESULT = new UnavailabilityReasonCode("INVALID_CLASSIFICATION_RESULT");
+        /// <summary>
+        /// Constant INVALID_RESULT_SIGNATURE for UnavailabilityReasonCode
+        /// </summary>
+        public static readonly UnavailabilityReasonCode INVALID_RESULT_SIGNATURE = new UnavailabilityReasonCode("INVALID_RESULT_SIGNATURE");
+        /// <summary>
+        /// Constant MEMBER_ROLE_TOO_PERMISSIVE for UnavailabilityReasonCode
+        /// </summary>
+        public static readonly UnavailabilityReasonCode MEMBER_ROLE_TOO_PERMISSIVE = new UnavailabilityReasonCode("MEMBER_ROLE_TOO_PERMISSIVE");
+        /// <summary>
+        /// Constant MISSING_GET_MEMBER_PERMISSION for UnavailabilityReasonCode
+        /// </summary>
+        public static readonly UnavailabilityReasonCode MISSING_GET_MEMBER_PERMISSION = new UnavailabilityReasonCode("MISSING_GET_MEMBER_PERMISSION");
         /// <summary>
         /// Constant OBJECT_EXCEEDS_SIZE_QUOTA for UnavailabilityReasonCode
         /// </summary>
@@ -2738,6 +2804,14 @@ namespace Amazon.Macie2
         /// Constant OBJECT_UNAVAILABLE for UnavailabilityReasonCode
         /// </summary>
         public static readonly UnavailabilityReasonCode OBJECT_UNAVAILABLE = new UnavailabilityReasonCode("OBJECT_UNAVAILABLE");
+        /// <summary>
+        /// Constant RESULT_NOT_SIGNED for UnavailabilityReasonCode
+        /// </summary>
+        public static readonly UnavailabilityReasonCode RESULT_NOT_SIGNED = new UnavailabilityReasonCode("RESULT_NOT_SIGNED");
+        /// <summary>
+        /// Constant ROLE_TOO_PERMISSIVE for UnavailabilityReasonCode
+        /// </summary>
+        public static readonly UnavailabilityReasonCode ROLE_TOO_PERMISSIVE = new UnavailabilityReasonCode("ROLE_TOO_PERMISSIVE");
         /// <summary>
         /// Constant UNSUPPORTED_FINDING_TYPE for UnavailabilityReasonCode
         /// </summary>

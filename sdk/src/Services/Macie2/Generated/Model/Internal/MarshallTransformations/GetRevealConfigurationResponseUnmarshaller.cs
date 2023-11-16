@@ -57,6 +57,12 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
                     response.Configuration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("retrievalConfiguration", targetDepth))
+                {
+                    var unmarshaller = RetrievalConfigurationUnmarshaller.Instance;
+                    response.RetrievalConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

@@ -79,8 +79,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Includes. 
         /// <para>
-        /// The allow lists, custom data identifiers, and managed data identifiers that are included
-        /// (used) when analyzing data.
+        /// The allow lists, custom data identifiers, and managed data identifiers that are explicitly
+        /// included (used) when analyzing data.
         /// </para>
         /// </summary>
         public SensitivityInspectionTemplateIncludes Includes

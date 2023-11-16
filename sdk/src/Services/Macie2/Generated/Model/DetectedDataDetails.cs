@@ -38,8 +38,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// An occurrence of the specified type of sensitive data. Each occurrence can contain
-        /// 1-128 characters.
+        /// An occurrence of the specified type of sensitive data. Each occurrence contains 1-128
+        /// characters.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

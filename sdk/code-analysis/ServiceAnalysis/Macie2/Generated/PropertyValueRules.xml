@@ -173,6 +173,12 @@
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Macie2.Model.RetrievalConfiguration.RoleName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[\w+=,.@-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Macie2.Model.RevealConfiguration.KmsKeyId</property>
     <min>1</min>
     <max>2048</max>
@@ -188,5 +194,11 @@
     <min>1</min>
     <max>1024</max>
     <pattern>^[\s\S]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Macie2.Model.UpdateRetrievalConfiguration.RoleName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[\w+=,.@-]*$</pattern>
   </property-value-rule>
 </property-value-rules>

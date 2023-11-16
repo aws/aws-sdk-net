@@ -76,6 +76,17 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetRetrievalConfiguration())
+                {
+                    context.Writer.WritePropertyName("retrievalConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = UpdateRetrievalConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.RetrievalConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

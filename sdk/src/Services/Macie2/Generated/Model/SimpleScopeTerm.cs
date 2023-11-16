@@ -54,11 +54,13 @@ namespace Amazon.Macie2.Model
         /// </para>
         /// </li> <li>
         /// <para>
-        /// OBJECT_LAST_MODIFIED_DATE - Any operator except CONTAINS
+        /// OBJECT_LAST_MODIFIED_DATE - EQ (equals), GT (greater than), GTE (greater than or equals),
+        /// LT (less than), LTE (less than or equals), or NE (not equals)
         /// </para>
         /// </li> <li>
         /// <para>
-        /// OBJECT_SIZE - Any operator except CONTAINS
+        /// OBJECT_SIZE - EQ (equals), GT (greater than), GTE (greater than or equals), LT (less
+        /// than), LTE (less than or equals), or NE (not equals)
         /// </para>
         /// </li></ul>
         /// </summary>
@@ -118,7 +120,7 @@ namespace Amazon.Macie2.Model
         /// </li> <li>
         /// <para>
         /// OBJECT_LAST_MODIFIED_DATE - The date and time (in UTC and extended ISO 8601 format)
-        /// when an object was created or last changed, whichever is latest. For example: 2020-09-28T14:31:13Z
+        /// when an object was created or last changed, whichever is latest. For example: 2023-09-24T14:31:13Z
         /// </para>
         /// </li> <li>
         /// <para>
