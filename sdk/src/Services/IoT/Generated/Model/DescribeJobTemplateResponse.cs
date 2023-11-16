@@ -107,8 +107,8 @@ namespace Amazon.IoT.Model
         /// </para>
         ///  
         /// <para>
-        ///  <b>Note:</b>The following Length Constraints relates to a single string. Up to five
-        /// strings are allowed.
+        ///  <b>Note:</b>The following Length Constraints relates to a single ARN. Up to 25 package
+        /// version ARNs are allowed.
         /// </para>
         /// </summary>
         public List<string> DestinationPackageVersions

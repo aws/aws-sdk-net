@@ -29,14 +29,59 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoT.Model
 {
     /// <summary>
-    /// Provides additional filters for specific data sources. Named shadow is the only data
-    /// source that currently supports and requires a filter. To add named shadows to your
-    /// fleet indexing configuration, set <code>namedShadowIndexingMode</code> to be <code>ON</code>
-    /// and specify your shadow names in <code>filter</code>.
+    /// Provides additional selections for named shadows and geolocation data. 
+    /// 
+    ///  
+    /// <para>
+    /// To add named shadows to your fleet indexing configuration, set <code>namedShadowIndexingMode</code>
+    /// to be ON and specify your shadow names in <code>namedShadowNames</code> filter.
+    /// </para>
+    ///  
+    /// <para>
+    /// To add geolocation data to your fleet indexing configuration: 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// If you store geolocation data in a class/unnamed shadow, set <code>thingIndexingMode</code>
+    /// to be <code>REGISTRY_AND_SHADOW</code> and specify your geolocation data in <code>geoLocations</code>
+    /// filter. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// If you store geolocation data in a named shadow, set <code>namedShadowIndexingMode</code>
+    /// to be <code>ON</code>, add the shadow name in <code>namedShadowNames</code> filter,
+    /// and specify your geolocation data in <code>geoLocations</code> filter. For more information,
+    /// see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/managing-fleet-index.html">Managing
+    /// fleet indexing</a>.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class IndexingFilter
     {
+        private List<GeoLocationTarget> _geoLocations = new List<GeoLocationTarget>();
         private List<string> _namedShadowNames = new List<string>();
+
+        /// <summary>
+        /// Gets and sets the property GeoLocations. 
+        /// <para>
+        /// The list of geolocation targets that you select to index. The default maximum number
+        /// of geolocation targets for indexing is <code>1</code>. To increase the limit, see
+        /// <a href="https://docs.aws.amazon.com/general/latest/gr/iot_device_management.html#fleet-indexing-limits">Amazon
+        /// Web Services IoT Device Management Quotas</a> in the <i>Amazon Web Services General
+        /// Reference</i>.
+        /// </para>
+        /// </summary>
+        public List<GeoLocationTarget> GeoLocations
+        {
+            get { return this._geoLocations; }
+            set { this._geoLocations = value; }
+        }
+
+        // Check to see if GeoLocations property is set
+        internal bool IsSetGeoLocations()
+        {
+            return this._geoLocations != null && this._geoLocations.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property NamedShadowNames. 

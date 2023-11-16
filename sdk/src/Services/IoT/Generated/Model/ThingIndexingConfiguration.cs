@@ -95,11 +95,32 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property Filter. 
         /// <para>
-        /// Provides additional filters for specific data sources. Named shadow is the only data
-        /// source that currently supports and requires a filter. To add named shadows to your
-        /// fleet indexing configuration, set <code>namedShadowIndexingMode</code> to be <code>ON</code>
-        /// and specify your shadow names in <code>filter</code>.
+        /// Provides additional selections for named shadows and geolocation data. 
         /// </para>
+        ///  
+        /// <para>
+        /// To add named shadows to your fleet indexing configuration, set <code>namedShadowIndexingMode</code>
+        /// to be ON and specify your shadow names in <code>namedShadowNames</code> filter.
+        /// </para>
+        ///  
+        /// <para>
+        /// To add geolocation data to your fleet indexing configuration: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If you store geolocation data in a class/unnamed shadow, set <code>thingIndexingMode</code>
+        /// to be <code>REGISTRY_AND_SHADOW</code> and specify your geolocation data in <code>geoLocations</code>
+        /// filter. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you store geolocation data in a named shadow, set <code>namedShadowIndexingMode</code>
+        /// to be <code>ON</code>, add the shadow name in <code>namedShadowNames</code> filter,
+        /// and specify your geolocation data in <code>geoLocations</code> filter. For more information,
+        /// see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/managing-fleet-index.html">Managing
+        /// fleet indexing</a>.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public IndexingFilter Filter
         {

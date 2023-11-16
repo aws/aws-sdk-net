@@ -68,8 +68,8 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of results to return at one time. The response might contain fewer
-        /// results but will never contain more.
+        /// The maximum number of results to return per page at one time. The response might contain
+        /// fewer results but will never contain more.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=500)]

@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// IndexingFilter Marshaller
+    /// GeoLocationTarget Marshaller
     /// </summary>
-    public class IndexingFilterMarshaller : IRequestMarshaller<IndexingFilter, JsonMarshallerContext> 
+    public class GeoLocationTargetMarshaller : IRequestMarshaller<GeoLocationTarget, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,33 +43,18 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(IndexingFilter requestObject, JsonMarshallerContext context)
+        public void Marshall(GeoLocationTarget requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetGeoLocations())
+            if(requestObject.IsSetName())
             {
-                context.Writer.WritePropertyName("geoLocations");
-                context.Writer.WriteArrayStart();
-                foreach(var requestObjectGeoLocationsListValue in requestObject.GeoLocations)
-                {
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = GeoLocationTargetMarshaller.Instance;
-                    marshaller.Marshall(requestObjectGeoLocationsListValue, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WritePropertyName("name");
+                context.Writer.Write(requestObject.Name);
             }
 
-            if(requestObject.IsSetNamedShadowNames())
+            if(requestObject.IsSetOrder())
             {
-                context.Writer.WritePropertyName("namedShadowNames");
-                context.Writer.WriteArrayStart();
-                foreach(var requestObjectNamedShadowNamesListValue in requestObject.NamedShadowNames)
-                {
-                        context.Writer.Write(requestObjectNamedShadowNamesListValue);
-                }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WritePropertyName("order");
+                context.Writer.Write(requestObject.Order);
             }
 
         }
@@ -77,7 +62,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static IndexingFilterMarshaller Instance = new IndexingFilterMarshaller();
+        public readonly static GeoLocationTargetMarshaller Instance = new GeoLocationTargetMarshaller();
 
     }
 }

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for IndexingFilter Object
+    /// Response Unmarshaller for GeoLocationTarget Object
     /// </summary>  
-    public class IndexingFilterUnmarshaller : IUnmarshaller<IndexingFilter, XmlUnmarshallerContext>, IUnmarshaller<IndexingFilter, JsonUnmarshallerContext>
+    public class GeoLocationTargetUnmarshaller : IUnmarshaller<GeoLocationTarget, XmlUnmarshallerContext>, IUnmarshaller<GeoLocationTarget, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        IndexingFilter IUnmarshaller<IndexingFilter, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        GeoLocationTarget IUnmarshaller<GeoLocationTarget, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,27 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public IndexingFilter Unmarshall(JsonUnmarshallerContext context)
+        public GeoLocationTarget Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            IndexingFilter unmarshalledObject = new IndexingFilter();
+            GeoLocationTarget unmarshalledObject = new GeoLocationTarget();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("geoLocations", targetDepth))
+                if (context.TestExpression("name", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<GeoLocationTarget, GeoLocationTargetUnmarshaller>(GeoLocationTargetUnmarshaller.Instance);
-                    unmarshalledObject.GeoLocations = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("namedShadowNames", targetDepth))
+                if (context.TestExpression("order", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.NamedShadowNames = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Order = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +82,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         }
 
 
-        private static IndexingFilterUnmarshaller _instance = new IndexingFilterUnmarshaller();        
+        private static GeoLocationTargetUnmarshaller _instance = new GeoLocationTargetUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static IndexingFilterUnmarshaller Instance
+        public static GeoLocationTargetUnmarshaller Instance
         {
             get
             {
