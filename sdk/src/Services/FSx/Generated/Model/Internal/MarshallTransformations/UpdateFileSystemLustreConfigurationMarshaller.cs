@@ -80,6 +80,12 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetPerUnitStorageThroughput())
+            {
+                context.Writer.WritePropertyName("PerUnitStorageThroughput");
+                context.Writer.Write(requestObject.PerUnitStorageThroughput);
+            }
+
             if(requestObject.IsSetRootSquashConfiguration())
             {
                 context.Writer.WritePropertyName("RootSquashConfiguration");

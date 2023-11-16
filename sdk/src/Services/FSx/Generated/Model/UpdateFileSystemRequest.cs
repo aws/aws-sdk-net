@@ -103,6 +103,10 @@ namespace Amazon.FSx.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <code>PerUnitStorageThroughput</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <code>StorageCapacity</code> 
     /// </para>
     ///  </li> <li> 

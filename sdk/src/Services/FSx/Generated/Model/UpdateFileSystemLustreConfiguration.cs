@@ -39,6 +39,7 @@ namespace Amazon.FSx.Model
         private string _dailyAutomaticBackupStartTime;
         private DataCompressionType _dataCompressionType;
         private LustreLogCreateConfiguration _logConfiguration;
+        private int? _perUnitStorageThroughput;
         private LustreRootSquashConfiguration _rootSquashConfiguration;
         private string _weeklyMaintenanceStartTime;
 
@@ -185,6 +186,43 @@ namespace Amazon.FSx.Model
         internal bool IsSetLogConfiguration()
         {
             return this._logConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PerUnitStorageThroughput. 
+        /// <para>
+        /// The throughput of an Amazon FSx for Lustre Persistent SSD-based file system, measured
+        /// in megabytes per second per tebibyte (MB/s/TiB). You can increase or decrease your
+        /// file system's throughput. Valid values depend on the deployment type of the file system,
+        /// as follows:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// For <code>PERSISTENT_1</code> SSD-based deployment types, valid values are 50, 100,
+        /// and 200 MB/s/TiB.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For <code>PERSISTENT_2</code> SSD-based deployment types, valid values are 125, 250,
+        /// 500, and 1000 MB/s/TiB.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-throughput-capacity.html">
+        /// Managing throughput capacity</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=1000)]
+        public int PerUnitStorageThroughput
+        {
+            get { return this._perUnitStorageThroughput.GetValueOrDefault(); }
+            set { this._perUnitStorageThroughput = value; }
+        }
+
+        // Check to see if PerUnitStorageThroughput property is set
+        internal bool IsSetPerUnitStorageThroughput()
+        {
+            return this._perUnitStorageThroughput.HasValue; 
         }
 
         /// <summary>

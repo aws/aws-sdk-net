@@ -2149,6 +2149,10 @@ namespace Amazon.FSx
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>PerUnitStorageThroughput</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>StorageCapacity</code> 
         /// </para>
         ///  </li> <li> 
