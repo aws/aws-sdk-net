@@ -155,7 +155,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("EventStreamException(Encoding.UTF8.GetString(payload.Payload), new ");
             
             #line 46 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamGenerator.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(member.DetermineType()));
+            this.Write(this.ToStringHelper.ToStringWithCulture(member.ModelShape));
             
             #line default
             #line hidden

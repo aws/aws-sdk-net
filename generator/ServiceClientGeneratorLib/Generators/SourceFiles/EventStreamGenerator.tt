@@ -43,7 +43,7 @@
             if(member.ModelShape.IsException)
             {
 #>
-            { "<#=member.PropertyName#>", payload => new <#=this.Config.ClassName#>EventStreamException(Encoding.UTF8.GetString(payload.Payload), new <#=member.DetermineType()#>Unmarshaller().Unmarshall(EventStreamUtils.ConvertMessageTo<#=protocol#>Context(payload))) },
+            { "<#=member.PropertyName#>", payload => new <#=this.Config.ClassName#>EventStreamException(Encoding.UTF8.GetString(payload.Payload), new <#=member.ModelShape#>Unmarshaller().Unmarshall(EventStreamUtils.ConvertMessageTo<#=protocol#>Context(payload))) },
 <#
         }
             }
