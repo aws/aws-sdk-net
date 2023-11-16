@@ -44,7 +44,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
     ///  
     /// <para>
     /// If the origination identity is a phone number and is already associated with another
-    /// pool, an Error is returned. A sender ID can be associated with multiple pools.
+    /// pool, an error is returned. A sender ID can be associated with multiple pools.
     /// </para>
     /// </summary>
     public partial class CreatePoolRequest : AmazonPinpointSMSVoiceV2Request

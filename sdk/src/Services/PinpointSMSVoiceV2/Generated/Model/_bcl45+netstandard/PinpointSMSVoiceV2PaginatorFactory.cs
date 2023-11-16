@@ -100,6 +100,62 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeRegistrationAttachments operation
+        ///</summary>
+        public IDescribeRegistrationAttachmentsPaginator DescribeRegistrationAttachments(DescribeRegistrationAttachmentsRequest request) 
+        {
+            return new DescribeRegistrationAttachmentsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeRegistrationFieldDefinitions operation
+        ///</summary>
+        public IDescribeRegistrationFieldDefinitionsPaginator DescribeRegistrationFieldDefinitions(DescribeRegistrationFieldDefinitionsRequest request) 
+        {
+            return new DescribeRegistrationFieldDefinitionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeRegistrationFieldValues operation
+        ///</summary>
+        public IDescribeRegistrationFieldValuesPaginator DescribeRegistrationFieldValues(DescribeRegistrationFieldValuesRequest request) 
+        {
+            return new DescribeRegistrationFieldValuesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeRegistrations operation
+        ///</summary>
+        public IDescribeRegistrationsPaginator DescribeRegistrations(DescribeRegistrationsRequest request) 
+        {
+            return new DescribeRegistrationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeRegistrationSectionDefinitions operation
+        ///</summary>
+        public IDescribeRegistrationSectionDefinitionsPaginator DescribeRegistrationSectionDefinitions(DescribeRegistrationSectionDefinitionsRequest request) 
+        {
+            return new DescribeRegistrationSectionDefinitionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeRegistrationTypeDefinitions operation
+        ///</summary>
+        public IDescribeRegistrationTypeDefinitionsPaginator DescribeRegistrationTypeDefinitions(DescribeRegistrationTypeDefinitionsRequest request) 
+        {
+            return new DescribeRegistrationTypeDefinitionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeRegistrationVersions operation
+        ///</summary>
+        public IDescribeRegistrationVersionsPaginator DescribeRegistrationVersions(DescribeRegistrationVersionsRequest request) 
+        {
+            return new DescribeRegistrationVersionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeSenderIds operation
         ///</summary>
         public IDescribeSenderIdsPaginator DescribeSenderIds(DescribeSenderIdsRequest request) 
@@ -116,11 +172,27 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeVerifiedDestinationNumbers operation
+        ///</summary>
+        public IDescribeVerifiedDestinationNumbersPaginator DescribeVerifiedDestinationNumbers(DescribeVerifiedDestinationNumbersRequest request) 
+        {
+            return new DescribeVerifiedDestinationNumbersPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListPoolOriginationIdentities operation
         ///</summary>
         public IListPoolOriginationIdentitiesPaginator ListPoolOriginationIdentities(ListPoolOriginationIdentitiesRequest request) 
         {
             return new ListPoolOriginationIdentitiesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListRegistrationAssociations operation
+        ///</summary>
+        public IListRegistrationAssociationsPaginator ListRegistrationAssociations(ListRegistrationAssociationsRequest request) 
+        {
+            return new ListRegistrationAssociationsPaginator(this.client, request);
         }
     }
 }

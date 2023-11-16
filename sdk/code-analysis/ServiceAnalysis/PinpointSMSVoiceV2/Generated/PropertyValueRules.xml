@@ -118,7 +118,112 @@
     <property>Amazon.PinpointSMSVoiceV2.Model.CreatePoolResponse.TwoWayChannelArn</property>
     <min>20</min>
     <max>2048</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.CreatePoolResponse.TwoWayChannelRole</property>
+    <min>20</min>
+    <max>2048</max>
     <pattern>arn:\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.CreateRegistrationRequest.ClientToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[!-~]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.CreateRegistrationRequest.RegistrationType</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[A-Za-z0-9_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.CreateRegistrationResponse.CurrentVersionNumber</property>
+    <min>1</min>
+    <max>100000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.CreateRegistrationResponse.RegistrationType</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[A-Za-z0-9_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.CreateRegistrationAssociationRequest.RegistrationId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[A-Za-z0-9_:/-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.CreateRegistrationAssociationRequest.ResourceId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[A-Za-z0-9_:/-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.CreateRegistrationAssociationResponse.IsoCountryCode</property>
+    <min>2</min>
+    <max>2</max>
+    <pattern>[A-Z]{2}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.CreateRegistrationAssociationResponse.PhoneNumber</property>
+    <min>1</min>
+    <max>20</max>
+    <pattern>\+?[1-9][0-9]{1,18}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.CreateRegistrationAssociationResponse.RegistrationType</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[A-Za-z0-9_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.CreateRegistrationAttachmentRequest.AttachmentBody</property>
+    <min>1</min>
+    <max>1572864</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.CreateRegistrationAttachmentRequest.AttachmentUrl</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.CreateRegistrationAttachmentRequest.ClientToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[!-~]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.CreateRegistrationVersionRequest.RegistrationId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[A-Za-z0-9_:/-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.CreateRegistrationVersionResponse.VersionNumber</property>
+    <min>1</min>
+    <max>100000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.CreateVerifiedDestinationNumberRequest.ClientToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[!-~]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.CreateVerifiedDestinationNumberRequest.DestinationPhoneNumber</property>
+    <min>1</min>
+    <max>20</max>
+    <pattern>\+?[1-9][0-9]{1,18}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.CreateVerifiedDestinationNumberResponse.DestinationPhoneNumber</property>
+    <min>1</min>
+    <max>20</max>
+    <pattern>\+?[1-9][0-9]{1,18}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PinpointSMSVoiceV2.Model.DeleteConfigurationSetRequest.ConfigurationSetName</property>
@@ -262,12 +367,91 @@
     <property>Amazon.PinpointSMSVoiceV2.Model.DeletePoolResponse.TwoWayChannelArn</property>
     <min>20</min>
     <max>2048</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.DeletePoolResponse.TwoWayChannelRole</property>
+    <min>20</min>
+    <max>2048</max>
     <pattern>arn:\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.DeleteRegistrationRequest.RegistrationId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[A-Za-z0-9_:/-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.DeleteRegistrationResponse.ApprovedVersionNumber</property>
+    <min>1</min>
+    <max>100000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.DeleteRegistrationResponse.CurrentVersionNumber</property>
+    <min>1</min>
+    <max>100000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.DeleteRegistrationResponse.LatestDeniedVersionNumber</property>
+    <min>1</min>
+    <max>100000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.DeleteRegistrationResponse.RegistrationType</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[A-Za-z0-9_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.DeleteRegistrationAttachmentRequest.RegistrationAttachmentId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[A-Za-z0-9_:/-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.DeleteRegistrationFieldValueRequest.FieldPath</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[A-Za-z0-9_\.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.DeleteRegistrationFieldValueRequest.RegistrationId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[A-Za-z0-9_:/-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.DeleteRegistrationFieldValueResponse.FieldPath</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[A-Za-z0-9_\.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.DeleteRegistrationFieldValueResponse.TextValue</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.DeleteRegistrationFieldValueResponse.VersionNumber</property>
+    <min>1</min>
+    <max>100000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PinpointSMSVoiceV2.Model.DeleteTextMessageSpendLimitOverrideResponse.MonthlyLimit</property>
     <min>0</min>
     <max>1000000000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.DeleteVerifiedDestinationNumberRequest.VerifiedDestinationNumberId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[A-Za-z0-9_:/-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.DeleteVerifiedDestinationNumberResponse.DestinationPhoneNumber</property>
+    <min>1</min>
+    <max>20</max>
+    <pattern>\+?[1-9][0-9]{1,18}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PinpointSMSVoiceV2.Model.DeleteVoiceMessageSpendLimitOverrideResponse.MonthlyLimit</property>
@@ -429,6 +613,183 @@
     <pattern>.+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.DescribeRegistrationAttachmentsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.DescribeRegistrationAttachmentsRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.DescribeRegistrationAttachmentsResponse.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.DescribeRegistrationFieldDefinitionsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.DescribeRegistrationFieldDefinitionsRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.DescribeRegistrationFieldDefinitionsRequest.RegistrationType</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[A-Za-z0-9_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.DescribeRegistrationFieldDefinitionsRequest.SectionPath</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[A-Za-z0-9_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.DescribeRegistrationFieldDefinitionsResponse.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.DescribeRegistrationFieldDefinitionsResponse.RegistrationType</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[A-Za-z0-9_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.DescribeRegistrationFieldValuesRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.DescribeRegistrationFieldValuesRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.DescribeRegistrationFieldValuesRequest.RegistrationId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[A-Za-z0-9_:/-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.DescribeRegistrationFieldValuesRequest.SectionPath</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[A-Za-z0-9_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.DescribeRegistrationFieldValuesRequest.VersionNumber</property>
+    <min>1</min>
+    <max>100000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.DescribeRegistrationFieldValuesResponse.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.DescribeRegistrationFieldValuesResponse.VersionNumber</property>
+    <min>1</min>
+    <max>100000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.DescribeRegistrationsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.DescribeRegistrationsRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.DescribeRegistrationsResponse.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.DescribeRegistrationSectionDefinitionsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.DescribeRegistrationSectionDefinitionsRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.DescribeRegistrationSectionDefinitionsRequest.RegistrationType</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[A-Za-z0-9_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.DescribeRegistrationSectionDefinitionsResponse.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.DescribeRegistrationSectionDefinitionsResponse.RegistrationType</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[A-Za-z0-9_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.DescribeRegistrationTypeDefinitionsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.DescribeRegistrationTypeDefinitionsRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.DescribeRegistrationTypeDefinitionsResponse.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.DescribeRegistrationVersionsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.DescribeRegistrationVersionsRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.DescribeRegistrationVersionsRequest.RegistrationId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[A-Za-z0-9_:/-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.DescribeRegistrationVersionsResponse.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.PinpointSMSVoiceV2.Model.DescribeSenderIdsRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
@@ -458,6 +819,23 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PinpointSMSVoiceV2.Model.DescribeSpendLimitsResponse.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.DescribeVerifiedDestinationNumbersRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.DescribeVerifiedDestinationNumbersRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.DescribeVerifiedDestinationNumbersResponse.NextToken</property>
     <min>1</min>
     <max>1024</max>
     <pattern>.+</pattern>
@@ -493,6 +871,17 @@
     <pattern>[A-Z]{2}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.DiscardRegistrationVersionRequest.RegistrationId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[A-Za-z0-9_:/-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.DiscardRegistrationVersionResponse.VersionNumber</property>
+    <min>1</min>
+    <max>100000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.PinpointSMSVoiceV2.Model.ListPoolOriginationIdentitiesRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
@@ -514,6 +903,35 @@
     <min>1</min>
     <max>1024</max>
     <pattern>.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.ListRegistrationAssociationsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.ListRegistrationAssociationsRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.ListRegistrationAssociationsRequest.RegistrationId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[A-Za-z0-9_:/-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.ListRegistrationAssociationsResponse.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.ListRegistrationAssociationsResponse.RegistrationType</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[A-Za-z0-9_]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PinpointSMSVoiceV2.Model.ListTagsForResourceRequest.ResourceArn</property>
@@ -582,6 +1000,45 @@
     <pattern>[A-Za-z0-9_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.PutRegistrationFieldValueRequest.FieldPath</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[A-Za-z0-9_\.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.PutRegistrationFieldValueRequest.RegistrationAttachmentId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[A-Za-z0-9_:/-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.PutRegistrationFieldValueRequest.RegistrationId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[A-Za-z0-9_:/-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.PutRegistrationFieldValueRequest.TextValue</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.PutRegistrationFieldValueResponse.FieldPath</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[A-Za-z0-9_\.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.PutRegistrationFieldValueResponse.TextValue</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.PutRegistrationFieldValueResponse.VersionNumber</property>
+    <min>1</min>
+    <max>100000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.PinpointSMSVoiceV2.Model.ReleasePhoneNumberRequest.PhoneNumberId</property>
     <min>1</min>
     <max>256</max>
@@ -609,7 +1066,37 @@
     <property>Amazon.PinpointSMSVoiceV2.Model.ReleasePhoneNumberResponse.TwoWayChannelArn</property>
     <min>20</min>
     <max>2048</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.ReleasePhoneNumberResponse.TwoWayChannelRole</property>
+    <min>20</min>
+    <max>2048</max>
     <pattern>arn:\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.ReleaseSenderIdRequest.IsoCountryCode</property>
+    <min>2</min>
+    <max>2</max>
+    <pattern>[A-Z]{2}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.ReleaseSenderIdRequest.SenderId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[A-Za-z0-9_:/-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.ReleaseSenderIdResponse.IsoCountryCode</property>
+    <min>2</min>
+    <max>2</max>
+    <pattern>[A-Z]{2}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.ReleaseSenderIdResponse.SenderId</property>
+    <min>1</min>
+    <max>11</max>
+    <pattern>[A-Za-z0-9_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PinpointSMSVoiceV2.Model.RequestPhoneNumberRequest.ClientToken</property>
@@ -638,8 +1125,8 @@
   <property-value-rule>
     <property>Amazon.PinpointSMSVoiceV2.Model.RequestPhoneNumberRequest.RegistrationId</property>
     <min>1</min>
-    <max>64</max>
-    <pattern>\S+</pattern>
+    <max>256</max>
+    <pattern>[A-Za-z0-9_:/-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PinpointSMSVoiceV2.Model.RequestPhoneNumberResponse.IsoCountryCode</property>
@@ -663,7 +1150,61 @@
     <property>Amazon.PinpointSMSVoiceV2.Model.RequestPhoneNumberResponse.TwoWayChannelArn</property>
     <min>20</min>
     <max>2048</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.RequestPhoneNumberResponse.TwoWayChannelRole</property>
+    <min>20</min>
+    <max>2048</max>
     <pattern>arn:\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.RequestSenderIdRequest.ClientToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[!-~]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.RequestSenderIdRequest.IsoCountryCode</property>
+    <min>2</min>
+    <max>2</max>
+    <pattern>[A-Z]{2}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.RequestSenderIdRequest.SenderId</property>
+    <min>1</min>
+    <max>11</max>
+    <pattern>[A-Za-z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.RequestSenderIdResponse.IsoCountryCode</property>
+    <min>2</min>
+    <max>2</max>
+    <pattern>[A-Z]{2}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.RequestSenderIdResponse.SenderId</property>
+    <min>1</min>
+    <max>11</max>
+    <pattern>[A-Za-z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.SendDestinationNumberVerificationCodeRequest.ConfigurationSetName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[A-Za-z0-9_:/-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.SendDestinationNumberVerificationCodeRequest.OriginationIdentity</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[A-Za-z0-9_:/\+-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.SendDestinationNumberVerificationCodeRequest.VerifiedDestinationNumberId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[A-Za-z0-9_:/-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PinpointSMSVoiceV2.Model.SendTextMessageRequest.ConfigurationSetName</property>
@@ -798,6 +1339,17 @@
     <max>1000000000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.SubmitRegistrationVersionRequest.RegistrationId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[A-Za-z0-9_:/-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.SubmitRegistrationVersionResponse.VersionNumber</property>
+    <min>1</min>
+    <max>100000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.PinpointSMSVoiceV2.Model.TagResourceRequest.ResourceArn</property>
     <min>20</min>
     <max>256</max>
@@ -843,6 +1395,12 @@
     <property>Amazon.PinpointSMSVoiceV2.Model.UpdatePhoneNumberRequest.TwoWayChannelArn</property>
     <min>20</min>
     <max>2048</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.UpdatePhoneNumberRequest.TwoWayChannelRole</property>
+    <min>20</min>
+    <max>2048</max>
     <pattern>arn:\S+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -867,6 +1425,12 @@
     <property>Amazon.PinpointSMSVoiceV2.Model.UpdatePhoneNumberResponse.TwoWayChannelArn</property>
     <min>20</min>
     <max>2048</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.UpdatePhoneNumberResponse.TwoWayChannelRole</property>
+    <min>20</min>
+    <max>2048</max>
     <pattern>arn:\S+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -885,6 +1449,12 @@
     <property>Amazon.PinpointSMSVoiceV2.Model.UpdatePoolRequest.TwoWayChannelArn</property>
     <min>20</min>
     <max>2048</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.UpdatePoolRequest.TwoWayChannelRole</property>
+    <min>20</min>
+    <max>2048</max>
     <pattern>arn:\S+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -897,7 +1467,55 @@
     <property>Amazon.PinpointSMSVoiceV2.Model.UpdatePoolResponse.TwoWayChannelArn</property>
     <min>20</min>
     <max>2048</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.UpdatePoolResponse.TwoWayChannelRole</property>
+    <min>20</min>
+    <max>2048</max>
     <pattern>arn:\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.UpdateSenderIdRequest.IsoCountryCode</property>
+    <min>2</min>
+    <max>2</max>
+    <pattern>[A-Z]{2}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.UpdateSenderIdRequest.SenderId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[A-Za-z0-9_:/-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.UpdateSenderIdResponse.IsoCountryCode</property>
+    <min>2</min>
+    <max>2</max>
+    <pattern>[A-Z]{2}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.UpdateSenderIdResponse.SenderId</property>
+    <min>1</min>
+    <max>11</max>
+    <pattern>[A-Za-z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.VerifyDestinationNumberRequest.VerificationCode</property>
+    <min>1</min>
+    <max>20</max>
+    <pattern>[A-Za-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.VerifyDestinationNumberRequest.VerifiedDestinationNumberId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[A-Za-z0-9_:/-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.VerifyDestinationNumberResponse.DestinationPhoneNumber</property>
+    <min>1</min>
+    <max>20</max>
+    <pattern>\+?[1-9][0-9]{1,18}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PinpointSMSVoiceV2.Model.CloudWatchLogsDestination.IamRoleArn</property>
@@ -972,6 +1590,12 @@
     <pattern>[A-Z]{2}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.OriginationIdentityMetadata.PhoneNumber</property>
+    <min>1</min>
+    <max>20</max>
+    <pattern>\+?[1-9][0-9]{1,18}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.PinpointSMSVoiceV2.Model.PhoneNumberInformation.IsoCountryCode</property>
     <min>2</min>
     <max>2</max>
@@ -993,6 +1617,12 @@
     <property>Amazon.PinpointSMSVoiceV2.Model.PhoneNumberInformation.TwoWayChannelArn</property>
     <min>20</min>
     <max>2048</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.PhoneNumberInformation.TwoWayChannelRole</property>
+    <min>20</min>
+    <max>2048</max>
     <pattern>arn:\S+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1005,7 +1635,92 @@
     <property>Amazon.PinpointSMSVoiceV2.Model.PoolInformation.TwoWayChannelArn</property>
     <min>20</min>
     <max>2048</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.PoolInformation.TwoWayChannelRole</property>
+    <min>20</min>
+    <max>2048</max>
     <pattern>arn:\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.RegistrationAssociationMetadata.IsoCountryCode</property>
+    <min>2</min>
+    <max>2</max>
+    <pattern>[A-Z]{2}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.RegistrationAssociationMetadata.PhoneNumber</property>
+    <min>1</min>
+    <max>20</max>
+    <pattern>\+?[1-9][0-9]{1,18}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.RegistrationFieldDefinition.FieldPath</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[A-Za-z0-9_\.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.RegistrationFieldDefinition.SectionPath</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[A-Za-z0-9_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.RegistrationFieldValueInformation.FieldPath</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[A-Za-z0-9_\.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.RegistrationFieldValueInformation.RegistrationAttachmentId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[A-Za-z0-9_:/-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.RegistrationFieldValueInformation.TextValue</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.RegistrationInformation.ApprovedVersionNumber</property>
+    <min>1</min>
+    <max>100000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.RegistrationInformation.CurrentVersionNumber</property>
+    <min>1</min>
+    <max>100000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.RegistrationInformation.LatestDeniedVersionNumber</property>
+    <min>1</min>
+    <max>100000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.RegistrationInformation.RegistrationType</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[A-Za-z0-9_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.RegistrationSectionDefinition.SectionPath</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[A-Za-z0-9_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.RegistrationTypeDefinition.RegistrationType</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[A-Za-z0-9_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.RegistrationVersionInformation.VersionNumber</property>
+    <min>1</min>
+    <max>100000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PinpointSMSVoiceV2.Model.SenderIdAndCountry.IsoCountryCode</property>
@@ -1038,6 +1753,12 @@
     <pattern>arn:\S+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.SupportedAssociation.IsoCountryCode</property>
+    <min>2</min>
+    <max>2</max>
+    <pattern>[A-Z]{2}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.PinpointSMSVoiceV2.Model.Tag.Key</property>
     <min>1</min>
     <max>128</max>
@@ -1048,5 +1769,11 @@
     <min>0</min>
     <max>256</max>
     <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.VerifiedDestinationNumberInformation.DestinationPhoneNumber</property>
+    <min>1</min>
+    <max>20</max>
+    <pattern>\+?[1-9][0-9]{1,18}</pattern>
   </property-value-rule>
 </property-value-rules>

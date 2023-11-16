@@ -142,6 +142,22 @@ namespace Amazon.PinpointSMSVoiceV2
         /// Constant POOLS for AccountLimitName
         /// </summary>
         public static readonly AccountLimitName POOLS = new AccountLimitName("POOLS");
+        /// <summary>
+        /// Constant REGISTRATION_ATTACHMENTS for AccountLimitName
+        /// </summary>
+        public static readonly AccountLimitName REGISTRATION_ATTACHMENTS = new AccountLimitName("REGISTRATION_ATTACHMENTS");
+        /// <summary>
+        /// Constant REGISTRATIONS for AccountLimitName
+        /// </summary>
+        public static readonly AccountLimitName REGISTRATIONS = new AccountLimitName("REGISTRATIONS");
+        /// <summary>
+        /// Constant SENDER_IDS for AccountLimitName
+        /// </summary>
+        public static readonly AccountLimitName SENDER_IDS = new AccountLimitName("SENDER_IDS");
+        /// <summary>
+        /// Constant VERIFIED_DESTINATION_NUMBERS for AccountLimitName
+        /// </summary>
+        public static readonly AccountLimitName VERIFIED_DESTINATION_NUMBERS = new AccountLimitName("VERIFIED_DESTINATION_NUMBERS");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -172,6 +188,110 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator AccountLimitName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AttachmentStatus.
+    /// </summary>
+    public class AttachmentStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DELETED for AttachmentStatus
+        /// </summary>
+        public static readonly AttachmentStatus DELETED = new AttachmentStatus("DELETED");
+        /// <summary>
+        /// Constant UPLOAD_COMPLETE for AttachmentStatus
+        /// </summary>
+        public static readonly AttachmentStatus UPLOAD_COMPLETE = new AttachmentStatus("UPLOAD_COMPLETE");
+        /// <summary>
+        /// Constant UPLOAD_FAILED for AttachmentStatus
+        /// </summary>
+        public static readonly AttachmentStatus UPLOAD_FAILED = new AttachmentStatus("UPLOAD_FAILED");
+        /// <summary>
+        /// Constant UPLOAD_IN_PROGRESS for AttachmentStatus
+        /// </summary>
+        public static readonly AttachmentStatus UPLOAD_IN_PROGRESS = new AttachmentStatus("UPLOAD_IN_PROGRESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AttachmentStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AttachmentStatus FindValue(string value)
+        {
+            return FindValue<AttachmentStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AttachmentStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AttachmentUploadErrorReason.
+    /// </summary>
+    public class AttachmentUploadErrorReason : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INTERNAL_ERROR for AttachmentUploadErrorReason
+        /// </summary>
+        public static readonly AttachmentUploadErrorReason INTERNAL_ERROR = new AttachmentUploadErrorReason("INTERNAL_ERROR");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AttachmentUploadErrorReason(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AttachmentUploadErrorReason FindValue(string value)
+        {
+            return FindValue<AttachmentUploadErrorReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AttachmentUploadErrorReason(string value)
         {
             return FindValue(value);
         }
@@ -243,6 +363,10 @@ namespace Amazon.PinpointSMSVoiceV2
     {
 
         /// <summary>
+        /// Constant CREATE_REGISTRATION_VERSION_NOT_ALLOWED for ConflictExceptionReason
+        /// </summary>
+        public static readonly ConflictExceptionReason CREATE_REGISTRATION_VERSION_NOT_ALLOWED = new ConflictExceptionReason("CREATE_REGISTRATION_VERSION_NOT_ALLOWED");
+        /// <summary>
         /// Constant DELETION_PROTECTION_ENABLED for ConflictExceptionReason
         /// </summary>
         public static readonly ConflictExceptionReason DELETION_PROTECTION_ENABLED = new ConflictExceptionReason("DELETION_PROTECTION_ENABLED");
@@ -254,6 +378,18 @@ namespace Amazon.PinpointSMSVoiceV2
         /// Constant DESTINATION_PHONE_NUMBER_OPTED_OUT for ConflictExceptionReason
         /// </summary>
         public static readonly ConflictExceptionReason DESTINATION_PHONE_NUMBER_OPTED_OUT = new ConflictExceptionReason("DESTINATION_PHONE_NUMBER_OPTED_OUT");
+        /// <summary>
+        /// Constant DISASSOCIATE_REGISTRATION_NOT_ALLOWED for ConflictExceptionReason
+        /// </summary>
+        public static readonly ConflictExceptionReason DISASSOCIATE_REGISTRATION_NOT_ALLOWED = new ConflictExceptionReason("DISASSOCIATE_REGISTRATION_NOT_ALLOWED");
+        /// <summary>
+        /// Constant DISCARD_REGISTRATION_VERSION_NOT_ALLOWED for ConflictExceptionReason
+        /// </summary>
+        public static readonly ConflictExceptionReason DISCARD_REGISTRATION_VERSION_NOT_ALLOWED = new ConflictExceptionReason("DISCARD_REGISTRATION_VERSION_NOT_ALLOWED");
+        /// <summary>
+        /// Constant EDIT_REGISTRATION_FIELD_VALUES_NOT_ALLOWED for ConflictExceptionReason
+        /// </summary>
+        public static readonly ConflictExceptionReason EDIT_REGISTRATION_FIELD_VALUES_NOT_ALLOWED = new ConflictExceptionReason("EDIT_REGISTRATION_FIELD_VALUES_NOT_ALLOWED");
         /// <summary>
         /// Constant EVENT_DESTINATION_MISMATCH for ConflictExceptionReason
         /// </summary>
@@ -275,6 +411,10 @@ namespace Amazon.PinpointSMSVoiceV2
         /// </summary>
         public static readonly ConflictExceptionReason NO_ORIGINATION_IDENTITIES_FOUND = new ConflictExceptionReason("NO_ORIGINATION_IDENTITIES_FOUND");
         /// <summary>
+        /// Constant NUMBER_CAPABILITIES_MISMATCH for ConflictExceptionReason
+        /// </summary>
+        public static readonly ConflictExceptionReason NUMBER_CAPABILITIES_MISMATCH = new ConflictExceptionReason("NUMBER_CAPABILITIES_MISMATCH");
+        /// <summary>
         /// Constant OPT_OUT_LIST_MISMATCH for ConflictExceptionReason
         /// </summary>
         public static readonly ConflictExceptionReason OPT_OUT_LIST_MISMATCH = new ConflictExceptionReason("OPT_OUT_LIST_MISMATCH");
@@ -283,6 +423,10 @@ namespace Amazon.PinpointSMSVoiceV2
         /// </summary>
         public static readonly ConflictExceptionReason PHONE_NUMBER_ASSOCIATED_TO_POOL = new ConflictExceptionReason("PHONE_NUMBER_ASSOCIATED_TO_POOL");
         /// <summary>
+        /// Constant PHONE_NUMBER_ASSOCIATED_TO_REGISTRATION for ConflictExceptionReason
+        /// </summary>
+        public static readonly ConflictExceptionReason PHONE_NUMBER_ASSOCIATED_TO_REGISTRATION = new ConflictExceptionReason("PHONE_NUMBER_ASSOCIATED_TO_REGISTRATION");
+        /// <summary>
         /// Constant PHONE_NUMBER_NOT_ASSOCIATED_TO_POOL for ConflictExceptionReason
         /// </summary>
         public static readonly ConflictExceptionReason PHONE_NUMBER_NOT_ASSOCIATED_TO_POOL = new ConflictExceptionReason("PHONE_NUMBER_NOT_ASSOCIATED_TO_POOL");
@@ -290,6 +434,14 @@ namespace Amazon.PinpointSMSVoiceV2
         /// Constant PHONE_NUMBER_NOT_IN_REGISTRATION_REGION for ConflictExceptionReason
         /// </summary>
         public static readonly ConflictExceptionReason PHONE_NUMBER_NOT_IN_REGISTRATION_REGION = new ConflictExceptionReason("PHONE_NUMBER_NOT_IN_REGISTRATION_REGION");
+        /// <summary>
+        /// Constant REGISTRATION_ALREADY_SUBMITTED for ConflictExceptionReason
+        /// </summary>
+        public static readonly ConflictExceptionReason REGISTRATION_ALREADY_SUBMITTED = new ConflictExceptionReason("REGISTRATION_ALREADY_SUBMITTED");
+        /// <summary>
+        /// Constant REGISTRATION_NOT_COMPLETE for ConflictExceptionReason
+        /// </summary>
+        public static readonly ConflictExceptionReason REGISTRATION_NOT_COMPLETE = new ConflictExceptionReason("REGISTRATION_NOT_COMPLETE");
         /// <summary>
         /// Constant RESOURCE_ALREADY_EXISTS for ConflictExceptionReason
         /// </summary>
@@ -315,9 +467,25 @@ namespace Amazon.PinpointSMSVoiceV2
         /// </summary>
         public static readonly ConflictExceptionReason SELF_MANAGED_OPT_OUTS_MISMATCH = new ConflictExceptionReason("SELF_MANAGED_OPT_OUTS_MISMATCH");
         /// <summary>
+        /// Constant SENDER_ID_ASSOCIATED_TO_POOL for ConflictExceptionReason
+        /// </summary>
+        public static readonly ConflictExceptionReason SENDER_ID_ASSOCIATED_TO_POOL = new ConflictExceptionReason("SENDER_ID_ASSOCIATED_TO_POOL");
+        /// <summary>
+        /// Constant SUBMIT_REGISTRATION_VERSION_NOT_ALLOWED for ConflictExceptionReason
+        /// </summary>
+        public static readonly ConflictExceptionReason SUBMIT_REGISTRATION_VERSION_NOT_ALLOWED = new ConflictExceptionReason("SUBMIT_REGISTRATION_VERSION_NOT_ALLOWED");
+        /// <summary>
         /// Constant TWO_WAY_CONFIG_MISMATCH for ConflictExceptionReason
         /// </summary>
         public static readonly ConflictExceptionReason TWO_WAY_CONFIG_MISMATCH = new ConflictExceptionReason("TWO_WAY_CONFIG_MISMATCH");
+        /// <summary>
+        /// Constant VERIFICATION_ALREADY_COMPLETE for ConflictExceptionReason
+        /// </summary>
+        public static readonly ConflictExceptionReason VERIFICATION_ALREADY_COMPLETE = new ConflictExceptionReason("VERIFICATION_ALREADY_COMPLETE");
+        /// <summary>
+        /// Constant VERIFICATION_CODE_EXPIRED for ConflictExceptionReason
+        /// </summary>
+        public static readonly ConflictExceptionReason VERIFICATION_CODE_EXPIRED = new ConflictExceptionReason("VERIFICATION_CODE_EXPIRED");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -547,6 +715,114 @@ namespace Amazon.PinpointSMSVoiceV2
 
 
     /// <summary>
+    /// Constants used for properties of type FieldRequirement.
+    /// </summary>
+    public class FieldRequirement : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONDITIONAL for FieldRequirement
+        /// </summary>
+        public static readonly FieldRequirement CONDITIONAL = new FieldRequirement("CONDITIONAL");
+        /// <summary>
+        /// Constant OPTIONAL for FieldRequirement
+        /// </summary>
+        public static readonly FieldRequirement OPTIONAL = new FieldRequirement("OPTIONAL");
+        /// <summary>
+        /// Constant REQUIRED for FieldRequirement
+        /// </summary>
+        public static readonly FieldRequirement REQUIRED = new FieldRequirement("REQUIRED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FieldRequirement(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FieldRequirement FindValue(string value)
+        {
+            return FindValue<FieldRequirement>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FieldRequirement(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FieldType.
+    /// </summary>
+    public class FieldType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ATTACHMENT for FieldType
+        /// </summary>
+        public static readonly FieldType ATTACHMENT = new FieldType("ATTACHMENT");
+        /// <summary>
+        /// Constant SELECT for FieldType
+        /// </summary>
+        public static readonly FieldType SELECT = new FieldType("SELECT");
+        /// <summary>
+        /// Constant TEXT for FieldType
+        /// </summary>
+        public static readonly FieldType TEXT = new FieldType("TEXT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FieldType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FieldType FindValue(string value)
+        {
+            return FindValue<FieldType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FieldType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type KeywordAction.
     /// </summary>
     public class KeywordAction : ConstantClass
@@ -640,6 +916,100 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator KeywordFilterName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LanguageCode.
+    /// </summary>
+    public class LanguageCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DE_DE for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode DE_DE = new LanguageCode("DE_DE");
+        /// <summary>
+        /// Constant EN_GB for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode EN_GB = new LanguageCode("EN_GB");
+        /// <summary>
+        /// Constant EN_US for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode EN_US = new LanguageCode("EN_US");
+        /// <summary>
+        /// Constant ES_419 for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode ES_419 = new LanguageCode("ES_419");
+        /// <summary>
+        /// Constant ES_ES for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode ES_ES = new LanguageCode("ES_ES");
+        /// <summary>
+        /// Constant FR_CA for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode FR_CA = new LanguageCode("FR_CA");
+        /// <summary>
+        /// Constant FR_FR for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode FR_FR = new LanguageCode("FR_FR");
+        /// <summary>
+        /// Constant IT_IT for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode IT_IT = new LanguageCode("IT_IT");
+        /// <summary>
+        /// Constant JA_JP for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode JA_JP = new LanguageCode("JA_JP");
+        /// <summary>
+        /// Constant KO_KR for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode KO_KR = new LanguageCode("KO_KR");
+        /// <summary>
+        /// Constant PT_BR for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode PT_BR = new LanguageCode("PT_BR");
+        /// <summary>
+        /// Constant ZH_CN for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode ZH_CN = new LanguageCode("ZH_CN");
+        /// <summary>
+        /// Constant ZH_TW for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode ZH_TW = new LanguageCode("ZH_TW");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LanguageCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LanguageCode FindValue(string value)
+        {
+            return FindValue<LanguageCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LanguageCode(string value)
         {
             return FindValue(value);
         }
@@ -823,6 +1193,10 @@ namespace Amazon.PinpointSMSVoiceV2
         /// </summary>
         public static readonly NumberType SHORT_CODE = new NumberType("SHORT_CODE");
         /// <summary>
+        /// Constant SIMULATOR for NumberType
+        /// </summary>
+        public static readonly NumberType SIMULATOR = new NumberType("SIMULATOR");
+        /// <summary>
         /// Constant TEN_DLC for NumberType
         /// </summary>
         public static readonly NumberType TEN_DLC = new NumberType("TEN_DLC");
@@ -951,6 +1325,10 @@ namespace Amazon.PinpointSMSVoiceV2
         /// </summary>
         public static readonly PhoneNumberFilterName Status = new PhoneNumberFilterName("status");
         /// <summary>
+        /// Constant TwoWayChannelArn for PhoneNumberFilterName
+        /// </summary>
+        public static readonly PhoneNumberFilterName TwoWayChannelArn = new PhoneNumberFilterName("two-way-channel-arn");
+        /// <summary>
         /// Constant TwoWayEnabled for PhoneNumberFilterName
         /// </summary>
         public static readonly PhoneNumberFilterName TwoWayEnabled = new PhoneNumberFilterName("two-way-enabled");
@@ -1020,6 +1398,10 @@ namespace Amazon.PinpointSMSVoiceV2
         /// Constant Status for PoolFilterName
         /// </summary>
         public static readonly PoolFilterName Status = new PoolFilterName("status");
+        /// <summary>
+        /// Constant TwoWayChannelArn for PoolFilterName
+        /// </summary>
+        public static readonly PoolFilterName TwoWayChannelArn = new PoolFilterName("two-way-channel-arn");
         /// <summary>
         /// Constant TwoWayEnabled for PoolFilterName
         /// </summary>
@@ -1165,6 +1547,504 @@ namespace Amazon.PinpointSMSVoiceV2
 
 
     /// <summary>
+    /// Constants used for properties of type RegistrationAssociationBehavior.
+    /// </summary>
+    public class RegistrationAssociationBehavior : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ASSOCIATE_AFTER_COMPLETE for RegistrationAssociationBehavior
+        /// </summary>
+        public static readonly RegistrationAssociationBehavior ASSOCIATE_AFTER_COMPLETE = new RegistrationAssociationBehavior("ASSOCIATE_AFTER_COMPLETE");
+        /// <summary>
+        /// Constant ASSOCIATE_BEFORE_SUBMIT for RegistrationAssociationBehavior
+        /// </summary>
+        public static readonly RegistrationAssociationBehavior ASSOCIATE_BEFORE_SUBMIT = new RegistrationAssociationBehavior("ASSOCIATE_BEFORE_SUBMIT");
+        /// <summary>
+        /// Constant ASSOCIATE_ON_APPROVAL for RegistrationAssociationBehavior
+        /// </summary>
+        public static readonly RegistrationAssociationBehavior ASSOCIATE_ON_APPROVAL = new RegistrationAssociationBehavior("ASSOCIATE_ON_APPROVAL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RegistrationAssociationBehavior(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RegistrationAssociationBehavior FindValue(string value)
+        {
+            return FindValue<RegistrationAssociationBehavior>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RegistrationAssociationBehavior(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RegistrationAssociationFilterName.
+    /// </summary>
+    public class RegistrationAssociationFilterName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant IsoCountryCode for RegistrationAssociationFilterName
+        /// </summary>
+        public static readonly RegistrationAssociationFilterName IsoCountryCode = new RegistrationAssociationFilterName("iso-country-code");
+        /// <summary>
+        /// Constant ResourceType for RegistrationAssociationFilterName
+        /// </summary>
+        public static readonly RegistrationAssociationFilterName ResourceType = new RegistrationAssociationFilterName("resource-type");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RegistrationAssociationFilterName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RegistrationAssociationFilterName FindValue(string value)
+        {
+            return FindValue<RegistrationAssociationFilterName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RegistrationAssociationFilterName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RegistrationAttachmentFilterName.
+    /// </summary>
+    public class RegistrationAttachmentFilterName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AttachmentStatus for RegistrationAttachmentFilterName
+        /// </summary>
+        public static readonly RegistrationAttachmentFilterName AttachmentStatus = new RegistrationAttachmentFilterName("attachment-status");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RegistrationAttachmentFilterName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RegistrationAttachmentFilterName FindValue(string value)
+        {
+            return FindValue<RegistrationAttachmentFilterName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RegistrationAttachmentFilterName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RegistrationDisassociationBehavior.
+    /// </summary>
+    public class RegistrationDisassociationBehavior : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DELETE_REGISTRATION_DISASSOCIATES for RegistrationDisassociationBehavior
+        /// </summary>
+        public static readonly RegistrationDisassociationBehavior DELETE_REGISTRATION_DISASSOCIATES = new RegistrationDisassociationBehavior("DELETE_REGISTRATION_DISASSOCIATES");
+        /// <summary>
+        /// Constant DISASSOCIATE_ALL_ALLOWS_DELETE_REGISTRATION for RegistrationDisassociationBehavior
+        /// </summary>
+        public static readonly RegistrationDisassociationBehavior DISASSOCIATE_ALL_ALLOWS_DELETE_REGISTRATION = new RegistrationDisassociationBehavior("DISASSOCIATE_ALL_ALLOWS_DELETE_REGISTRATION");
+        /// <summary>
+        /// Constant DISASSOCIATE_ALL_CLOSES_REGISTRATION for RegistrationDisassociationBehavior
+        /// </summary>
+        public static readonly RegistrationDisassociationBehavior DISASSOCIATE_ALL_CLOSES_REGISTRATION = new RegistrationDisassociationBehavior("DISASSOCIATE_ALL_CLOSES_REGISTRATION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RegistrationDisassociationBehavior(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RegistrationDisassociationBehavior FindValue(string value)
+        {
+            return FindValue<RegistrationDisassociationBehavior>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RegistrationDisassociationBehavior(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RegistrationFilterName.
+    /// </summary>
+    public class RegistrationFilterName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant RegistrationStatus for RegistrationFilterName
+        /// </summary>
+        public static readonly RegistrationFilterName RegistrationStatus = new RegistrationFilterName("registration-status");
+        /// <summary>
+        /// Constant RegistrationType for RegistrationFilterName
+        /// </summary>
+        public static readonly RegistrationFilterName RegistrationType = new RegistrationFilterName("registration-type");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RegistrationFilterName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RegistrationFilterName FindValue(string value)
+        {
+            return FindValue<RegistrationFilterName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RegistrationFilterName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RegistrationStatus.
+    /// </summary>
+    public class RegistrationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CLOSED for RegistrationStatus
+        /// </summary>
+        public static readonly RegistrationStatus CLOSED = new RegistrationStatus("CLOSED");
+        /// <summary>
+        /// Constant COMPLETE for RegistrationStatus
+        /// </summary>
+        public static readonly RegistrationStatus COMPLETE = new RegistrationStatus("COMPLETE");
+        /// <summary>
+        /// Constant CREATED for RegistrationStatus
+        /// </summary>
+        public static readonly RegistrationStatus CREATED = new RegistrationStatus("CREATED");
+        /// <summary>
+        /// Constant DELETED for RegistrationStatus
+        /// </summary>
+        public static readonly RegistrationStatus DELETED = new RegistrationStatus("DELETED");
+        /// <summary>
+        /// Constant PROVISIONING for RegistrationStatus
+        /// </summary>
+        public static readonly RegistrationStatus PROVISIONING = new RegistrationStatus("PROVISIONING");
+        /// <summary>
+        /// Constant REQUIRES_UPDATES for RegistrationStatus
+        /// </summary>
+        public static readonly RegistrationStatus REQUIRES_UPDATES = new RegistrationStatus("REQUIRES_UPDATES");
+        /// <summary>
+        /// Constant REVIEWING for RegistrationStatus
+        /// </summary>
+        public static readonly RegistrationStatus REVIEWING = new RegistrationStatus("REVIEWING");
+        /// <summary>
+        /// Constant SUBMITTED for RegistrationStatus
+        /// </summary>
+        public static readonly RegistrationStatus SUBMITTED = new RegistrationStatus("SUBMITTED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RegistrationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RegistrationStatus FindValue(string value)
+        {
+            return FindValue<RegistrationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RegistrationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RegistrationTypeFilterName.
+    /// </summary>
+    public class RegistrationTypeFilterName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SupportedAssociationIsoCountryCode for RegistrationTypeFilterName
+        /// </summary>
+        public static readonly RegistrationTypeFilterName SupportedAssociationIsoCountryCode = new RegistrationTypeFilterName("supported-association-iso-country-code");
+        /// <summary>
+        /// Constant SupportedAssociationResourceType for RegistrationTypeFilterName
+        /// </summary>
+        public static readonly RegistrationTypeFilterName SupportedAssociationResourceType = new RegistrationTypeFilterName("supported-association-resource-type");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RegistrationTypeFilterName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RegistrationTypeFilterName FindValue(string value)
+        {
+            return FindValue<RegistrationTypeFilterName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RegistrationTypeFilterName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RegistrationVersionFilterName.
+    /// </summary>
+    public class RegistrationVersionFilterName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant RegistrationVersionStatus for RegistrationVersionFilterName
+        /// </summary>
+        public static readonly RegistrationVersionFilterName RegistrationVersionStatus = new RegistrationVersionFilterName("registration-version-status");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RegistrationVersionFilterName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RegistrationVersionFilterName FindValue(string value)
+        {
+            return FindValue<RegistrationVersionFilterName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RegistrationVersionFilterName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RegistrationVersionStatus.
+    /// </summary>
+    public class RegistrationVersionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant APPROVED for RegistrationVersionStatus
+        /// </summary>
+        public static readonly RegistrationVersionStatus APPROVED = new RegistrationVersionStatus("APPROVED");
+        /// <summary>
+        /// Constant ARCHIVED for RegistrationVersionStatus
+        /// </summary>
+        public static readonly RegistrationVersionStatus ARCHIVED = new RegistrationVersionStatus("ARCHIVED");
+        /// <summary>
+        /// Constant DENIED for RegistrationVersionStatus
+        /// </summary>
+        public static readonly RegistrationVersionStatus DENIED = new RegistrationVersionStatus("DENIED");
+        /// <summary>
+        /// Constant DISCARDED for RegistrationVersionStatus
+        /// </summary>
+        public static readonly RegistrationVersionStatus DISCARDED = new RegistrationVersionStatus("DISCARDED");
+        /// <summary>
+        /// Constant DRAFT for RegistrationVersionStatus
+        /// </summary>
+        public static readonly RegistrationVersionStatus DRAFT = new RegistrationVersionStatus("DRAFT");
+        /// <summary>
+        /// Constant REVIEWING for RegistrationVersionStatus
+        /// </summary>
+        public static readonly RegistrationVersionStatus REVIEWING = new RegistrationVersionStatus("REVIEWING");
+        /// <summary>
+        /// Constant REVOKED for RegistrationVersionStatus
+        /// </summary>
+        public static readonly RegistrationVersionStatus REVOKED = new RegistrationVersionStatus("REVOKED");
+        /// <summary>
+        /// Constant SUBMITTED for RegistrationVersionStatus
+        /// </summary>
+        public static readonly RegistrationVersionStatus SUBMITTED = new RegistrationVersionStatus("SUBMITTED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RegistrationVersionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RegistrationVersionStatus FindValue(string value)
+        {
+            return FindValue<RegistrationVersionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RegistrationVersionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type RequestableNumberType.
     /// </summary>
     public class RequestableNumberType : ConstantClass
@@ -1174,6 +2054,10 @@ namespace Amazon.PinpointSMSVoiceV2
         /// Constant LONG_CODE for RequestableNumberType
         /// </summary>
         public static readonly RequestableNumberType LONG_CODE = new RequestableNumberType("LONG_CODE");
+        /// <summary>
+        /// Constant SIMULATOR for RequestableNumberType
+        /// </summary>
+        public static readonly RequestableNumberType SIMULATOR = new RequestableNumberType("SIMULATOR");
         /// <summary>
         /// Constant TEN_DLC for RequestableNumberType
         /// </summary>
@@ -1261,9 +2145,17 @@ namespace Amazon.PinpointSMSVoiceV2
         /// </summary>
         public static readonly ResourceType Registration = new ResourceType("registration");
         /// <summary>
+        /// Constant RegistrationAttachment for ResourceType
+        /// </summary>
+        public static readonly ResourceType RegistrationAttachment = new ResourceType("registration-attachment");
+        /// <summary>
         /// Constant SenderId for ResourceType
         /// </summary>
         public static readonly ResourceType SenderId = new ResourceType("sender-id");
+        /// <summary>
+        /// Constant VerifiedDestinationNumber for ResourceType
+        /// </summary>
+        public static readonly ResourceType VerifiedDestinationNumber = new ResourceType("verified-destination-number");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1307,6 +2199,10 @@ namespace Amazon.PinpointSMSVoiceV2
     {
 
         /// <summary>
+        /// Constant DeletionProtectionEnabled for SenderIdFilterName
+        /// </summary>
+        public static readonly SenderIdFilterName DeletionProtectionEnabled = new SenderIdFilterName("deletion-protection-enabled");
+        /// <summary>
         /// Constant IsoCountryCode for SenderIdFilterName
         /// </summary>
         public static readonly SenderIdFilterName IsoCountryCode = new SenderIdFilterName("iso-country-code");
@@ -1314,6 +2210,10 @@ namespace Amazon.PinpointSMSVoiceV2
         /// Constant MessageType for SenderIdFilterName
         /// </summary>
         public static readonly SenderIdFilterName MessageType = new SenderIdFilterName("message-type");
+        /// <summary>
+        /// Constant Registered for SenderIdFilterName
+        /// </summary>
+        public static readonly SenderIdFilterName Registered = new SenderIdFilterName("registered");
         /// <summary>
         /// Constant SenderId for SenderIdFilterName
         /// </summary>
@@ -1360,6 +2260,10 @@ namespace Amazon.PinpointSMSVoiceV2
     public class ServiceQuotaExceededExceptionReason : ConstantClass
     {
 
+        /// <summary>
+        /// Constant ASSOCIATIONS_PER_REGISTRATION for ServiceQuotaExceededExceptionReason
+        /// </summary>
+        public static readonly ServiceQuotaExceededExceptionReason ASSOCIATIONS_PER_REGISTRATION = new ServiceQuotaExceededExceptionReason("ASSOCIATIONS_PER_REGISTRATION");
         /// <summary>
         /// Constant CONFIGURATION_SETS_PER_ACCOUNT for ServiceQuotaExceededExceptionReason
         /// </summary>
@@ -1409,9 +2313,37 @@ namespace Amazon.PinpointSMSVoiceV2
         /// </summary>
         public static readonly ServiceQuotaExceededExceptionReason POOLS_PER_ACCOUNT = new ServiceQuotaExceededExceptionReason("POOLS_PER_ACCOUNT");
         /// <summary>
+        /// Constant REGISTRATION_ATTACHMENTS_CREATED_PER_DAY for ServiceQuotaExceededExceptionReason
+        /// </summary>
+        public static readonly ServiceQuotaExceededExceptionReason REGISTRATION_ATTACHMENTS_CREATED_PER_DAY = new ServiceQuotaExceededExceptionReason("REGISTRATION_ATTACHMENTS_CREATED_PER_DAY");
+        /// <summary>
+        /// Constant REGISTRATION_ATTACHMENTS_PER_ACCOUNT for ServiceQuotaExceededExceptionReason
+        /// </summary>
+        public static readonly ServiceQuotaExceededExceptionReason REGISTRATION_ATTACHMENTS_PER_ACCOUNT = new ServiceQuotaExceededExceptionReason("REGISTRATION_ATTACHMENTS_PER_ACCOUNT");
+        /// <summary>
+        /// Constant REGISTRATION_VERSIONS_CREATED_PER_DAY for ServiceQuotaExceededExceptionReason
+        /// </summary>
+        public static readonly ServiceQuotaExceededExceptionReason REGISTRATION_VERSIONS_CREATED_PER_DAY = new ServiceQuotaExceededExceptionReason("REGISTRATION_VERSIONS_CREATED_PER_DAY");
+        /// <summary>
+        /// Constant REGISTRATIONS_PER_ACCOUNT for ServiceQuotaExceededExceptionReason
+        /// </summary>
+        public static readonly ServiceQuotaExceededExceptionReason REGISTRATIONS_PER_ACCOUNT = new ServiceQuotaExceededExceptionReason("REGISTRATIONS_PER_ACCOUNT");
+        /// <summary>
+        /// Constant SENDER_IDS_PER_ACCOUNT for ServiceQuotaExceededExceptionReason
+        /// </summary>
+        public static readonly ServiceQuotaExceededExceptionReason SENDER_IDS_PER_ACCOUNT = new ServiceQuotaExceededExceptionReason("SENDER_IDS_PER_ACCOUNT");
+        /// <summary>
         /// Constant TAGS_PER_RESOURCE for ServiceQuotaExceededExceptionReason
         /// </summary>
         public static readonly ServiceQuotaExceededExceptionReason TAGS_PER_RESOURCE = new ServiceQuotaExceededExceptionReason("TAGS_PER_RESOURCE");
+        /// <summary>
+        /// Constant VERIFICATION_ATTEMPTS_PER_DAY for ServiceQuotaExceededExceptionReason
+        /// </summary>
+        public static readonly ServiceQuotaExceededExceptionReason VERIFICATION_ATTEMPTS_PER_DAY = new ServiceQuotaExceededExceptionReason("VERIFICATION_ATTEMPTS_PER_DAY");
+        /// <summary>
+        /// Constant VERIFIED_DESTINATION_NUMBERS_PER_ACCOUNT for ServiceQuotaExceededExceptionReason
+        /// </summary>
+        public static readonly ServiceQuotaExceededExceptionReason VERIFIED_DESTINATION_NUMBERS_PER_ACCOUNT = new ServiceQuotaExceededExceptionReason("VERIFIED_DESTINATION_NUMBERS_PER_ACCOUNT");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1505,6 +2437,10 @@ namespace Amazon.PinpointSMSVoiceV2
     {
 
         /// <summary>
+        /// Constant ATTACHMENT_TYPE_NOT_SUPPORTED for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason ATTACHMENT_TYPE_NOT_SUPPORTED = new ValidationExceptionReason("ATTACHMENT_TYPE_NOT_SUPPORTED");
+        /// <summary>
         /// Constant CANNOT_ADD_OPTED_OUT_NUMBER for ValidationExceptionReason
         /// </summary>
         public static readonly ValidationExceptionReason CANNOT_ADD_OPTED_OUT_NUMBER = new ValidationExceptionReason("CANNOT_ADD_OPTED_OUT_NUMBER");
@@ -1545,6 +2481,18 @@ namespace Amazon.PinpointSMSVoiceV2
         /// </summary>
         public static readonly ValidationExceptionReason INVALID_PARAMETER = new ValidationExceptionReason("INVALID_PARAMETER");
         /// <summary>
+        /// Constant INVALID_REGISTRATION_ASSOCIATION for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason INVALID_REGISTRATION_ASSOCIATION = new ValidationExceptionReason("INVALID_REGISTRATION_ASSOCIATION");
+        /// <summary>
+        /// Constant INVALID_REQUEST for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason INVALID_REQUEST = new ValidationExceptionReason("INVALID_REQUEST");
+        /// <summary>
+        /// Constant MAXIMUM_SIZE_EXCEEDED for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason MAXIMUM_SIZE_EXCEEDED = new ValidationExceptionReason("MAXIMUM_SIZE_EXCEEDED");
+        /// <summary>
         /// Constant MISSING_PARAMETER for ValidationExceptionReason
         /// </summary>
         public static readonly ValidationExceptionReason MISSING_PARAMETER = new ValidationExceptionReason("MISSING_PARAMETER");
@@ -1569,9 +2517,17 @@ namespace Amazon.PinpointSMSVoiceV2
         /// </summary>
         public static readonly ValidationExceptionReason PRICE_OVER_THRESHOLD = new ValidationExceptionReason("PRICE_OVER_THRESHOLD");
         /// <summary>
+        /// Constant REGISTRATION_FIELD_CANNOT_BE_DELETED for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason REGISTRATION_FIELD_CANNOT_BE_DELETED = new ValidationExceptionReason("REGISTRATION_FIELD_CANNOT_BE_DELETED");
+        /// <summary>
         /// Constant REQUESTED_SPEND_LIMIT_HIGHER_THAN_SERVICE_LIMIT for ValidationExceptionReason
         /// </summary>
         public static readonly ValidationExceptionReason REQUESTED_SPEND_LIMIT_HIGHER_THAN_SERVICE_LIMIT = new ValidationExceptionReason("REQUESTED_SPEND_LIMIT_HIGHER_THAN_SERVICE_LIMIT");
+        /// <summary>
+        /// Constant RESOURCE_NOT_ACCESSIBLE for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason RESOURCE_NOT_ACCESSIBLE = new ValidationExceptionReason("RESOURCE_NOT_ACCESSIBLE");
         /// <summary>
         /// Constant SENDER_ID_NOT_REGISTERED for ValidationExceptionReason
         /// </summary>
@@ -1580,6 +2536,14 @@ namespace Amazon.PinpointSMSVoiceV2
         /// Constant SENDER_ID_NOT_SUPPORTED for ValidationExceptionReason
         /// </summary>
         public static readonly ValidationExceptionReason SENDER_ID_NOT_SUPPORTED = new ValidationExceptionReason("SENDER_ID_NOT_SUPPORTED");
+        /// <summary>
+        /// Constant SENDER_ID_REQUIRES_REGISTRATION for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason SENDER_ID_REQUIRES_REGISTRATION = new ValidationExceptionReason("SENDER_ID_REQUIRES_REGISTRATION");
+        /// <summary>
+        /// Constant TWO_WAY_CHANNEL_NOT_PRESENT for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason TWO_WAY_CHANNEL_NOT_PRESENT = new ValidationExceptionReason("TWO_WAY_CHANNEL_NOT_PRESENT");
         /// <summary>
         /// Constant TWO_WAY_NOT_ENABLED for ValidationExceptionReason
         /// </summary>
@@ -1600,6 +2564,30 @@ namespace Amazon.PinpointSMSVoiceV2
         /// Constant UNKNOWN_OPERATION for ValidationExceptionReason
         /// </summary>
         public static readonly ValidationExceptionReason UNKNOWN_OPERATION = new ValidationExceptionReason("UNKNOWN_OPERATION");
+        /// <summary>
+        /// Constant UNKNOWN_REGISTRATION_FIELD for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason UNKNOWN_REGISTRATION_FIELD = new ValidationExceptionReason("UNKNOWN_REGISTRATION_FIELD");
+        /// <summary>
+        /// Constant UNKNOWN_REGISTRATION_SECTION for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason UNKNOWN_REGISTRATION_SECTION = new ValidationExceptionReason("UNKNOWN_REGISTRATION_SECTION");
+        /// <summary>
+        /// Constant UNKNOWN_REGISTRATION_TYPE for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason UNKNOWN_REGISTRATION_TYPE = new ValidationExceptionReason("UNKNOWN_REGISTRATION_TYPE");
+        /// <summary>
+        /// Constant UNKNOWN_REGISTRATION_VERSION for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason UNKNOWN_REGISTRATION_VERSION = new ValidationExceptionReason("UNKNOWN_REGISTRATION_VERSION");
+        /// <summary>
+        /// Constant VERIFICATION_CODE_MISMATCH for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason VERIFICATION_CODE_MISMATCH = new ValidationExceptionReason("VERIFICATION_CODE_MISMATCH");
+        /// <summary>
+        /// Constant VOICE_CAPABILITY_NOT_AVAILABLE for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason VOICE_CAPABILITY_NOT_AVAILABLE = new ValidationExceptionReason("VOICE_CAPABILITY_NOT_AVAILABLE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1630,6 +2618,152 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ValidationExceptionReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VerificationChannel.
+    /// </summary>
+    public class VerificationChannel : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant TEXT for VerificationChannel
+        /// </summary>
+        public static readonly VerificationChannel TEXT = new VerificationChannel("TEXT");
+        /// <summary>
+        /// Constant VOICE for VerificationChannel
+        /// </summary>
+        public static readonly VerificationChannel VOICE = new VerificationChannel("VOICE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VerificationChannel(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VerificationChannel FindValue(string value)
+        {
+            return FindValue<VerificationChannel>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VerificationChannel(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VerificationStatus.
+    /// </summary>
+    public class VerificationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PENDING for VerificationStatus
+        /// </summary>
+        public static readonly VerificationStatus PENDING = new VerificationStatus("PENDING");
+        /// <summary>
+        /// Constant VERIFIED for VerificationStatus
+        /// </summary>
+        public static readonly VerificationStatus VERIFIED = new VerificationStatus("VERIFIED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VerificationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VerificationStatus FindValue(string value)
+        {
+            return FindValue<VerificationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VerificationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VerifiedDestinationNumberFilterName.
+    /// </summary>
+    public class VerifiedDestinationNumberFilterName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Status for VerifiedDestinationNumberFilterName
+        /// </summary>
+        public static readonly VerifiedDestinationNumberFilterName Status = new VerifiedDestinationNumberFilterName("status");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VerifiedDestinationNumberFilterName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VerifiedDestinationNumberFilterName FindValue(string value)
+        {
+            return FindValue<VerifiedDestinationNumberFilterName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VerifiedDestinationNumberFilterName(string value)
         {
             return FindValue(value);
         }

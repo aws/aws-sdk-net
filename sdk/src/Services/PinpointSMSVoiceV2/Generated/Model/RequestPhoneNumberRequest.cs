@@ -167,8 +167,8 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// <summary>
         /// Gets and sets the property OptOutListName. 
         /// <para>
-        /// The name of the OptOutList to associate with the phone number. You can use the OutOutListName
-        /// or OptPutListArn.
+        /// The name of the OptOutList to associate with the phone number. You can use the OptOutListName
+        /// or OptOutListArn.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -209,7 +209,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// Use this field to attach your phone number for an external registration process.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=64)]
+        [AWSProperty(Min=1, Max=256)]
         public string RegistrationId
         {
             get { return this._registrationId; }

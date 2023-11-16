@@ -117,6 +117,12 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
                     response.TwoWayChannelArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("TwoWayChannelRole", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.TwoWayChannelRole = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("TwoWayEnabled", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;

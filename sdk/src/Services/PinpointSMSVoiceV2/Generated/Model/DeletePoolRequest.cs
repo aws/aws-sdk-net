@@ -35,7 +35,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
     /// 
     ///  
     /// <para>
-    /// If the pool status isn't active or if deletion protection is enabled, an Error is
+    /// If the pool status isn't active or if deletion protection is enabled, an error is
     /// returned.
     /// </para>
     ///  

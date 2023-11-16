@@ -43,7 +43,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
     /// </para>
     ///  
     /// <para>
-    /// If you specify an opted out number that isn't valid, an Error is returned.
+    /// If you specify an opted out number that isn't valid, an error is returned.
     /// </para>
     /// </summary>
     public partial class DescribeOptedOutNumbersRequest : AmazonPinpointSMSVoiceV2Request

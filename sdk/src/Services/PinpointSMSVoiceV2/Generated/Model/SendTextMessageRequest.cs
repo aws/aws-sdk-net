@@ -217,8 +217,8 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// <summary>
         /// Gets and sets the property MessageType. 
         /// <para>
-        /// The type of message. Valid values are TRANSACTIONAL for messages that are critical
-        /// or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.
+        /// The type of message. Valid values are for messages that are critical or time-sensitive
+        /// and PROMOTIONAL for messages that aren't critical or time-sensitive.
         /// </para>
         /// </summary>
         public MessageType MessageType

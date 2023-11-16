@@ -151,6 +151,11 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// <para>
         /// An array of event types that determine which events to log.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <code>TEXT_SENT</code> event type is not supported.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=1, Max=25)]
         public List<string> MatchingEventTypes

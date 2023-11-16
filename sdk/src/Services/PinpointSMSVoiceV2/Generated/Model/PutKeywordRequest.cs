@@ -42,7 +42,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
     /// </para>
     ///  
     /// <para>
-    /// If you specify a keyword that isn't valid, an Error is returned.
+    /// If you specify a keyword that isn't valid, an error is returned.
     /// </para>
     /// </summary>
     public partial class PutKeywordRequest : AmazonPinpointSMSVoiceV2Request
@@ -76,6 +76,19 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// <para>
         /// The action to perform for the new keyword when it is received.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// AUTOMATIC_RESPONSE: A message is sent to the recipient.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// OPT_OUT: Keeps the recipient from receiving future messages.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// OPT_IN: The recipient wants to receive future messages.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public KeywordAction KeywordAction
         {
@@ -94,19 +107,6 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// <para>
         /// The message associated with the keyword.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// AUTOMATIC_RESPONSE: A message is sent to the recipient.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// OPT_OUT: Keeps the recipient from receiving future messages.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// OPT_IN: The recipient wants to receive future messages.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1600)]
         public string KeywordMessage

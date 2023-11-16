@@ -64,6 +64,12 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("DeletionProtectionEnabled", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.DeletionProtectionEnabled = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("IsoCountryCode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -80,6 +86,18 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MonthlyLeasingPrice = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Registered", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.Registered = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RegistrationId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RegistrationId = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SenderId", targetDepth))

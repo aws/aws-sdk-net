@@ -97,6 +97,12 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.TwoWayChannelArn);
                 }
 
+                if(publicRequest.IsSetTwoWayChannelRole())
+                {
+                    context.Writer.WritePropertyName("TwoWayChannelRole");
+                    context.Writer.Write(publicRequest.TwoWayChannelRole);
+                }
+
                 if(publicRequest.IsSetTwoWayEnabled())
                 {
                     context.Writer.WritePropertyName("TwoWayEnabled");

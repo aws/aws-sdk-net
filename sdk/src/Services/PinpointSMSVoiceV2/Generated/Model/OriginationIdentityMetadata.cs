@@ -37,6 +37,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         private List<string> _numberCapabilities = new List<string>();
         private string _originationIdentity;
         private string _originationIdentityArn;
+        private string _phoneNumber;
 
         /// <summary>
         /// Gets and sets the property IsoCountryCode. 
@@ -113,6 +114,25 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         internal bool IsSetOriginationIdentityArn()
         {
             return this._originationIdentityArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PhoneNumber. 
+        /// <para>
+        /// The phone number in E.164 format.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=20)]
+        public string PhoneNumber
+        {
+            get { return this._phoneNumber; }
+            set { this._phoneNumber = value; }
+        }
+
+        // Check to see if PhoneNumber property is set
+        internal bool IsSetPhoneNumber()
+        {
+            return this._phoneNumber != null;
         }
 
     }

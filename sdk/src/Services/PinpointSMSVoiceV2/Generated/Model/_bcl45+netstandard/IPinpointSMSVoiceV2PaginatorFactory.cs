@@ -66,6 +66,41 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         IDescribePoolsPaginator DescribePools(DescribePoolsRequest request);
 
         /// <summary>
+        /// Paginator for DescribeRegistrationAttachments operation
+        ///</summary>
+        IDescribeRegistrationAttachmentsPaginator DescribeRegistrationAttachments(DescribeRegistrationAttachmentsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeRegistrationFieldDefinitions operation
+        ///</summary>
+        IDescribeRegistrationFieldDefinitionsPaginator DescribeRegistrationFieldDefinitions(DescribeRegistrationFieldDefinitionsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeRegistrationFieldValues operation
+        ///</summary>
+        IDescribeRegistrationFieldValuesPaginator DescribeRegistrationFieldValues(DescribeRegistrationFieldValuesRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeRegistrations operation
+        ///</summary>
+        IDescribeRegistrationsPaginator DescribeRegistrations(DescribeRegistrationsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeRegistrationSectionDefinitions operation
+        ///</summary>
+        IDescribeRegistrationSectionDefinitionsPaginator DescribeRegistrationSectionDefinitions(DescribeRegistrationSectionDefinitionsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeRegistrationTypeDefinitions operation
+        ///</summary>
+        IDescribeRegistrationTypeDefinitionsPaginator DescribeRegistrationTypeDefinitions(DescribeRegistrationTypeDefinitionsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeRegistrationVersions operation
+        ///</summary>
+        IDescribeRegistrationVersionsPaginator DescribeRegistrationVersions(DescribeRegistrationVersionsRequest request);
+
+        /// <summary>
         /// Paginator for DescribeSenderIds operation
         ///</summary>
         IDescribeSenderIdsPaginator DescribeSenderIds(DescribeSenderIdsRequest request);
@@ -76,8 +111,18 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         IDescribeSpendLimitsPaginator DescribeSpendLimits(DescribeSpendLimitsRequest request);
 
         /// <summary>
+        /// Paginator for DescribeVerifiedDestinationNumbers operation
+        ///</summary>
+        IDescribeVerifiedDestinationNumbersPaginator DescribeVerifiedDestinationNumbers(DescribeVerifiedDestinationNumbersRequest request);
+
+        /// <summary>
         /// Paginator for ListPoolOriginationIdentities operation
         ///</summary>
         IListPoolOriginationIdentitiesPaginator ListPoolOriginationIdentities(ListPoolOriginationIdentitiesRequest request);
+
+        /// <summary>
+        /// Paginator for ListRegistrationAssociations operation
+        ///</summary>
+        IListRegistrationAssociationsPaginator ListRegistrationAssociations(ListRegistrationAssociationsRequest request);
     }
 }

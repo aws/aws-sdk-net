@@ -88,6 +88,12 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.OriginationIdentityArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("PhoneNumber", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PhoneNumber = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

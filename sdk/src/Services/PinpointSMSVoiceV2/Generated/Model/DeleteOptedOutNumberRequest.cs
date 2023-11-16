@@ -40,7 +40,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
     ///  
     /// <para>
     /// If the specified destination phone number doesn't exist or if the opt-out list doesn't
-    /// exist, an Error is returned.
+    /// exist, an error is returned.
     /// </para>
     /// </summary>
     public partial class DeleteOptedOutNumberRequest : AmazonPinpointSMSVoiceV2Request

@@ -42,7 +42,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
     /// </para>
     ///  
     /// <para>
-    /// f you specify a sender ID that isn't valid, an Error is returned.
+    /// f you specify a sender ID that isn't valid, an error is returned.
     /// </para>
     /// </summary>
     public partial class DescribeSenderIdsRequest : AmazonPinpointSMSVoiceV2Request

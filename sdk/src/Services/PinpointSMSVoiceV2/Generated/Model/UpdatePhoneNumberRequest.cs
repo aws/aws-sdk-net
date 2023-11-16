@@ -36,7 +36,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
     /// 
     ///  
     /// <para>
-    /// If the origination phone number is associated with a pool, an Error is returned.
+    /// If the origination phone number is associated with a pool, an error is returned.
     /// </para>
     /// </summary>
     public partial class UpdatePhoneNumberRequest : AmazonPinpointSMSVoiceV2Request
@@ -46,6 +46,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         private string _phoneNumberId;
         private bool? _selfManagedOptOutsEnabled;
         private string _twoWayChannelArn;
+        private string _twoWayChannelRole;
         private bool? _twoWayEnabled;
 
         /// <summary>
@@ -146,6 +147,25 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         internal bool IsSetTwoWayChannelArn()
         {
             return this._twoWayChannelArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TwoWayChannelRole. 
+        /// <para>
+        /// An optional IAM Role Arn for a service to assume, to be able to post inbound SMS messages.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string TwoWayChannelRole
+        {
+            get { return this._twoWayChannelRole; }
+            set { this._twoWayChannelRole = value; }
+        }
+
+        // Check to see if TwoWayChannelRole property is set
+        internal bool IsSetTwoWayChannelRole()
+        {
+            return this._twoWayChannelRole != null;
         }
 
         /// <summary>

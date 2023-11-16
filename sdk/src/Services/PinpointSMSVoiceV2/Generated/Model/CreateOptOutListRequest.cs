@@ -34,7 +34,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
     /// 
     ///  
     /// <para>
-    /// If the opt-out list name already exists, an Error is returned.
+    /// If the opt-out list name already exists, an error is returned.
     /// </para>
     ///  
     /// <para>

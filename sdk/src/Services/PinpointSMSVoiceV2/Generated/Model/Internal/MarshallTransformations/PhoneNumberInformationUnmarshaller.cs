@@ -136,6 +136,12 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.PoolId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("RegistrationId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RegistrationId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SelfManagedOptOutsEnabled", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
@@ -152,6 +158,12 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TwoWayChannelArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TwoWayChannelRole", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TwoWayChannelRole = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TwoWayEnabled", targetDepth))

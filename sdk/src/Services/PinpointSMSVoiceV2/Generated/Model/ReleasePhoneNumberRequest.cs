@@ -36,7 +36,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
     ///  
     /// <para>
     /// If the origination phone number has deletion protection enabled or is associated with
-    /// a pool, an Error is returned.
+    /// a pool, an error is returned.
     /// </para>
     /// </summary>
     public partial class ReleasePhoneNumberRequest : AmazonPinpointSMSVoiceV2Request

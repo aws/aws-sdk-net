@@ -42,7 +42,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
     /// </para>
     ///  
     /// <para>
-    /// If you specify a phone number ID that isn't valid, an Error is returned.
+    /// If you specify a phone number ID that isn't valid, an error is returned.
     /// </para>
     /// </summary>
     public partial class DescribePhoneNumbersRequest : AmazonPinpointSMSVoiceV2Request

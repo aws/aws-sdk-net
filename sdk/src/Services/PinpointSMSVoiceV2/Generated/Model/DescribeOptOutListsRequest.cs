@@ -41,7 +41,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
     /// </para>
     ///  
     /// <para>
-    /// If you specify an opt-out list name that isn't valid, an Error is returned.
+    /// If you specify an opt-out list name that isn't valid, an error is returned.
     /// </para>
     /// </summary>
     public partial class DescribeOptOutListsRequest : AmazonPinpointSMSVoiceV2Request

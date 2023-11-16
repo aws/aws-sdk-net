@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PinpointSMSVoiceV2.Model
 {
     /// <summary>
-    /// The information for a phone number in an Amazon Web Services account.
+    /// The information for a phone number, in E.164 format, in an Amazon Web Services account.
     /// </summary>
     public partial class PhoneNumberInformation
     {
@@ -45,9 +45,11 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         private string _phoneNumberArn;
         private string _phoneNumberId;
         private string _poolId;
+        private string _registrationId;
         private bool? _selfManagedOptOutsEnabled;
         private NumberStatus _status;
         private string _twoWayChannelArn;
+        private string _twoWayChannelRole;
         private bool? _twoWayEnabled;
 
         /// <summary>
@@ -280,6 +282,24 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RegistrationId. 
+        /// <para>
+        /// The unique identifier for the registration.
+        /// </para>
+        /// </summary>
+        public string RegistrationId
+        {
+            get { return this._registrationId; }
+            set { this._registrationId = value; }
+        }
+
+        // Check to see if RegistrationId property is set
+        internal bool IsSetRegistrationId()
+        {
+            return this._registrationId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SelfManagedOptOutsEnabled. 
         /// <para>
         /// When set to false an end recipient sends a message that begins with HELP or STOP to
@@ -339,6 +359,25 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         internal bool IsSetTwoWayChannelArn()
         {
             return this._twoWayChannelArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TwoWayChannelRole. 
+        /// <para>
+        /// An optional IAM Role Arn for a service to assume, to be able to post inbound SMS messages.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string TwoWayChannelRole
+        {
+            get { return this._twoWayChannelRole; }
+            set { this._twoWayChannelRole = value; }
+        }
+
+        // Check to see if TwoWayChannelRole property is set
+        internal bool IsSetTwoWayChannelRole()
+        {
+            return this._twoWayChannelRole != null;
         }
 
         /// <summary>
