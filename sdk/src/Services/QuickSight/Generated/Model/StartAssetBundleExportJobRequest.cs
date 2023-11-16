@@ -54,7 +54,10 @@ namespace Amazon.QuickSight.Model
         private AssetBundleCloudFormationOverridePropertyConfiguration _cloudFormationOverridePropertyConfiguration;
         private AssetBundleExportFormat _exportFormat;
         private bool? _includeAllDependencies;
+        private bool? _includePermissions;
+        private bool? _includeTags;
         private List<string> _resourceArns = new List<string>();
+        private AssetBundleExportJobValidationStrategy _validationStrategy;
 
         /// <summary>
         /// Gets and sets the property AssetBundleExportJobId. 
@@ -162,6 +165,46 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IncludePermissions. 
+        /// <para>
+        /// A Boolean that determines whether all permissions for each resource ARN are exported
+        /// with the job. If you set <code>IncludePermissions</code> to <code>TRUE</code>, any
+        /// permissions associated with each resource are exported. 
+        /// </para>
+        /// </summary>
+        public bool IncludePermissions
+        {
+            get { return this._includePermissions.GetValueOrDefault(); }
+            set { this._includePermissions = value; }
+        }
+
+        // Check to see if IncludePermissions property is set
+        internal bool IsSetIncludePermissions()
+        {
+            return this._includePermissions.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludeTags. 
+        /// <para>
+        ///  A Boolean that determines whether all tags for each resource ARN are exported with
+        /// the job. If you set <code>IncludeTags</code> to <code>TRUE</code>, any tags associated
+        /// with each resource are exported.
+        /// </para>
+        /// </summary>
+        public bool IncludeTags
+        {
+            get { return this._includeTags.GetValueOrDefault(); }
+            set { this._includeTags = value; }
+        }
+
+        // Check to see if IncludeTags property is set
+        internal bool IsSetIncludeTags()
+        {
+            return this._includeTags.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ResourceArns. 
         /// <para>
         /// An array of resource ARNs to export. The following resources are supported.
@@ -211,6 +254,28 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetResourceArns()
         {
             return this._resourceArns != null && this._resourceArns.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ValidationStrategy. 
+        /// <para>
+        /// An optional parameter that determines which validation strategy to use for the export
+        /// job. If <code>StrictModeForAllResources</code> is set to <code>TRUE</code>, strict
+        /// validation for every error is enforced. If it is set to <code>FALSE</code>, validation
+        /// is skipped for specific UI errors that are shown as warnings. The default value for
+        /// <code>StrictModeForAllResources</code> is <code>FALSE</code>.
+        /// </para>
+        /// </summary>
+        public AssetBundleExportJobValidationStrategy ValidationStrategy
+        {
+            get { return this._validationStrategy; }
+            set { this._validationStrategy = value; }
+        }
+
+        // Check to see if ValidationStrategy property is set
+        internal bool IsSetValidationStrategy()
+        {
+            return this._validationStrategy != null;
         }
 
     }

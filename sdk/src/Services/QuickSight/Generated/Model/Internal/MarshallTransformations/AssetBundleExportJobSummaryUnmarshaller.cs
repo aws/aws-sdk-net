@@ -94,6 +94,18 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.IncludeAllDependencies = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("IncludePermissions", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.IncludePermissions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("IncludeTags", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.IncludeTags = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("JobStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

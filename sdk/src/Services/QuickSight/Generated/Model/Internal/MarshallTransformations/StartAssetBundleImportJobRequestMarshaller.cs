@@ -102,6 +102,39 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetOverridePermissions())
+                {
+                    context.Writer.WritePropertyName("OverridePermissions");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AssetBundleImportJobOverridePermissionsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.OverridePermissions, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetOverrideTags())
+                {
+                    context.Writer.WritePropertyName("OverrideTags");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AssetBundleImportJobOverrideTagsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.OverrideTags, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetOverrideValidationStrategy())
+                {
+                    context.Writer.WritePropertyName("OverrideValidationStrategy");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AssetBundleImportJobOverrideValidationStrategyMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.OverrideValidationStrategy, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

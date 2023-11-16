@@ -97,6 +97,18 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.IncludeAllDependencies);
                 }
 
+                if(publicRequest.IsSetIncludePermissions())
+                {
+                    context.Writer.WritePropertyName("IncludePermissions");
+                    context.Writer.Write(publicRequest.IncludePermissions);
+                }
+
+                if(publicRequest.IsSetIncludeTags())
+                {
+                    context.Writer.WritePropertyName("IncludeTags");
+                    context.Writer.Write(publicRequest.IncludeTags);
+                }
+
                 if(publicRequest.IsSetResourceArns())
                 {
                     context.Writer.WritePropertyName("ResourceArns");
@@ -106,6 +118,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                             context.Writer.Write(publicRequestResourceArnsListValue);
                     }
                     context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetValidationStrategy())
+                {
+                    context.Writer.WritePropertyName("ValidationStrategy");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AssetBundleExportJobValidationStrategyMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ValidationStrategy, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 writer.WriteObjectEnd();

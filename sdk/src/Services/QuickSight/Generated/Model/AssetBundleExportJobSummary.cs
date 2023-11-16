@@ -39,6 +39,8 @@ namespace Amazon.QuickSight.Model
         private DateTime? _createdTime;
         private AssetBundleExportFormat _exportFormat;
         private bool? _includeAllDependencies;
+        private bool? _includePermissions;
+        private bool? _includeTags;
         private AssetBundleExportJobStatus _jobStatus;
 
         /// <summary>
@@ -131,6 +133,43 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetIncludeAllDependencies()
         {
             return this._includeAllDependencies.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludePermissions. 
+        /// <para>
+        /// The flag that determines the inclusion of permissions associated with each resource
+        /// ARN.
+        /// </para>
+        /// </summary>
+        public bool IncludePermissions
+        {
+            get { return this._includePermissions.GetValueOrDefault(); }
+            set { this._includePermissions = value; }
+        }
+
+        // Check to see if IncludePermissions property is set
+        internal bool IsSetIncludePermissions()
+        {
+            return this._includePermissions.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludeTags. 
+        /// <para>
+        /// The flag that determines the inclusion of tags associated with each resource ARN.
+        /// </para>
+        /// </summary>
+        public bool IncludeTags
+        {
+            get { return this._includeTags.GetValueOrDefault(); }
+            set { this._includeTags = value; }
+        }
+
+        // Check to see if IncludeTags property is set
+        internal bool IsSetIncludeTags()
+        {
+            return this._includeTags.HasValue; 
         }
 
         /// <summary>

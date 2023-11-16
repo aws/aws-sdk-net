@@ -44,6 +44,7 @@ namespace Amazon.QuickSight.Model
         /// configured in this structure.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Arn
         {
             get { return this._arn; }

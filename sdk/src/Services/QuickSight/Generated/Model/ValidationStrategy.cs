@@ -40,7 +40,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Mode. 
         /// <para>
-        /// The mode of validation for the asset to be creaed or updated. When you set this value
+        /// The mode of validation for the asset to be created or updated. When you set this value
         /// to <code>STRICT</code>, strict validation for every error is enforced. When you set
         /// this value to <code>LENIENT</code>, validation is skipped for specific UI errors.
         /// </para>

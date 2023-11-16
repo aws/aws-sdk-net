@@ -47,6 +47,7 @@ namespace Amazon.QuickSight.Model
         /// asset bundle is a <code>.qs</code> zip file.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string Body
         {
             get { return this._body; }

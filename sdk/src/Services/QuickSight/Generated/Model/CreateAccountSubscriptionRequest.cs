@@ -131,9 +131,17 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AdminGroup. 
         /// <para>
-        /// The admin group associated with your Active Directory. This field is required if <code>ACTIVE_DIRECTORY</code>
-        /// is the selected authentication method of the new Amazon QuickSight account. For more
-        /// information about using Active Directory in Amazon QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using
+        /// The admin group associated with your Active Directory or IAM Identity Center account.
+        /// This field is required if <code>ACTIVE_DIRECTORY</code> or <code>IAM_IDENTITY_CENTER</code>
+        /// is the selected authentication method of the new Amazon QuickSight account.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about using IAM Identity Center in Amazon QuickSight, see <a
+        /// href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using
+        /// IAM Identity Center with Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight
+        /// User Guide. For more information about using Active Directory in Amazon QuickSight,
+        /// see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using
         /// Active Directory with Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight
         /// User Guide.
         /// </para>
@@ -153,14 +161,17 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AuthenticationMethod. 
         /// <para>
-        /// The method that you want to use to authenticate your Amazon QuickSight account. Currently,
-        /// the valid values for this parameter are <code>IAM_AND_QUICKSIGHT</code>, <code>IAM_ONLY</code>,
-        /// and <code>ACTIVE_DIRECTORY</code>.
+        /// The method that you want to use to authenticate your Amazon QuickSight account.
         /// </para>
         ///  
         /// <para>
         /// If you choose <code>ACTIVE_DIRECTORY</code>, provide an <code>ActiveDirectoryName</code>
         /// and an <code>AdminGroup</code> associated with your Active Directory.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you choose <code>IAM_IDENTITY_CENTER</code>, provide an <code>AdminGroup</code>
+        /// associated with your IAM Identity Center account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -179,8 +190,15 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AuthorGroup. 
         /// <para>
-        /// The author group associated with your Active Directory. For more information about
-        /// using Active Directory in Amazon QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using
+        /// The author group associated with your Active Directory or IAM Identity Center account.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about using IAM Identity Center in Amazon QuickSight, see <a
+        /// href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using
+        /// IAM Identity Center with Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight
+        /// User Guide. For more information about using Active Directory in Amazon QuickSight,
+        /// see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using
         /// Active Directory with Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight
         /// User Guide.
         /// </para>
@@ -379,10 +397,17 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property ReaderGroup. 
         /// <para>
-        /// The reader group associated with your Active Direcrtory. For more information about
-        /// using Active Directory in Amazon QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using
-        /// Active Directory with Amazon QuickSight Enterprise Edition</a> in the <i>Amazon QuickSight
-        /// User Guide</i>.
+        /// The reader group associated with your Active Directory or IAM Identity Center account.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about using IAM Identity Center in Amazon QuickSight, see <a
+        /// href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using
+        /// IAM Identity Center with Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight
+        /// User Guide. For more information about using Active Directory in Amazon QuickSight,
+        /// see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using
+        /// Active Directory with Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight
+        /// User Guide.
         /// </para>
         /// </summary>
         public List<string> ReaderGroup

@@ -105,6 +105,24 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     response.OverrideParameters = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("OverridePermissions", targetDepth))
+                {
+                    var unmarshaller = AssetBundleImportJobOverridePermissionsUnmarshaller.Instance;
+                    response.OverridePermissions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("OverrideTags", targetDepth))
+                {
+                    var unmarshaller = AssetBundleImportJobOverrideTagsUnmarshaller.Instance;
+                    response.OverrideTags = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("OverrideValidationStrategy", targetDepth))
+                {
+                    var unmarshaller = AssetBundleImportJobOverrideValidationStrategyUnmarshaller.Instance;
+                    response.OverrideValidationStrategy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RequestId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

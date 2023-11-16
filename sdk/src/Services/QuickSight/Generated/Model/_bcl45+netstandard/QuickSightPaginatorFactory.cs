@@ -172,6 +172,14 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Paginator for ListRoleMemberships operation
+        ///</summary>
+        public IListRoleMembershipsPaginator ListRoleMemberships(ListRoleMembershipsRequest request) 
+        {
+            return new ListRoleMembershipsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListTemplateAliases operation
         ///</summary>
         public IListTemplateAliasesPaginator ListTemplateAliases(ListTemplateAliasesRequest request) 

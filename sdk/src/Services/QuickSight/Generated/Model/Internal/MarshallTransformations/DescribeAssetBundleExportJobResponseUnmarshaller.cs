@@ -105,6 +105,18 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     response.IncludeAllDependencies = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("IncludePermissions", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    response.IncludePermissions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("IncludeTags", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    response.IncludeTags = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("JobStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -121,6 +133,18 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     response.ResourceArns = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ValidationStrategy", targetDepth))
+                {
+                    var unmarshaller = AssetBundleExportJobValidationStrategyUnmarshaller.Instance;
+                    response.ValidationStrategy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Warnings", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<AssetBundleExportJobWarning, AssetBundleExportJobWarningUnmarshaller>(AssetBundleExportJobWarningUnmarshaller.Instance);
+                    response.Warnings = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

@@ -100,6 +100,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.AwsIotAnalyticsParameters = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("BigQueryParameters", targetDepth))
+                {
+                    var unmarshaller = BigQueryParametersUnmarshaller.Instance;
+                    unmarshalledObject.BigQueryParameters = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DatabricksParameters", targetDepth))
                 {
                     var unmarshaller = DatabricksParametersUnmarshaller.Instance;

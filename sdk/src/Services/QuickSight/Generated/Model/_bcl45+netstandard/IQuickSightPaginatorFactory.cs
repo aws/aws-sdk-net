@@ -111,6 +111,11 @@ namespace Amazon.QuickSight.Model
         IListNamespacesPaginator ListNamespaces(ListNamespacesRequest request);
 
         /// <summary>
+        /// Paginator for ListRoleMemberships operation
+        ///</summary>
+        IListRoleMembershipsPaginator ListRoleMemberships(ListRoleMembershipsRequest request);
+
+        /// <summary>
         /// Paginator for ListTemplateAliases operation
         ///</summary>
         IListTemplateAliasesPaginator ListTemplateAliases(ListTemplateAliasesRequest request);

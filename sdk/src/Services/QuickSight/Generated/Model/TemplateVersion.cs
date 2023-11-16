@@ -37,7 +37,6 @@ namespace Amazon.QuickSight.Model
         private List<DataSetConfiguration> _dataSetConfigurations = new List<DataSetConfiguration>();
         private string _description;
         private List<TemplateError> _errors = new List<TemplateError>();
-        private AssetOptions _options;
         private List<Sheet> _sheets = new List<Sheet>();
         private string _sourceEntityArn;
         private ResourceStatus _status;
@@ -119,21 +118,6 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetErrors()
         {
             return this._errors != null && this._errors.Count > 0; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property Options.
-        /// </summary>
-        public AssetOptions Options
-        {
-            get { return this._options; }
-            set { this._options = value; }
-        }
-
-        // Check to see if Options property is set
-        internal bool IsSetOptions()
-        {
-            return this._options != null;
         }
 
         /// <summary>

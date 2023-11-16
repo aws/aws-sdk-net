@@ -111,6 +111,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetBigQueryParameters())
+            {
+                context.Writer.WritePropertyName("BigQueryParameters");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = BigQueryParametersMarshaller.Instance;
+                marshaller.Marshall(requestObject.BigQueryParameters, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetDatabricksParameters())
             {
                 context.Writer.WritePropertyName("DatabricksParameters");

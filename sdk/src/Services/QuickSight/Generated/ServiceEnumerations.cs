@@ -3201,6 +3201,10 @@ namespace Amazon.QuickSight
         /// </summary>
         public static readonly DataSourceType AWS_IOT_ANALYTICS = new DataSourceType("AWS_IOT_ANALYTICS");
         /// <summary>
+        /// Constant BIGQUERY for DataSourceType
+        /// </summary>
+        public static readonly DataSourceType BIGQUERY = new DataSourceType("BIGQUERY");
+        /// <summary>
         /// Constant DATABRICKS for DataSourceType
         /// </summary>
         public static readonly DataSourceType DATABRICKS = new DataSourceType("DATABRICKS");
@@ -3265,6 +3269,10 @@ namespace Amazon.QuickSight
         /// </summary>
         public static readonly DataSourceType SQLSERVER = new DataSourceType("SQLSERVER");
         /// <summary>
+        /// Constant STARBURST for DataSourceType
+        /// </summary>
+        public static readonly DataSourceType STARBURST = new DataSourceType("STARBURST");
+        /// <summary>
         /// Constant TERADATA for DataSourceType
         /// </summary>
         public static readonly DataSourceType TERADATA = new DataSourceType("TERADATA");
@@ -3272,6 +3280,10 @@ namespace Amazon.QuickSight
         /// Constant TIMESTREAM for DataSourceType
         /// </summary>
         public static readonly DataSourceType TIMESTREAM = new DataSourceType("TIMESTREAM");
+        /// <summary>
+        /// Constant TRINO for DataSourceType
+        /// </summary>
+        public static readonly DataSourceType TRINO = new DataSourceType("TRINO");
         /// <summary>
         /// Constant TWITTER for DataSourceType
         /// </summary>
@@ -8540,6 +8552,60 @@ namespace Amazon.QuickSight
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ResourceStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Role.
+    /// </summary>
+    public class Role : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ADMIN for Role
+        /// </summary>
+        public static readonly Role ADMIN = new Role("ADMIN");
+        /// <summary>
+        /// Constant AUTHOR for Role
+        /// </summary>
+        public static readonly Role AUTHOR = new Role("AUTHOR");
+        /// <summary>
+        /// Constant READER for Role
+        /// </summary>
+        public static readonly Role READER = new Role("READER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Role(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Role FindValue(string value)
+        {
+            return FindValue<Role>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Role(string value)
         {
             return FindValue(value);
         }

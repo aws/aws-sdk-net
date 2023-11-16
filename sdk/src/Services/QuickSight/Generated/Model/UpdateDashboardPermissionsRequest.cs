@@ -86,7 +86,7 @@ namespace Amazon.QuickSight.Model
         /// Grants link permissions to all users in a defined namespace.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=2)]
+        [AWSProperty(Max=100)]
         public List<ResourcePermission> GrantLinkPermissions
         {
             get { return this._grantLinkPermissions; }
@@ -124,7 +124,7 @@ namespace Amazon.QuickSight.Model
         /// Revokes link permissions from all users in a defined namespace.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=2)]
+        [AWSProperty(Max=100)]
         public List<ResourcePermission> RevokeLinkPermissions
         {
             get { return this._revokeLinkPermissions; }

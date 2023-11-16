@@ -50,6 +50,7 @@ namespace Amazon.QuickSight.Model
         private DashboardPublishOptions _dashboardPublishOptions;
         private DashboardVersionDefinition _definition;
         private List<string> _folderArns = new List<string>();
+        private LinkSharingConfiguration _linkSharingConfiguration;
         private string _name;
         private Parameters _parameters;
         private List<ResourcePermission> _permissions = new List<ResourcePermission>();
@@ -181,6 +182,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetFolderArns()
         {
             return this._folderArns != null && this._folderArns.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LinkSharingConfiguration. 
+        /// <para>
+        /// A structure that contains the permissions of a shareable link to the dashboard.
+        /// </para>
+        /// </summary>
+        public LinkSharingConfiguration LinkSharingConfiguration
+        {
+            get { return this._linkSharingConfiguration; }
+            set { this._linkSharingConfiguration = value; }
+        }
+
+        // Check to see if LinkSharingConfiguration property is set
+        internal bool IsSetLinkSharingConfiguration()
+        {
+            return this._linkSharingConfiguration != null;
         }
 
         /// <summary>

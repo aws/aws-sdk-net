@@ -42,6 +42,9 @@ namespace Amazon.QuickSight.Model
         private AssetBundleImportFailureAction _failureAction;
         private AssetBundleImportJobStatus _jobStatus;
         private AssetBundleImportJobOverrideParameters _overrideParameters;
+        private AssetBundleImportJobOverridePermissions _overridePermissions;
+        private AssetBundleImportJobOverrideTags _overrideTags;
+        private AssetBundleImportJobOverrideValidationStrategy _overrideValidationStrategy;
         private string _requestId;
         private List<AssetBundleImportJobError> _rollbackErrors = new List<AssetBundleImportJobError>();
         private int? _status;
@@ -225,7 +228,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property OverrideParameters. 
         /// <para>
-        /// Optional overrides to be applied to the resource configuration before import.
+        /// Optional overrides that are applied to the resource configuration before import.
         /// </para>
         /// </summary>
         public AssetBundleImportJobOverrideParameters OverrideParameters
@@ -238,6 +241,62 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetOverrideParameters()
         {
             return this._overrideParameters != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OverridePermissions. 
+        /// <para>
+        /// Optional permission overrides that are applied to the resource configuration before
+        /// import.
+        /// </para>
+        /// </summary>
+        public AssetBundleImportJobOverridePermissions OverridePermissions
+        {
+            get { return this._overridePermissions; }
+            set { this._overridePermissions = value; }
+        }
+
+        // Check to see if OverridePermissions property is set
+        internal bool IsSetOverridePermissions()
+        {
+            return this._overridePermissions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OverrideTags. 
+        /// <para>
+        /// Optional tag overrides that are applied to the resource configuration before import.
+        /// </para>
+        /// </summary>
+        public AssetBundleImportJobOverrideTags OverrideTags
+        {
+            get { return this._overrideTags; }
+            set { this._overrideTags = value; }
+        }
+
+        // Check to see if OverrideTags property is set
+        internal bool IsSetOverrideTags()
+        {
+            return this._overrideTags != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OverrideValidationStrategy. 
+        /// <para>
+        /// An optional validation strategy override for all analyses and dashboards to be applied
+        /// to the resource configuration before import.
+        /// </para>
+        /// </summary>
+        public AssetBundleImportJobOverrideValidationStrategy OverrideValidationStrategy
+        {
+            get { return this._overrideValidationStrategy; }
+            set { this._overrideValidationStrategy = value; }
+        }
+
+        // Check to see if OverrideValidationStrategy property is set
+        internal bool IsSetOverrideValidationStrategy()
+        {
+            return this._overrideValidationStrategy != null;
         }
 
         /// <summary>

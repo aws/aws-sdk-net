@@ -94,12 +94,6 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.Errors = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Options", targetDepth))
-                {
-                    var unmarshaller = AssetOptionsUnmarshaller.Instance;
-                    unmarshalledObject.Options = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("Sheets", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<Sheet, SheetUnmarshaller>(SheetUnmarshaller.Instance);

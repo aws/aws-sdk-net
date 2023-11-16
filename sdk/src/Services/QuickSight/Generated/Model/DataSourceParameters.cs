@@ -41,6 +41,7 @@ namespace Amazon.QuickSight.Model
         private AuroraParameters _auroraParameters;
         private AuroraPostgreSqlParameters _auroraPostgreSqlParameters;
         private AwsIotAnalyticsParameters _awsIotAnalyticsParameters;
+        private BigQueryParameters _bigQueryParameters;
         private DatabricksParameters _databricksParameters;
         private ExasolParameters _exasolParameters;
         private JiraParameters _jiraParameters;
@@ -167,6 +168,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetAwsIotAnalyticsParameters()
         {
             return this._awsIotAnalyticsParameters != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BigQueryParameters. 
+        /// <para>
+        /// The parameters that are required to connect to a Google BigQuery data source.
+        /// </para>
+        /// </summary>
+        public BigQueryParameters BigQueryParameters
+        {
+            get { return this._bigQueryParameters; }
+            set { this._bigQueryParameters = value; }
+        }
+
+        // Check to see if BigQueryParameters property is set
+        internal bool IsSetBigQueryParameters()
+        {
+            return this._bigQueryParameters != null;
         }
 
         /// <summary>

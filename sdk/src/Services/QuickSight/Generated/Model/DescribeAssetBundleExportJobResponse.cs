@@ -42,10 +42,14 @@ namespace Amazon.QuickSight.Model
         private List<AssetBundleExportJobError> _errors = new List<AssetBundleExportJobError>();
         private AssetBundleExportFormat _exportFormat;
         private bool? _includeAllDependencies;
+        private bool? _includePermissions;
+        private bool? _includeTags;
         private AssetBundleExportJobStatus _jobStatus;
         private string _requestId;
         private List<string> _resourceArns = new List<string>();
         private int? _status;
+        private AssetBundleExportJobValidationStrategy _validationStrategy;
+        private List<AssetBundleExportJobWarning> _warnings = new List<AssetBundleExportJobWarning>();
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -162,6 +166,7 @@ namespace Amazon.QuickSight.Model
         /// only be used for download purposes.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string DownloadUrl
         {
             get { return this._downloadUrl; }
@@ -235,6 +240,42 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetIncludeAllDependencies()
         {
             return this._includeAllDependencies.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludePermissions. 
+        /// <para>
+        /// The include permissions flag.
+        /// </para>
+        /// </summary>
+        public bool IncludePermissions
+        {
+            get { return this._includePermissions.GetValueOrDefault(); }
+            set { this._includePermissions = value; }
+        }
+
+        // Check to see if IncludePermissions property is set
+        internal bool IsSetIncludePermissions()
+        {
+            return this._includePermissions.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludeTags. 
+        /// <para>
+        /// The include tags flag.
+        /// </para>
+        /// </summary>
+        public bool IncludeTags
+        {
+            get { return this._includeTags.GetValueOrDefault(); }
+            set { this._includeTags = value; }
+        }
+
+        // Check to see if IncludeTags property is set
+        internal bool IsSetIncludeTags()
+        {
+            return this._includeTags.HasValue; 
         }
 
         /// <summary>
@@ -313,6 +354,48 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetStatus()
         {
             return this._status.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ValidationStrategy. 
+        /// <para>
+        /// The validation strategy that is used to export the analysis or dashboard.
+        /// </para>
+        /// </summary>
+        public AssetBundleExportJobValidationStrategy ValidationStrategy
+        {
+            get { return this._validationStrategy; }
+            set { this._validationStrategy = value; }
+        }
+
+        // Check to see if ValidationStrategy property is set
+        internal bool IsSetValidationStrategy()
+        {
+            return this._validationStrategy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Warnings. 
+        /// <para>
+        /// An array of warning records that describe the analysis or dashboard that is exported.
+        /// This array includes UI errors that can be skipped during the validation process.
+        /// </para>
+        ///  
+        /// <para>
+        /// This property only appears if <code>StrictModeForAllResources</code> in <code>ValidationStrategy</code>
+        /// is set to <code>FALSE</code>.
+        /// </para>
+        /// </summary>
+        public List<AssetBundleExportJobWarning> Warnings
+        {
+            get { return this._warnings; }
+            set { this._warnings = value; }
+        }
+
+        // Check to see if Warnings property is set
+        internal bool IsSetWarnings()
+        {
+            return this._warnings != null && this._warnings.Count > 0; 
         }
 
     }
