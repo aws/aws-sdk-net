@@ -38,13 +38,6 @@ namespace Amazon.Lambda.Model
     /// <para>
     /// Invokes a function asynchronously.
     /// </para>
-    ///  <note> 
-    /// <para>
-    /// If you do use the InvokeAsync action, note that it doesn't support the use of X-Ray
-    /// active tracing. Trace ID is not propagated to the function, even if X-Ray active tracing
-    /// is turned on.
-    /// </para>
-    ///  </note>
     /// </summary>
     [Obsolete("For .NET 3.5/4.5, API InvokeAsyncResponse InvokeAsync(InvokeAsyncRequest) is deprecated, use InvokeResponse Invoke(InvokeRequest), or Task<InvokeResponse> InvokeAsync(InvokeRequest, CancellationToken) instead. For .NET Core, Task<InvokeAsyncResponse> InvokeAsyncAsync(InvokeAsyncRequest, CancellationToken) is deprecated, use Task<InvokeResponse> InvokeAsync(InvokeRequest, CancellationToken) instead.")]
     public partial class InvokeAsyncRequest : AmazonLambdaRequest

@@ -3166,13 +3166,6 @@ namespace Amazon.Lambda
         /// <para>
         /// Invokes a function asynchronously.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// If you do use the InvokeAsync action, note that it doesn't support the use of X-Ray
-        /// active tracing. Trace ID is not propagated to the function, even if X-Ray active tracing
-        /// is turned on.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the InvokeAsync service method.</param>
         /// 
@@ -3207,13 +3200,6 @@ namespace Amazon.Lambda
         /// <para>
         /// Invokes a function asynchronously.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// If you do use the InvokeAsync action, note that it doesn't support the use of X-Ray
-        /// active tracing. Trace ID is not propagated to the function, even if X-Ray active tracing
-        /// is turned on.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the InvokeAsync service method.</param>
         /// <param name="cancellationToken">

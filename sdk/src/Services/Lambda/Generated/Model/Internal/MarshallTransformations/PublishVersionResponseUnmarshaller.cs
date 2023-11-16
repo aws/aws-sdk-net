@@ -159,6 +159,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     response.Layers = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LoggingConfig", targetDepth))
+                {
+                    var unmarshaller = LoggingConfigUnmarshaller.Instance;
+                    response.LoggingConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("MasterArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

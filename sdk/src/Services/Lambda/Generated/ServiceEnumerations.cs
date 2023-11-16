@@ -25,6 +25,72 @@ namespace Amazon.Lambda
 {
 
     /// <summary>
+    /// Constants used for properties of type ApplicationLogLevel.
+    /// </summary>
+    public class ApplicationLogLevel : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DEBUG for ApplicationLogLevel
+        /// </summary>
+        public static readonly ApplicationLogLevel DEBUG = new ApplicationLogLevel("DEBUG");
+        /// <summary>
+        /// Constant ERROR for ApplicationLogLevel
+        /// </summary>
+        public static readonly ApplicationLogLevel ERROR = new ApplicationLogLevel("ERROR");
+        /// <summary>
+        /// Constant FATAL for ApplicationLogLevel
+        /// </summary>
+        public static readonly ApplicationLogLevel FATAL = new ApplicationLogLevel("FATAL");
+        /// <summary>
+        /// Constant INFO for ApplicationLogLevel
+        /// </summary>
+        public static readonly ApplicationLogLevel INFO = new ApplicationLogLevel("INFO");
+        /// <summary>
+        /// Constant TRACE for ApplicationLogLevel
+        /// </summary>
+        public static readonly ApplicationLogLevel TRACE = new ApplicationLogLevel("TRACE");
+        /// <summary>
+        /// Constant WARN for ApplicationLogLevel
+        /// </summary>
+        public static readonly ApplicationLogLevel WARN = new ApplicationLogLevel("WARN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ApplicationLogLevel(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ApplicationLogLevel FindValue(string value)
+        {
+            return FindValue<ApplicationLogLevel>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ApplicationLogLevel(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Architecture.
     /// </summary>
     public class Architecture : ConstantClass
@@ -694,6 +760,56 @@ namespace Amazon.Lambda
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator LastUpdateStatusReasonCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LogFormat.
+    /// </summary>
+    public class LogFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant JSON for LogFormat
+        /// </summary>
+        public static readonly LogFormat JSON = new LogFormat("JSON");
+        /// <summary>
+        /// Constant Text for LogFormat
+        /// </summary>
+        public static readonly LogFormat Text = new LogFormat("Text");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LogFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LogFormat FindValue(string value)
+        {
+            return FindValue<LogFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LogFormat(string value)
         {
             return FindValue(value);
         }
@@ -1454,6 +1570,60 @@ namespace Amazon.Lambda
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator StateReasonCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SystemLogLevel.
+    /// </summary>
+    public class SystemLogLevel : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DEBUG for SystemLogLevel
+        /// </summary>
+        public static readonly SystemLogLevel DEBUG = new SystemLogLevel("DEBUG");
+        /// <summary>
+        /// Constant INFO for SystemLogLevel
+        /// </summary>
+        public static readonly SystemLogLevel INFO = new SystemLogLevel("INFO");
+        /// <summary>
+        /// Constant WARN for SystemLogLevel
+        /// </summary>
+        public static readonly SystemLogLevel WARN = new SystemLogLevel("WARN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SystemLogLevel(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SystemLogLevel FindValue(string value)
+        {
+            return FindValue<SystemLogLevel>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SystemLogLevel(string value)
         {
             return FindValue(value);
         }

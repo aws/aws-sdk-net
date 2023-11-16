@@ -51,6 +51,7 @@ namespace Amazon.Lambda.Model
         private string _lastUpdateStatusReason;
         private LastUpdateStatusReasonCode _lastUpdateStatusReasonCode;
         private List<Layer> _layers = new List<Layer>();
+        private LoggingConfig _loggingConfig;
         private string _masterArn;
         private int? _memorySize;
         private PackageType _packageType;
@@ -184,10 +185,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property EphemeralStorage. 
         /// <para>
-        /// The size of the function's <code>/tmp</code> directory in MB. The default value is
-        /// 512, but can be any whole number between 512 and 10,240 MB. For more information,
-        /// see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-ephemeral-storage">Configuring
-        /// ephemeral storage (console)</a>.
+        /// The size of the function’s <code>/tmp</code> directory in MB. The default value is
+        /// 512, but it can be any whole number between 512 and 10,240 MB.
         /// </para>
         /// </summary>
         public EphemeralStorage EphemeralStorage
@@ -407,6 +406,24 @@ namespace Amazon.Lambda.Model
         internal bool IsSetLayers()
         {
             return this._layers != null && this._layers.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LoggingConfig. 
+        /// <para>
+        /// The function's Amazon CloudWatch Logs configuration settings.
+        /// </para>
+        /// </summary>
+        public LoggingConfig LoggingConfig
+        {
+            get { return this._loggingConfig; }
+            set { this._loggingConfig = value; }
+        }
+
+        // Check to see if LoggingConfig property is set
+        internal bool IsSetLoggingConfig()
+        {
+            return this._loggingConfig != null;
         }
 
         /// <summary>

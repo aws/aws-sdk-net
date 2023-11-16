@@ -188,6 +188,17 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetLoggingConfig())
+                {
+                    context.Writer.WritePropertyName("LoggingConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = LoggingConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.LoggingConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetMemorySize())
                 {
                     context.Writer.WritePropertyName("MemorySize");

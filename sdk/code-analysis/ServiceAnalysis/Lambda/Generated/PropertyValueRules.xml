@@ -1715,6 +1715,12 @@
     <max>512</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Lambda.Model.LoggingConfig.LogGroup</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>[\.\-_/#A-Za-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Lambda.Model.OnFailure.Destination</property>
     <min>0</min>
     <max>350</max>
