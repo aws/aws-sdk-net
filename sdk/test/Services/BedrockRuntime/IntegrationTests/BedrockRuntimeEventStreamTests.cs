@@ -11,6 +11,17 @@ using System;
 using System.Diagnostics.Contracts;
 namespace AWSSDK_DotNet.IntegrationTests.Tests
 {
+    /// <summary>
+    /// To run these tests on your local development acccount, you need to request access to the bedrock models
+    /// 1. Go to AWS console.
+    /// 2. Type Bedrock in the search bar
+    /// 3. Select Model Access in the left hand side menu
+    /// 4. Click Manage model access
+    /// 5. Select all models and request access.
+    /// 
+    /// Because this test requires explicit access to the models it is ignored.
+    /// </summary>
+    [Ignore]
     [TestClass]
     public class BedrockRuntimeEventStreamTests : TestBase<AmazonBedrockRuntimeClient>
     {
