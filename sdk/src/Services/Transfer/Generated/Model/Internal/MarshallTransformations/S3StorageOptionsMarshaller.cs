@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Transfer.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// HomeDirectoryMapEntry Marshaller
+    /// S3StorageOptions Marshaller
     /// </summary>
-    public class HomeDirectoryMapEntryMarshaller : IRequestMarshaller<HomeDirectoryMapEntry, JsonMarshallerContext> 
+    public class S3StorageOptionsMarshaller : IRequestMarshaller<S3StorageOptions, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,24 +43,12 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(HomeDirectoryMapEntry requestObject, JsonMarshallerContext context)
+        public void Marshall(S3StorageOptions requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetEntry())
+            if(requestObject.IsSetDirectoryListingOptimization())
             {
-                context.Writer.WritePropertyName("Entry");
-                context.Writer.Write(requestObject.Entry);
-            }
-
-            if(requestObject.IsSetTarget())
-            {
-                context.Writer.WritePropertyName("Target");
-                context.Writer.Write(requestObject.Target);
-            }
-
-            if(requestObject.IsSetType())
-            {
-                context.Writer.WritePropertyName("Type");
-                context.Writer.Write(requestObject.Type);
+                context.Writer.WritePropertyName("DirectoryListingOptimization");
+                context.Writer.Write(requestObject.DirectoryListingOptimization);
             }
 
         }
@@ -68,7 +56,7 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static HomeDirectoryMapEntryMarshaller Instance = new HomeDirectoryMapEntryMarshaller();
+        public readonly static S3StorageOptionsMarshaller Instance = new S3StorageOptionsMarshaller();
 
     }
 }

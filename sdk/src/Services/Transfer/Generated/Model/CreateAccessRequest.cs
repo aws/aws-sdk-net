@@ -152,7 +152,7 @@ namespace Amazon.Transfer.Model
         ///  <code>[ { "Entry": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=50)]
+        [AWSProperty(Min=1, Max=50000)]
         public List<HomeDirectoryMapEntry> HomeDirectoryMappings
         {
             get { return this._homeDirectoryMappings; }

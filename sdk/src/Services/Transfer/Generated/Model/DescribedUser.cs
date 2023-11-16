@@ -113,7 +113,7 @@ namespace Amazon.Transfer.Model
         /// value.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=50)]
+        [AWSProperty(Min=1, Max=50000)]
         public List<HomeDirectoryMapEntry> HomeDirectoryMappings
         {
             get { return this._homeDirectoryMappings; }

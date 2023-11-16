@@ -375,6 +375,56 @@ namespace Amazon.Transfer
 
 
     /// <summary>
+    /// Constants used for properties of type DirectoryListingOptimization.
+    /// </summary>
+    public class DirectoryListingOptimization : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for DirectoryListingOptimization
+        /// </summary>
+        public static readonly DirectoryListingOptimization DISABLED = new DirectoryListingOptimization("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for DirectoryListingOptimization
+        /// </summary>
+        public static readonly DirectoryListingOptimization ENABLED = new DirectoryListingOptimization("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DirectoryListingOptimization(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DirectoryListingOptimization FindValue(string value)
+        {
+            return FindValue<DirectoryListingOptimization>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DirectoryListingOptimization(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Domain.
     /// </summary>
     public class Domain : ConstantClass
@@ -816,6 +866,56 @@ namespace Amazon.Transfer
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator IdentityProviderType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MapType.
+    /// </summary>
+    public class MapType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DIRECTORY for MapType
+        /// </summary>
+        public static readonly MapType DIRECTORY = new MapType("DIRECTORY");
+        /// <summary>
+        /// Constant FILE for MapType
+        /// </summary>
+        public static readonly MapType FILE = new MapType("FILE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MapType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MapType FindValue(string value)
+        {
+            return FindValue<MapType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MapType(string value)
         {
             return FindValue(value);
         }

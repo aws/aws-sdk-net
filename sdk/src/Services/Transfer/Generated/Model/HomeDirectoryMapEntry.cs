@@ -44,6 +44,7 @@ namespace Amazon.Transfer.Model
     {
         private string _entry;
         private string _target;
+        private MapType _type;
 
         /// <summary>
         /// Gets and sets the property Entry. 
@@ -67,7 +68,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property Target. 
         /// <para>
-        /// Represents the map target that is used in a <code>HomeDirectorymapEntry</code>.
+        /// Represents the map target that is used in a <code>HomeDirectoryMapEntry</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1024)]
@@ -81,6 +82,32 @@ namespace Amazon.Transfer.Model
         internal bool IsSetTarget()
         {
             return this._target != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// Specifies the type of mapping. Set the type to <code>FILE</code> if you want the mapping
+        /// to point to a file, or <code>DIRECTORY</code> for the directory to point to a directory.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// By default, home directory mappings have a <code>Type</code> of <code>DIRECTORY</code>
+        /// when you create a Transfer Family server. You would need to explicitly set <code>Type</code>
+        /// to <code>FILE</code> if you want a mapping to have a file target.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public MapType Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
         }
 
     }

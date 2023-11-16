@@ -10,7 +10,7 @@
     <property>Amazon.Transfer.Model.CreateAccessRequest.HomeDirectory</property>
     <min>0</min>
     <max>1024</max>
-    <pattern>$|/.*</pattern>
+    <pattern>(|/.*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.CreateAccessRequest.Policy</property>
@@ -21,7 +21,7 @@
     <property>Amazon.Transfer.Model.CreateAccessRequest.Role</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:.*role/.*</pattern>
+    <pattern>arn:.*role/\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.CreateAccessRequest.ServerId</property>
@@ -45,13 +45,13 @@
     <property>Amazon.Transfer.Model.CreateAgreementRequest.AccessRole</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:.*role/.*</pattern>
+    <pattern>arn:.*role/\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.CreateAgreementRequest.BaseDirectory</property>
     <min>0</min>
     <max>1024</max>
-    <pattern>$|/.*</pattern>
+    <pattern>(|/.*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.CreateAgreementRequest.Description</property>
@@ -86,13 +86,13 @@
     <property>Amazon.Transfer.Model.CreateConnectorRequest.AccessRole</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:.*role/.*</pattern>
+    <pattern>arn:.*role/\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.CreateConnectorRequest.LoggingRole</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:.*role/.*</pattern>
+    <pattern>arn:.*role/\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.CreateConnectorRequest.Url</property>
@@ -130,7 +130,7 @@
     <property>Amazon.Transfer.Model.CreateServerRequest.LoggingRole</property>
     <min>0</min>
     <max>2048</max>
-    <pattern>$|arn:.*role/.*</pattern>
+    <pattern>(|arn:.*role/\S+)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.CreateServerRequest.PostAuthenticationLoginBanner</property>
@@ -160,7 +160,7 @@
     <property>Amazon.Transfer.Model.CreateUserRequest.HomeDirectory</property>
     <min>0</min>
     <max>1024</max>
-    <pattern>$|/.*</pattern>
+    <pattern>(|/.*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.CreateUserRequest.Policy</property>
@@ -171,7 +171,7 @@
     <property>Amazon.Transfer.Model.CreateUserRequest.Role</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:.*role/.*</pattern>
+    <pattern>arn:.*role/\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.CreateUserRequest.ServerId</property>
@@ -697,7 +697,7 @@
     <property>Amazon.Transfer.Model.ListTagsForResourceRequest.Arn</property>
     <min>20</min>
     <max>1600</max>
-    <pattern>arn:.*</pattern>
+    <pattern>arn:\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.ListTagsForResourceRequest.MaxResults</property>
@@ -713,7 +713,7 @@
     <property>Amazon.Transfer.Model.ListTagsForResourceResponse.Arn</property>
     <min>20</min>
     <max>1600</max>
-    <pattern>arn:.*</pattern>
+    <pattern>arn:\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.ListTagsForResourceResponse.NextToken</property>
@@ -820,7 +820,7 @@
     <property>Amazon.Transfer.Model.TagResourceRequest.Arn</property>
     <min>20</min>
     <max>1600</max>
-    <pattern>arn:.*</pattern>
+    <pattern>arn:\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.TestConnectionRequest.ConnectorId</property>
@@ -866,7 +866,7 @@
     <property>Amazon.Transfer.Model.UntagResourceRequest.Arn</property>
     <min>20</min>
     <max>1600</max>
-    <pattern>arn:.*</pattern>
+    <pattern>arn:\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.UpdateAccessRequest.ExternalId</property>
@@ -878,7 +878,7 @@
     <property>Amazon.Transfer.Model.UpdateAccessRequest.HomeDirectory</property>
     <min>0</min>
     <max>1024</max>
-    <pattern>$|/.*</pattern>
+    <pattern>(|/.*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.UpdateAccessRequest.Policy</property>
@@ -889,7 +889,7 @@
     <property>Amazon.Transfer.Model.UpdateAccessRequest.Role</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:.*role/.*</pattern>
+    <pattern>arn:.*role/\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.UpdateAccessRequest.ServerId</property>
@@ -913,7 +913,7 @@
     <property>Amazon.Transfer.Model.UpdateAgreementRequest.AccessRole</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:.*role/.*</pattern>
+    <pattern>arn:.*role/\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.UpdateAgreementRequest.AgreementId</property>
@@ -925,7 +925,7 @@
     <property>Amazon.Transfer.Model.UpdateAgreementRequest.BaseDirectory</property>
     <min>0</min>
     <max>1024</max>
-    <pattern>$|/.*</pattern>
+    <pattern>(|/.*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.UpdateAgreementRequest.Description</property>
@@ -977,7 +977,7 @@
     <property>Amazon.Transfer.Model.UpdateConnectorRequest.AccessRole</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:.*role/.*</pattern>
+    <pattern>arn:.*role/\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.UpdateConnectorRequest.ConnectorId</property>
@@ -989,7 +989,7 @@
     <property>Amazon.Transfer.Model.UpdateConnectorRequest.LoggingRole</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:.*role/.*</pattern>
+    <pattern>arn:.*role/\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.UpdateConnectorRequest.Url</property>
@@ -1057,7 +1057,7 @@
     <property>Amazon.Transfer.Model.UpdateServerRequest.LoggingRole</property>
     <min>0</min>
     <max>2048</max>
-    <pattern>$|arn:.*role/.*</pattern>
+    <pattern>(|arn:.*role/\S+)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.UpdateServerRequest.PostAuthenticationLoginBanner</property>
@@ -1093,7 +1093,7 @@
     <property>Amazon.Transfer.Model.UpdateUserRequest.HomeDirectory</property>
     <min>0</min>
     <max>1024</max>
-    <pattern>$|/.*</pattern>
+    <pattern>(|/.*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.UpdateUserRequest.Policy</property>
@@ -1104,7 +1104,7 @@
     <property>Amazon.Transfer.Model.UpdateUserRequest.Role</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:.*role/.*</pattern>
+    <pattern>arn:.*role/\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.UpdateUserRequest.ServerId</property>
@@ -1221,7 +1221,7 @@
     <property>Amazon.Transfer.Model.DescribedAccess.HomeDirectory</property>
     <min>0</min>
     <max>1024</max>
-    <pattern>$|/.*</pattern>
+    <pattern>(|/.*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.DescribedAccess.Policy</property>
@@ -1232,13 +1232,13 @@
     <property>Amazon.Transfer.Model.DescribedAccess.Role</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:.*role/.*</pattern>
+    <pattern>arn:.*role/\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.DescribedAgreement.AccessRole</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:.*role/.*</pattern>
+    <pattern>arn:.*role/\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.DescribedAgreement.AgreementId</property>
@@ -1250,13 +1250,13 @@
     <property>Amazon.Transfer.Model.DescribedAgreement.Arn</property>
     <min>20</min>
     <max>1600</max>
-    <pattern>arn:.*</pattern>
+    <pattern>arn:\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.DescribedAgreement.BaseDirectory</property>
     <min>0</min>
     <max>1024</max>
-    <pattern>$|/.*</pattern>
+    <pattern>(|/.*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.DescribedAgreement.Description</property>
@@ -1285,7 +1285,7 @@
     <property>Amazon.Transfer.Model.DescribedCertificate.Arn</property>
     <min>20</min>
     <max>1600</max>
-    <pattern>arn:.*</pattern>
+    <pattern>arn:\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.DescribedCertificate.Certificate</property>
@@ -1319,13 +1319,13 @@
     <property>Amazon.Transfer.Model.DescribedConnector.AccessRole</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:.*role/.*</pattern>
+    <pattern>arn:.*role/\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.DescribedConnector.Arn</property>
     <min>20</min>
     <max>1600</max>
-    <pattern>arn:.*</pattern>
+    <pattern>arn:\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.DescribedConnector.ConnectorId</property>
@@ -1337,7 +1337,7 @@
     <property>Amazon.Transfer.Model.DescribedConnector.LoggingRole</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:.*role/.*</pattern>
+    <pattern>arn:.*role/\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.DescribedConnector.Url</property>
@@ -1354,13 +1354,13 @@
     <property>Amazon.Transfer.Model.DescribedExecution.ExecutionRole</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:.*role/.*</pattern>
+    <pattern>arn:.*role/\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.DescribedHostKey.Arn</property>
     <min>20</min>
     <max>1600</max>
-    <pattern>arn:.*</pattern>
+    <pattern>arn:\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.DescribedHostKey.Description</property>
@@ -1377,7 +1377,7 @@
     <property>Amazon.Transfer.Model.DescribedProfile.Arn</property>
     <min>20</min>
     <max>1600</max>
-    <pattern>arn:.*</pattern>
+    <pattern>arn:\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.DescribedProfile.As2Id</property>
@@ -1400,7 +1400,7 @@
     <property>Amazon.Transfer.Model.DescribedServer.Arn</property>
     <min>20</min>
     <max>1600</max>
-    <pattern>arn:.*</pattern>
+    <pattern>arn:\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.DescribedServer.Certificate</property>
@@ -1411,7 +1411,7 @@
     <property>Amazon.Transfer.Model.DescribedServer.LoggingRole</property>
     <min>0</min>
     <max>2048</max>
-    <pattern>$|arn:.*role/.*</pattern>
+    <pattern>(|arn:.*role/\S+)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.DescribedServer.PostAuthenticationLoginBanner</property>
@@ -1441,13 +1441,13 @@
     <property>Amazon.Transfer.Model.DescribedUser.Arn</property>
     <min>20</min>
     <max>1600</max>
-    <pattern>arn:.*</pattern>
+    <pattern>arn:\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.DescribedUser.HomeDirectory</property>
     <min>0</min>
     <max>1024</max>
-    <pattern>$|/.*</pattern>
+    <pattern>(|/.*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.DescribedUser.Policy</property>
@@ -1458,7 +1458,7 @@
     <property>Amazon.Transfer.Model.DescribedUser.Role</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:.*role/.*</pattern>
+    <pattern>arn:.*role/\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.DescribedUser.UserName</property>
@@ -1470,7 +1470,7 @@
     <property>Amazon.Transfer.Model.DescribedWorkflow.Arn</property>
     <min>20</min>
     <max>1600</max>
-    <pattern>arn:.*</pattern>
+    <pattern>arn:\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.DescribedWorkflow.Description</property>
@@ -1535,7 +1535,7 @@
     <property>Amazon.Transfer.Model.IdentityProviderDetails.InvocationRole</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:.*role/.*</pattern>
+    <pattern>arn:.*role/\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.IdentityProviderDetails.Url</property>
@@ -1552,13 +1552,13 @@
     <property>Amazon.Transfer.Model.ListedAccess.HomeDirectory</property>
     <min>0</min>
     <max>1024</max>
-    <pattern>$|/.*</pattern>
+    <pattern>(|/.*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.ListedAccess.Role</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:.*role/.*</pattern>
+    <pattern>arn:.*role/\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.ListedAgreement.AgreementId</property>
@@ -1570,7 +1570,7 @@
     <property>Amazon.Transfer.Model.ListedAgreement.Arn</property>
     <min>20</min>
     <max>1600</max>
-    <pattern>arn:.*</pattern>
+    <pattern>arn:\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.ListedAgreement.Description</property>
@@ -1599,7 +1599,7 @@
     <property>Amazon.Transfer.Model.ListedCertificate.Arn</property>
     <min>20</min>
     <max>1600</max>
-    <pattern>arn:.*</pattern>
+    <pattern>arn:\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.ListedCertificate.CertificateId</property>
@@ -1616,7 +1616,7 @@
     <property>Amazon.Transfer.Model.ListedConnector.Arn</property>
     <min>20</min>
     <max>1600</max>
-    <pattern>arn:.*</pattern>
+    <pattern>arn:\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.ListedConnector.ConnectorId</property>
@@ -1639,7 +1639,7 @@
     <property>Amazon.Transfer.Model.ListedHostKey.Arn</property>
     <min>20</min>
     <max>1600</max>
-    <pattern>arn:.*</pattern>
+    <pattern>arn:\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.ListedHostKey.Description</property>
@@ -1656,7 +1656,7 @@
     <property>Amazon.Transfer.Model.ListedProfile.Arn</property>
     <min>20</min>
     <max>1600</max>
-    <pattern>arn:.*</pattern>
+    <pattern>arn:\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.ListedProfile.As2Id</property>
@@ -1673,13 +1673,13 @@
     <property>Amazon.Transfer.Model.ListedServer.Arn</property>
     <min>20</min>
     <max>1600</max>
-    <pattern>arn:.*</pattern>
+    <pattern>arn:\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.ListedServer.LoggingRole</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:.*role/.*</pattern>
+    <pattern>arn:.*role/\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.ListedServer.ServerId</property>
@@ -1691,19 +1691,19 @@
     <property>Amazon.Transfer.Model.ListedUser.Arn</property>
     <min>20</min>
     <max>1600</max>
-    <pattern>arn:.*</pattern>
+    <pattern>arn:\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.ListedUser.HomeDirectory</property>
     <min>0</min>
     <max>1024</max>
-    <pattern>$|/.*</pattern>
+    <pattern>(|/.*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.ListedUser.Role</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:.*role/.*</pattern>
+    <pattern>arn:.*role/\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.ListedUser.UserName</property>
@@ -1715,7 +1715,7 @@
     <property>Amazon.Transfer.Model.ListedWorkflow.Arn</property>
     <min>20</min>
     <max>1600</max>
-    <pattern>arn:.*</pattern>
+    <pattern>arn:\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.ListedWorkflow.Description</property>
@@ -1733,7 +1733,7 @@
     <property>Amazon.Transfer.Model.LoggingConfiguration.LoggingRole</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:.*role/.*</pattern>
+    <pattern>arn:.*role/\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.LoggingConfiguration.LogGroupName</property>
@@ -1864,7 +1864,7 @@
     <property>Amazon.Transfer.Model.WorkflowDetail.ExecutionRole</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:.*role/.*</pattern>
+    <pattern>arn:.*role/\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.WorkflowDetail.WorkflowId</property>

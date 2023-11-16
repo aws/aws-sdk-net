@@ -159,6 +159,17 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetS3StorageOptions())
+                {
+                    context.Writer.WritePropertyName("S3StorageOptions");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = S3StorageOptionsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.S3StorageOptions, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetSecurityPolicyName())
                 {
                     context.Writer.WritePropertyName("SecurityPolicyName");

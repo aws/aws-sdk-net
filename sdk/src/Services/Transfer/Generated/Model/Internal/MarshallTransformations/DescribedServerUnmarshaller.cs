@@ -142,6 +142,12 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                     unmarshalledObject.Protocols = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("S3StorageOptions", targetDepth))
+                {
+                    var unmarshaller = S3StorageOptionsUnmarshaller.Instance;
+                    unmarshalledObject.S3StorageOptions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SecurityPolicyName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

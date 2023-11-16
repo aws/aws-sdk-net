@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Transfer.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for HomeDirectoryMapEntry Object
+    /// Response Unmarshaller for S3StorageOptions Object
     /// </summary>  
-    public class HomeDirectoryMapEntryUnmarshaller : IUnmarshaller<HomeDirectoryMapEntry, XmlUnmarshallerContext>, IUnmarshaller<HomeDirectoryMapEntry, JsonUnmarshallerContext>
+    public class S3StorageOptionsUnmarshaller : IUnmarshaller<S3StorageOptions, XmlUnmarshallerContext>, IUnmarshaller<S3StorageOptions, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        HomeDirectoryMapEntry IUnmarshaller<HomeDirectoryMapEntry, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        S3StorageOptions IUnmarshaller<S3StorageOptions, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,21 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public HomeDirectoryMapEntry Unmarshall(JsonUnmarshallerContext context)
+        public S3StorageOptions Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            HomeDirectoryMapEntry unmarshalledObject = new HomeDirectoryMapEntry();
+            S3StorageOptions unmarshalledObject = new S3StorageOptions();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Entry", targetDepth))
+                if (context.TestExpression("DirectoryListingOptimization", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Entry = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Target", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Target = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Type", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DirectoryListingOptimization = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +76,12 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
         }
 
 
-        private static HomeDirectoryMapEntryUnmarshaller _instance = new HomeDirectoryMapEntryUnmarshaller();        
+        private static S3StorageOptionsUnmarshaller _instance = new S3StorageOptionsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static HomeDirectoryMapEntryUnmarshaller Instance
+        public static S3StorageOptionsUnmarshaller Instance
         {
             get
             {

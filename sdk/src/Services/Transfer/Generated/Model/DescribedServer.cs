@@ -46,6 +46,7 @@ namespace Amazon.Transfer.Model
         private string _preAuthenticationLoginBanner;
         private ProtocolDetails _protocolDetails;
         private List<string> _protocols = new List<string>();
+        private S3StorageOptions _s3StorageOptions;
         private string _securityPolicyName;
         private string _serverId;
         private State _state;
@@ -418,6 +419,31 @@ namespace Amazon.Transfer.Model
         internal bool IsSetProtocols()
         {
             return this._protocols != null && this._protocols.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3StorageOptions. 
+        /// <para>
+        /// Specifies whether or not performance for your Amazon S3 directories is optimized.
+        /// This is disabled by default.
+        /// </para>
+        ///  
+        /// <para>
+        /// By default, home directory mappings have a <code>TYPE</code> of <code>DIRECTORY</code>.
+        /// If you enable this option, you would then need to explicitly set the <code>HomeDirectoryMapEntry</code>
+        /// <code>Type</code> to <code>FILE</code> if you want a mapping to have a file target.
+        /// </para>
+        /// </summary>
+        public S3StorageOptions S3StorageOptions
+        {
+            get { return this._s3StorageOptions; }
+            set { this._s3StorageOptions = value; }
+        }
+
+        // Check to see if S3StorageOptions property is set
+        internal bool IsSetS3StorageOptions()
+        {
+            return this._s3StorageOptions != null;
         }
 
         /// <summary>
