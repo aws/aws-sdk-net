@@ -33,11 +33,39 @@ namespace Amazon.DLM.Model
     /// </summary>
     public partial class LifecyclePolicySummary
     {
+        private bool? _defaultPolicy;
         private string _description;
         private string _policyId;
         private PolicyTypeValues _policyType;
         private GettablePolicyStateValues _state;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
+
+        /// <summary>
+        /// Gets and sets the property DefaultPolicy. 
+        /// <para>
+        ///  <b>[Default policies only]</b> The type of default policy. Values include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>VOLUME</code> - Default policy for EBS snapshots
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>INSTANCE</code> - Default policy for EBS-backed AMIs
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public bool DefaultPolicy
+        {
+            get { return this._defaultPolicy.GetValueOrDefault(); }
+            set { this._defaultPolicy = value; }
+        }
+
+        // Check to see if DefaultPolicy property is set
+        internal bool IsSetDefaultPolicy()
+        {
+            return this._defaultPolicy.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Description. 

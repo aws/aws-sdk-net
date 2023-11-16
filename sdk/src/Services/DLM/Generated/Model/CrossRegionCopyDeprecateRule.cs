@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DLM.Model
 {
     /// <summary>
-    /// <b>[AMI policies only]</b> Specifies an AMI deprecation rule for cross-Region AMI
-    /// copies created by an AMI policy.
+    /// <b>[Custom AMI policies only]</b> Specifies an AMI deprecation rule for cross-Region
+    /// AMI copies created by an AMI policy.
     /// </summary>
     public partial class CrossRegionCopyDeprecateRule
     {

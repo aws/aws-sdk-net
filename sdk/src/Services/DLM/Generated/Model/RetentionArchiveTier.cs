@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DLM.Model
 {
     /// <summary>
-    /// <b>[Snapshot policies only]</b> Describes the retention rule for archived snapshots.
-    /// Once the archive retention threshold is met, the snapshots are permanently deleted
-    /// from the archive tier.
+    /// <b>[Custom snapshot policies only]</b> Describes the retention rule for archived
+    /// snapshots. Once the archive retention threshold is met, the snapshots are permanently
+    /// deleted from the archive tier.
     /// 
     ///  <note> 
     /// <para>

@@ -59,6 +59,9 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
             request.HttpMethod = "GET";
 
             
+            if (publicRequest.IsSetDefaultPolicyType())
+                request.Parameters.Add("defaultPolicyType", StringUtils.FromString(publicRequest.DefaultPolicyType));
+            
             if (publicRequest.IsSetPolicyIds())
                 request.ParameterCollection.Add("policyIds", publicRequest.PolicyIds);
             

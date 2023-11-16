@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.DLM.Model.CreateLifecyclePolicyRequest.CreateInterval</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DLM.Model.CreateLifecyclePolicyRequest.Description</property>
     <min>0</min>
     <max>500</max>
@@ -13,22 +17,26 @@
     <pattern>arn:aws(-[a-z]{1,3}){0,2}:iam::\d+:role/.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DLM.Model.CreateLifecyclePolicyRequest.RetainInterval</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DLM.Model.CreateLifecyclePolicyResponse.PolicyId</property>
     <min>0</min>
     <max>64</max>
-    <pattern>policy-[A-Za-z0-9]+</pattern>
+    <pattern>policy-[a-f0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DLM.Model.DeleteLifecyclePolicyRequest.PolicyId</property>
     <min>0</min>
     <max>64</max>
-    <pattern>policy-[A-Za-z0-9]+</pattern>
+    <pattern>policy-[a-f0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DLM.Model.GetLifecyclePolicyRequest.PolicyId</property>
     <min>0</min>
     <max>64</max>
-    <pattern>policy-[A-Za-z0-9]+</pattern>
+    <pattern>policy-[a-f0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DLM.Model.ListTagsForResourceRequest.ResourceArn</property>
@@ -49,6 +57,10 @@
     <pattern>^arn:aws(-[a-z]{1,3}){0,2}:dlm:[A-Za-z0-9_/.-]{0,63}:\d+:policy/[0-9A-Za-z_-]{1,128}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DLM.Model.UpdateLifecyclePolicyRequest.CreateInterval</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DLM.Model.UpdateLifecyclePolicyRequest.Description</property>
     <min>0</min>
     <max>500</max>
@@ -64,7 +76,11 @@
     <property>Amazon.DLM.Model.UpdateLifecyclePolicyRequest.PolicyId</property>
     <min>0</min>
     <max>64</max>
-    <pattern>policy-[A-Za-z0-9]+</pattern>
+    <pattern>policy-[a-f0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DLM.Model.UpdateLifecyclePolicyRequest.RetainInterval</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DLM.Model.Action.Name</property>
@@ -110,6 +126,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DLM.Model.CrossRegionCopyRule.TargetRegion</property>
+    <min>0</min>
+    <max>16</max>
+    <pattern>([a-z]+-){2,3}\d</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DLM.Model.CrossRegionCopyTarget.TargetRegion</property>
     <min>0</min>
     <max>16</max>
     <pattern>([a-z]+-){2,3}\d</pattern>
@@ -165,7 +187,7 @@
     <property>Amazon.DLM.Model.LifecyclePolicy.PolicyId</property>
     <min>0</min>
     <max>64</max>
-    <pattern>policy-[A-Za-z0-9]+</pattern>
+    <pattern>policy-[a-f0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DLM.Model.LifecyclePolicy.StatusMessage</property>
@@ -182,12 +204,20 @@
     <property>Amazon.DLM.Model.LifecyclePolicySummary.PolicyId</property>
     <min>0</min>
     <max>64</max>
-    <pattern>policy-[A-Za-z0-9]+</pattern>
+    <pattern>policy-[a-f0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DLM.Model.LimitExceededException.ResourceType</property>
     <min>0</min>
     <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DLM.Model.PolicyDetails.CreateInterval</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DLM.Model.PolicyDetails.RetainInterval</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DLM.Model.ResourceNotFoundException.ResourceType</property>

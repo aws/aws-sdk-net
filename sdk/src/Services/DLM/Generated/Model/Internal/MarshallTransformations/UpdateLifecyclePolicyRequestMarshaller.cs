@@ -68,16 +68,61 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetCopyTags())
+                {
+                    context.Writer.WritePropertyName("CopyTags");
+                    context.Writer.Write(publicRequest.CopyTags);
+                }
+
+                if(publicRequest.IsSetCreateInterval())
+                {
+                    context.Writer.WritePropertyName("CreateInterval");
+                    context.Writer.Write(publicRequest.CreateInterval);
+                }
+
+                if(publicRequest.IsSetCrossRegionCopyTargets())
+                {
+                    context.Writer.WritePropertyName("CrossRegionCopyTargets");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestCrossRegionCopyTargetsListValue in publicRequest.CrossRegionCopyTargets)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = CrossRegionCopyTargetMarshaller.Instance;
+                        marshaller.Marshall(publicRequestCrossRegionCopyTargetsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetDescription())
                 {
                     context.Writer.WritePropertyName("Description");
                     context.Writer.Write(publicRequest.Description);
                 }
 
+                if(publicRequest.IsSetExclusions())
+                {
+                    context.Writer.WritePropertyName("Exclusions");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ExclusionsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Exclusions, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetExecutionRoleArn())
                 {
                     context.Writer.WritePropertyName("ExecutionRoleArn");
                     context.Writer.Write(publicRequest.ExecutionRoleArn);
+                }
+
+                if(publicRequest.IsSetExtendDeletion())
+                {
+                    context.Writer.WritePropertyName("ExtendDeletion");
+                    context.Writer.Write(publicRequest.ExtendDeletion);
                 }
 
                 if(publicRequest.IsSetPolicyDetails())
@@ -89,6 +134,12 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
                     marshaller.Marshall(publicRequest.PolicyDetails, context);
 
                     context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetRetainInterval())
+                {
+                    context.Writer.WritePropertyName("RetainInterval");
+                    context.Writer.Write(publicRequest.RetainInterval);
                 }
 
                 if(publicRequest.IsSetState())

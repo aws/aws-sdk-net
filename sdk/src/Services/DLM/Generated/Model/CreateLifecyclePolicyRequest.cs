@@ -30,16 +30,154 @@ namespace Amazon.DLM.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateLifecyclePolicy operation.
-    /// Creates a policy to manage the lifecycle of the specified Amazon Web Services resources.
-    /// You can create up to 100 lifecycle policies.
+    /// Creates an Amazon Data Lifecycle Manager lifecycle policy. Amazon Data Lifecycle Manager
+    /// supports the following policy types:
+    /// 
+    ///  <ul> <li> 
+    /// <para>
+    /// Custom EBS snapshot policy
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Custom EBS-backed AMI policy
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Cross-account copy event policy
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Default policy for EBS snapshots
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Default policy for EBS-backed AMIs
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/policy-differences.html">
+    /// Default policies vs custom policies</a>.
+    /// </para>
+    ///  <important> 
+    /// <para>
+    /// If you create a default policy, you can specify the request parameters either in the
+    /// request body, or in the PolicyDetails request structure, but not both.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class CreateLifecyclePolicyRequest : AmazonDLMRequest
     {
+        private bool? _copyTags;
+        private int? _createInterval;
+        private List<CrossRegionCopyTarget> _crossRegionCopyTargets = new List<CrossRegionCopyTarget>();
+        private DefaultPolicyTypeValues _defaultPolicy;
         private string _description;
+        private Exclusions _exclusions;
         private string _executionRoleArn;
+        private bool? _extendDeletion;
         private PolicyDetails _policyDetails;
+        private int? _retainInterval;
         private SettablePolicyStateValues _state;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
+
+        /// <summary>
+        /// Gets and sets the property CopyTags. 
+        /// <para>
+        ///  <b>[Default policies only]</b> Indicates whether the policy should copy tags from
+        /// the source resource to the snapshot or AMI. If you do not specify a value, the default
+        /// is <code>false</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: false
+        /// </para>
+        /// </summary>
+        public bool CopyTags
+        {
+            get { return this._copyTags.GetValueOrDefault(); }
+            set { this._copyTags = value; }
+        }
+
+        // Check to see if CopyTags property is set
+        internal bool IsSetCopyTags()
+        {
+            return this._copyTags.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreateInterval. 
+        /// <para>
+        ///  <b>[Default policies only]</b> Specifies how often the policy should run and create
+        /// snapshots or AMIs. The creation frequency can range from 1 to 7 days. If you do not
+        /// specify a value, the default is 1.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: 1
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public int CreateInterval
+        {
+            get { return this._createInterval.GetValueOrDefault(); }
+            set { this._createInterval = value; }
+        }
+
+        // Check to see if CreateInterval property is set
+        internal bool IsSetCreateInterval()
+        {
+            return this._createInterval.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CrossRegionCopyTargets. 
+        /// <para>
+        ///  <b>[Default policies only]</b> Specifies destination Regions for snapshot or AMI
+        /// copies. You can specify up to 3 destination Regions. If you do not want to create
+        /// cross-Region copies, omit this parameter.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=3)]
+        public List<CrossRegionCopyTarget> CrossRegionCopyTargets
+        {
+            get { return this._crossRegionCopyTargets; }
+            set { this._crossRegionCopyTargets = value; }
+        }
+
+        // Check to see if CrossRegionCopyTargets property is set
+        internal bool IsSetCrossRegionCopyTargets()
+        {
+            return this._crossRegionCopyTargets != null && this._crossRegionCopyTargets.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DefaultPolicy. 
+        /// <para>
+        ///  <b>[Default policies only]</b> Specify the type of default policy to create.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// To create a default policy for EBS snapshots, that creates snapshots of all volumes
+        /// in the Region that do not have recent backups, specify <code>VOLUME</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To create a default policy for EBS-backed AMIs, that creates EBS-backed AMIs from
+        /// all instances in the Region that do not have recent backups, specify <code>INSTANCE</code>.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public DefaultPolicyTypeValues DefaultPolicy
+        {
+            get { return this._defaultPolicy; }
+            set { this._defaultPolicy = value; }
+        }
+
+        // Check to see if DefaultPolicy property is set
+        internal bool IsSetDefaultPolicy()
+        {
+            return this._defaultPolicy != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -58,6 +196,26 @@ namespace Amazon.DLM.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Exclusions. 
+        /// <para>
+        ///  <b>[Default policies only]</b> Specifies exclusion parameters for volumes or instances
+        /// for which you do not want to create snapshots or AMIs. The policy will not create
+        /// snapshots or AMIs for target resources that match any of the specified exclusion parameters.
+        /// </para>
+        /// </summary>
+        public Exclusions Exclusions
+        {
+            get { return this._exclusions; }
+            set { this._exclusions = value; }
+        }
+
+        // Check to see if Exclusions property is set
+        internal bool IsSetExclusions()
+        {
+            return this._exclusions != null;
         }
 
         /// <summary>
@@ -81,12 +239,68 @@ namespace Amazon.DLM.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ExtendDeletion. 
+        /// <para>
+        ///  <b>[Default policies only]</b> Defines the snapshot or AMI retention behavior for
+        /// the policy if the source volume or instance is deleted, or if the policy enters the
+        /// error, disabled, or deleted state.
+        /// </para>
+        ///  
+        /// <para>
+        /// By default (<b>ExtendDeletion=false</b>):
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If a source resource is deleted, Amazon Data Lifecycle Manager will continue to delete
+        /// previously created snapshots or AMIs, up to but not including the last one, based
+        /// on the specified retention period. If you want Amazon Data Lifecycle Manager to delete
+        /// all snapshots or AMIs, including the last one, specify <code>true</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If a policy enters the error, disabled, or deleted state, Amazon Data Lifecycle Manager
+        /// stops deleting snapshots and AMIs. If you want Amazon Data Lifecycle Manager to continue
+        /// deleting snapshots or AMIs, including the last one, if the policy enters one of these
+        /// states, specify <code>true</code>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If you enable extended deletion (<b>ExtendDeletion=true</b>), you override both default
+        /// behaviors simultaneously.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you do not specify a value, the default is <code>false</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: false
+        /// </para>
+        /// </summary>
+        public bool ExtendDeletion
+        {
+            get { return this._extendDeletion.GetValueOrDefault(); }
+            set { this._extendDeletion = value; }
+        }
+
+        // Check to see if ExtendDeletion property is set
+        internal bool IsSetExtendDeletion()
+        {
+            return this._extendDeletion.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property PolicyDetails. 
         /// <para>
         /// The configuration details of the lifecycle policy.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// If you create a default policy, you can specify the request parameters either in the
+        /// request body, or in the PolicyDetails request structure, but not both.
+        /// </para>
+        ///  </important>
         /// </summary>
-        [AWSProperty(Required=true)]
         public PolicyDetails PolicyDetails
         {
             get { return this._policyDetails; }
@@ -100,9 +314,36 @@ namespace Amazon.DLM.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RetainInterval. 
+        /// <para>
+        ///  <b>[Default policies only]</b> Specifies how long the policy should retain snapshots
+        /// or AMIs before deleting them. The retention period can range from 2 to 14 days, but
+        /// it must be greater than the creation frequency to ensure that the policy retains at
+        /// least 1 snapshot or AMI at any given time. If you do not specify a value, the default
+        /// is 7.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: 7
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public int RetainInterval
+        {
+            get { return this._retainInterval.GetValueOrDefault(); }
+            set { this._retainInterval = value; }
+        }
+
+        // Check to see if RetainInterval property is set
+        internal bool IsSetRetainInterval()
+        {
+            return this._retainInterval.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The desired activation state of the lifecycle policy after creation.
+        /// The activation state of the lifecycle policy after creation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

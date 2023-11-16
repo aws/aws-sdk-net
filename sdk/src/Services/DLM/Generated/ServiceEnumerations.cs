@@ -25,6 +25,110 @@ namespace Amazon.DLM
 {
 
     /// <summary>
+    /// Constants used for properties of type DefaultPoliciesTypeValues.
+    /// </summary>
+    public class DefaultPoliciesTypeValues : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL for DefaultPoliciesTypeValues
+        /// </summary>
+        public static readonly DefaultPoliciesTypeValues ALL = new DefaultPoliciesTypeValues("ALL");
+        /// <summary>
+        /// Constant INSTANCE for DefaultPoliciesTypeValues
+        /// </summary>
+        public static readonly DefaultPoliciesTypeValues INSTANCE = new DefaultPoliciesTypeValues("INSTANCE");
+        /// <summary>
+        /// Constant VOLUME for DefaultPoliciesTypeValues
+        /// </summary>
+        public static readonly DefaultPoliciesTypeValues VOLUME = new DefaultPoliciesTypeValues("VOLUME");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DefaultPoliciesTypeValues(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DefaultPoliciesTypeValues FindValue(string value)
+        {
+            return FindValue<DefaultPoliciesTypeValues>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DefaultPoliciesTypeValues(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DefaultPolicyTypeValues.
+    /// </summary>
+    public class DefaultPolicyTypeValues : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INSTANCE for DefaultPolicyTypeValues
+        /// </summary>
+        public static readonly DefaultPolicyTypeValues INSTANCE = new DefaultPolicyTypeValues("INSTANCE");
+        /// <summary>
+        /// Constant VOLUME for DefaultPolicyTypeValues
+        /// </summary>
+        public static readonly DefaultPolicyTypeValues VOLUME = new DefaultPolicyTypeValues("VOLUME");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DefaultPolicyTypeValues(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DefaultPolicyTypeValues FindValue(string value)
+        {
+            return FindValue<DefaultPolicyTypeValues>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DefaultPolicyTypeValues(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EventSourceValues.
     /// </summary>
     public class EventSourceValues : ConstantClass
@@ -306,6 +410,56 @@ namespace Amazon.DLM
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator LocationValues(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PolicyLanguageValues.
+    /// </summary>
+    public class PolicyLanguageValues : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SIMPLIFIED for PolicyLanguageValues
+        /// </summary>
+        public static readonly PolicyLanguageValues SIMPLIFIED = new PolicyLanguageValues("SIMPLIFIED");
+        /// <summary>
+        /// Constant STANDARD for PolicyLanguageValues
+        /// </summary>
+        public static readonly PolicyLanguageValues STANDARD = new PolicyLanguageValues("STANDARD");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PolicyLanguageValues(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PolicyLanguageValues FindValue(string value)
+        {
+            return FindValue<PolicyLanguageValues>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PolicyLanguageValues(string value)
         {
             return FindValue(value);
         }

@@ -259,8 +259,40 @@ namespace Amazon.DLM
         #region  CreateLifecyclePolicy
 
         /// <summary>
-        /// Creates a policy to manage the lifecycle of the specified Amazon Web Services resources.
-        /// You can create up to 100 lifecycle policies.
+        /// Creates an Amazon Data Lifecycle Manager lifecycle policy. Amazon Data Lifecycle Manager
+        /// supports the following policy types:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Custom EBS snapshot policy
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Custom EBS-backed AMI policy
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cross-account copy event policy
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Default policy for EBS snapshots
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Default policy for EBS-backed AMIs
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/policy-differences.html">
+        /// Default policies vs custom policies</a>.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// If you create a default policy, you can specify the request parameters either in the
+        /// request body, or in the PolicyDetails request structure, but not both.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLifecyclePolicy service method.</param>
         /// 

@@ -61,6 +61,34 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetCopyTags())
+            {
+                context.Writer.WritePropertyName("CopyTags");
+                context.Writer.Write(requestObject.CopyTags);
+            }
+
+            if(requestObject.IsSetCreateInterval())
+            {
+                context.Writer.WritePropertyName("CreateInterval");
+                context.Writer.Write(requestObject.CreateInterval);
+            }
+
+            if(requestObject.IsSetCrossRegionCopyTargets())
+            {
+                context.Writer.WritePropertyName("CrossRegionCopyTargets");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectCrossRegionCopyTargetsListValue in requestObject.CrossRegionCopyTargets)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CrossRegionCopyTargetMarshaller.Instance;
+                    marshaller.Marshall(requestObjectCrossRegionCopyTargetsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetEventSource())
             {
                 context.Writer.WritePropertyName("EventSource");
@@ -72,6 +100,23 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetExclusions())
+            {
+                context.Writer.WritePropertyName("Exclusions");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ExclusionsMarshaller.Instance;
+                marshaller.Marshall(requestObject.Exclusions, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetExtendDeletion())
+            {
+                context.Writer.WritePropertyName("ExtendDeletion");
+                context.Writer.Write(requestObject.ExtendDeletion);
+            }
+
             if(requestObject.IsSetParameters())
             {
                 context.Writer.WritePropertyName("Parameters");
@@ -81,6 +126,12 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
                 marshaller.Marshall(requestObject.Parameters, context);
 
                 context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetPolicyLanguage())
+            {
+                context.Writer.WritePropertyName("PolicyLanguage");
+                context.Writer.Write(requestObject.PolicyLanguage);
             }
 
             if(requestObject.IsSetPolicyType())
@@ -100,6 +151,12 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetResourceType())
+            {
+                context.Writer.WritePropertyName("ResourceType");
+                context.Writer.Write(requestObject.ResourceType);
+            }
+
             if(requestObject.IsSetResourceTypes())
             {
                 context.Writer.WritePropertyName("ResourceTypes");
@@ -109,6 +166,12 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
                         context.Writer.Write(requestObjectResourceTypesListValue);
                 }
                 context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetRetainInterval())
+            {
+                context.Writer.WritePropertyName("RetainInterval");
+                context.Writer.Write(requestObject.RetainInterval);
             }
 
             if(requestObject.IsSetSchedules())

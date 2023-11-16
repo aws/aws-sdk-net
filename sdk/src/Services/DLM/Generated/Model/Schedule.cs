@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DLM.Model
 {
     /// <summary>
-    /// <b>[Snapshot and AMI policies only]</b> Specifies a schedule for a snapshot or AMI
-    /// lifecycle policy.
+    /// <b>[Custom snapshot and AMI policies only]</b> Specifies a schedule for a snapshot
+    /// or AMI lifecycle policy.
     /// </summary>
     public partial class Schedule
     {
@@ -49,9 +49,9 @@ namespace Amazon.DLM.Model
         /// <summary>
         /// Gets and sets the property ArchiveRule. 
         /// <para>
-        ///  <b>[Snapshot policies that target volumes only]</b> The snapshot archiving rule for
-        /// the schedule. When you specify an archiving rule, snapshots are automatically moved
-        /// from the standard tier to the archive tier once the schedule's retention threshold
+        ///  <b>[Custom snapshot policies that target volumes only]</b> The snapshot archiving
+        /// rule for the schedule. When you specify an archiving rule, snapshots are automatically
+        /// moved from the standard tier to the archive tier once the schedule's retention threshold
         /// is met. Snapshots are then retained in the archive tier for the archive retention
         /// period that you specify. 
         /// </para>
@@ -139,7 +139,7 @@ namespace Amazon.DLM.Model
         /// <summary>
         /// Gets and sets the property DeprecateRule. 
         /// <para>
-        ///  <b>[AMI policies only]</b> The AMI deprecation rule for the schedule.
+        ///  <b>[Custom AMI policies only]</b> The AMI deprecation rule for the schedule.
         /// </para>
         /// </summary>
         public DeprecateRule DeprecateRule
@@ -157,7 +157,7 @@ namespace Amazon.DLM.Model
         /// <summary>
         /// Gets and sets the property FastRestoreRule. 
         /// <para>
-        ///  <b>[Snapshot policies only]</b> The rule for enabling fast snapshot restore.
+        ///  <b>[Custom snapshot policies only]</b> The rule for enabling fast snapshot restore.
         /// </para>
         /// </summary>
         public FastRestoreRule FastRestoreRule
@@ -212,8 +212,8 @@ namespace Amazon.DLM.Model
         /// <summary>
         /// Gets and sets the property ShareRules. 
         /// <para>
-        ///  <b>[Snapshot policies only]</b> The rule for sharing snapshots with other Amazon
-        /// Web Services accounts.
+        ///  <b>[Custom snapshot policies only]</b> The rule for sharing snapshots with other
+        /// Amazon Web Services accounts.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]

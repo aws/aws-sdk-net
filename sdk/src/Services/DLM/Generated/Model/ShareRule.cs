@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DLM.Model
 {
     /// <summary>
-    /// <b>[Snapshot policies only]</b> Specifies a rule for sharing snapshots across Amazon
-    /// Web Services accounts.
+    /// <b>[Custom snapshot policies only]</b> Specifies a rule for sharing snapshots across
+    /// Amazon Web Services accounts.
     /// </summary>
     public partial class ShareRule
     {

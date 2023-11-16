@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DLM.Model
 {
     /// <summary>
-    /// <b>[Snapshot and AMI policies only]</b> Specifies optional parameters for snapshot
-    /// and AMI policies. The set of valid parameters depends on the combination of policy
-    /// type and target resource type.
+    /// <b>[Custom snapshot and AMI policies only]</b> Specifies optional parameters for
+    /// snapshot and AMI policies. The set of valid parameters depends on the combination
+    /// of policy type and target resource type.
     /// 
     ///  
     /// <para>
@@ -52,8 +52,8 @@ namespace Amazon.DLM.Model
         /// <summary>
         /// Gets and sets the property ExcludeBootVolume. 
         /// <para>
-        ///  <b>[Snapshot policies that target instances only]</b> Indicates whether to exclude
-        /// the root volume from multi-volume snapshot sets. The default is <code>false</code>.
+        ///  <b>[Custom snapshot policies that target instances only]</b> Indicates whether to
+        /// exclude the root volume from multi-volume snapshot sets. The default is <code>false</code>.
         /// If you specify <code>true</code>, then the root volumes attached to targeted instances
         /// will be excluded from the multi-volume snapshot sets created by the policy.
         /// </para>
@@ -73,8 +73,8 @@ namespace Amazon.DLM.Model
         /// <summary>
         /// Gets and sets the property ExcludeDataVolumeTags. 
         /// <para>
-        ///  <b>[Snapshot policies that target instances only]</b> The tags used to identify data
-        /// (non-root) volumes to exclude from multi-volume snapshot sets.
+        ///  <b>[Custom snapshot policies that target instances only]</b> The tags used to identify
+        /// data (non-root) volumes to exclude from multi-volume snapshot sets.
         /// </para>
         ///  
         /// <para>
@@ -100,9 +100,9 @@ namespace Amazon.DLM.Model
         /// <summary>
         /// Gets and sets the property NoReboot. 
         /// <para>
-        ///  <b>[AMI policies only]</b> Indicates whether targeted instances are rebooted when
-        /// the lifecycle policy runs. <code>true</code> indicates that targeted instances are
-        /// not rebooted when the policy runs. <code>false</code> indicates that target instances
+        ///  <b>[Custom AMI policies only]</b> Indicates whether targeted instances are rebooted
+        /// when the lifecycle policy runs. <code>true</code> indicates that targeted instances
+        /// are not rebooted when the policy runs. <code>false</code> indicates that target instances
         /// are rebooted when the policy runs. The default is <code>true</code> (instances are
         /// not rebooted).
         /// </para>

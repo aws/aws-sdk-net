@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DLM.Model
 {
     /// <summary>
-    /// <b>[Snapshot and AMI policies only]</b> Specifies a retention rule for snapshots
+    /// <b>[Custom snapshot and AMI policies only]</b> Specifies a retention rule for snapshots
     /// created by snapshot policies, or for AMIs created by AMI policies.
     /// 
     ///  <note> 

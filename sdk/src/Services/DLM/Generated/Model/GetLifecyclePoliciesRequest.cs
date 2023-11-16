@@ -39,11 +39,44 @@ namespace Amazon.DLM.Model
     /// </summary>
     public partial class GetLifecyclePoliciesRequest : AmazonDLMRequest
     {
+        private DefaultPoliciesTypeValues _defaultPolicyType;
         private List<string> _policyIds = new List<string>();
         private List<string> _resourceTypes = new List<string>();
         private GettablePolicyStateValues _state;
         private List<string> _tagsToAdd = new List<string>();
         private List<string> _targetTags = new List<string>();
+
+        /// <summary>
+        /// Gets and sets the property DefaultPolicyType. 
+        /// <para>
+        ///  <b>[Default policies only]</b> Specifies the type of default policy to get. Specify
+        /// one of the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>VOLUME</code> - To get only the default policy for EBS snapshots
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>INSTANCE</code> - To get only the default policy for EBS-backed AMIs
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ALL</code> - To get all default policies
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public DefaultPoliciesTypeValues DefaultPolicyType
+        {
+            get { return this._defaultPolicyType; }
+            set { this._defaultPolicyType = value; }
+        }
+
+        // Check to see if DefaultPolicyType property is set
+        internal bool IsSetDefaultPolicyType()
+        {
+            return this._defaultPolicyType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property PolicyIds. 

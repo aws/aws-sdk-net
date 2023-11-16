@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DLM.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for LifecyclePolicySummary Object
+    /// Response Unmarshaller for Exclusions Object
     /// </summary>  
-    public class LifecyclePolicySummaryUnmarshaller : IUnmarshaller<LifecyclePolicySummary, XmlUnmarshallerContext>, IUnmarshaller<LifecyclePolicySummary, JsonUnmarshallerContext>
+    public class ExclusionsUnmarshaller : IUnmarshaller<Exclusions, XmlUnmarshallerContext>, IUnmarshaller<Exclusions, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        LifecyclePolicySummary IUnmarshaller<LifecyclePolicySummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        Exclusions IUnmarshaller<Exclusions, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,51 +53,33 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public LifecyclePolicySummary Unmarshall(JsonUnmarshallerContext context)
+        public Exclusions Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            LifecyclePolicySummary unmarshalledObject = new LifecyclePolicySummary();
+            Exclusions unmarshalledObject = new Exclusions();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("DefaultPolicy", targetDepth))
+                if (context.TestExpression("ExcludeBootVolumes", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.DefaultPolicy = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ExcludeBootVolumes = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Description", targetDepth))
+                if (context.TestExpression("ExcludeTags", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
+                    unmarshalledObject.ExcludeTags = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("PolicyId", targetDepth))
+                if (context.TestExpression("ExcludeVolumeTypes", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PolicyId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("PolicyType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PolicyType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("State", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.State = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Tags", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    unmarshalledObject.Tags = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.ExcludeVolumeTypes = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -106,12 +88,12 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
         }
 
 
-        private static LifecyclePolicySummaryUnmarshaller _instance = new LifecyclePolicySummaryUnmarshaller();        
+        private static ExclusionsUnmarshaller _instance = new ExclusionsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static LifecyclePolicySummaryUnmarshaller Instance
+        public static ExclusionsUnmarshaller Instance
         {
             get
             {

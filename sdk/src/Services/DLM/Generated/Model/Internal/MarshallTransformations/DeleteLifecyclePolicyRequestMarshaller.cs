@@ -61,7 +61,7 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetPolicyId())
                 throw new AmazonDLMException("Request object does not have required field PolicyId set");
             request.AddPathResource("{policyId}", StringUtils.FromString(publicRequest.PolicyId));
-            request.ResourcePath = "/policies/{policyId}/";
+            request.ResourcePath = "/policies/{policyId}";
 
             return request;
         }

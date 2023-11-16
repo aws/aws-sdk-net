@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DLM.Model
 {
     /// <summary>
-    /// <b>[Snapshot and AMI policies only]</b> Specifies a cross-Region copy rule for a
-    /// snapshot and AMI policies.
+    /// <b>[Custom snapshot and AMI policies only]</b> Specifies a cross-Region copy rule
+    /// for a snapshot and AMI policies.
     /// 
     ///  <note> 
     /// <para>
@@ -90,8 +90,8 @@ namespace Amazon.DLM.Model
         /// <summary>
         /// Gets and sets the property DeprecateRule. 
         /// <para>
-        ///  <b>[AMI policies only]</b> The AMI deprecation rule for cross-Region AMI copies created
-        /// by the rule.
+        ///  <b>[Custom AMI policies only]</b> The AMI deprecation rule for cross-Region AMI copies
+        /// created by the rule.
         /// </para>
         /// </summary>
         public CrossRegionCopyDeprecateRule DeprecateRule
@@ -154,8 +154,8 @@ namespace Amazon.DLM.Model
         /// </para>
         ///  </note> 
         /// <para>
-        ///  <b>[Snapshot policies only]</b> The target Region or the Amazon Resource Name (ARN)
-        /// of the target Outpost for the snapshot copies.
+        ///  <b>[Custom snapshot policies only]</b> The target Region or the Amazon Resource Name
+        /// (ARN) of the target Outpost for the snapshot copies.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]
@@ -180,8 +180,8 @@ namespace Amazon.DLM.Model
         /// </para>
         ///   </note> 
         /// <para>
-        ///  <b>[AMI policies only]</b> The target Region or the Amazon Resource Name (ARN) of
-        /// the target Outpost for the snapshot copies.
+        ///  <b>[Custom AMI policies only]</b> The target Region or the Amazon Resource Name (ARN)
+        /// of the target Outpost for the snapshot copies.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=16)]

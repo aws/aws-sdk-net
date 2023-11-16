@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DLM.Model
 {
     /// <summary>
-    /// <b>[Snapshot policies that target instances only]</b> Information about pre and/or
-    /// post scripts for a snapshot lifecycle policy that targets instances. For more information,
-    /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/automate-app-consistent-backups.html">
+    /// <b>[Custom snapshot policies that target instances only]</b> Information about pre
+    /// and/or post scripts for a snapshot lifecycle policy that targets instances. For more
+    /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/automate-app-consistent-backups.html">
     /// Automating application-consistent snapshots with pre and post scripts</a>.
     /// </summary>
     public partial class Script

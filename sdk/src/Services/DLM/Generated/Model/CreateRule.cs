@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DLM.Model
 {
     /// <summary>
-    /// <b>[Snapshot and AMI policies only]</b> Specifies when the policy should create snapshots
-    /// or AMIs.
+    /// <b>[Custom snapshot and AMI policies only]</b> Specifies when the policy should create
+    /// snapshots or AMIs.
     /// 
     ///  <note> <ul> <li> 
     /// <para>
@@ -115,8 +115,8 @@ namespace Amazon.DLM.Model
         /// <summary>
         /// Gets and sets the property Location. 
         /// <para>
-        ///  <b>[Snapshot policies only]</b> Specifies the destination for snapshots created by
-        /// the policy. To create snapshots in the same Region as the source resource, specify
+        ///  <b>[Custom snapshot policies only]</b> Specifies the destination for snapshots created
+        /// by the policy. To create snapshots in the same Region as the source resource, specify
         /// <code>CLOUD</code>. To create snapshots on the same Outpost as the source resource,
         /// specify <code>OUTPOST_LOCAL</code>. If you omit this parameter, <code>CLOUD</code>
         /// is used by default.
@@ -144,10 +144,10 @@ namespace Amazon.DLM.Model
         /// <summary>
         /// Gets and sets the property Scripts. 
         /// <para>
-        ///  <b>[Snapshot policies that target instances only]</b> Specifies pre and/or post scripts
-        /// for a snapshot lifecycle policy that targets instances. This is useful for creating
-        /// application-consistent snapshots, or for performing specific administrative tasks
-        /// before or after Amazon Data Lifecycle Manager initiates snapshot creation.
+        ///  <b>[Custom snapshot policies that target instances only]</b> Specifies pre and/or
+        /// post scripts for a snapshot lifecycle policy that targets instances. This is useful
+        /// for creating application-consistent snapshots, or for performing specific administrative
+        /// tasks before or after Amazon Data Lifecycle Manager initiates snapshot creation.
         /// </para>
         ///  
         /// <para>

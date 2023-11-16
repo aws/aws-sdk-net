@@ -29,13 +29,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DLM.Model
 {
     /// <summary>
-    /// <b>[All policy types]</b> Detailed information about a snapshot, AMI, or event-based
+    /// <b>[Custom policies only]</b> Detailed information about a snapshot, AMI, or event-based
     /// lifecycle policy.
     /// </summary>
     public partial class LifecyclePolicy
     {
         private DateTime? _dateCreated;
         private DateTime? _dateModified;
+        private bool? _defaultPolicy;
         private string _description;
         private string _executionRoleArn;
         private string _policyArn;
@@ -79,6 +80,33 @@ namespace Amazon.DLM.Model
         internal bool IsSetDateModified()
         {
             return this._dateModified.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DefaultPolicy. 
+        /// <para>
+        ///  <b>[Default policies only]</b> The type of default policy. Values include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>VOLUME</code> - Default policy for EBS snapshots
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>INSTANCE</code> - Default policy for EBS-backed AMIs
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public bool DefaultPolicy
+        {
+            get { return this._defaultPolicy.GetValueOrDefault(); }
+            set { this._defaultPolicy = value; }
+        }
+
+        // Check to see if DefaultPolicy property is set
+        internal bool IsSetDefaultPolicy()
+        {
+            return this._defaultPolicy.HasValue; 
         }
 
         /// <summary>

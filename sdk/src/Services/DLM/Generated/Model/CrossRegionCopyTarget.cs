@@ -29,32 +29,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DLM.Model
 {
     /// <summary>
-    /// <b>[Custom snapshot policies only]</b> Specifies information about the archive storage
-    /// tier retention period.
+    /// <b>[Default policies only]</b> Specifies a destination Region for cross-Region copy
+    /// actions.
     /// </summary>
-    public partial class ArchiveRetainRule
+    public partial class CrossRegionCopyTarget
     {
-        private RetentionArchiveTier _retentionArchiveTier;
+        private string _targetRegion;
 
         /// <summary>
-        /// Gets and sets the property RetentionArchiveTier. 
+        /// Gets and sets the property TargetRegion. 
         /// <para>
-        /// Information about retention period in the Amazon EBS Snapshots Archive. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/snapshot-archive.html">Archive
-        /// Amazon EBS snapshots</a>.
+        /// The target Region, for example <code>us-east-1</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public RetentionArchiveTier RetentionArchiveTier
+        [AWSProperty(Min=0, Max=16)]
+        public string TargetRegion
         {
-            get { return this._retentionArchiveTier; }
-            set { this._retentionArchiveTier = value; }
+            get { return this._targetRegion; }
+            set { this._targetRegion = value; }
         }
 
-        // Check to see if RetentionArchiveTier property is set
-        internal bool IsSetRetentionArchiveTier()
+        // Check to see if TargetRegion property is set
+        internal bool IsSetTargetRegion()
         {
-            return this._retentionArchiveTier != null;
+            return this._targetRegion != null;
         }
 
     }
