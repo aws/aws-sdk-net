@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Text;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -10,8 +9,6 @@ using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.Model;
 using Amazon.DynamoDBv2.DocumentModel;
 using System.IO;
-using ThirdParty.Json.LitJson;
-using System.Xml;
 using ReturnValuesOnConditionCheckFailure = Amazon.DynamoDBv2.DocumentModel.ReturnValuesOnConditionCheckFailure;
 
 
@@ -78,6 +75,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
                 // Test storing some attributes as epoch seconds
                 TestStoreAsEpoch(hashRangeTable, numericHashRangeTable);
+
+                // Test that attributes stored as Datetimes can be retrieved in UTC.
+                TestAsDateTimeUtc(numericHashRangeTable);
             }
         }
 
@@ -154,7 +154,38 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
                 // Test storing some attributes as epoch seconds
                 TestStoreAsEpoch(hashRangeTable, numericHashRangeTable);
+
+                // Test that attributes stored as Datetimes can be retrieved in UTC.
+                TestAsDateTimeUtc(numericHashRangeTable);
             }
+        }
+
+        private void TestAsDateTimeUtc(Table numericHashRangeTable)
+        {
+            var config = new TableConfig(numericHashRangeTable.TableName)
+            {
+                AttributesToStoreAsEpoch = new List<string> { "CreationTime", "EpochDate2" }
+            };
+            var numericEpochTable = Table.LoadTable(Client, config);
+
+            // Capture current time
+            var currTime = DateTime.Now;
+            var currTimeUtc = currTime.ToUniversalTime();
+
+            // Save Item
+            var doc = new Document();
+            doc["Name"] = "Bob";
+            doc["Age"] = 42;
+            doc["CreationTime"] = currTime;
+            doc["EpochDate2"] = currTime;
+            doc["NonEpochDate"] = currTime;
+            numericEpochTable.PutItem(doc);
+
+            // Load Item
+            var storedDoc = numericEpochTable.GetItem(currTime, "Bob", new GetItemOperationConfig { ConsistentRead = true});
+            ApproximatelyEqual(currTimeUtc, storedDoc["CreationTime"].AsDateTimeUtc());
+            ApproximatelyEqual(currTimeUtc, storedDoc["EpochDate2"].AsDateTimeUtc());
+            ApproximatelyEqual(currTimeUtc, storedDoc["NonEpochDate"].AsDateTimeUtc());
         }
 
         private void TestEmptyString(Table hashTable)
