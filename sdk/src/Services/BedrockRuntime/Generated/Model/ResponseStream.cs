@@ -27,13 +27,15 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.EventStreams;
 using Amazon.Runtime.EventStreams.Internal;
+using Amazon.BedrockRuntime.Model.Internal.MarshallTransformations;
+using Amazon.Runtime.EventStreams.Utils;
 
 namespace Amazon.BedrockRuntime.Model
 {
     /// <summary>
     /// Definition of content in the response stream.
     /// </summary>
-
+    
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Naming", "CA1710:Identifiers should have correct suffix", Justification = "ResponseStreamCollection is not descriptive")]
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1063", Justification = "IDisposable is a transient interface from IEventStream. Users need to be able to call Dispose.")]
     public sealed class ResponseStream : EnumerableEventStream<IEventStreamEvent, BedrockRuntimeEventStreamException>
@@ -44,14 +46,19 @@ namespace Amazon.BedrockRuntime.Model
         protected override IDictionary<string,Func<IEventStreamMessage, IEventStreamEvent>> EventMapping {get;} =
         new Dictionary<string,Func<IEventStreamMessage,IEventStreamEvent>>(StringComparer.OrdinalIgnoreCase)
         {
-            {"Chunk", payload => new PayloadPart(payload)},
+            {"Chunk", payload => new PayloadPartUnmarshaller().Unmarshall(EventStreamUtils.ConvertMessageToJsonContext(payload))},
         };
         /// <summary>
         /// The mapping of event message to a generator function to construct the matching EventStream Exception
         /// </summary>
         protected override IDictionary<string,Func<IEventStreamMessage,BedrockRuntimeEventStreamException>> ExceptionMapping {get;} =
-        new Dictionary<string,Func<IEventStreamMessage,BedrockRuntimeEventStreamException>>
+        new Dictionary<string,Func<IEventStreamMessage,BedrockRuntimeEventStreamException>>(StringComparer.OrdinalIgnoreCase)
         {
+            { "InternalServerException", payload => new BedrockRuntimeEventStreamException(Encoding.UTF8.GetString(payload.Payload), new InternalServerExceptionUnmarshaller().Unmarshall(EventStreamUtils.ConvertMessageToJsonContext(payload))) },
+            { "ModelStreamErrorException", payload => new BedrockRuntimeEventStreamException(Encoding.UTF8.GetString(payload.Payload), new ModelStreamErrorExceptionUnmarshaller().Unmarshall(EventStreamUtils.ConvertMessageToJsonContext(payload))) },
+            { "ModelTimeoutException", payload => new BedrockRuntimeEventStreamException(Encoding.UTF8.GetString(payload.Payload), new ModelTimeoutExceptionUnmarshaller().Unmarshall(EventStreamUtils.ConvertMessageToJsonContext(payload))) },
+            { "ThrottlingException", payload => new BedrockRuntimeEventStreamException(Encoding.UTF8.GetString(payload.Payload), new ThrottlingExceptionUnmarshaller().Unmarshall(EventStreamUtils.ConvertMessageToJsonContext(payload))) },
+            { "ValidationException", payload => new BedrockRuntimeEventStreamException(Encoding.UTF8.GetString(payload.Payload), new ValidationExceptionUnmarshaller().Unmarshall(EventStreamUtils.ConvertMessageToJsonContext(payload))) },
         };
         // Backing by a volatile bool. The flag only changes one way, so no need for a lock.
         // This is located in the subclass to be CLS compliant.
@@ -110,6 +117,7 @@ namespace Amazon.BedrockRuntime.Model
 
             return false;
         }
+
 
     }
 }
