@@ -110,6 +110,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+                if(publicRequest.IsSetTier())
+                {
+                    request.Parameters.Add("Tier", StringUtils.FromString(publicRequest.Tier));
+                }
             }
             return request;
         }

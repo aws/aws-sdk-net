@@ -35,6 +35,7 @@ namespace Amazon.EC2.Model
     {
         private InstanceNetworkInterfaceAssociation _association;
         private InstanceNetworkInterfaceAttachment _attachment;
+        private ConnectionTrackingSpecificationResponse _connectionTrackingConfiguration;
         private string _description;
         private List<GroupIdentifier> _groups = new List<GroupIdentifier>();
         private string _interfaceType;
@@ -86,6 +87,27 @@ namespace Amazon.EC2.Model
         internal bool IsSetAttachment()
         {
             return this._attachment != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConnectionTrackingConfiguration. 
+        /// <para>
+        /// A security group connection tracking configuration that enables you to set the timeout
+        /// for connection tracking on an Elastic network interface. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#connection-tracking-timeouts">Connection
+        /// tracking timeouts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        /// </summary>
+        public ConnectionTrackingSpecificationResponse ConnectionTrackingConfiguration
+        {
+            get { return this._connectionTrackingConfiguration; }
+            set { this._connectionTrackingConfiguration = value; }
+        }
+
+        // Check to see if ConnectionTrackingConfiguration property is set
+        internal bool IsSetConnectionTrackingConfiguration()
+        {
+            return this._connectionTrackingConfiguration != null;
         }
 
         /// <summary>

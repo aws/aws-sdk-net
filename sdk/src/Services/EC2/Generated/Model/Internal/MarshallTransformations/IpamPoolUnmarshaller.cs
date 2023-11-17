@@ -175,6 +175,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.SourceIpamPoolId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("sourceResource", targetDepth))
+                    {
+                        var unmarshaller = IpamPoolSourceResourceUnmarshaller.Instance;
+                        unmarshalledObject.SourceResource = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("state", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

@@ -1312,6 +1312,49 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  AssociateIpamByoasn
+
+        internal virtual AssociateIpamByoasnResponse AssociateIpamByoasn(AssociateIpamByoasnRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateIpamByoasnRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateIpamByoasnResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateIpamByoasnResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Associates your Autonomous System Number (ASN) with a BYOIP CIDR that you own in the
+        /// same Amazon Web Services Region. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/tutorials-byoasn.html">Tutorial:
+        /// Bring your ASN to IPAM</a> in the <i>Amazon VPC IPAM guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// After the association succeeds, the ASN is eligible for advertisement. You can view
+        /// the association with <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeByoipCidrs.html">DescribeByoipCidrs</a>.
+        /// You can advertise the CIDR with <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AdvertiseByoipCidr.html">AdvertiseByoipCidr</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateIpamByoasn service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateIpamByoasn service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateIpamByoasn">REST API Reference for AssociateIpamByoasn Operation</seealso>
+        public virtual Task<AssociateIpamByoasnResponse> AssociateIpamByoasnAsync(AssociateIpamByoasnRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateIpamByoasnRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateIpamByoasnResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AssociateIpamByoasnResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  AssociateIpamResourceDiscovery
 
         internal virtual AssociateIpamResourceDiscoveryResponse AssociateIpamResourceDiscovery(AssociateIpamResourceDiscoveryRequest request)
@@ -1463,7 +1506,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Associates a CIDR block with your subnet. You can only associate a single IPv6 CIDR
-        /// block with your subnet. An IPv6 CIDR block must have a prefix length of /64.
+        /// block with your subnet.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateSubnetCidrBlock service method.</param>
         /// <param name="cancellationToken">
@@ -1609,15 +1652,8 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// This API action is currently in <b>limited preview only</b>. If you are interested
-        /// in using this feature, contact your account manager.
-        /// </para>
-        ///  </note> 
-        /// <para>
         /// Associates a branch network interface with a trunk network interface.
-        /// </para>
+        /// 
         ///  
         /// <para>
         /// Before you create the association, run the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html">create-network-interface</a>
@@ -1661,7 +1697,7 @@ namespace Amazon.EC2
         /// Associates a CIDR block with your VPC. You can associate a secondary IPv4 CIDR block,
         /// an Amazon-provided IPv6 CIDR block, or an IPv6 CIDR block from an IPv6 address pool
         /// that you provisioned through bring your own IP addresses (<a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">BYOIP</a>).
-        /// The IPv6 CIDR block size is fixed at /56.
+        /// 
         /// 
         ///  
         /// <para>
@@ -5235,8 +5271,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// If you've associated an IPv6 CIDR block with your VPC, you can associate an IPv6 CIDR
-        /// block with a subnet when you create it. The allowed block size for an IPv6 subnet
-        /// is a /64 netmask.
+        /// block with a subnet when you create it. 
         /// </para>
         ///  
         /// <para>
@@ -6221,7 +6256,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// You can optionally request an IPv6 CIDR block for the VPC. You can request an Amazon-provided
-        /// IPv6 CIDR block from Amazon's pool of IPv6 addresses, or an IPv6 CIDR block from an
+        /// IPv6 CIDR block from Amazon's pool of IPv6 addresses or an IPv6 CIDR block from an
         /// IPv6 address pool that you provisioned through bring your own IP addresses (<a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">BYOIP</a>).
         /// </para>
         ///  
@@ -9400,6 +9435,44 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DeprovisionIpamByoasn
+
+        internal virtual DeprovisionIpamByoasnResponse DeprovisionIpamByoasn(DeprovisionIpamByoasnRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeprovisionIpamByoasnRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeprovisionIpamByoasnResponseUnmarshaller.Instance;
+
+            return Invoke<DeprovisionIpamByoasnResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deprovisions your Autonomous System Number (ASN) from your Amazon Web Services account.
+        /// This action can only be called after any BYOIP CIDR associations are removed from
+        /// your Amazon Web Services account with <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisassociateIpamByoasn.html">DisassociateIpamByoasn</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/tutorials-byoasn.html">Tutorial:
+        /// Bring your ASN to IPAM</a> in the <i>Amazon VPC IPAM guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeprovisionIpamByoasn service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeprovisionIpamByoasn service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeprovisionIpamByoasn">REST API Reference for DeprovisionIpamByoasn Operation</seealso>
+        public virtual Task<DeprovisionIpamByoasnResponse> DeprovisionIpamByoasnAsync(DeprovisionIpamByoasnRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeprovisionIpamByoasnRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeprovisionIpamByoasnResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeprovisionIpamByoasnResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeprovisionIpamPoolCidr
 
         internal virtual DeprovisionIpamPoolCidrResponse DeprovisionIpamPoolCidr(DeprovisionIpamPoolCidrRequest request)
@@ -12308,6 +12381,42 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = DescribeInternetGatewaysResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeInternetGatewaysResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeIpamByoasn
+
+        internal virtual DescribeIpamByoasnResponse DescribeIpamByoasn(DescribeIpamByoasnRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeIpamByoasnRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeIpamByoasnResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeIpamByoasnResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes your Autonomous System Numbers (ASNs), their provisioning statuses, and
+        /// the BYOIP CIDRs with which they are associated. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/tutorials-byoasn.html">Tutorial:
+        /// Bring your ASN to IPAM</a> in the <i>Amazon VPC IPAM guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIpamByoasn service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeIpamByoasn service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamByoasn">REST API Reference for DescribeIpamByoasn Operation</seealso>
+        public virtual Task<DescribeIpamByoasnResponse> DescribeIpamByoasnAsync(DescribeIpamByoasnRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeIpamByoasnRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeIpamByoasnResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeIpamByoasnResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -15557,15 +15666,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// This API action is currently in <b>limited preview only</b>. If you are interested
-        /// in using this feature, contact your account manager.
-        /// </para>
-        ///  </note> 
-        /// <para>
         /// Describes one or more network interface trunk associations.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeTrunkInterfaceAssociations service method.</param>
         /// <param name="cancellationToken">
@@ -17719,6 +17820,43 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DisassociateIpamByoasn
+
+        internal virtual DisassociateIpamByoasnResponse DisassociateIpamByoasn(DisassociateIpamByoasnRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateIpamByoasnRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateIpamByoasnResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateIpamByoasnResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Remove the association between your Autonomous System Number (ASN) and your BYOIP
+        /// CIDR. You may want to use this action to disassociate an ASN from a CIDR or if you
+        /// want to swap ASNs. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/tutorials-byoasn.html">Tutorial:
+        /// Bring your ASN to IPAM</a> in the <i>Amazon VPC IPAM guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateIpamByoasn service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateIpamByoasn service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateIpamByoasn">REST API Reference for DisassociateIpamByoasn Operation</seealso>
+        public virtual Task<DisassociateIpamByoasnResponse> DisassociateIpamByoasnAsync(DisassociateIpamByoasnRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateIpamByoasnRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateIpamByoasnResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisassociateIpamByoasnResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DisassociateIpamResourceDiscovery
 
         internal virtual DisassociateIpamResourceDiscoveryResponse DisassociateIpamResourceDiscovery(DisassociateIpamResourceDiscoveryRequest request)
@@ -18000,15 +18138,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// This API action is currently in <b>limited preview only</b>. If you are interested
-        /// in using this feature, contact your account manager.
-        /// </para>
-        ///  </note> 
-        /// <para>
         /// Removes an association between a branch network interface with a trunk network interface.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateTrunkInterface service method.</param>
         /// <param name="cancellationToken">
@@ -19692,6 +19822,40 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = GetIpamDiscoveredAccountsResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetIpamDiscoveredAccountsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetIpamDiscoveredPublicAddresses
+
+        internal virtual GetIpamDiscoveredPublicAddressesResponse GetIpamDiscoveredPublicAddresses(GetIpamDiscoveredPublicAddressesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetIpamDiscoveredPublicAddressesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetIpamDiscoveredPublicAddressesResponseUnmarshaller.Instance;
+
+            return Invoke<GetIpamDiscoveredPublicAddressesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets the public IP addresses that have been discovered by IPAM.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIpamDiscoveredPublicAddresses service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetIpamDiscoveredPublicAddresses service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamDiscoveredPublicAddresses">REST API Reference for GetIpamDiscoveredPublicAddresses Operation</seealso>
+        public virtual Task<GetIpamDiscoveredPublicAddressesResponse> GetIpamDiscoveredPublicAddressesAsync(GetIpamDiscoveredPublicAddressesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetIpamDiscoveredPublicAddressesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetIpamDiscoveredPublicAddressesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetIpamDiscoveredPublicAddressesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -24117,6 +24281,43 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = ProvisionByoipCidrResponseUnmarshaller.Instance;
 
             return InvokeAsync<ProvisionByoipCidrResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ProvisionIpamByoasn
+
+        internal virtual ProvisionIpamByoasnResponse ProvisionIpamByoasn(ProvisionIpamByoasnRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ProvisionIpamByoasnRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ProvisionIpamByoasnResponseUnmarshaller.Instance;
+
+            return Invoke<ProvisionIpamByoasnResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Provisions your Autonomous System Number (ASN) for use in your Amazon Web Services
+        /// account. This action requires authorization context for Amazon to bring the ASN to
+        /// an Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/tutorials-byoasn.html">Tutorial:
+        /// Bring your ASN to IPAM</a> in the <i>Amazon VPC IPAM guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ProvisionIpamByoasn service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ProvisionIpamByoasn service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ProvisionIpamByoasn">REST API Reference for ProvisionIpamByoasn Operation</seealso>
+        public virtual Task<ProvisionIpamByoasnResponse> ProvisionIpamByoasnAsync(ProvisionIpamByoasnRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ProvisionIpamByoasnRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ProvisionIpamByoasnResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ProvisionIpamByoasnResponse>(request, options, cancellationToken);
         }
 
         #endregion

@@ -66,6 +66,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.AssociatePublicIpAddress = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("connectionTrackingSpecification", targetDepth))
+                    {
+                        var unmarshaller = ConnectionTrackingSpecificationUnmarshaller.Instance;
+                        unmarshalledObject.ConnectionTrackingSpecification = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("deleteOnTermination", targetDepth))
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;

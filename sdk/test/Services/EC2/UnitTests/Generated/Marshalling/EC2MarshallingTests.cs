@@ -544,6 +544,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void AssociateIpamByoasnMarshallTest()
+        {
+            var operation = service_model.FindOperation("AssociateIpamByoasn");
+
+            var request = InstantiateClassGenerator.Execute<AssociateIpamByoasnRequest>(operation);
+            var marshaller = new AssociateIpamByoasnRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = AssociateIpamByoasnResponseUnmarshaller.Instance.Unmarshall(context)
+                as AssociateIpamByoasnResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void AssociateIpamResourceDiscoveryMarshallTest()
         {
             var operation = service_model.FindOperation("AssociateIpamResourceDiscovery");
@@ -4979,6 +5003,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void DeprovisionIpamByoasnMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeprovisionIpamByoasn");
+
+            var request = InstantiateClassGenerator.Execute<DeprovisionIpamByoasnRequest>(operation);
+            var marshaller = new DeprovisionIpamByoasnRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DeprovisionIpamByoasnResponseUnmarshaller.Instance.Unmarshall(context)
+                as DeprovisionIpamByoasnResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void DeprovisionIpamPoolCidrMarshallTest()
         {
             var operation = service_model.FindOperation("DeprovisionIpamPoolCidr");
@@ -6453,6 +6501,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
             var response = DescribeInternetGatewaysResponseUnmarshaller.Instance.Unmarshall(context)
                 as DescribeInternetGatewaysResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void DescribeIpamByoasnMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeIpamByoasn");
+
+            var request = InstantiateClassGenerator.Execute<DescribeIpamByoasnRequest>(operation);
+            var marshaller = new DescribeIpamByoasnRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DescribeIpamByoasnResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeIpamByoasnResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
@@ -9269,6 +9341,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void DisassociateIpamByoasnMarshallTest()
+        {
+            var operation = service_model.FindOperation("DisassociateIpamByoasn");
+
+            var request = InstantiateClassGenerator.Execute<DisassociateIpamByoasnRequest>(operation);
+            var marshaller = new DisassociateIpamByoasnRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DisassociateIpamByoasnResponseUnmarshaller.Instance.Unmarshall(context)
+                as DisassociateIpamByoasnResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void DisassociateIpamResourceDiscoveryMarshallTest()
         {
             var operation = service_model.FindOperation("DisassociateIpamResourceDiscovery");
@@ -10397,6 +10493,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
             var response = GetIpamDiscoveredAccountsResponseUnmarshaller.Instance.Unmarshall(context)
                 as GetIpamDiscoveredAccountsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void GetIpamDiscoveredPublicAddressesMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetIpamDiscoveredPublicAddresses");
+
+            var request = InstantiateClassGenerator.Execute<GetIpamDiscoveredPublicAddressesRequest>(operation);
+            var marshaller = new GetIpamDiscoveredPublicAddressesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = GetIpamDiscoveredPublicAddressesResponseUnmarshaller.Instance.Unmarshall(context)
+                as GetIpamDiscoveredPublicAddressesResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
@@ -12872,6 +12992,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
             var response = ProvisionByoipCidrResponseUnmarshaller.Instance.Unmarshall(context)
                 as ProvisionByoipCidrResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void ProvisionIpamByoasnMarshallTest()
+        {
+            var operation = service_model.FindOperation("ProvisionIpamByoasn");
+
+            var request = InstantiateClassGenerator.Execute<ProvisionIpamByoasnRequest>(operation);
+            var marshaller = new ProvisionIpamByoasnRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = ProvisionIpamByoasnResponseUnmarshaller.Instance.Unmarshall(context)
+                as ProvisionIpamByoasnResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 

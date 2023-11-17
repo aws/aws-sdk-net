@@ -69,6 +69,21 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         request.Parameters.Add("Attachment" + "." + "DeleteOnTermination", StringUtils.FromBool(publicRequest.Attachment.DeleteOnTermination));
                     }
                 }
+                if(publicRequest.IsSetConnectionTrackingSpecification())
+                {
+                    if(publicRequest.ConnectionTrackingSpecification.IsSetTcpEstablishedTimeout())
+                    {
+                        request.Parameters.Add("ConnectionTrackingSpecification" + "." + "TcpEstablishedTimeout", StringUtils.FromInt(publicRequest.ConnectionTrackingSpecification.TcpEstablishedTimeout));
+                    }
+                    if(publicRequest.ConnectionTrackingSpecification.IsSetUdpStreamTimeout())
+                    {
+                        request.Parameters.Add("ConnectionTrackingSpecification" + "." + "UdpStreamTimeout", StringUtils.FromInt(publicRequest.ConnectionTrackingSpecification.UdpStreamTimeout));
+                    }
+                    if(publicRequest.ConnectionTrackingSpecification.IsSetUdpTimeout())
+                    {
+                        request.Parameters.Add("ConnectionTrackingSpecification" + "." + "UdpTimeout", StringUtils.FromInt(publicRequest.ConnectionTrackingSpecification.UdpTimeout));
+                    }
+                }
                 if(publicRequest.IsSetDescription())
                 {
                     request.Parameters.Add("Description.Value", StringUtils.FromString(publicRequest.Description));

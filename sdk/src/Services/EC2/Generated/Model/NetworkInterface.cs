@@ -36,6 +36,7 @@ namespace Amazon.EC2.Model
         private NetworkInterfaceAssociation _association;
         private NetworkInterfaceAttachment _attachment;
         private string _availabilityZone;
+        private ConnectionTrackingConfiguration _connectionTrackingConfiguration;
         private bool? _denyAllIgwTraffic;
         private string _description;
         private List<GroupIdentifier> _groups = new List<GroupIdentifier>();
@@ -113,6 +114,27 @@ namespace Amazon.EC2.Model
         internal bool IsSetAvailabilityZone()
         {
             return this._availabilityZone != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConnectionTrackingConfiguration. 
+        /// <para>
+        /// A security group connection tracking configuration that enables you to set the timeout
+        /// for connection tracking on an Elastic network interface. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#connection-tracking-timeouts">Connection
+        /// tracking timeouts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        /// </summary>
+        public ConnectionTrackingConfiguration ConnectionTrackingConfiguration
+        {
+            get { return this._connectionTrackingConfiguration; }
+            set { this._connectionTrackingConfiguration = value; }
+        }
+
+        // Check to see if ConnectionTrackingConfiguration property is set
+        internal bool IsSetConnectionTrackingConfiguration()
+        {
+            return this._connectionTrackingConfiguration != null;
         }
 
         /// <summary>

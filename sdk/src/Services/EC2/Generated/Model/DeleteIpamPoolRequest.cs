@@ -46,7 +46,34 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DeleteIpamPoolRequest : AmazonEC2Request
     {
+        private bool? _cascade;
         private string _ipamPoolId;
+
+        /// <summary>
+        /// Gets and sets the property Cascade. 
+        /// <para>
+        /// Enables you to quickly delete an IPAM pool and all resources within that pool, including
+        /// provisioned CIDRs, allocations, and other pools.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// You can only use this option to delete pools in the private scope or pools in the
+        /// public scope with a source resource. A source resource is a resource used to provision
+        /// CIDRs to a resource planning pool.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        public bool Cascade
+        {
+            get { return this._cascade.GetValueOrDefault(); }
+            set { this._cascade = value; }
+        }
+
+        // Check to see if Cascade property is set
+        internal bool IsSetCascade()
+        {
+            return this._cascade.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property IpamPoolId. 

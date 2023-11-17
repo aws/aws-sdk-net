@@ -534,6 +534,21 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             {
                                 request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "AssociatePublicIpAddress", StringUtils.FromBool(publicRequestLaunchTemplateDatalistValue.AssociatePublicIpAddress));
                             }
+                            if(publicRequestLaunchTemplateDatalistValue.IsSetConnectionTrackingSpecification())
+                            {
+                                if(publicRequestLaunchTemplateDatalistValue.ConnectionTrackingSpecification.IsSetTcpEstablishedTimeout())
+                                {
+                                    request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "ConnectionTrackingSpecification" + "." + "TcpEstablishedTimeout", StringUtils.FromInt(publicRequestLaunchTemplateDatalistValue.ConnectionTrackingSpecification.TcpEstablishedTimeout));
+                                }
+                                if(publicRequestLaunchTemplateDatalistValue.ConnectionTrackingSpecification.IsSetUdpStreamTimeout())
+                                {
+                                    request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "ConnectionTrackingSpecification" + "." + "UdpStreamTimeout", StringUtils.FromInt(publicRequestLaunchTemplateDatalistValue.ConnectionTrackingSpecification.UdpStreamTimeout));
+                                }
+                                if(publicRequestLaunchTemplateDatalistValue.ConnectionTrackingSpecification.IsSetUdpTimeout())
+                                {
+                                    request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "ConnectionTrackingSpecification" + "." + "UdpTimeout", StringUtils.FromInt(publicRequestLaunchTemplateDatalistValue.ConnectionTrackingSpecification.UdpTimeout));
+                                }
+                            }
                             if(publicRequestLaunchTemplateDatalistValue.IsSetDeleteOnTermination())
                             {
                                 request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "DeleteOnTermination", StringUtils.FromBool(publicRequestLaunchTemplateDatalistValue.DeleteOnTermination));

@@ -240,6 +240,11 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeIpamByoasnRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.DescribeIpamPoolsRequest.MaxResults</property>
     <min>5</min>
     <max>1000</max>
@@ -582,6 +587,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.GetIpamDiscoveredAccountsRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.GetIpamDiscoveredPublicAddressesRequest.MaxResults</property>
     <min>5</min>
     <max>1000</max>
   </property-value-rule>

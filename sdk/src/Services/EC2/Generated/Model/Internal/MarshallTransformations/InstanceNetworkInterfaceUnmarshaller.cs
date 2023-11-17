@@ -66,6 +66,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.Attachment = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("connectionTrackingConfiguration", targetDepth))
+                    {
+                        var unmarshaller = ConnectionTrackingSpecificationResponseUnmarshaller.Instance;
+                        unmarshalledObject.ConnectionTrackingConfiguration = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("description", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

@@ -72,6 +72,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.AvailabilityZone = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("connectionTrackingConfiguration", targetDepth))
+                    {
+                        var unmarshaller = ConnectionTrackingConfigurationUnmarshaller.Instance;
+                        unmarshalledObject.ConnectionTrackingConfiguration = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("denyAllIgwTraffic", targetDepth))
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;

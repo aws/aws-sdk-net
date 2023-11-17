@@ -58,7 +58,26 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class AdvertiseByoipCidrRequest : AmazonEC2Request
     {
+        private string _asn;
         private string _cidr;
+
+        /// <summary>
+        /// Gets and sets the property Asn. 
+        /// <para>
+        /// The public 2-byte or 4-byte ASN that you want to advertise.
+        /// </para>
+        /// </summary>
+        public string Asn
+        {
+            get { return this._asn; }
+            set { this._asn = value; }
+        }
+
+        // Check to see if Asn property is set
+        internal bool IsSetAsn()
+        {
+            return this._asn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Cidr. 

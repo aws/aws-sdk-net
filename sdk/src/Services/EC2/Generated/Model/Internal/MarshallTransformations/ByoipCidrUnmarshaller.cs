@@ -54,6 +54,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("asnAssociationSet/item", targetDepth))
+                    {
+                        var unmarshaller = AsnAssociationUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.AsnAssociations.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("cidr", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

@@ -390,6 +390,21 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "AssociatePublicIpAddress", StringUtils.FromBool(publicRequestlistValue.AssociatePublicIpAddress));
                         }
+                        if(publicRequestlistValue.IsSetConnectionTrackingSpecification())
+                        {
+                            if(publicRequestlistValue.ConnectionTrackingSpecification.IsSetTcpEstablishedTimeout())
+                            {
+                                request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "ConnectionTrackingSpecification" + "." + "TcpEstablishedTimeout", StringUtils.FromInt(publicRequestlistValue.ConnectionTrackingSpecification.TcpEstablishedTimeout));
+                            }
+                            if(publicRequestlistValue.ConnectionTrackingSpecification.IsSetUdpStreamTimeout())
+                            {
+                                request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "ConnectionTrackingSpecification" + "." + "UdpStreamTimeout", StringUtils.FromInt(publicRequestlistValue.ConnectionTrackingSpecification.UdpStreamTimeout));
+                            }
+                            if(publicRequestlistValue.ConnectionTrackingSpecification.IsSetUdpTimeout())
+                            {
+                                request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "ConnectionTrackingSpecification" + "." + "UdpTimeout", StringUtils.FromInt(publicRequestlistValue.ConnectionTrackingSpecification.UdpTimeout));
+                            }
+                        }
                         if(publicRequestlistValue.IsSetDeleteOnTermination())
                         {
                             request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "DeleteOnTermination", StringUtils.FromBool(publicRequestlistValue.DeleteOnTermination));

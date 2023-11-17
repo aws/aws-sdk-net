@@ -34,10 +34,29 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class ByoipCidr
     {
+        private List<AsnAssociation> _asnAssociations = new List<AsnAssociation>();
         private string _cidr;
         private string _description;
         private ByoipCidrState _state;
         private string _statusMessage;
+
+        /// <summary>
+        /// Gets and sets the property AsnAssociations. 
+        /// <para>
+        /// The BYOIP CIDR associations with ASNs.
+        /// </para>
+        /// </summary>
+        public List<AsnAssociation> AsnAssociations
+        {
+            get { return this._asnAssociations; }
+            set { this._asnAssociations = value; }
+        }
+
+        // Check to see if AsnAssociations property is set
+        internal bool IsSetAsnAssociations()
+        {
+            return this._asnAssociations != null && this._asnAssociations.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property Cidr. 

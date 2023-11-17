@@ -49,6 +49,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class AllocateIpamPoolCidrRequest : AmazonEC2Request
     {
+        private List<string> _allowedCidrs = new List<string>();
         private string _cidr;
         private string _clientToken;
         private string _description;
@@ -56,6 +57,25 @@ namespace Amazon.EC2.Model
         private string _ipamPoolId;
         private int? _netmaskLength;
         private bool? _previewNextCidr;
+
+        /// <summary>
+        /// Gets and sets the property AllowedCidrs. 
+        /// <para>
+        /// Include a particular CIDR range that can be returned by the pool. Allowed CIDRs are
+        /// only allowed if using netmask length for allocation.
+        /// </para>
+        /// </summary>
+        public List<string> AllowedCidrs
+        {
+            get { return this._allowedCidrs; }
+            set { this._allowedCidrs = value; }
+        }
+
+        // Check to see if AllowedCidrs property is set
+        internal bool IsSetAllowedCidrs()
+        {
+            return this._allowedCidrs != null && this._allowedCidrs.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property Cidr. 

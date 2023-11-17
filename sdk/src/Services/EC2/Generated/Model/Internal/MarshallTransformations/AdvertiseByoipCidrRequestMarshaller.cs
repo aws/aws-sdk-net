@@ -58,6 +58,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             if(publicRequest != null)
             {
+                if(publicRequest.IsSetAsn())
+                {
+                    request.Parameters.Add("Asn", StringUtils.FromString(publicRequest.Asn));
+                }
                 if(publicRequest.IsSetCidr())
                 {
                     request.Parameters.Add("Cidr", StringUtils.FromString(publicRequest.Cidr));

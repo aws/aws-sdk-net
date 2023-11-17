@@ -31,20 +31,21 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the AssociateSubnetCidrBlock operation.
     /// Associates a CIDR block with your subnet. You can only associate a single IPv6 CIDR
-    /// block with your subnet. An IPv6 CIDR block must have a prefix length of /64.
+    /// block with your subnet.
     /// </summary>
     public partial class AssociateSubnetCidrBlockRequest : AmazonEC2Request
     {
         private string _ipv6CidrBlock;
+        private string _ipv6IpamPoolId;
+        private int? _ipv6NetmaskLength;
         private string _subnetId;
 
         /// <summary>
         /// Gets and sets the property Ipv6CidrBlock. 
         /// <para>
-        /// The IPv6 CIDR block for your subnet. The subnet must have a /64 prefix length.
+        /// The IPv6 CIDR block for your subnet.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string Ipv6CidrBlock
         {
             get { return this._ipv6CidrBlock; }
@@ -55,6 +56,42 @@ namespace Amazon.EC2.Model
         internal bool IsSetIpv6CidrBlock()
         {
             return this._ipv6CidrBlock != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Ipv6IpamPoolId. 
+        /// <para>
+        /// An IPv6 IPAM pool ID.
+        /// </para>
+        /// </summary>
+        public string Ipv6IpamPoolId
+        {
+            get { return this._ipv6IpamPoolId; }
+            set { this._ipv6IpamPoolId = value; }
+        }
+
+        // Check to see if Ipv6IpamPoolId property is set
+        internal bool IsSetIpv6IpamPoolId()
+        {
+            return this._ipv6IpamPoolId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Ipv6NetmaskLength. 
+        /// <para>
+        /// An IPv6 netmask length.
+        /// </para>
+        /// </summary>
+        public int Ipv6NetmaskLength
+        {
+            get { return this._ipv6NetmaskLength.GetValueOrDefault(); }
+            set { this._ipv6NetmaskLength = value; }
+        }
+
+        // Check to see if Ipv6NetmaskLength property is set
+        internal bool IsSetIpv6NetmaskLength()
+        {
+            return this._ipv6NetmaskLength.HasValue; 
         }
 
         /// <summary>

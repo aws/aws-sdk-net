@@ -62,6 +62,14 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Ipv6CidrBlock", StringUtils.FromString(publicRequest.Ipv6CidrBlock));
                 }
+                if(publicRequest.IsSetIpv6IpamPoolId())
+                {
+                    request.Parameters.Add("Ipv6IpamPoolId", StringUtils.FromString(publicRequest.Ipv6IpamPoolId));
+                }
+                if(publicRequest.IsSetIpv6NetmaskLength())
+                {
+                    request.Parameters.Add("Ipv6NetmaskLength", StringUtils.FromInt(publicRequest.Ipv6NetmaskLength));
+                }
                 if(publicRequest.IsSetSubnetId())
                 {
                     request.Parameters.Add("SubnetId", StringUtils.FromString(publicRequest.SubnetId));

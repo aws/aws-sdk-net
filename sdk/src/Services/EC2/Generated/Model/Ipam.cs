@@ -50,7 +50,9 @@ namespace Amazon.EC2.Model
         private int? _resourceDiscoveryAssociationCount;
         private int? _scopeCount;
         private IpamState _state;
+        private string _stateMessage;
         private List<Tag> _tags = new List<Tag>();
+        private IpamTier _tier;
 
         /// <summary>
         /// Gets and sets the property DefaultResourceDiscoveryAssociationId. 
@@ -297,6 +299,24 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property StateMessage. 
+        /// <para>
+        /// The state message.
+        /// </para>
+        /// </summary>
+        public string StateMessage
+        {
+            get { return this._stateMessage; }
+            set { this._stateMessage = value; }
+        }
+
+        // Check to see if StateMessage property is set
+        internal bool IsSetStateMessage()
+        {
+            return this._stateMessage != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
         /// The key/value combination of a tag assigned to the resource. Use the tag key in the
@@ -316,6 +336,26 @@ namespace Amazon.EC2.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tier. 
+        /// <para>
+        /// IPAM is offered in a Free Tier and an Advanced Tier. For more information about the
+        /// features available in each tier and the costs associated with the tiers, see <a href="http://aws.amazon.com/vpc/pricing/">Amazon
+        /// VPC pricing &gt; IPAM tab</a>.
+        /// </para>
+        /// </summary>
+        public IpamTier Tier
+        {
+            get { return this._tier; }
+            set { this._tier = value; }
+        }
+
+        // Check to see if Tier property is set
+        internal bool IsSetTier()
+        {
+            return this._tier != null;
         }
 
     }

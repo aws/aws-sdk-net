@@ -37,6 +37,7 @@ namespace Amazon.EC2.Model
     public partial class ModifyNetworkInterfaceAttributeRequest : AmazonEC2Request
     {
         private NetworkInterfaceAttachmentChanges _attachment;
+        private ConnectionTrackingSpecificationRequest _connectionTrackingSpecification;
         private string _description;
         private bool? _enablePrimaryIpv6;
         private EnaSrdSpecification _enaSrdSpecification;
@@ -61,6 +62,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetAttachment()
         {
             return this._attachment != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConnectionTrackingSpecification. 
+        /// <para>
+        /// A connection tracking specification.
+        /// </para>
+        /// </summary>
+        public ConnectionTrackingSpecificationRequest ConnectionTrackingSpecification
+        {
+            get { return this._connectionTrackingSpecification; }
+            set { this._connectionTrackingSpecification = value; }
+        }
+
+        // Check to see if ConnectionTrackingSpecification property is set
+        internal bool IsSetConnectionTrackingSpecification()
+        {
+            return this._connectionTrackingSpecification != null;
         }
 
         /// <summary>

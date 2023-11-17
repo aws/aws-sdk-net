@@ -35,6 +35,7 @@ namespace Amazon.EC2.Model
     {
         private bool? _associateCarrierIpAddress;
         private bool? _associatePublicIpAddress;
+        private ConnectionTrackingSpecificationRequest _connectionTrackingSpecification;
         private bool? _deleteOnTermination;
         private string _description;
         private int? _deviceIndex;
@@ -96,6 +97,27 @@ namespace Amazon.EC2.Model
         internal bool IsSetAssociatePublicIpAddress()
         {
             return this._associatePublicIpAddress.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConnectionTrackingSpecification. 
+        /// <para>
+        /// A security group connection tracking specification that enables you to set the timeout
+        /// for connection tracking on an Elastic network interface. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#connection-tracking-timeouts">Connection
+        /// tracking timeouts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        /// </summary>
+        public ConnectionTrackingSpecificationRequest ConnectionTrackingSpecification
+        {
+            get { return this._connectionTrackingSpecification; }
+            set { this._connectionTrackingSpecification = value; }
+        }
+
+        // Check to see if ConnectionTrackingSpecification property is set
+        internal bool IsSetConnectionTrackingSpecification()
+        {
+            return this._connectionTrackingSpecification != null;
         }
 
         /// <summary>

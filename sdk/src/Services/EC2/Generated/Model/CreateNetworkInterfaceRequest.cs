@@ -48,6 +48,7 @@ namespace Amazon.EC2.Model
     public partial class CreateNetworkInterfaceRequest : AmazonEC2Request
     {
         private string _clientToken;
+        private ConnectionTrackingSpecificationRequest _connectionTrackingSpecification;
         private string _description;
         private bool? _enablePrimaryIpv6;
         private List<string> _groups = new List<string>();
@@ -82,6 +83,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetClientToken()
         {
             return this._clientToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConnectionTrackingSpecification. 
+        /// <para>
+        /// A connection tracking specification for the network interface.
+        /// </para>
+        /// </summary>
+        public ConnectionTrackingSpecificationRequest ConnectionTrackingSpecification
+        {
+            get { return this._connectionTrackingSpecification; }
+            set { this._connectionTrackingSpecification = value; }
+        }
+
+        // Check to see if ConnectionTrackingSpecification property is set
+        internal bool IsSetConnectionTrackingSpecification()
+        {
+            return this._connectionTrackingSpecification != null;
         }
 
         /// <summary>

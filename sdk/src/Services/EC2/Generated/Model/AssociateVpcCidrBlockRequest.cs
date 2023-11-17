@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
     /// Associates a CIDR block with your VPC. You can associate a secondary IPv4 CIDR block,
     /// an Amazon-provided IPv6 CIDR block, or an IPv6 CIDR block from an IPv6 address pool
     /// that you provisioned through bring your own IP addresses (<a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">BYOIP</a>).
-    /// The IPv6 CIDR block size is fixed at /56.
+    /// 
     /// 
     ///  
     /// <para>
@@ -64,7 +64,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property AmazonProvidedIpv6CidrBlock. 
         /// <para>
         /// Requests an Amazon-provided IPv6 CIDR block with a /56 prefix length for the VPC.
-        /// You cannot specify the range of IPv6 addresses, or the size of the CIDR block.
+        /// You cannot specify the range of IPv6 addresses or the size of the CIDR block.
         /// </para>
         /// </summary>
         public bool AmazonProvidedIpv6CidrBlock

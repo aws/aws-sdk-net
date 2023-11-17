@@ -66,6 +66,21 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ClientToken", StringUtils.FromString(Guid.NewGuid().ToString()));
                 }
+                if(publicRequest.IsSetConnectionTrackingSpecification())
+                {
+                    if(publicRequest.ConnectionTrackingSpecification.IsSetTcpEstablishedTimeout())
+                    {
+                        request.Parameters.Add("ConnectionTrackingSpecification" + "." + "TcpEstablishedTimeout", StringUtils.FromInt(publicRequest.ConnectionTrackingSpecification.TcpEstablishedTimeout));
+                    }
+                    if(publicRequest.ConnectionTrackingSpecification.IsSetUdpStreamTimeout())
+                    {
+                        request.Parameters.Add("ConnectionTrackingSpecification" + "." + "UdpStreamTimeout", StringUtils.FromInt(publicRequest.ConnectionTrackingSpecification.UdpStreamTimeout));
+                    }
+                    if(publicRequest.ConnectionTrackingSpecification.IsSetUdpTimeout())
+                    {
+                        request.Parameters.Add("ConnectionTrackingSpecification" + "." + "UdpTimeout", StringUtils.FromInt(publicRequest.ConnectionTrackingSpecification.UdpTimeout));
+                    }
+                }
                 if(publicRequest.IsSetDescription())
                 {
                     request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));

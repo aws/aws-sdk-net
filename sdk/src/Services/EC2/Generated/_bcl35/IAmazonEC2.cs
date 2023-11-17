@@ -1189,6 +1189,55 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  AssociateIpamByoasn
+
+
+        /// <summary>
+        /// Associates your Autonomous System Number (ASN) with a BYOIP CIDR that you own in the
+        /// same Amazon Web Services Region. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/tutorials-byoasn.html">Tutorial:
+        /// Bring your ASN to IPAM</a> in the <i>Amazon VPC IPAM guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// After the association succeeds, the ASN is eligible for advertisement. You can view
+        /// the association with <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeByoipCidrs.html">DescribeByoipCidrs</a>.
+        /// You can advertise the CIDR with <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AdvertiseByoipCidr.html">AdvertiseByoipCidr</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateIpamByoasn service method.</param>
+        /// 
+        /// <returns>The response from the AssociateIpamByoasn service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateIpamByoasn">REST API Reference for AssociateIpamByoasn Operation</seealso>
+        AssociateIpamByoasnResponse AssociateIpamByoasn(AssociateIpamByoasnRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateIpamByoasn operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateIpamByoasn operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateIpamByoasn
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateIpamByoasn">REST API Reference for AssociateIpamByoasn Operation</seealso>
+        IAsyncResult BeginAssociateIpamByoasn(AssociateIpamByoasnRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateIpamByoasn operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateIpamByoasn.</param>
+        /// 
+        /// <returns>Returns a  AssociateIpamByoasnResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateIpamByoasn">REST API Reference for AssociateIpamByoasn Operation</seealso>
+        AssociateIpamByoasnResponse EndAssociateIpamByoasn(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  AssociateIpamResourceDiscovery
 
 
@@ -1348,7 +1397,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Associates a CIDR block with your subnet. You can only associate a single IPv6 CIDR
-        /// block with your subnet. An IPv6 CIDR block must have a prefix length of /64.
+        /// block with your subnet.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateSubnetCidrBlock service method.</param>
         /// 
@@ -1518,15 +1567,8 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// This API action is currently in <b>limited preview only</b>. If you are interested
-        /// in using this feature, contact your account manager.
-        /// </para>
-        ///  </note> 
-        /// <para>
         /// Associates a branch network interface with a trunk network interface.
-        /// </para>
+        /// 
         ///  
         /// <para>
         /// Before you create the association, run the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html">create-network-interface</a>
@@ -1576,7 +1618,7 @@ namespace Amazon.EC2
         /// Associates a CIDR block with your VPC. You can associate a secondary IPv4 CIDR block,
         /// an Amazon-provided IPv6 CIDR block, or an IPv6 CIDR block from an IPv6 address pool
         /// that you provisioned through bring your own IP addresses (<a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">BYOIP</a>).
-        /// The IPv6 CIDR block size is fixed at /56.
+        /// 
         /// 
         ///  
         /// <para>
@@ -5595,8 +5637,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// If you've associated an IPv6 CIDR block with your VPC, you can associate an IPv6 CIDR
-        /// block with a subnet when you create it. The allowed block size for an IPv6 subnet
-        /// is a /64 netmask.
+        /// block with a subnet when you create it. 
         /// </para>
         ///  
         /// <para>
@@ -6719,7 +6760,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// You can optionally request an IPv6 CIDR block for the VPC. You can request an Amazon-provided
-        /// IPv6 CIDR block from Amazon's pool of IPv6 addresses, or an IPv6 CIDR block from an
+        /// IPv6 CIDR block from Amazon's pool of IPv6 addresses or an IPv6 CIDR block from an
         /// IPv6 address pool that you provisioned through bring your own IP addresses (<a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">BYOIP</a>).
         /// </para>
         ///  
@@ -10395,6 +10436,50 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DeprovisionIpamByoasn
+
+
+        /// <summary>
+        /// Deprovisions your Autonomous System Number (ASN) from your Amazon Web Services account.
+        /// This action can only be called after any BYOIP CIDR associations are removed from
+        /// your Amazon Web Services account with <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisassociateIpamByoasn.html">DisassociateIpamByoasn</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/tutorials-byoasn.html">Tutorial:
+        /// Bring your ASN to IPAM</a> in the <i>Amazon VPC IPAM guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeprovisionIpamByoasn service method.</param>
+        /// 
+        /// <returns>The response from the DeprovisionIpamByoasn service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeprovisionIpamByoasn">REST API Reference for DeprovisionIpamByoasn Operation</seealso>
+        DeprovisionIpamByoasnResponse DeprovisionIpamByoasn(DeprovisionIpamByoasnRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeprovisionIpamByoasn operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeprovisionIpamByoasn operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeprovisionIpamByoasn
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeprovisionIpamByoasn">REST API Reference for DeprovisionIpamByoasn Operation</seealso>
+        IAsyncResult BeginDeprovisionIpamByoasn(DeprovisionIpamByoasnRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeprovisionIpamByoasn operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeprovisionIpamByoasn.</param>
+        /// 
+        /// <returns>Returns a  DeprovisionIpamByoasnResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeprovisionIpamByoasn">REST API Reference for DeprovisionIpamByoasn Operation</seealso>
+        DeprovisionIpamByoasnResponse EndDeprovisionIpamByoasn(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeprovisionIpamPoolCidr
 
 
@@ -13544,6 +13629,48 @@ namespace Amazon.EC2
         /// <returns>Returns a  DescribeInternetGatewaysResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInternetGateways">REST API Reference for DescribeInternetGateways Operation</seealso>
         DescribeInternetGatewaysResponse EndDescribeInternetGateways(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeIpamByoasn
+
+
+        /// <summary>
+        /// Describes your Autonomous System Numbers (ASNs), their provisioning statuses, and
+        /// the BYOIP CIDRs with which they are associated. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/tutorials-byoasn.html">Tutorial:
+        /// Bring your ASN to IPAM</a> in the <i>Amazon VPC IPAM guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIpamByoasn service method.</param>
+        /// 
+        /// <returns>The response from the DescribeIpamByoasn service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamByoasn">REST API Reference for DescribeIpamByoasn Operation</seealso>
+        DescribeIpamByoasnResponse DescribeIpamByoasn(DescribeIpamByoasnRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeIpamByoasn operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIpamByoasn operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeIpamByoasn
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamByoasn">REST API Reference for DescribeIpamByoasn Operation</seealso>
+        IAsyncResult BeginDescribeIpamByoasn(DescribeIpamByoasnRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeIpamByoasn operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeIpamByoasn.</param>
+        /// 
+        /// <returns>Returns a  DescribeIpamByoasnResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamByoasn">REST API Reference for DescribeIpamByoasn Operation</seealso>
+        DescribeIpamByoasnResponse EndDescribeIpamByoasn(IAsyncResult asyncResult);
 
         #endregion
         
@@ -17009,15 +17136,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// This API action is currently in <b>limited preview only</b>. If you are interested
-        /// in using this feature, contact your account manager.
-        /// </para>
-        ///  </note> 
-        /// <para>
         /// Describes one or more network interface trunk associations.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeTrunkInterfaceAssociations service method.</param>
         /// 
@@ -19409,6 +19528,49 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DisassociateIpamByoasn
+
+
+        /// <summary>
+        /// Remove the association between your Autonomous System Number (ASN) and your BYOIP
+        /// CIDR. You may want to use this action to disassociate an ASN from a CIDR or if you
+        /// want to swap ASNs. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/tutorials-byoasn.html">Tutorial:
+        /// Bring your ASN to IPAM</a> in the <i>Amazon VPC IPAM guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateIpamByoasn service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateIpamByoasn service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateIpamByoasn">REST API Reference for DisassociateIpamByoasn Operation</seealso>
+        DisassociateIpamByoasnResponse DisassociateIpamByoasn(DisassociateIpamByoasnRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateIpamByoasn operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateIpamByoasn operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateIpamByoasn
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateIpamByoasn">REST API Reference for DisassociateIpamByoasn Operation</seealso>
+        IAsyncResult BeginDisassociateIpamByoasn(DisassociateIpamByoasnRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociateIpamByoasn operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateIpamByoasn.</param>
+        /// 
+        /// <returns>Returns a  DisassociateIpamByoasnResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateIpamByoasn">REST API Reference for DisassociateIpamByoasn Operation</seealso>
+        DisassociateIpamByoasnResponse EndDisassociateIpamByoasn(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DisassociateIpamResourceDiscovery
 
 
@@ -19722,15 +19884,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// This API action is currently in <b>limited preview only</b>. If you are interested
-        /// in using this feature, contact your account manager.
-        /// </para>
-        ///  </note> 
-        /// <para>
         /// Removes an association between a branch network interface with a trunk network interface.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateTrunkInterface service method.</param>
         /// 
@@ -21671,6 +21825,46 @@ namespace Amazon.EC2
         /// <returns>Returns a  GetIpamDiscoveredAccountsResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamDiscoveredAccounts">REST API Reference for GetIpamDiscoveredAccounts Operation</seealso>
         GetIpamDiscoveredAccountsResponse EndGetIpamDiscoveredAccounts(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetIpamDiscoveredPublicAddresses
+
+
+        /// <summary>
+        /// Gets the public IP addresses that have been discovered by IPAM.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIpamDiscoveredPublicAddresses service method.</param>
+        /// 
+        /// <returns>The response from the GetIpamDiscoveredPublicAddresses service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamDiscoveredPublicAddresses">REST API Reference for GetIpamDiscoveredPublicAddresses Operation</seealso>
+        GetIpamDiscoveredPublicAddressesResponse GetIpamDiscoveredPublicAddresses(GetIpamDiscoveredPublicAddressesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetIpamDiscoveredPublicAddresses operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetIpamDiscoveredPublicAddresses operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetIpamDiscoveredPublicAddresses
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamDiscoveredPublicAddresses">REST API Reference for GetIpamDiscoveredPublicAddresses Operation</seealso>
+        IAsyncResult BeginGetIpamDiscoveredPublicAddresses(GetIpamDiscoveredPublicAddressesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetIpamDiscoveredPublicAddresses operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetIpamDiscoveredPublicAddresses.</param>
+        /// 
+        /// <returns>Returns a  GetIpamDiscoveredPublicAddressesResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamDiscoveredPublicAddresses">REST API Reference for GetIpamDiscoveredPublicAddresses Operation</seealso>
+        GetIpamDiscoveredPublicAddressesResponse EndGetIpamDiscoveredPublicAddresses(IAsyncResult asyncResult);
 
         #endregion
         
@@ -26726,6 +26920,49 @@ namespace Amazon.EC2
         /// <returns>Returns a  ProvisionByoipCidrResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ProvisionByoipCidr">REST API Reference for ProvisionByoipCidr Operation</seealso>
         ProvisionByoipCidrResponse EndProvisionByoipCidr(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ProvisionIpamByoasn
+
+
+        /// <summary>
+        /// Provisions your Autonomous System Number (ASN) for use in your Amazon Web Services
+        /// account. This action requires authorization context for Amazon to bring the ASN to
+        /// an Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/tutorials-byoasn.html">Tutorial:
+        /// Bring your ASN to IPAM</a> in the <i>Amazon VPC IPAM guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ProvisionIpamByoasn service method.</param>
+        /// 
+        /// <returns>The response from the ProvisionIpamByoasn service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ProvisionIpamByoasn">REST API Reference for ProvisionIpamByoasn Operation</seealso>
+        ProvisionIpamByoasnResponse ProvisionIpamByoasn(ProvisionIpamByoasnRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ProvisionIpamByoasn operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ProvisionIpamByoasn operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndProvisionIpamByoasn
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ProvisionIpamByoasn">REST API Reference for ProvisionIpamByoasn Operation</seealso>
+        IAsyncResult BeginProvisionIpamByoasn(ProvisionIpamByoasnRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ProvisionIpamByoasn operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginProvisionIpamByoasn.</param>
+        /// 
+        /// <returns>Returns a  ProvisionIpamByoasnResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ProvisionIpamByoasn">REST API Reference for ProvisionIpamByoasn Operation</seealso>
+        ProvisionIpamByoasnResponse EndProvisionIpamByoasn(IAsyncResult asyncResult);
 
         #endregion
         

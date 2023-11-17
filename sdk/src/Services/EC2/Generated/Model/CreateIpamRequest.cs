@@ -47,6 +47,7 @@ namespace Amazon.EC2.Model
         private string _description;
         private List<AddIpamOperatingRegion> _operatingRegions = new List<AddIpamOperatingRegion>();
         private List<TagSpecification> _tagSpecifications = new List<TagSpecification>();
+        private IpamTier _tier;
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -132,6 +133,26 @@ namespace Amazon.EC2.Model
         internal bool IsSetTagSpecifications()
         {
             return this._tagSpecifications != null && this._tagSpecifications.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tier. 
+        /// <para>
+        /// IPAM is offered in a Free Tier and an Advanced Tier. For more information about the
+        /// features available in each tier and the costs associated with the tiers, see <a href="http://aws.amazon.com/vpc/pricing/">Amazon
+        /// VPC pricing &gt; IPAM tab</a>.
+        /// </para>
+        /// </summary>
+        public IpamTier Tier
+        {
+            get { return this._tier; }
+            set { this._tier = value; }
+        }
+
+        // Check to see if Tier property is set
+        internal bool IsSetTier()
+        {
+            return this._tier != null;
         }
 
     }

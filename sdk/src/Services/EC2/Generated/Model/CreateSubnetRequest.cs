@@ -50,8 +50,7 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// If you've associated an IPv6 CIDR block with your VPC, you can associate an IPv6 CIDR
-    /// block with a subnet when you create it. The allowed block size for an IPv6 subnet
-    /// is a /64 netmask.
+    /// block with a subnet when you create it. 
     /// </para>
     ///  
     /// <para>
@@ -75,8 +74,12 @@ namespace Amazon.EC2.Model
         private string _availabilityZone;
         private string _availabilityZoneId;
         private string _cidrBlock;
+        private string _ipv4IpamPoolId;
+        private int? _ipv4NetmaskLength;
         private string _ipv6CidrBlock;
+        private string _ipv6IpamPoolId;
         private bool? _ipv6Native;
+        private int? _ipv6NetmaskLength;
         private string _outpostArn;
         private List<TagSpecification> _tagSpecifications = new List<TagSpecification>();
         private string _vpcId;
@@ -175,14 +178,46 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Ipv4IpamPoolId. 
+        /// <para>
+        /// An IPv4 IPAM pool ID for the subnet.
+        /// </para>
+        /// </summary>
+        public string Ipv4IpamPoolId
+        {
+            get { return this._ipv4IpamPoolId; }
+            set { this._ipv4IpamPoolId = value; }
+        }
+
+        // Check to see if Ipv4IpamPoolId property is set
+        internal bool IsSetIpv4IpamPoolId()
+        {
+            return this._ipv4IpamPoolId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Ipv4NetmaskLength. 
+        /// <para>
+        /// An IPv4 netmask length for the subnet.
+        /// </para>
+        /// </summary>
+        public int Ipv4NetmaskLength
+        {
+            get { return this._ipv4NetmaskLength.GetValueOrDefault(); }
+            set { this._ipv4NetmaskLength = value; }
+        }
+
+        // Check to see if Ipv4NetmaskLength property is set
+        internal bool IsSetIpv4NetmaskLength()
+        {
+            return this._ipv4NetmaskLength.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Ipv6CidrBlock. 
         /// <para>
-        /// The IPv6 network range for the subnet, in CIDR notation. The subnet size must use
-        /// a /64 prefix length.
-        /// </para>
-        ///  
-        /// <para>
-        /// This parameter is required for an IPv6 only subnet.
+        /// The IPv6 network range for the subnet, in CIDR notation. This parameter is required
+        /// for an IPv6 only subnet.
         /// </para>
         /// </summary>
         public string Ipv6CidrBlock
@@ -195,6 +230,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetIpv6CidrBlock()
         {
             return this._ipv6CidrBlock != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Ipv6IpamPoolId. 
+        /// <para>
+        /// An IPv6 IPAM pool ID for the subnet.
+        /// </para>
+        /// </summary>
+        public string Ipv6IpamPoolId
+        {
+            get { return this._ipv6IpamPoolId; }
+            set { this._ipv6IpamPoolId = value; }
+        }
+
+        // Check to see if Ipv6IpamPoolId property is set
+        internal bool IsSetIpv6IpamPoolId()
+        {
+            return this._ipv6IpamPoolId != null;
         }
 
         /// <summary>
@@ -213,6 +266,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetIpv6Native()
         {
             return this._ipv6Native.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Ipv6NetmaskLength. 
+        /// <para>
+        /// An IPv6 netmask length for the subnet.
+        /// </para>
+        /// </summary>
+        public int Ipv6NetmaskLength
+        {
+            get { return this._ipv6NetmaskLength.GetValueOrDefault(); }
+            set { this._ipv6NetmaskLength = value; }
+        }
+
+        // Check to see if Ipv6NetmaskLength property is set
+        internal bool IsSetIpv6NetmaskLength()
+        {
+            return this._ipv6NetmaskLength.HasValue; 
         }
 
         /// <summary>

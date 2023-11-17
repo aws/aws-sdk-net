@@ -58,6 +58,15 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             if(publicRequest != null)
             {
+                if(publicRequest.IsSetAllowedCidrs())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.AllowedCidrs)
+                    {
+                        request.Parameters.Add("AllowedCidr" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
+                }
                 if(publicRequest.IsSetCidr())
                 {
                     request.Parameters.Add("Cidr", StringUtils.FromString(publicRequest.Cidr));

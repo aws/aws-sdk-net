@@ -130,6 +130,25 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("SourceIpamPoolId", StringUtils.FromString(publicRequest.SourceIpamPoolId));
                 }
+                if(publicRequest.IsSetSourceResource())
+                {
+                    if(publicRequest.SourceResource.IsSetResourceId())
+                    {
+                        request.Parameters.Add("SourceResource" + "." + "ResourceId", StringUtils.FromString(publicRequest.SourceResource.ResourceId));
+                    }
+                    if(publicRequest.SourceResource.IsSetResourceOwner())
+                    {
+                        request.Parameters.Add("SourceResource" + "." + "ResourceOwner", StringUtils.FromString(publicRequest.SourceResource.ResourceOwner));
+                    }
+                    if(publicRequest.SourceResource.IsSetResourceRegion())
+                    {
+                        request.Parameters.Add("SourceResource" + "." + "ResourceRegion", StringUtils.FromString(publicRequest.SourceResource.ResourceRegion));
+                    }
+                    if(publicRequest.SourceResource.IsSetResourceType())
+                    {
+                        request.Parameters.Add("SourceResource" + "." + "ResourceType", StringUtils.FromString(publicRequest.SourceResource.ResourceType));
+                    }
+                }
                 if(publicRequest.IsSetTagSpecifications())
                 {
                     int publicRequestlistValueIndex = 1;

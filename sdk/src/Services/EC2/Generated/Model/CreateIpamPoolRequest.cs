@@ -58,6 +58,7 @@ namespace Amazon.EC2.Model
         private IpamPoolPublicIpSource _publicIpSource;
         private bool? _publiclyAdvertisable;
         private string _sourceIpamPoolId;
+        private IpamPoolSourceResourceRequest _sourceResource;
         private List<TagSpecification> _tagSpecifications = new List<TagSpecification>();
 
         /// <summary>
@@ -360,6 +361,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetSourceIpamPoolId()
         {
             return this._sourceIpamPoolId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceResource. 
+        /// <para>
+        /// The resource used to provision CIDRs to a resource planning pool.
+        /// </para>
+        /// </summary>
+        public IpamPoolSourceResourceRequest SourceResource
+        {
+            get { return this._sourceResource; }
+            set { this._sourceResource = value; }
+        }
+
+        // Check to see if SourceResource property is set
+        internal bool IsSetSourceResource()
+        {
+            return this._sourceResource != null;
         }
 
         /// <summary>

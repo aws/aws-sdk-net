@@ -56,6 +56,7 @@ namespace Amazon.EC2.Model
         private IpamPoolPublicIpSource _publicIpSource;
         private bool? _publiclyAdvertisable;
         private string _sourceIpamPoolId;
+        private IpamPoolSourceResource _sourceResource;
         private IpamPoolState _state;
         private string _stateMessage;
         private List<Tag> _tags = new List<Tag>();
@@ -470,6 +471,21 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SourceResource.
+        /// </summary>
+        public IpamPoolSourceResource SourceResource
+        {
+            get { return this._sourceResource; }
+            set { this._sourceResource = value; }
+        }
+
+        // Check to see if SourceResource property is set
+        internal bool IsSetSourceResource()
+        {
+            return this._sourceResource != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property State. 
         /// <para>
         /// The state of the IPAM pool.
@@ -490,7 +506,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property StateMessage. 
         /// <para>
-        /// A message related to the failed creation of an IPAM pool.
+        /// The state message.
         /// </para>
         /// </summary>
         public string StateMessage
