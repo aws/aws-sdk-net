@@ -29,37 +29,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.VerifiedPermissions.Model
 {
     /// <summary>
-    /// Contains a description of an evaluation error.
-    /// 
-    ///  
-    /// <para>
-    /// This data type is a response parameter of the <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_IsAuthorized.html">IsAuthorized</a>,
-    /// <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_BatchIsAuthorized.html">BatchIsAuthorized</a>,
-    /// and <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_IsAuthorizedWithToken.html">IsAuthorizedWithToken</a>
-    /// operations.
-    /// </para>
+    /// This is the response object from the BatchIsAuthorized operation.
     /// </summary>
-    public partial class EvaluationErrorItem
+    public partial class BatchIsAuthorizedResponse : AmazonWebServiceResponse
     {
-        private string _errorDescription;
+        private List<BatchIsAuthorizedOutputItem> _results = new List<BatchIsAuthorizedOutputItem>();
 
         /// <summary>
-        /// Gets and sets the property ErrorDescription. 
+        /// Gets and sets the property Results. 
         /// <para>
-        /// The error description.
+        /// A series of <code>Allow</code> or <code>Deny</code> decisions for each request, and
+        /// the policies that produced them.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public string ErrorDescription
+        public List<BatchIsAuthorizedOutputItem> Results
         {
-            get { return this._errorDescription; }
-            set { this._errorDescription = value; }
+            get { return this._results; }
+            set { this._results = value; }
         }
 
-        // Check to see if ErrorDescription property is set
-        internal bool IsSetErrorDescription()
+        // Check to see if Results property is set
+        internal bool IsSetResults()
         {
-            return this._errorDescription != null;
+            return this._results != null && this._results.Count > 0; 
         }
 
     }

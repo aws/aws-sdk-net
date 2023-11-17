@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.VerifiedPermissions.Model.BatchIsAuthorizedRequest.PolicyStoreId</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>[a-zA-Z0-9-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.VerifiedPermissions.Model.CreateIdentitySourceRequest.ClientToken</property>
     <min>1</min>
     <max>64</max>
@@ -269,7 +275,7 @@
   <property-value-rule>
     <property>Amazon.VerifiedPermissions.Model.GetSchemaResponse.Schema</property>
     <min>1</min>
-    <max>10000</max>
+    <max>100000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.VerifiedPermissions.Model.IsAuthorizedRequest.PolicyStoreId</property>
@@ -633,7 +639,7 @@
   <property-value-rule>
     <property>Amazon.VerifiedPermissions.Model.SchemaDefinition.CedarJson</property>
     <min>1</min>
-    <max>10000</max>
+    <max>100000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.VerifiedPermissions.Model.StaticPolicyDefinition.Description</property>

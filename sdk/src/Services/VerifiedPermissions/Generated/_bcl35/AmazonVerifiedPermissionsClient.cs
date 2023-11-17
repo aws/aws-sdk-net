@@ -347,6 +347,195 @@ namespace Amazon.VerifiedPermissions
         #endregion
 
 
+        #region  BatchIsAuthorized
+
+        /// <summary>
+        /// Makes a series of decisions about multiple authorization requests for one principal
+        /// or resource. Each request contains the equivalent content of an <code>IsAuthorized</code>
+        /// request: principal, action, resource, and context. Either the <code>principal</code>
+        /// or the <code>resource</code> parameter must be identical across all requests. For
+        /// example, Verified Permissions won't evaluate a pair of requests where <code>bob</code>
+        /// views <code>photo1</code> and <code>alice</code> views <code>photo2</code>. Authorization
+        /// of <code>bob</code> to view <code>photo1</code> and <code>photo2</code>, or <code>bob</code>
+        /// and <code>alice</code> to view <code>photo1</code>, are valid batches. 
+        /// 
+        ///  
+        /// <para>
+        /// The request is evaluated against all policies in the specified policy store that match
+        /// the entities that you declare. The result of the decisions is a series of <code>Allow</code>
+        /// or <code>Deny</code> responses, along with the IDs of the policies that produced each
+        /// decision.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <code>entities</code> of a <code>BatchIsAuthorized</code> API request can contain
+        /// up to 100 principals and up to 100 resources. The <code>requests</code> of a <code>BatchIsAuthorized</code>
+        /// API request can contain up to 30 requests.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchIsAuthorized service method.</param>
+        /// 
+        /// <returns>The response from the BatchIsAuthorized service method, as returned by VerifiedPermissions.</returns>
+        /// <exception cref="Amazon.VerifiedPermissions.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.VerifiedPermissions.Model.InternalServerException">
+        /// The request failed because of an internal error. Try your request again later
+        /// </exception>
+        /// <exception cref="Amazon.VerifiedPermissions.Model.ResourceNotFoundException">
+        /// The request failed because it references a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.VerifiedPermissions.Model.ThrottlingException">
+        /// The request failed because it exceeded a throttling quota.
+        /// </exception>
+        /// <exception cref="Amazon.VerifiedPermissions.Model.ValidationException">
+        /// The request failed because one or more input parameters don't satisfy their constraint
+        /// requirements. The output is provided as a list of fields and a reason for each field
+        /// that isn't valid.
+        /// 
+        ///  
+        /// <para>
+        /// The possible reasons include the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>UnrecognizedEntityType</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy includes an entity type that isn't found in the schema.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>UnrecognizedActionId</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy includes an action id that isn't found in the schema.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>InvalidActionApplication</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy includes an action that, according to the schema, doesn't support the specified
+        /// principal and resource.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>UnexpectedType</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy included an operand that isn't a valid type for the specified operation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>IncompatibleTypes</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The types of elements included in a <code>set</code>, or the types of expressions
+        /// used in an <code>if...then...else</code> clause aren't compatible in this context.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>MissingAttribute</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy attempts to access a record or entity attribute that isn't specified in
+        /// the schema. Test for the existence of the attribute first before attempting to access
+        /// its value. For more information, see the <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
+        /// (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>UnsafeOptionalAttributeAccess</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy attempts to access a record or entity attribute that is optional and isn't
+        /// guaranteed to be present. Test for the existence of the attribute first before attempting
+        /// to access its value. For more information, see the <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
+        /// (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>ImpossiblePolicy</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Cedar has determined that a policy condition always evaluates to false. If the policy
+        /// is always false, it can never apply to any query, and so it can never affect an authorization
+        /// decision.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>WrongNumberArguments</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy references an extension type with the wrong number of arguments.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>FunctionArgumentValidationError</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Cedar couldn't parse the argument passed to an extension type. For example, a string
+        /// that is to be parsed as an IPv4 address can contain only digits and the period character.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/BatchIsAuthorized">REST API Reference for BatchIsAuthorized Operation</seealso>
+        public virtual BatchIsAuthorizedResponse BatchIsAuthorized(BatchIsAuthorizedRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchIsAuthorizedRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchIsAuthorizedResponseUnmarshaller.Instance;
+
+            return Invoke<BatchIsAuthorizedResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchIsAuthorized operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchIsAuthorized operation on AmazonVerifiedPermissionsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchIsAuthorized
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/BatchIsAuthorized">REST API Reference for BatchIsAuthorized Operation</seealso>
+        public virtual IAsyncResult BeginBatchIsAuthorized(BatchIsAuthorizedRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchIsAuthorizedRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchIsAuthorizedResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchIsAuthorized operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchIsAuthorized.</param>
+        /// 
+        /// <returns>Returns a  BatchIsAuthorizedResult from VerifiedPermissions.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/BatchIsAuthorized">REST API Reference for BatchIsAuthorized Operation</seealso>
+        public virtual BatchIsAuthorizedResponse EndBatchIsAuthorized(IAsyncResult asyncResult)
+        {
+            return EndInvoke<BatchIsAuthorizedResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateIdentitySource
 
         /// <summary>
