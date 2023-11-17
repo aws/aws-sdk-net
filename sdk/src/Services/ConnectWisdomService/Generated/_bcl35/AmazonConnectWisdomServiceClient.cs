@@ -588,6 +588,79 @@ namespace Amazon.ConnectWisdomService
 
         #endregion
         
+        #region  CreateQuickResponse
+
+        /// <summary>
+        /// Creates a Wisdom quick response.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateQuickResponse service method.</param>
+        /// 
+        /// <returns>The response from the CreateQuickResponse service method, as returned by ConnectWisdomService.</returns>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource. For example, if you're using a <code>Create</code> API (such as <code>CreateAssistant</code>)
+        /// that accepts name, a conflicting resource (usually with the same name) is being created
+        /// or mutated.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.ServiceQuotaExceededException">
+        /// You've exceeded your service quota. To perform the requested action, remove some of
+        /// the relevant resources, or use service quotas to request a service quota increase.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/CreateQuickResponse">REST API Reference for CreateQuickResponse Operation</seealso>
+        public virtual CreateQuickResponseResponse CreateQuickResponse(CreateQuickResponseRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateQuickResponseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateQuickResponseResponseUnmarshaller.Instance;
+
+            return Invoke<CreateQuickResponseResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateQuickResponse operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateQuickResponse operation on AmazonConnectWisdomServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateQuickResponse
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/CreateQuickResponse">REST API Reference for CreateQuickResponse Operation</seealso>
+        public virtual IAsyncResult BeginCreateQuickResponse(CreateQuickResponseRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateQuickResponseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateQuickResponseResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateQuickResponse operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateQuickResponse.</param>
+        /// 
+        /// <returns>Returns a  CreateQuickResponseResult from ConnectWisdomService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/CreateQuickResponse">REST API Reference for CreateQuickResponse Operation</seealso>
+        public virtual CreateQuickResponseResponse EndCreateQuickResponse(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateQuickResponseResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateSession
 
         /// <summary>
@@ -844,6 +917,75 @@ namespace Amazon.ConnectWisdomService
 
         #endregion
         
+        #region  DeleteImportJob
+
+        /// <summary>
+        /// Deletes the quick response import job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteImportJob service method.</param>
+        /// 
+        /// <returns>The response from the DeleteImportJob service method, as returned by ConnectWisdomService.</returns>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource. For example, if you're using a <code>Create</code> API (such as <code>CreateAssistant</code>)
+        /// that accepts name, a conflicting resource (usually with the same name) is being created
+        /// or mutated.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/DeleteImportJob">REST API Reference for DeleteImportJob Operation</seealso>
+        public virtual DeleteImportJobResponse DeleteImportJob(DeleteImportJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteImportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteImportJobResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteImportJobResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteImportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteImportJob operation on AmazonConnectWisdomServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteImportJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/DeleteImportJob">REST API Reference for DeleteImportJob Operation</seealso>
+        public virtual IAsyncResult BeginDeleteImportJob(DeleteImportJobRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteImportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteImportJobResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteImportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteImportJob.</param>
+        /// 
+        /// <returns>Returns a  DeleteImportJobResult from ConnectWisdomService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/DeleteImportJob">REST API Reference for DeleteImportJob Operation</seealso>
+        public virtual DeleteImportJobResponse EndDeleteImportJob(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteImportJobResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteKnowledgeBase
 
         /// <summary>
@@ -921,6 +1063,69 @@ namespace Amazon.ConnectWisdomService
         public virtual DeleteKnowledgeBaseResponse EndDeleteKnowledgeBase(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteKnowledgeBaseResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteQuickResponse
+
+        /// <summary>
+        /// Deletes a quick response.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteQuickResponse service method.</param>
+        /// 
+        /// <returns>The response from the DeleteQuickResponse service method, as returned by ConnectWisdomService.</returns>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/DeleteQuickResponse">REST API Reference for DeleteQuickResponse Operation</seealso>
+        public virtual DeleteQuickResponseResponse DeleteQuickResponse(DeleteQuickResponseRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteQuickResponseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteQuickResponseResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteQuickResponseResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteQuickResponse operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteQuickResponse operation on AmazonConnectWisdomServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteQuickResponse
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/DeleteQuickResponse">REST API Reference for DeleteQuickResponse Operation</seealso>
+        public virtual IAsyncResult BeginDeleteQuickResponse(DeleteQuickResponseRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteQuickResponseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteQuickResponseResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteQuickResponse operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteQuickResponse.</param>
+        /// 
+        /// <returns>Returns a  DeleteQuickResponseResult from ConnectWisdomService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/DeleteQuickResponse">REST API Reference for DeleteQuickResponse Operation</seealso>
+        public virtual DeleteQuickResponseResponse EndDeleteQuickResponse(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteQuickResponseResponse>(asyncResult);
         }
 
         #endregion
@@ -1177,6 +1382,69 @@ namespace Amazon.ConnectWisdomService
 
         #endregion
         
+        #region  GetImportJob
+
+        /// <summary>
+        /// Retrieves the started import job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetImportJob service method.</param>
+        /// 
+        /// <returns>The response from the GetImportJob service method, as returned by ConnectWisdomService.</returns>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/GetImportJob">REST API Reference for GetImportJob Operation</seealso>
+        public virtual GetImportJobResponse GetImportJob(GetImportJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetImportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetImportJobResponseUnmarshaller.Instance;
+
+            return Invoke<GetImportJobResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetImportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetImportJob operation on AmazonConnectWisdomServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetImportJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/GetImportJob">REST API Reference for GetImportJob Operation</seealso>
+        public virtual IAsyncResult BeginGetImportJob(GetImportJobRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetImportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetImportJobResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetImportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetImportJob.</param>
+        /// 
+        /// <returns>Returns a  GetImportJobResult from ConnectWisdomService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/GetImportJob">REST API Reference for GetImportJob Operation</seealso>
+        public virtual GetImportJobResponse EndGetImportJob(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetImportJobResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetKnowledgeBase
 
         /// <summary>
@@ -1236,6 +1504,69 @@ namespace Amazon.ConnectWisdomService
         public virtual GetKnowledgeBaseResponse EndGetKnowledgeBase(IAsyncResult asyncResult)
         {
             return EndInvoke<GetKnowledgeBaseResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetQuickResponse
+
+        /// <summary>
+        /// Retrieves the quick response.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetQuickResponse service method.</param>
+        /// 
+        /// <returns>The response from the GetQuickResponse service method, as returned by ConnectWisdomService.</returns>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/GetQuickResponse">REST API Reference for GetQuickResponse Operation</seealso>
+        public virtual GetQuickResponseResponse GetQuickResponse(GetQuickResponseRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetQuickResponseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetQuickResponseResponseUnmarshaller.Instance;
+
+            return Invoke<GetQuickResponseResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetQuickResponse operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetQuickResponse operation on AmazonConnectWisdomServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetQuickResponse
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/GetQuickResponse">REST API Reference for GetQuickResponse Operation</seealso>
+        public virtual IAsyncResult BeginGetQuickResponse(GetQuickResponseRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetQuickResponseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetQuickResponseResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetQuickResponse operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetQuickResponse.</param>
+        /// 
+        /// <returns>Returns a  GetQuickResponseResult from ConnectWisdomService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/GetQuickResponse">REST API Reference for GetQuickResponse Operation</seealso>
+        public virtual GetQuickResponseResponse EndGetQuickResponse(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetQuickResponseResponse>(asyncResult);
         }
 
         #endregion
@@ -1556,6 +1887,66 @@ namespace Amazon.ConnectWisdomService
 
         #endregion
         
+        #region  ListImportJobs
+
+        /// <summary>
+        /// Lists information about import jobs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListImportJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListImportJobs service method, as returned by ConnectWisdomService.</returns>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/ListImportJobs">REST API Reference for ListImportJobs Operation</seealso>
+        public virtual ListImportJobsResponse ListImportJobs(ListImportJobsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListImportJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListImportJobsResponseUnmarshaller.Instance;
+
+            return Invoke<ListImportJobsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListImportJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListImportJobs operation on AmazonConnectWisdomServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListImportJobs
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/ListImportJobs">REST API Reference for ListImportJobs Operation</seealso>
+        public virtual IAsyncResult BeginListImportJobs(ListImportJobsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListImportJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListImportJobsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListImportJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListImportJobs.</param>
+        /// 
+        /// <returns>Returns a  ListImportJobsResult from ConnectWisdomService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/ListImportJobs">REST API Reference for ListImportJobs Operation</seealso>
+        public virtual ListImportJobsResponse EndListImportJobs(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListImportJobsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListKnowledgeBases
 
         /// <summary>
@@ -1612,6 +2003,69 @@ namespace Amazon.ConnectWisdomService
         public virtual ListKnowledgeBasesResponse EndListKnowledgeBases(IAsyncResult asyncResult)
         {
             return EndInvoke<ListKnowledgeBasesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListQuickResponses
+
+        /// <summary>
+        /// Lists information about quick response.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListQuickResponses service method.</param>
+        /// 
+        /// <returns>The response from the ListQuickResponses service method, as returned by ConnectWisdomService.</returns>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/ListQuickResponses">REST API Reference for ListQuickResponses Operation</seealso>
+        public virtual ListQuickResponsesResponse ListQuickResponses(ListQuickResponsesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListQuickResponsesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListQuickResponsesResponseUnmarshaller.Instance;
+
+            return Invoke<ListQuickResponsesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListQuickResponses operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListQuickResponses operation on AmazonConnectWisdomServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListQuickResponses
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/ListQuickResponses">REST API Reference for ListQuickResponses Operation</seealso>
+        public virtual IAsyncResult BeginListQuickResponses(ListQuickResponsesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListQuickResponsesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListQuickResponsesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListQuickResponses operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListQuickResponses.</param>
+        /// 
+        /// <returns>Returns a  ListQuickResponsesResult from ConnectWisdomService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/ListQuickResponses">REST API Reference for ListQuickResponses Operation</seealso>
+        public virtual ListQuickResponsesResponse EndListQuickResponses(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListQuickResponsesResponse>(asyncResult);
         }
 
         #endregion
@@ -1750,6 +2204,11 @@ namespace Amazon.ConnectWisdomService
         /// <returns>The response from the QueryAssistant service method, as returned by ConnectWisdomService.</returns>
         /// <exception cref="Amazon.ConnectWisdomService.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.RequestTimeoutException">
+        /// The request reached the service more than 15 minutes after the date stamp on the request
+        /// or more than 15 minutes after the request expiration date (such as for pre-signed
+        /// URLs), or the date stamp on the request is more than 15 minutes in the future.
         /// </exception>
         /// <exception cref="Amazon.ConnectWisdomService.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
@@ -1930,6 +2389,74 @@ namespace Amazon.ConnectWisdomService
 
         #endregion
         
+        #region  SearchQuickResponses
+
+        /// <summary>
+        /// Searches existing Wisdom quick responses in a Wisdom knowledge base.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchQuickResponses service method.</param>
+        /// 
+        /// <returns>The response from the SearchQuickResponses service method, as returned by ConnectWisdomService.</returns>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.RequestTimeoutException">
+        /// The request reached the service more than 15 minutes after the date stamp on the request
+        /// or more than 15 minutes after the request expiration date (such as for pre-signed
+        /// URLs), or the date stamp on the request is more than 15 minutes in the future.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/SearchQuickResponses">REST API Reference for SearchQuickResponses Operation</seealso>
+        public virtual SearchQuickResponsesResponse SearchQuickResponses(SearchQuickResponsesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchQuickResponsesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchQuickResponsesResponseUnmarshaller.Instance;
+
+            return Invoke<SearchQuickResponsesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SearchQuickResponses operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SearchQuickResponses operation on AmazonConnectWisdomServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSearchQuickResponses
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/SearchQuickResponses">REST API Reference for SearchQuickResponses Operation</seealso>
+        public virtual IAsyncResult BeginSearchQuickResponses(SearchQuickResponsesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchQuickResponsesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchQuickResponsesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SearchQuickResponses operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSearchQuickResponses.</param>
+        /// 
+        /// <returns>Returns a  SearchQuickResponsesResult from ConnectWisdomService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/SearchQuickResponses">REST API Reference for SearchQuickResponses Operation</seealso>
+        public virtual SearchQuickResponsesResponse EndSearchQuickResponses(IAsyncResult asyncResult)
+        {
+            return EndInvoke<SearchQuickResponsesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  SearchSessions
 
         /// <summary>
@@ -2057,6 +2584,90 @@ namespace Amazon.ConnectWisdomService
         public virtual StartContentUploadResponse EndStartContentUpload(IAsyncResult asyncResult)
         {
             return EndInvoke<StartContentUploadResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StartImportJob
+
+        /// <summary>
+        /// Start an asynchronous job to import Wisdom resources from an uploaded source file.
+        /// Before calling this API, use <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a>
+        /// to upload an asset that contains the resource data.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// For importing Wisdom quick responses, you need to upload a csv file including the
+        /// quick responses. For information about how to format the csv file for importing quick
+        /// responses, see <a href="https://docs.aws.amazon.com/console/connect/quick-responses/add-data">Import
+        /// quick responses</a>.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartImportJob service method.</param>
+        /// 
+        /// <returns>The response from the StartImportJob service method, as returned by ConnectWisdomService.</returns>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource. For example, if you're using a <code>Create</code> API (such as <code>CreateAssistant</code>)
+        /// that accepts name, a conflicting resource (usually with the same name) is being created
+        /// or mutated.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.ServiceQuotaExceededException">
+        /// You've exceeded your service quota. To perform the requested action, remove some of
+        /// the relevant resources, or use service quotas to request a service quota increase.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/StartImportJob">REST API Reference for StartImportJob Operation</seealso>
+        public virtual StartImportJobResponse StartImportJob(StartImportJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartImportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartImportJobResponseUnmarshaller.Instance;
+
+            return Invoke<StartImportJobResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartImportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartImportJob operation on AmazonConnectWisdomServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartImportJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/StartImportJob">REST API Reference for StartImportJob Operation</seealso>
+        public virtual IAsyncResult BeginStartImportJob(StartImportJobRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartImportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartImportJobResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartImportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartImportJob.</param>
+        /// 
+        /// <returns>Returns a  StartImportJobResult from ConnectWisdomService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/StartImportJob">REST API Reference for StartImportJob Operation</seealso>
+        public virtual StartImportJobResponse EndStartImportJob(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartImportJobResponse>(asyncResult);
         }
 
         #endregion
@@ -2308,6 +2919,79 @@ namespace Amazon.ConnectWisdomService
         public virtual UpdateKnowledgeBaseTemplateUriResponse EndUpdateKnowledgeBaseTemplateUri(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateKnowledgeBaseTemplateUriResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateQuickResponse
+
+        /// <summary>
+        /// Updates an existing Wisdom quick response.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateQuickResponse service method.</param>
+        /// 
+        /// <returns>The response from the UpdateQuickResponse service method, as returned by ConnectWisdomService.</returns>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource. For example, if you're using a <code>Create</code> API (such as <code>CreateAssistant</code>)
+        /// that accepts name, a conflicting resource (usually with the same name) is being created
+        /// or mutated.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.PreconditionFailedException">
+        /// The provided <code>revisionId</code> does not match, indicating the content has been
+        /// modified since it was last read.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/UpdateQuickResponse">REST API Reference for UpdateQuickResponse Operation</seealso>
+        public virtual UpdateQuickResponseResponse UpdateQuickResponse(UpdateQuickResponseRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateQuickResponseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateQuickResponseResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateQuickResponseResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateQuickResponse operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateQuickResponse operation on AmazonConnectWisdomServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateQuickResponse
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/UpdateQuickResponse">REST API Reference for UpdateQuickResponse Operation</seealso>
+        public virtual IAsyncResult BeginUpdateQuickResponse(UpdateQuickResponseRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateQuickResponseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateQuickResponseResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateQuickResponse operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateQuickResponse.</param>
+        /// 
+        /// <returns>Returns a  UpdateQuickResponseResult from ConnectWisdomService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/UpdateQuickResponse">REST API Reference for UpdateQuickResponse Operation</seealso>
+        public virtual UpdateQuickResponseResponse EndUpdateQuickResponse(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateQuickResponseResponse>(asyncResult);
         }
 
         #endregion

@@ -368,6 +368,72 @@ namespace Amazon.ConnectWisdomService
 
         #endregion
         
+        #region  CreateQuickResponse
+
+
+        /// <summary>
+        /// Creates a Wisdom quick response.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateQuickResponse service method.</param>
+        /// 
+        /// <returns>The response from the CreateQuickResponse service method, as returned by ConnectWisdomService.</returns>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource. For example, if you're using a <code>Create</code> API (such as <code>CreateAssistant</code>)
+        /// that accepts name, a conflicting resource (usually with the same name) is being created
+        /// or mutated.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.ServiceQuotaExceededException">
+        /// You've exceeded your service quota. To perform the requested action, remove some of
+        /// the relevant resources, or use service quotas to request a service quota increase.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/CreateQuickResponse">REST API Reference for CreateQuickResponse Operation</seealso>
+        CreateQuickResponseResponse CreateQuickResponse(CreateQuickResponseRequest request);
+
+
+
+        /// <summary>
+        /// Creates a Wisdom quick response.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateQuickResponse service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateQuickResponse service method, as returned by ConnectWisdomService.</returns>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource. For example, if you're using a <code>Create</code> API (such as <code>CreateAssistant</code>)
+        /// that accepts name, a conflicting resource (usually with the same name) is being created
+        /// or mutated.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.ServiceQuotaExceededException">
+        /// You've exceeded your service quota. To perform the requested action, remove some of
+        /// the relevant resources, or use service quotas to request a service quota increase.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/CreateQuickResponse">REST API Reference for CreateQuickResponse Operation</seealso>
+        Task<CreateQuickResponseResponse> CreateQuickResponseAsync(CreateQuickResponseRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateSession
 
 
@@ -560,6 +626,64 @@ namespace Amazon.ConnectWisdomService
 
         #endregion
         
+        #region  DeleteImportJob
+
+
+        /// <summary>
+        /// Deletes the quick response import job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteImportJob service method.</param>
+        /// 
+        /// <returns>The response from the DeleteImportJob service method, as returned by ConnectWisdomService.</returns>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource. For example, if you're using a <code>Create</code> API (such as <code>CreateAssistant</code>)
+        /// that accepts name, a conflicting resource (usually with the same name) is being created
+        /// or mutated.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/DeleteImportJob">REST API Reference for DeleteImportJob Operation</seealso>
+        DeleteImportJobResponse DeleteImportJob(DeleteImportJobRequest request);
+
+
+
+        /// <summary>
+        /// Deletes the quick response import job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteImportJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteImportJob service method, as returned by ConnectWisdomService.</returns>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource. For example, if you're using a <code>Create</code> API (such as <code>CreateAssistant</code>)
+        /// that accepts name, a conflicting resource (usually with the same name) is being created
+        /// or mutated.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/DeleteImportJob">REST API Reference for DeleteImportJob Operation</seealso>
+        Task<DeleteImportJobResponse> DeleteImportJobAsync(DeleteImportJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteKnowledgeBase
 
 
@@ -639,6 +763,52 @@ namespace Amazon.ConnectWisdomService
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/DeleteKnowledgeBase">REST API Reference for DeleteKnowledgeBase Operation</seealso>
         Task<DeleteKnowledgeBaseResponse> DeleteKnowledgeBaseAsync(DeleteKnowledgeBaseRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteQuickResponse
+
+
+        /// <summary>
+        /// Deletes a quick response.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteQuickResponse service method.</param>
+        /// 
+        /// <returns>The response from the DeleteQuickResponse service method, as returned by ConnectWisdomService.</returns>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/DeleteQuickResponse">REST API Reference for DeleteQuickResponse Operation</seealso>
+        DeleteQuickResponseResponse DeleteQuickResponse(DeleteQuickResponseRequest request);
+
+
+
+        /// <summary>
+        /// Deletes a quick response.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteQuickResponse service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteQuickResponse service method, as returned by ConnectWisdomService.</returns>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/DeleteQuickResponse">REST API Reference for DeleteQuickResponse Operation</seealso>
+        Task<DeleteQuickResponseResponse> DeleteQuickResponseAsync(DeleteQuickResponseRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -826,6 +996,52 @@ namespace Amazon.ConnectWisdomService
 
         #endregion
         
+        #region  GetImportJob
+
+
+        /// <summary>
+        /// Retrieves the started import job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetImportJob service method.</param>
+        /// 
+        /// <returns>The response from the GetImportJob service method, as returned by ConnectWisdomService.</returns>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/GetImportJob">REST API Reference for GetImportJob Operation</seealso>
+        GetImportJobResponse GetImportJob(GetImportJobRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves the started import job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetImportJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetImportJob service method, as returned by ConnectWisdomService.</returns>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/GetImportJob">REST API Reference for GetImportJob Operation</seealso>
+        Task<GetImportJobResponse> GetImportJobAsync(GetImportJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetKnowledgeBase
 
 
@@ -869,6 +1085,52 @@ namespace Amazon.ConnectWisdomService
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/GetKnowledgeBase">REST API Reference for GetKnowledgeBase Operation</seealso>
         Task<GetKnowledgeBaseResponse> GetKnowledgeBaseAsync(GetKnowledgeBaseRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetQuickResponse
+
+
+        /// <summary>
+        /// Retrieves the quick response.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetQuickResponse service method.</param>
+        /// 
+        /// <returns>The response from the GetQuickResponse service method, as returned by ConnectWisdomService.</returns>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/GetQuickResponse">REST API Reference for GetQuickResponse Operation</seealso>
+        GetQuickResponseResponse GetQuickResponse(GetQuickResponseRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves the quick response.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetQuickResponse service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetQuickResponse service method, as returned by ConnectWisdomService.</returns>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/GetQuickResponse">REST API Reference for GetQuickResponse Operation</seealso>
+        Task<GetQuickResponseResponse> GetQuickResponseAsync(GetQuickResponseRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1104,6 +1366,46 @@ namespace Amazon.ConnectWisdomService
 
         #endregion
         
+        #region  ListImportJobs
+
+
+        /// <summary>
+        /// Lists information about import jobs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListImportJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListImportJobs service method, as returned by ConnectWisdomService.</returns>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/ListImportJobs">REST API Reference for ListImportJobs Operation</seealso>
+        ListImportJobsResponse ListImportJobs(ListImportJobsRequest request);
+
+
+
+        /// <summary>
+        /// Lists information about import jobs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListImportJobs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListImportJobs service method, as returned by ConnectWisdomService.</returns>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/ListImportJobs">REST API Reference for ListImportJobs Operation</seealso>
+        Task<ListImportJobsResponse> ListImportJobsAsync(ListImportJobsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListKnowledgeBases
 
 
@@ -1141,6 +1443,52 @@ namespace Amazon.ConnectWisdomService
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/ListKnowledgeBases">REST API Reference for ListKnowledgeBases Operation</seealso>
         Task<ListKnowledgeBasesResponse> ListKnowledgeBasesAsync(ListKnowledgeBasesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListQuickResponses
+
+
+        /// <summary>
+        /// Lists information about quick response.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListQuickResponses service method.</param>
+        /// 
+        /// <returns>The response from the ListQuickResponses service method, as returned by ConnectWisdomService.</returns>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/ListQuickResponses">REST API Reference for ListQuickResponses Operation</seealso>
+        ListQuickResponsesResponse ListQuickResponses(ListQuickResponsesRequest request);
+
+
+
+        /// <summary>
+        /// Lists information about quick response.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListQuickResponses service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListQuickResponses service method, as returned by ConnectWisdomService.</returns>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/ListQuickResponses">REST API Reference for ListQuickResponses Operation</seealso>
+        Task<ListQuickResponsesResponse> ListQuickResponsesAsync(ListQuickResponsesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1243,6 +1591,11 @@ namespace Amazon.ConnectWisdomService
         /// <exception cref="Amazon.ConnectWisdomService.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
         /// </exception>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.RequestTimeoutException">
+        /// The request reached the service more than 15 minutes after the date stamp on the request
+        /// or more than 15 minutes after the request expiration date (such as for pre-signed
+        /// URLs), or the date stamp on the request is more than 15 minutes in the future.
+        /// </exception>
         /// <exception cref="Amazon.ConnectWisdomService.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
         /// </exception>
@@ -1266,6 +1619,11 @@ namespace Amazon.ConnectWisdomService
         /// <returns>The response from the QueryAssistant service method, as returned by ConnectWisdomService.</returns>
         /// <exception cref="Amazon.ConnectWisdomService.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.RequestTimeoutException">
+        /// The request reached the service more than 15 minutes after the date stamp on the request
+        /// or more than 15 minutes after the request expiration date (such as for pre-signed
+        /// URLs), or the date stamp on the request is more than 15 minutes in the future.
         /// </exception>
         /// <exception cref="Amazon.ConnectWisdomService.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
@@ -1372,6 +1730,62 @@ namespace Amazon.ConnectWisdomService
 
         #endregion
         
+        #region  SearchQuickResponses
+
+
+        /// <summary>
+        /// Searches existing Wisdom quick responses in a Wisdom knowledge base.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchQuickResponses service method.</param>
+        /// 
+        /// <returns>The response from the SearchQuickResponses service method, as returned by ConnectWisdomService.</returns>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.RequestTimeoutException">
+        /// The request reached the service more than 15 minutes after the date stamp on the request
+        /// or more than 15 minutes after the request expiration date (such as for pre-signed
+        /// URLs), or the date stamp on the request is more than 15 minutes in the future.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/SearchQuickResponses">REST API Reference for SearchQuickResponses Operation</seealso>
+        SearchQuickResponsesResponse SearchQuickResponses(SearchQuickResponsesRequest request);
+
+
+
+        /// <summary>
+        /// Searches existing Wisdom quick responses in a Wisdom knowledge base.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchQuickResponses service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SearchQuickResponses service method, as returned by ConnectWisdomService.</returns>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.RequestTimeoutException">
+        /// The request reached the service more than 15 minutes after the date stamp on the request
+        /// or more than 15 minutes after the request expiration date (such as for pre-signed
+        /// URLs), or the date stamp on the request is more than 15 minutes in the future.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/SearchQuickResponses">REST API Reference for SearchQuickResponses Operation</seealso>
+        Task<SearchQuickResponsesResponse> SearchQuickResponsesAsync(SearchQuickResponsesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  SearchSessions
 
 
@@ -1471,6 +1885,94 @@ namespace Amazon.ConnectWisdomService
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/StartContentUpload">REST API Reference for StartContentUpload Operation</seealso>
         Task<StartContentUploadResponse> StartContentUploadAsync(StartContentUploadRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  StartImportJob
+
+
+        /// <summary>
+        /// Start an asynchronous job to import Wisdom resources from an uploaded source file.
+        /// Before calling this API, use <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a>
+        /// to upload an asset that contains the resource data.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// For importing Wisdom quick responses, you need to upload a csv file including the
+        /// quick responses. For information about how to format the csv file for importing quick
+        /// responses, see <a href="https://docs.aws.amazon.com/console/connect/quick-responses/add-data">Import
+        /// quick responses</a>.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartImportJob service method.</param>
+        /// 
+        /// <returns>The response from the StartImportJob service method, as returned by ConnectWisdomService.</returns>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource. For example, if you're using a <code>Create</code> API (such as <code>CreateAssistant</code>)
+        /// that accepts name, a conflicting resource (usually with the same name) is being created
+        /// or mutated.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.ServiceQuotaExceededException">
+        /// You've exceeded your service quota. To perform the requested action, remove some of
+        /// the relevant resources, or use service quotas to request a service quota increase.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/StartImportJob">REST API Reference for StartImportJob Operation</seealso>
+        StartImportJobResponse StartImportJob(StartImportJobRequest request);
+
+
+
+        /// <summary>
+        /// Start an asynchronous job to import Wisdom resources from an uploaded source file.
+        /// Before calling this API, use <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a>
+        /// to upload an asset that contains the resource data.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// For importing Wisdom quick responses, you need to upload a csv file including the
+        /// quick responses. For information about how to format the csv file for importing quick
+        /// responses, see <a href="https://docs.aws.amazon.com/console/connect/quick-responses/add-data">Import
+        /// quick responses</a>.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartImportJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartImportJob service method, as returned by ConnectWisdomService.</returns>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource. For example, if you're using a <code>Create</code> API (such as <code>CreateAssistant</code>)
+        /// that accepts name, a conflicting resource (usually with the same name) is being created
+        /// or mutated.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.ServiceQuotaExceededException">
+        /// You've exceeded your service quota. To perform the requested action, remove some of
+        /// the relevant resources, or use service quotas to request a service quota increase.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/StartImportJob">REST API Reference for StartImportJob Operation</seealso>
+        Task<StartImportJobResponse> StartImportJobAsync(StartImportJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1653,6 +2155,72 @@ namespace Amazon.ConnectWisdomService
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/UpdateKnowledgeBaseTemplateUri">REST API Reference for UpdateKnowledgeBaseTemplateUri Operation</seealso>
         Task<UpdateKnowledgeBaseTemplateUriResponse> UpdateKnowledgeBaseTemplateUriAsync(UpdateKnowledgeBaseTemplateUriRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateQuickResponse
+
+
+        /// <summary>
+        /// Updates an existing Wisdom quick response.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateQuickResponse service method.</param>
+        /// 
+        /// <returns>The response from the UpdateQuickResponse service method, as returned by ConnectWisdomService.</returns>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource. For example, if you're using a <code>Create</code> API (such as <code>CreateAssistant</code>)
+        /// that accepts name, a conflicting resource (usually with the same name) is being created
+        /// or mutated.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.PreconditionFailedException">
+        /// The provided <code>revisionId</code> does not match, indicating the content has been
+        /// modified since it was last read.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/UpdateQuickResponse">REST API Reference for UpdateQuickResponse Operation</seealso>
+        UpdateQuickResponseResponse UpdateQuickResponse(UpdateQuickResponseRequest request);
+
+
+
+        /// <summary>
+        /// Updates an existing Wisdom quick response.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateQuickResponse service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateQuickResponse service method, as returned by ConnectWisdomService.</returns>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource. For example, if you're using a <code>Create</code> API (such as <code>CreateAssistant</code>)
+        /// that accepts name, a conflicting resource (usually with the same name) is being created
+        /// or mutated.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.PreconditionFailedException">
+        /// The provided <code>revisionId</code> does not match, indicating the content has been
+        /// modified since it was last read.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/UpdateQuickResponse">REST API Reference for UpdateQuickResponse Operation</seealso>
+        Task<UpdateQuickResponseResponse> UpdateQuickResponseAsync(UpdateQuickResponseRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

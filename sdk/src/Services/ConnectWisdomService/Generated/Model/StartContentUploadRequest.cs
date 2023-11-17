@@ -41,6 +41,7 @@ namespace Amazon.ConnectWisdomService.Model
     {
         private string _contentType;
         private string _knowledgeBaseId;
+        private int? _presignedUrlTimeToLive;
 
         /// <summary>
         /// Gets and sets the property ContentType. 
@@ -64,8 +65,9 @@ namespace Amazon.ConnectWisdomService.Model
         /// <summary>
         /// Gets and sets the property KnowledgeBaseId. 
         /// <para>
-        /// The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot
-        /// contain the ARN.
+        /// The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge
+        /// base if you're storing Wisdom Content resource to it. Can be either the ID or the
+        /// ARN. URLs cannot contain the ARN.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -79,6 +81,25 @@ namespace Amazon.ConnectWisdomService.Model
         internal bool IsSetKnowledgeBaseId()
         {
             return this._knowledgeBaseId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PresignedUrlTimeToLive. 
+        /// <para>
+        /// The expected expiration time of the generated presigned URL, specified in minutes.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=60)]
+        public int PresignedUrlTimeToLive
+        {
+            get { return this._presignedUrlTimeToLive.GetValueOrDefault(); }
+            set { this._presignedUrlTimeToLive = value; }
+        }
+
+        // Check to see if PresignedUrlTimeToLive property is set
+        internal bool IsSetPresignedUrlTimeToLive()
+        {
+            return this._presignedUrlTimeToLive.HasValue; 
         }
 
     }

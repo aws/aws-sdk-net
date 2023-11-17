@@ -41,9 +41,19 @@ namespace Amazon.ConnectWisdomService.Model
         IListContentsPaginator ListContents(ListContentsRequest request);
 
         /// <summary>
+        /// Paginator for ListImportJobs operation
+        ///</summary>
+        IListImportJobsPaginator ListImportJobs(ListImportJobsRequest request);
+
+        /// <summary>
         /// Paginator for ListKnowledgeBases operation
         ///</summary>
         IListKnowledgeBasesPaginator ListKnowledgeBases(ListKnowledgeBasesRequest request);
+
+        /// <summary>
+        /// Paginator for ListQuickResponses operation
+        ///</summary>
+        IListQuickResponsesPaginator ListQuickResponses(ListQuickResponsesRequest request);
 
         /// <summary>
         /// Paginator for QueryAssistant operation
@@ -54,6 +64,11 @@ namespace Amazon.ConnectWisdomService.Model
         /// Paginator for SearchContent operation
         ///</summary>
         ISearchContentPaginator SearchContent(SearchContentRequest request);
+
+        /// <summary>
+        /// Paginator for SearchQuickResponses operation
+        ///</summary>
+        ISearchQuickResponsesPaginator SearchQuickResponses(SearchQuickResponsesRequest request);
 
         /// <summary>
         /// Paginator for SearchSessions operation

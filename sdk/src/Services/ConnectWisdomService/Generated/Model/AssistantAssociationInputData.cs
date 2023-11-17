@@ -38,7 +38,8 @@ namespace Amazon.ConnectWisdomService.Model
         /// <summary>
         /// Gets and sets the property KnowledgeBaseId. 
         /// <para>
-        /// The identifier of the knowledge base.
+        /// The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge
+        /// base if you're storing Wisdom Content resource to it.
         /// </para>
         /// </summary>
         public string KnowledgeBaseId

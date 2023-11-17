@@ -86,7 +86,8 @@ namespace Amazon.ConnectWisdomService.Model
         /// <summary>
         /// Gets and sets the property KnowledgeBaseId. 
         /// <para>
-        /// The identifier of the knowledge base.
+        /// The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge
+        /// base if you're storing Wisdom Content resource to it.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -184,8 +185,9 @@ namespace Amazon.ConnectWisdomService.Model
         /// </para>
         ///  
         /// <para>
-        /// This KMS key must have a policy that allows <code>kms:CreateGrant</code> and <code>kms:DescribeKey</code>
-        /// permissions to the IAM identity using the key to invoke Wisdom. 
+        /// This KMS key must have a policy that allows <code>kms:CreateGrant</code>, <code>kms:DescribeKey</code>,
+        /// and <code>kms:Decrypt/kms:GenerateDataKey</code> permissions to the IAM identity using
+        /// the key to invoke Wisdom. 
         /// </para>
         ///  
         /// <para>

@@ -253,6 +253,52 @@ namespace Amazon.ConnectWisdomService
 
 
     /// <summary>
+    /// Constants used for properties of type ExternalSource.
+    /// </summary>
+    public class ExternalSource : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AMAZON_CONNECT for ExternalSource
+        /// </summary>
+        public static readonly ExternalSource AMAZON_CONNECT = new ExternalSource("AMAZON_CONNECT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ExternalSource(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExternalSource FindValue(string value)
+        {
+            return FindValue<ExternalSource>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExternalSource(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FilterField.
     /// </summary>
     public class FilterField : ConstantClass
@@ -345,6 +391,118 @@ namespace Amazon.ConnectWisdomService
 
 
     /// <summary>
+    /// Constants used for properties of type ImportJobStatus.
+    /// </summary>
+    public class ImportJobStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETE for ImportJobStatus
+        /// </summary>
+        public static readonly ImportJobStatus COMPLETE = new ImportJobStatus("COMPLETE");
+        /// <summary>
+        /// Constant DELETE_FAILED for ImportJobStatus
+        /// </summary>
+        public static readonly ImportJobStatus DELETE_FAILED = new ImportJobStatus("DELETE_FAILED");
+        /// <summary>
+        /// Constant DELETE_IN_PROGRESS for ImportJobStatus
+        /// </summary>
+        public static readonly ImportJobStatus DELETE_IN_PROGRESS = new ImportJobStatus("DELETE_IN_PROGRESS");
+        /// <summary>
+        /// Constant DELETED for ImportJobStatus
+        /// </summary>
+        public static readonly ImportJobStatus DELETED = new ImportJobStatus("DELETED");
+        /// <summary>
+        /// Constant FAILED for ImportJobStatus
+        /// </summary>
+        public static readonly ImportJobStatus FAILED = new ImportJobStatus("FAILED");
+        /// <summary>
+        /// Constant START_IN_PROGRESS for ImportJobStatus
+        /// </summary>
+        public static readonly ImportJobStatus START_IN_PROGRESS = new ImportJobStatus("START_IN_PROGRESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ImportJobStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ImportJobStatus FindValue(string value)
+        {
+            return FindValue<ImportJobStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ImportJobStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ImportJobType.
+    /// </summary>
+    public class ImportJobType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant QUICK_RESPONSES for ImportJobType
+        /// </summary>
+        public static readonly ImportJobType QUICK_RESPONSES = new ImportJobType("QUICK_RESPONSES");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ImportJobType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ImportJobType FindValue(string value)
+        {
+            return FindValue<ImportJobType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ImportJobType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type KnowledgeBaseStatus.
     /// </summary>
     public class KnowledgeBaseStatus : ConstantClass
@@ -424,6 +582,10 @@ namespace Amazon.ConnectWisdomService
         /// Constant EXTERNAL for KnowledgeBaseType
         /// </summary>
         public static readonly KnowledgeBaseType EXTERNAL = new KnowledgeBaseType("EXTERNAL");
+        /// <summary>
+        /// Constant QUICK_RESPONSES for KnowledgeBaseType
+        /// </summary>
+        public static readonly KnowledgeBaseType QUICK_RESPONSES = new KnowledgeBaseType("QUICK_RESPONSES");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -454,6 +616,284 @@ namespace Amazon.ConnectWisdomService
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator KnowledgeBaseType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Order.
+    /// </summary>
+    public class Order : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ASC for Order
+        /// </summary>
+        public static readonly Order ASC = new Order("ASC");
+        /// <summary>
+        /// Constant DESC for Order
+        /// </summary>
+        public static readonly Order DESC = new Order("DESC");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Order(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Order FindValue(string value)
+        {
+            return FindValue<Order>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Order(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Priority.
+    /// </summary>
+    public class Priority : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HIGH for Priority
+        /// </summary>
+        public static readonly Priority HIGH = new Priority("HIGH");
+        /// <summary>
+        /// Constant LOW for Priority
+        /// </summary>
+        public static readonly Priority LOW = new Priority("LOW");
+        /// <summary>
+        /// Constant MEDIUM for Priority
+        /// </summary>
+        public static readonly Priority MEDIUM = new Priority("MEDIUM");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Priority(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Priority FindValue(string value)
+        {
+            return FindValue<Priority>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Priority(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type QuickResponseFilterOperator.
+    /// </summary>
+    public class QuickResponseFilterOperator : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EQUALS for QuickResponseFilterOperator
+        /// </summary>
+        public static readonly QuickResponseFilterOperator EQUALS = new QuickResponseFilterOperator("EQUALS");
+        /// <summary>
+        /// Constant PREFIX for QuickResponseFilterOperator
+        /// </summary>
+        public static readonly QuickResponseFilterOperator PREFIX = new QuickResponseFilterOperator("PREFIX");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public QuickResponseFilterOperator(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static QuickResponseFilterOperator FindValue(string value)
+        {
+            return FindValue<QuickResponseFilterOperator>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator QuickResponseFilterOperator(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type QuickResponseQueryOperator.
+    /// </summary>
+    public class QuickResponseQueryOperator : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONTAINS for QuickResponseQueryOperator
+        /// </summary>
+        public static readonly QuickResponseQueryOperator CONTAINS = new QuickResponseQueryOperator("CONTAINS");
+        /// <summary>
+        /// Constant CONTAINS_AND_PREFIX for QuickResponseQueryOperator
+        /// </summary>
+        public static readonly QuickResponseQueryOperator CONTAINS_AND_PREFIX = new QuickResponseQueryOperator("CONTAINS_AND_PREFIX");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public QuickResponseQueryOperator(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static QuickResponseQueryOperator FindValue(string value)
+        {
+            return FindValue<QuickResponseQueryOperator>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator QuickResponseQueryOperator(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type QuickResponseStatus.
+    /// </summary>
+    public class QuickResponseStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATE_FAILED for QuickResponseStatus
+        /// </summary>
+        public static readonly QuickResponseStatus CREATE_FAILED = new QuickResponseStatus("CREATE_FAILED");
+        /// <summary>
+        /// Constant CREATE_IN_PROGRESS for QuickResponseStatus
+        /// </summary>
+        public static readonly QuickResponseStatus CREATE_IN_PROGRESS = new QuickResponseStatus("CREATE_IN_PROGRESS");
+        /// <summary>
+        /// Constant CREATED for QuickResponseStatus
+        /// </summary>
+        public static readonly QuickResponseStatus CREATED = new QuickResponseStatus("CREATED");
+        /// <summary>
+        /// Constant DELETE_FAILED for QuickResponseStatus
+        /// </summary>
+        public static readonly QuickResponseStatus DELETE_FAILED = new QuickResponseStatus("DELETE_FAILED");
+        /// <summary>
+        /// Constant DELETE_IN_PROGRESS for QuickResponseStatus
+        /// </summary>
+        public static readonly QuickResponseStatus DELETE_IN_PROGRESS = new QuickResponseStatus("DELETE_IN_PROGRESS");
+        /// <summary>
+        /// Constant DELETED for QuickResponseStatus
+        /// </summary>
+        public static readonly QuickResponseStatus DELETED = new QuickResponseStatus("DELETED");
+        /// <summary>
+        /// Constant UPDATE_FAILED for QuickResponseStatus
+        /// </summary>
+        public static readonly QuickResponseStatus UPDATE_FAILED = new QuickResponseStatus("UPDATE_FAILED");
+        /// <summary>
+        /// Constant UPDATE_IN_PROGRESS for QuickResponseStatus
+        /// </summary>
+        public static readonly QuickResponseStatus UPDATE_IN_PROGRESS = new QuickResponseStatus("UPDATE_IN_PROGRESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public QuickResponseStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static QuickResponseStatus FindValue(string value)
+        {
+            return FindValue<QuickResponseStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator QuickResponseStatus(string value)
         {
             return FindValue(value);
         }

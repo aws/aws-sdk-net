@@ -74,6 +74,12 @@ namespace Amazon.ConnectWisdomService.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ContentType);
                 }
 
+                if(publicRequest.IsSetPresignedUrlTimeToLive())
+                {
+                    context.Writer.WritePropertyName("presignedUrlTimeToLive");
+                    context.Writer.Write(publicRequest.PresignedUrlTimeToLive);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

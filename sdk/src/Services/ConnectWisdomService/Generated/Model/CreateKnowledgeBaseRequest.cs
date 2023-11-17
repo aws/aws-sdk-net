@@ -181,8 +181,9 @@ namespace Amazon.ConnectWisdomService.Model
         /// </para>
         ///  
         /// <para>
-        /// This KMS key must have a policy that allows <code>kms:CreateGrant</code> and <code>kms:DescribeKey</code>
-        /// permissions to the IAM identity using the key to invoke Wisdom.
+        /// This KMS key must have a policy that allows <code>kms:CreateGrant</code>, <code>kms:DescribeKey</code>,
+        /// and <code>kms:Decrypt/kms:GenerateDataKey</code> permissions to the IAM identity using
+        /// the key to invoke Wisdom.
         /// </para>
         ///  
         /// <para>

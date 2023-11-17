@@ -74,6 +74,39 @@
     <pattern>^[a-zA-Z0-9\s_.,-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ConnectWisdomService.Model.CreateQuickResponseRequest.ClientToken</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectWisdomService.Model.CreateQuickResponseRequest.ContentType</property>
+    <pattern>^(application/x\.quickresponse;format=(plain|markdown))$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectWisdomService.Model.CreateQuickResponseRequest.Description</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectWisdomService.Model.CreateQuickResponseRequest.KnowledgeBaseId</property>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$|^arn:[a-z-]*?:wisdom:[a-z0-9-]*?:[0-9]{12}:[a-z-]*?/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(?:/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectWisdomService.Model.CreateQuickResponseRequest.Language</property>
+    <min>2</min>
+    <max>5</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectWisdomService.Model.CreateQuickResponseRequest.Name</property>
+    <min>1</min>
+    <max>40</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectWisdomService.Model.CreateQuickResponseRequest.ShortcutKey</property>
+    <min>1</min>
+    <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ConnectWisdomService.Model.CreateSessionRequest.AssistantId</property>
     <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$|^arn:[a-z-]*?:wisdom:[a-z0-9-]*?:[0-9]{12}:[a-z-]*?/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(?:/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})?$</pattern>
   </property-value-rule>
@@ -115,7 +148,23 @@
     <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$|^arn:[a-z-]*?:wisdom:[a-z0-9-]*?:[0-9]{12}:[a-z-]*?/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(?:/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})?$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ConnectWisdomService.Model.DeleteImportJobRequest.ImportJobId</property>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectWisdomService.Model.DeleteImportJobRequest.KnowledgeBaseId</property>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$|^arn:[a-z-]*?:wisdom:[a-z0-9-]*?:[0-9]{12}:[a-z-]*?/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(?:/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ConnectWisdomService.Model.DeleteKnowledgeBaseRequest.KnowledgeBaseId</property>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$|^arn:[a-z-]*?:wisdom:[a-z0-9-]*?:[0-9]{12}:[a-z-]*?/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(?:/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectWisdomService.Model.DeleteQuickResponseRequest.KnowledgeBaseId</property>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$|^arn:[a-z-]*?:wisdom:[a-z0-9-]*?:[0-9]{12}:[a-z-]*?/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(?:/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectWisdomService.Model.DeleteQuickResponseRequest.QuickResponseId</property>
     <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$|^arn:[a-z-]*?:wisdom:[a-z0-9-]*?:[0-9]{12}:[a-z-]*?/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(?:/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})?$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -147,7 +196,23 @@
     <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$|^arn:[a-z-]*?:wisdom:[a-z0-9-]*?:[0-9]{12}:[a-z-]*?/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(?:/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})?$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ConnectWisdomService.Model.GetImportJobRequest.ImportJobId</property>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectWisdomService.Model.GetImportJobRequest.KnowledgeBaseId</property>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$|^arn:[a-z-]*?:wisdom:[a-z0-9-]*?:[0-9]{12}:[a-z-]*?/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(?:/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ConnectWisdomService.Model.GetKnowledgeBaseRequest.KnowledgeBaseId</property>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$|^arn:[a-z-]*?:wisdom:[a-z0-9-]*?:[0-9]{12}:[a-z-]*?/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(?:/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectWisdomService.Model.GetQuickResponseRequest.KnowledgeBaseId</property>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$|^arn:[a-z-]*?:wisdom:[a-z0-9-]*?:[0-9]{12}:[a-z-]*?/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(?:/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectWisdomService.Model.GetQuickResponseRequest.QuickResponseId</property>
     <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$|^arn:[a-z-]*?:wisdom:[a-z0-9-]*?:[0-9]{12}:[a-z-]*?/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(?:/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})?$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -230,6 +295,25 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ConnectWisdomService.Model.ListImportJobsRequest.KnowledgeBaseId</property>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$|^arn:[a-z-]*?:wisdom:[a-z0-9-]*?:[0-9]{12}:[a-z-]*?/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(?:/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectWisdomService.Model.ListImportJobsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectWisdomService.Model.ListImportJobsRequest.NextToken</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectWisdomService.Model.ListImportJobsResponse.NextToken</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ConnectWisdomService.Model.ListKnowledgeBasesRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
@@ -241,6 +325,25 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectWisdomService.Model.ListKnowledgeBasesResponse.NextToken</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectWisdomService.Model.ListQuickResponsesRequest.KnowledgeBaseId</property>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$|^arn:[a-z-]*?:wisdom:[a-z0-9-]*?:[0-9]{12}:[a-z-]*?/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(?:/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectWisdomService.Model.ListQuickResponsesRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectWisdomService.Model.ListQuickResponsesRequest.NextToken</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectWisdomService.Model.ListQuickResponsesResponse.NextToken</property>
     <min>1</min>
     <max>4096</max>
   </property-value-rule>
@@ -299,6 +402,25 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ConnectWisdomService.Model.SearchQuickResponsesRequest.KnowledgeBaseId</property>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$|^arn:[a-z-]*?:wisdom:[a-z0-9-]*?:[0-9]{12}:[a-z-]*?/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(?:/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectWisdomService.Model.SearchQuickResponsesRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectWisdomService.Model.SearchQuickResponsesRequest.NextToken</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectWisdomService.Model.SearchQuickResponsesResponse.NextToken</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ConnectWisdomService.Model.SearchSessionsRequest.AssistantId</property>
     <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$|^arn:[a-z-]*?:wisdom:[a-z0-9-]*?:[0-9]{12}:[a-z-]*?/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(?:/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})?$</pattern>
   </property-value-rule>
@@ -319,11 +441,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectWisdomService.Model.StartContentUploadRequest.ContentType</property>
-    <pattern>^(text/(plain|html))|(application/(pdf|vnd\.openxmlformats-officedocument\.wordprocessingml\.document))|(application/x\.wisdom-json;source=(salesforce|servicenow|zendesk))$</pattern>
+    <pattern>^(text/(plain|html|csv))|(application/(pdf|vnd\.openxmlformats-officedocument\.wordprocessingml\.document))|(application/x\.wisdom-json;source=(salesforce|servicenow|zendesk))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectWisdomService.Model.StartContentUploadRequest.KnowledgeBaseId</property>
     <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$|^arn:[a-z-]*?:wisdom:[a-z0-9-]*?:[0-9]{12}:[a-z-]*?/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(?:/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectWisdomService.Model.StartContentUploadRequest.PresignedUrlTimeToLive</property>
+    <min>1</min>
+    <max>60</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectWisdomService.Model.StartContentUploadResponse.UploadId</property>
@@ -334,6 +461,20 @@
     <property>Amazon.ConnectWisdomService.Model.StartContentUploadResponse.Url</property>
     <min>1</min>
     <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectWisdomService.Model.StartImportJobRequest.ClientToken</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectWisdomService.Model.StartImportJobRequest.KnowledgeBaseId</property>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$|^arn:[a-z-]*?:wisdom:[a-z0-9-]*?:[0-9]{12}:[a-z-]*?/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(?:/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectWisdomService.Model.StartImportJobRequest.UploadId</property>
+    <min>1</min>
+    <max>1200</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectWisdomService.Model.TagResourceRequest.ResourceArn</property>
@@ -379,6 +520,38 @@
     <property>Amazon.ConnectWisdomService.Model.UpdateKnowledgeBaseTemplateUriRequest.TemplateUri</property>
     <min>1</min>
     <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectWisdomService.Model.UpdateQuickResponseRequest.ContentType</property>
+    <pattern>^(application/x\.quickresponse;format=(plain|markdown))$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectWisdomService.Model.UpdateQuickResponseRequest.Description</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectWisdomService.Model.UpdateQuickResponseRequest.KnowledgeBaseId</property>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$|^arn:[a-z-]*?:wisdom:[a-z0-9-]*?:[0-9]{12}:[a-z-]*?/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(?:/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectWisdomService.Model.UpdateQuickResponseRequest.Language</property>
+    <min>2</min>
+    <max>5</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectWisdomService.Model.UpdateQuickResponseRequest.Name</property>
+    <min>1</min>
+    <max>40</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectWisdomService.Model.UpdateQuickResponseRequest.QuickResponseId</property>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$|^arn:[a-z-]*?:wisdom:[a-z0-9-]*?:[0-9]{12}:[a-z-]*?/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(?:/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectWisdomService.Model.UpdateQuickResponseRequest.ShortcutKey</property>
+    <min>1</min>
+    <max>10</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectWisdomService.Model.AppIntegrationsConfiguration.AppIntegrationArn</property>
@@ -469,6 +642,11 @@
     <pattern>^[a-zA-Z0-9\s_.,-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ConnectWisdomService.Model.ConnectConfiguration.InstanceId</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ConnectWisdomService.Model.ContentData.ContentArn</property>
     <pattern>^arn:[a-z-]*?:wisdom:[a-z0-9-]*?:[0-9]{12}:[a-z-]*?/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(?:/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})?$</pattern>
   </property-value-rule>
@@ -478,7 +656,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectWisdomService.Model.ContentData.ContentType</property>
-    <pattern>^(text/(plain|html))|(application/(pdf|vnd\.openxmlformats-officedocument\.wordprocessingml\.document))|(application/x\.wisdom-json;source=(salesforce|servicenow|zendesk))$</pattern>
+    <pattern>^(text/(plain|html|csv))|(application/(pdf|vnd\.openxmlformats-officedocument\.wordprocessingml\.document))|(application/x\.wisdom-json;source=(salesforce|servicenow|zendesk))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectWisdomService.Model.ContentData.KnowledgeBaseArn</property>
@@ -540,7 +718,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectWisdomService.Model.ContentSummary.ContentType</property>
-    <pattern>^(text/(plain|html))|(application/(pdf|vnd\.openxmlformats-officedocument\.wordprocessingml\.document))|(application/x\.wisdom-json;source=(salesforce|servicenow|zendesk))$</pattern>
+    <pattern>^(text/(plain|html|csv))|(application/(pdf|vnd\.openxmlformats-officedocument\.wordprocessingml\.document))|(application/x\.wisdom-json;source=(salesforce|servicenow|zendesk))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectWisdomService.Model.ContentSummary.KnowledgeBaseArn</property>
@@ -570,6 +748,55 @@
     <property>Amazon.ConnectWisdomService.Model.Filter.Value</property>
     <min>1</min>
     <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectWisdomService.Model.GroupingConfiguration.Criteria</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectWisdomService.Model.ImportJobData.FailedRecordReport</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectWisdomService.Model.ImportJobData.ImportJobId</property>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectWisdomService.Model.ImportJobData.KnowledgeBaseArn</property>
+    <pattern>^arn:[a-z-]*?:wisdom:[a-z0-9-]*?:[0-9]{12}:[a-z-]*?/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(?:/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectWisdomService.Model.ImportJobData.KnowledgeBaseId</property>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectWisdomService.Model.ImportJobData.UploadId</property>
+    <min>1</min>
+    <max>1200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectWisdomService.Model.ImportJobData.Url</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectWisdomService.Model.ImportJobSummary.ImportJobId</property>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectWisdomService.Model.ImportJobSummary.KnowledgeBaseArn</property>
+    <pattern>^arn:[a-z-]*?:wisdom:[a-z0-9-]*?:[0-9]{12}:[a-z-]*?/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(?:/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectWisdomService.Model.ImportJobSummary.KnowledgeBaseId</property>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectWisdomService.Model.ImportJobSummary.UploadId</property>
+    <min>1</min>
+    <max>1200</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectWisdomService.Model.KnowledgeBaseAssociationData.KnowledgeBaseArn</property>
@@ -618,6 +845,159 @@
     <min>1</min>
     <max>255</max>
     <pattern>^[a-zA-Z0-9\s_.,-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectWisdomService.Model.QuickResponseContentProvider.Content</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectWisdomService.Model.QuickResponseData.ContentType</property>
+    <pattern>^(application/x\.quickresponse;format=(plain|markdown))$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectWisdomService.Model.QuickResponseData.Description</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectWisdomService.Model.QuickResponseData.KnowledgeBaseArn</property>
+    <pattern>^arn:[a-z-]*?:wisdom:[a-z0-9-]*?:[0-9]{12}:[a-z-]*?/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(?:/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectWisdomService.Model.QuickResponseData.KnowledgeBaseId</property>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectWisdomService.Model.QuickResponseData.Language</property>
+    <min>2</min>
+    <max>5</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectWisdomService.Model.QuickResponseData.LastModifiedBy</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:[a-z-]+?:[a-z-]+?:[a-z0-9-]*?:([0-9]{12})?:[a-zA-Z0-9-:/]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectWisdomService.Model.QuickResponseData.Name</property>
+    <min>1</min>
+    <max>40</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectWisdomService.Model.QuickResponseData.QuickResponseArn</property>
+    <pattern>^arn:[a-z-]*?:wisdom:[a-z0-9-]*?:[0-9]{12}:[a-z-]*?/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(?:/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectWisdomService.Model.QuickResponseData.QuickResponseId</property>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectWisdomService.Model.QuickResponseData.ShortcutKey</property>
+    <min>1</min>
+    <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectWisdomService.Model.QuickResponseDataProvider.Content</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectWisdomService.Model.QuickResponseFilterField.Name</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectWisdomService.Model.QuickResponseOrderField.Name</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectWisdomService.Model.QuickResponseQueryField.Name</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectWisdomService.Model.QuickResponseSearchResultData.ContentType</property>
+    <pattern>^(application/x\.quickresponse;format=(plain|markdown))$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectWisdomService.Model.QuickResponseSearchResultData.Description</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectWisdomService.Model.QuickResponseSearchResultData.KnowledgeBaseArn</property>
+    <pattern>^arn:[a-z-]*?:wisdom:[a-z0-9-]*?:[0-9]{12}:[a-z-]*?/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(?:/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectWisdomService.Model.QuickResponseSearchResultData.KnowledgeBaseId</property>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectWisdomService.Model.QuickResponseSearchResultData.Language</property>
+    <min>2</min>
+    <max>5</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectWisdomService.Model.QuickResponseSearchResultData.LastModifiedBy</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:[a-z-]+?:[a-z-]+?:[a-z0-9-]*?:([0-9]{12})?:[a-zA-Z0-9-:/]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectWisdomService.Model.QuickResponseSearchResultData.Name</property>
+    <min>1</min>
+    <max>40</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectWisdomService.Model.QuickResponseSearchResultData.QuickResponseArn</property>
+    <pattern>^arn:[a-z-]*?:wisdom:[a-z0-9-]*?:[0-9]{12}:[a-z-]*?/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(?:/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectWisdomService.Model.QuickResponseSearchResultData.QuickResponseId</property>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectWisdomService.Model.QuickResponseSearchResultData.ShortcutKey</property>
+    <min>1</min>
+    <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectWisdomService.Model.QuickResponseSummary.ContentType</property>
+    <pattern>^(application/x\.quickresponse;format=(plain|markdown))$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectWisdomService.Model.QuickResponseSummary.Description</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectWisdomService.Model.QuickResponseSummary.KnowledgeBaseArn</property>
+    <pattern>^arn:[a-z-]*?:wisdom:[a-z0-9-]*?:[0-9]{12}:[a-z-]*?/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(?:/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectWisdomService.Model.QuickResponseSummary.KnowledgeBaseId</property>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectWisdomService.Model.QuickResponseSummary.LastModifiedBy</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:[a-z-]+?:[a-z-]+?:[a-z0-9-]*?:([0-9]{12})?:[a-zA-Z0-9-:/]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectWisdomService.Model.QuickResponseSummary.Name</property>
+    <min>1</min>
+    <max>40</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectWisdomService.Model.QuickResponseSummary.QuickResponseArn</property>
+    <pattern>^arn:[a-z-]*?:wisdom:[a-z0-9-]*?:[0-9]{12}:[a-z-]*?/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(?:/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectWisdomService.Model.QuickResponseSummary.QuickResponseId</property>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectWisdomService.Model.RecommendationData.RelevanceScore</property>

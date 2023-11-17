@@ -60,11 +60,27 @@ namespace Amazon.ConnectWisdomService.Model
         }
 
         /// <summary>
+        /// Paginator for ListImportJobs operation
+        ///</summary>
+        public IListImportJobsPaginator ListImportJobs(ListImportJobsRequest request) 
+        {
+            return new ListImportJobsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListKnowledgeBases operation
         ///</summary>
         public IListKnowledgeBasesPaginator ListKnowledgeBases(ListKnowledgeBasesRequest request) 
         {
             return new ListKnowledgeBasesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListQuickResponses operation
+        ///</summary>
+        public IListQuickResponsesPaginator ListQuickResponses(ListQuickResponsesRequest request) 
+        {
+            return new ListQuickResponsesPaginator(this.client, request);
         }
 
         /// <summary>
@@ -81,6 +97,14 @@ namespace Amazon.ConnectWisdomService.Model
         public ISearchContentPaginator SearchContent(SearchContentRequest request) 
         {
             return new SearchContentPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for SearchQuickResponses operation
+        ///</summary>
+        public ISearchQuickResponsesPaginator SearchQuickResponses(SearchQuickResponsesRequest request) 
+        {
+            return new SearchQuickResponsesPaginator(this.client, request);
         }
 
         /// <summary>
