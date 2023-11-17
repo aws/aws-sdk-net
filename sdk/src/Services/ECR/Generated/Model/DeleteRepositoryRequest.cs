@@ -30,8 +30,9 @@ namespace Amazon.ECR.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteRepository operation.
-    /// Deletes a repository. If the repository contains images, you must either delete all
-    /// images in the repository or use the <code>force</code> option to delete the repository.
+    /// Deletes a repository. If the repository isn't empty, you must either delete the contents
+    /// of the repository or use the <code>force</code> option to delete the repository and
+    /// have Amazon ECR delete all of its contents on your behalf.
     /// </summary>
     public partial class DeleteRepositoryRequest : AmazonECRRequest
     {
@@ -42,7 +43,8 @@ namespace Amazon.ECR.Model
         /// <summary>
         /// Gets and sets the property Force. 
         /// <para>
-        ///  If a repository contains images, forces the deletion.
+        /// If true, deleting the repository force deletes the contents of the repository. If
+        /// false, the repository must be empty before attempting to delete it.
         /// </para>
         /// </summary>
         public bool Force

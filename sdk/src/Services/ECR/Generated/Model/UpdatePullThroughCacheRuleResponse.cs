@@ -29,21 +29,42 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECR.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeletePullThroughCacheRule operation.
-    /// Deletes a pull through cache rule.
+    /// This is the response object from the UpdatePullThroughCacheRule operation.
     /// </summary>
-    public partial class DeletePullThroughCacheRuleRequest : AmazonECRRequest
+    public partial class UpdatePullThroughCacheRuleResponse : AmazonWebServiceResponse
     {
+        private string _credentialArn;
         private string _ecrRepositoryPrefix;
         private string _registryId;
+        private DateTime? _updatedAt;
+
+        /// <summary>
+        /// Gets and sets the property CredentialArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret associated
+        /// with the pull through cache rule.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=50, Max=612)]
+        public string CredentialArn
+        {
+            get { return this._credentialArn; }
+            set { this._credentialArn = value; }
+        }
+
+        // Check to see if CredentialArn property is set
+        internal bool IsSetCredentialArn()
+        {
+            return this._credentialArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property EcrRepositoryPrefix. 
         /// <para>
-        /// The Amazon ECR repository prefix associated with the pull through cache rule to delete.
+        /// The Amazon ECR repository prefix associated with the pull through cache rule.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=2, Max=30)]
+        [AWSProperty(Min=2, Max=30)]
         public string EcrRepositoryPrefix
         {
             get { return this._ecrRepositoryPrefix; }
@@ -59,9 +80,7 @@ namespace Amazon.ECR.Model
         /// <summary>
         /// Gets and sets the property RegistryId. 
         /// <para>
-        /// The Amazon Web Services account ID associated with the registry that contains the
-        /// pull through cache rule. If you do not specify a registry, the default registry is
-        /// assumed.
+        /// The registry ID associated with the request.
         /// </para>
         /// </summary>
         public string RegistryId
@@ -74,6 +93,25 @@ namespace Amazon.ECR.Model
         internal bool IsSetRegistryId()
         {
             return this._registryId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UpdatedAt. 
+        /// <para>
+        /// The date and time, in JavaScript date format, when the pull through cache rule was
+        /// updated.
+        /// </para>
+        /// </summary>
+        public DateTime UpdatedAt
+        {
+            get { return this._updatedAt.GetValueOrDefault(); }
+            set { this._updatedAt = value; }
+        }
+
+        // Check to see if UpdatedAt property is set
+        internal bool IsSetUpdatedAt()
+        {
+            return this._updatedAt.HasValue; 
         }
 
     }

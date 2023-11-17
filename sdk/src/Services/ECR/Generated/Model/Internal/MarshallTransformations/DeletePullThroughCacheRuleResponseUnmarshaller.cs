@@ -57,6 +57,12 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
                     response.CreatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("credentialArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.CredentialArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ecrRepositoryPrefix", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

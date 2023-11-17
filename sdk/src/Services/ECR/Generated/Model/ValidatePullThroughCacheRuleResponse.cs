@@ -29,33 +29,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECR.Model
 {
     /// <summary>
-    /// This is the response object from the DeletePullThroughCacheRule operation.
+    /// This is the response object from the ValidatePullThroughCacheRule operation.
     /// </summary>
-    public partial class DeletePullThroughCacheRuleResponse : AmazonWebServiceResponse
+    public partial class ValidatePullThroughCacheRuleResponse : AmazonWebServiceResponse
     {
-        private DateTime? _createdAt;
         private string _credentialArn;
         private string _ecrRepositoryPrefix;
+        private string _failure;
+        private bool? _isValid;
         private string _registryId;
         private string _upstreamRegistryUrl;
-
-        /// <summary>
-        /// Gets and sets the property CreatedAt. 
-        /// <para>
-        /// The timestamp associated with the pull through cache rule.
-        /// </para>
-        /// </summary>
-        public DateTime CreatedAt
-        {
-            get { return this._createdAt.GetValueOrDefault(); }
-            set { this._createdAt = value; }
-        }
-
-        // Check to see if CreatedAt property is set
-        internal bool IsSetCreatedAt()
-        {
-            return this._createdAt.HasValue; 
-        }
 
         /// <summary>
         /// Gets and sets the property CredentialArn. 
@@ -80,7 +63,7 @@ namespace Amazon.ECR.Model
         /// <summary>
         /// Gets and sets the property EcrRepositoryPrefix. 
         /// <para>
-        /// The Amazon ECR repository prefix associated with the request.
+        /// The Amazon ECR repository prefix associated with the pull through cache rule.
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=30)]
@@ -94,6 +77,47 @@ namespace Amazon.ECR.Model
         internal bool IsSetEcrRepositoryPrefix()
         {
             return this._ecrRepositoryPrefix != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Failure. 
+        /// <para>
+        /// The reason the validation failed. For more details about possible causes and how to
+        /// address them, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/pull-through-cache.html">Using
+        /// pull through cache rules</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string Failure
+        {
+            get { return this._failure; }
+            set { this._failure = value; }
+        }
+
+        // Check to see if Failure property is set
+        internal bool IsSetFailure()
+        {
+            return this._failure != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsValid. 
+        /// <para>
+        /// Whether or not the pull through cache rule was validated. If <code>true</code>, Amazon
+        /// ECR was able to reach the upstream registry and authentication was successful. If
+        /// <code>false</code>, there was an issue and validation failed. The <code>failure</code>
+        /// reason indicates the cause.
+        /// </para>
+        /// </summary>
+        public bool IsValid
+        {
+            get { return this._isValid.GetValueOrDefault(); }
+            set { this._isValid = value; }
+        }
+
+        // Check to see if IsValid property is set
+        internal bool IsSetIsValid()
+        {
+            return this._isValid.HasValue; 
         }
 
         /// <summary>

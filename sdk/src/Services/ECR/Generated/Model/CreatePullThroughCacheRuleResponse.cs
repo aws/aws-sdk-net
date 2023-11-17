@@ -34,8 +34,10 @@ namespace Amazon.ECR.Model
     public partial class CreatePullThroughCacheRuleResponse : AmazonWebServiceResponse
     {
         private DateTime? _createdAt;
+        private string _credentialArn;
         private string _ecrRepositoryPrefix;
         private string _registryId;
+        private UpstreamRegistry _upstreamRegistry;
         private string _upstreamRegistryUrl;
 
         /// <summary>
@@ -58,12 +60,32 @@ namespace Amazon.ECR.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CredentialArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret associated
+        /// with the pull through cache rule.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=50, Max=612)]
+        public string CredentialArn
+        {
+            get { return this._credentialArn; }
+            set { this._credentialArn = value; }
+        }
+
+        // Check to see if CredentialArn property is set
+        internal bool IsSetCredentialArn()
+        {
+            return this._credentialArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property EcrRepositoryPrefix. 
         /// <para>
         /// The Amazon ECR repository prefix associated with the pull through cache rule.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=2, Max=20)]
+        [AWSProperty(Min=2, Max=30)]
         public string EcrRepositoryPrefix
         {
             get { return this._ecrRepositoryPrefix; }
@@ -92,6 +114,24 @@ namespace Amazon.ECR.Model
         internal bool IsSetRegistryId()
         {
             return this._registryId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UpstreamRegistry. 
+        /// <para>
+        /// The name of the upstream registry associated with the pull through cache rule.
+        /// </para>
+        /// </summary>
+        public UpstreamRegistry UpstreamRegistry
+        {
+            get { return this._upstreamRegistry; }
+            set { this._upstreamRegistry = value; }
+        }
+
+        // Check to see if UpstreamRegistry property is set
+        internal bool IsSetUpstreamRegistry()
+        {
+            return this._upstreamRegistry != null;
         }
 
         /// <summary>

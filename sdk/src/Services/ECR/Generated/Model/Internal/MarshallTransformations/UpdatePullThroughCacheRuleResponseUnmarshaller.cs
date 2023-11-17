@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ECR.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CreatePullThroughCacheRule operation
+    /// Response Unmarshaller for UpdatePullThroughCacheRule operation
     /// </summary>  
-    public class CreatePullThroughCacheRuleResponseUnmarshaller : JsonResponseUnmarshaller
+    public class UpdatePullThroughCacheRuleResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,18 +45,12 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            CreatePullThroughCacheRuleResponse response = new CreatePullThroughCacheRuleResponse();
+            UpdatePullThroughCacheRuleResponse response = new UpdatePullThroughCacheRuleResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("createdAt", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.CreatedAt = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("credentialArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -75,16 +69,10 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
                     response.RegistryId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("upstreamRegistry", targetDepth))
+                if (context.TestExpression("updatedAt", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.UpstreamRegistry = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("upstreamRegistryUrl", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.UpstreamRegistryUrl = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    response.UpdatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -114,13 +102,9 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
                 {
                     return InvalidParameterExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceededException"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("PullThroughCacheRuleNotFoundException"))
                 {
-                    return LimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("PullThroughCacheRuleAlreadyExistsException"))
-                {
-                    return PullThroughCacheRuleAlreadyExistsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return PullThroughCacheRuleNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("SecretNotFoundException"))
                 {
@@ -138,10 +122,6 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
                 {
                     return UnableToDecryptSecretValueExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("UnsupportedUpstreamRegistryException"))
-                {
-                    return UnsupportedUpstreamRegistryExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ValidationException"))
                 {
                     return ValidationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -150,9 +130,9 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
             return new AmazonECRException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static CreatePullThroughCacheRuleResponseUnmarshaller _instance = new CreatePullThroughCacheRuleResponseUnmarshaller();        
+        private static UpdatePullThroughCacheRuleResponseUnmarshaller _instance = new UpdatePullThroughCacheRuleResponseUnmarshaller();        
 
-        internal static CreatePullThroughCacheRuleResponseUnmarshaller GetInstance()
+        internal static UpdatePullThroughCacheRuleResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -160,7 +140,7 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreatePullThroughCacheRuleResponseUnmarshaller Instance
+        public static UpdatePullThroughCacheRuleResponseUnmarshaller Instance
         {
             get
             {

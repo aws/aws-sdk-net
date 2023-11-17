@@ -220,6 +220,18 @@ namespace Amazon.ECR
         /// Constant MissingDigestAndTag for ImageFailureCode
         /// </summary>
         public static readonly ImageFailureCode MissingDigestAndTag = new ImageFailureCode("MissingDigestAndTag");
+        /// <summary>
+        /// Constant UpstreamAccessDenied for ImageFailureCode
+        /// </summary>
+        public static readonly ImageFailureCode UpstreamAccessDenied = new ImageFailureCode("UpstreamAccessDenied");
+        /// <summary>
+        /// Constant UpstreamTooManyRequests for ImageFailureCode
+        /// </summary>
+        public static readonly ImageFailureCode UpstreamTooManyRequests = new ImageFailureCode("UpstreamTooManyRequests");
+        /// <summary>
+        /// Constant UpstreamUnavailable for ImageFailureCode
+        /// </summary>
+        public static readonly ImageFailureCode UpstreamUnavailable = new ImageFailureCode("UpstreamUnavailable");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -882,6 +894,72 @@ namespace Amazon.ECR
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TagStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type UpstreamRegistry.
+    /// </summary>
+    public class UpstreamRegistry : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AzureContainerRegistry for UpstreamRegistry
+        /// </summary>
+        public static readonly UpstreamRegistry AzureContainerRegistry = new UpstreamRegistry("azure-container-registry");
+        /// <summary>
+        /// Constant DockerHub for UpstreamRegistry
+        /// </summary>
+        public static readonly UpstreamRegistry DockerHub = new UpstreamRegistry("docker-hub");
+        /// <summary>
+        /// Constant EcrPublic for UpstreamRegistry
+        /// </summary>
+        public static readonly UpstreamRegistry EcrPublic = new UpstreamRegistry("ecr-public");
+        /// <summary>
+        /// Constant GithubContainerRegistry for UpstreamRegistry
+        /// </summary>
+        public static readonly UpstreamRegistry GithubContainerRegistry = new UpstreamRegistry("github-container-registry");
+        /// <summary>
+        /// Constant K8s for UpstreamRegistry
+        /// </summary>
+        public static readonly UpstreamRegistry K8s = new UpstreamRegistry("k8s");
+        /// <summary>
+        /// Constant Quay for UpstreamRegistry
+        /// </summary>
+        public static readonly UpstreamRegistry Quay = new UpstreamRegistry("quay");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public UpstreamRegistry(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UpstreamRegistry FindValue(string value)
+        {
+            return FindValue<UpstreamRegistry>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UpstreamRegistry(string value)
         {
             return FindValue(value);
         }

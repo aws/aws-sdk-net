@@ -29,18 +29,39 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECR.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeletePullThroughCacheRule operation.
-    /// Deletes a pull through cache rule.
+    /// Container for the parameters to the UpdatePullThroughCacheRule operation.
+    /// Updates an existing pull through cache rule.
     /// </summary>
-    public partial class DeletePullThroughCacheRuleRequest : AmazonECRRequest
+    public partial class UpdatePullThroughCacheRuleRequest : AmazonECRRequest
     {
+        private string _credentialArn;
         private string _ecrRepositoryPrefix;
         private string _registryId;
 
         /// <summary>
+        /// Gets and sets the property CredentialArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that
+        /// identifies the credentials to authenticate to the upstream registry.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=50, Max=612)]
+        public string CredentialArn
+        {
+            get { return this._credentialArn; }
+            set { this._credentialArn = value; }
+        }
+
+        // Check to see if CredentialArn property is set
+        internal bool IsSetCredentialArn()
+        {
+            return this._credentialArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property EcrRepositoryPrefix. 
         /// <para>
-        /// The Amazon ECR repository prefix associated with the pull through cache rule to delete.
+        /// The repository name prefix to use when caching images from the source registry.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=2, Max=30)]
@@ -59,7 +80,7 @@ namespace Amazon.ECR.Model
         /// <summary>
         /// Gets and sets the property RegistryId. 
         /// <para>
-        /// The Amazon Web Services account ID associated with the registry that contains the
+        /// The Amazon Web Services account ID associated with the registry associated with the
         /// pull through cache rule. If you do not specify a registry, the default registry is
         /// assumed.
         /// </para>

@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ECR.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreatePullThroughCacheRule Request Marshaller
+    /// UpdatePullThroughCacheRule Request Marshaller
     /// </summary>       
-    public class CreatePullThroughCacheRuleRequestMarshaller : IMarshaller<IRequest, CreatePullThroughCacheRuleRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class UpdatePullThroughCacheRuleRequestMarshaller : IMarshaller<IRequest, UpdatePullThroughCacheRuleRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreatePullThroughCacheRuleRequest)input);
+            return this.Marshall((UpdatePullThroughCacheRuleRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreatePullThroughCacheRuleRequest publicRequest)
+        public IRequest Marshall(UpdatePullThroughCacheRuleRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ECR");
-            string target = "AmazonEC2ContainerRegistry_V20150921.CreatePullThroughCacheRule";
+            string target = "AmazonEC2ContainerRegistry_V20150921.UpdatePullThroughCacheRule";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-09-21";
@@ -85,18 +85,6 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.RegistryId);
                 }
 
-                if(publicRequest.IsSetUpstreamRegistry())
-                {
-                    context.Writer.WritePropertyName("upstreamRegistry");
-                    context.Writer.Write(publicRequest.UpstreamRegistry);
-                }
-
-                if(publicRequest.IsSetUpstreamRegistryUrl())
-                {
-                    context.Writer.WritePropertyName("upstreamRegistryUrl");
-                    context.Writer.Write(publicRequest.UpstreamRegistryUrl);
-                }
-
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
@@ -105,9 +93,9 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreatePullThroughCacheRuleRequestMarshaller _instance = new CreatePullThroughCacheRuleRequestMarshaller();        
+        private static UpdatePullThroughCacheRuleRequestMarshaller _instance = new UpdatePullThroughCacheRuleRequestMarshaller();        
 
-        internal static CreatePullThroughCacheRuleRequestMarshaller GetInstance()
+        internal static UpdatePullThroughCacheRuleRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -115,7 +103,7 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreatePullThroughCacheRuleRequestMarshaller Instance
+        public static UpdatePullThroughCacheRuleRequestMarshaller Instance
         {
             get
             {

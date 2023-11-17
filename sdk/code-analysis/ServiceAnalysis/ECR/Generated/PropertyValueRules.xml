@@ -63,20 +63,32 @@
     <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ECR.Model.CreatePullThroughCacheRuleRequest.CredentialArn</property>
+    <min>50</min>
+    <max>612</max>
+    <pattern>^arn:aws:secretsmanager:[a-zA-Z0-9-:]+:secret:ecr\-pullthroughcache\/[a-zA-Z0-9\/_+=.@-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ECR.Model.CreatePullThroughCacheRuleRequest.EcrRepositoryPrefix</property>
     <min>2</min>
-    <max>20</max>
-    <pattern>[a-z0-9]+(?:[._-][a-z0-9]+)*</pattern>
+    <max>30</max>
+    <pattern>(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECR.Model.CreatePullThroughCacheRuleRequest.RegistryId</property>
     <pattern>[0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ECR.Model.CreatePullThroughCacheRuleResponse.CredentialArn</property>
+    <min>50</min>
+    <max>612</max>
+    <pattern>^arn:aws:secretsmanager:[a-zA-Z0-9-:]+:secret:ecr\-pullthroughcache\/[a-zA-Z0-9\/_+=.@-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ECR.Model.CreatePullThroughCacheRuleResponse.EcrRepositoryPrefix</property>
     <min>2</min>
-    <max>20</max>
-    <pattern>[a-z0-9]+(?:[._-][a-z0-9]+)*</pattern>
+    <max>30</max>
+    <pattern>(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECR.Model.CreatePullThroughCacheRuleResponse.RegistryId</property>
@@ -120,18 +132,24 @@
   <property-value-rule>
     <property>Amazon.ECR.Model.DeletePullThroughCacheRuleRequest.EcrRepositoryPrefix</property>
     <min>2</min>
-    <max>20</max>
-    <pattern>[a-z0-9]+(?:[._-][a-z0-9]+)*</pattern>
+    <max>30</max>
+    <pattern>(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECR.Model.DeletePullThroughCacheRuleRequest.RegistryId</property>
     <pattern>[0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ECR.Model.DeletePullThroughCacheRuleResponse.CredentialArn</property>
+    <min>50</min>
+    <max>612</max>
+    <pattern>^arn:aws:secretsmanager:[a-zA-Z0-9-:]+:secret:ecr\-pullthroughcache\/[a-zA-Z0-9\/_+=.@-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ECR.Model.DeletePullThroughCacheRuleResponse.EcrRepositoryPrefix</property>
     <min>2</min>
-    <max>20</max>
-    <pattern>[a-z0-9]+(?:[._-][a-z0-9]+)*</pattern>
+    <max>30</max>
+    <pattern>(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECR.Model.DeletePullThroughCacheRuleResponse.RegistryId</property>
@@ -588,6 +606,38 @@
     <pattern>(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ECR.Model.UpdatePullThroughCacheRuleRequest.CredentialArn</property>
+    <min>50</min>
+    <max>612</max>
+    <pattern>^arn:aws:secretsmanager:[a-zA-Z0-9-:]+:secret:ecr\-pullthroughcache\/[a-zA-Z0-9\/_+=.@-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ECR.Model.UpdatePullThroughCacheRuleRequest.EcrRepositoryPrefix</property>
+    <min>2</min>
+    <max>30</max>
+    <pattern>(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ECR.Model.UpdatePullThroughCacheRuleRequest.RegistryId</property>
+    <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ECR.Model.UpdatePullThroughCacheRuleResponse.CredentialArn</property>
+    <min>50</min>
+    <max>612</max>
+    <pattern>^arn:aws:secretsmanager:[a-zA-Z0-9-:]+:secret:ecr\-pullthroughcache\/[a-zA-Z0-9\/_+=.@-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ECR.Model.UpdatePullThroughCacheRuleResponse.EcrRepositoryPrefix</property>
+    <min>2</min>
+    <max>30</max>
+    <pattern>(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ECR.Model.UpdatePullThroughCacheRuleResponse.RegistryId</property>
+    <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ECR.Model.UploadLayerPartRequest.LayerPartBlob</property>
     <min>0</min>
     <max>20971520</max>
@@ -631,6 +681,32 @@
   <property-value-rule>
     <property>Amazon.ECR.Model.UploadLayerPartResponse.UploadId</property>
     <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ECR.Model.ValidatePullThroughCacheRuleRequest.EcrRepositoryPrefix</property>
+    <min>2</min>
+    <max>30</max>
+    <pattern>(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ECR.Model.ValidatePullThroughCacheRuleRequest.RegistryId</property>
+    <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ECR.Model.ValidatePullThroughCacheRuleResponse.CredentialArn</property>
+    <min>50</min>
+    <max>612</max>
+    <pattern>^arn:aws:secretsmanager:[a-zA-Z0-9-:]+:secret:ecr\-pullthroughcache\/[a-zA-Z0-9\/_+=.@-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ECR.Model.ValidatePullThroughCacheRuleResponse.EcrRepositoryPrefix</property>
+    <min>2</min>
+    <max>30</max>
+    <pattern>(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ECR.Model.ValidatePullThroughCacheRuleResponse.RegistryId</property>
+    <pattern>[0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECR.Model.Attribute.Key</property>
@@ -741,10 +817,16 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ECR.Model.PullThroughCacheRule.CredentialArn</property>
+    <min>50</min>
+    <max>612</max>
+    <pattern>^arn:aws:secretsmanager:[a-zA-Z0-9-:]+:secret:ecr\-pullthroughcache\/[a-zA-Z0-9\/_+=.@-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ECR.Model.PullThroughCacheRule.EcrRepositoryPrefix</property>
     <min>2</min>
-    <max>20</max>
-    <pattern>[a-z0-9]+(?:[._-][a-z0-9]+)*</pattern>
+    <max>30</max>
+    <pattern>(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECR.Model.PullThroughCacheRule.RegistryId</property>

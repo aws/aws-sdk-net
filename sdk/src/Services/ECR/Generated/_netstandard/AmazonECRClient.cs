@@ -426,12 +426,22 @@ namespace Amazon.ECR
         /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
         /// The specified parameter is invalid. Review the available parameters for the API request.
         /// </exception>
+        /// <exception cref="Amazon.ECR.Model.LimitExceededException">
+        /// The operation did not succeed because it would have exceeded a service limit for your
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service-quotas.html">Amazon
+        /// ECR service quotas</a> in the Amazon Elastic Container Registry User Guide.
+        /// </exception>
         /// <exception cref="Amazon.ECR.Model.RepositoryNotFoundException">
         /// The specified repository could not be found. Check the spelling of the specified repository
         /// and ensure that you are performing operations on the correct registry.
         /// </exception>
         /// <exception cref="Amazon.ECR.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.UnableToGetUpstreamImageException">
+        /// The image or images were unable to be pulled using the pull through cache rule. This
+        /// is usually caused because of an issue with the Secrets Manager secret containing the
+        /// credentials for the upstream registry.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/BatchGetImage">REST API Reference for BatchGetImage Operation</seealso>
         public virtual Task<BatchGetImageResponse> BatchGetImageAsync(BatchGetImageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -585,7 +595,9 @@ namespace Amazon.ECR
 
         /// <summary>
         /// Creates a pull through cache rule. A pull through cache rule provides a way to cache
-        /// images from an external public registry in your Amazon ECR private registry.
+        /// images from an upstream registry source in your Amazon ECR private registry. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/pull-through-cache.html">Using
+        /// pull through cache rules</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePullThroughCacheRule service method.</param>
         /// <param name="cancellationToken">
@@ -604,8 +616,20 @@ namespace Amazon.ECR
         /// <exception cref="Amazon.ECR.Model.PullThroughCacheRuleAlreadyExistsException">
         /// A pull through cache rule with these settings already exists for the private registry.
         /// </exception>
+        /// <exception cref="Amazon.ECR.Model.SecretNotFoundException">
+        /// The ARN of the secret specified in the pull through cache rule was not found. Update
+        /// the pull through cache rule with a valid secret ARN and try again.
+        /// </exception>
         /// <exception cref="Amazon.ECR.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.UnableToAccessSecretException">
+        /// The secret is unable to be accessed. Verify the resource permissions for the secret
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.UnableToDecryptSecretValueException">
+        /// The secret is accessible but is unable to be decrypted. Verify the resource permisisons
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.ECR.Model.UnsupportedUpstreamRegistryException">
         /// The specified upstream registry isn't supported.
@@ -842,8 +866,9 @@ namespace Amazon.ECR
 
 
         /// <summary>
-        /// Deletes a repository. If the repository contains images, you must either delete all
-        /// images in the repository or use the <code>force</code> option to delete the repository.
+        /// Deletes a repository. If the repository isn't empty, you must either delete the contents
+        /// of the repository or use the <code>force</code> option to delete the repository and
+        /// have Amazon ECR delete all of its contents on your behalf.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteRepository service method.</param>
         /// <param name="cancellationToken">
@@ -1327,6 +1352,9 @@ namespace Amazon.ECR
         /// </exception>
         /// <exception cref="Amazon.ECR.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.UnableToGetUpstreamLayerException">
+        /// There was an issue getting the upstream layer matching the pull through cache rule.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetDownloadUrlForLayer">REST API Reference for GetDownloadUrlForLayer Operation</seealso>
         public virtual Task<GetDownloadUrlForLayerResponse> GetDownloadUrlForLayerAsync(GetDownloadUrlForLayerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2389,6 +2417,65 @@ namespace Amazon.ECR
 
         #endregion
         
+        #region  UpdatePullThroughCacheRule
+
+        internal virtual UpdatePullThroughCacheRuleResponse UpdatePullThroughCacheRule(UpdatePullThroughCacheRuleRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdatePullThroughCacheRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePullThroughCacheRuleResponseUnmarshaller.Instance;
+
+            return Invoke<UpdatePullThroughCacheRuleResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates an existing pull through cache rule.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePullThroughCacheRule service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdatePullThroughCacheRule service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.PullThroughCacheRuleNotFoundException">
+        /// The pull through cache rule was not found. Specify a valid pull through cache rule
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.SecretNotFoundException">
+        /// The ARN of the secret specified in the pull through cache rule was not found. Update
+        /// the pull through cache rule with a valid secret ARN and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.UnableToAccessSecretException">
+        /// The secret is unable to be accessed. Verify the resource permissions for the secret
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.UnableToDecryptSecretValueException">
+        /// The secret is accessible but is unable to be decrypted. Verify the resource permisisons
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/UpdatePullThroughCacheRule">REST API Reference for UpdatePullThroughCacheRule Operation</seealso>
+        public virtual Task<UpdatePullThroughCacheRuleResponse> UpdatePullThroughCacheRuleAsync(UpdatePullThroughCacheRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdatePullThroughCacheRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePullThroughCacheRuleResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdatePullThroughCacheRuleResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UploadLayerPart
 
         internal virtual UploadLayerPartResponse UploadLayerPart(UploadLayerPartRequest request)
@@ -2458,6 +2545,56 @@ namespace Amazon.ECR
             options.ResponseUnmarshaller = UploadLayerPartResponseUnmarshaller.Instance;
 
             return InvokeAsync<UploadLayerPartResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ValidatePullThroughCacheRule
+
+        internal virtual ValidatePullThroughCacheRuleResponse ValidatePullThroughCacheRule(ValidatePullThroughCacheRuleRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ValidatePullThroughCacheRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ValidatePullThroughCacheRuleResponseUnmarshaller.Instance;
+
+            return Invoke<ValidatePullThroughCacheRuleResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Validates an existing pull through cache rule for an upstream registry that requires
+        /// authentication. This will retrieve the contents of the Amazon Web Services Secrets
+        /// Manager secret, verify the syntax, and then validate that authentication to the upstream
+        /// registry is successful.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ValidatePullThroughCacheRule service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ValidatePullThroughCacheRule service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.PullThroughCacheRuleNotFoundException">
+        /// The pull through cache rule was not found. Specify a valid pull through cache rule
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/ValidatePullThroughCacheRule">REST API Reference for ValidatePullThroughCacheRule Operation</seealso>
+        public virtual Task<ValidatePullThroughCacheRuleResponse> ValidatePullThroughCacheRuleAsync(ValidatePullThroughCacheRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ValidatePullThroughCacheRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ValidatePullThroughCacheRuleResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ValidatePullThroughCacheRuleResponse>(request, options, cancellationToken);
         }
 
         #endregion
