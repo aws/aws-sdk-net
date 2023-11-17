@@ -46,11 +46,6 @@ namespace Amazon.Athena
     /// For more information and to download the driver, see <a href="https://docs.aws.amazon.com/athena/latest/ug/connect-with-jdbc.html">Accessing
     /// Amazon Athena with JDBC</a>.
     /// </para>
-    ///  
-    /// <para>
-    /// For code samples using the Amazon Web Services SDK for Java, see <a href="https://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples
-    /// and Code Samples</a> in the <i>Amazon Athena User Guide</i>.
-    /// </para>
     /// </summary>
     public partial interface IAmazonAthena : IAmazonService, IDisposable
     {
@@ -237,12 +232,6 @@ namespace Amazon.Athena
         /// <summary>
         /// Creates a named query in the specified workgroup. Requires that you have access to
         /// the workgroup.
-        /// 
-        ///  
-        /// <para>
-        /// For code samples using the Amazon Web Services SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples
-        /// and Code Samples</a> in the <i>Amazon Athena User Guide</i>.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateNamedQuery service method.</param>
         /// <param name="cancellationToken">
@@ -435,12 +424,6 @@ namespace Amazon.Athena
         /// <summary>
         /// Deletes the named query if you have access to the workgroup in which the query was
         /// saved.
-        /// 
-        ///  
-        /// <para>
-        /// For code samples using the Amazon Web Services SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples
-        /// and Code Samples</a> in the <i>Amazon Athena User Guide</i>.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteNamedQuery service method.</param>
         /// <param name="cancellationToken">
@@ -1302,12 +1285,6 @@ namespace Amazon.Athena
         /// Provides a list of available query IDs only for queries saved in the specified workgroup.
         /// Requires that you have access to the specified workgroup. If a workgroup is not specified,
         /// lists the saved queries for the primary workgroup.
-        /// 
-        ///  
-        /// <para>
-        /// For code samples using the Amazon Web Services SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples
-        /// and Code Samples</a> in the <i>Amazon Athena User Guide</i>.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListNamedQueries service method.</param>
         /// <param name="cancellationToken">
@@ -1416,15 +1393,9 @@ namespace Amazon.Athena
 
         /// <summary>
         /// Provides a list of available query execution IDs for the queries in the specified
-        /// workgroup. If a workgroup is not specified, returns a list of query execution IDs
-        /// for the primary workgroup. Requires you to have access to the workgroup in which the
-        /// queries ran.
-        /// 
-        ///  
-        /// <para>
-        /// For code samples using the Amazon Web Services SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples
-        /// and Code Samples</a> in the <i>Amazon Athena User Guide</i>.
-        /// </para>
+        /// workgroup. Athena keeps a query history for 45 days. If a workgroup is not specified,
+        /// returns a list of query execution IDs for the primary workgroup. Requires you to have
+        /// access to the workgroup in which the queries ran.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListQueryExecutions service method.</param>
         /// <param name="cancellationToken">
@@ -1593,6 +1564,15 @@ namespace Amazon.Athena
         /// <summary>
         /// Submits calculations for execution within a session. You can supply the code to run
         /// as an inline code block within the request.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The request syntax requires the <a>StartCalculationExecutionRequest$CodeBlock</a>
+        /// parameter or the <a>CalculationConfiguration$CodeBlock</a> parameter, but not both.
+        /// Because <a>CalculationConfiguration$CodeBlock</a> is deprecated, use the <a>StartCalculationExecutionRequest$CodeBlock</a>
+        /// parameter instead.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartCalculationExecution service method.</param>
         /// <param name="cancellationToken">
@@ -1728,12 +1708,6 @@ namespace Amazon.Athena
         /// <summary>
         /// Stops a query execution. Requires you to have access to the workgroup in which the
         /// query ran.
-        /// 
-        ///  
-        /// <para>
-        /// For code samples using the Amazon Web Services SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples
-        /// and Code Samples</a> in the <i>Amazon Athena User Guide</i>.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopQueryExecution service method.</param>
         /// <param name="cancellationToken">

@@ -32,12 +32,6 @@ namespace Amazon.Athena.Model
     /// Container for the parameters to the DeleteNamedQuery operation.
     /// Deletes the named query if you have access to the workgroup in which the query was
     /// saved.
-    /// 
-    ///  
-    /// <para>
-    /// For code samples using the Amazon Web Services SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples
-    /// and Code Samples</a> in the <i>Amazon Athena User Guide</i>.
-    /// </para>
     /// </summary>
     public partial class DeleteNamedQueryRequest : AmazonAthenaRequest
     {

@@ -141,11 +141,6 @@ namespace Amazon.Athena.Model
         /// The <code>GLUE</code> data catalog type also applies to the default <code>AwsDataCatalog</code>
         /// that already exists in your account, of which you can have only one and cannot modify.
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Queries that specify a Glue Data Catalog other than the default <code>AwsDataCatalog</code>
-        /// must be run on Athena engine version 2.
-        /// </para>
         ///  </li> </ul> </li> </ul>
         /// </summary>
         public Dictionary<string, string> Parameters

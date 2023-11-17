@@ -100,6 +100,12 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
                     unmarshalledObject.ResultReuseInformation = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ServicePreProcessingTimeInMillis", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.ServicePreProcessingTimeInMillis = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ServiceProcessingTimeInMillis", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;

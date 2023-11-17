@@ -176,7 +176,8 @@ namespace Amazon.Athena.Model
         /// <summary>
         /// Gets and sets the property ExecutionRole. 
         /// <para>
-        /// Role used in a session for accessing the user's resources.
+        /// Role used in a Spark session for accessing the user's resources. This property applies
+        /// only to Spark-enabled workgroups.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]

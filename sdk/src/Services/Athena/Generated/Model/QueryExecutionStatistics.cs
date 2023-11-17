@@ -40,6 +40,7 @@ namespace Amazon.Athena.Model
         private long? _queryPlanningTimeInMillis;
         private long? _queryQueueTimeInMillis;
         private ResultReuseInformation _resultReuseInformation;
+        private long? _servicePreProcessingTimeInMillis;
         private long? _serviceProcessingTimeInMillis;
         private long? _totalExecutionTimeInMillis;
 
@@ -160,6 +161,25 @@ namespace Amazon.Athena.Model
         internal bool IsSetResultReuseInformation()
         {
             return this._resultReuseInformation != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServicePreProcessingTimeInMillis. 
+        /// <para>
+        /// The number of milliseconds that Athena took to preprocess the query before submitting
+        /// the query to the query engine.
+        /// </para>
+        /// </summary>
+        public long ServicePreProcessingTimeInMillis
+        {
+            get { return this._servicePreProcessingTimeInMillis.GetValueOrDefault(); }
+            set { this._servicePreProcessingTimeInMillis = value; }
+        }
+
+        // Check to see if ServicePreProcessingTimeInMillis property is set
+        internal bool IsSetServicePreProcessingTimeInMillis()
+        {
+            return this._servicePreProcessingTimeInMillis.HasValue; 
         }
 
         /// <summary>

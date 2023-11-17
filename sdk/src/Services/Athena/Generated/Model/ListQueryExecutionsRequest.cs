@@ -31,15 +31,9 @@ namespace Amazon.Athena.Model
     /// <summary>
     /// Container for the parameters to the ListQueryExecutions operation.
     /// Provides a list of available query execution IDs for the queries in the specified
-    /// workgroup. If a workgroup is not specified, returns a list of query execution IDs
-    /// for the primary workgroup. Requires you to have access to the workgroup in which the
-    /// queries ran.
-    /// 
-    ///  
-    /// <para>
-    /// For code samples using the Amazon Web Services SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples
-    /// and Code Samples</a> in the <i>Amazon Athena User Guide</i>.
-    /// </para>
+    /// workgroup. Athena keeps a query history for 45 days. If a workgroup is not specified,
+    /// returns a list of query execution IDs for the primary workgroup. Requires you to have
+    /// access to the workgroup in which the queries ran.
     /// </summary>
     public partial class ListQueryExecutionsRequest : AmazonAthenaRequest
     {

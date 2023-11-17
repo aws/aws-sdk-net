@@ -176,7 +176,8 @@ namespace Amazon.Athena.Model
         /// <summary>
         /// Gets and sets the property ExecutionRole. 
         /// <para>
-        /// Contains the ARN of the execution role for the workgroup
+        /// The ARN of the execution role used to access user resources. This property applies
+        /// only to Spark-enabled workgroups.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]

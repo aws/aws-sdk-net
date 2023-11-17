@@ -33,12 +33,6 @@ namespace Amazon.Athena.Model
     /// Provides a list of available query IDs only for queries saved in the specified workgroup.
     /// Requires that you have access to the specified workgroup. If a workgroup is not specified,
     /// lists the saved queries for the primary workgroup.
-    /// 
-    ///  
-    /// <para>
-    /// For code samples using the Amazon Web Services SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples
-    /// and Code Samples</a> in the <i>Amazon Athena User Guide</i>.
-    /// </para>
     /// </summary>
     public partial class ListNamedQueriesRequest : AmazonAthenaRequest
     {
