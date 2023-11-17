@@ -492,6 +492,161 @@ namespace Amazon.CodeStarconnections
 
         #endregion
         
+        #region  CreateRepositoryLink
+
+        /// <summary>
+        /// Creates a link to a specified external Git repository. A repository link allows Git
+        /// sync to monitor and sync changes to files in a specified Git repository.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRepositoryLink service method.</param>
+        /// 
+        /// <returns>The response from the CreateRepositoryLink service method, as returned by CodeStarconnections.</returns>
+        /// <exception cref="Amazon.CodeStarconnections.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ConcurrentModificationException">
+        /// Exception thrown as a result of concurrent modification to an application. For example,
+        /// two individuals attempting to edit the same application at the same time.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.InternalServerException">
+        /// Received an internal server exception. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.InvalidInputException">
+        /// The input is not valid. Verify that the action is typed correctly.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.LimitExceededException">
+        /// Exceeded the maximum limit for connections.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ResourceAlreadyExistsException">
+        /// Unable to create resource. Resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/CreateRepositoryLink">REST API Reference for CreateRepositoryLink Operation</seealso>
+        public virtual CreateRepositoryLinkResponse CreateRepositoryLink(CreateRepositoryLinkRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateRepositoryLinkRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRepositoryLinkResponseUnmarshaller.Instance;
+
+            return Invoke<CreateRepositoryLinkResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateRepositoryLink operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateRepositoryLink operation on AmazonCodeStarconnectionsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateRepositoryLink
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/CreateRepositoryLink">REST API Reference for CreateRepositoryLink Operation</seealso>
+        public virtual IAsyncResult BeginCreateRepositoryLink(CreateRepositoryLinkRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateRepositoryLinkRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRepositoryLinkResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateRepositoryLink operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateRepositoryLink.</param>
+        /// 
+        /// <returns>Returns a  CreateRepositoryLinkResult from CodeStarconnections.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/CreateRepositoryLink">REST API Reference for CreateRepositoryLink Operation</seealso>
+        public virtual CreateRepositoryLinkResponse EndCreateRepositoryLink(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateRepositoryLinkResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateSyncConfiguration
+
+        /// <summary>
+        /// Creates a sync configuration which allows Amazon Web Services to sync content from
+        /// a Git repository to update a specified Amazon Web Services resource. Parameters for
+        /// the sync configuration are determined by the sync type.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSyncConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the CreateSyncConfiguration service method, as returned by CodeStarconnections.</returns>
+        /// <exception cref="Amazon.CodeStarconnections.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ConcurrentModificationException">
+        /// Exception thrown as a result of concurrent modification to an application. For example,
+        /// two individuals attempting to edit the same application at the same time.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.InternalServerException">
+        /// Received an internal server exception. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.InvalidInputException">
+        /// The input is not valid. Verify that the action is typed correctly.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.LimitExceededException">
+        /// Exceeded the maximum limit for connections.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ResourceAlreadyExistsException">
+        /// Unable to create resource. Resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/CreateSyncConfiguration">REST API Reference for CreateSyncConfiguration Operation</seealso>
+        public virtual CreateSyncConfigurationResponse CreateSyncConfiguration(CreateSyncConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateSyncConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSyncConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateSyncConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateSyncConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateSyncConfiguration operation on AmazonCodeStarconnectionsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateSyncConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/CreateSyncConfiguration">REST API Reference for CreateSyncConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginCreateSyncConfiguration(CreateSyncConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateSyncConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSyncConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateSyncConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateSyncConfiguration.</param>
+        /// 
+        /// <returns>Returns a  CreateSyncConfigurationResult from CodeStarconnections.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/CreateSyncConfiguration">REST API Reference for CreateSyncConfiguration Operation</seealso>
+        public virtual CreateSyncConfigurationResponse EndCreateSyncConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateSyncConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteConnection
 
         /// <summary>
@@ -617,6 +772,158 @@ namespace Amazon.CodeStarconnections
 
         #endregion
         
+        #region  DeleteRepositoryLink
+
+        /// <summary>
+        /// Deletes the association between your connection and a specified external Git repository.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRepositoryLink service method.</param>
+        /// 
+        /// <returns>The response from the DeleteRepositoryLink service method, as returned by CodeStarconnections.</returns>
+        /// <exception cref="Amazon.CodeStarconnections.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ConcurrentModificationException">
+        /// Exception thrown as a result of concurrent modification to an application. For example,
+        /// two individuals attempting to edit the same application at the same time.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.InternalServerException">
+        /// Received an internal server exception. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.InvalidInputException">
+        /// The input is not valid. Verify that the action is typed correctly.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ResourceNotFoundException">
+        /// Resource not found. Verify the connection resource ARN and try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.SyncConfigurationStillExistsException">
+        /// Unable to continue. The sync blocker still exists.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.UnsupportedProviderTypeException">
+        /// The specified provider type is not supported for connections.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/DeleteRepositoryLink">REST API Reference for DeleteRepositoryLink Operation</seealso>
+        public virtual DeleteRepositoryLinkResponse DeleteRepositoryLink(DeleteRepositoryLinkRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRepositoryLinkRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRepositoryLinkResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteRepositoryLinkResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteRepositoryLink operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRepositoryLink operation on AmazonCodeStarconnectionsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteRepositoryLink
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/DeleteRepositoryLink">REST API Reference for DeleteRepositoryLink Operation</seealso>
+        public virtual IAsyncResult BeginDeleteRepositoryLink(DeleteRepositoryLinkRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRepositoryLinkRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRepositoryLinkResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteRepositoryLink operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteRepositoryLink.</param>
+        /// 
+        /// <returns>Returns a  DeleteRepositoryLinkResult from CodeStarconnections.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/DeleteRepositoryLink">REST API Reference for DeleteRepositoryLink Operation</seealso>
+        public virtual DeleteRepositoryLinkResponse EndDeleteRepositoryLink(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteRepositoryLinkResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteSyncConfiguration
+
+        /// <summary>
+        /// Deletes the sync configuration for a specified repository and connection.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSyncConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteSyncConfiguration service method, as returned by CodeStarconnections.</returns>
+        /// <exception cref="Amazon.CodeStarconnections.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ConcurrentModificationException">
+        /// Exception thrown as a result of concurrent modification to an application. For example,
+        /// two individuals attempting to edit the same application at the same time.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.InternalServerException">
+        /// Received an internal server exception. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.InvalidInputException">
+        /// The input is not valid. Verify that the action is typed correctly.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.LimitExceededException">
+        /// Exceeded the maximum limit for connections.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/DeleteSyncConfiguration">REST API Reference for DeleteSyncConfiguration Operation</seealso>
+        public virtual DeleteSyncConfigurationResponse DeleteSyncConfiguration(DeleteSyncConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteSyncConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSyncConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteSyncConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteSyncConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSyncConfiguration operation on AmazonCodeStarconnectionsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteSyncConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/DeleteSyncConfiguration">REST API Reference for DeleteSyncConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginDeleteSyncConfiguration(DeleteSyncConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteSyncConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSyncConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteSyncConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteSyncConfiguration.</param>
+        /// 
+        /// <returns>Returns a  DeleteSyncConfigurationResult from CodeStarconnections.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/DeleteSyncConfiguration">REST API Reference for DeleteSyncConfiguration Operation</seealso>
+        public virtual DeleteSyncConfigurationResponse EndDeleteSyncConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteSyncConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetConnection
 
         /// <summary>
@@ -738,6 +1045,360 @@ namespace Amazon.CodeStarconnections
 
         #endregion
         
+        #region  GetRepositoryLink
+
+        /// <summary>
+        /// Returns details about a repository link. A repository link allows Git sync to monitor
+        /// and sync changes from files in a specified Git repository.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRepositoryLink service method.</param>
+        /// 
+        /// <returns>The response from the GetRepositoryLink service method, as returned by CodeStarconnections.</returns>
+        /// <exception cref="Amazon.CodeStarconnections.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ConcurrentModificationException">
+        /// Exception thrown as a result of concurrent modification to an application. For example,
+        /// two individuals attempting to edit the same application at the same time.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.InternalServerException">
+        /// Received an internal server exception. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.InvalidInputException">
+        /// The input is not valid. Verify that the action is typed correctly.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ResourceNotFoundException">
+        /// Resource not found. Verify the connection resource ARN and try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/GetRepositoryLink">REST API Reference for GetRepositoryLink Operation</seealso>
+        public virtual GetRepositoryLinkResponse GetRepositoryLink(GetRepositoryLinkRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetRepositoryLinkRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRepositoryLinkResponseUnmarshaller.Instance;
+
+            return Invoke<GetRepositoryLinkResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetRepositoryLink operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetRepositoryLink operation on AmazonCodeStarconnectionsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetRepositoryLink
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/GetRepositoryLink">REST API Reference for GetRepositoryLink Operation</seealso>
+        public virtual IAsyncResult BeginGetRepositoryLink(GetRepositoryLinkRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetRepositoryLinkRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRepositoryLinkResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetRepositoryLink operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetRepositoryLink.</param>
+        /// 
+        /// <returns>Returns a  GetRepositoryLinkResult from CodeStarconnections.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/GetRepositoryLink">REST API Reference for GetRepositoryLink Operation</seealso>
+        public virtual GetRepositoryLinkResponse EndGetRepositoryLink(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetRepositoryLinkResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetRepositorySyncStatus
+
+        /// <summary>
+        /// Returns details about the sync status for a repository. A repository sync uses Git
+        /// sync to push and pull changes from your remote repository.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRepositorySyncStatus service method.</param>
+        /// 
+        /// <returns>The response from the GetRepositorySyncStatus service method, as returned by CodeStarconnections.</returns>
+        /// <exception cref="Amazon.CodeStarconnections.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.InternalServerException">
+        /// Received an internal server exception. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.InvalidInputException">
+        /// The input is not valid. Verify that the action is typed correctly.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ResourceNotFoundException">
+        /// Resource not found. Verify the connection resource ARN and try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/GetRepositorySyncStatus">REST API Reference for GetRepositorySyncStatus Operation</seealso>
+        public virtual GetRepositorySyncStatusResponse GetRepositorySyncStatus(GetRepositorySyncStatusRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetRepositorySyncStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRepositorySyncStatusResponseUnmarshaller.Instance;
+
+            return Invoke<GetRepositorySyncStatusResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetRepositorySyncStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetRepositorySyncStatus operation on AmazonCodeStarconnectionsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetRepositorySyncStatus
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/GetRepositorySyncStatus">REST API Reference for GetRepositorySyncStatus Operation</seealso>
+        public virtual IAsyncResult BeginGetRepositorySyncStatus(GetRepositorySyncStatusRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetRepositorySyncStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRepositorySyncStatusResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetRepositorySyncStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetRepositorySyncStatus.</param>
+        /// 
+        /// <returns>Returns a  GetRepositorySyncStatusResult from CodeStarconnections.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/GetRepositorySyncStatus">REST API Reference for GetRepositorySyncStatus Operation</seealso>
+        public virtual GetRepositorySyncStatusResponse EndGetRepositorySyncStatus(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetRepositorySyncStatusResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetResourceSyncStatus
+
+        /// <summary>
+        /// Returns the status of the sync with the Git repository for a specific Amazon Web Services
+        /// resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourceSyncStatus service method.</param>
+        /// 
+        /// <returns>The response from the GetResourceSyncStatus service method, as returned by CodeStarconnections.</returns>
+        /// <exception cref="Amazon.CodeStarconnections.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.InternalServerException">
+        /// Received an internal server exception. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.InvalidInputException">
+        /// The input is not valid. Verify that the action is typed correctly.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ResourceNotFoundException">
+        /// Resource not found. Verify the connection resource ARN and try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/GetResourceSyncStatus">REST API Reference for GetResourceSyncStatus Operation</seealso>
+        public virtual GetResourceSyncStatusResponse GetResourceSyncStatus(GetResourceSyncStatusRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResourceSyncStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourceSyncStatusResponseUnmarshaller.Instance;
+
+            return Invoke<GetResourceSyncStatusResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetResourceSyncStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetResourceSyncStatus operation on AmazonCodeStarconnectionsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetResourceSyncStatus
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/GetResourceSyncStatus">REST API Reference for GetResourceSyncStatus Operation</seealso>
+        public virtual IAsyncResult BeginGetResourceSyncStatus(GetResourceSyncStatusRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResourceSyncStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourceSyncStatusResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetResourceSyncStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetResourceSyncStatus.</param>
+        /// 
+        /// <returns>Returns a  GetResourceSyncStatusResult from CodeStarconnections.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/GetResourceSyncStatus">REST API Reference for GetResourceSyncStatus Operation</seealso>
+        public virtual GetResourceSyncStatusResponse EndGetResourceSyncStatus(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetResourceSyncStatusResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetSyncBlockerSummary
+
+        /// <summary>
+        /// Returns a list of the most recent sync blockers.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSyncBlockerSummary service method.</param>
+        /// 
+        /// <returns>The response from the GetSyncBlockerSummary service method, as returned by CodeStarconnections.</returns>
+        /// <exception cref="Amazon.CodeStarconnections.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.InternalServerException">
+        /// Received an internal server exception. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.InvalidInputException">
+        /// The input is not valid. Verify that the action is typed correctly.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ResourceNotFoundException">
+        /// Resource not found. Verify the connection resource ARN and try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/GetSyncBlockerSummary">REST API Reference for GetSyncBlockerSummary Operation</seealso>
+        public virtual GetSyncBlockerSummaryResponse GetSyncBlockerSummary(GetSyncBlockerSummaryRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSyncBlockerSummaryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSyncBlockerSummaryResponseUnmarshaller.Instance;
+
+            return Invoke<GetSyncBlockerSummaryResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSyncBlockerSummary operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSyncBlockerSummary operation on AmazonCodeStarconnectionsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSyncBlockerSummary
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/GetSyncBlockerSummary">REST API Reference for GetSyncBlockerSummary Operation</seealso>
+        public virtual IAsyncResult BeginGetSyncBlockerSummary(GetSyncBlockerSummaryRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSyncBlockerSummaryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSyncBlockerSummaryResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetSyncBlockerSummary operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSyncBlockerSummary.</param>
+        /// 
+        /// <returns>Returns a  GetSyncBlockerSummaryResult from CodeStarconnections.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/GetSyncBlockerSummary">REST API Reference for GetSyncBlockerSummary Operation</seealso>
+        public virtual GetSyncBlockerSummaryResponse EndGetSyncBlockerSummary(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetSyncBlockerSummaryResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetSyncConfiguration
+
+        /// <summary>
+        /// Returns details about a sync configuration, including the sync type and resource name.
+        /// A sync configuration allows the configuration to sync (push and pull) changes from
+        /// the remote repository for a specified branch in a Git repository.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSyncConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetSyncConfiguration service method, as returned by CodeStarconnections.</returns>
+        /// <exception cref="Amazon.CodeStarconnections.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.InternalServerException">
+        /// Received an internal server exception. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.InvalidInputException">
+        /// The input is not valid. Verify that the action is typed correctly.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ResourceNotFoundException">
+        /// Resource not found. Verify the connection resource ARN and try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/GetSyncConfiguration">REST API Reference for GetSyncConfiguration Operation</seealso>
+        public virtual GetSyncConfigurationResponse GetSyncConfiguration(GetSyncConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSyncConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSyncConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<GetSyncConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSyncConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSyncConfiguration operation on AmazonCodeStarconnectionsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSyncConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/GetSyncConfiguration">REST API Reference for GetSyncConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginGetSyncConfiguration(GetSyncConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSyncConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSyncConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetSyncConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSyncConfiguration.</param>
+        /// 
+        /// <returns>Returns a  GetSyncConfigurationResult from CodeStarconnections.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/GetSyncConfiguration">REST API Reference for GetSyncConfiguration Operation</seealso>
+        public virtual GetSyncConfigurationResponse EndGetSyncConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetSyncConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListConnections
 
         /// <summary>
@@ -845,6 +1506,217 @@ namespace Amazon.CodeStarconnections
         public virtual ListHostsResponse EndListHosts(IAsyncResult asyncResult)
         {
             return EndInvoke<ListHostsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListRepositoryLinks
+
+        /// <summary>
+        /// Lists the repository links created for connections in your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRepositoryLinks service method.</param>
+        /// 
+        /// <returns>The response from the ListRepositoryLinks service method, as returned by CodeStarconnections.</returns>
+        /// <exception cref="Amazon.CodeStarconnections.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ConcurrentModificationException">
+        /// Exception thrown as a result of concurrent modification to an application. For example,
+        /// two individuals attempting to edit the same application at the same time.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.InternalServerException">
+        /// Received an internal server exception. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.InvalidInputException">
+        /// The input is not valid. Verify that the action is typed correctly.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ResourceNotFoundException">
+        /// Resource not found. Verify the connection resource ARN and try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/ListRepositoryLinks">REST API Reference for ListRepositoryLinks Operation</seealso>
+        public virtual ListRepositoryLinksResponse ListRepositoryLinks(ListRepositoryLinksRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRepositoryLinksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRepositoryLinksResponseUnmarshaller.Instance;
+
+            return Invoke<ListRepositoryLinksResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListRepositoryLinks operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListRepositoryLinks operation on AmazonCodeStarconnectionsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListRepositoryLinks
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/ListRepositoryLinks">REST API Reference for ListRepositoryLinks Operation</seealso>
+        public virtual IAsyncResult BeginListRepositoryLinks(ListRepositoryLinksRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRepositoryLinksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRepositoryLinksResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListRepositoryLinks operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListRepositoryLinks.</param>
+        /// 
+        /// <returns>Returns a  ListRepositoryLinksResult from CodeStarconnections.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/ListRepositoryLinks">REST API Reference for ListRepositoryLinks Operation</seealso>
+        public virtual ListRepositoryLinksResponse EndListRepositoryLinks(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListRepositoryLinksResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListRepositorySyncDefinitions
+
+        /// <summary>
+        /// Lists the repository sync definitions for repository links in your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRepositorySyncDefinitions service method.</param>
+        /// 
+        /// <returns>The response from the ListRepositorySyncDefinitions service method, as returned by CodeStarconnections.</returns>
+        /// <exception cref="Amazon.CodeStarconnections.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.InternalServerException">
+        /// Received an internal server exception. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.InvalidInputException">
+        /// The input is not valid. Verify that the action is typed correctly.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ResourceNotFoundException">
+        /// Resource not found. Verify the connection resource ARN and try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/ListRepositorySyncDefinitions">REST API Reference for ListRepositorySyncDefinitions Operation</seealso>
+        public virtual ListRepositorySyncDefinitionsResponse ListRepositorySyncDefinitions(ListRepositorySyncDefinitionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRepositorySyncDefinitionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRepositorySyncDefinitionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListRepositorySyncDefinitionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListRepositorySyncDefinitions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListRepositorySyncDefinitions operation on AmazonCodeStarconnectionsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListRepositorySyncDefinitions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/ListRepositorySyncDefinitions">REST API Reference for ListRepositorySyncDefinitions Operation</seealso>
+        public virtual IAsyncResult BeginListRepositorySyncDefinitions(ListRepositorySyncDefinitionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRepositorySyncDefinitionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRepositorySyncDefinitionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListRepositorySyncDefinitions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListRepositorySyncDefinitions.</param>
+        /// 
+        /// <returns>Returns a  ListRepositorySyncDefinitionsResult from CodeStarconnections.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/ListRepositorySyncDefinitions">REST API Reference for ListRepositorySyncDefinitions Operation</seealso>
+        public virtual ListRepositorySyncDefinitionsResponse EndListRepositorySyncDefinitions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListRepositorySyncDefinitionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListSyncConfigurations
+
+        /// <summary>
+        /// Returns a list of sync configurations for a specified repository.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSyncConfigurations service method.</param>
+        /// 
+        /// <returns>The response from the ListSyncConfigurations service method, as returned by CodeStarconnections.</returns>
+        /// <exception cref="Amazon.CodeStarconnections.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.InternalServerException">
+        /// Received an internal server exception. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.InvalidInputException">
+        /// The input is not valid. Verify that the action is typed correctly.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ResourceNotFoundException">
+        /// Resource not found. Verify the connection resource ARN and try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/ListSyncConfigurations">REST API Reference for ListSyncConfigurations Operation</seealso>
+        public virtual ListSyncConfigurationsResponse ListSyncConfigurations(ListSyncConfigurationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSyncConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSyncConfigurationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListSyncConfigurationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListSyncConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListSyncConfigurations operation on AmazonCodeStarconnectionsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListSyncConfigurations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/ListSyncConfigurations">REST API Reference for ListSyncConfigurations Operation</seealso>
+        public virtual IAsyncResult BeginListSyncConfigurations(ListSyncConfigurationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSyncConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSyncConfigurationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListSyncConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListSyncConfigurations.</param>
+        /// 
+        /// <returns>Returns a  ListSyncConfigurationsResult from CodeStarconnections.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/ListSyncConfigurations">REST API Reference for ListSyncConfigurations Operation</seealso>
+        public virtual ListSyncConfigurationsResponse EndListSyncConfigurations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListSyncConfigurationsResponse>(asyncResult);
         }
 
         #endregion
@@ -1086,6 +1958,235 @@ namespace Amazon.CodeStarconnections
         public virtual UpdateHostResponse EndUpdateHost(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateHostResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateRepositoryLink
+
+        /// <summary>
+        /// Updates the association between your connection and a specified external Git repository.
+        /// A repository link allows Git sync to monitor and sync changes to files in a specified
+        /// Git repository.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRepositoryLink service method.</param>
+        /// 
+        /// <returns>The response from the UpdateRepositoryLink service method, as returned by CodeStarconnections.</returns>
+        /// <exception cref="Amazon.CodeStarconnections.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ConditionalCheckFailedException">
+        /// The conditional check failed. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.InternalServerException">
+        /// Received an internal server exception. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.InvalidInputException">
+        /// The input is not valid. Verify that the action is typed correctly.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ResourceNotFoundException">
+        /// Resource not found. Verify the connection resource ARN and try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.UpdateOutOfSyncException">
+        /// The update is out of sync. Try syncing again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/UpdateRepositoryLink">REST API Reference for UpdateRepositoryLink Operation</seealso>
+        public virtual UpdateRepositoryLinkResponse UpdateRepositoryLink(UpdateRepositoryLinkRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateRepositoryLinkRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRepositoryLinkResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateRepositoryLinkResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateRepositoryLink operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRepositoryLink operation on AmazonCodeStarconnectionsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateRepositoryLink
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/UpdateRepositoryLink">REST API Reference for UpdateRepositoryLink Operation</seealso>
+        public virtual IAsyncResult BeginUpdateRepositoryLink(UpdateRepositoryLinkRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateRepositoryLinkRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRepositoryLinkResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateRepositoryLink operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateRepositoryLink.</param>
+        /// 
+        /// <returns>Returns a  UpdateRepositoryLinkResult from CodeStarconnections.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/UpdateRepositoryLink">REST API Reference for UpdateRepositoryLink Operation</seealso>
+        public virtual UpdateRepositoryLinkResponse EndUpdateRepositoryLink(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateRepositoryLinkResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateSyncBlocker
+
+        /// <summary>
+        /// Allows you to update the status of a sync blocker, resolving the blocker and allowing
+        /// syncing to continue.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSyncBlocker service method.</param>
+        /// 
+        /// <returns>The response from the UpdateSyncBlocker service method, as returned by CodeStarconnections.</returns>
+        /// <exception cref="Amazon.CodeStarconnections.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.InternalServerException">
+        /// Received an internal server exception. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.InvalidInputException">
+        /// The input is not valid. Verify that the action is typed correctly.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ResourceNotFoundException">
+        /// Resource not found. Verify the connection resource ARN and try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.RetryLatestCommitFailedException">
+        /// Retrying the latest commit failed. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.SyncBlockerDoesNotExistException">
+        /// Unable to continue. The sync blocker does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/UpdateSyncBlocker">REST API Reference for UpdateSyncBlocker Operation</seealso>
+        public virtual UpdateSyncBlockerResponse UpdateSyncBlocker(UpdateSyncBlockerRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateSyncBlockerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSyncBlockerResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateSyncBlockerResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateSyncBlocker operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSyncBlocker operation on AmazonCodeStarconnectionsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateSyncBlocker
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/UpdateSyncBlocker">REST API Reference for UpdateSyncBlocker Operation</seealso>
+        public virtual IAsyncResult BeginUpdateSyncBlocker(UpdateSyncBlockerRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateSyncBlockerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSyncBlockerResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateSyncBlocker operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateSyncBlocker.</param>
+        /// 
+        /// <returns>Returns a  UpdateSyncBlockerResult from CodeStarconnections.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/UpdateSyncBlocker">REST API Reference for UpdateSyncBlocker Operation</seealso>
+        public virtual UpdateSyncBlockerResponse EndUpdateSyncBlocker(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateSyncBlockerResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateSyncConfiguration
+
+        /// <summary>
+        /// Updates the sync configuration for your connection and a specified external Git repository.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSyncConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the UpdateSyncConfiguration service method, as returned by CodeStarconnections.</returns>
+        /// <exception cref="Amazon.CodeStarconnections.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ConcurrentModificationException">
+        /// Exception thrown as a result of concurrent modification to an application. For example,
+        /// two individuals attempting to edit the same application at the same time.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.InternalServerException">
+        /// Received an internal server exception. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.InvalidInputException">
+        /// The input is not valid. Verify that the action is typed correctly.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ResourceNotFoundException">
+        /// Resource not found. Verify the connection resource ARN and try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.UpdateOutOfSyncException">
+        /// The update is out of sync. Try syncing again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/UpdateSyncConfiguration">REST API Reference for UpdateSyncConfiguration Operation</seealso>
+        public virtual UpdateSyncConfigurationResponse UpdateSyncConfiguration(UpdateSyncConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateSyncConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSyncConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateSyncConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateSyncConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSyncConfiguration operation on AmazonCodeStarconnectionsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateSyncConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/UpdateSyncConfiguration">REST API Reference for UpdateSyncConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginUpdateSyncConfiguration(UpdateSyncConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateSyncConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSyncConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateSyncConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateSyncConfiguration.</param>
+        /// 
+        /// <returns>Returns a  UpdateSyncConfigurationResult from CodeStarconnections.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/UpdateSyncConfiguration">REST API Reference for UpdateSyncConfiguration Operation</seealso>
+        public virtual UpdateSyncConfigurationResponse EndUpdateSyncConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateSyncConfigurationResponse>(asyncResult);
         }
 
         #endregion

@@ -34,5 +34,15 @@ namespace Amazon.CodeStarconnections.Model
         /// Paginator for ListHosts operation
         ///</summary>
         IListHostsPaginator ListHosts(ListHostsRequest request);
+
+        /// <summary>
+        /// Paginator for ListRepositoryLinks operation
+        ///</summary>
+        IListRepositoryLinksPaginator ListRepositoryLinks(ListRepositoryLinksRequest request);
+
+        /// <summary>
+        /// Paginator for ListSyncConfigurations operation
+        ///</summary>
+        IListSyncConfigurationsPaginator ListSyncConfigurations(ListSyncConfigurationsRequest request);
     }
 }

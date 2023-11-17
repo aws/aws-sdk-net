@@ -199,6 +199,89 @@ namespace Amazon.CodeStarconnections
 
         #endregion
                 
+        #region  CreateRepositoryLink
+
+
+
+        /// <summary>
+        /// Creates a link to a specified external Git repository. A repository link allows Git
+        /// sync to monitor and sync changes to files in a specified Git repository.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRepositoryLink service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateRepositoryLink service method, as returned by CodeStarconnections.</returns>
+        /// <exception cref="Amazon.CodeStarconnections.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ConcurrentModificationException">
+        /// Exception thrown as a result of concurrent modification to an application. For example,
+        /// two individuals attempting to edit the same application at the same time.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.InternalServerException">
+        /// Received an internal server exception. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.InvalidInputException">
+        /// The input is not valid. Verify that the action is typed correctly.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.LimitExceededException">
+        /// Exceeded the maximum limit for connections.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ResourceAlreadyExistsException">
+        /// Unable to create resource. Resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/CreateRepositoryLink">REST API Reference for CreateRepositoryLink Operation</seealso>
+        Task<CreateRepositoryLinkResponse> CreateRepositoryLinkAsync(CreateRepositoryLinkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateSyncConfiguration
+
+
+
+        /// <summary>
+        /// Creates a sync configuration which allows Amazon Web Services to sync content from
+        /// a Git repository to update a specified Amazon Web Services resource. Parameters for
+        /// the sync configuration are determined by the sync type.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSyncConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateSyncConfiguration service method, as returned by CodeStarconnections.</returns>
+        /// <exception cref="Amazon.CodeStarconnections.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ConcurrentModificationException">
+        /// Exception thrown as a result of concurrent modification to an application. For example,
+        /// two individuals attempting to edit the same application at the same time.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.InternalServerException">
+        /// Received an internal server exception. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.InvalidInputException">
+        /// The input is not valid. Verify that the action is typed correctly.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.LimitExceededException">
+        /// Exceeded the maximum limit for connections.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ResourceAlreadyExistsException">
+        /// Unable to create resource. Resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/CreateSyncConfiguration">REST API Reference for CreateSyncConfiguration Operation</seealso>
+        Task<CreateSyncConfigurationResponse> CreateSyncConfigurationAsync(CreateSyncConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeleteConnection
 
 
@@ -252,6 +335,86 @@ namespace Amazon.CodeStarconnections
 
         #endregion
                 
+        #region  DeleteRepositoryLink
+
+
+
+        /// <summary>
+        /// Deletes the association between your connection and a specified external Git repository.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRepositoryLink service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteRepositoryLink service method, as returned by CodeStarconnections.</returns>
+        /// <exception cref="Amazon.CodeStarconnections.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ConcurrentModificationException">
+        /// Exception thrown as a result of concurrent modification to an application. For example,
+        /// two individuals attempting to edit the same application at the same time.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.InternalServerException">
+        /// Received an internal server exception. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.InvalidInputException">
+        /// The input is not valid. Verify that the action is typed correctly.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ResourceNotFoundException">
+        /// Resource not found. Verify the connection resource ARN and try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.SyncConfigurationStillExistsException">
+        /// Unable to continue. The sync blocker still exists.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.UnsupportedProviderTypeException">
+        /// The specified provider type is not supported for connections.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/DeleteRepositoryLink">REST API Reference for DeleteRepositoryLink Operation</seealso>
+        Task<DeleteRepositoryLinkResponse> DeleteRepositoryLinkAsync(DeleteRepositoryLinkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteSyncConfiguration
+
+
+
+        /// <summary>
+        /// Deletes the sync configuration for a specified repository and connection.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSyncConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteSyncConfiguration service method, as returned by CodeStarconnections.</returns>
+        /// <exception cref="Amazon.CodeStarconnections.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ConcurrentModificationException">
+        /// Exception thrown as a result of concurrent modification to an application. For example,
+        /// two individuals attempting to edit the same application at the same time.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.InternalServerException">
+        /// Received an internal server exception. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.InvalidInputException">
+        /// The input is not valid. Verify that the action is typed correctly.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.LimitExceededException">
+        /// Exceeded the maximum limit for connections.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/DeleteSyncConfiguration">REST API Reference for DeleteSyncConfiguration Operation</seealso>
+        Task<DeleteSyncConfigurationResponse> DeleteSyncConfigurationAsync(DeleteSyncConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetConnection
 
 
@@ -301,6 +464,180 @@ namespace Amazon.CodeStarconnections
 
         #endregion
                 
+        #region  GetRepositoryLink
+
+
+
+        /// <summary>
+        /// Returns details about a repository link. A repository link allows Git sync to monitor
+        /// and sync changes from files in a specified Git repository.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRepositoryLink service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetRepositoryLink service method, as returned by CodeStarconnections.</returns>
+        /// <exception cref="Amazon.CodeStarconnections.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ConcurrentModificationException">
+        /// Exception thrown as a result of concurrent modification to an application. For example,
+        /// two individuals attempting to edit the same application at the same time.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.InternalServerException">
+        /// Received an internal server exception. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.InvalidInputException">
+        /// The input is not valid. Verify that the action is typed correctly.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ResourceNotFoundException">
+        /// Resource not found. Verify the connection resource ARN and try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/GetRepositoryLink">REST API Reference for GetRepositoryLink Operation</seealso>
+        Task<GetRepositoryLinkResponse> GetRepositoryLinkAsync(GetRepositoryLinkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetRepositorySyncStatus
+
+
+
+        /// <summary>
+        /// Returns details about the sync status for a repository. A repository sync uses Git
+        /// sync to push and pull changes from your remote repository.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRepositorySyncStatus service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetRepositorySyncStatus service method, as returned by CodeStarconnections.</returns>
+        /// <exception cref="Amazon.CodeStarconnections.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.InternalServerException">
+        /// Received an internal server exception. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.InvalidInputException">
+        /// The input is not valid. Verify that the action is typed correctly.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ResourceNotFoundException">
+        /// Resource not found. Verify the connection resource ARN and try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/GetRepositorySyncStatus">REST API Reference for GetRepositorySyncStatus Operation</seealso>
+        Task<GetRepositorySyncStatusResponse> GetRepositorySyncStatusAsync(GetRepositorySyncStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetResourceSyncStatus
+
+
+
+        /// <summary>
+        /// Returns the status of the sync with the Git repository for a specific Amazon Web Services
+        /// resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourceSyncStatus service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetResourceSyncStatus service method, as returned by CodeStarconnections.</returns>
+        /// <exception cref="Amazon.CodeStarconnections.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.InternalServerException">
+        /// Received an internal server exception. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.InvalidInputException">
+        /// The input is not valid. Verify that the action is typed correctly.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ResourceNotFoundException">
+        /// Resource not found. Verify the connection resource ARN and try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/GetResourceSyncStatus">REST API Reference for GetResourceSyncStatus Operation</seealso>
+        Task<GetResourceSyncStatusResponse> GetResourceSyncStatusAsync(GetResourceSyncStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetSyncBlockerSummary
+
+
+
+        /// <summary>
+        /// Returns a list of the most recent sync blockers.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSyncBlockerSummary service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetSyncBlockerSummary service method, as returned by CodeStarconnections.</returns>
+        /// <exception cref="Amazon.CodeStarconnections.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.InternalServerException">
+        /// Received an internal server exception. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.InvalidInputException">
+        /// The input is not valid. Verify that the action is typed correctly.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ResourceNotFoundException">
+        /// Resource not found. Verify the connection resource ARN and try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/GetSyncBlockerSummary">REST API Reference for GetSyncBlockerSummary Operation</seealso>
+        Task<GetSyncBlockerSummaryResponse> GetSyncBlockerSummaryAsync(GetSyncBlockerSummaryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetSyncConfiguration
+
+
+
+        /// <summary>
+        /// Returns details about a sync configuration, including the sync type and resource name.
+        /// A sync configuration allows the configuration to sync (push and pull) changes from
+        /// the remote repository for a specified branch in a Git repository.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSyncConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetSyncConfiguration service method, as returned by CodeStarconnections.</returns>
+        /// <exception cref="Amazon.CodeStarconnections.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.InternalServerException">
+        /// Received an internal server exception. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.InvalidInputException">
+        /// The input is not valid. Verify that the action is typed correctly.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ResourceNotFoundException">
+        /// Resource not found. Verify the connection resource ARN and try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/GetSyncConfiguration">REST API Reference for GetSyncConfiguration Operation</seealso>
+        Task<GetSyncConfigurationResponse> GetSyncConfigurationAsync(GetSyncConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListConnections
 
 
@@ -337,6 +674,109 @@ namespace Amazon.CodeStarconnections
         /// <returns>The response from the ListHosts service method, as returned by CodeStarconnections.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/ListHosts">REST API Reference for ListHosts Operation</seealso>
         Task<ListHostsResponse> ListHostsAsync(ListHostsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListRepositoryLinks
+
+
+
+        /// <summary>
+        /// Lists the repository links created for connections in your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRepositoryLinks service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListRepositoryLinks service method, as returned by CodeStarconnections.</returns>
+        /// <exception cref="Amazon.CodeStarconnections.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ConcurrentModificationException">
+        /// Exception thrown as a result of concurrent modification to an application. For example,
+        /// two individuals attempting to edit the same application at the same time.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.InternalServerException">
+        /// Received an internal server exception. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.InvalidInputException">
+        /// The input is not valid. Verify that the action is typed correctly.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ResourceNotFoundException">
+        /// Resource not found. Verify the connection resource ARN and try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/ListRepositoryLinks">REST API Reference for ListRepositoryLinks Operation</seealso>
+        Task<ListRepositoryLinksResponse> ListRepositoryLinksAsync(ListRepositoryLinksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListRepositorySyncDefinitions
+
+
+
+        /// <summary>
+        /// Lists the repository sync definitions for repository links in your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRepositorySyncDefinitions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListRepositorySyncDefinitions service method, as returned by CodeStarconnections.</returns>
+        /// <exception cref="Amazon.CodeStarconnections.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.InternalServerException">
+        /// Received an internal server exception. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.InvalidInputException">
+        /// The input is not valid. Verify that the action is typed correctly.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ResourceNotFoundException">
+        /// Resource not found. Verify the connection resource ARN and try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/ListRepositorySyncDefinitions">REST API Reference for ListRepositorySyncDefinitions Operation</seealso>
+        Task<ListRepositorySyncDefinitionsResponse> ListRepositorySyncDefinitionsAsync(ListRepositorySyncDefinitionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListSyncConfigurations
+
+
+
+        /// <summary>
+        /// Returns a list of sync configurations for a specified repository.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSyncConfigurations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListSyncConfigurations service method, as returned by CodeStarconnections.</returns>
+        /// <exception cref="Amazon.CodeStarconnections.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.InternalServerException">
+        /// Received an internal server exception. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.InvalidInputException">
+        /// The input is not valid. Verify that the action is typed correctly.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ResourceNotFoundException">
+        /// Resource not found. Verify the connection resource ARN and try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/ListSyncConfigurations">REST API Reference for ListSyncConfigurations Operation</seealso>
+        Task<ListSyncConfigurationsResponse> ListSyncConfigurationsAsync(ListSyncConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -434,6 +874,127 @@ namespace Amazon.CodeStarconnections
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/UpdateHost">REST API Reference for UpdateHost Operation</seealso>
         Task<UpdateHostResponse> UpdateHostAsync(UpdateHostRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateRepositoryLink
+
+
+
+        /// <summary>
+        /// Updates the association between your connection and a specified external Git repository.
+        /// A repository link allows Git sync to monitor and sync changes to files in a specified
+        /// Git repository.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRepositoryLink service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateRepositoryLink service method, as returned by CodeStarconnections.</returns>
+        /// <exception cref="Amazon.CodeStarconnections.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ConditionalCheckFailedException">
+        /// The conditional check failed. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.InternalServerException">
+        /// Received an internal server exception. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.InvalidInputException">
+        /// The input is not valid. Verify that the action is typed correctly.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ResourceNotFoundException">
+        /// Resource not found. Verify the connection resource ARN and try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.UpdateOutOfSyncException">
+        /// The update is out of sync. Try syncing again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/UpdateRepositoryLink">REST API Reference for UpdateRepositoryLink Operation</seealso>
+        Task<UpdateRepositoryLinkResponse> UpdateRepositoryLinkAsync(UpdateRepositoryLinkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateSyncBlocker
+
+
+
+        /// <summary>
+        /// Allows you to update the status of a sync blocker, resolving the blocker and allowing
+        /// syncing to continue.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSyncBlocker service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateSyncBlocker service method, as returned by CodeStarconnections.</returns>
+        /// <exception cref="Amazon.CodeStarconnections.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.InternalServerException">
+        /// Received an internal server exception. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.InvalidInputException">
+        /// The input is not valid. Verify that the action is typed correctly.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ResourceNotFoundException">
+        /// Resource not found. Verify the connection resource ARN and try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.RetryLatestCommitFailedException">
+        /// Retrying the latest commit failed. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.SyncBlockerDoesNotExistException">
+        /// Unable to continue. The sync blocker does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/UpdateSyncBlocker">REST API Reference for UpdateSyncBlocker Operation</seealso>
+        Task<UpdateSyncBlockerResponse> UpdateSyncBlockerAsync(UpdateSyncBlockerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateSyncConfiguration
+
+
+
+        /// <summary>
+        /// Updates the sync configuration for your connection and a specified external Git repository.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSyncConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateSyncConfiguration service method, as returned by CodeStarconnections.</returns>
+        /// <exception cref="Amazon.CodeStarconnections.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ConcurrentModificationException">
+        /// Exception thrown as a result of concurrent modification to an application. For example,
+        /// two individuals attempting to edit the same application at the same time.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.InternalServerException">
+        /// Received an internal server exception. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.InvalidInputException">
+        /// The input is not valid. Verify that the action is typed correctly.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ResourceNotFoundException">
+        /// Resource not found. Verify the connection resource ARN and try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.UpdateOutOfSyncException">
+        /// The update is out of sync. Try syncing again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/UpdateSyncConfiguration">REST API Reference for UpdateSyncConfiguration Operation</seealso>
+        Task<UpdateSyncConfigurationResponse> UpdateSyncConfigurationAsync(UpdateSyncConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
