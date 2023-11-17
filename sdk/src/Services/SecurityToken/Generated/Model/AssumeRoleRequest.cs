@@ -355,7 +355,19 @@ namespace Amazon.SecurityToken.Model
         /// <summary>
         /// Gets and sets the property ProvidedContexts. 
         /// <para>
-        /// Reserved for future use.
+        /// A list of previously acquired trusted context assertions in the format of a JSON array.
+        /// The trusted context assertion is signed and encrypted by Amazon Web Services STS.
+        /// </para>
+        ///  
+        /// <para>
+        /// The following is an example of a <code>ProvidedContext</code> value that includes
+        /// a single trusted context assertion and the ARN of the context provider from which
+        /// the trusted context assertion was generated.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>[{"ProviderArn":"arn:aws:iam::aws:contextProvider/identitycenter","ContextAssertion":"trusted-context-assertion"}]</code>
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Max=5)]
