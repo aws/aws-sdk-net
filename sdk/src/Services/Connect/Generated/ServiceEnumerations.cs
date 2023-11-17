@@ -2050,6 +2050,10 @@ namespace Amazon.Connect
         /// Constant WISDOM_KNOWLEDGE_BASE for IntegrationType
         /// </summary>
         public static readonly IntegrationType WISDOM_KNOWLEDGE_BASE = new IntegrationType("WISDOM_KNOWLEDGE_BASE");
+        /// <summary>
+        /// Constant WISDOM_QUICK_RESPONSES for IntegrationType
+        /// </summary>
+        public static readonly IntegrationType WISDOM_QUICK_RESPONSES = new IntegrationType("WISDOM_QUICK_RESPONSES");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -2208,10 +2212,6 @@ namespace Amazon.Connect
     public class ListFlowAssociationResourceType : ConstantClass
     {
 
-        /// <summary>
-        /// Constant SMS_PHONE_NUMBER for ListFlowAssociationResourceType
-        /// </summary>
-        public static readonly ListFlowAssociationResourceType SMS_PHONE_NUMBER = new ListFlowAssociationResourceType("SMS_PHONE_NUMBER");
         /// <summary>
         /// Constant VOICE_PHONE_NUMBER for ListFlowAssociationResourceType
         /// </summary>
