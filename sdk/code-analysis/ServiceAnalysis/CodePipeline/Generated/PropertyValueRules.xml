@@ -965,6 +965,17 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodePipeline.Model.SourceRevisionOverride.ActionName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[A-Za-z0-9.@\-_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodePipeline.Model.SourceRevisionOverride.RevisionValue</property>
+    <min>1</min>
+    <max>1500</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodePipeline.Model.StageContext.Name</property>
     <min>1</min>
     <max>100</max>

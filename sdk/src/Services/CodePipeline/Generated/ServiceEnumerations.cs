@@ -843,6 +843,60 @@ namespace Amazon.CodePipeline
 
 
     /// <summary>
+    /// Constants used for properties of type SourceRevisionType.
+    /// </summary>
+    public class SourceRevisionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMMIT_ID for SourceRevisionType
+        /// </summary>
+        public static readonly SourceRevisionType COMMIT_ID = new SourceRevisionType("COMMIT_ID");
+        /// <summary>
+        /// Constant IMAGE_DIGEST for SourceRevisionType
+        /// </summary>
+        public static readonly SourceRevisionType IMAGE_DIGEST = new SourceRevisionType("IMAGE_DIGEST");
+        /// <summary>
+        /// Constant S3_OBJECT_VERSION_ID for SourceRevisionType
+        /// </summary>
+        public static readonly SourceRevisionType S3_OBJECT_VERSION_ID = new SourceRevisionType("S3_OBJECT_VERSION_ID");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SourceRevisionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SourceRevisionType FindValue(string value)
+        {
+            return FindValue<SourceRevisionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SourceRevisionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type StageExecutionStatus.
     /// </summary>
     public class StageExecutionStatus : ConstantClass

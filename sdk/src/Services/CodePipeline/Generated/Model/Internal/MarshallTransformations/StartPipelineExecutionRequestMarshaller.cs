@@ -84,6 +84,22 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
+                if(publicRequest.IsSetSourceRevisions())
+                {
+                    context.Writer.WritePropertyName("sourceRevisions");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestSourceRevisionsListValue in publicRequest.SourceRevisions)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = SourceRevisionOverrideMarshaller.Instance;
+                        marshaller.Marshall(publicRequestSourceRevisionsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetVariables())
                 {
                     context.Writer.WritePropertyName("variables");

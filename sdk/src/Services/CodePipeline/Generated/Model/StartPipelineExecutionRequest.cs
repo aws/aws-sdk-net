@@ -37,6 +37,7 @@ namespace Amazon.CodePipeline.Model
     {
         private string _clientRequestToken;
         private string _name;
+        private List<SourceRevisionOverride> _sourceRevisions = new List<SourceRevisionOverride>();
         private List<PipelineVariable> _variables = new List<PipelineVariable>();
 
         /// <summary>
@@ -75,6 +76,27 @@ namespace Amazon.CodePipeline.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceRevisions. 
+        /// <para>
+        /// A list that allows you to specify, or override, the source revision for a pipeline
+        /// execution that's being started. A source revision is the version with all the changes
+        /// to your application code, or source artifact, for the pipeline execution.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=50)]
+        public List<SourceRevisionOverride> SourceRevisions
+        {
+            get { return this._sourceRevisions; }
+            set { this._sourceRevisions = value; }
+        }
+
+        // Check to see if SourceRevisions property is set
+        internal bool IsSetSourceRevisions()
+        {
+            return this._sourceRevisions != null && this._sourceRevisions.Count > 0; 
         }
 
         /// <summary>

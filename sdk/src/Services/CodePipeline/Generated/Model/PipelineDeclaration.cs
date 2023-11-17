@@ -146,6 +146,14 @@ namespace Amazon.CodePipeline.Model
         ///  For information about which type of pipeline to choose, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types-planning.html">What
         /// type of pipeline is right for me?</a>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// V2 type pipelines, along with triggers on Git tags and pipeline-level variables, are
+        /// not currently supported for CloudFormation and CDK resources in CodePipeline. For
+        /// more information about V2 type pipelines, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types.html">Pipeline
+        /// types</a> in the <i>CodePipeline User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         public PipelineType PipelineType
         {
