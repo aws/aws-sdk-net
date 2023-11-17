@@ -35,6 +35,8 @@ namespace Amazon.OSIS.Model
     /// </summary>
     public partial class CreatePipelineRequest : AmazonOSISRequest
     {
+        private BufferOptions _bufferOptions;
+        private EncryptionAtRestOptions _encryptionAtRestOptions;
         private LogPublishingOptions _logPublishingOptions;
         private int? _maxUnits;
         private int? _minUnits;
@@ -42,6 +44,42 @@ namespace Amazon.OSIS.Model
         private string _pipelineName;
         private List<Tag> _tags = new List<Tag>();
         private VpcOptions _vpcOptions;
+
+        /// <summary>
+        /// Gets and sets the property BufferOptions. 
+        /// <para>
+        /// Key-value pairs to configure persistent buffering for the pipeline.
+        /// </para>
+        /// </summary>
+        public BufferOptions BufferOptions
+        {
+            get { return this._bufferOptions; }
+            set { this._bufferOptions = value; }
+        }
+
+        // Check to see if BufferOptions property is set
+        internal bool IsSetBufferOptions()
+        {
+            return this._bufferOptions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EncryptionAtRestOptions. 
+        /// <para>
+        /// Key-value pairs to configure encryption for data that is written to a persistent buffer.
+        /// </para>
+        /// </summary>
+        public EncryptionAtRestOptions EncryptionAtRestOptions
+        {
+            get { return this._encryptionAtRestOptions; }
+            set { this._encryptionAtRestOptions = value; }
+        }
+
+        // Check to see if EncryptionAtRestOptions property is set
+        internal bool IsSetEncryptionAtRestOptions()
+        {
+            return this._encryptionAtRestOptions != null;
+        }
 
         /// <summary>
         /// Gets and sets the property LogPublishingOptions. 
@@ -67,7 +105,7 @@ namespace Amazon.OSIS.Model
         /// The maximum pipeline capacity, in Ingestion Compute Units (ICUs).
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=96)]
+        [AWSProperty(Required=true, Min=1)]
         public int MaxUnits
         {
             get { return this._maxUnits.GetValueOrDefault(); }
@@ -86,7 +124,7 @@ namespace Amazon.OSIS.Model
         /// The minimum pipeline capacity, in Ingestion Compute Units (ICUs).
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=96)]
+        [AWSProperty(Required=true, Min=1)]
         public int MinUnits
         {
             get { return this._minUnits.GetValueOrDefault(); }

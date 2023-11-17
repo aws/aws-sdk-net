@@ -3,12 +3,10 @@
   <property-value-rule>
     <property>Amazon.OSIS.Model.CreatePipelineRequest.MaxUnits</property>
     <min>1</min>
-    <max>96</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OSIS.Model.CreatePipelineRequest.MinUnits</property>
     <min>1</min>
-    <max>96</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OSIS.Model.CreatePipelineRequest.PipelineConfigurationBody</property>
@@ -89,12 +87,10 @@
   <property-value-rule>
     <property>Amazon.OSIS.Model.UpdatePipelineRequest.MaxUnits</property>
     <min>1</min>
-    <max>96</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OSIS.Model.UpdatePipelineRequest.MinUnits</property>
     <min>1</min>
-    <max>96</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OSIS.Model.UpdatePipelineRequest.PipelineConfigurationBody</property>
@@ -119,14 +115,17 @@
     <pattern>\/aws\/vendedlogs\/[\.\-_/#A-Za-z0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.OSIS.Model.EncryptionAtRestOptions.KmsKeyArn</property>
+    <min>7</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.OSIS.Model.PipelineSummary.MaxUnits</property>
     <min>1</min>
-    <max>96</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OSIS.Model.PipelineSummary.MinUnits</property>
     <min>1</min>
-    <max>96</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OSIS.Model.PipelineSummary.PipelineArn</property>

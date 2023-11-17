@@ -288,6 +288,9 @@ namespace Amazon.OSIS
         /// <exception cref="Amazon.OSIS.Model.ResourceAlreadyExistsException">
         /// You attempted to create a resource that already exists.
         /// </exception>
+        /// <exception cref="Amazon.OSIS.Model.ResourceNotFoundException">
+        /// You attempted to access or delete a resource that does not exist.
+        /// </exception>
         /// <exception cref="Amazon.OSIS.Model.ValidationException">
         /// An exception for missing or invalid input fields.
         /// </exception>

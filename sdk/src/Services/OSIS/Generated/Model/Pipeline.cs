@@ -33,7 +33,9 @@ namespace Amazon.OSIS.Model
     /// </summary>
     public partial class Pipeline
     {
+        private BufferOptions _bufferOptions;
         private DateTime? _createdAt;
+        private EncryptionAtRestOptions _encryptionAtRestOptions;
         private List<string> _ingestEndpointUrls = new List<string>();
         private DateTime? _lastUpdatedAt;
         private LogPublishingOptions _logPublishingOptions;
@@ -42,9 +44,26 @@ namespace Amazon.OSIS.Model
         private string _pipelineArn;
         private string _pipelineConfigurationBody;
         private string _pipelineName;
+        private List<ServiceVpcEndpoint> _serviceVpcEndpoints = new List<ServiceVpcEndpoint>();
         private PipelineStatus _status;
         private PipelineStatusReason _statusReason;
+        private List<Tag> _tags = new List<Tag>();
         private List<VpcEndpoint> _vpcEndpoints = new List<VpcEndpoint>();
+
+        /// <summary>
+        /// Gets and sets the property BufferOptions.
+        /// </summary>
+        public BufferOptions BufferOptions
+        {
+            get { return this._bufferOptions; }
+            set { this._bufferOptions = value; }
+        }
+
+        // Check to see if BufferOptions property is set
+        internal bool IsSetBufferOptions()
+        {
+            return this._bufferOptions != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CreatedAt. 
@@ -62,6 +81,21 @@ namespace Amazon.OSIS.Model
         internal bool IsSetCreatedAt()
         {
             return this._createdAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EncryptionAtRestOptions.
+        /// </summary>
+        public EncryptionAtRestOptions EncryptionAtRestOptions
+        {
+            get { return this._encryptionAtRestOptions; }
+            set { this._encryptionAtRestOptions = value; }
+        }
+
+        // Check to see if EncryptionAtRestOptions property is set
+        internal bool IsSetEncryptionAtRestOptions()
+        {
+            return this._encryptionAtRestOptions != null;
         }
 
         /// <summary>
@@ -209,6 +243,24 @@ namespace Amazon.OSIS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ServiceVpcEndpoints. 
+        /// <para>
+        /// A list of VPC endpoints that OpenSearch Ingestion has created to other AWS services.
+        /// </para>
+        /// </summary>
+        public List<ServiceVpcEndpoint> ServiceVpcEndpoints
+        {
+            get { return this._serviceVpcEndpoints; }
+            set { this._serviceVpcEndpoints = value; }
+        }
+
+        // Check to see if ServiceVpcEndpoints property is set
+        internal bool IsSetServiceVpcEndpoints()
+        {
+            return this._serviceVpcEndpoints != null && this._serviceVpcEndpoints.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
         /// The current status of the pipeline.
@@ -242,6 +294,24 @@ namespace Amazon.OSIS.Model
         internal bool IsSetStatusReason()
         {
             return this._statusReason != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of tags associated with the given pipeline.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

@@ -41,6 +41,7 @@ namespace Amazon.OSIS.Model
         private string _pipelineName;
         private PipelineStatus _status;
         private PipelineStatusReason _statusReason;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property CreatedAt. 
@@ -84,7 +85,7 @@ namespace Amazon.OSIS.Model
         /// The maximum pipeline capacity, in Ingestion Compute Units (ICUs).
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=96)]
+        [AWSProperty(Min=1)]
         public int MaxUnits
         {
             get { return this._maxUnits.GetValueOrDefault(); }
@@ -103,7 +104,7 @@ namespace Amazon.OSIS.Model
         /// The minimum pipeline capacity, in Ingestion Compute Units (ICUs).
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=96)]
+        [AWSProperty(Min=1)]
         public int MinUnits
         {
             get { return this._minUnits.GetValueOrDefault(); }
@@ -185,6 +186,24 @@ namespace Amazon.OSIS.Model
         internal bool IsSetStatusReason()
         {
             return this._statusReason != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of tags associated with the given pipeline.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

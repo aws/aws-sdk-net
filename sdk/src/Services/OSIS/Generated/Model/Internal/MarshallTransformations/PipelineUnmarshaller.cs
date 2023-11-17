@@ -64,10 +64,22 @@ namespace Amazon.OSIS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("BufferOptions", targetDepth))
+                {
+                    var unmarshaller = BufferOptionsUnmarshaller.Instance;
+                    unmarshalledObject.BufferOptions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CreatedAt", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("EncryptionAtRestOptions", targetDepth))
+                {
+                    var unmarshaller = EncryptionAtRestOptionsUnmarshaller.Instance;
+                    unmarshalledObject.EncryptionAtRestOptions = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("IngestEndpointUrls", targetDepth))
@@ -118,6 +130,12 @@ namespace Amazon.OSIS.Model.Internal.MarshallTransformations
                     unmarshalledObject.PipelineName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ServiceVpcEndpoints", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ServiceVpcEndpoint, ServiceVpcEndpointUnmarshaller>(ServiceVpcEndpointUnmarshaller.Instance);
+                    unmarshalledObject.ServiceVpcEndpoints = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -128,6 +146,12 @@ namespace Amazon.OSIS.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = PipelineStatusReasonUnmarshaller.Instance;
                     unmarshalledObject.StatusReason = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Tags", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
+                    unmarshalledObject.Tags = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("VpcEndpoints", targetDepth))
