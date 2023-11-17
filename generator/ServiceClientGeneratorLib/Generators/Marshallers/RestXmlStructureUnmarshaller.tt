@@ -46,7 +46,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
     }
 #>
 <#
-     if(this.Structure != null && this.Structure.HasImplicitEventPayloadMembers() || !this.Structure.IsEvent)
+     if(this.Structure != null && (this.Structure.HasImplicitEventPayloadMembers() || !this.Structure.IsEvent))
      {
 #>
             int originalDepth = context.CurrentDepth;
@@ -63,7 +63,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
     }
 #>
 <#
-    if(this.Structure != null && !this.Structure.IsEvent ||  this.Structure.HasImplicitEventPayloadMembers())
+    if(this.Structure != null && (!this.Structure.IsEvent ||  this.Structure.HasImplicitEventPayloadMembers()))
     {
         // For every member, generate code to add the unmarshalled member to the response object
         foreach (var member in this.Structure.Members)

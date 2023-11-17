@@ -639,7 +639,10 @@ namespace ServiceClientGenerator
                     // the 'simple' DocumentMarshaller in AWSSDK.
                     if (nestedStructure.IsDocument)
                         continue;
-
+                    // We don't generate an umarshaller for a member that is an event stream.
+                    // instead we generated a layer over the structure. That layer is is EventStreamGenerator.tt.
+                    if (nestedStructure.IsEventStream)
+                        continue;
                     // Skip already processed unmarshallers. This handles the case of structures being returned in mulitiple requests.
                     if (!this._processedUnmarshallers.Contains(nestedStructure.Name))
                     {
@@ -648,20 +651,6 @@ namespace ServiceClientGenerator
 
                         this.ExecuteGenerator(generator, nestedStructure.Name + "Unmarshaller.cs", "Model.Internal.MarshallTransformations");
                         this._processedUnmarshallers.Add(nestedStructure.Name);
-                    }
-                    if (operation.IsEventStreamOutput)
-                    {
-
-                        if (operation.ResponsePayloadMember.ModelShape.IsEventStream)
-                        {
-                            //If the file was already generated incorrectly delete it
-                            var unmarshallerName = operation.ResponsePayloadMember.ModelShape.Name + "Unmarshaller.cs";
-                            var unmarshallerPath = Utils.PathCombineAlt(GeneratedFilesRoot, "Model", "Internal", "MarshallTransformations", unmarshallerName);
-                            if (File.Exists(unmarshallerPath))
-                            {
-                                File.Delete(unmarshallerPath);
-                            }
-                        }
                     }
                     else
                     {
@@ -688,7 +677,7 @@ namespace ServiceClientGenerator
                 // the 'simple' DocumentMarshaller in AWSSDK.
                 if (nestedStructure.IsDocument)
                     continue;
-
+                    
                 // Skip already processed unmarshallers. This handles the case of structures being returned in mulitiple requests.
                 if (!this._processedUnmarshallers.Contains(nestedStructure.Name))
                 {

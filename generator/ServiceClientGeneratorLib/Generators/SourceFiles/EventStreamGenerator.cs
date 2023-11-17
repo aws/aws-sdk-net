@@ -67,7 +67,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
         string protocol = null;
         if(string.Equals(this.Config.ServiceModel.Protocol,"rest-json", StringComparison.OrdinalIgnoreCase))
             protocol = "Json";
-        if(string.Equals(this.Config.ServiceModel.Protocol,"rest-xml",StringComparison.OrdinalIgnoreCase))
+        else if(string.Equals(this.Config.ServiceModel.Protocol,"rest-xml",StringComparison.OrdinalIgnoreCase))
             protocol = "Xml";
         foreach(var member in this.Structure.Members)
         {
@@ -170,8 +170,8 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             
             #line 47 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamGenerator.tt"
 
-        }
             }
+        }
 
             
             #line default
@@ -281,7 +281,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                 }
                 EventReceived?.Invoke(this, new EventStreamEventReceivedArgs<IEventStreamEvent>(ev));
 
-                //Call RaiseEvent until it returns true or all calls complete. This way only a subset of casts is perfromed
+                //Call RaiseEvent until it returns true or all calls complete. This way only a subset of casts are perfromed
                 // and we can avoid a cascade of nested if else statements. The result is thrown away
                 var _ =
 ");

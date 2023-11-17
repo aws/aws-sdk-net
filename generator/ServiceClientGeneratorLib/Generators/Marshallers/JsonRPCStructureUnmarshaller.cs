@@ -100,7 +100,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name=""context""></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public ");
             
             #line 35 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureUnmarshaller.tt"
@@ -188,18 +188,18 @@ namespace ServiceClientGenerator.Generators.Marshallers
             
             #line 63 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureUnmarshaller.tt"
 
-    if(this.Structure != null && this.Structure.HasImplicitEventPayloadMembers() || !this.Structure.IsEvent)
+    if(this.Structure != null && (this.Structure.HasImplicitEventPayloadMembers() || !this.Structure.IsEvent))
     {
 
             
             #line default
             #line hidden
             this.Write("            context.Read();\r\n            if (context.CurrentTokenType == JsonToke" +
-                    "n.Null) \r\n                return null;\r\n\r\n\r\n            int targetDepth = contex" +
-                    "t.CurrentDepth;\r\n            while (context.ReadAtDepth(targetDepth))\r\n         " +
-                    "   {\r\n");
+                    "n.Null) \r\n                return null;\r\n\r\n            int targetDepth = context." +
+                    "CurrentDepth;\r\n            while (context.ReadAtDepth(targetDepth))\r\n           " +
+                    " {\r\n");
             
-            #line 75 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureUnmarshaller.tt"
+            #line 74 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureUnmarshaller.tt"
 
     }
 
@@ -207,9 +207,9 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line default
             #line hidden
             
-            #line 78 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureUnmarshaller.tt"
+            #line 77 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureUnmarshaller.tt"
 
-    if(this.Structure != null && !this.Structure.IsEvent ||  this.Structure.HasImplicitEventPayloadMembers())
+    if(this.Structure != null && (!this.Structure.IsEvent ||  this.Structure.HasImplicitEventPayloadMembers()))
     {
         foreach (var member in this.Structure.Members)
         {
@@ -219,21 +219,21 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("                if (context.TestExpression(\"");
             
-            #line 84 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureUnmarshaller.tt"
+            #line 83 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallName));
             
             #line default
             #line hidden
             this.Write("\", targetDepth))\r\n                {\r\n                    var unmarshaller = ");
             
-            #line 86 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureUnmarshaller.tt"
+            #line 85 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.DetermineTypeUnmarshallerInstantiate()));
             
             #line default
             #line hidden
             this.Write(";\r\n                    unmarshalledObject.");
             
-            #line 87 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureUnmarshaller.tt"
+            #line 86 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
             
             #line default
@@ -241,7 +241,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             this.Write(" = unmarshaller.Unmarshall(context);\r\n                    continue;\r\n            " +
                     "    }\r\n");
             
-            #line 90 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureUnmarshaller.tt"
+            #line 89 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureUnmarshaller.tt"
 
         }
     }
@@ -250,9 +250,9 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line default
             #line hidden
             
-            #line 94 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureUnmarshaller.tt"
+            #line 93 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureUnmarshaller.tt"
 
-    if(!this.Structure.IsEvent || this.Structure.HasImplicitEventPayloadMembers())
+    if(this.Structure != null && (!this.Structure.IsEvent || this.Structure.HasImplicitEventPayloadMembers()))
     {
 
             
@@ -260,7 +260,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("            }\r\n");
             
-            #line 99 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureUnmarshaller.tt"
+            #line 98 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureUnmarshaller.tt"
 
     }
 
@@ -269,7 +269,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("            return unmarshalledObject;\r\n        }\r\n\r\n\r\n");
             
-            #line 106 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureUnmarshaller.tt"
+            #line 105 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureUnmarshaller.tt"
 
     this.AddStructureSingletonMethod();
 

@@ -143,7 +143,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             
             #line 48 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
 
-     if(this.Structure != null && this.Structure.HasImplicitEventPayloadMembers() || !this.Structure.IsEvent)
+     if(this.Structure != null && (this.Structure.HasImplicitEventPayloadMembers() || !this.Structure.IsEvent))
      {
 
             
@@ -171,7 +171,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             
             #line 65 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
 
-    if(this.Structure != null && !this.Structure.IsEvent ||  this.Structure.HasImplicitEventPayloadMembers())
+    if(this.Structure != null && (!this.Structure.IsEvent ||  this.Structure.HasImplicitEventPayloadMembers()))
     {
         // For every member, generate code to add the unmarshalled member to the response object
         foreach (var member in this.Structure.Members)

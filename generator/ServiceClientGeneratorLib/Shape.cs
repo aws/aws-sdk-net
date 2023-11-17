@@ -868,10 +868,11 @@ namespace ServiceClientGenerator
                 return (bool)exceptionNode;
             }
         }
+
         /// <summary>
-        /// Returns the list of members who are not marked with the event header or eventPayload trait
+        /// Unbound Event members are members of an event which are not marked with the eventHeader or EventPayload trait.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Returns the list of members who are not marked with the event header or eventPayload trait</returns>
         public List<Member> GetUnboundEventMembers()
         {
             if (Members == null)
@@ -880,10 +881,16 @@ namespace ServiceClientGenerator
 
         }
 
+        /// <summary>
+        /// A structure with an implicit payload is one where there is no eventPayload
+        /// trait marked on one of the members.
+        /// </summary>
+        /// <returns>True if the number of members marked without eventPaylod or EventHeader is greater than 1. False otherwise</returns>
         public bool HasImplicitEventPayloadMembers()
         {
             return IsEvent && GetUnboundEventMembers().Count > 0;
         }
+
         /// <summary>
         /// An explicity payload member must have the "eventpayload" trait and can be the only
         /// member marked as such. 
@@ -897,10 +904,11 @@ namespace ServiceClientGenerator
             }
             return Members.Where(m => m.IsEventPayload).FirstOrDefault();
         }
+
         /// <summary>
         /// If all members of an event are marked with eventheader then there is no event payload
         /// </summary>
-        /// <returns></returns>
+        /// <returns>True if the structure contains only eventHeaders. False otherwise</returns>
         public bool HasNoEventPayload()
         {
             return Members == null || Members.All(m => m.IsEventHeader);

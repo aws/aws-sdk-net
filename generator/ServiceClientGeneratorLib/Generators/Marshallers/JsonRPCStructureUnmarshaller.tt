@@ -31,7 +31,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>The unmarshalled object</returns>
         public <#=this.UnmarshallerBaseName #> Unmarshall(JsonUnmarshallerContext context)
         {
             <#=this.UnmarshallerBaseName #> unmarshalledObject = new <#=this.UnmarshallerBaseName #>();
@@ -61,13 +61,12 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
     }
 #>
 <#
-    if(this.Structure != null && this.Structure.HasImplicitEventPayloadMembers() || !this.Structure.IsEvent)
+    if(this.Structure != null && (this.Structure.HasImplicitEventPayloadMembers() || !this.Structure.IsEvent))
     {
 #>
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
-
 
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
@@ -76,7 +75,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
     }
 #>
 <#
-    if(this.Structure != null && !this.Structure.IsEvent ||  this.Structure.HasImplicitEventPayloadMembers())
+    if(this.Structure != null && (!this.Structure.IsEvent ||  this.Structure.HasImplicitEventPayloadMembers()))
     {
         foreach (var member in this.Structure.Members)
         {
@@ -92,7 +91,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
     }
 #>
 <#
-    if(!this.Structure.IsEvent || this.Structure.HasImplicitEventPayloadMembers())
+    if(this.Structure != null && (!this.Structure.IsEvent || this.Structure.HasImplicitEventPayloadMembers()))
     {
 #>
             }

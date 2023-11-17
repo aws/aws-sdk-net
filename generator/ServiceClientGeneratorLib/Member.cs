@@ -947,7 +947,6 @@ namespace ServiceClientGenerator
         {
             get
             {
-                //return this.Shape.IsEventHeader;
                 if (data[EventHeaderKey] != null && data[EventHeaderKey].IsBoolean)
                     return (bool)data[EventHeaderKey];
                 return false;
