@@ -37,6 +37,7 @@ namespace Amazon.ElasticMapReduce.Model
     {
         private string _defaultS3Location;
         private string _description;
+        private string _encryptionKeyArn;
         private string _name;
         private string _studioId;
         private List<string> _subnetIds = new List<string>();
@@ -78,6 +79,26 @@ namespace Amazon.ElasticMapReduce.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EncryptionKeyArn. 
+        /// <para>
+        /// The KMS key identifier (ARN) used to encrypt Amazon EMR Studio workspace and notebook
+        /// files when backed up to Amazon S3.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=10280)]
+        public string EncryptionKeyArn
+        {
+            get { return this._encryptionKeyArn; }
+            set { this._encryptionKeyArn = value; }
+        }
+
+        // Check to see if EncryptionKeyArn property is set
+        internal bool IsSetEncryptionKeyArn()
+        {
+            return this._encryptionKeyArn != null;
         }
 
         /// <summary>

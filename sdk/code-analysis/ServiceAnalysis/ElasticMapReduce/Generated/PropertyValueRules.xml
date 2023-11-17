@@ -66,9 +66,19 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.CreateStudioRequest.EncryptionKeyArn</property>
+    <min>0</min>
+    <max>10280</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.CreateStudioRequest.EngineSecurityGroupId</property>
     <min>0</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.CreateStudioRequest.IdcInstanceArn</property>
+    <min>20</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.CreateStudioRequest.IdpAuthUrl</property>
@@ -354,6 +364,11 @@
     <property>Amazon.ElasticMapReduce.Model.UpdateStudioRequest.Description</property>
     <min>0</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.UpdateStudioRequest.EncryptionKeyArn</property>
+    <min>0</min>
+    <max>10280</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.UpdateStudioRequest.Name</property>
@@ -994,9 +1009,19 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.Studio.EncryptionKeyArn</property>
+    <min>0</min>
+    <max>10280</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.Studio.EngineSecurityGroupId</property>
     <min>0</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.Studio.IdcInstanceArn</property>
+    <min>20</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.Studio.IdpAuthUrl</property>

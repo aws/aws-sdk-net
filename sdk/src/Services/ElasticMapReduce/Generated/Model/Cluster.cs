@@ -146,7 +146,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property Configurations. 
         /// <para>
-        /// Applies only to Amazon EMR releases 4.x and higher. The list of configurations that
+        /// Applies only to Amazon EMR releases 4.x and later. The list of configurations that
         /// are supplied to the Amazon EMR cluster.
         /// </para>
         /// </summary>
@@ -165,8 +165,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property CustomAmiId. 
         /// <para>
-        /// Available only in Amazon EMR releases 5.7.0 and higher. The ID of a custom Amazon
-        /// EBS-backed Linux AMI if the cluster uses a custom AMI.
+        /// Available only in Amazon EMR releases 5.7.0 and later. The ID of a custom Amazon EBS-backed
+        /// Linux AMI if the cluster uses a custom AMI.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]
@@ -185,8 +185,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property EbsRootVolumeIops. 
         /// <para>
-        /// The IOPS, of the Amazon EBS root device volume for the Linux AMI that each Amazon
-        /// EC2 instance uses. Available in Amazon EMR releases 6.15.0 and higher.
+        /// The IOPS, of the Amazon EBS root device volume of the Linux AMI that is used for each
+        /// Amazon EC2 instance. Available in Amazon EMR releases 6.15.0 and later.
         /// </para>
         /// </summary>
         public int EbsRootVolumeIops
@@ -204,8 +204,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property EbsRootVolumeSize. 
         /// <para>
-        /// The size, in GiB, of the Amazon EBS root device volume for the Linux AMI that each
-        /// Amazon EC2 instance uses. Available in Amazon EMR releases 4.x and higher.
+        /// The size, in GiB, of the Amazon EBS root device volume of the Linux AMI that is used
+        /// for each Amazon EC2 instance. Available in Amazon EMR releases 4.x and later.
         /// </para>
         /// </summary>
         public int EbsRootVolumeSize
@@ -223,8 +223,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property EbsRootVolumeThroughput. 
         /// <para>
-        /// The throughput, in MiB/s, of the Amazon EBS root device volume for the Linux AMI that
-        /// each Amazon EC2 instance uses. Available in Amazon EMR releases 6.15.0 and higher.
+        /// The throughput, in MiB/s, of the Amazon EBS root device volume of the Linux AMI that
+        /// is used for each Amazon EC2 instance. Available in Amazon EMR releases 6.15.0 and
+        /// later.
         /// </para>
         /// </summary>
         public int EbsRootVolumeThroughput
@@ -280,7 +281,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// Gets and sets the property InstanceCollectionType. <note> 
         /// <para>
         /// The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and
-        /// higher, excluding 5.0.x versions.
+        /// later, excluding 5.0.x versions.
         /// </para>
         ///  </note> 
         /// <para>
@@ -325,7 +326,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// Gets and sets the property LogEncryptionKmsKeyId. 
         /// <para>
         ///  The KMS key used for encrypting log files. This attribute is only available with
-        /// Amazon EMR 5.30.0 and higher, excluding Amazon EMR 6.0.0. 
+        /// Amazon EMR 5.30.0 and later, excluding Amazon EMR 6.0.0. 
         /// </para>
         /// </summary>
         public string LogEncryptionKmsKeyId
@@ -481,7 +482,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// where x.x.x is an Amazon EMR release version such as <code>emr-5.14.0</code>. For
         /// more information about Amazon EMR release versions and included application versions
         /// and features, see <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>.
-        /// The release label applies only to Amazon EMR releases version 4.0 and higher. Earlier
+        /// The release label applies only to Amazon EMR releases version 4.0 and later. Earlier
         /// versions use <code>AmiVersion</code>.
         /// </para>
         /// </summary>
@@ -560,13 +561,13 @@ namespace Amazon.ElasticMapReduce.Model
         /// activity occurs or an instance group is resized. <code>TERMINATE_AT_INSTANCE_HOUR</code>
         /// indicates that Amazon EMR terminates nodes at the instance-hour boundary, regardless
         /// of when the request to terminate the instance was submitted. This option is only available
-        /// with Amazon EMR 5.1.0 and higher and is the default for clusters created using that
+        /// with Amazon EMR 5.1.0 and later and is the default for clusters created using that
         /// version. <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds
         /// nodes to a deny list and drains tasks from nodes before terminating the Amazon EC2
         /// instances, regardless of the instance-hour boundary. With either behavior, Amazon
         /// EMR removes the least active nodes first and blocks instance termination if it could
         /// lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> is available only
-        /// in Amazon EMR releases 4.1.0 and higher, and is the default for versions of Amazon
+        /// in Amazon EMR releases 4.1.0 and later, and is the default for versions of Amazon
         /// EMR earlier than 5.1.0.
         /// </para>
         /// </summary>

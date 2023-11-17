@@ -79,6 +79,12 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Description);
                 }
 
+                if(publicRequest.IsSetEncryptionKeyArn())
+                {
+                    context.Writer.WritePropertyName("EncryptionKeyArn");
+                    context.Writer.Write(publicRequest.EncryptionKeyArn);
+                }
+
                 if(publicRequest.IsSetName())
                 {
                     context.Writer.WritePropertyName("Name");

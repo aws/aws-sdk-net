@@ -97,7 +97,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property Configurations. <note> 
         /// <para>
-        /// Amazon EMR releases 4.x or higher.
+        /// Amazon EMR releases 4.x or later.
         /// </para>
         ///  </note> 
         /// <para>

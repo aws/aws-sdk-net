@@ -88,10 +88,28 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EncryptionKeyArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EncryptionKeyArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("EngineSecurityGroupId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EngineSecurityGroupId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("IdcInstanceArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.IdcInstanceArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("IdcUserAssignment", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.IdcUserAssignment = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("IdpAuthUrl", targetDepth))
@@ -140,6 +158,12 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
                     unmarshalledObject.Tags = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TrustedIdentityPropagationEnabled", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.TrustedIdentityPropagationEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Url", targetDepth))

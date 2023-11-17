@@ -37,13 +37,17 @@ namespace Amazon.ElasticMapReduce.Model
         private AuthMode _authMode;
         private string _defaultS3Location;
         private string _description;
+        private string _encryptionKeyArn;
         private string _engineSecurityGroupId;
+        private string _idcInstanceArn;
+        private IdcUserAssignment _idcUserAssignment;
         private string _idpAuthUrl;
         private string _idpRelayStateParameterName;
         private string _name;
         private string _serviceRole;
         private List<string> _subnetIds = new List<string>();
         private List<Tag> _tags = new List<Tag>();
+        private bool? _trustedIdentityPropagationEnabled;
         private string _userRole;
         private string _vpcId;
         private string _workspaceSecurityGroupId;
@@ -106,6 +110,26 @@ namespace Amazon.ElasticMapReduce.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EncryptionKeyArn. 
+        /// <para>
+        /// The KMS key identifier (ARN) used to encrypt Amazon EMR Studio workspace and notebook
+        /// files when backed up to Amazon S3.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=10280)]
+        public string EncryptionKeyArn
+        {
+            get { return this._encryptionKeyArn; }
+            set { this._encryptionKeyArn = value; }
+        }
+
+        // Check to see if EncryptionKeyArn property is set
+        internal bool IsSetEncryptionKeyArn()
+        {
+            return this._encryptionKeyArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property EngineSecurityGroupId. 
         /// <para>
         /// The ID of the Amazon EMR Studio Engine security group. The Engine security group allows
@@ -124,6 +148,45 @@ namespace Amazon.ElasticMapReduce.Model
         internal bool IsSetEngineSecurityGroupId()
         {
             return this._engineSecurityGroupId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IdcInstanceArn. 
+        /// <para>
+        ///  The ARN of the IAM Identity Center instance to create the Studio application. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string IdcInstanceArn
+        {
+            get { return this._idcInstanceArn; }
+            set { this._idcInstanceArn = value; }
+        }
+
+        // Check to see if IdcInstanceArn property is set
+        internal bool IsSetIdcInstanceArn()
+        {
+            return this._idcInstanceArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IdcUserAssignment. 
+        /// <para>
+        ///  Specifies whether IAM Identity Center user assignment is <code>REQUIRED</code> or
+        /// <code>OPTIONAL</code>. If the value is set to <code>REQUIRED</code>, users must be
+        /// explicitly assigned to the Studio application to access the Studio. 
+        /// </para>
+        /// </summary>
+        public IdcUserAssignment IdcUserAssignment
+        {
+            get { return this._idcUserAssignment; }
+            set { this._idcUserAssignment = value; }
+        }
+
+        // Check to see if IdcUserAssignment property is set
+        internal bool IsSetIdcUserAssignment()
+        {
+            return this._idcUserAssignment != null;
         }
 
         /// <summary>
@@ -248,6 +311,25 @@ namespace Amazon.ElasticMapReduce.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TrustedIdentityPropagationEnabled. 
+        /// <para>
+        ///  A Boolean indicating whether to enable Trusted identity propagation for the Studio.
+        /// The default value is <code>false</code>. 
+        /// </para>
+        /// </summary>
+        public bool TrustedIdentityPropagationEnabled
+        {
+            get { return this._trustedIdentityPropagationEnabled.GetValueOrDefault(); }
+            set { this._trustedIdentityPropagationEnabled = value; }
+        }
+
+        // Check to see if TrustedIdentityPropagationEnabled property is set
+        internal bool IsSetTrustedIdentityPropagationEnabled()
+        {
+            return this._trustedIdentityPropagationEnabled.HasValue; 
         }
 
         /// <summary>

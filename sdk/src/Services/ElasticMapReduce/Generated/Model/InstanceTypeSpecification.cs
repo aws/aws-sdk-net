@@ -34,7 +34,7 @@ namespace Amazon.ElasticMapReduce.Model
     ///  <note> 
     /// <para>
     /// The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and
-    /// higher, excluding 5.0.x versions.
+    /// later, excluding 5.0.x versions.
     /// </para>
     ///  </note>
     /// </summary>
