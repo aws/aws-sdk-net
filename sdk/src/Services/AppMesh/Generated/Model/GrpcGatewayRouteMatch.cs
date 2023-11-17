@@ -78,7 +78,7 @@ namespace Amazon.AppMesh.Model
         /// <summary>
         /// Gets and sets the property Port. 
         /// <para>
-        /// The port number to match from the request.
+        /// The gateway route port to be matched on.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=65535)]
