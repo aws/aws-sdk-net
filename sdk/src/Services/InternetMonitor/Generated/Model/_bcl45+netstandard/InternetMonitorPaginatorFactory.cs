@@ -36,6 +36,14 @@ namespace Amazon.InternetMonitor.Model
         }
 
         /// <summary>
+        /// Paginator for GetQueryResults operation
+        ///</summary>
+        public IGetQueryResultsPaginator GetQueryResults(GetQueryResultsRequest request) 
+        {
+            return new GetQueryResultsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListHealthEvents operation
         ///</summary>
         public IListHealthEventsPaginator ListHealthEvents(ListHealthEventsRequest request) 

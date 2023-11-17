@@ -357,6 +357,172 @@ namespace Amazon.InternetMonitor
 
 
     /// <summary>
+    /// Constants used for properties of type Operator.
+    /// </summary>
+    public class Operator : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EQUALS for Operator
+        /// </summary>
+        public static readonly Operator EQUALS = new Operator("EQUALS");
+        /// <summary>
+        /// Constant NOT_EQUALS for Operator
+        /// </summary>
+        public static readonly Operator NOT_EQUALS = new Operator("NOT_EQUALS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Operator(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Operator FindValue(string value)
+        {
+            return FindValue<Operator>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Operator(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type QueryStatus.
+    /// </summary>
+    public class QueryStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CANCELED for QueryStatus
+        /// </summary>
+        public static readonly QueryStatus CANCELED = new QueryStatus("CANCELED");
+        /// <summary>
+        /// Constant FAILED for QueryStatus
+        /// </summary>
+        public static readonly QueryStatus FAILED = new QueryStatus("FAILED");
+        /// <summary>
+        /// Constant QUEUED for QueryStatus
+        /// </summary>
+        public static readonly QueryStatus QUEUED = new QueryStatus("QUEUED");
+        /// <summary>
+        /// Constant RUNNING for QueryStatus
+        /// </summary>
+        public static readonly QueryStatus RUNNING = new QueryStatus("RUNNING");
+        /// <summary>
+        /// Constant SUCCEEDED for QueryStatus
+        /// </summary>
+        public static readonly QueryStatus SUCCEEDED = new QueryStatus("SUCCEEDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public QueryStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static QueryStatus FindValue(string value)
+        {
+            return FindValue<QueryStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator QueryStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type QueryType.
+    /// </summary>
+    public class QueryType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MEASUREMENTS for QueryType
+        /// </summary>
+        public static readonly QueryType MEASUREMENTS = new QueryType("MEASUREMENTS");
+        /// <summary>
+        /// Constant TOP_LOCATION_DETAILS for QueryType
+        /// </summary>
+        public static readonly QueryType TOP_LOCATION_DETAILS = new QueryType("TOP_LOCATION_DETAILS");
+        /// <summary>
+        /// Constant TOP_LOCATIONS for QueryType
+        /// </summary>
+        public static readonly QueryType TOP_LOCATIONS = new QueryType("TOP_LOCATIONS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public QueryType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static QueryType FindValue(string value)
+        {
+            return FindValue<QueryType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator QueryType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type TriangulationEventType.
     /// </summary>
     public class TriangulationEventType : ConstantClass

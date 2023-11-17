@@ -1,0 +1,81 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the internetmonitor-2021-06-03.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+namespace Amazon.InternetMonitor.Model
+{
+    /// <summary>
+    /// Defines a field to query for your application's Amazon CloudWatch Internet Monitor
+    /// data. You create a data repository by running a query of a specific type. Each <code>QueryType</code>
+    /// includes a specific set of fields and datatypes to retrieve data for.
+    /// </summary>
+    public partial class QueryField
+    {
+        private string _name;
+        private string _type;
+
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of a field to query your application's Amazon CloudWatch Internet Monitor
+        /// data for, such as <code>availability_score</code>.
+        /// </para>
+        /// </summary>
+        public string Name
+        {
+            get { return this._name; }
+            set { this._name = value; }
+        }
+
+        // Check to see if Name property is set
+        internal bool IsSetName()
+        {
+            return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The data type for a query field, which must correspond to the field you're defining
+        /// for <code>QueryField</code>. For example, if the query field name is <code>availability_score</code>,
+        /// the data type is <code>float</code>.
+        /// </para>
+        /// </summary>
+        public string Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
+        }
+
+    }
+}

@@ -43,6 +43,10 @@ namespace Amazon.InternetMonitor.Model
     /// </para>
     ///  
     /// <para>
+    /// If you don't set a local health event threshold, the default value is 60%.
+    /// </para>
+    ///  
+    /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-overview.html#IMUpdateThresholdFromOverview">
     /// Change health event thresholds</a> in the Internet Monitor section of the <i>CloudWatch
     /// User Guide</i>.
@@ -79,6 +83,10 @@ namespace Amazon.InternetMonitor.Model
         /// The minimum percentage of overall traffic for an application that must be impacted
         /// by an issue before Internet Monitor creates an event when a threshold is crossed for
         /// a local health score.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you don't set a minimum traffic impact threshold, the default value is 0.01%.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]

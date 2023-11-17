@@ -105,7 +105,7 @@ namespace Amazon.InternetMonitor.Model
         /// <summary>
         /// Gets and sets the property EventId. 
         /// <para>
-        /// The internally generated identifier of a specific network traffic impairment health
+        /// The internally-generated identifier of a specific network traffic impairment health
         /// event.
         /// </para>
         /// </summary>

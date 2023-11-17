@@ -16,28 +16,23 @@
 /*
  * Do not modify this file. This file is generated from the internetmonitor-2021-06-03.normal.json service model.
  */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.InternetMonitor.Model
 {
     /// <summary>
-    /// Paginators for the InternetMonitor service
-    ///</summary>
-    public interface IInternetMonitorPaginatorFactory
+    /// This is the response object from the StopQuery operation.
+    /// </summary>
+    public partial class StopQueryResponse : AmazonWebServiceResponse
     {
 
-        /// <summary>
-        /// Paginator for GetQueryResults operation
-        ///</summary>
-        IGetQueryResultsPaginator GetQueryResults(GetQueryResultsRequest request);
-
-        /// <summary>
-        /// Paginator for ListHealthEvents operation
-        ///</summary>
-        IListHealthEventsPaginator ListHealthEvents(ListHealthEventsRequest request);
-
-        /// <summary>
-        /// Paginator for ListMonitors operation
-        ///</summary>
-        IListMonitorsPaginator ListMonitors(ListMonitorsRequest request);
     }
 }

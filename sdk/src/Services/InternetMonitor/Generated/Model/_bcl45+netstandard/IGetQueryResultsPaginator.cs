@@ -16,28 +16,18 @@
 /*
  * Do not modify this file. This file is generated from the internetmonitor-2021-06-03.normal.json service model.
  */
+using Amazon.Runtime;
 
 namespace Amazon.InternetMonitor.Model
 {
     /// <summary>
-    /// Paginators for the InternetMonitor service
+    /// Paginator for the GetQueryResults operation
     ///</summary>
-    public interface IInternetMonitorPaginatorFactory
+    public interface IGetQueryResultsPaginator
     {
-
         /// <summary>
-        /// Paginator for GetQueryResults operation
-        ///</summary>
-        IGetQueryResultsPaginator GetQueryResults(GetQueryResultsRequest request);
-
-        /// <summary>
-        /// Paginator for ListHealthEvents operation
-        ///</summary>
-        IListHealthEventsPaginator ListHealthEvents(ListHealthEventsRequest request);
-
-        /// <summary>
-        /// Paginator for ListMonitors operation
-        ///</summary>
-        IListMonitorsPaginator ListMonitors(ListMonitorsRequest request);
+        /// Enumerable containing all full responses for the operation
+        /// </summary>
+        IPaginatedEnumerable<GetQueryResultsResponse> Responses { get; }
     }
 }

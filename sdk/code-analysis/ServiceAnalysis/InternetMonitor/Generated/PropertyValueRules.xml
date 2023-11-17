@@ -86,6 +86,23 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.InternetMonitor.Model.GetQueryResultsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.InternetMonitor.Model.GetQueryResultsRequest.MonitorName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.InternetMonitor.Model.GetQueryStatusRequest.MonitorName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.InternetMonitor.Model.ListHealthEventsRequest.MaxResults</property>
     <min>1</min>
     <max>25</max>
@@ -106,6 +123,18 @@
     <min>20</min>
     <max>512</max>
     <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.InternetMonitor.Model.StartQueryRequest.MonitorName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.InternetMonitor.Model.StopQueryRequest.MonitorName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.InternetMonitor.Model.TagResourceRequest.ResourceArn</property>

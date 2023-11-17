@@ -104,7 +104,7 @@ namespace Amazon.InternetMonitor.Model
         /// <summary>
         /// Gets and sets the property EventId. 
         /// <para>
-        /// The internally generated identifier of a health event.
+        /// The internally-generated identifier of a health event.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
