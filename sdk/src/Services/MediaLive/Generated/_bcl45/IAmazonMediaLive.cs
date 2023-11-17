@@ -1638,7 +1638,7 @@ namespace Amazon.MediaLive
 
 
         /// <summary>
-        /// Get account configuration
+        /// Describe account configuration
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAccountConfiguration service method.</param>
         /// 
@@ -1667,7 +1667,7 @@ namespace Amazon.MediaLive
 
 
         /// <summary>
-        /// Get account configuration
+        /// Describe account configuration
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAccountConfiguration service method.</param>
         /// <param name="cancellationToken">

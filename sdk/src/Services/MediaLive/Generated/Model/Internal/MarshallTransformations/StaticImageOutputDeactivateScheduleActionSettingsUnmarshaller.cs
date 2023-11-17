@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for FeatureActivations Object
+    /// Response Unmarshaller for StaticImageOutputDeactivateScheduleActionSettings Object
     /// </summary>  
-    public class FeatureActivationsUnmarshaller : IUnmarshaller<FeatureActivations, XmlUnmarshallerContext>, IUnmarshaller<FeatureActivations, JsonUnmarshallerContext>
+    public class StaticImageOutputDeactivateScheduleActionSettingsUnmarshaller : IUnmarshaller<StaticImageOutputDeactivateScheduleActionSettings, XmlUnmarshallerContext>, IUnmarshaller<StaticImageOutputDeactivateScheduleActionSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        FeatureActivations IUnmarshaller<FeatureActivations, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        StaticImageOutputDeactivateScheduleActionSettings IUnmarshaller<StaticImageOutputDeactivateScheduleActionSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,33 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public FeatureActivations Unmarshall(JsonUnmarshallerContext context)
+        public StaticImageOutputDeactivateScheduleActionSettings Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            FeatureActivations unmarshalledObject = new FeatureActivations();
+            StaticImageOutputDeactivateScheduleActionSettings unmarshalledObject = new StaticImageOutputDeactivateScheduleActionSettings();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("inputPrepareScheduleActions", targetDepth))
+                if (context.TestExpression("fadeOut", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InputPrepareScheduleActions = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.FadeOut = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("outputStaticImageOverlayScheduleActions", targetDepth))
+                if (context.TestExpression("layer", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OutputStaticImageOverlayScheduleActions = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.Layer = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("outputNames", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.OutputNames = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +88,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         }
 
 
-        private static FeatureActivationsUnmarshaller _instance = new FeatureActivationsUnmarshaller();        
+        private static StaticImageOutputDeactivateScheduleActionSettingsUnmarshaller _instance = new StaticImageOutputDeactivateScheduleActionSettingsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static FeatureActivationsUnmarshaller Instance
+        public static StaticImageOutputDeactivateScheduleActionSettingsUnmarshaller Instance
         {
             get
             {

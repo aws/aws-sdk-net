@@ -46,6 +46,8 @@ namespace Amazon.MediaLive.Model
         private Scte35TimeSignalScheduleActionSettings _scte35TimeSignalSettings;
         private StaticImageActivateScheduleActionSettings _staticImageActivateSettings;
         private StaticImageDeactivateScheduleActionSettings _staticImageDeactivateSettings;
+        private StaticImageOutputActivateScheduleActionSettings _staticImageOutputActivateSettings;
+        private StaticImageOutputDeactivateScheduleActionSettings _staticImageOutputDeactivateSettings;
 
         /// <summary>
         /// Gets and sets the property HlsId3SegmentTaggingSettings. Action to insert HLS ID3
@@ -250,6 +252,38 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetStaticImageDeactivateSettings()
         {
             return this._staticImageDeactivateSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StaticImageOutputActivateSettings. Action to activate a
+        /// static image overlay in one or more specified outputs
+        /// </summary>
+        public StaticImageOutputActivateScheduleActionSettings StaticImageOutputActivateSettings
+        {
+            get { return this._staticImageOutputActivateSettings; }
+            set { this._staticImageOutputActivateSettings = value; }
+        }
+
+        // Check to see if StaticImageOutputActivateSettings property is set
+        internal bool IsSetStaticImageOutputActivateSettings()
+        {
+            return this._staticImageOutputActivateSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StaticImageOutputDeactivateSettings. Action to deactivate
+        /// a static image overlay in one or more specified outputs
+        /// </summary>
+        public StaticImageOutputDeactivateScheduleActionSettings StaticImageOutputDeactivateSettings
+        {
+            get { return this._staticImageOutputDeactivateSettings; }
+            set { this._staticImageOutputDeactivateSettings = value; }
+        }
+
+        // Check to see if StaticImageOutputDeactivateSettings property is set
+        internal bool IsSetStaticImageOutputDeactivateSettings()
+        {
+            return this._staticImageOutputDeactivateSettings != null;
         }
 
     }

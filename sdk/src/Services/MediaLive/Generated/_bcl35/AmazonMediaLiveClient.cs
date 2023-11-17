@@ -1942,7 +1942,7 @@ namespace Amazon.MediaLive
         #region  DescribeAccountConfiguration
 
         /// <summary>
-        /// Get account configuration
+        /// Describe account configuration
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAccountConfiguration service method.</param>
         /// 

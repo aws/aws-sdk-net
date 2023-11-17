@@ -142,6 +142,18 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.StaticImageDeactivateSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("staticImageOutputActivateSettings", targetDepth))
+                {
+                    var unmarshaller = StaticImageOutputActivateScheduleActionSettingsUnmarshaller.Instance;
+                    unmarshalledObject.StaticImageOutputActivateSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("staticImageOutputDeactivateSettings", targetDepth))
+                {
+                    var unmarshaller = StaticImageOutputDeactivateScheduleActionSettingsUnmarshaller.Instance;
+                    unmarshalledObject.StaticImageOutputDeactivateSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

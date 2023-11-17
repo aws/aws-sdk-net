@@ -39,7 +39,7 @@ namespace Amazon.MediaLive.Model
         private string _inputDeviceId;
 
         /// <summary>
-        /// Gets and sets the property InputDeviceId. The unique ID of the input device to reboot.
+        /// Gets and sets the property InputDeviceId. The unique ID of the input device to start.
         /// For example, hd-123456789abcdef.
         /// </summary>
         [AWSProperty(Required=true)]

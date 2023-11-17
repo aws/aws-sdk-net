@@ -977,6 +977,53 @@
     <max>7</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaLive.Model.StaticImageOutputActivateScheduleActionSettings.Duration</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.StaticImageOutputActivateScheduleActionSettings.FadeIn</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.StaticImageOutputActivateScheduleActionSettings.FadeOut</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.StaticImageOutputActivateScheduleActionSettings.Height</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.StaticImageOutputActivateScheduleActionSettings.ImageX</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.StaticImageOutputActivateScheduleActionSettings.ImageY</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.StaticImageOutputActivateScheduleActionSettings.Layer</property>
+    <min>0</min>
+    <max>7</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.StaticImageOutputActivateScheduleActionSettings.Opacity</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.StaticImageOutputActivateScheduleActionSettings.Width</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.StaticImageOutputDeactivateScheduleActionSettings.FadeOut</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.StaticImageOutputDeactivateScheduleActionSettings.Layer</property>
+    <min>0</min>
+    <max>7</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaLive.Model.StaticKeySettings.StaticKeyValue</property>
     <min>32</min>
     <max>32</max>

@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// FeatureActivations Marshaller
+    /// StaticImageOutputDeactivateScheduleActionSettings Marshaller
     /// </summary>
-    public class FeatureActivationsMarshaller : IRequestMarshaller<FeatureActivations, JsonMarshallerContext> 
+    public class StaticImageOutputDeactivateScheduleActionSettingsMarshaller : IRequestMarshaller<StaticImageOutputDeactivateScheduleActionSettings, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,18 +43,29 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(FeatureActivations requestObject, JsonMarshallerContext context)
+        public void Marshall(StaticImageOutputDeactivateScheduleActionSettings requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetInputPrepareScheduleActions())
+            if(requestObject.IsSetFadeOut())
             {
-                context.Writer.WritePropertyName("inputPrepareScheduleActions");
-                context.Writer.Write(requestObject.InputPrepareScheduleActions);
+                context.Writer.WritePropertyName("fadeOut");
+                context.Writer.Write(requestObject.FadeOut);
             }
 
-            if(requestObject.IsSetOutputStaticImageOverlayScheduleActions())
+            if(requestObject.IsSetLayer())
             {
-                context.Writer.WritePropertyName("outputStaticImageOverlayScheduleActions");
-                context.Writer.Write(requestObject.OutputStaticImageOverlayScheduleActions);
+                context.Writer.WritePropertyName("layer");
+                context.Writer.Write(requestObject.Layer);
+            }
+
+            if(requestObject.IsSetOutputNames())
+            {
+                context.Writer.WritePropertyName("outputNames");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectOutputNamesListValue in requestObject.OutputNames)
+                {
+                        context.Writer.Write(requestObjectOutputNamesListValue);
+                }
+                context.Writer.WriteArrayEnd();
             }
 
         }
@@ -62,7 +73,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static FeatureActivationsMarshaller Instance = new FeatureActivationsMarshaller();
+        public readonly static StaticImageOutputDeactivateScheduleActionSettingsMarshaller Instance = new StaticImageOutputDeactivateScheduleActionSettingsMarshaller();
 
     }
 }

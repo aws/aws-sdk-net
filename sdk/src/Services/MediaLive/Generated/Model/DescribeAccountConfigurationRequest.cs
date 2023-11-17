@@ -30,7 +30,7 @@ namespace Amazon.MediaLive.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAccountConfiguration operation.
-    /// Get account configuration
+    /// Describe account configuration
     /// </summary>
     public partial class DescribeAccountConfigurationRequest : AmazonMediaLiveRequest
     {
