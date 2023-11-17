@@ -69,6 +69,7 @@ namespace Amazon.CloudFormation.Model
         private ChangeSetType _changeSetType;
         private string _clientToken;
         private string _description;
+        private bool? _importExistingResources;
         private bool? _includeNestedStacks;
         private List<string> _notificationARNs = new List<string>();
         private OnStackFailure _onStackFailure;
@@ -314,6 +315,35 @@ namespace Amazon.CloudFormation.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ImportExistingResources. 
+        /// <para>
+        /// Indicates if the stack set imports resources that already exist.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter can only import resources that have custom names in templates. For
+        /// more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html">name
+        /// type</a> in the <i>CloudFormation User Guide</i>. To import resources that do not
+        /// accept custom names, such as EC2 instances, use the resource import feature instead.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import.html">Bringing
+        /// existing resources into CloudFormation management</a> in the <i>CloudFormation User
+        /// Guide</i>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public bool ImportExistingResources
+        {
+            get { return this._importExistingResources.GetValueOrDefault(); }
+            set { this._importExistingResources = value; }
+        }
+
+        // Check to see if ImportExistingResources property is set
+        internal bool IsSetImportExistingResources()
+        {
+            return this._importExistingResources.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property IncludeNestedStacks. 
         /// <para>
         /// Creates a change set for the all nested stacks specified in the template. The default
@@ -451,7 +481,7 @@ namespace Amazon.CloudFormation.Model
         /// the stack update fails. By default, CloudFormation grants permissions to all resource
         /// types. Identity and Access Management (IAM) uses this parameter for condition keys
         /// in IAM policies for CloudFormation. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
-        /// access with Identity and Access Management</a> in the CloudFormation User Guide.
+        /// access with Identity and Access Management</a> in the <i>CloudFormation User Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>

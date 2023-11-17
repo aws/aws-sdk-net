@@ -39,6 +39,7 @@ namespace Amazon.CloudFormation.Model
         private DateTime? _creationTime;
         private string _description;
         private ExecutionStatus _executionStatus;
+        private bool? _importExistingResources;
         private bool? _includeNestedStacks;
         private string _parentChangeSetId;
         private string _rootChangeSetId;
@@ -142,6 +143,24 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetExecutionStatus()
         {
             return this._executionStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImportExistingResources. 
+        /// <para>
+        /// Indicates if the stack set imports resources that already exist.
+        /// </para>
+        /// </summary>
+        public bool ImportExistingResources
+        {
+            get { return this._importExistingResources.GetValueOrDefault(); }
+            set { this._importExistingResources = value; }
+        }
+
+        // Check to see if ImportExistingResources property is set
+        internal bool IsSetImportExistingResources()
+        {
+            return this._importExistingResources.HasValue; 
         }
 
         /// <summary>

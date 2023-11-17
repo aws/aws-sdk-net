@@ -1492,7 +1492,7 @@ namespace Amazon.CloudFormation
         /// <summary>
         /// Returns the inputs for the change set and a list of changes that CloudFormation will
         /// make if you execute the change set. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-changesets.html">Updating
-        /// Stacks Using Change Sets</a> in the CloudFormation User Guide.
+        /// Stacks Using Change Sets</a> in the <i>CloudFormation User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeChangeSet service method.</param>
         /// 
@@ -1823,7 +1823,7 @@ namespace Amazon.CloudFormation
         /// <summary>
         /// Returns all stack related events for a specified stack in reverse chronological order.
         /// For more information about a stack's event history, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/concept-stack.html">Stacks</a>
-        /// in the CloudFormation User Guide.
+        /// in the <i>CloudFormation User Guide</i>.
         /// 
         ///  <note> 
         /// <para>

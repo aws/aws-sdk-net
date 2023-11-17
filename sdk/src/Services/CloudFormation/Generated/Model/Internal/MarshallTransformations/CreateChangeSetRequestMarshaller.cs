@@ -83,6 +83,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));
                 }
+                if(publicRequest.IsSetImportExistingResources())
+                {
+                    request.Parameters.Add("ImportExistingResources", StringUtils.FromBool(publicRequest.ImportExistingResources));
+                }
                 if(publicRequest.IsSetIncludeNestedStacks())
                 {
                     request.Parameters.Add("IncludeNestedStacks", StringUtils.FromBool(publicRequest.IncludeNestedStacks));

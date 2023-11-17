@@ -40,6 +40,7 @@ namespace Amazon.CloudFormation.Model
         private DateTime? _creationTime;
         private string _description;
         private ExecutionStatus _executionStatus;
+        private bool? _importExistingResources;
         private bool? _includeNestedStacks;
         private string _nextToken;
         private List<string> _notificationARNs = new List<string>();
@@ -187,6 +188,32 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetExecutionStatus()
         {
             return this._executionStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImportExistingResources. 
+        /// <para>
+        /// Indicates if the stack set imports resources that already exist.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter can only import resources that have <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html">custom
+        /// names</a> in templates. To import resources that do not accept custom names, such
+        /// as EC2 instances, use the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import.html">resource
+        /// import</a> feature instead.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public bool ImportExistingResources
+        {
+            get { return this._importExistingResources.GetValueOrDefault(); }
+            set { this._importExistingResources = value; }
+        }
+
+        // Check to see if ImportExistingResources property is set
+        internal bool IsSetImportExistingResources()
+        {
+            return this._importExistingResources.HasValue; 
         }
 
         /// <summary>

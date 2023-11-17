@@ -84,6 +84,12 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         unmarshalledObject.ExecutionStatus = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ImportExistingResources", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.ImportExistingResources = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("IncludeNestedStacks", targetDepth))
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;
