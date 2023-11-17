@@ -278,6 +278,10 @@
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Redshift.Model.CreateClusterRequest.RedshiftIdcApplicationArn</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Redshift.Model.CreateClusterRequest.SnapshotScheduleIdentifier</property>
     <max>2147483647</max>
   </property-value-rule>
@@ -436,6 +440,32 @@
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateHsmConfigurationRequest.HsmServerPublicCertificate</property>
     <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.CreateRedshiftIdcApplicationRequest.IamRoleArn</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.CreateRedshiftIdcApplicationRequest.IdcDisplayName</property>
+    <min>1</min>
+    <max>127</max>
+    <pattern>[\w+=,.@-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.CreateRedshiftIdcApplicationRequest.IdcInstanceArn</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.CreateRedshiftIdcApplicationRequest.IdentityNamespace</property>
+    <min>1</min>
+    <max>127</max>
+    <pattern>^[a-zA-Z0-9_+.#@$-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.CreateRedshiftIdcApplicationRequest.RedshiftIdcApplicationName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>[a-z][a-z0-9]*(-[a-z0-9]+)*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateScheduledActionRequest.IamRole</property>
@@ -647,6 +677,10 @@
     <property>Amazon.Redshift.Model.DeletePartnerResponse.PartnerName</property>
     <max>255</max>
     <pattern>^[a-zA-Z0-9\-_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.DeleteRedshiftIdcApplicationRequest.RedshiftIdcApplicationArn</property>
+    <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DeleteResourcePolicyRequest.ResourceArn</property>
@@ -1057,6 +1091,18 @@
     <property>Amazon.Redshift.Model.DescribePartnersRequest.PartnerName</property>
     <max>255</max>
     <pattern>^[a-zA-Z0-9\-_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.DescribeRedshiftIdcApplicationsRequest.Marker</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.DescribeRedshiftIdcApplicationsRequest.RedshiftIdcApplicationArn</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.DescribeRedshiftIdcApplicationsResponse.Marker</property>
+    <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeReservedNodeExchangeStatusRequest.Marker</property>
@@ -1585,6 +1631,26 @@
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Redshift.Model.ModifyRedshiftIdcApplicationRequest.IamRoleArn</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.ModifyRedshiftIdcApplicationRequest.IdcDisplayName</property>
+    <min>1</min>
+    <max>127</max>
+    <pattern>[\w+=,.@-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.ModifyRedshiftIdcApplicationRequest.IdentityNamespace</property>
+    <min>1</min>
+    <max>127</max>
+    <pattern>^[a-zA-Z0-9_+.#@$-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.ModifyRedshiftIdcApplicationRequest.RedshiftIdcApplicationArn</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyScheduledActionRequest.IamRole</property>
     <max>2147483647</max>
   </property-value-rule>
@@ -1960,6 +2026,10 @@
     <property>Amazon.Redshift.Model.AuthenticationProfile.AuthenticationProfileName</property>
     <max>63</max>
     <pattern>^[a-zA-Z0-9\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.AuthorizedTokenIssuer.TrustedTokenIssuerArn</property>
+    <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.AvailabilityZone.Name</property>
@@ -2483,6 +2553,44 @@
   <property-value-rule>
     <property>Amazon.Redshift.Model.RecurringCharge.RecurringChargeFrequency</property>
     <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.RedshiftIdcApplication.IamRoleArn</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.RedshiftIdcApplication.IdcDisplayName</property>
+    <min>1</min>
+    <max>127</max>
+    <pattern>[\w+=,.@-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.RedshiftIdcApplication.IdcInstanceArn</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.RedshiftIdcApplication.IdcManagedApplicationArn</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.RedshiftIdcApplication.IdcOnboardStatus</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.RedshiftIdcApplication.IdentityNamespace</property>
+    <min>1</min>
+    <max>127</max>
+    <pattern>^[a-zA-Z0-9_+.#@$-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.RedshiftIdcApplication.RedshiftIdcApplicationArn</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.RedshiftIdcApplication.RedshiftIdcApplicationName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>[a-z][a-z0-9]*(-[a-z0-9]+)*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ReservedNode.CurrencyCode</property>

@@ -929,6 +929,9 @@ namespace Amazon.Redshift
         /// about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits
         /// in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
         /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.RedshiftIdcApplicationNotExistsException">
+        /// The application you attempted to find doesn't exist.
+        /// </exception>
         /// <exception cref="Amazon.Redshift.Model.SnapshotScheduleNotFoundException">
         /// We could not find the specified snapshot schedule.
         /// </exception>
@@ -1034,6 +1037,9 @@ namespace Amazon.Redshift
         /// The operation would exceed the number of nodes allotted to the account. For information
         /// about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits
         /// in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.RedshiftIdcApplicationNotExistsException">
+        /// The application you attempted to find doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.SnapshotScheduleNotFoundException">
         /// We could not find the specified snapshot schedule.
@@ -1855,6 +1861,66 @@ namespace Amazon.Redshift
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateHsmConfiguration">REST API Reference for CreateHsmConfiguration Operation</seealso>
         Task<CreateHsmConfigurationResponse> CreateHsmConfigurationAsync(CreateHsmConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateRedshiftIdcApplication
+
+
+        /// <summary>
+        /// Creates an Amazon Redshift application for use with IAM Identity Center.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRedshiftIdcApplication service method.</param>
+        /// 
+        /// <returns>The response from the CreateRedshiftIdcApplication service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.DependentServiceAccessDeniedException">
+        /// A dependent service denied access for the integration.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.DependentServiceUnavailableException">
+        /// Your request cannot be completed because a dependent internal service is temporarily
+        /// unavailable. Wait 30 to 60 seconds and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.RedshiftIdcApplicationAlreadyExistsException">
+        /// The application you attempted to add already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.RedshiftIdcApplicationQuotaExceededException">
+        /// The maximum number of Redshift IAM Identity Center applications was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateRedshiftIdcApplication">REST API Reference for CreateRedshiftIdcApplication Operation</seealso>
+        CreateRedshiftIdcApplicationResponse CreateRedshiftIdcApplication(CreateRedshiftIdcApplicationRequest request);
+
+
+
+        /// <summary>
+        /// Creates an Amazon Redshift application for use with IAM Identity Center.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRedshiftIdcApplication service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateRedshiftIdcApplication service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.DependentServiceAccessDeniedException">
+        /// A dependent service denied access for the integration.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.DependentServiceUnavailableException">
+        /// Your request cannot be completed because a dependent internal service is temporarily
+        /// unavailable. Wait 30 to 60 seconds and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.RedshiftIdcApplicationAlreadyExistsException">
+        /// The application you attempted to add already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.RedshiftIdcApplicationQuotaExceededException">
+        /// The maximum number of Redshift IAM Identity Center applications was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateRedshiftIdcApplication">REST API Reference for CreateRedshiftIdcApplication Operation</seealso>
+        Task<CreateRedshiftIdcApplicationResponse> CreateRedshiftIdcApplicationAsync(CreateRedshiftIdcApplicationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -2941,6 +3007,60 @@ namespace Amazon.Redshift
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeletePartner">REST API Reference for DeletePartner Operation</seealso>
         Task<DeletePartnerResponse> DeletePartnerAsync(DeletePartnerRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteRedshiftIdcApplication
+
+
+        /// <summary>
+        /// Deletes an Amazon Redshift IAM Identity Center application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRedshiftIdcApplication service method.</param>
+        /// 
+        /// <returns>The response from the DeleteRedshiftIdcApplication service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.DependentServiceAccessDeniedException">
+        /// A dependent service denied access for the integration.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.DependentServiceUnavailableException">
+        /// Your request cannot be completed because a dependent internal service is temporarily
+        /// unavailable. Wait 30 to 60 seconds and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.RedshiftIdcApplicationNotExistsException">
+        /// The application you attempted to find doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteRedshiftIdcApplication">REST API Reference for DeleteRedshiftIdcApplication Operation</seealso>
+        DeleteRedshiftIdcApplicationResponse DeleteRedshiftIdcApplication(DeleteRedshiftIdcApplicationRequest request);
+
+
+
+        /// <summary>
+        /// Deletes an Amazon Redshift IAM Identity Center application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRedshiftIdcApplication service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteRedshiftIdcApplication service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.DependentServiceAccessDeniedException">
+        /// A dependent service denied access for the integration.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.DependentServiceUnavailableException">
+        /// Your request cannot be completed because a dependent internal service is temporarily
+        /// unavailable. Wait 30 to 60 seconds and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.RedshiftIdcApplicationNotExistsException">
+        /// The application you attempted to find doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteRedshiftIdcApplication">REST API Reference for DeleteRedshiftIdcApplication Operation</seealso>
+        Task<DeleteRedshiftIdcApplicationResponse> DeleteRedshiftIdcApplicationAsync(DeleteRedshiftIdcApplicationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -5317,6 +5437,60 @@ namespace Amazon.Redshift
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribePartners">REST API Reference for DescribePartners Operation</seealso>
         Task<DescribePartnersResponse> DescribePartnersAsync(DescribePartnersRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeRedshiftIdcApplications
+
+
+        /// <summary>
+        /// Lists the Amazon Redshift IAM Identity Center applications.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRedshiftIdcApplications service method.</param>
+        /// 
+        /// <returns>The response from the DescribeRedshiftIdcApplications service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.DependentServiceAccessDeniedException">
+        /// A dependent service denied access for the integration.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.DependentServiceUnavailableException">
+        /// Your request cannot be completed because a dependent internal service is temporarily
+        /// unavailable. Wait 30 to 60 seconds and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.RedshiftIdcApplicationNotExistsException">
+        /// The application you attempted to find doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeRedshiftIdcApplications">REST API Reference for DescribeRedshiftIdcApplications Operation</seealso>
+        DescribeRedshiftIdcApplicationsResponse DescribeRedshiftIdcApplications(DescribeRedshiftIdcApplicationsRequest request);
+
+
+
+        /// <summary>
+        /// Lists the Amazon Redshift IAM Identity Center applications.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRedshiftIdcApplications service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeRedshiftIdcApplications service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.DependentServiceAccessDeniedException">
+        /// A dependent service denied access for the integration.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.DependentServiceUnavailableException">
+        /// Your request cannot be completed because a dependent internal service is temporarily
+        /// unavailable. Wait 30 to 60 seconds and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.RedshiftIdcApplicationNotExistsException">
+        /// The application you attempted to find doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeRedshiftIdcApplications">REST API Reference for DescribeRedshiftIdcApplications Operation</seealso>
+        Task<DescribeRedshiftIdcApplicationsResponse> DescribeRedshiftIdcApplicationsAsync(DescribeRedshiftIdcApplicationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -7727,6 +7901,60 @@ namespace Amazon.Redshift
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyEventSubscription">REST API Reference for ModifyEventSubscription Operation</seealso>
         Task<ModifyEventSubscriptionResponse> ModifyEventSubscriptionAsync(ModifyEventSubscriptionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ModifyRedshiftIdcApplication
+
+
+        /// <summary>
+        /// Changes an existing Amazon Redshift IAM Identity Center application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyRedshiftIdcApplication service method.</param>
+        /// 
+        /// <returns>The response from the ModifyRedshiftIdcApplication service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.DependentServiceAccessDeniedException">
+        /// A dependent service denied access for the integration.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.DependentServiceUnavailableException">
+        /// Your request cannot be completed because a dependent internal service is temporarily
+        /// unavailable. Wait 30 to 60 seconds and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.RedshiftIdcApplicationNotExistsException">
+        /// The application you attempted to find doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyRedshiftIdcApplication">REST API Reference for ModifyRedshiftIdcApplication Operation</seealso>
+        ModifyRedshiftIdcApplicationResponse ModifyRedshiftIdcApplication(ModifyRedshiftIdcApplicationRequest request);
+
+
+
+        /// <summary>
+        /// Changes an existing Amazon Redshift IAM Identity Center application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyRedshiftIdcApplication service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyRedshiftIdcApplication service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.DependentServiceAccessDeniedException">
+        /// A dependent service denied access for the integration.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.DependentServiceUnavailableException">
+        /// Your request cannot be completed because a dependent internal service is temporarily
+        /// unavailable. Wait 30 to 60 seconds and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.RedshiftIdcApplicationNotExistsException">
+        /// The application you attempted to find doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyRedshiftIdcApplication">REST API Reference for ModifyRedshiftIdcApplication Operation</seealso>
+        Task<ModifyRedshiftIdcApplicationResponse> ModifyRedshiftIdcApplicationAsync(ModifyRedshiftIdcApplicationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

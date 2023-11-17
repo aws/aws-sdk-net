@@ -78,6 +78,7 @@ namespace Amazon.Redshift.Model
         private int? _port;
         private string _preferredMaintenanceWindow;
         private bool? _publiclyAccessible;
+        private string _redshiftIdcApplicationArn;
         private string _snapshotScheduleIdentifier;
         private List<Tag> _tags = new List<Tag>();
         private List<string> _vpcSecurityGroupIds = new List<string>();
@@ -1068,6 +1069,25 @@ namespace Amazon.Redshift.Model
         internal bool IsSetPubliclyAccessible()
         {
             return this._publiclyAccessible.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RedshiftIdcApplicationArn. 
+        /// <para>
+        /// The Amazon resource name (ARN) of the Amazon Redshift IAM Identity Center application.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=2147483647)]
+        public string RedshiftIdcApplicationArn
+        {
+            get { return this._redshiftIdcApplicationArn; }
+            set { this._redshiftIdcApplicationArn = value; }
+        }
+
+        // Check to see if RedshiftIdcApplicationArn property is set
+        internal bool IsSetRedshiftIdcApplicationArn()
+        {
+            return this._redshiftIdcApplicationArn != null;
         }
 
         /// <summary>

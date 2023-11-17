@@ -141,6 +141,11 @@ namespace Amazon.Redshift.Model
         IDescribeOrderableClusterOptionsPaginator DescribeOrderableClusterOptions(DescribeOrderableClusterOptionsRequest request);
 
         /// <summary>
+        /// Paginator for DescribeRedshiftIdcApplications operation
+        ///</summary>
+        IDescribeRedshiftIdcApplicationsPaginator DescribeRedshiftIdcApplications(DescribeRedshiftIdcApplicationsRequest request);
+
+        /// <summary>
         /// Paginator for DescribeReservedNodeExchangeStatus operation
         ///</summary>
         IDescribeReservedNodeExchangeStatusPaginator DescribeReservedNodeExchangeStatus(DescribeReservedNodeExchangeStatusRequest request);

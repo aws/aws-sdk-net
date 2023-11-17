@@ -861,6 +861,9 @@ namespace Amazon.Redshift
         /// about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits
         /// in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
         /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.RedshiftIdcApplicationNotExistsException">
+        /// The application you attempted to find doesn't exist.
+        /// </exception>
         /// <exception cref="Amazon.Redshift.Model.SnapshotScheduleNotFoundException">
         /// We could not find the specified snapshot schedule.
         /// </exception>
@@ -1538,6 +1541,62 @@ namespace Amazon.Redshift
         /// <returns>Returns a  CreateHsmConfigurationResult from Redshift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateHsmConfiguration">REST API Reference for CreateHsmConfiguration Operation</seealso>
         CreateHsmConfigurationResponse EndCreateHsmConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateRedshiftIdcApplication
+
+
+        /// <summary>
+        /// Creates an Amazon Redshift application for use with IAM Identity Center.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRedshiftIdcApplication service method.</param>
+        /// 
+        /// <returns>The response from the CreateRedshiftIdcApplication service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.DependentServiceAccessDeniedException">
+        /// A dependent service denied access for the integration.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.DependentServiceUnavailableException">
+        /// Your request cannot be completed because a dependent internal service is temporarily
+        /// unavailable. Wait 30 to 60 seconds and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.RedshiftIdcApplicationAlreadyExistsException">
+        /// The application you attempted to add already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.RedshiftIdcApplicationQuotaExceededException">
+        /// The maximum number of Redshift IAM Identity Center applications was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateRedshiftIdcApplication">REST API Reference for CreateRedshiftIdcApplication Operation</seealso>
+        CreateRedshiftIdcApplicationResponse CreateRedshiftIdcApplication(CreateRedshiftIdcApplicationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateRedshiftIdcApplication operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateRedshiftIdcApplication operation on AmazonRedshiftClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateRedshiftIdcApplication
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateRedshiftIdcApplication">REST API Reference for CreateRedshiftIdcApplication Operation</seealso>
+        IAsyncResult BeginCreateRedshiftIdcApplication(CreateRedshiftIdcApplicationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateRedshiftIdcApplication operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateRedshiftIdcApplication.</param>
+        /// 
+        /// <returns>Returns a  CreateRedshiftIdcApplicationResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateRedshiftIdcApplication">REST API Reference for CreateRedshiftIdcApplication Operation</seealso>
+        CreateRedshiftIdcApplicationResponse EndCreateRedshiftIdcApplication(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2549,6 +2608,59 @@ namespace Amazon.Redshift
         /// <returns>Returns a  DeletePartnerResult from Redshift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeletePartner">REST API Reference for DeletePartner Operation</seealso>
         DeletePartnerResponse EndDeletePartner(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteRedshiftIdcApplication
+
+
+        /// <summary>
+        /// Deletes an Amazon Redshift IAM Identity Center application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRedshiftIdcApplication service method.</param>
+        /// 
+        /// <returns>The response from the DeleteRedshiftIdcApplication service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.DependentServiceAccessDeniedException">
+        /// A dependent service denied access for the integration.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.DependentServiceUnavailableException">
+        /// Your request cannot be completed because a dependent internal service is temporarily
+        /// unavailable. Wait 30 to 60 seconds and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.RedshiftIdcApplicationNotExistsException">
+        /// The application you attempted to find doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteRedshiftIdcApplication">REST API Reference for DeleteRedshiftIdcApplication Operation</seealso>
+        DeleteRedshiftIdcApplicationResponse DeleteRedshiftIdcApplication(DeleteRedshiftIdcApplicationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteRedshiftIdcApplication operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRedshiftIdcApplication operation on AmazonRedshiftClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteRedshiftIdcApplication
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteRedshiftIdcApplication">REST API Reference for DeleteRedshiftIdcApplication Operation</seealso>
+        IAsyncResult BeginDeleteRedshiftIdcApplication(DeleteRedshiftIdcApplicationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteRedshiftIdcApplication operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteRedshiftIdcApplication.</param>
+        /// 
+        /// <returns>Returns a  DeleteRedshiftIdcApplicationResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteRedshiftIdcApplication">REST API Reference for DeleteRedshiftIdcApplication Operation</seealso>
+        DeleteRedshiftIdcApplicationResponse EndDeleteRedshiftIdcApplication(IAsyncResult asyncResult);
 
         #endregion
         
@@ -4591,6 +4703,59 @@ namespace Amazon.Redshift
         /// <returns>Returns a  DescribePartnersResult from Redshift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribePartners">REST API Reference for DescribePartners Operation</seealso>
         DescribePartnersResponse EndDescribePartners(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeRedshiftIdcApplications
+
+
+        /// <summary>
+        /// Lists the Amazon Redshift IAM Identity Center applications.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRedshiftIdcApplications service method.</param>
+        /// 
+        /// <returns>The response from the DescribeRedshiftIdcApplications service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.DependentServiceAccessDeniedException">
+        /// A dependent service denied access for the integration.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.DependentServiceUnavailableException">
+        /// Your request cannot be completed because a dependent internal service is temporarily
+        /// unavailable. Wait 30 to 60 seconds and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.RedshiftIdcApplicationNotExistsException">
+        /// The application you attempted to find doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeRedshiftIdcApplications">REST API Reference for DescribeRedshiftIdcApplications Operation</seealso>
+        DescribeRedshiftIdcApplicationsResponse DescribeRedshiftIdcApplications(DescribeRedshiftIdcApplicationsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeRedshiftIdcApplications operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRedshiftIdcApplications operation on AmazonRedshiftClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeRedshiftIdcApplications
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeRedshiftIdcApplications">REST API Reference for DescribeRedshiftIdcApplications Operation</seealso>
+        IAsyncResult BeginDescribeRedshiftIdcApplications(DescribeRedshiftIdcApplicationsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeRedshiftIdcApplications operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeRedshiftIdcApplications.</param>
+        /// 
+        /// <returns>Returns a  DescribeRedshiftIdcApplicationsResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeRedshiftIdcApplications">REST API Reference for DescribeRedshiftIdcApplications Operation</seealso>
+        DescribeRedshiftIdcApplicationsResponse EndDescribeRedshiftIdcApplications(IAsyncResult asyncResult);
 
         #endregion
         
@@ -6701,6 +6866,59 @@ namespace Amazon.Redshift
         /// <returns>Returns a  ModifyEventSubscriptionResult from Redshift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyEventSubscription">REST API Reference for ModifyEventSubscription Operation</seealso>
         ModifyEventSubscriptionResponse EndModifyEventSubscription(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ModifyRedshiftIdcApplication
+
+
+        /// <summary>
+        /// Changes an existing Amazon Redshift IAM Identity Center application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyRedshiftIdcApplication service method.</param>
+        /// 
+        /// <returns>The response from the ModifyRedshiftIdcApplication service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.DependentServiceAccessDeniedException">
+        /// A dependent service denied access for the integration.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.DependentServiceUnavailableException">
+        /// Your request cannot be completed because a dependent internal service is temporarily
+        /// unavailable. Wait 30 to 60 seconds and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.RedshiftIdcApplicationNotExistsException">
+        /// The application you attempted to find doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyRedshiftIdcApplication">REST API Reference for ModifyRedshiftIdcApplication Operation</seealso>
+        ModifyRedshiftIdcApplicationResponse ModifyRedshiftIdcApplication(ModifyRedshiftIdcApplicationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyRedshiftIdcApplication operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyRedshiftIdcApplication operation on AmazonRedshiftClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyRedshiftIdcApplication
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyRedshiftIdcApplication">REST API Reference for ModifyRedshiftIdcApplication Operation</seealso>
+        IAsyncResult BeginModifyRedshiftIdcApplication(ModifyRedshiftIdcApplicationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyRedshiftIdcApplication operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyRedshiftIdcApplication.</param>
+        /// 
+        /// <returns>Returns a  ModifyRedshiftIdcApplicationResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyRedshiftIdcApplication">REST API Reference for ModifyRedshiftIdcApplication Operation</seealso>
+        ModifyRedshiftIdcApplicationResponse EndModifyRedshiftIdcApplication(IAsyncResult asyncResult);
 
         #endregion
         

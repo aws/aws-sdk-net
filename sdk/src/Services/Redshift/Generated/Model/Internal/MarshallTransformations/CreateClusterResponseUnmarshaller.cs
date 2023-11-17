@@ -192,6 +192,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 {
                     return NumberOfNodesQuotaExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("RedshiftIdcApplicationNotExists"))
+                {
+                    return RedshiftIdcApplicationNotExistsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("SnapshotScheduleNotFound"))
                 {
                     return SnapshotScheduleNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
