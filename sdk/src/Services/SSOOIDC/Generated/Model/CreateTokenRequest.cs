@@ -31,8 +31,9 @@ namespace Amazon.SSOOIDC.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateToken operation.
-    /// Creates and returns an access token for the authorized client. The access token issued
-    /// will be used to fetch short-term credentials for the assigned roles in the AWS account.
+    /// Creates and returns access and refresh tokens for clients that are authenticated using
+    /// client secrets. The access token can be used to fetch short-term credentials for the
+    /// assigned AWS accounts or to access application APIs using <code>bearer</code> authentication.
     /// </summary>
     public partial class CreateTokenRequest : AmazonSSOOIDCRequest
     {
@@ -48,8 +49,8 @@ namespace Amazon.SSOOIDC.Model
         /// <summary>
         /// Gets and sets the property ClientId. 
         /// <para>
-        /// The unique identifier string for each client. This value should come from the persisted
-        /// result of the <a>RegisterClient</a> API.
+        /// The unique identifier string for the client or application. This value comes from
+        /// the result of the <a>RegisterClient</a> API.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -72,7 +73,7 @@ namespace Amazon.SSOOIDC.Model
         /// result of the <a>RegisterClient</a> API.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string ClientSecret
         {
             get { return this._clientSecret; }
@@ -88,8 +89,9 @@ namespace Amazon.SSOOIDC.Model
         /// <summary>
         /// Gets and sets the property Code. 
         /// <para>
-        /// The authorization code received from the authorization service. This parameter is
-        /// required to perform an authorization grant request to get access to a token.
+        /// Used only when calling this API for the Authorization Code grant type. The short-term
+        /// code is used to identify this authorization request. This grant type is currently
+        /// unsupported for the <a>CreateToken</a> API.
         /// </para>
         /// </summary>
         public string Code
@@ -107,9 +109,9 @@ namespace Amazon.SSOOIDC.Model
         /// <summary>
         /// Gets and sets the property DeviceCode. 
         /// <para>
-        /// Used only when calling this API for the device code grant type. This short-term code
-        /// is used to identify this authentication attempt. This should come from an in-memory
-        /// reference to the result of the <a>StartDeviceAuthorization</a> API.
+        /// Used only when calling this API for the Device Code grant type. This short-term code
+        /// is used to identify this authorization request. This comes from the result of the
+        /// <a>StartDeviceAuthorization</a> API.
         /// </para>
         /// </summary>
         public string DeviceCode
@@ -127,12 +129,16 @@ namespace Amazon.SSOOIDC.Model
         /// <summary>
         /// Gets and sets the property GrantType. 
         /// <para>
-        /// Supports grant types for the authorization code, refresh token, and device code request.
-        /// For device code requests, specify the following value:
+        /// Supports the following OAuth grant types: Device Code and Refresh Token. Specify either
+        /// of the following values, depending on the grant type that you want:
         /// </para>
         ///  
         /// <para>
-        ///  <code>urn:ietf:params:oauth:grant-type:<i>device_code</i> </code> 
+        /// * Device Code - <code>urn:ietf:params:oauth:grant-type:device_code</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// * Refresh Token - <code>refresh_token</code> 
         /// </para>
         ///  
         /// <para>
@@ -156,8 +162,9 @@ namespace Amazon.SSOOIDC.Model
         /// <summary>
         /// Gets and sets the property RedirectUri. 
         /// <para>
-        /// The location of the application that will receive the authorization code. Users authorize
-        /// the service to send the request to this location.
+        /// Used only when calling this API for the Authorization Code grant type. This value
+        /// specifies the location of the client or application that has registered to receive
+        /// the authorization code.
         /// </para>
         /// </summary>
         public string RedirectUri
@@ -175,18 +182,18 @@ namespace Amazon.SSOOIDC.Model
         /// <summary>
         /// Gets and sets the property RefreshToken. 
         /// <para>
-        /// Currently, <code>refreshToken</code> is not yet implemented and is not supported.
+        /// Used only when calling this API for the Refresh Token grant type. This token is used
+        /// to refresh short-term tokens, such as the access token, that might expire.
+        /// </para>
+        ///  
+        /// <para>
         /// For more information about the features and limitations of the current IAM Identity
         /// Center OIDC implementation, see <i>Considerations for Using this Guide</i> in the
         /// <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM
         /// Identity Center OIDC API Reference</a>.
         /// </para>
-        ///  
-        /// <para>
-        /// The token used to obtain an access token in the event that the access token is invalid
-        /// or expired.
-        /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string RefreshToken
         {
             get { return this._refreshToken; }
@@ -202,8 +209,10 @@ namespace Amazon.SSOOIDC.Model
         /// <summary>
         /// Gets and sets the property Scope. 
         /// <para>
-        /// The list of scopes that is defined by the client. Upon authorization, this list is
-        /// used to restrict permissions when granting an access token.
+        /// The list of scopes for which authorization is requested. The access token that is
+        /// issued is limited to the scopes that are granted. If this value is not specified,
+        /// IAM Identity Center authorizes all scopes that are configured for the client during
+        /// the call to <a>RegisterClient</a>.
         /// </para>
         /// </summary>
         public List<string> Scope

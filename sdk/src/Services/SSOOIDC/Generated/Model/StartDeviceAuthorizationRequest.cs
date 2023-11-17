@@ -68,7 +68,7 @@ namespace Amazon.SSOOIDC.Model
         /// persisted result of the <a>RegisterClient</a> API operation.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string ClientSecret
         {
             get { return this._clientSecret; }
@@ -84,8 +84,8 @@ namespace Amazon.SSOOIDC.Model
         /// <summary>
         /// Gets and sets the property StartUrl. 
         /// <para>
-        /// The URL for the AWS access portal. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using
-        /// the AWS access portal</a> in the <i>IAM Identity Center User Guide</i>.
+        /// The URL for the Amazon Web Services access portal. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using
+        /// the Amazon Web Services access portal</a> in the <i>IAM Identity Center User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

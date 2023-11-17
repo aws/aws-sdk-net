@@ -29,43 +29,46 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SSOOIDC.Model
 {
     /// <summary>
-    /// Indicates that the scope provided in the request is invalid.
+    /// Indicates that a token provided as input to the request was issued by and is only
+    /// usable by calling IAM Identity Center endpoints in another region.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
-    public partial class InvalidScopeException : AmazonSSOOIDCException
+    public partial class InvalidRequestRegionException : AmazonSSOOIDCException
     {
+        private string _endpoint;
         private string _error;
         private string _error_description;
+        private string _region;
 
         /// <summary>
-        /// Constructs a new InvalidScopeException with the specified error
+        /// Constructs a new InvalidRequestRegionException with the specified error
         /// message.
         /// </summary>
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        public InvalidScopeException(string message) 
+        public InvalidRequestRegionException(string message) 
             : base(message) {}
 
         /// <summary>
-        /// Construct instance of InvalidScopeException
+        /// Construct instance of InvalidRequestRegionException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
-        public InvalidScopeException(string message, Exception innerException) 
+        public InvalidRequestRegionException(string message, Exception innerException) 
             : base(message, innerException) {}
 
         /// <summary>
-        /// Construct instance of InvalidScopeException
+        /// Construct instance of InvalidRequestRegionException
         /// </summary>
         /// <param name="innerException"></param>
-        public InvalidScopeException(Exception innerException) 
+        public InvalidRequestRegionException(Exception innerException) 
             : base(innerException) {}
 
         /// <summary>
-        /// Construct instance of InvalidScopeException
+        /// Construct instance of InvalidRequestRegionException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
@@ -73,34 +76,36 @@ namespace Amazon.SSOOIDC.Model
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public InvalidScopeException(string message, Exception innerException, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public InvalidRequestRegionException(string message, Exception innerException, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, requestId, statusCode) {}
 
         /// <summary>
-        /// Construct instance of InvalidScopeException
+        /// Construct instance of InvalidRequestRegionException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="errorType"></param>
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public InvalidScopeException(string message, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public InvalidRequestRegionException(string message, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
 #if !NETSTANDARD
         /// <summary>
-        /// Constructs a new instance of the InvalidScopeException class with serialized data.
+        /// Constructs a new instance of the InvalidRequestRegionException class with serialized data.
         /// </summary>
         /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
         /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
         /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is null. </exception>
         /// <exception cref="T:System.Runtime.Serialization.SerializationException">The class name is null or <see cref="P:System.Exception.HResult" /> is zero (0). </exception>
-        protected InvalidScopeException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        protected InvalidRequestRegionException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.Endpoint = (string)info.GetValue("Endpoint", typeof(string));
             this.Error = (string)info.GetValue("Error", typeof(string));
             this.Error_description = (string)info.GetValue("Error_description", typeof(string));
+            this.Region = (string)info.GetValue("Region", typeof(string));
         }
 
         /// <summary>
@@ -121,15 +126,36 @@ namespace Amazon.SSOOIDC.Model
         public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
         {
             base.GetObjectData(info, context);
+            info.AddValue("Endpoint", this.Endpoint);
             info.AddValue("Error", this.Error);
             info.AddValue("Error_description", this.Error_description);
+            info.AddValue("Region", this.Region);
         }
 #endif
 
         /// <summary>
+        /// Gets and sets the property Endpoint. 
+        /// <para>
+        /// Indicates the IAM Identity Center endpoint which the requester may call with this
+        /// token.
+        /// </para>
+        /// </summary>
+        public string Endpoint
+        {
+            get { return this._endpoint; }
+            set { this._endpoint = value; }
+        }
+
+        // Check to see if Endpoint property is set
+        internal bool IsSetEndpoint()
+        {
+            return this._endpoint != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Error. 
         /// <para>
-        /// Single error code. For this exception the value will be <code>invalid_scope</code>.
+        /// Single error code. For this exception the value will be <code>invalid_request</code>.
         /// </para>
         /// </summary>
         public string Error
@@ -161,6 +187,24 @@ namespace Amazon.SSOOIDC.Model
         internal bool IsSetError_description()
         {
             return this._error_description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Region. 
+        /// <para>
+        /// Indicates the region which the requester may call with this token.
+        /// </para>
+        /// </summary>
+        public string Region
+        {
+            get { return this._region; }
+            set { this._region = value; }
+        }
+
+        // Check to see if Region property is set
+        internal bool IsSetRegion()
+        {
+            return this._region != null;
         }
 
     }

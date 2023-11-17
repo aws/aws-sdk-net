@@ -29,14 +29,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SSOOIDC.Model
 {
     /// <summary>
-    /// This is the response object from the CreateToken operation.
+    /// This is the response object from the CreateTokenWithIAM operation.
     /// </summary>
-    public partial class CreateTokenResponse : AmazonWebServiceResponse
+    public partial class CreateTokenWithIAMResponse : AmazonWebServiceResponse
     {
         private string _accessToken;
         private int? _expiresIn;
         private string _idToken;
+        private string _issuedTokenType;
         private string _refreshToken;
+        private List<string> _scope = new List<string>();
         private string _tokenType;
 
         /// <summary>
@@ -79,15 +81,8 @@ namespace Amazon.SSOOIDC.Model
         /// <summary>
         /// Gets and sets the property IdToken. 
         /// <para>
-        /// The <code>idToken</code> is not implemented or supported. For more information about
-        /// the features and limitations of the current IAM Identity Center OIDC implementation,
-        /// see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM
-        /// Identity Center OIDC API Reference</a>.
-        /// </para>
-        ///  
-        /// <para>
-        /// A JSON Web Token (JWT) that identifies who is associated with the issued access token.
-        /// 
+        /// A JSON Web Token (JWT) that identifies the user associated with the issued access
+        /// token. 
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
@@ -101,6 +96,33 @@ namespace Amazon.SSOOIDC.Model
         internal bool IsSetIdToken()
         {
             return this._idToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IssuedTokenType. 
+        /// <para>
+        /// Indicates the type of tokens that are issued by IAM Identity Center. The following
+        /// values are supported: 
+        /// </para>
+        ///  
+        /// <para>
+        /// * Access Token - <code>urn:ietf:params:oauth:token-type:access_token</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// * Refresh Token - <code>urn:ietf:params:oauth:token-type:refresh_token</code> 
+        /// </para>
+        /// </summary>
+        public string IssuedTokenType
+        {
+            get { return this._issuedTokenType; }
+            set { this._issuedTokenType = value; }
+        }
+
+        // Check to see if IssuedTokenType property is set
+        internal bool IsSetIssuedTokenType()
+        {
+            return this._issuedTokenType != null;
         }
 
         /// <summary>
@@ -131,9 +153,28 @@ namespace Amazon.SSOOIDC.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Scope. 
+        /// <para>
+        /// The list of scopes for which authorization is granted. The access token that is issued
+        /// is limited to the scopes that are granted.
+        /// </para>
+        /// </summary>
+        public List<string> Scope
+        {
+            get { return this._scope; }
+            set { this._scope = value; }
+        }
+
+        // Check to see if Scope property is set
+        internal bool IsSetScope()
+        {
+            return this._scope != null && this._scope.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property TokenType. 
         /// <para>
-        /// Used to notify the client that the returned token is an access token. The supported
+        /// Used to notify the requester that the returned token is an access token. The supported
         /// token type is <code>Bearer</code>.
         /// </para>
         /// </summary>

@@ -127,7 +127,10 @@ namespace Amazon.SSOOIDC.Model
 #endif
 
         /// <summary>
-        /// Gets and sets the property Error.
+        /// Gets and sets the property Error. 
+        /// <para>
+        /// Single error code. For this exception the value will be <code>unsupported_grant_type</code>.
+        /// </para>
         /// </summary>
         public string Error
         {
@@ -142,7 +145,11 @@ namespace Amazon.SSOOIDC.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Error_description.
+        /// Gets and sets the property Error_description. 
+        /// <para>
+        /// Human-readable text providing additional information, used to assist the client developer
+        /// in understanding the error that occurred.
+        /// </para>
         /// </summary>
         public string Error_description
         {

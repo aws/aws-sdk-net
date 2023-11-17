@@ -52,7 +52,7 @@ namespace Amazon.SSOOIDC
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonSSOOIDCDefaultConfiguration.GetAllConfigurations()))
         {
             base.ServiceId = "SSO OIDC";
-            this.AuthenticationServiceName = "awsssooidc";
+            this.AuthenticationServiceName = "sso-oauth";
             this.EndpointProvider = new AmazonSSOOIDCEndpointProvider();
         }
 

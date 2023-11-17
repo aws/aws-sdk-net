@@ -43,7 +43,7 @@ namespace Amazon.SSOOIDC.Model
         /// <summary>
         /// Gets and sets the property AuthorizationEndpoint. 
         /// <para>
-        /// The endpoint where the client can request authorization.
+        /// An endpoint that the client can use to request authorization.
         /// </para>
         /// </summary>
         public string AuthorizationEndpoint
@@ -103,6 +103,7 @@ namespace Amazon.SSOOIDC.Model
         /// by the service in subsequent calls.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string ClientSecret
         {
             get { return this._clientSecret; }
@@ -137,7 +138,7 @@ namespace Amazon.SSOOIDC.Model
         /// <summary>
         /// Gets and sets the property TokenEndpoint. 
         /// <para>
-        /// The endpoint where the client can get an access token.
+        /// An endpoint that the client can use to create tokens.
         /// </para>
         /// </summary>
         public string TokenEndpoint

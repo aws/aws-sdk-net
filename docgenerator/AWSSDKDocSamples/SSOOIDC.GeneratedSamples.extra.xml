@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.SSOOIDC.IAmazonSSOOIDC.CreateToken(Amazon.SSOOIDC.Model.CreateTokenRequest)" />
+            <member name="M:Amazon.SSOOIDC.AmazonSSOOIDCClient.CreateToken(Amazon.SSOOIDC.Model.CreateTokenRequest)" />
+            <member name="T:Amazon.SSOOIDC.Model.CreateTokenRequest" />
+            <member name="T:Amazon.SSOOIDC.Model.CreateTokenResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Call OAuth/OIDC /token endpoint for Device Code grant with Secret authentication"
+                    source=".\AWSSDKDocSamples\SSOOIDC\SSOOIDC.GeneratedSamples.cs"
+                    region="create-token-for-device-code" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SSOOIDC.IAmazonSSOOIDC.CreateToken(Amazon.SSOOIDC.Model.CreateTokenRequest)" />
+            <member name="M:Amazon.SSOOIDC.AmazonSSOOIDCClient.CreateToken(Amazon.SSOOIDC.Model.CreateTokenRequest)" />
+            <member name="T:Amazon.SSOOIDC.Model.CreateTokenRequest" />
+            <member name="T:Amazon.SSOOIDC.Model.CreateTokenResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Call OAuth/OIDC /token endpoint for Refresh Token grant with Secret authentication"
+                    source=".\AWSSDKDocSamples\SSOOIDC\SSOOIDC.GeneratedSamples.cs"
+                    region="create-token-for-refresh-token" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SSOOIDC.IAmazonSSOOIDC.CreateTokenWithIAM(Amazon.SSOOIDC.Model.CreateTokenWithIAMRequest)" />
+            <member name="M:Amazon.SSOOIDC.AmazonSSOOIDCClient.CreateTokenWithIAM(Amazon.SSOOIDC.Model.CreateTokenWithIAMRequest)" />
+            <member name="T:Amazon.SSOOIDC.Model.CreateTokenWithIAMRequest" />
+            <member name="T:Amazon.SSOOIDC.Model.CreateTokenWithIAMResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Call OAuth/OIDC /token endpoint for Authorization Code grant with IAM authentication"
+                    source=".\AWSSDKDocSamples\SSOOIDC\SSOOIDC.GeneratedSamples.cs"
+                    region="create-token-with-iam-for-auth-code" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SSOOIDC.IAmazonSSOOIDC.CreateTokenWithIAM(Amazon.SSOOIDC.Model.CreateTokenWithIAMRequest)" />
+            <member name="M:Amazon.SSOOIDC.AmazonSSOOIDCClient.CreateTokenWithIAM(Amazon.SSOOIDC.Model.CreateTokenWithIAMRequest)" />
+            <member name="T:Amazon.SSOOIDC.Model.CreateTokenWithIAMRequest" />
+            <member name="T:Amazon.SSOOIDC.Model.CreateTokenWithIAMResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Call OAuth/OIDC /token endpoint for Refresh Token grant with IAM authentication"
+                    source=".\AWSSDKDocSamples\SSOOIDC\SSOOIDC.GeneratedSamples.cs"
+                    region="create-token-with-iam-for-refresh-token" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SSOOIDC.IAmazonSSOOIDC.CreateTokenWithIAM(Amazon.SSOOIDC.Model.CreateTokenWithIAMRequest)" />
+            <member name="M:Amazon.SSOOIDC.AmazonSSOOIDCClient.CreateTokenWithIAM(Amazon.SSOOIDC.Model.CreateTokenWithIAMRequest)" />
+            <member name="T:Amazon.SSOOIDC.Model.CreateTokenWithIAMRequest" />
+            <member name="T:Amazon.SSOOIDC.Model.CreateTokenWithIAMResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Call OAuth/OIDC /token endpoint for JWT Bearer grant with IAM authentication"
+                    source=".\AWSSDKDocSamples\SSOOIDC\SSOOIDC.GeneratedSamples.cs"
+                    region="create-token-with-iam-for-jwt-bearer" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SSOOIDC.IAmazonSSOOIDC.CreateTokenWithIAM(Amazon.SSOOIDC.Model.CreateTokenWithIAMRequest)" />
+            <member name="M:Amazon.SSOOIDC.AmazonSSOOIDCClient.CreateTokenWithIAM(Amazon.SSOOIDC.Model.CreateTokenWithIAMRequest)" />
+            <member name="T:Amazon.SSOOIDC.Model.CreateTokenWithIAMRequest" />
+            <member name="T:Amazon.SSOOIDC.Model.CreateTokenWithIAMResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Call OAuth/OIDC /token endpoint for Token Exchange grant with IAM authentication"
+                    source=".\AWSSDKDocSamples\SSOOIDC\SSOOIDC.GeneratedSamples.cs"
+                    region="create-token-with-iam-for-token-exchange" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SSOOIDC.IAmazonSSOOIDC.RegisterClient(Amazon.SSOOIDC.Model.RegisterClientRequest)" />
+            <member name="M:Amazon.SSOOIDC.AmazonSSOOIDCClient.RegisterClient(Amazon.SSOOIDC.Model.RegisterClientRequest)" />
+            <member name="T:Amazon.SSOOIDC.Model.RegisterClientRequest" />
+            <member name="T:Amazon.SSOOIDC.Model.RegisterClientResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Call OAuth/OIDC /register-client endpoint"
+                    source=".\AWSSDKDocSamples\SSOOIDC\SSOOIDC.GeneratedSamples.cs"
+                    region="register-client" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SSOOIDC.IAmazonSSOOIDC.StartDeviceAuthorization(Amazon.SSOOIDC.Model.StartDeviceAuthorizationRequest)" />
+            <member name="M:Amazon.SSOOIDC.AmazonSSOOIDCClient.StartDeviceAuthorization(Amazon.SSOOIDC.Model.StartDeviceAuthorizationRequest)" />
+            <member name="T:Amazon.SSOOIDC.Model.StartDeviceAuthorizationRequest" />
+            <member name="T:Amazon.SSOOIDC.Model.StartDeviceAuthorizationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Call OAuth/OIDC /start-device-authorization endpoint"
+                    source=".\AWSSDKDocSamples\SSOOIDC\SSOOIDC.GeneratedSamples.cs"
+                    region="start-device-authorization" />
+            </example>
+        </value>
+    </doc>
+</docs>
