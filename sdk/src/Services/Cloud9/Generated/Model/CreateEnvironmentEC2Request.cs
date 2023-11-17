@@ -165,7 +165,7 @@ namespace Amazon.Cloud9.Model
         /// </para>
         ///  
         /// <para>
-        /// From November 20, 2023, you will be required to include the <code>imageId</code> parameter
+        /// From December 04, 2023, you will be required to include the <code>imageId</code> parameter
         /// for the <code>CreateEnvironmentEC2</code> action. This change will be reflected across
         /// all direct methods of communicating with the API, such as Amazon Web Services SDK,
         /// Amazon Web Services CLI and Amazon Web Services CloudFormation. This change will only
@@ -190,7 +190,7 @@ namespace Amazon.Cloud9.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>Amazon Linux (default): <code>amazonlinux-1-x86_64</code> </b> 
+        /// Amazon Linux (default): <code>amazonlinux-1-x86_64</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -210,8 +210,8 @@ namespace Amazon.Cloud9.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>Amazon Linux (default): <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code>
-        /// </b> 
+        /// Amazon Linux (default): <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>

@@ -21,6 +21,7 @@ namespace AWSSDKDocSamples.Amazon.Cloud9.Generated
                 Name = "my-demo-environment",
                 AutomaticStopTimeMinutes = 60,
                 Description = "This is my demonstration environment.",
+                ImageId = "amazonlinux-2-x86_64",
                 InstanceType = "t2.micro",
                 OwnerArn = "arn:aws:iam::123456789012:user/MyDemoUser",
                 SubnetId = "subnet-6300cd1b"
