@@ -32,18 +32,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for RdsCustomClusterConfiguration Object
+    /// Response Unmarshaller for DBClusterStatusInfo Object
     /// </summary>  
-    public class RdsCustomClusterConfigurationUnmarshaller : IUnmarshaller<RdsCustomClusterConfiguration, XmlUnmarshallerContext>, IUnmarshaller<RdsCustomClusterConfiguration, JsonUnmarshallerContext>
+    public class DBClusterStatusInfoUnmarshaller : IUnmarshaller<DBClusterStatusInfo, XmlUnmarshallerContext>, IUnmarshaller<DBClusterStatusInfo, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public RdsCustomClusterConfiguration Unmarshall(XmlUnmarshallerContext context)
+        public DBClusterStatusInfo Unmarshall(XmlUnmarshallerContext context)
         {
-            RdsCustomClusterConfiguration unmarshalledObject = new RdsCustomClusterConfiguration();
+            DBClusterStatusInfo unmarshalledObject = new DBClusterStatusInfo();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -54,22 +54,28 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("InterconnectSubnetId", targetDepth))
+                    if (context.TestExpression("Message", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.InterconnectSubnetId = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Message = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("ReplicaMode", targetDepth))
+                    if (context.TestExpression("Normal", targetDepth))
                     {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.ReplicaMode = unmarshaller.Unmarshall(context);
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.Normal = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("TransitGatewayMulticastDomainId", targetDepth))
+                    if (context.TestExpression("Status", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.TransitGatewayMulticastDomainId = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("StatusType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.StatusType = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -87,18 +93,18 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public RdsCustomClusterConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public DBClusterStatusInfo Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static RdsCustomClusterConfigurationUnmarshaller _instance = new RdsCustomClusterConfigurationUnmarshaller();        
+        private static DBClusterStatusInfoUnmarshaller _instance = new DBClusterStatusInfoUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RdsCustomClusterConfigurationUnmarshaller Instance
+        public static DBClusterStatusInfoUnmarshaller Instance
         {
             get
             {

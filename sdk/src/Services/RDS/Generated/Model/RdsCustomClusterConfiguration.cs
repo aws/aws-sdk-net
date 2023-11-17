@@ -34,6 +34,7 @@ namespace Amazon.RDS.Model
     public partial class RdsCustomClusterConfiguration
     {
         private string _interconnectSubnetId;
+        private ReplicaMode _replicaMode;
         private string _transitGatewayMulticastDomainId;
 
         /// <summary>
@@ -52,6 +53,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetInterconnectSubnetId()
         {
             return this._interconnectSubnetId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReplicaMode. 
+        /// <para>
+        /// Reserved for future use.
+        /// </para>
+        /// </summary>
+        public ReplicaMode ReplicaMode
+        {
+            get { return this._replicaMode; }
+            set { this._replicaMode = value; }
+        }
+
+        // Check to see if ReplicaMode property is set
+        internal bool IsSetReplicaMode()
+        {
+            return this._replicaMode != null;
         }
 
         /// <summary>

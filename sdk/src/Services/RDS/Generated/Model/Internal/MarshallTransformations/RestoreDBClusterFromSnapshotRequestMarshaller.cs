@@ -162,6 +162,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     {
                         request.Parameters.Add("RdsCustomClusterConfiguration" + "." + "InterconnectSubnetId", StringUtils.FromString(publicRequest.RdsCustomClusterConfiguration.InterconnectSubnetId));
                     }
+                    if(publicRequest.RdsCustomClusterConfiguration.IsSetReplicaMode())
+                    {
+                        request.Parameters.Add("RdsCustomClusterConfiguration" + "." + "ReplicaMode", StringUtils.FromString(publicRequest.RdsCustomClusterConfiguration.ReplicaMode));
+                    }
                     if(publicRequest.RdsCustomClusterConfiguration.IsSetTransitGatewayMulticastDomainId())
                     {
                         request.Parameters.Add("RdsCustomClusterConfiguration" + "." + "TransitGatewayMulticastDomainId", StringUtils.FromString(publicRequest.RdsCustomClusterConfiguration.TransitGatewayMulticastDomainId));

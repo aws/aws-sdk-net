@@ -648,6 +648,14 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Copies the specified DB cluster parameter group.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You can't copy a default DB cluster parameter group. Instead, create a new custom
+        /// DB cluster parameter group, which copies the default parameters and values for the
+        /// specified DB cluster parameter group family.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CopyDBClusterParameterGroup service method.</param>
         /// 
@@ -669,6 +677,14 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Copies the specified DB cluster parameter group.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You can't copy a default DB cluster parameter group. Instead, create a new custom
+        /// DB cluster parameter group, which copies the default parameters and values for the
+        /// specified DB cluster parameter group family.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CopyDBClusterParameterGroup service method.</param>
         /// <param name="cancellationToken">
@@ -870,6 +886,14 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Copies the specified DB parameter group.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You can't copy a default DB parameter group. Instead, create a new custom DB parameter
+        /// group, which copies the default parameters and values for the specified DB parameter
+        /// group family.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CopyDBParameterGroup service method.</param>
         /// 
@@ -891,6 +915,14 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Copies the specified DB parameter group.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You can't copy a default DB parameter group. Instead, create a new custom DB parameter
+        /// group, which copies the default parameters and values for the specified DB parameter
+        /// group family.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CopyDBParameterGroup service method.</param>
         /// <param name="cancellationToken">
@@ -1338,6 +1370,10 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
         /// The DB instance isn't in a valid state.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBSubnetGroupException">
+        /// The DBSubnetGroup doesn't belong to the same VPC as that of an existing cross-region
+        /// read replica of the same source instance.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBSubnetGroupStateException">
         /// The DB subnet group cannot be deleted because it's in use.
         /// </exception>
@@ -1354,6 +1390,9 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
         /// An error occurred accessing an Amazon Web Services KMS key.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.OptionGroupNotFoundException">
+        /// The specified option group could not be found.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.StorageQuotaExceededException">
         /// The request would result in the user exceeding the allowed amount of storage available
@@ -1437,6 +1476,10 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
         /// The DB instance isn't in a valid state.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBSubnetGroupException">
+        /// The DBSubnetGroup doesn't belong to the same VPC as that of an existing cross-region
+        /// read replica of the same source instance.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBSubnetGroupStateException">
         /// The DB subnet group cannot be deleted because it's in use.
         /// </exception>
@@ -1453,6 +1496,9 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
         /// An error occurred accessing an Amazon Web Services KMS key.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.OptionGroupNotFoundException">
+        /// The specified option group could not be found.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.StorageQuotaExceededException">
         /// The request would result in the user exceeding the allowed amount of storage available
@@ -7677,6 +7723,9 @@ namespace Amazon.RDS
         /// The DB subnet group doesn't cover all Availability Zones after it's created because
         /// of users' change.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.OptionGroupNotFoundException">
+        /// The specified option group could not be found.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.StorageQuotaExceededException">
         /// The request would result in the user exceeding the allowed amount of storage available
         /// across all DB instances.
@@ -7750,6 +7799,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.InvalidVPCNetworkStateException">
         /// The DB subnet group doesn't cover all Availability Zones after it's created because
         /// of users' change.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.OptionGroupNotFoundException">
+        /// The specified option group could not be found.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.StorageQuotaExceededException">
         /// The request would result in the user exceeding the allowed amount of storage available

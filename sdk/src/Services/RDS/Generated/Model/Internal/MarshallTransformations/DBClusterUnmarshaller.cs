@@ -488,6 +488,13 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("StatusInfos/DBClusterStatusInfo", targetDepth))
+                    {
+                        var unmarshaller = DBClusterStatusInfoUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.StatusInfos.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("StorageEncrypted", targetDepth))
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;

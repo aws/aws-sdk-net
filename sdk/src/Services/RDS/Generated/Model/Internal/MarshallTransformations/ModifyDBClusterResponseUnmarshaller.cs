@@ -160,6 +160,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     return InvalidVPCNetworkStateExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("OptionGroupNotFoundFault"))
+                {
+                    return OptionGroupNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("StorageQuotaExceeded"))
                 {
                     return StorageQuotaExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

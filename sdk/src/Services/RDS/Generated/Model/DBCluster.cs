@@ -131,6 +131,7 @@ namespace Amazon.RDS.Model
         private ScalingConfigurationInfo _scalingConfigurationInfo;
         private ServerlessV2ScalingConfigurationInfo _serverlessV2ScalingConfiguration;
         private string _status;
+        private List<DBClusterStatusInfo> _statusInfos = new List<DBClusterStatusInfo>();
         private bool? _storageEncrypted;
         private string _storageType;
         private List<Tag> _tagList = new List<Tag>();
@@ -1598,6 +1599,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StatusInfos. 
+        /// <para>
+        /// Reserved for future use.
+        /// </para>
+        /// </summary>
+        public List<DBClusterStatusInfo> StatusInfos
+        {
+            get { return this._statusInfos; }
+            set { this._statusInfos = value; }
+        }
+
+        // Check to see if StatusInfos property is set
+        internal bool IsSetStatusInfos()
+        {
+            return this._statusInfos != null && this._statusInfos.Count > 0; 
         }
 
         /// <summary>

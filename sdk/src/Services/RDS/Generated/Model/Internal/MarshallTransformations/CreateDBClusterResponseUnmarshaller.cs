@@ -160,6 +160,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     return InvalidDBInstanceStateExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidDBSubnetGroupFault"))
+                {
+                    return InvalidDBSubnetGroupExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidDBSubnetGroupStateFault"))
                 {
                     return InvalidDBSubnetGroupStateExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -179,6 +183,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("KMSKeyNotAccessibleFault"))
                 {
                     return KMSKeyNotAccessibleExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("OptionGroupNotFoundFault"))
+                {
+                    return OptionGroupNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("StorageQuotaExceeded"))
                 {

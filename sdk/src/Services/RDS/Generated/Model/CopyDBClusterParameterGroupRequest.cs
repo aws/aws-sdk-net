@@ -31,6 +31,14 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// Container for the parameters to the CopyDBClusterParameterGroup operation.
     /// Copies the specified DB cluster parameter group.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// You can't copy a default DB cluster parameter group. Instead, create a new custom
+    /// DB cluster parameter group, which copies the default parameters and values for the
+    /// specified DB cluster parameter group family.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class CopyDBClusterParameterGroupRequest : AmazonRDSRequest
     {
