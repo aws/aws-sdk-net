@@ -68,6 +68,7 @@ namespace Amazon.Ivschat.Model
         /// is 1 KB total.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Dictionary<string, string> Attributes
         {
             get { return this._attributes; }
@@ -145,7 +146,7 @@ namespace Amazon.Ivschat.Model
         /// This can be any UTF-8 encoded text.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=128)]
         public string UserId
         {
             get { return this._userId; }

@@ -62,6 +62,7 @@ namespace Amazon.Ivschat.Model
         /// The issued client token, encrypted.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string Token
         {
             get { return this._token; }

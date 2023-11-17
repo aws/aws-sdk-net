@@ -85,7 +85,7 @@ namespace Amazon.Ivschat.Model
         /// ID of the user (connection) to disconnect from the room.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=128)]
         public string UserId
         {
             get { return this._userId; }
