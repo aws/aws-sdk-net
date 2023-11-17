@@ -92,6 +92,11 @@ namespace Amazon.DLM.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// If you are automating application-consistent snapshots for SAP HANA workloads, specify
+        /// <code>AWSSystemsManagerSAP-CreateDLMSnapshotForSAPHANA</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// If you are using a custom SSM document that you own, specify either the name or ARN
         /// of the SSM document. If you are using a custom SSM document that is shared with you,
         /// specify the ARN of the SSM document.
@@ -118,7 +123,8 @@ namespace Amazon.DLM.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If you are using custom SSM documents, specify <code>AWS_SYSTEMS_MANAGER</code>.
+        /// If you are using custom SSM documents or automating application-consistent snapshots
+        /// of SAP HANA workloads, specify <code>AWS_SYSTEMS_MANAGER</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
