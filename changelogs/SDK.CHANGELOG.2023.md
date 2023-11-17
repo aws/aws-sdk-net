@@ -1,3 +1,70 @@
+### 3.7.689.0 (2023-11-17 20:36 UTC)
+* AppMesh (3.7.301.0)
+	* Change the default value of these fields from 0 to null: MaxConnections, MaxPendingRequests, MaxRequests, HealthCheckThreshold, PortNumber, and HealthCheckPolicy -> port. Users are not expected to perceive the change, except that badRequestException is thrown when required fields missing configured.
+* Athena (3.7.301.0)
+	* Adding SerivicePreProcessing time metric
+* Cloud9 (3.7.300.5)
+	* A minor doc only update related to changing the date of an API change.
+* CloudFormation (3.7.301.0)
+	* This release adds a new flag ImportExistingResources to CreateChangeSet. Specify this parameter on a CREATE- or UPDATE-type change set to import existing resources with custom names instead of recreating them.
+* CodePipeline (3.7.301.0)
+	* CodePipeline now supports overriding source revisions to achieve manual re-deploy of a past revision
+* CodeStarconnections (3.7.301.0)
+	* This release adds support for the CloudFormation Git sync feature. Git sync enables updating a CloudFormation stack from a template stored in a Git repository.
+* Connect (3.7.302.0)
+	* This release adds WISDOM_QUICK_RESPONSES as new IntegrationType of Connect IntegrationAssociation resource and bug fixes.
+* ConnectWisdomService (3.7.301.0)
+	* This release adds QuickResponse as a new Wisdom resource and Wisdom APIs for import, create, read, search, update and delete QuickResponse resources.
+* DLM (3.7.301.1)
+	* Added support for SAP HANA in Amazon Data Lifecycle Manager EBS snapshot lifecycle policies with pre and post scripts.
+* EC2 (3.7.305.0)
+	* This release adds new features for Amazon VPC IP Address Manager (IPAM) Allowing a choice between Free and Advanced Tiers, viewing public IP address insights across regions and in Amazon Cloudwatch, use IPAM to plan your subnet IPs within a VPC and bring your own autonomous system number to IPAM.
+* ECR (3.7.301.0)
+	* Documentation and operational updates for Amazon ECR, adding support for pull through cache rules for upstream registries that require authentication.
+* ElasticMapReduce (3.7.302.0)
+	* Launch support for IAM Identity Center Trusted Identity Propagation and workspace storage encryption using AWS KMS in EMR Studio
+* EventBridge (3.7.301.0)
+	* Introduces a new rule state ENABLED_WITH_ALL_CLOUDTRAIL_MANAGEMENT_EVENTS for matching with Get, List and Describe AWS API call events from CloudTrail.
+* InternetMonitor (3.7.301.0)
+	* Adds new querying capabilities for running data queries on a monitor
+* IVS (3.7.301.0)
+	* type & defaulting refinement to various range properties
+* Ivschat (3.7.301.0)
+	* type & defaulting refinement to various range properties
+* KinesisVideo (3.7.300.5)
+	* Docs only build to bring up-to-date with public docs.
+* LocationService (3.7.301.0)
+	* Remove default value and allow nullable for request parameters having minimum value larger than zero.
+* MediaLive (3.7.301.0)
+	* MediaLive has now added support for per-output static image overlay.
+* Mgn (3.7.301.0)
+	* Removed invalid and unnecessary default values.
+* OSIS (3.7.301.0)
+	* Add support for enabling a persistent buffer when creating or updating an OpenSearch Ingestion pipeline. Add tags to Pipeline and PipelineSummary response models.
+* Pipes (3.7.302.0)
+	* TargetParameters now properly supports BatchJobParameters.ArrayProperties.Size and BatchJobParameters.RetryStrategy.Attempts being optional, and EcsTaskParameters.Overrides.EphemeralStorage.SizeInGiB now properly required when setting EphemeralStorage
+* RDS (3.7.301.0)
+	* This release adds support for option groups and replica enhancements to Amazon RDS Custom.
+* Redshift (3.7.302.0)
+	* Updated SDK for Amazon Redshift, which you can use to configure a connection with IAM Identity Center to manage access to databases. With these, you can create a connection through a managed application. You can also change a managed application, delete it, or get information about an existing one.
+* RedshiftServerless (3.7.301.0)
+	* Updated SDK for Amazon Redshift Serverless, which provides the ability to configure a connection with IAM Identity Center to manage user and group access to databases.
+* S3 (3.7.301.0)
+	* Removes all default 0 values for numbers and false values for booleans
+* SecurityToken (3.7.300.5)
+	* API updates for the AWS Security Token Service
+* SSOAdmin (3.7.302.0)
+	* Improves support for configuring RefreshToken and TokenExchange grants on applications.
+* SSOOIDC (3.7.301.0)
+	* Adding support for `sso-oauth:CreateTokenWithIAM`.
+* TrustedAdvisor (3.7.300.0)
+	* AWS Trusted Advisor introduces new APIs to enable you to programmatically access Trusted Advisor best practice checks, recommendations, and prioritized recommendations. Trusted Advisor APIs enable you to integrate Trusted Advisor with your operational tools to automate your workloads.
+* VerifiedPermissions (3.7.301.0)
+	* Adding BatchIsAuthorized API which supports multiple authorization requests against a PolicyStore
+* Core 3.7.300.5
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.688.0 (2023-11-16 19:33 UTC)
 * CodeCatalyst (3.7.302.0)
 	* This release includes updates to the Dev Environment APIs to include an optional vpcConnectionName parameter that supports using Dev Environments with Amazon VPC.
