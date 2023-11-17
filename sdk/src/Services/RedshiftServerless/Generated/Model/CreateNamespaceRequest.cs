@@ -44,6 +44,7 @@ namespace Amazon.RedshiftServerless.Model
         private List<string> _logExports = new List<string>();
         private bool? _manageAdminPassword;
         private string _namespaceName;
+        private string _redshiftIdcApplicationArn;
         private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
@@ -240,6 +241,25 @@ namespace Amazon.RedshiftServerless.Model
         internal bool IsSetNamespaceName()
         {
             return this._namespaceName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RedshiftIdcApplicationArn. 
+        /// <para>
+        /// The ARN for the Redshift application that integrates with IAM Identity Center.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
+        public string RedshiftIdcApplicationArn
+        {
+            get { return this._redshiftIdcApplicationArn; }
+            set { this._redshiftIdcApplicationArn = value; }
+        }
+
+        // Check to see if RedshiftIdcApplicationArn property is set
+        internal bool IsSetRedshiftIdcApplicationArn()
+        {
+            return this._redshiftIdcApplicationArn != null;
         }
 
         /// <summary>

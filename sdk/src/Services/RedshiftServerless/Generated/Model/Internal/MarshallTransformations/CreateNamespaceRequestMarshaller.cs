@@ -137,6 +137,12 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.NamespaceName);
                 }
 
+                if(publicRequest.IsSetRedshiftIdcApplicationArn())
+                {
+                    context.Writer.WritePropertyName("redshiftIdcApplicationArn");
+                    context.Writer.Write(publicRequest.RedshiftIdcApplicationArn);
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("tags");
