@@ -30,6 +30,19 @@ namespace Amazon.KinesisVideo.Model
 {
     /// <summary>
     /// A structure that encapsulates, or contains, the media storage configuration properties.
+    /// 
+    ///  <ul> <li> 
+    /// <para>
+    /// If <code>StorageStatus</code> is enabled, the data will be stored in the <code>StreamARN</code>
+    /// provided. In order for WebRTC Ingestion to work, the stream must have data retention
+    /// enabled.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// If <code>StorageStatus</code> is disabled, no data will be stored, and the <code>StreamARN</code>
+    /// parameter will not be needed. 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class MediaStorageConfiguration
     {
@@ -58,7 +71,7 @@ namespace Amazon.KinesisVideo.Model
         /// <summary>
         /// Gets and sets the property StreamARN. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the stream 
+        /// The Amazon Resource Name (ARN) of the stream. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

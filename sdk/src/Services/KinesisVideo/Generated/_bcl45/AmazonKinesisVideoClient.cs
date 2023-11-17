@@ -1181,16 +1181,8 @@ namespace Amazon.KinesisVideo
 
 
         /// <summary>
-        /// <important> 
-        /// <para>
-        /// This API is related to <a href="https://docs.aws.amazon.com/kinesisvideostreams-webrtc-dg/latest/devguide/webrtc-ingestion.html">WebRTC
-        /// Ingestion</a> and is only available in the <code>us-west-2</code> region.
-        /// </para>
-        ///  </important> 
-        /// <para>
         /// Returns the most current information about the channel. Specify the <code>ChannelName</code>
         /// or <code>ChannelARN</code> in the input.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeMediaStorageConfiguration service method.</param>
         /// 
@@ -1220,16 +1212,8 @@ namespace Amazon.KinesisVideo
 
 
         /// <summary>
-        /// <important> 
-        /// <para>
-        /// This API is related to <a href="https://docs.aws.amazon.com/kinesisvideostreams-webrtc-dg/latest/devguide/webrtc-ingestion.html">WebRTC
-        /// Ingestion</a> and is only available in the <code>us-west-2</code> region.
-        /// </para>
-        ///  </important> 
-        /// <para>
         /// Returns the most current information about the channel. Specify the <code>ChannelName</code>
         /// or <code>ChannelARN</code> in the input.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeMediaStorageConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -2588,11 +2572,7 @@ namespace Amazon.KinesisVideo
         /// the <code>Operation</code> parameter in the request body. In the request, you must
         /// specify either the <code>StreamName</code> or the <code>StreamARN</code>. 
         /// 
-        ///  <note> 
-        /// <para>
-        /// The retention period that you specify replaces the current value.
-        /// </para>
-        ///  </note> 
+        ///  
         /// <para>
         /// This operation requires permission for the <code>KinesisVideo:UpdateDataRetention</code>
         /// action.
@@ -2677,11 +2657,7 @@ namespace Amazon.KinesisVideo
         /// the <code>Operation</code> parameter in the request body. In the request, you must
         /// specify either the <code>StreamName</code> or the <code>StreamARN</code>. 
         /// 
-        ///  <note> 
-        /// <para>
-        /// The retention period that you specify replaces the current value.
-        /// </para>
-        ///  </note> 
+        ///  
         /// <para>
         /// This operation requires permission for the <code>KinesisVideo:UpdateDataRetention</code>
         /// action.
@@ -2889,25 +2865,19 @@ namespace Amazon.KinesisVideo
 
 
         /// <summary>
-        /// <important> 
-        /// <para>
-        /// This API is related to <a href="https://docs.aws.amazon.com/kinesisvideostreams-webrtc-dg/latest/devguide/webrtc-ingestion.html">WebRTC
-        /// Ingestion</a> and is only available in the <code>us-west-2</code> region.
-        /// </para>
-        ///  </important> 
-        /// <para>
         /// Associates a <code>SignalingChannel</code> to a stream to store the media. There are
-        /// two signaling modes that can specified :
-        /// </para>
+        /// two signaling modes that you can specify :
+        /// 
         ///  <ul> <li> 
         /// <para>
-        /// If the <code>StorageStatus</code> is disabled, no data will be stored, and the <code>StreamARN</code>
-        /// parameter will not be needed. 
+        /// If <code>StorageStatus</code> is enabled, the data will be stored in the <code>StreamARN</code>
+        /// provided. In order for WebRTC Ingestion to work, the stream must have data retention
+        /// enabled.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the <code>StorageStatus</code> is enabled, the data will be stored in the <code>StreamARN</code>
-        /// provided. 
+        /// If <code>StorageStatus</code> is disabled, no data will be stored, and the <code>StreamARN</code>
+        /// parameter will not be needed. 
         /// </para>
         ///  </li> </ul> <important> 
         /// <para>
@@ -2972,25 +2942,19 @@ namespace Amazon.KinesisVideo
 
 
         /// <summary>
-        /// <important> 
-        /// <para>
-        /// This API is related to <a href="https://docs.aws.amazon.com/kinesisvideostreams-webrtc-dg/latest/devguide/webrtc-ingestion.html">WebRTC
-        /// Ingestion</a> and is only available in the <code>us-west-2</code> region.
-        /// </para>
-        ///  </important> 
-        /// <para>
         /// Associates a <code>SignalingChannel</code> to a stream to store the media. There are
-        /// two signaling modes that can specified :
-        /// </para>
+        /// two signaling modes that you can specify :
+        /// 
         ///  <ul> <li> 
         /// <para>
-        /// If the <code>StorageStatus</code> is disabled, no data will be stored, and the <code>StreamARN</code>
-        /// parameter will not be needed. 
+        /// If <code>StorageStatus</code> is enabled, the data will be stored in the <code>StreamARN</code>
+        /// provided. In order for WebRTC Ingestion to work, the stream must have data retention
+        /// enabled.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the <code>StorageStatus</code> is enabled, the data will be stored in the <code>StreamARN</code>
-        /// provided. 
+        /// If <code>StorageStatus</code> is disabled, no data will be stored, and the <code>StreamARN</code>
+        /// parameter will not be needed. 
         /// </para>
         ///  </li> </ul> <important> 
         /// <para>

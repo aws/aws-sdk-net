@@ -35,11 +35,7 @@ namespace Amazon.KinesisVideo.Model
     /// the <code>Operation</code> parameter in the request body. In the request, you must
     /// specify either the <code>StreamName</code> or the <code>StreamARN</code>. 
     /// 
-    ///  <note> 
-    /// <para>
-    /// The retention period that you specify replaces the current value.
-    /// </para>
-    ///  </note> 
+    ///  
     /// <para>
     /// This operation requires permission for the <code>KinesisVideo:UpdateDataRetention</code>
     /// action.
@@ -94,8 +90,12 @@ namespace Amazon.KinesisVideo.Model
         /// <summary>
         /// Gets and sets the property DataRetentionChangeInHours. 
         /// <para>
-        /// The retention period, in hours. The value you specify replaces the current value.
-        /// The maximum value for this parameter is 87600 (ten years).
+        /// The number of hours to adjust the current retention by. The value you specify is added
+        /// to or subtracted from the current value, depending on the <code>operation</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The minimum value for data retention is 0 and the maximum value is 87600 (ten years).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
