@@ -67,6 +67,28 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetRefreshToken())
+            {
+                context.Writer.WritePropertyName("RefreshToken");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = RefreshTokenGrantMarshaller.Instance;
+                marshaller.Marshall(requestObject.RefreshToken, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetTokenExchange())
+            {
+                context.Writer.WritePropertyName("TokenExchange");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = TokenExchangeGrantMarshaller.Instance;
+                marshaller.Marshall(requestObject.TokenExchange, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

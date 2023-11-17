@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SSOAdmin.Model
 {
     /// <summary>
-    /// ~~~[ TODO: ADD DESCRIPTION HERE ]~~~
+    /// A structure that defines configuration settings for an application that supports the
+    /// OAuth 2.0 Authorization Code Grant.
     /// </summary>
     public partial class AuthorizationCodeGrant
     {
@@ -38,7 +39,8 @@ namespace Amazon.SSOAdmin.Model
         /// <summary>
         /// Gets and sets the property RedirectUris. 
         /// <para>
-        /// ~~~[ TODO: ADD DESCRIPTION HERE ]~~~
+        /// A list of URIs that are valid locations to redirect a user's browser after the user
+        /// is authorized.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]

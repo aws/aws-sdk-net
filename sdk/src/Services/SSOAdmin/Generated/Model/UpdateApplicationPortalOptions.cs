@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SSOAdmin.Model
 {
     /// <summary>
-    /// 
+    /// A structure that describes the options for the access portal associated with an application
+    /// that can be updated.
     /// </summary>
     public partial class UpdateApplicationPortalOptions
     {

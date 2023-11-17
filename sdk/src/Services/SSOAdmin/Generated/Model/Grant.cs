@@ -29,17 +29,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SSOAdmin.Model
 {
     /// <summary>
-    /// ~~~[ TODO: ADD DESCRIPTION HERE ]~~~
+    /// The Grant union represents the set of possible configuration options for the selected
+    /// grant type. Exactly one member of the union must be specified, and must match the
+    /// grant type selected.
     /// </summary>
     public partial class Grant
     {
         private AuthorizationCodeGrant _authorizationCode;
         private JwtBearerGrant _jwtBearer;
+        private RefreshTokenGrant _refreshToken;
+        private TokenExchangeGrant _tokenExchange;
 
         /// <summary>
         /// Gets and sets the property AuthorizationCode. 
         /// <para>
-        /// ~~~[ TODO: ADD DESCRIPTION HERE ]~~~
+        /// Configuration options for the <code>authorization_code</code> grant type.
         /// </para>
         /// </summary>
         public AuthorizationCodeGrant AuthorizationCode
@@ -57,7 +61,8 @@ namespace Amazon.SSOAdmin.Model
         /// <summary>
         /// Gets and sets the property JwtBearer. 
         /// <para>
-        /// ~~~[ TODO: ADD DESCRIPTION HERE ]~~~
+        /// Configuration options for the <code>urn:ietf:params:oauth:grant-type:jwt-bearer</code>
+        /// grant type.
         /// </para>
         /// </summary>
         public JwtBearerGrant JwtBearer
@@ -70,6 +75,43 @@ namespace Amazon.SSOAdmin.Model
         internal bool IsSetJwtBearer()
         {
             return this._jwtBearer != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RefreshToken. 
+        /// <para>
+        /// Configuration options for the <code>refresh_token</code> grant type.
+        /// </para>
+        /// </summary>
+        public RefreshTokenGrant RefreshToken
+        {
+            get { return this._refreshToken; }
+            set { this._refreshToken = value; }
+        }
+
+        // Check to see if RefreshToken property is set
+        internal bool IsSetRefreshToken()
+        {
+            return this._refreshToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TokenExchange. 
+        /// <para>
+        /// Configuration options for the <code>urn:ietf:params:oauth:grant-type:token-exchange</code>
+        /// grant type.
+        /// </para>
+        /// </summary>
+        public TokenExchangeGrant TokenExchange
+        {
+            get { return this._tokenExchange; }
+            set { this._tokenExchange = value; }
+        }
+
+        // Check to see if TokenExchange property is set
+        internal bool IsSetTokenExchange()
+        {
+            return this._tokenExchange != null;
         }
 
     }

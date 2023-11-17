@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Grant Object
+    /// Response Unmarshaller for RefreshTokenGrant Object
     /// </summary>  
-    public class GrantUnmarshaller : IUnmarshaller<Grant, XmlUnmarshallerContext>, IUnmarshaller<Grant, JsonUnmarshallerContext>
+    public class RefreshTokenGrantUnmarshaller : IUnmarshaller<RefreshTokenGrant, XmlUnmarshallerContext>, IUnmarshaller<RefreshTokenGrant, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Grant IUnmarshaller<Grant, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        RefreshTokenGrant IUnmarshaller<RefreshTokenGrant, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,53 +53,29 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Grant Unmarshall(JsonUnmarshallerContext context)
+        public RefreshTokenGrant Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Grant unmarshalledObject = new Grant();
+            RefreshTokenGrant unmarshalledObject = new RefreshTokenGrant();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AuthorizationCode", targetDepth))
-                {
-                    var unmarshaller = AuthorizationCodeGrantUnmarshaller.Instance;
-                    unmarshalledObject.AuthorizationCode = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("JwtBearer", targetDepth))
-                {
-                    var unmarshaller = JwtBearerGrantUnmarshaller.Instance;
-                    unmarshalledObject.JwtBearer = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("RefreshToken", targetDepth))
-                {
-                    var unmarshaller = RefreshTokenGrantUnmarshaller.Instance;
-                    unmarshalledObject.RefreshToken = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("TokenExchange", targetDepth))
-                {
-                    var unmarshaller = TokenExchangeGrantUnmarshaller.Instance;
-                    unmarshalledObject.TokenExchange = unmarshaller.Unmarshall(context);
-                    continue;
-                }
             }
           
             return unmarshalledObject;
         }
 
 
-        private static GrantUnmarshaller _instance = new GrantUnmarshaller();        
+        private static RefreshTokenGrantUnmarshaller _instance = new RefreshTokenGrantUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GrantUnmarshaller Instance
+        public static RefreshTokenGrantUnmarshaller Instance
         {
             get
             {

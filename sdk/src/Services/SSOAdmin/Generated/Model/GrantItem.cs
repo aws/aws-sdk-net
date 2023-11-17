@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SSOAdmin.Model
 {
     /// <summary>
-    /// ~~~[ TODO: ADD DESCRIPTION HERE ]~~~
+    /// A structure that defines a single grant and its configuration.
     /// </summary>
     public partial class GrantItem
     {
@@ -39,7 +39,7 @@ namespace Amazon.SSOAdmin.Model
         /// <summary>
         /// Gets and sets the property Grant. 
         /// <para>
-        /// ~~~[ TODO: ADD DESCRIPTION HERE ]~~~
+        /// The configuration structure for the selected grant.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -58,7 +58,7 @@ namespace Amazon.SSOAdmin.Model
         /// <summary>
         /// Gets and sets the property GrantType. 
         /// <para>
-        /// ~~~[ TODO: ADD DESCRIPTION HERE ]~~~
+        /// The type of the selected grant.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

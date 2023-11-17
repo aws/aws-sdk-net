@@ -30,31 +30,10 @@ namespace Amazon.SSOAdmin.Model
 {
     /// <summary>
     /// A structure that defines configuration settings for an application that supports the
-    /// JWT Bearer Token Authorization Grant.
+    /// OAuth 2.0 Refresh Token Grant.
     /// </summary>
-    public partial class JwtBearerGrant
+    public partial class RefreshTokenGrant
     {
-        private List<AuthorizedTokenIssuer> _authorizedTokenIssuers = new List<AuthorizedTokenIssuer>();
-
-        /// <summary>
-        /// Gets and sets the property AuthorizedTokenIssuers. 
-        /// <para>
-        /// A list of allowed token issuers trusted by the Identity Center instances for this
-        /// application.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=10)]
-        public List<AuthorizedTokenIssuer> AuthorizedTokenIssuers
-        {
-            get { return this._authorizedTokenIssuers; }
-            set { this._authorizedTokenIssuers = value; }
-        }
-
-        // Check to see if AuthorizedTokenIssuers property is set
-        internal bool IsSetAuthorizedTokenIssuers()
-        {
-            return this._authorizedTokenIssuers != null && this._authorizedTokenIssuers.Count > 0; 
-        }
 
     }
 }
