@@ -12420,8 +12420,8 @@ namespace Amazon.S3
         /// or an object, it checks the <code>PublicAccessBlock</code> configuration for both
         /// the bucket (or the bucket that contains the object) and the bucket owner's account.
         /// If the <code>PublicAccessBlock</code> configurations are different between the bucket
-        /// and the account, S3 uses the most restrictive combination of the bucket-level and
-        /// account-level settings.
+        /// and the account, Amazon S3 uses the most restrictive combination of the bucket-level
+        /// and account-level settings.
         /// </para>
         ///  </important> 
         /// <para>
