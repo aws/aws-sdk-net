@@ -31,6 +31,11 @@ namespace Amazon.EventBridge.Model
     /// <summary>
     /// Container for the parameters to the ListTargetsByRule operation.
     /// Lists the targets assigned to the specified rule.
+    /// 
+    ///  
+    /// <para>
+    /// The maximum number of results per page for requests is 100.
+    /// </para>
     /// </summary>
     public partial class ListTargetsByRuleRequest : AmazonEventBridgeRequest
     {

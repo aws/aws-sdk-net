@@ -177,6 +177,16 @@ namespace Amazon.EventBridge
         /// <summary>
         /// Creates an API destination, which is an HTTP invocation endpoint configured as a target
         /// for events.
+        /// 
+        ///  
+        /// <para>
+        /// API destinations do not support private destinations, such as interface VPC endpoints.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-api-destinations.html">API
+        /// destinations</a> in the <i>EventBridge User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateApiDestination service method.</param>
         /// 
@@ -491,15 +501,31 @@ namespace Amazon.EventBridge
         /// <para>
         ///  <code> <i>partner_name</i>/<i>event_namespace</i>/<i>event_name</i> </code> 
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <i>partner_name</i> is determined during partner registration, and identifies the
+        /// partner to Amazon Web Services customers. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>event_namespace</i> is determined by the partner, and is a way for the partner
+        /// to categorize their events.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>event_name</i> is determined by the partner, and should uniquely identify an event-generating
+        /// resource within the partner system. 
+        /// </para>
         ///  
         /// <para>
-        ///  <i>partner_name</i> is determined during partner registration and identifies the
-        /// partner to Amazon Web Services customers. <i>event_namespace</i> is determined by
-        /// the partner and is a way for the partner to categorize their events. <i>event_name</i>
-        /// is determined by the partner, and should uniquely identify an event-generating resource
-        /// within the partner system. The combination of <i>event_namespace</i> and <i>event_name</i>
-        /// should help Amazon Web Services customers decide whether to create an event bus to
-        /// receive these events.
+        /// The <i>event_name</i> must be unique across all Amazon Web Services customers. This
+        /// is because the event source is a shared resource between the partner and customer
+        /// accounts, and each partner event source unique in the partner account.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The combination of <i>event_namespace</i> and <i>event_name</i> should help Amazon
+        /// Web Services customers decide whether to create an event bus to receive these events.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePartnerEventSource service method.</param>
@@ -822,7 +848,7 @@ namespace Amazon.EventBridge
         /// Delete an existing global endpoint. For more information about global endpoints, see
         /// <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-global-endpoints.html">Making
         /// applications Regional-fault tolerant with global endpoints and event replication</a>
-        /// in the Amazon EventBridge User Guide.
+        /// in the <i>Amazon EventBridge User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteEndpoint service method.</param>
         /// 
@@ -1200,7 +1226,7 @@ namespace Amazon.EventBridge
         /// Get the information about an existing global endpoint. For more information about
         /// global endpoints, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-global-endpoints.html">Making
         /// applications Regional-fault tolerant with global endpoints and event replication</a>
-        /// in the Amazon EventBridge User Guide..
+        /// in the <i>Amazon EventBridge User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEndpoint service method.</param>
         /// 
@@ -1776,7 +1802,7 @@ namespace Amazon.EventBridge
         /// List the global endpoints associated with this account. For more information about
         /// global endpoints, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-global-endpoints.html">Making
         /// applications Regional-fault tolerant with global endpoints and event replication</a>
-        /// in the Amazon EventBridge User Guide..
+        /// in the <i>Amazon EventBridge User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListEndpoints service method.</param>
         /// 
@@ -2055,6 +2081,11 @@ namespace Amazon.EventBridge
         /// <summary>
         /// Lists the rules for the specified target. You can see which of the rules in Amazon
         /// EventBridge can invoke a specific target in your account.
+        /// 
+        ///  
+        /// <para>
+        /// The maximum number of results per page for requests is 100.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRuleNamesByTarget service method.</param>
         /// 
@@ -2103,6 +2134,10 @@ namespace Amazon.EventBridge
         /// Lists your Amazon EventBridge rules. You can either list all the rules or you can
         /// provide a prefix to match to the rule names.
         /// 
+        ///  
+        /// <para>
+        /// The maximum number of results per page for requests is 100.
+        /// </para>
         ///  
         /// <para>
         /// ListRules does not list the targets of a rule. To see the targets associated with
@@ -2201,6 +2236,11 @@ namespace Amazon.EventBridge
 
         /// <summary>
         /// Lists the targets assigned to the specified rule.
+        /// 
+        ///  
+        /// <para>
+        /// The maximum number of results per page for requests is 100.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTargetsByRule service method.</param>
         /// 
@@ -2248,6 +2288,19 @@ namespace Amazon.EventBridge
         /// <summary>
         /// Sends custom events to Amazon EventBridge so that they can be matched to rules.
         /// 
+        ///  
+        /// <para>
+        /// The maximum size for a PutEvents event entry is 256 KB. Entry size is calculated including
+        /// the event and any necessary characters and keys of the JSON representation of the
+        /// event. To learn more, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-putevent-size.html">Calculating
+        /// PutEvents event entry size</a> in the <i>Amazon EventBridge User Guide</i> 
+        /// </para>
+        ///  
+        /// <para>
+        /// PutEvents accepts the data in JSON format. For the JSON number (integer) data type,
+        /// the constraints are: a minimum value of -9,223,372,036,854,775,808 and a maximum value
+        /// of 9,223,372,036,854,775,807.
+        /// </para>
         ///  <note> 
         /// <para>
         /// PutEvents will only process nested JSON up to 1100 levels deep.
@@ -2297,6 +2350,12 @@ namespace Amazon.EventBridge
         /// <summary>
         /// This is used by SaaS partners to write events to a customer's partner event bus. Amazon
         /// Web Services customers do not use this operation.
+        /// 
+        ///  
+        /// <para>
+        /// For information on calculating event batch size, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-putevent-size.html">Calculating
+        /// EventBridge PutEvents event entry size</a> in the <i>EventBridge User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutPartnerEvents service method.</param>
         /// 
@@ -2571,143 +2630,41 @@ namespace Amazon.EventBridge
         /// <para>
         /// Targets are the resources that are invoked when a rule is triggered.
         /// </para>
+        ///  
+        /// <para>
+        /// The maximum number of entries per request is 10.
+        /// </para>
         ///  <note> 
         /// <para>
         /// Each rule can have up to five (5) targets associated with it at one time.
         /// </para>
         ///  </note> 
         /// <para>
-        /// You can configure the following as targets for Events:
+        /// For a list of services you can configure as targets for events, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-targets.html">EventBridge
+        /// targets</a> in the <i>Amazon EventBridge User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Creating rules with built-in targets is supported only in the Amazon Web Services
+        /// Management Console. The built-in targets are:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-api-destinations.html">API
-        /// destination</a> 
+        ///  <code>Amazon EBS CreateSnapshot API call</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-api-gateway-target.html">API
-        /// Gateway</a> 
+        ///  <code>Amazon EC2 RebootInstances API call</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Batch job queue
+        ///  <code>Amazon EC2 StopInstances API call</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// CloudWatch group
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// CodeBuild project
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// CodePipeline
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// EC2 <code>CreateSnapshot</code> API call
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// EC2 Image Builder
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// EC2 <code>RebootInstances</code> API call
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// EC2 <code>StopInstances</code> API call
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// EC2 <code>TerminateInstances</code> API call
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// ECS task
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-cross-account.html">Event
-        /// bus in a different account or Region</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-bus-to-bus.html">Event
-        /// bus in the same account and Region</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Firehose delivery stream
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Glue workflow
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a href="https://docs.aws.amazon.com/incident-manager/latest/userguide/incident-creation.html#incident-tracking-auto-eventbridge">Incident
-        /// Manager response plan</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Inspector assessment template
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Kinesis stream
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Lambda function
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Redshift cluster
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Redshift Serverless workgroup
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// SageMaker Pipeline
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// SNS topic
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// SQS queue
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Step Functions state machine
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Systems Manager Automation
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Systems Manager OpsItem
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Systems Manager Run Command
+        ///  <code>Amazon EC2 TerminateInstances API call</code> 
         /// </para>
         ///  </li> </ul> 
-        /// <para>
-        /// Creating rules with built-in targets is supported only in the Amazon Web Services
-        /// Management Console. The built-in targets are <code>EC2 CreateSnapshot API call</code>,
-        /// <code>EC2 RebootInstances API call</code>, <code>EC2 StopInstances API call</code>,
-        /// and <code>EC2 TerminateInstances API call</code>. 
-        /// </para>
-        ///  
         /// <para>
         /// For some target types, <code>PutTargets</code> provides target-specific parameters.
         /// If the target is a Kinesis data stream, you can optionally specify which shard the
@@ -2718,11 +2675,21 @@ namespace Amazon.EventBridge
         ///  
         /// <para>
         /// To be able to make API calls against the resources that you own, Amazon EventBridge
-        /// needs the appropriate permissions. For Lambda and Amazon SNS resources, EventBridge
-        /// relies on resource-based policies. For EC2 instances, Kinesis Data Streams, Step Functions
-        /// state machines and API Gateway APIs, EventBridge relies on IAM roles that you specify
-        /// in the <code>RoleARN</code> argument in <code>PutTargets</code>. For more information,
-        /// see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/auth-and-access-control-eventbridge.html">Authentication
+        /// needs the appropriate permissions: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// For Lambda and Amazon SNS resources, EventBridge relies on resource-based policies.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For EC2 instances, Kinesis Data Streams, Step Functions state machines and API Gateway
+        /// APIs, EventBridge relies on IAM roles that you specify in the <code>RoleARN</code>
+        /// argument in <code>PutTargets</code>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/auth-and-access-control-eventbridge.html">Authentication
         /// and Access Control</a> in the <i>Amazon EventBridge User Guide</i>.
         /// </para>
         ///  
@@ -2752,7 +2719,13 @@ namespace Amazon.EventBridge
         /// and Receiving Events Between Amazon Web Services Accounts</a> in the <i>Amazon EventBridge
         /// User Guide</i>.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// If you have an IAM role on a cross-account event bus target, a <code>PutTargets</code>
+        /// call without a role on the same target (same <code>Id</code> and <code>Arn</code>)
+        /// will not remove the role.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// For more information about enabling cross-account events, see <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutPermission.html">PutPermission</a>.
         /// </para>
@@ -2934,6 +2907,10 @@ namespace Amazon.EventBridge
         /// This action can partially fail if too many requests are made at the same time. If
         /// that happens, <code>FailedEntryCount</code> is non-zero in the response and each entry
         /// in <code>FailedEntries</code> provides the ID of the failed target and the error code.
+        /// </para>
+        ///  
+        /// <para>
+        /// The maximum number of entries per request is 10.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemoveTargets service method.</param>
@@ -3408,7 +3385,7 @@ namespace Amazon.EventBridge
         /// <summary>
         /// Update an existing endpoint. For more information about global endpoints, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-global-endpoints.html">Making
         /// applications Regional-fault tolerant with global endpoints and event replication</a>
-        /// in the Amazon EventBridge User Guide..
+        /// in the <i>Amazon EventBridge User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateEndpoint service method.</param>
         /// 

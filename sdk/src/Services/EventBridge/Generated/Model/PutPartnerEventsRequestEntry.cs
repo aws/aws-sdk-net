@@ -43,8 +43,17 @@ namespace Amazon.EventBridge.Model
         /// Gets and sets the property Detail. 
         /// <para>
         /// A valid JSON string. There is no other schema imposed. The JSON string may contain
-        /// fields and nested subobjects.
+        /// fields and nested sub-objects.
         /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <code>Detail</code>, <code>DetailType</code>, and <code>Source</code> are required
+        /// for EventBridge to successfully send an event to an event bus. If you include event
+        /// entries in a request that do not include each of those properties, EventBridge fails
+        /// that entry. If you submit a request in which <i>none</i> of the entries have each
+        /// of these properties, EventBridge fails the entire request. 
+        /// </para>
+        ///  </note>
         /// </summary>
         public string Detail
         {
@@ -64,6 +73,15 @@ namespace Amazon.EventBridge.Model
         /// A free-form string, with a maximum of 128 characters, used to decide what fields to
         /// expect in the event detail.
         /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <code>Detail</code>, <code>DetailType</code>, and <code>Source</code> are required
+        /// for EventBridge to successfully send an event to an event bus. If you include event
+        /// entries in a request that do not include each of those properties, EventBridge fails
+        /// that entry. If you submit a request in which <i>none</i> of the entries have each
+        /// of these properties, EventBridge fails the entire request. 
+        /// </para>
+        ///  </note>
         /// </summary>
         public string DetailType
         {
@@ -101,6 +119,15 @@ namespace Amazon.EventBridge.Model
         /// <para>
         /// The event source that is generating the entry.
         /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <code>Detail</code>, <code>DetailType</code>, and <code>Source</code> are required
+        /// for EventBridge to successfully send an event to an event bus. If you include event
+        /// entries in a request that do not include each of those properties, EventBridge fails
+        /// that entry. If you submit a request in which <i>none</i> of the entries have each
+        /// of these properties, EventBridge fails the entire request. 
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
         public string Source

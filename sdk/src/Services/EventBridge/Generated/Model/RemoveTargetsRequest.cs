@@ -49,6 +49,10 @@ namespace Amazon.EventBridge.Model
     /// that happens, <code>FailedEntryCount</code> is non-zero in the response and each entry
     /// in <code>FailedEntries</code> provides the ID of the failed target and the error code.
     /// </para>
+    ///  
+    /// <para>
+    /// The maximum number of entries per request is 10.
+    /// </para>
     /// </summary>
     public partial class RemoveTargetsRequest : AmazonEventBridgeRequest
     {

@@ -32,6 +32,11 @@ namespace Amazon.EventBridge.Model
     /// Container for the parameters to the ListRuleNamesByTarget operation.
     /// Lists the rules for the specified target. You can see which of the rules in Amazon
     /// EventBridge can invoke a specific target in your account.
+    /// 
+    ///  
+    /// <para>
+    /// The maximum number of results per page for requests is 100.
+    /// </para>
     /// </summary>
     public partial class ListRuleNamesByTargetRequest : AmazonEventBridgeRequest
     {

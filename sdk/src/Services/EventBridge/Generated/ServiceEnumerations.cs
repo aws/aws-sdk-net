@@ -896,6 +896,10 @@ namespace Amazon.EventBridge
         /// Constant ENABLED for RuleState
         /// </summary>
         public static readonly RuleState ENABLED = new RuleState("ENABLED");
+        /// <summary>
+        /// Constant ENABLED_WITH_ALL_CLOUDTRAIL_MANAGEMENT_EVENTS for RuleState
+        /// </summary>
+        public static readonly RuleState ENABLED_WITH_ALL_CLOUDTRAIL_MANAGEMENT_EVENTS = new RuleState("ENABLED_WITH_ALL_CLOUDTRAIL_MANAGEMENT_EVENTS");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

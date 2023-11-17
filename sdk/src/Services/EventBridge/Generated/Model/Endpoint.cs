@@ -32,7 +32,7 @@ namespace Amazon.EventBridge.Model
     /// A global endpoint used to improve your application's availability by making it regional-fault
     /// tolerant. For more information about global endpoints, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-global-endpoints.html">Making
     /// applications Regional-fault tolerant with global endpoints and event replication</a>
-    /// in the Amazon EventBridge User Guide.
+    /// in the <i>Amazon EventBridge User Guide</i>.
     /// </summary>
     public partial class Endpoint
     {

@@ -35,6 +35,10 @@ namespace Amazon.EventBridge.Model
     /// 
     ///  
     /// <para>
+    /// The maximum number of results per page for requests is 100.
+    /// </para>
+    ///  
+    /// <para>
     /// ListRules does not list the targets of a rule. To see the targets associated with
     /// a rule, use <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_ListTargetsByRule.html">ListTargetsByRule</a>.
     /// </para>

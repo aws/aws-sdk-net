@@ -39,8 +39,14 @@ namespace Amazon.EventBridge.Model
         /// <summary>
         /// Gets and sets the property Entries. 
         /// <para>
-        /// The list of events from this operation that were successfully written to the partner
-        /// event bus.
+        /// The results for each event entry the partner submitted in this request. If the event
+        /// was successfully submitted, the entry has the event ID in it. Otherwise, you can use
+        /// the error code and error message to identify the problem with the entry.
+        /// </para>
+        ///  
+        /// <para>
+        /// For each record, the index of the response element is the same as the index in the
+        /// request array.
         /// </para>
         /// </summary>
         public List<PutPartnerEventsResultEntry> Entries

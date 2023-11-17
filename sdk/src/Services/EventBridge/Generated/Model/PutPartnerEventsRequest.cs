@@ -32,6 +32,12 @@ namespace Amazon.EventBridge.Model
     /// Container for the parameters to the PutPartnerEvents operation.
     /// This is used by SaaS partners to write events to a customer's partner event bus. Amazon
     /// Web Services customers do not use this operation.
+    /// 
+    ///  
+    /// <para>
+    /// For information on calculating event batch size, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-putevent-size.html">Calculating
+    /// EventBridge PutEvents event entry size</a> in the <i>EventBridge User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class PutPartnerEventsRequest : AmazonEventBridgeRequest
     {

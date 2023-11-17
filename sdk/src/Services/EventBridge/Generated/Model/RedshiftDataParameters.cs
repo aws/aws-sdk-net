@@ -30,8 +30,7 @@ namespace Amazon.EventBridge.Model
 {
     /// <summary>
     /// These are custom parameters to be used when the target is a Amazon Redshift cluster
-    /// or Redshift Serverless workgroup to invoke the Amazon Redshift Data API ExecuteStatement
-    /// based on EventBridge events.
+    /// to invoke the Amazon Redshift Data API ExecuteStatement based on EventBridge events.
     /// </summary>
     public partial class RedshiftDataParameters
     {
@@ -66,10 +65,6 @@ namespace Amazon.EventBridge.Model
         /// Gets and sets the property DbUser. 
         /// <para>
         /// The database user name. Required when authenticating using temporary credentials.
-        /// </para>
-        ///  
-        /// <para>
-        /// Do not provide this parameter when connecting to a Redshift Serverless workgroup.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -125,7 +120,13 @@ namespace Amazon.EventBridge.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Sqls.
+        /// Gets and sets the property Sqls. 
+        /// <para>
+        /// One or more SQL statements to run. The SQL statements are run as a single transaction.
+        /// They run serially in the order of the array. Subsequent SQL statements don't start
+        /// until the previous statement in the array completes. If any SQL statement fails, then
+        /// because they are run as one transaction, all work is rolled back.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=40)]
         public List<string> Sqls
