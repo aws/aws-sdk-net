@@ -35,6 +35,7 @@ namespace Amazon.EC2.Model
     {
         private string _groupId;
         private string _referencingVpcId;
+        private string _transitGatewayId;
         private string _vpcPeeringConnectionId;
 
         /// <summary>
@@ -74,9 +75,32 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property TransitGatewayId. 
+        /// <para>
+        /// The ID of the transit gateway (if applicable). For more information about security
+        /// group referencing for transit gateways, see <a href="https://docs.aws.amazon.com/tgw/tgw-vpc-attachments.html#create-vpc-attachment">Create
+        /// a transit gateway attachment to a VPC</a> in the <i>Amazon Web Services Transit Gateway
+        /// Guide</i>.
+        /// </para>
+        /// </summary>
+        public string TransitGatewayId
+        {
+            get { return this._transitGatewayId; }
+            set { this._transitGatewayId = value; }
+        }
+
+        // Check to see if TransitGatewayId property is set
+        internal bool IsSetTransitGatewayId()
+        {
+            return this._transitGatewayId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property VpcPeeringConnectionId. 
         /// <para>
-        /// The ID of the VPC peering connection.
+        /// The ID of the VPC peering connection (if applicable). For more information about security
+        /// group referencing for peering connections, see <a href="https://docs.aws.amazon.com/peering/vpc-peering-security-groups.html">Update
+        /// your security groups to reference peer security groups</a> in the <i>VPC Peering Guide</i>.
         /// </para>
         /// </summary>
         public string VpcPeeringConnectionId

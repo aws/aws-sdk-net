@@ -72,6 +72,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         request.Parameters.Add("Options" + "." + "Ipv6Support", StringUtils.FromString(publicRequest.Options.Ipv6Support));
                     }
+                    if(publicRequest.Options.IsSetSecurityGroupReferencingSupport())
+                    {
+                        request.Parameters.Add("Options" + "." + "SecurityGroupReferencingSupport", StringUtils.FromString(publicRequest.Options.SecurityGroupReferencingSupport));
+                    }
                 }
                 if(publicRequest.IsSetSubnetIds())
                 {

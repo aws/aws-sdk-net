@@ -114,7 +114,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property VpcPeeringConnectionId. 
         /// <para>
-        /// The ID of the VPC peering connection.
+        /// The ID of the VPC peering connection (if applicable).
         /// </para>
         /// </summary>
         public string VpcPeeringConnectionId

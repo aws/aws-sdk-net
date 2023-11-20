@@ -2023,6 +2023,14 @@ namespace Amazon.EC2
         /// For information about VPC security group quotas, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon
         /// VPC quotas</a>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you want to reference a security group across VPCs attached to a transit gateway
+        /// using the <a href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-transit-gateways.html#create-tgw">security
+        /// group referencing feature</a>, note that you can only reference security groups for
+        /// ingress rules. You cannot reference a security group for egress rules.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AuthorizeSecurityGroupEgress service method.</param>
         /// 
@@ -2059,6 +2067,14 @@ namespace Amazon.EC2
         /// For information about VPC security group quotas, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon
         /// VPC quotas</a>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you want to reference a security group across VPCs attached to a transit gateway
+        /// using the <a href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-transit-gateways.html#create-tgw">security
+        /// group referencing feature</a>, note that you can only reference security groups for
+        /// ingress rules. You cannot reference a security group for egress rules.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AuthorizeSecurityGroupEgress service method.</param>
         /// <param name="cancellationToken">
@@ -14871,8 +14887,9 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the VPCs on the other side of a VPC peering connection that are referencing
-        /// the security groups you've specified in this request.
+        /// Describes the VPCs on the other side of a VPC peering connection or the VPCs attached
+        /// to a transit gateway that are referencing the security groups you've specified in
+        /// this request.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSecurityGroupReferences service method.</param>
         /// 
@@ -14883,8 +14900,9 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the VPCs on the other side of a VPC peering connection that are referencing
-        /// the security groups you've specified in this request.
+        /// Describes the VPCs on the other side of a VPC peering connection or the VPCs attached
+        /// to a transit gateway that are referencing the security groups you've specified in
+        /// this request.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSecurityGroupReferences service method.</param>
         /// <param name="cancellationToken">
@@ -15773,9 +15791,12 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes the stale security group rules for security groups in a specified VPC. Rules
-        /// are stale when they reference a deleted security group in the same VPC or in a peer
-        /// VPC, or if they reference a security group in a peer VPC for which the VPC peering
-        /// connection has been deleted.
+        /// are stale when they reference a deleted security group in the same VPC, peered VPC,
+        /// or in separate VPCs attached to a transit gateway (with <a href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-transit-gateways.html#create-tgw">security
+        /// group referencing support</a> enabled). Rules can also be stale if they reference
+        /// a security group in a peer VPC for which the VPC peering connection has been deleted
+        /// or if they reference a security group in a VPC that has been detached from a transit
+        /// gateway.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeStaleSecurityGroups service method.</param>
         /// 
@@ -15787,9 +15808,12 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes the stale security group rules for security groups in a specified VPC. Rules
-        /// are stale when they reference a deleted security group in the same VPC or in a peer
-        /// VPC, or if they reference a security group in a peer VPC for which the VPC peering
-        /// connection has been deleted.
+        /// are stale when they reference a deleted security group in the same VPC, peered VPC,
+        /// or in separate VPCs attached to a transit gateway (with <a href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-transit-gateways.html#create-tgw">security
+        /// group referencing support</a> enabled). Rules can also be stale if they reference
+        /// a security group in a peer VPC for which the VPC peering connection has been deleted
+        /// or if they reference a security group in a VPC that has been detached from a transit
+        /// gateway.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeStaleSecurityGroups service method.</param>
         /// <param name="cancellationToken">

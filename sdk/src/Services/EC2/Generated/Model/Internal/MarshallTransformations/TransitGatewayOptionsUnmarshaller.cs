@@ -102,6 +102,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.PropagationDefaultRouteTableId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("securityGroupReferencingSupport", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.SecurityGroupReferencingSupport = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("transitGatewayCidrBlocks/item", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

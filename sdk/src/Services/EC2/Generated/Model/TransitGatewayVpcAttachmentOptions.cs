@@ -36,6 +36,7 @@ namespace Amazon.EC2.Model
         private ApplianceModeSupportValue _applianceModeSupport;
         private DnsSupportValue _dnsSupport;
         private Ipv6SupportValue _ipv6Support;
+        private SecurityGroupReferencingSupportValue _securityGroupReferencingSupport;
 
         /// <summary>
         /// Gets and sets the property ApplianceModeSupport. 
@@ -89,6 +90,26 @@ namespace Amazon.EC2.Model
         internal bool IsSetIpv6Support()
         {
             return this._ipv6Support != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecurityGroupReferencingSupport. 
+        /// <para>
+        /// For important information about this feature, see <a href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-vpc-attachments.html#create-vpc-attachment">Create
+        /// a transit gateway attachment to a VPC</a> in the <i>Amazon Web Services Transit Gateway
+        /// Guide</i>.
+        /// </para>
+        /// </summary>
+        public SecurityGroupReferencingSupportValue SecurityGroupReferencingSupport
+        {
+            get { return this._securityGroupReferencingSupport; }
+            set { this._securityGroupReferencingSupport = value; }
+        }
+
+        // Check to see if SecurityGroupReferencingSupport property is set
+        internal bool IsSetSecurityGroupReferencingSupport()
+        {
+            return this._securityGroupReferencingSupport != null;
         }
 
     }

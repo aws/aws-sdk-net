@@ -110,6 +110,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             publicRequestOptionslistValueIndex++;
                         }
                     }
+                    if(publicRequest.Options.IsSetSecurityGroupReferencingSupport())
+                    {
+                        request.Parameters.Add("Options" + "." + "SecurityGroupReferencingSupport", StringUtils.FromString(publicRequest.Options.SecurityGroupReferencingSupport));
+                    }
                     if(publicRequest.Options.IsSetVpnEcmpSupport())
                     {
                         request.Parameters.Add("Options" + "." + "VpnEcmpSupport", StringUtils.FromString(publicRequest.Options.VpnEcmpSupport));

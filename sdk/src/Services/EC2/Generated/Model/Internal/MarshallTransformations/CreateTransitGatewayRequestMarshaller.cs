@@ -88,6 +88,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         request.Parameters.Add("Options" + "." + "MulticastSupport", StringUtils.FromString(publicRequest.Options.MulticastSupport));
                     }
+                    if(publicRequest.Options.IsSetSecurityGroupReferencingSupport())
+                    {
+                        request.Parameters.Add("Options" + "." + "SecurityGroupReferencingSupport", StringUtils.FromString(publicRequest.Options.SecurityGroupReferencingSupport));
+                    }
                     if(publicRequest.Options.IsSetTransitGatewayCidrBlocks())
                     {
                         int publicRequestOptionslistValueIndex = 1;
