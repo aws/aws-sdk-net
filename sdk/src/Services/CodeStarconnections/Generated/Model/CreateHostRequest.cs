@@ -110,10 +110,7 @@ namespace Amazon.CodeStarconnections.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Tags. 
-        /// <para>
-        /// Tags for the host to be created.
-        /// </para>
+        /// Gets and sets the property Tags.
         /// </summary>
         [AWSProperty(Min=0, Max=200)]
         public List<Tag> Tags

@@ -50,21 +50,5 @@ namespace Amazon.CodeStarconnections.Model
         {
             return new ListHostsPaginator(this.client, request);
         }
-
-        /// <summary>
-        /// Paginator for ListRepositoryLinks operation
-        ///</summary>
-        public IListRepositoryLinksPaginator ListRepositoryLinks(ListRepositoryLinksRequest request) 
-        {
-            return new ListRepositoryLinksPaginator(this.client, request);
-        }
-
-        /// <summary>
-        /// Paginator for ListSyncConfigurations operation
-        ///</summary>
-        public IListSyncConfigurationsPaginator ListSyncConfigurations(ListSyncConfigurationsRequest request) 
-        {
-            return new ListSyncConfigurationsPaginator(this.client, request);
-        }
     }
 }
