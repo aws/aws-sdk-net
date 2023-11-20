@@ -38,6 +38,7 @@ namespace Amazon.DocDB.Model
         private string _engine;
         private string _engineVersion;
         private string _licenseModel;
+        private string _storageType;
         private bool? _vpc;
 
         /// <summary>
@@ -128,6 +129,24 @@ namespace Amazon.DocDB.Model
         internal bool IsSetLicenseModel()
         {
             return this._licenseModel != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StorageType. 
+        /// <para>
+        /// The storage type to associate with the DB cluster
+        /// </para>
+        /// </summary>
+        public string StorageType
+        {
+            get { return this._storageType; }
+            set { this._storageType = value; }
+        }
+
+        // Check to see if StorageType property is set
+        internal bool IsSetStorageType()
+        {
+            return this._storageType != null;
         }
 
         /// <summary>

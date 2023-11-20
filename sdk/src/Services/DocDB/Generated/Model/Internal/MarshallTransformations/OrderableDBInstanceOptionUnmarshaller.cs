@@ -85,6 +85,12 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
                         unmarshalledObject.LicenseModel = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("StorageType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.StorageType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Vpc", targetDepth))
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;
