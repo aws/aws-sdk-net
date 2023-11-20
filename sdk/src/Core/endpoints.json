@@ -595,7 +595,23 @@
             "ap-south-1": {},
             "ap-southeast-1": {},
             "ap-southeast-2": {},
-            "ca-central-1": {},
+            "ca-central-1": {
+              "variants": [
+                {
+                  "hostname": "api.detective-fips.ca-central-1.amazonaws.com",
+                  "tags": [
+                    "fips"
+                  ]
+                }
+              ]
+            },
+            "ca-central-1-fips": {
+              "credentialScope": {
+                "region": "ca-central-1"
+              },
+              "deprecated": true,
+              "hostname": "api.detective-fips.ca-central-1.amazonaws.com"
+            },
             "eu-central-1": {},
             "eu-north-1": {},
             "eu-south-1": {},
@@ -8038,6 +8054,7 @@
             "ap-south-1": {},
             "ap-southeast-1": {},
             "ap-southeast-2": {},
+            "ap-southeast-3": {},
             "ca-central-1": {
               "variants": [
                 {
@@ -8089,6 +8106,7 @@
               "deprecated": true,
               "hostname": "emr-containers-fips.us-west-2.amazonaws.com"
             },
+            "me-central-1": {},
             "me-south-1": {},
             "sa-east-1": {},
             "us-east-1": {
@@ -12836,6 +12854,7 @@
             "eu-central-2": {},
             "eu-north-1": {},
             "eu-south-1": {},
+            "eu-south-2": {},
             "eu-west-1": {},
             "eu-west-2": {},
             "eu-west-3": {},
@@ -13027,6 +13046,7 @@
             "eu-central-2": {},
             "eu-north-1": {},
             "eu-south-1": {},
+            "eu-south-2": {},
             "eu-west-1": {},
             "eu-west-2": {},
             "eu-west-3": {},
@@ -13327,44 +13347,6 @@
           "endpoints": {
             "eu-west-1": {},
             "us-east-1": {}
-          }
-        },
-        "macie": {
-          "endpoints": {
-            "fips-us-east-1": {
-              "credentialScope": {
-                "region": "us-east-1"
-              },
-              "deprecated": true,
-              "hostname": "macie-fips.us-east-1.amazonaws.com"
-            },
-            "fips-us-west-2": {
-              "credentialScope": {
-                "region": "us-west-2"
-              },
-              "deprecated": true,
-              "hostname": "macie-fips.us-west-2.amazonaws.com"
-            },
-            "us-east-1": {
-              "variants": [
-                {
-                  "hostname": "macie-fips.us-east-1.amazonaws.com",
-                  "tags": [
-                    "fips"
-                  ]
-                }
-              ]
-            },
-            "us-west-2": {
-              "variants": [
-                {
-                  "hostname": "macie-fips.us-west-2.amazonaws.com",
-                  "tags": [
-                    "fips"
-                  ]
-                }
-              ]
-            }
           }
         },
         "macie2": {
@@ -14947,8 +14929,11 @@
         "osis": {
           "endpoints": {
             "ap-northeast-1": {},
+            "ap-northeast-2": {},
+            "ap-south-1": {},
             "ap-southeast-1": {},
             "ap-southeast-2": {},
+            "ca-central-1": {},
             "eu-central-1": {},
             "eu-west-1": {},
             "eu-west-2": {},
