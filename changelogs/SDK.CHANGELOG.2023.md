@@ -1,3 +1,14 @@
+### 3.7.690.0 (2023-11-20 20:21 UTC)
+* CodeStarconnections (3.7.302.0)
+	* This release updates a few CodeStar Connections related APIs.
+* DocDB (3.7.301.0)
+	* Amazon DocumentDB updates for new cluster storage configuration: Amazon DocumentDB I/O-Optimized.
+* EC2 (3.7.306.0)
+	* This release adds support for Security group referencing over Transit gateways, enabling you to simplify Security group management and control of instance-to-instance traffic across VPCs that are connected by Transit gateway.
+* Core 3.7.300.6
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.689.0 (2023-11-17 20:36 UTC)
 * AppMesh (3.7.301.0)
 	* Change the default value of these fields from 0 to null: MaxConnections, MaxPendingRequests, MaxRequests, HealthCheckThreshold, PortNumber, and HealthCheckPolicy -> port. Users are not expected to perceive the change, except that badRequestException is thrown when required fields missing configured.
