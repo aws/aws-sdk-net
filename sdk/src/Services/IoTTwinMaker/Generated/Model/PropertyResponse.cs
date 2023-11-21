@@ -33,8 +33,28 @@ namespace Amazon.IoTTwinMaker.Model
     /// </summary>
     public partial class PropertyResponse
     {
+        private bool? _areAllPropertyValuesReturned;
         private PropertyDefinitionResponse _definition;
         private DataValue _value;
+
+        /// <summary>
+        /// Gets and sets the property AreAllPropertyValuesReturned. 
+        /// <para>
+        /// This flag notes whether all values of a list or map type property are returned in
+        /// the API response. The maximum number of values per property returned is 50.
+        /// </para>
+        /// </summary>
+        public bool AreAllPropertyValuesReturned
+        {
+            get { return this._areAllPropertyValuesReturned.GetValueOrDefault(); }
+            set { this._areAllPropertyValuesReturned = value; }
+        }
+
+        // Check to see if AreAllPropertyValuesReturned property is set
+        internal bool IsSetAreAllPropertyValuesReturned()
+        {
+            return this._areAllPropertyValuesReturned.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Definition. 

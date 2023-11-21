@@ -80,6 +80,12 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Role);
                 }
 
+                if(publicRequest.IsSetS3Location())
+                {
+                    context.Writer.WritePropertyName("s3Location");
+                    context.Writer.Write(publicRequest.S3Location);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

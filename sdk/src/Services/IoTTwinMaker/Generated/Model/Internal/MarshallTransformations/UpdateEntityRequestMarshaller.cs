@@ -90,6 +90,25 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetCompositeComponentUpdates())
+                {
+                    context.Writer.WritePropertyName("compositeComponentUpdates");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestCompositeComponentUpdatesKvp in publicRequest.CompositeComponentUpdates)
+                    {
+                        context.Writer.WritePropertyName(publicRequestCompositeComponentUpdatesKvp.Key);
+                        var publicRequestCompositeComponentUpdatesValue = publicRequestCompositeComponentUpdatesKvp.Value;
+
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = CompositeComponentUpdateRequestMarshaller.Instance;
+                        marshaller.Marshall(publicRequestCompositeComponentUpdatesValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetDescription())
                 {
                     context.Writer.WritePropertyName("description");

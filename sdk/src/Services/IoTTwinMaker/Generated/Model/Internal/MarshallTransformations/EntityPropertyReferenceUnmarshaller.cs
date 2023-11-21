@@ -70,6 +70,12 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.ComponentName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("componentPath", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ComponentPath = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("entityId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

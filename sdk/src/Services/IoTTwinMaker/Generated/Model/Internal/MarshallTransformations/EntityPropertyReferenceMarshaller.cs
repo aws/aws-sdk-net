@@ -51,6 +51,12 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ComponentName);
             }
 
+            if(requestObject.IsSetComponentPath())
+            {
+                context.Writer.WritePropertyName("componentPath");
+                context.Writer.Write(requestObject.ComponentPath);
+            }
+
             if(requestObject.IsSetEntityId())
             {
                 context.Writer.WritePropertyName("entityId");

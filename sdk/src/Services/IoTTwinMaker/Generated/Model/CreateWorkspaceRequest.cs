@@ -65,7 +65,7 @@ namespace Amazon.IoTTwinMaker.Model
         /// The ARN of the execution role associated with the workspace.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=20, Max=2048)]
+        [AWSProperty(Min=20, Max=2048)]
         public string Role
         {
             get { return this._role; }
@@ -84,7 +84,7 @@ namespace Amazon.IoTTwinMaker.Model
         /// The ARN of the S3 bucket where resources associated with the workspace are stored.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string S3Location
         {
             get { return this._s3Location; }

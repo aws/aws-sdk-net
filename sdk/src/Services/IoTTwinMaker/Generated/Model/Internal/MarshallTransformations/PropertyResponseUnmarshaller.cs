@@ -64,6 +64,12 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("areAllPropertyValuesReturned", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.AreAllPropertyValuesReturned = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("definition", targetDepth))
                 {
                     var unmarshaller = PropertyDefinitionResponseUnmarshaller.Instance;

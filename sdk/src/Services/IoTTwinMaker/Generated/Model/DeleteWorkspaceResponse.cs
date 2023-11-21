@@ -33,6 +33,26 @@ namespace Amazon.IoTTwinMaker.Model
     /// </summary>
     public partial class DeleteWorkspaceResponse : AmazonWebServiceResponse
     {
+        private string _message;
+
+        /// <summary>
+        /// Gets and sets the property Message. 
+        /// <para>
+        /// The string that specifies the delete result for the workspace.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=2048)]
+        public string Message
+        {
+            get { return this._message; }
+            set { this._message = value; }
+        }
+
+        // Check to see if Message property is set
+        internal bool IsSetMessage()
+        {
+            return this._message != null;
+        }
 
     }
 }

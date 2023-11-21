@@ -317,6 +317,58 @@ namespace Amazon.IoTTwinMaker
 
         #endregion
         
+        #region  CancelMetadataTransferJob
+
+        internal virtual CancelMetadataTransferJobResponse CancelMetadataTransferJob(CancelMetadataTransferJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelMetadataTransferJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelMetadataTransferJobResponseUnmarshaller.Instance;
+
+            return Invoke<CancelMetadataTransferJobResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Cancels the metadata transfer job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelMetadataTransferJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CancelMetadataTransferJob service method, as returned by IoTTwinMaker.</returns>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ConflictException">
+        /// A conflict occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.InternalServerException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ResourceNotFoundException">
+        /// The resource wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ValidationException">
+        /// Failed
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/CancelMetadataTransferJob">REST API Reference for CancelMetadataTransferJob Operation</seealso>
+        public virtual Task<CancelMetadataTransferJobResponse> CancelMetadataTransferJobAsync(CancelMetadataTransferJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelMetadataTransferJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelMetadataTransferJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CancelMetadataTransferJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateComponentType
 
         internal virtual CreateComponentTypeResponse CreateComponentType(CreateComponentTypeRequest request)
@@ -417,6 +469,61 @@ namespace Amazon.IoTTwinMaker
             options.ResponseUnmarshaller = CreateEntityResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateEntityResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateMetadataTransferJob
+
+        internal virtual CreateMetadataTransferJobResponse CreateMetadataTransferJob(CreateMetadataTransferJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateMetadataTransferJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateMetadataTransferJobResponseUnmarshaller.Instance;
+
+            return Invoke<CreateMetadataTransferJobResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a new metadata transfer job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateMetadataTransferJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateMetadataTransferJob service method, as returned by IoTTwinMaker.</returns>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ConflictException">
+        /// A conflict occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.InternalServerException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ResourceNotFoundException">
+        /// The resource wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ServiceQuotaExceededException">
+        /// The service quota was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ValidationException">
+        /// Failed
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/CreateMetadataTransferJob">REST API Reference for CreateMetadataTransferJob Operation</seealso>
+        public virtual Task<CreateMetadataTransferJobResponse> CreateMetadataTransferJobAsync(CreateMetadataTransferJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateMetadataTransferJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateMetadataTransferJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateMetadataTransferJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -841,6 +948,14 @@ namespace Amazon.IoTTwinMaker
         /// <summary>
         /// Run queries to access information from your knowledge graph of entities within individual
         /// workspaces.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The ExecuteQuery action only works with <a href="https://docs.aws.amazon.com/sdk-for-java/latest/developer-guide/home.html">Amazon
+        /// Web Services Java SDK2</a>. ExecuteQuery will not work with any Amazon Web Services
+        /// Java SDK version &lt; 2.x.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ExecuteQuery service method.</param>
         /// <param name="cancellationToken">
@@ -972,6 +1087,55 @@ namespace Amazon.IoTTwinMaker
             options.ResponseUnmarshaller = GetEntityResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetEntityResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetMetadataTransferJob
+
+        internal virtual GetMetadataTransferJobResponse GetMetadataTransferJob(GetMetadataTransferJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMetadataTransferJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMetadataTransferJobResponseUnmarshaller.Instance;
+
+            return Invoke<GetMetadataTransferJobResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets a nmetadata transfer job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMetadataTransferJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetMetadataTransferJob service method, as returned by IoTTwinMaker.</returns>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.InternalServerException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ResourceNotFoundException">
+        /// The resource wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ValidationException">
+        /// Failed
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/GetMetadataTransferJob">REST API Reference for GetMetadataTransferJob Operation</seealso>
+        public virtual Task<GetMetadataTransferJobResponse> GetMetadataTransferJobAsync(GetMetadataTransferJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMetadataTransferJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMetadataTransferJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetMetadataTransferJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1296,6 +1460,55 @@ namespace Amazon.IoTTwinMaker
 
         #endregion
         
+        #region  ListComponents
+
+        internal virtual ListComponentsResponse ListComponents(ListComponentsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListComponentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListComponentsResponseUnmarshaller.Instance;
+
+            return Invoke<ListComponentsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// This API lists the components of an entity.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListComponents service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListComponents service method, as returned by IoTTwinMaker.</returns>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.InternalServerException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ResourceNotFoundException">
+        /// The resource wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ValidationException">
+        /// Failed
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/ListComponents">REST API Reference for ListComponents Operation</seealso>
+        public virtual Task<ListComponentsResponse> ListComponentsAsync(ListComponentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListComponentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListComponentsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListComponentsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListComponentTypes
 
         internal virtual ListComponentTypesResponse ListComponentTypes(ListComponentTypesRequest request)
@@ -1384,6 +1597,101 @@ namespace Amazon.IoTTwinMaker
             options.ResponseUnmarshaller = ListEntitiesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListEntitiesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListMetadataTransferJobs
+
+        internal virtual ListMetadataTransferJobsResponse ListMetadataTransferJobs(ListMetadataTransferJobsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMetadataTransferJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMetadataTransferJobsResponseUnmarshaller.Instance;
+
+            return Invoke<ListMetadataTransferJobsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists the metadata transfer jobs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMetadataTransferJobs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListMetadataTransferJobs service method, as returned by IoTTwinMaker.</returns>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.InternalServerException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ValidationException">
+        /// Failed
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/ListMetadataTransferJobs">REST API Reference for ListMetadataTransferJobs Operation</seealso>
+        public virtual Task<ListMetadataTransferJobsResponse> ListMetadataTransferJobsAsync(ListMetadataTransferJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMetadataTransferJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMetadataTransferJobsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListMetadataTransferJobsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListProperties
+
+        internal virtual ListPropertiesResponse ListProperties(ListPropertiesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPropertiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPropertiesResponseUnmarshaller.Instance;
+
+            return Invoke<ListPropertiesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// This API lists the properties of a component.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListProperties service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListProperties service method, as returned by IoTTwinMaker.</returns>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.InternalServerException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ResourceNotFoundException">
+        /// The resource wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ValidationException">
+        /// Failed
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/ListProperties">REST API Reference for ListProperties Operation</seealso>
+        public virtual Task<ListPropertiesResponse> ListPropertiesAsync(ListPropertiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPropertiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPropertiesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListPropertiesResponse>(request, options, cancellationToken);
         }
 
         #endregion

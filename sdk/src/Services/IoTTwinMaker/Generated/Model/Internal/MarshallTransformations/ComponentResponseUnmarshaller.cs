@@ -64,6 +64,18 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("areAllCompositeComponentsReturned", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.AreAllCompositeComponentsReturned = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("areAllPropertiesReturned", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.AreAllPropertiesReturned = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("componentName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -74,6 +86,12 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ComponentTypeId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("compositeComponents", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, ComponentSummary, StringUnmarshaller, ComponentSummaryUnmarshaller>(StringUnmarshaller.Instance, ComponentSummaryUnmarshaller.Instance);
+                    unmarshalledObject.CompositeComponents = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("definedIn", targetDepth))

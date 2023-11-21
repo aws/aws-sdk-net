@@ -33,14 +33,55 @@ namespace Amazon.IoTTwinMaker.Model
     /// </summary>
     public partial class ComponentResponse
     {
+        private bool? _areAllCompositeComponentsReturned;
+        private bool? _areAllPropertiesReturned;
         private string _componentName;
         private string _componentTypeId;
+        private Dictionary<string, ComponentSummary> _compositeComponents = new Dictionary<string, ComponentSummary>();
         private string _definedIn;
         private string _description;
         private Dictionary<string, PropertyResponse> _properties = new Dictionary<string, PropertyResponse>();
         private Dictionary<string, ComponentPropertyGroupResponse> _propertyGroups = new Dictionary<string, ComponentPropertyGroupResponse>();
         private Status _status;
         private string _syncSource;
+
+        /// <summary>
+        /// Gets and sets the property AreAllCompositeComponentsReturned. 
+        /// <para>
+        /// This flag notes whether all <code>compositeComponents</code> are returned in the API
+        /// response.
+        /// </para>
+        /// </summary>
+        public bool AreAllCompositeComponentsReturned
+        {
+            get { return this._areAllCompositeComponentsReturned.GetValueOrDefault(); }
+            set { this._areAllCompositeComponentsReturned = value; }
+        }
+
+        // Check to see if AreAllCompositeComponentsReturned property is set
+        internal bool IsSetAreAllCompositeComponentsReturned()
+        {
+            return this._areAllCompositeComponentsReturned.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AreAllPropertiesReturned. 
+        /// <para>
+        /// This flag notes whether all properties of the component are returned in the API response.
+        /// The maximum number of properties returned is 800.
+        /// </para>
+        /// </summary>
+        public bool AreAllPropertiesReturned
+        {
+            get { return this._areAllPropertiesReturned.GetValueOrDefault(); }
+            set { this._areAllPropertiesReturned = value; }
+        }
+
+        // Check to see if AreAllPropertiesReturned property is set
+        internal bool IsSetAreAllPropertiesReturned()
+        {
+            return this._areAllPropertiesReturned.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property ComponentName. 
@@ -78,6 +119,24 @@ namespace Amazon.IoTTwinMaker.Model
         internal bool IsSetComponentTypeId()
         {
             return this._componentTypeId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CompositeComponents. 
+        /// <para>
+        /// This lists objects that contain information about the <code>compositeComponents</code>.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, ComponentSummary> CompositeComponents
+        {
+            get { return this._compositeComponents; }
+            set { this._compositeComponents = value; }
+        }
+
+        // Check to see if CompositeComponents property is set
+        internal bool IsSetCompositeComponents()
+        {
+            return this._compositeComponents != null && this._compositeComponents.Count > 0; 
         }
 
         /// <summary>

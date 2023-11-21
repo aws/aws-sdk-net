@@ -33,6 +33,7 @@ namespace Amazon.IoTTwinMaker.Model
     /// </summary>
     public partial class GetEntityResponse : AmazonWebServiceResponse
     {
+        private bool? _areAllComponentsReturned;
         private string _arn;
         private Dictionary<string, ComponentResponse> _components = new Dictionary<string, ComponentResponse>();
         private DateTime? _creationDateTime;
@@ -45,6 +46,25 @@ namespace Amazon.IoTTwinMaker.Model
         private string _syncSource;
         private DateTime? _updateDateTime;
         private string _workspaceId;
+
+        /// <summary>
+        /// Gets and sets the property AreAllComponentsReturned. 
+        /// <para>
+        /// This flag notes whether all components are returned in the API response. The maximum
+        /// number of components returned is 30.
+        /// </para>
+        /// </summary>
+        public bool AreAllComponentsReturned
+        {
+            get { return this._areAllComponentsReturned.GetValueOrDefault(); }
+            set { this._areAllComponentsReturned = value; }
+        }
+
+        // Check to see if AreAllComponentsReturned property is set
+        internal bool IsSetAreAllComponentsReturned()
+        {
+            return this._areAllComponentsReturned.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Arn. 

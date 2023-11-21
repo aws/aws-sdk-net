@@ -47,6 +47,17 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
         {
             DeleteWorkspaceResponse response = new DeleteWorkspaceResponse();
 
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
+            {
+                if (context.TestExpression("message", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Message = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+            }
 
             return response;
         }

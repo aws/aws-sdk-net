@@ -36,6 +36,7 @@ namespace Amazon.IoTTwinMaker.Model
         private string _arn;
         private string _componentTypeId;
         private string _componentTypeName;
+        private Dictionary<string, CompositeComponentTypeResponse> _compositeComponentTypes = new Dictionary<string, CompositeComponentTypeResponse>();
         private DateTime? _creationDateTime;
         private string _description;
         private List<string> _extendsFrom = new List<string>();
@@ -105,6 +106,25 @@ namespace Amazon.IoTTwinMaker.Model
         internal bool IsSetComponentTypeName()
         {
             return this._componentTypeName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CompositeComponentTypes. 
+        /// <para>
+        /// This is an object that maps strings to <code>compositeComponentTypes</code> of the
+        /// <code>componentType</code>. <code>CompositeComponentType</code> is referenced by <code>componentTypeId</code>.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, CompositeComponentTypeResponse> CompositeComponentTypes
+        {
+            get { return this._compositeComponentTypes; }
+            set { this._compositeComponentTypes = value; }
+        }
+
+        // Check to see if CompositeComponentTypes property is set
+        internal bool IsSetCompositeComponentTypes()
+        {
+            return this._compositeComponentTypes != null && this._compositeComponentTypes.Count > 0; 
         }
 
         /// <summary>

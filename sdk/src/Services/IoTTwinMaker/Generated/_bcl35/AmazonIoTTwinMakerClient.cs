@@ -333,6 +333,78 @@ namespace Amazon.IoTTwinMaker
 
         #endregion
         
+        #region  CancelMetadataTransferJob
+
+        /// <summary>
+        /// Cancels the metadata transfer job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelMetadataTransferJob service method.</param>
+        /// 
+        /// <returns>The response from the CancelMetadataTransferJob service method, as returned by IoTTwinMaker.</returns>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ConflictException">
+        /// A conflict occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.InternalServerException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ResourceNotFoundException">
+        /// The resource wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ValidationException">
+        /// Failed
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/CancelMetadataTransferJob">REST API Reference for CancelMetadataTransferJob Operation</seealso>
+        public virtual CancelMetadataTransferJobResponse CancelMetadataTransferJob(CancelMetadataTransferJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelMetadataTransferJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelMetadataTransferJobResponseUnmarshaller.Instance;
+
+            return Invoke<CancelMetadataTransferJobResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CancelMetadataTransferJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CancelMetadataTransferJob operation on AmazonIoTTwinMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCancelMetadataTransferJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/CancelMetadataTransferJob">REST API Reference for CancelMetadataTransferJob Operation</seealso>
+        public virtual IAsyncResult BeginCancelMetadataTransferJob(CancelMetadataTransferJobRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelMetadataTransferJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelMetadataTransferJobResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CancelMetadataTransferJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCancelMetadataTransferJob.</param>
+        /// 
+        /// <returns>Returns a  CancelMetadataTransferJobResult from IoTTwinMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/CancelMetadataTransferJob">REST API Reference for CancelMetadataTransferJob Operation</seealso>
+        public virtual CancelMetadataTransferJobResponse EndCancelMetadataTransferJob(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CancelMetadataTransferJobResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateComponentType
 
         /// <summary>
@@ -473,6 +545,81 @@ namespace Amazon.IoTTwinMaker
         public virtual CreateEntityResponse EndCreateEntity(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateEntityResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateMetadataTransferJob
+
+        /// <summary>
+        /// Creates a new metadata transfer job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateMetadataTransferJob service method.</param>
+        /// 
+        /// <returns>The response from the CreateMetadataTransferJob service method, as returned by IoTTwinMaker.</returns>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ConflictException">
+        /// A conflict occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.InternalServerException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ResourceNotFoundException">
+        /// The resource wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ServiceQuotaExceededException">
+        /// The service quota was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ValidationException">
+        /// Failed
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/CreateMetadataTransferJob">REST API Reference for CreateMetadataTransferJob Operation</seealso>
+        public virtual CreateMetadataTransferJobResponse CreateMetadataTransferJob(CreateMetadataTransferJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateMetadataTransferJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateMetadataTransferJobResponseUnmarshaller.Instance;
+
+            return Invoke<CreateMetadataTransferJobResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateMetadataTransferJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateMetadataTransferJob operation on AmazonIoTTwinMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateMetadataTransferJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/CreateMetadataTransferJob">REST API Reference for CreateMetadataTransferJob Operation</seealso>
+        public virtual IAsyncResult BeginCreateMetadataTransferJob(CreateMetadataTransferJobRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateMetadataTransferJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateMetadataTransferJobResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateMetadataTransferJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateMetadataTransferJob.</param>
+        /// 
+        /// <returns>Returns a  CreateMetadataTransferJobResult from IoTTwinMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/CreateMetadataTransferJob">REST API Reference for CreateMetadataTransferJob Operation</seealso>
+        public virtual CreateMetadataTransferJobResponse EndCreateMetadataTransferJob(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateMetadataTransferJobResponse>(asyncResult);
         }
 
         #endregion
@@ -1046,6 +1193,14 @@ namespace Amazon.IoTTwinMaker
         /// <summary>
         /// Run queries to access information from your knowledge graph of entities within individual
         /// workspaces.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The ExecuteQuery action only works with <a href="https://docs.aws.amazon.com/sdk-for-java/latest/developer-guide/home.html">Amazon
+        /// Web Services Java SDK2</a>. ExecuteQuery will not work with any Amazon Web Services
+        /// Java SDK version &lt; 2.x.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ExecuteQuery service method.</param>
         /// 
@@ -1248,6 +1403,75 @@ namespace Amazon.IoTTwinMaker
         public virtual GetEntityResponse EndGetEntity(IAsyncResult asyncResult)
         {
             return EndInvoke<GetEntityResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetMetadataTransferJob
+
+        /// <summary>
+        /// Gets a nmetadata transfer job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMetadataTransferJob service method.</param>
+        /// 
+        /// <returns>The response from the GetMetadataTransferJob service method, as returned by IoTTwinMaker.</returns>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.InternalServerException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ResourceNotFoundException">
+        /// The resource wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ValidationException">
+        /// Failed
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/GetMetadataTransferJob">REST API Reference for GetMetadataTransferJob Operation</seealso>
+        public virtual GetMetadataTransferJobResponse GetMetadataTransferJob(GetMetadataTransferJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMetadataTransferJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMetadataTransferJobResponseUnmarshaller.Instance;
+
+            return Invoke<GetMetadataTransferJobResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetMetadataTransferJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetMetadataTransferJob operation on AmazonIoTTwinMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetMetadataTransferJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/GetMetadataTransferJob">REST API Reference for GetMetadataTransferJob Operation</seealso>
+        public virtual IAsyncResult BeginGetMetadataTransferJob(GetMetadataTransferJobRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMetadataTransferJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMetadataTransferJobResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetMetadataTransferJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetMetadataTransferJob.</param>
+        /// 
+        /// <returns>Returns a  GetMetadataTransferJobResult from IoTTwinMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/GetMetadataTransferJob">REST API Reference for GetMetadataTransferJob Operation</seealso>
+        public virtual GetMetadataTransferJobResponse EndGetMetadataTransferJob(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetMetadataTransferJobResponse>(asyncResult);
         }
 
         #endregion
@@ -1692,6 +1916,75 @@ namespace Amazon.IoTTwinMaker
 
         #endregion
         
+        #region  ListComponents
+
+        /// <summary>
+        /// This API lists the components of an entity.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListComponents service method.</param>
+        /// 
+        /// <returns>The response from the ListComponents service method, as returned by IoTTwinMaker.</returns>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.InternalServerException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ResourceNotFoundException">
+        /// The resource wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ValidationException">
+        /// Failed
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/ListComponents">REST API Reference for ListComponents Operation</seealso>
+        public virtual ListComponentsResponse ListComponents(ListComponentsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListComponentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListComponentsResponseUnmarshaller.Instance;
+
+            return Invoke<ListComponentsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListComponents operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListComponents operation on AmazonIoTTwinMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListComponents
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/ListComponents">REST API Reference for ListComponents Operation</seealso>
+        public virtual IAsyncResult BeginListComponents(ListComponentsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListComponentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListComponentsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListComponents operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListComponents.</param>
+        /// 
+        /// <returns>Returns a  ListComponentsResult from IoTTwinMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/ListComponents">REST API Reference for ListComponents Operation</seealso>
+        public virtual ListComponentsResponse EndListComponents(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListComponentsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListComponentTypes
 
         /// <summary>
@@ -1820,6 +2113,141 @@ namespace Amazon.IoTTwinMaker
         public virtual ListEntitiesResponse EndListEntities(IAsyncResult asyncResult)
         {
             return EndInvoke<ListEntitiesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListMetadataTransferJobs
+
+        /// <summary>
+        /// Lists the metadata transfer jobs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMetadataTransferJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListMetadataTransferJobs service method, as returned by IoTTwinMaker.</returns>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.InternalServerException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ValidationException">
+        /// Failed
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/ListMetadataTransferJobs">REST API Reference for ListMetadataTransferJobs Operation</seealso>
+        public virtual ListMetadataTransferJobsResponse ListMetadataTransferJobs(ListMetadataTransferJobsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMetadataTransferJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMetadataTransferJobsResponseUnmarshaller.Instance;
+
+            return Invoke<ListMetadataTransferJobsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListMetadataTransferJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListMetadataTransferJobs operation on AmazonIoTTwinMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListMetadataTransferJobs
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/ListMetadataTransferJobs">REST API Reference for ListMetadataTransferJobs Operation</seealso>
+        public virtual IAsyncResult BeginListMetadataTransferJobs(ListMetadataTransferJobsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMetadataTransferJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMetadataTransferJobsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListMetadataTransferJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListMetadataTransferJobs.</param>
+        /// 
+        /// <returns>Returns a  ListMetadataTransferJobsResult from IoTTwinMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/ListMetadataTransferJobs">REST API Reference for ListMetadataTransferJobs Operation</seealso>
+        public virtual ListMetadataTransferJobsResponse EndListMetadataTransferJobs(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListMetadataTransferJobsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListProperties
+
+        /// <summary>
+        /// This API lists the properties of a component.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListProperties service method.</param>
+        /// 
+        /// <returns>The response from the ListProperties service method, as returned by IoTTwinMaker.</returns>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.InternalServerException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ResourceNotFoundException">
+        /// The resource wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ValidationException">
+        /// Failed
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/ListProperties">REST API Reference for ListProperties Operation</seealso>
+        public virtual ListPropertiesResponse ListProperties(ListPropertiesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPropertiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPropertiesResponseUnmarshaller.Instance;
+
+            return Invoke<ListPropertiesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListProperties operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListProperties operation on AmazonIoTTwinMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListProperties
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/ListProperties">REST API Reference for ListProperties Operation</seealso>
+        public virtual IAsyncResult BeginListProperties(ListPropertiesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPropertiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPropertiesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListProperties operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListProperties.</param>
+        /// 
+        /// <returns>Returns a  ListPropertiesResult from IoTTwinMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/ListProperties">REST API Reference for ListProperties Operation</seealso>
+        public virtual ListPropertiesResponse EndListProperties(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListPropertiesResponse>(asyncResult);
         }
 
         #endregion

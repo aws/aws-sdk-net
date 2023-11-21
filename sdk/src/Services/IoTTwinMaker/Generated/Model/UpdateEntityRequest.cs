@@ -35,6 +35,7 @@ namespace Amazon.IoTTwinMaker.Model
     public partial class UpdateEntityRequest : AmazonIoTTwinMakerRequest
     {
         private Dictionary<string, ComponentUpdateRequest> _componentUpdates = new Dictionary<string, ComponentUpdateRequest>();
+        private Dictionary<string, CompositeComponentUpdateRequest> _compositeComponentUpdates = new Dictionary<string, CompositeComponentUpdateRequest>();
         private string _description;
         private string _entityId;
         private string _entityName;
@@ -58,6 +59,26 @@ namespace Amazon.IoTTwinMaker.Model
         internal bool IsSetComponentUpdates()
         {
             return this._componentUpdates != null && this._componentUpdates.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CompositeComponentUpdates. 
+        /// <para>
+        /// This is an object that maps strings to <code>compositeComponent</code> updates in
+        /// the request. Each key of the map represents the <code>componentPath</code> of the
+        /// <code>compositeComponent</code>.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, CompositeComponentUpdateRequest> CompositeComponentUpdates
+        {
+            get { return this._compositeComponentUpdates; }
+            set { this._compositeComponentUpdates = value; }
+        }
+
+        // Check to see if CompositeComponentUpdates property is set
+        internal bool IsSetCompositeComponentUpdates()
+        {
+            return this._compositeComponentUpdates != null && this._compositeComponentUpdates.Count > 0; 
         }
 
         /// <summary>

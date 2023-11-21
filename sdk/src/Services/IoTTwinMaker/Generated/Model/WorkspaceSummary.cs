@@ -36,6 +36,7 @@ namespace Amazon.IoTTwinMaker.Model
         private string _arn;
         private DateTime? _creationDateTime;
         private string _description;
+        private List<string> _linkedServices = new List<string>();
         private DateTime? _updateDateTime;
         private string _workspaceId;
 
@@ -94,6 +95,24 @@ namespace Amazon.IoTTwinMaker.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LinkedServices. 
+        /// <para>
+        /// A list of services that are linked to the workspace.
+        /// </para>
+        /// </summary>
+        public List<string> LinkedServices
+        {
+            get { return this._linkedServices; }
+            set { this._linkedServices = value; }
+        }
+
+        // Check to see if LinkedServices property is set
+        internal bool IsSetLinkedServices()
+        {
+            return this._linkedServices != null && this._linkedServices.Count > 0; 
         }
 
         /// <summary>

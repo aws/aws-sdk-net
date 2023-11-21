@@ -36,6 +36,7 @@ namespace Amazon.IoTTwinMaker.Model
     {
         private string _description;
         private string _role;
+        private string _s3Location;
         private string _workspaceId;
 
         /// <summary>
@@ -74,6 +75,25 @@ namespace Amazon.IoTTwinMaker.Model
         internal bool IsSetRole()
         {
             return this._role != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3Location. 
+        /// <para>
+        /// The ARN of the S3 bucket where resources associated with the workspace are stored.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
+        public string S3Location
+        {
+            get { return this._s3Location; }
+            set { this._s3Location = value; }
+        }
+
+        // Check to see if S3Location property is set
+        internal bool IsSetS3Location()
+        {
+            return this._s3Location != null;
         }
 
         /// <summary>

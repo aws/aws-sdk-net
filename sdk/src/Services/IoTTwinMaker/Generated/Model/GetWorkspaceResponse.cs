@@ -36,6 +36,7 @@ namespace Amazon.IoTTwinMaker.Model
         private string _arn;
         private DateTime? _creationDateTime;
         private string _description;
+        private List<string> _linkedServices = new List<string>();
         private string _role;
         private string _s3Location;
         private DateTime? _updateDateTime;
@@ -99,12 +100,30 @@ namespace Amazon.IoTTwinMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LinkedServices. 
+        /// <para>
+        /// A list of services that are linked to the workspace.
+        /// </para>
+        /// </summary>
+        public List<string> LinkedServices
+        {
+            get { return this._linkedServices; }
+            set { this._linkedServices = value; }
+        }
+
+        // Check to see if LinkedServices property is set
+        internal bool IsSetLinkedServices()
+        {
+            return this._linkedServices != null && this._linkedServices.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Role. 
         /// <para>
         /// The ARN of the execution role associated with the workspace.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=20, Max=2048)]
+        [AWSProperty(Min=20, Max=2048)]
         public string Role
         {
             get { return this._role; }
@@ -123,7 +142,7 @@ namespace Amazon.IoTTwinMaker.Model
         /// The ARN of the S3 bucket where resources associated with the workspace are stored.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string S3Location
         {
             get { return this._s3Location; }

@@ -69,6 +69,12 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
                     response.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("linkedServices", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.LinkedServices = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("role", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
