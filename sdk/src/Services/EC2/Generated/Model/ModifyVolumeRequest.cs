@@ -88,17 +88,23 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>gp3</code>: 3,000-16,000 IOPS
+        ///  <code>gp3</code>: 3,000 - 16,000 IOPS
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>io1</code>: 100-64,000 IOPS
+        ///  <code>io1</code>: 100 - 64,000 IOPS
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>io2</code>: 100-64,000 IOPS
+        ///  <code>io2</code>: 100 - 256,000 IOPS
         /// </para>
         ///  </li> </ul> 
+        /// <para>
+        /// For <code>io2</code> volumes, you can achieve up to 256,000 IOPS on <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">instances
+        /// built on the Nitro System</a>. On other instances, you can achieve performance up
+        /// to 32,000 IOPS.
+        /// </para>
+        ///  
         /// <para>
         /// Default: The existing value is retained if you keep the same volume type. If you change
         /// the volume type to <code>io1</code>, <code>io2</code>, or <code>gp3</code>, the default
@@ -152,19 +158,23 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>gp2</code> and <code>gp3</code>: 1-16,384
+        ///  <code>gp2</code> and <code>gp3</code>: 1 - 16,384 GiB
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>io1</code> and <code>io2</code>: 4-16,384
+        ///  <code>io1</code>: 4 - 16,384 GiB
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>st1</code> and <code>sc1</code>: 125-16,384
+        ///  <code>io2</code>: 4 - 65,536 GiB
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>standard</code>: 1-1,024
+        ///  <code>st1</code> and <code>sc1</code>: 125 - 16,384 GiB
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>standard</code>: 1 - 1024 GiB
         /// </para>
         ///  </li> </ul> 
         /// <para>

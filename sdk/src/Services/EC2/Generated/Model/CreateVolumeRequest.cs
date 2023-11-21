@@ -80,7 +80,7 @@ namespace Amazon.EC2.Model
         /// Instantiates CreateVolumeRequest with the parameterized properties
         /// </summary>
         /// <param name="availabilityZone">The ID of the Availability Zone in which to create the volume. For example, <code>us-east-1a</code>.</param>
-        /// <param name="size">The size of the volume, in GiBs. You must specify either a snapshot ID or a volume size. If you specify a snapshot, the default is the snapshot size. You can specify a volume size that is equal to or larger than the snapshot size. The following are the supported volumes sizes for each volume type: <ul> <li>  <code>gp2</code> and <code>gp3</code>: 1-16,384 </li> <li>  <code>io1</code> and <code>io2</code>: 4-16,384 </li> <li>  <code>st1</code> and <code>sc1</code>: 125-16,384 </li> <li>  <code>standard</code>: 1-1,024 </li> </ul></param>
+        /// <param name="size">The size of the volume, in GiBs. You must specify either a snapshot ID or a volume size. If you specify a snapshot, the default is the snapshot size. You can specify a volume size that is equal to or larger than the snapshot size. The following are the supported volumes sizes for each volume type: <ul> <li>  <code>gp2</code> and <code>gp3</code>: 1 - 16,384 GiB </li> <li>  <code>io1</code>: 4 - 16,384 GiB </li> <li>  <code>io2</code>: 4 - 65,536 GiB </li> <li>  <code>st1</code> and <code>sc1</code>: 125 - 16,384 GiB </li> <li>  <code>standard</code>: 1 - 1024 GiB </li> </ul></param>
         public CreateVolumeRequest(string availabilityZone, int size)
         {
             _availabilityZone = availabilityZone;
@@ -179,22 +179,21 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>gp3</code>: 3,000-16,000 IOPS
+        ///  <code>gp3</code>: 3,000 - 16,000 IOPS
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>io1</code>: 100-64,000 IOPS
+        ///  <code>io1</code>: 100 - 64,000 IOPS
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>io2</code>: 100-64,000 IOPS
+        ///  <code>io2</code>: 100 - 256,000 IOPS
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  <code>io1</code> and <code>io2</code> volumes support up to 64,000 IOPS only on <a
-        /// href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Instances
-        /// built on the Nitro System</a>. Other instance families support performance up to 32,000
-        /// IOPS.
+        /// For <code>io2</code> volumes, you can achieve up to 256,000 IOPS on <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">instances
+        /// built on the Nitro System</a>. On other instances, you can achieve performance up
+        /// to 32,000 IOPS.
         /// </para>
         ///  
         /// <para>
@@ -316,19 +315,23 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>gp2</code> and <code>gp3</code>: 1-16,384
+        ///  <code>gp2</code> and <code>gp3</code>: 1 - 16,384 GiB
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>io1</code> and <code>io2</code>: 4-16,384
+        ///  <code>io1</code>: 4 - 16,384 GiB
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>st1</code> and <code>sc1</code>: 125-16,384
+        ///  <code>io2</code>: 4 - 65,536 GiB
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>standard</code>: 1-1,024
+        ///  <code>st1</code> and <code>sc1</code>: 125 - 16,384 GiB
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>standard</code>: 1 - 1024 GiB
         /// </para>
         ///  </li> </ul>
         /// </summary>
