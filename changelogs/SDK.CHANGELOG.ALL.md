@@ -1,3 +1,22 @@
+### 3.7.691.0 (2023-11-21 20:04 UTC)
+* CloudFront (3.7.301.0)
+	* This release adds support for CloudFront KeyValueStore, a globally managed key value datastore associated with CloudFront Functions.
+* CloudFrontKeyValueStore (3.7.300.0)
+	* This release adds support for CloudFront KeyValueStore, a globally managed key value datastore associated with CloudFront Functions.
+* EC2 (3.7.306.1)
+	* Documentation updates for Amazon EC2.
+* InspectorScan (3.7.300.0)
+	* This release adds support for the new Amazon Inspector Scan API. The new Inspector Scan API can synchronously scan SBOMs adhering to the CycloneDX v1.5 format.
+* IoTSiteWise (3.7.301.0)
+	* Adds 1/ user-defined unique identifier for asset and model metadata, 2/ asset model components, and 3/ query API for asset metadata and telemetry data. Supports 4/ multi variate anomaly detection using Amazon Lookout for Equipment, 5/ warm storage tier, and 6/ buffered ingestion of time series data.
+* IoTTwinMaker (3.7.301.0)
+	* This release adds following support. 1. New APIs for metadata bulk operations. 2. Modify the component type API to support composite component types - nesting component types within one another. 3. New list APIs for components and properties. 4. Support the larger scope digital twin modeling.
+* S3 (3.7.302.0)
+	* Add support for automatic date based partitioning in S3 Server Access Logs.
+* Core 3.7.300.7
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.690.0 (2023-11-20 20:21 UTC)
 * CodeStarconnections (3.7.302.0)
 	* This release updates a few CodeStar Connections related APIs.
