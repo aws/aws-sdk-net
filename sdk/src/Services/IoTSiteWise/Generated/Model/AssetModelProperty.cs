@@ -35,8 +35,10 @@ namespace Amazon.IoTSiteWise.Model
     {
         private PropertyDataType _dataType;
         private string _dataTypeSpec;
+        private string _externalId;
         private string _id;
         private string _name;
+        private List<AssetModelPropertyPathSegment> _path = new List<AssetModelPropertyPathSegment>();
         private PropertyType _type;
         private string _unit;
 
@@ -80,12 +82,53 @@ namespace Amazon.IoTSiteWise.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ExternalId. 
+        /// <para>
+        /// The external ID (if any) provided in the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html">CreateAssetModel</a>
+        /// or <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a>
+        /// operation. You can assign an external ID by specifying this value as part of a call
+        /// to <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a>.
+        /// However, you can't change the external ID if one is already assigned. For more information,
+        /// see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+        /// external IDs</a> in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=2, Max=128)]
+        public string ExternalId
+        {
+            get { return this._externalId; }
+            set { this._externalId = value; }
+        }
+
+        // Check to see if ExternalId property is set
+        internal bool IsSetExternalId()
+        {
+            return this._externalId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
         /// The ID of the asset model property.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If you are callling <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a>
+        /// to create a <i>new</i> property: You can specify its ID here, if desired. IoT SiteWise
+        /// automatically generates a unique ID for you, so this parameter is never required.
+        /// However, if you prefer to supply your own ID instead, you can specify it here in UUID
+        /// format. If you specify your own ID, it must be globally unique.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are calling UpdateAssetModel to modify an <i>existing</i> property: This can
+        /// be either the actual ID in UUID format, or else <code>externalId:</code> followed
+        /// by the external ID, if it has one. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+        /// objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Min=36, Max=36)]
+        [AWSProperty(Min=13, Max=139)]
         public string Id
         {
             get { return this._id; }
@@ -115,6 +158,24 @@ namespace Amazon.IoTSiteWise.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Path. 
+        /// <para>
+        /// The structured path to the property from the root of the asset model.
+        /// </para>
+        /// </summary>
+        public List<AssetModelPropertyPathSegment> Path
+        {
+            get { return this._path; }
+            set { this._path = value; }
+        }
+
+        // Check to see if Path property is set
+        internal bool IsSetPath()
+        {
+            return this._path != null && this._path.Count > 0; 
         }
 
         /// <summary>

@@ -54,6 +54,7 @@ namespace Amazon.IoTSiteWise.Model
     {
         private List<AssetModelCompositeModel> _assetModelCompositeModels = new List<AssetModelCompositeModel>();
         private string _assetModelDescription;
+        private string _assetModelExternalId;
         private List<AssetModelHierarchy> _assetModelHierarchies = new List<AssetModelHierarchy>();
         private string _assetModelId;
         private string _assetModelName;
@@ -63,11 +64,18 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property AssetModelCompositeModels. 
         /// <para>
-        /// The composite asset models that are part of this asset model. Composite asset models
-        /// are asset models that contain specific properties. Each composite model has a type
-        /// that defines the properties that the composite model supports. Use composite asset
-        /// models to define alarms on this asset model.
+        /// The composite models that are part of this asset model. It groups properties (such
+        /// as attributes, measurements, transforms, and metrics) and child composite models that
+        /// model parts of your industrial equipment. Each composite model has a type that defines
+        /// the properties that the composite model supports. Use composite models to define alarms
+        /// on this asset model.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// When creating custom composite models, you need to use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModelCompositeModel.html">CreateAssetModelCompositeModel</a>.
+        /// For more information, see &lt;LINK&gt;.
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<AssetModelCompositeModel> AssetModelCompositeModels
         {
@@ -101,6 +109,28 @@ namespace Amazon.IoTSiteWise.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AssetModelExternalId. 
+        /// <para>
+        /// An external ID to assign to the asset model. The asset model must not already have
+        /// an external ID. The external ID must be unique within your Amazon Web Services account.
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+        /// external IDs</a> in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=2, Max=128)]
+        public string AssetModelExternalId
+        {
+            get { return this._assetModelExternalId; }
+            set { this._assetModelExternalId = value; }
+        }
+
+        // Check to see if AssetModelExternalId property is set
+        internal bool IsSetAssetModelExternalId()
+        {
+            return this._assetModelExternalId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property AssetModelHierarchies. 
         /// <para>
         /// The updated hierarchy definitions of the asset model. Each hierarchy specifies an
@@ -130,10 +160,13 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property AssetModelId. 
         /// <para>
-        /// The ID of the asset model to update.
+        /// The ID of the asset model to update. This can be either the actual ID in UUID format,
+        /// or else <code>externalId:</code> followed by the external ID, if it has one. For more
+        /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+        /// objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=36, Max=36)]
+        [AWSProperty(Required=true, Min=13, Max=139)]
         public string AssetModelId
         {
             get { return this._assetModelId; }

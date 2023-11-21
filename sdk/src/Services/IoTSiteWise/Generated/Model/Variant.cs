@@ -77,7 +77,7 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property IntegerValue. 
         /// <para>
-        /// Asset property data of type integer (whole number).
+        /// Asset property data of type integer (number that's greater than or equal to zero).
         /// </para>
         /// </summary>
         public int IntegerValue

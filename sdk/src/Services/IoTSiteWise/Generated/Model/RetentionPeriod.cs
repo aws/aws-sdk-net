@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
-    /// How many days your data is kept in the hot tier. By default, your data is kept indefinitely
-    /// in the hot tier.
+    /// The number of days your data is kept in the hot tier. By default, your data is kept
+    /// indefinitely in the hot tier.
     /// </summary>
     public partial class RetentionPeriod
     {

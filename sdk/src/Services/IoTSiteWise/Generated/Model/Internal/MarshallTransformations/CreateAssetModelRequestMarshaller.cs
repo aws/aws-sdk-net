@@ -87,6 +87,12 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.AssetModelDescription);
                 }
 
+                if(publicRequest.IsSetAssetModelExternalId())
+                {
+                    context.Writer.WritePropertyName("assetModelExternalId");
+                    context.Writer.Write(publicRequest.AssetModelExternalId);
+                }
+
                 if(publicRequest.IsSetAssetModelHierarchies())
                 {
                     context.Writer.WritePropertyName("assetModelHierarchies");
@@ -101,6 +107,12 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                         context.Writer.WriteObjectEnd();
                     }
                     context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetAssetModelId())
+                {
+                    context.Writer.WritePropertyName("assetModelId");
+                    context.Writer.Write(publicRequest.AssetModelId);
                 }
 
                 if(publicRequest.IsSetAssetModelName())
@@ -123,6 +135,12 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                         context.Writer.WriteObjectEnd();
                     }
                     context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetAssetModelType())
+                {
+                    context.Writer.WritePropertyName("assetModelType");
+                    context.Writer.Write(publicRequest.AssetModelType);
                 }
 
                 if(publicRequest.IsSetClientToken())

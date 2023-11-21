@@ -99,6 +99,23 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.StorageType);
                 }
 
+                if(publicRequest.IsSetWarmTier())
+                {
+                    context.Writer.WritePropertyName("warmTier");
+                    context.Writer.Write(publicRequest.WarmTier);
+                }
+
+                if(publicRequest.IsSetWarmTierRetentionPeriod())
+                {
+                    context.Writer.WritePropertyName("warmTierRetentionPeriod");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = WarmTierRetentionPeriodMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.WarmTierRetentionPeriod, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

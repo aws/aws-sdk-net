@@ -36,6 +36,8 @@ namespace Amazon.IoTSiteWise.Model
     public partial class CreateAssetRequest : AmazonIoTSiteWiseRequest
     {
         private string _assetDescription;
+        private string _assetExternalId;
+        private string _assetId;
         private string _assetModelId;
         private string _assetName;
         private string _clientToken;
@@ -61,12 +63,58 @@ namespace Amazon.IoTSiteWise.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AssetModelId. 
+        /// Gets and sets the property AssetExternalId. 
         /// <para>
-        /// The ID of the asset model from which to create the asset.
+        /// An external ID to assign to the asset. The external ID must be unique within your
+        /// Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+        /// external IDs</a> in the <i>IoT SiteWise User Guide</i>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=36, Max=36)]
+        [AWSProperty(Min=2, Max=128)]
+        public string AssetExternalId
+        {
+            get { return this._assetExternalId; }
+            set { this._assetExternalId = value; }
+        }
+
+        // Check to see if AssetExternalId property is set
+        internal bool IsSetAssetExternalId()
+        {
+            return this._assetExternalId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AssetId. 
+        /// <para>
+        /// The ID to assign to the asset, if desired. IoT SiteWise automatically generates a
+        /// unique ID for you, so this parameter is never required. However, if you prefer to
+        /// supply your own ID instead, you can specify it here in UUID format. If you specify
+        /// your own ID, it must be globally unique.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=36, Max=36)]
+        public string AssetId
+        {
+            get { return this._assetId; }
+            set { this._assetId = value; }
+        }
+
+        // Check to see if AssetId property is set
+        internal bool IsSetAssetId()
+        {
+            return this._assetId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AssetModelId. 
+        /// <para>
+        /// The ID of the asset model from which to create the asset. This can be either the actual
+        /// ID in UUID format, or else <code>externalId:</code> followed by the external ID, if
+        /// it has one. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+        /// objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=13, Max=139)]
         public string AssetModelId
         {
             get { return this._assetModelId; }

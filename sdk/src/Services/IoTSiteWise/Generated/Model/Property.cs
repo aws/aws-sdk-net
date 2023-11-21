@@ -35,9 +35,11 @@ namespace Amazon.IoTSiteWise.Model
     {
         private string _alias;
         private PropertyDataType _dataType;
+        private string _externalId;
         private string _id;
         private string _name;
         private PropertyNotification _notification;
+        private List<AssetPropertyPathSegment> _path = new List<AssetPropertyPathSegment>();
         private PropertyType _type;
         private string _unit;
 
@@ -80,6 +82,26 @@ namespace Amazon.IoTSiteWise.Model
         internal bool IsSetDataType()
         {
             return this._dataType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExternalId. 
+        /// <para>
+        /// The external ID of the asset property. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+        /// external IDs</a> in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=2, Max=128)]
+        public string ExternalId
+        {
+            get { return this._externalId; }
+            set { this._externalId = value; }
+        }
+
+        // Check to see if ExternalId property is set
+        internal bool IsSetExternalId()
+        {
+            return this._externalId != null;
         }
 
         /// <summary>
@@ -136,6 +158,24 @@ namespace Amazon.IoTSiteWise.Model
         internal bool IsSetNotification()
         {
             return this._notification != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Path. 
+        /// <para>
+        /// The structured path to the property from the root of the asset.
+        /// </para>
+        /// </summary>
+        public List<AssetPropertyPathSegment> Path
+        {
+            get { return this._path; }
+            set { this._path = value; }
+        }
+
+        // Check to see if Path property is set
+        internal bool IsSetPath()
+        {
+            return this._path != null && this._path.Count > 0; 
         }
 
         /// <summary>

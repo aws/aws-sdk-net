@@ -39,7 +39,7 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property FileFormat. 
         /// <para>
-        /// The file format of the data in Amazon S3.
+        /// The file format of the data in S3.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -35,15 +35,20 @@ namespace Amazon.IoTSiteWise.Model
     public partial class AssetModelHierarchyDefinition
     {
         private string _childAssetModelId;
+        private string _externalId;
+        private string _id;
         private string _name;
 
         /// <summary>
         /// Gets and sets the property ChildAssetModelId. 
         /// <para>
-        /// The ID of an asset model for this hierarchy.
+        /// The ID of an asset model for this hierarchy. This can be either the actual ID in UUID
+        /// format, or else <code>externalId:</code> followed by the external ID, if it has one.
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+        /// objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=36, Max=36)]
+        [AWSProperty(Required=true, Min=13, Max=139)]
         public string ChildAssetModelId
         {
             get { return this._childAssetModelId; }
@@ -54,6 +59,50 @@ namespace Amazon.IoTSiteWise.Model
         internal bool IsSetChildAssetModelId()
         {
             return this._childAssetModelId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExternalId. 
+        /// <para>
+        /// An external ID to assign to the asset model hierarchy. The external ID must be unique
+        /// among asset model hierarchies within this asset model. For more information, see <a
+        /// href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+        /// external IDs</a> in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=2, Max=128)]
+        public string ExternalId
+        {
+            get { return this._externalId; }
+            set { this._externalId = value; }
+        }
+
+        // Check to see if ExternalId property is set
+        internal bool IsSetExternalId()
+        {
+            return this._externalId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Id. 
+        /// <para>
+        /// The ID to assign to the asset model hierarchy, if desired. IoT SiteWise automatically
+        /// generates a unique ID for you, so this parameter is never required. However, if you
+        /// prefer to supply your own ID instead, you can specify it here in UUID format. If you
+        /// specify your own ID, it must be globally unique.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=36, Max=36)]
+        public string Id
+        {
+            get { return this._id; }
+            set { this._id = value; }
+        }
+
+        // Check to see if Id property is set
+        internal bool IsSetId()
+        {
+            return this._id != null;
         }
 
         /// <summary>

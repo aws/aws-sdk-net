@@ -63,6 +63,12 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                     response.AssetCompositeModels = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("assetCompositeModelSummaries", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<AssetCompositeModelSummary, AssetCompositeModelSummaryUnmarshaller>(AssetCompositeModelSummaryUnmarshaller.Instance);
+                    response.AssetCompositeModelSummaries = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("assetCreationDate", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
@@ -73,6 +79,12 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AssetDescription = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("assetExternalId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.AssetExternalId = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("assetHierarchies", targetDepth))

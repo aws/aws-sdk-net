@@ -57,6 +57,22 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.PropertyId);
             }
 
+            if(requestObject.IsSetPropertyPath())
+            {
+                context.Writer.WritePropertyName("propertyPath");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectPropertyPathListValue in requestObject.PropertyPath)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AssetModelPropertyPathSegmentMarshaller.Instance;
+                    marshaller.Marshall(requestObjectPropertyPathListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
         }
 
         /// <summary>

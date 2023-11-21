@@ -63,6 +63,12 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                     response.AssetModelCompositeModels = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("assetModelCompositeModelSummaries", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<AssetModelCompositeModelSummary, AssetModelCompositeModelSummaryUnmarshaller>(AssetModelCompositeModelSummaryUnmarshaller.Instance);
+                    response.AssetModelCompositeModelSummaries = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("assetModelCreationDate", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
@@ -73,6 +79,12 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AssetModelDescription = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("assetModelExternalId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.AssetModelExternalId = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("assetModelHierarchies", targetDepth))
@@ -109,6 +121,12 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = AssetModelStatusUnmarshaller.Instance;
                     response.AssetModelStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("assetModelType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.AssetModelType = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

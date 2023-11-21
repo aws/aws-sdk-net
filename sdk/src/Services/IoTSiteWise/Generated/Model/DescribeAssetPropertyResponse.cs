@@ -33,6 +33,7 @@ namespace Amazon.IoTSiteWise.Model
     /// </summary>
     public partial class DescribeAssetPropertyResponse : AmazonWebServiceResponse
     {
+        private string _assetExternalId;
         private string _assetId;
         private string _assetModelId;
         private string _assetName;
@@ -40,9 +41,29 @@ namespace Amazon.IoTSiteWise.Model
         private CompositeModelProperty _compositeModel;
 
         /// <summary>
+        /// Gets and sets the property AssetExternalId. 
+        /// <para>
+        /// The external ID of the asset. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+        /// external IDs</a> in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=2, Max=128)]
+        public string AssetExternalId
+        {
+            get { return this._assetExternalId; }
+            set { this._assetExternalId = value; }
+        }
+
+        // Check to see if AssetExternalId property is set
+        internal bool IsSetAssetExternalId()
+        {
+            return this._assetExternalId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property AssetId. 
         /// <para>
-        /// The ID of the asset.
+        /// The ID of the asset, in UUID format.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]
@@ -61,7 +82,7 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property AssetModelId. 
         /// <para>
-        /// The ID of the asset model.
+        /// The ID of the asset model, in UUID format.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]
@@ -123,8 +144,8 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property CompositeModel. 
         /// <para>
-        /// The composite asset model that declares this asset property, if this asset property
-        /// exists in a composite model.
+        /// The composite model that declares this asset property, if this asset property exists
+        /// in a composite model.
         /// </para>
         /// </summary>
         public CompositeModelProperty CompositeModel

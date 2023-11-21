@@ -33,6 +33,8 @@ namespace Amazon.IoTSiteWise.Model
     /// </summary>
     public partial class DescribeBulkImportJobResponse : AmazonWebServiceResponse
     {
+        private bool? _adaptiveIngestion;
+        private bool? _deleteFilesAfterImport;
         private ErrorReportLocation _errorReportLocation;
         private List<File> _files = new List<File>();
         private JobConfiguration _jobConfiguration;
@@ -42,6 +44,45 @@ namespace Amazon.IoTSiteWise.Model
         private string _jobName;
         private string _jobRoleArn;
         private JobStatus _jobStatus;
+
+        /// <summary>
+        /// Gets and sets the property AdaptiveIngestion. 
+        /// <para>
+        /// If set to true, ingest new data into IoT SiteWise storage. Measurements with notifications,
+        /// metrics and transforms are computed. If set to false, historical data is ingested
+        /// into IoT SiteWise as is.
+        /// </para>
+        /// </summary>
+        public bool AdaptiveIngestion
+        {
+            get { return this._adaptiveIngestion.GetValueOrDefault(); }
+            set { this._adaptiveIngestion = value; }
+        }
+
+        // Check to see if AdaptiveIngestion property is set
+        internal bool IsSetAdaptiveIngestion()
+        {
+            return this._adaptiveIngestion.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeleteFilesAfterImport. 
+        /// <para>
+        /// If set to true, your data files is deleted from S3, after ingestion into IoT SiteWise
+        /// storage.
+        /// </para>
+        /// </summary>
+        public bool DeleteFilesAfterImport
+        {
+            get { return this._deleteFilesAfterImport.GetValueOrDefault(); }
+            set { this._deleteFilesAfterImport = value; }
+        }
+
+        // Check to see if DeleteFilesAfterImport property is set
+        internal bool IsSetDeleteFilesAfterImport()
+        {
+            return this._deleteFilesAfterImport.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property ErrorReportLocation. 
@@ -201,7 +242,7 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property JobStatus. 
         /// <para>
-        /// The status of the bulk import job can be one of following values.
+        /// The status of the bulk import job can be one of following values:
         /// </para>
         ///  <ul> <li> 
         /// <para>

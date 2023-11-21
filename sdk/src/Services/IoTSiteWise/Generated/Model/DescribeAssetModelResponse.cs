@@ -35,14 +35,17 @@ namespace Amazon.IoTSiteWise.Model
     {
         private string _assetModelArn;
         private List<AssetModelCompositeModel> _assetModelCompositeModels = new List<AssetModelCompositeModel>();
+        private List<AssetModelCompositeModelSummary> _assetModelCompositeModelSummaries = new List<AssetModelCompositeModelSummary>();
         private DateTime? _assetModelCreationDate;
         private string _assetModelDescription;
+        private string _assetModelExternalId;
         private List<AssetModelHierarchy> _assetModelHierarchies = new List<AssetModelHierarchy>();
         private string _assetModelId;
         private DateTime? _assetModelLastUpdateDate;
         private string _assetModelName;
         private List<AssetModelProperty> _assetModelProperties = new List<AssetModelProperty>();
         private AssetModelStatus _assetModelStatus;
+        private AssetModelType _assetModelType;
 
         /// <summary>
         /// Gets and sets the property AssetModelArn. 
@@ -72,7 +75,8 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property AssetModelCompositeModels. 
         /// <para>
-        /// The list of composite asset models for the asset model.
+        /// The list of built-in composite models for the asset model, such as those with those
+        /// of type <code>AWS/ALARMS</code>.
         /// </para>
         /// </summary>
         public List<AssetModelCompositeModel> AssetModelCompositeModels
@@ -85,6 +89,24 @@ namespace Amazon.IoTSiteWise.Model
         internal bool IsSetAssetModelCompositeModels()
         {
             return this._assetModelCompositeModels != null && this._assetModelCompositeModels.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AssetModelCompositeModelSummaries. 
+        /// <para>
+        /// The list of the immediate child custom composite model summaries for the asset model.
+        /// </para>
+        /// </summary>
+        public List<AssetModelCompositeModelSummary> AssetModelCompositeModelSummaries
+        {
+            get { return this._assetModelCompositeModelSummaries; }
+            set { this._assetModelCompositeModelSummaries = value; }
+        }
+
+        // Check to see if AssetModelCompositeModelSummaries property is set
+        internal bool IsSetAssetModelCompositeModelSummaries()
+        {
+            return this._assetModelCompositeModelSummaries != null && this._assetModelCompositeModelSummaries.Count > 0; 
         }
 
         /// <summary>
@@ -126,6 +148,25 @@ namespace Amazon.IoTSiteWise.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AssetModelExternalId. 
+        /// <para>
+        /// The external ID of the asset model, if any.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=2, Max=128)]
+        public string AssetModelExternalId
+        {
+            get { return this._assetModelExternalId; }
+            set { this._assetModelExternalId = value; }
+        }
+
+        // Check to see if AssetModelExternalId property is set
+        internal bool IsSetAssetModelExternalId()
+        {
+            return this._assetModelExternalId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property AssetModelHierarchies. 
         /// <para>
         /// A list of asset model hierarchies that each contain a <code>childAssetModelId</code>
@@ -149,7 +190,7 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property AssetModelId. 
         /// <para>
-        /// The ID of the asset model.
+        /// The ID of the asset model, in UUID format.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]
@@ -244,6 +285,36 @@ namespace Amazon.IoTSiteWise.Model
         internal bool IsSetAssetModelStatus()
         {
             return this._assetModelStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AssetModelType. 
+        /// <para>
+        /// The type of asset model.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets.
+        /// Can't be included as a component in another asset model.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite
+        /// models of other asset models. You can't create assets directly from this type of asset
+        /// model. 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public AssetModelType AssetModelType
+        {
+            get { return this._assetModelType; }
+            set { this._assetModelType = value; }
+        }
+
+        // Check to see if AssetModelType property is set
+        internal bool IsSetAssetModelType()
+        {
+            return this._assetModelType != null;
         }
 
     }

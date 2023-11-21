@@ -35,6 +35,7 @@ namespace Amazon.IoTSiteWise.Model
     public partial class AssetModelCompositeModel
     {
         private string _description;
+        private string _externalId;
         private string _id;
         private string _name;
         private List<AssetModelProperty> _properties = new List<AssetModelProperty>();
@@ -60,12 +61,32 @@ namespace Amazon.IoTSiteWise.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ExternalId. 
+        /// <para>
+        /// The external ID of the asset model composite model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+        /// external IDs</a> in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=2, Max=128)]
+        public string ExternalId
+        {
+            get { return this._externalId; }
+            set { this._externalId = value; }
+        }
+
+        // Check to see if ExternalId property is set
+        internal bool IsSetExternalId()
+        {
+            return this._externalId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
         ///  The ID of the asset model composite model. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=36, Max=36)]
+        [AWSProperty(Min=13, Max=139)]
         public string Id
         {
             get { return this._id; }

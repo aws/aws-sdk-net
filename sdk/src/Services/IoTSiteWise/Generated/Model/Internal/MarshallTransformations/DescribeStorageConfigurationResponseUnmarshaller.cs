@@ -87,6 +87,18 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                     response.StorageType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("warmTier", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.WarmTier = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("warmTierRetentionPeriod", targetDepth))
+                {
+                    var unmarshaller = WarmTierRetentionPeriodUnmarshaller.Instance;
+                    response.WarmTierRetentionPeriod = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

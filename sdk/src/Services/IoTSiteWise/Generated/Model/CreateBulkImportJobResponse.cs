@@ -78,7 +78,7 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property JobStatus. 
         /// <para>
-        /// The status of the bulk import job can be one of following values.
+        /// The status of the bulk import job can be one of following values:
         /// </para>
         ///  <ul> <li> 
         /// <para>

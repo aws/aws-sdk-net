@@ -51,6 +51,18 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("adaptiveIngestion", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    response.AdaptiveIngestion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("deleteFilesAfterImport", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    response.DeleteFilesAfterImport = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("errorReportLocation", targetDepth))
                 {
                     var unmarshaller = ErrorReportLocationUnmarshaller.Instance;

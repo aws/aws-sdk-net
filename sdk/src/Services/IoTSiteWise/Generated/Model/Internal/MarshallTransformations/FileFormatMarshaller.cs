@@ -56,6 +56,17 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetParquet())
+            {
+                context.Writer.WritePropertyName("parquet");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ParquetMarshaller.Instance;
+                marshaller.Marshall(requestObject.Parquet, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

@@ -41,6 +41,11 @@ namespace Amazon.IoTSiteWise.Model
         IBatchGetAssetPropertyValueHistoryPaginator BatchGetAssetPropertyValueHistory(BatchGetAssetPropertyValueHistoryRequest request);
 
         /// <summary>
+        /// Paginator for ExecuteQuery operation
+        ///</summary>
+        IExecuteQueryPaginator ExecuteQuery(ExecuteQueryRequest request);
+
+        /// <summary>
         /// Paginator for GetAssetPropertyAggregates operation
         ///</summary>
         IGetAssetPropertyAggregatesPaginator GetAssetPropertyAggregates(GetAssetPropertyAggregatesRequest request);
@@ -59,6 +64,16 @@ namespace Amazon.IoTSiteWise.Model
         /// Paginator for ListAccessPolicies operation
         ///</summary>
         IListAccessPoliciesPaginator ListAccessPolicies(ListAccessPoliciesRequest request);
+
+        /// <summary>
+        /// Paginator for ListActions operation
+        ///</summary>
+        IListActionsPaginator ListActions(ListActionsRequest request);
+
+        /// <summary>
+        /// Paginator for ListAssetModelCompositeModels operation
+        ///</summary>
+        IListAssetModelCompositeModelsPaginator ListAssetModelCompositeModels(ListAssetModelCompositeModelsRequest request);
 
         /// <summary>
         /// Paginator for ListAssetModelProperties operation
@@ -94,6 +109,11 @@ namespace Amazon.IoTSiteWise.Model
         /// Paginator for ListBulkImportJobs operation
         ///</summary>
         IListBulkImportJobsPaginator ListBulkImportJobs(ListBulkImportJobsRequest request);
+
+        /// <summary>
+        /// Paginator for ListCompositionRelationships operation
+        ///</summary>
+        IListCompositionRelationshipsPaginator ListCompositionRelationships(ListCompositionRelationshipsRequest request);
 
         /// <summary>
         /// Paginator for ListDashboards operation

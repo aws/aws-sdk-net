@@ -33,8 +33,32 @@ namespace Amazon.IoTSiteWise.Model
     /// </summary>
     public partial class AssetHierarchy
     {
+        private string _externalId;
         private string _id;
         private string _name;
+
+        /// <summary>
+        /// Gets and sets the property ExternalId. 
+        /// <para>
+        /// The external ID of the hierarchy, if it has one. When you update an asset hierarchy,
+        /// you may assign an external ID if it doesn't already have one. You can't change the
+        /// external ID of an asset hierarchy that already has one. For more information, see
+        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+        /// external IDs</a> in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=2, Max=128)]
+        public string ExternalId
+        {
+            get { return this._externalId; }
+            set { this._externalId = value; }
+        }
+
+        // Check to see if ExternalId property is set
+        internal bool IsSetExternalId()
+        {
+            return this._externalId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Id. 

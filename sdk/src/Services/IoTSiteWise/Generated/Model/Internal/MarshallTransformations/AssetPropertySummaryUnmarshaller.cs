@@ -76,6 +76,12 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                     unmarshalledObject.AssetCompositeModelId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("externalId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ExternalId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -86,6 +92,12 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = PropertyNotificationUnmarshaller.Instance;
                     unmarshalledObject.Notification = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("path", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<AssetPropertyPathSegment, AssetPropertyPathSegmentUnmarshaller>(AssetPropertyPathSegmentUnmarshaller.Instance);
+                    unmarshalledObject.Path = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("unit", targetDepth))

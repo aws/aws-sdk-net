@@ -35,8 +35,10 @@ namespace Amazon.IoTSiteWise.Model
     {
         private string _assetArn;
         private List<AssetCompositeModel> _assetCompositeModels = new List<AssetCompositeModel>();
+        private List<AssetCompositeModelSummary> _assetCompositeModelSummaries = new List<AssetCompositeModelSummary>();
         private DateTime? _assetCreationDate;
         private string _assetDescription;
+        private string _assetExternalId;
         private List<AssetHierarchy> _assetHierarchies = new List<AssetHierarchy>();
         private string _assetId;
         private DateTime? _assetLastUpdateDate;
@@ -88,6 +90,24 @@ namespace Amazon.IoTSiteWise.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AssetCompositeModelSummaries. 
+        /// <para>
+        /// The list of the immediate child custom composite model summaries for the asset.
+        /// </para>
+        /// </summary>
+        public List<AssetCompositeModelSummary> AssetCompositeModelSummaries
+        {
+            get { return this._assetCompositeModelSummaries; }
+            set { this._assetCompositeModelSummaries = value; }
+        }
+
+        // Check to see if AssetCompositeModelSummaries property is set
+        internal bool IsSetAssetCompositeModelSummaries()
+        {
+            return this._assetCompositeModelSummaries != null && this._assetCompositeModelSummaries.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property AssetCreationDate. 
         /// <para>
         /// The date the asset was created, in Unix epoch time.
@@ -126,6 +146,25 @@ namespace Amazon.IoTSiteWise.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AssetExternalId. 
+        /// <para>
+        /// The external ID of the asset, if any.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=2, Max=128)]
+        public string AssetExternalId
+        {
+            get { return this._assetExternalId; }
+            set { this._assetExternalId = value; }
+        }
+
+        // Check to see if AssetExternalId property is set
+        internal bool IsSetAssetExternalId()
+        {
+            return this._assetExternalId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property AssetHierarchies. 
         /// <para>
         /// A list of asset hierarchies that each contain a <code>hierarchyId</code>. A hierarchy
@@ -148,7 +187,7 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property AssetId. 
         /// <para>
-        /// The ID of the asset.
+        /// The ID of the asset, in UUID format.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]

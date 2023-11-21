@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
-    /// A .csv file.
+    /// A .CSV file.
     /// </summary>
     public partial class Csv
     {
@@ -41,6 +41,7 @@ namespace Amazon.IoTSiteWise.Model
         /// The column names specified in the .csv file.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> ColumnNames
         {
             get { return this._columnNames; }

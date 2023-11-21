@@ -76,6 +76,12 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                     unmarshalledObject.PropertyId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("propertyPath", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<AssetModelPropertyPathSegment, AssetModelPropertyPathSegmentUnmarshaller>(AssetModelPropertyPathSegmentUnmarshaller.Instance);
+                    unmarshalledObject.PropertyPath = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

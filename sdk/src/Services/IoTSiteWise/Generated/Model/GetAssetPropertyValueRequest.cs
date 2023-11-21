@@ -57,7 +57,7 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property AssetId. 
         /// <para>
-        /// The ID of the asset.
+        /// The ID of the asset, in UUID format.
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]
@@ -98,7 +98,7 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property PropertyId. 
         /// <para>
-        /// The ID of the asset property.
+        /// The ID of the asset property, in UUID format.
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]

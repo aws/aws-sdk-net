@@ -59,6 +59,9 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             request.HttpMethod = "GET";
 
             
+            if (publicRequest.IsSetAssetModelTypes())
+                request.ParameterCollection.Add("assetModelTypes", publicRequest.AssetModelTypes);
+            
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
             

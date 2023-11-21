@@ -39,6 +39,8 @@ namespace Amazon.IoTSiteWise.Model
         private MultiLayerStorage _multiLayerStorage;
         private RetentionPeriod _retentionPeriod;
         private StorageType _storageType;
+        private WarmTierState _warmTier;
+        private WarmTierRetentionPeriod _warmTierRetentionPeriod;
 
         /// <summary>
         /// Gets and sets the property ConfigurationStatus.
@@ -134,8 +136,8 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property RetentionPeriod. 
         /// <para>
-        /// How many days your data is kept in the hot tier. By default, your data is kept indefinitely
-        /// in the hot tier.
+        /// The number of days your data is kept in the hot tier. By default, your data is kept
+        /// indefinitely in the hot tier.
         /// </para>
         /// </summary>
         public RetentionPeriod RetentionPeriod
@@ -179,6 +181,44 @@ namespace Amazon.IoTSiteWise.Model
         internal bool IsSetStorageType()
         {
             return this._storageType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WarmTier. 
+        /// <para>
+        /// A service managed storage tier optimized for analytical queries. It stores periodically
+        /// uploaded, buffered and historical data ingested with the CreaeBulkImportJob API.
+        /// </para>
+        /// </summary>
+        public WarmTierState WarmTier
+        {
+            get { return this._warmTier; }
+            set { this._warmTier = value; }
+        }
+
+        // Check to see if WarmTier property is set
+        internal bool IsSetWarmTier()
+        {
+            return this._warmTier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WarmTierRetentionPeriod. 
+        /// <para>
+        /// Set this period to specify how long your data is stored in the warm tier before it
+        /// is deleted. You can set this only if cold tier is enabled.
+        /// </para>
+        /// </summary>
+        public WarmTierRetentionPeriod WarmTierRetentionPeriod
+        {
+            get { return this._warmTierRetentionPeriod; }
+            set { this._warmTierRetentionPeriod = value; }
+        }
+
+        // Check to see if WarmTierRetentionPeriod property is set
+        internal bool IsSetWarmTierRetentionPeriod()
+        {
+            return this._warmTierRetentionPeriod != null;
         }
 
     }

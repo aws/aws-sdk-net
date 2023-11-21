@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
-    /// Contains a job summary information.
+    /// Contains the job summary information.
     /// </summary>
     public partial class JobSummary
     {
@@ -78,7 +78,7 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the bulk import job can be one of following values.
+        /// The status of the bulk import job can be one of following values:
         /// </para>
         ///  <ul> <li> 
         /// <para>

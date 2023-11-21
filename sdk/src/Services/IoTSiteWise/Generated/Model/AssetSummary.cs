@@ -37,6 +37,7 @@ namespace Amazon.IoTSiteWise.Model
         private string _assetModelId;
         private DateTime? _creationDate;
         private string _description;
+        private string _externalId;
         private List<AssetHierarchy> _hierarchies = new List<AssetHierarchy>();
         private string _id;
         private DateTime? _lastUpdateDate;
@@ -125,6 +126,26 @@ namespace Amazon.IoTSiteWise.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ExternalId. 
+        /// <para>
+        /// The external ID of the asset. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+        /// external IDs</a> in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=2, Max=128)]
+        public string ExternalId
+        {
+            get { return this._externalId; }
+            set { this._externalId = value; }
+        }
+
+        // Check to see if ExternalId property is set
+        internal bool IsSetExternalId()
+        {
+            return this._externalId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Hierarchies. 
         /// <para>
         /// A list of asset hierarchies that each contain a <code>hierarchyId</code>. A hierarchy
@@ -147,7 +168,7 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The ID of the asset.
+        /// The ID of the asset, in UUID format.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]

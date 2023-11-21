@@ -203,6 +203,56 @@ namespace Amazon.IoTSiteWise
 
 
     /// <summary>
+    /// Constants used for properties of type AssetModelType.
+    /// </summary>
+    public class AssetModelType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ASSET_MODEL for AssetModelType
+        /// </summary>
+        public static readonly AssetModelType ASSET_MODEL = new AssetModelType("ASSET_MODEL");
+        /// <summary>
+        /// Constant COMPONENT_MODEL for AssetModelType
+        /// </summary>
+        public static readonly AssetModelType COMPONENT_MODEL = new AssetModelType("COMPONENT_MODEL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AssetModelType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AssetModelType FindValue(string value)
+        {
+            return FindValue<AssetModelType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AssetModelType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AssetRelationshipType.
     /// </summary>
     public class AssetRelationshipType : ConstantClass
@@ -2009,6 +2059,68 @@ namespace Amazon.IoTSiteWise
 
 
     /// <summary>
+    /// Constants used for properties of type ScalarType.
+    /// </summary>
+    public class ScalarType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BOOLEAN for ScalarType
+        /// </summary>
+        public static readonly ScalarType BOOLEAN = new ScalarType("BOOLEAN");
+        /// <summary>
+        /// Constant DOUBLE for ScalarType
+        /// </summary>
+        public static readonly ScalarType DOUBLE = new ScalarType("DOUBLE");
+        /// <summary>
+        /// Constant INT for ScalarType
+        /// </summary>
+        public static readonly ScalarType INT = new ScalarType("INT");
+        /// <summary>
+        /// Constant STRING for ScalarType
+        /// </summary>
+        public static readonly ScalarType STRING = new ScalarType("STRING");
+        /// <summary>
+        /// Constant TIMESTAMP for ScalarType
+        /// </summary>
+        public static readonly ScalarType TIMESTAMP = new ScalarType("TIMESTAMP");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ScalarType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ScalarType FindValue(string value)
+        {
+            return FindValue<ScalarType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ScalarType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type StorageType.
     /// </summary>
     public class StorageType : ConstantClass
@@ -2052,6 +2164,52 @@ namespace Amazon.IoTSiteWise
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator StorageType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TargetResourceType.
+    /// </summary>
+    public class TargetResourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ASSET for TargetResourceType
+        /// </summary>
+        public static readonly TargetResourceType ASSET = new TargetResourceType("ASSET");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TargetResourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TargetResourceType FindValue(string value)
+        {
+            return FindValue<TargetResourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TargetResourceType(string value)
         {
             return FindValue(value);
         }
@@ -2198,6 +2356,56 @@ namespace Amazon.IoTSiteWise
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TraversalType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type WarmTierState.
+    /// </summary>
+    public class WarmTierState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for WarmTierState
+        /// </summary>
+        public static readonly WarmTierState DISABLED = new WarmTierState("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for WarmTierState
+        /// </summary>
+        public static readonly WarmTierState ENABLED = new WarmTierState("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public WarmTierState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WarmTierState FindValue(string value)
+        {
+            return FindValue<WarmTierState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WarmTierState(string value)
         {
             return FindValue(value);
         }

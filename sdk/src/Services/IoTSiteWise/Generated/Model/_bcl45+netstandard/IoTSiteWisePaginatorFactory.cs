@@ -60,6 +60,14 @@ namespace Amazon.IoTSiteWise.Model
         }
 
         /// <summary>
+        /// Paginator for ExecuteQuery operation
+        ///</summary>
+        public IExecuteQueryPaginator ExecuteQuery(ExecuteQueryRequest request) 
+        {
+            return new ExecuteQueryPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for GetAssetPropertyAggregates operation
         ///</summary>
         public IGetAssetPropertyAggregatesPaginator GetAssetPropertyAggregates(GetAssetPropertyAggregatesRequest request) 
@@ -89,6 +97,22 @@ namespace Amazon.IoTSiteWise.Model
         public IListAccessPoliciesPaginator ListAccessPolicies(ListAccessPoliciesRequest request) 
         {
             return new ListAccessPoliciesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListActions operation
+        ///</summary>
+        public IListActionsPaginator ListActions(ListActionsRequest request) 
+        {
+            return new ListActionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListAssetModelCompositeModels operation
+        ///</summary>
+        public IListAssetModelCompositeModelsPaginator ListAssetModelCompositeModels(ListAssetModelCompositeModelsRequest request) 
+        {
+            return new ListAssetModelCompositeModelsPaginator(this.client, request);
         }
 
         /// <summary>
@@ -145,6 +169,14 @@ namespace Amazon.IoTSiteWise.Model
         public IListBulkImportJobsPaginator ListBulkImportJobs(ListBulkImportJobsRequest request) 
         {
             return new ListBulkImportJobsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListCompositionRelationships operation
+        ///</summary>
+        public IListCompositionRelationshipsPaginator ListCompositionRelationships(ListCompositionRelationshipsRequest request) 
+        {
+            return new ListCompositionRelationshipsPaginator(this.client, request);
         }
 
         /// <summary>

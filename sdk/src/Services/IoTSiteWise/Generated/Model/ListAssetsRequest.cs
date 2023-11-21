@@ -63,10 +63,13 @@ namespace Amazon.IoTSiteWise.Model
         /// Gets and sets the property AssetModelId. 
         /// <para>
         /// The ID of the asset model by which to filter the list of assets. This parameter is
-        /// required if you choose <code>ALL</code> for <code>filter</code>.
+        /// required if you choose <code>ALL</code> for <code>filter</code>. This can be either
+        /// the actual ID in UUID format, or else <code>externalId:</code> followed by the external
+        /// ID, if it has one. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+        /// objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=36, Max=36)]
+        [AWSProperty(Min=13, Max=139)]
         public string AssetModelId
         {
             get { return this._assetModelId; }

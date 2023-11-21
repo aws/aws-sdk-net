@@ -34,8 +34,39 @@ namespace Amazon.IoTSiteWise.Model
     /// </summary>
     public partial class ListAssetModelsRequest : AmazonIoTSiteWiseRequest
     {
+        private List<string> _assetModelTypes = new List<string>();
         private int? _maxResults;
         private string _nextToken;
+
+        /// <summary>
+        /// Gets and sets the property AssetModelTypes. 
+        /// <para>
+        /// The type of asset model.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets.
+        /// Can't be included as a component in another asset model.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite
+        /// models of other asset models. You can't create assets directly from this type of asset
+        /// model. 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public List<string> AssetModelTypes
+        {
+            get { return this._assetModelTypes; }
+            set { this._assetModelTypes = value; }
+        }
+
+        // Check to see if AssetModelTypes property is set
+        internal bool IsSetAssetModelTypes()
+        {
+            return this._assetModelTypes != null && this._assetModelTypes.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 

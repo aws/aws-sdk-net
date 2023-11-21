@@ -36,6 +36,8 @@ namespace Amazon.IoTSiteWise.Model
     {
         private PropertyDataType _dataType;
         private string _dataTypeSpec;
+        private string _externalId;
+        private string _id;
         private string _name;
         private PropertyType _type;
         private string _unit;
@@ -88,6 +90,49 @@ namespace Amazon.IoTSiteWise.Model
         internal bool IsSetDataTypeSpec()
         {
             return this._dataTypeSpec != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExternalId. 
+        /// <para>
+        /// An external ID to assign to the property definition. The external ID must be unique
+        /// among property definitions within this asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+        /// external IDs</a> in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=2, Max=128)]
+        public string ExternalId
+        {
+            get { return this._externalId; }
+            set { this._externalId = value; }
+        }
+
+        // Check to see if ExternalId property is set
+        internal bool IsSetExternalId()
+        {
+            return this._externalId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Id. 
+        /// <para>
+        /// The ID to assign to the asset model property, if desired. IoT SiteWise automatically
+        /// generates a unique ID for you, so this parameter is never required. However, if you
+        /// prefer to supply your own ID instead, you can specify it here in UUID format. If you
+        /// specify your own ID, it must be globally unique.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=36, Max=36)]
+        public string Id
+        {
+            get { return this._id; }
+            set { this._id = value; }
+        }
+
+        // Check to see if Id property is set
+        internal bool IsSetId()
+        {
+            return this._id != null;
         }
 
         /// <summary>

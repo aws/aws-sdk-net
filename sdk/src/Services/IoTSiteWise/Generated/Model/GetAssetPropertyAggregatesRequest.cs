@@ -84,7 +84,7 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property AssetId. 
         /// <para>
-        /// The ID of the asset.
+        /// The ID of the asset, in UUID format.
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]
@@ -133,7 +133,7 @@ namespace Amazon.IoTSiteWise.Model
         ///  </li> <li> 
         /// <para>
         /// The number of data points in the result set is equal to the value of <code>maxResults</code>.
-        /// The maximum value of <code>maxResults</code> is 250.
+        /// The maximum value of <code>maxResults</code> is 2500.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -194,7 +194,7 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property PropertyId. 
         /// <para>
-        /// The ID of the asset property.
+        /// The ID of the asset property, in UUID format.
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]

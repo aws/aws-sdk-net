@@ -70,6 +70,12 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                     unmarshalledObject.Csv = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("parquet", targetDepth))
+                {
+                    var unmarshaller = ParquetUnmarshaller.Instance;
+                    unmarshalledObject.Parquet = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

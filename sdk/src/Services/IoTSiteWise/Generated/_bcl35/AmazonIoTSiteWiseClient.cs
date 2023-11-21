@@ -1153,6 +1153,23 @@ namespace Amazon.IoTSiteWise
         /// the asset model's property and hierarchy definitions. For more information, see <a
         /// href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/define-models.html">Defining
         /// asset models</a> in the <i>IoT SiteWise User Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// You can create two types of asset models, <code>ASSET_MODEL</code> or <code>COMPONENT_MODEL</code>.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets.
+        /// Can't be included as a component in another asset model.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite
+        /// models of other asset models. You can't create assets directly from this type of asset
+        /// model. 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAssetModel service method.</param>
         /// 
@@ -1242,6 +1259,127 @@ namespace Amazon.IoTSiteWise
 
         #endregion
         
+        #region  CreateAssetModelCompositeModel
+
+        /// <summary>
+        /// Creates a custom composite model from specified property and hierarchy definitions.
+        /// There are two types of custom composite models, <code>inline</code> and <code>component-model-based</code>.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        /// Use component-model-based custom composite models to define standard, reusable components.
+        /// A component-model-based custom composite model consists of a name, a description,
+        /// and the ID of the component model it references. A component-model-based custom composite
+        /// model has no properties of its own; its referenced component model provides its associated
+        /// properties to any created assets. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/custom-composite-models.html">Custom
+        /// composite models (Components)</a> in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Use inline custom composite models to organize the properties of an asset model. The
+        /// properties of inline custom composite models are local to the asset model where they
+        /// are included and can't be used to create multiple assets.
+        /// </para>
+        ///  
+        /// <para>
+        /// To create a component-model-based model, specify the <code>composedAssetModelId</code>
+        /// of an existing asset model with <code>assetModelType</code> of <code>COMPONENT_MODEL</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To create an inline model, specify the <code>assetModelCompositeModelProperties</code>
+        /// and don't include an <code>composedAssetModelId</code>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAssetModelCompositeModel service method.</param>
+        /// 
+        /// <returns>The response from the CreateAssetModelCompositeModel service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ConflictingOperationException">
+        /// Your request has conflicting operations. This can occur if you're trying to perform
+        /// more than one operation on the same resource at the same time.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
+        /// IoT SiteWise can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
+        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// to associate more than the allowed number of child assets or attempting to create
+        /// more than the allowed number of properties for an asset model.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ResourceAlreadyExistsException">
+        /// The resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ThrottlingException">
+        /// Your request exceeded a rate limit. For example, you might have exceeded the number
+        /// of IoT SiteWise assets that can be created per second, the allowed number of messages
+        /// per second, and so on.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateAssetModelCompositeModel">REST API Reference for CreateAssetModelCompositeModel Operation</seealso>
+        public virtual CreateAssetModelCompositeModelResponse CreateAssetModelCompositeModel(CreateAssetModelCompositeModelRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAssetModelCompositeModelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAssetModelCompositeModelResponseUnmarshaller.Instance;
+
+            return Invoke<CreateAssetModelCompositeModelResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateAssetModelCompositeModel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateAssetModelCompositeModel operation on AmazonIoTSiteWiseClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateAssetModelCompositeModel
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateAssetModelCompositeModel">REST API Reference for CreateAssetModelCompositeModel Operation</seealso>
+        public virtual IAsyncResult BeginCreateAssetModelCompositeModel(CreateAssetModelCompositeModelRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAssetModelCompositeModelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAssetModelCompositeModelResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateAssetModelCompositeModel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateAssetModelCompositeModel.</param>
+        /// 
+        /// <returns>Returns a  CreateAssetModelCompositeModelResult from IoTSiteWise.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateAssetModelCompositeModel">REST API Reference for CreateAssetModelCompositeModel Operation</seealso>
+        public virtual CreateAssetModelCompositeModelResponse EndCreateAssetModelCompositeModel(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateAssetModelCompositeModelResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateBulkImportJob
 
         /// <summary>
@@ -1251,8 +1389,14 @@ namespace Amazon.IoTSiteWise
         /// 
         ///  <important> 
         /// <para>
-        /// You must enable IoT SiteWise to export data to Amazon S3 before you create a bulk
-        /// import job. For more information about how to configure storage settings, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_PutStorageConfiguration.html">PutStorageConfiguration</a>.
+        /// Before you create a bulk import job, you must enable IoT SiteWise warm tier or IoT
+        /// SiteWise cold tier. For more information about how to configure storage settings,
+        /// see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_PutStorageConfiguration.html">PutStorageConfiguration</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Bulk import is designed to store historical data to IoT SiteWise. It does not trigger
+        /// computations or notifications on IoT SiteWise warm or cold tier storage.
         /// </para>
         ///  </important>
         /// </summary>
@@ -1786,7 +1930,7 @@ namespace Amazon.IoTSiteWise
 
         /// <summary>
         /// Deletes an asset. This action can't be undone. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/delete-assets-and-models.html">Deleting
-        /// assets and models</a> in the <i>IoT SiteWise User Guide</i>. 
+        /// assets and models</a> in the <i>IoT SiteWise User Guide</i>.
         /// 
         ///  <note> 
         /// <para>
@@ -1948,6 +2092,90 @@ namespace Amazon.IoTSiteWise
         public virtual DeleteAssetModelResponse EndDeleteAssetModel(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteAssetModelResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteAssetModelCompositeModel
+
+        /// <summary>
+        /// Deletes a composite model. This action can't be undone. You must delete all assets
+        /// created from a composite model before you can delete the model. Also, you can't delete
+        /// a composite model if a parent asset model exists that contains a property formula
+        /// expression that depends on the asset model that you want to delete. For more information,
+        /// see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/delete-assets-and-models.html">Deleting
+        /// assets and models</a> in the <i>IoT SiteWise User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAssetModelCompositeModel service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAssetModelCompositeModel service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ConflictingOperationException">
+        /// Your request has conflicting operations. This can occur if you're trying to perform
+        /// more than one operation on the same resource at the same time.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
+        /// IoT SiteWise can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ThrottlingException">
+        /// Your request exceeded a rate limit. For example, you might have exceeded the number
+        /// of IoT SiteWise assets that can be created per second, the allowed number of messages
+        /// per second, and so on.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteAssetModelCompositeModel">REST API Reference for DeleteAssetModelCompositeModel Operation</seealso>
+        public virtual DeleteAssetModelCompositeModelResponse DeleteAssetModelCompositeModel(DeleteAssetModelCompositeModelRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAssetModelCompositeModelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAssetModelCompositeModelResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAssetModelCompositeModelResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteAssetModelCompositeModel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAssetModelCompositeModel operation on AmazonIoTSiteWiseClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteAssetModelCompositeModel
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteAssetModelCompositeModel">REST API Reference for DeleteAssetModelCompositeModel Operation</seealso>
+        public virtual IAsyncResult BeginDeleteAssetModelCompositeModel(DeleteAssetModelCompositeModelRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAssetModelCompositeModelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAssetModelCompositeModelResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteAssetModelCompositeModel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAssetModelCompositeModel.</param>
+        /// 
+        /// <returns>Returns a  DeleteAssetModelCompositeModelResult from IoTSiteWise.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteAssetModelCompositeModel">REST API Reference for DeleteAssetModelCompositeModel Operation</seealso>
+        public virtual DeleteAssetModelCompositeModelResponse EndDeleteAssetModelCompositeModel(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteAssetModelCompositeModelResponse>(asyncResult);
         }
 
         #endregion
@@ -2438,6 +2666,81 @@ namespace Amazon.IoTSiteWise
 
         #endregion
         
+        #region  DescribeAction
+
+        /// <summary>
+        /// Retrieves information about an action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAction service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAction service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
+        /// IoT SiteWise can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ThrottlingException">
+        /// Your request exceeded a rate limit. For example, you might have exceeded the number
+        /// of IoT SiteWise assets that can be created per second, the allowed number of messages
+        /// per second, and so on.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeAction">REST API Reference for DescribeAction Operation</seealso>
+        public virtual DescribeActionResponse DescribeAction(DescribeActionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeActionResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeActionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeAction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAction operation on AmazonIoTSiteWiseClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAction
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeAction">REST API Reference for DescribeAction Operation</seealso>
+        public virtual IAsyncResult BeginDescribeAction(DescribeActionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeActionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeAction operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAction.</param>
+        /// 
+        /// <returns>Returns a  DescribeActionResult from IoTSiteWise.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeAction">REST API Reference for DescribeAction Operation</seealso>
+        public virtual DescribeActionResponse EndDescribeAction(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeActionResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeAsset
 
         /// <summary>
@@ -2513,6 +2816,83 @@ namespace Amazon.IoTSiteWise
 
         #endregion
         
+        #region  DescribeAssetCompositeModel
+
+        /// <summary>
+        /// Retrieves information about an asset composite model (also known as an asset component).
+        /// An <code>AssetCompositeModel</code> is an instance of an <code>AssetModelCompositeModel</code>.
+        /// If you want to see information about the model this is based on, call <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetModelCompositeModel.html">DescribeAssetModelCompositeModel</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAssetCompositeModel service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAssetCompositeModel service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
+        /// IoT SiteWise can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ThrottlingException">
+        /// Your request exceeded a rate limit. For example, you might have exceeded the number
+        /// of IoT SiteWise assets that can be created per second, the allowed number of messages
+        /// per second, and so on.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeAssetCompositeModel">REST API Reference for DescribeAssetCompositeModel Operation</seealso>
+        public virtual DescribeAssetCompositeModelResponse DescribeAssetCompositeModel(DescribeAssetCompositeModelRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAssetCompositeModelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAssetCompositeModelResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAssetCompositeModelResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeAssetCompositeModel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAssetCompositeModel operation on AmazonIoTSiteWiseClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAssetCompositeModel
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeAssetCompositeModel">REST API Reference for DescribeAssetCompositeModel Operation</seealso>
+        public virtual IAsyncResult BeginDescribeAssetCompositeModel(DescribeAssetCompositeModelRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAssetCompositeModelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAssetCompositeModelResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeAssetCompositeModel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAssetCompositeModel.</param>
+        /// 
+        /// <returns>Returns a  DescribeAssetCompositeModelResult from IoTSiteWise.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeAssetCompositeModel">REST API Reference for DescribeAssetCompositeModel Operation</seealso>
+        public virtual DescribeAssetCompositeModelResponse EndDescribeAssetCompositeModel(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeAssetCompositeModelResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeAssetModel
 
         /// <summary>
@@ -2584,6 +2964,83 @@ namespace Amazon.IoTSiteWise
         public virtual DescribeAssetModelResponse EndDescribeAssetModel(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeAssetModelResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeAssetModelCompositeModel
+
+        /// <summary>
+        /// Retrieves information about an asset model composite model (also known as an asset
+        /// model component). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/custom-composite-models.html">Custom
+        /// composite models (Components)</a> in the <i>IoT SiteWise User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAssetModelCompositeModel service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAssetModelCompositeModel service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
+        /// IoT SiteWise can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ThrottlingException">
+        /// Your request exceeded a rate limit. For example, you might have exceeded the number
+        /// of IoT SiteWise assets that can be created per second, the allowed number of messages
+        /// per second, and so on.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeAssetModelCompositeModel">REST API Reference for DescribeAssetModelCompositeModel Operation</seealso>
+        public virtual DescribeAssetModelCompositeModelResponse DescribeAssetModelCompositeModel(DescribeAssetModelCompositeModelRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAssetModelCompositeModelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAssetModelCompositeModelResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAssetModelCompositeModelResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeAssetModelCompositeModel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAssetModelCompositeModel operation on AmazonIoTSiteWiseClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAssetModelCompositeModel
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeAssetModelCompositeModel">REST API Reference for DescribeAssetModelCompositeModel Operation</seealso>
+        public virtual IAsyncResult BeginDescribeAssetModelCompositeModel(DescribeAssetModelCompositeModelRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAssetModelCompositeModelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAssetModelCompositeModelResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeAssetModelCompositeModel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAssetModelCompositeModel.</param>
+        /// 
+        /// <returns>Returns a  DescribeAssetModelCompositeModelResult from IoTSiteWise.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeAssetModelCompositeModel">REST API Reference for DescribeAssetModelCompositeModel Operation</seealso>
+        public virtual DescribeAssetModelCompositeModelResponse EndDescribeAssetModelCompositeModel(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeAssetModelCompositeModelResponse>(asyncResult);
         }
 
         #endregion
@@ -3629,6 +4086,181 @@ namespace Amazon.IoTSiteWise
 
         #endregion
         
+        #region  ExecuteAction
+
+        /// <summary>
+        /// Executes an action on a target resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExecuteAction service method.</param>
+        /// 
+        /// <returns>The response from the ExecuteAction service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ConflictingOperationException">
+        /// Your request has conflicting operations. This can occur if you're trying to perform
+        /// more than one operation on the same resource at the same time.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
+        /// IoT SiteWise can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
+        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// to associate more than the allowed number of child assets or attempting to create
+        /// more than the allowed number of properties for an asset model.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ThrottlingException">
+        /// Your request exceeded a rate limit. For example, you might have exceeded the number
+        /// of IoT SiteWise assets that can be created per second, the allowed number of messages
+        /// per second, and so on.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ExecuteAction">REST API Reference for ExecuteAction Operation</seealso>
+        public virtual ExecuteActionResponse ExecuteAction(ExecuteActionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ExecuteActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExecuteActionResponseUnmarshaller.Instance;
+
+            return Invoke<ExecuteActionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ExecuteAction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ExecuteAction operation on AmazonIoTSiteWiseClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndExecuteAction
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ExecuteAction">REST API Reference for ExecuteAction Operation</seealso>
+        public virtual IAsyncResult BeginExecuteAction(ExecuteActionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ExecuteActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExecuteActionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ExecuteAction operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginExecuteAction.</param>
+        /// 
+        /// <returns>Returns a  ExecuteActionResult from IoTSiteWise.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ExecuteAction">REST API Reference for ExecuteAction Operation</seealso>
+        public virtual ExecuteActionResponse EndExecuteAction(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ExecuteActionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ExecuteQuery
+
+        /// <summary>
+        /// Run SQL queries to retrieve metadata and time-series data from asset models, assets,
+        /// measurements, metrics, transforms, and aggregates.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExecuteQuery service method.</param>
+        /// 
+        /// <returns>The response from the ExecuteQuery service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
+        /// IoT SiteWise can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.QueryTimeoutException">
+        /// The query timed out.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ServiceUnavailableException">
+        /// The requested service is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ThrottlingException">
+        /// Your request exceeded a rate limit. For example, you might have exceeded the number
+        /// of IoT SiteWise assets that can be created per second, the allowed number of messages
+        /// per second, and so on.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ValidationException">
+        /// The validation failed for this query.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ExecuteQuery">REST API Reference for ExecuteQuery Operation</seealso>
+        public virtual ExecuteQueryResponse ExecuteQuery(ExecuteQueryRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ExecuteQueryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExecuteQueryResponseUnmarshaller.Instance;
+
+            return Invoke<ExecuteQueryResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ExecuteQuery operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ExecuteQuery operation on AmazonIoTSiteWiseClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndExecuteQuery
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ExecuteQuery">REST API Reference for ExecuteQuery Operation</seealso>
+        public virtual IAsyncResult BeginExecuteQuery(ExecuteQueryRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ExecuteQueryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExecuteQueryResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ExecuteQuery operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginExecuteQuery.</param>
+        /// 
+        /// <returns>Returns a  ExecuteQueryResult from IoTSiteWise.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ExecuteQuery">REST API Reference for ExecuteQuery Operation</seealso>
+        public virtual ExecuteQueryResponse EndExecuteQuery(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ExecuteQueryResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetAssetPropertyAggregates
 
         /// <summary>
@@ -4081,6 +4713,156 @@ namespace Amazon.IoTSiteWise
         public virtual ListAccessPoliciesResponse EndListAccessPolicies(IAsyncResult asyncResult)
         {
             return EndInvoke<ListAccessPoliciesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListActions
+
+        /// <summary>
+        /// Retrieves a paginated list of actions for a specific target resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListActions service method.</param>
+        /// 
+        /// <returns>The response from the ListActions service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
+        /// IoT SiteWise can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ThrottlingException">
+        /// Your request exceeded a rate limit. For example, you might have exceeded the number
+        /// of IoT SiteWise assets that can be created per second, the allowed number of messages
+        /// per second, and so on.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListActions">REST API Reference for ListActions Operation</seealso>
+        public virtual ListActionsResponse ListActions(ListActionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListActionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListActionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListActionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListActions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListActions operation on AmazonIoTSiteWiseClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListActions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListActions">REST API Reference for ListActions Operation</seealso>
+        public virtual IAsyncResult BeginListActions(ListActionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListActionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListActionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListActions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListActions.</param>
+        /// 
+        /// <returns>Returns a  ListActionsResult from IoTSiteWise.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListActions">REST API Reference for ListActions Operation</seealso>
+        public virtual ListActionsResponse EndListActions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListActionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListAssetModelCompositeModels
+
+        /// <summary>
+        /// Retrieves a paginated list of composite models associated with the asset model
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAssetModelCompositeModels service method.</param>
+        /// 
+        /// <returns>The response from the ListAssetModelCompositeModels service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
+        /// IoT SiteWise can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ThrottlingException">
+        /// Your request exceeded a rate limit. For example, you might have exceeded the number
+        /// of IoT SiteWise assets that can be created per second, the allowed number of messages
+        /// per second, and so on.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAssetModelCompositeModels">REST API Reference for ListAssetModelCompositeModels Operation</seealso>
+        public virtual ListAssetModelCompositeModelsResponse ListAssetModelCompositeModels(ListAssetModelCompositeModelsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAssetModelCompositeModelsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAssetModelCompositeModelsResponseUnmarshaller.Instance;
+
+            return Invoke<ListAssetModelCompositeModelsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAssetModelCompositeModels operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAssetModelCompositeModels operation on AmazonIoTSiteWiseClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAssetModelCompositeModels
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAssetModelCompositeModels">REST API Reference for ListAssetModelCompositeModels Operation</seealso>
+        public virtual IAsyncResult BeginListAssetModelCompositeModels(ListAssetModelCompositeModelsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAssetModelCompositeModelsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAssetModelCompositeModelsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAssetModelCompositeModels operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAssetModelCompositeModels.</param>
+        /// 
+        /// <returns>Returns a  ListAssetModelCompositeModelsResult from IoTSiteWise.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAssetModelCompositeModels">REST API Reference for ListAssetModelCompositeModels Operation</seealso>
+        public virtual ListAssetModelCompositeModelsResponse EndListAssetModelCompositeModels(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListAssetModelCompositeModelsResponse>(asyncResult);
         }
 
         #endregion
@@ -4645,6 +5427,82 @@ namespace Amazon.IoTSiteWise
         public virtual ListBulkImportJobsResponse EndListBulkImportJobs(IAsyncResult asyncResult)
         {
             return EndInvoke<ListBulkImportJobsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListCompositionRelationships
+
+        /// <summary>
+        /// Retrieves a paginated list of composition relationships for an asset model of type
+        /// <code>COMPONENT_MODEL</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCompositionRelationships service method.</param>
+        /// 
+        /// <returns>The response from the ListCompositionRelationships service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
+        /// IoT SiteWise can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ThrottlingException">
+        /// Your request exceeded a rate limit. For example, you might have exceeded the number
+        /// of IoT SiteWise assets that can be created per second, the allowed number of messages
+        /// per second, and so on.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListCompositionRelationships">REST API Reference for ListCompositionRelationships Operation</seealso>
+        public virtual ListCompositionRelationshipsResponse ListCompositionRelationships(ListCompositionRelationshipsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCompositionRelationshipsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCompositionRelationshipsResponseUnmarshaller.Instance;
+
+            return Invoke<ListCompositionRelationshipsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListCompositionRelationships operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListCompositionRelationships operation on AmazonIoTSiteWiseClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListCompositionRelationships
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListCompositionRelationships">REST API Reference for ListCompositionRelationships Operation</seealso>
+        public virtual IAsyncResult BeginListCompositionRelationships(ListCompositionRelationshipsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCompositionRelationshipsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCompositionRelationshipsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListCompositionRelationships operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListCompositionRelationships.</param>
+        /// 
+        /// <returns>Returns a  ListCompositionRelationshipsResult from IoTSiteWise.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListCompositionRelationships">REST API Reference for ListCompositionRelationships Operation</seealso>
+        public virtual ListCompositionRelationshipsResponse EndListCompositionRelationships(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListCompositionRelationshipsResponse>(asyncResult);
         }
 
         #endregion
@@ -5896,6 +6754,125 @@ namespace Amazon.IoTSiteWise
         public virtual UpdateAssetModelResponse EndUpdateAssetModel(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateAssetModelResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateAssetModelCompositeModel
+
+        /// <summary>
+        /// Updates a composite model and all of the assets that were created from the model.
+        /// Each asset created from the model inherits the updated asset model's property and
+        /// hierarchy definitions. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-assets-and-models.html">Updating
+        /// assets and models</a> in the <i>IoT SiteWise User Guide</i>.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// If you remove a property from a composite asset model, IoT SiteWise deletes all previous
+        /// data for that property. You can’t change the type or data type of an existing property.
+        /// </para>
+        ///  
+        /// <para>
+        /// To replace an existing composite asset model property with a new one with the same
+        /// <code>name</code>, do the following:
+        /// </para>
+        ///  <ol> <li> 
+        /// <para>
+        /// Submit an <code>UpdateAssetModelCompositeModel</code> request with the entire existing
+        /// property removed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit a second <code>UpdateAssetModelCompositeModel</code> request that includes
+        /// the new property. The new asset property will have the same <code>name</code> as the
+        /// previous one and IoT SiteWise will generate a new unique <code>id</code>.
+        /// </para>
+        ///  </li> </ol> </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAssetModelCompositeModel service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAssetModelCompositeModel service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ConflictingOperationException">
+        /// Your request has conflicting operations. This can occur if you're trying to perform
+        /// more than one operation on the same resource at the same time.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
+        /// IoT SiteWise can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
+        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// to associate more than the allowed number of child assets or attempting to create
+        /// more than the allowed number of properties for an asset model.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ResourceAlreadyExistsException">
+        /// The resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ThrottlingException">
+        /// Your request exceeded a rate limit. For example, you might have exceeded the number
+        /// of IoT SiteWise assets that can be created per second, the allowed number of messages
+        /// per second, and so on.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateAssetModelCompositeModel">REST API Reference for UpdateAssetModelCompositeModel Operation</seealso>
+        public virtual UpdateAssetModelCompositeModelResponse UpdateAssetModelCompositeModel(UpdateAssetModelCompositeModelRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAssetModelCompositeModelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAssetModelCompositeModelResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateAssetModelCompositeModelResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateAssetModelCompositeModel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAssetModelCompositeModel operation on AmazonIoTSiteWiseClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateAssetModelCompositeModel
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateAssetModelCompositeModel">REST API Reference for UpdateAssetModelCompositeModel Operation</seealso>
+        public virtual IAsyncResult BeginUpdateAssetModelCompositeModel(UpdateAssetModelCompositeModelRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAssetModelCompositeModelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAssetModelCompositeModelResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateAssetModelCompositeModel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateAssetModelCompositeModel.</param>
+        /// 
+        /// <returns>Returns a  UpdateAssetModelCompositeModelResult from IoTSiteWise.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateAssetModelCompositeModel">REST API Reference for UpdateAssetModelCompositeModel Operation</seealso>
+        public virtual UpdateAssetModelCompositeModelResponse EndUpdateAssetModelCompositeModel(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateAssetModelCompositeModelResponse>(asyncResult);
         }
 
         #endregion

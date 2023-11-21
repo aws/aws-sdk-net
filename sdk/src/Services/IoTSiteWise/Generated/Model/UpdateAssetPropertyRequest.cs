@@ -52,10 +52,13 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property AssetId. 
         /// <para>
-        /// The ID of the asset to be updated.
+        /// The ID of the asset to be updated. This can be either the actual ID in UUID format,
+        /// or else <code>externalId:</code> followed by the external ID, if it has one. For more
+        /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+        /// objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=36, Max=36)]
+        [AWSProperty(Required=true, Min=13, Max=139)]
         public string AssetId
         {
             get { return this._assetId; }
@@ -117,10 +120,13 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property PropertyId. 
         /// <para>
-        /// The ID of the asset property to be updated.
+        /// The ID of the asset property to be updated. This can be either the actual ID in UUID
+        /// format, or else <code>externalId:</code> followed by the external ID, if it has one.
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+        /// objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=36, Max=36)]
+        [AWSProperty(Required=true, Min=13, Max=139)]
         public string PropertyId
         {
             get { return this._propertyId; }

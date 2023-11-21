@@ -51,6 +51,12 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ChildAssetModelId);
             }
 
+            if(requestObject.IsSetExternalId())
+            {
+                context.Writer.WritePropertyName("externalId");
+                context.Writer.Write(requestObject.ExternalId);
+            }
+
             if(requestObject.IsSetId())
             {
                 context.Writer.WritePropertyName("id");

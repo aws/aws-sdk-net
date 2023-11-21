@@ -65,6 +65,18 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAdaptiveIngestion())
+                {
+                    context.Writer.WritePropertyName("adaptiveIngestion");
+                    context.Writer.Write(publicRequest.AdaptiveIngestion);
+                }
+
+                if(publicRequest.IsSetDeleteFilesAfterImport())
+                {
+                    context.Writer.WritePropertyName("deleteFilesAfterImport");
+                    context.Writer.Write(publicRequest.DeleteFilesAfterImport);
+                }
+
                 if(publicRequest.IsSetErrorReportLocation())
                 {
                     context.Writer.WritePropertyName("errorReportLocation");

@@ -36,18 +36,65 @@ namespace Amazon.IoTSiteWise.Model
     /// 
     ///  <important> 
     /// <para>
-    /// You must enable IoT SiteWise to export data to Amazon S3 before you create a bulk
-    /// import job. For more information about how to configure storage settings, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_PutStorageConfiguration.html">PutStorageConfiguration</a>.
+    /// Before you create a bulk import job, you must enable IoT SiteWise warm tier or IoT
+    /// SiteWise cold tier. For more information about how to configure storage settings,
+    /// see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_PutStorageConfiguration.html">PutStorageConfiguration</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// Bulk import is designed to store historical data to IoT SiteWise. It does not trigger
+    /// computations or notifications on IoT SiteWise warm or cold tier storage.
     /// </para>
     ///  </important>
     /// </summary>
     public partial class CreateBulkImportJobRequest : AmazonIoTSiteWiseRequest
     {
+        private bool? _adaptiveIngestion;
+        private bool? _deleteFilesAfterImport;
         private ErrorReportLocation _errorReportLocation;
         private List<File> _files = new List<File>();
         private JobConfiguration _jobConfiguration;
         private string _jobName;
         private string _jobRoleArn;
+
+        /// <summary>
+        /// Gets and sets the property AdaptiveIngestion. 
+        /// <para>
+        /// If set to true, ingest new data into IoT SiteWise storage. Measurements with notifications,
+        /// metrics and transforms are computed. If set to false, historical data is ingested
+        /// into IoT SiteWise as is.
+        /// </para>
+        /// </summary>
+        public bool AdaptiveIngestion
+        {
+            get { return this._adaptiveIngestion.GetValueOrDefault(); }
+            set { this._adaptiveIngestion = value; }
+        }
+
+        // Check to see if AdaptiveIngestion property is set
+        internal bool IsSetAdaptiveIngestion()
+        {
+            return this._adaptiveIngestion.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeleteFilesAfterImport. 
+        /// <para>
+        /// If set to true, your data files is deleted from S3, after ingestion into IoT SiteWise
+        /// storage.
+        /// </para>
+        /// </summary>
+        public bool DeleteFilesAfterImport
+        {
+            get { return this._deleteFilesAfterImport.GetValueOrDefault(); }
+            set { this._deleteFilesAfterImport = value; }
+        }
+
+        // Check to see if DeleteFilesAfterImport property is set
+        internal bool IsSetDeleteFilesAfterImport()
+        {
+            return this._deleteFilesAfterImport.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property ErrorReportLocation. 
