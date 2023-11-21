@@ -127,7 +127,10 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// The date and time the object was last modified.
+        /// Gets and sets the property LastModified. 
+        /// <para>
+        /// Date and time when the object was last modified.
+        /// </para>
         /// <remarks>
         /// The date retrieved from S3 is in ISO8601 format. A GMT formatted date is passed back to the user.
         /// </remarks>

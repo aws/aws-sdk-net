@@ -205,8 +205,10 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Last modified date of the object
-        ///  
+        /// Gets and sets the property LastModified. 
+        /// <para>
+        /// Date and time when the object was last modified.
+        /// </para>
         /// </summary>
         public DateTime LastModified
         {

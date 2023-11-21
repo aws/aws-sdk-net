@@ -1819,6 +1819,55 @@ namespace Amazon.S3
     }
 
     /// <summary>
+    /// Constants used for properties of type PartitionDateSource.
+    /// </summary>
+    public sealed class PartitionDateSource : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DeliveryTime for PartitionDateSource
+        /// </summary>
+        public static readonly PartitionDateSource DeliveryTime = new PartitionDateSource("DeliveryTime");
+        /// <summary>
+        /// Constant EventTime for PartitionDateSource
+        /// </summary>
+        public static readonly PartitionDateSource EventTime = new PartitionDateSource("EventTime");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PartitionDateSource(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PartitionDateSource FindValue(string value)
+        {
+            return FindValue<PartitionDateSource>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PartitionDateSource(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// The replication for KMS encrypted S3 objects is disabled if status is not Enabled.
     /// </summary>
     public sealed class SseKmsEncryptedObjectsStatus : ConstantClass

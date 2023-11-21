@@ -63,6 +63,25 @@ namespace Amazon.S3.Model
             return this.targetGrants.Count > 0;
         }
 
+        private TargetObjectKeyFormat _targetObjectKeyFormat;
+        /// <summary>
+        /// Gets and sets the property TargetObjectKeyFormat. 
+        /// <para>
+        /// Amazon S3 key format for log objects.
+        /// </para>
+        /// </summary>
+        public TargetObjectKeyFormat TargetObjectKeyFormat
+        {
+            get { return this._targetObjectKeyFormat; }
+            set { this._targetObjectKeyFormat = value; }
+        }
+
+        // Check to see if TargetObjectKeyFormat property is set
+        internal bool IsSetTargetObjectKeyFormat()
+        {
+            return this._targetObjectKeyFormat != null;
+        }
+
         /// <summary>
         /// Gets and sets the property TargetPrefix. 
         /// <para>

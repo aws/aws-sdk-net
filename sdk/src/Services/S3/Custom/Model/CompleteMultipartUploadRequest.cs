@@ -455,8 +455,9 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property SSECustomerAlgorithm. 
         /// <para>
-        /// The SSE algorithm used to encrypt the object. This is only needed when the object
-        /// was created using a checksum algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting
+        /// The server-side encryption (SSE) algorithm used to encrypt the object. This parameter
+        /// is required only when the object was created using a checksum algorithm or if your
+        /// bucket policy requires the use of SSE-C. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ServerSideEncryptionCustomerKeys.html#ssec-require-condition-key">Protecting
         /// data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         /// </summary>

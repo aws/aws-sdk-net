@@ -118,6 +118,28 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                 }
                                 xmlWriter.WriteEndElement();
                             }
+
+                            if (loggingEnabledLoggingEnabled.TargetObjectKeyFormat != null)
+                            {
+                                xmlWriter.WriteStartElement("TargetObjectKeyFormat", "http://s3.amazonaws.com/doc/2006-03-01/");
+
+                                if (loggingEnabledLoggingEnabled.TargetObjectKeyFormat.PartitionedPrefix != null)
+                                {
+                                    xmlWriter.WriteStartElement("PartitionedPrefix", "http://s3.amazonaws.com/doc/2006-03-01/");
+                                    if (loggingEnabledLoggingEnabled.TargetObjectKeyFormat.PartitionedPrefix.IsSetPartitionDateSource())
+                                        xmlWriter.WriteElementString("PartitionDateSource", "http://s3.amazonaws.com/doc/2006-03-01/", StringUtils.FromString(loggingEnabledLoggingEnabled.TargetObjectKeyFormat.PartitionedPrefix.PartitionDateSource));
+
+                                    xmlWriter.WriteEndElement();
+                                }
+
+                                if (loggingEnabledLoggingEnabled.TargetObjectKeyFormat.SimplePrefix != null)
+                                {
+                                    xmlWriter.WriteStartElement("SimplePrefix", "http://s3.amazonaws.com/doc/2006-03-01/");
+                                    xmlWriter.WriteEndElement();
+                                }
+                                xmlWriter.WriteEndElement();
+                            }
+
                             if (loggingEnabledLoggingEnabled.IsSetTargetPrefix())
                             {
                                 xmlWriter.WriteElementString("TargetPrefix", S3Transforms.ToXmlStringValue(loggingEnabledLoggingEnabled.TargetPrefix));

@@ -8708,7 +8708,7 @@ namespace Amazon.S3
         /// </para>
         ///  <note> <ul> <li> 
         /// <para>
-        ///  If you supply a <code>versionId</code>, you need the <code>s3:GetObjectVersion</code>
+        /// If you supply a <code>versionId</code>, you need the <code>s3:GetObjectVersion</code>
         /// permission to access a specific version of an object. If you request a specific version,
         /// you do not need to have the <code>s3:GetObject</code> permission. If you request the
         /// current version without a specific version ID, only <code>s3:GetObject</code> permission
@@ -8718,6 +8718,11 @@ namespace Amazon.S3
         /// <para>
         /// If the current version of the object is a delete marker, Amazon S3 behaves as if the
         /// object was deleted and includes <code>x-amz-delete-marker: true</code> in the response.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the specified version is a delete marker, the response returns a 405 (Method Not
+        /// Allowed) error and the <code>Last-Modified: timestamp</code> response header.
         /// </para>
         ///  </li> </ul> </note> 
         /// <para>
@@ -8913,7 +8918,7 @@ namespace Amazon.S3
         /// </para>
         ///  <note> <ul> <li> 
         /// <para>
-        ///  If you supply a <code>versionId</code>, you need the <code>s3:GetObjectVersion</code>
+        /// If you supply a <code>versionId</code>, you need the <code>s3:GetObjectVersion</code>
         /// permission to access a specific version of an object. If you request a specific version,
         /// you do not need to have the <code>s3:GetObject</code> permission. If you request the
         /// current version without a specific version ID, only <code>s3:GetObject</code> permission
@@ -8923,6 +8928,11 @@ namespace Amazon.S3
         /// <para>
         /// If the current version of the object is a delete marker, Amazon S3 behaves as if the
         /// object was deleted and includes <code>x-amz-delete-marker: true</code> in the response.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the specified version is a delete marker, the response returns a 405 (Method Not
+        /// Allowed) error and the <code>Last-Modified: timestamp</code> response header.
         /// </para>
         ///  </li> </ul> </note> 
         /// <para>
@@ -9119,7 +9129,7 @@ namespace Amazon.S3
         /// </para>
         ///  <note> <ul> <li> 
         /// <para>
-        ///  If you supply a <code>versionId</code>, you need the <code>s3:GetObjectVersion</code>
+        /// If you supply a <code>versionId</code>, you need the <code>s3:GetObjectVersion</code>
         /// permission to access a specific version of an object. If you request a specific version,
         /// you do not need to have the <code>s3:GetObject</code> permission. If you request the
         /// current version without a specific version ID, only <code>s3:GetObject</code> permission
@@ -9129,6 +9139,11 @@ namespace Amazon.S3
         /// <para>
         /// If the current version of the object is a delete marker, Amazon S3 behaves as if the
         /// object was deleted and includes <code>x-amz-delete-marker: true</code> in the response.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the specified version is a delete marker, the response returns a 405 (Method Not
+        /// Allowed) error and the <code>Last-Modified: timestamp</code> response header.
         /// </para>
         ///  </li> </ul> </note> 
         /// <para>
@@ -9324,7 +9339,7 @@ namespace Amazon.S3
         /// </para>
         ///  <note> <ul> <li> 
         /// <para>
-        ///  If you supply a <code>versionId</code>, you need the <code>s3:GetObjectVersion</code>
+        /// If you supply a <code>versionId</code>, you need the <code>s3:GetObjectVersion</code>
         /// permission to access a specific version of an object. If you request a specific version,
         /// you do not need to have the <code>s3:GetObject</code> permission. If you request the
         /// current version without a specific version ID, only <code>s3:GetObject</code> permission
@@ -9334,6 +9349,11 @@ namespace Amazon.S3
         /// <para>
         /// If the current version of the object is a delete marker, Amazon S3 behaves as if the
         /// object was deleted and includes <code>x-amz-delete-marker: true</code> in the response.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the specified version is a delete marker, the response returns a 405 (Method Not
+        /// Allowed) error and the <code>Last-Modified: timestamp</code> response header.
         /// </para>
         ///  </li> </ul> </note> 
         /// <para>
@@ -9532,7 +9552,7 @@ namespace Amazon.S3
         /// </para>
         ///  <note> <ul> <li> 
         /// <para>
-        ///  If you supply a <code>versionId</code>, you need the <code>s3:GetObjectVersion</code>
+        /// If you supply a <code>versionId</code>, you need the <code>s3:GetObjectVersion</code>
         /// permission to access a specific version of an object. If you request a specific version,
         /// you do not need to have the <code>s3:GetObject</code> permission. If you request the
         /// current version without a specific version ID, only <code>s3:GetObject</code> permission
@@ -9542,6 +9562,11 @@ namespace Amazon.S3
         /// <para>
         /// If the current version of the object is a delete marker, Amazon S3 behaves as if the
         /// object was deleted and includes <code>x-amz-delete-marker: true</code> in the response.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the specified version is a delete marker, the response returns a 405 (Method Not
+        /// Allowed) error and the <code>Last-Modified: timestamp</code> response header.
         /// </para>
         ///  </li> </ul> </note> 
         /// <para>
@@ -9742,7 +9767,7 @@ namespace Amazon.S3
         /// </para>
         ///  <note> <ul> <li> 
         /// <para>
-        ///  If you supply a <code>versionId</code>, you need the <code>s3:GetObjectVersion</code>
+        /// If you supply a <code>versionId</code>, you need the <code>s3:GetObjectVersion</code>
         /// permission to access a specific version of an object. If you request a specific version,
         /// you do not need to have the <code>s3:GetObject</code> permission. If you request the
         /// current version without a specific version ID, only <code>s3:GetObject</code> permission
@@ -9752,6 +9777,11 @@ namespace Amazon.S3
         /// <para>
         /// If the current version of the object is a delete marker, Amazon S3 behaves as if the
         /// object was deleted and includes <code>x-amz-delete-marker: true</code> in the response.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the specified version is a delete marker, the response returns a 405 (Method Not
+        /// Allowed) error and the <code>Last-Modified: timestamp</code> response header.
         /// </para>
         ///  </li> </ul> </note> 
         /// <para>
@@ -10303,9 +10333,10 @@ namespace Amazon.S3
         /// A <code>HEAD</code> request has the same options as a <code>GET</code> action on an
         /// object. The response is identical to the <code>GET</code> response except that there
         /// is no response body. Because of this, if the <code>HEAD</code> request generates an
-        /// error, it returns a generic <code>400 Bad Request</code>, <code>403 Forbidden</code>
-        /// or <code>404 Not Found</code> code. It is not possible to retrieve the exact exception
-        /// beyond these error codes.
+        /// error, it returns a generic code, such as <code>400 Bad Request</code>, <code>403
+        /// Forbidden</code>, <code>404 Not Found</code>, <code>405 Method Not Allowed</code>,
+        /// <code>412 Precondition Failed</code>, or <code>304 Not Modified</code>. It's not possible
+        /// to retrieve the exact exception of these error codes.
         /// </para>
         ///  
         /// <para>
@@ -10408,6 +10439,16 @@ namespace Amazon.S3
         /// <para>
         /// If you don’t have the <code>s3:ListBucket</code> permission, Amazon S3 returns an
         /// HTTP status code 403 error.
+        /// </para>
+        ///  </li> </ul> </dd> <dt>Versioning</dt> <dd> <ul> <li> 
+        /// <para>
+        /// If the current version of the object is a delete marker, Amazon S3 behaves as if the
+        /// object was deleted and includes <code>x-amz-delete-marker: true</code> in the response.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the specified version is a delete marker, the response returns a 405 (Method Not
+        /// Allowed) error and the <code>Last-Modified: timestamp</code> response header.
         /// </para>
         ///  </li> </ul> </dd> </dl> 
         /// <para>
@@ -10442,9 +10483,10 @@ namespace Amazon.S3
         /// A <code>HEAD</code> request has the same options as a <code>GET</code> action on an
         /// object. The response is identical to the <code>GET</code> response except that there
         /// is no response body. Because of this, if the <code>HEAD</code> request generates an
-        /// error, it returns a generic <code>400 Bad Request</code>, <code>403 Forbidden</code>
-        /// or <code>404 Not Found</code> code. It is not possible to retrieve the exact exception
-        /// beyond these error codes.
+        /// error, it returns a generic code, such as <code>400 Bad Request</code>, <code>403
+        /// Forbidden</code>, <code>404 Not Found</code>, <code>405 Method Not Allowed</code>,
+        /// <code>412 Precondition Failed</code>, or <code>304 Not Modified</code>. It's not possible
+        /// to retrieve the exact exception of these error codes.
         /// </para>
         ///  
         /// <para>
@@ -10547,6 +10589,16 @@ namespace Amazon.S3
         /// <para>
         /// If you don’t have the <code>s3:ListBucket</code> permission, Amazon S3 returns an
         /// HTTP status code 403 error.
+        /// </para>
+        ///  </li> </ul> </dd> <dt>Versioning</dt> <dd> <ul> <li> 
+        /// <para>
+        /// If the current version of the object is a delete marker, Amazon S3 behaves as if the
+        /// object was deleted and includes <code>x-amz-delete-marker: true</code> in the response.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the specified version is a delete marker, the response returns a 405 (Method Not
+        /// Allowed) error and the <code>Last-Modified: timestamp</code> response header.
         /// </para>
         ///  </li> </ul> </dd> </dl> 
         /// <para>
@@ -10582,9 +10634,10 @@ namespace Amazon.S3
         /// A <code>HEAD</code> request has the same options as a <code>GET</code> action on an
         /// object. The response is identical to the <code>GET</code> response except that there
         /// is no response body. Because of this, if the <code>HEAD</code> request generates an
-        /// error, it returns a generic <code>400 Bad Request</code>, <code>403 Forbidden</code>
-        /// or <code>404 Not Found</code> code. It is not possible to retrieve the exact exception
-        /// beyond these error codes.
+        /// error, it returns a generic code, such as <code>400 Bad Request</code>, <code>403
+        /// Forbidden</code>, <code>404 Not Found</code>, <code>405 Method Not Allowed</code>,
+        /// <code>412 Precondition Failed</code>, or <code>304 Not Modified</code>. It's not possible
+        /// to retrieve the exact exception of these error codes.
         /// </para>
         ///  
         /// <para>
@@ -10687,6 +10740,16 @@ namespace Amazon.S3
         /// <para>
         /// If you don’t have the <code>s3:ListBucket</code> permission, Amazon S3 returns an
         /// HTTP status code 403 error.
+        /// </para>
+        ///  </li> </ul> </dd> <dt>Versioning</dt> <dd> <ul> <li> 
+        /// <para>
+        /// If the current version of the object is a delete marker, Amazon S3 behaves as if the
+        /// object was deleted and includes <code>x-amz-delete-marker: true</code> in the response.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the specified version is a delete marker, the response returns a 405 (Method Not
+        /// Allowed) error and the <code>Last-Modified: timestamp</code> response header.
         /// </para>
         ///  </li> </ul> </dd> </dl> 
         /// <para>
@@ -10721,9 +10784,10 @@ namespace Amazon.S3
         /// A <code>HEAD</code> request has the same options as a <code>GET</code> action on an
         /// object. The response is identical to the <code>GET</code> response except that there
         /// is no response body. Because of this, if the <code>HEAD</code> request generates an
-        /// error, it returns a generic <code>400 Bad Request</code>, <code>403 Forbidden</code>
-        /// or <code>404 Not Found</code> code. It is not possible to retrieve the exact exception
-        /// beyond these error codes.
+        /// error, it returns a generic code, such as <code>400 Bad Request</code>, <code>403
+        /// Forbidden</code>, <code>404 Not Found</code>, <code>405 Method Not Allowed</code>,
+        /// <code>412 Precondition Failed</code>, or <code>304 Not Modified</code>. It's not possible
+        /// to retrieve the exact exception of these error codes.
         /// </para>
         ///  
         /// <para>
@@ -10826,6 +10890,16 @@ namespace Amazon.S3
         /// <para>
         /// If you don’t have the <code>s3:ListBucket</code> permission, Amazon S3 returns an
         /// HTTP status code 403 error.
+        /// </para>
+        ///  </li> </ul> </dd> <dt>Versioning</dt> <dd> <ul> <li> 
+        /// <para>
+        /// If the current version of the object is a delete marker, Amazon S3 behaves as if the
+        /// object was deleted and includes <code>x-amz-delete-marker: true</code> in the response.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the specified version is a delete marker, the response returns a 405 (Method Not
+        /// Allowed) error and the <code>Last-Modified: timestamp</code> response header.
         /// </para>
         ///  </li> </ul> </dd> </dl> 
         /// <para>
@@ -10863,9 +10937,10 @@ namespace Amazon.S3
         /// A <code>HEAD</code> request has the same options as a <code>GET</code> action on an
         /// object. The response is identical to the <code>GET</code> response except that there
         /// is no response body. Because of this, if the <code>HEAD</code> request generates an
-        /// error, it returns a generic <code>400 Bad Request</code>, <code>403 Forbidden</code>
-        /// or <code>404 Not Found</code> code. It is not possible to retrieve the exact exception
-        /// beyond these error codes.
+        /// error, it returns a generic code, such as <code>400 Bad Request</code>, <code>403
+        /// Forbidden</code>, <code>404 Not Found</code>, <code>405 Method Not Allowed</code>,
+        /// <code>412 Precondition Failed</code>, or <code>304 Not Modified</code>. It's not possible
+        /// to retrieve the exact exception of these error codes.
         /// </para>
         ///  
         /// <para>
@@ -10968,6 +11043,16 @@ namespace Amazon.S3
         /// <para>
         /// If you don’t have the <code>s3:ListBucket</code> permission, Amazon S3 returns an
         /// HTTP status code 403 error.
+        /// </para>
+        ///  </li> </ul> </dd> <dt>Versioning</dt> <dd> <ul> <li> 
+        /// <para>
+        /// If the current version of the object is a delete marker, Amazon S3 behaves as if the
+        /// object was deleted and includes <code>x-amz-delete-marker: true</code> in the response.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the specified version is a delete marker, the response returns a 405 (Method Not
+        /// Allowed) error and the <code>Last-Modified: timestamp</code> response header.
         /// </para>
         ///  </li> </ul> </dd> </dl> 
         /// <para>
@@ -11007,9 +11092,10 @@ namespace Amazon.S3
         /// A <code>HEAD</code> request has the same options as a <code>GET</code> action on an
         /// object. The response is identical to the <code>GET</code> response except that there
         /// is no response body. Because of this, if the <code>HEAD</code> request generates an
-        /// error, it returns a generic <code>400 Bad Request</code>, <code>403 Forbidden</code>
-        /// or <code>404 Not Found</code> code. It is not possible to retrieve the exact exception
-        /// beyond these error codes.
+        /// error, it returns a generic code, such as <code>400 Bad Request</code>, <code>403
+        /// Forbidden</code>, <code>404 Not Found</code>, <code>405 Method Not Allowed</code>,
+        /// <code>412 Precondition Failed</code>, or <code>304 Not Modified</code>. It's not possible
+        /// to retrieve the exact exception of these error codes.
         /// </para>
         ///  
         /// <para>
@@ -11112,6 +11198,16 @@ namespace Amazon.S3
         /// <para>
         /// If you don’t have the <code>s3:ListBucket</code> permission, Amazon S3 returns an
         /// HTTP status code 403 error.
+        /// </para>
+        ///  </li> </ul> </dd> <dt>Versioning</dt> <dd> <ul> <li> 
+        /// <para>
+        /// If the current version of the object is a delete marker, Amazon S3 behaves as if the
+        /// object was deleted and includes <code>x-amz-delete-marker: true</code> in the response.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the specified version is a delete marker, the response returns a 405 (Method Not
+        /// Allowed) error and the <code>Last-Modified: timestamp</code> response header.
         /// </para>
         ///  </li> </ul> </dd> </dl> 
         /// <para>
@@ -14698,10 +14794,6 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// This action is not supported by Amazon S3 on Outposts.
-        /// </para>
-        ///  
-        /// <para>
         /// The following operations are related to <code>ListObjectVersions</code>:
         /// </para>
         ///  <ul> <li> 
@@ -14750,10 +14842,6 @@ namespace Amazon.S3
         ///  </note> 
         /// <para>
         /// To use this operation, you must have READ access to the bucket.
-        /// </para>
-        ///  
-        /// <para>
-        /// This action is not supported by Amazon S3 on Outposts.
         /// </para>
         ///  
         /// <para>
@@ -14809,10 +14897,6 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// This action is not supported by Amazon S3 on Outposts.
-        /// </para>
-        ///  
-        /// <para>
         /// The following operations are related to <code>ListObjectVersions</code>:
         /// </para>
         ///  <ul> <li> 
@@ -14862,10 +14946,6 @@ namespace Amazon.S3
         ///  </note> 
         /// <para>
         /// To use this operation, you must have READ access to the bucket.
-        /// </para>
-        ///  
-        /// <para>
-        /// This action is not supported by Amazon S3 on Outposts.
         /// </para>
         ///  
         /// <para>
@@ -14923,10 +15003,6 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// This action is not supported by Amazon S3 on Outposts.
-        /// </para>
-        ///  
-        /// <para>
         /// The following operations are related to <code>ListObjectVersions</code>:
         /// </para>
         ///  <ul> <li> 
@@ -14980,10 +15056,6 @@ namespace Amazon.S3
         ///  </note> 
         /// <para>
         /// To use this operation, you must have READ access to the bucket.
-        /// </para>
-        ///  
-        /// <para>
-        /// This action is not supported by Amazon S3 on Outposts.
         /// </para>
         ///  
         /// <para>

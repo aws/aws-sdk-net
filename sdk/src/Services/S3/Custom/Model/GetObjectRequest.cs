@@ -50,26 +50,26 @@ namespace Amazon.S3.Model
     /// </para>
     ///  
     /// <para>
-    /// To distribute large files to many people, you can save bandwidth costs by using BitTorrent.
-    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3Torrent.html">Amazon
-    /// S3 Torrent</a>. For more information about returning the ACL of an object, see <a
-    /// href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAcl.html">GetObjectAcl</a>.
+    /// For more information about returning the ACL of an object, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAcl.html">GetObjectAcl</a>.
     /// </para>
     ///  
     /// <para>
-    /// If the object you are retrieving is stored in the S3 Glacier or S3 Glacier Deep Archive
-    /// storage class, or S3 Intelligent-Tiering Archive or S3 Intelligent-Tiering Deep Archive
-    /// tiers, before you can retrieve the object you must first restore a copy using <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a>.
-    /// Otherwise, this action returns an <code>InvalidObjectStateError</code> error. For
-    /// information about restoring archived objects, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/restoring-objects.html">Restoring
+    /// If the object you are retrieving is stored in the S3 Glacier Flexible Retrieval or
+    /// S3 Glacier Deep Archive storage class, or S3 Intelligent-Tiering Archive or S3 Intelligent-Tiering
+    /// Deep Archive tiers, before you can retrieve the object you must first restore a copy
+    /// using <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a>.
+    /// Otherwise, this action returns an <code>InvalidObjectState</code> error. For information
+    /// about restoring archived objects, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/restoring-objects.html">Restoring
     /// Archived Objects</a>.
     /// </para>
     ///  
     /// <para>
     /// Encryption request headers, like <code>x-amz-server-side-encryption</code>, should
-    /// not be sent for GET requests if your object uses server-side encryption with KMS keys
-    /// (SSE-KMS) or server-side encryption with Amazon S3 managed encryption keys (SSE-S3).
-    /// If your object does use these types of keys, you'll get an HTTP 400 BadRequest error.
+    /// not be sent for GET requests if your object uses server-side encryption with Key Management
+    /// Service (KMS) keys (SSE-KMS), dual-layer server-side encryption with Amazon Web Services
+    /// KMS keys (DSSE-KMS), or server-side encryption with Amazon S3 managed encryption keys
+    /// (SSE-S3). If your object does use these types of keys, you’ll get an HTTP 400 Bad
+    /// Request error.
     /// </para>
     ///  
     /// <para>
@@ -79,15 +79,15 @@ namespace Amazon.S3.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// x-amz-server-side-encryption-customer-algorithm
+    ///  <code>x-amz-server-side-encryption-customer-algorithm</code> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// x-amz-server-side-encryption-customer-key
+    ///  <code>x-amz-server-side-encryption-customer-key</code> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// x-amz-server-side-encryption-customer-key-MD5
+    ///  <code>x-amz-server-side-encryption-customer-key-MD5</code> 
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -105,33 +105,42 @@ namespace Amazon.S3.Model
     /// <para>
     /// You need the relevant read object (or version) permission for this operation. For
     /// more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html">Specifying
-    /// Permissions in a Policy</a>. If the object you request does not exist, the error Amazon
-    /// S3 returns depends on whether you also have the <code>s3:ListBucket</code> permission.
+    /// Permissions in a Policy</a>. If the object that you request doesn’t exist, the error
+    /// that Amazon S3 returns depends on whether you also have the <code>s3:ListBucket</code>
+    /// permission.
     /// </para>
-    ///  <ul> <li> 
+    ///  
     /// <para>
-    /// If you have the <code>s3:ListBucket</code> permission on the bucket, Amazon S3 will
-    /// return an HTTP status code 404 ("no such key") error.
+    /// If you have the <code>s3:ListBucket</code> permission on the bucket, Amazon S3 returns
+    /// an HTTP status code 404 (Not Found) error.
     /// </para>
-    ///  </li> <li> 
+    ///  
     /// <para>
-    /// If you don’t have the <code>s3:ListBucket</code> permission, Amazon S3 will return
-    /// an HTTP status code 403 ("access denied") error.
+    /// If you don’t have the <code>s3:ListBucket</code> permission, Amazon S3 returns an
+    /// HTTP status code 403 ("access denied") error.
     /// </para>
-    ///  </li> </ul> </dd> <dt>Versioning</dt> <dd>  
+    ///  </dd> <dt>Versioning</dt> <dd> 
     /// <para>
-    /// By default, the GET action returns the current version of an object. To return a different
-    /// version, use the <code>versionId</code> subresource.
+    /// By default, the <code>GET</code> action returns the current version of an object.
+    /// To return a different version, use the <code>versionId</code> subresource.
     /// </para>
     ///  <note> <ul> <li> 
     /// <para>
-    /// You need the <code>s3:GetObjectVersion</code> permission to access a specific version
-    /// of an object. 
+    /// If you supply a <code>versionId</code>, you need the <code>s3:GetObjectVersion</code>
+    /// permission to access a specific version of an object. If you request a specific version,
+    /// you do not need to have the <code>s3:GetObject</code> permission. If you request the
+    /// current version without a specific version ID, only <code>s3:GetObject</code> permission
+    /// is required. <code>s3:GetObjectVersion</code> permission won't be required.
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// If the current version of the object is a delete marker, Amazon S3 behaves as if the
     /// object was deleted and includes <code>x-amz-delete-marker: true</code> in the response.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// If the specified version is a delete marker, the response returns a 405 (Method Not
+    /// Allowed) error and the <code>Last-Modified: timestamp</code> response header.
     /// </para>
     ///  </li> </ul> </note> 
     /// <para>
@@ -140,9 +149,9 @@ namespace Amazon.S3.Model
     /// </para>
     ///  </dd> <dt>Overriding Response Header Values</dt> <dd> 
     /// <para>
-    /// There are times when you want to override certain response header values in a GET
-    /// response. For example, you might override the Content-Disposition response header
-    /// value in your GET request.
+    /// There are times when you want to override certain response header values in a <code>GET</code>
+    /// response. For example, you might override the <code>Content-Disposition</code> response
+    /// header value in your <code>GET</code> request.
     /// </para>
     ///  
     /// <para>
@@ -150,10 +159,10 @@ namespace Amazon.S3.Model
     /// These response header values are sent only on a successful request, that is, when
     /// status code 200 OK is returned. The set of headers you can override using these parameters
     /// is a subset of the headers that Amazon S3 accepts when you create an object. The response
-    /// headers that you can override for the GET response are <code>Content-Type</code>,
+    /// headers that you can override for the <code>GET</code> response are <code>Content-Type</code>,
     /// <code>Content-Language</code>, <code>Expires</code>, <code>Cache-Control</code>, <code>Content-Disposition</code>,
-    /// and <code>Content-Encoding</code>. To override these header values in the GET response,
-    /// you use the following request parameters.
+    /// and <code>Content-Encoding</code>. To override these header values in the <code>GET</code>
+    /// response, you use the following request parameters.
     /// </para>
     ///  <note> 
     /// <para>

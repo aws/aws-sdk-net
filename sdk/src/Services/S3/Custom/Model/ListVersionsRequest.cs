@@ -32,21 +32,17 @@ namespace Amazon.S3.Model
     /// 
     ///  <important> 
     /// <para>
-    ///  To use this operation, you must have permissions to perform the <code>s3:ListBucketVersions</code>
+    ///  To use this operation, you must have permission to perform the <code>s3:ListBucketVersions</code>
     /// action. Be aware of the name difference. 
     /// </para>
     ///  </important> <note> 
     /// <para>
-    /// A <code>200 OK</code> response can contain valid or invalid XML. Make sure to design
+    ///  A <code>200 OK</code> response can contain valid or invalid XML. Make sure to design
     /// your application to parse the contents of the response and handle it appropriately.
     /// </para>
     ///  </note> 
     /// <para>
     /// To use this operation, you must have READ access to the bucket.
-    /// </para>
-    ///  
-    /// <para>
-    /// This action is not supported by Amazon S3 on Outposts.
     /// </para>
     ///  
     /// <para>

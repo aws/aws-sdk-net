@@ -30,7 +30,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
         {   
             GetBucketLoggingResponse response = new GetBucketLoggingResponse();
-            
+            context.AllowEmptyElementLookup.Add("SimplePrefix");
+
             while (context.Read())
             {
                 if (context.IsStartElement)

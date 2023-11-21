@@ -49,6 +49,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                             
                         continue;
                     }
+                    if (context.TestExpression("TargetObjectKeyFormat", targetDepth))
+                    {
+                        loggingEnabled.TargetObjectKeyFormat = TargetObjectKeyFormatUnmarshaller.Instance.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("TargetPrefix", targetDepth))
                     {
                         loggingEnabled.TargetPrefix = StringUnmarshaller.GetInstance().Unmarshall(context);
