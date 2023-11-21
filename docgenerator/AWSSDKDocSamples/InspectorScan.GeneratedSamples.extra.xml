@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.InspectorScan.IAmazonInspectorScan.ScanSbom(Amazon.InspectorScan.Model.ScanSbomRequest)" />
+            <member name="M:Amazon.InspectorScan.AmazonInspectorScanClient.ScanSbom(Amazon.InspectorScan.Model.ScanSbomRequest)" />
+            <member name="T:Amazon.InspectorScan.Model.ScanSbomRequest" />
+            <member name="T:Amazon.InspectorScan.Model.ScanSbomResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Sample ScanSbom Call"
+                    source=".\AWSSDKDocSamples\InspectorScan\InspectorScan.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+</docs>
