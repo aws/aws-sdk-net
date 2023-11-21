@@ -61,6 +61,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         unmarshalledObject.Comment = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("KeyValueStoreAssociations", targetDepth))
+                    {
+                        var unmarshaller = KeyValueStoreAssociationsUnmarshaller.Instance;
+                        unmarshalledObject.KeyValueStoreAssociations = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Runtime", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

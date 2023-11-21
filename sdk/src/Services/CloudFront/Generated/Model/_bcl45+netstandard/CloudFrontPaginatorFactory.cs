@@ -60,6 +60,14 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
+        /// Paginator for ListKeyValueStores operation
+        ///</summary>
+        public IListKeyValueStoresPaginator ListKeyValueStores(ListKeyValueStoresRequest request) 
+        {
+            return new ListKeyValueStoresPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListStreamingDistributions operation
         ///</summary>
         public IListStreamingDistributionsPaginator ListStreamingDistributions(ListStreamingDistributionsRequest request) 

@@ -101,7 +101,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property LastModifiedTime. 
         /// <para>
-        /// The time when the the field-level encryption profile summary was last updated.
+        /// The time when the field-level encryption profile summary was last updated.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

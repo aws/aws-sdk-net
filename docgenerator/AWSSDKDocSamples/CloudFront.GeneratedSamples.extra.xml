@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudFront.IAmazonCloudFront.CreateFunction(Amazon.CloudFront.Model.CreateFunctionRequest)" />
+            <member name="M:Amazon.CloudFront.AmazonCloudFrontClient.CreateFunction(Amazon.CloudFront.Model.CreateFunctionRequest)" />
+            <member name="T:Amazon.CloudFront.Model.CreateFunctionRequest" />
+            <member name="T:Amazon.CloudFront.Model.CreateFunctionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Use the following command to create a function.
+                </para>
+                <code
+                    title="To create a function"
+                    source=".\AWSSDKDocSamples\CloudFront\CloudFront.GeneratedSamples.cs"
+                    region="to-create-a-function-1699737558249" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudFront.IAmazonCloudFront.CreateKeyValueStore(Amazon.CloudFront.Model.CreateKeyValueStoreRequest)" />
+            <member name="M:Amazon.CloudFront.AmazonCloudFrontClient.CreateKeyValueStore(Amazon.CloudFront.Model.CreateKeyValueStoreRequest)" />
+            <member name="T:Amazon.CloudFront.Model.CreateKeyValueStoreRequest" />
+            <member name="T:Amazon.CloudFront.Model.CreateKeyValueStoreResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Use the following command to create a KeyValueStore.
+                </para>
+                <code
+                    title="To create a KeyValueStore"
+                    source=".\AWSSDKDocSamples\CloudFront\CloudFront.GeneratedSamples.cs"
+                    region="to-create-a-key-value-store-1699751722467" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudFront.IAmazonCloudFront.DeleteKeyValueStore(Amazon.CloudFront.Model.DeleteKeyValueStoreRequest)" />
+            <member name="M:Amazon.CloudFront.AmazonCloudFrontClient.DeleteKeyValueStore(Amazon.CloudFront.Model.DeleteKeyValueStoreRequest)" />
+            <member name="T:Amazon.CloudFront.Model.DeleteKeyValueStoreRequest" />
+            <member name="T:Amazon.CloudFront.Model.DeleteKeyValueStoreResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Use the following command to delete a KeyValueStore.
+                </para>
+                <code
+                    title="To delete a KeyValueStore"
+                    source=".\AWSSDKDocSamples\CloudFront\CloudFront.GeneratedSamples.cs"
+                    region="to-delete-a-key-value-store-1699751759648" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudFront.IAmazonCloudFront.DescribeKeyValueStore(Amazon.CloudFront.Model.DescribeKeyValueStoreRequest)" />
+            <member name="M:Amazon.CloudFront.AmazonCloudFrontClient.DescribeKeyValueStore(Amazon.CloudFront.Model.DescribeKeyValueStoreRequest)" />
+            <member name="T:Amazon.CloudFront.Model.DescribeKeyValueStoreRequest" />
+            <member name="T:Amazon.CloudFront.Model.DescribeKeyValueStoreResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Use the following command to describe a KeyValueStore.
+                </para>
+                <code
+                    title="To describe a KeyValueStore"
+                    source=".\AWSSDKDocSamples\CloudFront\CloudFront.GeneratedSamples.cs"
+                    region="to-describe-a-key-value-store-1699751788152" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudFront.IAmazonCloudFront.ListKeyValueStores(Amazon.CloudFront.Model.ListKeyValueStoresRequest)" />
+            <member name="M:Amazon.CloudFront.AmazonCloudFrontClient.ListKeyValueStores(Amazon.CloudFront.Model.ListKeyValueStoresRequest)" />
+            <member name="T:Amazon.CloudFront.Model.ListKeyValueStoresRequest" />
+            <member name="T:Amazon.CloudFront.Model.ListKeyValueStoresResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following command retrieves a list of KeyValueStores with READY status.
+                </para>
+                <code
+                    title="To get a list of KeyValueStores"
+                    source=".\AWSSDKDocSamples\CloudFront\CloudFront.GeneratedSamples.cs"
+                    region="to-get-a-list-of-key-value-store-1699751799198" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudFront.IAmazonCloudFront.UpdateFunction(Amazon.CloudFront.Model.UpdateFunctionRequest)" />
+            <member name="M:Amazon.CloudFront.AmazonCloudFrontClient.UpdateFunction(Amazon.CloudFront.Model.UpdateFunctionRequest)" />
+            <member name="T:Amazon.CloudFront.Model.UpdateFunctionRequest" />
+            <member name="T:Amazon.CloudFront.Model.UpdateFunctionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Use the following command to update a function.
+                </para>
+                <code
+                    title="To update a function"
+                    source=".\AWSSDKDocSamples\CloudFront\CloudFront.GeneratedSamples.cs"
+                    region="to-update-a-function-1699751865053" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudFront.IAmazonCloudFront.UpdateKeyValueStore(Amazon.CloudFront.Model.UpdateKeyValueStoreRequest)" />
+            <member name="M:Amazon.CloudFront.AmazonCloudFrontClient.UpdateKeyValueStore(Amazon.CloudFront.Model.UpdateKeyValueStoreRequest)" />
+            <member name="T:Amazon.CloudFront.Model.UpdateKeyValueStoreRequest" />
+            <member name="T:Amazon.CloudFront.Model.UpdateKeyValueStoreResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Use the following command to update a KeyValueStore.
+                </para>
+                <code
+                    title="To update a KeyValueStore"
+                    source=".\AWSSDKDocSamples\CloudFront\CloudFront.GeneratedSamples.cs"
+                    region="to-update-a-key-value-store-1699751822090" />
+            </example>
+        </value>
+    </doc>
+</docs>

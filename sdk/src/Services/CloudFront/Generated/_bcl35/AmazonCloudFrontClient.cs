@@ -1974,6 +1974,79 @@ namespace Amazon.CloudFront
 
         #endregion
         
+        #region  CreateKeyValueStore
+
+        /// <summary>
+        /// Specifies the Key Value Store resource to add to your account. In your account, the
+        /// Key Value Store names must be unique. You can also import Key Value Store data in
+        /// JSON format from an S3 bucket by providing a valid <code>ImportSource</code> that
+        /// you own.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateKeyValueStore service method.</param>
+        /// 
+        /// <returns>The response from the CreateKeyValueStore service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityAlreadyExistsException">
+        /// The Key Value Store entity already exists. You must provide a unique Key Value Store
+        /// entity.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityLimitExceededException">
+        /// The Key Value Store entity limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntitySizeLimitExceededException">
+        /// The Key Value Store entity size limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateKeyValueStore">REST API Reference for CreateKeyValueStore Operation</seealso>
+        public virtual CreateKeyValueStoreResponse CreateKeyValueStore(CreateKeyValueStoreRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateKeyValueStoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateKeyValueStoreResponseUnmarshaller.Instance;
+
+            return Invoke<CreateKeyValueStoreResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateKeyValueStore operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateKeyValueStore operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateKeyValueStore
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateKeyValueStore">REST API Reference for CreateKeyValueStore Operation</seealso>
+        public virtual IAsyncResult BeginCreateKeyValueStore(CreateKeyValueStoreRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateKeyValueStoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateKeyValueStoreResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateKeyValueStore operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateKeyValueStore.</param>
+        /// 
+        /// <returns>Returns a  CreateKeyValueStoreResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateKeyValueStore">REST API Reference for CreateKeyValueStore Operation</seealso>
+        public virtual CreateKeyValueStoreResponse EndCreateKeyValueStore(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateKeyValueStoreResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateMonitoringSubscription
 
         /// <summary>
@@ -3379,6 +3452,75 @@ namespace Amazon.CloudFront
 
         #endregion
         
+        #region  DeleteKeyValueStore
+
+        /// <summary>
+        /// Specifies the Key Value Store to delete.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteKeyValueStore service method.</param>
+        /// 
+        /// <returns>The response from the DeleteKeyValueStore service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.CannotDeleteEntityWhileInUseException">
+        /// The Key Value Store entity cannot be deleted while it is in use.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The Key Value Store entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <code>If-Match</code> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteKeyValueStore">REST API Reference for DeleteKeyValueStore Operation</seealso>
+        public virtual DeleteKeyValueStoreResponse DeleteKeyValueStore(DeleteKeyValueStoreRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteKeyValueStoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteKeyValueStoreResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteKeyValueStoreResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteKeyValueStore operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteKeyValueStore operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteKeyValueStore
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteKeyValueStore">REST API Reference for DeleteKeyValueStore Operation</seealso>
+        public virtual IAsyncResult BeginDeleteKeyValueStore(DeleteKeyValueStoreRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteKeyValueStoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteKeyValueStoreResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteKeyValueStore operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteKeyValueStore.</param>
+        /// 
+        /// <returns>Returns a  DeleteKeyValueStoreResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteKeyValueStore">REST API Reference for DeleteKeyValueStore Operation</seealso>
+        public virtual DeleteKeyValueStoreResponse EndDeleteKeyValueStore(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteKeyValueStoreResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteMonitoringSubscription
 
         /// <summary>
@@ -4117,6 +4259,69 @@ namespace Amazon.CloudFront
         public virtual DescribeFunctionResponse EndDescribeFunction(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeFunctionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeKeyValueStore
+
+        /// <summary>
+        /// Specifies the Key Value Store and its configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeKeyValueStore service method.</param>
+        /// 
+        /// <returns>The response from the DescribeKeyValueStore service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The Key Value Store entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DescribeKeyValueStore">REST API Reference for DescribeKeyValueStore Operation</seealso>
+        public virtual DescribeKeyValueStoreResponse DescribeKeyValueStore(DescribeKeyValueStoreRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeKeyValueStoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeKeyValueStoreResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeKeyValueStoreResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeKeyValueStore operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeKeyValueStore operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeKeyValueStore
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DescribeKeyValueStore">REST API Reference for DescribeKeyValueStore Operation</seealso>
+        public virtual IAsyncResult BeginDescribeKeyValueStore(DescribeKeyValueStoreRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeKeyValueStoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeKeyValueStoreResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeKeyValueStore operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeKeyValueStore.</param>
+        /// 
+        /// <returns>Returns a  DescribeKeyValueStoreResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DescribeKeyValueStore">REST API Reference for DescribeKeyValueStore Operation</seealso>
+        public virtual DescribeKeyValueStoreResponse EndDescribeKeyValueStore(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeKeyValueStoreResponse>(asyncResult);
         }
 
         #endregion
@@ -7139,6 +7344,66 @@ namespace Amazon.CloudFront
 
         #endregion
         
+        #region  ListKeyValueStores
+
+        /// <summary>
+        /// Specifies the Key Value Stores to list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListKeyValueStores service method.</param>
+        /// 
+        /// <returns>The response from the ListKeyValueStores service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListKeyValueStores">REST API Reference for ListKeyValueStores Operation</seealso>
+        public virtual ListKeyValueStoresResponse ListKeyValueStores(ListKeyValueStoresRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListKeyValueStoresRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListKeyValueStoresResponseUnmarshaller.Instance;
+
+            return Invoke<ListKeyValueStoresResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListKeyValueStores operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListKeyValueStores operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListKeyValueStores
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListKeyValueStores">REST API Reference for ListKeyValueStores Operation</seealso>
+        public virtual IAsyncResult BeginListKeyValueStores(ListKeyValueStoresRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListKeyValueStoresRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListKeyValueStoresResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListKeyValueStores operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListKeyValueStores.</param>
+        /// 
+        /// <returns>Returns a  ListKeyValueStoresResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListKeyValueStores">REST API Reference for ListKeyValueStores Operation</seealso>
+        public virtual ListKeyValueStoresResponse EndListKeyValueStores(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListKeyValueStoresResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListOriginAccessControls
 
         /// <summary>
@@ -9217,6 +9482,75 @@ namespace Amazon.CloudFront
         public virtual UpdateKeyGroupResponse EndUpdateKeyGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateKeyGroupResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateKeyValueStore
+
+        /// <summary>
+        /// Specifies the Key Value Store to update.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateKeyValueStore service method.</param>
+        /// 
+        /// <returns>The response from the UpdateKeyValueStore service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The Key Value Store entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <code>If-Match</code> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateKeyValueStore">REST API Reference for UpdateKeyValueStore Operation</seealso>
+        public virtual UpdateKeyValueStoreResponse UpdateKeyValueStore(UpdateKeyValueStoreRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateKeyValueStoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateKeyValueStoreResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateKeyValueStoreResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateKeyValueStore operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateKeyValueStore operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateKeyValueStore
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateKeyValueStore">REST API Reference for UpdateKeyValueStore Operation</seealso>
+        public virtual IAsyncResult BeginUpdateKeyValueStore(UpdateKeyValueStoreRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateKeyValueStoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateKeyValueStoreResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateKeyValueStore operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateKeyValueStore.</param>
+        /// 
+        /// <returns>Returns a  UpdateKeyValueStoreResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateKeyValueStore">REST API Reference for UpdateKeyValueStore Operation</seealso>
+        public virtual UpdateKeyValueStoreResponse EndUpdateKeyValueStore(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateKeyValueStoreResponse>(asyncResult);
         }
 
         #endregion

@@ -55,11 +55,11 @@ namespace Amazon.CloudFront.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// An AWS Elemental MediaPackage endpoint
+    /// An Elemental MediaPackage endpoint
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// An AWS Elemental MediaStore container
+    /// An Elemental MediaStore container
     /// </para>
     ///  </li> <li> 
     /// <para>

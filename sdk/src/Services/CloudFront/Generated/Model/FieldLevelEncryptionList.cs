@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// List of field-level encrpytion configurations.
+    /// List of field-level encryption configurations.
     /// </summary>
     public partial class FieldLevelEncryptionList
     {
