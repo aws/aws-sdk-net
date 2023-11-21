@@ -210,6 +210,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* AWS CloudFormation gives developers and systems administrators an easy way to create and manage a collection of related AWS resources, provisioning and updating them in an orderly and predictable fashion.
 * [AWSSDK.CloudFront](https://www.nuget.org/packages/AWSSDK.CloudFront/)
 	* Amazon CloudFront is a content delivery web service. It integrates with other Amazon Web Services products to give developers and businesses an easy way to distribute content to end users with low latency, high data transfer speeds, and no minimum usage commitments.
+* [AWSSDK.CloudFrontKeyValueStore](https://www.nuget.org/packages/AWSSDK.CloudFrontKeyValueStore/)
+	* This release adds support for CloudFront KeyValueStore, a globally managed key value datastore associated with CloudFront Functions.
 * [AWSSDK.CloudHSM](https://www.nuget.org/packages/AWSSDK.CloudHSM/)
 	* The AWS CloudHSM service helps you meet corporate, contractual and regulatory compliance requirements for data security by using dedicated Hardware Security Module (HSM) appliances within the AWS cloud. With CloudHSM, you control the encryption keys and cryptographic operations performed by the HSM.
 * [AWSSDK.CloudHSMV2](https://www.nuget.org/packages/AWSSDK.CloudHSMV2/)
