@@ -1,3 +1,11 @@
+### 3.7.692.0 (2023-11-22 19:43 UTC)
+* Kinesis (3.7.301.0)
+	* This release adds support for resource based policies on streams and consumers.
+* S3Control (3.7.302.0)
+	* Amazon S3 Batch Operations now manages buckets or prefixes in a single step.
+* SageMaker (3.7.303.0)
+	* This feature adds the end user license agreement status as a model access configuration parameter.
+
 ### 3.7.691.0 (2023-11-21 20:04 UTC)
 * CloudFront (3.7.301.0)
 	* This release adds support for CloudFront KeyValueStore, a globally managed key value datastore associated with CloudFront Functions.
