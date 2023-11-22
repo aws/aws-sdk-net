@@ -147,6 +147,60 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                             if(publicRequest.ManifestGenerator.S3JobManifestGenerator.Filter.IsSetEligibleForReplication())
                                 xmlWriter.WriteElementString("EligibleForReplication", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromBool(publicRequest.ManifestGenerator.S3JobManifestGenerator.Filter.EligibleForReplication));                 
 
+                
+                            if (publicRequest.ManifestGenerator.S3JobManifestGenerator.Filter.KeyNameConstraint != null) 
+                            {
+                                xmlWriter.WriteStartElement("KeyNameConstraint", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
+                                var publicRequestManifestGeneratorS3JobManifestGeneratorFilterKeyNameConstraintMatchAnyPrefix = publicRequest.ManifestGenerator.S3JobManifestGenerator.Filter.KeyNameConstraint.MatchAnyPrefix;
+                                if (publicRequestManifestGeneratorS3JobManifestGeneratorFilterKeyNameConstraintMatchAnyPrefix != null && publicRequestManifestGeneratorS3JobManifestGeneratorFilterKeyNameConstraintMatchAnyPrefix.Count > 0) 
+                                {                        
+                                    xmlWriter.WriteStartElement("MatchAnyPrefix", "http://awss3control.amazonaws.com/doc/2018-08-20/");
+                                    foreach (var publicRequestManifestGeneratorS3JobManifestGeneratorFilterKeyNameConstraintMatchAnyPrefixValue in publicRequestManifestGeneratorS3JobManifestGeneratorFilterKeyNameConstraintMatchAnyPrefix) 
+                                    {
+                                        xmlWriter.WriteStartElement("member", "http://awss3control.amazonaws.com/doc/2018-08-20/");
+                                        xmlWriter.WriteValue(publicRequestManifestGeneratorS3JobManifestGeneratorFilterKeyNameConstraintMatchAnyPrefixValue);
+                                        xmlWriter.WriteEndElement();
+                                    }            
+                                    xmlWriter.WriteEndElement();            
+                                }
+                                var publicRequestManifestGeneratorS3JobManifestGeneratorFilterKeyNameConstraintMatchAnySubstring = publicRequest.ManifestGenerator.S3JobManifestGenerator.Filter.KeyNameConstraint.MatchAnySubstring;
+                                if (publicRequestManifestGeneratorS3JobManifestGeneratorFilterKeyNameConstraintMatchAnySubstring != null && publicRequestManifestGeneratorS3JobManifestGeneratorFilterKeyNameConstraintMatchAnySubstring.Count > 0) 
+                                {                        
+                                    xmlWriter.WriteStartElement("MatchAnySubstring", "http://awss3control.amazonaws.com/doc/2018-08-20/");
+                                    foreach (var publicRequestManifestGeneratorS3JobManifestGeneratorFilterKeyNameConstraintMatchAnySubstringValue in publicRequestManifestGeneratorS3JobManifestGeneratorFilterKeyNameConstraintMatchAnySubstring) 
+                                    {
+                                        xmlWriter.WriteStartElement("member", "http://awss3control.amazonaws.com/doc/2018-08-20/");
+                                        xmlWriter.WriteValue(publicRequestManifestGeneratorS3JobManifestGeneratorFilterKeyNameConstraintMatchAnySubstringValue);
+                                        xmlWriter.WriteEndElement();
+                                    }            
+                                    xmlWriter.WriteEndElement();            
+                                }
+                                var publicRequestManifestGeneratorS3JobManifestGeneratorFilterKeyNameConstraintMatchAnySuffix = publicRequest.ManifestGenerator.S3JobManifestGenerator.Filter.KeyNameConstraint.MatchAnySuffix;
+                                if (publicRequestManifestGeneratorS3JobManifestGeneratorFilterKeyNameConstraintMatchAnySuffix != null && publicRequestManifestGeneratorS3JobManifestGeneratorFilterKeyNameConstraintMatchAnySuffix.Count > 0) 
+                                {                        
+                                    xmlWriter.WriteStartElement("MatchAnySuffix", "http://awss3control.amazonaws.com/doc/2018-08-20/");
+                                    foreach (var publicRequestManifestGeneratorS3JobManifestGeneratorFilterKeyNameConstraintMatchAnySuffixValue in publicRequestManifestGeneratorS3JobManifestGeneratorFilterKeyNameConstraintMatchAnySuffix) 
+                                    {
+                                        xmlWriter.WriteStartElement("member", "http://awss3control.amazonaws.com/doc/2018-08-20/");
+                                        xmlWriter.WriteValue(publicRequestManifestGeneratorS3JobManifestGeneratorFilterKeyNameConstraintMatchAnySuffixValue);
+                                        xmlWriter.WriteEndElement();
+                                    }            
+                                    xmlWriter.WriteEndElement();            
+                                }
+                                xmlWriter.WriteEndElement();
+                            }
+                            var publicRequestManifestGeneratorS3JobManifestGeneratorFilterMatchAnyStorageClass = publicRequest.ManifestGenerator.S3JobManifestGenerator.Filter.MatchAnyStorageClass;
+                            if (publicRequestManifestGeneratorS3JobManifestGeneratorFilterMatchAnyStorageClass != null && publicRequestManifestGeneratorS3JobManifestGeneratorFilterMatchAnyStorageClass.Count > 0) 
+                            {                        
+                                xmlWriter.WriteStartElement("MatchAnyStorageClass", "http://awss3control.amazonaws.com/doc/2018-08-20/");
+                                foreach (var publicRequestManifestGeneratorS3JobManifestGeneratorFilterMatchAnyStorageClassValue in publicRequestManifestGeneratorS3JobManifestGeneratorFilterMatchAnyStorageClass) 
+                                {
+                                    xmlWriter.WriteStartElement("member", "http://awss3control.amazonaws.com/doc/2018-08-20/");
+                                    xmlWriter.WriteValue(publicRequestManifestGeneratorS3JobManifestGeneratorFilterMatchAnyStorageClassValue);
+                                    xmlWriter.WriteEndElement();
+                                }            
+                                xmlWriter.WriteEndElement();            
+                            }
                             var publicRequestManifestGeneratorS3JobManifestGeneratorFilterObjectReplicationStatuses = publicRequest.ManifestGenerator.S3JobManifestGenerator.Filter.ObjectReplicationStatuses;
                             if (publicRequestManifestGeneratorS3JobManifestGeneratorFilterObjectReplicationStatuses != null && publicRequestManifestGeneratorS3JobManifestGeneratorFilterObjectReplicationStatuses.Count > 0) 
                             {                        
@@ -159,6 +213,12 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                                 }            
                                 xmlWriter.WriteEndElement();            
                             }
+                            if(publicRequest.ManifestGenerator.S3JobManifestGenerator.Filter.IsSetObjectSizeGreaterThanBytes())
+                                xmlWriter.WriteElementString("ObjectSizeGreaterThanBytes", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromLong(publicRequest.ManifestGenerator.S3JobManifestGenerator.Filter.ObjectSizeGreaterThanBytes));                 
+
+                            if(publicRequest.ManifestGenerator.S3JobManifestGenerator.Filter.IsSetObjectSizeLessThanBytes())
+                                xmlWriter.WriteElementString("ObjectSizeLessThanBytes", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromLong(publicRequest.ManifestGenerator.S3JobManifestGenerator.Filter.ObjectSizeLessThanBytes));                 
+
                             xmlWriter.WriteEndElement();
                         }
                 

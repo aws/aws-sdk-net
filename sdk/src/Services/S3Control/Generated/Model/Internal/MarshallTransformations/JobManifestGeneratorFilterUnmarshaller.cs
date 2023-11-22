@@ -73,10 +73,34 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         unmarshalledObject.EligibleForReplication = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("KeyNameConstraint", targetDepth))
+                    {
+                        var unmarshaller = KeyNameConstraintUnmarshaller.Instance;
+                        unmarshalledObject.KeyNameConstraint = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("MatchAnyStorageClass/member", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.MatchAnyStorageClass.Add(unmarshaller.Unmarshall(context));
+                        continue;
+                    }
                     if (context.TestExpression("ObjectReplicationStatuses/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.ObjectReplicationStatuses.Add(unmarshaller.Unmarshall(context));
+                        continue;
+                    }
+                    if (context.TestExpression("ObjectSizeGreaterThanBytes", targetDepth))
+                    {
+                        var unmarshaller = LongUnmarshaller.Instance;
+                        unmarshalledObject.ObjectSizeGreaterThanBytes = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ObjectSizeLessThanBytes", targetDepth))
+                    {
+                        var unmarshaller = LongUnmarshaller.Instance;
+                        unmarshalledObject.ObjectSizeLessThanBytes = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
