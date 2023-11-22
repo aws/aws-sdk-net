@@ -34,8 +34,9 @@ namespace Amazon.Kinesis.Model
     /// 
     ///  <note> 
     /// <para>
-    /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
-    /// parameter in addition to the <code>ShardIterator</code> parameter.
+    /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
+    /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
+    /// parameter when you invoke this API.
     /// </para>
     ///  </note> 
     /// <para>

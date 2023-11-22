@@ -88,6 +88,12 @@ namespace Amazon.Kinesis.Internal
                 result.StreamARN = request.StreamARN;
                 return result;
             }
+            if (requestContext.RequestName == "DeleteResourcePolicyRequest") {
+                result.OperationType = "control";
+                var request = (DeleteResourcePolicyRequest)requestContext.OriginalRequest;
+                result.ResourceARN = request.ResourceARN;
+                return result;
+            }
             if (requestContext.RequestName == "DeleteStreamRequest") {
                 result.OperationType = "control";
                 var request = (DeleteStreamRequest)requestContext.OriginalRequest;
@@ -138,6 +144,12 @@ namespace Amazon.Kinesis.Internal
                 result.StreamARN = request.StreamARN;
                 return result;
             }
+            if (requestContext.RequestName == "GetResourcePolicyRequest") {
+                result.OperationType = "control";
+                var request = (GetResourcePolicyRequest)requestContext.OriginalRequest;
+                result.ResourceARN = request.ResourceARN;
+                return result;
+            }
             if (requestContext.RequestName == "GetShardIteratorRequest") {
                 result.OperationType = "data";
                 var request = (GetShardIteratorRequest)requestContext.OriginalRequest;
@@ -184,6 +196,12 @@ namespace Amazon.Kinesis.Internal
                 result.OperationType = "data";
                 var request = (PutRecordsRequest)requestContext.OriginalRequest;
                 result.StreamARN = request.StreamARN;
+                return result;
+            }
+            if (requestContext.RequestName == "PutResourcePolicyRequest") {
+                result.OperationType = "control";
+                var request = (PutResourcePolicyRequest)requestContext.OriginalRequest;
+                result.ResourceARN = request.ResourceARN;
                 return result;
             }
             if (requestContext.RequestName == "RegisterStreamConsumerRequest") {

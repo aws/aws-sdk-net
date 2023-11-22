@@ -33,7 +33,13 @@ namespace Amazon.Kinesis.Model
     /// Enables or updates server-side encryption using an Amazon Web Services KMS key for
     /// a specified stream. 
     /// 
-    ///  
+    ///  <note> 
+    /// <para>
+    /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
+    /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
+    /// parameter when you invoke this API.
+    /// </para>
+    ///  </note> 
     /// <para>
     /// Starting encryption is an asynchronous operation. Upon receiving the request, Kinesis
     /// Data Streams returns immediately and sets the status of the stream to <code>UPDATING</code>.
@@ -55,12 +61,6 @@ namespace Amazon.Kinesis.Model
     /// you can verify that encryption is applied by inspecting the API response from <code>PutRecord</code>
     /// or <code>PutRecords</code>.
     /// </para>
-    ///  <note> 
-    /// <para>
-    /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
-    /// parameter rather than the <code>StreamName</code> input parameter.
-    /// </para>
-    ///  </note>
     /// </summary>
     public partial class StartStreamEncryptionRequest : AmazonKinesisRequest
     {

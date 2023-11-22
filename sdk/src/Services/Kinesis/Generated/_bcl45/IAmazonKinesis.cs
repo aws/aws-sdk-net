@@ -55,8 +55,9 @@ namespace Amazon.Kinesis
         /// 
         ///  <note> 
         /// <para>
-        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
-        /// parameter rather than the <code>StreamName</code> input parameter.
+        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
+        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
+        /// parameter when you invoke this API.
         /// </para>
         ///  </note> 
         /// <para>
@@ -100,8 +101,9 @@ namespace Amazon.Kinesis
         /// 
         ///  <note> 
         /// <para>
-        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
-        /// parameter rather than the <code>StreamName</code> input parameter.
+        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
+        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
+        /// parameter when you invoke this API.
         /// </para>
         ///  </note> 
         /// <para>
@@ -326,8 +328,9 @@ namespace Amazon.Kinesis
         /// 
         ///  <note> 
         /// <para>
-        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
-        /// parameter rather than the <code>StreamName</code> input parameter.
+        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
+        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
+        /// parameter when you invoke this API.
         /// </para>
         ///  </note> 
         /// <para>
@@ -368,8 +371,9 @@ namespace Amazon.Kinesis
         /// 
         ///  <note> 
         /// <para>
-        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
-        /// parameter rather than the <code>StreamName</code> input parameter.
+        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
+        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
+        /// parameter when you invoke this API.
         /// </para>
         ///  </note> 
         /// <para>
@@ -410,8 +414,9 @@ namespace Amazon.Kinesis
         /// 
         ///  <note> 
         /// <para>
-        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
-        /// parameter rather than the <code>StreamName</code> input parameter.
+        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
+        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
+        /// parameter when you invoke this API.
         /// </para>
         ///  </note> 
         /// <para>
@@ -456,8 +461,9 @@ namespace Amazon.Kinesis
         /// 
         ///  <note> 
         /// <para>
-        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
-        /// parameter rather than the <code>StreamName</code> input parameter.
+        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
+        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
+        /// parameter when you invoke this API.
         /// </para>
         ///  </note> 
         /// <para>
@@ -495,6 +501,94 @@ namespace Amazon.Kinesis
 
         #endregion
         
+        #region  DeleteResourcePolicy
+
+
+        /// <summary>
+        /// Delete a policy for the specified data stream or consumer. Request patterns can be
+        /// one of the following:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Data stream pattern: <code>arn:aws.*:kinesis:.*:\d{12}:.*stream/\S+</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Consumer pattern: <code>^(arn):aws.*:kinesis:.*:\d{12}:.*stream\/[a-zA-Z0-9_.-]+\/consumer\/[a-zA-Z0-9_.-]+:[0-9]+</code>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourcePolicy service method.</param>
+        /// 
+        /// <returns>The response from the DeleteResourcePolicy service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
+        /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
+        /// For more information, see the returned message.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
+        /// The requested resource exceeds the maximum number allowed, or the number of concurrent
+        /// stream requests exceeds the maximum number allowed.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
+        /// The resource is not available for this operation. For successful operation, the resource
+        /// must be in the <code>ACTIVE</code> state.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
+        /// The requested resource could not be found. The stream might not be specified correctly.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
+        DeleteResourcePolicyResponse DeleteResourcePolicy(DeleteResourcePolicyRequest request);
+
+
+
+        /// <summary>
+        /// Delete a policy for the specified data stream or consumer. Request patterns can be
+        /// one of the following:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Data stream pattern: <code>arn:aws.*:kinesis:.*:\d{12}:.*stream/\S+</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Consumer pattern: <code>^(arn):aws.*:kinesis:.*:\d{12}:.*stream\/[a-zA-Z0-9_.-]+\/consumer\/[a-zA-Z0-9_.-]+:[0-9]+</code>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourcePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteResourcePolicy service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
+        /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
+        /// For more information, see the returned message.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
+        /// The requested resource exceeds the maximum number allowed, or the number of concurrent
+        /// stream requests exceeds the maximum number allowed.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
+        /// The resource is not available for this operation. For successful operation, the resource
+        /// must be in the <code>ACTIVE</code> state.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
+        /// The requested resource could not be found. The stream might not be specified correctly.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
+        Task<DeleteResourcePolicyResponse> DeleteResourcePolicyAsync(DeleteResourcePolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteStream
 
 
@@ -505,8 +599,9 @@ namespace Amazon.Kinesis
         /// 
         ///  <note> 
         /// <para>
-        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
-        /// parameter rather than the <code>StreamName</code> input parameter.
+        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
+        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
+        /// parameter when you invoke this API.
         /// </para>
         ///  </note> 
         /// <para>
@@ -568,8 +663,9 @@ namespace Amazon.Kinesis
         /// 
         ///  <note> 
         /// <para>
-        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
-        /// parameter rather than the <code>StreamName</code> input parameter.
+        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
+        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
+        /// parameter when you invoke this API.
         /// </para>
         ///  </note> 
         /// <para>
@@ -768,8 +864,9 @@ namespace Amazon.Kinesis
         /// </para>
         ///  </note> <note> 
         /// <para>
-        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
-        /// parameter rather than the <code>StreamName</code> input parameter.
+        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
+        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
+        /// parameter when you invoke this API.
         /// </para>
         ///  </note> 
         /// <para>
@@ -831,8 +928,9 @@ namespace Amazon.Kinesis
         /// </para>
         ///  </note> <note> 
         /// <para>
-        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
-        /// parameter rather than the <code>StreamName</code> input parameter.
+        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
+        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
+        /// parameter when you invoke this API.
         /// </para>
         ///  </note> 
         /// <para>
@@ -901,6 +999,12 @@ namespace Amazon.Kinesis
         /// <para>
         /// This operation has a limit of 20 transactions per second per stream.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// When making a cross-account call with <code>DescribeStreamConsumer</code>, make sure
+        /// to provide the ARN of the consumer. 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeStreamConsumer service method.</param>
         /// 
@@ -934,6 +1038,12 @@ namespace Amazon.Kinesis
         /// <para>
         /// This operation has a limit of 20 transactions per second per stream.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// When making a cross-account call with <code>DescribeStreamConsumer</code>, make sure
+        /// to provide the ARN of the consumer. 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeStreamConsumer service method.</param>
         /// <param name="cancellationToken">
@@ -966,8 +1076,9 @@ namespace Amazon.Kinesis
         /// 
         ///  <note> 
         /// <para>
-        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
-        /// parameter rather than the <code>StreamName</code> input parameter.
+        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
+        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
+        /// parameter when you invoke this API.
         /// </para>
         ///  </note> 
         /// <para>
@@ -1008,8 +1119,9 @@ namespace Amazon.Kinesis
         /// 
         ///  <note> 
         /// <para>
-        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
-        /// parameter rather than the <code>StreamName</code> input parameter.
+        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
+        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
+        /// parameter when you invoke this API.
         /// </para>
         ///  </note> 
         /// <para>
@@ -1055,8 +1167,9 @@ namespace Amazon.Kinesis
         /// 
         ///  <note> 
         /// <para>
-        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
-        /// parameter rather than the <code>StreamName</code> input parameter.
+        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
+        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
+        /// parameter when you invoke this API.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1091,8 +1204,9 @@ namespace Amazon.Kinesis
         /// 
         ///  <note> 
         /// <para>
-        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
-        /// parameter rather than the <code>StreamName</code> input parameter.
+        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
+        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
+        /// parameter when you invoke this API.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1133,8 +1247,9 @@ namespace Amazon.Kinesis
         /// 
         ///  <note> 
         /// <para>
-        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
-        /// parameter rather than the <code>StreamName</code> input parameter.
+        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
+        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
+        /// parameter when you invoke this API.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1169,8 +1284,9 @@ namespace Amazon.Kinesis
         /// 
         ///  <note> 
         /// <para>
-        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
-        /// parameter rather than the <code>StreamName</code> input parameter.
+        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
+        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
+        /// parameter when you invoke this API.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1211,8 +1327,9 @@ namespace Amazon.Kinesis
         /// 
         ///  <note> 
         /// <para>
-        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
-        /// parameter in addition to the <code>ShardIterator</code> parameter.
+        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
+        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
+        /// parameter when you invoke this API.
         /// </para>
         ///  </note> 
         /// <para>
@@ -1341,8 +1458,9 @@ namespace Amazon.Kinesis
         /// 
         ///  <note> 
         /// <para>
-        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
-        /// parameter in addition to the <code>ShardIterator</code> parameter.
+        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
+        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
+        /// parameter when you invoke this API.
         /// </para>
         ///  </note> 
         /// <para>
@@ -1469,6 +1587,86 @@ namespace Amazon.Kinesis
 
         #endregion
         
+        #region  GetResourcePolicy
+
+
+        /// <summary>
+        /// Returns a policy attached to the specified data stream or consumer. Request patterns
+        /// can be one of the following:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Data stream pattern: <code>arn:aws.*:kinesis:.*:\d{12}:.*stream/\S+</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  Consumer pattern: <code>^(arn):aws.*:kinesis:.*:\d{12}:.*stream\/[a-zA-Z0-9_.-]+\/consumer\/[a-zA-Z0-9_.-]+:[0-9]+</code>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourcePolicy service method.</param>
+        /// 
+        /// <returns>The response from the GetResourcePolicy service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
+        /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
+        /// For more information, see the returned message.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
+        /// The requested resource exceeds the maximum number allowed, or the number of concurrent
+        /// stream requests exceeds the maximum number allowed.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
+        /// The requested resource could not be found. The stream might not be specified correctly.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
+        GetResourcePolicyResponse GetResourcePolicy(GetResourcePolicyRequest request);
+
+
+
+        /// <summary>
+        /// Returns a policy attached to the specified data stream or consumer. Request patterns
+        /// can be one of the following:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Data stream pattern: <code>arn:aws.*:kinesis:.*:\d{12}:.*stream/\S+</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  Consumer pattern: <code>^(arn):aws.*:kinesis:.*:\d{12}:.*stream\/[a-zA-Z0-9_.-]+\/consumer\/[a-zA-Z0-9_.-]+:[0-9]+</code>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourcePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetResourcePolicy service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
+        /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
+        /// For more information, see the returned message.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
+        /// The requested resource exceeds the maximum number allowed, or the number of concurrent
+        /// stream requests exceeds the maximum number allowed.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
+        /// The requested resource could not be found. The stream might not be specified correctly.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
+        Task<GetResourcePolicyResponse> GetResourcePolicyAsync(GetResourcePolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetShardIterator
 
 
@@ -1478,8 +1676,9 @@ namespace Amazon.Kinesis
         /// 
         ///  <note> 
         /// <para>
-        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
-        /// parameter rather than the <code>StreamName</code> input parameter.
+        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
+        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
+        /// parameter when you invoke this API.
         /// </para>
         ///  </note> 
         /// <para>
@@ -1562,8 +1761,9 @@ namespace Amazon.Kinesis
         /// 
         ///  <note> 
         /// <para>
-        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
-        /// parameter rather than the <code>StreamName</code> input parameter.
+        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
+        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
+        /// parameter when you invoke this API.
         /// </para>
         ///  </note> 
         /// <para>
@@ -1653,8 +1853,9 @@ namespace Amazon.Kinesis
         /// 
         ///  <note> 
         /// <para>
-        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
-        /// parameter rather than the <code>StreamName</code> input parameter.
+        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
+        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
+        /// parameter when you invoke this API.
         /// </para>
         ///  </note> 
         /// <para>
@@ -1698,8 +1899,9 @@ namespace Amazon.Kinesis
         /// 
         ///  <note> 
         /// <para>
-        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
-        /// parameter rather than the <code>StreamName</code> input parameter.
+        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
+        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
+        /// parameter when you invoke this API.
         /// </para>
         ///  </note> 
         /// <para>
@@ -1743,8 +1945,9 @@ namespace Amazon.Kinesis
         /// 
         ///  <note> 
         /// <para>
-        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
-        /// parameter rather than the <code>StreamName</code> input parameter.
+        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
+        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
+        /// parameter when you invoke this API.
         /// </para>
         ///  </note> 
         /// <para>
@@ -1792,8 +1995,9 @@ namespace Amazon.Kinesis
         /// 
         ///  <note> 
         /// <para>
-        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
-        /// parameter rather than the <code>StreamName</code> input parameter.
+        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
+        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
+        /// parameter when you invoke this API.
         /// </para>
         ///  </note> 
         /// <para>
@@ -1843,8 +2047,9 @@ namespace Amazon.Kinesis
         /// 
         ///  <note> 
         /// <para>
-        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
-        /// parameter rather than the <code>StreamName</code> input parameter.
+        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
+        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
+        /// parameter when you invoke this API.
         /// </para>
         ///  </note> 
         /// <para>
@@ -1896,8 +2101,9 @@ namespace Amazon.Kinesis
         /// 
         ///  <note> 
         /// <para>
-        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
-        /// parameter rather than the <code>StreamName</code> input parameter.
+        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
+        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
+        /// parameter when you invoke this API.
         /// </para>
         ///  </note> 
         /// <para>
@@ -2212,8 +2418,9 @@ namespace Amazon.Kinesis
         /// 
         ///  <note> 
         /// <para>
-        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
-        /// parameter rather than the <code>StreamName</code> input parameter.
+        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
+        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
+        /// parameter when you invoke this API.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2245,8 +2452,9 @@ namespace Amazon.Kinesis
         /// 
         ///  <note> 
         /// <para>
-        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
-        /// parameter rather than the <code>StreamName</code> input parameter.
+        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
+        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
+        /// parameter when you invoke this API.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2291,8 +2499,9 @@ namespace Amazon.Kinesis
         /// 
         ///  <note> 
         /// <para>
-        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
-        /// parameter rather than the <code>StreamName</code> input parameter.
+        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
+        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
+        /// parameter when you invoke this API.
         /// </para>
         ///  </note> 
         /// <para>
@@ -2382,8 +2591,9 @@ namespace Amazon.Kinesis
         /// 
         ///  <note> 
         /// <para>
-        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
-        /// parameter rather than the <code>StreamName</code> input parameter.
+        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
+        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
+        /// parameter when you invoke this API.
         /// </para>
         ///  </note> 
         /// <para>
@@ -2474,8 +2684,9 @@ namespace Amazon.Kinesis
         /// 
         ///  <note> 
         /// <para>
-        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
-        /// parameter rather than the <code>StreamName</code> input parameter.
+        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
+        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
+        /// parameter when you invoke this API.
         /// </para>
         ///  </note> 
         /// <para>
@@ -2592,8 +2803,9 @@ namespace Amazon.Kinesis
         /// 
         ///  <note> 
         /// <para>
-        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
-        /// parameter rather than the <code>StreamName</code> input parameter.
+        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
+        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
+        /// parameter when you invoke this API.
         /// </para>
         ///  </note> 
         /// <para>
@@ -2715,8 +2927,9 @@ namespace Amazon.Kinesis
         /// 
         ///  <note> 
         /// <para>
-        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
-        /// parameter rather than the <code>StreamName</code> input parameter.
+        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
+        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
+        /// parameter when you invoke this API.
         /// </para>
         ///  </note> 
         /// <para>
@@ -2859,8 +3072,9 @@ namespace Amazon.Kinesis
         /// 
         ///  <note> 
         /// <para>
-        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
-        /// parameter rather than the <code>StreamName</code> input parameter.
+        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
+        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
+        /// parameter when you invoke this API.
         /// </para>
         ///  </note> 
         /// <para>
@@ -2999,6 +3213,122 @@ namespace Amazon.Kinesis
 
         #endregion
         
+        #region  PutResourcePolicy
+
+
+        /// <summary>
+        /// Attaches a resource-based policy to a data stream or registered consumer. If you are
+        /// using an identity other than the root user of the Amazon Web Services account that
+        /// owns the resource, the calling identity must have the <code>PutResourcePolicy</code>
+        /// permissions on the specified Kinesis Data Streams resource and belong to the owner's
+        /// account in order to use this operation. If you don't have <code>PutResourcePolicy</code>
+        /// permissions, Amazon Kinesis Data Streams returns a <code>403 Access Denied error</code>.
+        /// If you receive a <code>ResourceNotFoundException</code>, check to see if you passed
+        /// a valid stream or consumer resource. 
+        /// 
+        ///  
+        /// <para>
+        ///  Request patterns can be one of the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Data stream pattern: <code>arn:aws.*:kinesis:.*:\d{12}:.*stream/\S+</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Consumer pattern: <code>^(arn):aws.*:kinesis:.*:\d{12}:.*stream\/[a-zA-Z0-9_.-]+\/consumer\/[a-zA-Z0-9_.-]+:[0-9]+</code>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/streams/latest/dev/controlling-access.html">Controlling
+        /// Access to Amazon Kinesis Data Streams Resources Using IAM</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy service method.</param>
+        /// 
+        /// <returns>The response from the PutResourcePolicy service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
+        /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
+        /// For more information, see the returned message.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
+        /// The requested resource exceeds the maximum number allowed, or the number of concurrent
+        /// stream requests exceeds the maximum number allowed.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
+        /// The resource is not available for this operation. For successful operation, the resource
+        /// must be in the <code>ACTIVE</code> state.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
+        /// The requested resource could not be found. The stream might not be specified correctly.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
+        PutResourcePolicyResponse PutResourcePolicy(PutResourcePolicyRequest request);
+
+
+
+        /// <summary>
+        /// Attaches a resource-based policy to a data stream or registered consumer. If you are
+        /// using an identity other than the root user of the Amazon Web Services account that
+        /// owns the resource, the calling identity must have the <code>PutResourcePolicy</code>
+        /// permissions on the specified Kinesis Data Streams resource and belong to the owner's
+        /// account in order to use this operation. If you don't have <code>PutResourcePolicy</code>
+        /// permissions, Amazon Kinesis Data Streams returns a <code>403 Access Denied error</code>.
+        /// If you receive a <code>ResourceNotFoundException</code>, check to see if you passed
+        /// a valid stream or consumer resource. 
+        /// 
+        ///  
+        /// <para>
+        ///  Request patterns can be one of the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Data stream pattern: <code>arn:aws.*:kinesis:.*:\d{12}:.*stream/\S+</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Consumer pattern: <code>^(arn):aws.*:kinesis:.*:\d{12}:.*stream\/[a-zA-Z0-9_.-]+\/consumer\/[a-zA-Z0-9_.-]+:[0-9]+</code>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/streams/latest/dev/controlling-access.html">Controlling
+        /// Access to Amazon Kinesis Data Streams Resources Using IAM</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutResourcePolicy service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
+        /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
+        /// For more information, see the returned message.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
+        /// The requested resource exceeds the maximum number allowed, or the number of concurrent
+        /// stream requests exceeds the maximum number allowed.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
+        /// The resource is not available for this operation. For successful operation, the resource
+        /// must be in the <code>ACTIVE</code> state.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
+        /// The requested resource could not be found. The stream might not be specified correctly.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
+        Task<PutResourcePolicyResponse> PutResourcePolicyAsync(PutResourcePolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  RegisterStreamConsumer
 
 
@@ -3110,8 +3440,9 @@ namespace Amazon.Kinesis
         /// 
         ///  <note> 
         /// <para>
-        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
-        /// parameter rather than the <code>StreamName</code> input parameter.
+        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
+        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
+        /// parameter when you invoke this API.
         /// </para>
         ///  </note> 
         /// <para>
@@ -3154,8 +3485,9 @@ namespace Amazon.Kinesis
         /// 
         ///  <note> 
         /// <para>
-        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
-        /// parameter rather than the <code>StreamName</code> input parameter.
+        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
+        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
+        /// parameter when you invoke this API.
         /// </para>
         ///  </note> 
         /// <para>
@@ -3207,8 +3539,9 @@ namespace Amazon.Kinesis
         /// 
         ///  <note> 
         /// <para>
-        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
-        /// parameter rather than the <code>StreamName</code> input parameter.
+        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
+        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
+        /// parameter when you invoke this API.
         /// </para>
         ///  </note> 
         /// <para>
@@ -3309,8 +3642,9 @@ namespace Amazon.Kinesis
         /// 
         ///  <note> 
         /// <para>
-        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
-        /// parameter rather than the <code>StreamName</code> input parameter.
+        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
+        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
+        /// parameter when you invoke this API.
         /// </para>
         ///  </note> 
         /// <para>
@@ -3412,7 +3746,13 @@ namespace Amazon.Kinesis
         /// Enables or updates server-side encryption using an Amazon Web Services KMS key for
         /// a specified stream. 
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
+        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
+        /// parameter when you invoke this API.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// Starting encryption is an asynchronous operation. Upon receiving the request, Kinesis
         /// Data Streams returns immediately and sets the status of the stream to <code>UPDATING</code>.
@@ -3434,12 +3774,6 @@ namespace Amazon.Kinesis
         /// you can verify that encryption is applied by inspecting the API response from <code>PutRecord</code>
         /// or <code>PutRecords</code>.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
-        /// parameter rather than the <code>StreamName</code> input parameter.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartStreamEncryption service method.</param>
         /// 
@@ -3494,7 +3828,13 @@ namespace Amazon.Kinesis
         /// Enables or updates server-side encryption using an Amazon Web Services KMS key for
         /// a specified stream. 
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
+        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
+        /// parameter when you invoke this API.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// Starting encryption is an asynchronous operation. Upon receiving the request, Kinesis
         /// Data Streams returns immediately and sets the status of the stream to <code>UPDATING</code>.
@@ -3516,12 +3856,6 @@ namespace Amazon.Kinesis
         /// you can verify that encryption is applied by inspecting the API response from <code>PutRecord</code>
         /// or <code>PutRecords</code>.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
-        /// parameter rather than the <code>StreamName</code> input parameter.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartStreamEncryption service method.</param>
         /// <param name="cancellationToken">
@@ -3583,8 +3917,9 @@ namespace Amazon.Kinesis
         /// 
         ///  <note> 
         /// <para>
-        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
-        /// parameter rather than the <code>StreamName</code> input parameter.
+        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
+        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
+        /// parameter when you invoke this API.
         /// </para>
         ///  </note> 
         /// <para>
@@ -3640,8 +3975,9 @@ namespace Amazon.Kinesis
         /// 
         ///  <note> 
         /// <para>
-        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
-        /// parameter rather than the <code>StreamName</code> input parameter.
+        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
+        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
+        /// parameter when you invoke this API.
         /// </para>
         ///  </note> 
         /// <para>
@@ -3704,8 +4040,9 @@ namespace Amazon.Kinesis
         /// 
         ///  <note> 
         /// <para>
-        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
-        /// parameter rather than the <code>StreamName</code> input parameter.
+        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
+        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
+        /// parameter when you invoke this API.
         /// </para>
         ///  </note> 
         /// <para>
@@ -3758,6 +4095,10 @@ namespace Amazon.Kinesis
         ///  </li> <li> 
         /// <para>
         /// Scale up to more than the shard limit for your account
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Make over 10 TPS. TPS over 10 will trigger the LimitExceededException
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -3804,8 +4145,9 @@ namespace Amazon.Kinesis
         /// 
         ///  <note> 
         /// <para>
-        /// When invoking this API, it is recommended you use the <code>StreamARN</code> input
-        /// parameter rather than the <code>StreamName</code> input parameter.
+        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
+        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
+        /// parameter when you invoke this API.
         /// </para>
         ///  </note> 
         /// <para>
@@ -3858,6 +4200,10 @@ namespace Amazon.Kinesis
         ///  </li> <li> 
         /// <para>
         /// Scale up to more than the shard limit for your account
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Make over 10 TPS. TPS over 10 will trigger the LimitExceededException
         /// </para>
         ///  </li> </ul> 
         /// <para>

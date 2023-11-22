@@ -101,5 +101,14 @@ namespace Amazon.Kinesis.Endpoints
             get { return (string)this["ConsumerARN"]; }
             set { this["ConsumerARN"] = value; } 
         }
+
+        /// <summary>
+        /// ResourceARN parameter
+        /// </summary>
+        public string ResourceARN 
+        { 
+            get { return (string)this["ResourceARN"]; }
+            set { this["ResourceARN"] = value; } 
+        }
     }
 }
