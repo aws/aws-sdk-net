@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// S3ModelDataSource Marshaller
+    /// ModelAccessConfig Marshaller
     /// </summary>
-    public class S3ModelDataSourceMarshaller : IRequestMarshaller<S3ModelDataSource, JsonMarshallerContext> 
+    public class ModelAccessConfigMarshaller : IRequestMarshaller<ModelAccessConfig, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,35 +43,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(S3ModelDataSource requestObject, JsonMarshallerContext context)
+        public void Marshall(ModelAccessConfig requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetCompressionType())
+            if(requestObject.IsSetAcceptEula())
             {
-                context.Writer.WritePropertyName("CompressionType");
-                context.Writer.Write(requestObject.CompressionType);
-            }
-
-            if(requestObject.IsSetModelAccessConfig())
-            {
-                context.Writer.WritePropertyName("ModelAccessConfig");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = ModelAccessConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.ModelAccessConfig, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetS3DataType())
-            {
-                context.Writer.WritePropertyName("S3DataType");
-                context.Writer.Write(requestObject.S3DataType);
-            }
-
-            if(requestObject.IsSetS3Uri())
-            {
-                context.Writer.WritePropertyName("S3Uri");
-                context.Writer.Write(requestObject.S3Uri);
+                context.Writer.WritePropertyName("AcceptEula");
+                context.Writer.Write(requestObject.AcceptEula);
             }
 
         }
@@ -79,7 +56,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static S3ModelDataSourceMarshaller Instance = new S3ModelDataSourceMarshaller();
+        public readonly static ModelAccessConfigMarshaller Instance = new ModelAccessConfigMarshaller();
 
     }
 }

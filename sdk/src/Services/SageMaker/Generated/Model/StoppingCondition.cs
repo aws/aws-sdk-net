@@ -66,7 +66,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property MaxPendingTimeInSeconds. 
         /// <para>
-        /// The maximum pending time in seconds.
+        /// The maximum length of time, in seconds, that a training or compilation job can be
+        /// pending before it is stopped.
         /// </para>
         /// </summary>
         [AWSProperty(Min=7200, Max=2419200)]
