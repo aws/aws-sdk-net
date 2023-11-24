@@ -1,0 +1,9 @@
+{
+    "core": {
+        "updateMinimum": true,
+        "type": "Patch",
+        "changeLogMessages": [
+            "Fix `RegionEndpointProviderV3` not to throw an exception when application is deployed to the root folder"
+        ]
+    }
+}
