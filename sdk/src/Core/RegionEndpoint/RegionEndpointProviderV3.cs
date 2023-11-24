@@ -449,7 +449,11 @@ namespace Amazon.Internal
 #endif
             if (!string.IsNullOrEmpty(assemblyLocation))
             {
-                string endpointsPath = Path.Combine(Path.GetDirectoryName(assemblyLocation), ENDPOINT_JSON);
+                // If the application is deployed to the root directory (e.g. "/" in a container), GetDirectoryName will return null (which Path.Combine does not allow).
+                // In that case, we'll use an empty string and look for an endpoints.json file in the current folder.
+                var directoryName = Path.GetDirectoryName(assemblyLocation) ?? string.Empty;
+
+                string endpointsPath = Path.Combine(directoryName, ENDPOINT_JSON);
                 if (File.Exists(endpointsPath))
                 {
                     return File.Open(endpointsPath, FileMode.Open, FileAccess.Read);
