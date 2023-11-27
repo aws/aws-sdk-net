@@ -1,3 +1,28 @@
+### 3.7.694.0 (2023-11-27 20:15 UTC)
+* AppSync (3.7.301.0)
+	* This update enables introspection of Aurora cluster databases using the RDS Data API
+* B2bi (3.7.300.0)
+	* This is the initial SDK release for AWS B2B Data Interchange.
+* Backup (3.7.302.0)
+	* AWS Backup now supports restore testing, a new feature that allows customers to automate restore testing and validating their backups. Additionally, this release adds support for EBS Snapshots Archive tier.
+* ControlTower (3.7.303.0)
+	* This release adds the following support: 1. The EnableControl API can configure controls that are configurable.  2. The GetEnabledControl API shows the configured parameters on an enabled control. 3. The new UpdateEnabledControl API can change parameters on an enabled control.
+* ElasticFileSystem (3.7.302.0)
+	* Adding support for EFS Replication to existing file system.
+* FIS (3.7.301.0)
+	* AWS FIS adds support for multi-account experiments & empty target resolution. This release also introduces the CreateTargetAccountConfiguration API that allows experiments across multiple AWS accounts, and the ListExperimentResolvedTargets API to list target details.
+* Glue (3.7.303.0)
+	* add observations support to DQ CodeGen config model + update document for connectiontypes supported by ConnectorData entities
+* RDS (3.7.301.4)
+	* Updates Amazon RDS documentation for support for RDS for Db2.
+* SecurityHub (3.7.302.0)
+	* Adds and updates APIs to support central configuration. This feature allows the Security Hub delegated administrator to configure Security Hub for their entire AWS Org across multiple regions from a home Region. With this release, findings also include account name and application metadata.
+* TranscribeService (3.7.302.0)
+	* This release adds support for AWS HealthScribe APIs within Amazon Transcribe
+* Core 3.7.300.9
+	* Fix `RegionEndpointProviderV3` not to throw an exception when application is deployed to the root folder
+	* All services packages updated to require new Core
+
 ### 3.7.693.0 (2023-11-27 04:24 UTC)
 * AccessAnalyzer (3.7.301.0)
 	* IAM Access Analyzer now continuously monitors IAM roles and users in your AWS account or organization to generate findings for unused access. Additionally, IAM Access Analyzer now provides custom policy checks to validate that IAM policies adhere to your security standards ahead of deployments.
