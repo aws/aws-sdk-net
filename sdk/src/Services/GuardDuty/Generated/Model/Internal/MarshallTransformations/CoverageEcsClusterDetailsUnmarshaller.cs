@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CoverageResourceDetails Object
+    /// Response Unmarshaller for CoverageEcsClusterDetails Object
     /// </summary>  
-    public class CoverageResourceDetailsUnmarshaller : IUnmarshaller<CoverageResourceDetails, XmlUnmarshallerContext>, IUnmarshaller<CoverageResourceDetails, JsonUnmarshallerContext>
+    public class CoverageEcsClusterDetailsUnmarshaller : IUnmarshaller<CoverageEcsClusterDetails, XmlUnmarshallerContext>, IUnmarshaller<CoverageEcsClusterDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        CoverageResourceDetails IUnmarshaller<CoverageResourceDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        CoverageEcsClusterDetails IUnmarshaller<CoverageEcsClusterDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,33 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public CoverageResourceDetails Unmarshall(JsonUnmarshallerContext context)
+        public CoverageEcsClusterDetails Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            CoverageResourceDetails unmarshalledObject = new CoverageResourceDetails();
+            CoverageEcsClusterDetails unmarshalledObject = new CoverageEcsClusterDetails();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ec2InstanceDetails", targetDepth))
-                {
-                    var unmarshaller = CoverageEc2InstanceDetailsUnmarshaller.Instance;
-                    unmarshalledObject.Ec2InstanceDetails = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ecsClusterDetails", targetDepth))
-                {
-                    var unmarshaller = CoverageEcsClusterDetailsUnmarshaller.Instance;
-                    unmarshalledObject.EcsClusterDetails = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("eksClusterDetails", targetDepth))
-                {
-                    var unmarshaller = CoverageEksClusterDetailsUnmarshaller.Instance;
-                    unmarshalledObject.EksClusterDetails = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("resourceType", targetDepth))
+                if (context.TestExpression("clusterName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ClusterName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("containerInstanceDetails", targetDepth))
+                {
+                    var unmarshaller = ContainerInstanceDetailsUnmarshaller.Instance;
+                    unmarshalledObject.ContainerInstanceDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("fargateDetails", targetDepth))
+                {
+                    var unmarshaller = FargateDetailsUnmarshaller.Instance;
+                    unmarshalledObject.FargateDetails = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +88,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         }
 
 
-        private static CoverageResourceDetailsUnmarshaller _instance = new CoverageResourceDetailsUnmarshaller();        
+        private static CoverageEcsClusterDetailsUnmarshaller _instance = new CoverageEcsClusterDetailsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CoverageResourceDetailsUnmarshaller Instance
+        public static CoverageEcsClusterDetailsUnmarshaller Instance
         {
             get
             {

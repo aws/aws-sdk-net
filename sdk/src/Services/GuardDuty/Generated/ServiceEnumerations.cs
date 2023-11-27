@@ -143,6 +143,14 @@ namespace Amazon.GuardDuty
         /// </summary>
         public static readonly CoverageFilterCriterionKey ADDON_VERSION = new CoverageFilterCriterionKey("ADDON_VERSION");
         /// <summary>
+        /// Constant AGENT_VERSION for CoverageFilterCriterionKey
+        /// </summary>
+        public static readonly CoverageFilterCriterionKey AGENT_VERSION = new CoverageFilterCriterionKey("AGENT_VERSION");
+        /// <summary>
+        /// Constant CLUSTER_ARN for CoverageFilterCriterionKey
+        /// </summary>
+        public static readonly CoverageFilterCriterionKey CLUSTER_ARN = new CoverageFilterCriterionKey("CLUSTER_ARN");
+        /// <summary>
         /// Constant CLUSTER_NAME for CoverageFilterCriterionKey
         /// </summary>
         public static readonly CoverageFilterCriterionKey CLUSTER_NAME = new CoverageFilterCriterionKey("CLUSTER_NAME");
@@ -151,9 +159,17 @@ namespace Amazon.GuardDuty
         /// </summary>
         public static readonly CoverageFilterCriterionKey COVERAGE_STATUS = new CoverageFilterCriterionKey("COVERAGE_STATUS");
         /// <summary>
+        /// Constant ECS_CLUSTER_NAME for CoverageFilterCriterionKey
+        /// </summary>
+        public static readonly CoverageFilterCriterionKey ECS_CLUSTER_NAME = new CoverageFilterCriterionKey("ECS_CLUSTER_NAME");
+        /// <summary>
         /// Constant EKS_CLUSTER_NAME for CoverageFilterCriterionKey
         /// </summary>
         public static readonly CoverageFilterCriterionKey EKS_CLUSTER_NAME = new CoverageFilterCriterionKey("EKS_CLUSTER_NAME");
+        /// <summary>
+        /// Constant INSTANCE_ID for CoverageFilterCriterionKey
+        /// </summary>
+        public static readonly CoverageFilterCriterionKey INSTANCE_ID = new CoverageFilterCriterionKey("INSTANCE_ID");
         /// <summary>
         /// Constant MANAGEMENT_TYPE for CoverageFilterCriterionKey
         /// </summary>
@@ -221,9 +237,17 @@ namespace Amazon.GuardDuty
         /// </summary>
         public static readonly CoverageSortKey COVERAGE_STATUS = new CoverageSortKey("COVERAGE_STATUS");
         /// <summary>
+        /// Constant ECS_CLUSTER_NAME for CoverageSortKey
+        /// </summary>
+        public static readonly CoverageSortKey ECS_CLUSTER_NAME = new CoverageSortKey("ECS_CLUSTER_NAME");
+        /// <summary>
         /// Constant EKS_CLUSTER_NAME for CoverageSortKey
         /// </summary>
         public static readonly CoverageSortKey EKS_CLUSTER_NAME = new CoverageSortKey("EKS_CLUSTER_NAME");
+        /// <summary>
+        /// Constant INSTANCE_ID for CoverageSortKey
+        /// </summary>
+        public static readonly CoverageSortKey INSTANCE_ID = new CoverageSortKey("INSTANCE_ID");
         /// <summary>
         /// Constant ISSUE for CoverageSortKey
         /// </summary>
@@ -627,6 +651,10 @@ namespace Amazon.GuardDuty
         /// </summary>
         public static readonly DetectorFeature RDS_LOGIN_EVENTS = new DetectorFeature("RDS_LOGIN_EVENTS");
         /// <summary>
+        /// Constant RUNTIME_MONITORING for DetectorFeature
+        /// </summary>
+        public static readonly DetectorFeature RUNTIME_MONITORING = new DetectorFeature("RUNTIME_MONITORING");
+        /// <summary>
         /// Constant S3_DATA_EVENTS for DetectorFeature
         /// </summary>
         public static readonly DetectorFeature S3_DATA_EVENTS = new DetectorFeature("S3_DATA_EVENTS");
@@ -704,6 +732,10 @@ namespace Amazon.GuardDuty
         /// Constant RDS_LOGIN_EVENTS for DetectorFeatureResult
         /// </summary>
         public static readonly DetectorFeatureResult RDS_LOGIN_EVENTS = new DetectorFeatureResult("RDS_LOGIN_EVENTS");
+        /// <summary>
+        /// Constant RUNTIME_MONITORING for DetectorFeatureResult
+        /// </summary>
+        public static readonly DetectorFeatureResult RUNTIME_MONITORING = new DetectorFeatureResult("RUNTIME_MONITORING");
         /// <summary>
         /// Constant S3_DATA_EVENTS for DetectorFeatureResult
         /// </summary>
@@ -850,6 +882,10 @@ namespace Amazon.GuardDuty
     public class FeatureAdditionalConfiguration : ConstantClass
     {
 
+        /// <summary>
+        /// Constant ECS_FARGATE_AGENT_MANAGEMENT for FeatureAdditionalConfiguration
+        /// </summary>
+        public static readonly FeatureAdditionalConfiguration ECS_FARGATE_AGENT_MANAGEMENT = new FeatureAdditionalConfiguration("ECS_FARGATE_AGENT_MANAGEMENT");
         /// <summary>
         /// Constant EKS_ADDON_MANAGEMENT for FeatureAdditionalConfiguration
         /// </summary>
@@ -1159,6 +1195,10 @@ namespace Amazon.GuardDuty
         /// </summary>
         public static readonly FreeTrialFeatureResult EBS_MALWARE_PROTECTION = new FreeTrialFeatureResult("EBS_MALWARE_PROTECTION");
         /// <summary>
+        /// Constant EC2_RUNTIME_MONITORING for FreeTrialFeatureResult
+        /// </summary>
+        public static readonly FreeTrialFeatureResult EC2_RUNTIME_MONITORING = new FreeTrialFeatureResult("EC2_RUNTIME_MONITORING");
+        /// <summary>
         /// Constant EKS_AUDIT_LOGS for FreeTrialFeatureResult
         /// </summary>
         public static readonly FreeTrialFeatureResult EKS_AUDIT_LOGS = new FreeTrialFeatureResult("EKS_AUDIT_LOGS");
@@ -1166,6 +1206,10 @@ namespace Amazon.GuardDuty
         /// Constant EKS_RUNTIME_MONITORING for FreeTrialFeatureResult
         /// </summary>
         public static readonly FreeTrialFeatureResult EKS_RUNTIME_MONITORING = new FreeTrialFeatureResult("EKS_RUNTIME_MONITORING");
+        /// <summary>
+        /// Constant FARGATE_RUNTIME_MONITORING for FreeTrialFeatureResult
+        /// </summary>
+        public static readonly FreeTrialFeatureResult FARGATE_RUNTIME_MONITORING = new FreeTrialFeatureResult("FARGATE_RUNTIME_MONITORING");
         /// <summary>
         /// Constant FLOW_LOGS for FreeTrialFeatureResult
         /// </summary>
@@ -1365,6 +1409,10 @@ namespace Amazon.GuardDuty
         /// </summary>
         public static readonly ManagementType AUTO_MANAGED = new ManagementType("AUTO_MANAGED");
         /// <summary>
+        /// Constant DISABLED for ManagementType
+        /// </summary>
+        public static readonly ManagementType DISABLED = new ManagementType("DISABLED");
+        /// <summary>
         /// Constant MANUAL for ManagementType
         /// </summary>
         public static readonly ManagementType MANUAL = new ManagementType("MANUAL");
@@ -1481,6 +1529,10 @@ namespace Amazon.GuardDuty
         /// </summary>
         public static readonly OrgFeature RDS_LOGIN_EVENTS = new OrgFeature("RDS_LOGIN_EVENTS");
         /// <summary>
+        /// Constant RUNTIME_MONITORING for OrgFeature
+        /// </summary>
+        public static readonly OrgFeature RUNTIME_MONITORING = new OrgFeature("RUNTIME_MONITORING");
+        /// <summary>
         /// Constant S3_DATA_EVENTS for OrgFeature
         /// </summary>
         public static readonly OrgFeature S3_DATA_EVENTS = new OrgFeature("S3_DATA_EVENTS");
@@ -1526,6 +1578,10 @@ namespace Amazon.GuardDuty
     public class OrgFeatureAdditionalConfiguration : ConstantClass
     {
 
+        /// <summary>
+        /// Constant ECS_FARGATE_AGENT_MANAGEMENT for OrgFeatureAdditionalConfiguration
+        /// </summary>
+        public static readonly OrgFeatureAdditionalConfiguration ECS_FARGATE_AGENT_MANAGEMENT = new OrgFeatureAdditionalConfiguration("ECS_FARGATE_AGENT_MANAGEMENT");
         /// <summary>
         /// Constant EKS_ADDON_MANAGEMENT for OrgFeatureAdditionalConfiguration
         /// </summary>
@@ -1788,6 +1844,14 @@ namespace Amazon.GuardDuty
     public class ResourceType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant EC2 for ResourceType
+        /// </summary>
+        public static readonly ResourceType EC2 = new ResourceType("EC2");
+        /// <summary>
+        /// Constant ECS for ResourceType
+        /// </summary>
+        public static readonly ResourceType ECS = new ResourceType("ECS");
         /// <summary>
         /// Constant EKS for ResourceType
         /// </summary>
@@ -2187,6 +2251,10 @@ namespace Amazon.GuardDuty
         /// </summary>
         public static readonly UsageFeature EBS_MALWARE_PROTECTION = new UsageFeature("EBS_MALWARE_PROTECTION");
         /// <summary>
+        /// Constant EC2_RUNTIME_MONITORING for UsageFeature
+        /// </summary>
+        public static readonly UsageFeature EC2_RUNTIME_MONITORING = new UsageFeature("EC2_RUNTIME_MONITORING");
+        /// <summary>
         /// Constant EKS_AUDIT_LOGS for UsageFeature
         /// </summary>
         public static readonly UsageFeature EKS_AUDIT_LOGS = new UsageFeature("EKS_AUDIT_LOGS");
@@ -2194,6 +2262,10 @@ namespace Amazon.GuardDuty
         /// Constant EKS_RUNTIME_MONITORING for UsageFeature
         /// </summary>
         public static readonly UsageFeature EKS_RUNTIME_MONITORING = new UsageFeature("EKS_RUNTIME_MONITORING");
+        /// <summary>
+        /// Constant FARGATE_RUNTIME_MONITORING for UsageFeature
+        /// </summary>
+        public static readonly UsageFeature FARGATE_RUNTIME_MONITORING = new UsageFeature("FARGATE_RUNTIME_MONITORING");
         /// <summary>
         /// Constant FLOW_LOGS for UsageFeature
         /// </summary>

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CoverageResourceDetails Object
+    /// Response Unmarshaller for CoverageEc2InstanceDetails Object
     /// </summary>  
-    public class CoverageResourceDetailsUnmarshaller : IUnmarshaller<CoverageResourceDetails, XmlUnmarshallerContext>, IUnmarshaller<CoverageResourceDetails, JsonUnmarshallerContext>
+    public class CoverageEc2InstanceDetailsUnmarshaller : IUnmarshaller<CoverageEc2InstanceDetails, XmlUnmarshallerContext>, IUnmarshaller<CoverageEc2InstanceDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        CoverageResourceDetails IUnmarshaller<CoverageResourceDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        CoverageEc2InstanceDetails IUnmarshaller<CoverageEc2InstanceDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,45 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public CoverageResourceDetails Unmarshall(JsonUnmarshallerContext context)
+        public CoverageEc2InstanceDetails Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            CoverageResourceDetails unmarshalledObject = new CoverageResourceDetails();
+            CoverageEc2InstanceDetails unmarshalledObject = new CoverageEc2InstanceDetails();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ec2InstanceDetails", targetDepth))
+                if (context.TestExpression("agentDetails", targetDepth))
                 {
-                    var unmarshaller = CoverageEc2InstanceDetailsUnmarshaller.Instance;
-                    unmarshalledObject.Ec2InstanceDetails = unmarshaller.Unmarshall(context);
+                    var unmarshaller = AgentDetailsUnmarshaller.Instance;
+                    unmarshalledObject.AgentDetails = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ecsClusterDetails", targetDepth))
-                {
-                    var unmarshaller = CoverageEcsClusterDetailsUnmarshaller.Instance;
-                    unmarshalledObject.EcsClusterDetails = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("eksClusterDetails", targetDepth))
-                {
-                    var unmarshaller = CoverageEksClusterDetailsUnmarshaller.Instance;
-                    unmarshalledObject.EksClusterDetails = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("resourceType", targetDepth))
+                if (context.TestExpression("clusterArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ClusterArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("instanceId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.InstanceId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("instanceType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("managementType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ManagementType = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +100,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         }
 
 
-        private static CoverageResourceDetailsUnmarshaller _instance = new CoverageResourceDetailsUnmarshaller();        
+        private static CoverageEc2InstanceDetailsUnmarshaller _instance = new CoverageEc2InstanceDetailsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CoverageResourceDetailsUnmarshaller Instance
+        public static CoverageEc2InstanceDetailsUnmarshaller Instance
         {
             get
             {

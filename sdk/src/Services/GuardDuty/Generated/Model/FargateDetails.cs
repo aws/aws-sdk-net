@@ -1,0 +1,93 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the guardduty-2017-11-28.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+namespace Amazon.GuardDuty.Model
+{
+    /// <summary>
+    /// Contains information about AWS Fargate details associated with an Amazon ECS cluster.
+    /// </summary>
+    public partial class FargateDetails
+    {
+        private List<string> _issues = new List<string>();
+        private ManagementType _managementType;
+
+        /// <summary>
+        /// Gets and sets the property Issues. 
+        /// <para>
+        /// Runtime coverage issues identified for the resource running on AWS Fargate.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=50)]
+        public List<string> Issues
+        {
+            get { return this._issues; }
+            set { this._issues = value; }
+        }
+
+        // Check to see if Issues property is set
+        internal bool IsSetIssues()
+        {
+            return this._issues != null && this._issues.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ManagementType. 
+        /// <para>
+        /// Indicates how the GuardDuty security agent is managed for this resource.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>AUTO_MANAGED</code> indicates that GuardDuty deploys and manages updates for
+        /// this resource.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>MANUAL</code> indicates that you are responsible to deploy, update, and manage
+        /// the GuardDuty security agent updates for this resource.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DISABLED</code> indicates that the deployment of the GuardDuty security agent
+        /// is disabled for this resource.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public ManagementType ManagementType
+        {
+            get { return this._managementType; }
+            set { this._managementType = value; }
+        }
+
+        // Check to see if ManagementType property is set
+        internal bool IsSetManagementType()
+        {
+            return this._managementType != null;
+        }
+
+    }
+}
