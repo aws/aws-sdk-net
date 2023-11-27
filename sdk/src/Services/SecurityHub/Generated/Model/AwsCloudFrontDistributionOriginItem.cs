@@ -30,8 +30,7 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// A complex type that describes the Amazon S3 bucket, HTTP server (for example, a web
-    /// server), AWS Elemental MediaStore, or other server from which CloudFront gets your
-    /// files.
+    /// server), Elemental MediaStore, or other server from which CloudFront gets your files.
     /// </summary>
     public partial class AwsCloudFrontDistributionOriginItem
     {

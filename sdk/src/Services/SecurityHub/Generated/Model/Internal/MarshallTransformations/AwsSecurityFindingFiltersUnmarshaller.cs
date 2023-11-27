@@ -88,6 +88,18 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.ComplianceSecurityControlId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ComplianceSecurityControlParametersName", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<StringFilter, StringFilterUnmarshaller>(StringFilterUnmarshaller.Instance);
+                    unmarshalledObject.ComplianceSecurityControlParametersName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ComplianceSecurityControlParametersValue", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<StringFilter, StringFilterUnmarshaller>(StringFilterUnmarshaller.Instance);
+                    unmarshalledObject.ComplianceSecurityControlParametersValue = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ComplianceStatus", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<StringFilter, StringFilterUnmarshaller>(StringFilterUnmarshaller.Instance);
@@ -632,6 +644,18 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<StringFilter, StringFilterUnmarshaller>(StringFilterUnmarshaller.Instance);
                     unmarshalledObject.VerificationState = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("VulnerabilitiesExploitAvailable", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<StringFilter, StringFilterUnmarshaller>(StringFilterUnmarshaller.Instance);
+                    unmarshalledObject.VulnerabilitiesExploitAvailable = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("VulnerabilitiesFixAvailable", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<StringFilter, StringFilterUnmarshaller>(StringFilterUnmarshaller.Instance);
+                    unmarshalledObject.VulnerabilitiesFixAvailable = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("WorkflowState", targetDepth))

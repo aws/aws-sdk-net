@@ -82,6 +82,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.SecurityControlId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SecurityControlParameters", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<SecurityControlParameter, SecurityControlParameterUnmarshaller>(SecurityControlParameterUnmarshaller.Instance);
+                    unmarshalledObject.SecurityControlParameters = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

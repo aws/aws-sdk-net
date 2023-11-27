@@ -208,6 +208,10 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SecurityHub.Model.GetSecurityControlDefinitionRequest.SecurityControlId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SecurityHub.Model.ListAutomationRulesRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
@@ -317,6 +321,14 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityHub.Model.UpdateInsightRequest.Name</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.UpdateSecurityControlRequest.LastUpdateReason</property>
+    <pattern>^[-_ a-zA-Z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.UpdateSecurityControlRequest.SecurityControlId</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -5648,6 +5660,10 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SecurityHub.Model.EnumConfigurationOptions.DefaultValue</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SecurityHub.Model.FilePaths.FileName</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
@@ -5922,6 +5938,18 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SecurityHub.Model.ParameterDefinition.Description</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.ParameterValue.Enum</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.ParameterValue.String</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SecurityHub.Model.PatchSummary.Id</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
@@ -6027,6 +6055,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityHub.Model.ResourceConflictException.Code</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.ResourceInUseException.Code</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -6158,6 +6190,10 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SecurityHub.Model.SecurityControl.LastUpdateReason</property>
+    <pattern>^[-_ a-zA-Z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SecurityHub.Model.SecurityControl.RemediationUrl</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
@@ -6187,6 +6223,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityHub.Model.SecurityControlDefinition.Title</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.SecurityControlParameter.Name</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -6391,7 +6431,27 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SecurityHub.Model.StringConfigurationOptions.DefaultValue</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.StringConfigurationOptions.ExpressionDescription</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.StringConfigurationOptions.Re2Expression</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SecurityHub.Model.StringFilter.Value</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.StringListConfigurationOptions.ExpressionDescription</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.StringListConfigurationOptions.Re2Expression</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>

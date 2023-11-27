@@ -70,10 +70,22 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.CurrentRegionAvailability = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CustomizableProperties", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.CustomizableProperties = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Description", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ParameterDefinitions", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, ParameterDefinition, StringUnmarshaller, ParameterDefinitionUnmarshaller>(StringUnmarshaller.Instance, ParameterDefinitionUnmarshaller.Instance);
+                    unmarshalledObject.ParameterDefinitions = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RemediationUrl", targetDepth))

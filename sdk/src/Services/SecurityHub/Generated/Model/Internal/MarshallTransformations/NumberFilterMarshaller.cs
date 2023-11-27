@@ -51,10 +51,22 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Eq);
             }
 
+            if(requestObject.IsSetGt())
+            {
+                context.Writer.WritePropertyName("Gt");
+                context.Writer.Write(requestObject.Gt);
+            }
+
             if(requestObject.IsSetGte())
             {
                 context.Writer.WritePropertyName("Gte");
                 context.Writer.Write(requestObject.Gte);
+            }
+
+            if(requestObject.IsSetLt())
+            {
+                context.Writer.WritePropertyName("Lt");
+                context.Writer.Write(requestObject.Lt);
             }
 
             if(requestObject.IsSetLte())

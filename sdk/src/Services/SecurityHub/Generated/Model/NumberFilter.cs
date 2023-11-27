@@ -34,7 +34,9 @@ namespace Amazon.SecurityHub.Model
     public partial class NumberFilter
     {
         private double? _eq;
+        private double? _gt;
         private double? _gte;
+        private double? _lt;
         private double? _lte;
 
         /// <summary>
@@ -56,6 +58,25 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Gt. 
+        /// <para>
+        ///  The greater-than condition to be applied to a single field when querying for findings.
+        /// 
+        /// </para>
+        /// </summary>
+        public double Gt
+        {
+            get { return this._gt.GetValueOrDefault(); }
+            set { this._gt = value; }
+        }
+
+        // Check to see if Gt property is set
+        internal bool IsSetGt()
+        {
+            return this._gt.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Gte. 
         /// <para>
         /// The greater-than-equal condition to be applied to a single field when querying for
@@ -72,6 +93,25 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetGte()
         {
             return this._gte.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Lt. 
+        /// <para>
+        ///  The less-than condition to be applied to a single field when querying for findings.
+        /// 
+        /// </para>
+        /// </summary>
+        public double Lt
+        {
+            get { return this._lt.GetValueOrDefault(); }
+            set { this._lt = value; }
+        }
+
+        // Check to see if Lt property is set
+        internal bool IsSetLt()
+        {
+            return this._lt.HasValue; 
         }
 
         /// <summary>

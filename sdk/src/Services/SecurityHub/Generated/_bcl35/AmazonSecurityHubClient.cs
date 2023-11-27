@@ -4204,6 +4204,79 @@ namespace Amazon.SecurityHub
 
         #endregion
         
+        #region  GetSecurityControlDefinition
+
+        /// <summary>
+        /// Retrieves the definition of a security control. The definition includes the control
+        /// title, description, Region availability, parameter definitions, and other details.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSecurityControlDefinition service method.</param>
+        /// 
+        /// <returns>The response from the GetSecurityControlDefinition service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// The account doesn't have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetSecurityControlDefinition">REST API Reference for GetSecurityControlDefinition Operation</seealso>
+        public virtual GetSecurityControlDefinitionResponse GetSecurityControlDefinition(GetSecurityControlDefinitionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSecurityControlDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSecurityControlDefinitionResponseUnmarshaller.Instance;
+
+            return Invoke<GetSecurityControlDefinitionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSecurityControlDefinition operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSecurityControlDefinition operation on AmazonSecurityHubClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSecurityControlDefinition
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetSecurityControlDefinition">REST API Reference for GetSecurityControlDefinition Operation</seealso>
+        public virtual IAsyncResult BeginGetSecurityControlDefinition(GetSecurityControlDefinitionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSecurityControlDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSecurityControlDefinitionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetSecurityControlDefinition operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSecurityControlDefinition.</param>
+        /// 
+        /// <returns>Returns a  GetSecurityControlDefinitionResult from SecurityHub.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetSecurityControlDefinition">REST API Reference for GetSecurityControlDefinition Operation</seealso>
+        public virtual GetSecurityControlDefinitionResponse EndGetSecurityControlDefinition(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetSecurityControlDefinitionResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  InviteMembers
 
         /// <summary>
@@ -5426,6 +5499,83 @@ namespace Amazon.SecurityHub
         public virtual UpdateOrganizationConfigurationResponse EndUpdateOrganizationConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateOrganizationConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateSecurityControl
+
+        /// <summary>
+        /// Updates the properties of a security control.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSecurityControl service method.</param>
+        /// 
+        /// <returns>The response from the UpdateSecurityControl service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// The account doesn't have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceInUseException">
+        /// The request was rejected because it conflicts with the resource's availability. For
+        /// example, you tried to update a security control that's currently in the <code>UPDATING</code>
+        /// state.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateSecurityControl">REST API Reference for UpdateSecurityControl Operation</seealso>
+        public virtual UpdateSecurityControlResponse UpdateSecurityControl(UpdateSecurityControlRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateSecurityControlRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSecurityControlResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateSecurityControlResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateSecurityControl operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSecurityControl operation on AmazonSecurityHubClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateSecurityControl
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateSecurityControl">REST API Reference for UpdateSecurityControl Operation</seealso>
+        public virtual IAsyncResult BeginUpdateSecurityControl(UpdateSecurityControlRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateSecurityControlRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSecurityControlResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateSecurityControl operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateSecurityControl.</param>
+        /// 
+        /// <returns>Returns a  UpdateSecurityControlResult from SecurityHub.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateSecurityControl">REST API Reference for UpdateSecurityControl Operation</seealso>
+        public virtual UpdateSecurityControlResponse EndUpdateSecurityControl(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateSecurityControlResponse>(asyncResult);
         }
 
         #endregion

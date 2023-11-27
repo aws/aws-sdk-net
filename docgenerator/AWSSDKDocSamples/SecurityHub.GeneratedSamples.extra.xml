@@ -859,6 +859,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.GetSecurityControlDefinition(Amazon.SecurityHub.Model.GetSecurityControlDefinitionRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.GetSecurityControlDefinition(Amazon.SecurityHub.Model.GetSecurityControlDefinitionRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.GetSecurityControlDefinitionRequest" />
+            <member name="T:Amazon.SecurityHub.Model.GetSecurityControlDefinitionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves definition details for the specified security control.
+                </para>
+                <code
+                    title="To get the definition of a security control."
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-get-the-definition-of-a-security-control-1699283789356" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.InviteMembers(Amazon.SecurityHub.Model.InviteMembersRequest)" />
             <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.InviteMembers(Amazon.SecurityHub.Model.InviteMembersRequest)" />
             <member name="T:Amazon.SecurityHub.Model.InviteMembersRequest" />
@@ -1158,6 +1177,25 @@
                     title="To update organization configuration"
                     source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
                     region="to-update-organization-configuration-1678911630846" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.UpdateSecurityControl(Amazon.SecurityHub.Model.UpdateSecurityControlRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.UpdateSecurityControl(Amazon.SecurityHub.Model.UpdateSecurityControlRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.UpdateSecurityControlRequest" />
+            <member name="T:Amazon.SecurityHub.Model.UpdateSecurityControlResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example updates the specified security control. Specifically, this example updates control parameters.
+                </para>
+                <code
+                    title="To update security control properties"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-update-security-control-properties-1699282942434" />
             </example>
         </value>
     </doc>

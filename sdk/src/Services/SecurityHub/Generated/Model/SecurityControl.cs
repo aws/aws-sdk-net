@@ -35,12 +35,15 @@ namespace Amazon.SecurityHub.Model
     public partial class SecurityControl
     {
         private string _description;
+        private string _lastUpdateReason;
+        private Dictionary<string, ParameterConfiguration> _parameters = new Dictionary<string, ParameterConfiguration>();
         private string _remediationUrl;
         private string _securityControlArn;
         private string _securityControlId;
         private ControlStatus _securityControlStatus;
         private SeverityRating _severityRating;
         private string _title;
+        private UpdateStatus _updateStatus;
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -61,6 +64,47 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastUpdateReason. 
+        /// <para>
+        ///  The most recent reason for updating the customizable properties of a security control.
+        /// This differs from the <code>UpdateReason</code> field of the <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateStandardsControlAssociations.html">
+        /// <code>BatchUpdateStandardsControlAssociations</code> </a> API, which tracks the reason
+        /// for updating the enablement status of a control. This field accepts alphanumeric characters
+        /// in addition to white spaces, dashes, and underscores. 
+        /// </para>
+        /// </summary>
+        public string LastUpdateReason
+        {
+            get { return this._lastUpdateReason; }
+            set { this._lastUpdateReason = value; }
+        }
+
+        // Check to see if LastUpdateReason property is set
+        internal bool IsSetLastUpdateReason()
+        {
+            return this._lastUpdateReason != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Parameters. 
+        /// <para>
+        ///  An object that identifies the name of a control parameter, its current value, and
+        /// whether it has been customized. 
+        /// </para>
+        /// </summary>
+        public Dictionary<string, ParameterConfiguration> Parameters
+        {
+            get { return this._parameters; }
+            set { this._parameters = value; }
+        }
+
+        // Check to see if Parameters property is set
+        internal bool IsSetParameters()
+        {
+            return this._parameters != null && this._parameters.Count > 0; 
         }
 
         /// <summary>
@@ -181,6 +225,27 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetTitle()
         {
             return this._title != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UpdateStatus. 
+        /// <para>
+        ///  Identifies whether customizable properties of a security control are reflected in
+        /// Security Hub findings. A status of <code>READY</code> indicates findings include the
+        /// current parameter values. A status of <code>UPDATING</code> indicates that all findings
+        /// may not include the current parameter values. 
+        /// </para>
+        /// </summary>
+        public UpdateStatus UpdateStatus
+        {
+            get { return this._updateStatus; }
+            set { this._updateStatus = value; }
+        }
+
+        // Check to see if UpdateStatus property is set
+        internal bool IsSetUpdateStatus()
+        {
+            return this._updateStatus != null;
         }
 
     }

@@ -37,6 +37,7 @@ namespace Amazon.SecurityHub.Model
         private List<AssociatedStandard> _associatedStandards = new List<AssociatedStandard>();
         private List<string> _relatedRequirements = new List<string>();
         private string _securityControlId;
+        private List<SecurityControlParameter> _securityControlParameters = new List<SecurityControlParameter>();
         private ComplianceStatus _status;
         private List<StatusReason> _statusReasons = new List<StatusReason>();
 
@@ -94,6 +95,24 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetSecurityControlId()
         {
             return this._securityControlId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecurityControlParameters. 
+        /// <para>
+        ///  An object that includes security control parameter names and values. 
+        /// </para>
+        /// </summary>
+        public List<SecurityControlParameter> SecurityControlParameters
+        {
+            get { return this._securityControlParameters; }
+            set { this._securityControlParameters = value; }
+        }
+
+        // Check to see if SecurityControlParameters property is set
+        internal bool IsSetSecurityControlParameters()
+        {
+            return this._securityControlParameters != null && this._securityControlParameters.Count > 0; 
         }
 
         /// <summary>

@@ -78,6 +78,22 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.SecurityControlId);
             }
 
+            if(requestObject.IsSetSecurityControlParameters())
+            {
+                context.Writer.WritePropertyName("SecurityControlParameters");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectSecurityControlParametersListValue in requestObject.SecurityControlParameters)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = SecurityControlParameterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectSecurityControlParametersListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetStatus())
             {
                 context.Writer.WritePropertyName("Status");

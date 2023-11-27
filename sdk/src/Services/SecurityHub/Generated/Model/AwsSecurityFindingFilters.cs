@@ -29,12 +29,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// A collection of attributes that are applied to all active Security Hub-aggregated
-    /// findings and that result in a subset of findings that are included in this insight.
+    /// A collection of filters that are applied to all active findings aggregated by Security
+    /// Hub.
     /// 
     ///  
     /// <para>
-    /// You can filter by up to 10 finding attributes. For each attribute, you can provide
+    /// You can filter by up to ten finding attributes. For each attribute, you can provide
     /// up to 20 filter values.
     /// </para>
     /// </summary>
@@ -44,6 +44,8 @@ namespace Amazon.SecurityHub.Model
         private List<StringFilter> _companyName = new List<StringFilter>();
         private List<StringFilter> _complianceAssociatedStandardsId = new List<StringFilter>();
         private List<StringFilter> _complianceSecurityControlId = new List<StringFilter>();
+        private List<StringFilter> _complianceSecurityControlParametersName = new List<StringFilter>();
+        private List<StringFilter> _complianceSecurityControlParametersValue = new List<StringFilter>();
         private List<StringFilter> _complianceStatus = new List<StringFilter>();
         private List<NumberFilter> _confidence = new List<NumberFilter>();
         private List<DateFilter> _createdAt = new List<DateFilter>();
@@ -135,6 +137,8 @@ namespace Amazon.SecurityHub.Model
         private List<DateFilter> _updatedAt = new List<DateFilter>();
         private List<MapFilter> _userDefinedFields = new List<MapFilter>();
         private List<StringFilter> _verificationState = new List<StringFilter>();
+        private List<StringFilter> _vulnerabilitiesExploitAvailable = new List<StringFilter>();
+        private List<StringFilter> _vulnerabilitiesFixAvailable = new List<StringFilter>();
         private List<StringFilter> _workflowState = new List<StringFilter>();
         private List<StringFilter> _workflowStatus = new List<StringFilter>();
 
@@ -213,6 +217,42 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetComplianceSecurityControlId()
         {
             return this._complianceSecurityControlId != null && this._complianceSecurityControlId.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ComplianceSecurityControlParametersName. 
+        /// <para>
+        ///  The name of a security control parameter. 
+        /// </para>
+        /// </summary>
+        public List<StringFilter> ComplianceSecurityControlParametersName
+        {
+            get { return this._complianceSecurityControlParametersName; }
+            set { this._complianceSecurityControlParametersName = value; }
+        }
+
+        // Check to see if ComplianceSecurityControlParametersName property is set
+        internal bool IsSetComplianceSecurityControlParametersName()
+        {
+            return this._complianceSecurityControlParametersName != null && this._complianceSecurityControlParametersName.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ComplianceSecurityControlParametersValue. 
+        /// <para>
+        ///  The current value of a security control parameter. 
+        /// </para>
+        /// </summary>
+        public List<StringFilter> ComplianceSecurityControlParametersValue
+        {
+            get { return this._complianceSecurityControlParametersValue; }
+            set { this._complianceSecurityControlParametersValue = value; }
+        }
+
+        // Check to see if ComplianceSecurityControlParametersValue property is set
+        internal bool IsSetComplianceSecurityControlParametersValue()
+        {
+            return this._complianceSecurityControlParametersValue != null && this._complianceSecurityControlParametersValue.Count > 0; 
         }
 
         /// <summary>
@@ -1954,6 +1994,46 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetVerificationState()
         {
             return this._verificationState != null && this._verificationState.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VulnerabilitiesExploitAvailable. 
+        /// <para>
+        ///  Indicates whether a software vulnerability in your environment has a known exploit.
+        /// You can filter findings by this field only if you use Security Hub and Amazon Inspector.
+        /// 
+        /// </para>
+        /// </summary>
+        public List<StringFilter> VulnerabilitiesExploitAvailable
+        {
+            get { return this._vulnerabilitiesExploitAvailable; }
+            set { this._vulnerabilitiesExploitAvailable = value; }
+        }
+
+        // Check to see if VulnerabilitiesExploitAvailable property is set
+        internal bool IsSetVulnerabilitiesExploitAvailable()
+        {
+            return this._vulnerabilitiesExploitAvailable != null && this._vulnerabilitiesExploitAvailable.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VulnerabilitiesFixAvailable. 
+        /// <para>
+        ///  Indicates whether a vulnerability is fixed in a newer version of the affected software
+        /// packages. You can filter findings by this field only if you use Security Hub and Amazon
+        /// Inspector. 
+        /// </para>
+        /// </summary>
+        public List<StringFilter> VulnerabilitiesFixAvailable
+        {
+            get { return this._vulnerabilitiesFixAvailable; }
+            set { this._vulnerabilitiesFixAvailable = value; }
+        }
+
+        // Check to see if VulnerabilitiesFixAvailable property is set
+        internal bool IsSetVulnerabilitiesFixAvailable()
+        {
+            return this._vulnerabilitiesFixAvailable != null && this._vulnerabilitiesFixAvailable.Count > 0; 
         }
 
         /// <summary>

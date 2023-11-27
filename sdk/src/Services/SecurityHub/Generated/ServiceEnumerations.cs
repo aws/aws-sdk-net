@@ -893,6 +893,56 @@ namespace Amazon.SecurityHub
 
 
     /// <summary>
+    /// Constants used for properties of type ParameterValueType.
+    /// </summary>
+    public class ParameterValueType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CUSTOM for ParameterValueType
+        /// </summary>
+        public static readonly ParameterValueType CUSTOM = new ParameterValueType("CUSTOM");
+        /// <summary>
+        /// Constant DEFAULT for ParameterValueType
+        /// </summary>
+        public static readonly ParameterValueType DEFAULT = new ParameterValueType("DEFAULT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ParameterValueType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ParameterValueType FindValue(string value)
+        {
+            return FindValue<ParameterValueType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ParameterValueType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Partition.
     /// </summary>
     public class Partition : ConstantClass
@@ -1090,6 +1140,52 @@ namespace Amazon.SecurityHub
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RuleStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SecurityControlProperty.
+    /// </summary>
+    public class SecurityControlProperty : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Parameters for SecurityControlProperty
+        /// </summary>
+        public static readonly SecurityControlProperty Parameters = new SecurityControlProperty("Parameters");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SecurityControlProperty(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SecurityControlProperty FindValue(string value)
+        {
+            return FindValue<SecurityControlProperty>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SecurityControlProperty(string value)
         {
             return FindValue(value);
         }
@@ -1648,6 +1744,56 @@ namespace Amazon.SecurityHub
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator UnprocessedErrorCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type UpdateStatus.
+    /// </summary>
+    public class UpdateStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant READY for UpdateStatus
+        /// </summary>
+        public static readonly UpdateStatus READY = new UpdateStatus("READY");
+        /// <summary>
+        /// Constant UPDATING for UpdateStatus
+        /// </summary>
+        public static readonly UpdateStatus UPDATING = new UpdateStatus("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public UpdateStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UpdateStatus FindValue(string value)
+        {
+            return FindValue<UpdateStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UpdateStatus(string value)
         {
             return FindValue(value);
         }

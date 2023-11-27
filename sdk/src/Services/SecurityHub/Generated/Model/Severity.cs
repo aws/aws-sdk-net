@@ -118,8 +118,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Normalized. 
         /// <para>
-        /// Deprecated. The normalized severity of a finding. This attribute is being deprecated.
-        /// Instead of providing <code>Normalized</code>, provide <code>Label</code>.
+        /// Deprecated. The normalized severity of a finding. Instead of providing <code>Normalized</code>,
+        /// provide <code>Label</code>.
         /// </para>
         ///  
         /// <para>
@@ -181,7 +181,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Product. 
         /// <para>
-        /// Deprecated. This attribute is being deprecated. Instead of providing <code>Product</code>,
+        /// Deprecated. This attribute isn't included in findings. Instead of providing <code>Product</code>,
         /// provide <code>Original</code>.
         /// </para>
         ///  

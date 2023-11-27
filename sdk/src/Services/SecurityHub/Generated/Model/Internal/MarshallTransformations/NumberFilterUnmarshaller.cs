@@ -70,10 +70,22 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.Eq = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Gt", targetDepth))
+                {
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.Gt = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Gte", targetDepth))
                 {
                     var unmarshaller = DoubleUnmarshaller.Instance;
                     unmarshalledObject.Gte = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Lt", targetDepth))
+                {
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.Lt = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Lte", targetDepth))

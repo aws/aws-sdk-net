@@ -109,6 +109,38 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetComplianceSecurityControlParametersName())
+            {
+                context.Writer.WritePropertyName("ComplianceSecurityControlParametersName");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectComplianceSecurityControlParametersNameListValue in requestObject.ComplianceSecurityControlParametersName)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = StringFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectComplianceSecurityControlParametersNameListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetComplianceSecurityControlParametersValue())
+            {
+                context.Writer.WritePropertyName("ComplianceSecurityControlParametersValue");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectComplianceSecurityControlParametersValueListValue in requestObject.ComplianceSecurityControlParametersValue)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = StringFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectComplianceSecurityControlParametersValueListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetComplianceStatus())
             {
                 context.Writer.WritePropertyName("ComplianceStatus");
@@ -1559,6 +1591,38 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
                     var marshaller = StringFilterMarshaller.Instance;
                     marshaller.Marshall(requestObjectVerificationStateListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetVulnerabilitiesExploitAvailable())
+            {
+                context.Writer.WritePropertyName("VulnerabilitiesExploitAvailable");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectVulnerabilitiesExploitAvailableListValue in requestObject.VulnerabilitiesExploitAvailable)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = StringFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectVulnerabilitiesExploitAvailableListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetVulnerabilitiesFixAvailable())
+            {
+                context.Writer.WritePropertyName("VulnerabilitiesFixAvailable");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectVulnerabilitiesFixAvailableListValue in requestObject.VulnerabilitiesFixAvailable)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = StringFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectVulnerabilitiesFixAvailableListValue, context);
 
                     context.Writer.WriteObjectEnd();
                 }

@@ -908,6 +908,21 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
             #endregion
         }
 
+        public void SecurityHubGetSecurityControlDefinition()
+        {
+            #region to-get-the-definition-of-a-security-control-1699283789356
+
+            var client = new AmazonSecurityHubClient();
+            var response = client.GetSecurityControlDefinition(new GetSecurityControlDefinitionRequest 
+            {
+                SecurityControlId = "EC2.4"
+            });
+
+            SecurityControlDefinition securityControlDefinition = response.SecurityControlDefinition;
+
+            #endregion
+        }
+
         public void SecurityHubInviteMembers()
         {
             #region to-invite-accounts-to-become-members-1677775500860
@@ -1172,6 +1187,27 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
             var response = client.UpdateOrganizationConfiguration(new UpdateOrganizationConfigurationRequest 
             {
                 AutoEnable = true
+            });
+
+
+            #endregion
+        }
+
+        public void SecurityHubUpdateSecurityControl()
+        {
+            #region to-update-security-control-properties-1699282942434
+
+            var client = new AmazonSecurityHubClient();
+            var response = client.UpdateSecurityControl(new UpdateSecurityControlRequest 
+            {
+                LastUpdateReason = "Comply with internal requirements",
+                Parameters = new Dictionary<string, ParameterConfiguration> {
+                    { "maxCredentialUsageAge", new ParameterConfiguration {
+                        Value = new ParameterValue { Integer = 15 },
+                        ValueType = "CUSTOM"
+                    } }
+                },
+                SecurityControlId = "ACM.1"
             });
 
 

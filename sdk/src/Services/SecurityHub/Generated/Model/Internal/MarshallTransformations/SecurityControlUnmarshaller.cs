@@ -70,6 +70,18 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LastUpdateReason", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LastUpdateReason = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Parameters", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, ParameterConfiguration, StringUnmarshaller, ParameterConfigurationUnmarshaller>(StringUnmarshaller.Instance, ParameterConfigurationUnmarshaller.Instance);
+                    unmarshalledObject.Parameters = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RemediationUrl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -104,6 +116,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Title = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("UpdateStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.UpdateStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

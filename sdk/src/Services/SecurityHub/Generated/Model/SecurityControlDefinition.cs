@@ -36,7 +36,9 @@ namespace Amazon.SecurityHub.Model
     public partial class SecurityControlDefinition
     {
         private RegionAvailabilityStatus _currentRegionAvailability;
+        private List<string> _customizableProperties = new List<string>();
         private string _description;
+        private Dictionary<string, ParameterDefinition> _parameterDefinitions = new Dictionary<string, ParameterDefinition>();
         private string _remediationUrl;
         private string _securityControlId;
         private SeverityRating _severityRating;
@@ -63,6 +65,26 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CustomizableProperties. 
+        /// <para>
+        ///  Security control properties that you can customize. Currently, only parameter customization
+        /// is supported for select controls. An empty array is returned for controls that don’t
+        /// support custom properties. 
+        /// </para>
+        /// </summary>
+        public List<string> CustomizableProperties
+        {
+            get { return this._customizableProperties; }
+            set { this._customizableProperties = value; }
+        }
+
+        // Check to see if CustomizableProperties property is set
+        internal bool IsSetCustomizableProperties()
+        {
+            return this._customizableProperties != null && this._customizableProperties.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
         ///  The description of a security control across standards. This typically summarizes
@@ -81,6 +103,26 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ParameterDefinitions. 
+        /// <para>
+        ///  An object that provides a security control parameter name, description, and the options
+        /// for customizing it. This object is excluded for a control that doesn't support custom
+        /// parameters. 
+        /// </para>
+        /// </summary>
+        public Dictionary<string, ParameterDefinition> ParameterDefinitions
+        {
+            get { return this._parameterDefinitions; }
+            set { this._parameterDefinitions = value; }
+        }
+
+        // Check to see if ParameterDefinitions property is set
+        internal bool IsSetParameterDefinitions()
+        {
+            return this._parameterDefinitions != null && this._parameterDefinitions.Count > 0; 
         }
 
         /// <summary>
