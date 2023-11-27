@@ -513,6 +513,11 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ElasticFileSystem.Model.UpdateFileSystemProtectionRequest.FileSystemId</property>
+    <max>128</max>
+    <pattern>^(arn:aws[-a-z]*:elasticfilesystem:[0-9a-z-:]+:file-system/fs-[0-9a-f]{8,40}|fs-[0-9a-f]{8,40})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ElasticFileSystem.Model.AccessPointAlreadyExistsException.AccessPointId</property>
     <max>128</max>
     <pattern>^(arn:aws[-a-z]*:elasticfilesystem:[0-9a-z-:]+:access-point/fsap-[0-9a-f]{8,40}|fsap-[0-9a-f]{8,40})$</pattern>
@@ -535,6 +540,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticFileSystem.Model.BadRequestException.ErrorCode</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticFileSystem.Model.ConflictException.ErrorCode</property>
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
@@ -573,6 +582,11 @@
     <min>1</min>
     <max>64</max>
     <pattern>.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticFileSystem.Model.DestinationToCreate.FileSystemId</property>
+    <max>128</max>
+    <pattern>^(arn:aws[-a-z]*:elasticfilesystem:[0-9a-z-:]+:file-system/fs-[0-9a-f]{8,40}|fs-[0-9a-f]{8,40})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticFileSystem.Model.DestinationToCreate.KmsKeyId</property>
@@ -675,6 +689,10 @@
     <property>Amazon.ElasticFileSystem.Model.PosixUser.Uid</property>
     <min>0</min>
     <max>4294967295</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticFileSystem.Model.ReplicationAlreadyExistsException.ErrorCode</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticFileSystem.Model.ReplicationNotFoundException.ErrorCode</property>

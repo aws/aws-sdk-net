@@ -40,6 +40,7 @@ namespace Amazon.ElasticFileSystem.Model
         private bool? _encrypted;
         private string _fileSystemArn;
         private string _fileSystemId;
+        private FileSystemProtectionDescription _fileSystemProtection;
         private string _kmsKeyId;
         private LifeCycleState _lifeCycleState;
         private string _name;
@@ -186,6 +187,24 @@ namespace Amazon.ElasticFileSystem.Model
         internal bool IsSetFileSystemId()
         {
             return this._fileSystemId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FileSystemProtection. 
+        /// <para>
+        /// Describes the protection on the file system. 
+        /// </para>
+        /// </summary>
+        public FileSystemProtectionDescription FileSystemProtection
+        {
+            get { return this._fileSystemProtection; }
+            set { this._fileSystemProtection = value; }
+        }
+
+        // Check to see if FileSystemProtection property is set
+        internal bool IsSetFileSystemProtection()
+        {
+            return this._fileSystemProtection != null;
         }
 
         /// <summary>

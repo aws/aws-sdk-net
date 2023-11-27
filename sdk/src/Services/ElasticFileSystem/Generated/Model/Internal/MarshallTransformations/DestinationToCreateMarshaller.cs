@@ -51,6 +51,12 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.AvailabilityZoneName);
             }
 
+            if(requestObject.IsSetFileSystemId())
+            {
+                context.Writer.WritePropertyName("FileSystemId");
+                context.Writer.Write(requestObject.FileSystemId);
+            }
+
             if(requestObject.IsSetKmsKeyId())
             {
                 context.Writer.WritePropertyName("KmsKeyId");

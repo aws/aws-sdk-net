@@ -30,7 +30,7 @@ namespace Amazon.ElasticFileSystem.Model
 {
     /// <summary>
     /// Container for the parameters to the PutLifecycleConfiguration operation.
-    /// Use this action to manage storage of your file system. A <code>LifecycleConfiguration</code>
+    /// Use this action to manage storage for your file system. A <code>LifecycleConfiguration</code>
     /// consists of one or more <code>LifecyclePolicy</code> objects that define the following:
     /// 
     ///  <ul> <li> 
@@ -54,7 +54,7 @@ namespace Amazon.ElasticFileSystem.Model
     ///  The Archive storage class is available only for file systems that use the Elastic
     /// Throughput mode and the General Purpose Performance mode. 
     /// </para>
-    ///  </note> </li> <li> 
+    ///  </note> </li> </ul> <ul> <li> 
     /// <para>
     ///  <b> <code>TransitionToPrimaryStorageClass</code> </b> – Whether to move files in
     /// the file system back to primary storage (Standard storage class) after they are accessed
@@ -72,11 +72,8 @@ namespace Amazon.ElasticFileSystem.Model
     /// exists for the specified file system, a <code>PutLifecycleConfiguration</code> call
     /// modifies the existing configuration. A <code>PutLifecycleConfiguration</code> call
     /// with an empty <code>LifecyclePolicies</code> array in the request body deletes any
-    /// existing <code>LifecycleConfiguration</code> for the file system.
-    /// </para>
-    ///  
-    /// <para>
-    /// In the request, specify the following: 
+    /// existing <code>LifecycleConfiguration</code>. In the request, specify the following:
+    /// 
     /// </para>
     ///  <ul> <li> 
     /// <para>

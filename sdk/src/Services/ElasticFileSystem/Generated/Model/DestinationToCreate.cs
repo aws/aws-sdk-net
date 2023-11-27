@@ -29,11 +29,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticFileSystem.Model
 {
     /// <summary>
-    /// Describes the destination file system to create in the replication configuration.
+    /// Describes the new or existing destination file system for the replication configuration.
     /// </summary>
     public partial class DestinationToCreate
     {
         private string _availabilityZoneName;
+        private string _fileSystemId;
         private string _kmsKeyId;
         private string _region;
 
@@ -58,12 +59,33 @@ namespace Amazon.ElasticFileSystem.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FileSystemId. 
+        /// <para>
+        /// The ID of the file system to use for the destination. The file system's replication
+        /// overwrite replication must be disabled. If you do not provide an ID, then EFS creates
+        /// a new file system for the replication destination.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=128)]
+        public string FileSystemId
+        {
+            get { return this._fileSystemId; }
+            set { this._fileSystemId = value; }
+        }
+
+        // Check to see if FileSystemId property is set
+        internal bool IsSetFileSystemId()
+        {
+            return this._fileSystemId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// Specifies the Key Management Service (KMS) key that you want to use to encrypt the
-        /// destination file system. If you do not specify a KMS key, Amazon EFS uses your default
-        /// KMS key for Amazon EFS, <code>/aws/elasticfilesystem</code>. This ID can be in one
-        /// of the following formats:
+        /// Specify the Key Management Service (KMS) key that you want to use to encrypt the destination
+        /// file system. If you do not specify a KMS key, Amazon EFS uses your default KMS key
+        /// for Amazon EFS, <code>/aws/elasticfilesystem</code>. This ID can be in one of the
+        /// following formats:
         /// </para>
         ///  <ul> <li> 
         /// <para>

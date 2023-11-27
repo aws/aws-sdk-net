@@ -30,8 +30,7 @@ namespace Amazon.ElasticFileSystem.Model
 {
     /// <summary>
     /// Describes a policy used by Lifecycle management that specifies when to transition
-    /// files into and out of the Infrequent Access (IA) and Archive storage classes. For
-    /// more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/lifecycle-management-efs.html">Managing
+    /// files into and out of storage classes. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/lifecycle-management-efs.html">Managing
     /// file system storage</a>.
     /// 
     ///  <note> 

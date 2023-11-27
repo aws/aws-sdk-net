@@ -93,6 +93,12 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
                     response.FileSystemId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("FileSystemProtection", targetDepth))
+                {
+                    var unmarshaller = FileSystemProtectionDescriptionUnmarshaller.Instance;
+                    response.FileSystemProtection = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("KmsKeyId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
