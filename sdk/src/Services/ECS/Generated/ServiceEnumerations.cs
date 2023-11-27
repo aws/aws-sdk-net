@@ -2441,6 +2441,10 @@ namespace Amazon.ECS
         /// </summary>
         public static readonly SettingName FargateTaskRetirementWaitPeriod = new SettingName("fargateTaskRetirementWaitPeriod");
         /// <summary>
+        /// Constant GuardDutyActivate for SettingName
+        /// </summary>
+        public static readonly SettingName GuardDutyActivate = new SettingName("guardDutyActivate");
+        /// <summary>
         /// Constant ServiceLongArnFormat for SettingName
         /// </summary>
         public static readonly SettingName ServiceLongArnFormat = new SettingName("serviceLongArnFormat");
@@ -2482,6 +2486,56 @@ namespace Amazon.ECS
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SettingName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SettingType.
+    /// </summary>
+    public class SettingType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Aws_managed for SettingType
+        /// </summary>
+        public static readonly SettingType Aws_managed = new SettingType("aws_managed");
+        /// <summary>
+        /// Constant User for SettingType
+        /// </summary>
+        public static readonly SettingType User = new SettingType("user");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SettingType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SettingType FindValue(string value)
+        {
+            return FindValue<SettingType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SettingType(string value)
         {
             return FindValue(value);
         }

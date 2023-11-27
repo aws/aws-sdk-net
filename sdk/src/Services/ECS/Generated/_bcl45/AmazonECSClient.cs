@@ -59,6 +59,7 @@ namespace Amazon.ECS
     /// based on your resource needs, isolation policies, and availability requirements. With
     /// Amazon ECS, you don't need to operate your own cluster management and configuration
     /// management systems. You also don't need to worry about scaling your management infrastructure.
+    /// 
     /// </para>
     /// </summary>
     public partial class AmazonECSClient : AmazonServiceClient, IAmazonECS
@@ -3484,6 +3485,14 @@ namespace Amazon.ECS
         /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-maintenance.html">Amazon
         /// Web Services Fargate task maintenance</a> in the <i>Amazon ECS Developer Guide</i>.
         /// </para>
+        ///  
+        /// <para>
+        /// The <code>guardDutyActivate</code> parameter is read-only in Amazon ECS and indicates
+        /// whether Amazon ECS Runtime Monitoring is enabled or disabled by your security administrator
+        /// in your Amazon ECS account. Amazon GuardDuty controls this account setting on your
+        /// behalf. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-guard-duty-integration.html">Protecting
+        /// Amazon ECS workloads with Amazon ECS Runtime Monitoring</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutAccountSetting service method.</param>
         /// 
@@ -3566,6 +3575,14 @@ namespace Amazon.ECS
         /// the wait time to retire a Fargate task. For information about the Fargate tasks maintenance,
         /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-maintenance.html">Amazon
         /// Web Services Fargate task maintenance</a> in the <i>Amazon ECS Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <code>guardDutyActivate</code> parameter is read-only in Amazon ECS and indicates
+        /// whether Amazon ECS Runtime Monitoring is enabled or disabled by your security administrator
+        /// in your Amazon ECS account. Amazon GuardDuty controls this account setting on your
+        /// behalf. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-guard-duty-integration.html">Protecting
+        /// Amazon ECS workloads with Amazon ECS Runtime Monitoring</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutAccountSetting service method.</param>
