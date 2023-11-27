@@ -827,6 +827,160 @@ namespace Amazon.TranscribeService
 
 
     /// <summary>
+    /// Constants used for properties of type MedicalScribeJobStatus.
+    /// </summary>
+    public class MedicalScribeJobStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETED for MedicalScribeJobStatus
+        /// </summary>
+        public static readonly MedicalScribeJobStatus COMPLETED = new MedicalScribeJobStatus("COMPLETED");
+        /// <summary>
+        /// Constant FAILED for MedicalScribeJobStatus
+        /// </summary>
+        public static readonly MedicalScribeJobStatus FAILED = new MedicalScribeJobStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for MedicalScribeJobStatus
+        /// </summary>
+        public static readonly MedicalScribeJobStatus IN_PROGRESS = new MedicalScribeJobStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant QUEUED for MedicalScribeJobStatus
+        /// </summary>
+        public static readonly MedicalScribeJobStatus QUEUED = new MedicalScribeJobStatus("QUEUED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MedicalScribeJobStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MedicalScribeJobStatus FindValue(string value)
+        {
+            return FindValue<MedicalScribeJobStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MedicalScribeJobStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MedicalScribeLanguageCode.
+    /// </summary>
+    public class MedicalScribeLanguageCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EnUS for MedicalScribeLanguageCode
+        /// </summary>
+        public static readonly MedicalScribeLanguageCode EnUS = new MedicalScribeLanguageCode("en-US");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MedicalScribeLanguageCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MedicalScribeLanguageCode FindValue(string value)
+        {
+            return FindValue<MedicalScribeLanguageCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MedicalScribeLanguageCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MedicalScribeParticipantRole.
+    /// </summary>
+    public class MedicalScribeParticipantRole : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CLINICIAN for MedicalScribeParticipantRole
+        /// </summary>
+        public static readonly MedicalScribeParticipantRole CLINICIAN = new MedicalScribeParticipantRole("CLINICIAN");
+        /// <summary>
+        /// Constant PATIENT for MedicalScribeParticipantRole
+        /// </summary>
+        public static readonly MedicalScribeParticipantRole PATIENT = new MedicalScribeParticipantRole("PATIENT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MedicalScribeParticipantRole(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MedicalScribeParticipantRole FindValue(string value)
+        {
+            return FindValue<MedicalScribeParticipantRole>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MedicalScribeParticipantRole(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ModelStatus.
     /// </summary>
     public class ModelStatus : ConstantClass

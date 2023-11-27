@@ -60,11 +60,6 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  
         /// <para>
-        /// You can't include both <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code>
-        /// in the same request. Including both parameters returns a <code>BadRequestException</code>.
-        /// </para>
-        ///  
-        /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/channel-id.html">Transcribing
         /// multi-channel audio</a>.
         /// </para>
@@ -189,11 +184,6 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  
         /// <para>
-        /// You can't include <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code>
-        /// in the same request. Including both parameters returns a <code>BadRequestException</code>.
-        /// </para>
-        ///  
-        /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Partitioning
         /// speakers (diarization)</a>.
         /// </para>
@@ -219,7 +209,7 @@ namespace Amazon.TranscribeService.Model
         ///  
         /// <para>
         /// The language of the specified custom vocabulary must match the language code that
-        /// you specify in your transcription request. If the languages don't match, the custom
+        /// you specify in your transcription request. If the languages do not match, the custom
         /// vocabulary isn't applied. There are no errors or warnings associated with a language
         /// mismatch. US English (<code>en-US</code>) is the only valid language for Amazon Transcribe
         /// Medical.

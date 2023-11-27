@@ -50,7 +50,7 @@ namespace Amazon.TranscribeService.Model
         /// <para>
         /// The maximum number of custom medical vocabularies to return in each page of results.
         /// If there are fewer results than the value that you specify, only the actual results
-        /// are returned. If you don't specify a value, a default of 5 is used.
+        /// are returned. If you do not specify a value, a default of 5 is used.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -113,7 +113,7 @@ namespace Amazon.TranscribeService.Model
         /// Gets and sets the property StateEquals. 
         /// <para>
         /// Returns only custom medical vocabularies with the specified state. Custom vocabularies
-        /// are ordered by creation date, with the newest vocabulary first. If you don't include
+        /// are ordered by creation date, with the newest vocabulary first. If you do not include
         /// <code>StateEquals</code>, all custom medical vocabularies are returned.
         /// </para>
         /// </summary>

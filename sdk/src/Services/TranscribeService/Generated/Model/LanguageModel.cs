@@ -171,7 +171,7 @@ namespace Amazon.TranscribeService.Model
         /// <para>
         /// For a list of supported languages and their associated language codes, refer to the
         /// <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported
-        /// languages</a> table. Note that U.S. English (<code>en-US</code>) is the only language
+        /// languages</a> table. Note that US English (<code>en-US</code>) is the only language
         /// supported with Amazon Transcribe Medical.
         /// </para>
         /// </summary>

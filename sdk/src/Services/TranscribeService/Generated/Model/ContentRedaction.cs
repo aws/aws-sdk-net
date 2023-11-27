@@ -31,8 +31,9 @@ namespace Amazon.TranscribeService.Model
     /// <summary>
     /// Makes it possible to redact or flag specified personally identifiable information
     /// (PII) in your transcript. If you use <code>ContentRedaction</code>, you must also
-    /// include the sub-parameters: <code>PiiEntityTypes</code>, <code>RedactionOutput</code>,
-    /// and <code>RedactionType</code>.
+    /// include the sub-parameters: <code>RedactionOutput</code> and <code>RedactionType</code>.
+    /// You can optionally include <code>PiiEntityTypes</code> to choose which types of PII
+    /// you want to redact.
     /// </summary>
     public partial class ContentRedaction
     {
@@ -45,7 +46,8 @@ namespace Amazon.TranscribeService.Model
         /// <para>
         /// Specify which types of personally identifiable information (PII) you want to redact
         /// in your transcript. You can include as many types as you'd like, or you can select
-        /// <code>ALL</code>.
+        /// <code>ALL</code>. If you do not include <code>PiiEntityTypes</code> in your request,
+        /// all PII is redacted.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=11)]
@@ -95,7 +97,8 @@ namespace Amazon.TranscribeService.Model
         /// <para>
         /// Specify the category of information you want to redact; <code>PII</code> (personally
         /// identifiable information) is the only valid value. You can use <code>PiiEntityTypes</code>
-        /// to choose which types of PII you want to redact.
+        /// to choose which types of PII you want to redact. If you do not include <code>PiiEntityTypes</code>
+        /// in your request, all PII is redacted.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

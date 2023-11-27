@@ -33,7 +33,7 @@ namespace Amazon.TranscribeService.Model
     /// 
     ///  
     /// <para>
-    /// For information on supported media formats, refer to the <a href="https://docs.aws.amazon.com/APIReference/API_StartTranscriptionJob.html#transcribe-StartTranscriptionJob-request-MediaFormat">MediaFormat</a>
+    /// For information on supported media formats, refer to the <code>MediaFormat</code>
     /// parameter or the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-input.html#how-input-audio">Media
     /// formats</a> section in the Amazon S3 Developer Guide.
     /// </para>

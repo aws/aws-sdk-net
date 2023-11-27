@@ -215,8 +215,8 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  
         /// <para>
-        /// The media format specified in <code>MediaFormat</code> isn't valid. Refer to <b>MediaFormat</b>
-        /// for a list of supported formats.
+        /// The media format specified in <code>MediaFormat</code> isn't valid. Refer to refer
+        /// to the <code>MediaFormat</code> parameter for a list of supported formats.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -254,8 +254,8 @@ namespace Amazon.TranscribeService.Model
         ///  
         /// <para>
         /// The size of your media file is larger than what Amazon Transcribe can process. For
-        /// more information, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines
-        /// and quotas</a>.
+        /// more information, refer to <a href="https://docs.aws.amazon.com/general/latest/gr/transcribe.html#limits-amazon-transcribe">Service
+        /// quotas</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -264,8 +264,8 @@ namespace Amazon.TranscribeService.Model
         ///  
         /// <para>
         /// Your audio contains more channels than Amazon Transcribe is able to process. For more
-        /// information, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines
-        /// and quotas</a>.
+        /// information, refer to <a href="https://docs.aws.amazon.com/general/latest/gr/transcribe.html#limits-amazon-transcribe">Service
+        /// quotas</a>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -313,7 +313,7 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  
         /// <para>
-        /// If you don't know the language spoken in your media file, you can omit this field
+        /// If you do not know the language spoken in your media file, you can omit this field
         /// and let Amazon Transcribe automatically identify the language of your media. To improve
         /// the accuracy of language identification, you can include several language codes and
         /// Amazon Transcribe chooses the closest match for your transcription.

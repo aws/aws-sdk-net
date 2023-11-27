@@ -248,7 +248,7 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  </li> </ol> 
         /// <para>
-        /// If you don't specify an encryption key, your output is encrypted with the default
+        /// If you do not specify an encryption key, your output is encrypted with the default
         /// Amazon S3 key (SSE-S3).
         /// </para>
         ///  
@@ -302,13 +302,13 @@ namespace Amazon.TranscribeService.Model
         ///  
         /// <para>
         /// You can specify a KMS key to encrypt your output using the <code>OutputEncryptionKMSKeyId</code>
-        /// parameter. If you don't specify a KMS key, Amazon Transcribe uses the default Amazon
+        /// parameter. If you do not specify a KMS key, Amazon Transcribe uses the default Amazon
         /// S3 key for server-side encryption.
         /// </para>
         ///  
         /// <para>
-        /// If you don't specify <code>OutputLocation</code>, your transcript is placed in a service-managed
-        /// Amazon S3 bucket and you are provided with a URI to access your transcript.
+        /// If you do not specify <code>OutputLocation</code>, your transcript is placed in a
+        /// service-managed Amazon S3 bucket and you are provided with a URI to access your transcript.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2000)]

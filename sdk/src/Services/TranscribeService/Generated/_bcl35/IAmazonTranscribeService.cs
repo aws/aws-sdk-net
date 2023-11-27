@@ -630,6 +630,60 @@ namespace Amazon.TranscribeService
 
         #endregion
         
+        #region  DeleteMedicalScribeJob
+
+
+        /// <summary>
+        /// Deletes a Medical Scribe job. To use this operation, specify the name of the job you
+        /// want to delete using <code>MedicalScribeJobName</code>. Job names are case sensitive.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMedicalScribeJob service method.</param>
+        /// 
+        /// <returns>The response from the DeleteMedicalScribeJob service method, as returned by TranscribeService.</returns>
+        /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
+        /// Your request didn't pass one or more validation tests. This can occur when the entity
+        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
+        /// <code>IN PROGRESS</code>). See the exception message field for more information.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
+        /// There was an internal error. Check the error message, correct the issue, and try your
+        /// request again.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.LimitExceededException">
+        /// You've either sent too many requests or your input file is too long. Wait before retrying
+        /// your request, or use a smaller file and try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteMedicalScribeJob">REST API Reference for DeleteMedicalScribeJob Operation</seealso>
+        DeleteMedicalScribeJobResponse DeleteMedicalScribeJob(DeleteMedicalScribeJobRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteMedicalScribeJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMedicalScribeJob operation on AmazonTranscribeServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteMedicalScribeJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteMedicalScribeJob">REST API Reference for DeleteMedicalScribeJob Operation</seealso>
+        IAsyncResult BeginDeleteMedicalScribeJob(DeleteMedicalScribeJobRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteMedicalScribeJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteMedicalScribeJob.</param>
+        /// 
+        /// <returns>Returns a  DeleteMedicalScribeJobResult from TranscribeService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteMedicalScribeJob">REST API Reference for DeleteMedicalScribeJob Operation</seealso>
+        DeleteMedicalScribeJobResponse EndDeleteMedicalScribeJob(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteMedicalTranscriptionJob
 
 
@@ -1124,6 +1178,76 @@ namespace Amazon.TranscribeService
         /// <returns>Returns a  GetCallAnalyticsJobResult from TranscribeService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/GetCallAnalyticsJob">REST API Reference for GetCallAnalyticsJob Operation</seealso>
         GetCallAnalyticsJobResponse EndGetCallAnalyticsJob(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetMedicalScribeJob
+
+
+        /// <summary>
+        /// Provides information about the specified Medical Scribe job.
+        /// 
+        ///  
+        /// <para>
+        /// To view the status of the specified medical transcription job, check the <code>MedicalScribeJobStatus</code>
+        /// field. If the status is <code>COMPLETED</code>, the job is finished. You can find
+        /// the results at the location specified in <code>MedicalScribeOutput</code>. If the
+        /// status is <code>FAILED</code>, <code>FailureReason</code> provides details on why
+        /// your Medical Scribe job failed.
+        /// </para>
+        ///  
+        /// <para>
+        /// To get a list of your Medical Scribe jobs, use the operation.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMedicalScribeJob service method.</param>
+        /// 
+        /// <returns>The response from the GetMedicalScribeJob service method, as returned by TranscribeService.</returns>
+        /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
+        /// Your request didn't pass one or more validation tests. This can occur when the entity
+        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
+        /// <code>IN PROGRESS</code>). See the exception message field for more information.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
+        /// There was an internal error. Check the error message, correct the issue, and try your
+        /// request again.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.LimitExceededException">
+        /// You've either sent too many requests or your input file is too long. Wait before retrying
+        /// your request, or use a smaller file and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.NotFoundException">
+        /// We can't find the requested resource. Check that the specified name is correct and
+        /// try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/GetMedicalScribeJob">REST API Reference for GetMedicalScribeJob Operation</seealso>
+        GetMedicalScribeJobResponse GetMedicalScribeJob(GetMedicalScribeJobRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetMedicalScribeJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetMedicalScribeJob operation on AmazonTranscribeServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetMedicalScribeJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/GetMedicalScribeJob">REST API Reference for GetMedicalScribeJob Operation</seealso>
+        IAsyncResult BeginGetMedicalScribeJob(GetMedicalScribeJobRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetMedicalScribeJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetMedicalScribeJob.</param>
+        /// 
+        /// <returns>Returns a  GetMedicalScribeJobResult from TranscribeService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/GetMedicalScribeJob">REST API Reference for GetMedicalScribeJob Operation</seealso>
+        GetMedicalScribeJobResponse EndGetMedicalScribeJob(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1649,6 +1773,65 @@ namespace Amazon.TranscribeService
 
         #endregion
         
+        #region  ListMedicalScribeJobs
+
+
+        /// <summary>
+        /// Provides a list of Medical Scribe jobs that match the specified criteria. If no criteria
+        /// are specified, all Medical Scribe jobs are returned.
+        /// 
+        ///  
+        /// <para>
+        /// To get detailed information about a specific Medical Scribe job, use the operation.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMedicalScribeJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListMedicalScribeJobs service method, as returned by TranscribeService.</returns>
+        /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
+        /// Your request didn't pass one or more validation tests. This can occur when the entity
+        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
+        /// <code>IN PROGRESS</code>). See the exception message field for more information.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
+        /// There was an internal error. Check the error message, correct the issue, and try your
+        /// request again.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.LimitExceededException">
+        /// You've either sent too many requests or your input file is too long. Wait before retrying
+        /// your request, or use a smaller file and try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ListMedicalScribeJobs">REST API Reference for ListMedicalScribeJobs Operation</seealso>
+        ListMedicalScribeJobsResponse ListMedicalScribeJobs(ListMedicalScribeJobsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListMedicalScribeJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListMedicalScribeJobs operation on AmazonTranscribeServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListMedicalScribeJobs
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ListMedicalScribeJobs">REST API Reference for ListMedicalScribeJobs Operation</seealso>
+        IAsyncResult BeginListMedicalScribeJobs(ListMedicalScribeJobsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListMedicalScribeJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListMedicalScribeJobs.</param>
+        /// 
+        /// <returns>Returns a  ListMedicalScribeJobsResult from TranscribeService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ListMedicalScribeJobs">REST API Reference for ListMedicalScribeJobs Operation</seealso>
+        ListMedicalScribeJobsResponse EndListMedicalScribeJobs(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListMedicalTranscriptionJobs
 
 
@@ -2131,6 +2314,120 @@ namespace Amazon.TranscribeService
 
         #endregion
         
+        #region  StartMedicalScribeJob
+
+
+        /// <summary>
+        /// Transcribes patient-clinician conversations and generates clinical notes. 
+        /// 
+        ///  
+        /// <para>
+        /// Amazon Web Services HealthScribe automatically provides rich conversation transcripts,
+        /// identifies speaker roles, classifies dialogues, extracts medical terms, and generates
+        /// preliminary clinical notes. To learn more about these features, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/health-scribe.html">Amazon
+        /// Web Services HealthScribe</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To make a <code>StartMedicalScribeJob</code> request, you must first upload your media
+        /// file into an Amazon S3 bucket; you can then specify the Amazon S3 location of the
+        /// file using the <code>Media</code> parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// You must include the following parameters in your <code>StartMedicalTranscriptionJob</code>
+        /// request:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>DataAccessRoleArn</code>: The ARN of an IAM role with the these minimum permissions:
+        /// read permission on input file Amazon S3 bucket specified in <code>Media</code>, write
+        /// permission on the Amazon S3 bucket specified in <code>OutputBucketName</code>, and
+        /// full permissions on the KMS key specified in <code>OutputEncryptionKMSKeyId</code>
+        /// (if set). The role should also allow <code>transcribe.amazonaws.com</code> to assume
+        /// it. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Media</code> (<code>MediaFileUri</code>): The Amazon S3 location of your media
+        /// file.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>MedicalScribeJobName</code>: A custom name you create for your MedicalScribe
+        /// job that is unique within your Amazon Web Services account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>OutputBucketName</code>: The Amazon S3 bucket where you want your output files
+        /// stored.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Settings</code>: A <code>MedicalScribeSettings</code> obect that must set exactly
+        /// one of <code>ShowSpeakerLabels</code> or <code>ChannelIdentification</code> to true.
+        /// If <code>ShowSpeakerLabels</code> is true, <code>MaxSpeakerLabels</code> must also
+        /// be set. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ChannelDefinitions</code>: A <code>MedicalScribeChannelDefinitions</code> array
+        /// should be set if and only if the <code>ChannelIdentification</code> value of <code>Settings</code>
+        /// is set to true. 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartMedicalScribeJob service method.</param>
+        /// 
+        /// <returns>The response from the StartMedicalScribeJob service method, as returned by TranscribeService.</returns>
+        /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
+        /// Your request didn't pass one or more validation tests. This can occur when the entity
+        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
+        /// <code>IN PROGRESS</code>). See the exception message field for more information.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.ConflictException">
+        /// A resource already exists with this name. Resource names must be unique within an
+        /// Amazon Web Services account.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
+        /// There was an internal error. Check the error message, correct the issue, and try your
+        /// request again.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.LimitExceededException">
+        /// You've either sent too many requests or your input file is too long. Wait before retrying
+        /// your request, or use a smaller file and try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/StartMedicalScribeJob">REST API Reference for StartMedicalScribeJob Operation</seealso>
+        StartMedicalScribeJobResponse StartMedicalScribeJob(StartMedicalScribeJobRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartMedicalScribeJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartMedicalScribeJob operation on AmazonTranscribeServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartMedicalScribeJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/StartMedicalScribeJob">REST API Reference for StartMedicalScribeJob Operation</seealso>
+        IAsyncResult BeginStartMedicalScribeJob(StartMedicalScribeJobRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartMedicalScribeJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartMedicalScribeJob.</param>
+        /// 
+        /// <returns>Returns a  StartMedicalScribeJobResult from TranscribeService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/StartMedicalScribeJob">REST API Reference for StartMedicalScribeJob Operation</seealso>
+        StartMedicalScribeJobResponse EndStartMedicalScribeJob(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  StartMedicalTranscriptionJob
 
 
@@ -2149,8 +2446,8 @@ namespace Amazon.TranscribeService
         ///  
         /// <para>
         /// To make a <code>StartMedicalTranscriptionJob</code> request, you must first upload
-        /// your media file into an Amazon S3 bucket; you can then specify the S3 location of
-        /// the file using the <code>Media</code> parameter.
+        /// your media file into an Amazon S3 bucket; you can then specify the Amazon S3 location
+        /// of the file using the <code>Media</code> parameter.
         /// </para>
         ///  
         /// <para>
@@ -2285,7 +2582,7 @@ namespace Amazon.TranscribeService
         /// One of <code>LanguageCode</code>, <code>IdentifyLanguage</code>, or <code>IdentifyMultipleLanguages</code>:
         /// If you know the language of your media file, specify it using the <code>LanguageCode</code>
         /// parameter; you can find all valid language codes in the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported
-        /// languages</a> table. If you don't know the languages spoken in your media, use either
+        /// languages</a> table. If you do not know the languages spoken in your media, use either
         /// <code>IdentifyLanguage</code> or <code>IdentifyMultipleLanguages</code> and let Amazon
         /// Transcribe identify the languages for you.
         /// </para>

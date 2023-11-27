@@ -60,6 +60,14 @@ namespace Amazon.TranscribeService.Model
         }
 
         /// <summary>
+        /// Paginator for ListMedicalScribeJobs operation
+        ///</summary>
+        public IListMedicalScribeJobsPaginator ListMedicalScribeJobs(ListMedicalScribeJobsRequest request) 
+        {
+            return new ListMedicalScribeJobsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListMedicalTranscriptionJobs operation
         ///</summary>
         public IListMedicalTranscriptionJobsPaginator ListMedicalTranscriptionJobs(ListMedicalTranscriptionJobsRequest request) 

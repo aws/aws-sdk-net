@@ -43,8 +43,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property DownloadUri. 
         /// <para>
-        /// The S3 location where the custom vocabulary is stored; use this URI to view or download
-        /// the custom vocabulary.
+        /// The Amazon S3 location where the custom vocabulary is stored; use this URI to view
+        /// or download the custom vocabulary.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2000)]

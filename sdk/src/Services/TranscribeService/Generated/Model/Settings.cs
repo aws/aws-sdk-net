@@ -56,11 +56,6 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  
         /// <para>
-        /// You can't include both <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code>
-        /// in the same request. Including both parameters returns a <code>BadRequestException</code>.
-        /// </para>
-        ///  
-        /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/channel-id.html">Transcribing
         /// multi-channel audio</a>.
         /// </para>
@@ -187,11 +182,6 @@ namespace Amazon.TranscribeService.Model
         /// <para>
         /// If you enable <code>ShowSpeakerLabels</code> in your request, you must also include
         /// <code>MaxSpeakerLabels</code>.
-        /// </para>
-        ///  
-        /// <para>
-        /// You can't include both <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code>
-        /// in the same request. Including both parameters returns a <code>BadRequestException</code>.
         /// </para>
         ///  
         /// <para>

@@ -66,7 +66,7 @@ namespace Amazon.TranscribeService.Model
     /// One of <code>LanguageCode</code>, <code>IdentifyLanguage</code>, or <code>IdentifyMultipleLanguages</code>:
     /// If you know the language of your media file, specify it using the <code>LanguageCode</code>
     /// parameter; you can find all valid language codes in the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported
-    /// languages</a> table. If you don't know the languages spoken in your media, use either
+    /// languages</a> table. If you do not know the languages spoken in your media, use either
     /// <code>IdentifyLanguage</code> or <code>IdentifyMultipleLanguages</code> and let Amazon
     /// Transcribe identify the languages for you.
     /// </para>
@@ -100,8 +100,10 @@ namespace Amazon.TranscribeService.Model
         /// <para>
         /// Makes it possible to redact or flag specified personally identifiable information
         /// (PII) in your transcript. If you use <code>ContentRedaction</code>, you must also
-        /// include the sub-parameters: <code>PiiEntityTypes</code>, <code>RedactionOutput</code>,
-        /// and <code>RedactionType</code>.
+        /// include the sub-parameters: <code>RedactionOutput</code> and <code>RedactionType</code>.
+        /// You can optionally include <code>PiiEntityTypes</code> to choose which types of PII
+        /// you want to redact. If you do not include <code>PiiEntityTypes</code> in your request,
+        /// all PII is redacted.
         /// </para>
         /// </summary>
         public ContentRedaction ContentRedaction
@@ -417,7 +419,7 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  
         /// <para>
-        /// If you don't specify the media sample rate, Amazon Transcribe determines it for you.
+        /// If you do not specify the media sample rate, Amazon Transcribe determines it for you.
         /// If you specify the sample rate, it must match the rate detected by Amazon Transcribe.
         /// If there's a mismatch between the value that you specify and the value detected, your
         /// job fails. In most cases, you can omit <code>MediaSampleRateHertz</code> and let Amazon
@@ -491,8 +493,9 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  
         /// <para>
-        /// If you don't specify <code>OutputBucketName</code>, your transcript is placed in a
-        /// service-managed Amazon S3 bucket and you are provided with a URI to access your transcript.
+        /// If you do not specify <code>OutputBucketName</code>, your transcript is placed in
+        /// a service-managed Amazon S3 bucket and you are provided with a URI to access your
+        /// transcript.
         /// </para>
         /// </summary>
         [AWSProperty(Max=64)]
@@ -549,7 +552,7 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  </li> </ol> 
         /// <para>
-        /// If you don't specify an encryption key, your output is encrypted with the default
+        /// If you do not specify an encryption key, your output is encrypted with the default
         /// Amazon S3 key (SSE-S3).
         /// </para>
         ///  

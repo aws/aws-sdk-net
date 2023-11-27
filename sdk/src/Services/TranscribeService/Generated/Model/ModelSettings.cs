@@ -52,7 +52,7 @@ namespace Amazon.TranscribeService.Model
         ///  
         /// <para>
         /// The language of the specified custom language model must match the language code that
-        /// you specify in your transcription request. If the languages don't match, the custom
+        /// you specify in your transcription request. If the languages do not match, the custom
         /// language model isn't applied. There are no errors or warnings associated with a language
         /// mismatch.
         /// </para>

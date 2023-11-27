@@ -44,8 +44,8 @@ namespace Amazon.TranscribeService.Model
     ///  
     /// <para>
     /// To make a <code>StartMedicalTranscriptionJob</code> request, you must first upload
-    /// your media file into an Amazon S3 bucket; you can then specify the S3 location of
-    /// the file using the <code>Media</code> parameter.
+    /// your media file into an Amazon S3 bucket; you can then specify the Amazon S3 location
+    /// of the file using the <code>Media</code> parameter.
     /// </para>
     ///  
     /// <para>
@@ -212,8 +212,8 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  
         /// <para>
-        /// If you don't specify the media sample rate, Amazon Transcribe Medical determines it
-        /// for you. If you specify the sample rate, it must match the rate detected by Amazon
+        /// If you do not specify the media sample rate, Amazon Transcribe Medical determines
+        /// it for you. If you specify the sample rate, it must match the rate detected by Amazon
         /// Transcribe Medical; if there's a mismatch between the value that you specify and the
         /// value detected, your job fails. Therefore, in most cases, it's advised to omit <code>MediaSampleRateHertz</code>
         /// and let Amazon Transcribe Medical determine the sample rate.
@@ -342,7 +342,7 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  </li> </ol> 
         /// <para>
-        /// If you don't specify an encryption key, your output is encrypted with the default
+        /// If you do not specify an encryption key, your output is encrypted with the default
         /// Amazon S3 key (SSE-S3).
         /// </para>
         ///  
