@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ConfigurationRecorder Marshaller
+    /// RecordingModeOverride Marshaller
     /// </summary>
-    public class ConfigurationRecorderMarshaller : IRequestMarshaller<ConfigurationRecorder, JsonMarshallerContext> 
+    public class RecordingModeOverrideMarshaller : IRequestMarshaller<RecordingModeOverride, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,40 +43,29 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ConfigurationRecorder requestObject, JsonMarshallerContext context)
+        public void Marshall(RecordingModeOverride requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetName())
+            if(requestObject.IsSetDescription())
             {
-                context.Writer.WritePropertyName("name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WritePropertyName("description");
+                context.Writer.Write(requestObject.Description);
             }
 
-            if(requestObject.IsSetRecordingGroup())
+            if(requestObject.IsSetRecordingFrequency())
             {
-                context.Writer.WritePropertyName("recordingGroup");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = RecordingGroupMarshaller.Instance;
-                marshaller.Marshall(requestObject.RecordingGroup, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("recordingFrequency");
+                context.Writer.Write(requestObject.RecordingFrequency);
             }
 
-            if(requestObject.IsSetRecordingMode())
+            if(requestObject.IsSetResourceTypes())
             {
-                context.Writer.WritePropertyName("recordingMode");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = RecordingModeMarshaller.Instance;
-                marshaller.Marshall(requestObject.RecordingMode, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetRoleARN())
-            {
-                context.Writer.WritePropertyName("roleARN");
-                context.Writer.Write(requestObject.RoleARN);
+                context.Writer.WritePropertyName("resourceTypes");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectResourceTypesListValue in requestObject.ResourceTypes)
+                {
+                        context.Writer.Write(requestObjectResourceTypesListValue);
+                }
+                context.Writer.WriteArrayEnd();
             }
 
         }
@@ -84,7 +73,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static ConfigurationRecorderMarshaller Instance = new ConfigurationRecorderMarshaller();
+        public readonly static RecordingModeOverrideMarshaller Instance = new RecordingModeOverrideMarshaller();
 
     }
 }

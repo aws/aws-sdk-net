@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// The detailed configuration of a specified resource.
+    /// The detailed configurations of a specified resource.
     /// </summary>
     public partial class BaseConfigurationItem
     {
@@ -39,8 +39,10 @@ namespace Amazon.ConfigService.Model
         private string _awsRegion;
         private string _configuration;
         private DateTime? _configurationItemCaptureTime;
+        private DateTime? _configurationItemDeliveryTime;
         private ConfigurationItemStatus _configurationItemStatus;
         private string _configurationStateId;
+        private RecordingFrequency _recordingFrequency;
         private DateTime? _resourceCreationTime;
         private string _resourceId;
         private string _resourceName;
@@ -142,7 +144,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ConfigurationItemCaptureTime. 
         /// <para>
-        /// The time when the configuration recording was initiated.
+        /// The time when the recording of configuration changes was initiated for the resource.
         /// </para>
         /// </summary>
         public DateTime ConfigurationItemCaptureTime
@@ -158,22 +160,40 @@ namespace Amazon.ConfigService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ConfigurationItemDeliveryTime. 
+        /// <para>
+        /// The time when configuration changes for the resource were delivered.
+        /// </para>
+        /// </summary>
+        public DateTime ConfigurationItemDeliveryTime
+        {
+            get { return this._configurationItemDeliveryTime.GetValueOrDefault(); }
+            set { this._configurationItemDeliveryTime = value; }
+        }
+
+        // Check to see if ConfigurationItemDeliveryTime property is set
+        internal bool IsSetConfigurationItemDeliveryTime()
+        {
+            return this._configurationItemDeliveryTime.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ConfigurationItemStatus. 
         /// <para>
-        /// The configuration item status. The valid values are:
+        /// The configuration item status. Valid values include:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// OK – The resource configuration has been updated
+        /// OK – The resource configuration has been updated.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// ResourceDiscovered – The resource was newly discovered
+        /// ResourceDiscovered – The resource was newly discovered.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// ResourceNotRecorded – The resource was discovered but its configuration was not recorded
-        /// since the recorder excludes the recording of resources of this type
+        /// ResourceNotRecorded – The resource was discovered, but its configuration was not recorded
+        /// since the recorder doesn't record resources of this type.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -181,8 +201,8 @@ namespace Amazon.ConfigService.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// ResourceDeletedNotRecorded – The resource was deleted but its configuration was not
-        /// recorded since the recorder excludes the recording of resources of this type
+        /// ResourceDeletedNotRecorded – The resource was deleted, but its configuration was not
+        /// recorded since the recorder doesn't record resources of this type.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -214,6 +234,24 @@ namespace Amazon.ConfigService.Model
         internal bool IsSetConfigurationStateId()
         {
             return this._configurationStateId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RecordingFrequency. 
+        /// <para>
+        /// The recording frequency that Config uses to record configuration changes for the resource.
+        /// </para>
+        /// </summary>
+        public RecordingFrequency RecordingFrequency
+        {
+            get { return this._recordingFrequency; }
+            set { this._recordingFrequency = value; }
+        }
+
+        // Check to see if RecordingFrequency property is set
+        internal bool IsSetRecordingFrequency()
+        {
+            return this._recordingFrequency != null;
         }
 
         /// <summary>

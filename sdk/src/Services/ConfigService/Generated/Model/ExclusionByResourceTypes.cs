@@ -41,7 +41,7 @@ namespace Amazon.ConfigService.Model
     /// </para>
     ///  <note> 
     /// <para>
-    ///  <b>How to use</b> 
+    ///  <b>How to use the exclusion recording strategy </b> 
     /// </para>
     ///  
     /// <para>
@@ -55,15 +55,21 @@ namespace Amazon.ConfigService.Model
     /// </para>
     ///  
     /// <para>
-    ///  <b>Globally recorded resources</b> 
+    ///  <b>Global resource types and the exclusion recording strategy </b> 
     /// </para>
     ///  
     /// <para>
     /// Unless specifically listed as exclusions, <code>AWS::RDS::GlobalCluster</code> will
     /// be recorded automatically in all supported Config Regions were the configuration recorder
-    /// is enabled. IAM users, groups, roles, and customer managed policies will be recorded
-    /// automatically in all enabled Config Regions where Config was available before February
-    /// 2022. This list does not include the following Regions:
+    /// is enabled.
+    /// </para>
+    ///  
+    /// <para>
+    /// IAM users, groups, roles, and customer managed policies will be recorded in the Region
+    /// where you set up the configuration recorder if that is a Region where Config was available
+    /// before February 2022. You cannot be record the global IAM resouce types in Regions
+    /// supported by Config after February 2022. This list where you cannot record the global
+    /// IAM resource types includes the following Regions:
     /// </para>
     ///  <ul> <li> 
     /// <para>

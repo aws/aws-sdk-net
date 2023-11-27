@@ -100,6 +100,12 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
                     unmarshalledObject.ConfigurationItemCaptureTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("configurationItemDeliveryTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.ConfigurationItemDeliveryTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("configurationItemMD5Hash", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -116,6 +122,12 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ConfigurationStateId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("recordingFrequency", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RecordingFrequency = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("relatedEvents", targetDepth))

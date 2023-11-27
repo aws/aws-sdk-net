@@ -1367,6 +1367,56 @@ namespace Amazon.ConfigService
 
 
     /// <summary>
+    /// Constants used for properties of type RecordingFrequency.
+    /// </summary>
+    public class RecordingFrequency : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONTINUOUS for RecordingFrequency
+        /// </summary>
+        public static readonly RecordingFrequency CONTINUOUS = new RecordingFrequency("CONTINUOUS");
+        /// <summary>
+        /// Constant DAILY for RecordingFrequency
+        /// </summary>
+        public static readonly RecordingFrequency DAILY = new RecordingFrequency("DAILY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RecordingFrequency(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RecordingFrequency FindValue(string value)
+        {
+            return FindValue<RecordingFrequency>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RecordingFrequency(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type RecordingStrategyType.
     /// </summary>
     public class RecordingStrategyType : ConstantClass

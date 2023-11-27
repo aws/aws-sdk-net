@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ConfigurationRecorder Object
+    /// Response Unmarshaller for RecordingMode Object
     /// </summary>  
-    public class ConfigurationRecorderUnmarshaller : IUnmarshaller<ConfigurationRecorder, XmlUnmarshallerContext>, IUnmarshaller<ConfigurationRecorder, JsonUnmarshallerContext>
+    public class RecordingModeUnmarshaller : IUnmarshaller<RecordingMode, XmlUnmarshallerContext>, IUnmarshaller<RecordingMode, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ConfigurationRecorder IUnmarshaller<ConfigurationRecorder, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        RecordingMode IUnmarshaller<RecordingMode, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,27 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ConfigurationRecorder Unmarshall(JsonUnmarshallerContext context)
+        public RecordingMode Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ConfigurationRecorder unmarshalledObject = new ConfigurationRecorder();
+            RecordingMode unmarshalledObject = new RecordingMode();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("recordingFrequency", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RecordingFrequency = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("recordingGroup", targetDepth))
+                if (context.TestExpression("recordingModeOverrides", targetDepth))
                 {
-                    var unmarshaller = RecordingGroupUnmarshaller.Instance;
-                    unmarshalledObject.RecordingGroup = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("recordingMode", targetDepth))
-                {
-                    var unmarshaller = RecordingModeUnmarshaller.Instance;
-                    unmarshalledObject.RecordingMode = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("roleARN", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RoleARN = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<RecordingModeOverride, RecordingModeOverrideUnmarshaller>(RecordingModeOverrideUnmarshaller.Instance);
+                    unmarshalledObject.RecordingModeOverrides = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +82,12 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
         }
 
 
-        private static ConfigurationRecorderUnmarshaller _instance = new ConfigurationRecorderUnmarshaller();        
+        private static RecordingModeUnmarshaller _instance = new RecordingModeUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ConfigurationRecorderUnmarshaller Instance
+        public static RecordingModeUnmarshaller Instance
         {
             get
             {

@@ -8021,6 +8021,21 @@ namespace Amazon.ConfigService
         /// <exception cref="Amazon.ConfigService.Model.MaxNumberOfConfigurationRecordersExceededException">
         /// You have reached the limit of the number of configuration recorders you can create.
         /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.ValidationException">
+        /// The requested action is not valid.
+        /// 
+        ///  
+        /// <para>
+        /// For PutStoredQuery, you will see this exception if there are missing required fields
+        /// or if the input value fails the validation, or if you are trying to create more than
+        /// 300 queries.
+        /// </para>
+        ///  
+        /// <para>
+        /// For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception
+        /// if there are missing required fields or if the input value fails the validation.
+        /// </para>
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigurationRecorder">REST API Reference for PutConfigurationRecorder Operation</seealso>
         public virtual PutConfigurationRecorderResponse PutConfigurationRecorder(PutConfigurationRecorderRequest request)
         {
@@ -8103,6 +8118,21 @@ namespace Amazon.ConfigService
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.MaxNumberOfConfigurationRecordersExceededException">
         /// You have reached the limit of the number of configuration recorders you can create.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.ValidationException">
+        /// The requested action is not valid.
+        /// 
+        ///  
+        /// <para>
+        /// For PutStoredQuery, you will see this exception if there are missing required fields
+        /// or if the input value fails the validation, or if you are trying to create more than
+        /// 300 queries.
+        /// </para>
+        ///  
+        /// <para>
+        /// For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception
+        /// if there are missing required fields or if the input value fails the validation.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigurationRecorder">REST API Reference for PutConfigurationRecorder Operation</seealso>
         public virtual Task<PutConfigurationRecorderResponse> PutConfigurationRecorderAsync(PutConfigurationRecorderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))

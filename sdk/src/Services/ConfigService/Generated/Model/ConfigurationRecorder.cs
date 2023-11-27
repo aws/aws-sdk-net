@@ -29,14 +29,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// Records configuration changes to specified resource types. For more information about
-    /// the configuration recorder, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/stop-start-recorder.html">
+    /// Records configuration changes to your specified resource types. For more information
+    /// about the configuration recorder, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/stop-start-recorder.html">
     /// <b>Managing the Configuration Recorder</b> </a> in the <i>Config Developer Guide</i>.
     /// </summary>
     public partial class ConfigurationRecorder
     {
         private string _name;
         private RecordingGroup _recordingGroup;
+        private RecordingMode _recordingMode;
         private string _rolearn;
 
         /// <summary>
@@ -45,12 +46,13 @@ namespace Amazon.ConfigService.Model
         /// The name of the configuration recorder. Config automatically assigns the name of "default"
         /// when creating the configuration recorder.
         /// </para>
-        ///  
+        ///  <note> 
         /// <para>
         /// You cannot change the name of the configuration recorder after it has been created.
         /// To change the configuration recorder name, you must delete it and create a new configuration
         /// recorder with a new name. 
         /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
         public string Name
@@ -104,6 +106,45 @@ namespace Amazon.ConfigService.Model
         internal bool IsSetRecordingGroup()
         {
             return this._recordingGroup != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RecordingMode. 
+        /// <para>
+        /// Specifies the default recording frequency that Config uses to record configuration
+        /// changes. Config supports <i>Continuous recording</i> and <i>Daily recording</i>.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Continuous recording allows you to record configuration changes continuously whenever
+        /// a change occurs.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Daily recording allows you record configuration data once every 24 hours, only if
+        /// a change has occurred.
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// Firewall Manager depends on continuous recording to monitor your resources. If you
+        /// are using Firewall Manager, it is recommended that you set the recording frequency
+        /// to Continuous.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// You can also override the recording frequency for specific resource types.
+        /// </para>
+        /// </summary>
+        public RecordingMode RecordingMode
+        {
+            get { return this._recordingMode; }
+            set { this._recordingMode = value; }
+        }
+
+        // Check to see if RecordingMode property is set
+        internal bool IsSetRecordingMode()
+        {
+            return this._recordingMode != null;
         }
 
         /// <summary>

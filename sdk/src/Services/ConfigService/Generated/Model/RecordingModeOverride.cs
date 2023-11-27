@@ -1,0 +1,134 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the config-2014-11-12.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+namespace Amazon.ConfigService.Model
+{
+    /// <summary>
+    /// An object for you to specify your overrides for the recording mode.
+    /// </summary>
+    public partial class RecordingModeOverride
+    {
+        private string _description;
+        private RecordingFrequency _recordingFrequency;
+        private List<string> _resourceTypes = new List<string>();
+
+        /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// A description that you provide for the override.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string Description
+        {
+            get { return this._description; }
+            set { this._description = value; }
+        }
+
+        // Check to see if Description property is set
+        internal bool IsSetDescription()
+        {
+            return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RecordingFrequency. 
+        /// <para>
+        /// The recording frequency that will be applied to all the resource types specified in
+        /// the override.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Continuous recording allows you to record configuration changes continuously whenever
+        /// a change occurs.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Daily recording allows you record configuration data once every 24 hours, only if
+        /// a change has occurred.
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// Firewall Manager depends on continuous recording to monitor your resources. If you
+        /// are using Firewall Manager, it is recommended that you set the recording frequency
+        /// to Continuous.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public RecordingFrequency RecordingFrequency
+        {
+            get { return this._recordingFrequency; }
+            set { this._recordingFrequency = value; }
+        }
+
+        // Check to see if RecordingFrequency property is set
+        internal bool IsSetRecordingFrequency()
+        {
+            return this._recordingFrequency != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceTypes. 
+        /// <para>
+        /// A comma-separated list that specifies which resource types Config includes in the
+        /// override.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// Daily recording is not supported for the following resource types:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>AWS::Config::ResourceCompliance</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::Config::ConformancePackCompliance</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::Config::ConfigurationRecorder</code> 
+        /// </para>
+        ///  </li> </ul> </important>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public List<string> ResourceTypes
+        {
+            get { return this._resourceTypes; }
+            set { this._resourceTypes = value; }
+        }
+
+        // Check to see if ResourceTypes property is set
+        internal bool IsSetResourceTypes()
+        {
+            return this._resourceTypes != null && this._resourceTypes.Count > 0; 
+        }
+
+    }
+}
