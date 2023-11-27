@@ -46,6 +46,11 @@
     <pattern>[\p{L}\p{N}\p{P}]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LakeFormation.Model.CreateLakeFormationIdentityCenterConfigurationRequest.CatalogId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LakeFormation.Model.CreateLFTagRequest.CatalogId</property>
     <min>1</min>
     <max>255</max>
@@ -73,6 +78,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LakeFormation.Model.DeleteDataCellsFilterRequest.TableName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.DeleteLakeFormationIdentityCenterConfigurationRequest.CatalogId</property>
     <min>1</min>
     <max>255</max>
   </property-value-rule>
@@ -107,6 +117,16 @@
     <min>1</min>
     <max>255</max>
     <pattern>[\p{L}\p{N}\p{P}]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.DescribeLakeFormationIdentityCenterConfigurationRequest.CatalogId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.DescribeLakeFormationIdentityCenterConfigurationResponse.CatalogId</property>
+    <min>1</min>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LakeFormation.Model.DescribeTransactionRequest.TransactionId</property>
@@ -390,6 +410,11 @@
     <min>1</min>
     <max>255</max>
     <pattern>[\p{L}\p{N}\p{P}]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.UpdateLakeFormationIdentityCenterConfigurationRequest.CatalogId</property>
+    <min>1</min>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LakeFormation.Model.UpdateLFTagRequest.CatalogId</property>

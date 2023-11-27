@@ -234,9 +234,9 @@ namespace Amazon.LakeFormation.Model
         /// <summary>
         /// Gets and sets the property Parameters. 
         /// <para>
-        /// A key-value map that provides an additional configuration on your data lake. CrossAccountVersion
+        /// A key-value map that provides an additional configuration on your data lake. CROSS_ACCOUNT_VERSION
         /// is the key you can configure in the Parameters field. Accepted values for the CrossAccountVersion
-        /// key are 1, 2, and 3.
+        /// key are 1, 2, 3, and 4.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Parameters

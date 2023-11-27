@@ -39,7 +39,8 @@ namespace Amazon.LakeFormation.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A continuation token, present if the current list segment is not the last.
+        /// A continuation token, present if the current list segment is not the last. On the
+        /// first run, if you include a not null (a value) token you can get empty pages.
         /// </para>
         /// </summary>
         public string NextToken
