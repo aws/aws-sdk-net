@@ -34,6 +34,7 @@ namespace Amazon.AccessAnalyzer.Model
     public partial class AnalyzerSummary
     {
         private string _arn;
+        private AnalyzerConfiguration _configuration;
         private DateTime? _createdAt;
         private string _lastResourceAnalyzed;
         private DateTime? _lastResourceAnalyzedAt;
@@ -60,6 +61,24 @@ namespace Amazon.AccessAnalyzer.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Configuration. 
+        /// <para>
+        /// Specifies whether the analyzer is an external access or unused access analyzer.
+        /// </para>
+        /// </summary>
+        public AnalyzerConfiguration Configuration
+        {
+            get { return this._configuration; }
+            set { this._configuration = value; }
+        }
+
+        // Check to see if Configuration property is set
+        internal bool IsSetConfiguration()
+        {
+            return this._configuration != null;
         }
 
         /// <summary>

@@ -37,6 +37,7 @@ namespace Amazon.AccessAnalyzer.Model
         private string _analyzerName;
         private List<InlineArchiveRule> _archiveRules = new List<InlineArchiveRule>();
         private string _clientToken;
+        private AnalyzerConfiguration _configuration;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private Type _type;
 
@@ -97,9 +98,29 @@ namespace Amazon.AccessAnalyzer.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Configuration. 
+        /// <para>
+        /// Specifies the configuration of the analyzer. If the analyzer is an unused access analyzer,
+        /// the specified scope of unused access is used for the configuration. If the analyzer
+        /// is an external access analyzer, this field is not used.
+        /// </para>
+        /// </summary>
+        public AnalyzerConfiguration Configuration
+        {
+            get { return this._configuration; }
+            set { this._configuration = value; }
+        }
+
+        // Check to see if Configuration property is set
+        internal bool IsSetConfiguration()
+        {
+            return this._configuration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags to apply to the analyzer.
+        /// An array of key-value pairs to apply to the analyzer.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Tags
@@ -117,9 +138,10 @@ namespace Amazon.AccessAnalyzer.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are supported.
-        /// You can create only one analyzer per account per Region. You can create up to 5 analyzers
-        /// per organization per Region.
+        /// The type of analyzer to create. Only <code>ACCOUNT</code>, <code>ORGANIZATION</code>,
+        /// <code>ACCOUNT_UNUSED_ACCESS</code>, and <code>ORGANIZTAION_UNUSED_ACCESS</code> analyzers
+        /// are supported. You can create only one analyzer per account per Region. You can create
+        /// up to 5 analyzers per organization per Region.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

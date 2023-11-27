@@ -25,6 +25,56 @@ namespace Amazon.AccessAnalyzer
 {
 
     /// <summary>
+    /// Constants used for properties of type AccessCheckPolicyType.
+    /// </summary>
+    public class AccessCheckPolicyType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant IDENTITY_POLICY for AccessCheckPolicyType
+        /// </summary>
+        public static readonly AccessCheckPolicyType IDENTITY_POLICY = new AccessCheckPolicyType("IDENTITY_POLICY");
+        /// <summary>
+        /// Constant RESOURCE_POLICY for AccessCheckPolicyType
+        /// </summary>
+        public static readonly AccessCheckPolicyType RESOURCE_POLICY = new AccessCheckPolicyType("RESOURCE_POLICY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AccessCheckPolicyType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AccessCheckPolicyType FindValue(string value)
+        {
+            return FindValue<AccessCheckPolicyType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AccessCheckPolicyType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AccessPreviewStatus.
     /// </summary>
     public class AccessPreviewStatus : ConstantClass
@@ -249,6 +299,106 @@ namespace Amazon.AccessAnalyzer
 
 
     /// <summary>
+    /// Constants used for properties of type CheckAccessNotGrantedResult.
+    /// </summary>
+    public class CheckAccessNotGrantedResult : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAIL for CheckAccessNotGrantedResult
+        /// </summary>
+        public static readonly CheckAccessNotGrantedResult FAIL = new CheckAccessNotGrantedResult("FAIL");
+        /// <summary>
+        /// Constant PASS for CheckAccessNotGrantedResult
+        /// </summary>
+        public static readonly CheckAccessNotGrantedResult PASS = new CheckAccessNotGrantedResult("PASS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CheckAccessNotGrantedResult(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CheckAccessNotGrantedResult FindValue(string value)
+        {
+            return FindValue<CheckAccessNotGrantedResult>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CheckAccessNotGrantedResult(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CheckNoNewAccessResult.
+    /// </summary>
+    public class CheckNoNewAccessResult : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAIL for CheckNoNewAccessResult
+        /// </summary>
+        public static readonly CheckNoNewAccessResult FAIL = new CheckNoNewAccessResult("FAIL");
+        /// <summary>
+        /// Constant PASS for CheckNoNewAccessResult
+        /// </summary>
+        public static readonly CheckNoNewAccessResult PASS = new CheckNoNewAccessResult("PASS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CheckNoNewAccessResult(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CheckNoNewAccessResult FindValue(string value)
+        {
+            return FindValue<CheckNoNewAccessResult>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CheckNoNewAccessResult(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FindingChangeType.
     /// </summary>
     public class FindingChangeType : ConstantClass
@@ -458,6 +608,68 @@ namespace Amazon.AccessAnalyzer
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator FindingStatusUpdate(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FindingType.
+    /// </summary>
+    public class FindingType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ExternalAccess for FindingType
+        /// </summary>
+        public static readonly FindingType ExternalAccess = new FindingType("ExternalAccess");
+        /// <summary>
+        /// Constant UnusedIAMRole for FindingType
+        /// </summary>
+        public static readonly FindingType UnusedIAMRole = new FindingType("UnusedIAMRole");
+        /// <summary>
+        /// Constant UnusedIAMUserAccessKey for FindingType
+        /// </summary>
+        public static readonly FindingType UnusedIAMUserAccessKey = new FindingType("UnusedIAMUserAccessKey");
+        /// <summary>
+        /// Constant UnusedIAMUserPassword for FindingType
+        /// </summary>
+        public static readonly FindingType UnusedIAMUserPassword = new FindingType("UnusedIAMUserPassword");
+        /// <summary>
+        /// Constant UnusedPermission for FindingType
+        /// </summary>
+        public static readonly FindingType UnusedPermission = new FindingType("UnusedPermission");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FindingType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FindingType FindValue(string value)
+        {
+            return FindValue<FindingType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FindingType(string value)
         {
             return FindValue(value);
         }
@@ -1027,9 +1239,17 @@ namespace Amazon.AccessAnalyzer
         /// </summary>
         public static readonly Type ACCOUNT = new Type("ACCOUNT");
         /// <summary>
+        /// Constant ACCOUNT_UNUSED_ACCESS for Type
+        /// </summary>
+        public static readonly Type ACCOUNT_UNUSED_ACCESS = new Type("ACCOUNT_UNUSED_ACCESS");
+        /// <summary>
         /// Constant ORGANIZATION for Type
         /// </summary>
         public static readonly Type ORGANIZATION = new Type("ORGANIZATION");
+        /// <summary>
+        /// Constant ORGANIZATION_UNUSED_ACCESS for Type
+        /// </summary>
+        public static readonly Type ORGANIZATION_UNUSED_ACCESS = new Type("ORGANIZATION_UNUSED_ACCESS");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

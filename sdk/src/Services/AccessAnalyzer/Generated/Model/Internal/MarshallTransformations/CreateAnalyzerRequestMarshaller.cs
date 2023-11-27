@@ -98,6 +98,17 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName("clientToken");
                     context.Writer.Write(Guid.NewGuid().ToString());
                 }
+                if(publicRequest.IsSetConfiguration())
+                {
+                    context.Writer.WritePropertyName("configuration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AnalyzerConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Configuration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("tags");

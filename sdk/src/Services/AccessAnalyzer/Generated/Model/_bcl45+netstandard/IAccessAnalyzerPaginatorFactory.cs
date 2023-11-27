@@ -26,6 +26,11 @@ namespace Amazon.AccessAnalyzer.Model
     {
 
         /// <summary>
+        /// Paginator for GetFindingV2 operation
+        ///</summary>
+        IGetFindingV2Paginator GetFindingV2(GetFindingV2Request request);
+
+        /// <summary>
         /// Paginator for ListAccessPreviewFindings operation
         ///</summary>
         IListAccessPreviewFindingsPaginator ListAccessPreviewFindings(ListAccessPreviewFindingsRequest request);
@@ -54,6 +59,11 @@ namespace Amazon.AccessAnalyzer.Model
         /// Paginator for ListFindings operation
         ///</summary>
         IListFindingsPaginator ListFindings(ListFindingsRequest request);
+
+        /// <summary>
+        /// Paginator for ListFindingsV2 operation
+        ///</summary>
+        IListFindingsV2Paginator ListFindingsV2(ListFindingsV2Request request);
 
         /// <summary>
         /// Paginator for ListPolicyGenerations operation

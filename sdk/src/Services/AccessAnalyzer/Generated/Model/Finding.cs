@@ -183,7 +183,7 @@ namespace Amazon.AccessAnalyzer.Model
         /// <summary>
         /// Gets and sets the property Principal. 
         /// <para>
-        /// The external principal that access to a resource within the zone of trust.
+        /// The external principal that has access to a resource within the zone of trust.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Principal
