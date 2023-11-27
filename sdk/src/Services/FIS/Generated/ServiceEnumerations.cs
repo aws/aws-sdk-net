@@ -25,6 +25,106 @@ namespace Amazon.FIS
 {
 
     /// <summary>
+    /// Constants used for properties of type AccountTargeting.
+    /// </summary>
+    public class AccountTargeting : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MultiAccount for AccountTargeting
+        /// </summary>
+        public static readonly AccountTargeting MultiAccount = new AccountTargeting("multi-account");
+        /// <summary>
+        /// Constant SingleAccount for AccountTargeting
+        /// </summary>
+        public static readonly AccountTargeting SingleAccount = new AccountTargeting("single-account");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AccountTargeting(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AccountTargeting FindValue(string value)
+        {
+            return FindValue<AccountTargeting>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AccountTargeting(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EmptyTargetResolutionMode.
+    /// </summary>
+    public class EmptyTargetResolutionMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Fail for EmptyTargetResolutionMode
+        /// </summary>
+        public static readonly EmptyTargetResolutionMode Fail = new EmptyTargetResolutionMode("fail");
+        /// <summary>
+        /// Constant Skip for EmptyTargetResolutionMode
+        /// </summary>
+        public static readonly EmptyTargetResolutionMode Skip = new EmptyTargetResolutionMode("skip");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EmptyTargetResolutionMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EmptyTargetResolutionMode FindValue(string value)
+        {
+            return FindValue<EmptyTargetResolutionMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EmptyTargetResolutionMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ExperimentActionStatus.
     /// </summary>
     public class ExperimentActionStatus : ConstantClass
@@ -54,6 +154,10 @@ namespace Amazon.FIS
         /// Constant Running for ExperimentActionStatus
         /// </summary>
         public static readonly ExperimentActionStatus Running = new ExperimentActionStatus("running");
+        /// <summary>
+        /// Constant Skipped for ExperimentActionStatus
+        /// </summary>
+        public static readonly ExperimentActionStatus Skipped = new ExperimentActionStatus("skipped");
         /// <summary>
         /// Constant Stopped for ExperimentActionStatus
         /// </summary>

@@ -82,6 +82,12 @@ namespace Amazon.FIS.Model.Internal.MarshallTransformations
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("experimentOptions", targetDepth))
+                {
+                    var unmarshaller = ExperimentTemplateExperimentOptionsUnmarshaller.Instance;
+                    unmarshalledObject.ExperimentOptions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -116,6 +122,12 @@ namespace Amazon.FIS.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.Tags = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("targetAccountConfigurationsCount", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.TargetAccountConfigurationsCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("targets", targetDepth))

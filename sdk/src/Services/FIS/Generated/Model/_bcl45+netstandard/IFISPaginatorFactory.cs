@@ -31,6 +31,11 @@ namespace Amazon.FIS.Model
         IListActionsPaginator ListActions(ListActionsRequest request);
 
         /// <summary>
+        /// Paginator for ListExperimentResolvedTargets operation
+        ///</summary>
+        IListExperimentResolvedTargetsPaginator ListExperimentResolvedTargets(ListExperimentResolvedTargetsRequest request);
+
+        /// <summary>
         /// Paginator for ListExperiments operation
         ///</summary>
         IListExperimentsPaginator ListExperiments(ListExperimentsRequest request);
@@ -39,6 +44,11 @@ namespace Amazon.FIS.Model
         /// Paginator for ListExperimentTemplates operation
         ///</summary>
         IListExperimentTemplatesPaginator ListExperimentTemplates(ListExperimentTemplatesRequest request);
+
+        /// <summary>
+        /// Paginator for ListTargetAccountConfigurations operation
+        ///</summary>
+        IListTargetAccountConfigurationsPaginator ListTargetAccountConfigurations(ListTargetAccountConfigurationsRequest request);
 
         /// <summary>
         /// Paginator for ListTargetResourceTypes operation

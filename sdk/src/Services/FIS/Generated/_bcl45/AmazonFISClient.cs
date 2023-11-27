@@ -295,7 +295,7 @@ namespace Amazon.FIS
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/fis/latest/userguide/experiment-templates.html">Experiment
+        /// For more information, see <a href="https://docs.aws.amazon.com/fis/latest/userguide/experiment-templates.html">experiment
         /// templates</a> in the <i>Fault Injection Simulator User Guide</i>.
         /// </para>
         /// </summary>
@@ -351,7 +351,7 @@ namespace Amazon.FIS
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/fis/latest/userguide/experiment-templates.html">Experiment
+        /// For more information, see <a href="https://docs.aws.amazon.com/fis/latest/userguide/experiment-templates.html">experiment
         /// templates</a> in the <i>Fault Injection Simulator User Guide</i>.
         /// </para>
         /// </summary>
@@ -381,6 +381,77 @@ namespace Amazon.FIS
             options.ResponseUnmarshaller = CreateExperimentTemplateResponseUnmarshaller.Instance;
             
             return InvokeAsync<CreateExperimentTemplateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateTargetAccountConfiguration
+
+
+        /// <summary>
+        /// Creates a target account configuration for the experiment template. A target account
+        /// configuration is required when <code>accountTargeting</code> of <code>experimentOptions</code>
+        /// is set to <code>multi-account</code>. For more information, see <a href="https://docs.aws.amazon.com/fis/latest/userguide/experiment-options.html">experiment
+        /// options</a> in the <i>Fault Injection Simulator User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTargetAccountConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the CreateTargetAccountConfiguration service method, as returned by FIS.</returns>
+        /// <exception cref="Amazon.FIS.Model.ConflictException">
+        /// The request could not be processed because of a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.FIS.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.FIS.Model.ServiceQuotaExceededException">
+        /// You have exceeded your service quota.
+        /// </exception>
+        /// <exception cref="Amazon.FIS.Model.ValidationException">
+        /// The specified input is not valid, or fails to satisfy the constraints for the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/CreateTargetAccountConfiguration">REST API Reference for CreateTargetAccountConfiguration Operation</seealso>
+        public virtual CreateTargetAccountConfigurationResponse CreateTargetAccountConfiguration(CreateTargetAccountConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTargetAccountConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTargetAccountConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateTargetAccountConfigurationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a target account configuration for the experiment template. A target account
+        /// configuration is required when <code>accountTargeting</code> of <code>experimentOptions</code>
+        /// is set to <code>multi-account</code>. For more information, see <a href="https://docs.aws.amazon.com/fis/latest/userguide/experiment-options.html">experiment
+        /// options</a> in the <i>Fault Injection Simulator User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTargetAccountConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateTargetAccountConfiguration service method, as returned by FIS.</returns>
+        /// <exception cref="Amazon.FIS.Model.ConflictException">
+        /// The request could not be processed because of a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.FIS.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.FIS.Model.ServiceQuotaExceededException">
+        /// You have exceeded your service quota.
+        /// </exception>
+        /// <exception cref="Amazon.FIS.Model.ValidationException">
+        /// The specified input is not valid, or fails to satisfy the constraints for the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/CreateTargetAccountConfiguration">REST API Reference for CreateTargetAccountConfiguration Operation</seealso>
+        public virtual Task<CreateTargetAccountConfigurationResponse> CreateTargetAccountConfigurationAsync(CreateTargetAccountConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTargetAccountConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTargetAccountConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateTargetAccountConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -434,6 +505,59 @@ namespace Amazon.FIS
             options.ResponseUnmarshaller = DeleteExperimentTemplateResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteExperimentTemplateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteTargetAccountConfiguration
+
+
+        /// <summary>
+        /// Deletes the specified target account configuration of the experiment template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTargetAccountConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTargetAccountConfiguration service method, as returned by FIS.</returns>
+        /// <exception cref="Amazon.FIS.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.FIS.Model.ValidationException">
+        /// The specified input is not valid, or fails to satisfy the constraints for the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/DeleteTargetAccountConfiguration">REST API Reference for DeleteTargetAccountConfiguration Operation</seealso>
+        public virtual DeleteTargetAccountConfigurationResponse DeleteTargetAccountConfiguration(DeleteTargetAccountConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTargetAccountConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTargetAccountConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteTargetAccountConfigurationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes the specified target account configuration of the experiment template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTargetAccountConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteTargetAccountConfiguration service method, as returned by FIS.</returns>
+        /// <exception cref="Amazon.FIS.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.FIS.Model.ValidationException">
+        /// The specified input is not valid, or fails to satisfy the constraints for the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/DeleteTargetAccountConfiguration">REST API Reference for DeleteTargetAccountConfiguration Operation</seealso>
+        public virtual Task<DeleteTargetAccountConfigurationResponse> DeleteTargetAccountConfigurationAsync(DeleteTargetAccountConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTargetAccountConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTargetAccountConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteTargetAccountConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -544,6 +668,59 @@ namespace Amazon.FIS
 
         #endregion
         
+        #region  GetExperimentTargetAccountConfiguration
+
+
+        /// <summary>
+        /// Gets information about the specified target account configuration of the experiment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetExperimentTargetAccountConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetExperimentTargetAccountConfiguration service method, as returned by FIS.</returns>
+        /// <exception cref="Amazon.FIS.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.FIS.Model.ValidationException">
+        /// The specified input is not valid, or fails to satisfy the constraints for the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/GetExperimentTargetAccountConfiguration">REST API Reference for GetExperimentTargetAccountConfiguration Operation</seealso>
+        public virtual GetExperimentTargetAccountConfigurationResponse GetExperimentTargetAccountConfiguration(GetExperimentTargetAccountConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetExperimentTargetAccountConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetExperimentTargetAccountConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<GetExperimentTargetAccountConfigurationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets information about the specified target account configuration of the experiment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetExperimentTargetAccountConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetExperimentTargetAccountConfiguration service method, as returned by FIS.</returns>
+        /// <exception cref="Amazon.FIS.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.FIS.Model.ValidationException">
+        /// The specified input is not valid, or fails to satisfy the constraints for the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/GetExperimentTargetAccountConfiguration">REST API Reference for GetExperimentTargetAccountConfiguration Operation</seealso>
+        public virtual Task<GetExperimentTargetAccountConfigurationResponse> GetExperimentTargetAccountConfigurationAsync(GetExperimentTargetAccountConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetExperimentTargetAccountConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetExperimentTargetAccountConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetExperimentTargetAccountConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetExperimentTemplate
 
 
@@ -593,6 +770,61 @@ namespace Amazon.FIS
             options.ResponseUnmarshaller = GetExperimentTemplateResponseUnmarshaller.Instance;
             
             return InvokeAsync<GetExperimentTemplateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetTargetAccountConfiguration
+
+
+        /// <summary>
+        /// Gets information about the specified target account configuration of the experiment
+        /// template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTargetAccountConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetTargetAccountConfiguration service method, as returned by FIS.</returns>
+        /// <exception cref="Amazon.FIS.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.FIS.Model.ValidationException">
+        /// The specified input is not valid, or fails to satisfy the constraints for the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/GetTargetAccountConfiguration">REST API Reference for GetTargetAccountConfiguration Operation</seealso>
+        public virtual GetTargetAccountConfigurationResponse GetTargetAccountConfiguration(GetTargetAccountConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTargetAccountConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTargetAccountConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<GetTargetAccountConfigurationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets information about the specified target account configuration of the experiment
+        /// template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTargetAccountConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetTargetAccountConfiguration service method, as returned by FIS.</returns>
+        /// <exception cref="Amazon.FIS.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.FIS.Model.ValidationException">
+        /// The specified input is not valid, or fails to satisfy the constraints for the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/GetTargetAccountConfiguration">REST API Reference for GetTargetAccountConfiguration Operation</seealso>
+        public virtual Task<GetTargetAccountConfigurationResponse> GetTargetAccountConfigurationAsync(GetTargetAccountConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTargetAccountConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTargetAccountConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetTargetAccountConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -697,6 +929,59 @@ namespace Amazon.FIS
 
         #endregion
         
+        #region  ListExperimentResolvedTargets
+
+
+        /// <summary>
+        /// Lists the resolved targets information of the specified experiment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListExperimentResolvedTargets service method.</param>
+        /// 
+        /// <returns>The response from the ListExperimentResolvedTargets service method, as returned by FIS.</returns>
+        /// <exception cref="Amazon.FIS.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.FIS.Model.ValidationException">
+        /// The specified input is not valid, or fails to satisfy the constraints for the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/ListExperimentResolvedTargets">REST API Reference for ListExperimentResolvedTargets Operation</seealso>
+        public virtual ListExperimentResolvedTargetsResponse ListExperimentResolvedTargets(ListExperimentResolvedTargetsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListExperimentResolvedTargetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListExperimentResolvedTargetsResponseUnmarshaller.Instance;
+
+            return Invoke<ListExperimentResolvedTargetsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists the resolved targets information of the specified experiment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListExperimentResolvedTargets service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListExperimentResolvedTargets service method, as returned by FIS.</returns>
+        /// <exception cref="Amazon.FIS.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.FIS.Model.ValidationException">
+        /// The specified input is not valid, or fails to satisfy the constraints for the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/ListExperimentResolvedTargets">REST API Reference for ListExperimentResolvedTargets Operation</seealso>
+        public virtual Task<ListExperimentResolvedTargetsResponse> ListExperimentResolvedTargetsAsync(ListExperimentResolvedTargetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListExperimentResolvedTargetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListExperimentResolvedTargetsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListExperimentResolvedTargetsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListExperiments
 
 
@@ -740,6 +1025,59 @@ namespace Amazon.FIS
             options.ResponseUnmarshaller = ListExperimentsResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListExperimentsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListExperimentTargetAccountConfigurations
+
+
+        /// <summary>
+        /// Lists the target account configurations of the specified experiment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListExperimentTargetAccountConfigurations service method.</param>
+        /// 
+        /// <returns>The response from the ListExperimentTargetAccountConfigurations service method, as returned by FIS.</returns>
+        /// <exception cref="Amazon.FIS.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.FIS.Model.ValidationException">
+        /// The specified input is not valid, or fails to satisfy the constraints for the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/ListExperimentTargetAccountConfigurations">REST API Reference for ListExperimentTargetAccountConfigurations Operation</seealso>
+        public virtual ListExperimentTargetAccountConfigurationsResponse ListExperimentTargetAccountConfigurations(ListExperimentTargetAccountConfigurationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListExperimentTargetAccountConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListExperimentTargetAccountConfigurationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListExperimentTargetAccountConfigurationsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists the target account configurations of the specified experiment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListExperimentTargetAccountConfigurations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListExperimentTargetAccountConfigurations service method, as returned by FIS.</returns>
+        /// <exception cref="Amazon.FIS.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.FIS.Model.ValidationException">
+        /// The specified input is not valid, or fails to satisfy the constraints for the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/ListExperimentTargetAccountConfigurations">REST API Reference for ListExperimentTargetAccountConfigurations Operation</seealso>
+        public virtual Task<ListExperimentTargetAccountConfigurationsResponse> ListExperimentTargetAccountConfigurationsAsync(ListExperimentTargetAccountConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListExperimentTargetAccountConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListExperimentTargetAccountConfigurationsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListExperimentTargetAccountConfigurationsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -828,6 +1166,59 @@ namespace Amazon.FIS
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListTargetAccountConfigurations
+
+
+        /// <summary>
+        /// Lists the target account configurations of the specified experiment template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTargetAccountConfigurations service method.</param>
+        /// 
+        /// <returns>The response from the ListTargetAccountConfigurations service method, as returned by FIS.</returns>
+        /// <exception cref="Amazon.FIS.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.FIS.Model.ValidationException">
+        /// The specified input is not valid, or fails to satisfy the constraints for the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/ListTargetAccountConfigurations">REST API Reference for ListTargetAccountConfigurations Operation</seealso>
+        public virtual ListTargetAccountConfigurationsResponse ListTargetAccountConfigurations(ListTargetAccountConfigurationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTargetAccountConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTargetAccountConfigurationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListTargetAccountConfigurationsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists the target account configurations of the specified experiment template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTargetAccountConfigurations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTargetAccountConfigurations service method, as returned by FIS.</returns>
+        /// <exception cref="Amazon.FIS.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.FIS.Model.ValidationException">
+        /// The specified input is not valid, or fails to satisfy the constraints for the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/ListTargetAccountConfigurations">REST API Reference for ListTargetAccountConfigurations Operation</seealso>
+        public virtual Task<ListTargetAccountConfigurationsResponse> ListTargetAccountConfigurationsAsync(ListTargetAccountConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTargetAccountConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTargetAccountConfigurationsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListTargetAccountConfigurationsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1134,6 +1525,59 @@ namespace Amazon.FIS
             options.ResponseUnmarshaller = UpdateExperimentTemplateResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateExperimentTemplateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateTargetAccountConfiguration
+
+
+        /// <summary>
+        /// Updates the target account configuration for the specified experiment template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTargetAccountConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the UpdateTargetAccountConfiguration service method, as returned by FIS.</returns>
+        /// <exception cref="Amazon.FIS.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.FIS.Model.ValidationException">
+        /// The specified input is not valid, or fails to satisfy the constraints for the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/UpdateTargetAccountConfiguration">REST API Reference for UpdateTargetAccountConfiguration Operation</seealso>
+        public virtual UpdateTargetAccountConfigurationResponse UpdateTargetAccountConfiguration(UpdateTargetAccountConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateTargetAccountConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateTargetAccountConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateTargetAccountConfigurationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates the target account configuration for the specified experiment template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTargetAccountConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateTargetAccountConfiguration service method, as returned by FIS.</returns>
+        /// <exception cref="Amazon.FIS.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.FIS.Model.ValidationException">
+        /// The specified input is not valid, or fails to satisfy the constraints for the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/UpdateTargetAccountConfiguration">REST API Reference for UpdateTargetAccountConfiguration Operation</seealso>
+        public virtual Task<UpdateTargetAccountConfigurationResponse> UpdateTargetAccountConfigurationAsync(UpdateTargetAccountConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateTargetAccountConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateTargetAccountConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateTargetAccountConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion

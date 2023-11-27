@@ -36,6 +36,7 @@ namespace Amazon.FIS.Model
     {
         private Dictionary<string, UpdateExperimentTemplateActionInputItem> _actions = new Dictionary<string, UpdateExperimentTemplateActionInputItem>();
         private string _description;
+        private UpdateExperimentTemplateExperimentOptionsInput _experimentOptions;
         private string _id;
         private UpdateExperimentTemplateLogConfigurationInput _logConfiguration;
         private string _roleArn;
@@ -77,6 +78,24 @@ namespace Amazon.FIS.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExperimentOptions. 
+        /// <para>
+        /// The experiment options for the experiment template.
+        /// </para>
+        /// </summary>
+        public UpdateExperimentTemplateExperimentOptionsInput ExperimentOptions
+        {
+            get { return this._experimentOptions; }
+            set { this._experimentOptions = value; }
+        }
+
+        // Check to see if ExperimentOptions property is set
+        internal bool IsSetExperimentOptions()
+        {
+            return this._experimentOptions != null;
         }
 
         /// <summary>

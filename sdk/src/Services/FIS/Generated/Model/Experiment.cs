@@ -36,6 +36,7 @@ namespace Amazon.FIS.Model
         private Dictionary<string, ExperimentAction> _actions = new Dictionary<string, ExperimentAction>();
         private DateTime? _creationTime;
         private DateTime? _endTime;
+        private ExperimentOptions _experimentOptions;
         private string _experimentTemplateId;
         private string _id;
         private ExperimentLogConfiguration _logConfiguration;
@@ -44,6 +45,7 @@ namespace Amazon.FIS.Model
         private ExperimentState _state;
         private List<ExperimentStopCondition> _stopConditions = new List<ExperimentStopCondition>();
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private long? _targetAccountConfigurationsCount;
         private Dictionary<string, ExperimentTarget> _targets = new Dictionary<string, ExperimentTarget>();
 
         /// <summary>
@@ -98,6 +100,24 @@ namespace Amazon.FIS.Model
         internal bool IsSetEndTime()
         {
             return this._endTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExperimentOptions. 
+        /// <para>
+        /// The experiment options for the experiment.
+        /// </para>
+        /// </summary>
+        public ExperimentOptions ExperimentOptions
+        {
+            get { return this._experimentOptions; }
+            set { this._experimentOptions = value; }
+        }
+
+        // Check to see if ExperimentOptions property is set
+        internal bool IsSetExperimentOptions()
+        {
+            return this._experimentOptions != null;
         }
 
         /// <summary>
@@ -247,6 +267,25 @@ namespace Amazon.FIS.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetAccountConfigurationsCount. 
+        /// <para>
+        /// The count of target account configurations for the experiment.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0)]
+        public long TargetAccountConfigurationsCount
+        {
+            get { return this._targetAccountConfigurationsCount.GetValueOrDefault(); }
+            set { this._targetAccountConfigurationsCount = value; }
+        }
+
+        // Check to see if TargetAccountConfigurationsCount property is set
+        internal bool IsSetTargetAccountConfigurationsCount()
+        {
+            return this._targetAccountConfigurationsCount.HasValue; 
         }
 
         /// <summary>

@@ -55,7 +55,7 @@ namespace Amazon.FIS.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/fis/latest/userguide/experiment-templates.html">Experiment
+    /// For more information, see <a href="https://docs.aws.amazon.com/fis/latest/userguide/experiment-templates.html">experiment
     /// templates</a> in the <i>Fault Injection Simulator User Guide</i>.
     /// </para>
     /// </summary>
@@ -64,6 +64,7 @@ namespace Amazon.FIS.Model
         private Dictionary<string, CreateExperimentTemplateActionInput> _actions = new Dictionary<string, CreateExperimentTemplateActionInput>();
         private string _clientToken;
         private string _description;
+        private CreateExperimentTemplateExperimentOptionsInput _experimentOptions;
         private CreateExperimentTemplateLogConfigurationInput _logConfiguration;
         private string _roleArn;
         private List<CreateExperimentTemplateStopConditionInput> _stopConditions = new List<CreateExperimentTemplateStopConditionInput>();
@@ -126,6 +127,24 @@ namespace Amazon.FIS.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExperimentOptions. 
+        /// <para>
+        /// The experiment options for the experiment template.
+        /// </para>
+        /// </summary>
+        public CreateExperimentTemplateExperimentOptionsInput ExperimentOptions
+        {
+            get { return this._experimentOptions; }
+            set { this._experimentOptions = value; }
+        }
+
+        // Check to see if ExperimentOptions property is set
+        internal bool IsSetExperimentOptions()
+        {
+            return this._experimentOptions != null;
         }
 
         /// <summary>

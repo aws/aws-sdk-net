@@ -36,12 +36,14 @@ namespace Amazon.FIS.Model
         private Dictionary<string, ExperimentTemplateAction> _actions = new Dictionary<string, ExperimentTemplateAction>();
         private DateTime? _creationTime;
         private string _description;
+        private ExperimentTemplateExperimentOptions _experimentOptions;
         private string _id;
         private DateTime? _lastUpdateTime;
         private ExperimentTemplateLogConfiguration _logConfiguration;
         private string _roleArn;
         private List<ExperimentTemplateStopCondition> _stopConditions = new List<ExperimentTemplateStopCondition>();
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private long? _targetAccountConfigurationsCount;
         private Dictionary<string, ExperimentTemplateTarget> _targets = new Dictionary<string, ExperimentTemplateTarget>();
 
         /// <summary>
@@ -97,6 +99,24 @@ namespace Amazon.FIS.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExperimentOptions. 
+        /// <para>
+        /// The experiment options for an experiment template.
+        /// </para>
+        /// </summary>
+        public ExperimentTemplateExperimentOptions ExperimentOptions
+        {
+            get { return this._experimentOptions; }
+            set { this._experimentOptions = value; }
+        }
+
+        // Check to see if ExperimentOptions property is set
+        internal bool IsSetExperimentOptions()
+        {
+            return this._experimentOptions != null;
         }
 
         /// <summary>
@@ -208,6 +228,25 @@ namespace Amazon.FIS.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetAccountConfigurationsCount. 
+        /// <para>
+        /// The count of target account configurations for the experiment template.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0)]
+        public long TargetAccountConfigurationsCount
+        {
+            get { return this._targetAccountConfigurationsCount.GetValueOrDefault(); }
+            set { this._targetAccountConfigurationsCount = value; }
+        }
+
+        // Check to see if TargetAccountConfigurationsCount property is set
+        internal bool IsSetTargetAccountConfigurationsCount()
+        {
+            return this._targetAccountConfigurationsCount.HasValue; 
         }
 
         /// <summary>
