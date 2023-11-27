@@ -31,8 +31,8 @@ namespace Amazon.ControlTower.Model
     /// <summary>
     /// Container for the parameters to the UpdateLandingZone operation.
     /// This API call updates the landing zone. It starts an asynchronous operation that updates
-    /// the landing zone based on the new landing zone version or the updated parameters specified
-    /// in the updated manifest file.
+    /// the landing zone based on the new landing zone version, or on the changed parameters
+    /// specified in the updated manifest file.
     /// </summary>
     public partial class UpdateLandingZoneRequest : AmazonControlTowerRequest
     {
@@ -43,7 +43,7 @@ namespace Amazon.ControlTower.Model
         /// <summary>
         /// Gets and sets the property LandingZoneIdentifier. 
         /// <para>
-        /// The unique identifier of the landing zone. 
+        /// The unique identifier of the landing zone.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -62,9 +62,9 @@ namespace Amazon.ControlTower.Model
         /// <summary>
         /// Gets and sets the property Manifest. 
         /// <para>
-        /// The manifest.yaml file is a text file that describes your Amazon Web Services resources.
-        /// For examples, review <a href="https://docs.aws.amazon.com/controltower/latest/userguide/the-manifest-file">The
-        /// manifest file</a> 
+        /// The <code>manifest.yaml</code> file is a text file that describes your Amazon Web
+        /// Services resources. For examples, review <a href="https://docs.aws.amazon.com/controltower/latest/userguide/the-manifest-file">The
+        /// manifest file</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -83,7 +83,7 @@ namespace Amazon.ControlTower.Model
         /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        /// The landing zone version. 
+        /// The landing zone version, for example, 3.2.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=10)]

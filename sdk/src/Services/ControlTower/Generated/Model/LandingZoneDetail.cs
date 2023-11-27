@@ -43,7 +43,7 @@ namespace Amazon.ControlTower.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The ARN of the landing zone. 
+        /// The ARN of the landing zone.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -62,7 +62,7 @@ namespace Amazon.ControlTower.Model
         /// <summary>
         /// Gets and sets the property DriftStatus. 
         /// <para>
-        /// The drift status of the landing zone. 
+        /// The drift status of the landing zone.
         /// </para>
         /// </summary>
         public LandingZoneDriftStatusSummary DriftStatus
@@ -80,7 +80,7 @@ namespace Amazon.ControlTower.Model
         /// <summary>
         /// Gets and sets the property LatestAvailableVersion. 
         /// <para>
-        /// The latest available version of the landing zone. 
+        /// The latest available version of the landing zone.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=10)]
@@ -99,8 +99,8 @@ namespace Amazon.ControlTower.Model
         /// <summary>
         /// Gets and sets the property Manifest. 
         /// <para>
-        /// The landing zone manifest.yaml text file that specifies the landing zone configurations.
-        /// 
+        /// The landing zone <code>manifest.yaml</code> text file that specifies the landing zone
+        /// configurations. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -119,25 +119,8 @@ namespace Amazon.ControlTower.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The landing zone deployment status. 
+        /// The landing zone deployment status.
         /// </para>
-        ///  
-        /// <para>
-        /// Valid values:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>ACTIVE</code>: The landing zone is actively deployed. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>PROCESSING</code>: The landing zone is processing deployment. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>FAILED</code>: The landing zone failed deployment. 
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public LandingZoneStatus Status
         {
@@ -154,7 +137,7 @@ namespace Amazon.ControlTower.Model
         /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        /// The landing zone's current deployed version. 
+        /// The landing zone's current deployed version.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=10)]

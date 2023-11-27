@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ControlTower.Model
 {
     /// <summary>
-    /// Request references a resource which does not exist.
+    /// The request references a resource that does not exist.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

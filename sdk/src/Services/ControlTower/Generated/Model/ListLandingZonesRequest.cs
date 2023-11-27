@@ -36,7 +36,7 @@ namespace Amazon.ControlTower.Model
     /// 
     ///  
     /// <para>
-    /// The return limit is one landing zone ARN. 
+    /// Returns one landing zone ARN.
     /// </para>
     /// </summary>
     public partial class ListLandingZonesRequest : AmazonControlTowerRequest
@@ -47,7 +47,7 @@ namespace Amazon.ControlTower.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of returned landing zone ARNs. 
+        /// The maximum number of returned landing zone ARNs, which is one.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1)]
@@ -67,7 +67,6 @@ namespace Amazon.ControlTower.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// The token to continue the list from a previous API call with the same parameters.
-        /// 
         /// </para>
         /// </summary>
         public string NextToken

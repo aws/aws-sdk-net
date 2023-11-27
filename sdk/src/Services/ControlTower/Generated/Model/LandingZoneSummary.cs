@@ -38,7 +38,7 @@ namespace Amazon.ControlTower.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The ARN of the landing zone. 
+        /// The ARN of the landing zone.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]

@@ -29,32 +29,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ControlTower.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteLandingZone operation.
-    /// Decommissions a landing zone. This API call starts an asynchronous operation that
-    /// deletes Amazon Web Services Control Tower resources deployed in accounts managed by
-    /// Amazon Web Services Control Tower.
+    /// This is the response object from the UpdateEnabledControl operation.
     /// </summary>
-    public partial class DeleteLandingZoneRequest : AmazonControlTowerRequest
+    public partial class UpdateEnabledControlResponse : AmazonWebServiceResponse
     {
-        private string _landingZoneIdentifier;
+        private string _operationIdentifier;
 
         /// <summary>
-        /// Gets and sets the property LandingZoneIdentifier. 
+        /// Gets and sets the property OperationIdentifier. 
         /// <para>
-        /// The unique identifier of the landing zone.
+        ///  The operation identifier for this <code>UpdateEnabledControl</code> operation. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string LandingZoneIdentifier
+        [AWSProperty(Required=true, Min=36, Max=36)]
+        public string OperationIdentifier
         {
-            get { return this._landingZoneIdentifier; }
-            set { this._landingZoneIdentifier = value; }
+            get { return this._operationIdentifier; }
+            set { this._operationIdentifier = value; }
         }
 
-        // Check to see if LandingZoneIdentifier property is set
-        internal bool IsSetLandingZoneIdentifier()
+        // Check to see if OperationIdentifier property is set
+        internal bool IsSetOperationIdentifier()
         {
-            return this._landingZoneIdentifier != null;
+            return this._operationIdentifier != null;
         }
 
     }

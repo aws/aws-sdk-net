@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ControlTower.Model
 {
     /// <summary>
-    /// Unexpected error during processing of request.
+    /// An unexpected error occurred during processing of a request.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

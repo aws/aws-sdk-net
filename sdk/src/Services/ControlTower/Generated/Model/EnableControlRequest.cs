@@ -39,6 +39,7 @@ namespace Amazon.ControlTower.Model
     public partial class EnableControlRequest : AmazonControlTowerRequest
     {
         private string _controlIdentifier;
+        private List<EnabledControlParameter> _parameters = new List<EnabledControlParameter>();
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private string _targetIdentifier;
 
@@ -46,8 +47,8 @@ namespace Amazon.ControlTower.Model
         /// Gets and sets the property ControlIdentifier. 
         /// <para>
         /// The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls
-        /// are permitted, with the exception of the <b>Region deny</b> control. For information
-        /// on how to find the <code>controlIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the
+        /// are permitted, with the exception of the <b>landing zone Region deny</b> control.
+        /// For information on how to find the <code>controlIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the
         /// overview page</a>.
         /// </para>
         /// </summary>
@@ -62,6 +63,24 @@ namespace Amazon.ControlTower.Model
         internal bool IsSetControlIdentifier()
         {
             return this._controlIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Parameters. 
+        /// <para>
+        /// An array of <code>EnabledControlParameter</code> objects
+        /// </para>
+        /// </summary>
+        public List<EnabledControlParameter> Parameters
+        {
+            get { return this._parameters; }
+            set { this._parameters = value; }
+        }
+
+        // Check to see if Parameters property is set
+        internal bool IsSetParameters()
+        {
+            return this._parameters != null && this._parameters.Count > 0; 
         }
 
         /// <summary>

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ControlTower.Model
 {
     /// <summary>
-    /// Updating or deleting a resource can cause an inconsistent state.
+    /// Updating or deleting the resource can cause an inconsistent state.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

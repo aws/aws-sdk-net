@@ -59,8 +59,8 @@ namespace Amazon.ControlTower.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Retrieves the next page of results. If the string is empty, the current response is
-        /// the end of the results.
+        /// Retrieves the next page of results. If the string is empty, the response is the end
+        /// of the results.
         /// </para>
         /// </summary>
         public string NextToken

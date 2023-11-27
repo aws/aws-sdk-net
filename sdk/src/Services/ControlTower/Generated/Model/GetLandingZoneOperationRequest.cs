@@ -31,7 +31,7 @@ namespace Amazon.ControlTower.Model
     /// <summary>
     /// Container for the parameters to the GetLandingZoneOperation operation.
     /// Returns the status of the specified landing zone operation. Details for an operation
-    /// are available for X days.
+    /// are available for 60 days.
     /// </summary>
     public partial class GetLandingZoneOperationRequest : AmazonControlTowerRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.ControlTower.Model
         /// <summary>
         /// Gets and sets the property OperationIdentifier. 
         /// <para>
-        /// A unique identifier assigned to a landing zone operation. 
+        /// A unique identifier assigned to a landing zone operation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]

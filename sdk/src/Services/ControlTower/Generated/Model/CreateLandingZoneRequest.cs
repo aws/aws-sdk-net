@@ -30,8 +30,9 @@ namespace Amazon.ControlTower.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateLandingZone operation.
-    /// Creates a new landing zone. This starts an asynchronous operation that creates and
-    /// configures a landing zone based on the parameters specified in the manifest JSON file.
+    /// Creates a new landing zone. This API call starts an asynchronous operation that creates
+    /// and configures a landing zone, based on the parameters specified in the manifest JSON
+    /// file.
     /// </summary>
     public partial class CreateLandingZoneRequest : AmazonControlTowerRequest
     {
@@ -82,7 +83,7 @@ namespace Amazon.ControlTower.Model
         /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        /// The landing zone version. 
+        /// The landing zone version, for example, 3.0.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=10)]

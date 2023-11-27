@@ -40,7 +40,7 @@ namespace Amazon.ControlTower.Model
         /// <summary>
         /// Gets and sets the property LandingZoneIdentifier. 
         /// <para>
-        /// The unique identifier of the landing zone. 
+        /// The unique identifier of the landing zone.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

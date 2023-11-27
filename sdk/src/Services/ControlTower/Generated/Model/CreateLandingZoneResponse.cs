@@ -39,7 +39,7 @@ namespace Amazon.ControlTower.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The ARN of the landing zone. 
+        /// The ARN of the landing zone resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]
@@ -60,7 +60,7 @@ namespace Amazon.ControlTower.Model
         /// <para>
         /// A unique identifier assigned to a <code>CreateLandingZone</code> operation. You can
         /// use this identifier as an input of <code>GetLandingZoneOperation</code> to check the
-        /// operation's status. 
+        /// operation's status.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]

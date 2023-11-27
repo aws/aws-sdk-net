@@ -39,7 +39,7 @@ namespace Amazon.ControlTower.Model
         /// <summary>
         /// Gets and sets the property LandingZones. 
         /// <para>
-        /// The ARN of the landing zone. 
+        /// The ARN of the landing zone.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1)]
@@ -58,8 +58,8 @@ namespace Amazon.ControlTower.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Retrieves the next page of results. If the string is empty, the current response is
-        /// the end of the results. 
+        /// Retrieves the next page of results. If the string is empty, the response is the end
+        /// of the results.
         /// </para>
         /// </summary>
         public string NextToken

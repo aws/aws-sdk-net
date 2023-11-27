@@ -116,7 +116,7 @@ namespace Amazon.ControlTower.Model
         /// <summary>
         /// Gets and sets the property TargetIdentifier. 
         /// <para>
-        ///  The ARN of the organizational unit. 
+        /// The ARN of the organizational unit.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]

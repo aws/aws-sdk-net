@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ControlTower.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// EnableControl Request Marshaller
+    /// UpdateEnabledControl Request Marshaller
     /// </summary>       
-    public class EnableControlRequestMarshaller : IMarshaller<IRequest, EnableControlRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class UpdateEnabledControlRequestMarshaller : IMarshaller<IRequest, UpdateEnabledControlRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.ControlTower.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((EnableControlRequest)input);
+            return this.Marshall((UpdateEnabledControlRequest)input);
         }
 
         /// <summary>
@@ -52,23 +52,23 @@ namespace Amazon.ControlTower.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(EnableControlRequest publicRequest)
+        public IRequest Marshall(UpdateEnabledControlRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ControlTower");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-10";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/enable-control";
+            request.ResourcePath = "/update-enabled-control";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetControlIdentifier())
+                if(publicRequest.IsSetEnabledControlIdentifier())
                 {
-                    context.Writer.WritePropertyName("controlIdentifier");
-                    context.Writer.Write(publicRequest.ControlIdentifier);
+                    context.Writer.WritePropertyName("enabledControlIdentifier");
+                    context.Writer.Write(publicRequest.EnabledControlIdentifier);
                 }
 
                 if(publicRequest.IsSetParameters())
@@ -87,26 +87,6 @@ namespace Amazon.ControlTower.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                    {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
-                    }
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTargetIdentifier())
-                {
-                    context.Writer.WritePropertyName("targetIdentifier");
-                    context.Writer.Write(publicRequest.TargetIdentifier);
-                }
-
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
@@ -115,9 +95,9 @@ namespace Amazon.ControlTower.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static EnableControlRequestMarshaller _instance = new EnableControlRequestMarshaller();        
+        private static UpdateEnabledControlRequestMarshaller _instance = new UpdateEnabledControlRequestMarshaller();        
 
-        internal static EnableControlRequestMarshaller GetInstance()
+        internal static UpdateEnabledControlRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -125,7 +105,7 @@ namespace Amazon.ControlTower.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static EnableControlRequestMarshaller Instance
+        public static UpdateEnabledControlRequestMarshaller Instance
         {
             get
             {

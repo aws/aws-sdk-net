@@ -42,7 +42,7 @@ namespace Amazon.ControlTower.Model
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        /// The landing zone operation end time. 
+        /// The landing zone operation end time.
         /// </para>
         /// </summary>
         public DateTime EndTime
@@ -99,7 +99,7 @@ namespace Amazon.ControlTower.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// The landing zone operation start time. 
+        /// The landing zone operation start time.
         /// </para>
         /// </summary>
         public DateTime StartTime
@@ -116,10 +116,6 @@ namespace Amazon.ControlTower.Model
 
         /// <summary>
         /// Gets and sets the property Status. 
-        /// <para>
-        /// The landing zone operation status. 
-        /// </para>
-        ///  
         /// <para>
         /// Valid values:
         /// </para>
@@ -153,7 +149,7 @@ namespace Amazon.ControlTower.Model
         /// Gets and sets the property StatusMessage. 
         /// <para>
         /// If the operation result is FAILED, this string contains a message explaining why the
-        /// operation failed. 
+        /// operation failed.
         /// </para>
         /// </summary>
         public string StatusMessage

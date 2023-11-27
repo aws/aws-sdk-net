@@ -92,6 +92,10 @@ namespace Amazon.ControlTower
         /// Constant ENABLE_CONTROL for ControlOperationType
         /// </summary>
         public static readonly ControlOperationType ENABLE_CONTROL = new ControlOperationType("ENABLE_CONTROL");
+        /// <summary>
+        /// Constant UPDATE_ENABLED_CONTROL for ControlOperationType
+        /// </summary>
+        public static readonly ControlOperationType UPDATE_ENABLED_CONTROL = new ControlOperationType("UPDATE_ENABLED_CONTROL");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

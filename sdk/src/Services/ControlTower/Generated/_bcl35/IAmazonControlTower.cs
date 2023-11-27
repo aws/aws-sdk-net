@@ -51,8 +51,8 @@ namespace Amazon.ControlTower
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    ///  <b>To get the <code>controlIdentifier</code> for your AWS Control Tower control:</b>
-    /// 
+    ///  <b>To get the <code>controlIdentifier</code> for your Amazon Web Services Control
+    /// Tower control:</b> 
     /// </para>
     ///  
     /// <para>
@@ -192,8 +192,9 @@ namespace Amazon.ControlTower
 
 
         /// <summary>
-        /// Creates a new landing zone. This starts an asynchronous operation that creates and
-        /// configures a landing zone based on the parameters specified in the manifest JSON file.
+        /// Creates a new landing zone. This API call starts an asynchronous operation that creates
+        /// and configures a landing zone, based on the parameters specified in the manifest JSON
+        /// file.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLandingZone service method.</param>
         /// 
@@ -202,16 +203,16 @@ namespace Amazon.ControlTower
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ConflictException">
-        /// Updating or deleting a resource can cause an inconsistent state.
+        /// Updating or deleting the resource can cause an inconsistent state.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.InternalServerException">
-        /// Unexpected error during processing of request.
+        /// An unexpected error occurred during processing of a request.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ThrottlingException">
-        /// Request was denied due to request throttling.
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/CreateLandingZone">REST API Reference for CreateLandingZone Operation</seealso>
         CreateLandingZoneResponse CreateLandingZone(CreateLandingZoneRequest request);
@@ -248,9 +249,9 @@ namespace Amazon.ControlTower
 
 
         /// <summary>
-        /// This decommissions a landing zone. This starts an asynchronous operation that deletes
-        /// Amazon Web Services Control Tower resources deployed in Amazon Web Services Control
-        /// Tower managed accounts.
+        /// Decommissions a landing zone. This API call starts an asynchronous operation that
+        /// deletes Amazon Web Services Control Tower resources deployed in accounts managed by
+        /// Amazon Web Services Control Tower.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteLandingZone service method.</param>
         /// 
@@ -259,19 +260,19 @@ namespace Amazon.ControlTower
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ConflictException">
-        /// Updating or deleting a resource can cause an inconsistent state.
+        /// Updating or deleting the resource can cause an inconsistent state.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.InternalServerException">
-        /// Unexpected error during processing of request.
+        /// An unexpected error occurred during processing of a request.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ResourceNotFoundException">
-        /// Request references a resource which does not exist.
+        /// The request references a resource that does not exist.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ThrottlingException">
-        /// Request was denied due to request throttling.
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/DeleteLandingZone">REST API Reference for DeleteLandingZone Operation</seealso>
         DeleteLandingZoneResponse DeleteLandingZone(DeleteLandingZoneRequest request);
@@ -321,22 +322,23 @@ namespace Amazon.ControlTower
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ConflictException">
-        /// Updating or deleting a resource can cause an inconsistent state.
+        /// Updating or deleting the resource can cause an inconsistent state.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.InternalServerException">
-        /// Unexpected error during processing of request.
+        /// An unexpected error occurred during processing of a request.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ResourceNotFoundException">
-        /// Request references a resource which does not exist.
+        /// The request references a resource that does not exist.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ServiceQuotaExceededException">
-        /// Request would cause a service quota to be exceeded. The limit is 10 concurrent operations.
+        /// The request would cause a service quota to be exceeded. The limit is 10 concurrent
+        /// operations.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ThrottlingException">
-        /// Request was denied due to request throttling.
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/DisableControl">REST API Reference for DisableControl Operation</seealso>
         DisableControlResponse DisableControl(DisableControlRequest request);
@@ -386,22 +388,23 @@ namespace Amazon.ControlTower
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ConflictException">
-        /// Updating or deleting a resource can cause an inconsistent state.
+        /// Updating or deleting the resource can cause an inconsistent state.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.InternalServerException">
-        /// Unexpected error during processing of request.
+        /// An unexpected error occurred during processing of a request.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ResourceNotFoundException">
-        /// Request references a resource which does not exist.
+        /// The request references a resource that does not exist.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ServiceQuotaExceededException">
-        /// Request would cause a service quota to be exceeded. The limit is 10 concurrent operations.
+        /// The request would cause a service quota to be exceeded. The limit is 10 concurrent
+        /// operations.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ThrottlingException">
-        /// Request was denied due to request throttling.
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/EnableControl">REST API Reference for EnableControl Operation</seealso>
         EnableControlResponse EnableControl(EnableControlRequest request);
@@ -450,16 +453,16 @@ namespace Amazon.ControlTower
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.InternalServerException">
-        /// Unexpected error during processing of request.
+        /// An unexpected error occurred during processing of a request.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ResourceNotFoundException">
-        /// Request references a resource which does not exist.
+        /// The request references a resource that does not exist.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ThrottlingException">
-        /// Request was denied due to request throttling.
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/GetControlOperation">REST API Reference for GetControlOperation Operation</seealso>
         GetControlOperationResponse GetControlOperation(GetControlOperationRequest request);
@@ -506,16 +509,16 @@ namespace Amazon.ControlTower
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.InternalServerException">
-        /// Unexpected error during processing of request.
+        /// An unexpected error occurred during processing of a request.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ResourceNotFoundException">
-        /// Request references a resource which does not exist.
+        /// The request references a resource that does not exist.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ThrottlingException">
-        /// Request was denied due to request throttling.
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/GetEnabledControl">REST API Reference for GetEnabledControl Operation</seealso>
         GetEnabledControlResponse GetEnabledControl(GetEnabledControlRequest request);
@@ -561,16 +564,16 @@ namespace Amazon.ControlTower
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.InternalServerException">
-        /// Unexpected error during processing of request.
+        /// An unexpected error occurred during processing of a request.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ResourceNotFoundException">
-        /// Request references a resource which does not exist.
+        /// The request references a resource that does not exist.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ThrottlingException">
-        /// Request was denied due to request throttling.
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/GetLandingZone">REST API Reference for GetLandingZone Operation</seealso>
         GetLandingZoneResponse GetLandingZone(GetLandingZoneRequest request);
@@ -608,7 +611,7 @@ namespace Amazon.ControlTower
 
         /// <summary>
         /// Returns the status of the specified landing zone operation. Details for an operation
-        /// are available for X days.
+        /// are available for 60 days.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetLandingZoneOperation service method.</param>
         /// 
@@ -617,16 +620,16 @@ namespace Amazon.ControlTower
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.InternalServerException">
-        /// Unexpected error during processing of request.
+        /// An unexpected error occurred during processing of a request.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ResourceNotFoundException">
-        /// Request references a resource which does not exist.
+        /// The request references a resource that does not exist.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ThrottlingException">
-        /// Request was denied due to request throttling.
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/GetLandingZoneOperation">REST API Reference for GetLandingZoneOperation Operation</seealso>
         GetLandingZoneOperationResponse GetLandingZoneOperation(GetLandingZoneOperationRequest request);
@@ -674,16 +677,16 @@ namespace Amazon.ControlTower
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.InternalServerException">
-        /// Unexpected error during processing of request.
+        /// An unexpected error occurred during processing of a request.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ResourceNotFoundException">
-        /// Request references a resource which does not exist.
+        /// The request references a resource that does not exist.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ThrottlingException">
-        /// Request was denied due to request throttling.
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/ListEnabledControls">REST API Reference for ListEnabledControls Operation</seealso>
         ListEnabledControlsResponse ListEnabledControls(ListEnabledControlsRequest request);
@@ -726,7 +729,7 @@ namespace Amazon.ControlTower
         /// 
         ///  
         /// <para>
-        /// The return limit is one landing zone ARN. 
+        /// Returns one landing zone ARN.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListLandingZones service method.</param>
@@ -736,13 +739,13 @@ namespace Amazon.ControlTower
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.InternalServerException">
-        /// Unexpected error during processing of request.
+        /// An unexpected error occurred during processing of a request.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ThrottlingException">
-        /// Request was denied due to request throttling.
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/ListLandingZones">REST API Reference for ListLandingZones Operation</seealso>
         ListLandingZonesResponse ListLandingZones(ListLandingZonesRequest request);
@@ -786,13 +789,13 @@ namespace Amazon.ControlTower
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by ControlTower.</returns>
         /// <exception cref="Amazon.ControlTower.Model.InternalServerException">
-        /// Unexpected error during processing of request.
+        /// An unexpected error occurred during processing of a request.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ResourceNotFoundException">
-        /// Request references a resource which does not exist.
+        /// The request references a resource that does not exist.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
@@ -839,19 +842,19 @@ namespace Amazon.ControlTower
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ConflictException">
-        /// Updating or deleting a resource can cause an inconsistent state.
+        /// Updating or deleting the resource can cause an inconsistent state.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.InternalServerException">
-        /// Unexpected error during processing of request.
+        /// An unexpected error occurred during processing of a request.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ResourceNotFoundException">
-        /// Request references a resource which does not exist.
+        /// The request references a resource that does not exist.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ThrottlingException">
-        /// Request was denied due to request throttling.
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/ResetLandingZone">REST API Reference for ResetLandingZone Operation</seealso>
         ResetLandingZoneResponse ResetLandingZone(ResetLandingZoneRequest request);
@@ -895,13 +898,13 @@ namespace Amazon.ControlTower
         /// 
         /// <returns>The response from the TagResource service method, as returned by ControlTower.</returns>
         /// <exception cref="Amazon.ControlTower.Model.InternalServerException">
-        /// Unexpected error during processing of request.
+        /// An unexpected error occurred during processing of a request.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ResourceNotFoundException">
-        /// Request references a resource which does not exist.
+        /// The request references a resource that does not exist.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
         TagResourceResponse TagResource(TagResourceRequest request);
@@ -945,13 +948,13 @@ namespace Amazon.ControlTower
         /// 
         /// <returns>The response from the UntagResource service method, as returned by ControlTower.</returns>
         /// <exception cref="Amazon.ControlTower.Model.InternalServerException">
-        /// Unexpected error during processing of request.
+        /// An unexpected error occurred during processing of a request.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ResourceNotFoundException">
-        /// Request references a resource which does not exist.
+        /// The request references a resource that does not exist.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
         UntagResourceResponse UntagResource(UntagResourceRequest request);
@@ -984,13 +987,96 @@ namespace Amazon.ControlTower
 
         #endregion
         
+        #region  UpdateEnabledControl
+
+
+        /// <summary>
+        /// Updates the configuration of an already enabled control.
+        /// 
+        ///  
+        /// <para>
+        /// If the enabled control shows an <code>EnablementStatus</code> of SUCCEEDED, supply
+        /// parameters that are different from the currently configured parameters. Otherwise,
+        /// Amazon Web Services Control Tower will not accept the request.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the enabled control shows an <code>EnablementStatus</code> of FAILED, Amazon Web
+        /// Services Control Tower will update the control to match any valid parameters that
+        /// you supply.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the <code>DriftSummary</code> status for the control shows as DRIFTED, you cannot
+        /// call this API. Instead, you can update the control by calling <code>DisableControl</code>
+        /// and again calling <code>EnableControl</code>, or you can run an extending governance
+        /// operation. For usage examples, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
+        /// <i>the Amazon Web Services Control Tower User Guide</i> </a> 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEnabledControl service method.</param>
+        /// 
+        /// <returns>The response from the UpdateEnabledControl service method, as returned by ControlTower.</returns>
+        /// <exception cref="Amazon.ControlTower.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ConflictException">
+        /// Updating or deleting the resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.InternalServerException">
+        /// An unexpected error occurred during processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ServiceQuotaExceededException">
+        /// The request would cause a service quota to be exceeded. The limit is 10 concurrent
+        /// operations.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/UpdateEnabledControl">REST API Reference for UpdateEnabledControl Operation</seealso>
+        UpdateEnabledControlResponse UpdateEnabledControl(UpdateEnabledControlRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateEnabledControl operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEnabledControl operation on AmazonControlTowerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateEnabledControl
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/UpdateEnabledControl">REST API Reference for UpdateEnabledControl Operation</seealso>
+        IAsyncResult BeginUpdateEnabledControl(UpdateEnabledControlRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateEnabledControl operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateEnabledControl.</param>
+        /// 
+        /// <returns>Returns a  UpdateEnabledControlResult from ControlTower.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/UpdateEnabledControl">REST API Reference for UpdateEnabledControl Operation</seealso>
+        UpdateEnabledControlResponse EndUpdateEnabledControl(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  UpdateLandingZone
 
 
         /// <summary>
         /// This API call updates the landing zone. It starts an asynchronous operation that updates
-        /// the landing zone based on the new landing zone version or the updated parameters specified
-        /// in the updated manifest file.
+        /// the landing zone based on the new landing zone version, or on the changed parameters
+        /// specified in the updated manifest file.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateLandingZone service method.</param>
         /// 
@@ -999,19 +1085,19 @@ namespace Amazon.ControlTower
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ConflictException">
-        /// Updating or deleting a resource can cause an inconsistent state.
+        /// Updating or deleting the resource can cause an inconsistent state.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.InternalServerException">
-        /// Unexpected error during processing of request.
+        /// An unexpected error occurred during processing of a request.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ResourceNotFoundException">
-        /// Request references a resource which does not exist.
+        /// The request references a resource that does not exist.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ThrottlingException">
-        /// Request was denied due to request throttling.
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.ControlTower.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/UpdateLandingZone">REST API Reference for UpdateLandingZone Operation</seealso>
         UpdateLandingZoneResponse UpdateLandingZone(UpdateLandingZoneRequest request);

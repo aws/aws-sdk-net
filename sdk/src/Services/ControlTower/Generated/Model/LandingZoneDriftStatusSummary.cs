@@ -34,7 +34,7 @@ namespace Amazon.ControlTower.Model
     ///  
     /// <para>
     /// If the landing zone differs from the expected configuration, it is defined to be in
-    /// a state of drift. You can repair this drift by resetting the landing zone. 
+    /// a state of drift. You can repair this drift by resetting the landing zone.
     /// </para>
     /// </summary>
     public partial class LandingZoneDriftStatusSummary

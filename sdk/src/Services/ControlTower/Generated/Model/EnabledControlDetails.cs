@@ -36,6 +36,7 @@ namespace Amazon.ControlTower.Model
         private string _arn;
         private string _controlIdentifier;
         private DriftStatusSummary _driftStatusSummary;
+        private List<EnabledControlParameterSummary> _parameters = new List<EnabledControlParameterSummary>();
         private EnablementStatusSummary _statusSummary;
         private string _targetIdentifier;
         private List<Region> _targetRegions = new List<Region>();
@@ -96,6 +97,24 @@ namespace Amazon.ControlTower.Model
         internal bool IsSetDriftStatusSummary()
         {
             return this._driftStatusSummary != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Parameters. 
+        /// <para>
+        /// Array of <code>EnabledControlParameter</code> objects.
+        /// </para>
+        /// </summary>
+        public List<EnabledControlParameterSummary> Parameters
+        {
+            get { return this._parameters; }
+            set { this._parameters = value; }
+        }
+
+        // Check to see if Parameters property is set
+        internal bool IsSetParameters()
+        {
+            return this._parameters != null && this._parameters.Count > 0; 
         }
 
         /// <summary>

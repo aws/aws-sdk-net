@@ -29,32 +29,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ControlTower.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteLandingZone operation.
-    /// Decommissions a landing zone. This API call starts an asynchronous operation that
-    /// deletes Amazon Web Services Control Tower resources deployed in accounts managed by
-    /// Amazon Web Services Control Tower.
+    /// Returns a summary of information about the parameters of an enabled control.
     /// </summary>
-    public partial class DeleteLandingZoneRequest : AmazonControlTowerRequest
+    public partial class EnabledControlParameterSummary
     {
-        private string _landingZoneIdentifier;
+        private string _key;
+        private Amazon.Runtime.Documents.Document _value;
 
         /// <summary>
-        /// Gets and sets the property LandingZoneIdentifier. 
+        /// Gets and sets the property Key. 
         /// <para>
-        /// The unique identifier of the landing zone.
+        /// The key of a key/value pair.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public string LandingZoneIdentifier
+        public string Key
         {
-            get { return this._landingZoneIdentifier; }
-            set { this._landingZoneIdentifier = value; }
+            get { return this._key; }
+            set { this._key = value; }
         }
 
-        // Check to see if LandingZoneIdentifier property is set
-        internal bool IsSetLandingZoneIdentifier()
+        // Check to see if Key property is set
+        internal bool IsSetKey()
         {
-            return this._landingZoneIdentifier != null;
+            return this._key != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Value. 
+        /// <para>
+        /// The value of a key/value pair.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public Amazon.Runtime.Documents.Document Value
+        {
+            get { return this._value; }
+            set { this._value = value; }
+        }
+
+        // Check to see if Value property is set
+        internal bool IsSetValue()
+        {
+            return !this._value.IsNull();
         }
 
     }

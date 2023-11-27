@@ -38,7 +38,7 @@ namespace Amazon.ControlTower.Model
         /// <summary>
         /// Gets and sets the property OperationDetails. 
         /// <para>
-        /// The landing zone operation details. 
+        /// Details about a landing zone operation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

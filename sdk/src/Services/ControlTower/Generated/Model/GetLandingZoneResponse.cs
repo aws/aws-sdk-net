@@ -38,7 +38,7 @@ namespace Amazon.ControlTower.Model
         /// <summary>
         /// Gets and sets the property LandingZone. 
         /// <para>
-        /// Information about the landing zone. 
+        /// Information about the landing zone.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

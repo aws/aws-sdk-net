@@ -125,6 +125,18 @@
     <pattern>^arn:aws[0-9a-zA-Z_\-:\/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ControlTower.Model.UpdateEnabledControlRequest.EnabledControlIdentifier</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws[0-9a-zA-Z_\-:\/]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ControlTower.Model.UpdateEnabledControlResponse.OperationIdentifier</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ControlTower.Model.UpdateLandingZoneRequest.Version</property>
     <min>3</min>
     <max>10</max>
