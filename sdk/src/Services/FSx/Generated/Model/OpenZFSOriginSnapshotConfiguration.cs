@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FSx.Model
 {
     /// <summary>
-    /// The snapshot configuration to use when creating an OpenZFS volume from a snapshot.
+    /// The snapshot configuration used when creating an Amazon FSx for OpenZFS volume from
+    /// a snapshot.
     /// </summary>
     public partial class OpenZFSOriginSnapshotConfiguration
     {
@@ -50,9 +51,15 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FULL_COPY</code> - Copies all data from the snapshot to the new volume. 
+        ///  <code>FULL_COPY</code> - Copies all data from the snapshot to the new volume.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// The <code>INCREMENTAL_COPY</code> option is only for updating an existing volume by
+        /// using a snapshot from another FSx for OpenZFS file system. For more information, see
+        /// <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_CopySnapshotAndUpdateVolume.html">CopySnapshotAndUpdateVolume</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         public OpenZFSCopyStrategy CopyStrategy
         {

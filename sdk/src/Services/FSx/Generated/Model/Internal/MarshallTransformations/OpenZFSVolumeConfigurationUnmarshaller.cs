@@ -82,10 +82,22 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                     unmarshalledObject.DeleteClonedVolumes = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DeleteIntermediateData", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.DeleteIntermediateData = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DeleteIntermediateSnaphots", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
                     unmarshalledObject.DeleteIntermediateSnaphots = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DestinationSnapshot", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DestinationSnapshot = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("NfsExports", targetDepth))
@@ -122,6 +134,12 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RestoreToSnapshot = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SourceSnapshotARN", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SourceSnapshotARN = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("StorageCapacityQuotaGiB", targetDepth))

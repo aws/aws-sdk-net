@@ -30,18 +30,20 @@ namespace Amazon.FSx.Model
 {
     /// <summary>
     /// Describes a specific Amazon FSx administrative action for the current Windows, Lustre,
-    /// or OpenZFS file system.
+    /// OpenZFS, or ONTAP file system or volume.
     /// </summary>
     public partial class AdministrativeAction
     {
         private AdministrativeActionType _administrativeActionType;
         private AdministrativeActionFailureDetails _failureDetails;
         private int? _progressPercent;
+        private long? _remainingTransferBytes;
         private DateTime? _requestTime;
         private Status _status;
         private FileSystem _targetFileSystemValues;
         private Snapshot _targetSnapshotValues;
         private Volume _targetVolumeValues;
+        private long? _totalTransferBytes;
 
         /// <summary>
         /// Gets and sets the property AdministrativeActionType.
@@ -94,6 +96,25 @@ namespace Amazon.FSx.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RemainingTransferBytes. 
+        /// <para>
+        /// The remaining bytes to transfer for the FSx for OpenZFS snapshot that you're copying.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0)]
+        public long RemainingTransferBytes
+        {
+            get { return this._remainingTransferBytes.GetValueOrDefault(); }
+            set { this._remainingTransferBytes = value; }
+        }
+
+        // Check to see if RemainingTransferBytes property is set
+        internal bool IsSetRemainingTransferBytes()
+        {
+            return this._remainingTransferBytes.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property RequestTime. 
         /// <para>
         /// The time that the administrative action request was received.
@@ -114,7 +135,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Describes the status of the administrative action, as follows:
+        /// The status of the administrative action, as follows:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -136,7 +157,7 @@ namespace Amazon.FSx.Model
         /// <para>
         ///  <code>UPDATED_OPTIMIZING</code> - For a storage-capacity increase update, Amazon
         /// FSx has updated the file system with the new storage capacity, and is now performing
-        /// the storage-optimization process. 
+        /// the storage-optimization process.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -155,7 +176,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property TargetFileSystemValues. 
         /// <para>
-        /// Describes the target value for the administration action, provided in the <code>UpdateFileSystem</code>
+        /// The target value for the administration action, provided in the <code>UpdateFileSystem</code>
         /// operation. Returned for <code>FILE_SYSTEM_UPDATE</code> administrative actions. 
         /// </para>
         /// </summary>
@@ -199,6 +220,26 @@ namespace Amazon.FSx.Model
         internal bool IsSetTargetVolumeValues()
         {
             return this._targetVolumeValues != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TotalTransferBytes. 
+        /// <para>
+        /// The number of bytes that have transferred for the FSx for OpenZFS snapshot that you're
+        /// copying.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0)]
+        public long TotalTransferBytes
+        {
+            get { return this._totalTransferBytes.GetValueOrDefault(); }
+            set { this._totalTransferBytes = value; }
+        }
+
+        // Check to see if TotalTransferBytes property is set
+        internal bool IsSetTotalTransferBytes()
+        {
+            return this._totalTransferBytes.HasValue; 
         }
 
     }

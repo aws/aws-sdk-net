@@ -406,6 +406,11 @@ namespace Amazon.FSx.Model
         /// <para>
         /// The storage capacity of the file system in gibibytes (GiB).
         /// </para>
+        ///  
+        /// <para>
+        /// Amazon FSx responds with an HTTP status code 400 (Bad Request) if the value of <code>StorageCapacity</code>
+        /// is outside of the minimum or maximum values.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2147483647)]
         public int StorageCapacity

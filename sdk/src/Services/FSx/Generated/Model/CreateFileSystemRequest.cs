@@ -300,7 +300,8 @@ namespace Amazon.FSx.Model
         ///  </li> </ul> 
         /// <para>
         ///  <b>FSx for ONTAP file systems</b> - The amount of storage capacity that you can configure
-        /// is from 1024 GiB up to 196,608 GiB (192 TiB).
+        /// depends on the value of the <code>HAPairs</code> property. The minimum value is calculated
+        /// as 1,024 * <code>HAPairs</code> and the maxium is calculated as 524,288 * <code>HAPairs</code>..
         /// </para>
         ///  
         /// <para>

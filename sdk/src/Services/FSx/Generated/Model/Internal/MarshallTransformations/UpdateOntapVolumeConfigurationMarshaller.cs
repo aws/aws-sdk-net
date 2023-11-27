@@ -63,6 +63,12 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.SecurityStyle);
             }
 
+            if(requestObject.IsSetSizeInBytes())
+            {
+                context.Writer.WritePropertyName("SizeInBytes");
+                context.Writer.Write(requestObject.SizeInBytes);
+            }
+
             if(requestObject.IsSetSizeInMegabytes())
             {
                 context.Writer.WritePropertyName("SizeInMegabytes");

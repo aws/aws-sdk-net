@@ -237,7 +237,7 @@ namespace Amazon.FSx.Model
         /// <para>
         /// If used to create a file system other than OpenZFS, you must provide a value that
         /// matches the backup's <code>StorageCapacity</code> value. If you provide any other
-        /// value, Amazon FSx responds with a 400 Bad Request. 
+        /// value, Amazon FSx responds with with an HTTP status code 400 Bad Request. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2147483647)]

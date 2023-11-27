@@ -82,6 +82,12 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                     unmarshalledObject.ProgressPercent = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("RemainingTransferBytes", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.RemainingTransferBytes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RequestTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
@@ -110,6 +116,12 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = VolumeUnmarshaller.Instance;
                     unmarshalledObject.TargetVolumeValues = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TotalTransferBytes", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.TotalTransferBytes = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

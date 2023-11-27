@@ -139,6 +139,10 @@ namespace Amazon.FSx.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <code>HAPairs</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <code>RemoveRouteTableIds</code> 
     /// </para>
     ///  </li> <li> 
@@ -148,6 +152,10 @@ namespace Amazon.FSx.Model
     ///  </li> <li> 
     /// <para>
     ///  <code>ThroughputCapacity</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>ThroughputCapacityPerHAPair</code> 
     /// </para>
     ///  </li> <li> 
     /// <para>

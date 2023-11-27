@@ -129,6 +129,10 @@ namespace Amazon.FSx
         /// </summary>
         public static readonly AdministrativeActionType THROUGHPUT_OPTIMIZATION = new AdministrativeActionType("THROUGHPUT_OPTIMIZATION");
         /// <summary>
+        /// Constant VOLUME_INITIALIZE_WITH_SNAPSHOT for AdministrativeActionType
+        /// </summary>
+        public static readonly AdministrativeActionType VOLUME_INITIALIZE_WITH_SNAPSHOT = new AdministrativeActionType("VOLUME_INITIALIZE_WITH_SNAPSHOT");
+        /// <summary>
         /// Constant VOLUME_RESTORE for AdministrativeActionType
         /// </summary>
         public static readonly AdministrativeActionType VOLUME_RESTORE = new AdministrativeActionType("VOLUME_RESTORE");
@@ -136,6 +140,10 @@ namespace Amazon.FSx
         /// Constant VOLUME_UPDATE for AdministrativeActionType
         /// </summary>
         public static readonly AdministrativeActionType VOLUME_UPDATE = new AdministrativeActionType("VOLUME_UPDATE");
+        /// <summary>
+        /// Constant VOLUME_UPDATE_WITH_SNAPSHOT for AdministrativeActionType
+        /// </summary>
+        public static readonly AdministrativeActionType VOLUME_UPDATE_WITH_SNAPSHOT = new AdministrativeActionType("VOLUME_UPDATE_WITH_SNAPSHOT");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1708,6 +1716,10 @@ namespace Amazon.FSx
         /// Constant SINGLE_AZ_1 for OntapDeploymentType
         /// </summary>
         public static readonly OntapDeploymentType SINGLE_AZ_1 = new OntapDeploymentType("SINGLE_AZ_1");
+        /// <summary>
+        /// Constant SINGLE_AZ_2 for OntapDeploymentType
+        /// </summary>
+        public static readonly OntapDeploymentType SINGLE_AZ_2 = new OntapDeploymentType("SINGLE_AZ_2");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1812,6 +1824,10 @@ namespace Amazon.FSx
         /// Constant FULL_COPY for OpenZFSCopyStrategy
         /// </summary>
         public static readonly OpenZFSCopyStrategy FULL_COPY = new OpenZFSCopyStrategy("FULL_COPY");
+        /// <summary>
+        /// Constant INCREMENTAL_COPY for OpenZFSCopyStrategy
+        /// </summary>
+        public static readonly OpenZFSCopyStrategy INCREMENTAL_COPY = new OpenZFSCopyStrategy("INCREMENTAL_COPY");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -3061,6 +3077,60 @@ namespace Amazon.FSx
 
 
     /// <summary>
+    /// Constants used for properties of type UpdateOpenZFSVolumeOption.
+    /// </summary>
+    public class UpdateOpenZFSVolumeOption : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DELETE_CLONED_VOLUMES for UpdateOpenZFSVolumeOption
+        /// </summary>
+        public static readonly UpdateOpenZFSVolumeOption DELETE_CLONED_VOLUMES = new UpdateOpenZFSVolumeOption("DELETE_CLONED_VOLUMES");
+        /// <summary>
+        /// Constant DELETE_INTERMEDIATE_DATA for UpdateOpenZFSVolumeOption
+        /// </summary>
+        public static readonly UpdateOpenZFSVolumeOption DELETE_INTERMEDIATE_DATA = new UpdateOpenZFSVolumeOption("DELETE_INTERMEDIATE_DATA");
+        /// <summary>
+        /// Constant DELETE_INTERMEDIATE_SNAPSHOTS for UpdateOpenZFSVolumeOption
+        /// </summary>
+        public static readonly UpdateOpenZFSVolumeOption DELETE_INTERMEDIATE_SNAPSHOTS = new UpdateOpenZFSVolumeOption("DELETE_INTERMEDIATE_SNAPSHOTS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public UpdateOpenZFSVolumeOption(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UpdateOpenZFSVolumeOption FindValue(string value)
+        {
+            return FindValue<UpdateOpenZFSVolumeOption>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UpdateOpenZFSVolumeOption(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type VolumeFilterName.
     /// </summary>
     public class VolumeFilterName : ConstantClass
@@ -3174,6 +3244,56 @@ namespace Amazon.FSx
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator VolumeLifecycle(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VolumeStyle.
+    /// </summary>
+    public class VolumeStyle : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FLEXGROUP for VolumeStyle
+        /// </summary>
+        public static readonly VolumeStyle FLEXGROUP = new VolumeStyle("FLEXGROUP");
+        /// <summary>
+        /// Constant FLEXVOL for VolumeStyle
+        /// </summary>
+        public static readonly VolumeStyle FLEXVOL = new VolumeStyle("FLEXVOL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VolumeStyle(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VolumeStyle FindValue(string value)
+        {
+            return FindValue<VolumeStyle>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VolumeStyle(string value)
         {
             return FindValue(value);
         }

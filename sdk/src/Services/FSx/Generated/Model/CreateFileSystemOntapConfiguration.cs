@@ -39,9 +39,11 @@ namespace Amazon.FSx.Model
         private DiskIopsConfiguration _diskIopsConfiguration;
         private string _endpointIpAddressRange;
         private string _fsxAdminPassword;
+        private int? _haPairs;
         private string _preferredSubnetId;
         private List<string> _routeTableIds = new List<string>();
         private int? _throughputCapacity;
+        private int? _throughputCapacityPerHAPair;
         private string _weeklyMaintenanceStartTime;
 
         /// <summary>
@@ -90,6 +92,11 @@ namespace Amazon.FSx.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>SINGLE_AZ_1</code> - A file system configured for Single-AZ redundancy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>SINGLE_AZ_2</code> - A file system configured with multiple high-availability
+        /// (HA) pairs for Single-AZ redundancy.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -175,6 +182,43 @@ namespace Amazon.FSx.Model
         }
 
         /// <summary>
+        /// Gets and sets the property HAPairs. 
+        /// <para>
+        /// Specifies how many high-availability (HA) pairs the file system will have. The default
+        /// value is 1. The value of this property affects the values of <code>StorageCapacity</code>,
+        /// <code>Iops</code>, and <code>ThroughputCapacity</code>. For more information, see
+        /// <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/HA-pairs.html">High-availability
+        /// (HA) pairs</a> in the FSx for ONTAP user guide.
+        /// </para>
+        ///  
+        /// <para>
+        /// Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The value of <code>HAPairs</code> is less than 1 or greater than 6.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The value of <code>HAPairs</code> is greater than 1 and the value of <code>DeploymentType</code>
+        /// is <code>SINGLE_AZ_1</code> or <code>MULTI_AZ_1</code>.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        [AWSProperty(Min=1, Max=6)]
+        public int HAPairs
+        {
+            get { return this._haPairs.GetValueOrDefault(); }
+            set { this._haPairs = value; }
+        }
+
+        // Check to see if HAPairs property is set
+        internal bool IsSetHAPairs()
+        {
+            return this._haPairs.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property PreferredSubnetId. 
         /// <para>
         /// Required when <code>DeploymentType</code> is set to <code>MULTI_AZ_1</code>. This
@@ -219,11 +263,27 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property ThroughputCapacity. 
         /// <para>
-        /// Sets the throughput capacity for the file system that you're creating. Valid values
-        /// are 128, 256, 512, 1024, 2048, and 4096 MBps.
+        /// Sets the throughput capacity for the file system that you're creating in megabytes
+        /// per second (MBps). For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-throughput-capacity.html">Managing
+        /// throughput capacity</a> in the FSx for ONTAP User Guide.
         /// </para>
+        ///  
+        /// <para>
+        /// Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The value of <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code>
+        /// are not the same value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The value of <code>ThroughputCapacity</code> when divided by the value of <code>HAPairs</code>
+        /// is outside of the valid range for <code>ThroughputCapacity</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Required=true, Min=8, Max=100000)]
+        [AWSProperty(Min=8, Max=100000)]
         public int ThroughputCapacity
         {
             get { return this._throughputCapacity.GetValueOrDefault(); }
@@ -234,6 +294,59 @@ namespace Amazon.FSx.Model
         internal bool IsSetThroughputCapacity()
         {
             return this._throughputCapacity.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ThroughputCapacityPerHAPair. 
+        /// <para>
+        /// Use to choose the throughput capacity per HA pair, rather than the total throughput
+        /// for the file system. 
+        /// </para>
+        ///  
+        /// <para>
+        /// This field and <code>ThroughputCapacity</code> cannot be defined in the same API call,
+        /// but one is required.
+        /// </para>
+        ///  
+        /// <para>
+        /// This field and <code>ThroughputCapacity</code> are the same for file systems with
+        /// one HA pair.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// For <code>SINGLE_AZ_1</code> and <code>MULTI_AZ_1</code>, valid values are 128, 256,
+        /// 512, 1024, 2048, or 4096 MBps.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For <code>SINGLE_AZ_2</code>, valid values are 3072 or 6144 MBps.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The value of <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code>
+        /// are not the same value
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The value of <code>ThroughputCapacityPerHAPair</code> is not a valid value.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        [AWSProperty(Min=128, Max=6144)]
+        public int ThroughputCapacityPerHAPair
+        {
+            get { return this._throughputCapacityPerHAPair.GetValueOrDefault(); }
+            set { this._throughputCapacityPerHAPair = value; }
+        }
+
+        // Check to see if ThroughputCapacityPerHAPair property is set
+        internal bool IsSetThroughputCapacityPerHAPair()
+        {
+            return this._throughputCapacityPerHAPair.HasValue; 
         }
 
         /// <summary>

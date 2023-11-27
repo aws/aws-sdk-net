@@ -106,6 +106,12 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                     unmarshalledObject.FsxAdminPassword = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("HAPairs", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.HAPairs = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("PreferredSubnetId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -122,6 +128,12 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
                     unmarshalledObject.ThroughputCapacity = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ThroughputCapacityPerHAPair", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.ThroughputCapacityPerHAPair = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("WeeklyMaintenanceStartTime", targetDepth))

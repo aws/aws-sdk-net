@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FSx.Model
 {
     /// <summary>
-    /// Describes an Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS volume.
+    /// Describes an Amazon FSx volume.
     /// </summary>
     public partial class Volume
     {

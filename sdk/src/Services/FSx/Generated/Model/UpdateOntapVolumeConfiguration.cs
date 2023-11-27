@@ -36,6 +36,7 @@ namespace Amazon.FSx.Model
         private bool? _copyTagsToBackups;
         private string _junctionPath;
         private SecurityStyle _securityStyle;
+        private long? _sizeInBytes;
         private int? _sizeInMegabytes;
         private UpdateSnaplockConfiguration _snaplockConfiguration;
         private string _snapshotPolicy;
@@ -105,12 +106,31 @@ namespace Amazon.FSx.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SizeInBytes. 
+        /// <para>
+        /// The configured size of the volume, in bytes.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=22517998000000000)]
+        public long SizeInBytes
+        {
+            get { return this._sizeInBytes.GetValueOrDefault(); }
+            set { this._sizeInBytes = value; }
+        }
+
+        // Check to see if SizeInBytes property is set
+        internal bool IsSetSizeInBytes()
+        {
+            return this._sizeInBytes.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property SizeInMegabytes. 
         /// <para>
         /// Specifies the size of the volume in megabytes.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=314572800)]
+        [AWSProperty(Min=0, Max=2147483647)]
         public int SizeInMegabytes
         {
             get { return this._sizeInMegabytes.GetValueOrDefault(); }

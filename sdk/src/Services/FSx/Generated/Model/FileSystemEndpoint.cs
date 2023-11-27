@@ -60,7 +60,7 @@ namespace Amazon.FSx.Model
         /// IP addresses of the file system endpoint.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2)]
+        [AWSProperty(Min=1, Max=24)]
         public List<string> IpAddresses
         {
             get { return this._ipAddresses; }

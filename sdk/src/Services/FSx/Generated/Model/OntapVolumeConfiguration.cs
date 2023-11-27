@@ -33,11 +33,13 @@ namespace Amazon.FSx.Model
     /// </summary>
     public partial class OntapVolumeConfiguration
     {
+        private AggregateConfiguration _aggregateConfiguration;
         private bool? _copyTagsToBackups;
         private FlexCacheEndpointType _flexCacheEndpointType;
         private string _junctionPath;
         private OntapVolumeType _ontapVolumeType;
         private SecurityStyle _securityStyle;
+        private long? _sizeInBytes;
         private int? _sizeInMegabytes;
         private SnaplockConfiguration _snaplockConfiguration;
         private string _snapshotPolicy;
@@ -46,6 +48,26 @@ namespace Amazon.FSx.Model
         private bool? _storageVirtualMachineRoot;
         private TieringPolicy _tieringPolicy;
         private string _uuid;
+        private VolumeStyle _volumeStyle;
+
+        /// <summary>
+        /// Gets and sets the property AggregateConfiguration. 
+        /// <para>
+        /// This structure specifies configuration options for a volume’s storage aggregate or
+        /// aggregates.
+        /// </para>
+        /// </summary>
+        public AggregateConfiguration AggregateConfiguration
+        {
+            get { return this._aggregateConfiguration; }
+            set { this._aggregateConfiguration = value; }
+        }
+
+        // Check to see if AggregateConfiguration property is set
+        internal bool IsSetAggregateConfiguration()
+        {
+            return this._aggregateConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CopyTagsToBackups. 
@@ -182,12 +204,31 @@ namespace Amazon.FSx.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SizeInBytes. 
+        /// <para>
+        /// The configured size of the volume, in bytes.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=22517998000000000)]
+        public long SizeInBytes
+        {
+            get { return this._sizeInBytes.GetValueOrDefault(); }
+            set { this._sizeInBytes = value; }
+        }
+
+        // Check to see if SizeInBytes property is set
+        internal bool IsSetSizeInBytes()
+        {
+            return this._sizeInBytes.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property SizeInMegabytes. 
         /// <para>
         /// The configured size of the volume, in megabytes (MBs).
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=314572800)]
+        [AWSProperty(Min=0, Max=2147483647)]
         public int SizeInMegabytes
         {
             get { return this._sizeInMegabytes.GetValueOrDefault(); }
@@ -248,7 +289,7 @@ namespace Amazon.FSx.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot
-        /// policies</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.
+        /// policies</a> in the Amazon FSx for NetApp ONTAP User Guide.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -363,6 +404,26 @@ namespace Amazon.FSx.Model
         internal bool IsSetUUID()
         {
             return this._uuid != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VolumeStyle. 
+        /// <para>
+        /// Use to specify the style of an ONTAP volume. For more information about FlexVols and
+        /// FlexGroups, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-types.html">Volume
+        /// types</a> in Amazon FSx for NetApp ONTAP User Guide.
+        /// </para>
+        /// </summary>
+        public VolumeStyle VolumeStyle
+        {
+            get { return this._volumeStyle; }
+            set { this._volumeStyle = value; }
+        }
+
+        // Check to see if VolumeStyle property is set
+        internal bool IsSetVolumeStyle()
+        {
+            return this._volumeStyle != null;
         }
 
     }

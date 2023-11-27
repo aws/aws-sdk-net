@@ -36,13 +36,16 @@ namespace Amazon.FSx.Model
         private bool? _copyTagsToSnapshots;
         private OpenZFSDataCompressionType _dataCompressionType;
         private bool? _deleteClonedVolumes;
+        private bool? _deleteIntermediateData;
         private bool? _deleteIntermediateSnaphots;
+        private string _destinationSnapshot;
         private List<OpenZFSNfsExport> _nfsExports = new List<OpenZFSNfsExport>();
         private OpenZFSOriginSnapshotConfiguration _originSnapshot;
         private string _parentVolumeId;
         private bool? _readOnly;
         private int? _recordSizeKiB;
         private string _restoreToSnapshot;
+        private string _sourceSnapshotARN;
         private int? _storageCapacityQuotaGiB;
         private int? _storageCapacityReservationGiB;
         private List<OpenZFSUserOrGroupQuota> _userAndGroupQuotas = new List<OpenZFSUserOrGroupQuota>();
@@ -128,6 +131,26 @@ namespace Amazon.FSx.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DeleteIntermediateData. 
+        /// <para>
+        /// A Boolean value indicating whether snapshot data that differs between the current
+        /// state and the specified snapshot should be overwritten when a volume is restored from
+        /// a snapshot.
+        /// </para>
+        /// </summary>
+        public bool DeleteIntermediateData
+        {
+            get { return this._deleteIntermediateData.GetValueOrDefault(); }
+            set { this._deleteIntermediateData = value; }
+        }
+
+        // Check to see if DeleteIntermediateData property is set
+        internal bool IsSetDeleteIntermediateData()
+        {
+            return this._deleteIntermediateData.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property DeleteIntermediateSnaphots. 
         /// <para>
         /// A Boolean value indicating whether snapshots between the current state and the specified
@@ -144,6 +167,26 @@ namespace Amazon.FSx.Model
         internal bool IsSetDeleteIntermediateSnaphots()
         {
             return this._deleteIntermediateSnaphots.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DestinationSnapshot. 
+        /// <para>
+        /// The ID of the snapshot that's being copied or was most recently copied to the destination
+        /// volume.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=11, Max=28)]
+        public string DestinationSnapshot
+        {
+            get { return this._destinationSnapshot; }
+            set { this._destinationSnapshot = value; }
+        }
+
+        // Check to see if DestinationSnapshot property is set
+        internal bool IsSetDestinationSnapshot()
+        {
+            return this._destinationSnapshot != null;
         }
 
         /// <summary>
@@ -260,6 +303,22 @@ namespace Amazon.FSx.Model
         internal bool IsSetRestoreToSnapshot()
         {
             return this._restoreToSnapshot != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceSnapshotARN.
+        /// </summary>
+        [AWSProperty(Min=8, Max=512)]
+        public string SourceSnapshotARN
+        {
+            get { return this._sourceSnapshotARN; }
+            set { this._sourceSnapshotARN = value; }
+        }
+
+        // Check to see if SourceSnapshotARN property is set
+        internal bool IsSetSourceSnapshotARN()
+        {
+            return this._sourceSnapshotARN != null;
         }
 
         /// <summary>

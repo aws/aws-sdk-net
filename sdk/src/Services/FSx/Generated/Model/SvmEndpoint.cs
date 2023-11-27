@@ -61,7 +61,7 @@ namespace Amazon.FSx.Model
         /// The SVM endpoint's IP addresses.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2)]
+        [AWSProperty(Min=1, Max=24)]
         public List<string> IpAddresses
         {
             get { return this._ipAddresses; }

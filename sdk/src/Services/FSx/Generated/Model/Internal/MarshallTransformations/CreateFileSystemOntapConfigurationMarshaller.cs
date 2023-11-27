@@ -86,6 +86,12 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.FsxAdminPassword);
             }
 
+            if(requestObject.IsSetHAPairs())
+            {
+                context.Writer.WritePropertyName("HAPairs");
+                context.Writer.Write(requestObject.HAPairs);
+            }
+
             if(requestObject.IsSetPreferredSubnetId())
             {
                 context.Writer.WritePropertyName("PreferredSubnetId");
@@ -107,6 +113,12 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("ThroughputCapacity");
                 context.Writer.Write(requestObject.ThroughputCapacity);
+            }
+
+            if(requestObject.IsSetThroughputCapacityPerHAPair())
+            {
+                context.Writer.WritePropertyName("ThroughputCapacityPerHAPair");
+                context.Writer.Write(requestObject.ThroughputCapacityPerHAPair);
             }
 
             if(requestObject.IsSetWeeklyMaintenanceStartTime())
