@@ -104,6 +104,12 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Min);
             }
 
+            if(requestObject.IsSetStructFullyQualifiedName())
+            {
+                context.Writer.WritePropertyName("structFullyQualifiedName");
+                context.Writer.Write(requestObject.StructFullyQualifiedName);
+            }
+
             if(requestObject.IsSetUnit())
             {
                 context.Writer.WritePropertyName("unit");

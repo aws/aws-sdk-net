@@ -41,7 +41,8 @@ namespace Amazon.IoTFleetWise.Model
         /// Gets and sets the property CanDbcFiles. 
         /// <para>
         /// A list of DBC files. You can upload only one DBC file for each network interface and
-        /// specify up to five (inclusive) files in the list.
+        /// specify up to five (inclusive) files in the list. The DBC file can be a maximum size
+        /// of 200 MB.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=5)]

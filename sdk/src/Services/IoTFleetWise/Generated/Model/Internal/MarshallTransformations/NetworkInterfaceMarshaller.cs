@@ -79,6 +79,17 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Type);
             }
 
+            if(requestObject.IsSetVehicleMiddleware())
+            {
+                context.Writer.WritePropertyName("vehicleMiddleware");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = VehicleMiddlewareMarshaller.Instance;
+                marshaller.Marshall(requestObject.VehicleMiddleware, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

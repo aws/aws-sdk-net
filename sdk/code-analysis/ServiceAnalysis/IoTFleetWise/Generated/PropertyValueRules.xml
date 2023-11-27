@@ -247,6 +247,12 @@
     <pattern>[^\u0000-\u001F\u007F]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoTFleetWise.Model.GetDecoderManifestResponse.Message</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[^\u0000-\u001F\u007F]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoTFleetWise.Model.GetFleetRequest.FleetId</property>
     <min>1</min>
     <max>100</max>
@@ -585,6 +591,11 @@
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoTFleetWise.Model.PutEncryptionConfigurationRequest.KmsKeyId</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoTFleetWise.Model.TagResourceRequest.ResourceARN</property>
     <min>1</min>
     <max>1011</max>
@@ -715,6 +726,12 @@
     <pattern>[^\u0000-\u001F\u007F]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoTFleetWise.Model.Actuator.StructFullyQualifiedName</property>
+    <min>1</min>
+    <max>150</max>
+    <pattern>[a-zA-Z0-9_.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoTFleetWise.Model.Attribute.Comment</property>
     <min>1</min>
     <max>2048</max>
@@ -838,7 +855,55 @@
     <pattern>[a-zA-Z\d\-_:]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoTFleetWise.Model.CustomProperty.Comment</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[^\u0000-\u001F\u007F]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTFleetWise.Model.CustomProperty.DeprecationMessage</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[^\u0000-\u001F\u007F]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTFleetWise.Model.CustomProperty.Description</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[^\u0000-\u001F\u007F]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTFleetWise.Model.CustomProperty.StructFullyQualifiedName</property>
+    <min>1</min>
+    <max>150</max>
+    <pattern>[a-zA-Z0-9_.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTFleetWise.Model.CustomStruct.Comment</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[^\u0000-\u001F\u007F]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTFleetWise.Model.CustomStruct.DeprecationMessage</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[^\u0000-\u001F\u007F]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTFleetWise.Model.CustomStruct.Description</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[^\u0000-\u001F\u007F]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoTFleetWise.Model.DecoderManifestSummary.Description</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[^\u0000-\u001F\u007F]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTFleetWise.Model.DecoderManifestSummary.Message</property>
     <min>1</min>
     <max>2048</max>
     <pattern>[^\u0000-\u001F\u007F]+</pattern>
@@ -872,9 +937,21 @@
     <max>150</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoTFleetWise.Model.InvalidSignalDecoder.Hint</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[^\u0000-\u001F\u007F]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoTFleetWise.Model.InvalidSignalDecoder.Name</property>
     <min>1</min>
     <max>150</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTFleetWise.Model.MessageSignal.TopicName</property>
+    <min>1</min>
+    <max>150</max>
+    <pattern>[a-zA-Z0-9_\-#:./]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTFleetWise.Model.ModelManifestSummary.Description</property>
@@ -940,6 +1017,11 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoTFleetWise.Model.ROS2PrimitiveMessageDefinition.UpperBound</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoTFleetWise.Model.S3Config.BucketArn</property>
     <min>16</min>
     <max>100</max>
@@ -970,6 +1052,12 @@
     <pattern>[^\u0000-\u001F\u007F]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoTFleetWise.Model.Sensor.StructFullyQualifiedName</property>
+    <min>1</min>
+    <max>150</max>
+    <pattern>[a-zA-Z0-9_.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoTFleetWise.Model.SignalDecoder.FullyQualifiedName</property>
     <min>1</min>
     <max>150</max>
@@ -994,6 +1082,20 @@
     <min>1</min>
     <max>150</max>
     <pattern>[\w|*|-]+(\.[\w|*|-]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTFleetWise.Model.StructuredMessageFieldNameAndDataTypePair.FieldName</property>
+    <min>1</min>
+    <max>150</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTFleetWise.Model.StructuredMessageListDefinition.Capacity</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTFleetWise.Model.StructuredMessageListDefinition.Name</property>
+    <min>1</min>
+    <max>150</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTFleetWise.Model.Tag.Key</property>
@@ -1063,6 +1165,11 @@
     <min>1</min>
     <max>100</max>
     <pattern>[a-zA-Z\d\-_:]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTFleetWise.Model.VehicleMiddleware.Name</property>
+    <min>1</min>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTFleetWise.Model.VehicleStatus.VehicleName</property>

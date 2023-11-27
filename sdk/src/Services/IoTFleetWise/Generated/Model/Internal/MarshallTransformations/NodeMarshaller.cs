@@ -78,6 +78,17 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetProperty())
+            {
+                context.Writer.WritePropertyName("property");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = CustomPropertyMarshaller.Instance;
+                marshaller.Marshall(requestObject.Property, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetSensor())
             {
                 context.Writer.WritePropertyName("sensor");
@@ -85,6 +96,17 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
 
                 var marshaller = SensorMarshaller.Instance;
                 marshaller.Marshall(requestObject.Sensor, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetStruct())
+            {
+                context.Writer.WritePropertyName("struct");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = CustomStructMarshaller.Instance;
+                marshaller.Marshall(requestObject.Struct, context);
 
                 context.Writer.WriteObjectEnd();
             }

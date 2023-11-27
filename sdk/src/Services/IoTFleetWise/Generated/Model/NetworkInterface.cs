@@ -44,6 +44,7 @@ namespace Amazon.IoTFleetWise.Model
         private string _interfaceId;
         private ObdInterface _obdInterface;
         private NetworkInterfaceType _type;
+        private VehicleMiddleware _vehicleMiddleware;
 
         /// <summary>
         /// Gets and sets the property CanInterface. 
@@ -122,6 +123,25 @@ namespace Amazon.IoTFleetWise.Model
         internal bool IsSetType()
         {
             return this._type != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VehicleMiddleware. 
+        /// <para>
+        /// The vehicle middleware defined as a type of network interface. Examples of vehicle
+        /// middleware include <code>ROS2</code> and <code>SOME/IP</code>.
+        /// </para>
+        /// </summary>
+        public VehicleMiddleware VehicleMiddleware
+        {
+            get { return this._vehicleMiddleware; }
+            set { this._vehicleMiddleware = value; }
+        }
+
+        // Check to see if VehicleMiddleware property is set
+        internal bool IsSetVehicleMiddleware()
+        {
+            return this._vehicleMiddleware != null;
         }
 
     }

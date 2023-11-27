@@ -37,7 +37,9 @@ namespace Amazon.IoTFleetWise.Model
         private int? _totalAttributes;
         private int? _totalBranches;
         private int? _totalNodes;
+        private int? _totalProperties;
         private int? _totalSensors;
+        private int? _totalStructs;
 
         /// <summary>
         /// Gets and sets the property TotalActuators. 
@@ -112,6 +114,24 @@ namespace Amazon.IoTFleetWise.Model
         }
 
         /// <summary>
+        /// Gets and sets the property TotalProperties. 
+        /// <para>
+        /// The total properties for the node.
+        /// </para>
+        /// </summary>
+        public int TotalProperties
+        {
+            get { return this._totalProperties.GetValueOrDefault(); }
+            set { this._totalProperties = value; }
+        }
+
+        // Check to see if TotalProperties property is set
+        internal bool IsSetTotalProperties()
+        {
+            return this._totalProperties.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property TotalSensors. 
         /// <para>
         /// The total number of nodes in a vehicle network that represent sensors.
@@ -127,6 +147,24 @@ namespace Amazon.IoTFleetWise.Model
         internal bool IsSetTotalSensors()
         {
             return this._totalSensors.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TotalStructs. 
+        /// <para>
+        /// The total structure for the node.
+        /// </para>
+        /// </summary>
+        public int TotalStructs
+        {
+            get { return this._totalStructs.GetValueOrDefault(); }
+            set { this._totalStructs = value; }
+        }
+
+        // Check to see if TotalStructs property is set
+        internal bool IsSetTotalStructs()
+        {
+            return this._totalStructs.HasValue; 
         }
 
     }

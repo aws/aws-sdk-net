@@ -36,6 +36,7 @@ namespace Amazon.IoTFleetWise.Model
         private CanSignal _canSignal;
         private string _fullyQualifiedName;
         private string _interfaceId;
+        private MessageSignal _messageSignal;
         private ObdSignal _obdSignal;
         private SignalDecoderType _type;
 
@@ -93,6 +94,25 @@ namespace Amazon.IoTFleetWise.Model
         internal bool IsSetInterfaceId()
         {
             return this._interfaceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MessageSignal. 
+        /// <para>
+        /// The decoding information for a specific message which supports higher order data types.
+        /// 
+        /// </para>
+        /// </summary>
+        public MessageSignal MessageSignal
+        {
+            get { return this._messageSignal; }
+            set { this._messageSignal = value; }
+        }
+
+        // Check to see if MessageSignal property is set
+        internal bool IsSetMessageSignal()
+        {
+            return this._messageSignal != null;
         }
 
         /// <summary>

@@ -67,6 +67,7 @@ namespace Amazon.IoTFleetWise.Model
         /// The ID of the KMS key that is used for encryption.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=2048)]
         public string KmsKeyId
         {
             get { return this._kmsKeyId; }

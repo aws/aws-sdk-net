@@ -112,6 +112,12 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
                     unmarshalledObject.Min = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("structFullyQualifiedName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StructFullyQualifiedName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("unit", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -50,6 +50,7 @@ namespace Amazon.IoTFleetWise.Model
         private string _fullyQualifiedName;
         private double? _max;
         private double? _min;
+        private string _structFullyQualifiedName;
         private string _unit;
 
         /// <summary>
@@ -219,6 +220,27 @@ namespace Amazon.IoTFleetWise.Model
         internal bool IsSetMin()
         {
             return this._min.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StructFullyQualifiedName. 
+        /// <para>
+        /// The fully qualified name of the struct node for the actuator if the data type of the
+        /// actuator is <code>Struct</code> or <code>StructArray</code>. For example, the struct
+        /// fully qualified name of an actuator might be <code>Vehicle.Door.LockStruct</code>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=150)]
+        public string StructFullyQualifiedName
+        {
+            get { return this._structFullyQualifiedName; }
+            set { this._structFullyQualifiedName = value; }
+        }
+
+        // Check to see if StructFullyQualifiedName property is set
+        internal bool IsSetStructFullyQualifiedName()
+        {
+            return this._structFullyQualifiedName != null;
         }
 
         /// <summary>

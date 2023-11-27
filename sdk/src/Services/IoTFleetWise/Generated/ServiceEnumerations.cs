@@ -400,6 +400,14 @@ namespace Amazon.IoTFleetWise
         /// Constant DRAFT for ManifestStatus
         /// </summary>
         public static readonly ManifestStatus DRAFT = new ManifestStatus("DRAFT");
+        /// <summary>
+        /// Constant INVALID for ManifestStatus
+        /// </summary>
+        public static readonly ManifestStatus INVALID = new ManifestStatus("INVALID");
+        /// <summary>
+        /// Constant VALIDATING for ManifestStatus
+        /// </summary>
+        public static readonly ManifestStatus VALIDATING = new ManifestStatus("VALIDATING");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -451,6 +459,10 @@ namespace Amazon.IoTFleetWise
         /// </summary>
         public static readonly NetworkInterfaceFailureReason CONFLICTING_NETWORK_INTERFACE = new NetworkInterfaceFailureReason("CONFLICTING_NETWORK_INTERFACE");
         /// <summary>
+        /// Constant CUSTOMER_DECODED_SIGNAL_NETWORK_INTERFACE_INFO_IS_NULL for NetworkInterfaceFailureReason
+        /// </summary>
+        public static readonly NetworkInterfaceFailureReason CUSTOMER_DECODED_SIGNAL_NETWORK_INTERFACE_INFO_IS_NULL = new NetworkInterfaceFailureReason("CUSTOMER_DECODED_SIGNAL_NETWORK_INTERFACE_INFO_IS_NULL");
+        /// <summary>
         /// Constant DUPLICATE_NETWORK_INTERFACE for NetworkInterfaceFailureReason
         /// </summary>
         public static readonly NetworkInterfaceFailureReason DUPLICATE_NETWORK_INTERFACE = new NetworkInterfaceFailureReason("DUPLICATE_NETWORK_INTERFACE");
@@ -466,6 +478,10 @@ namespace Amazon.IoTFleetWise
         /// Constant OBD_NETWORK_INTERFACE_INFO_IS_NULL for NetworkInterfaceFailureReason
         /// </summary>
         public static readonly NetworkInterfaceFailureReason OBD_NETWORK_INTERFACE_INFO_IS_NULL = new NetworkInterfaceFailureReason("OBD_NETWORK_INTERFACE_INFO_IS_NULL");
+        /// <summary>
+        /// Constant VEHICLE_MIDDLEWARE_NETWORK_INTERFACE_INFO_IS_NULL for NetworkInterfaceFailureReason
+        /// </summary>
+        public static readonly NetworkInterfaceFailureReason VEHICLE_MIDDLEWARE_NETWORK_INTERFACE_INFO_IS_NULL = new NetworkInterfaceFailureReason("VEHICLE_MIDDLEWARE_NETWORK_INTERFACE_INFO_IS_NULL");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -513,9 +529,17 @@ namespace Amazon.IoTFleetWise
         /// </summary>
         public static readonly NetworkInterfaceType CAN_INTERFACE = new NetworkInterfaceType("CAN_INTERFACE");
         /// <summary>
+        /// Constant CUSTOMER_DECODED_INTERFACE for NetworkInterfaceType
+        /// </summary>
+        public static readonly NetworkInterfaceType CUSTOMER_DECODED_INTERFACE = new NetworkInterfaceType("CUSTOMER_DECODED_INTERFACE");
+        /// <summary>
         /// Constant OBD_INTERFACE for NetworkInterfaceType
         /// </summary>
         public static readonly NetworkInterfaceType OBD_INTERFACE = new NetworkInterfaceType("OBD_INTERFACE");
+        /// <summary>
+        /// Constant VEHICLE_MIDDLEWARE for NetworkInterfaceType
+        /// </summary>
+        public static readonly NetworkInterfaceType VEHICLE_MIDDLEWARE = new NetworkInterfaceType("VEHICLE_MIDDLEWARE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -546,6 +570,56 @@ namespace Amazon.IoTFleetWise
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator NetworkInterfaceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type NodeDataEncoding.
+    /// </summary>
+    public class NodeDataEncoding : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BINARY for NodeDataEncoding
+        /// </summary>
+        public static readonly NodeDataEncoding BINARY = new NodeDataEncoding("BINARY");
+        /// <summary>
+        /// Constant TYPED for NodeDataEncoding
+        /// </summary>
+        public static readonly NodeDataEncoding TYPED = new NodeDataEncoding("TYPED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NodeDataEncoding(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NodeDataEncoding FindValue(string value)
+        {
+            return FindValue<NodeDataEncoding>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NodeDataEncoding(string value)
         {
             return FindValue(value);
         }
@@ -622,6 +696,14 @@ namespace Amazon.IoTFleetWise
         /// Constant STRING_ARRAY for NodeDataType
         /// </summary>
         public static readonly NodeDataType STRING_ARRAY = new NodeDataType("STRING_ARRAY");
+        /// <summary>
+        /// Constant STRUCT for NodeDataType
+        /// </summary>
+        public static readonly NodeDataType STRUCT = new NodeDataType("STRUCT");
+        /// <summary>
+        /// Constant STRUCT_ARRAY for NodeDataType
+        /// </summary>
+        public static readonly NodeDataType STRUCT_ARRAY = new NodeDataType("STRUCT_ARRAY");
         /// <summary>
         /// Constant UINT16 for NodeDataType
         /// </summary>
@@ -757,6 +839,108 @@ namespace Amazon.IoTFleetWise
 
 
     /// <summary>
+    /// Constants used for properties of type ROS2PrimitiveType.
+    /// </summary>
+    public class ROS2PrimitiveType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BOOL for ROS2PrimitiveType
+        /// </summary>
+        public static readonly ROS2PrimitiveType BOOL = new ROS2PrimitiveType("BOOL");
+        /// <summary>
+        /// Constant BYTE for ROS2PrimitiveType
+        /// </summary>
+        public static readonly ROS2PrimitiveType BYTE = new ROS2PrimitiveType("BYTE");
+        /// <summary>
+        /// Constant CHAR for ROS2PrimitiveType
+        /// </summary>
+        public static readonly ROS2PrimitiveType CHAR = new ROS2PrimitiveType("CHAR");
+        /// <summary>
+        /// Constant FLOAT32 for ROS2PrimitiveType
+        /// </summary>
+        public static readonly ROS2PrimitiveType FLOAT32 = new ROS2PrimitiveType("FLOAT32");
+        /// <summary>
+        /// Constant FLOAT64 for ROS2PrimitiveType
+        /// </summary>
+        public static readonly ROS2PrimitiveType FLOAT64 = new ROS2PrimitiveType("FLOAT64");
+        /// <summary>
+        /// Constant INT16 for ROS2PrimitiveType
+        /// </summary>
+        public static readonly ROS2PrimitiveType INT16 = new ROS2PrimitiveType("INT16");
+        /// <summary>
+        /// Constant INT32 for ROS2PrimitiveType
+        /// </summary>
+        public static readonly ROS2PrimitiveType INT32 = new ROS2PrimitiveType("INT32");
+        /// <summary>
+        /// Constant INT64 for ROS2PrimitiveType
+        /// </summary>
+        public static readonly ROS2PrimitiveType INT64 = new ROS2PrimitiveType("INT64");
+        /// <summary>
+        /// Constant INT8 for ROS2PrimitiveType
+        /// </summary>
+        public static readonly ROS2PrimitiveType INT8 = new ROS2PrimitiveType("INT8");
+        /// <summary>
+        /// Constant STRING for ROS2PrimitiveType
+        /// </summary>
+        public static readonly ROS2PrimitiveType STRING = new ROS2PrimitiveType("STRING");
+        /// <summary>
+        /// Constant UINT16 for ROS2PrimitiveType
+        /// </summary>
+        public static readonly ROS2PrimitiveType UINT16 = new ROS2PrimitiveType("UINT16");
+        /// <summary>
+        /// Constant UINT32 for ROS2PrimitiveType
+        /// </summary>
+        public static readonly ROS2PrimitiveType UINT32 = new ROS2PrimitiveType("UINT32");
+        /// <summary>
+        /// Constant UINT64 for ROS2PrimitiveType
+        /// </summary>
+        public static readonly ROS2PrimitiveType UINT64 = new ROS2PrimitiveType("UINT64");
+        /// <summary>
+        /// Constant UINT8 for ROS2PrimitiveType
+        /// </summary>
+        public static readonly ROS2PrimitiveType UINT8 = new ROS2PrimitiveType("UINT8");
+        /// <summary>
+        /// Constant WSTRING for ROS2PrimitiveType
+        /// </summary>
+        public static readonly ROS2PrimitiveType WSTRING = new ROS2PrimitiveType("WSTRING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ROS2PrimitiveType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ROS2PrimitiveType FindValue(string value)
+        {
+            return FindValue<ROS2PrimitiveType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ROS2PrimitiveType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SignalDecoderFailureReason.
     /// </summary>
     public class SignalDecoderFailureReason : ConstantClass
@@ -771,9 +955,21 @@ namespace Amazon.IoTFleetWise
         /// </summary>
         public static readonly SignalDecoderFailureReason CONFLICTING_SIGNAL = new SignalDecoderFailureReason("CONFLICTING_SIGNAL");
         /// <summary>
+        /// Constant CUSTOMER_DECODED_SIGNAL_INFO_IS_NULL for SignalDecoderFailureReason
+        /// </summary>
+        public static readonly SignalDecoderFailureReason CUSTOMER_DECODED_SIGNAL_INFO_IS_NULL = new SignalDecoderFailureReason("CUSTOMER_DECODED_SIGNAL_INFO_IS_NULL");
+        /// <summary>
         /// Constant DUPLICATE_SIGNAL for SignalDecoderFailureReason
         /// </summary>
         public static readonly SignalDecoderFailureReason DUPLICATE_SIGNAL = new SignalDecoderFailureReason("DUPLICATE_SIGNAL");
+        /// <summary>
+        /// Constant EMPTY_MESSAGE_SIGNAL for SignalDecoderFailureReason
+        /// </summary>
+        public static readonly SignalDecoderFailureReason EMPTY_MESSAGE_SIGNAL = new SignalDecoderFailureReason("EMPTY_MESSAGE_SIGNAL");
+        /// <summary>
+        /// Constant MESSAGE_SIGNAL_INFO_IS_NULL for SignalDecoderFailureReason
+        /// </summary>
+        public static readonly SignalDecoderFailureReason MESSAGE_SIGNAL_INFO_IS_NULL = new SignalDecoderFailureReason("MESSAGE_SIGNAL_INFO_IS_NULL");
         /// <summary>
         /// Constant NETWORK_INTERFACE_TYPE_INCOMPATIBLE_WITH_SIGNAL_DECODER_TYPE for SignalDecoderFailureReason
         /// </summary>
@@ -783,9 +979,21 @@ namespace Amazon.IoTFleetWise
         /// </summary>
         public static readonly SignalDecoderFailureReason NO_DECODER_INFO_FOR_SIGNAL_IN_MODEL = new SignalDecoderFailureReason("NO_DECODER_INFO_FOR_SIGNAL_IN_MODEL");
         /// <summary>
+        /// Constant NO_SIGNAL_IN_CATALOG_FOR_DECODER_SIGNAL for SignalDecoderFailureReason
+        /// </summary>
+        public static readonly SignalDecoderFailureReason NO_SIGNAL_IN_CATALOG_FOR_DECODER_SIGNAL = new SignalDecoderFailureReason("NO_SIGNAL_IN_CATALOG_FOR_DECODER_SIGNAL");
+        /// <summary>
         /// Constant OBD_SIGNAL_INFO_IS_NULL for SignalDecoderFailureReason
         /// </summary>
         public static readonly SignalDecoderFailureReason OBD_SIGNAL_INFO_IS_NULL = new SignalDecoderFailureReason("OBD_SIGNAL_INFO_IS_NULL");
+        /// <summary>
+        /// Constant SIGNAL_DECODER_INCOMPATIBLE_WITH_SIGNAL_CATALOG for SignalDecoderFailureReason
+        /// </summary>
+        public static readonly SignalDecoderFailureReason SIGNAL_DECODER_INCOMPATIBLE_WITH_SIGNAL_CATALOG = new SignalDecoderFailureReason("SIGNAL_DECODER_INCOMPATIBLE_WITH_SIGNAL_CATALOG");
+        /// <summary>
+        /// Constant SIGNAL_DECODER_TYPE_INCOMPATIBLE_WITH_MESSAGE_SIGNAL_TYPE for SignalDecoderFailureReason
+        /// </summary>
+        public static readonly SignalDecoderFailureReason SIGNAL_DECODER_TYPE_INCOMPATIBLE_WITH_MESSAGE_SIGNAL_TYPE = new SignalDecoderFailureReason("SIGNAL_DECODER_TYPE_INCOMPATIBLE_WITH_MESSAGE_SIGNAL_TYPE");
         /// <summary>
         /// Constant SIGNAL_NOT_ASSOCIATED_WITH_NETWORK_INTERFACE for SignalDecoderFailureReason
         /// </summary>
@@ -798,6 +1006,10 @@ namespace Amazon.IoTFleetWise
         /// Constant SIGNAL_TO_ADD_ALREADY_EXISTS for SignalDecoderFailureReason
         /// </summary>
         public static readonly SignalDecoderFailureReason SIGNAL_TO_ADD_ALREADY_EXISTS = new SignalDecoderFailureReason("SIGNAL_TO_ADD_ALREADY_EXISTS");
+        /// <summary>
+        /// Constant STRUCT_SIZE_MISMATCH for SignalDecoderFailureReason
+        /// </summary>
+        public static readonly SignalDecoderFailureReason STRUCT_SIZE_MISMATCH = new SignalDecoderFailureReason("STRUCT_SIZE_MISMATCH");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -844,6 +1056,14 @@ namespace Amazon.IoTFleetWise
         /// Constant CAN_SIGNAL for SignalDecoderType
         /// </summary>
         public static readonly SignalDecoderType CAN_SIGNAL = new SignalDecoderType("CAN_SIGNAL");
+        /// <summary>
+        /// Constant CUSTOMER_DECODED_SIGNAL for SignalDecoderType
+        /// </summary>
+        public static readonly SignalDecoderType CUSTOMER_DECODED_SIGNAL = new SignalDecoderType("CUSTOMER_DECODED_SIGNAL");
+        /// <summary>
+        /// Constant MESSAGE_SIGNAL for SignalDecoderType
+        /// </summary>
+        public static readonly SignalDecoderType MESSAGE_SIGNAL = new SignalDecoderType("MESSAGE_SIGNAL");
         /// <summary>
         /// Constant OBD_SIGNAL for SignalDecoderType
         /// </summary>
@@ -978,6 +1198,60 @@ namespace Amazon.IoTFleetWise
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator StorageCompressionFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type StructuredMessageListType.
+    /// </summary>
+    public class StructuredMessageListType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DYNAMIC_BOUNDED_CAPACITY for StructuredMessageListType
+        /// </summary>
+        public static readonly StructuredMessageListType DYNAMIC_BOUNDED_CAPACITY = new StructuredMessageListType("DYNAMIC_BOUNDED_CAPACITY");
+        /// <summary>
+        /// Constant DYNAMIC_UNBOUNDED_CAPACITY for StructuredMessageListType
+        /// </summary>
+        public static readonly StructuredMessageListType DYNAMIC_UNBOUNDED_CAPACITY = new StructuredMessageListType("DYNAMIC_UNBOUNDED_CAPACITY");
+        /// <summary>
+        /// Constant FIXED_CAPACITY for StructuredMessageListType
+        /// </summary>
+        public static readonly StructuredMessageListType FIXED_CAPACITY = new StructuredMessageListType("FIXED_CAPACITY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StructuredMessageListType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StructuredMessageListType FindValue(string value)
+        {
+            return FindValue<StructuredMessageListType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StructuredMessageListType(string value)
         {
             return FindValue(value);
         }
@@ -1244,6 +1518,52 @@ namespace Amazon.IoTFleetWise
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator VehicleAssociationBehavior(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VehicleMiddlewareProtocol.
+    /// </summary>
+    public class VehicleMiddlewareProtocol : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ROS_2 for VehicleMiddlewareProtocol
+        /// </summary>
+        public static readonly VehicleMiddlewareProtocol ROS_2 = new VehicleMiddlewareProtocol("ROS_2");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VehicleMiddlewareProtocol(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VehicleMiddlewareProtocol FindValue(string value)
+        {
+            return FindValue<VehicleMiddlewareProtocol>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VehicleMiddlewareProtocol(string value)
         {
             return FindValue(value);
         }

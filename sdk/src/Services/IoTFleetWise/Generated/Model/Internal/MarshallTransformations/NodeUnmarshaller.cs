@@ -82,10 +82,22 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
                     unmarshalledObject.Branch = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("property", targetDepth))
+                {
+                    var unmarshaller = CustomPropertyUnmarshaller.Instance;
+                    unmarshalledObject.Property = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("sensor", targetDepth))
                 {
                     var unmarshaller = SensorUnmarshaller.Instance;
                     unmarshalledObject.Sensor = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("struct", targetDepth))
+                {
+                    var unmarshaller = CustomStructUnmarshaller.Instance;
+                    unmarshalledObject.Struct = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

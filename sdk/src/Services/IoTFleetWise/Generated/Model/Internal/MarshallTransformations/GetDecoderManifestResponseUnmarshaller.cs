@@ -75,6 +75,12 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
                     response.LastModificationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("message", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Message = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("modelManifestArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

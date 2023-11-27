@@ -88,6 +88,12 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("vehicleMiddleware", targetDepth))
+                {
+                    var unmarshaller = VehicleMiddlewareUnmarshaller.Instance;
+                    unmarshalledObject.VehicleMiddleware = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

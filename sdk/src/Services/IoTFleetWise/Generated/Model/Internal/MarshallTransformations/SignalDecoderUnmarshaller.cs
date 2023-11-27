@@ -82,6 +82,12 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
                     unmarshalledObject.InterfaceId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("messageSignal", targetDepth))
+                {
+                    var unmarshaller = MessageSignalUnmarshaller.Instance;
+                    unmarshalledObject.MessageSignal = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("obdSignal", targetDepth))
                 {
                     var unmarshaller = ObdSignalUnmarshaller.Instance;

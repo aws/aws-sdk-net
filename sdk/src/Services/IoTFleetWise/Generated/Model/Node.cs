@@ -37,7 +37,9 @@ namespace Amazon.IoTFleetWise.Model
         private Actuator _actuator;
         private Attribute _attribute;
         private Branch _branch;
+        private CustomProperty _property;
         private Sensor _sensor;
+        private CustomStruct _struct;
 
         /// <summary>
         /// Gets and sets the property Actuator. 
@@ -109,6 +111,25 @@ namespace Amazon.IoTFleetWise.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Property. 
+        /// <para>
+        /// Represents a member of the complex data structure. The <code>datatype</code> of the
+        /// property can be either primitive or another <code>struct</code>.
+        /// </para>
+        /// </summary>
+        public CustomProperty Property
+        {
+            get { return this._property; }
+            set { this._property = value; }
+        }
+
+        // Check to see if Property property is set
+        internal bool IsSetProperty()
+        {
+            return this._property != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Sensor.
         /// </summary>
         public Sensor Sensor
@@ -121,6 +142,24 @@ namespace Amazon.IoTFleetWise.Model
         internal bool IsSetSensor()
         {
             return this._sensor != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Struct. 
+        /// <para>
+        /// Represents a complex or higher-order data structure.
+        /// </para>
+        /// </summary>
+        public CustomStruct Struct
+        {
+            get { return this._struct; }
+            set { this._struct = value; }
+        }
+
+        // Check to see if Struct property is set
+        internal bool IsSetStruct()
+        {
+            return this._struct != null;
         }
 
     }

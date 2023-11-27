@@ -68,6 +68,17 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.InterfaceId);
             }
 
+            if(requestObject.IsSetMessageSignal())
+            {
+                context.Writer.WritePropertyName("messageSignal");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = MessageSignalMarshaller.Instance;
+                marshaller.Marshall(requestObject.MessageSignal, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetObdSignal())
             {
                 context.Writer.WritePropertyName("obdSignal");
