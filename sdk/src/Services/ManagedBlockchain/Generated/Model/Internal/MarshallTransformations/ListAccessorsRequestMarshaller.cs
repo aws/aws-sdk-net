@@ -62,6 +62,9 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
             
+            if (publicRequest.IsSetNetworkType())
+                request.Parameters.Add("networkType", StringUtils.FromString(publicRequest.NetworkType));
+            
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
             request.ResourcePath = "/accessors";

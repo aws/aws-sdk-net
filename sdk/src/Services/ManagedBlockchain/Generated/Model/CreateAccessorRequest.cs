@@ -30,13 +30,14 @@ namespace Amazon.ManagedBlockchain.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateAccessor operation.
-    /// Creates a new accessor for use with Managed Blockchain Ethereum nodes. An accessor
-    /// contains information required for token based access to your Ethereum nodes.
+    /// Creates a new accessor for use with Amazon Managed Blockchain service that supports
+    /// token based access. The accessor contains information required for token based access.
     /// </summary>
     public partial class CreateAccessorRequest : AmazonManagedBlockchainRequest
     {
         private AccessorType _accessorType;
         private string _clientRequestToken;
+        private AccessorNetworkType _networkType;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
@@ -84,6 +85,45 @@ namespace Amazon.ManagedBlockchain.Model
         internal bool IsSetClientRequestToken()
         {
             return this._clientRequestToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkType. 
+        /// <para>
+        /// The blockchain network that the <code>Accessor</code> token is created for.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// We recommend using the appropriate <code>networkType</code> value for the blockchain
+        /// network that you are creating the <code>Accessor</code> token for. You cannnot use
+        /// the value <code>ETHEREUM_MAINNET_AND_GOERLI</code> to specify a <code>networkType</code>
+        /// for your Accessor token.
+        /// </para>
+        ///  
+        /// <para>
+        /// The default value of <code>ETHEREUM_MAINNET_AND_GOERLI</code> is only applied:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// when the <code>CreateAccessor</code> action does not set a <code>networkType</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// to all existing <code>Accessor</code> tokens that were created before the <code>networkType</code>
+        /// property was introduced. 
+        /// </para>
+        ///  </li> </ul> </note>
+        /// </summary>
+        public AccessorNetworkType NetworkType
+        {
+            get { return this._networkType; }
+            set { this._networkType = value; }
+        }
+
+        // Check to see if NetworkType property is set
+        internal bool IsSetNetworkType()
+        {
+            return this._networkType != null;
         }
 
         /// <summary>

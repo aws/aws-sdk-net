@@ -299,8 +299,8 @@ namespace Amazon.ManagedBlockchain
 
 
         /// <summary>
-        /// Creates a new accessor for use with Managed Blockchain Ethereum nodes. An accessor
-        /// contains information required for token based access to your Ethereum nodes.
+        /// Creates a new accessor for use with Amazon Managed Blockchain service that supports
+        /// token based access. The accessor contains information required for token based access.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAccessor service method.</param>
         /// <param name="cancellationToken">

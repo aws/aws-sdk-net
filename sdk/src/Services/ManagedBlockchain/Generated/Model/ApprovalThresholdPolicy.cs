@@ -72,7 +72,7 @@ namespace Amazon.ManagedBlockchain.Model
         /// Gets and sets the property ThresholdComparator. 
         /// <para>
         /// Determines whether the vote percentage must be greater than the <code>ThresholdPercentage</code>
-        /// or must be greater than or equal to the <code>ThreholdPercentage</code> to be approved.
+        /// or must be greater than or equal to the <code>ThresholdPercentage</code> to be approved.
         /// </para>
         /// </summary>
         public ThresholdComparator ThresholdComparator

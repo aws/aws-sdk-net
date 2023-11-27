@@ -63,6 +63,12 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
                     response.BillingToken = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("NetworkType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.NetworkType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

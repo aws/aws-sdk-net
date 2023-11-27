@@ -37,6 +37,7 @@ namespace Amazon.ManagedBlockchain.Model
         private string _billingToken;
         private DateTime? _creationDate;
         private string _id;
+        private AccessorNetworkType _networkType;
         private AccessorStatus _status;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private AccessorType _type;
@@ -65,9 +66,9 @@ namespace Amazon.ManagedBlockchain.Model
         /// <summary>
         /// Gets and sets the property BillingToken. 
         /// <para>
-        /// The billing token is a property of the accessor. Use this token to make Ethereum API
-        /// calls to your Ethereum node. The billing token is used to track your accessor object
-        /// for billing Ethereum API requests made to your Ethereum nodes.
+        /// The billing token is a property of the Accessor. Use this token to when making calls
+        /// to the blockchain network. The billing token is used to track your accessor token
+        /// for billing requests.
         /// </para>
         /// </summary>
         [AWSProperty(Min=42, Max=42)]
@@ -118,6 +119,24 @@ namespace Amazon.ManagedBlockchain.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkType. 
+        /// <para>
+        /// The blockchain network that the Accessor token is created for.
+        /// </para>
+        /// </summary>
+        public AccessorNetworkType NetworkType
+        {
+            get { return this._networkType; }
+            set { this._networkType = value; }
+        }
+
+        // Check to see if NetworkType property is set
+        internal bool IsSetNetworkType()
+        {
+            return this._networkType != null;
         }
 
         /// <summary>
