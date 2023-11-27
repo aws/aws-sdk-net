@@ -290,6 +290,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* The AWS Cost and Usage Report Service API allows you to enable and disable the Cost and Usage report, as well as modify the report name, the data granularity, and the delivery preferences.
 * [AWSSDK.CostExplorer](https://www.nuget.org/packages/AWSSDK.CostExplorer/)
 	* The AWS Cost Explorer API gives customers programmatic access to AWS cost and usage information, allowing them to perform adhoc queries and build interactive cost management applications that leverage this dataset.
+* [AWSSDK.CostOptimizationHub](https://www.nuget.org/packages/AWSSDK.CostOptimizationHub/)
+	* This release launches Cost Optimization Hub, a new AWS Billing and Cost Management feature that helps you consolidate and prioritize cost optimization recommendations across your AWS Organizations member accounts and AWS Regions, so that you can get the most out of your AWS spend.
 * [AWSSDK.CustomerProfiles](https://www.nuget.org/packages/AWSSDK.CustomerProfiles/)
 	* This is the first release of Amazon Connect Customer Profiles, a unified customer profile for your Amazon Connect contact center.
 * [AWSSDK.DatabaseMigrationService](https://www.nuget.org/packages/AWSSDK.DatabaseMigrationService/)
