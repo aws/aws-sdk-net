@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.PersonalizeEvents.Model.PutActionInteractionsRequest.TrackingId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PersonalizeEvents.Model.PutActionsRequest.DatasetArn</property>
+    <max>256</max>
+    <pattern>arn:([a-z\d-]+):personalize:.*:.*:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.PersonalizeEvents.Model.PutEventsRequest.SessionId</property>
     <min>1</min>
     <max>256</max>
@@ -24,6 +34,51 @@
     <property>Amazon.PersonalizeEvents.Model.PutUsersRequest.DatasetArn</property>
     <max>256</max>
     <pattern>arn:([a-z\d-]+):personalize:.*:.*:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PersonalizeEvents.Model.Action.ActionId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PersonalizeEvents.Model.Action.Properties</property>
+    <min>1</min>
+    <max>32000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PersonalizeEvents.Model.ActionInteraction.ActionId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PersonalizeEvents.Model.ActionInteraction.EventId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PersonalizeEvents.Model.ActionInteraction.EventType</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PersonalizeEvents.Model.ActionInteraction.Properties</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PersonalizeEvents.Model.ActionInteraction.RecommendationId</property>
+    <min>1</min>
+    <max>40</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PersonalizeEvents.Model.ActionInteraction.SessionId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PersonalizeEvents.Model.ActionInteraction.UserId</property>
+    <min>1</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PersonalizeEvents.Model.Event.EventId</property>
@@ -58,7 +113,7 @@
   <property-value-rule>
     <property>Amazon.PersonalizeEvents.Model.Item.Properties</property>
     <min>1</min>
-    <max>24262</max>
+    <max>32000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PersonalizeEvents.Model.MetricAttribution.EventAttributionSource</property>
@@ -68,7 +123,7 @@
   <property-value-rule>
     <property>Amazon.PersonalizeEvents.Model.User.Properties</property>
     <min>1</min>
-    <max>4096</max>
+    <max>24000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PersonalizeEvents.Model.User.UserId</property>

@@ -29,20 +29,40 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PersonalizeEvents.Model
 {
     /// <summary>
-    /// Represents item interaction event information sent using the <code>PutEvents</code>
+    /// Represents an action interaction event sent using the <code>PutActionInteractions</code>
     /// API.
     /// </summary>
-    public partial class Event
+    public partial class ActionInteraction
     {
+        private string _actionId;
         private string _eventId;
         private string _eventType;
-        private float? _eventValue;
         private List<string> _impression = new List<string>();
-        private string _itemId;
-        private MetricAttribution _metricAttribution;
         private string _properties;
         private string _recommendationId;
-        private DateTime? _sentAt;
+        private string _sessionId;
+        private DateTime? _timestamp;
+        private string _userId;
+
+        /// <summary>
+        /// Gets and sets the property ActionId. 
+        /// <para>
+        /// The ID of the action the user interacted with. This corresponds to the <code>ACTION_ID</code>
+        /// field of the Action interaction schema.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=256)]
+        public string ActionId
+        {
+            get { return this._actionId; }
+            set { this._actionId = value; }
+        }
+
+        // Check to see if ActionId property is set
+        internal bool IsSetActionId()
+        {
+            return this._actionId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property EventId. 
@@ -69,9 +89,10 @@ namespace Amazon.PersonalizeEvents.Model
         /// <summary>
         /// Gets and sets the property EventType. 
         /// <para>
-        /// The type of event, such as click or download. This property corresponds to the <code>EVENT_TYPE</code>
-        /// field of your Item interactions dataset's schema and depends on the types of events
-        /// you are tracking.
+        /// The type of action interaction event. You can specify <code>Viewed</code>, <code>Taken</code>,
+        /// and <code>Not Taken</code> event types. For more information about action interaction
+        /// event type data, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/action-interaction-event-type-data.html">Event
+        /// type data</a>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -88,32 +109,12 @@ namespace Amazon.PersonalizeEvents.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EventValue. 
-        /// <para>
-        /// The event value that corresponds to the <code>EVENT_VALUE</code> field of the Item
-        /// interactions schema.
-        /// </para>
-        /// </summary>
-        public float EventValue
-        {
-            get { return this._eventValue.GetValueOrDefault(); }
-            set { this._eventValue = value; }
-        }
-
-        // Check to see if EventValue property is set
-        internal bool IsSetEventValue()
-        {
-            return this._eventValue.HasValue; 
-        }
-
-        /// <summary>
         /// Gets and sets the property Impression. 
         /// <para>
-        /// A list of item IDs that represents the sequence of items you have shown the user.
-        /// For example, <code>["itemId1", "itemId2", "itemId3"]</code>. Provide a list of items
-        /// to manually record impressions data for an event. For more information on recording
-        /// impressions data, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html#putevents-including-impressions-data">Recording
-        /// impressions data</a>. 
+        /// A list of action IDs that represents the sequence of actions you have shown the user.
+        /// For example, <code>["actionId1", "actionId2", "actionId3"]</code>. Amazon Personalize
+        /// doesn't use impressions data from action interaction events. Instead, record multiple
+        /// events for each action and use the <code>Viewed</code> event type. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=25)]
@@ -130,52 +131,11 @@ namespace Amazon.PersonalizeEvents.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ItemId. 
-        /// <para>
-        /// The item ID key that corresponds to the <code>ITEM_ID</code> field of the Item interactions
-        /// dataset's schema.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Sensitive=true, Min=1, Max=256)]
-        public string ItemId
-        {
-            get { return this._itemId; }
-            set { this._itemId = value; }
-        }
-
-        // Check to see if ItemId property is set
-        internal bool IsSetItemId()
-        {
-            return this._itemId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property MetricAttribution. 
-        /// <para>
-        /// Contains information about the metric attribution associated with an event. For more
-        /// information about metric attributions, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring
-        /// impact of recommendations</a>.
-        /// </para>
-        /// </summary>
-        public MetricAttribution MetricAttribution
-        {
-            get { return this._metricAttribution; }
-            set { this._metricAttribution = value; }
-        }
-
-        // Check to see if MetricAttribution property is set
-        internal bool IsSetMetricAttribution()
-        {
-            return this._metricAttribution != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property Properties. 
         /// <para>
         /// A string map of event-specific data that you might choose to record. For example,
-        /// if a user rates a movie on your site, other than movie ID (<code>itemId</code>) and
-        /// rating (<code>eventValue</code>) , you might also send the number of movie ratings
-        /// made by the user.
+        /// if a user takes an action, other than the action ID, you might also send the number
+        /// of actions taken by the user.
         /// </para>
         ///  
         /// <para>
@@ -183,13 +143,13 @@ namespace Amazon.PersonalizeEvents.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>{"numberOfRatings": "12"}</code> 
+        ///  <code>{"numberOfActions": "12"}</code> 
         /// </para>
         ///  
         /// <para>
-        /// The keys use camel case names that match the fields in the Item interactions dataset's
-        /// schema. In the above example, the <code>numberOfRatings</code> would match the 'NUMBER_OF_RATINGS'
-        /// field defined in the Item interactions dataset's schema.
+        /// The keys use camel case names that match the fields in the Action interactions schema.
+        /// In the above example, the <code>numberOfActions</code> would match the 'NUMBER_OF_ACTIONS'
+        /// field defined in the Action interactions schema.
         /// </para>
         ///  
         /// <para>
@@ -237,17 +197,8 @@ namespace Amazon.PersonalizeEvents.Model
         /// <summary>
         /// Gets and sets the property RecommendationId. 
         /// <para>
-        /// The ID of the list of recommendations that contains the item the user interacted with.
-        /// Provide a <code>recommendationId</code> to have Amazon Personalize implicitly record
-        /// the recommendations you show your user as impressions data. Or provide a <code>recommendationId</code>
-        /// if you use a metric attribution to measure the impact of recommendations. 
-        /// </para>
-        ///  
-        /// <para>
-        ///  For more information on recording impressions data, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html#putevents-including-impressions-data">Recording
-        /// impressions data</a>. For more information on creating a metric attribution see <a
-        /// href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring
-        /// impact of recommendations</a>. 
+        /// The ID of the list of recommendations that contains the action the user interacted
+        /// with.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=40)]
@@ -264,22 +215,63 @@ namespace Amazon.PersonalizeEvents.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SentAt. 
+        /// Gets and sets the property SessionId. 
         /// <para>
-        /// The timestamp (in Unix time) on the client side when the event occurred.
+        /// The ID associated with the user's visit. Your application generates a unique <code>sessionId</code>
+        /// when a user first visits your website or uses your application. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
+        public string SessionId
+        {
+            get { return this._sessionId; }
+            set { this._sessionId = value; }
+        }
+
+        // Check to see if SessionId property is set
+        internal bool IsSetSessionId()
+        {
+            return this._sessionId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Timestamp. 
+        /// <para>
+        /// The timestamp for when the action interaction event occurred. Timestamps must be in
+        /// Unix epoch time format, in seconds.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime SentAt
+        public DateTime Timestamp
         {
-            get { return this._sentAt.GetValueOrDefault(); }
-            set { this._sentAt = value; }
+            get { return this._timestamp.GetValueOrDefault(); }
+            set { this._timestamp = value; }
         }
 
-        // Check to see if SentAt property is set
-        internal bool IsSetSentAt()
+        // Check to see if Timestamp property is set
+        internal bool IsSetTimestamp()
         {
-            return this._sentAt.HasValue; 
+            return this._timestamp.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UserId. 
+        /// <para>
+        /// The ID of the user who interacted with the action. This corresponds to the <code>USER_ID</code>
+        /// field of the Action interaction schema.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=1, Max=256)]
+        public string UserId
+        {
+            get { return this._userId; }
+            set { this._userId = value; }
+        }
+
+        // Check to see if UserId property is set
+        internal bool IsSetUserId()
+        {
+            return this._userId != null;
         }
 
     }

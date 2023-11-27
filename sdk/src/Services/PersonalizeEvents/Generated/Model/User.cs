@@ -31,7 +31,7 @@ namespace Amazon.PersonalizeEvents.Model
     /// <summary>
     /// Represents user metadata added to a Users dataset using the <code>PutUsers</code>
     /// API. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/importing-users.html">Importing
-    /// Users Incrementally</a>.
+    /// users individually</a>.
     /// </summary>
     public partial class User
     {
@@ -53,7 +53,7 @@ namespace Amazon.PersonalizeEvents.Model
         /// For example, <code>\"Member|Frequent shopper\"</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=1, Max=4096)]
+        [AWSProperty(Sensitive=true, Min=1, Max=24000)]
         public string Properties
         {
             get { return this._properties; }

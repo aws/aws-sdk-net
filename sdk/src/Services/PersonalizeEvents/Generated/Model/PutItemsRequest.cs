@@ -31,7 +31,7 @@ namespace Amazon.PersonalizeEvents.Model
     /// <summary>
     /// Container for the parameters to the PutItems operation.
     /// Adds one or more items to an Items dataset. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/importing-items.html">Importing
-    /// Items Incrementally</a>.
+    /// items individually</a>.
     /// </summary>
     public partial class PutItemsRequest : AmazonPersonalizeEventsRequest
     {

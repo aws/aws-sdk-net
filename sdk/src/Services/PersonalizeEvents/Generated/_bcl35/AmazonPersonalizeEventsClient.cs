@@ -37,8 +37,8 @@ namespace Amazon.PersonalizeEvents
     ///
     /// Amazon Personalize can consume real-time user event data, such as <i>stream</i> or
     /// <i>click</i> data, and use it for model training either alone or combined with historical
-    /// data. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html">Recording
-    /// Events</a>.
+    /// data. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/recording-item-interaction-events.html">Recording
+    /// item interaction events</a>.
     /// </summary>
     public partial class AmazonPersonalizeEventsClient : AmazonServiceClient, IAmazonPersonalizeEvents
     {
@@ -248,11 +248,148 @@ namespace Amazon.PersonalizeEvents
         #endregion
 
 
+        #region  PutActionInteractions
+
+        /// <summary>
+        /// Records action interaction event data. An <i>action interaction</i> event is an interaction
+        /// between a user and an <i>action</i>. For example, a user taking an action, such a
+        /// enrolling in a membership program or downloading your app.
+        /// 
+        ///  
+        /// <para>
+        ///  For more information about recording action interactions, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/recording-action-interaction-events.html">Recording
+        /// action interaction events</a>. For more information about actions in an Actions dataset,
+        /// see <a href="https://docs.aws.amazon.com/personalize/latest/dg/actions-datasets.html">Actions
+        /// dataset</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutActionInteractions service method.</param>
+        /// 
+        /// <returns>The response from the PutActionInteractions service method, as returned by PersonalizeEvents.</returns>
+        /// <exception cref="Amazon.PersonalizeEvents.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.PersonalizeEvents.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.PersonalizeEvents.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-events-2018-03-22/PutActionInteractions">REST API Reference for PutActionInteractions Operation</seealso>
+        public virtual PutActionInteractionsResponse PutActionInteractions(PutActionInteractionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutActionInteractionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutActionInteractionsResponseUnmarshaller.Instance;
+
+            return Invoke<PutActionInteractionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutActionInteractions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutActionInteractions operation on AmazonPersonalizeEventsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutActionInteractions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-events-2018-03-22/PutActionInteractions">REST API Reference for PutActionInteractions Operation</seealso>
+        public virtual IAsyncResult BeginPutActionInteractions(PutActionInteractionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutActionInteractionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutActionInteractionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutActionInteractions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutActionInteractions.</param>
+        /// 
+        /// <returns>Returns a  PutActionInteractionsResult from PersonalizeEvents.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-events-2018-03-22/PutActionInteractions">REST API Reference for PutActionInteractions Operation</seealso>
+        public virtual PutActionInteractionsResponse EndPutActionInteractions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutActionInteractionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  PutActions
+
+        /// <summary>
+        /// Adds one or more actions to an Actions dataset. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/importing-actions.html">Importing
+        /// actions individually</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutActions service method.</param>
+        /// 
+        /// <returns>The response from the PutActions service method, as returned by PersonalizeEvents.</returns>
+        /// <exception cref="Amazon.PersonalizeEvents.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.PersonalizeEvents.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.PersonalizeEvents.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-events-2018-03-22/PutActions">REST API Reference for PutActions Operation</seealso>
+        public virtual PutActionsResponse PutActions(PutActionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutActionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutActionsResponseUnmarshaller.Instance;
+
+            return Invoke<PutActionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutActions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutActions operation on AmazonPersonalizeEventsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutActions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-events-2018-03-22/PutActions">REST API Reference for PutActions Operation</seealso>
+        public virtual IAsyncResult BeginPutActions(PutActionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutActionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutActionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutActions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutActions.</param>
+        /// 
+        /// <returns>Returns a  PutActionsResult from PersonalizeEvents.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-events-2018-03-22/PutActions">REST API Reference for PutActions Operation</seealso>
+        public virtual PutActionsResponse EndPutActions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutActionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  PutEvents
 
         /// <summary>
-        /// Records user interaction event data. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html">Recording
-        /// Events</a>.
+        /// Records item interaction event data. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/recording-item-interaction-events.html">Recording
+        /// item interaction events</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutEvents service method.</param>
         /// 
@@ -310,7 +447,7 @@ namespace Amazon.PersonalizeEvents
 
         /// <summary>
         /// Adds one or more items to an Items dataset. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/importing-items.html">Importing
-        /// Items Incrementally</a>.
+        /// items individually</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutItems service method.</param>
         /// 
@@ -374,7 +511,7 @@ namespace Amazon.PersonalizeEvents
 
         /// <summary>
         /// Adds one or more users to a Users dataset. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/importing-users.html">Importing
-        /// Users Incrementally</a>.
+        /// users individually</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutUsers service method.</param>
         /// 

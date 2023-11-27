@@ -29,47 +29,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PersonalizeEvents.Model
 {
     /// <summary>
-    /// Represents item metadata added to an Items dataset using the <code>PutItems</code>
-    /// API. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/importing-items.html">Importing
-    /// items individually</a>.
+    /// Represents action metadata added to an Action dataset using the <code>PutActions</code>
+    /// API. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/importing-actions.html">Importing
+    /// actions individually</a>.
     /// </summary>
-    public partial class Item
+    public partial class Action
     {
-        private string _itemId;
+        private string _actionId;
         private string _properties;
 
         /// <summary>
-        /// Gets and sets the property ItemId. 
+        /// Gets and sets the property ActionId. 
         /// <para>
-        /// The ID associated with the item.
+        /// The ID associated with the action.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
-        public string ItemId
+        public string ActionId
         {
-            get { return this._itemId; }
-            set { this._itemId = value; }
+            get { return this._actionId; }
+            set { this._actionId = value; }
         }
 
-        // Check to see if ItemId property is set
-        internal bool IsSetItemId()
+        // Check to see if ActionId property is set
+        internal bool IsSetActionId()
         {
-            return this._itemId != null;
+            return this._actionId != null;
         }
 
         /// <summary>
         /// Gets and sets the property Properties. 
         /// <para>
-        /// A string map of item-specific metadata. Each element in the map consists of a key-value
-        /// pair. For example, <code>{"numberOfRatings": "12"}</code>.
+        /// A string map of action-specific metadata. Each element in the map consists of a key-value
+        /// pair. For example, <code>{"value": "100"}</code>.
         /// </para>
         ///  
         /// <para>
-        /// The keys use camel case names that match the fields in the schema for the Items dataset.
-        /// In the previous example, the <code>numberOfRatings</code> matches the 'NUMBER_OF_RATINGS'
-        /// field defined in the Items schema. For categorical string data, to include multiple
-        /// categories for a single item, separate each category with a pipe separator (<code>|</code>).
-        /// For example, <code>\"Horror|Action\"</code>.
+        /// The keys use camel case names that match the fields in the schema for the Actions
+        /// dataset. In the previous example, the <code>value</code> matches the 'VALUE' field
+        /// defined in the Actions schema. For categorical string data, to include multiple categories
+        /// for a single action, separate each category with a pipe separator (<code>|</code>).
+        /// For example, <code>\"Deluxe|Premium\"</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=32000)]

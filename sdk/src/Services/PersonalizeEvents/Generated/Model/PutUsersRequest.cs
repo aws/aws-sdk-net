@@ -31,7 +31,7 @@ namespace Amazon.PersonalizeEvents.Model
     /// <summary>
     /// Container for the parameters to the PutUsers operation.
     /// Adds one or more users to a Users dataset. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/importing-users.html">Importing
-    /// Users Incrementally</a>.
+    /// users individually</a>.
     /// </summary>
     public partial class PutUsersRequest : AmazonPersonalizeEventsRequest
     {

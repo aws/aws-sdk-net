@@ -33,19 +33,84 @@ namespace Amazon.PersonalizeEvents
     ///
     /// Amazon Personalize can consume real-time user event data, such as <i>stream</i> or
     /// <i>click</i> data, and use it for model training either alone or combined with historical
-    /// data. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html">Recording
-    /// Events</a>.
+    /// data. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/recording-item-interaction-events.html">Recording
+    /// item interaction events</a>.
     /// </summary>
     public partial interface IAmazonPersonalizeEvents : IAmazonService, IDisposable
     {
+                
+        #region  PutActionInteractions
+
+
+
+        /// <summary>
+        /// Records action interaction event data. An <i>action interaction</i> event is an interaction
+        /// between a user and an <i>action</i>. For example, a user taking an action, such a
+        /// enrolling in a membership program or downloading your app.
+        /// 
+        ///  
+        /// <para>
+        ///  For more information about recording action interactions, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/recording-action-interaction-events.html">Recording
+        /// action interaction events</a>. For more information about actions in an Actions dataset,
+        /// see <a href="https://docs.aws.amazon.com/personalize/latest/dg/actions-datasets.html">Actions
+        /// dataset</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutActionInteractions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutActionInteractions service method, as returned by PersonalizeEvents.</returns>
+        /// <exception cref="Amazon.PersonalizeEvents.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.PersonalizeEvents.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.PersonalizeEvents.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-events-2018-03-22/PutActionInteractions">REST API Reference for PutActionInteractions Operation</seealso>
+        Task<PutActionInteractionsResponse> PutActionInteractionsAsync(PutActionInteractionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  PutActions
+
+
+
+        /// <summary>
+        /// Adds one or more actions to an Actions dataset. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/importing-actions.html">Importing
+        /// actions individually</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutActions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutActions service method, as returned by PersonalizeEvents.</returns>
+        /// <exception cref="Amazon.PersonalizeEvents.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.PersonalizeEvents.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.PersonalizeEvents.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-events-2018-03-22/PutActions">REST API Reference for PutActions Operation</seealso>
+        Task<PutActionsResponse> PutActionsAsync(PutActionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
                 
         #region  PutEvents
 
 
 
         /// <summary>
-        /// Records user interaction event data. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html">Recording
-        /// Events</a>.
+        /// Records item interaction event data. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/recording-item-interaction-events.html">Recording
+        /// item interaction events</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutEvents service method.</param>
         /// <param name="cancellationToken">
@@ -67,7 +132,7 @@ namespace Amazon.PersonalizeEvents
 
         /// <summary>
         /// Adds one or more items to an Items dataset. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/importing-items.html">Importing
-        /// Items Incrementally</a>.
+        /// items individually</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutItems service method.</param>
         /// <param name="cancellationToken">
@@ -95,7 +160,7 @@ namespace Amazon.PersonalizeEvents
 
         /// <summary>
         /// Adds one or more users to a Users dataset. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/importing-users.html">Importing
-        /// Users Incrementally</a>.
+        /// users individually</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutUsers service method.</param>
         /// <param name="cancellationToken">
