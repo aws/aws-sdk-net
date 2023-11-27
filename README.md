@@ -670,6 +670,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Add new API operations for Amazon Redshift Serverless, a new way of using Amazon Redshift without needing to manually manage provisioned clusters. The new operations let you interact with Redshift Serverless resources, such as create snapshots, list VPC endpoints, delete resource policies, and more.
 * [AWSSDK.Rekognition](https://www.nuget.org/packages/AWSSDK.Rekognition/)
 	* AWS Rekognition service does image processing and concept recognition, face detection and identification, face verification, similar face search and face clustering.
+* [AWSSDK.Repostspace](https://www.nuget.org/packages/AWSSDK.Repostspace/)
+	* Initial release of AWS re:Post Private
 * [AWSSDK.ResilienceHub](https://www.nuget.org/packages/AWSSDK.ResilienceHub/)
 	* Initial release of AWS Resilience Hub, a managed service that enables you to define, validate, and track the resilience of your applications on AWS
 * [AWSSDK.ResourceExplorer2](https://www.nuget.org/packages/AWSSDK.ResourceExplorer2/)
