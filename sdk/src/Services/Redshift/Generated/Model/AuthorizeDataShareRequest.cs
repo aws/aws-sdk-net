@@ -36,8 +36,27 @@ namespace Amazon.Redshift.Model
     /// </summary>
     public partial class AuthorizeDataShareRequest : AmazonRedshiftRequest
     {
+        private bool? _allowWrites;
         private string _consumerIdentifier;
         private string _dataShareArn;
+
+        /// <summary>
+        /// Gets and sets the property AllowWrites. 
+        /// <para>
+        /// If set to true, allows write operations for a datashare.
+        /// </para>
+        /// </summary>
+        public bool AllowWrites
+        {
+            get { return this._allowWrites.GetValueOrDefault(); }
+            set { this._allowWrites = value; }
+        }
+
+        // Check to see if AllowWrites property is set
+        internal bool IsSetAllowWrites()
+        {
+            return this._allowWrites.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property ConsumerIdentifier. 

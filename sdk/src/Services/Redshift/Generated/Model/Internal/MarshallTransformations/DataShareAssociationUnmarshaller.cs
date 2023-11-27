@@ -54,6 +54,12 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("ConsumerAcceptedWrites", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.ConsumerAcceptedWrites = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("ConsumerIdentifier", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -70,6 +76,12 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = DateTimeUnmarshaller.Instance;
                         unmarshalledObject.CreatedDate = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ProducerAllowedWrites", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.ProducerAllowedWrites = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Status", targetDepth))

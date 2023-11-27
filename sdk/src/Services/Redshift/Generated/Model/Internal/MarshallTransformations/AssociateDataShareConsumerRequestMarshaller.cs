@@ -58,6 +58,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 
             if(publicRequest != null)
             {
+                if(publicRequest.IsSetAllowWrites())
+                {
+                    request.Parameters.Add("AllowWrites", StringUtils.FromBool(publicRequest.AllowWrites));
+                }
                 if(publicRequest.IsSetAssociateEntireAccount())
                 {
                     request.Parameters.Add("AssociateEntireAccount", StringUtils.FromBool(publicRequest.AssociateEntireAccount));
