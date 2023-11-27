@@ -44,6 +44,14 @@ namespace Amazon.PrometheusService.Model
         }
 
         /// <summary>
+        /// Paginator for ListScrapers operation
+        ///</summary>
+        public IListScrapersPaginator ListScrapers(ListScrapersRequest request) 
+        {
+            return new ListScrapersPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListWorkspaces operation
         ///</summary>
         public IListWorkspacesPaginator ListWorkspaces(ListWorkspacesRequest request) 

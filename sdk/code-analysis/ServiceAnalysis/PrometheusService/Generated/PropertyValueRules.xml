@@ -52,6 +52,24 @@
     <pattern>.*[0-9A-Za-z][-.0-9A-Z_a-z]*.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.PrometheusService.Model.CreateScraperRequest.Alias</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[0-9A-Za-z][-.0-9A-Z_a-z]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PrometheusService.Model.CreateScraperRequest.ClientToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[!-~]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PrometheusService.Model.CreateScraperResponse.ScraperId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9A-Za-z][-.0-9A-Z_a-z]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.PrometheusService.Model.CreateWorkspaceRequest.Alias</property>
     <min>1</min>
     <max>100</max>
@@ -61,6 +79,10 @@
     <min>1</min>
     <max>64</max>
     <pattern>[!-~]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PrometheusService.Model.CreateWorkspaceResponse.Arn</property>
+    <pattern>arn:aws[-a-z]*:aps:[-a-z0-9]+:[0-9]{12}:workspace/.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PrometheusService.Model.CreateWorkspaceResponse.WorkspaceId</property>
@@ -111,6 +133,24 @@
     <pattern>.*[0-9A-Za-z][-.0-9A-Z_a-z]*.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.PrometheusService.Model.DeleteScraperRequest.ClientToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[!-~]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PrometheusService.Model.DeleteScraperRequest.ScraperId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9A-Za-z][-.0-9A-Z_a-z]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PrometheusService.Model.DeleteScraperResponse.ScraperId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9A-Za-z][-.0-9A-Z_a-z]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.PrometheusService.Model.DeleteWorkspaceRequest.ClientToken</property>
     <min>1</min>
     <max>64</max>
@@ -147,6 +187,12 @@
     <pattern>.*[0-9A-Za-z][-.0-9A-Z_a-z]*.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.PrometheusService.Model.DescribeScraperRequest.ScraperId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9A-Za-z][-.0-9A-Z_a-z]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.PrometheusService.Model.DescribeWorkspaceRequest.WorkspaceId</property>
     <min>1</min>
     <max>64</max>
@@ -164,10 +210,35 @@
     <pattern>.*[0-9A-Za-z][-.0-9A-Z_a-z]*.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.PrometheusService.Model.ListRuleGroupsNamespacesRequest.NextToken</property>
+    <min>0</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.PrometheusService.Model.ListRuleGroupsNamespacesRequest.WorkspaceId</property>
     <min>1</min>
     <max>64</max>
     <pattern>.*[0-9A-Za-z][-.0-9A-Z_a-z]*.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PrometheusService.Model.ListRuleGroupsNamespacesResponse.NextToken</property>
+    <min>0</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PrometheusService.Model.ListScrapersRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PrometheusService.Model.ListScrapersRequest.NextToken</property>
+    <min>0</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PrometheusService.Model.ListScrapersResponse.NextToken</property>
+    <min>0</min>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PrometheusService.Model.ListWorkspacesRequest.Alias</property>
@@ -177,6 +248,16 @@
   <property-value-rule>
     <property>Amazon.PrometheusService.Model.ListWorkspacesRequest.MaxResults</property>
     <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PrometheusService.Model.ListWorkspacesRequest.NextToken</property>
+    <min>0</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PrometheusService.Model.ListWorkspacesResponse.NextToken</property>
+    <min>0</min>
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
@@ -248,6 +329,14 @@
     <pattern>.*[0-9A-Za-z][-.0-9A-Z_a-z]*.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.PrometheusService.Model.AmpConfiguration.WorkspaceArn</property>
+    <pattern>arn:aws[-a-z]*:aps:[-a-z0-9]+:[0-9]{12}:workspace/.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PrometheusService.Model.EksConfiguration.ClusterArn</property>
+    <pattern>arn:aws[-a-z]*:eks:[-a-z0-9]+:[0-9]{12}:cluster/.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.PrometheusService.Model.LoggingConfigurationMetadata.LogGroupArn</property>
   </property-value-rule>
   <property-value-rule>
@@ -269,9 +358,47 @@
     <pattern>.*[0-9A-Za-z][-.0-9A-Z_a-z]*.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.PrometheusService.Model.ScraperDescription.Alias</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[0-9A-Za-z][-.0-9A-Z_a-z]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PrometheusService.Model.ScraperDescription.ScraperId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9A-Za-z][-.0-9A-Z_a-z]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PrometheusService.Model.ScraperDescription.StatusReason</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PrometheusService.Model.ScraperSummary.Alias</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[0-9A-Za-z][-.0-9A-Z_a-z]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PrometheusService.Model.ScraperSummary.ScraperId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9A-Za-z][-.0-9A-Z_a-z]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PrometheusService.Model.ScraperSummary.StatusReason</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.PrometheusService.Model.WorkspaceDescription.Alias</property>
     <min>1</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PrometheusService.Model.WorkspaceDescription.Arn</property>
+    <pattern>arn:aws[-a-z]*:aps:[-a-z0-9]+:[0-9]{12}:workspace/.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PrometheusService.Model.WorkspaceDescription.PrometheusEndpoint</property>
@@ -288,6 +415,10 @@
     <property>Amazon.PrometheusService.Model.WorkspaceSummary.Alias</property>
     <min>1</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PrometheusService.Model.WorkspaceSummary.Arn</property>
+    <pattern>arn:aws[-a-z]*:aps:[-a-z0-9]+:[0-9]{12}:workspace/.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PrometheusService.Model.WorkspaceSummary.WorkspaceId</property>

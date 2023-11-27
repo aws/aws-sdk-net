@@ -42,6 +42,7 @@ namespace Amazon.PrometheusService.Model
         /// Pagination token to use when requesting the next page in this list.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1000)]
         public string NextToken
         {
             get { return this._nextToken; }

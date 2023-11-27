@@ -29,15 +29,34 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PrometheusService.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListRuleGroupsNamespaces operation.
-    /// Lists rule groups namespaces.
+    /// Container for the parameters to the ListScrapers operation.
+    /// Lists all scrapers in a customer account, including scrapers being created or deleted.
+    /// You may provide filters to return a more specific list of results.
     /// </summary>
-    public partial class ListRuleGroupsNamespacesRequest : AmazonPrometheusServiceRequest
+    public partial class ListScrapersRequest : AmazonPrometheusServiceRequest
     {
+        private Dictionary<string, List<string>> _filters = new Dictionary<string, List<string>>();
         private int? _maxResults;
-        private string _name;
         private string _nextToken;
-        private string _workspaceId;
+
+        /// <summary>
+        /// Gets and sets the property Filters. 
+        /// <para>
+        /// A list of scraper filters.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=4)]
+        public Dictionary<string, List<string>> Filters
+        {
+            get { return this._filters; }
+            set { this._filters = value; }
+        }
+
+        // Check to see if Filters property is set
+        internal bool IsSetFilters()
+        {
+            return this._filters != null && this._filters.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
@@ -59,30 +78,10 @@ namespace Amazon.PrometheusService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name. 
-        /// <para>
-        /// Optional filter for rule groups namespace name. Only the rule groups namespace that
-        /// begin with this value will be returned.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=64)]
-        public string Name
-        {
-            get { return this._name; }
-            set { this._name = value; }
-        }
-
-        // Check to see if Name property is set
-        internal bool IsSetName()
-        {
-            return this._name != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
         /// Pagination token to request the next page in a paginated list. This token is obtained
-        /// from the output of the previous ListRuleGroupsNamespaces request.
+        /// from the output of the previous ListScrapers request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000)]
@@ -96,25 +95,6 @@ namespace Amazon.PrometheusService.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property WorkspaceId. 
-        /// <para>
-        /// The ID of the workspace.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=64)]
-        public string WorkspaceId
-        {
-            get { return this._workspaceId; }
-            set { this._workspaceId = value; }
-        }
-
-        // Check to see if WorkspaceId property is set
-        internal bool IsSetWorkspaceId()
-        {
-            return this._workspaceId != null;
         }
 
     }

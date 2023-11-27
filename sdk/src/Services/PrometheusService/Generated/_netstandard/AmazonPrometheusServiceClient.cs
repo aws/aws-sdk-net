@@ -423,6 +423,61 @@ namespace Amazon.PrometheusService
 
         #endregion
         
+        #region  CreateScraper
+
+        internal virtual CreateScraperResponse CreateScraper(CreateScraperRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateScraperRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateScraperResponseUnmarshaller.Instance;
+
+            return Invoke<CreateScraperResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Create a scraper.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateScraper service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateScraper service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/CreateScraper">REST API Reference for CreateScraper Operation</seealso>
+        public virtual Task<CreateScraperResponse> CreateScraperAsync(CreateScraperRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateScraperRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateScraperResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateScraperResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateWorkspace
 
         internal virtual CreateWorkspaceResponse CreateWorkspace(CreateWorkspaceRequest request)
@@ -628,6 +683,58 @@ namespace Amazon.PrometheusService
 
         #endregion
         
+        #region  DeleteScraper
+
+        internal virtual DeleteScraperResponse DeleteScraper(DeleteScraperRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteScraperRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteScraperResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteScraperResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a scraper.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteScraper service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteScraper service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DeleteScraper">REST API Reference for DeleteScraper Operation</seealso>
+        public virtual Task<DeleteScraperResponse> DeleteScraperAsync(DeleteScraperRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteScraperRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteScraperResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteScraperResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteWorkspace
 
         internal virtual DeleteWorkspaceResponse DeleteWorkspace(DeleteWorkspaceRequest request)
@@ -824,6 +931,55 @@ namespace Amazon.PrometheusService
 
         #endregion
         
+        #region  DescribeScraper
+
+        internal virtual DescribeScraperResponse DescribeScraper(DescribeScraperRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeScraperRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeScraperResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeScraperResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describe an existing scraper.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeScraper service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeScraper service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeScraper">REST API Reference for DescribeScraper Operation</seealso>
+        public virtual Task<DescribeScraperResponse> DescribeScraperAsync(DescribeScraperRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeScraperRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeScraperResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeScraperResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeWorkspace
 
         internal virtual DescribeWorkspaceResponse DescribeWorkspace(DescribeWorkspaceRequest request)
@@ -873,6 +1029,49 @@ namespace Amazon.PrometheusService
 
         #endregion
         
+        #region  GetDefaultScraperConfiguration
+
+        internal virtual GetDefaultScraperConfigurationResponse GetDefaultScraperConfiguration(GetDefaultScraperConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDefaultScraperConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDefaultScraperConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<GetDefaultScraperConfigurationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets a default configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDefaultScraperConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDefaultScraperConfiguration service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/GetDefaultScraperConfiguration">REST API Reference for GetDefaultScraperConfiguration Operation</seealso>
+        public virtual Task<GetDefaultScraperConfigurationResponse> GetDefaultScraperConfigurationAsync(GetDefaultScraperConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDefaultScraperConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDefaultScraperConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetDefaultScraperConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListRuleGroupsNamespaces
 
         internal virtual ListRuleGroupsNamespacesResponse ListRuleGroupsNamespaces(ListRuleGroupsNamespacesRequest request)
@@ -918,6 +1117,53 @@ namespace Amazon.PrometheusService
             options.ResponseUnmarshaller = ListRuleGroupsNamespacesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListRuleGroupsNamespacesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListScrapers
+
+        internal virtual ListScrapersResponse ListScrapers(ListScrapersRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListScrapersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListScrapersResponseUnmarshaller.Instance;
+
+            return Invoke<ListScrapersResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists all scrapers in a customer account, including scrapers being created or deleted.
+        /// You may provide filters to return a more specific list of results.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListScrapers service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListScrapers service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/ListScrapers">REST API Reference for ListScrapers Operation</seealso>
+        public virtual Task<ListScrapersResponse> ListScrapersAsync(ListScrapersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListScrapersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListScrapersResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListScrapersResponse>(request, options, cancellationToken);
         }
 
         #endregion

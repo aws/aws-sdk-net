@@ -479,6 +479,81 @@ namespace Amazon.PrometheusService
 
         #endregion
         
+        #region  CreateScraper
+
+        /// <summary>
+        /// Create a scraper.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateScraper service method.</param>
+        /// 
+        /// <returns>The response from the CreateScraper service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/CreateScraper">REST API Reference for CreateScraper Operation</seealso>
+        public virtual CreateScraperResponse CreateScraper(CreateScraperRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateScraperRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateScraperResponseUnmarshaller.Instance;
+
+            return Invoke<CreateScraperResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateScraper operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateScraper operation on AmazonPrometheusServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateScraper
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/CreateScraper">REST API Reference for CreateScraper Operation</seealso>
+        public virtual IAsyncResult BeginCreateScraper(CreateScraperRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateScraperRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateScraperResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateScraper operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateScraper.</param>
+        /// 
+        /// <returns>Returns a  CreateScraperResult from PrometheusService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/CreateScraper">REST API Reference for CreateScraper Operation</seealso>
+        public virtual CreateScraperResponse EndCreateScraper(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateScraperResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateWorkspace
 
         /// <summary>
@@ -764,6 +839,78 @@ namespace Amazon.PrometheusService
 
         #endregion
         
+        #region  DeleteScraper
+
+        /// <summary>
+        /// Deletes a scraper.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteScraper service method.</param>
+        /// 
+        /// <returns>The response from the DeleteScraper service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DeleteScraper">REST API Reference for DeleteScraper Operation</seealso>
+        public virtual DeleteScraperResponse DeleteScraper(DeleteScraperRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteScraperRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteScraperResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteScraperResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteScraper operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteScraper operation on AmazonPrometheusServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteScraper
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DeleteScraper">REST API Reference for DeleteScraper Operation</seealso>
+        public virtual IAsyncResult BeginDeleteScraper(DeleteScraperRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteScraperRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteScraperResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteScraper operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteScraper.</param>
+        /// 
+        /// <returns>Returns a  DeleteScraperResult from PrometheusService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DeleteScraper">REST API Reference for DeleteScraper Operation</seealso>
+        public virtual DeleteScraperResponse EndDeleteScraper(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteScraperResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteWorkspace
 
         /// <summary>
@@ -1040,6 +1187,75 @@ namespace Amazon.PrometheusService
 
         #endregion
         
+        #region  DescribeScraper
+
+        /// <summary>
+        /// Describe an existing scraper.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeScraper service method.</param>
+        /// 
+        /// <returns>The response from the DescribeScraper service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeScraper">REST API Reference for DescribeScraper Operation</seealso>
+        public virtual DescribeScraperResponse DescribeScraper(DescribeScraperRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeScraperRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeScraperResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeScraperResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeScraper operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeScraper operation on AmazonPrometheusServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeScraper
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeScraper">REST API Reference for DescribeScraper Operation</seealso>
+        public virtual IAsyncResult BeginDescribeScraper(DescribeScraperRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeScraperRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeScraperResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeScraper operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeScraper.</param>
+        /// 
+        /// <returns>Returns a  DescribeScraperResult from PrometheusService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeScraper">REST API Reference for DescribeScraper Operation</seealso>
+        public virtual DescribeScraperResponse EndDescribeScraper(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeScraperResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeWorkspace
 
         /// <summary>
@@ -1109,6 +1325,69 @@ namespace Amazon.PrometheusService
 
         #endregion
         
+        #region  GetDefaultScraperConfiguration
+
+        /// <summary>
+        /// Gets a default configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDefaultScraperConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetDefaultScraperConfiguration service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/GetDefaultScraperConfiguration">REST API Reference for GetDefaultScraperConfiguration Operation</seealso>
+        public virtual GetDefaultScraperConfigurationResponse GetDefaultScraperConfiguration(GetDefaultScraperConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDefaultScraperConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDefaultScraperConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<GetDefaultScraperConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDefaultScraperConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDefaultScraperConfiguration operation on AmazonPrometheusServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDefaultScraperConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/GetDefaultScraperConfiguration">REST API Reference for GetDefaultScraperConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginGetDefaultScraperConfiguration(GetDefaultScraperConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDefaultScraperConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDefaultScraperConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetDefaultScraperConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDefaultScraperConfiguration.</param>
+        /// 
+        /// <returns>Returns a  GetDefaultScraperConfigurationResult from PrometheusService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/GetDefaultScraperConfiguration">REST API Reference for GetDefaultScraperConfiguration Operation</seealso>
+        public virtual GetDefaultScraperConfigurationResponse EndGetDefaultScraperConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetDefaultScraperConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListRuleGroupsNamespaces
 
         /// <summary>
@@ -1174,6 +1453,73 @@ namespace Amazon.PrometheusService
         public virtual ListRuleGroupsNamespacesResponse EndListRuleGroupsNamespaces(IAsyncResult asyncResult)
         {
             return EndInvoke<ListRuleGroupsNamespacesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListScrapers
+
+        /// <summary>
+        /// Lists all scrapers in a customer account, including scrapers being created or deleted.
+        /// You may provide filters to return a more specific list of results.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListScrapers service method.</param>
+        /// 
+        /// <returns>The response from the ListScrapers service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/ListScrapers">REST API Reference for ListScrapers Operation</seealso>
+        public virtual ListScrapersResponse ListScrapers(ListScrapersRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListScrapersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListScrapersResponseUnmarshaller.Instance;
+
+            return Invoke<ListScrapersResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListScrapers operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListScrapers operation on AmazonPrometheusServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListScrapers
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/ListScrapers">REST API Reference for ListScrapers Operation</seealso>
+        public virtual IAsyncResult BeginListScrapers(ListScrapersRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListScrapersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListScrapersResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListScrapers operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListScrapers.</param>
+        /// 
+        /// <returns>Returns a  ListScrapersResult from PrometheusService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/ListScrapers">REST API Reference for ListScrapers Operation</seealso>
+        public virtual ListScrapersResponse EndListScrapers(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListScrapersResponse>(asyncResult);
         }
 
         #endregion

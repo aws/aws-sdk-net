@@ -29,49 +29,51 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PrometheusService.Model
 {
     /// <summary>
-    /// Represents the output of a ListWorkspaces operation.
+    /// Container for the parameters to the DeleteScraper operation.
+    /// Deletes a scraper.
     /// </summary>
-    public partial class ListWorkspacesResponse : AmazonWebServiceResponse
+    public partial class DeleteScraperRequest : AmazonPrometheusServiceRequest
     {
-        private string _nextToken;
-        private List<WorkspaceSummary> _workspaces = new List<WorkspaceSummary>();
+        private string _clientToken;
+        private string _scraperId;
 
         /// <summary>
-        /// Gets and sets the property NextToken. 
+        /// Gets and sets the property ClientToken. 
         /// <para>
-        /// Pagination token to use when requesting the next page in this list.
+        /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency
+        /// of the request.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=1000)]
-        public string NextToken
+        [AWSProperty(Min=1, Max=64)]
+        public string ClientToken
         {
-            get { return this._nextToken; }
-            set { this._nextToken = value; }
+            get { return this._clientToken; }
+            set { this._clientToken = value; }
         }
 
-        // Check to see if NextToken property is set
-        internal bool IsSetNextToken()
+        // Check to see if ClientToken property is set
+        internal bool IsSetClientToken()
         {
-            return this._nextToken != null;
+            return this._clientToken != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Workspaces. 
+        /// Gets and sets the property ScraperId. 
         /// <para>
-        /// The list of existing workspaces, including those undergoing creation or deletion.
+        /// The ID of the scraper to delete.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public List<WorkspaceSummary> Workspaces
+        [AWSProperty(Required=true, Min=1, Max=64)]
+        public string ScraperId
         {
-            get { return this._workspaces; }
-            set { this._workspaces = value; }
+            get { return this._scraperId; }
+            set { this._scraperId = value; }
         }
 
-        // Check to see if Workspaces property is set
-        internal bool IsSetWorkspaces()
+        // Check to see if ScraperId property is set
+        internal bool IsSetScraperId()
         {
-            return this._workspaces != null && this._workspaces.Count > 0; 
+            return this._scraperId != null;
         }
 
     }

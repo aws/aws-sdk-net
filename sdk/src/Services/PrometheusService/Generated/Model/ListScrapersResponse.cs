@@ -29,12 +29,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PrometheusService.Model
 {
     /// <summary>
-    /// Represents the output of a ListWorkspaces operation.
+    /// Represents the output of a ListScrapers operation.
     /// </summary>
-    public partial class ListWorkspacesResponse : AmazonWebServiceResponse
+    public partial class ListScrapersResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<WorkspaceSummary> _workspaces = new List<WorkspaceSummary>();
+        private List<ScraperSummary> _scrapers = new List<ScraperSummary>();
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -56,22 +56,22 @@ namespace Amazon.PrometheusService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Workspaces. 
+        /// Gets and sets the property Scrapers. 
         /// <para>
-        /// The list of existing workspaces, including those undergoing creation or deletion.
+        /// The list of scrapers, filtered down if a set of filters was provided in the request.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public List<WorkspaceSummary> Workspaces
+        public List<ScraperSummary> Scrapers
         {
-            get { return this._workspaces; }
-            set { this._workspaces = value; }
+            get { return this._scrapers; }
+            set { this._scrapers = value; }
         }
 
-        // Check to see if Workspaces property is set
-        internal bool IsSetWorkspaces()
+        // Check to see if Scrapers property is set
+        internal bool IsSetScrapers()
         {
-            return this._workspaces != null && this._workspaces.Count > 0; 
+            return this._scrapers != null && this._scrapers.Count > 0; 
         }
 
     }

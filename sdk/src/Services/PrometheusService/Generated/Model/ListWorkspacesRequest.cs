@@ -84,6 +84,7 @@ namespace Amazon.PrometheusService.Model
         /// from the output of the previous ListWorkspaces request.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1000)]
         public string NextToken
         {
             get { return this._nextToken; }

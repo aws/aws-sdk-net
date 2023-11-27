@@ -29,49 +29,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PrometheusService.Model
 {
     /// <summary>
-    /// Represents the output of a ListWorkspaces operation.
+    /// Represents the output of a DeleteScraper operation.
     /// </summary>
-    public partial class ListWorkspacesResponse : AmazonWebServiceResponse
+    public partial class DeleteScraperResponse : AmazonWebServiceResponse
     {
-        private string _nextToken;
-        private List<WorkspaceSummary> _workspaces = new List<WorkspaceSummary>();
+        private string _scraperId;
+        private ScraperStatus _status;
 
         /// <summary>
-        /// Gets and sets the property NextToken. 
+        /// Gets and sets the property ScraperId. 
         /// <para>
-        /// Pagination token to use when requesting the next page in this list.
+        /// The ID of the scraper that was deleted.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=1000)]
-        public string NextToken
+        [AWSProperty(Required=true, Min=1, Max=64)]
+        public string ScraperId
         {
-            get { return this._nextToken; }
-            set { this._nextToken = value; }
+            get { return this._scraperId; }
+            set { this._scraperId = value; }
         }
 
-        // Check to see if NextToken property is set
-        internal bool IsSetNextToken()
+        // Check to see if ScraperId property is set
+        internal bool IsSetScraperId()
         {
-            return this._nextToken != null;
+            return this._scraperId != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Workspaces. 
+        /// Gets and sets the property Status. 
         /// <para>
-        /// The list of existing workspaces, including those undergoing creation or deletion.
+        /// The status of the scraper that is being deleted.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public List<WorkspaceSummary> Workspaces
+        public ScraperStatus Status
         {
-            get { return this._workspaces; }
-            set { this._workspaces = value; }
+            get { return this._status; }
+            set { this._status = value; }
         }
 
-        // Check to see if Workspaces property is set
-        internal bool IsSetWorkspaces()
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
         {
-            return this._workspaces != null && this._workspaces.Count > 0; 
+            return this._status != null;
         }
 
     }
