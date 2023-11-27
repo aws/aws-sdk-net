@@ -187,7 +187,7 @@
     <property>Amazon.LexRuntimeV2.Model.ActiveContext.Name</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^([A-Za-z]_?)+$</pattern>
+    <pattern>^([A-Za-z0-9]_?)+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexRuntimeV2.Model.ActiveContextTimeToLive.TimeToLiveInSeconds</property>

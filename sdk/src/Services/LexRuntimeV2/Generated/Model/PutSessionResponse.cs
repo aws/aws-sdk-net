@@ -103,9 +103,9 @@ namespace Amazon.LexRuntimeV2.Model
         /// <summary>
         /// Gets and sets the property RequestAttributes. 
         /// <para>
-        /// Request-specific information passed between the client application and Amazon Lex
-        /// V2. These are the same as the <code>requestAttribute</code> parameter in the call
-        /// to the <code>PutSession</code> operation.
+        /// A base-64-encoded gzipped field that provides request-specific information passed
+        /// between the client application and Amazon Lex V2. These are the same as the <code>requestAttribute</code>
+        /// parameter in the call to the <code>PutSession</code> operation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -143,12 +143,9 @@ namespace Amazon.LexRuntimeV2.Model
         /// <summary>
         /// Gets and sets the property SessionStateValue. 
         /// <para>
-        /// Represents the current state of the dialog between the user and the bot.
-        /// </para>
-        ///  
-        /// <para>
-        /// Use this to determine the progress of the conversation and what the next action may
-        /// be.
+        /// A base-64-encoded gzipped field that represents the current state of the dialog between
+        /// the user and the bot. Use this to determine the progress of the conversation and what
+        /// the next action may be.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

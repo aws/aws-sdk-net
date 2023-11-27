@@ -90,7 +90,8 @@ namespace Amazon.LexRuntimeV2.Model
         /// <summary>
         /// Gets and sets the property InputMode. 
         /// <para>
-        /// Indicates whether the input mode to the operation was text or speech. 
+        /// Indicates whether the input mode to the operation was text, speech, or from a touch-tone
+        /// keypad. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

@@ -41,7 +41,8 @@ namespace Amazon.LexRuntimeV2.Model
         /// <summary>
         /// Gets and sets the property ConfirmationState. 
         /// <para>
-        /// Contains information about whether fulfillment of the intent has been confirmed.
+        /// Indicates whether the intent has been <code>Confirmed</code>, <code>Denied</code>,
+        /// or <code>None</code> if the confirmation stage has not yet been reached.
         /// </para>
         /// </summary>
         public ConfirmationState ConfirmationState
@@ -97,8 +98,37 @@ namespace Amazon.LexRuntimeV2.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// Contains fulfillment information for the intent. 
+        /// Indicates the fulfillment state for the intent. The meanings of each value are as
+        /// follows:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>Failed</code> – The bot failed to fulfill the intent.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Fulfilled</code> – The bot has completed fulfillment of the intent.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>FulfillmentInProgress</code> – The bot is in the middle of fulfilling the intent.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>InProgress</code> – The bot is in the middle of eliciting the slot values that
+        /// are necessary to fulfill the intent.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ReadyForFulfillment</code> – The bot has elicited all the slot values for the
+        /// intent and is ready to fulfill the intent.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Waiting</code> – The bot is waiting for a response from the user (limited to
+        /// streaming conversations).
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public IntentState State
         {

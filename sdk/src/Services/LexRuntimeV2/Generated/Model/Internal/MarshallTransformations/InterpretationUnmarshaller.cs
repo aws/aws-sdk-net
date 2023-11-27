@@ -70,6 +70,12 @@ namespace Amazon.LexRuntimeV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.Intent = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("interpretationSource", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.InterpretationSource = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("nluConfidence", targetDepth))
                 {
                     var unmarshaller = ConfidenceScoreUnmarshaller.Instance;

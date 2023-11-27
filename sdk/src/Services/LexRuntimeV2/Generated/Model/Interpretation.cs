@@ -29,12 +29,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LexRuntimeV2.Model
 {
     /// <summary>
-    /// An intent that Amazon Lex V2 determined might satisfy the user's utterance. The intents
-    /// are ordered by the confidence score.
+    /// An object containing information about an intent that Amazon Lex V2 determined might
+    /// satisfy the user's utterance. The intents are ordered by the confidence score.
     /// </summary>
     public partial class Interpretation
     {
         private Intent _intent;
+        private InterpretationSource _interpretationSource;
         private ConfidenceScore _nluConfidence;
         private SentimentResponse _sentimentResponse;
 
@@ -55,6 +56,24 @@ namespace Amazon.LexRuntimeV2.Model
         internal bool IsSetIntent()
         {
             return this._intent != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InterpretationSource. 
+        /// <para>
+        /// Specifies the service that interpreted the input.
+        /// </para>
+        /// </summary>
+        public InterpretationSource InterpretationSource
+        {
+            get { return this._interpretationSource; }
+            set { this._interpretationSource = value; }
+        }
+
+        // Check to see if InterpretationSource property is set
+        internal bool IsSetInterpretationSource()
+        {
+            return this._interpretationSource != null;
         }
 
         /// <summary>
