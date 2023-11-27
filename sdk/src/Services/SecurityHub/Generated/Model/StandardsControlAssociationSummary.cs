@@ -183,8 +183,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        ///  The last time that a control's enablement status in a specified standard was updated.
-        /// 
+        /// The last time that a control's enablement status in a specified standard was updated.
         /// </para>
         /// </summary>
         public DateTime UpdatedAt
@@ -202,8 +201,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property UpdatedReason. 
         /// <para>
-        ///  The reason for updating the control's enablement status in a specified standard.
-        /// 
+        /// The reason for updating a control's enablement status in a specified standard.
         /// </para>
         /// </summary>
         public string UpdatedReason

@@ -590,6 +590,9 @@ namespace Amazon.SecurityHub
         /// <param name="request">Container for the necessary parameters to execute the BatchDisableStandards service method.</param>
         /// 
         /// <returns>The response from the BatchDisableStandards service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InternalException">
         /// Internal server error.
         /// </exception>
@@ -666,6 +669,9 @@ namespace Amazon.SecurityHub
         /// <param name="request">Container for the necessary parameters to execute the BatchEnableStandards service method.</param>
         /// 
         /// <returns>The response from the BatchEnableStandards service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InternalException">
         /// Internal server error.
         /// </exception>
@@ -799,6 +805,84 @@ namespace Amazon.SecurityHub
         public virtual BatchGetAutomationRulesResponse EndBatchGetAutomationRules(IAsyncResult asyncResult)
         {
             return EndInvoke<BatchGetAutomationRulesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  BatchGetConfigurationPolicyAssociations
+
+        /// <summary>
+        /// Returns associations between an Security Hub configuration and a batch of target
+        /// accounts, organizational units, or the root. Only the Security Hub delegated administrator
+        /// can invoke this operation from the home Region. A configuration can refer to a configuration
+        /// policy or to a self-managed configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetConfigurationPolicyAssociations service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetConfigurationPolicyAssociations service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// The account doesn't have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchGetConfigurationPolicyAssociations">REST API Reference for BatchGetConfigurationPolicyAssociations Operation</seealso>
+        public virtual BatchGetConfigurationPolicyAssociationsResponse BatchGetConfigurationPolicyAssociations(BatchGetConfigurationPolicyAssociationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetConfigurationPolicyAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetConfigurationPolicyAssociationsResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetConfigurationPolicyAssociationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchGetConfigurationPolicyAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetConfigurationPolicyAssociations operation on AmazonSecurityHubClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchGetConfigurationPolicyAssociations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchGetConfigurationPolicyAssociations">REST API Reference for BatchGetConfigurationPolicyAssociations Operation</seealso>
+        public virtual IAsyncResult BeginBatchGetConfigurationPolicyAssociations(BatchGetConfigurationPolicyAssociationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetConfigurationPolicyAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetConfigurationPolicyAssociationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchGetConfigurationPolicyAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchGetConfigurationPolicyAssociations.</param>
+        /// 
+        /// <returns>Returns a  BatchGetConfigurationPolicyAssociationsResult from SecurityHub.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchGetConfigurationPolicyAssociations">REST API Reference for BatchGetConfigurationPolicyAssociations Operation</seealso>
+        public virtual BatchGetConfigurationPolicyAssociationsResponse EndBatchGetConfigurationPolicyAssociations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<BatchGetConfigurationPolicyAssociationsResponse>(asyncResult);
         }
 
         #endregion
@@ -1299,6 +1383,9 @@ namespace Amazon.SecurityHub
         /// <param name="request">Container for the necessary parameters to execute the BatchUpdateStandardsControlAssociations service method.</param>
         /// 
         /// <returns>The response from the BatchUpdateStandardsControlAssociations service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InternalException">
         /// Internal server error.
         /// </exception>
@@ -1506,6 +1593,82 @@ namespace Amazon.SecurityHub
         public virtual CreateAutomationRuleResponse EndCreateAutomationRule(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateAutomationRuleResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateConfigurationPolicy
+
+        /// <summary>
+        /// Creates a configuration policy with the defined configuration. Only the Security
+        /// Hub delegated administrator can invoke this operation from the home Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateConfigurationPolicy service method.</param>
+        /// 
+        /// <returns>The response from the CreateConfigurationPolicy service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// The account doesn't have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceConflictException">
+        /// The resource specified in the request conflicts with an existing resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CreateConfigurationPolicy">REST API Reference for CreateConfigurationPolicy Operation</seealso>
+        public virtual CreateConfigurationPolicyResponse CreateConfigurationPolicy(CreateConfigurationPolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateConfigurationPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateConfigurationPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<CreateConfigurationPolicyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateConfigurationPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateConfigurationPolicy operation on AmazonSecurityHubClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateConfigurationPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CreateConfigurationPolicy">REST API Reference for CreateConfigurationPolicy Operation</seealso>
+        public virtual IAsyncResult BeginCreateConfigurationPolicy(CreateConfigurationPolicyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateConfigurationPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateConfigurationPolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateConfigurationPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateConfigurationPolicy.</param>
+        /// 
+        /// <returns>Returns a  CreateConfigurationPolicyResult from SecurityHub.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CreateConfigurationPolicy">REST API Reference for CreateConfigurationPolicy Operation</seealso>
+        public virtual CreateConfigurationPolicyResponse EndCreateConfigurationPolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateConfigurationPolicyResponse>(asyncResult);
         }
 
         #endregion
@@ -1737,6 +1900,9 @@ namespace Amazon.SecurityHub
         /// <param name="request">Container for the necessary parameters to execute the CreateMembers service method.</param>
         /// 
         /// <returns>The response from the CreateMembers service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InternalException">
         /// Internal server error.
         /// </exception>
@@ -1948,6 +2114,87 @@ namespace Amazon.SecurityHub
         public virtual DeleteActionTargetResponse EndDeleteActionTarget(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteActionTargetResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteConfigurationPolicy
+
+        /// <summary>
+        /// Deletes a configuration policy. Only the Security Hub delegated administrator can
+        /// invoke this operation from the home Region. For the deletion to succeed, you must
+        /// first disassociate a configuration policy from target accounts, organizational units,
+        /// or the root by invoking the <code>StartConfigurationPolicyDisassociation</code> operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConfigurationPolicy service method.</param>
+        /// 
+        /// <returns>The response from the DeleteConfigurationPolicy service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// The account doesn't have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceConflictException">
+        /// The resource specified in the request conflicts with an existing resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DeleteConfigurationPolicy">REST API Reference for DeleteConfigurationPolicy Operation</seealso>
+        public virtual DeleteConfigurationPolicyResponse DeleteConfigurationPolicy(DeleteConfigurationPolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteConfigurationPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteConfigurationPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteConfigurationPolicyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteConfigurationPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConfigurationPolicy operation on AmazonSecurityHubClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteConfigurationPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DeleteConfigurationPolicy">REST API Reference for DeleteConfigurationPolicy Operation</seealso>
+        public virtual IAsyncResult BeginDeleteConfigurationPolicy(DeleteConfigurationPolicyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteConfigurationPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteConfigurationPolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteConfigurationPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteConfigurationPolicy.</param>
+        /// 
+        /// <returns>Returns a  DeleteConfigurationPolicyResult from SecurityHub.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DeleteConfigurationPolicy">REST API Reference for DeleteConfigurationPolicy Operation</seealso>
+        public virtual DeleteConfigurationPolicyResponse EndDeleteConfigurationPolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteConfigurationPolicyResponse>(asyncResult);
         }
 
         #endregion
@@ -2412,8 +2659,8 @@ namespace Amazon.SecurityHub
         #region  DescribeOrganizationConfiguration
 
         /// <summary>
-        /// Returns information about the Organizations configuration for Security Hub. Can only
-        /// be called from a Security Hub administrator account.
+        /// Returns information about the way your organization is configured in Security Hub.
+        /// Only the Security Hub administrator account can invoke this operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeOrganizationConfiguration service method.</param>
         /// 
@@ -2784,6 +3031,9 @@ namespace Amazon.SecurityHub
         /// <param name="request">Container for the necessary parameters to execute the DisableOrganizationAdminAccount service method.</param>
         /// 
         /// <returns>The response from the DisableOrganizationAdminAccount service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InternalException">
         /// Internal server error.
         /// </exception>
@@ -2872,6 +3122,9 @@ namespace Amazon.SecurityHub
         /// <param name="request">Container for the necessary parameters to execute the DisableSecurityHub service method.</param>
         /// 
         /// <returns>The response from the DisableSecurityHub service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InternalException">
         /// Internal server error.
         /// </exception>
@@ -3120,6 +3373,9 @@ namespace Amazon.SecurityHub
         /// <param name="request">Container for the necessary parameters to execute the DisassociateMembers service method.</param>
         /// 
         /// <returns>The response from the DisassociateMembers service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InternalException">
         /// Internal server error.
         /// </exception>
@@ -3272,6 +3528,9 @@ namespace Amazon.SecurityHub
         /// <param name="request">Container for the necessary parameters to execute the EnableOrganizationAdminAccount service method.</param>
         /// 
         /// <returns>The response from the EnableOrganizationAdminAccount service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InternalException">
         /// Internal server error.
         /// </exception>
@@ -3518,6 +3777,160 @@ namespace Amazon.SecurityHub
         public virtual GetAdministratorAccountResponse EndGetAdministratorAccount(IAsyncResult asyncResult)
         {
             return EndInvoke<GetAdministratorAccountResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetConfigurationPolicy
+
+        /// <summary>
+        /// Provides information about a configuration policy. Only the Security Hub delegated
+        /// administrator can invoke this operation from the home Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConfigurationPolicy service method.</param>
+        /// 
+        /// <returns>The response from the GetConfigurationPolicy service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// The account doesn't have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetConfigurationPolicy">REST API Reference for GetConfigurationPolicy Operation</seealso>
+        public virtual GetConfigurationPolicyResponse GetConfigurationPolicy(GetConfigurationPolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetConfigurationPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetConfigurationPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetConfigurationPolicyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetConfigurationPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetConfigurationPolicy operation on AmazonSecurityHubClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetConfigurationPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetConfigurationPolicy">REST API Reference for GetConfigurationPolicy Operation</seealso>
+        public virtual IAsyncResult BeginGetConfigurationPolicy(GetConfigurationPolicyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetConfigurationPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetConfigurationPolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetConfigurationPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetConfigurationPolicy.</param>
+        /// 
+        /// <returns>Returns a  GetConfigurationPolicyResult from SecurityHub.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetConfigurationPolicy">REST API Reference for GetConfigurationPolicy Operation</seealso>
+        public virtual GetConfigurationPolicyResponse EndGetConfigurationPolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetConfigurationPolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetConfigurationPolicyAssociation
+
+        /// <summary>
+        /// Returns the association between a configuration and a target account, organizational
+        /// unit, or the root. The configuration can be a configuration policy or self-managed
+        /// behavior. Only the Security Hub delegated administrator can invoke this operation
+        /// from the home Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConfigurationPolicyAssociation service method.</param>
+        /// 
+        /// <returns>The response from the GetConfigurationPolicyAssociation service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// The account doesn't have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetConfigurationPolicyAssociation">REST API Reference for GetConfigurationPolicyAssociation Operation</seealso>
+        public virtual GetConfigurationPolicyAssociationResponse GetConfigurationPolicyAssociation(GetConfigurationPolicyAssociationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetConfigurationPolicyAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetConfigurationPolicyAssociationResponseUnmarshaller.Instance;
+
+            return Invoke<GetConfigurationPolicyAssociationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetConfigurationPolicyAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetConfigurationPolicyAssociation operation on AmazonSecurityHubClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetConfigurationPolicyAssociation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetConfigurationPolicyAssociation">REST API Reference for GetConfigurationPolicyAssociation Operation</seealso>
+        public virtual IAsyncResult BeginGetConfigurationPolicyAssociation(GetConfigurationPolicyAssociationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetConfigurationPolicyAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetConfigurationPolicyAssociationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetConfigurationPolicyAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetConfigurationPolicyAssociation.</param>
+        /// 
+        /// <returns>Returns a  GetConfigurationPolicyAssociationResult from SecurityHub.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetConfigurationPolicyAssociation">REST API Reference for GetConfigurationPolicyAssociation Operation</seealso>
+        public virtual GetConfigurationPolicyAssociationResponse EndGetConfigurationPolicyAssociation(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetConfigurationPolicyAssociationResponse>(asyncResult);
         }
 
         #endregion
@@ -4439,6 +4852,154 @@ namespace Amazon.SecurityHub
 
         #endregion
         
+        #region  ListConfigurationPolicies
+
+        /// <summary>
+        /// Lists the configuration policies that the Security Hub delegated administrator has
+        /// created for your organization. Only the delegated administrator can invoke this operation
+        /// from the home Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListConfigurationPolicies service method.</param>
+        /// 
+        /// <returns>The response from the ListConfigurationPolicies service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// The account doesn't have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListConfigurationPolicies">REST API Reference for ListConfigurationPolicies Operation</seealso>
+        public virtual ListConfigurationPoliciesResponse ListConfigurationPolicies(ListConfigurationPoliciesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListConfigurationPoliciesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListConfigurationPoliciesResponseUnmarshaller.Instance;
+
+            return Invoke<ListConfigurationPoliciesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListConfigurationPolicies operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListConfigurationPolicies operation on AmazonSecurityHubClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListConfigurationPolicies
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListConfigurationPolicies">REST API Reference for ListConfigurationPolicies Operation</seealso>
+        public virtual IAsyncResult BeginListConfigurationPolicies(ListConfigurationPoliciesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListConfigurationPoliciesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListConfigurationPoliciesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListConfigurationPolicies operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListConfigurationPolicies.</param>
+        /// 
+        /// <returns>Returns a  ListConfigurationPoliciesResult from SecurityHub.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListConfigurationPolicies">REST API Reference for ListConfigurationPolicies Operation</seealso>
+        public virtual ListConfigurationPoliciesResponse EndListConfigurationPolicies(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListConfigurationPoliciesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListConfigurationPolicyAssociations
+
+        /// <summary>
+        /// Provides information about the associations for your configuration policies and self-managed
+        /// behavior. Only the Security Hub delegated administrator can invoke this operation
+        /// from the home Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListConfigurationPolicyAssociations service method.</param>
+        /// 
+        /// <returns>The response from the ListConfigurationPolicyAssociations service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// The account doesn't have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListConfigurationPolicyAssociations">REST API Reference for ListConfigurationPolicyAssociations Operation</seealso>
+        public virtual ListConfigurationPolicyAssociationsResponse ListConfigurationPolicyAssociations(ListConfigurationPolicyAssociationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListConfigurationPolicyAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListConfigurationPolicyAssociationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListConfigurationPolicyAssociationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListConfigurationPolicyAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListConfigurationPolicyAssociations operation on AmazonSecurityHubClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListConfigurationPolicyAssociations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListConfigurationPolicyAssociations">REST API Reference for ListConfigurationPolicyAssociations Operation</seealso>
+        public virtual IAsyncResult BeginListConfigurationPolicyAssociations(ListConfigurationPolicyAssociationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListConfigurationPolicyAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListConfigurationPolicyAssociationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListConfigurationPolicyAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListConfigurationPolicyAssociations.</param>
+        /// 
+        /// <returns>Returns a  ListConfigurationPolicyAssociationsResult from SecurityHub.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListConfigurationPolicyAssociations">REST API Reference for ListConfigurationPolicyAssociations Operation</seealso>
+        public virtual ListConfigurationPolicyAssociationsResponse EndListConfigurationPolicyAssociations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListConfigurationPolicyAssociationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListEnabledProductsForImport
 
         /// <summary>
@@ -5003,6 +5564,164 @@ namespace Amazon.SecurityHub
 
         #endregion
         
+        #region  StartConfigurationPolicyAssociation
+
+        /// <summary>
+        /// Associates a target account, organizational unit, or the root with a specified configuration.
+        /// The target can be associated with a configuration policy or self-managed behavior.
+        /// Only the Security Hub delegated administrator can invoke this operation from the home
+        /// Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartConfigurationPolicyAssociation service method.</param>
+        /// 
+        /// <returns>The response from the StartConfigurationPolicyAssociation service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// The account doesn't have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/StartConfigurationPolicyAssociation">REST API Reference for StartConfigurationPolicyAssociation Operation</seealso>
+        public virtual StartConfigurationPolicyAssociationResponse StartConfigurationPolicyAssociation(StartConfigurationPolicyAssociationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartConfigurationPolicyAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartConfigurationPolicyAssociationResponseUnmarshaller.Instance;
+
+            return Invoke<StartConfigurationPolicyAssociationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartConfigurationPolicyAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartConfigurationPolicyAssociation operation on AmazonSecurityHubClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartConfigurationPolicyAssociation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/StartConfigurationPolicyAssociation">REST API Reference for StartConfigurationPolicyAssociation Operation</seealso>
+        public virtual IAsyncResult BeginStartConfigurationPolicyAssociation(StartConfigurationPolicyAssociationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartConfigurationPolicyAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartConfigurationPolicyAssociationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartConfigurationPolicyAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartConfigurationPolicyAssociation.</param>
+        /// 
+        /// <returns>Returns a  StartConfigurationPolicyAssociationResult from SecurityHub.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/StartConfigurationPolicyAssociation">REST API Reference for StartConfigurationPolicyAssociation Operation</seealso>
+        public virtual StartConfigurationPolicyAssociationResponse EndStartConfigurationPolicyAssociation(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartConfigurationPolicyAssociationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StartConfigurationPolicyDisassociation
+
+        /// <summary>
+        /// Disassociates a target account, organizational unit, or the root from a specified
+        /// configuration. When you disassociate a configuration from its target, the target inherits
+        /// the configuration of the closest parent. If there’s no configuration to inherit, the
+        /// target retains its settings but becomes a self-managed account. A target can be disassociated
+        /// from a configuration policy or self-managed behavior. Only the Security Hub delegated
+        /// administrator can invoke this operation from the home Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartConfigurationPolicyDisassociation service method.</param>
+        /// 
+        /// <returns>The response from the StartConfigurationPolicyDisassociation service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// The account doesn't have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/StartConfigurationPolicyDisassociation">REST API Reference for StartConfigurationPolicyDisassociation Operation</seealso>
+        public virtual StartConfigurationPolicyDisassociationResponse StartConfigurationPolicyDisassociation(StartConfigurationPolicyDisassociationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartConfigurationPolicyDisassociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartConfigurationPolicyDisassociationResponseUnmarshaller.Instance;
+
+            return Invoke<StartConfigurationPolicyDisassociationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartConfigurationPolicyDisassociation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartConfigurationPolicyDisassociation operation on AmazonSecurityHubClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartConfigurationPolicyDisassociation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/StartConfigurationPolicyDisassociation">REST API Reference for StartConfigurationPolicyDisassociation Operation</seealso>
+        public virtual IAsyncResult BeginStartConfigurationPolicyDisassociation(StartConfigurationPolicyDisassociationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartConfigurationPolicyDisassociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartConfigurationPolicyDisassociationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartConfigurationPolicyDisassociation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartConfigurationPolicyDisassociation.</param>
+        /// 
+        /// <returns>Returns a  StartConfigurationPolicyDisassociationResult from SecurityHub.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/StartConfigurationPolicyDisassociation">REST API Reference for StartConfigurationPolicyDisassociation Operation</seealso>
+        public virtual StartConfigurationPolicyDisassociationResponse EndStartConfigurationPolicyDisassociation(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartConfigurationPolicyDisassociationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  TagResource
 
         /// <summary>
@@ -5194,6 +5913,85 @@ namespace Amazon.SecurityHub
         public virtual UpdateActionTargetResponse EndUpdateActionTarget(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateActionTargetResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateConfigurationPolicy
+
+        /// <summary>
+        /// Updates a configuration policy. Only the Security Hub delegated administrator can
+        /// invoke this operation from the home Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConfigurationPolicy service method.</param>
+        /// 
+        /// <returns>The response from the UpdateConfigurationPolicy service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// The account doesn't have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceConflictException">
+        /// The resource specified in the request conflicts with an existing resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateConfigurationPolicy">REST API Reference for UpdateConfigurationPolicy Operation</seealso>
+        public virtual UpdateConfigurationPolicyResponse UpdateConfigurationPolicy(UpdateConfigurationPolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateConfigurationPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateConfigurationPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateConfigurationPolicyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateConfigurationPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConfigurationPolicy operation on AmazonSecurityHubClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateConfigurationPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateConfigurationPolicy">REST API Reference for UpdateConfigurationPolicy Operation</seealso>
+        public virtual IAsyncResult BeginUpdateConfigurationPolicy(UpdateConfigurationPolicyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateConfigurationPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateConfigurationPolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateConfigurationPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateConfigurationPolicy.</param>
+        /// 
+        /// <returns>Returns a  UpdateConfigurationPolicyResult from SecurityHub.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateConfigurationPolicy">REST API Reference for UpdateConfigurationPolicy Operation</seealso>
+        public virtual UpdateConfigurationPolicyResponse EndUpdateConfigurationPolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateConfigurationPolicyResponse>(asyncResult);
         }
 
         #endregion
@@ -5436,12 +6234,15 @@ namespace Amazon.SecurityHub
         #region  UpdateOrganizationConfiguration
 
         /// <summary>
-        /// Used to update the configuration related to Organizations. Can only be called from
-        /// a Security Hub administrator account.
+        /// Updates the configuration of your organization in Security Hub. Only the Security
+        /// Hub administrator account can invoke this operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateOrganizationConfiguration service method.</param>
         /// 
         /// <returns>The response from the UpdateOrganizationConfiguration service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InternalException">
         /// Internal server error.
         /// </exception>
@@ -5456,6 +6257,12 @@ namespace Amazon.SecurityHub
         /// The request was rejected because it attempted to create resources beyond the current
         /// Amazon Web Services account or throttling limits. The error code describes the limit
         /// exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceConflictException">
+        /// The resource specified in the request conflicts with an existing resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateOrganizationConfiguration">REST API Reference for UpdateOrganizationConfiguration Operation</seealso>
         public virtual UpdateOrganizationConfigurationResponse UpdateOrganizationConfiguration(UpdateOrganizationConfigurationRequest request)
@@ -5511,6 +6318,9 @@ namespace Amazon.SecurityHub
         /// <param name="request">Container for the necessary parameters to execute the UpdateSecurityControl service method.</param>
         /// 
         /// <returns>The response from the UpdateSecurityControl service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InternalException">
         /// Internal server error.
         /// </exception>
@@ -5588,6 +6398,9 @@ namespace Amazon.SecurityHub
         /// <param name="request">Container for the necessary parameters to execute the UpdateSecurityHubConfiguration service method.</param>
         /// 
         /// <returns>The response from the UpdateSecurityHubConfiguration service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InternalException">
         /// Internal server error.
         /// </exception>
@@ -5660,6 +6473,9 @@ namespace Amazon.SecurityHub
         /// <param name="request">Container for the necessary parameters to execute the UpdateStandardsControl service method.</param>
         /// 
         /// <returns>The response from the UpdateStandardsControl service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InternalException">
         /// Internal server error.
         /// </exception>

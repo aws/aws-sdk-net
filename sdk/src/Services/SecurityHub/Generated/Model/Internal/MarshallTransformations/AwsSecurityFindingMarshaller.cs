@@ -62,6 +62,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.AwsAccountId);
             }
 
+            if(requestObject.IsSetAwsAccountName())
+            {
+                context.Writer.WritePropertyName("AwsAccountName");
+                context.Writer.Write(requestObject.AwsAccountName);
+            }
+
             if(requestObject.IsSetCompanyName())
             {
                 context.Writer.WritePropertyName("CompanyName");
@@ -223,6 +229,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 marshaller.Marshall(requestObject.Process, context);
 
                 context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetProcessedAt())
+            {
+                context.Writer.WritePropertyName("ProcessedAt");
+                context.Writer.Write(requestObject.ProcessedAt);
             }
 
             if(requestObject.IsSetProductArn())

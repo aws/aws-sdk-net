@@ -97,6 +97,25 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
             #endregion
         }
 
+        public void SecurityHubBatchGetConfigurationPolicyAssociations()
+        {
+            #region to-get-configuration-associations-for-a-batch-of-targets-1695178953302
+
+            var client = new AmazonSecurityHubClient();
+            var response = client.BatchGetConfigurationPolicyAssociations(new BatchGetConfigurationPolicyAssociationsRequest 
+            {
+                ConfigurationPolicyAssociationIdentifiers = new List<ConfigurationPolicyAssociation> {
+                    new ConfigurationPolicyAssociation { Target = new Target { AccountId = "111122223333" } },
+                    new ConfigurationPolicyAssociation { Target = new Target { RootId = "r-f6g7h8i9j0example" } }
+                }
+            });
+
+            List<ConfigurationPolicyAssociationSummary> configurationPolicyAssociations = response.ConfigurationPolicyAssociations;
+            List<UnprocessedConfigurationPolicyAssociation> unprocessedConfigurationPolicyAssociations = response.UnprocessedConfigurationPolicyAssociations;
+
+            #endregion
+        }
+
         public void SecurityHubBatchGetSecurityControls()
         {
             #region to-get-security-control-details--1683234478355
@@ -367,6 +386,51 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
             #endregion
         }
 
+        public void SecurityHubCreateConfigurationPolicy()
+        {
+            #region to-create-a-configuration-policy-1695172470099
+
+            var client = new AmazonSecurityHubClient();
+            var response = client.CreateConfigurationPolicy(new CreateConfigurationPolicyRequest 
+            {
+                ConfigurationPolicy = new Policy { SecurityHub = new SecurityHubPolicy {
+                    EnabledStandardIdentifiers = new List<string> {
+                        "arn:aws:securityhub:us-east-1::standards/aws-foundational-security-best-practices/v/1.0.0",
+                        "arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0"
+                    },
+                    SecurityControlsConfiguration = new SecurityControlsConfiguration {
+                        DisabledSecurityControlIdentifiers = new List<string> {
+                            "CloudWatch.1"
+                        },
+                        SecurityControlCustomParameters = new List<SecurityControlCustomParameter> {
+                            new SecurityControlCustomParameter {
+                                Parameters = new Dictionary<string, ParameterConfiguration> {
+                                    { "daysToExpiration", new ParameterConfiguration {
+                                        Value = new ParameterValue { Integer = 14 },
+                                        ValueType = "CUSTOM"
+                                    } }
+                                },
+                                SecurityControlId = "ACM.1"
+                            }
+                        }
+                    },
+                    ServiceEnabled = true
+                } },
+                Description = "Configuration policy for testing FSBP and CIS",
+                Name = "TestConfigurationPolicy"
+            });
+
+            string arn = response.Arn;
+            Policy configurationPolicy = response.ConfigurationPolicy;
+            DateTime createdAt = response.CreatedAt;
+            string description = response.Description;
+            string id = response.Id;
+            string name = response.Name;
+            DateTime updatedAt = response.UpdatedAt;
+
+            #endregion
+        }
+
         public void SecurityHubCreateFindingAggregator()
         {
             #region to-enable-cross-region-aggregation-1674766716226
@@ -466,6 +530,20 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
             });
 
             string actionTargetArn = response.ActionTargetArn;
+
+            #endregion
+        }
+
+        public void SecurityHubDeleteConfigurationPolicy()
+        {
+            #region to-delete-a-configuration-policy-1695174614062
+
+            var client = new AmazonSecurityHubClient();
+            var response = client.DeleteConfigurationPolicy(new DeleteConfigurationPolicyRequest 
+            {
+                Identifier = "arn:aws:securityhub:us-east-1:123456789012:configuration-policy/a1b2c3d4-5678-90ab-cdef-EXAMPLE11111"
+            });
+
 
             #endregion
         }
@@ -571,7 +649,7 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
 
         public void SecurityHubDescribeOrganizationConfiguration()
         {
-            #region to-get-information-about-organizations-configuration-1676059786304
+            #region to-get-information-about-organization-configuration-1676059786304
 
             var client = new AmazonSecurityHubClient();
             var response = client.DescribeOrganizationConfiguration(new DescribeOrganizationConfigurationRequest 
@@ -581,6 +659,7 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
             bool autoEnable = response.AutoEnable;
             string autoEnableStandards = response.AutoEnableStandards;
             bool memberAccountLimitReached = response.MemberAccountLimitReached;
+            OrganizationConfiguration organizationConfiguration = response.OrganizationConfiguration;
 
             #endregion
         }
@@ -762,6 +841,48 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
             });
 
             Invitation administrator = response.Administrator;
+
+            #endregion
+        }
+
+        public void SecurityHubGetConfigurationPolicy()
+        {
+            #region to-get-details-about-a-configuration-policy-1695173701103
+
+            var client = new AmazonSecurityHubClient();
+            var response = client.GetConfigurationPolicy(new GetConfigurationPolicyRequest 
+            {
+                Identifier = "arn:aws:securityhub:us-east-1:123456789012:configuration-policy/a1b2c3d4-5678-90ab-cdef-EXAMPLE11111"
+            });
+
+            string arn = response.Arn;
+            Policy configurationPolicy = response.ConfigurationPolicy;
+            DateTime createdAt = response.CreatedAt;
+            string description = response.Description;
+            string id = response.Id;
+            string name = response.Name;
+            DateTime updatedAt = response.UpdatedAt;
+
+            #endregion
+        }
+
+        public void SecurityHubGetConfigurationPolicyAssociation()
+        {
+            #region to-get-details-about-a-configuration-association-1695177816371
+
+            var client = new AmazonSecurityHubClient();
+            var response = client.GetConfigurationPolicyAssociation(new GetConfigurationPolicyAssociationRequest 
+            {
+                Target = new Target { AccountId = "111122223333" }
+            });
+
+            string associationStatus = response.AssociationStatus;
+            string associationStatusMessage = response.AssociationStatusMessage;
+            string associationType = response.AssociationType;
+            string configurationPolicyId = response.ConfigurationPolicyId;
+            string targetId = response.TargetId;
+            string targetType = response.TargetType;
+            DateTime updatedAt = response.UpdatedAt;
 
             #endregion
         }
@@ -958,6 +1079,41 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
             #endregion
         }
 
+        public void SecurityHubListConfigurationPolicies()
+        {
+            #region to-view-a-list-of-configuration-policies-1695173268602
+
+            var client = new AmazonSecurityHubClient();
+            var response = client.ListConfigurationPolicies(new ListConfigurationPoliciesRequest 
+            {
+                MaxResults = 1,
+                NextToken = "U1FsdGVkX19nBV2zoh+Gou9NgnulLJHWpn9xnG4hqSOhvw3o2JqjI86QDxdf"
+            });
+
+            List<ConfigurationPolicySummary> configurationPolicySummaries = response.ConfigurationPolicySummaries;
+            string nextToken = response.NextToken;
+
+            #endregion
+        }
+
+        public void SecurityHubListConfigurationPolicyAssociations()
+        {
+            #region to-list-configuration-associations-1695177309791
+
+            var client = new AmazonSecurityHubClient();
+            var response = client.ListConfigurationPolicyAssociations(new ListConfigurationPolicyAssociationsRequest 
+            {
+                Filters = new AssociationFilters { AssociationType = "APPLIED" },
+                MaxResults = 1,
+                NextToken = "U1FsdGVkX19nBV2zoh+Gou9NgnulLJHWpn9xnG4hqSOhvw3o2JqjI86QDxdf"
+            });
+
+            List<ConfigurationPolicyAssociationSummary> configurationPolicyAssociationSummaries = response.ConfigurationPolicyAssociationSummaries;
+            string nextToken = response.NextToken;
+
+            #endregion
+        }
+
         public void SecurityHubListEnabledProductsForImport()
         {
             #region to-list-arns-for-enabled-integrations-1678294870020
@@ -1076,6 +1232,43 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
             #endregion
         }
 
+        public void SecurityHubStartConfigurationPolicyAssociation()
+        {
+            #region to-associate-a-configuration-with-a-target-1695176455638
+
+            var client = new AmazonSecurityHubClient();
+            var response = client.StartConfigurationPolicyAssociation(new StartConfigurationPolicyAssociationRequest 
+            {
+                ConfigurationPolicyIdentifier = "arn:aws:securityhub:us-east-1:123456789012:configuration-policy/a1b2c3d4-5678-90ab-cdef-EXAMPLE11111",
+                Target = new Target { AccountId = "111122223333" }
+            });
+
+            string associationStatus = response.AssociationStatus;
+            string associationStatusMessage = response.AssociationStatusMessage;
+            string associationType = response.AssociationType;
+            string configurationPolicyId = response.ConfigurationPolicyId;
+            string targetId = response.TargetId;
+            string targetType = response.TargetType;
+            DateTime updatedAt = response.UpdatedAt;
+
+            #endregion
+        }
+
+        public void SecurityHubStartConfigurationPolicyDisassociation()
+        {
+            #region to-disassociate-a-configuration-from-a-target-1695177176748
+
+            var client = new AmazonSecurityHubClient();
+            var response = client.StartConfigurationPolicyDisassociation(new StartConfigurationPolicyDisassociationRequest 
+            {
+                ConfigurationPolicyIdentifier = "SELF_MANAGED_SECURITY_HUB",
+                Target = new Target { RootId = "r-f6g7h8i9j0example" }
+            });
+
+
+            #endregion
+        }
+
         public void SecurityHubTagResource()
         {
             #region to-tag-a-resource-1678478687320
@@ -1123,6 +1316,54 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
                 Name = "Chat custom action"
             });
 
+
+            #endregion
+        }
+
+        public void SecurityHubUpdateConfigurationPolicy()
+        {
+            #region to-update-a-configuration-policy-1695174120555
+
+            var client = new AmazonSecurityHubClient();
+            var response = client.UpdateConfigurationPolicy(new UpdateConfigurationPolicyRequest 
+            {
+                ConfigurationPolicy = new Policy { SecurityHub = new SecurityHubPolicy {
+                    EnabledStandardIdentifiers = new List<string> {
+                        "arn:aws:securityhub:us-east-1::standards/aws-foundational-security-best-practices/v/1.0.0",
+                        "arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0"
+                    },
+                    SecurityControlsConfiguration = new SecurityControlsConfiguration {
+                        DisabledSecurityControlIdentifiers = new List<string> {
+                            "CloudWatch.1",
+                            "CloudWatch.2"
+                        },
+                        SecurityControlCustomParameters = new List<SecurityControlCustomParameter> {
+                            new SecurityControlCustomParameter {
+                                Parameters = new Dictionary<string, ParameterConfiguration> {
+                                    { "daysToExpiration", new ParameterConfiguration {
+                                        Value = new ParameterValue { Integer = 21 },
+                                        ValueType = "CUSTOM"
+                                    } }
+                                },
+                                SecurityControlId = "ACM.1"
+                            }
+                        }
+                    },
+                    ServiceEnabled = true
+                } },
+                Description = "Updated configuration policy for testing FSBP and CIS",
+                Identifier = "arn:aws:securityhub:us-east-1:123456789012:configuration-policy/a1b2c3d4-5678-90ab-cdef-EXAMPLE11111",
+                Name = "TestConfigurationPolicy",
+                UpdatedReason = "Enabling ACM.2"
+            });
+
+            string arn = response.Arn;
+            Policy configurationPolicy = response.ConfigurationPolicy;
+            DateTime createdAt = response.CreatedAt;
+            string description = response.Description;
+            string id = response.Id;
+            string name = response.Name;
+            DateTime updatedAt = response.UpdatedAt;
 
             #endregion
         }
@@ -1186,7 +1427,9 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
             var client = new AmazonSecurityHubClient();
             var response = client.UpdateOrganizationConfiguration(new UpdateOrganizationConfigurationRequest 
             {
-                AutoEnable = true
+                AutoEnable = false,
+                AutoEnableStandards = "NONE",
+                OrganizationConfiguration = new OrganizationConfiguration { ConfigurationType = "CENTRAL" }
             });
 
 

@@ -97,6 +97,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.BatchGetConfigurationPolicyAssociations(Amazon.SecurityHub.Model.BatchGetConfigurationPolicyAssociationsRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.BatchGetConfigurationPolicyAssociations(Amazon.SecurityHub.Model.BatchGetConfigurationPolicyAssociationsRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.BatchGetConfigurationPolicyAssociationsRequest" />
+            <member name="T:Amazon.SecurityHub.Model.BatchGetConfigurationPolicyAssociationsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation provides details about configuration associations for a batch of target accounts, organizational units, or the root.
+                </para>
+                <code
+                    title="To get configuration associations for a batch of targets"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-get-configuration-associations-for-a-batch-of-targets-1695178953302" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.BatchGetSecurityControls(Amazon.SecurityHub.Model.BatchGetSecurityControlsRequest)" />
             <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.BatchGetSecurityControls(Amazon.SecurityHub.Model.BatchGetSecurityControlsRequest)" />
             <member name="T:Amazon.SecurityHub.Model.BatchGetSecurityControlsRequest" />
@@ -249,6 +268,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.CreateConfigurationPolicy(Amazon.SecurityHub.Model.CreateConfigurationPolicyRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.CreateConfigurationPolicy(Amazon.SecurityHub.Model.CreateConfigurationPolicyRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.CreateConfigurationPolicyRequest" />
+            <member name="T:Amazon.SecurityHub.Model.CreateConfigurationPolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation creates a configuration policy in Security Hub.
+                </para>
+                <code
+                    title="To create a configuration policy"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-create-a-configuration-policy-1695172470099" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.CreateFindingAggregator(Amazon.SecurityHub.Model.CreateFindingAggregatorRequest)" />
             <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.CreateFindingAggregator(Amazon.SecurityHub.Model.CreateFindingAggregatorRequest)" />
             <member name="T:Amazon.SecurityHub.Model.CreateFindingAggregatorRequest" />
@@ -339,6 +377,25 @@
                     title="To delete a custom action target"
                     source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
                     region="to-delete-a-custom-action-target-1675449272793" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.DeleteConfigurationPolicy(Amazon.SecurityHub.Model.DeleteConfigurationPolicyRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.DeleteConfigurationPolicy(Amazon.SecurityHub.Model.DeleteConfigurationPolicyRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.DeleteConfigurationPolicyRequest" />
+            <member name="T:Amazon.SecurityHub.Model.DeleteConfigurationPolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation deletes the specified configuration policy.
+                </para>
+                <code
+                    title="To delete a configuration policy"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-delete-a-configuration-policy-1695174614062" />
             </example>
         </value>
     </doc>
@@ -466,12 +523,12 @@
         <value>
             <example>
                 <para>
-                    The following example returns details about the way in which AWS Organizations is configured for a Security Hub account that belongs to an organization. Only a Security Hub administrator account can call this operation.
+                    This operation provides information about the way your organization is configured in Security Hub. Only a Security Hub administrator account can invoke this operation.
                 </para>
                 <code
-                    title="To get information about Organizations configuration"
+                    title="To get information about organization configuration"
                     source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
-                    region="to-get-information-about-organizations-configuration-1676059786304" />
+                    region="to-get-information-about-organization-configuration-1676059786304" />
             </example>
         </value>
     </doc>
@@ -705,6 +762,44 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.GetConfigurationPolicy(Amazon.SecurityHub.Model.GetConfigurationPolicyRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.GetConfigurationPolicy(Amazon.SecurityHub.Model.GetConfigurationPolicyRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.GetConfigurationPolicyRequest" />
+            <member name="T:Amazon.SecurityHub.Model.GetConfigurationPolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation provides details about the specified configuration policy.
+                </para>
+                <code
+                    title="To get details about a configuration policy"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-get-details-about-a-configuration-policy-1695173701103" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.GetConfigurationPolicyAssociation(Amazon.SecurityHub.Model.GetConfigurationPolicyAssociationRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.GetConfigurationPolicyAssociation(Amazon.SecurityHub.Model.GetConfigurationPolicyAssociationRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.GetConfigurationPolicyAssociationRequest" />
+            <member name="T:Amazon.SecurityHub.Model.GetConfigurationPolicyAssociationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation provides details about configuration associations for a specific target account, organizational unit, or the root.
+                </para>
+                <code
+                    title="To get details about a configuration association"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-get-details-about-a-configuration-association-1695177816371" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.GetEnabledStandards(Amazon.SecurityHub.Model.GetEnabledStandardsRequest)" />
             <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.GetEnabledStandards(Amazon.SecurityHub.Model.GetEnabledStandardsRequest)" />
             <member name="T:Amazon.SecurityHub.Model.GetEnabledStandardsRequest" />
@@ -916,6 +1011,44 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.ListConfigurationPolicies(Amazon.SecurityHub.Model.ListConfigurationPoliciesRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.ListConfigurationPolicies(Amazon.SecurityHub.Model.ListConfigurationPoliciesRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.ListConfigurationPoliciesRequest" />
+            <member name="T:Amazon.SecurityHub.Model.ListConfigurationPoliciesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation provides a list of your configuration policies, including metadata for each policy.
+                </para>
+                <code
+                    title="To view a list of configuration policies"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-view-a-list-of-configuration-policies-1695173268602" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.ListConfigurationPolicyAssociations(Amazon.SecurityHub.Model.ListConfigurationPolicyAssociationsRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.ListConfigurationPolicyAssociations(Amazon.SecurityHub.Model.ListConfigurationPolicyAssociationsRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.ListConfigurationPolicyAssociationsRequest" />
+            <member name="T:Amazon.SecurityHub.Model.ListConfigurationPolicyAssociationsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation lists all of the associations between targets and configuration policies or self-managed behavior. Targets can include accounts, organizational units, or the root.
+                </para>
+                <code
+                    title="To list configuration associations"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-list-configuration-associations-1695177309791" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.ListEnabledProductsForImport(Amazon.SecurityHub.Model.ListEnabledProductsForImportRequest)" />
             <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.ListEnabledProductsForImport(Amazon.SecurityHub.Model.ListEnabledProductsForImportRequest)" />
             <member name="T:Amazon.SecurityHub.Model.ListEnabledProductsForImportRequest" />
@@ -1068,6 +1201,44 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.StartConfigurationPolicyAssociation(Amazon.SecurityHub.Model.StartConfigurationPolicyAssociationRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.StartConfigurationPolicyAssociation(Amazon.SecurityHub.Model.StartConfigurationPolicyAssociationRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.StartConfigurationPolicyAssociationRequest" />
+            <member name="T:Amazon.SecurityHub.Model.StartConfigurationPolicyAssociationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation associates a configuration policy or self-managed behavior with the target account, organizational unit, or the root.
+                </para>
+                <code
+                    title="To associate a configuration with a target"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-associate-a-configuration-with-a-target-1695176455638" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.StartConfigurationPolicyDisassociation(Amazon.SecurityHub.Model.StartConfigurationPolicyDisassociationRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.StartConfigurationPolicyDisassociation(Amazon.SecurityHub.Model.StartConfigurationPolicyDisassociationRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.StartConfigurationPolicyDisassociationRequest" />
+            <member name="T:Amazon.SecurityHub.Model.StartConfigurationPolicyDisassociationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation disassociates a configuration policy or self-managed behavior from the target account, organizational unit, or the root.
+                </para>
+                <code
+                    title="To disassociate a configuration from a target"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-disassociate-a-configuration-from-a-target-1695177176748" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.TagResource(Amazon.SecurityHub.Model.TagResourceRequest)" />
             <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.TagResource(Amazon.SecurityHub.Model.TagResourceRequest)" />
             <member name="T:Amazon.SecurityHub.Model.TagResourceRequest" />
@@ -1125,6 +1296,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.UpdateConfigurationPolicy(Amazon.SecurityHub.Model.UpdateConfigurationPolicyRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.UpdateConfigurationPolicy(Amazon.SecurityHub.Model.UpdateConfigurationPolicyRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.UpdateConfigurationPolicyRequest" />
+            <member name="T:Amazon.SecurityHub.Model.UpdateConfigurationPolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation updates the specified configuration policy.
+                </para>
+                <code
+                    title="To update a configuration policy"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-update-a-configuration-policy-1695174120555" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.UpdateFindingAggregator(Amazon.SecurityHub.Model.UpdateFindingAggregatorRequest)" />
             <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.UpdateFindingAggregator(Amazon.SecurityHub.Model.UpdateFindingAggregatorRequest)" />
             <member name="T:Amazon.SecurityHub.Model.UpdateFindingAggregatorRequest" />
@@ -1171,7 +1361,7 @@
         <value>
             <example>
                 <para>
-                    The following example updates the configuration for an organization so that Security Hub is automatically activated for new member accounts. Only the Security Hub administrator account can call this operation.
+                    This operation updates the way your organization is configured in Security Hub. Only a Security Hub administrator account can invoke this operation.
                 </para>
                 <code
                     title="To update organization configuration"

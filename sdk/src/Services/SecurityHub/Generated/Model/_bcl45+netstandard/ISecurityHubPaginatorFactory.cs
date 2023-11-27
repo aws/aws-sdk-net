@@ -66,6 +66,16 @@ namespace Amazon.SecurityHub.Model
         IGetInsightsPaginator GetInsights(GetInsightsRequest request);
 
         /// <summary>
+        /// Paginator for ListConfigurationPolicies operation
+        ///</summary>
+        IListConfigurationPoliciesPaginator ListConfigurationPolicies(ListConfigurationPoliciesRequest request);
+
+        /// <summary>
+        /// Paginator for ListConfigurationPolicyAssociations operation
+        ///</summary>
+        IListConfigurationPolicyAssociationsPaginator ListConfigurationPolicyAssociations(ListConfigurationPolicyAssociationsRequest request);
+
+        /// <summary>
         /// Paginator for ListEnabledProductsForImport operation
         ///</summary>
         IListEnabledProductsForImportPaginator ListEnabledProductsForImport(ListEnabledProductsForImportRequest request);

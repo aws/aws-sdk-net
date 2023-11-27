@@ -44,6 +44,7 @@ namespace Amazon.SecurityHub.Model
     {
         private Action _action;
         private string _awsAccountId;
+        private string _awsAccountName;
         private string _companyName;
         private Compliance _compliance;
         private int? _confidence;
@@ -62,6 +63,7 @@ namespace Amazon.SecurityHub.Model
         private Note _note;
         private PatchSummary _patchSummary;
         private ProcessDetails _process;
+        private string _processedAt;
         private string _productArn;
         private Dictionary<string, string> _productFields = new Dictionary<string, string>();
         private string _productName;
@@ -120,6 +122,24 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetAwsAccountId()
         {
             return this._awsAccountId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsAccountName. 
+        /// <para>
+        /// The name of the Amazon Web Services account from which a finding was generated. 
+        /// </para>
+        /// </summary>
+        public string AwsAccountName
+        {
+            get { return this._awsAccountName; }
+            set { this._awsAccountName = value; }
+        }
+
+        // Check to see if AwsAccountName property is set
+        internal bool IsSetAwsAccountName()
+        {
+            return this._awsAccountName != null;
         }
 
         /// <summary>
@@ -508,6 +528,32 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetProcess()
         {
             return this._process != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProcessedAt. 
+        /// <para>
+        /// An ISO8601-formatted timestamp that indicates when Security Hub received a finding
+        /// and begins to process it.
+        /// </para>
+        ///  
+        /// <para>
+        /// A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
+        /// cannot contain spaces, and date and time should be separated by <code>T</code>. For
+        /// more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC
+        /// 3339 section 5.6, Internet Date/Time Format</a>.
+        /// </para>
+        /// </summary>
+        public string ProcessedAt
+        {
+            get { return this._processedAt; }
+            set { this._processedAt = value; }
+        }
+
+        // Check to see if ProcessedAt property is set
+        internal bool IsSetProcessedAt()
+        {
+            return this._processedAt != null;
         }
 
         /// <summary>

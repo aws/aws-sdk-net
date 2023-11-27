@@ -125,6 +125,56 @@ namespace Amazon.SecurityHub
 
 
     /// <summary>
+    /// Constants used for properties of type AssociationType.
+    /// </summary>
+    public class AssociationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant APPLIED for AssociationType
+        /// </summary>
+        public static readonly AssociationType APPLIED = new AssociationType("APPLIED");
+        /// <summary>
+        /// Constant INHERITED for AssociationType
+        /// </summary>
+        public static readonly AssociationType INHERITED = new AssociationType("INHERITED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AssociationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AssociationType FindValue(string value)
+        {
+            return FindValue<AssociationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AssociationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AutoEnableStandards.
     /// </summary>
     public class AutoEnableStandards : ConstantClass
@@ -372,6 +422,60 @@ namespace Amazon.SecurityHub
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ComplianceStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ConfigurationPolicyAssociationStatus.
+    /// </summary>
+    public class ConfigurationPolicyAssociationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for ConfigurationPolicyAssociationStatus
+        /// </summary>
+        public static readonly ConfigurationPolicyAssociationStatus FAILED = new ConfigurationPolicyAssociationStatus("FAILED");
+        /// <summary>
+        /// Constant PENDING for ConfigurationPolicyAssociationStatus
+        /// </summary>
+        public static readonly ConfigurationPolicyAssociationStatus PENDING = new ConfigurationPolicyAssociationStatus("PENDING");
+        /// <summary>
+        /// Constant SUCCESS for ConfigurationPolicyAssociationStatus
+        /// </summary>
+        public static readonly ConfigurationPolicyAssociationStatus SUCCESS = new ConfigurationPolicyAssociationStatus("SUCCESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConfigurationPolicyAssociationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConfigurationPolicyAssociationStatus FindValue(string value)
+        {
+            return FindValue<ConfigurationPolicyAssociationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConfigurationPolicyAssociationStatus(string value)
         {
             return FindValue(value);
         }
@@ -886,6 +990,110 @@ namespace Amazon.SecurityHub
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator NetworkDirection(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OrganizationConfigurationConfigurationType.
+    /// </summary>
+    public class OrganizationConfigurationConfigurationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CENTRAL for OrganizationConfigurationConfigurationType
+        /// </summary>
+        public static readonly OrganizationConfigurationConfigurationType CENTRAL = new OrganizationConfigurationConfigurationType("CENTRAL");
+        /// <summary>
+        /// Constant LOCAL for OrganizationConfigurationConfigurationType
+        /// </summary>
+        public static readonly OrganizationConfigurationConfigurationType LOCAL = new OrganizationConfigurationConfigurationType("LOCAL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OrganizationConfigurationConfigurationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OrganizationConfigurationConfigurationType FindValue(string value)
+        {
+            return FindValue<OrganizationConfigurationConfigurationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OrganizationConfigurationConfigurationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OrganizationConfigurationStatus.
+    /// </summary>
+    public class OrganizationConfigurationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ENABLED for OrganizationConfigurationStatus
+        /// </summary>
+        public static readonly OrganizationConfigurationStatus ENABLED = new OrganizationConfigurationStatus("ENABLED");
+        /// <summary>
+        /// Constant FAILED for OrganizationConfigurationStatus
+        /// </summary>
+        public static readonly OrganizationConfigurationStatus FAILED = new OrganizationConfigurationStatus("FAILED");
+        /// <summary>
+        /// Constant PENDING for OrganizationConfigurationStatus
+        /// </summary>
+        public static readonly OrganizationConfigurationStatus PENDING = new OrganizationConfigurationStatus("PENDING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OrganizationConfigurationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OrganizationConfigurationStatus FindValue(string value)
+        {
+            return FindValue<OrganizationConfigurationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OrganizationConfigurationStatus(string value)
         {
             return FindValue(value);
         }
@@ -1534,6 +1742,56 @@ namespace Amazon.SecurityHub
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator StringFilterComparison(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TargetType.
+    /// </summary>
+    public class TargetType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACCOUNT for TargetType
+        /// </summary>
+        public static readonly TargetType ACCOUNT = new TargetType("ACCOUNT");
+        /// <summary>
+        /// Constant ORGANIZATIONAL_UNIT for TargetType
+        /// </summary>
+        public static readonly TargetType ORGANIZATIONAL_UNIT = new TargetType("ORGANIZATIONAL_UNIT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TargetType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TargetType FindValue(string value)
+        {
+            return FindValue<TargetType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TargetType(string value)
         {
             return FindValue(value);
         }

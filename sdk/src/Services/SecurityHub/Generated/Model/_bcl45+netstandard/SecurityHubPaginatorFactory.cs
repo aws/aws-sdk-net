@@ -100,6 +100,22 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
+        /// Paginator for ListConfigurationPolicies operation
+        ///</summary>
+        public IListConfigurationPoliciesPaginator ListConfigurationPolicies(ListConfigurationPoliciesRequest request) 
+        {
+            return new ListConfigurationPoliciesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListConfigurationPolicyAssociations operation
+        ///</summary>
+        public IListConfigurationPolicyAssociationsPaginator ListConfigurationPolicyAssociations(ListConfigurationPolicyAssociationsRequest request) 
+        {
+            return new ListConfigurationPolicyAssociationsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListEnabledProductsForImport operation
         ///</summary>
         public IListEnabledProductsForImportPaginator ListEnabledProductsForImport(ListEnabledProductsForImportRequest request) 

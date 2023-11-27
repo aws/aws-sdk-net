@@ -76,6 +76,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.AwsAccountId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AwsAccountName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AwsAccountName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CompanyName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -182,6 +188,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = ProcessDetailsUnmarshaller.Instance;
                     unmarshalledObject.Process = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ProcessedAt", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ProcessedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ProductArn", targetDepth))

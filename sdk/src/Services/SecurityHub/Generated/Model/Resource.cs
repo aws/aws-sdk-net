@@ -33,6 +33,8 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class Resource
     {
+        private string _applicationArn;
+        private string _applicationName;
         private DataClassificationDetails _dataClassification;
         private ResourceDetails _details;
         private string _id;
@@ -41,6 +43,42 @@ namespace Amazon.SecurityHub.Model
         private string _resourceRole;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private string _type;
+
+        /// <summary>
+        /// Gets and sets the property ApplicationArn. 
+        /// <para>
+        ///  The Amazon Resource Name (ARN) of the application that is related to a finding. 
+        /// </para>
+        /// </summary>
+        public string ApplicationArn
+        {
+            get { return this._applicationArn; }
+            set { this._applicationArn = value; }
+        }
+
+        // Check to see if ApplicationArn property is set
+        internal bool IsSetApplicationArn()
+        {
+            return this._applicationArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ApplicationName. 
+        /// <para>
+        ///  The name of the application that is related to a finding. 
+        /// </para>
+        /// </summary>
+        public string ApplicationName
+        {
+            get { return this._applicationName; }
+            set { this._applicationName = value; }
+        }
+
+        // Check to see if ApplicationName property is set
+        internal bool IsSetApplicationName()
+        {
+            return this._applicationName != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DataClassification. 

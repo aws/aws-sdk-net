@@ -36,16 +36,27 @@ namespace Amazon.SecurityHub.Model
         private bool? _autoEnable;
         private AutoEnableStandards _autoEnableStandards;
         private bool? _memberAccountLimitReached;
+        private OrganizationConfiguration _organizationConfiguration;
 
         /// <summary>
         /// Gets and sets the property AutoEnable. 
         /// <para>
-        /// Whether to automatically enable Security Hub for new accounts in the organization.
+        /// Whether to automatically enable Security Hub in new member accounts when they join
+        /// the organization.
         /// </para>
         ///  
         /// <para>
-        /// If set to <code>true</code>, then Security Hub is enabled for new accounts. If set
-        /// to false, then new accounts are not added automatically.
+        /// If set to <code>true</code>, then Security Hub is automatically enabled in new accounts.
+        /// If set to <code>false</code>, then Security Hub isn't enabled in new accounts automatically.
+        /// The default value is <code>false</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the <code>ConfigurationType</code> of your organization is set to <code>CENTRAL</code>,
+        /// then this field is set to <code>false</code> and can't be changed in the home Region
+        /// and linked Regions. However, in that case, the delegated administrator can create
+        /// a configuration policy in which Security Hub is enabled and associate the policy with
+        /// new organization accounts.
         /// </para>
         /// </summary>
         public bool AutoEnable
@@ -64,17 +75,22 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property AutoEnableStandards. 
         /// <para>
         /// Whether to automatically enable Security Hub <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-enable-disable.html">default
-        /// standards</a> for new member accounts in the organization.
-        /// </para>
-        ///  
-        /// <para>
-        /// The default value of this parameter is equal to <code>DEFAULT</code>.
+        /// standards</a> in new member accounts when they join the organization.
         /// </para>
         ///  
         /// <para>
         /// If equal to <code>DEFAULT</code>, then Security Hub default standards are automatically
         /// enabled for new member accounts. If equal to <code>NONE</code>, then default standards
-        /// are not automatically enabled for new member accounts.
+        /// are not automatically enabled for new member accounts. The default value of this parameter
+        /// is equal to <code>DEFAULT</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the <code>ConfigurationType</code> of your organization is set to <code>CENTRAL</code>,
+        /// then this field is set to <code>NONE</code> and can't be changed in the home Region
+        /// and linked Regions. However, in that case, the delegated administrator can create
+        /// a configuration policy in which specific security standards are enabled and associate
+        /// the policy with new organization accounts.
         /// </para>
         /// </summary>
         public AutoEnableStandards AutoEnableStandards
@@ -106,6 +122,21 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetMemberAccountLimitReached()
         {
             return this._memberAccountLimitReached.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OrganizationConfiguration.
+        /// </summary>
+        public OrganizationConfiguration OrganizationConfiguration
+        {
+            get { return this._organizationConfiguration; }
+            set { this._organizationConfiguration = value; }
+        }
+
+        // Check to see if OrganizationConfiguration property is set
+        internal bool IsSetOrganizationConfiguration()
+        {
+            return this._organizationConfiguration != null;
         }
 
     }

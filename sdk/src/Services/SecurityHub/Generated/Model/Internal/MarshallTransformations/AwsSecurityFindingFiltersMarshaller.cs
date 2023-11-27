@@ -61,6 +61,22 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetAwsAccountName())
+            {
+                context.Writer.WritePropertyName("AwsAccountName");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectAwsAccountNameListValue in requestObject.AwsAccountName)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = StringFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectAwsAccountNameListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetCompanyName())
             {
                 context.Writer.WritePropertyName("CompanyName");
@@ -919,6 +935,38 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
                     var marshaller = StringFilterMarshaller.Instance;
                     marshaller.Marshall(requestObjectRelatedFindingsProductArnListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetResourceApplicationArn())
+            {
+                context.Writer.WritePropertyName("ResourceApplicationArn");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectResourceApplicationArnListValue in requestObject.ResourceApplicationArn)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = StringFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectResourceApplicationArnListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetResourceApplicationName())
+            {
+                context.Writer.WritePropertyName("ResourceApplicationName");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectResourceApplicationNameListValue in requestObject.ResourceApplicationName)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = StringFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectResourceApplicationNameListValue, context);
 
                     context.Writer.WriteObjectEnd();
                 }

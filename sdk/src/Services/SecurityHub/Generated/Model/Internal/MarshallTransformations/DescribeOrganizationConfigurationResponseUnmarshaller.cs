@@ -69,6 +69,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     response.MemberAccountLimitReached = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("OrganizationConfiguration", targetDepth))
+                {
+                    var unmarshaller = OrganizationConfigurationUnmarshaller.Instance;
+                    response.OrganizationConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

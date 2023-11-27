@@ -34,6 +34,7 @@ namespace Amazon.SecurityHub.Model
     public partial class AutomationRulesFindingFilters
     {
         private List<StringFilter> _awsAccountId = new List<StringFilter>();
+        private List<StringFilter> _awsAccountName = new List<StringFilter>();
         private List<StringFilter> _companyName = new List<StringFilter>();
         private List<StringFilter> _complianceAssociatedStandardsId = new List<StringFilter>();
         private List<StringFilter> _complianceSecurityControlId = new List<StringFilter>();
@@ -54,6 +55,8 @@ namespace Amazon.SecurityHub.Model
         private List<StringFilter> _recordState = new List<StringFilter>();
         private List<StringFilter> _relatedFindingsId = new List<StringFilter>();
         private List<StringFilter> _relatedFindingsProductArn = new List<StringFilter>();
+        private List<StringFilter> _resourceApplicationArn = new List<StringFilter>();
+        private List<StringFilter> _resourceApplicationName = new List<StringFilter>();
         private List<MapFilter> _resourceDetailsOther = new List<MapFilter>();
         private List<StringFilter> _resourceId = new List<StringFilter>();
         private List<StringFilter> _resourcePartition = new List<StringFilter>();
@@ -72,7 +75,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        ///  The Amazon Web Services account ID in which a finding was generated. 
+        /// The Amazon Web Services account ID in which a finding was generated.
         /// </para>
         ///  
         /// <para>
@@ -89,6 +92,28 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetAwsAccountId()
         {
             return this._awsAccountId != null && this._awsAccountId.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsAccountName. 
+        /// <para>
+        /// The name of the Amazon Web Services account in which a finding was generated. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Array Members: Minimum number of 1 item. Maximum number of 20 items. 
+        /// </para>
+        /// </summary>
+        public List<StringFilter> AwsAccountName
+        {
+            get { return this._awsAccountName; }
+            set { this._awsAccountName = value; }
+        }
+
+        // Check to see if AwsAccountName property is set
+        internal bool IsSetAwsAccountName()
+        {
+            return this._awsAccountName != null && this._awsAccountName.Count > 0; 
         }
 
         /// <summary>
@@ -571,6 +596,50 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetRelatedFindingsProductArn()
         {
             return this._relatedFindingsProductArn != null && this._relatedFindingsProductArn.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceApplicationArn. 
+        /// <para>
+        ///  The Amazon Resource Name (ARN) of the application that is related to a finding. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Array Members: Minimum number of 1 item. Maximum number of 20 items. 
+        /// </para>
+        /// </summary>
+        public List<StringFilter> ResourceApplicationArn
+        {
+            get { return this._resourceApplicationArn; }
+            set { this._resourceApplicationArn = value; }
+        }
+
+        // Check to see if ResourceApplicationArn property is set
+        internal bool IsSetResourceApplicationArn()
+        {
+            return this._resourceApplicationArn != null && this._resourceApplicationArn.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceApplicationName. 
+        /// <para>
+        ///  The name of the application that is related to a finding. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Array Members: Minimum number of 1 item. Maximum number of 20 items. 
+        /// </para>
+        /// </summary>
+        public List<StringFilter> ResourceApplicationName
+        {
+            get { return this._resourceApplicationName; }
+            set { this._resourceApplicationName = value; }
+        }
+
+        // Check to see if ResourceApplicationName property is set
+        internal bool IsSetResourceApplicationName()
+        {
+            return this._resourceApplicationName != null && this._resourceApplicationName.Count > 0; 
         }
 
         /// <summary>

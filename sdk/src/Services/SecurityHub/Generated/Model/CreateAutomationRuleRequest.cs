@@ -190,7 +190,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        ///  User-defined tags that help you label the purpose of a rule. 
+        ///  User-defined tags associated with an automation rule. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
