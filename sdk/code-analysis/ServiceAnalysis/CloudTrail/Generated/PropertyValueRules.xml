@@ -154,6 +154,42 @@
     <pattern>(?s).*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudTrail.Model.DisableFederationRequest.EventDataStore</property>
+    <min>3</min>
+    <max>256</max>
+    <pattern>^[a-zA-Z0-9._/\-:]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.DisableFederationResponse.EventDataStoreArn</property>
+    <min>3</min>
+    <max>256</max>
+    <pattern>^[a-zA-Z0-9._/\-:]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.EnableFederationRequest.EventDataStore</property>
+    <min>3</min>
+    <max>256</max>
+    <pattern>^[a-zA-Z0-9._/\-:]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.EnableFederationRequest.FederationRoleArn</property>
+    <min>3</min>
+    <max>125</max>
+    <pattern>^[a-zA-Z0-9._/\-:@=\+,\.]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.EnableFederationResponse.EventDataStoreArn</property>
+    <min>3</min>
+    <max>256</max>
+    <pattern>^[a-zA-Z0-9._/\-:]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.EnableFederationResponse.FederationRoleArn</property>
+    <min>3</min>
+    <max>125</max>
+    <pattern>^[a-zA-Z0-9._/\-:@=\+,\.]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudTrail.Model.GetChannelRequest.Channel</property>
     <min>3</min>
     <max>256</max>
@@ -188,6 +224,12 @@
     <min>3</min>
     <max>256</max>
     <pattern>^[a-zA-Z0-9._/\-:]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.GetEventDataStoreResponse.FederationRoleArn</property>
+    <min>3</min>
+    <max>125</max>
+    <pattern>^[a-zA-Z0-9._/\-:@=\+,\.]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudTrail.Model.GetEventDataStoreResponse.KmsKeyId</property>
@@ -594,6 +636,12 @@
     <min>3</min>
     <max>256</max>
     <pattern>^[a-zA-Z0-9._/\-:]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.UpdateEventDataStoreResponse.FederationRoleArn</property>
+    <min>3</min>
+    <max>125</max>
+    <pattern>^[a-zA-Z0-9._/\-:@=\+,\.]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudTrail.Model.UpdateEventDataStoreResponse.KmsKeyId</property>

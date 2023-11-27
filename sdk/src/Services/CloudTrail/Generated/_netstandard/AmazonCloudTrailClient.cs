@@ -976,8 +976,9 @@ namespace Amazon.CloudTrail
         /// an event data store ARN. After you run <code>DeleteEventDataStore</code>, the event
         /// data store enters a <code>PENDING_DELETION</code> state, and is automatically deleted
         /// after a wait period of seven days. <code>TerminationProtectionEnabled</code> must
-        /// be set to <code>False</code> on the event data store; this operation cannot work if
-        /// <code>TerminationProtectionEnabled</code> is <code>True</code>.
+        /// be set to <code>False</code> on the event data store and the <code>FederationStatus</code>
+        /// must be <code>DISABLED</code>. You cannot delete an event data store if <code>TerminationProtectionEnabled</code>
+        /// is <code>True</code> or the <code>FederationStatus</code> is <code>ENABLED</code>.
         /// 
         ///  
         /// <para>
@@ -997,9 +998,20 @@ namespace Amazon.CloudTrail
         /// This exception is thrown when the specified event data store cannot yet be deleted
         /// because it is in use by a channel.
         /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.ConflictException">
+        /// This exception is thrown when the specified resource is not ready for an operation.
+        /// This can occur when you try to run an operation on a resource before CloudTrail has
+        /// time to fully load the resource, or because another operation is modifying the resource.
+        /// If this exception occurs, wait a few minutes, and then try the operation again.
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.EventDataStoreARNInvalidException">
         /// The specified event data store ARN is not valid or does not map to an event data store
         /// in your account.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.EventDataStoreFederationEnabledException">
+        /// You cannot delete the event data store because Lake query federation is enabled.
+        /// To delete the event data store, run the <code>DisableFederation</code> operation to
+        /// disable Lake query federation on the event data store.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.EventDataStoreHasOngoingImportException">
         /// This exception is thrown when you try to update or delete an event data store that
@@ -1506,6 +1518,219 @@ namespace Amazon.CloudTrail
             options.ResponseUnmarshaller = DescribeTrailsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeTrailsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DisableFederation
+
+        internal virtual DisableFederationResponse DisableFederation(DisableFederationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisableFederationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableFederationResponseUnmarshaller.Instance;
+
+            return Invoke<DisableFederationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Disables Lake query federation on the specified event data store. When you disable
+        /// federation, CloudTrail removes the metadata associated with the federated event data
+        /// store in the Glue Data Catalog and removes registration for the federation role ARN
+        /// and event data store in Lake Formation. No CloudTrail Lake data is deleted when you
+        /// disable federation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableFederation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisableFederation service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.CloudTrailAccessNotEnabledException">
+        /// This exception is thrown when trusted access has not been enabled between CloudTrail
+        /// and Organizations. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Enabling
+        /// Trusted Access with Other Amazon Web Services Services</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
+        /// For Creating a Trail For Your Organization</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.ConcurrentModificationException">
+        /// You are trying to update a resource when another request is in progress. Allow sufficient
+        /// wait time for the previous request to complete, then retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.EventDataStoreARNInvalidException">
+        /// The specified event data store ARN is not valid or does not map to an event data store
+        /// in your account.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.EventDataStoreNotFoundException">
+        /// The specified event data store was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InactiveEventDataStoreException">
+        /// The event data store is inactive.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InsufficientDependencyServiceAccessPermissionException">
+        /// This exception is thrown when the IAM identity that is used to create the organization
+        /// resource lacks one or more required permissions for creating an organization resource
+        /// in a required service.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidParameterException">
+        /// The request includes a parameter that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.NoManagementAccountSLRExistsException">
+        /// This exception is thrown when the management account does not have a service-linked
+        /// role.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.NotOrganizationMasterAccountException">
+        /// This exception is thrown when the Amazon Web Services account making the request to
+        /// create or update an organization trail or event data store is not the management account
+        /// for an organization in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
+        /// For Creating a Trail For Your Organization</a> or <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store.html">Create
+        /// an event data store</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
+        /// This exception is thrown when the requested operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.OrganizationNotInAllFeaturesModeException">
+        /// This exception is thrown when Organizations is not configured to support all features.
+        /// All features must be enabled in Organizations to support creating an organization
+        /// trail or event data store.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.OrganizationsNotInUseException">
+        /// This exception is thrown when the request is made from an Amazon Web Services account
+        /// that is not a member of an organization. To make this request, sign in using the credentials
+        /// of an account that belongs to an organization.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
+        /// This exception is thrown when the requested operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DisableFederation">REST API Reference for DisableFederation Operation</seealso>
+        public virtual Task<DisableFederationResponse> DisableFederationAsync(DisableFederationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisableFederationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableFederationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisableFederationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  EnableFederation
+
+        internal virtual EnableFederationResponse EnableFederation(EnableFederationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnableFederationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableFederationResponseUnmarshaller.Instance;
+
+            return Invoke<EnableFederationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Enables Lake query federation on the specified event data store. Federating an event
+        /// data store lets you view the metadata associated with the event data store in the
+        /// Glue <a href="https://docs.aws.amazon.com/glue/latest/dg/components-overview.html#data-catalog-intro">Data
+        /// Catalog</a> and run SQL queries against your event data using Amazon Athena. The table
+        /// metadata stored in the Glue Data Catalog lets the Athena query engine know how to
+        /// find, read, and process the data that you want to query.
+        /// 
+        ///  
+        /// <para>
+        /// When you enable Lake query federation, CloudTrail creates a federated database named
+        /// <code>aws:cloudtrail</code> (if the database doesn't already exist) and a federated
+        /// table in the Glue Data Catalog. The event data store ID is used for the table name.
+        /// CloudTrail registers the role ARN and event data store in <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/how-it-works.html">Lake
+        /// Formation</a>, the service responsible for revoking or granting permissions to the
+        /// federated resources in the Glue Data Catalog. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about Lake query federation, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-federation.html">Federate
+        /// an event data store</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableFederation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the EnableFederation service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.CloudTrailAccessNotEnabledException">
+        /// This exception is thrown when trusted access has not been enabled between CloudTrail
+        /// and Organizations. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Enabling
+        /// Trusted Access with Other Amazon Web Services Services</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
+        /// For Creating a Trail For Your Organization</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.ConcurrentModificationException">
+        /// You are trying to update a resource when another request is in progress. Allow sufficient
+        /// wait time for the previous request to complete, then retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.EventDataStoreARNInvalidException">
+        /// The specified event data store ARN is not valid or does not map to an event data store
+        /// in your account.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.EventDataStoreFederationEnabledException">
+        /// You cannot delete the event data store because Lake query federation is enabled.
+        /// To delete the event data store, run the <code>DisableFederation</code> operation to
+        /// disable Lake query federation on the event data store.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.EventDataStoreNotFoundException">
+        /// The specified event data store was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InactiveEventDataStoreException">
+        /// The event data store is inactive.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InsufficientDependencyServiceAccessPermissionException">
+        /// This exception is thrown when the IAM identity that is used to create the organization
+        /// resource lacks one or more required permissions for creating an organization resource
+        /// in a required service.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidParameterException">
+        /// The request includes a parameter that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.NoManagementAccountSLRExistsException">
+        /// This exception is thrown when the management account does not have a service-linked
+        /// role.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.NotOrganizationMasterAccountException">
+        /// This exception is thrown when the Amazon Web Services account making the request to
+        /// create or update an organization trail or event data store is not the management account
+        /// for an organization in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
+        /// For Creating a Trail For Your Organization</a> or <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store.html">Create
+        /// an event data store</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
+        /// This exception is thrown when the requested operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.OrganizationNotInAllFeaturesModeException">
+        /// This exception is thrown when Organizations is not configured to support all features.
+        /// All features must be enabled in Organizations to support creating an organization
+        /// trail or event data store.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.OrganizationsNotInUseException">
+        /// This exception is thrown when the request is made from an Amazon Web Services account
+        /// that is not a member of an organization. To make this request, sign in using the credentials
+        /// of an account that belongs to an organization.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
+        /// This exception is thrown when the requested operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/EnableFederation">REST API Reference for EnableFederation Operation</seealso>
+        public virtual Task<EnableFederationResponse> EnableFederationAsync(EnableFederationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnableFederationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableFederationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<EnableFederationResponse>(request, options, cancellationToken);
         }
 
         #endregion

@@ -315,6 +315,64 @@ namespace Amazon.CloudTrail
 
 
     /// <summary>
+    /// Constants used for properties of type FederationStatus.
+    /// </summary>
+    public class FederationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for FederationStatus
+        /// </summary>
+        public static readonly FederationStatus DISABLED = new FederationStatus("DISABLED");
+        /// <summary>
+        /// Constant DISABLING for FederationStatus
+        /// </summary>
+        public static readonly FederationStatus DISABLING = new FederationStatus("DISABLING");
+        /// <summary>
+        /// Constant ENABLED for FederationStatus
+        /// </summary>
+        public static readonly FederationStatus ENABLED = new FederationStatus("ENABLED");
+        /// <summary>
+        /// Constant ENABLING for FederationStatus
+        /// </summary>
+        public static readonly FederationStatus ENABLING = new FederationStatus("ENABLING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FederationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FederationStatus FindValue(string value)
+        {
+            return FindValue<FederationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FederationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ImportFailureStatus.
     /// </summary>
     public class ImportFailureStatus : ConstantClass

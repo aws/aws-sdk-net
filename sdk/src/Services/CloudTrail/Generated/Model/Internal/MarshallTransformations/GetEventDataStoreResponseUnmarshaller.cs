@@ -75,6 +75,18 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                     response.EventDataStoreArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("FederationRoleArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.FederationRoleArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("FederationStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.FederationStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("KmsKeyId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

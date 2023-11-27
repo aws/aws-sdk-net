@@ -37,6 +37,8 @@ namespace Amazon.CloudTrail.Model
         private BillingMode _billingMode;
         private DateTime? _createdTimestamp;
         private string _eventDataStoreArn;
+        private string _federationRoleArn;
+        private FederationStatus _federationStatus;
         private string _kmsKeyId;
         private bool? _multiRegionEnabled;
         private string _name;
@@ -117,6 +119,48 @@ namespace Amazon.CloudTrail.Model
         internal bool IsSetEventDataStoreArn()
         {
             return this._eventDataStoreArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FederationRoleArn. 
+        /// <para>
+        ///  If Lake query federation is enabled, provides the ARN of the federation role used
+        /// to access the resources for the federated event data store. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=3, Max=125)]
+        public string FederationRoleArn
+        {
+            get { return this._federationRoleArn; }
+            set { this._federationRoleArn = value; }
+        }
+
+        // Check to see if FederationRoleArn property is set
+        internal bool IsSetFederationRoleArn()
+        {
+            return this._federationRoleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FederationStatus. 
+        /// <para>
+        ///  Indicates the <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-federation.html">Lake
+        /// query federation</a> status. The status is <code>ENABLED</code> if Lake query federation
+        /// is enabled, or <code>DISABLED</code> if Lake query federation is disabled. You cannot
+        /// delete an event data store if the <code>FederationStatus</code> is <code>ENABLED</code>.
+        /// 
+        /// </para>
+        /// </summary>
+        public FederationStatus FederationStatus
+        {
+            get { return this._federationStatus; }
+            set { this._federationStatus = value; }
+        }
+
+        // Check to see if FederationStatus property is set
+        internal bool IsSetFederationStatus()
+        {
+            return this._federationStatus != null;
         }
 
         /// <summary>

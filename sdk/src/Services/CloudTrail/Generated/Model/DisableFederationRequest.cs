@@ -29,31 +29,22 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudTrail.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteEventDataStore operation.
-    /// Disables the event data store specified by <code>EventDataStore</code>, which accepts
-    /// an event data store ARN. After you run <code>DeleteEventDataStore</code>, the event
-    /// data store enters a <code>PENDING_DELETION</code> state, and is automatically deleted
-    /// after a wait period of seven days. <code>TerminationProtectionEnabled</code> must
-    /// be set to <code>False</code> on the event data store and the <code>FederationStatus</code>
-    /// must be <code>DISABLED</code>. You cannot delete an event data store if <code>TerminationProtectionEnabled</code>
-    /// is <code>True</code> or the <code>FederationStatus</code> is <code>ENABLED</code>.
-    /// 
-    ///  
-    /// <para>
-    /// After you run <code>DeleteEventDataStore</code> on an event data store, you cannot
-    /// run <code>ListQueries</code>, <code>DescribeQuery</code>, or <code>GetQueryResults</code>
-    /// on queries that are using an event data store in a <code>PENDING_DELETION</code> state.
-    /// An event data store in the <code>PENDING_DELETION</code> state does not incur costs.
-    /// </para>
+    /// Container for the parameters to the DisableFederation operation.
+    /// Disables Lake query federation on the specified event data store. When you disable
+    /// federation, CloudTrail removes the metadata associated with the federated event data
+    /// store in the Glue Data Catalog and removes registration for the federation role ARN
+    /// and event data store in Lake Formation. No CloudTrail Lake data is deleted when you
+    /// disable federation.
     /// </summary>
-    public partial class DeleteEventDataStoreRequest : AmazonCloudTrailRequest
+    public partial class DisableFederationRequest : AmazonCloudTrailRequest
     {
         private string _eventDataStore;
 
         /// <summary>
         /// Gets and sets the property EventDataStore. 
         /// <para>
-        /// The ARN (or the ID suffix of the ARN) of the event data store to delete.
+        ///  The ARN (or ID suffix of the ARN) of the event data store for which you want to disable
+        /// Lake query federation. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=256)]
