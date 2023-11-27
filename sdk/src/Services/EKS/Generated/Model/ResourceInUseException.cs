@@ -130,7 +130,10 @@ namespace Amazon.EKS.Model
 #endif
 
         /// <summary>
-        /// Gets and sets the property AddonName.
+        /// Gets and sets the property AddonName. 
+        /// <para>
+        /// The specified add-on name is in use.
+        /// </para>
         /// </summary>
         public string AddonName
         {

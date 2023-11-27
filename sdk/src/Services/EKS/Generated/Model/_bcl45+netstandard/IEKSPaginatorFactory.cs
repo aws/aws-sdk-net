@@ -41,6 +41,11 @@ namespace Amazon.EKS.Model
         IListClustersPaginator ListClusters(ListClustersRequest request);
 
         /// <summary>
+        /// Paginator for ListEksAnywhereSubscriptions operation
+        ///</summary>
+        IListEksAnywhereSubscriptionsPaginator ListEksAnywhereSubscriptions(ListEksAnywhereSubscriptionsRequest request);
+
+        /// <summary>
         /// Paginator for ListFargateProfiles operation
         ///</summary>
         IListFargateProfilesPaginator ListFargateProfiles(ListFargateProfilesRequest request);
@@ -54,6 +59,11 @@ namespace Amazon.EKS.Model
         /// Paginator for ListNodegroups operation
         ///</summary>
         IListNodegroupsPaginator ListNodegroups(ListNodegroupsRequest request);
+
+        /// <summary>
+        /// Paginator for ListPodIdentityAssociations operation
+        ///</summary>
+        IListPodIdentityAssociationsPaginator ListPodIdentityAssociations(ListPodIdentityAssociationsRequest request);
 
         /// <summary>
         /// Paginator for ListUpdates operation

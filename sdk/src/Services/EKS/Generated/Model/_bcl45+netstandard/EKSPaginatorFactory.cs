@@ -60,6 +60,14 @@ namespace Amazon.EKS.Model
         }
 
         /// <summary>
+        /// Paginator for ListEksAnywhereSubscriptions operation
+        ///</summary>
+        public IListEksAnywhereSubscriptionsPaginator ListEksAnywhereSubscriptions(ListEksAnywhereSubscriptionsRequest request) 
+        {
+            return new ListEksAnywhereSubscriptionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListFargateProfiles operation
         ///</summary>
         public IListFargateProfilesPaginator ListFargateProfiles(ListFargateProfilesRequest request) 
@@ -81,6 +89,14 @@ namespace Amazon.EKS.Model
         public IListNodegroupsPaginator ListNodegroups(ListNodegroupsRequest request) 
         {
             return new ListNodegroupsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListPodIdentityAssociations operation
+        ///</summary>
+        public IListPodIdentityAssociationsPaginator ListPodIdentityAssociations(ListPodIdentityAssociationsRequest request) 
+        {
+            return new ListPodIdentityAssociationsPaginator(this.client, request);
         }
 
         /// <summary>

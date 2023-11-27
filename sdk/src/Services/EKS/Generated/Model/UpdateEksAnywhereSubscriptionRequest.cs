@@ -77,7 +77,10 @@ namespace Amazon.EKS.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Id.
+        /// Gets and sets the property Id. 
+        /// <para>
+        /// The ID of the subscription.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string Id

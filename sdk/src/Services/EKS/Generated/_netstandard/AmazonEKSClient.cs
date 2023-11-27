@@ -520,6 +520,29 @@ namespace Amazon.EKS
         /// </para>
         ///  
         /// <para>
+        /// You can use the <code>endpointPublicAccess</code> and <code>endpointPrivateAccess</code>
+        /// parameters to enable or disable public and private access to your cluster's Kubernetes
+        /// API server endpoint. By default, public access is enabled, and private access is disabled.
+        /// For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
+        /// EKS Cluster Endpoint Access Control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use the <code>logging</code> parameter to enable or disable exporting the
+        /// Kubernetes control plane logs for your cluster to CloudWatch Logs. By default, cluster
+        /// control plane logs aren't exported to CloudWatch Logs. For more information, see <a
+        /// href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon
+        /// EKS Cluster Control Plane Logs</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// CloudWatch Logs ingestion, archive storage, and data scanning rates apply to exported
+        /// control plane logs. For more information, see <a href="http://aws.amazon.com/cloudwatch/pricing/">CloudWatch
+        /// Pricing</a>.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// In most cases, it takes several minutes to create a cluster. After you create an Amazon
         /// EKS cluster, you must configure your Kubernetes tooling to communicate with the API
         /// server and launch nodes into your cluster. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/managing-auth.html">Managing
@@ -799,6 +822,83 @@ namespace Amazon.EKS
 
         #endregion
         
+        #region  CreatePodIdentityAssociation
+
+        internal virtual CreatePodIdentityAssociationResponse CreatePodIdentityAssociation(CreatePodIdentityAssociationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePodIdentityAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePodIdentityAssociationResponseUnmarshaller.Instance;
+
+            return Invoke<CreatePodIdentityAssociationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates an EKS Pod Identity association between a service account in an Amazon EKS
+        /// cluster and an IAM role with <i>EKS Pod Identity</i>. Use EKS Pod Identity to give
+        /// temporary IAM credentials to pods and the credentials are rotated automatically.
+        /// 
+        ///  
+        /// <para>
+        /// Amazon EKS Pod Identity associations provide the ability to manage credentials for
+        /// your applications, similar to the way that 7EC2l instance profiles provide credentials
+        /// to Amazon EC2 instances.
+        /// </para>
+        ///  
+        /// <para>
+        /// If a pod uses a service account that has an association, Amazon EKS sets environment
+        /// variables in the containers of the pod. The environment variables configure the Amazon
+        /// Web Services SDKs, including the Command Line Interface, to use the EKS Pod Identity
+        /// credentials.
+        /// </para>
+        ///  
+        /// <para>
+        /// Pod Identity is a simpler method than <i>IAM roles for service accounts</i>, as this
+        /// method doesn't use OIDC identity providers. Additionally, you can configure a role
+        /// for Pod Identity once, and reuse it across clusters.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePodIdentityAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreatePodIdentityAssociation service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidRequestException">
+        /// The request is invalid given the state of the cluster. Check the state of the cluster
+        /// and the associated operations.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceLimitExceededException">
+        /// You have encountered a service limit on the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
+        /// Amazon EKS clusters and node groups are Region-specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreatePodIdentityAssociation">REST API Reference for CreatePodIdentityAssociation Operation</seealso>
+        public virtual Task<CreatePodIdentityAssociationResponse> CreatePodIdentityAssociationAsync(CreatePodIdentityAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePodIdentityAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePodIdentityAssociationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreatePodIdentityAssociationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteAddon
 
         internal virtual DeleteAddonResponse DeleteAddon(DeleteAddonRequest request)
@@ -942,10 +1042,10 @@ namespace Amazon.EKS
 
 
         /// <summary>
-        /// Deletes an expired / inactive subscription. Deleting inactive subscriptions removes
+        /// Deletes an expired or inactive subscription. Deleting inactive subscriptions removes
         /// them from the Amazon Web Services Management Console view and from list/describe API
-        /// responses. Subscriptions can only be cancelled within 7 days of creation, and are
-        /// cancelled by creating a ticket in the Amazon Web Services Support Center.
+        /// responses. Subscriptions can only be cancelled within 7 days of creation and are cancelled
+        /// by creating a ticket in the Amazon Web Services Support Center.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteEksAnywhereSubscription service method.</param>
         /// <param name="cancellationToken">
@@ -1101,6 +1201,62 @@ namespace Amazon.EKS
             options.ResponseUnmarshaller = DeleteNodegroupResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteNodegroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeletePodIdentityAssociation
+
+        internal virtual DeletePodIdentityAssociationResponse DeletePodIdentityAssociation(DeletePodIdentityAssociationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePodIdentityAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePodIdentityAssociationResponseUnmarshaller.Instance;
+
+            return Invoke<DeletePodIdentityAssociationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a EKS Pod Identity association.
+        /// 
+        ///  
+        /// <para>
+        /// The temporary Amazon Web Services credentials from the previous IAM role session might
+        /// still be valid until the session expiry. If you need to immediately revoke the temporary
+        /// session credentials, then go to the role in the IAM console.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePodIdentityAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeletePodIdentityAssociation service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidRequestException">
+        /// The request is invalid given the state of the cluster. Check the state of the cluster
+        /// and the associated operations.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
+        /// Amazon EKS clusters and node groups are Region-specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeletePodIdentityAssociation">REST API Reference for DeletePodIdentityAssociation Operation</seealso>
+        public virtual Task<DeletePodIdentityAssociationResponse> DeletePodIdentityAssociationAsync(DeletePodIdentityAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePodIdentityAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePodIdentityAssociationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeletePodIdentityAssociationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1587,6 +1743,63 @@ namespace Amazon.EKS
 
         #endregion
         
+        #region  DescribePodIdentityAssociation
+
+        internal virtual DescribePodIdentityAssociationResponse DescribePodIdentityAssociation(DescribePodIdentityAssociationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribePodIdentityAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribePodIdentityAssociationResponseUnmarshaller.Instance;
+
+            return Invoke<DescribePodIdentityAssociationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns descriptive information about an EKS Pod Identity association.
+        /// 
+        ///  
+        /// <para>
+        /// This action requires the ID of the association. You can get the ID from the response
+        /// to the <code>CreatePodIdentityAssocation</code> for newly created associations. Or,
+        /// you can list the IDs for associations with <code>ListPodIdentityAssociations</code>
+        /// and filter the list by namespace or service account.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribePodIdentityAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribePodIdentityAssociation service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidRequestException">
+        /// The request is invalid given the state of the cluster. Check the state of the cluster
+        /// and the associated operations.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
+        /// Amazon EKS clusters and node groups are Region-specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribePodIdentityAssociation">REST API Reference for DescribePodIdentityAssociation Operation</seealso>
+        public virtual Task<DescribePodIdentityAssociationResponse> DescribePodIdentityAssociationAsync(DescribePodIdentityAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribePodIdentityAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribePodIdentityAssociationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribePodIdentityAssociationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeUpdate
 
         internal virtual DescribeUpdateResponse DescribeUpdate(DescribeUpdateRequest request)
@@ -2023,6 +2236,56 @@ namespace Amazon.EKS
 
         #endregion
         
+        #region  ListPodIdentityAssociations
+
+        internal virtual ListPodIdentityAssociationsResponse ListPodIdentityAssociations(ListPodIdentityAssociationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPodIdentityAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPodIdentityAssociationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListPodIdentityAssociationsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// List the EKS Pod Identity associations in a cluster. You can filter the list by the
+        /// namespace that the association is in or the service account that the association uses.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPodIdentityAssociations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListPodIdentityAssociations service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidRequestException">
+        /// The request is invalid given the state of the cluster. Check the state of the cluster
+        /// and the associated operations.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
+        /// Amazon EKS clusters and node groups are Region-specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListPodIdentityAssociations">REST API Reference for ListPodIdentityAssociations Operation</seealso>
+        public virtual Task<ListPodIdentityAssociationsResponse> ListPodIdentityAssociationsAsync(ListPodIdentityAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPodIdentityAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPodIdentityAssociationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListPodIdentityAssociationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListTagsForResource
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
@@ -2390,13 +2653,17 @@ namespace Amazon.EKS
         /// to your cluster's Kubernetes API server endpoint. By default, public access is enabled,
         /// and private access is disabled. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
         /// EKS cluster endpoint access control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
-        /// 
         /// </para>
-        ///  <important> 
+        ///  
         /// <para>
-        /// You can't update the subnets or security group IDs for an existing cluster.
+        /// You can also use this API operation to choose different subnets and security groups
+        /// for the cluster. You must specify at least two subnets that are in different Availability
+        /// Zones. You can't change which VPC the subnets are from, the subnets must be in the
+        /// same VPC as the subnets that the cluster was created with. For more information about
+        /// the VPC requirements, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html</a>
+        /// in the <i> <i>Amazon EKS User Guide</i> </i>.
         /// </para>
-        ///  </important> 
+        ///  
         /// <para>
         /// Cluster updates are asynchronous, and they should finish within a few minutes. During
         /// an update, the cluster status moves to <code>UPDATING</code> (this status transition
@@ -2724,6 +2991,58 @@ namespace Amazon.EKS
             options.ResponseUnmarshaller = UpdateNodegroupVersionResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateNodegroupVersionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdatePodIdentityAssociation
+
+        internal virtual UpdatePodIdentityAssociationResponse UpdatePodIdentityAssociation(UpdatePodIdentityAssociationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdatePodIdentityAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePodIdentityAssociationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdatePodIdentityAssociationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates a EKS Pod Identity association. Only the IAM role can be changed; an association
+        /// can't be moved between clusters, namespaces, or service accounts. If you need to edit
+        /// the namespace or service account, you need to remove the association and then create
+        /// a new association with your desired settings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePodIdentityAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdatePodIdentityAssociation service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidRequestException">
+        /// The request is invalid given the state of the cluster. Check the state of the cluster
+        /// and the associated operations.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
+        /// Amazon EKS clusters and node groups are Region-specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdatePodIdentityAssociation">REST API Reference for UpdatePodIdentityAssociation Operation</seealso>
+        public virtual Task<UpdatePodIdentityAssociationResponse> UpdatePodIdentityAssociationAsync(UpdatePodIdentityAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdatePodIdentityAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePodIdentityAssociationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdatePodIdentityAssociationResponse>(request, options, cancellationToken);
         }
 
         #endregion

@@ -86,7 +86,7 @@ namespace Amazon.EKS.Model
         /// Gets and sets the property LicenseQuantity. 
         /// <para>
         /// The number of licenses to purchase with the subscription. Valid values are between
-        /// 1 and 1000. This value cannot be changed after creating the subscription.
+        /// 1 and 100. This value can't be changed after creating the subscription.
         /// </para>
         /// </summary>
         public int LicenseQuantity
@@ -146,7 +146,7 @@ namespace Amazon.EKS.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// The metadata for a subscription to assist with categorization and organization. Each
-        /// tag consists of a key and an optional value. Subscription tags do not propagate to
+        /// tag consists of a key and an optional value. Subscription tags don't propagate to
         /// any other resources associated with the subscription.
         /// </para>
         /// </summary>

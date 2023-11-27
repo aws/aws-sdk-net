@@ -133,7 +133,10 @@ namespace Amazon.EKS.Model
 #endif
 
         /// <summary>
-        /// Gets and sets the property AddonName.
+        /// Gets and sets the property AddonName. 
+        /// <para>
+        /// The Amazon EKS add-on name associated with the exception.
+        /// </para>
         /// </summary>
         public string AddonName
         {

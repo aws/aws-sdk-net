@@ -159,7 +159,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property LicenseArns. 
         /// <para>
-        /// License Manager License ARNs associated with the subscription.
+        /// Amazon Web Services License Manager ARN associated with the subscription.
         /// </para>
         /// </summary>
         public List<string> LicenseArns
@@ -178,7 +178,7 @@ namespace Amazon.EKS.Model
         /// Gets and sets the property LicenseQuantity. 
         /// <para>
         /// The number of licenses included in a subscription. Valid values are between 1 and
-        /// 1000.
+        /// 100.
         /// </para>
         /// </summary>
         public int LicenseQuantity

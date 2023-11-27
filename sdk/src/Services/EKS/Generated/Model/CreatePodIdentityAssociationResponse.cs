@@ -29,33 +29,33 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EKS.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteEksAnywhereSubscription operation.
-    /// Deletes an expired or inactive subscription. Deleting inactive subscriptions removes
-    /// them from the Amazon Web Services Management Console view and from list/describe API
-    /// responses. Subscriptions can only be cancelled within 7 days of creation and are cancelled
-    /// by creating a ticket in the Amazon Web Services Support Center.
+    /// This is the response object from the CreatePodIdentityAssociation operation.
     /// </summary>
-    public partial class DeleteEksAnywhereSubscriptionRequest : AmazonEKSRequest
+    public partial class CreatePodIdentityAssociationResponse : AmazonWebServiceResponse
     {
-        private string _id;
+        private PodIdentityAssociation _association;
 
         /// <summary>
-        /// Gets and sets the property Id. 
+        /// Gets and sets the property Association. 
         /// <para>
-        /// The ID of the subscription.
+        /// The full description of your new association.
+        /// </para>
+        ///  
+        /// <para>
+        /// The description includes an ID for the association. Use the ID of the association
+        /// in further actions to manage the association.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string Id
+        public PodIdentityAssociation Association
         {
-            get { return this._id; }
-            set { this._id = value; }
+            get { return this._association; }
+            set { this._association = value; }
         }
 
-        // Check to see if Id property is set
-        internal bool IsSetId()
+        // Check to see if Association property is set
+        internal bool IsSetAssociation()
         {
-            return this._id != null;
+            return this._association != null;
         }
 
     }
