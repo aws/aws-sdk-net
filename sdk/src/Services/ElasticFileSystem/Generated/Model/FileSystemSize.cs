@@ -41,6 +41,7 @@ namespace Amazon.ElasticFileSystem.Model
     {
         private DateTime? _timestamp;
         private long? _value;
+        private long? _valueInArchive;
         private long? _valueInIA;
         private long? _valueInStandard;
 
@@ -80,6 +81,25 @@ namespace Amazon.ElasticFileSystem.Model
         internal bool IsSetValue()
         {
             return this._value.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ValueInArchive. 
+        /// <para>
+        /// The latest known metered size (in bytes) of data stored in the Archive storage class.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0)]
+        public long ValueInArchive
+        {
+            get { return this._valueInArchive.GetValueOrDefault(); }
+            set { this._valueInArchive = value; }
+        }
+
+        // Check to see if ValueInArchive property is set
+        internal bool IsSetValueInArchive()
+        {
+            return this._valueInArchive.HasValue; 
         }
 
         /// <summary>

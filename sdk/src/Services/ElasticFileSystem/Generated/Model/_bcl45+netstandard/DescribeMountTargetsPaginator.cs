@@ -28,69 +28,69 @@ using Amazon.Runtime;
 namespace Amazon.ElasticFileSystem.Model
 {
     /// <summary>
-    /// Base class for DescribeAccessPoints paginators.
+    /// Base class for DescribeMountTargets paginators.
     /// </summary>
-    internal sealed partial class DescribeAccessPointsPaginator : IPaginator<DescribeAccessPointsResponse>, IDescribeAccessPointsPaginator
+    internal sealed partial class DescribeMountTargetsPaginator : IPaginator<DescribeMountTargetsResponse>, IDescribeMountTargetsPaginator
     {
         private readonly IAmazonElasticFileSystem _client;
-        private readonly DescribeAccessPointsRequest _request;
+        private readonly DescribeMountTargetsRequest _request;
         private int _isPaginatorInUse = 0;
         
         /// <summary>
         /// Enumerable containing all full responses for the operation
         /// </summary>
-        public IPaginatedEnumerable<DescribeAccessPointsResponse> Responses => new PaginatedResponse<DescribeAccessPointsResponse>(this);
+        public IPaginatedEnumerable<DescribeMountTargetsResponse> Responses => new PaginatedResponse<DescribeMountTargetsResponse>(this);
 
         /// <summary>
-        /// Enumerable containing all of the AccessPoints
+        /// Enumerable containing all of the MountTargets
         /// </summary>
-        public IPaginatedEnumerable<AccessPointDescription> AccessPoints => 
-            new PaginatedResultKeyResponse<DescribeAccessPointsResponse, AccessPointDescription>(this, (i) => i.AccessPoints);
+        public IPaginatedEnumerable<MountTargetDescription> MountTargets => 
+            new PaginatedResultKeyResponse<DescribeMountTargetsResponse, MountTargetDescription>(this, (i) => i.MountTargets);
 
-        internal DescribeAccessPointsPaginator(IAmazonElasticFileSystem client, DescribeAccessPointsRequest request)
+        internal DescribeMountTargetsPaginator(IAmazonElasticFileSystem client, DescribeMountTargetsRequest request)
         {
             this._client = client;
             this._request = request;
         }
 #if BCL
-        IEnumerable<DescribeAccessPointsResponse> IPaginator<DescribeAccessPointsResponse>.Paginate()
+        IEnumerable<DescribeMountTargetsResponse> IPaginator<DescribeMountTargetsResponse>.Paginate()
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {
                 throw new System.InvalidOperationException("Paginator has already been consumed and cannot be reused. Please create a new instance.");
             }
             PaginatorUtils.SetUserAgentAdditionOnRequest(_request);
-            var nextToken = _request.NextToken;
-            DescribeAccessPointsResponse response;
+            var marker = _request.Marker;
+            DescribeMountTargetsResponse response;
             do
             {
-                _request.NextToken = nextToken;
-                response = _client.DescribeAccessPoints(_request);
-                nextToken = response.NextToken;
+                _request.Marker = marker;
+                response = _client.DescribeMountTargets(_request);
+                marker = response.NextMarker;
                 yield return response;
             }
-            while (!string.IsNullOrEmpty(nextToken));
+            while (!string.IsNullOrEmpty(marker));
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<DescribeAccessPointsResponse> IPaginator<DescribeAccessPointsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<DescribeMountTargetsResponse> IPaginator<DescribeMountTargetsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {
                 throw new System.InvalidOperationException("Paginator has already been consumed and cannot be reused. Please create a new instance.");
             }
             PaginatorUtils.SetUserAgentAdditionOnRequest(_request);
-            var nextToken = _request.NextToken;
-            DescribeAccessPointsResponse response;
+            var marker = _request.Marker;
+            DescribeMountTargetsResponse response;
             do
             {
-                _request.NextToken = nextToken;
-                response = await _client.DescribeAccessPointsAsync(_request, cancellationToken).ConfigureAwait(false);
-                nextToken = response.NextToken;
+                _request.Marker = marker;
+                response = await _client.DescribeMountTargetsAsync(_request, cancellationToken).ConfigureAwait(false);
+                marker = response.NextMarker;
                 cancellationToken.ThrowIfCancellationRequested();
                 yield return response;
             }
-            while (!string.IsNullOrEmpty(nextToken));
+            while (!string.IsNullOrEmpty(marker));
         }
 #endif
     }

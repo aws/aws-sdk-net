@@ -45,6 +45,12 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(LifecyclePolicy requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetTransitionToArchive())
+            {
+                context.Writer.WritePropertyName("TransitionToArchive");
+                context.Writer.Write(requestObject.TransitionToArchive);
+            }
+
             if(requestObject.IsSetTransitionToIA())
             {
                 context.Writer.WritePropertyName("TransitionToIA");

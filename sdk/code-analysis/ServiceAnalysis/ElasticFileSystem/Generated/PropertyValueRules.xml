@@ -611,6 +611,10 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ElasticFileSystem.Model.FileSystemSize.ValueInArchive</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ElasticFileSystem.Model.FileSystemSize.ValueInIA</property>
     <min>0</min>
   </property-value-rule>

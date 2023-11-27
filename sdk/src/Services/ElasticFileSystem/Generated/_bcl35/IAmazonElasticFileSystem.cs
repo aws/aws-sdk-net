@@ -179,7 +179,7 @@ namespace Amazon.ElasticFileSystem
         /// </para>
         ///  </note> 
         /// <para>
-        ///  The idempotent operation allows you to retry a <code>CreateFileSystem</code> call
+        /// The idempotent operation allows you to retry a <code>CreateFileSystem</code> call
         /// without risk of creating an extra file system. This can happen when an initial call
         /// fails in a way that leaves it uncertain whether or not a file system was actually
         /// created. An example might be that a transport level timeout occurred or your connection
@@ -203,11 +203,20 @@ namespace Amazon.ElasticFileSystem
         /// <para>
         /// This operation accepts an optional <code>PerformanceMode</code> parameter that you
         /// choose for your file system. We recommend <code>generalPurpose</code> performance
-        /// mode for most file systems. File systems using the <code>maxIO</code> performance
-        /// mode can scale to higher levels of aggregate throughput and operations per second
-        /// with a tradeoff of slightly higher latencies for most file operations. The performance
-        /// mode can't be changed after the file system has been created. For more information,
-        /// see <a href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#performancemodes.html">Amazon
+        /// mode for all file systems. File systems using the <code>maxIO</code> mode is a previous
+        /// generation performance type that is designed for highly parallelized workloads that
+        /// can tolerate higher latencies than the General Purpose mode. Max I/O mode is not supported
+        /// for One Zone file systems or file systems that use Elastic throughput.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// Due to the higher per-operation latencies with Max I/O, we recommend using General
+        /// Purpose performance mode for all file systems.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// The performance mode can't be changed after the file system has been created. For
+        /// more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#performancemodes.html">Amazon
         /// EFS performance modes</a>.
         /// </para>
         ///  
@@ -302,7 +311,7 @@ namespace Amazon.ElasticFileSystem
         /// </para>
         ///  </note> 
         /// <para>
-        ///  The idempotent operation allows you to retry a <code>CreateFileSystem</code> call
+        /// The idempotent operation allows you to retry a <code>CreateFileSystem</code> call
         /// without risk of creating an extra file system. This can happen when an initial call
         /// fails in a way that leaves it uncertain whether or not a file system was actually
         /// created. An example might be that a transport level timeout occurred or your connection
@@ -326,11 +335,20 @@ namespace Amazon.ElasticFileSystem
         /// <para>
         /// This operation accepts an optional <code>PerformanceMode</code> parameter that you
         /// choose for your file system. We recommend <code>generalPurpose</code> performance
-        /// mode for most file systems. File systems using the <code>maxIO</code> performance
-        /// mode can scale to higher levels of aggregate throughput and operations per second
-        /// with a tradeoff of slightly higher latencies for most file operations. The performance
-        /// mode can't be changed after the file system has been created. For more information,
-        /// see <a href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#performancemodes.html">Amazon
+        /// mode for all file systems. File systems using the <code>maxIO</code> mode is a previous
+        /// generation performance type that is designed for highly parallelized workloads that
+        /// can tolerate higher latencies than the General Purpose mode. Max I/O mode is not supported
+        /// for One Zone file systems or file systems that use Elastic throughput.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// Due to the higher per-operation latencies with Max I/O, we recommend using General
+        /// Purpose performance mode for all file systems.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// The performance mode can't be changed after the file system has been created. For
+        /// more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#performancemodes.html">Amazon
         /// EFS performance modes</a>.
         /// </para>
         ///  
@@ -443,12 +461,12 @@ namespace Amazon.ElasticFileSystem
         /// </para>
         ///  
         /// <para>
-        /// You can create only one mount target for an EFS file system using One Zone storage
-        /// classes. You must create that mount target in the same Availability Zone in which
-        /// the file system is located. Use the <code>AvailabilityZoneName</code> and <code>AvailabiltyZoneId</code>
-        /// properties in the <a>DescribeFileSystems</a> response object to get this information.
-        /// Use the <code>subnetId</code> associated with the file system's Availability Zone
-        /// when creating the mount target.
+        /// You can create only one mount target for a One Zone file system. You must create that
+        /// mount target in the same Availability Zone in which the file system is located. Use
+        /// the <code>AvailabilityZoneName</code> and <code>AvailabiltyZoneId</code> properties
+        /// in the <a>DescribeFileSystems</a> response object to get this information. Use the
+        /// <code>subnetId</code> associated with the file system's Availability Zone when creating
+        /// the mount target.
         /// </para>
         ///  
         /// <para>
@@ -720,8 +738,8 @@ namespace Amazon.ElasticFileSystem
         ///  </li> <li> 
         /// <para>
         ///  <b>Availability Zone</b> - If you want the destination file system to use EFS One
-        /// Zone availability and durability, you must specify the Availability Zone to create
-        /// the file system in. For more information about EFS storage classes, see <a href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">
+        /// Zone availability, you must specify the Availability Zone to create the file system
+        /// in. For more information about EFS storage classes, see <a href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">
         /// Amazon EFS storage classes</a> in the <i>Amazon EFS User Guide</i>.
         /// </para>
         ///  </li> <li> 
@@ -758,13 +776,12 @@ namespace Amazon.ElasticFileSystem
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>Lifecycle management</b> - EFS lifecycle management and EFS Intelligent-Tiering
-        /// are not enabled on the destination file system. After the destination file system
-        /// is created, you can enable EFS lifecycle management and EFS Intelligent-Tiering.
+        ///  <b>Lifecycle management</b> – Lifecycle management is not enabled on the destination
+        /// file system. After the destination file system is created, you can enable it.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Automatic backups</b> - Automatic daily backups are enabled on the destination
+        ///  <b>Automatic backups</b> – Automatic daily backups are enabled on the destination
         /// file system. After the file system is created, you can change this setting.
         /// </para>
         ///  </li> </ul> 
@@ -1775,16 +1792,11 @@ namespace Amazon.ElasticFileSystem
 
         /// <summary>
         /// Returns the current <code>LifecycleConfiguration</code> object for the specified Amazon
-        /// EFS file system. EFS lifecycle management uses the <code>LifecycleConfiguration</code>
-        /// object to identify which files to move to the EFS Infrequent Access (IA) storage class.
-        /// For a file system without a <code>LifecycleConfiguration</code> object, the call returns
-        /// an empty array in the response.
+        /// EFS file system. Llifecycle management uses the <code>LifecycleConfiguration</code>
+        /// object to identify when to move files between storage classes. For a file system without
+        /// a <code>LifecycleConfiguration</code> object, the call returns an empty array in the
+        /// response.
         /// 
-        ///  
-        /// <para>
-        /// When EFS Intelligent-Tiering is enabled, <code>TransitionToPrimaryStorageClass</code>
-        /// has a value of <code>AFTER_1_ACCESS</code>.
-        /// </para>
         ///  
         /// <para>
         /// This operation requires permissions for the <code>elasticfilesystem:DescribeLifecycleConfiguration</code>
@@ -2572,35 +2584,40 @@ namespace Amazon.ElasticFileSystem
 
 
         /// <summary>
-        /// Use this action to manage EFS lifecycle management and EFS Intelligent-Tiering. A
-        /// <code>LifecycleConfiguration</code> consists of one or more <code>LifecyclePolicy</code>
-        /// objects that define the following:
+        /// Use this action to manage storage of your file system. A <code>LifecycleConfiguration</code>
+        /// consists of one or more <code>LifecyclePolicy</code> objects that define the following:
         /// 
         ///  <ul> <li> 
         /// <para>
-        ///  <b>EFS Lifecycle management</b> - When Amazon EFS automatically transitions files
-        /// in a file system into the lower-cost EFS Infrequent Access (IA) storage class.
-        /// </para>
-        ///  
-        /// <para>
-        /// To enable EFS Lifecycle management, set the value of <code>TransitionToIA</code> to
-        /// one of the available options.
+        ///  <b> <code>TransitionToIA</code> </b> – When to move files in the file system from
+        /// primary storage (Standard storage class) into the Infrequent Access (IA) storage.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>EFS Intelligent-Tiering</b> - When Amazon EFS automatically transitions files
-        /// from IA back into the file system's primary storage class (EFS Standard or EFS One
-        /// Zone Standard).
+        ///  <b> <code>TransitionToArchive</code> </b> – When to move files in the file system
+        /// from their current storage class (either IA or Standard storage) into the Archive
+        /// storage.
         /// </para>
         ///  
         /// <para>
-        /// To enable EFS Intelligent-Tiering, set the value of <code>TransitionToPrimaryStorageClass</code>
-        /// to <code>AFTER_1_ACCESS</code>.
+        /// File systems cannot transition into Archive storage before transitioning into IA storage.
+        /// Therefore, TransitionToArchive must either not be set or must be later than TransitionToIA.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  The Archive storage class is available only for file systems that use the Elastic
+        /// Throughput mode and the General Purpose Performance mode. 
+        /// </para>
+        ///  </note> </li> <li> 
+        /// <para>
+        ///  <b> <code>TransitionToPrimaryStorageClass</code> </b> – Whether to move files in
+        /// the file system back to primary storage (Standard storage class) after they are accessed
+        /// in IA or Archive storage.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/lifecycle-management-efs.html">EFS
-        /// Lifecycle Management</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/lifecycle-management-efs.html">
+        /// Managing file system storage</a>.
         /// </para>
         ///  
         /// <para>
@@ -2609,8 +2626,7 @@ namespace Amazon.ElasticFileSystem
         /// exists for the specified file system, a <code>PutLifecycleConfiguration</code> call
         /// modifies the existing configuration. A <code>PutLifecycleConfiguration</code> call
         /// with an empty <code>LifecyclePolicies</code> array in the request body deletes any
-        /// existing <code>LifecycleConfiguration</code> and turns off lifecycle management and
-        /// EFS Intelligent-Tiering for the file system.
+        /// existing <code>LifecycleConfiguration</code> for the file system.
         /// </para>
         ///  
         /// <para>
@@ -2618,14 +2634,13 @@ namespace Amazon.ElasticFileSystem
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The ID for the file system for which you are enabling, disabling, or modifying lifecycle
-        /// management and EFS Intelligent-Tiering.
+        /// The ID for the file system for which you are enabling, disabling, or modifying Lifecycle
+        /// management.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// A <code>LifecyclePolicies</code> array of <code>LifecyclePolicy</code> objects that
-        /// define when files are moved into IA storage, and when they are moved back to Standard
-        /// storage.
+        /// define when to move files to IA storage, to Archive storage, and back to primary storage.
         /// </para>
         ///  <note> 
         /// <para>

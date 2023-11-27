@@ -29,5 +29,10 @@ namespace Amazon.ElasticFileSystem.Model
         /// Enumerable containing all full responses for the operation
         /// </summary>
         IPaginatedEnumerable<DescribeAccessPointsResponse> Responses { get; }
+
+        /// <summary>
+        /// Enumerable containing all of the AccessPoints
+        /// </summary>
+        IPaginatedEnumerable<AccessPointDescription> AccessPoints { get; }
     }
 }

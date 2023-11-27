@@ -81,8 +81,8 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property OriginalSourceFileSystemArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the original source Amazon EFS file system in the
-        /// replication configuration.
+        /// The Amazon Resource Name (ARN) of the original source EFS file system in the replication
+        /// configuration.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -140,7 +140,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property SourceFileSystemRegion. 
         /// <para>
-        /// The Amazon Web Services Region in which the source Amazon EFS file system is located.
+        /// The Amazon Web Services Region in which the source EFS file system is located.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]

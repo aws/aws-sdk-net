@@ -52,6 +52,22 @@ namespace Amazon.ElasticFileSystem.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeMountTargets operation
+        ///</summary>
+        public IDescribeMountTargetsPaginator DescribeMountTargets(DescribeMountTargetsRequest request) 
+        {
+            return new DescribeMountTargetsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeReplicationConfigurations operation
+        ///</summary>
+        public IDescribeReplicationConfigurationsPaginator DescribeReplicationConfigurations(DescribeReplicationConfigurationsRequest request) 
+        {
+            return new DescribeReplicationConfigurationsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeTags operation
         ///</summary>
         public IDescribeTagsPaginator DescribeTags(DescribeTagsRequest request) 

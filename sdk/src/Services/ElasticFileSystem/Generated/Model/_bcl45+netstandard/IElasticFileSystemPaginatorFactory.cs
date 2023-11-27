@@ -36,6 +36,16 @@ namespace Amazon.ElasticFileSystem.Model
         IDescribeFileSystemsPaginator DescribeFileSystems(DescribeFileSystemsRequest request);
 
         /// <summary>
+        /// Paginator for DescribeMountTargets operation
+        ///</summary>
+        IDescribeMountTargetsPaginator DescribeMountTargets(DescribeMountTargetsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeReplicationConfigurations operation
+        ///</summary>
+        IDescribeReplicationConfigurationsPaginator DescribeReplicationConfigurations(DescribeReplicationConfigurationsRequest request);
+
+        /// <summary>
         /// Paginator for DescribeTags operation
         ///</summary>
         IDescribeTagsPaginator DescribeTags(DescribeTagsRequest request);

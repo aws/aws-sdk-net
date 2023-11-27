@@ -198,8 +198,8 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property RootDirectory. 
         /// <para>
-        /// The directory on the Amazon EFS file system that the access point exposes as the root
-        /// directory to NFS clients using the access point.
+        /// The directory on the EFS file system that the access point exposes as the root directory
+        /// to NFS clients using the access point.
         /// </para>
         /// </summary>
         public RootDirectory RootDirectory

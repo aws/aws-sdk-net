@@ -43,12 +43,12 @@ namespace Amazon.ElasticFileSystem.Model
     /// </para>
     ///  
     /// <para>
-    /// You can create only one mount target for an EFS file system using One Zone storage
-    /// classes. You must create that mount target in the same Availability Zone in which
-    /// the file system is located. Use the <code>AvailabilityZoneName</code> and <code>AvailabiltyZoneId</code>
-    /// properties in the <a>DescribeFileSystems</a> response object to get this information.
-    /// Use the <code>subnetId</code> associated with the file system's Availability Zone
-    /// when creating the mount target.
+    /// You can create only one mount target for a One Zone file system. You must create that
+    /// mount target in the same Availability Zone in which the file system is located. Use
+    /// the <code>AvailabilityZoneName</code> and <code>AvailabiltyZoneId</code> properties
+    /// in the <a>DescribeFileSystems</a> response object to get this information. Use the
+    /// <code>subnetId</code> associated with the file system's Availability Zone when creating
+    /// the mount target.
     /// </para>
     ///  
     /// <para>
@@ -266,9 +266,8 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property SubnetId. 
         /// <para>
-        /// The ID of the subnet to add the mount target in. For file systems that use One Zone
-        /// storage classes, use the subnet that is associated with the file system's Availability
-        /// Zone.
+        /// The ID of the subnet to add the mount target in. For One Zone file systems, use the
+        /// subnet that is associated with the file system's Availability Zone.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=15, Max=47)]

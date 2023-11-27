@@ -60,8 +60,8 @@ namespace Amazon.ElasticFileSystem.Model
     ///  </li> <li> 
     /// <para>
     ///  <b>Availability Zone</b> - If you want the destination file system to use EFS One
-    /// Zone availability and durability, you must specify the Availability Zone to create
-    /// the file system in. For more information about EFS storage classes, see <a href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">
+    /// Zone availability, you must specify the Availability Zone to create the file system
+    /// in. For more information about EFS storage classes, see <a href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">
     /// Amazon EFS storage classes</a> in the <i>Amazon EFS User Guide</i>.
     /// </para>
     ///  </li> <li> 
@@ -98,13 +98,12 @@ namespace Amazon.ElasticFileSystem.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <b>Lifecycle management</b> - EFS lifecycle management and EFS Intelligent-Tiering
-    /// are not enabled on the destination file system. After the destination file system
-    /// is created, you can enable EFS lifecycle management and EFS Intelligent-Tiering.
+    ///  <b>Lifecycle management</b> – Lifecycle management is not enabled on the destination
+    /// file system. After the destination file system is created, you can enable it.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>Automatic backups</b> - Automatic daily backups are enabled on the destination
+    ///  <b>Automatic backups</b> – Automatic daily backups are enabled on the destination
     /// file system. After the file system is created, you can change this setting.
     /// </para>
     ///  </li> </ul> 

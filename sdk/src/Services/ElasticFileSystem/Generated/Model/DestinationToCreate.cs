@@ -40,7 +40,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZoneName. 
         /// <para>
-        /// To create a file system that uses EFS One Zone storage, specify the name of the Availability
+        /// To create a file system that uses One Zone storage, specify the name of the Availability
         /// Zone in which to create the destination file system.
         /// </para>
         /// </summary>

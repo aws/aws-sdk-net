@@ -64,6 +64,12 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("TransitionToArchive", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TransitionToArchive = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("TransitionToIA", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

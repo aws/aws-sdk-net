@@ -28,32 +28,32 @@ using Amazon.Runtime;
 namespace Amazon.ElasticFileSystem.Model
 {
     /// <summary>
-    /// Base class for DescribeAccessPoints paginators.
+    /// Base class for DescribeReplicationConfigurations paginators.
     /// </summary>
-    internal sealed partial class DescribeAccessPointsPaginator : IPaginator<DescribeAccessPointsResponse>, IDescribeAccessPointsPaginator
+    internal sealed partial class DescribeReplicationConfigurationsPaginator : IPaginator<DescribeReplicationConfigurationsResponse>, IDescribeReplicationConfigurationsPaginator
     {
         private readonly IAmazonElasticFileSystem _client;
-        private readonly DescribeAccessPointsRequest _request;
+        private readonly DescribeReplicationConfigurationsRequest _request;
         private int _isPaginatorInUse = 0;
         
         /// <summary>
         /// Enumerable containing all full responses for the operation
         /// </summary>
-        public IPaginatedEnumerable<DescribeAccessPointsResponse> Responses => new PaginatedResponse<DescribeAccessPointsResponse>(this);
+        public IPaginatedEnumerable<DescribeReplicationConfigurationsResponse> Responses => new PaginatedResponse<DescribeReplicationConfigurationsResponse>(this);
 
         /// <summary>
-        /// Enumerable containing all of the AccessPoints
+        /// Enumerable containing all of the Replications
         /// </summary>
-        public IPaginatedEnumerable<AccessPointDescription> AccessPoints => 
-            new PaginatedResultKeyResponse<DescribeAccessPointsResponse, AccessPointDescription>(this, (i) => i.AccessPoints);
+        public IPaginatedEnumerable<ReplicationConfigurationDescription> Replications => 
+            new PaginatedResultKeyResponse<DescribeReplicationConfigurationsResponse, ReplicationConfigurationDescription>(this, (i) => i.Replications);
 
-        internal DescribeAccessPointsPaginator(IAmazonElasticFileSystem client, DescribeAccessPointsRequest request)
+        internal DescribeReplicationConfigurationsPaginator(IAmazonElasticFileSystem client, DescribeReplicationConfigurationsRequest request)
         {
             this._client = client;
             this._request = request;
         }
 #if BCL
-        IEnumerable<DescribeAccessPointsResponse> IPaginator<DescribeAccessPointsResponse>.Paginate()
+        IEnumerable<DescribeReplicationConfigurationsResponse> IPaginator<DescribeReplicationConfigurationsResponse>.Paginate()
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {
@@ -61,11 +61,11 @@ namespace Amazon.ElasticFileSystem.Model
             }
             PaginatorUtils.SetUserAgentAdditionOnRequest(_request);
             var nextToken = _request.NextToken;
-            DescribeAccessPointsResponse response;
+            DescribeReplicationConfigurationsResponse response;
             do
             {
                 _request.NextToken = nextToken;
-                response = _client.DescribeAccessPoints(_request);
+                response = _client.DescribeReplicationConfigurations(_request);
                 nextToken = response.NextToken;
                 yield return response;
             }
@@ -73,7 +73,7 @@ namespace Amazon.ElasticFileSystem.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<DescribeAccessPointsResponse> IPaginator<DescribeAccessPointsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<DescribeReplicationConfigurationsResponse> IPaginator<DescribeReplicationConfigurationsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {
@@ -81,11 +81,11 @@ namespace Amazon.ElasticFileSystem.Model
             }
             PaginatorUtils.SetUserAgentAdditionOnRequest(_request);
             var nextToken = _request.NextToken;
-            DescribeAccessPointsResponse response;
+            DescribeReplicationConfigurationsResponse response;
             do
             {
                 _request.NextToken = nextToken;
-                response = await _client.DescribeAccessPointsAsync(_request, cancellationToken).ConfigureAwait(false);
+                response = await _client.DescribeReplicationConfigurationsAsync(_request, cancellationToken).ConfigureAwait(false);
                 nextToken = response.NextToken;
                 cancellationToken.ThrowIfCancellationRequested();
                 yield return response;

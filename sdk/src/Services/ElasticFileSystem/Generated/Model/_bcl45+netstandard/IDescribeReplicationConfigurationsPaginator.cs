@@ -21,18 +21,18 @@ using Amazon.Runtime;
 namespace Amazon.ElasticFileSystem.Model
 {
     /// <summary>
-    /// Paginator for the DescribeFileSystems operation
+    /// Paginator for the DescribeReplicationConfigurations operation
     ///</summary>
-    public interface IDescribeFileSystemsPaginator
+    public interface IDescribeReplicationConfigurationsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation
         /// </summary>
-        IPaginatedEnumerable<DescribeFileSystemsResponse> Responses { get; }
+        IPaginatedEnumerable<DescribeReplicationConfigurationsResponse> Responses { get; }
 
         /// <summary>
-        /// Enumerable containing all of the FileSystems
+        /// Enumerable containing all of the Replications
         /// </summary>
-        IPaginatedEnumerable<FileSystemDescription> FileSystems { get; }
+        IPaginatedEnumerable<ReplicationConfigurationDescription> Replications { get; }
     }
 }

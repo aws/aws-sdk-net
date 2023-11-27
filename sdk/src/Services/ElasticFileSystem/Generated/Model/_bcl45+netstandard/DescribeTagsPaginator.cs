@@ -41,6 +41,12 @@ namespace Amazon.ElasticFileSystem.Model
         /// </summary>
         public IPaginatedEnumerable<DescribeTagsResponse> Responses => new PaginatedResponse<DescribeTagsResponse>(this);
 
+        /// <summary>
+        /// Enumerable containing all of the Tags
+        /// </summary>
+        public IPaginatedEnumerable<Tag> Tags => 
+            new PaginatedResultKeyResponse<DescribeTagsResponse, Tag>(this, (i) => i.Tags);
+
         internal DescribeTagsPaginator(IAmazonElasticFileSystem client, DescribeTagsRequest request)
         {
             this._client = client;

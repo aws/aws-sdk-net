@@ -100,7 +100,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Describes the status of the destination Amazon EFS file system.
+        /// Describes the status of the destination EFS file system.
         /// </para>
         ///  <ul> <li> 
         /// <para>

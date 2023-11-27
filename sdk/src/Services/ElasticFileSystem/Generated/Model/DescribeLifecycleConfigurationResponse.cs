@@ -42,7 +42,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// file system.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=2)]
+        [AWSProperty(Max=3)]
         public List<LifecyclePolicy> LifecyclePolicies
         {
             get { return this._lifecyclePolicies; }

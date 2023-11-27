@@ -45,20 +45,20 @@ namespace Amazon.ElasticFileSystem.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b> <code>ENABLED</code> </b> - EFS is automatically backing up the file system.
+        ///  <b> <code>ENABLED</code> </b> – EFS is automatically backing up the file system.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>ENABLING</code> </b> - EFS is turning on automatic backups for the file
+        ///  <b> <code>ENABLING</code> </b> – EFS is turning on automatic backups for the file
         /// system.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>DISABLED</code> </b> - Automatic back ups are turned off for the file system.
+        ///  <b> <code>DISABLED</code> </b> – Automatic back ups are turned off for the file system.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>DISABLING</code> </b> - EFS is turning off automatic backups for the file
+        ///  <b> <code>DISABLING</code> </b> – EFS is turning off automatic backups for the file
         /// system.
         /// </para>
         ///  </li> </ul>

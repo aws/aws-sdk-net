@@ -39,7 +39,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property FileSystemId. 
         /// <para>
-        /// Specifies which EFS file system to retrieve the <code>BackupPolicy</code> for.
+        /// Specifies which EFS file system for which to retrieve the <code>BackupPolicy</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=128)]

@@ -54,10 +54,10 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZoneId. 
         /// <para>
-        /// The unique and consistent identifier of the Availability Zone in which the file system's
-        /// One Zone storage classes exist. For example, <code>use1-az1</code> is an Availability
-        /// Zone ID for the us-east-1 Amazon Web Services Region, and it has the same location
-        /// in every Amazon Web Services account.
+        /// The unique and consistent identifier of the Availability Zone in which the file system
+        /// is located, and is valid only for One Zone file systems. For example, <code>use1-az1</code>
+        /// is an Availability Zone ID for the us-east-1 Amazon Web Services Region, and it has
+        /// the same location in every Amazon Web Services account.
         /// </para>
         /// </summary>
         public string AvailabilityZoneId
@@ -76,8 +76,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// Gets and sets the property AvailabilityZoneName. 
         /// <para>
         /// Describes the Amazon Web Services Availability Zone in which the file system is located,
-        /// and is valid only for file systems using One Zone storage classes. For more information,
-        /// see <a href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using
+        /// and is valid only for One Zone file systems. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using
         /// EFS storage classes</a> in the <i>Amazon EFS User Guide</i>.
         /// </para>
         /// </summary>
@@ -290,7 +289,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property PerformanceMode. 
         /// <para>
-        /// The performance mode of the file system.
+        /// The Performance mode of the file system.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -129,12 +129,12 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property RootDirectory. 
         /// <para>
-        /// Specifies the directory on the Amazon EFS file system that the access point exposes
-        /// as the root directory of your file system to NFS clients using the access point. The
-        /// clients using the access point can only access the root directory and below. If the
-        /// <code>RootDirectory</code> &gt; <code>Path</code> specified does not exist, EFS creates
-        /// it and applies the <code>CreationInfo</code> settings when a client connects to an
-        /// access point. When specifying a <code>RootDirectory</code>, you must provide the <code>Path</code>,
+        /// Specifies the directory on the EFS file system that the access point exposes as the
+        /// root directory of your file system to NFS clients using the access point. The clients
+        /// using the access point can only access the root directory and below. If the <code>RootDirectory</code>
+        /// &gt; <code>Path</code> specified does not exist, Amazon EFS creates it and applies
+        /// the <code>CreationInfo</code> settings when a client connects to an access point.
+        /// When specifying a <code>RootDirectory</code>, you must provide the <code>Path</code>,
         /// and the <code>CreationInfo</code>.
         /// </para>
         ///  
