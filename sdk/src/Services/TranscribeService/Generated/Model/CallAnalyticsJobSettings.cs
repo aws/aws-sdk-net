@@ -39,6 +39,7 @@ namespace Amazon.TranscribeService.Model
         private Dictionary<string, LanguageIdSettings> _languageIdSettings = new Dictionary<string, LanguageIdSettings>();
         private string _languageModelName;
         private List<string> _languageOptions = new List<string>();
+        private Summarization _summarization;
         private VocabularyFilterMethod _vocabularyFilterMethod;
         private string _vocabularyFilterName;
         private string _vocabularyName;
@@ -170,6 +171,25 @@ namespace Amazon.TranscribeService.Model
         internal bool IsSetLanguageOptions()
         {
             return this._languageOptions != null && this._languageOptions.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Summarization. 
+        /// <para>
+        /// Contains <code>GenerateAbstractiveSummary</code>, which is a required parameter if
+        /// you want to enable Generative call summarization in your Call Analytics request.
+        /// </para>
+        /// </summary>
+        public Summarization Summarization
+        {
+            get { return this._summarization; }
+            set { this._summarization = value; }
+        }
+
+        // Check to see if Summarization property is set
+        internal bool IsSetSummarization()
+        {
+            return this._summarization != null;
         }
 
         /// <summary>

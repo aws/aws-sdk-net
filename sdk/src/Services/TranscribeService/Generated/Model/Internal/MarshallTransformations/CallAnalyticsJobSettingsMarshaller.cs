@@ -92,6 +92,17 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetSummarization())
+            {
+                context.Writer.WritePropertyName("Summarization");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = SummarizationMarshaller.Instance;
+                marshaller.Marshall(requestObject.Summarization, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetVocabularyFilterMethod())
             {
                 context.Writer.WritePropertyName("VocabularyFilterMethod");

@@ -88,6 +88,12 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
                     unmarshalledObject.LanguageOptions = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Summarization", targetDepth))
+                {
+                    var unmarshaller = SummarizationUnmarshaller.Instance;
+                    unmarshalledObject.Summarization = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("VocabularyFilterMethod", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
