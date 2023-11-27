@@ -36,6 +36,7 @@ namespace Amazon.ComputeOptimizer.Model
         private string _accountId;
         private CurrentPerformanceRisk _currentPerformanceRisk;
         private ServiceConfiguration _currentServiceConfiguration;
+        private ECSEffectiveRecommendationPreferences _effectiveRecommendationPreferences;
         private ECSServiceRecommendationFinding _finding;
         private List<string> _findingReasonCodes = new List<string>();
         private DateTime? _lastRefreshTimestamp;
@@ -100,6 +101,24 @@ namespace Amazon.ComputeOptimizer.Model
         internal bool IsSetCurrentServiceConfiguration()
         {
             return this._currentServiceConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EffectiveRecommendationPreferences. 
+        /// <para>
+        ///  Describes the effective recommendation preferences for Amazon ECS services. 
+        /// </para>
+        /// </summary>
+        public ECSEffectiveRecommendationPreferences EffectiveRecommendationPreferences
+        {
+            get { return this._effectiveRecommendationPreferences; }
+            set { this._effectiveRecommendationPreferences = value; }
+        }
+
+        // Check to see if EffectiveRecommendationPreferences property is set
+        internal bool IsSetEffectiveRecommendationPreferences()
+        {
+            return this._effectiveRecommendationPreferences != null;
         }
 
         /// <summary>

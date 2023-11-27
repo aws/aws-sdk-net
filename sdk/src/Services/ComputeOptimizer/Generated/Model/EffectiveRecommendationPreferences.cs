@@ -37,6 +37,10 @@ namespace Amazon.ComputeOptimizer.Model
         private EnhancedInfrastructureMetrics _enhancedInfrastructureMetrics;
         private ExternalMetricsPreference _externalMetricsPreference;
         private InferredWorkloadTypesPreference _inferredWorkloadTypes;
+        private LookBackPeriodPreference _lookBackPeriod;
+        private List<EffectivePreferredResource> _preferredResources = new List<EffectivePreferredResource>();
+        private InstanceSavingsEstimationMode _savingsEstimationMode;
+        private List<UtilizationPreference> _utilizationPreferences = new List<UtilizationPreference>();
 
         /// <summary>
         /// Gets and sets the property CpuVendorArchitectures. 
@@ -154,6 +158,87 @@ namespace Amazon.ComputeOptimizer.Model
         internal bool IsSetInferredWorkloadTypes()
         {
             return this._inferredWorkloadTypes != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LookBackPeriod. 
+        /// <para>
+        ///  The number of days the utilization metrics of the Amazon Web Services resource are
+        /// analyzed. 
+        /// </para>
+        /// </summary>
+        public LookBackPeriodPreference LookBackPeriod
+        {
+            get { return this._lookBackPeriod; }
+            set { this._lookBackPeriod = value; }
+        }
+
+        // Check to see if LookBackPeriod property is set
+        internal bool IsSetLookBackPeriod()
+        {
+            return this._lookBackPeriod != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PreferredResources. 
+        /// <para>
+        ///  The resource type values that are considered as candidates when generating rightsizing
+        /// recommendations. 
+        /// </para>
+        /// </summary>
+        public List<EffectivePreferredResource> PreferredResources
+        {
+            get { return this._preferredResources; }
+            set { this._preferredResources = value; }
+        }
+
+        // Check to see if PreferredResources property is set
+        internal bool IsSetPreferredResources()
+        {
+            return this._preferredResources != null && this._preferredResources.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SavingsEstimationMode. 
+        /// <para>
+        ///  Describes the savings estimation mode applied for calculating savings opportunity
+        /// for a resource. 
+        /// </para>
+        /// </summary>
+        public InstanceSavingsEstimationMode SavingsEstimationMode
+        {
+            get { return this._savingsEstimationMode; }
+            set { this._savingsEstimationMode = value; }
+        }
+
+        // Check to see if SavingsEstimationMode property is set
+        internal bool IsSetSavingsEstimationMode()
+        {
+            return this._savingsEstimationMode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UtilizationPreferences. 
+        /// <para>
+        ///  The resource’s CPU utilization threshold preferences, such as threshold and headroom,
+        /// that are used to generate rightsizing recommendations. 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This preference is only available for the Amazon EC2 instance resource type.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public List<UtilizationPreference> UtilizationPreferences
+        {
+            get { return this._utilizationPreferences; }
+            set { this._utilizationPreferences = value; }
+        }
+
+        // Check to see if UtilizationPreferences property is set
+        internal bool IsSetUtilizationPreferences()
+        {
+            return this._utilizationPreferences != null && this._utilizationPreferences.Count > 0; 
         }
 
     }

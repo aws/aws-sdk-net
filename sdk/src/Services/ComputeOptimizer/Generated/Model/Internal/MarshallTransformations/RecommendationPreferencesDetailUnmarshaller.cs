@@ -82,16 +82,40 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
                     unmarshalledObject.InferredWorkloadTypes = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("lookBackPeriod", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LookBackPeriod = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("preferredResources", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<EffectivePreferredResource, EffectivePreferredResourceUnmarshaller>(EffectivePreferredResourceUnmarshaller.Instance);
+                    unmarshalledObject.PreferredResources = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("resourceType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("savingsEstimationMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SavingsEstimationMode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("scope", targetDepth))
                 {
                     var unmarshaller = ScopeUnmarshaller.Instance;
                     unmarshalledObject.Scope = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("utilizationPreferences", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<UtilizationPreference, UtilizationPreferenceUnmarshaller>(UtilizationPreferenceUnmarshaller.Instance);
+                    unmarshalledObject.UtilizationPreferences = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

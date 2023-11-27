@@ -36,6 +36,7 @@ namespace Amazon.ComputeOptimizer.Model
         private string _accountId;
         private VolumeConfiguration _currentConfiguration;
         private CurrentPerformanceRisk _currentPerformanceRisk;
+        private EBSEffectiveRecommendationPreferences _effectiveRecommendationPreferences;
         private EBSFinding _finding;
         private DateTime? _lastRefreshTimestamp;
         private double? _lookBackPeriodInDays;
@@ -98,6 +99,24 @@ namespace Amazon.ComputeOptimizer.Model
         internal bool IsSetCurrentPerformanceRisk()
         {
             return this._currentPerformanceRisk != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EffectiveRecommendationPreferences. 
+        /// <para>
+        ///  Describes the effective recommendation preferences for Amazon EBS volume. 
+        /// </para>
+        /// </summary>
+        public EBSEffectiveRecommendationPreferences EffectiveRecommendationPreferences
+        {
+            get { return this._effectiveRecommendationPreferences; }
+            set { this._effectiveRecommendationPreferences = value; }
+        }
+
+        // Check to see if EffectiveRecommendationPreferences property is set
+        internal bool IsSetEffectiveRecommendationPreferences()
+        {
+            return this._effectiveRecommendationPreferences != null;
         }
 
         /// <summary>

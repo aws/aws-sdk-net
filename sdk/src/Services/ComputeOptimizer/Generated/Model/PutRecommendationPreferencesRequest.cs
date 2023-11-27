@@ -44,8 +44,12 @@ namespace Amazon.ComputeOptimizer.Model
         private EnhancedInfrastructureMetrics _enhancedInfrastructureMetrics;
         private ExternalMetricsPreference _externalMetricsPreference;
         private InferredWorkloadTypesPreference _inferredWorkloadTypes;
+        private LookBackPeriodPreference _lookBackPeriod;
+        private List<PreferredResource> _preferredResources = new List<PreferredResource>();
         private ResourceType _resourceType;
+        private SavingsEstimationMode _savingsEstimationMode;
         private Scope _scope;
+        private List<UtilizationPreference> _utilizationPreferences = new List<UtilizationPreference>();
 
         /// <summary>
         /// Gets and sets the property EnhancedInfrastructureMetrics. 
@@ -142,6 +146,59 @@ namespace Amazon.ComputeOptimizer.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LookBackPeriod. 
+        /// <para>
+        ///  The preference to control the number of days the utilization metrics of the Amazon
+        /// Web Services resource are analyzed. When this preference isn't specified, we use the
+        /// default value <code>DAYS_14</code>. 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You can only set this preference for the Amazon EC2 instance and Auto Scaling group
+        /// resource types.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public LookBackPeriodPreference LookBackPeriod
+        {
+            get { return this._lookBackPeriod; }
+            set { this._lookBackPeriod = value; }
+        }
+
+        // Check to see if LookBackPeriod property is set
+        internal bool IsSetLookBackPeriod()
+        {
+            return this._lookBackPeriod != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PreferredResources. 
+        /// <para>
+        ///  The preference to control which resource type values are considered when generating
+        /// rightsizing recommendations. You can specify this preference as a combination of include
+        /// and exclude lists. You must specify either an <code>includeList</code> or <code>excludeList</code>.
+        /// If the preference is an empty set of resource type values, an error occurs. 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You can only set this preference for the Amazon EC2 instance and Auto Scaling group
+        /// resource types.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public List<PreferredResource> PreferredResources
+        {
+            get { return this._preferredResources; }
+            set { this._preferredResources = value; }
+        }
+
+        // Check to see if PreferredResources property is set
+        internal bool IsSetPreferredResources()
+        {
+            return this._preferredResources != null && this._preferredResources.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
         /// The target resource type of the recommendation preference to create.
@@ -169,6 +226,39 @@ namespace Amazon.ComputeOptimizer.Model
         internal bool IsSetResourceType()
         {
             return this._resourceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SavingsEstimationMode. 
+        /// <para>
+        ///  The status of the savings estimation mode preference to create or update. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Specify the <code>AfterDiscounts</code> status to activate the preference, or specify
+        /// <code>BeforeDiscounts</code> to deactivate the preference.
+        /// </para>
+        ///  
+        /// <para>
+        /// Only the account manager or delegated administrator of your organization can activate
+        /// this preference.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/savings-estimation-mode.html">
+        /// Savings estimation mode</a> in the <i>Compute Optimizer User Guide</i>.
+        /// </para>
+        /// </summary>
+        public SavingsEstimationMode SavingsEstimationMode
+        {
+            get { return this._savingsEstimationMode; }
+            set { this._savingsEstimationMode = value; }
+        }
+
+        // Check to see if SavingsEstimationMode property is set
+        internal bool IsSetSavingsEstimationMode()
+        {
+            return this._savingsEstimationMode != null;
         }
 
         /// <summary>
@@ -206,6 +296,39 @@ namespace Amazon.ComputeOptimizer.Model
         internal bool IsSetScope()
         {
             return this._scope != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UtilizationPreferences. 
+        /// <para>
+        ///  The preference to control the resource’s CPU utilization thresholds - threshold and
+        /// headroom. When this preference isn't specified, we use the following default values:
+        /// 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>P99_5</code> for threshold
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>PERCENT_17</code> for headroom
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// You can only set this preference for the Amazon EC2 instance resource type.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public List<UtilizationPreference> UtilizationPreferences
+        {
+            get { return this._utilizationPreferences; }
+            set { this._utilizationPreferences = value; }
+        }
+
+        // Check to see if UtilizationPreferences property is set
+        internal bool IsSetUtilizationPreferences()
+        {
+            return this._utilizationPreferences != null && this._utilizationPreferences.Count > 0; 
         }
 
     }

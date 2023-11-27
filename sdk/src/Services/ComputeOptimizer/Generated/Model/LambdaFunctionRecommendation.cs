@@ -36,6 +36,7 @@ namespace Amazon.ComputeOptimizer.Model
         private string _accountId;
         private int? _currentMemorySize;
         private CurrentPerformanceRisk _currentPerformanceRisk;
+        private LambdaEffectiveRecommendationPreferences _effectiveRecommendationPreferences;
         private LambdaFunctionRecommendationFinding _finding;
         private List<string> _findingReasonCodes = new List<string>();
         private string _functionArn;
@@ -100,6 +101,24 @@ namespace Amazon.ComputeOptimizer.Model
         internal bool IsSetCurrentPerformanceRisk()
         {
             return this._currentPerformanceRisk != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EffectiveRecommendationPreferences. 
+        /// <para>
+        ///  Describes the effective recommendation preferences for Lambda functions. 
+        /// </para>
+        /// </summary>
+        public LambdaEffectiveRecommendationPreferences EffectiveRecommendationPreferences
+        {
+            get { return this._effectiveRecommendationPreferences; }
+            set { this._effectiveRecommendationPreferences = value; }
+        }
+
+        // Check to see if EffectiveRecommendationPreferences property is set
+        internal bool IsSetEffectiveRecommendationPreferences()
+        {
+            return this._effectiveRecommendationPreferences != null;
         }
 
         /// <summary>

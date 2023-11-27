@@ -37,6 +37,7 @@ namespace Amazon.ComputeOptimizer.Model
         private List<LambdaFunctionMemoryProjectedMetric> _projectedUtilizationMetrics = new List<LambdaFunctionMemoryProjectedMetric>();
         private int? _rank;
         private SavingsOpportunity _savingsOpportunity;
+        private LambdaSavingsOpportunityAfterDiscounts _savingsOpportunityAfterDiscounts;
 
         /// <summary>
         /// Gets and sets the property MemorySize. 
@@ -114,6 +115,26 @@ namespace Amazon.ComputeOptimizer.Model
         internal bool IsSetSavingsOpportunity()
         {
             return this._savingsOpportunity != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SavingsOpportunityAfterDiscounts. 
+        /// <para>
+        ///  An object that describes the savings opportunity for the Lambda recommendation option
+        /// which includes Saving Plans discounts. Savings opportunity includes the estimated
+        /// monthly savings and percentage. 
+        /// </para>
+        /// </summary>
+        public LambdaSavingsOpportunityAfterDiscounts SavingsOpportunityAfterDiscounts
+        {
+            get { return this._savingsOpportunityAfterDiscounts; }
+            set { this._savingsOpportunityAfterDiscounts = value; }
+        }
+
+        // Check to see if SavingsOpportunityAfterDiscounts property is set
+        internal bool IsSetSavingsOpportunityAfterDiscounts()
+        {
+            return this._savingsOpportunityAfterDiscounts != null;
         }
 
     }

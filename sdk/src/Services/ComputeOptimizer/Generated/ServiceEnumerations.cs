@@ -233,6 +233,160 @@ namespace Amazon.ComputeOptimizer
 
 
     /// <summary>
+    /// Constants used for properties of type CustomizableMetricHeadroom.
+    /// </summary>
+    public class CustomizableMetricHeadroom : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PERCENT_0 for CustomizableMetricHeadroom
+        /// </summary>
+        public static readonly CustomizableMetricHeadroom PERCENT_0 = new CustomizableMetricHeadroom("PERCENT_0");
+        /// <summary>
+        /// Constant PERCENT_20 for CustomizableMetricHeadroom
+        /// </summary>
+        public static readonly CustomizableMetricHeadroom PERCENT_20 = new CustomizableMetricHeadroom("PERCENT_20");
+        /// <summary>
+        /// Constant PERCENT_30 for CustomizableMetricHeadroom
+        /// </summary>
+        public static readonly CustomizableMetricHeadroom PERCENT_30 = new CustomizableMetricHeadroom("PERCENT_30");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CustomizableMetricHeadroom(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CustomizableMetricHeadroom FindValue(string value)
+        {
+            return FindValue<CustomizableMetricHeadroom>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CustomizableMetricHeadroom(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CustomizableMetricName.
+    /// </summary>
+    public class CustomizableMetricName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CpuUtilization for CustomizableMetricName
+        /// </summary>
+        public static readonly CustomizableMetricName CpuUtilization = new CustomizableMetricName("CpuUtilization");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CustomizableMetricName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CustomizableMetricName FindValue(string value)
+        {
+            return FindValue<CustomizableMetricName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CustomizableMetricName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CustomizableMetricThreshold.
+    /// </summary>
+    public class CustomizableMetricThreshold : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant P90 for CustomizableMetricThreshold
+        /// </summary>
+        public static readonly CustomizableMetricThreshold P90 = new CustomizableMetricThreshold("P90");
+        /// <summary>
+        /// Constant P95 for CustomizableMetricThreshold
+        /// </summary>
+        public static readonly CustomizableMetricThreshold P95 = new CustomizableMetricThreshold("P95");
+        /// <summary>
+        /// Constant P99_5 for CustomizableMetricThreshold
+        /// </summary>
+        public static readonly CustomizableMetricThreshold P99_5 = new CustomizableMetricThreshold("P99_5");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CustomizableMetricThreshold(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CustomizableMetricThreshold FindValue(string value)
+        {
+            return FindValue<CustomizableMetricThreshold>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CustomizableMetricThreshold(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EBSFilterName.
     /// </summary>
     public class EBSFilterName : ConstantClass
@@ -380,6 +534,114 @@ namespace Amazon.ComputeOptimizer
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator EBSMetricName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EBSSavingsEstimationModeSource.
+    /// </summary>
+    public class EBSSavingsEstimationModeSource : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CostExplorerRightsizing for EBSSavingsEstimationModeSource
+        /// </summary>
+        public static readonly EBSSavingsEstimationModeSource CostExplorerRightsizing = new EBSSavingsEstimationModeSource("CostExplorerRightsizing");
+        /// <summary>
+        /// Constant CostOptimizationHub for EBSSavingsEstimationModeSource
+        /// </summary>
+        public static readonly EBSSavingsEstimationModeSource CostOptimizationHub = new EBSSavingsEstimationModeSource("CostOptimizationHub");
+        /// <summary>
+        /// Constant PublicPricing for EBSSavingsEstimationModeSource
+        /// </summary>
+        public static readonly EBSSavingsEstimationModeSource PublicPricing = new EBSSavingsEstimationModeSource("PublicPricing");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EBSSavingsEstimationModeSource(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EBSSavingsEstimationModeSource FindValue(string value)
+        {
+            return FindValue<EBSSavingsEstimationModeSource>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EBSSavingsEstimationModeSource(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ECSSavingsEstimationModeSource.
+    /// </summary>
+    public class ECSSavingsEstimationModeSource : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CostExplorerRightsizing for ECSSavingsEstimationModeSource
+        /// </summary>
+        public static readonly ECSSavingsEstimationModeSource CostExplorerRightsizing = new ECSSavingsEstimationModeSource("CostExplorerRightsizing");
+        /// <summary>
+        /// Constant CostOptimizationHub for ECSSavingsEstimationModeSource
+        /// </summary>
+        public static readonly ECSSavingsEstimationModeSource CostOptimizationHub = new ECSSavingsEstimationModeSource("CostOptimizationHub");
+        /// <summary>
+        /// Constant PublicPricing for ECSSavingsEstimationModeSource
+        /// </summary>
+        public static readonly ECSSavingsEstimationModeSource PublicPricing = new ECSSavingsEstimationModeSource("PublicPricing");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ECSSavingsEstimationModeSource(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ECSSavingsEstimationModeSource FindValue(string value)
+        {
+            return FindValue<ECSSavingsEstimationModeSource>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ECSSavingsEstimationModeSource(string value)
         {
             return FindValue(value);
         }
@@ -877,6 +1139,18 @@ namespace Amazon.ComputeOptimizer
         /// </summary>
         public static readonly ExportableAutoScalingGroupField EffectiveRecommendationPreferencesInferredWorkloadTypes = new ExportableAutoScalingGroupField("EffectiveRecommendationPreferencesInferredWorkloadTypes");
         /// <summary>
+        /// Constant EffectiveRecommendationPreferencesLookBackPeriod for ExportableAutoScalingGroupField
+        /// </summary>
+        public static readonly ExportableAutoScalingGroupField EffectiveRecommendationPreferencesLookBackPeriod = new ExportableAutoScalingGroupField("EffectiveRecommendationPreferencesLookBackPeriod");
+        /// <summary>
+        /// Constant EffectiveRecommendationPreferencesPreferredResources for ExportableAutoScalingGroupField
+        /// </summary>
+        public static readonly ExportableAutoScalingGroupField EffectiveRecommendationPreferencesPreferredResources = new ExportableAutoScalingGroupField("EffectiveRecommendationPreferencesPreferredResources");
+        /// <summary>
+        /// Constant EffectiveRecommendationPreferencesSavingsEstimationMode for ExportableAutoScalingGroupField
+        /// </summary>
+        public static readonly ExportableAutoScalingGroupField EffectiveRecommendationPreferencesSavingsEstimationMode = new ExportableAutoScalingGroupField("EffectiveRecommendationPreferencesSavingsEstimationMode");
+        /// <summary>
         /// Constant Finding for ExportableAutoScalingGroupField
         /// </summary>
         public static readonly ExportableAutoScalingGroupField Finding = new ExportableAutoScalingGroupField("Finding");
@@ -913,9 +1187,17 @@ namespace Amazon.ComputeOptimizer
         /// </summary>
         public static readonly ExportableAutoScalingGroupField RecommendationOptionsEstimatedMonthlySavingsCurrency = new ExportableAutoScalingGroupField("RecommendationOptionsEstimatedMonthlySavingsCurrency");
         /// <summary>
+        /// Constant RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts for ExportableAutoScalingGroupField
+        /// </summary>
+        public static readonly ExportableAutoScalingGroupField RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts = new ExportableAutoScalingGroupField("RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts");
+        /// <summary>
         /// Constant RecommendationOptionsEstimatedMonthlySavingsValue for ExportableAutoScalingGroupField
         /// </summary>
         public static readonly ExportableAutoScalingGroupField RecommendationOptionsEstimatedMonthlySavingsValue = new ExportableAutoScalingGroupField("RecommendationOptionsEstimatedMonthlySavingsValue");
+        /// <summary>
+        /// Constant RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts for ExportableAutoScalingGroupField
+        /// </summary>
+        public static readonly ExportableAutoScalingGroupField RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts = new ExportableAutoScalingGroupField("RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts");
         /// <summary>
         /// Constant RecommendationOptionsInstanceGpuInfo for ExportableAutoScalingGroupField
         /// </summary>
@@ -956,6 +1238,10 @@ namespace Amazon.ComputeOptimizer
         /// Constant RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum for ExportableAutoScalingGroupField
         /// </summary>
         public static readonly ExportableAutoScalingGroupField RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum = new ExportableAutoScalingGroupField("RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum");
+        /// <summary>
+        /// Constant RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage for ExportableAutoScalingGroupField
+        /// </summary>
+        public static readonly ExportableAutoScalingGroupField RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage = new ExportableAutoScalingGroupField("RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage");
         /// <summary>
         /// Constant RecommendationOptionsSavingsOpportunityPercentage for ExportableAutoScalingGroupField
         /// </summary>
@@ -1111,6 +1397,10 @@ namespace Amazon.ComputeOptimizer
         /// </summary>
         public static readonly ExportableECSServiceField CurrentServiceContainerConfigurations = new ExportableECSServiceField("CurrentServiceContainerConfigurations");
         /// <summary>
+        /// Constant EffectiveRecommendationPreferencesSavingsEstimationMode for ExportableECSServiceField
+        /// </summary>
+        public static readonly ExportableECSServiceField EffectiveRecommendationPreferencesSavingsEstimationMode = new ExportableECSServiceField("EffectiveRecommendationPreferencesSavingsEstimationMode");
+        /// <summary>
         /// Constant Finding for ExportableECSServiceField
         /// </summary>
         public static readonly ExportableECSServiceField Finding = new ExportableECSServiceField("Finding");
@@ -1143,9 +1433,17 @@ namespace Amazon.ComputeOptimizer
         /// </summary>
         public static readonly ExportableECSServiceField RecommendationOptionsEstimatedMonthlySavingsCurrency = new ExportableECSServiceField("RecommendationOptionsEstimatedMonthlySavingsCurrency");
         /// <summary>
+        /// Constant RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts for ExportableECSServiceField
+        /// </summary>
+        public static readonly ExportableECSServiceField RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts = new ExportableECSServiceField("RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts");
+        /// <summary>
         /// Constant RecommendationOptionsEstimatedMonthlySavingsValue for ExportableECSServiceField
         /// </summary>
         public static readonly ExportableECSServiceField RecommendationOptionsEstimatedMonthlySavingsValue = new ExportableECSServiceField("RecommendationOptionsEstimatedMonthlySavingsValue");
+        /// <summary>
+        /// Constant RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts for ExportableECSServiceField
+        /// </summary>
+        public static readonly ExportableECSServiceField RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts = new ExportableECSServiceField("RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts");
         /// <summary>
         /// Constant RecommendationOptionsMemory for ExportableECSServiceField
         /// </summary>
@@ -1158,6 +1456,10 @@ namespace Amazon.ComputeOptimizer
         /// Constant RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum for ExportableECSServiceField
         /// </summary>
         public static readonly ExportableECSServiceField RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum = new ExportableECSServiceField("RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum");
+        /// <summary>
+        /// Constant RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage for ExportableECSServiceField
+        /// </summary>
+        public static readonly ExportableECSServiceField RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage = new ExportableECSServiceField("RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage");
         /// <summary>
         /// Constant RecommendationOptionsSavingsOpportunityPercentage for ExportableECSServiceField
         /// </summary>
@@ -1281,6 +1583,22 @@ namespace Amazon.ComputeOptimizer
         /// </summary>
         public static readonly ExportableInstanceField EffectiveRecommendationPreferencesInferredWorkloadTypes = new ExportableInstanceField("EffectiveRecommendationPreferencesInferredWorkloadTypes");
         /// <summary>
+        /// Constant EffectiveRecommendationPreferencesLookBackPeriod for ExportableInstanceField
+        /// </summary>
+        public static readonly ExportableInstanceField EffectiveRecommendationPreferencesLookBackPeriod = new ExportableInstanceField("EffectiveRecommendationPreferencesLookBackPeriod");
+        /// <summary>
+        /// Constant EffectiveRecommendationPreferencesPreferredResources for ExportableInstanceField
+        /// </summary>
+        public static readonly ExportableInstanceField EffectiveRecommendationPreferencesPreferredResources = new ExportableInstanceField("EffectiveRecommendationPreferencesPreferredResources");
+        /// <summary>
+        /// Constant EffectiveRecommendationPreferencesSavingsEstimationMode for ExportableInstanceField
+        /// </summary>
+        public static readonly ExportableInstanceField EffectiveRecommendationPreferencesSavingsEstimationMode = new ExportableInstanceField("EffectiveRecommendationPreferencesSavingsEstimationMode");
+        /// <summary>
+        /// Constant EffectiveRecommendationPreferencesUtilizationPreferences for ExportableInstanceField
+        /// </summary>
+        public static readonly ExportableInstanceField EffectiveRecommendationPreferencesUtilizationPreferences = new ExportableInstanceField("EffectiveRecommendationPreferencesUtilizationPreferences");
+        /// <summary>
         /// Constant ExternalMetricStatusCode for ExportableInstanceField
         /// </summary>
         public static readonly ExportableInstanceField ExternalMetricStatusCode = new ExportableInstanceField("ExternalMetricStatusCode");
@@ -1329,9 +1647,17 @@ namespace Amazon.ComputeOptimizer
         /// </summary>
         public static readonly ExportableInstanceField RecommendationOptionsEstimatedMonthlySavingsCurrency = new ExportableInstanceField("RecommendationOptionsEstimatedMonthlySavingsCurrency");
         /// <summary>
+        /// Constant RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts for ExportableInstanceField
+        /// </summary>
+        public static readonly ExportableInstanceField RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts = new ExportableInstanceField("RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts");
+        /// <summary>
         /// Constant RecommendationOptionsEstimatedMonthlySavingsValue for ExportableInstanceField
         /// </summary>
         public static readonly ExportableInstanceField RecommendationOptionsEstimatedMonthlySavingsValue = new ExportableInstanceField("RecommendationOptionsEstimatedMonthlySavingsValue");
+        /// <summary>
+        /// Constant RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts for ExportableInstanceField
+        /// </summary>
+        public static readonly ExportableInstanceField RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts = new ExportableInstanceField("RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts");
         /// <summary>
         /// Constant RecommendationOptionsInstanceGpuInfo for ExportableInstanceField
         /// </summary>
@@ -1380,6 +1706,10 @@ namespace Amazon.ComputeOptimizer
         /// Constant RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum for ExportableInstanceField
         /// </summary>
         public static readonly ExportableInstanceField RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum = new ExportableInstanceField("RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum");
+        /// <summary>
+        /// Constant RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage for ExportableInstanceField
+        /// </summary>
+        public static readonly ExportableInstanceField RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage = new ExportableInstanceField("RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage");
         /// <summary>
         /// Constant RecommendationOptionsSavingsOpportunityPercentage for ExportableInstanceField
         /// </summary>
@@ -1543,6 +1873,10 @@ namespace Amazon.ComputeOptimizer
         /// </summary>
         public static readonly ExportableLambdaFunctionField CurrentPerformanceRisk = new ExportableLambdaFunctionField("CurrentPerformanceRisk");
         /// <summary>
+        /// Constant EffectiveRecommendationPreferencesSavingsEstimationMode for ExportableLambdaFunctionField
+        /// </summary>
+        public static readonly ExportableLambdaFunctionField EffectiveRecommendationPreferencesSavingsEstimationMode = new ExportableLambdaFunctionField("EffectiveRecommendationPreferencesSavingsEstimationMode");
+        /// <summary>
         /// Constant Finding for ExportableLambdaFunctionField
         /// </summary>
         public static readonly ExportableLambdaFunctionField Finding = new ExportableLambdaFunctionField("Finding");
@@ -1587,9 +1921,17 @@ namespace Amazon.ComputeOptimizer
         /// </summary>
         public static readonly ExportableLambdaFunctionField RecommendationOptionsEstimatedMonthlySavingsCurrency = new ExportableLambdaFunctionField("RecommendationOptionsEstimatedMonthlySavingsCurrency");
         /// <summary>
+        /// Constant RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts for ExportableLambdaFunctionField
+        /// </summary>
+        public static readonly ExportableLambdaFunctionField RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts = new ExportableLambdaFunctionField("RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts");
+        /// <summary>
         /// Constant RecommendationOptionsEstimatedMonthlySavingsValue for ExportableLambdaFunctionField
         /// </summary>
         public static readonly ExportableLambdaFunctionField RecommendationOptionsEstimatedMonthlySavingsValue = new ExportableLambdaFunctionField("RecommendationOptionsEstimatedMonthlySavingsValue");
+        /// <summary>
+        /// Constant RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts for ExportableLambdaFunctionField
+        /// </summary>
+        public static readonly ExportableLambdaFunctionField RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts = new ExportableLambdaFunctionField("RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts");
         /// <summary>
         /// Constant RecommendationOptionsProjectedUtilizationMetricsDurationExpected for ExportableLambdaFunctionField
         /// </summary>
@@ -1602,6 +1944,10 @@ namespace Amazon.ComputeOptimizer
         /// Constant RecommendationOptionsProjectedUtilizationMetricsDurationUpperBound for ExportableLambdaFunctionField
         /// </summary>
         public static readonly ExportableLambdaFunctionField RecommendationOptionsProjectedUtilizationMetricsDurationUpperBound = new ExportableLambdaFunctionField("RecommendationOptionsProjectedUtilizationMetricsDurationUpperBound");
+        /// <summary>
+        /// Constant RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage for ExportableLambdaFunctionField
+        /// </summary>
+        public static readonly ExportableLambdaFunctionField RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage = new ExportableLambdaFunctionField("RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage");
         /// <summary>
         /// Constant RecommendationOptionsSavingsOpportunityPercentage for ExportableLambdaFunctionField
         /// </summary>
@@ -1835,6 +2181,10 @@ namespace Amazon.ComputeOptimizer
         /// </summary>
         public static readonly ExportableVolumeField CurrentPerformanceRisk = new ExportableVolumeField("CurrentPerformanceRisk");
         /// <summary>
+        /// Constant EffectiveRecommendationPreferencesSavingsEstimationMode for ExportableVolumeField
+        /// </summary>
+        public static readonly ExportableVolumeField EffectiveRecommendationPreferencesSavingsEstimationMode = new ExportableVolumeField("EffectiveRecommendationPreferencesSavingsEstimationMode");
+        /// <summary>
         /// Constant Finding for ExportableVolumeField
         /// </summary>
         public static readonly ExportableVolumeField Finding = new ExportableVolumeField("Finding");
@@ -1875,9 +2225,17 @@ namespace Amazon.ComputeOptimizer
         /// </summary>
         public static readonly ExportableVolumeField RecommendationOptionsEstimatedMonthlySavingsCurrency = new ExportableVolumeField("RecommendationOptionsEstimatedMonthlySavingsCurrency");
         /// <summary>
+        /// Constant RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts for ExportableVolumeField
+        /// </summary>
+        public static readonly ExportableVolumeField RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts = new ExportableVolumeField("RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts");
+        /// <summary>
         /// Constant RecommendationOptionsEstimatedMonthlySavingsValue for ExportableVolumeField
         /// </summary>
         public static readonly ExportableVolumeField RecommendationOptionsEstimatedMonthlySavingsValue = new ExportableVolumeField("RecommendationOptionsEstimatedMonthlySavingsValue");
+        /// <summary>
+        /// Constant RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts for ExportableVolumeField
+        /// </summary>
+        public static readonly ExportableVolumeField RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts = new ExportableVolumeField("RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts");
         /// <summary>
         /// Constant RecommendationOptionsMonthlyPrice for ExportableVolumeField
         /// </summary>
@@ -1886,6 +2244,10 @@ namespace Amazon.ComputeOptimizer
         /// Constant RecommendationOptionsPerformanceRisk for ExportableVolumeField
         /// </summary>
         public static readonly ExportableVolumeField RecommendationOptionsPerformanceRisk = new ExportableVolumeField("RecommendationOptionsPerformanceRisk");
+        /// <summary>
+        /// Constant RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage for ExportableVolumeField
+        /// </summary>
+        public static readonly ExportableVolumeField RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage = new ExportableVolumeField("RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage");
         /// <summary>
         /// Constant RecommendationOptionsSavingsOpportunityPercentage for ExportableVolumeField
         /// </summary>
@@ -2607,6 +2969,60 @@ namespace Amazon.ComputeOptimizer
 
 
     /// <summary>
+    /// Constants used for properties of type InstanceSavingsEstimationModeSource.
+    /// </summary>
+    public class InstanceSavingsEstimationModeSource : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CostExplorerRightsizing for InstanceSavingsEstimationModeSource
+        /// </summary>
+        public static readonly InstanceSavingsEstimationModeSource CostExplorerRightsizing = new InstanceSavingsEstimationModeSource("CostExplorerRightsizing");
+        /// <summary>
+        /// Constant CostOptimizationHub for InstanceSavingsEstimationModeSource
+        /// </summary>
+        public static readonly InstanceSavingsEstimationModeSource CostOptimizationHub = new InstanceSavingsEstimationModeSource("CostOptimizationHub");
+        /// <summary>
+        /// Constant PublicPricing for InstanceSavingsEstimationModeSource
+        /// </summary>
+        public static readonly InstanceSavingsEstimationModeSource PublicPricing = new InstanceSavingsEstimationModeSource("PublicPricing");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InstanceSavingsEstimationModeSource(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InstanceSavingsEstimationModeSource FindValue(string value)
+        {
+            return FindValue<InstanceSavingsEstimationModeSource>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InstanceSavingsEstimationModeSource(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type InstanceState.
     /// </summary>
     public class InstanceState : ConstantClass
@@ -3143,6 +3559,60 @@ namespace Amazon.ComputeOptimizer
 
 
     /// <summary>
+    /// Constants used for properties of type LambdaSavingsEstimationModeSource.
+    /// </summary>
+    public class LambdaSavingsEstimationModeSource : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CostExplorerRightsizing for LambdaSavingsEstimationModeSource
+        /// </summary>
+        public static readonly LambdaSavingsEstimationModeSource CostExplorerRightsizing = new LambdaSavingsEstimationModeSource("CostExplorerRightsizing");
+        /// <summary>
+        /// Constant CostOptimizationHub for LambdaSavingsEstimationModeSource
+        /// </summary>
+        public static readonly LambdaSavingsEstimationModeSource CostOptimizationHub = new LambdaSavingsEstimationModeSource("CostOptimizationHub");
+        /// <summary>
+        /// Constant PublicPricing for LambdaSavingsEstimationModeSource
+        /// </summary>
+        public static readonly LambdaSavingsEstimationModeSource PublicPricing = new LambdaSavingsEstimationModeSource("PublicPricing");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LambdaSavingsEstimationModeSource(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LambdaSavingsEstimationModeSource FindValue(string value)
+        {
+            return FindValue<LambdaSavingsEstimationModeSource>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LambdaSavingsEstimationModeSource(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type LicenseEdition.
     /// </summary>
     public class LicenseEdition : ConstantClass
@@ -3456,6 +3926,60 @@ namespace Amazon.ComputeOptimizer
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator LicenseRecommendationFilterName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LookBackPeriodPreference.
+    /// </summary>
+    public class LookBackPeriodPreference : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DAYS_14 for LookBackPeriodPreference
+        /// </summary>
+        public static readonly LookBackPeriodPreference DAYS_14 = new LookBackPeriodPreference("DAYS_14");
+        /// <summary>
+        /// Constant DAYS_32 for LookBackPeriodPreference
+        /// </summary>
+        public static readonly LookBackPeriodPreference DAYS_32 = new LookBackPeriodPreference("DAYS_32");
+        /// <summary>
+        /// Constant DAYS_93 for LookBackPeriodPreference
+        /// </summary>
+        public static readonly LookBackPeriodPreference DAYS_93 = new LookBackPeriodPreference("DAYS_93");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LookBackPeriodPreference(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LookBackPeriodPreference FindValue(string value)
+        {
+            return FindValue<LookBackPeriodPreference>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LookBackPeriodPreference(string value)
         {
             return FindValue(value);
         }
@@ -3789,6 +4313,52 @@ namespace Amazon.ComputeOptimizer
 
 
     /// <summary>
+    /// Constants used for properties of type PreferredResourceName.
+    /// </summary>
+    public class PreferredResourceName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Ec2InstanceTypes for PreferredResourceName
+        /// </summary>
+        public static readonly PreferredResourceName Ec2InstanceTypes = new PreferredResourceName("Ec2InstanceTypes");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PreferredResourceName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PreferredResourceName FindValue(string value)
+        {
+            return FindValue<PreferredResourceName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PreferredResourceName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type RecommendationPreferenceName.
     /// </summary>
     public class RecommendationPreferenceName : ConstantClass
@@ -3806,6 +4376,18 @@ namespace Amazon.ComputeOptimizer
         /// Constant InferredWorkloadTypes for RecommendationPreferenceName
         /// </summary>
         public static readonly RecommendationPreferenceName InferredWorkloadTypes = new RecommendationPreferenceName("InferredWorkloadTypes");
+        /// <summary>
+        /// Constant LookBackPeriodPreference for RecommendationPreferenceName
+        /// </summary>
+        public static readonly RecommendationPreferenceName LookBackPeriodPreference = new RecommendationPreferenceName("LookBackPeriodPreference");
+        /// <summary>
+        /// Constant PreferredResources for RecommendationPreferenceName
+        /// </summary>
+        public static readonly RecommendationPreferenceName PreferredResources = new RecommendationPreferenceName("PreferredResources");
+        /// <summary>
+        /// Constant UtilizationPreferences for RecommendationPreferenceName
+        /// </summary>
+        public static readonly RecommendationPreferenceName UtilizationPreferences = new RecommendationPreferenceName("UtilizationPreferences");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -3972,6 +4554,56 @@ namespace Amazon.ComputeOptimizer
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ResourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SavingsEstimationMode.
+    /// </summary>
+    public class SavingsEstimationMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AfterDiscounts for SavingsEstimationMode
+        /// </summary>
+        public static readonly SavingsEstimationMode AfterDiscounts = new SavingsEstimationMode("AfterDiscounts");
+        /// <summary>
+        /// Constant BeforeDiscounts for SavingsEstimationMode
+        /// </summary>
+        public static readonly SavingsEstimationMode BeforeDiscounts = new SavingsEstimationMode("BeforeDiscounts");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SavingsEstimationMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SavingsEstimationMode FindValue(string value)
+        {
+            return FindValue<SavingsEstimationMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SavingsEstimationMode(string value)
         {
             return FindValue(value);
         }

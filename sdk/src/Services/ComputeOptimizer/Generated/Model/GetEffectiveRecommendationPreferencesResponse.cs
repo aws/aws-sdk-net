@@ -35,6 +35,9 @@ namespace Amazon.ComputeOptimizer.Model
     {
         private EnhancedInfrastructureMetrics _enhancedInfrastructureMetrics;
         private ExternalMetricsPreference _externalMetricsPreference;
+        private LookBackPeriodPreference _lookBackPeriod;
+        private List<EffectivePreferredResource> _preferredResources = new List<EffectivePreferredResource>();
+        private List<UtilizationPreference> _utilizationPreferences = new List<UtilizationPreference>();
 
         /// <summary>
         /// Gets and sets the property EnhancedInfrastructureMetrics. 
@@ -108,6 +111,84 @@ namespace Amazon.ComputeOptimizer.Model
         internal bool IsSetExternalMetricsPreference()
         {
             return this._externalMetricsPreference != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LookBackPeriod. 
+        /// <para>
+        ///  The number of days the utilization metrics of the Amazon Web Services resource are
+        /// analyzed. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To validate that the preference is applied to your last generated set of recommendations,
+        /// review the <code>effectiveRecommendationPreferences</code> value in the response of
+        /// the GetAutoScalingGroupRecommendations or GetEC2InstanceRecommendations actions.
+        /// </para>
+        /// </summary>
+        public LookBackPeriodPreference LookBackPeriod
+        {
+            get { return this._lookBackPeriod; }
+            set { this._lookBackPeriod = value; }
+        }
+
+        // Check to see if LookBackPeriod property is set
+        internal bool IsSetLookBackPeriod()
+        {
+            return this._lookBackPeriod != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PreferredResources. 
+        /// <para>
+        ///  The resource type values that are considered as candidates when generating rightsizing
+        /// recommendations. This object resolves any wildcard expressions and returns the effective
+        /// list of candidate resource type values. It also considers all applicable preferences
+        /// that you set at the resource, account, and organization level. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To validate that the preference is applied to your last generated set of recommendations,
+        /// review the <code>effectiveRecommendationPreferences</code> value in the response of
+        /// the GetAutoScalingGroupRecommendations or GetEC2InstanceRecommendations actions.
+        /// </para>
+        /// </summary>
+        public List<EffectivePreferredResource> PreferredResources
+        {
+            get { return this._preferredResources; }
+            set { this._preferredResources = value; }
+        }
+
+        // Check to see if PreferredResources property is set
+        internal bool IsSetPreferredResources()
+        {
+            return this._preferredResources != null && this._preferredResources.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UtilizationPreferences. 
+        /// <para>
+        ///  The resource’s CPU utilization threshold preferences, such as threshold and headroom,
+        /// that were used to generate rightsizing recommendations. It considers all applicable
+        /// preferences that you set at the resource, account, and organization level. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To validate that the preference is applied to your last generated set of recommendations,
+        /// review the <code>effectiveRecommendationPreferences</code> value in the response of
+        /// the GetAutoScalingGroupRecommendations or GetEC2InstanceRecommendations actions.
+        /// </para>
+        /// </summary>
+        public List<UtilizationPreference> UtilizationPreferences
+        {
+            get { return this._utilizationPreferences; }
+            set { this._utilizationPreferences = value; }
+        }
+
+        // Check to see if UtilizationPreferences property is set
+        internal bool IsSetUtilizationPreferences()
+        {
+            return this._utilizationPreferences != null && this._utilizationPreferences.Count > 0; 
         }
 
     }

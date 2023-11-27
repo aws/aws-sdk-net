@@ -88,6 +88,12 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
                     unmarshalledObject.SavingsOpportunity = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("savingsOpportunityAfterDiscounts", targetDepth))
+                {
+                    var unmarshaller = EBSSavingsOpportunityAfterDiscountsUnmarshaller.Instance;
+                    unmarshalledObject.SavingsOpportunityAfterDiscounts = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

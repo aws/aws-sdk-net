@@ -1,0 +1,87 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the compute-optimizer-2019-11-01.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+namespace Amazon.ComputeOptimizer.Model
+{
+    /// <summary>
+    /// Describes the savings opportunity for Auto Scaling group recommendations after applying
+    /// the Savings Plans and Reserved Instances discounts. 
+    /// 
+    ///  
+    /// <para>
+    /// Savings opportunity represents the estimated monthly savings you can achieve by implementing
+    /// Compute Optimizer recommendations.
+    /// </para>
+    /// </summary>
+    public partial class AutoScalingGroupSavingsOpportunityAfterDiscounts
+    {
+        private AutoScalingGroupEstimatedMonthlySavings _estimatedMonthlySavings;
+        private double? _savingsOpportunityPercentage;
+
+        /// <summary>
+        /// Gets and sets the property EstimatedMonthlySavings. 
+        /// <para>
+        ///  An object that describes the estimated monthly savings possible by adopting Compute
+        /// Optimizer’s Auto Scaling group recommendations. This is based on the Savings Plans
+        /// and Reserved Instances pricing discounts. 
+        /// </para>
+        /// </summary>
+        public AutoScalingGroupEstimatedMonthlySavings EstimatedMonthlySavings
+        {
+            get { return this._estimatedMonthlySavings; }
+            set { this._estimatedMonthlySavings = value; }
+        }
+
+        // Check to see if EstimatedMonthlySavings property is set
+        internal bool IsSetEstimatedMonthlySavings()
+        {
+            return this._estimatedMonthlySavings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SavingsOpportunityPercentage. 
+        /// <para>
+        ///  The estimated monthly savings possible as a percentage of monthly cost after applying
+        /// the Savings Plans and Reserved Instances discounts. This saving can be achieved by
+        /// adopting Compute Optimizer’s Auto Scaling group recommendations. 
+        /// </para>
+        /// </summary>
+        public double SavingsOpportunityPercentage
+        {
+            get { return this._savingsOpportunityPercentage.GetValueOrDefault(); }
+            set { this._savingsOpportunityPercentage = value; }
+        }
+
+        // Check to see if SavingsOpportunityPercentage property is set
+        internal bool IsSetSavingsOpportunityPercentage()
+        {
+            return this._savingsOpportunityPercentage.HasValue; 
+        }
+
+    }
+}

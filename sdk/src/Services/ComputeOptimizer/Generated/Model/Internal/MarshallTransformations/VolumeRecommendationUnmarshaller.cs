@@ -82,6 +82,12 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
                     unmarshalledObject.CurrentPerformanceRisk = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("effectiveRecommendationPreferences", targetDepth))
+                {
+                    var unmarshaller = EBSEffectiveRecommendationPreferencesUnmarshaller.Instance;
+                    unmarshalledObject.EffectiveRecommendationPreferences = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("finding", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

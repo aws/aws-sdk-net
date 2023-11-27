@@ -63,6 +63,24 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
                     response.ExternalMetricsPreference = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("lookBackPeriod", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.LookBackPeriod = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("preferredResources", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<EffectivePreferredResource, EffectivePreferredResourceUnmarshaller>(EffectivePreferredResourceUnmarshaller.Instance);
+                    response.PreferredResources = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("utilizationPreferences", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<UtilizationPreference, UtilizationPreferenceUnmarshaller>(UtilizationPreferenceUnmarshaller.Instance);
+                    response.UtilizationPreferences = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

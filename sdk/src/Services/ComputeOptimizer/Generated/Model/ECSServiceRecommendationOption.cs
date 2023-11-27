@@ -38,6 +38,7 @@ namespace Amazon.ComputeOptimizer.Model
         private int? _memory;
         private List<ECSServiceProjectedUtilizationMetric> _projectedUtilizationMetrics = new List<ECSServiceProjectedUtilizationMetric>();
         private SavingsOpportunity _savingsOpportunity;
+        private ECSSavingsOpportunityAfterDiscounts _savingsOpportunityAfterDiscounts;
 
         /// <summary>
         /// Gets and sets the property ContainerRecommendations. 
@@ -126,6 +127,30 @@ namespace Amazon.ComputeOptimizer.Model
         internal bool IsSetSavingsOpportunity()
         {
             return this._savingsOpportunity != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SavingsOpportunityAfterDiscounts. 
+        /// <para>
+        ///  Describes the savings opportunity for Amazon ECS service recommendations or for the
+        /// recommendation option. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Savings opportunity represents the estimated monthly savings after applying Savings
+        /// Plans discounts. You can achieve this by implementing a given Compute Optimizer recommendation.
+        /// </para>
+        /// </summary>
+        public ECSSavingsOpportunityAfterDiscounts SavingsOpportunityAfterDiscounts
+        {
+            get { return this._savingsOpportunityAfterDiscounts; }
+            set { this._savingsOpportunityAfterDiscounts = value; }
+        }
+
+        // Check to see if SavingsOpportunityAfterDiscounts property is set
+        internal bool IsSetSavingsOpportunityAfterDiscounts()
+        {
+            return this._savingsOpportunityAfterDiscounts != null;
         }
 
     }
