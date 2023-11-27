@@ -25,6 +25,72 @@ namespace Amazon.CloudWatchLogs
 {
 
     /// <summary>
+    /// Constants used for properties of type AnomalyDetectorStatus.
+    /// </summary>
+    public class AnomalyDetectorStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ANALYZING for AnomalyDetectorStatus
+        /// </summary>
+        public static readonly AnomalyDetectorStatus ANALYZING = new AnomalyDetectorStatus("ANALYZING");
+        /// <summary>
+        /// Constant DELETED for AnomalyDetectorStatus
+        /// </summary>
+        public static readonly AnomalyDetectorStatus DELETED = new AnomalyDetectorStatus("DELETED");
+        /// <summary>
+        /// Constant FAILED for AnomalyDetectorStatus
+        /// </summary>
+        public static readonly AnomalyDetectorStatus FAILED = new AnomalyDetectorStatus("FAILED");
+        /// <summary>
+        /// Constant INITIALIZING for AnomalyDetectorStatus
+        /// </summary>
+        public static readonly AnomalyDetectorStatus INITIALIZING = new AnomalyDetectorStatus("INITIALIZING");
+        /// <summary>
+        /// Constant PAUSED for AnomalyDetectorStatus
+        /// </summary>
+        public static readonly AnomalyDetectorStatus PAUSED = new AnomalyDetectorStatus("PAUSED");
+        /// <summary>
+        /// Constant TRAINING for AnomalyDetectorStatus
+        /// </summary>
+        public static readonly AnomalyDetectorStatus TRAINING = new AnomalyDetectorStatus("TRAINING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AnomalyDetectorStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AnomalyDetectorStatus FindValue(string value)
+        {
+            return FindValue<AnomalyDetectorStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AnomalyDetectorStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DataProtectionStatus.
     /// </summary>
     public class DataProtectionStatus : ConstantClass
@@ -187,6 +253,72 @@ namespace Amazon.CloudWatchLogs
 
 
     /// <summary>
+    /// Constants used for properties of type EvaluationFrequency.
+    /// </summary>
+    public class EvaluationFrequency : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FIFTEEN_MIN for EvaluationFrequency
+        /// </summary>
+        public static readonly EvaluationFrequency FIFTEEN_MIN = new EvaluationFrequency("FIFTEEN_MIN");
+        /// <summary>
+        /// Constant FIVE_MIN for EvaluationFrequency
+        /// </summary>
+        public static readonly EvaluationFrequency FIVE_MIN = new EvaluationFrequency("FIVE_MIN");
+        /// <summary>
+        /// Constant ONE_HOUR for EvaluationFrequency
+        /// </summary>
+        public static readonly EvaluationFrequency ONE_HOUR = new EvaluationFrequency("ONE_HOUR");
+        /// <summary>
+        /// Constant ONE_MIN for EvaluationFrequency
+        /// </summary>
+        public static readonly EvaluationFrequency ONE_MIN = new EvaluationFrequency("ONE_MIN");
+        /// <summary>
+        /// Constant TEN_MIN for EvaluationFrequency
+        /// </summary>
+        public static readonly EvaluationFrequency TEN_MIN = new EvaluationFrequency("TEN_MIN");
+        /// <summary>
+        /// Constant THIRTY_MIN for EvaluationFrequency
+        /// </summary>
+        public static readonly EvaluationFrequency THIRTY_MIN = new EvaluationFrequency("THIRTY_MIN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EvaluationFrequency(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EvaluationFrequency FindValue(string value)
+        {
+            return FindValue<EvaluationFrequency>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EvaluationFrequency(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ExportTaskStatusCode.
     /// </summary>
     public class ExportTaskStatusCode : ConstantClass
@@ -292,6 +424,56 @@ namespace Amazon.CloudWatchLogs
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator InheritedProperty(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LogGroupClass.
+    /// </summary>
+    public class LogGroupClass : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INFREQUENT_ACCESS for LogGroupClass
+        /// </summary>
+        public static readonly LogGroupClass INFREQUENT_ACCESS = new LogGroupClass("INFREQUENT_ACCESS");
+        /// <summary>
+        /// Constant STANDARD for LogGroupClass
+        /// </summary>
+        public static readonly LogGroupClass STANDARD = new LogGroupClass("STANDARD");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LogGroupClass(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LogGroupClass FindValue(string value)
+        {
+            return FindValue<LogGroupClass>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LogGroupClass(string value)
         {
             return FindValue(value);
         }
@@ -716,6 +898,214 @@ namespace Amazon.CloudWatchLogs
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator StandardUnit(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type State.
+    /// </summary>
+    public class State : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Active for State
+        /// </summary>
+        public static readonly State Active = new State("Active");
+        /// <summary>
+        /// Constant Baseline for State
+        /// </summary>
+        public static readonly State Baseline = new State("Baseline");
+        /// <summary>
+        /// Constant Suppressed for State
+        /// </summary>
+        public static readonly State Suppressed = new State("Suppressed");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public State(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static State FindValue(string value)
+        {
+            return FindValue<State>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator State(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SuppressionState.
+    /// </summary>
+    public class SuppressionState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SUPPRESSED for SuppressionState
+        /// </summary>
+        public static readonly SuppressionState SUPPRESSED = new SuppressionState("SUPPRESSED");
+        /// <summary>
+        /// Constant UNSUPPRESSED for SuppressionState
+        /// </summary>
+        public static readonly SuppressionState UNSUPPRESSED = new SuppressionState("UNSUPPRESSED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SuppressionState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SuppressionState FindValue(string value)
+        {
+            return FindValue<SuppressionState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SuppressionState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SuppressionType.
+    /// </summary>
+    public class SuppressionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INFINITE for SuppressionType
+        /// </summary>
+        public static readonly SuppressionType INFINITE = new SuppressionType("INFINITE");
+        /// <summary>
+        /// Constant LIMITED for SuppressionType
+        /// </summary>
+        public static readonly SuppressionType LIMITED = new SuppressionType("LIMITED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SuppressionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SuppressionType FindValue(string value)
+        {
+            return FindValue<SuppressionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SuppressionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SuppressionUnit.
+    /// </summary>
+    public class SuppressionUnit : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HOURS for SuppressionUnit
+        /// </summary>
+        public static readonly SuppressionUnit HOURS = new SuppressionUnit("HOURS");
+        /// <summary>
+        /// Constant MINUTES for SuppressionUnit
+        /// </summary>
+        public static readonly SuppressionUnit MINUTES = new SuppressionUnit("MINUTES");
+        /// <summary>
+        /// Constant SECONDS for SuppressionUnit
+        /// </summary>
+        public static readonly SuppressionUnit SECONDS = new SuppressionUnit("SECONDS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SuppressionUnit(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SuppressionUnit FindValue(string value)
+        {
+            return FindValue<SuppressionUnit>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SuppressionUnit(string value)
         {
             return FindValue(value);
         }

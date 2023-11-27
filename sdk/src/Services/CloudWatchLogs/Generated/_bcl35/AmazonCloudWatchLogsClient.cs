@@ -515,7 +515,7 @@ namespace Amazon.CloudWatchLogs
         /// <para>
         /// Only some Amazon Web Services services support being configured as a delivery source
         /// using this operation. These services are listed as <b>Supported [V2 Permissions]</b>
-        /// in the table at <a href="https://docs.aws.amazon.com/ AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html#AWS-vended-logs-permissions">Enabling
+        /// in the table at <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html">Enabling
         /// logging from Amazon Web Services services.</a> 
         /// </para>
         ///  
@@ -732,6 +732,119 @@ namespace Amazon.CloudWatchLogs
         public virtual CreateExportTaskResponse EndCreateExportTask(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateExportTaskResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateLogAnomalyDetector
+
+        /// <summary>
+        /// Creates an <i>anomaly detector</i> that regularly scans one or more log groups and
+        /// look for patterns and anomalies in the logs.
+        /// 
+        ///  
+        /// <para>
+        /// An anomaly detector can help surface issues by automatically discovering anomalies
+        /// in your log event traffic. An anomaly detector uses machine learning algorithms to
+        /// scan log events and find <i>patterns</i>. A pattern is a shared text structure that
+        /// recurs among your log fields. Patterns provide a useful tool for analyzing large sets
+        /// of logs because a large number of log events can often be compressed into a few patterns.
+        /// </para>
+        ///  
+        /// <para>
+        /// The anomaly detector uses pattern recognition to find <code>anomalies</code>, which
+        /// are unusual log events. It uses the <code>evaluationFrequency</code> to compare current
+        /// log events and patterns with trained baselines. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Fields within a pattern are called <i>tokens</i>. Fields that vary within a pattern,
+        /// such as a request ID or timestamp, are referred to as <i>dynamic tokens</i> and represented
+        /// by <code>&lt;*&gt;</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The following is an example of a pattern:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>[INFO] Request time: &lt;*&gt; ms</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// This pattern represents log events like <code>[INFO] Request time: 327 ms</code> and
+        /// other similar log events that differ only by the number, in this csse 327. When the
+        /// pattern is displayed, the different numbers are replaced by <code>&lt;*&gt;</code>
+        /// 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Any parts of log events that are masked as sensitive data are not scanned for anomalies.
+        /// For more information about masking sensitive data, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/mask-sensitive-log-data.html">Help
+        /// protect sensitive log data with masking</a>. 
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLogAnomalyDetector service method.</param>
+        /// 
+        /// <returns>The response from the CreateLogAnomalyDetector service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.LimitExceededException">
+        /// You have reached the maximum number of resources that can be created.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
+        /// Multiple concurrent requests to update the same resource were in conflict.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CreateLogAnomalyDetector">REST API Reference for CreateLogAnomalyDetector Operation</seealso>
+        public virtual CreateLogAnomalyDetectorResponse CreateLogAnomalyDetector(CreateLogAnomalyDetectorRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLogAnomalyDetectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLogAnomalyDetectorResponseUnmarshaller.Instance;
+
+            return Invoke<CreateLogAnomalyDetectorResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateLogAnomalyDetector operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateLogAnomalyDetector operation on AmazonCloudWatchLogsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateLogAnomalyDetector
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CreateLogAnomalyDetector">REST API Reference for CreateLogAnomalyDetector Operation</seealso>
+        public virtual IAsyncResult BeginCreateLogAnomalyDetector(CreateLogAnomalyDetectorRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLogAnomalyDetectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLogAnomalyDetectorResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateLogAnomalyDetector operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateLogAnomalyDetector.</param>
+        /// 
+        /// <returns>Returns a  CreateLogAnomalyDetectorResult from CloudWatchLogs.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CreateLogAnomalyDetector">REST API Reference for CreateLogAnomalyDetector Operation</seealso>
+        public virtual CreateLogAnomalyDetectorResponse EndCreateLogAnomalyDetector(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateLogAnomalyDetectorResponse>(asyncResult);
         }
 
         #endregion
@@ -1453,6 +1566,72 @@ namespace Amazon.CloudWatchLogs
         public virtual DeleteDestinationResponse EndDeleteDestination(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteDestinationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteLogAnomalyDetector
+
+        /// <summary>
+        /// Deletes the specified CloudWatch Logs anomaly detector.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLogAnomalyDetector service method.</param>
+        /// 
+        /// <returns>The response from the DeleteLogAnomalyDetector service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
+        /// Multiple concurrent requests to update the same resource were in conflict.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteLogAnomalyDetector">REST API Reference for DeleteLogAnomalyDetector Operation</seealso>
+        public virtual DeleteLogAnomalyDetectorResponse DeleteLogAnomalyDetector(DeleteLogAnomalyDetectorRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLogAnomalyDetectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLogAnomalyDetectorResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteLogAnomalyDetectorResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteLogAnomalyDetector operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLogAnomalyDetector operation on AmazonCloudWatchLogsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteLogAnomalyDetector
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteLogAnomalyDetector">REST API Reference for DeleteLogAnomalyDetector Operation</seealso>
+        public virtual IAsyncResult BeginDeleteLogAnomalyDetector(DeleteLogAnomalyDetectorRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLogAnomalyDetectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLogAnomalyDetectorResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteLogAnomalyDetector operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteLogAnomalyDetector.</param>
+        /// 
+        /// <returns>Returns a  DeleteLogAnomalyDetectorResult from CloudWatchLogs.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteLogAnomalyDetector">REST API Reference for DeleteLogAnomalyDetector Operation</seealso>
+        public virtual DeleteLogAnomalyDetectorResponse EndDeleteLogAnomalyDetector(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteLogAnomalyDetectorResponse>(asyncResult);
         }
 
         #endregion
@@ -3371,6 +3550,72 @@ namespace Amazon.CloudWatchLogs
 
         #endregion
         
+        #region  GetLogAnomalyDetector
+
+        /// <summary>
+        /// Retrieves information about the log anomaly detector that you specify.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetLogAnomalyDetector service method.</param>
+        /// 
+        /// <returns>The response from the GetLogAnomalyDetector service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
+        /// Multiple concurrent requests to update the same resource were in conflict.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetLogAnomalyDetector">REST API Reference for GetLogAnomalyDetector Operation</seealso>
+        public virtual GetLogAnomalyDetectorResponse GetLogAnomalyDetector(GetLogAnomalyDetectorRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetLogAnomalyDetectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetLogAnomalyDetectorResponseUnmarshaller.Instance;
+
+            return Invoke<GetLogAnomalyDetectorResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetLogAnomalyDetector operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetLogAnomalyDetector operation on AmazonCloudWatchLogsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetLogAnomalyDetector
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetLogAnomalyDetector">REST API Reference for GetLogAnomalyDetector Operation</seealso>
+        public virtual IAsyncResult BeginGetLogAnomalyDetector(GetLogAnomalyDetectorRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetLogAnomalyDetectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetLogAnomalyDetectorResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetLogAnomalyDetector operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetLogAnomalyDetector.</param>
+        /// 
+        /// <returns>Returns a  GetLogAnomalyDetectorResult from CloudWatchLogs.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetLogAnomalyDetector">REST API Reference for GetLogAnomalyDetector Operation</seealso>
+        public virtual GetLogAnomalyDetectorResponse EndGetLogAnomalyDetector(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetLogAnomalyDetectorResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetLogEvents
 
         /// <summary>
@@ -3712,6 +3957,140 @@ namespace Amazon.CloudWatchLogs
         public virtual GetQueryResultsResponse EndGetQueryResults(IAsyncResult asyncResult)
         {
             return EndInvoke<GetQueryResultsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListAnomalies
+
+        /// <summary>
+        /// Returns a list of anomalies that log anomaly detectors have found. For details about
+        /// the structure format of each anomaly object that is returned, see the example in this
+        /// section.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAnomalies service method.</param>
+        /// 
+        /// <returns>The response from the ListAnomalies service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
+        /// Multiple concurrent requests to update the same resource were in conflict.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ListAnomalies">REST API Reference for ListAnomalies Operation</seealso>
+        public virtual ListAnomaliesResponse ListAnomalies(ListAnomaliesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAnomaliesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAnomaliesResponseUnmarshaller.Instance;
+
+            return Invoke<ListAnomaliesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAnomalies operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAnomalies operation on AmazonCloudWatchLogsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAnomalies
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ListAnomalies">REST API Reference for ListAnomalies Operation</seealso>
+        public virtual IAsyncResult BeginListAnomalies(ListAnomaliesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAnomaliesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAnomaliesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAnomalies operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAnomalies.</param>
+        /// 
+        /// <returns>Returns a  ListAnomaliesResult from CloudWatchLogs.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ListAnomalies">REST API Reference for ListAnomalies Operation</seealso>
+        public virtual ListAnomaliesResponse EndListAnomalies(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListAnomaliesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListLogAnomalyDetectors
+
+        /// <summary>
+        /// Retrieves a list of the log anomaly detectors in the account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListLogAnomalyDetectors service method.</param>
+        /// 
+        /// <returns>The response from the ListLogAnomalyDetectors service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
+        /// Multiple concurrent requests to update the same resource were in conflict.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ListLogAnomalyDetectors">REST API Reference for ListLogAnomalyDetectors Operation</seealso>
+        public virtual ListLogAnomalyDetectorsResponse ListLogAnomalyDetectors(ListLogAnomalyDetectorsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListLogAnomalyDetectorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLogAnomalyDetectorsResponseUnmarshaller.Instance;
+
+            return Invoke<ListLogAnomalyDetectorsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListLogAnomalyDetectors operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListLogAnomalyDetectors operation on AmazonCloudWatchLogsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListLogAnomalyDetectors
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ListLogAnomalyDetectors">REST API Reference for ListLogAnomalyDetectors Operation</seealso>
+        public virtual IAsyncResult BeginListLogAnomalyDetectors(ListLogAnomalyDetectorsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListLogAnomalyDetectorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLogAnomalyDetectorsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListLogAnomalyDetectors operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListLogAnomalyDetectors.</param>
+        /// 
+        /// <returns>Returns a  ListLogAnomalyDetectorsResult from CloudWatchLogs.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ListLogAnomalyDetectors">REST API Reference for ListLogAnomalyDetectors Operation</seealso>
+        public virtual ListLogAnomalyDetectorsResponse EndListLogAnomalyDetectors(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListLogAnomalyDetectorsResponse>(asyncResult);
         }
 
         #endregion
@@ -4117,7 +4496,7 @@ namespace Amazon.CloudWatchLogs
         /// <para>
         /// Only some Amazon Web Services services support being configured as a delivery source.
         /// These services are listed as <b>Supported [V2 Permissions]</b> in the table at <a
-        /// href="https://docs.aws.amazon.com/ AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html#AWS-vended-logs-permissions">Enabling
+        /// href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html">Enabling
         /// logging from Amazon Web Services services.</a> 
         /// </para>
         ///  
@@ -4226,7 +4605,7 @@ namespace Amazon.CloudWatchLogs
         /// <para>
         /// Only some Amazon Web Services services support being configured as a delivery source.
         /// These services are listed as <b>Supported [V2 Permissions]</b> in the table at <a
-        /// href="https://docs.aws.amazon.com/ AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html#AWS-vended-logs-permissions">Enabling
+        /// href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html">Enabling
         /// logging from Amazon Web Services services.</a> 
         /// </para>
         ///  
@@ -4342,7 +4721,7 @@ namespace Amazon.CloudWatchLogs
         /// <para>
         /// Only some Amazon Web Services services support being configured as a delivery source.
         /// These services are listed as <b>Supported [V2 Permissions]</b> in the table at <a
-        /// href="https://docs.aws.amazon.com/ AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html#AWS-vended-logs-permissions">Enabling
+        /// href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html">Enabling
         /// logging from Amazon Web Services services.</a> 
         /// </para>
         ///  
@@ -5728,6 +6107,154 @@ namespace Amazon.CloudWatchLogs
         public virtual UntagResourceResponse EndUntagResource(IAsyncResult asyncResult)
         {
             return EndInvoke<UntagResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateAnomaly
+
+        /// <summary>
+        /// Use this operation to <i>suppress</i> anomaly detection for a specified anomaly or
+        /// pattern. If you suppress an anomaly, CloudWatch Logs won’t report new occurrences
+        /// of that anomaly and won't update that anomaly with new data. If you suppress a pattern,
+        /// CloudWatch Logs won’t report any anomalies related to that pattern.
+        /// 
+        ///  
+        /// <para>
+        /// You must specify either <code>anomalyId</code> or <code>patternId</code>, but you
+        /// can't specify both parameters in the same operation.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you have previously used this operation to suppress detection of a pattern or anomaly,
+        /// you can use it again to cause CloudWatch Logs to end the suppression. To do this,
+        /// use this operation and specify the anomaly or pattern to stop suppressing, and omit
+        /// the <code>suppressionType</code> and <code>suppressionPeriod</code> parameters.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAnomaly service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAnomaly service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
+        /// Multiple concurrent requests to update the same resource were in conflict.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/UpdateAnomaly">REST API Reference for UpdateAnomaly Operation</seealso>
+        public virtual UpdateAnomalyResponse UpdateAnomaly(UpdateAnomalyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAnomalyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAnomalyResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateAnomalyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateAnomaly operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAnomaly operation on AmazonCloudWatchLogsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateAnomaly
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/UpdateAnomaly">REST API Reference for UpdateAnomaly Operation</seealso>
+        public virtual IAsyncResult BeginUpdateAnomaly(UpdateAnomalyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAnomalyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAnomalyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateAnomaly operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateAnomaly.</param>
+        /// 
+        /// <returns>Returns a  UpdateAnomalyResult from CloudWatchLogs.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/UpdateAnomaly">REST API Reference for UpdateAnomaly Operation</seealso>
+        public virtual UpdateAnomalyResponse EndUpdateAnomaly(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateAnomalyResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateLogAnomalyDetector
+
+        /// <summary>
+        /// Updates an existing log anomaly detector.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLogAnomalyDetector service method.</param>
+        /// 
+        /// <returns>The response from the UpdateLogAnomalyDetector service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
+        /// Multiple concurrent requests to update the same resource were in conflict.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/UpdateLogAnomalyDetector">REST API Reference for UpdateLogAnomalyDetector Operation</seealso>
+        public virtual UpdateLogAnomalyDetectorResponse UpdateLogAnomalyDetector(UpdateLogAnomalyDetectorRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateLogAnomalyDetectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateLogAnomalyDetectorResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateLogAnomalyDetectorResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateLogAnomalyDetector operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLogAnomalyDetector operation on AmazonCloudWatchLogsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateLogAnomalyDetector
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/UpdateLogAnomalyDetector">REST API Reference for UpdateLogAnomalyDetector Operation</seealso>
+        public virtual IAsyncResult BeginUpdateLogAnomalyDetector(UpdateLogAnomalyDetectorRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateLogAnomalyDetectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateLogAnomalyDetectorResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateLogAnomalyDetector operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateLogAnomalyDetector.</param>
+        /// 
+        /// <returns>Returns a  UpdateLogAnomalyDetectorResult from CloudWatchLogs.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/UpdateLogAnomalyDetector">REST API Reference for UpdateLogAnomalyDetector Operation</seealso>
+        public virtual UpdateLogAnomalyDetectorResponse EndUpdateLogAnomalyDetector(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateLogAnomalyDetectorResponse>(asyncResult);
         }
 
         #endregion

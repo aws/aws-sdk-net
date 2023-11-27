@@ -340,7 +340,7 @@ namespace Amazon.CloudWatchLogs
         /// <para>
         /// Only some Amazon Web Services services support being configured as a delivery source
         /// using this operation. These services are listed as <b>Supported [V2 Permissions]</b>
-        /// in the table at <a href="https://docs.aws.amazon.com/ AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html#AWS-vended-logs-permissions">Enabling
+        /// in the table at <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html">Enabling
         /// logging from Amazon Web Services services.</a> 
         /// </para>
         ///  
@@ -422,7 +422,7 @@ namespace Amazon.CloudWatchLogs
         /// <para>
         /// Only some Amazon Web Services services support being configured as a delivery source
         /// using this operation. These services are listed as <b>Supported [V2 Permissions]</b>
-        /// in the table at <a href="https://docs.aws.amazon.com/ AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html#AWS-vended-logs-permissions">Enabling
+        /// in the table at <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html">Enabling
         /// logging from Amazon Web Services services.</a> 
         /// </para>
         ///  
@@ -628,6 +628,152 @@ namespace Amazon.CloudWatchLogs
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CreateExportTask">REST API Reference for CreateExportTask Operation</seealso>
         Task<CreateExportTaskResponse> CreateExportTaskAsync(CreateExportTaskRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateLogAnomalyDetector
+
+
+        /// <summary>
+        /// Creates an <i>anomaly detector</i> that regularly scans one or more log groups and
+        /// look for patterns and anomalies in the logs.
+        /// 
+        ///  
+        /// <para>
+        /// An anomaly detector can help surface issues by automatically discovering anomalies
+        /// in your log event traffic. An anomaly detector uses machine learning algorithms to
+        /// scan log events and find <i>patterns</i>. A pattern is a shared text structure that
+        /// recurs among your log fields. Patterns provide a useful tool for analyzing large sets
+        /// of logs because a large number of log events can often be compressed into a few patterns.
+        /// </para>
+        ///  
+        /// <para>
+        /// The anomaly detector uses pattern recognition to find <code>anomalies</code>, which
+        /// are unusual log events. It uses the <code>evaluationFrequency</code> to compare current
+        /// log events and patterns with trained baselines. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Fields within a pattern are called <i>tokens</i>. Fields that vary within a pattern,
+        /// such as a request ID or timestamp, are referred to as <i>dynamic tokens</i> and represented
+        /// by <code>&lt;*&gt;</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The following is an example of a pattern:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>[INFO] Request time: &lt;*&gt; ms</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// This pattern represents log events like <code>[INFO] Request time: 327 ms</code> and
+        /// other similar log events that differ only by the number, in this csse 327. When the
+        /// pattern is displayed, the different numbers are replaced by <code>&lt;*&gt;</code>
+        /// 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Any parts of log events that are masked as sensitive data are not scanned for anomalies.
+        /// For more information about masking sensitive data, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/mask-sensitive-log-data.html">Help
+        /// protect sensitive log data with masking</a>. 
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLogAnomalyDetector service method.</param>
+        /// 
+        /// <returns>The response from the CreateLogAnomalyDetector service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.LimitExceededException">
+        /// You have reached the maximum number of resources that can be created.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
+        /// Multiple concurrent requests to update the same resource were in conflict.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CreateLogAnomalyDetector">REST API Reference for CreateLogAnomalyDetector Operation</seealso>
+        CreateLogAnomalyDetectorResponse CreateLogAnomalyDetector(CreateLogAnomalyDetectorRequest request);
+
+
+
+        /// <summary>
+        /// Creates an <i>anomaly detector</i> that regularly scans one or more log groups and
+        /// look for patterns and anomalies in the logs.
+        /// 
+        ///  
+        /// <para>
+        /// An anomaly detector can help surface issues by automatically discovering anomalies
+        /// in your log event traffic. An anomaly detector uses machine learning algorithms to
+        /// scan log events and find <i>patterns</i>. A pattern is a shared text structure that
+        /// recurs among your log fields. Patterns provide a useful tool for analyzing large sets
+        /// of logs because a large number of log events can often be compressed into a few patterns.
+        /// </para>
+        ///  
+        /// <para>
+        /// The anomaly detector uses pattern recognition to find <code>anomalies</code>, which
+        /// are unusual log events. It uses the <code>evaluationFrequency</code> to compare current
+        /// log events and patterns with trained baselines. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Fields within a pattern are called <i>tokens</i>. Fields that vary within a pattern,
+        /// such as a request ID or timestamp, are referred to as <i>dynamic tokens</i> and represented
+        /// by <code>&lt;*&gt;</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The following is an example of a pattern:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>[INFO] Request time: &lt;*&gt; ms</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// This pattern represents log events like <code>[INFO] Request time: 327 ms</code> and
+        /// other similar log events that differ only by the number, in this csse 327. When the
+        /// pattern is displayed, the different numbers are replaced by <code>&lt;*&gt;</code>
+        /// 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Any parts of log events that are masked as sensitive data are not scanned for anomalies.
+        /// For more information about masking sensitive data, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/mask-sensitive-log-data.html">Help
+        /// protect sensitive log data with masking</a>. 
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLogAnomalyDetector service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateLogAnomalyDetector service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.LimitExceededException">
+        /// You have reached the maximum number of resources that can be created.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
+        /// Multiple concurrent requests to update the same resource were in conflict.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CreateLogAnomalyDetector">REST API Reference for CreateLogAnomalyDetector Operation</seealso>
+        Task<CreateLogAnomalyDetectorResponse> CreateLogAnomalyDetectorAsync(CreateLogAnomalyDetectorRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1350,6 +1496,58 @@ namespace Amazon.CloudWatchLogs
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteDestination">REST API Reference for DeleteDestination Operation</seealso>
         Task<DeleteDestinationResponse> DeleteDestinationAsync(DeleteDestinationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteLogAnomalyDetector
+
+
+        /// <summary>
+        /// Deletes the specified CloudWatch Logs anomaly detector.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLogAnomalyDetector service method.</param>
+        /// 
+        /// <returns>The response from the DeleteLogAnomalyDetector service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
+        /// Multiple concurrent requests to update the same resource were in conflict.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteLogAnomalyDetector">REST API Reference for DeleteLogAnomalyDetector Operation</seealso>
+        DeleteLogAnomalyDetectorResponse DeleteLogAnomalyDetector(DeleteLogAnomalyDetectorRequest request);
+
+
+
+        /// <summary>
+        /// Deletes the specified CloudWatch Logs anomaly detector.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLogAnomalyDetector service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteLogAnomalyDetector service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
+        /// Multiple concurrent requests to update the same resource were in conflict.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteLogAnomalyDetector">REST API Reference for DeleteLogAnomalyDetector Operation</seealso>
+        Task<DeleteLogAnomalyDetectorResponse> DeleteLogAnomalyDetectorAsync(DeleteLogAnomalyDetectorRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -3020,6 +3218,58 @@ namespace Amazon.CloudWatchLogs
 
         #endregion
         
+        #region  GetLogAnomalyDetector
+
+
+        /// <summary>
+        /// Retrieves information about the log anomaly detector that you specify.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetLogAnomalyDetector service method.</param>
+        /// 
+        /// <returns>The response from the GetLogAnomalyDetector service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
+        /// Multiple concurrent requests to update the same resource were in conflict.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetLogAnomalyDetector">REST API Reference for GetLogAnomalyDetector Operation</seealso>
+        GetLogAnomalyDetectorResponse GetLogAnomalyDetector(GetLogAnomalyDetectorRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves information about the log anomaly detector that you specify.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetLogAnomalyDetector service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetLogAnomalyDetector service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
+        /// Multiple concurrent requests to update the same resource were in conflict.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetLogAnomalyDetector">REST API Reference for GetLogAnomalyDetector Operation</seealso>
+        Task<GetLogAnomalyDetectorResponse> GetLogAnomalyDetectorAsync(GetLogAnomalyDetectorRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetLogEvents
 
 
@@ -3387,6 +3637,114 @@ namespace Amazon.CloudWatchLogs
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetQueryResults">REST API Reference for GetQueryResults Operation</seealso>
         Task<GetQueryResultsResponse> GetQueryResultsAsync(GetQueryResultsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListAnomalies
+
+
+        /// <summary>
+        /// Returns a list of anomalies that log anomaly detectors have found. For details about
+        /// the structure format of each anomaly object that is returned, see the example in this
+        /// section.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAnomalies service method.</param>
+        /// 
+        /// <returns>The response from the ListAnomalies service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
+        /// Multiple concurrent requests to update the same resource were in conflict.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ListAnomalies">REST API Reference for ListAnomalies Operation</seealso>
+        ListAnomaliesResponse ListAnomalies(ListAnomaliesRequest request);
+
+
+
+        /// <summary>
+        /// Returns a list of anomalies that log anomaly detectors have found. For details about
+        /// the structure format of each anomaly object that is returned, see the example in this
+        /// section.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAnomalies service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAnomalies service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
+        /// Multiple concurrent requests to update the same resource were in conflict.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ListAnomalies">REST API Reference for ListAnomalies Operation</seealso>
+        Task<ListAnomaliesResponse> ListAnomaliesAsync(ListAnomaliesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListLogAnomalyDetectors
+
+
+        /// <summary>
+        /// Retrieves a list of the log anomaly detectors in the account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListLogAnomalyDetectors service method.</param>
+        /// 
+        /// <returns>The response from the ListLogAnomalyDetectors service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
+        /// Multiple concurrent requests to update the same resource were in conflict.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ListLogAnomalyDetectors">REST API Reference for ListLogAnomalyDetectors Operation</seealso>
+        ListLogAnomalyDetectorsResponse ListLogAnomalyDetectors(ListLogAnomalyDetectorsRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves a list of the log anomaly detectors in the account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListLogAnomalyDetectors service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListLogAnomalyDetectors service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
+        /// Multiple concurrent requests to update the same resource were in conflict.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ListLogAnomalyDetectors">REST API Reference for ListLogAnomalyDetectors Operation</seealso>
+        Task<ListLogAnomalyDetectorsResponse> ListLogAnomalyDetectorsAsync(ListLogAnomalyDetectorsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -3824,7 +4182,7 @@ namespace Amazon.CloudWatchLogs
         /// <para>
         /// Only some Amazon Web Services services support being configured as a delivery source.
         /// These services are listed as <b>Supported [V2 Permissions]</b> in the table at <a
-        /// href="https://docs.aws.amazon.com/ AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html#AWS-vended-logs-permissions">Enabling
+        /// href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html">Enabling
         /// logging from Amazon Web Services services.</a> 
         /// </para>
         ///  
@@ -3903,7 +4261,7 @@ namespace Amazon.CloudWatchLogs
         /// <para>
         /// Only some Amazon Web Services services support being configured as a delivery source.
         /// These services are listed as <b>Supported [V2 Permissions]</b> in the table at <a
-        /// href="https://docs.aws.amazon.com/ AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html#AWS-vended-logs-permissions">Enabling
+        /// href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html">Enabling
         /// logging from Amazon Web Services services.</a> 
         /// </para>
         ///  
@@ -3975,7 +4333,7 @@ namespace Amazon.CloudWatchLogs
         /// <para>
         /// Only some Amazon Web Services services support being configured as a delivery source.
         /// These services are listed as <b>Supported [V2 Permissions]</b> in the table at <a
-        /// href="https://docs.aws.amazon.com/ AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html#AWS-vended-logs-permissions">Enabling
+        /// href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html">Enabling
         /// logging from Amazon Web Services services.</a> 
         /// </para>
         ///  
@@ -4035,7 +4393,7 @@ namespace Amazon.CloudWatchLogs
         /// <para>
         /// Only some Amazon Web Services services support being configured as a delivery source.
         /// These services are listed as <b>Supported [V2 Permissions]</b> in the table at <a
-        /// href="https://docs.aws.amazon.com/ AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html#AWS-vended-logs-permissions">Enabling
+        /// href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html">Enabling
         /// logging from Amazon Web Services services.</a> 
         /// </para>
         ///  
@@ -4114,7 +4472,7 @@ namespace Amazon.CloudWatchLogs
         /// <para>
         /// Only some Amazon Web Services services support being configured as a delivery source.
         /// These services are listed as <b>Supported [V2 Permissions]</b> in the table at <a
-        /// href="https://docs.aws.amazon.com/ AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html#AWS-vended-logs-permissions">Enabling
+        /// href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html">Enabling
         /// logging from Amazon Web Services services.</a> 
         /// </para>
         ///  
@@ -4192,7 +4550,7 @@ namespace Amazon.CloudWatchLogs
         /// <para>
         /// Only some Amazon Web Services services support being configured as a delivery source.
         /// These services are listed as <b>Supported [V2 Permissions]</b> in the table at <a
-        /// href="https://docs.aws.amazon.com/ AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html#AWS-vended-logs-permissions">Enabling
+        /// href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html">Enabling
         /// logging from Amazon Web Services services.</a> 
         /// </para>
         ///  
@@ -5647,6 +6005,142 @@ namespace Amazon.CloudWatchLogs
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/UntagResource">REST API Reference for UntagResource Operation</seealso>
         Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateAnomaly
+
+
+        /// <summary>
+        /// Use this operation to <i>suppress</i> anomaly detection for a specified anomaly or
+        /// pattern. If you suppress an anomaly, CloudWatch Logs won’t report new occurrences
+        /// of that anomaly and won't update that anomaly with new data. If you suppress a pattern,
+        /// CloudWatch Logs won’t report any anomalies related to that pattern.
+        /// 
+        ///  
+        /// <para>
+        /// You must specify either <code>anomalyId</code> or <code>patternId</code>, but you
+        /// can't specify both parameters in the same operation.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you have previously used this operation to suppress detection of a pattern or anomaly,
+        /// you can use it again to cause CloudWatch Logs to end the suppression. To do this,
+        /// use this operation and specify the anomaly or pattern to stop suppressing, and omit
+        /// the <code>suppressionType</code> and <code>suppressionPeriod</code> parameters.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAnomaly service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAnomaly service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
+        /// Multiple concurrent requests to update the same resource were in conflict.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/UpdateAnomaly">REST API Reference for UpdateAnomaly Operation</seealso>
+        UpdateAnomalyResponse UpdateAnomaly(UpdateAnomalyRequest request);
+
+
+
+        /// <summary>
+        /// Use this operation to <i>suppress</i> anomaly detection for a specified anomaly or
+        /// pattern. If you suppress an anomaly, CloudWatch Logs won’t report new occurrences
+        /// of that anomaly and won't update that anomaly with new data. If you suppress a pattern,
+        /// CloudWatch Logs won’t report any anomalies related to that pattern.
+        /// 
+        ///  
+        /// <para>
+        /// You must specify either <code>anomalyId</code> or <code>patternId</code>, but you
+        /// can't specify both parameters in the same operation.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you have previously used this operation to suppress detection of a pattern or anomaly,
+        /// you can use it again to cause CloudWatch Logs to end the suppression. To do this,
+        /// use this operation and specify the anomaly or pattern to stop suppressing, and omit
+        /// the <code>suppressionType</code> and <code>suppressionPeriod</code> parameters.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAnomaly service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateAnomaly service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
+        /// Multiple concurrent requests to update the same resource were in conflict.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/UpdateAnomaly">REST API Reference for UpdateAnomaly Operation</seealso>
+        Task<UpdateAnomalyResponse> UpdateAnomalyAsync(UpdateAnomalyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateLogAnomalyDetector
+
+
+        /// <summary>
+        /// Updates an existing log anomaly detector.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLogAnomalyDetector service method.</param>
+        /// 
+        /// <returns>The response from the UpdateLogAnomalyDetector service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
+        /// Multiple concurrent requests to update the same resource were in conflict.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/UpdateLogAnomalyDetector">REST API Reference for UpdateLogAnomalyDetector Operation</seealso>
+        UpdateLogAnomalyDetectorResponse UpdateLogAnomalyDetector(UpdateLogAnomalyDetectorRequest request);
+
+
+
+        /// <summary>
+        /// Updates an existing log anomaly detector.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLogAnomalyDetector service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateLogAnomalyDetector service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
+        /// Multiple concurrent requests to update the same resource were in conflict.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/UpdateLogAnomalyDetector">REST API Reference for UpdateLogAnomalyDetector Operation</seealso>
+        Task<UpdateLogAnomalyDetectorResponse> UpdateLogAnomalyDetectorAsync(UpdateLogAnomalyDetectorRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

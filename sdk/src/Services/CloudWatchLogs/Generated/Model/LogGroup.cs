@@ -38,6 +38,7 @@ namespace Amazon.CloudWatchLogs.Model
         private DataProtectionStatus _dataProtectionStatus;
         private List<string> _inheritedProperties = new List<string>();
         private string _kmsKeyId;
+        private LogGroupClass _logGroupClass;
         private string _logGroupName;
         private int? _metricFilterCount;
         private int? _retentionInDays;
@@ -135,6 +136,38 @@ namespace Amazon.CloudWatchLogs.Model
         internal bool IsSetKmsKeyId()
         {
             return this._kmsKeyId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LogGroupClass. 
+        /// <para>
+        /// This specifies the log group class for this log group. There are two classes:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <code>Standard</code> log class supports all CloudWatch Logs features.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <code>Infrequent Access</code> log class supports a subset of CloudWatch Logs
+        /// features and incurs lower costs.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For details about the features supported by each class, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log
+        /// classes</a> 
+        /// </para>
+        /// </summary>
+        public LogGroupClass LogGroupClass
+        {
+            get { return this._logGroupClass; }
+            set { this._logGroupClass = value; }
+        }
+
+        // Check to see if LogGroupClass property is set
+        internal bool IsSetLogGroupClass()
+        {
+            return this._logGroupClass != null;
         }
 
         /// <summary>

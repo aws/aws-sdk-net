@@ -114,5 +114,21 @@ namespace Amazon.CloudWatchLogs.Model
         {
             return new GetLogEventsPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for ListAnomalies operation
+        ///</summary>
+        public IListAnomaliesPaginator ListAnomalies(ListAnomaliesRequest request) 
+        {
+            return new ListAnomaliesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListLogAnomalyDetectors operation
+        ///</summary>
+        public IListLogAnomalyDetectorsPaginator ListLogAnomalyDetectors(ListLogAnomalyDetectorsRequest request) 
+        {
+            return new ListLogAnomalyDetectorsPaginator(this.client, request);
+        }
     }
 }

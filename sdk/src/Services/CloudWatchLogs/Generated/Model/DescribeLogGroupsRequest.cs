@@ -55,6 +55,7 @@ namespace Amazon.CloudWatchLogs.Model
         private List<string> _accountIdentifiers = new List<string>();
         private bool? _includeLinkedAccounts;
         private int? _limit;
+        private LogGroupClass _logGroupClass;
         private string _logGroupNamePattern;
         private string _logGroupNamePrefix;
         private string _nextToken;
@@ -124,6 +125,38 @@ namespace Amazon.CloudWatchLogs.Model
         internal bool IsSetLimit()
         {
             return this._limit.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LogGroupClass. 
+        /// <para>
+        /// Specifies the log group class for this log group. There are two classes:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <code>Standard</code> log class supports all CloudWatch Logs features.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <code>Infrequent Access</code> log class supports a subset of CloudWatch Logs
+        /// features and incurs lower costs.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For details about the features supported by each class, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log
+        /// classes</a> 
+        /// </para>
+        /// </summary>
+        public LogGroupClass LogGroupClass
+        {
+            get { return this._logGroupClass; }
+            set { this._logGroupClass = value; }
+        }
+
+        // Check to see if LogGroupClass property is set
+        internal bool IsSetLogGroupClass()
+        {
+            return this._logGroupClass != null;
         }
 
         /// <summary>

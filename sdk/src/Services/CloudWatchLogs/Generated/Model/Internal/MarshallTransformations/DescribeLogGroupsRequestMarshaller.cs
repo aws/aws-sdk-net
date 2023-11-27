@@ -90,6 +90,12 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Limit);
                 }
 
+                if(publicRequest.IsSetLogGroupClass())
+                {
+                    context.Writer.WritePropertyName("logGroupClass");
+                    context.Writer.Write(publicRequest.LogGroupClass);
+                }
+
                 if(publicRequest.IsSetLogGroupNamePattern())
                 {
                     context.Writer.WritePropertyName("logGroupNamePattern");

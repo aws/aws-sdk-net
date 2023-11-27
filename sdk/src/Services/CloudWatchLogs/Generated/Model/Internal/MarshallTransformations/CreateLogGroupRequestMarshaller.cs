@@ -73,6 +73,12 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.KmsKeyId);
                 }
 
+                if(publicRequest.IsSetLogGroupClass())
+                {
+                    context.Writer.WritePropertyName("logGroupClass");
+                    context.Writer.Write(publicRequest.LogGroupClass);
+                }
+
                 if(publicRequest.IsSetLogGroupName())
                 {
                     context.Writer.WritePropertyName("logGroupName");

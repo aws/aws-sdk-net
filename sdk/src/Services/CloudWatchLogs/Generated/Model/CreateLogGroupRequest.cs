@@ -80,6 +80,7 @@ namespace Amazon.CloudWatchLogs.Model
     public partial class CreateLogGroupRequest : AmazonCloudWatchLogsRequest
     {
         private string _kmsKeyId;
+        private LogGroupClass _logGroupClass;
         private string _logGroupName;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
@@ -91,7 +92,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Instantiates CreateLogGroupRequest with the parameterized properties
         /// </summary>
-        /// <param name="logGroupName">The name of the log group.</param>
+        /// <param name="logGroupName">A name for the log group.</param>
         public CreateLogGroupRequest(string logGroupName)
         {
             _logGroupName = logGroupName;
@@ -119,9 +120,46 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LogGroupClass. 
+        /// <para>
+        /// Use this parameter to specify the log group class for this log group. There are two
+        /// classes:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <code>Standard</code> log class supports all CloudWatch Logs features.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <code>Infrequent Access</code> log class supports a subset of CloudWatch Logs
+        /// features and incurs lower costs.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If you omit this parameter, the default of <code>STANDARD</code> is used.
+        /// </para>
+        ///  
+        /// <para>
+        /// For details about the features supported by each class, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log
+        /// classes</a> 
+        /// </para>
+        /// </summary>
+        public LogGroupClass LogGroupClass
+        {
+            get { return this._logGroupClass; }
+            set { this._logGroupClass = value; }
+        }
+
+        // Check to see if LogGroupClass property is set
+        internal bool IsSetLogGroupClass()
+        {
+            return this._logGroupClass != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property LogGroupName. 
         /// <para>
-        /// The name of the log group.
+        /// A name for the log group.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=512)]
