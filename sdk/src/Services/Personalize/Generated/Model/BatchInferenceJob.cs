@@ -35,6 +35,7 @@ namespace Amazon.Personalize.Model
     {
         private string _batchInferenceJobArn;
         private BatchInferenceJobConfig _batchInferenceJobConfig;
+        private BatchInferenceJobMode _batchInferenceJobMode;
         private DateTime? _creationDateTime;
         private string _failureReason;
         private string _filterArn;
@@ -46,6 +47,7 @@ namespace Amazon.Personalize.Model
         private string _roleArn;
         private string _solutionVersionArn;
         private string _status;
+        private ThemeGenerationConfig _themeGenerationConfig;
 
         /// <summary>
         /// Gets and sets the property BatchInferenceJobArn. 
@@ -82,6 +84,24 @@ namespace Amazon.Personalize.Model
         internal bool IsSetBatchInferenceJobConfig()
         {
             return this._batchInferenceJobConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BatchInferenceJobMode. 
+        /// <para>
+        /// The job's mode.
+        /// </para>
+        /// </summary>
+        public BatchInferenceJobMode BatchInferenceJobMode
+        {
+            get { return this._batchInferenceJobMode; }
+            set { this._batchInferenceJobMode = value; }
+        }
+
+        // Check to see if BatchInferenceJobMode property is set
+        internal bool IsSetBatchInferenceJobMode()
+        {
+            return this._batchInferenceJobMode != null;
         }
 
         /// <summary>
@@ -307,6 +327,24 @@ namespace Amazon.Personalize.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ThemeGenerationConfig. 
+        /// <para>
+        /// The job's theme generation settings.
+        /// </para>
+        /// </summary>
+        public ThemeGenerationConfig ThemeGenerationConfig
+        {
+            get { return this._themeGenerationConfig; }
+            set { this._themeGenerationConfig = value; }
+        }
+
+        // Check to see if ThemeGenerationConfig property is set
+        internal bool IsSetThemeGenerationConfig()
+        {
+            return this._themeGenerationConfig != null;
         }
 
     }

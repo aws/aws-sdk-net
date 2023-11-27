@@ -119,7 +119,7 @@ namespace Amazon.Personalize.Model
         /// The schema.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=10000)]
+        [AWSProperty(Max=20000)]
         public string Schema
         {
             get { return this._schema; }

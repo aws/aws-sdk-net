@@ -44,7 +44,7 @@ namespace Amazon.Personalize.Model
         /// <summary>
         /// Gets and sets the property AlgorithmHyperParameters. 
         /// <para>
-        /// Lists the hyperparameter names and ranges.
+        /// Lists the algorithm hyperparameters and their values.
         /// </para>
         /// </summary>
         [AWSProperty(Max=100)]

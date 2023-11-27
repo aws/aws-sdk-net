@@ -30,8 +30,9 @@ namespace Amazon.Personalize.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateCampaign operation.
-    /// Updates a campaign by either deploying a new solution or changing the value of the
-    /// campaign's <code>minProvisionedTPS</code> parameter.
+    /// Updates a campaign to deploy a retrained solution version with an existing campaign,
+    /// change your campaign's <code>minProvisionedTPS</code>, or modify your campaign's configuration,
+    /// such as the exploration configuration. 
     /// 
     ///  
     /// <para>
@@ -48,7 +49,9 @@ namespace Amazon.Personalize.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// For more information on campaigns, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateCampaign.html">CreateCampaign</a>.
+    /// For more information about updating a campaign, including code samples, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/update-campaigns.html">Updating
+    /// a campaign</a>. For more information about campaigns, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html">Creating
+    /// a campaign</a>.
     /// </para>
     /// </summary>
     public partial class UpdateCampaignRequest : AmazonPersonalizeRequest

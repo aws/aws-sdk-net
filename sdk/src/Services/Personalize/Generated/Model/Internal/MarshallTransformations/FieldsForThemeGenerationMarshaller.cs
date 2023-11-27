@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Personalize.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CampaignConfig Marshaller
+    /// FieldsForThemeGeneration Marshaller
     /// </summary>
-    public class CampaignConfigMarshaller : IRequestMarshaller<CampaignConfig, JsonMarshallerContext> 
+    public class FieldsForThemeGenerationMarshaller : IRequestMarshaller<FieldsForThemeGeneration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,26 +43,12 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(CampaignConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(FieldsForThemeGeneration requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetEnableMetadataWithRecommendations())
+            if(requestObject.IsSetItemName())
             {
-                context.Writer.WritePropertyName("enableMetadataWithRecommendations");
-                context.Writer.Write(requestObject.EnableMetadataWithRecommendations);
-            }
-
-            if(requestObject.IsSetItemExplorationConfig())
-            {
-                context.Writer.WritePropertyName("itemExplorationConfig");
-                context.Writer.WriteObjectStart();
-                foreach (var requestObjectItemExplorationConfigKvp in requestObject.ItemExplorationConfig)
-                {
-                    context.Writer.WritePropertyName(requestObjectItemExplorationConfigKvp.Key);
-                    var requestObjectItemExplorationConfigValue = requestObjectItemExplorationConfigKvp.Value;
-
-                        context.Writer.Write(requestObjectItemExplorationConfigValue);
-                }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("itemName");
+                context.Writer.Write(requestObject.ItemName);
             }
 
         }
@@ -70,7 +56,7 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static CampaignConfigMarshaller Instance = new CampaignConfigMarshaller();
+        public readonly static FieldsForThemeGenerationMarshaller Instance = new FieldsForThemeGenerationMarshaller();
 
     }
 }

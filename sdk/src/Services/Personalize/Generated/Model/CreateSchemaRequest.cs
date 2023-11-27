@@ -111,7 +111,7 @@ namespace Amazon.Personalize.Model
         /// A schema in Avro JSON format.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=10000)]
+        [AWSProperty(Required=true, Max=20000)]
         public string Schema
         {
             get { return this._schema; }

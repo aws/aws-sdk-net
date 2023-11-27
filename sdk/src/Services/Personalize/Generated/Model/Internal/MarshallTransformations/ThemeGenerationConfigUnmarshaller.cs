@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Personalize.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CampaignConfig Object
+    /// Response Unmarshaller for ThemeGenerationConfig Object
     /// </summary>  
-    public class CampaignConfigUnmarshaller : IUnmarshaller<CampaignConfig, XmlUnmarshallerContext>, IUnmarshaller<CampaignConfig, JsonUnmarshallerContext>
+    public class ThemeGenerationConfigUnmarshaller : IUnmarshaller<ThemeGenerationConfig, XmlUnmarshallerContext>, IUnmarshaller<ThemeGenerationConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        CampaignConfig IUnmarshaller<CampaignConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ThemeGenerationConfig IUnmarshaller<ThemeGenerationConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,21 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public CampaignConfig Unmarshall(JsonUnmarshallerContext context)
+        public ThemeGenerationConfig Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            CampaignConfig unmarshalledObject = new CampaignConfig();
+            ThemeGenerationConfig unmarshalledObject = new ThemeGenerationConfig();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("enableMetadataWithRecommendations", targetDepth))
+                if (context.TestExpression("fieldsForThemeGeneration", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.EnableMetadataWithRecommendations = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("itemExplorationConfig", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    unmarshalledObject.ItemExplorationConfig = unmarshaller.Unmarshall(context);
+                    var unmarshaller = FieldsForThemeGenerationUnmarshaller.Instance;
+                    unmarshalledObject.FieldsForThemeGeneration = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +76,12 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
         }
 
 
-        private static CampaignConfigUnmarshaller _instance = new CampaignConfigUnmarshaller();        
+        private static ThemeGenerationConfigUnmarshaller _instance = new ThemeGenerationConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CampaignConfigUnmarshaller Instance
+        public static ThemeGenerationConfigUnmarshaller Instance
         {
             get
             {

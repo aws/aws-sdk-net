@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Personalize.Model
 {
     /// <summary>
-    /// A dataset group is a collection of related datasets (Interactions, User, and Item).
-    /// You create a dataset group by calling <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDatasetGroup.html">CreateDatasetGroup</a>.
+    /// A dataset group is a collection of related datasets (Item interactions, Users, Items,
+    /// Actions, Action interactions). You create a dataset group by calling <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDatasetGroup.html">CreateDatasetGroup</a>.
     /// You then create a dataset and add it to a dataset group by calling <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDataset.html">CreateDataset</a>.
     /// The dataset group is used to create and train a solution by calling <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html">CreateSolution</a>.
     /// A dataset group can contain only one of each type of dataset.
@@ -186,7 +186,9 @@ namespace Amazon.Personalize.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The ARN of the IAM role that has permissions to create the dataset group.
+        /// The ARN of the Identity and Access Management (IAM) role that has permissions to access
+        /// the Key Management Service (KMS) key. Supplying an IAM role is only valid when also
+        /// specifying a KMS key.
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]

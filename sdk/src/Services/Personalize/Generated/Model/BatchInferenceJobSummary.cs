@@ -36,6 +36,7 @@ namespace Amazon.Personalize.Model
     public partial class BatchInferenceJobSummary
     {
         private string _batchInferenceJobArn;
+        private BatchInferenceJobMode _batchInferenceJobMode;
         private DateTime? _creationDateTime;
         private string _failureReason;
         private string _jobName;
@@ -60,6 +61,24 @@ namespace Amazon.Personalize.Model
         internal bool IsSetBatchInferenceJobArn()
         {
             return this._batchInferenceJobArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BatchInferenceJobMode. 
+        /// <para>
+        /// The job's mode.
+        /// </para>
+        /// </summary>
+        public BatchInferenceJobMode BatchInferenceJobMode
+        {
+            get { return this._batchInferenceJobMode; }
+            set { this._batchInferenceJobMode = value; }
+        }
+
+        // Check to see if BatchInferenceJobMode property is set
+        internal bool IsSetBatchInferenceJobMode()
+        {
+            return this._batchInferenceJobMode != null;
         }
 
         /// <summary>

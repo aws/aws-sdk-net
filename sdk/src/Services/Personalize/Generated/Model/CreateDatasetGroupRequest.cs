@@ -36,7 +36,7 @@ namespace Amazon.Personalize.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    /// Interactions
+    /// Item interactions
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -45,6 +45,14 @@ namespace Amazon.Personalize.Model
     ///  </li> <li> 
     /// <para>
     /// Users
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Actions
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Action interactions
     /// </para>
     ///  </li> </ul> 
     /// <para>

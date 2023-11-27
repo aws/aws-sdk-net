@@ -33,7 +33,35 @@ namespace Amazon.Personalize.Model
     /// </summary>
     public partial class CampaignConfig
     {
+        private bool? _enableMetadataWithRecommendations;
         private Dictionary<string, string> _itemExplorationConfig = new Dictionary<string, string>();
+
+        /// <summary>
+        /// Gets and sets the property EnableMetadataWithRecommendations. 
+        /// <para>
+        /// Whether metadata with recommendations is enabled for the campaign. If enabled, you
+        /// can specify the columns from your Items dataset in your request for recommendations.
+        /// Amazon Personalize returns this data for each item in the recommendation response.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        ///  If you enable metadata in recommendations, you will incur additional costs. For more
+        /// information, see <a href="https://aws.amazon.com/personalize/pricing/">Amazon Personalize
+        /// pricing</a>. 
+        /// </para>
+        /// </summary>
+        public bool EnableMetadataWithRecommendations
+        {
+            get { return this._enableMetadataWithRecommendations.GetValueOrDefault(); }
+            set { this._enableMetadataWithRecommendations = value; }
+        }
+
+        // Check to see if EnableMetadataWithRecommendations property is set
+        internal bool IsSetEnableMetadataWithRecommendations()
+        {
+            return this._enableMetadataWithRecommendations.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property ItemExplorationConfig. 

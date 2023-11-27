@@ -78,6 +78,12 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetBatchInferenceJobMode())
+                {
+                    context.Writer.WritePropertyName("batchInferenceJobMode");
+                    context.Writer.Write(publicRequest.BatchInferenceJobMode);
+                }
+
                 if(publicRequest.IsSetFilterArn())
                 {
                     context.Writer.WritePropertyName("filterArn");
@@ -144,6 +150,17 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
                         context.Writer.WriteObjectEnd();
                     }
                     context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetThemeGenerationConfig())
+                {
+                    context.Writer.WritePropertyName("themeGenerationConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ThemeGenerationConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ThemeGenerationConfig, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 writer.WriteObjectEnd();

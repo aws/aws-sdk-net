@@ -35,11 +35,11 @@ namespace Amazon.Personalize.Model
     /// 
     ///  
     /// <para>
-    /// There are three types of datasets:
+    /// There are 5 types of datasets:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Interactions
+    /// Item interactions
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -49,10 +49,19 @@ namespace Amazon.Personalize.Model
     /// <para>
     /// Users
     /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Action interactions
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Actions
+    /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// Each dataset type has an associated schema with required field types. Only the <code>Interactions</code>
-    /// dataset is required in order to train a model (also referred to as creating a solution).
+    /// Each dataset type has an associated schema with required field types. Only the <code>Item
+    /// interactions</code> dataset is required in order to train a model (also referred to
+    /// as creating a solution).
     /// </para>
     ///  
     /// <para>
@@ -143,6 +152,14 @@ namespace Amazon.Personalize.Model
         ///  </li> <li> 
         /// <para>
         /// Users
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Actions
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Action_Interactions
         /// </para>
         ///  </li> </ul>
         /// </summary>

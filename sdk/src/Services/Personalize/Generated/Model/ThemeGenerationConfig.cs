@@ -29,31 +29,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Personalize.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteEventTracker operation.
-    /// Deletes the event tracker. Does not delete the dataset from the dataset group. For
-    /// more information on event trackers, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateEventTracker.html">CreateEventTracker</a>.
+    /// The configuration details for generating themes with a batch inference job.
     /// </summary>
-    public partial class DeleteEventTrackerRequest : AmazonPersonalizeRequest
+    public partial class ThemeGenerationConfig
     {
-        private string _eventTrackerArn;
+        private FieldsForThemeGeneration _fieldsForThemeGeneration;
 
         /// <summary>
-        /// Gets and sets the property EventTrackerArn. 
+        /// Gets and sets the property FieldsForThemeGeneration. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the event tracker to delete.
+        /// Fields used to generate descriptive themes for a batch inference job.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
-        public string EventTrackerArn
+        [AWSProperty(Required=true)]
+        public FieldsForThemeGeneration FieldsForThemeGeneration
         {
-            get { return this._eventTrackerArn; }
-            set { this._eventTrackerArn = value; }
+            get { return this._fieldsForThemeGeneration; }
+            set { this._fieldsForThemeGeneration = value; }
         }
 
-        // Check to see if EventTrackerArn property is set
-        internal bool IsSetEventTrackerArn()
+        // Check to see if FieldsForThemeGeneration property is set
+        internal bool IsSetFieldsForThemeGeneration()
         {
-            return this._eventTrackerArn != null;
+            return this._fieldsForThemeGeneration != null;
         }
 
     }

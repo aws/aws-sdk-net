@@ -76,6 +76,12 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
                     unmarshalledObject.BatchInferenceJobConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("batchInferenceJobMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.BatchInferenceJobMode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("creationDateTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
@@ -140,6 +146,12 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("themeGenerationConfig", targetDepth))
+                {
+                    var unmarshaller = ThemeGenerationConfigUnmarshaller.Instance;
+                    unmarshalledObject.ThemeGenerationConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

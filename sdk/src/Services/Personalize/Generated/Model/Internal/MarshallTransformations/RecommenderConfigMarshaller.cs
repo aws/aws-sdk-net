@@ -45,6 +45,12 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RecommenderConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetEnableMetadataWithRecommendations())
+            {
+                context.Writer.WritePropertyName("enableMetadataWithRecommendations");
+                context.Writer.Write(requestObject.EnableMetadataWithRecommendations);
+            }
+
             if(requestObject.IsSetItemExplorationConfig())
             {
                 context.Writer.WritePropertyName("itemExplorationConfig");

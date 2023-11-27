@@ -30,13 +30,42 @@ namespace Amazon.Personalize.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateBatchInferenceJob operation.
-    /// Creates a batch inference job. The operation can handle up to 50 million records and
-    /// the input file must be in JSON format. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/creating-batch-inference-job.html">Creating
-    /// a batch inference job</a>.
+    /// Generates batch recommendations based on a list of items or users stored in Amazon
+    /// S3 and exports the recommendations to an Amazon S3 bucket.
+    /// 
+    ///  
+    /// <para>
+    /// To generate batch recommendations, specify the ARN of a solution version and an Amazon
+    /// S3 URI for the input and output data. For user personalization, popular items, and
+    /// personalized ranking solutions, the batch inference job generates a list of recommended
+    /// items for each user ID in the input file. For related items solutions, the job generates
+    /// a list of recommended items for each item ID in the input file.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/getting-batch-recommendations.html">Creating
+    /// a batch inference job </a>.
+    /// </para>
+    ///  
+    /// <para>
+    ///  If you use the Similar-Items recipe, Amazon Personalize can add descriptive themes
+    /// to batch recommendations. To generate themes, set the job's mode to <code>THEME_GENERATION</code>
+    /// and specify the name of the field that contains item names in the input data.
+    /// </para>
+    ///  
+    /// <para>
+    ///  For more information about generating themes, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/themed-batch-recommendations.html">Batch
+    /// recommendations with themes from Content Generator </a>. 
+    /// </para>
+    ///  
+    /// <para>
+    /// You can't get batch recommendations with the Trending-Now or Next-Best-Action recipes.
+    /// </para>
     /// </summary>
     public partial class CreateBatchInferenceJobRequest : AmazonPersonalizeRequest
     {
         private BatchInferenceJobConfig _batchInferenceJobConfig;
+        private BatchInferenceJobMode _batchInferenceJobMode;
         private string _filterArn;
         private BatchInferenceJobInput _jobInput;
         private string _jobName;
@@ -45,6 +74,7 @@ namespace Amazon.Personalize.Model
         private string _roleArn;
         private string _solutionVersionArn;
         private List<Tag> _tags = new List<Tag>();
+        private ThemeGenerationConfig _themeGenerationConfig;
 
         /// <summary>
         /// Gets and sets the property BatchInferenceJobConfig. 
@@ -62,6 +92,32 @@ namespace Amazon.Personalize.Model
         internal bool IsSetBatchInferenceJobConfig()
         {
             return this._batchInferenceJobConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BatchInferenceJobMode. 
+        /// <para>
+        /// The mode of the batch inference job. To generate descriptive themes for groups of
+        /// similar items, set the job mode to <code>THEME_GENERATION</code>. If you don't want
+        /// to generate themes, use the default <code>BATCH_INFERENCE</code>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  When you get batch recommendations with themes, you will incur additional costs.
+        /// For more information, see <a href="https://aws.amazon.com/personalize/pricing/">Amazon
+        /// Personalize pricing</a>. 
+        /// </para>
+        /// </summary>
+        public BatchInferenceJobMode BatchInferenceJobMode
+        {
+            get { return this._batchInferenceJobMode; }
+            set { this._batchInferenceJobMode = value; }
+        }
+
+        // Check to see if BatchInferenceJobMode property is set
+        internal bool IsSetBatchInferenceJobMode()
+        {
+            return this._batchInferenceJobMode != null;
         }
 
         /// <summary>
@@ -219,6 +275,25 @@ namespace Amazon.Personalize.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ThemeGenerationConfig. 
+        /// <para>
+        /// For theme generation jobs, specify the name of the column in your Items dataset that
+        /// contains each item's name.
+        /// </para>
+        /// </summary>
+        public ThemeGenerationConfig ThemeGenerationConfig
+        {
+            get { return this._themeGenerationConfig; }
+            set { this._themeGenerationConfig = value; }
+        }
+
+        // Check to see if ThemeGenerationConfig property is set
+        internal bool IsSetThemeGenerationConfig()
+        {
+            return this._themeGenerationConfig != null;
         }
 
     }

@@ -42,6 +42,7 @@ namespace Amazon.Personalize.Model
         private string _name;
         private string _schemaArn;
         private string _status;
+        private string _trackingId;
 
         /// <summary>
         /// Gets and sets the property CreationDateTime. 
@@ -115,6 +116,14 @@ namespace Amazon.Personalize.Model
         ///  </li> <li> 
         /// <para>
         /// Users
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Actions
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Action_Interactions
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -235,6 +244,27 @@ namespace Amazon.Personalize.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TrackingId. 
+        /// <para>
+        /// The ID of the event tracker for an Action interactions dataset. You specify the tracker's
+        /// ID in the <code>PutActionInteractions</code> API operation. Amazon Personalize uses
+        /// it to direct new data to the Action interactions dataset in your dataset group.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=256)]
+        public string TrackingId
+        {
+            get { return this._trackingId; }
+            set { this._trackingId = value; }
+        }
+
+        // Check to see if TrackingId property is set
+        internal bool IsSetTrackingId()
+        {
+            return this._trackingId != null;
         }
 
     }

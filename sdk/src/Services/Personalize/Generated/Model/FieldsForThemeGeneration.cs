@@ -29,31 +29,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Personalize.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteEventTracker operation.
-    /// Deletes the event tracker. Does not delete the dataset from the dataset group. For
-    /// more information on event trackers, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateEventTracker.html">CreateEventTracker</a>.
+    /// A string to string map of the configuration details for theme generation.
     /// </summary>
-    public partial class DeleteEventTrackerRequest : AmazonPersonalizeRequest
+    public partial class FieldsForThemeGeneration
     {
-        private string _eventTrackerArn;
+        private string _itemName;
 
         /// <summary>
-        /// Gets and sets the property EventTrackerArn. 
+        /// Gets and sets the property ItemName. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the event tracker to delete.
+        /// The name of the Items dataset column that stores the name of each item in the dataset.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
-        public string EventTrackerArn
+        [AWSProperty(Required=true, Max=150)]
+        public string ItemName
         {
-            get { return this._eventTrackerArn; }
-            set { this._eventTrackerArn = value; }
+            get { return this._itemName; }
+            set { this._itemName = value; }
         }
 
-        // Check to see if EventTrackerArn property is set
-        internal bool IsSetEventTrackerArn()
+        // Check to see if ItemName property is set
+        internal bool IsSetItemName()
         {
-            return this._eventTrackerArn != null;
+            return this._itemName != null;
         }
 
     }
