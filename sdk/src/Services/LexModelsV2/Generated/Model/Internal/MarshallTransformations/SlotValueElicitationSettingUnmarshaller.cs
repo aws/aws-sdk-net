@@ -94,6 +94,12 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.SlotConstraint = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("slotResolutionSetting", targetDepth))
+                {
+                    var unmarshaller = SlotResolutionSettingUnmarshaller.Instance;
+                    unmarshalledObject.SlotResolutionSetting = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("waitAndContinueSpecification", targetDepth))
                 {
                     var unmarshaller = WaitAndContinueSpecificationUnmarshaller.Instance;

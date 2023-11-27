@@ -2933,6 +2933,110 @@ namespace Amazon.LexModelsV2
 
 
     /// <summary>
+    /// Constants used for properties of type GenerationSortByAttribute.
+    /// </summary>
+    public class GenerationSortByAttribute : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CreationStartTime for GenerationSortByAttribute
+        /// </summary>
+        public static readonly GenerationSortByAttribute CreationStartTime = new GenerationSortByAttribute("creationStartTime");
+        /// <summary>
+        /// Constant LastUpdatedTime for GenerationSortByAttribute
+        /// </summary>
+        public static readonly GenerationSortByAttribute LastUpdatedTime = new GenerationSortByAttribute("lastUpdatedTime");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GenerationSortByAttribute(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GenerationSortByAttribute FindValue(string value)
+        {
+            return FindValue<GenerationSortByAttribute>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GenerationSortByAttribute(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type GenerationStatus.
+    /// </summary>
+    public class GenerationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Complete for GenerationStatus
+        /// </summary>
+        public static readonly GenerationStatus Complete = new GenerationStatus("Complete");
+        /// <summary>
+        /// Constant Failed for GenerationStatus
+        /// </summary>
+        public static readonly GenerationStatus Failed = new GenerationStatus("Failed");
+        /// <summary>
+        /// Constant InProgress for GenerationStatus
+        /// </summary>
+        public static readonly GenerationStatus InProgress = new GenerationStatus("InProgress");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GenerationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GenerationStatus FindValue(string value)
+        {
+            return FindValue<GenerationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GenerationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ImportExportFileFormat.
     /// </summary>
     public class ImportExportFileFormat : ConstantClass
@@ -3866,6 +3970,56 @@ namespace Amazon.LexModelsV2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SlotFilterOperator(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SlotResolutionStrategy.
+    /// </summary>
+    public class SlotResolutionStrategy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Default for SlotResolutionStrategy
+        /// </summary>
+        public static readonly SlotResolutionStrategy Default = new SlotResolutionStrategy("Default");
+        /// <summary>
+        /// Constant EnhancedFallback for SlotResolutionStrategy
+        /// </summary>
+        public static readonly SlotResolutionStrategy EnhancedFallback = new SlotResolutionStrategy("EnhancedFallback");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SlotResolutionStrategy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SlotResolutionStrategy FindValue(string value)
+        {
+            return FindValue<SlotResolutionStrategy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SlotResolutionStrategy(string value)
         {
             return FindValue(value);
         }

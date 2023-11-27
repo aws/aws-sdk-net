@@ -100,6 +100,17 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.SlotConstraint);
             }
 
+            if(requestObject.IsSetSlotResolutionSetting())
+            {
+                context.Writer.WritePropertyName("slotResolutionSetting");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = SlotResolutionSettingMarshaller.Instance;
+                marshaller.Marshall(requestObject.SlotResolutionSetting, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetWaitAndContinueSpecification())
             {
                 context.Writer.WritePropertyName("waitAndContinueSpecification");

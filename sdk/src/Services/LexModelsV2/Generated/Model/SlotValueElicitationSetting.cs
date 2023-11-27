@@ -38,6 +38,7 @@ namespace Amazon.LexModelsV2.Model
         private List<SampleUtterance> _sampleUtterances = new List<SampleUtterance>();
         private SlotCaptureSetting _slotCaptureSetting;
         private SlotConstraint _slotConstraint;
+        private SlotResolutionSetting _slotResolutionSetting;
         private WaitAndContinueSpecification _waitAndContinueSpecification;
 
         /// <summary>
@@ -134,6 +135,25 @@ namespace Amazon.LexModelsV2.Model
         internal bool IsSetSlotConstraint()
         {
             return this._slotConstraint != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SlotResolutionSetting. 
+        /// <para>
+        /// An object containing information about whether assisted slot resolution is turned
+        /// on for the slot or not.
+        /// </para>
+        /// </summary>
+        public SlotResolutionSetting SlotResolutionSetting
+        {
+            get { return this._slotResolutionSetting; }
+            set { this._slotResolutionSetting = value; }
+        }
+
+        // Check to see if SlotResolutionSetting property is set
+        internal bool IsSetSlotResolutionSetting()
+        {
+            return this._slotResolutionSetting != null;
         }
 
         /// <summary>

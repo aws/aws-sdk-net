@@ -854,15 +854,11 @@ namespace Amazon.LexModelsV2
 
 
         /// <summary>
-        /// Creates a new version of the bot based on the <code>DRAFT</code> version. If the <code>DRAFT</code>
-        /// version of this resource hasn't changed since you created the last version, Amazon
-        /// Lex doesn't create a new version, it returns the last created version.
-        /// 
-        ///  
-        /// <para>
-        /// When you create the first version of a bot, Amazon Lex sets the version to 1. Subsequent
-        /// versions increment by 1.
-        /// </para>
+        /// Creates an immutable version of the bot. When you create the first version of a bot,
+        /// Amazon Lex sets the version number to 1. Subsequent bot versions increase in an increment
+        /// of 1. The version number will always represent the total number of versions created
+        /// of the bot, not the current number of versions. If a bot version is deleted, that
+        /// bot version number will not be reused.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateBotVersion service method.</param>
         /// 
@@ -901,15 +897,11 @@ namespace Amazon.LexModelsV2
 
 
         /// <summary>
-        /// Creates a new version of the bot based on the <code>DRAFT</code> version. If the <code>DRAFT</code>
-        /// version of this resource hasn't changed since you created the last version, Amazon
-        /// Lex doesn't create a new version, it returns the last created version.
-        /// 
-        ///  
-        /// <para>
-        /// When you create the first version of a bot, Amazon Lex sets the version to 1. Subsequent
-        /// versions increment by 1.
-        /// </para>
+        /// Creates an immutable version of the bot. When you create the first version of a bot,
+        /// Amazon Lex sets the version number to 1. Subsequent bot versions increase in an increment
+        /// of 1. The version number will always represent the total number of versions created
+        /// of the bot, not the current number of versions. If a bot version is deleted, that
+        /// bot version number will not be reused.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateBotVersion service method.</param>
         /// <param name="cancellationToken">
@@ -3301,6 +3293,81 @@ namespace Amazon.LexModelsV2
 
         #endregion
         
+        #region  DescribeBotResourceGeneration
+
+
+        /// <summary>
+        /// Returns information about a request to generate a bot through natural language description,
+        /// made through the <code>StartBotResource</code> API. Use the <code>generatedBotLocaleUrl</code>
+        /// to retrieve the Amazon S3 object containing the bot locale configuration. You can
+        /// then modify and import this configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeBotResourceGeneration service method.</param>
+        /// 
+        /// <returns>The response from the DescribeBotResourceGeneration service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// The service encountered an unexpected condition. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ResourceNotFoundException">
+        /// You asked to describe a resource that doesn't exist. Check the resource that you are
+        /// requesting and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// Your request rate is too high. Reduce the frequency of requests.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeBotResourceGeneration">REST API Reference for DescribeBotResourceGeneration Operation</seealso>
+        public virtual DescribeBotResourceGenerationResponse DescribeBotResourceGeneration(DescribeBotResourceGenerationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeBotResourceGenerationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeBotResourceGenerationResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeBotResourceGenerationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns information about a request to generate a bot through natural language description,
+        /// made through the <code>StartBotResource</code> API. Use the <code>generatedBotLocaleUrl</code>
+        /// to retrieve the Amazon S3 object containing the bot locale configuration. You can
+        /// then modify and import this configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeBotResourceGeneration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeBotResourceGeneration service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// The service encountered an unexpected condition. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ResourceNotFoundException">
+        /// You asked to describe a resource that doesn't exist. Check the resource that you are
+        /// requesting and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// Your request rate is too high. Reduce the frequency of requests.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeBotResourceGeneration">REST API Reference for DescribeBotResourceGeneration Operation</seealso>
+        public virtual Task<DescribeBotResourceGenerationResponse> DescribeBotResourceGenerationAsync(DescribeBotResourceGenerationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeBotResourceGenerationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeBotResourceGenerationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeBotResourceGenerationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeBotVersion
 
 
@@ -4175,6 +4242,99 @@ namespace Amazon.LexModelsV2
 
         #endregion
         
+        #region  GenerateBotElement
+
+
+        /// <summary>
+        /// Generates sample utterances for an intent.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GenerateBotElement service method.</param>
+        /// 
+        /// <returns>The response from the GenerateBotElement service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.ConflictException">
+        /// The action that you tried to perform couldn't be completed because the resource is
+        /// in a conflicting state. For example, deleting a bot that is in the CREATING state.
+        /// Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// The service encountered an unexpected condition. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.PreconditionFailedException">
+        /// Your request couldn't be completed because one or more request fields aren't valid.
+        /// Check the fields in your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ResourceNotFoundException">
+        /// You asked to describe a resource that doesn't exist. Check the resource that you are
+        /// requesting and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
+        /// You have reached a quota for your bot.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// Your request rate is too high. Reduce the frequency of requests.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/GenerateBotElement">REST API Reference for GenerateBotElement Operation</seealso>
+        public virtual GenerateBotElementResponse GenerateBotElement(GenerateBotElementRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GenerateBotElementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GenerateBotElementResponseUnmarshaller.Instance;
+
+            return Invoke<GenerateBotElementResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Generates sample utterances for an intent.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GenerateBotElement service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GenerateBotElement service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.ConflictException">
+        /// The action that you tried to perform couldn't be completed because the resource is
+        /// in a conflicting state. For example, deleting a bot that is in the CREATING state.
+        /// Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// The service encountered an unexpected condition. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.PreconditionFailedException">
+        /// Your request couldn't be completed because one or more request fields aren't valid.
+        /// Check the fields in your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ResourceNotFoundException">
+        /// You asked to describe a resource that doesn't exist. Check the resource that you are
+        /// requesting and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
+        /// You have reached a quota for your bot.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// Your request rate is too high. Reduce the frequency of requests.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/GenerateBotElement">REST API Reference for GenerateBotElement Operation</seealso>
+        public virtual Task<GenerateBotElementResponse> GenerateBotElementAsync(GenerateBotElementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GenerateBotElementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GenerateBotElementResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GenerateBotElementResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetTestExecutionArtifactsUrl
 
 
@@ -4588,6 +4748,75 @@ namespace Amazon.LexModelsV2
             options.ResponseUnmarshaller = ListBotRecommendationsResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListBotRecommendationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListBotResourceGenerations
+
+
+        /// <summary>
+        /// Lists the generation requests made for a bot locale.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListBotResourceGenerations service method.</param>
+        /// 
+        /// <returns>The response from the ListBotResourceGenerations service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// The service encountered an unexpected condition. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ResourceNotFoundException">
+        /// You asked to describe a resource that doesn't exist. Check the resource that you are
+        /// requesting and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// Your request rate is too high. Reduce the frequency of requests.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListBotResourceGenerations">REST API Reference for ListBotResourceGenerations Operation</seealso>
+        public virtual ListBotResourceGenerationsResponse ListBotResourceGenerations(ListBotResourceGenerationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListBotResourceGenerationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListBotResourceGenerationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListBotResourceGenerationsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists the generation requests made for a bot locale.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListBotResourceGenerations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListBotResourceGenerations service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// The service encountered an unexpected condition. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ResourceNotFoundException">
+        /// You asked to describe a resource that doesn't exist. Check the resource that you are
+        /// requesting and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// Your request rate is too high. Reduce the frequency of requests.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListBotResourceGenerations">REST API Reference for ListBotResourceGenerations Operation</seealso>
+        public virtual Task<ListBotResourceGenerationsResponse> ListBotResourceGenerationsAsync(ListBotResourceGenerationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListBotResourceGenerationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListBotResourceGenerationsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListBotResourceGenerationsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -6867,6 +7096,99 @@ namespace Amazon.LexModelsV2
             options.ResponseUnmarshaller = StartBotRecommendationResponseUnmarshaller.Instance;
             
             return InvokeAsync<StartBotRecommendationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartBotResourceGeneration
+
+
+        /// <summary>
+        /// Starts a request for the descriptive bot builder to generate a bot locale configuration
+        /// based on the prompt you provide it. After you make this call, use the <code>DescribeBotResourceGeneration</code>
+        /// operation to check on the status of the generation and for the <code>generatedBotLocaleUrl</code>
+        /// when the generation is complete. Use that value to retrieve the Amazon S3 object containing
+        /// the bot locale configuration. You can then modify and import this configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartBotResourceGeneration service method.</param>
+        /// 
+        /// <returns>The response from the StartBotResourceGeneration service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.ConflictException">
+        /// The action that you tried to perform couldn't be completed because the resource is
+        /// in a conflicting state. For example, deleting a bot that is in the CREATING state.
+        /// Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// The service encountered an unexpected condition. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.PreconditionFailedException">
+        /// Your request couldn't be completed because one or more request fields aren't valid.
+        /// Check the fields in your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
+        /// You have reached a quota for your bot.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// Your request rate is too high. Reduce the frequency of requests.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/StartBotResourceGeneration">REST API Reference for StartBotResourceGeneration Operation</seealso>
+        public virtual StartBotResourceGenerationResponse StartBotResourceGeneration(StartBotResourceGenerationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartBotResourceGenerationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartBotResourceGenerationResponseUnmarshaller.Instance;
+
+            return Invoke<StartBotResourceGenerationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Starts a request for the descriptive bot builder to generate a bot locale configuration
+        /// based on the prompt you provide it. After you make this call, use the <code>DescribeBotResourceGeneration</code>
+        /// operation to check on the status of the generation and for the <code>generatedBotLocaleUrl</code>
+        /// when the generation is complete. Use that value to retrieve the Amazon S3 object containing
+        /// the bot locale configuration. You can then modify and import this configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartBotResourceGeneration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartBotResourceGeneration service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.ConflictException">
+        /// The action that you tried to perform couldn't be completed because the resource is
+        /// in a conflicting state. For example, deleting a bot that is in the CREATING state.
+        /// Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// The service encountered an unexpected condition. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.PreconditionFailedException">
+        /// Your request couldn't be completed because one or more request fields aren't valid.
+        /// Check the fields in your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
+        /// You have reached a quota for your bot.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// Your request rate is too high. Reduce the frequency of requests.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/StartBotResourceGeneration">REST API Reference for StartBotResourceGeneration Operation</seealso>
+        public virtual Task<StartBotResourceGenerationResponse> StartBotResourceGenerationAsync(StartBotResourceGenerationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartBotResourceGenerationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartBotResourceGenerationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartBotResourceGenerationResponse>(request, options, cancellationToken);
         }
 
         #endregion

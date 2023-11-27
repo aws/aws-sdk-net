@@ -39,6 +39,7 @@ namespace Amazon.LexModelsV2.Model
         private DateTime? _creationDateTime;
         private string _description;
         private List<string> _failureReasons = new List<string>();
+        private GenerativeAISettings _generativeaiSettings;
         private DateTime? _lastUpdatedDateTime;
         private string _localeId;
         private string _localeName;
@@ -157,6 +158,25 @@ namespace Amazon.LexModelsV2.Model
         internal bool IsSetFailureReasons()
         {
             return this._failureReasons != null && this._failureReasons.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property GenerativeAISettings. 
+        /// <para>
+        /// Contains settings for generative AI features powered by Amazon Bedrock for your bot
+        /// locale.
+        /// </para>
+        /// </summary>
+        public GenerativeAISettings GenerativeAISettings
+        {
+            get { return this._generativeaiSettings; }
+            set { this._generativeaiSettings = value; }
+        }
+
+        // Check to see if GenerativeAISettings property is set
+        internal bool IsSetGenerativeAISettings()
+        {
+            return this._generativeaiSettings != null;
         }
 
         /// <summary>

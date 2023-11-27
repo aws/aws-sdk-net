@@ -68,6 +68,14 @@ namespace Amazon.LexModelsV2.Model
         }
 
         /// <summary>
+        /// Paginator for ListBotResourceGenerations operation
+        ///</summary>
+        public IListBotResourceGenerationsPaginator ListBotResourceGenerations(ListBotResourceGenerationsRequest request) 
+        {
+            return new ListBotResourceGenerationsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListBots operation
         ///</summary>
         public IListBotsPaginator ListBots(ListBotsRequest request) 

@@ -87,6 +87,12 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                     response.FailureReasons = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("generativeAISettings", targetDepth))
+                {
+                    var unmarshaller = GenerativeAISettingsUnmarshaller.Instance;
+                    response.GenerativeAISettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("lastUpdatedDateTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

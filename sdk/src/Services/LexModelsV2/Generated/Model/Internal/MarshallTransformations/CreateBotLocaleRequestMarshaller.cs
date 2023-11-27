@@ -77,6 +77,17 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Description);
                 }
 
+                if(publicRequest.IsSetGenerativeAISettings())
+                {
+                    context.Writer.WritePropertyName("generativeAISettings");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = GenerativeAISettingsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.GenerativeAISettings, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetLocaleId())
                 {
                     context.Writer.WritePropertyName("localeId");

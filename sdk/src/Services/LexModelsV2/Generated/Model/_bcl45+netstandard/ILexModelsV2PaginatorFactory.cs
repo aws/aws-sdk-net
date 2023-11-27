@@ -46,6 +46,11 @@ namespace Amazon.LexModelsV2.Model
         IListBotRecommendationsPaginator ListBotRecommendations(ListBotRecommendationsRequest request);
 
         /// <summary>
+        /// Paginator for ListBotResourceGenerations operation
+        ///</summary>
+        IListBotResourceGenerationsPaginator ListBotResourceGenerations(ListBotResourceGenerationsRequest request);
+
+        /// <summary>
         /// Paginator for ListBots operation
         ///</summary>
         IListBotsPaginator ListBots(ListBotsRequest request);

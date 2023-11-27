@@ -794,15 +794,11 @@ namespace Amazon.LexModelsV2
         #region  CreateBotVersion
 
         /// <summary>
-        /// Creates a new version of the bot based on the <code>DRAFT</code> version. If the <code>DRAFT</code>
-        /// version of this resource hasn't changed since you created the last version, Amazon
-        /// Lex doesn't create a new version, it returns the last created version.
-        /// 
-        ///  
-        /// <para>
-        /// When you create the first version of a bot, Amazon Lex sets the version to 1. Subsequent
-        /// versions increment by 1.
-        /// </para>
+        /// Creates an immutable version of the bot. When you create the first version of a bot,
+        /// Amazon Lex sets the version number to 1. Subsequent bot versions increase in an increment
+        /// of 1. The version number will always represent the total number of versions created
+        /// of the bot, not the current number of versions. If a bot version is deleted, that
+        /// bot version number will not be reused.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateBotVersion service method.</param>
         /// 
@@ -2921,6 +2917,77 @@ namespace Amazon.LexModelsV2
 
         #endregion
         
+        #region  DescribeBotResourceGeneration
+
+        /// <summary>
+        /// Returns information about a request to generate a bot through natural language description,
+        /// made through the <code>StartBotResource</code> API. Use the <code>generatedBotLocaleUrl</code>
+        /// to retrieve the Amazon S3 object containing the bot locale configuration. You can
+        /// then modify and import this configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeBotResourceGeneration service method.</param>
+        /// 
+        /// <returns>The response from the DescribeBotResourceGeneration service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// The service encountered an unexpected condition. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ResourceNotFoundException">
+        /// You asked to describe a resource that doesn't exist. Check the resource that you are
+        /// requesting and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// Your request rate is too high. Reduce the frequency of requests.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeBotResourceGeneration">REST API Reference for DescribeBotResourceGeneration Operation</seealso>
+        public virtual DescribeBotResourceGenerationResponse DescribeBotResourceGeneration(DescribeBotResourceGenerationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeBotResourceGenerationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeBotResourceGenerationResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeBotResourceGenerationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeBotResourceGeneration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeBotResourceGeneration operation on AmazonLexModelsV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeBotResourceGeneration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeBotResourceGeneration">REST API Reference for DescribeBotResourceGeneration Operation</seealso>
+        public virtual IAsyncResult BeginDescribeBotResourceGeneration(DescribeBotResourceGenerationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeBotResourceGenerationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeBotResourceGenerationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeBotResourceGeneration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeBotResourceGeneration.</param>
+        /// 
+        /// <returns>Returns a  DescribeBotResourceGenerationResult from LexModelsV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeBotResourceGeneration">REST API Reference for DescribeBotResourceGeneration Operation</seealso>
+        public virtual DescribeBotResourceGenerationResponse EndDescribeBotResourceGeneration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeBotResourceGenerationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeBotVersion
 
         /// <summary>
@@ -3760,6 +3827,86 @@ namespace Amazon.LexModelsV2
 
         #endregion
         
+        #region  GenerateBotElement
+
+        /// <summary>
+        /// Generates sample utterances for an intent.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GenerateBotElement service method.</param>
+        /// 
+        /// <returns>The response from the GenerateBotElement service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.ConflictException">
+        /// The action that you tried to perform couldn't be completed because the resource is
+        /// in a conflicting state. For example, deleting a bot that is in the CREATING state.
+        /// Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// The service encountered an unexpected condition. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.PreconditionFailedException">
+        /// Your request couldn't be completed because one or more request fields aren't valid.
+        /// Check the fields in your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ResourceNotFoundException">
+        /// You asked to describe a resource that doesn't exist. Check the resource that you are
+        /// requesting and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
+        /// You have reached a quota for your bot.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// Your request rate is too high. Reduce the frequency of requests.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/GenerateBotElement">REST API Reference for GenerateBotElement Operation</seealso>
+        public virtual GenerateBotElementResponse GenerateBotElement(GenerateBotElementRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GenerateBotElementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GenerateBotElementResponseUnmarshaller.Instance;
+
+            return Invoke<GenerateBotElementResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GenerateBotElement operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GenerateBotElement operation on AmazonLexModelsV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGenerateBotElement
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/GenerateBotElement">REST API Reference for GenerateBotElement Operation</seealso>
+        public virtual IAsyncResult BeginGenerateBotElement(GenerateBotElementRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GenerateBotElementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GenerateBotElementResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GenerateBotElement operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGenerateBotElement.</param>
+        /// 
+        /// <returns>Returns a  GenerateBotElementResult from LexModelsV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/GenerateBotElement">REST API Reference for GenerateBotElement Operation</seealso>
+        public virtual GenerateBotElementResponse EndGenerateBotElement(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GenerateBotElementResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetTestExecutionArtifactsUrl
 
         /// <summary>
@@ -4132,6 +4279,74 @@ namespace Amazon.LexModelsV2
         public virtual ListBotRecommendationsResponse EndListBotRecommendations(IAsyncResult asyncResult)
         {
             return EndInvoke<ListBotRecommendationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListBotResourceGenerations
+
+        /// <summary>
+        /// Lists the generation requests made for a bot locale.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListBotResourceGenerations service method.</param>
+        /// 
+        /// <returns>The response from the ListBotResourceGenerations service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// The service encountered an unexpected condition. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ResourceNotFoundException">
+        /// You asked to describe a resource that doesn't exist. Check the resource that you are
+        /// requesting and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// Your request rate is too high. Reduce the frequency of requests.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListBotResourceGenerations">REST API Reference for ListBotResourceGenerations Operation</seealso>
+        public virtual ListBotResourceGenerationsResponse ListBotResourceGenerations(ListBotResourceGenerationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListBotResourceGenerationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListBotResourceGenerationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListBotResourceGenerationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListBotResourceGenerations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListBotResourceGenerations operation on AmazonLexModelsV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListBotResourceGenerations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListBotResourceGenerations">REST API Reference for ListBotResourceGenerations Operation</seealso>
+        public virtual IAsyncResult BeginListBotResourceGenerations(ListBotResourceGenerationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListBotResourceGenerationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListBotResourceGenerationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListBotResourceGenerations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListBotResourceGenerations.</param>
+        /// 
+        /// <returns>Returns a  ListBotResourceGenerationsResult from LexModelsV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListBotResourceGenerations">REST API Reference for ListBotResourceGenerations Operation</seealso>
+        public virtual ListBotResourceGenerationsResponse EndListBotResourceGenerations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListBotResourceGenerationsResponse>(asyncResult);
         }
 
         #endregion
@@ -6109,6 +6324,86 @@ namespace Amazon.LexModelsV2
         public virtual StartBotRecommendationResponse EndStartBotRecommendation(IAsyncResult asyncResult)
         {
             return EndInvoke<StartBotRecommendationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StartBotResourceGeneration
+
+        /// <summary>
+        /// Starts a request for the descriptive bot builder to generate a bot locale configuration
+        /// based on the prompt you provide it. After you make this call, use the <code>DescribeBotResourceGeneration</code>
+        /// operation to check on the status of the generation and for the <code>generatedBotLocaleUrl</code>
+        /// when the generation is complete. Use that value to retrieve the Amazon S3 object containing
+        /// the bot locale configuration. You can then modify and import this configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartBotResourceGeneration service method.</param>
+        /// 
+        /// <returns>The response from the StartBotResourceGeneration service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.ConflictException">
+        /// The action that you tried to perform couldn't be completed because the resource is
+        /// in a conflicting state. For example, deleting a bot that is in the CREATING state.
+        /// Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// The service encountered an unexpected condition. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.PreconditionFailedException">
+        /// Your request couldn't be completed because one or more request fields aren't valid.
+        /// Check the fields in your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
+        /// You have reached a quota for your bot.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// Your request rate is too high. Reduce the frequency of requests.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/StartBotResourceGeneration">REST API Reference for StartBotResourceGeneration Operation</seealso>
+        public virtual StartBotResourceGenerationResponse StartBotResourceGeneration(StartBotResourceGenerationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartBotResourceGenerationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartBotResourceGenerationResponseUnmarshaller.Instance;
+
+            return Invoke<StartBotResourceGenerationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartBotResourceGeneration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartBotResourceGeneration operation on AmazonLexModelsV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartBotResourceGeneration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/StartBotResourceGeneration">REST API Reference for StartBotResourceGeneration Operation</seealso>
+        public virtual IAsyncResult BeginStartBotResourceGeneration(StartBotResourceGenerationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartBotResourceGenerationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartBotResourceGenerationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartBotResourceGeneration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartBotResourceGeneration.</param>
+        /// 
+        /// <returns>Returns a  StartBotResourceGenerationResult from LexModelsV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/StartBotResourceGeneration">REST API Reference for StartBotResourceGeneration Operation</seealso>
+        public virtual StartBotResourceGenerationResponse EndStartBotResourceGeneration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartBotResourceGenerationResponse>(asyncResult);
         }
 
         #endregion

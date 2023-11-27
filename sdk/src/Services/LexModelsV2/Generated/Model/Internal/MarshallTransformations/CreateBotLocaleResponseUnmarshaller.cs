@@ -81,6 +81,12 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                     response.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("generativeAISettings", targetDepth))
+                {
+                    var unmarshaller = GenerativeAISettingsUnmarshaller.Instance;
+                    response.GenerativeAISettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("localeId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

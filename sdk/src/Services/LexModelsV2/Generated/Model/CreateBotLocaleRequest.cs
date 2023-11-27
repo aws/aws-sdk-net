@@ -39,6 +39,7 @@ namespace Amazon.LexModelsV2.Model
         private string _botId;
         private string _botVersion;
         private string _description;
+        private GenerativeAISettings _generativeaiSettings;
         private string _localeId;
         private double? _nluIntentConfidenceThreshold;
         private VoiceSettings _voiceSettings;
@@ -99,6 +100,21 @@ namespace Amazon.LexModelsV2.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GenerativeAISettings.
+        /// </summary>
+        public GenerativeAISettings GenerativeAISettings
+        {
+            get { return this._generativeaiSettings; }
+            set { this._generativeaiSettings = value; }
+        }
+
+        // Check to see if GenerativeAISettings property is set
+        internal bool IsSetGenerativeAISettings()
+        {
+            return this._generativeaiSettings != null;
         }
 
         /// <summary>
