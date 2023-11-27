@@ -30,8 +30,7 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeOrderableDBInstanceOptions operation.
-    /// Returns a list of orderable DB instance options for the specified DB engine, DB engine
-    /// version, and DB instance class.
+    /// Describes the orderable DB instance options for a specified DB engine.
     /// </summary>
     public partial class DescribeOrderableDBInstanceOptionsRequest : AmazonRDSRequest
     {
@@ -49,16 +48,16 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property AvailabilityZoneGroup. 
         /// <para>
         /// The Availability Zone group associated with a Local Zone. Specify this parameter to
-        /// retrieve available offerings for the Local Zones in the group.
+        /// retrieve available options for the Local Zones in the group.
         /// </para>
         ///  
         /// <para>
-        /// Omit this parameter to show the available offerings in the specified Amazon Web Services
+        /// Omit this parameter to show the available options in the specified Amazon Web Services
         /// Region.
         /// </para>
         ///  
         /// <para>
-        /// This setting doesn't apply to RDS Custom.
+        /// This setting doesn't apply to RDS Custom DB instances.
         /// </para>
         /// </summary>
         public string AvailabilityZoneGroup
@@ -76,8 +75,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBInstanceClass. 
         /// <para>
-        /// The DB instance class filter value. Specify this parameter to show only the available
-        /// offerings matching the specified DB instance class.
+        /// A filter to include only the available options for the specified DB instance class.
         /// </para>
         /// </summary>
         public string DBInstanceClass
@@ -95,7 +93,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        /// The name of the engine to retrieve DB instance options for.
+        /// The name of the engine to describe DB instance options for.
         /// </para>
         ///  
         /// <para>
@@ -112,6 +110,14 @@ namespace Amazon.RDS.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>custom-oracle-ee</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>db2-ae</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>db2-se</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -175,8 +181,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
-        /// The engine version filter value. Specify this parameter to show only the available
-        /// offerings matching the specified engine version.
+        /// A filter to include only the available options for the specified engine version.
         /// </para>
         /// </summary>
         public string EngineVersion
@@ -212,8 +217,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property LicenseModel. 
         /// <para>
-        /// The license model filter value. Specify this parameter to show only the available
-        /// offerings matching the specified license model.
+        /// A filter to include only the available options for the specified license model.
         /// </para>
         ///  
         /// <para>

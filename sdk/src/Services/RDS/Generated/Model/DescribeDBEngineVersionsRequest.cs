@@ -119,6 +119,14 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>db2-ae</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>db2-se</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>mariadb</code> 
         /// </para>
         ///  </li> <li> 

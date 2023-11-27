@@ -36,7 +36,7 @@ namespace Amazon.RDS.Model
     ///  
     /// <para>
     /// Amazon RDS supports upgrading DB snapshots for MySQL, PostgreSQL, and Oracle. This
-    /// command doesn't apply to RDS Custom.
+    /// operation doesn't apply to RDS Custom or RDS for Db2.
     /// </para>
     /// </summary>
     public partial class ModifyDBSnapshotRequest : AmazonRDSRequest

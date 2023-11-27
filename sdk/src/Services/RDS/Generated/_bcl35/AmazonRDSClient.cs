@@ -46,8 +46,8 @@ namespace Amazon.RDS
     ///  
     /// <para>
     /// Amazon RDS gives you access to the capabilities of a MySQL, MariaDB, PostgreSQL, Microsoft
-    /// SQL Server, Oracle, or Amazon Aurora database server. These capabilities mean that
-    /// the code, applications, and tools you already use today with your existing databases
+    /// SQL Server, Oracle, Db2, or Amazon Aurora database server. These capabilities mean
+    /// that the code, applications, and tools you already use today with your existing databases
     /// work with Amazon RDS without modification. Amazon RDS automatically backs up your
     /// database and maintains the database software that powers your DB instance. Amazon
     /// RDS is flexible: you can scale your DB instance's compute resources and storage capacity
@@ -2092,9 +2092,9 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Creates a new DB instance that acts as a read replica for an existing source DB instance
-        /// or Multi-AZ DB cluster. You can create a read replica for a DB instance running MySQL,
-        /// MariaDB, Oracle, PostgreSQL, or SQL Server. You can create a read replica for a Multi-AZ
-        /// DB cluster running MySQL or PostgreSQL. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html">Working
+        /// or Multi-AZ DB cluster. You can create a read replica for a DB instance running Db2,
+        /// MariaDB, MySQL, Oracle, PostgreSQL, or SQL Server. You can create a read replica for
+        /// a Multi-AZ DB cluster running MySQL or PostgreSQL. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html">Working
         /// with read replicas</a> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html#multi-az-db-clusters-migrating-to-instance-with-read-replica">Migrating
         /// from a Multi-AZ DB cluster to a DB instance using a read replica</a> in the <i>Amazon
         /// RDS User Guide</i>.
@@ -6981,7 +6981,7 @@ namespace Amazon.RDS
         #region  DescribeOptionGroupOptions
 
         /// <summary>
-        /// Describes all available options.
+        /// Describes all available options for the specified engine.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeOptionGroupOptions service method.</param>
         /// 
@@ -7106,8 +7106,7 @@ namespace Amazon.RDS
         #region  DescribeOrderableDBInstanceOptions
 
         /// <summary>
-        /// Returns a list of orderable DB instance options for the specified DB engine, DB engine
-        /// version, and DB instance class.
+        /// Describes the orderable DB instance options for a specified DB engine.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeOrderableDBInstanceOptions service method.</param>
         /// 
@@ -8134,7 +8133,7 @@ namespace Amazon.RDS
         /// </para>
         ///  </important> <note> 
         /// <para>
-        /// This action only applies to Aurora Serverless v1 DB clusters.
+        /// This operation only applies to Aurora Serverless v1 DB clusters.
         /// </para>
         ///  </note>
         /// </summary>
@@ -8398,7 +8397,7 @@ namespace Amazon.RDS
         /// 
         ///  <note> 
         /// <para>
-        /// This action only applies to Aurora DB clusters.
+        /// This operation only applies to Aurora DB clusters.
         /// </para>
         ///  </note>
         /// </summary>
@@ -8479,7 +8478,7 @@ namespace Amazon.RDS
         /// <para>
         /// After you create a DB cluster parameter group, you should wait at least 5 minutes
         /// before creating your first DB cluster that uses that DB cluster parameter group as
-        /// the default parameter group. This allows Amazon RDS to fully complete the create action
+        /// the default parameter group. This allows Amazon RDS to fully complete the create operation
         /// before the parameter group is used as the default for a new DB cluster. This is especially
         /// important for parameters that are critical when creating the default database for
         /// a DB cluster, such as the character set for the default database defined by the <code>character_set_database</code>
@@ -8798,7 +8797,7 @@ namespace Amazon.RDS
         /// <para>
         /// After you modify a DB parameter group, you should wait at least 5 minutes before creating
         /// your first DB instance that uses that DB parameter group as the default parameter
-        /// group. This allows Amazon RDS to fully complete the modify action before the parameter
+        /// group. This allows Amazon RDS to fully complete the modify operation before the parameter
         /// group is used as the default for a new DB instance. This is especially important for
         /// parameters that are critical when creating the default database for a DB instance,
         /// such as the character set for the default database defined by the <code>character_set_database</code>
@@ -9071,7 +9070,7 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// Amazon RDS supports upgrading DB snapshots for MySQL, PostgreSQL, and Oracle. This
-        /// command doesn't apply to RDS Custom.
+        /// operation doesn't apply to RDS Custom or RDS for Db2.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyDBSnapshot service method.</param>
@@ -10032,7 +10031,7 @@ namespace Amazon.RDS
         /// 
         ///  <note> 
         /// <para>
-        /// This action only applies to Aurora DB clusters.
+        /// This operation only applies to Aurora DB clusters.
         /// </para>
         ///  </note>
         /// </summary>
@@ -10549,11 +10548,11 @@ namespace Amazon.RDS
         /// 
         ///  <note> 
         /// <para>
-        /// This action only restores the DB cluster, not the DB instances for that DB cluster.
-        /// You must invoke the <code>CreateDBInstance</code> action to create DB instances for
-        /// the restored DB cluster, specifying the identifier of the restored DB cluster in <code>DBClusterIdentifier</code>.
-        /// You can create DB instances only after the <code>RestoreDBClusterFromS3</code> action
-        /// has completed and the DB cluster is available.
+        /// This operation only restores the DB cluster, not the DB instances for that DB cluster.
+        /// You must invoke the <code>CreateDBInstance</code> operation to create DB instances
+        /// for the restored DB cluster, specifying the identifier of the restored DB cluster
+        /// in <code>DBClusterIdentifier</code>. You can create DB instances only after the <code>RestoreDBClusterFromS3</code>
+        /// operation has completed and the DB cluster is available.
         /// </para>
         ///  </note> 
         /// <para>
@@ -10562,7 +10561,7 @@ namespace Amazon.RDS
         /// </para>
         ///  <note> 
         /// <para>
-        /// This action only applies to Aurora DB clusters. The source DB engine must be MySQL.
+        /// This operation only applies to Aurora DB clusters. The source DB engine must be MySQL.
         /// </para>
         ///  </note>
         /// </summary>
@@ -10682,11 +10681,11 @@ namespace Amazon.RDS
         /// </para>
         ///  <note> 
         /// <para>
-        /// This action only restores the DB cluster, not the DB instances for that DB cluster.
-        /// You must invoke the <code>CreateDBInstance</code> action to create DB instances for
-        /// the restored DB cluster, specifying the identifier of the restored DB cluster in <code>DBClusterIdentifier</code>.
-        /// You can create DB instances only after the <code>RestoreDBClusterFromSnapshot</code>
-        /// action has completed and the DB cluster is available.
+        /// This operation only restores the DB cluster, not the DB instances for that DB cluster.
+        /// You must invoke the <code>CreateDBInstance</code> operation to create DB instances
+        /// for the restored DB cluster, specifying the identifier of the restored DB cluster
+        /// in <code>DBClusterIdentifier</code>. You can create DB instances only after the <code>RestoreDBClusterFromSnapshot</code>
+        /// operation has completed and the DB cluster is available.
         /// </para>
         ///  </note> 
         /// <para>
@@ -10825,12 +10824,12 @@ namespace Amazon.RDS
         /// 
         ///  <note> 
         /// <para>
-        /// For Aurora, this action only restores the DB cluster, not the DB instances for that
-        /// DB cluster. You must invoke the <code>CreateDBInstance</code> action to create DB
-        /// instances for the restored DB cluster, specifying the identifier of the restored DB
-        /// cluster in <code>DBClusterIdentifier</code>. You can create DB instances only after
-        /// the <code>RestoreDBClusterToPointInTime</code> action has completed and the DB cluster
-        /// is available.
+        /// For Aurora, this operation only restores the DB cluster, not the DB instances for
+        /// that DB cluster. You must invoke the <code>CreateDBInstance</code> operation to create
+        /// DB instances for the restored DB cluster, specifying the identifier of the restored
+        /// DB cluster in <code>DBClusterIdentifier</code>. You can create DB instances only after
+        /// the <code>RestoreDBClusterToPointInTime</code> operation has completed and the DB
+        /// cluster is available.
         /// </para>
         ///  </note> 
         /// <para>
@@ -10970,12 +10969,12 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// If you want to replace your original DB instance with the new, restored DB instance,
-        /// then rename your original DB instance before you call the RestoreDBInstanceFromDBSnapshot
-        /// action. RDS doesn't allow two DB instances with the same name. After you have renamed
+        /// then rename your original DB instance before you call the <code>RestoreDBInstanceFromDBSnapshot</code>
+        /// operation. RDS doesn't allow two DB instances with the same name. After you have renamed
         /// your original DB instance with a different identifier, then you can pass the original
-        /// name of the DB instance as the DBInstanceIdentifier in the call to the RestoreDBInstanceFromDBSnapshot
-        /// action. The result is that you replace the original DB instance with the DB instance
-        /// created from the snapshot.
+        /// name of the DB instance as the <code>DBInstanceIdentifier</code> in the call to the
+        /// <code>RestoreDBInstanceFromDBSnapshot</code> operation. The result is that you replace
+        /// the original DB instance with the DB instance created from the snapshot.
         /// </para>
         ///  
         /// <para>
@@ -11132,7 +11131,7 @@ namespace Amazon.RDS
         /// 
         ///  
         /// <para>
-        /// This command doesn't apply to RDS Custom.
+        /// This operation doesn't apply to RDS Custom.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RestoreDBInstanceFromS3 service method.</param>
@@ -11270,7 +11269,7 @@ namespace Amazon.RDS
         /// </para>
         ///  <note> 
         /// <para>
-        /// This command doesn't apply to Aurora MySQL and Aurora PostgreSQL. For Aurora, use
+        /// This operation doesn't apply to Aurora MySQL and Aurora PostgreSQL. For Aurora, use
         /// <code>RestoreDBClusterToPointInTime</code>.
         /// </para>
         ///  </note>
@@ -11572,7 +11571,7 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Starts an Amazon Aurora DB cluster that was stopped using the Amazon Web Services
-        /// console, the stop-db-cluster CLI command, or the StopDBCluster action.
+        /// console, the stop-db-cluster CLI command, or the <code>StopDBCluster</code> operation.
         /// 
         ///  
         /// <para>
@@ -11581,7 +11580,7 @@ namespace Amazon.RDS
         /// </para>
         ///  <note> 
         /// <para>
-        /// This action only applies to Aurora DB clusters.
+        /// This operation only applies to Aurora DB clusters.
         /// </para>
         ///  </note>
         /// </summary>
@@ -11647,7 +11646,7 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Starts an Amazon RDS DB instance that was stopped using the Amazon Web Services console,
-        /// the stop-db-instance CLI command, or the StopDBInstance action.
+        /// the stop-db-instance CLI command, or the <code>StopDBInstance</code> operation.
         /// 
         ///  
         /// <para>
@@ -11843,7 +11842,7 @@ namespace Amazon.RDS
         /// 
         ///  
         /// <para>
-        /// You can't export snapshot data from RDS Custom DB instances.
+        /// You can't export snapshot data from Db2 or RDS Custom DB instances.
         /// </para>
         ///  
         /// <para>
@@ -11948,7 +11947,7 @@ namespace Amazon.RDS
         /// <summary>
         /// Stops a database activity stream that was started using the Amazon Web Services console,
         /// the <code>start-activity-stream</code> CLI command, or the <code>StartActivityStream</code>
-        /// action.
+        /// operation.
         /// 
         ///  
         /// <para>
@@ -12037,7 +12036,7 @@ namespace Amazon.RDS
         /// </para>
         ///  <note> 
         /// <para>
-        /// This action only applies to Aurora DB clusters.
+        /// This operation only applies to Aurora DB clusters.
         /// </para>
         ///  </note>
         /// </summary>

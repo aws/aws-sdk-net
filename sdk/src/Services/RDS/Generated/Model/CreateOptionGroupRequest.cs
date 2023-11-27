@@ -48,13 +48,21 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EngineName. 
         /// <para>
-        /// Specifies the name of the engine that this option group should be associated with.
+        /// The name of the engine to associate this option group with.
         /// </para>
         ///  
         /// <para>
         /// Valid Values:
         /// </para>
         ///  <ul> <li> 
+        /// <para>
+        ///  <code>db2-ae</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>db2-se</code> 
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         ///  <code>mariadb</code> 
         /// </para>

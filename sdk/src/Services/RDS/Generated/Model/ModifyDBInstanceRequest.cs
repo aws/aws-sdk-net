@@ -119,10 +119,10 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// For RDS for MariaDB, RDS for MySQL, RDS for Oracle, and RDS for PostgreSQL, the value
-        /// supplied must be at least 10% greater than the current value. Values that are not
-        /// at least 10% greater than the existing value are rounded up so that they are 10% greater
-        /// than the current value.
+        /// For RDS for Db2, MariaDB, RDS for MySQL, RDS for Oracle, and RDS for PostgreSQL, the
+        /// value supplied must be at least 10% greater than the current value. Values that are
+        /// not at least 10% greater than the existing value are rounded up so that they are 10%
+        /// greater than the current value.
         /// </para>
         ///  
         /// <para>
@@ -630,6 +630,10 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// RDS for Db2 - <code>50000</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// RDS for MariaDB - <code>3306</code> 
         /// </para>
         ///  </li> <li> 
@@ -807,7 +811,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The Active Directory directory ID to move the DB instance to. Specify <code>none</code>
         /// to remove the instance from its current domain. You must create the domain before
-        /// this operation. Currently, you can create only MySQL, Microsoft SQL Server, Oracle,
+        /// this operation. Currently, you can create only Db2, MySQL, Microsoft SQL Server, Oracle,
         /// and PostgreSQL DB instances in an Active Directory Domain.
         /// </para>
         ///  
@@ -1256,6 +1260,10 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        /// RDS for Db2 - <code>bring-your-own-license</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// RDS for MariaDB - <code>general-public-license</code> 
         /// </para>
         ///  </li> <li> 
@@ -1351,8 +1359,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// Amazon RDS API operations never return the password, so this action provides a way
-        /// to regain access to a primary instance user if the password is lost. This includes
+        /// Amazon RDS API operations never return the password, so this operation provides a
+        /// way to regain access to a primary instance user if the password is lost. This includes
         /// restoring privileges that might have been accidentally revoked.
         /// </para>
         ///  </note> 
@@ -1382,13 +1390,18 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Can include any printable ASCII character except "/", """, or "@".
+        /// Can include any printable ASCII character except "/", """, or "@". For RDS for Oracle,
+        /// can't include the "&amp;" (ampersand) or the "'" (single quotes) character.
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// Length Constraints:
         /// </para>
         ///  <ul> <li> 
+        /// <para>
+        /// RDS for Db2 - Must contain from 8 to 255 characters.
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         /// RDS for MariaDB - Must contain from 8 to 41 characters.
         /// </para>

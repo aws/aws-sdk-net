@@ -30,7 +30,7 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Contains the result of a successful invocation of the <code>ModifyDBParameterGroup</code>
-    /// or <code>ResetDBParameterGroup</code> action.
+    /// or <code>ResetDBParameterGroup</code> operation.
     /// </summary>
     public partial class ModifyDBParameterGroupResponse : AmazonWebServiceResponse
     {

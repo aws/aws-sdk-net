@@ -59,7 +59,7 @@ namespace Amazon.RDS.Model
     /// </para>
     ///  </important> <note> 
     /// <para>
-    /// This action only applies to Aurora Serverless v1 DB clusters.
+    /// This operation only applies to Aurora Serverless v1 DB clusters.
     /// </para>
     ///  </note>
     /// </summary>

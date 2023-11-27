@@ -32,7 +32,7 @@ namespace Amazon.RDS.Model
     /// Container for the parameters to the StopActivityStream operation.
     /// Stops a database activity stream that was started using the Amazon Web Services console,
     /// the <code>start-activity-stream</code> CLI command, or the <code>StartActivityStream</code>
-    /// action.
+    /// operation.
     /// 
     ///  
     /// <para>

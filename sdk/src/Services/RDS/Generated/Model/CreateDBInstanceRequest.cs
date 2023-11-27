@@ -124,11 +124,11 @@ namespace Amazon.RDS.Model
         /// Instantiates CreateDBInstanceRequest with the parameterized properties
         /// </summary>
         /// <param name="dbInstanceIdentifier">The identifier for this DB instance. This parameter is stored as a lowercase string. Constraints: <ul> <li> Must contain from 1 to 63 letters, numbers, or hyphens. </li> <li> First character must be a letter. </li> <li> Can't end with a hyphen or contain two consecutive hyphens. </li> </ul> Example: <code>mydbinstance</code> </param>
-        /// <param name="allocatedStorage">The amount of storage in gibibytes (GiB) to allocate for the DB instance. This setting doesn't apply to Amazon Aurora DB instances. Aurora cluster volumes automatically grow as the amount of data in your database increases, though you are only charged for the space that you use in an Aurora cluster volume. <dl> <dt>Amazon RDS Custom</dt> <dd> Constraints to the amount of storage for each storage type are the following: <ul> <li> General Purpose (SSD) storage (gp2, gp3): Must be an integer from 40 to 65536 for RDS Custom for Oracle, 16384 for RDS Custom for SQL Server. </li> <li> Provisioned IOPS storage (io1): Must be an integer from 40 to 65536 for RDS Custom for Oracle, 16384 for RDS Custom for SQL Server. </li> </ul> </dd> <dt>RDS for MariaDB</dt> <dd> Constraints to the amount of storage for each storage type are the following: <ul> <li> General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536. </li> <li> Provisioned IOPS storage (io1): Must be an integer from 100 to 65536. </li> <li> Magnetic storage (standard): Must be an integer from 5 to 3072. </li> </ul> </dd> <dt>RDS for MySQL</dt> <dd> Constraints to the amount of storage for each storage type are the following: <ul> <li> General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536. </li> <li> Provisioned IOPS storage (io1): Must be an integer from 100 to 65536. </li> <li> Magnetic storage (standard): Must be an integer from 5 to 3072. </li> </ul> </dd> <dt>RDS for Oracle</dt> <dd> Constraints to the amount of storage for each storage type are the following: <ul> <li> General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536. </li> <li> Provisioned IOPS storage (io1): Must be an integer from 100 to 65536. </li> <li> Magnetic storage (standard): Must be an integer from 10 to 3072. </li> </ul> </dd> <dt>RDS for PostgreSQL</dt> <dd> Constraints to the amount of storage for each storage type are the following: <ul> <li> General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536. </li> <li> Provisioned IOPS storage (io1): Must be an integer from 100 to 65536. </li> <li> Magnetic storage (standard): Must be an integer from 5 to 3072. </li> </ul> </dd> <dt>RDS for SQL Server</dt> <dd> Constraints to the amount of storage for each storage type are the following: <ul> <li> General Purpose (SSD) storage (gp2, gp3): <ul> <li> Enterprise and Standard editions: Must be an integer from 20 to 16384. </li> <li> Web and Express editions: Must be an integer from 20 to 16384. </li> </ul> </li> <li> Provisioned IOPS storage (io1): <ul> <li> Enterprise and Standard editions: Must be an integer from 100 to 16384. </li> <li> Web and Express editions: Must be an integer from 100 to 16384. </li> </ul> </li> <li> Magnetic storage (standard): <ul> <li> Enterprise and Standard editions: Must be an integer from 20 to 1024. </li> <li> Web and Express editions: Must be an integer from 20 to 1024. </li> </ul> </li> </ul> </dd> </dl></param>
+        /// <param name="allocatedStorage">The amount of storage in gibibytes (GiB) to allocate for the DB instance. This setting doesn't apply to Amazon Aurora DB instances. Aurora cluster volumes automatically grow as the amount of data in your database increases, though you are only charged for the space that you use in an Aurora cluster volume. <dl> <dt>Amazon RDS Custom</dt> <dd> Constraints to the amount of storage for each storage type are the following: <ul> <li> General Purpose (SSD) storage (gp2, gp3): Must be an integer from 40 to 65536 for RDS Custom for Oracle, 16384 for RDS Custom for SQL Server. </li> <li> Provisioned IOPS storage (io1): Must be an integer from 40 to 65536 for RDS Custom for Oracle, 16384 for RDS Custom for SQL Server. </li> </ul> </dd> <dt>RDS for Db2</dt> <dd> Constraints to the amount of storage for each storage type are the following: <ul> <li> General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 64000. </li> <li> Provisioned IOPS storage (io1): Must be an integer from 100 to 64000. </li> </ul> </dd> <dt>RDS for MariaDB</dt> <dd> Constraints to the amount of storage for each storage type are the following: <ul> <li> General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536. </li> <li> Provisioned IOPS storage (io1): Must be an integer from 100 to 65536. </li> <li> Magnetic storage (standard): Must be an integer from 5 to 3072. </li> </ul> </dd> <dt>RDS for MySQL</dt> <dd> Constraints to the amount of storage for each storage type are the following: <ul> <li> General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536. </li> <li> Provisioned IOPS storage (io1): Must be an integer from 100 to 65536. </li> <li> Magnetic storage (standard): Must be an integer from 5 to 3072. </li> </ul> </dd> <dt>RDS for Oracle</dt> <dd> Constraints to the amount of storage for each storage type are the following: <ul> <li> General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536. </li> <li> Provisioned IOPS storage (io1): Must be an integer from 100 to 65536. </li> <li> Magnetic storage (standard): Must be an integer from 10 to 3072. </li> </ul> </dd> <dt>RDS for PostgreSQL</dt> <dd> Constraints to the amount of storage for each storage type are the following: <ul> <li> General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536. </li> <li> Provisioned IOPS storage (io1): Must be an integer from 100 to 65536. </li> <li> Magnetic storage (standard): Must be an integer from 5 to 3072. </li> </ul> </dd> <dt>RDS for SQL Server</dt> <dd> Constraints to the amount of storage for each storage type are the following: <ul> <li> General Purpose (SSD) storage (gp2, gp3): <ul> <li> Enterprise and Standard editions: Must be an integer from 20 to 16384. </li> <li> Web and Express editions: Must be an integer from 20 to 16384. </li> </ul> </li> <li> Provisioned IOPS storage (io1): <ul> <li> Enterprise and Standard editions: Must be an integer from 100 to 16384. </li> <li> Web and Express editions: Must be an integer from 100 to 16384. </li> </ul> </li> <li> Magnetic storage (standard): <ul> <li> Enterprise and Standard editions: Must be an integer from 20 to 1024. </li> <li> Web and Express editions: Must be an integer from 20 to 1024. </li> </ul> </li> </ul> </dd> </dl></param>
         /// <param name="dbInstanceClass">The compute and memory capacity of the DB instance, for example <code>db.m5.large</code>. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB instance classes</a> in the <i>Amazon RDS User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.DBInstanceClass.html">Aurora DB instance classes</a> in the <i>Amazon Aurora User Guide</i>.</param>
-        /// <param name="engine">The database engine to use for this DB instance. Not every database engine is available in every Amazon Web Services Region. Valid Values: <ul> <li>  <code>aurora-mysql</code> (for Aurora MySQL DB instances) </li> <li>  <code>aurora-postgresql</code> (for Aurora PostgreSQL DB instances) </li> <li>  <code>custom-oracle-ee</code> (for RDS Custom for Oracle DB instances) </li> <li>  <code>custom-oracle-ee-cdb</code> (for RDS Custom for Oracle DB instances) </li> <li>  <code>custom-sqlserver-ee</code> (for RDS Custom for SQL Server DB instances) </li> <li>  <code>custom-sqlserver-se</code> (for RDS Custom for SQL Server DB instances) </li> <li>  <code>custom-sqlserver-web</code> (for RDS Custom for SQL Server DB instances) </li> <li>  <code>mariadb</code>  </li> <li>  <code>mysql</code>  </li> <li>  <code>oracle-ee</code>  </li> <li>  <code>oracle-ee-cdb</code>  </li> <li>  <code>oracle-se2</code>  </li> <li>  <code>oracle-se2-cdb</code>  </li> <li>  <code>postgres</code>  </li> <li>  <code>sqlserver-ee</code>  </li> <li>  <code>sqlserver-se</code>  </li> <li>  <code>sqlserver-ex</code>  </li> <li>  <code>sqlserver-web</code>  </li> </ul></param>
+        /// <param name="engine">The database engine to use for this DB instance. Not every database engine is available in every Amazon Web Services Region. Valid Values: <ul> <li>  <code>aurora-mysql</code> (for Aurora MySQL DB instances) </li> <li>  <code>aurora-postgresql</code> (for Aurora PostgreSQL DB instances) </li> <li>  <code>custom-oracle-ee</code> (for RDS Custom for Oracle DB instances) </li> <li>  <code>custom-oracle-ee-cdb</code> (for RDS Custom for Oracle DB instances) </li> <li>  <code>custom-sqlserver-ee</code> (for RDS Custom for SQL Server DB instances) </li> <li>  <code>custom-sqlserver-se</code> (for RDS Custom for SQL Server DB instances) </li> <li>  <code>custom-sqlserver-web</code> (for RDS Custom for SQL Server DB instances) </li> <li>  <code>db2-ae</code>  </li> <li>  <code>db2-se</code>  </li> <li>  <code>mariadb</code>  </li> <li>  <code>mysql</code>  </li> <li>  <code>oracle-ee</code>  </li> <li>  <code>oracle-ee-cdb</code>  </li> <li>  <code>oracle-se2</code>  </li> <li>  <code>oracle-se2-cdb</code>  </li> <li>  <code>postgres</code>  </li> <li>  <code>sqlserver-ee</code>  </li> <li>  <code>sqlserver-se</code>  </li> <li>  <code>sqlserver-ex</code>  </li> <li>  <code>sqlserver-web</code>  </li> </ul></param>
         /// <param name="masterUsername">The name for the master user. This setting doesn't apply to Amazon Aurora DB instances. The name for the master user is managed by the DB cluster. This setting is required for RDS DB instances. Constraints: <ul> <li> Must be 1 to 16 letters, numbers, or underscores. </li> <li> First character must be a letter. </li> <li> Can't be a reserved word for the chosen database engine. </li> </ul></param>
-        /// <param name="masterUserPassword">The password for the master user. This setting doesn't apply to Amazon Aurora DB instances. The password for the master user is managed by the DB cluster. Constraints: <ul> <li> Can't be specified if <code>ManageMasterUserPassword</code> is turned on. </li> <li> Can include any printable ASCII character except "/", """, or "@". For RDS for Oracle, can't include the "&amp;" (ampersand) or the "'" (single quotes) character. </li> </ul> Length Constraints: <ul> <li> RDS for MariaDB - Must contain from 8 to 41 characters. </li> <li> RDS for Microsoft SQL Server - Must contain from 8 to 128 characters. </li> <li> RDS for MySQL - Must contain from 8 to 41 characters. </li> <li> RDS for Oracle - Must contain from 8 to 30 characters. </li> <li> RDS for PostgreSQL - Must contain from 8 to 128 characters. </li> </ul></param>
+        /// <param name="masterUserPassword">The password for the master user. This setting doesn't apply to Amazon Aurora DB instances. The password for the master user is managed by the DB cluster. Constraints: <ul> <li> Can't be specified if <code>ManageMasterUserPassword</code> is turned on. </li> <li> Can include any printable ASCII character except "/", """, or "@". For RDS for Oracle, can't include the "&amp;" (ampersand) or the "'" (single quotes) character. </li> </ul> Length Constraints: <ul> <li> RDS for Db2 - Must contain from 8 to 255 characters. </li> <li> RDS for MariaDB - Must contain from 8 to 41 characters. </li> <li> RDS for Microsoft SQL Server - Must contain from 8 to 128 characters. </li> <li> RDS for MySQL - Must contain from 8 to 41 characters. </li> <li> RDS for Oracle - Must contain from 8 to 30 characters. </li> <li> RDS for PostgreSQL - Must contain from 8 to 128 characters. </li> </ul></param>
         public CreateDBInstanceRequest(string dbInstanceIdentifier, int allocatedStorage, string dbInstanceClass, string engine, string masterUsername, string masterUserPassword)
         {
             _dbInstanceIdentifier = dbInstanceIdentifier;
@@ -163,6 +163,18 @@ namespace Amazon.RDS.Model
         /// <para>
         /// Provisioned IOPS storage (io1): Must be an integer from 40 to 65536 for RDS Custom
         /// for Oracle, 16384 for RDS Custom for SQL Server.
+        /// </para>
+        ///  </li> </ul> </dd> <dt>RDS for Db2</dt> <dd> 
+        /// <para>
+        /// Constraints to the amount of storage for each storage type are the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 64000.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Provisioned IOPS storage (io1): Must be an integer from 100 to 64000.
         /// </para>
         ///  </li> </ul> </dd> <dt>RDS for MariaDB</dt> <dd> 
         /// <para>
@@ -408,7 +420,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valie Values:
+        /// Valid Values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -664,11 +676,78 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The meaning of this parameter differs according to the database engine you use.
         /// </para>
-        ///  
+        ///  <dl> <dt>Amazon Aurora MySQL</dt> <dd> 
         /// <para>
-        ///  <b>MySQL</b> 
+        /// The name of the database to create when the primary DB instance of the Aurora MySQL
+        /// DB cluster is created. If this parameter isn't specified for an Aurora MySQL DB cluster,
+        /// no database is created in the DB cluster.
         /// </para>
         ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must contain 1 to 64 alphanumeric characters.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Can't be a word reserved by the database engine.
+        /// </para>
+        ///  </li> </ul> </dd> <dt>Amazon Aurora PostgreSQL</dt> <dd> 
+        /// <para>
+        /// The name of the database to create when the primary DB instance of the Aurora PostgreSQL
+        /// DB cluster is created. If this parameter isn't specified for an Aurora PostgreSQL
+        /// DB cluster, a database named <code>postgres</code> is created in the DB cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// It must contain 1 to 63 alphanumeric characters.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Must begin with a letter. Subsequent characters can be letters, underscores, or digits
+        /// (0 to 9).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Can't be a word reserved by the database engine.
+        /// </para>
+        ///  </li> </ul> </dd> <dt>Amazon RDS Custom for Oracle</dt> <dd> 
+        /// <para>
+        /// The Oracle System ID (SID) of the created RDS Custom DB instance. If you don't specify
+        /// a value, the default value is <code>ORCL</code> for non-CDBs and <code>RDSCDB</code>
+        /// for CDBs.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <code>ORCL</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must contain 1 to 8 alphanumeric characters.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Must contain a letter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Can't be a word reserved by the database engine.
+        /// </para>
+        ///  </li> </ul> </dd> <dt>Amazon RDS Custom for SQL Server</dt> <dd> 
+        /// <para>
+        /// Not applicable. Must be null.
+        /// </para>
+        ///  </dd> <dt>RDS for Db2</dt> <dd> 
         /// <para>
         /// The name of the database to create when the DB instance is created. If this parameter
         /// isn't specified, no database is created in the DB instance.
@@ -688,13 +767,9 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Can't be a word reserved by the specified database engine
+        /// Can't be a word reserved by the specified database engine.
         /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        ///  <b>MariaDB</b> 
-        /// </para>
-        ///  
+        ///  </li> </ul> </dd> <dt>RDS for MariaDB</dt> <dd> 
         /// <para>
         /// The name of the database to create when the DB instance is created. If this parameter
         /// isn't specified, no database is created in the DB instance.
@@ -714,13 +789,49 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Can't be a word reserved by the specified database engine
+        /// Can't be a word reserved by the specified database engine.
         /// </para>
-        ///  </li> </ul> 
+        ///  </li> </ul> </dd> <dt>RDS for MySQL</dt> <dd> 
         /// <para>
-        ///  <b>PostgreSQL</b> 
+        /// The name of the database to create when the DB instance is created. If this parameter
+        /// isn't specified, no database is created in the DB instance.
         /// </para>
         ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must contain 1 to 64 letters or numbers.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Must begin with a letter. Subsequent characters can be letters, underscores, or digits
+        /// (0-9).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Can't be a word reserved by the specified database engine.
+        /// </para>
+        ///  </li> </ul> </dd> <dt>RDS for Oracle</dt> <dd> 
+        /// <para>
+        /// The Oracle System ID (SID) of the created DB instance. If you don't specify a value,
+        /// the default value is <code>ORCL</code>. You can't specify the string <code>null</code>,
+        /// or any other reserved word, for <code>DBName</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <code>ORCL</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Can't be longer than 8 characters.
+        /// </para>
+        ///  </li> </ul> </dd> <dt>RDS for PostgreSQL</dt> <dd> 
         /// <para>
         /// The name of the database to create when the DB instance is created. If this parameter
         /// isn't specified, a database named <code>postgres</code> is created in the DB instance.
@@ -740,126 +851,13 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Can't be a word reserved by the specified database engine
+        /// Can't be a word reserved by the specified database engine.
         /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        ///  <b>Oracle</b> 
-        /// </para>
-        ///  
-        /// <para>
-        /// The Oracle System ID (SID) of the created DB instance. If you don't specify a value,
-        /// the default value is <code>ORCL</code>. You can't specify the string <code>null</code>,
-        /// or any other reserved word, for <code>DBName</code>.
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: <code>ORCL</code> 
-        /// </para>
-        ///  
-        /// <para>
-        /// Constraints:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Can't be longer than 8 characters
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        ///  <b>Amazon RDS Custom for Oracle</b> 
-        /// </para>
-        ///  
-        /// <para>
-        /// The Oracle System ID (SID) of the created RDS Custom DB instance. If you don't specify
-        /// a value, the default value is <code>ORCL</code> for non-CDBs and <code>RDSCDB</code>
-        /// for CDBs.
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: <code>ORCL</code> 
-        /// </para>
-        ///  
-        /// <para>
-        /// Constraints:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// It must contain 1 to 8 alphanumeric characters.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// It must contain a letter.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// It can't be a word reserved by the database engine.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        ///  <b>Amazon RDS Custom for SQL Server</b> 
-        /// </para>
-        ///  
+        ///  </li> </ul> </dd> <dt>RDS for SQL Server</dt> <dd> 
         /// <para>
         /// Not applicable. Must be null.
         /// </para>
-        ///  
-        /// <para>
-        ///  <b>SQL Server</b> 
-        /// </para>
-        ///  
-        /// <para>
-        /// Not applicable. Must be null.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <b>Amazon Aurora MySQL</b> 
-        /// </para>
-        ///  
-        /// <para>
-        /// The name of the database to create when the primary DB instance of the Aurora MySQL
-        /// DB cluster is created. If this parameter isn't specified for an Aurora MySQL DB cluster,
-        /// no database is created in the DB cluster.
-        /// </para>
-        ///  
-        /// <para>
-        /// Constraints:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// It must contain 1 to 64 alphanumeric characters.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// It can't be a word reserved by the database engine.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        ///  <b>Amazon Aurora PostgreSQL</b> 
-        /// </para>
-        ///  
-        /// <para>
-        /// The name of the database to create when the primary DB instance of the Aurora PostgreSQL
-        /// DB cluster is created. If this parameter isn't specified for an Aurora PostgreSQL
-        /// DB cluster, a database named <code>postgres</code> is created in the DB cluster.
-        /// </para>
-        ///  
-        /// <para>
-        /// Constraints:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// It must contain 1 to 63 alphanumeric characters.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// It must begin with a letter. Subsequent characters can be letters, underscores, or
-        /// digits (0 to 9).
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// It can't be a word reserved by the database engine.
-        /// </para>
-        ///  </li> </ul>
+        ///  </dd> </dl>
         /// </summary>
         public string DBName
         {
@@ -1042,9 +1040,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
-        /// The Active Directory directory ID to create the DB instance in. Currently, only Microsoft
-        /// SQL Server, MySQL, Oracle, and PostgreSQL DB instances can be created in an Active
-        /// Directory Domain.
+        /// The Active Directory directory ID to create the DB instance in. Currently, you can
+        /// create only Db2, MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances
+        /// in an Active Directory Domain.
         /// </para>
         ///  
         /// <para>
@@ -1231,8 +1229,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EnableCloudwatchLogsExports. 
         /// <para>
-        /// The list of log types that need to be enabled for exporting to CloudWatch Logs. For
-        /// more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">
+        /// The list of log types to enable for exporting to CloudWatch Logs. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">
         /// Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         ///  
@@ -1252,6 +1250,10 @@ namespace Amazon.RDS.Model
         /// The following values are valid for each DB engine:
         /// </para>
         ///  <ul> <li> 
+        /// <para>
+        /// RDS for Db2 - <code>diag.log | notify.log</code> 
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         /// RDS for MariaDB - <code>audit | error | general | slowquery</code> 
         /// </para>
@@ -1427,6 +1429,14 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>db2-ae</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>db2-se</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>mariadb</code> 
         /// </para>
         ///  </li> <li> 
@@ -1517,6 +1527,11 @@ namespace Amazon.RDS.Model
         /// See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits-MS.html">RDS
         /// Custom for SQL Server general requirements</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
+        ///  </dd> <dt>RDS for Db2</dt> <dd> 
+        /// <para>
+        /// For information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Db2.html#Db2.Concepts.VersionMgmt">Db2
+        /// on Amazon RDS versions</a> in the <i>Amazon RDS User Guide</i>.
+        /// </para>
         ///  </dd> <dt>RDS for MariaDB</dt> <dd> 
         /// <para>
         /// For information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
@@ -1574,8 +1589,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For RDS for MariaDB, MySQL, Oracle, and PostgreSQL - Must be a multiple between .5
-        /// and 50 of the storage amount for the DB instance.
+        /// For RDS for Db2, MariaDB, MySQL, Oracle, and PostgreSQL - Must be a multiple between
+        /// .5 and 50 of the storage amount for the DB instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1653,6 +1668,10 @@ namespace Amazon.RDS.Model
         /// Valid Values:
         /// </para>
         ///  <ul> <li> 
+        /// <para>
+        /// RDS for Db2 - <code>bring-your-own-license</code> 
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         /// RDS for MariaDB - <code>general-public-license</code> 
         /// </para>
@@ -1793,6 +1812,10 @@ namespace Amazon.RDS.Model
         /// Length Constraints:
         /// </para>
         ///  <ul> <li> 
+        /// <para>
+        /// RDS for Db2 - Must contain from 8 to 255 characters.
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         /// RDS for MariaDB - Must contain from 8 to 41 characters.
         /// </para>
@@ -2228,6 +2251,10 @@ namespace Amazon.RDS.Model
         /// Default:
         /// </para>
         ///  <ul> <li> 
+        /// <para>
+        /// RDS for Db2 - <code>50000</code> 
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         /// RDS for MariaDB - <code>3306</code> 
         /// </para>

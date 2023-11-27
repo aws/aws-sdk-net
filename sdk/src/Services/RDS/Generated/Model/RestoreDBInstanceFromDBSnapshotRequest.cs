@@ -40,12 +40,12 @@ namespace Amazon.RDS.Model
     ///  
     /// <para>
     /// If you want to replace your original DB instance with the new, restored DB instance,
-    /// then rename your original DB instance before you call the RestoreDBInstanceFromDBSnapshot
-    /// action. RDS doesn't allow two DB instances with the same name. After you have renamed
+    /// then rename your original DB instance before you call the <code>RestoreDBInstanceFromDBSnapshot</code>
+    /// operation. RDS doesn't allow two DB instances with the same name. After you have renamed
     /// your original DB instance with a different identifier, then you can pass the original
-    /// name of the DB instance as the DBInstanceIdentifier in the call to the RestoreDBInstanceFromDBSnapshot
-    /// action. The result is that you replace the original DB instance with the DB instance
-    /// created from the snapshot.
+    /// name of the DB instance as the <code>DBInstanceIdentifier</code> in the call to the
+    /// <code>RestoreDBInstanceFromDBSnapshot</code> operation. The result is that you replace
+    /// the original DB instance with the DB instance created from the snapshot.
     /// </para>
     ///  
     /// <para>
@@ -110,8 +110,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Instantiates RestoreDBInstanceFromDBSnapshotRequest with the parameterized properties
         /// </summary>
-        /// <param name="dbInstanceIdentifier">Name of the DB instance to create from the DB snapshot. This parameter isn't case-sensitive. Constraints: <ul> <li> Must contain from 1 to 63 numbers, letters, or hyphens </li> <li> First character must be a letter </li> <li> Can't end with a hyphen or contain two consecutive hyphens </li> </ul> Example: <code>my-snapshot-id</code> </param>
-        /// <param name="dbSnapshotIdentifier">The identifier for the DB snapshot to restore from. Constraints: <ul> <li> Must match the identifier of an existing DBSnapshot. </li> <li> Can't be specified when <code>DBClusterSnapshotIdentifier</code> is specified. </li> <li> Must be specified when <code>DBClusterSnapshotIdentifier</code> isn't specified. </li> <li> If you are restoring from a shared manual DB snapshot, the <code>DBSnapshotIdentifier</code> must be the ARN of the shared DB snapshot. </li> </ul></param>
+        /// <param name="dbInstanceIdentifier">The name of the DB instance to create from the DB snapshot. This parameter isn't case-sensitive. Constraints: <ul> <li> Must contain from 1 to 63 numbers, letters, or hyphens. </li> <li> First character must be a letter. </li> <li> Can't end with a hyphen or contain two consecutive hyphens. </li> </ul> Example: <code>my-snapshot-id</code> </param>
+        /// <param name="dbSnapshotIdentifier">The identifier for the DB snapshot to restore from. Constraints: <ul> <li> Must match the identifier of an existing DB snapshot. </li> <li> Can't be specified when <code>DBClusterSnapshotIdentifier</code> is specified. </li> <li> Must be specified when <code>DBClusterSnapshotIdentifier</code> isn't specified. </li> <li> If you are restoring from a shared manual DB snapshot, the <code>DBSnapshotIdentifier</code> must be the ARN of the shared DB snapshot. </li> </ul></param>
         public RestoreDBInstanceFromDBSnapshotRequest(string dbInstanceIdentifier, string dbSnapshotIdentifier)
         {
             _dbInstanceIdentifier = dbInstanceIdentifier;
@@ -381,7 +381,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBInstanceIdentifier. 
         /// <para>
-        /// Name of the DB instance to create from the DB snapshot. This parameter isn't case-sensitive.
+        /// The name of the DB instance to create from the DB snapshot. This parameter isn't case-sensitive.
         /// </para>
         ///  
         /// <para>
@@ -389,15 +389,15 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Must contain from 1 to 63 numbers, letters, or hyphens
+        /// Must contain from 1 to 63 numbers, letters, or hyphens.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// First character must be a letter
+        /// First character must be a letter.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Can't end with a hyphen or contain two consecutive hyphens
+        /// Can't end with a hyphen or contain two consecutive hyphens.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -420,12 +420,12 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBName. 
         /// <para>
-        /// The database name for the restored DB instance.
+        /// The name of the database for the restored DB instance.
         /// </para>
         ///  
         /// <para>
-        /// This parameter doesn't apply to the MySQL, PostgreSQL, or MariaDB engines. It also
-        /// doesn't apply to RDS Custom DB instances.
+        /// This parameter only applies to RDS for Oracle and RDS for SQL Server DB instances.
+        /// It doesn't apply to the other engines or to RDS Custom DB instances.
         /// </para>
         /// </summary>
         public string DBName
@@ -460,7 +460,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If supplied, must match the name of an existing DBParameterGroup.
+        /// If supplied, must match the name of an existing DB parameter group.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -499,7 +499,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Must match the identifier of an existing DBSnapshot.
+        /// Must match the identifier of an existing DB snapshot.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -531,13 +531,17 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBSubnetGroupName. 
         /// <para>
-        /// The DB subnet group name to use for the new instance.
+        /// The name of the DB subnet group to use for the new instance.
         /// </para>
         ///  
         /// <para>
-        /// Constraints: If supplied, must match the name of an existing DBSubnetGroup.
+        /// Constraints:
         /// </para>
-        ///  
+        ///  <ul> <li> 
+        /// <para>
+        /// If supplied, must match the name of an existing DB subnet group.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// Example: <code>mydbsubnetgroup</code> 
         /// </para>
@@ -596,8 +600,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
-        /// Specify the Active Directory directory ID to restore the DB instance in. The domain/
-        /// must be created prior to this operation. Currently, you can create only MySQL, Microsoft
+        /// The Active Directory directory ID to restore the DB instance in. The domain/ must
+        /// be created prior to this operation. Currently, you can create only Db2, MySQL, Microsoft
         /// SQL Server, Oracle, and PostgreSQL DB instances in an Active Directory Domain.
         /// </para>
         ///  
@@ -775,9 +779,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EnableCloudwatchLogsExports. 
         /// <para>
-        /// The list of logs that the restored DB instance is to export to CloudWatch Logs. The
-        /// values in the list depend on the DB engine being used. For more information, see <a
-        /// href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+        /// The list of logs for the restored DB instance to export to CloudWatch Logs. The values
+        /// in the list depend on the DB engine. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
         /// Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         ///  
@@ -889,6 +892,14 @@ namespace Amazon.RDS.Model
         /// Valid Values:
         /// </para>
         ///  <ul> <li> 
+        /// <para>
+        ///  <code>db2-ae</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>db2-se</code> 
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         ///  <code>mariadb</code> 
         /// </para>

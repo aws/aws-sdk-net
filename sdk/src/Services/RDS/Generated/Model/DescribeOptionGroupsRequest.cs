@@ -44,14 +44,21 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EngineName. 
         /// <para>
-        /// Filters the list of option groups to only include groups associated with a specific
-        /// database engine.
+        /// A filter to only include option groups associated with this database engine.
         /// </para>
         ///  
         /// <para>
         /// Valid Values:
         /// </para>
         ///  <ul> <li> 
+        /// <para>
+        ///  <code>db2-ae</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>db2-se</code> 
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         ///  <code>mariadb</code> 
         /// </para>

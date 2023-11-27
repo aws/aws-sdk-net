@@ -46,7 +46,7 @@ namespace Amazon.RDS.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// This command doesn't apply to Aurora MySQL and Aurora PostgreSQL. For Aurora, use
+    /// This operation doesn't apply to Aurora MySQL and Aurora PostgreSQL. For Aurora, use
     /// <code>RestoreDBClusterToPointInTime</code>.
     /// </para>
     ///  </note>
@@ -200,13 +200,24 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property BackupTarget. 
         /// <para>
-        /// Specifies where automated backups and manual snapshots are stored for the restored
-        /// DB instance.
+        /// The location for storing automated backups and manual snapshots for the restored DB
+        /// instance.
         /// </para>
         ///  
         /// <para>
-        /// Possible values are <code>outposts</code> (Amazon Web Services Outposts) and <code>region</code>
-        /// (Amazon Web Services Region). The default is <code>region</code>.
+        /// Valid Values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>outposts</code> (Amazon Web Services Outposts)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>region</code> (Amazon Web Services Region)
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Default: <code>region</code> 
         /// </para>
         ///  
         /// <para>
@@ -317,12 +328,27 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The database name for the restored DB instance.
         /// </para>
-        ///  <note> 
+        ///  
         /// <para>
-        /// This parameter isn't supported for the MySQL or MariaDB engines. It also doesn't apply
-        /// to RDS Custom.
+        /// This parameter doesn't apply to the following DB instances:
         /// </para>
-        ///  </note>
+        ///  <ul> <li> 
+        /// <para>
+        /// RDS Custom
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// RDS for Db2
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// RDS for MariaDB
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// RDS for MySQL
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string DBName
         {
@@ -740,6 +766,14 @@ namespace Amazon.RDS.Model
         /// Valid Values:
         /// </para>
         ///  <ul> <li> 
+        /// <para>
+        ///  <code>db2-ae</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>db2-se</code> 
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         ///  <code>mariadb</code> 
         /// </para>

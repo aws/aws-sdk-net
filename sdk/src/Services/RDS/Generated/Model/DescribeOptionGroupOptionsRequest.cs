@@ -30,7 +30,7 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeOptionGroupOptions operation.
-    /// Describes all available options.
+    /// Describes all available options for the specified engine.
     /// </summary>
     public partial class DescribeOptionGroupOptionsRequest : AmazonRDSRequest
     {
@@ -43,13 +43,21 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EngineName. 
         /// <para>
-        /// A required parameter. Options available for the given engine name are described.
+        /// The name of the engine to describe options for.
         /// </para>
         ///  
         /// <para>
         /// Valid Values:
         /// </para>
         ///  <ul> <li> 
+        /// <para>
+        ///  <code>db2-ae</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>db2-se</code> 
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         ///  <code>mariadb</code> 
         /// </para>

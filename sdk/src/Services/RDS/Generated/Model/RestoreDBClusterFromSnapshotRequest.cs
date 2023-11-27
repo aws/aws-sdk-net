@@ -40,11 +40,11 @@ namespace Amazon.RDS.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// This action only restores the DB cluster, not the DB instances for that DB cluster.
-    /// You must invoke the <code>CreateDBInstance</code> action to create DB instances for
-    /// the restored DB cluster, specifying the identifier of the restored DB cluster in <code>DBClusterIdentifier</code>.
-    /// You can create DB instances only after the <code>RestoreDBClusterFromSnapshot</code>
-    /// action has completed and the DB cluster is available.
+    /// This operation only restores the DB cluster, not the DB instances for that DB cluster.
+    /// You must invoke the <code>CreateDBInstance</code> operation to create DB instances
+    /// for the restored DB cluster, specifying the identifier of the restored DB cluster
+    /// in <code>DBClusterIdentifier</code>. You can create DB instances only after the <code>RestoreDBClusterFromSnapshot</code>
+    /// operation has completed and the DB cluster is available.
     /// </para>
     ///  </note> 
     /// <para>

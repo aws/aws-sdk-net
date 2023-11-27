@@ -39,7 +39,7 @@ namespace Amazon.RDS.Model
     /// 
     ///  
     /// <para>
-    /// This command doesn't apply to RDS Custom.
+    /// This operation doesn't apply to RDS Custom.
     /// </para>
     /// </summary>
     public partial class RestoreDBInstanceFromS3Request : AmazonRDSRequest
@@ -661,54 +661,50 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property MasterUserPassword. 
         /// <para>
-        /// The password for the master user. The password can include any printable ASCII character
-        /// except "/", """, or "@".
+        /// The password for the master user.
         /// </para>
         ///  
         /// <para>
-        /// Constraints: Can't be specified if <code>ManageMasterUserPassword</code> is turned
-        /// on.
+        /// Constraints:
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        ///  <b>MariaDB</b> 
+        /// Can't be specified if <code>ManageMasterUserPassword</code> is turned on.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// Constraints: Must contain from 8 to 41 characters.
+        /// Can include any printable ASCII character except "/", """, or "@". For RDS for Oracle,
+        /// can't include the "&amp;" (ampersand) or the "'" (single quotes) character.
         /// </para>
-        ///  
+        ///  </li> </ul> 
         /// <para>
-        ///  <b>Microsoft SQL Server</b> 
+        /// Length Constraints:
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// Constraints: Must contain from 8 to 128 characters.
+        /// RDS for Db2 - Must contain from 8 to 128 characters.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        ///  <b>MySQL</b> 
+        /// RDS for MariaDB - Must contain from 8 to 41 characters.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// Constraints: Must contain from 8 to 41 characters.
+        /// RDS for Microsoft SQL Server - Must contain from 8 to 128 characters.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        ///  <b>Oracle</b> 
+        /// RDS for MySQL - Must contain from 8 to 41 characters.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// Constraints: Must contain from 8 to 30 characters.
+        /// RDS for Oracle - Must contain from 8 to 30 characters.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        ///  <b>PostgreSQL</b> 
+        /// RDS for PostgreSQL - Must contain from 8 to 128 characters.
         /// </para>
-        ///  
-        /// <para>
-        /// Constraints: Must contain from 8 to 128 characters.
-        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string MasterUserPassword
         {
