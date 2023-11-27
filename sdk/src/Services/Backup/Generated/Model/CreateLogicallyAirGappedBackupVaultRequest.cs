@@ -95,6 +95,11 @@ namespace Amazon.Backup.Model
         /// <para>
         /// This is the ID of the creation request.
         /// </para>
+        ///  
+        /// <para>
+        /// This parameter is optional. If used, this parameter must contain 1 to 50 alphanumeric
+        /// or '-_.' characters.
+        /// </para>
         /// </summary>
         public string CreatorRequestId
         {

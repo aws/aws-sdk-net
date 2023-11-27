@@ -35,6 +35,7 @@ namespace Amazon.Backup.Model
     {
         private string _backupVaultArn;
         private string _recoveryPointArn;
+        private string _resourceType;
         private Dictionary<string, string> _restoreMetadata = new Dictionary<string, string>();
 
         /// <summary>
@@ -71,6 +72,24 @@ namespace Amazon.Backup.Model
         internal bool IsSetRecoveryPointArn()
         {
             return this._recoveryPointArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceType. 
+        /// <para>
+        /// This is the resource type associated with the recovery point.
+        /// </para>
+        /// </summary>
+        public string ResourceType
+        {
+            get { return this._resourceType; }
+            set { this._resourceType = value; }
+        }
+
+        // Check to see if ResourceType property is set
+        internal bool IsSetResourceType()
+        {
+            return this._resourceType != null;
         }
 
         /// <summary>

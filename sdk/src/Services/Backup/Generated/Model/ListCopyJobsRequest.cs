@@ -164,13 +164,18 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property ByMessageCategory. 
         /// <para>
-        /// This parameter returns the job count for the specified message category.
+        /// This is an optional parameter that can be used to filter out jobs with a MessageCategory
+        /// which matches the value you input.
         /// </para>
         ///  
         /// <para>
-        /// Example accepted strings include <code>AccessDenied</code>, <code>Success</code>,
-        /// and <code>InvalidParameters</code>. See <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a>
-        /// for a list of accepted MessageCategory strings.
+        /// Example strings may include <code>AccessDenied</code>, <code>SUCCESS</code>, <code>AGGREGATE_ALL</code>,
+        /// and <code>INVALIDPARAMETERS</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// View <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a>
+        /// for a list of accepted strings.
         /// </para>
         ///  
         /// <para>
@@ -339,7 +344,7 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// The next item following a partial list of returned items. For example, if a request
-        /// is made to return maxResults number of items, NextToken allows you to return more
+        /// is made to return MaxResults number of items, NextToken allows you to return more
         /// items in your list starting at the location pointed to by the next token. 
         /// </para>
         /// </summary>

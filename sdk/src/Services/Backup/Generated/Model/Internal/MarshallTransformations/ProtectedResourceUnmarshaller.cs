@@ -70,6 +70,18 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                     unmarshalledObject.LastBackupTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LastBackupVaultArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LastBackupVaultArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LastRecoveryPointArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LastRecoveryPointArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ResourceArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

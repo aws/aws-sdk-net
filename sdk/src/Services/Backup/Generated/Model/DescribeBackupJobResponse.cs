@@ -47,6 +47,7 @@ namespace Amazon.Backup.Model
         private DateTime? _creationDate;
         private DateTime? _expectedCompletionDate;
         private string _iamRoleArn;
+        private DateTime? _initiationDate;
         private bool? _isParent;
         private string _messageCategory;
         private long? _numberOfChildJobs;
@@ -332,6 +333,24 @@ namespace Amazon.Backup.Model
         }
 
         /// <summary>
+        /// Gets and sets the property InitiationDate. 
+        /// <para>
+        /// This is the date a backup job was initiated.
+        /// </para>
+        /// </summary>
+        public DateTime InitiationDate
+        {
+            get { return this._initiationDate.GetValueOrDefault(); }
+            set { this._initiationDate = value; }
+        }
+
+        // Check to see if InitiationDate property is set
+        internal bool IsSetInitiationDate()
+        {
+            return this._initiationDate.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property IsParent. 
         /// <para>
         /// This returns the boolean value that a backup job is a parent (composite) job.
@@ -356,9 +375,9 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  
         /// <para>
-        /// Example strings may include <code>AccessDenied</code>, <code>Success</code>, and <code>InvalidParameters</code>.
-        /// See <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a>
-        /// for a list of MessageCategory strings.
+        /// Example strings may include <code>AccessDenied</code>, <code>SUCCESS</code>, <code>AGGREGATE_ALL</code>,
+        /// and <code>INVALIDPARAMETERS</code>. View <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a>
+        /// for a list of accepted MessageCategory strings.
         /// </para>
         /// </summary>
         public string MessageCategory

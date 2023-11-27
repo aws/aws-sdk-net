@@ -57,6 +57,12 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.MoveToColdStorageAfterDays);
             }
 
+            if(requestObject.IsSetOptInToArchiveForSupportedResources())
+            {
+                context.Writer.WritePropertyName("OptInToArchiveForSupportedResources");
+                context.Writer.Write(requestObject.OptInToArchiveForSupportedResources);
+            }
+
         }
 
         /// <summary>

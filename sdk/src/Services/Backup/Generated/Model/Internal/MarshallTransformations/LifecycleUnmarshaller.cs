@@ -76,6 +76,12 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                     unmarshalledObject.MoveToColdStorageAfterDays = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("OptInToArchiveForSupportedResources", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.OptInToArchiveForSupportedResources = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

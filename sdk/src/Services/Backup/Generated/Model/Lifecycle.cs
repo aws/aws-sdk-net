@@ -51,6 +51,7 @@ namespace Amazon.Backup.Model
     {
         private long? _deleteAfterDays;
         private long? _moveToColdStorageAfterDays;
+        private bool? _optInToArchiveForSupportedResources;
 
         /// <summary>
         /// Gets and sets the property DeleteAfterDays. 
@@ -88,6 +89,26 @@ namespace Amazon.Backup.Model
         internal bool IsSetMoveToColdStorageAfterDays()
         {
             return this._moveToColdStorageAfterDays.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OptInToArchiveForSupportedResources. 
+        /// <para>
+        /// Optional Boolean. If this is true, this setting will instruct your backup plan to
+        /// transition supported resources to archive (cold) storage tier in accordance with your
+        /// lifecycle settings.
+        /// </para>
+        /// </summary>
+        public bool OptInToArchiveForSupportedResources
+        {
+            get { return this._optInToArchiveForSupportedResources.GetValueOrDefault(); }
+            set { this._optInToArchiveForSupportedResources = value; }
+        }
+
+        // Check to see if OptInToArchiveForSupportedResources property is set
+        internal bool IsSetOptInToArchiveForSupportedResources()
+        {
+            return this._optInToArchiveForSupportedResources.HasValue; 
         }
 
     }

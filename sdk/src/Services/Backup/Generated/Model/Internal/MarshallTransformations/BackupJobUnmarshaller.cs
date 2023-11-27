@@ -142,6 +142,12 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                     unmarshalledObject.IamRoleArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("InitiationDate", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.InitiationDate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("IsParent", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;

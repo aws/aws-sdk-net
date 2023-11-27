@@ -725,6 +725,153 @@ namespace Amazon.Backup
 
         #endregion
         
+        #region  CreateRestoreTestingPlan
+
+        internal virtual CreateRestoreTestingPlanResponse CreateRestoreTestingPlan(CreateRestoreTestingPlanRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateRestoreTestingPlanRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRestoreTestingPlanResponseUnmarshaller.Instance;
+
+            return Invoke<CreateRestoreTestingPlanResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// This is the first of two steps to create a restore testing plan; once this request
+        /// is successful, finish the procedure with request CreateRestoreTestingSelection.
+        /// 
+        ///  
+        /// <para>
+        /// You must include the parameter RestoreTestingPlan. You may optionally include CreatorRequestId
+        /// and Tags.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRestoreTestingPlan service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateRestoreTestingPlan service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.AlreadyExistsException">
+        /// The required resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ConflictException">
+        /// Backup can't perform the action that you requested until it finishes performing a
+        /// previous action. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.LimitExceededException">
+        /// A limit in the request has been exceeded; for example, a maximum number of items allowed
+        /// in a request.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CreateRestoreTestingPlan">REST API Reference for CreateRestoreTestingPlan Operation</seealso>
+        public virtual Task<CreateRestoreTestingPlanResponse> CreateRestoreTestingPlanAsync(CreateRestoreTestingPlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateRestoreTestingPlanRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRestoreTestingPlanResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateRestoreTestingPlanResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateRestoreTestingSelection
+
+        internal virtual CreateRestoreTestingSelectionResponse CreateRestoreTestingSelection(CreateRestoreTestingSelectionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateRestoreTestingSelectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRestoreTestingSelectionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateRestoreTestingSelectionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// This request can be sent after CreateRestoreTestingPlan request returns successfully.
+        /// This is the second part of creating a resource testing plan, and it must be completed
+        /// sequentially.
+        /// 
+        ///  
+        /// <para>
+        /// This consists of <code>RestoreTestingSelectionName</code>, <code>ProtectedResourceType</code>,
+        /// and one of the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>ProtectedResourceArns</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ProtectedResourceConditions</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Each protected resource type can have one single value.
+        /// </para>
+        ///  
+        /// <para>
+        /// A restore testing selection can include a wildcard value ("*") for <code>ProtectedResourceArns</code>
+        /// along with <code>ProtectedResourceConditions</code>. Alternatively, you can include
+        /// up to 30 specific protected resource ARNs in <code>ProtectedResourceArns</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Cannot select by both protected resource types AND specific ARNs. Request will fail
+        /// if both are included.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRestoreTestingSelection service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateRestoreTestingSelection service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.AlreadyExistsException">
+        /// The required resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.LimitExceededException">
+        /// A limit in the request has been exceeded; for example, a maximum number of items allowed
+        /// in a request.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CreateRestoreTestingSelection">REST API Reference for CreateRestoreTestingSelection Operation</seealso>
+        public virtual Task<CreateRestoreTestingSelectionResponse> CreateRestoreTestingSelectionAsync(CreateRestoreTestingSelectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateRestoreTestingSelectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRestoreTestingSelectionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateRestoreTestingSelectionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteBackupPlan
 
         internal virtual DeleteBackupPlanResponse DeleteBackupPlan(DeleteBackupPlanRequest request)
@@ -1208,6 +1355,99 @@ namespace Amazon.Backup
             options.ResponseUnmarshaller = DeleteReportPlanResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteReportPlanResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteRestoreTestingPlan
+
+        internal virtual DeleteRestoreTestingPlanResponse DeleteRestoreTestingPlan(DeleteRestoreTestingPlanRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRestoreTestingPlanRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRestoreTestingPlanResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteRestoreTestingPlanResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// This request deletes the specified restore testing plan.
+        /// 
+        ///  
+        /// <para>
+        /// Deletion can only successfully occur if all associated restore testing selections
+        /// are deleted first.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRestoreTestingPlan service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteRestoreTestingPlan service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a parameter
+        /// is of the wrong type.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DeleteRestoreTestingPlan">REST API Reference for DeleteRestoreTestingPlan Operation</seealso>
+        public virtual Task<DeleteRestoreTestingPlanResponse> DeleteRestoreTestingPlanAsync(DeleteRestoreTestingPlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRestoreTestingPlanRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRestoreTestingPlanResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteRestoreTestingPlanResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteRestoreTestingSelection
+
+        internal virtual DeleteRestoreTestingSelectionResponse DeleteRestoreTestingSelection(DeleteRestoreTestingSelectionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRestoreTestingSelectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRestoreTestingSelectionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteRestoreTestingSelectionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Input the Restore Testing Plan name and Restore Testing Selection name.
+        /// 
+        ///  
+        /// <para>
+        /// All testing selections associated with a restore testing plan must be deleted before
+        /// the restore testing plan can be deleted.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRestoreTestingSelection service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteRestoreTestingSelection service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DeleteRestoreTestingSelection">REST API Reference for DeleteRestoreTestingSelection Operation</seealso>
+        public virtual Task<DeleteRestoreTestingSelectionResponse> DeleteRestoreTestingSelectionAsync(DeleteRestoreTestingSelectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRestoreTestingSelectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRestoreTestingSelectionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteRestoreTestingSelectionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2272,6 +2512,185 @@ namespace Amazon.Backup
 
         #endregion
         
+        #region  GetRestoreJobMetadata
+
+        internal virtual GetRestoreJobMetadataResponse GetRestoreJobMetadata(GetRestoreJobMetadataRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetRestoreJobMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRestoreJobMetadataResponseUnmarshaller.Instance;
+
+            return Invoke<GetRestoreJobMetadataResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// This request returns the metadata for the specified restore job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRestoreJobMetadata service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetRestoreJobMetadata service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/GetRestoreJobMetadata">REST API Reference for GetRestoreJobMetadata Operation</seealso>
+        public virtual Task<GetRestoreJobMetadataResponse> GetRestoreJobMetadataAsync(GetRestoreJobMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetRestoreJobMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRestoreJobMetadataResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetRestoreJobMetadataResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetRestoreTestingInferredMetadata
+
+        internal virtual GetRestoreTestingInferredMetadataResponse GetRestoreTestingInferredMetadata(GetRestoreTestingInferredMetadataRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetRestoreTestingInferredMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRestoreTestingInferredMetadataResponseUnmarshaller.Instance;
+
+            return Invoke<GetRestoreTestingInferredMetadataResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// This request returns the minimal required set of metadata needed to start a restore
+        /// job with secure default settings. <code>BackupVaultName</code> and <code>RecoveryPointArn</code>
+        /// are required parameters. <code>BackupVaultAccountId</code> is an optional parameter.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRestoreTestingInferredMetadata service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetRestoreTestingInferredMetadata service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/GetRestoreTestingInferredMetadata">REST API Reference for GetRestoreTestingInferredMetadata Operation</seealso>
+        public virtual Task<GetRestoreTestingInferredMetadataResponse> GetRestoreTestingInferredMetadataAsync(GetRestoreTestingInferredMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetRestoreTestingInferredMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRestoreTestingInferredMetadataResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetRestoreTestingInferredMetadataResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetRestoreTestingPlan
+
+        internal virtual GetRestoreTestingPlanResponse GetRestoreTestingPlan(GetRestoreTestingPlanRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetRestoreTestingPlanRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRestoreTestingPlanResponseUnmarshaller.Instance;
+
+            return Invoke<GetRestoreTestingPlanResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns <code>RestoreTestingPlan</code> details for the specified <code>RestoreTestingPlanName</code>.
+        /// The details are the body of a restore testing plan in JSON format, in addition to
+        /// plan metadata.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRestoreTestingPlan service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetRestoreTestingPlan service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/GetRestoreTestingPlan">REST API Reference for GetRestoreTestingPlan Operation</seealso>
+        public virtual Task<GetRestoreTestingPlanResponse> GetRestoreTestingPlanAsync(GetRestoreTestingPlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetRestoreTestingPlanRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRestoreTestingPlanResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetRestoreTestingPlanResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetRestoreTestingSelection
+
+        internal virtual GetRestoreTestingSelectionResponse GetRestoreTestingSelection(GetRestoreTestingSelectionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetRestoreTestingSelectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRestoreTestingSelectionResponseUnmarshaller.Instance;
+
+            return Invoke<GetRestoreTestingSelectionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns RestoreTestingSelection, which displays resources and elements of the restore
+        /// testing plan.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRestoreTestingSelection service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetRestoreTestingSelection service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/GetRestoreTestingSelection">REST API Reference for GetRestoreTestingSelection Operation</seealso>
+        public virtual Task<GetRestoreTestingSelectionResponse> GetRestoreTestingSelectionAsync(GetRestoreTestingSelectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetRestoreTestingSelectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRestoreTestingSelectionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetRestoreTestingSelectionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetSupportedResourceTypes
 
         internal virtual GetSupportedResourceTypesResponse GetSupportedResourceTypes(GetSupportedResourceTypesRequest request)
@@ -3181,6 +3600,60 @@ namespace Amazon.Backup
 
         #endregion
         
+        #region  ListRestoreJobsByProtectedResource
+
+        internal virtual ListRestoreJobsByProtectedResourceResponse ListRestoreJobsByProtectedResource(ListRestoreJobsByProtectedResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRestoreJobsByProtectedResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRestoreJobsByProtectedResourceResponseUnmarshaller.Instance;
+
+            return Invoke<ListRestoreJobsByProtectedResourceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// This returns restore jobs that contain the specified protected resource.
+        /// 
+        ///  
+        /// <para>
+        /// You must include <code>ResourceArn</code>. You can optionally include <code>NextToken</code>,
+        /// <code>ByStatus</code>, <code>MaxResults</code>, <code>ByRecoveryPointCreationDateAfter</code>
+        /// , and <code>ByRecoveryPointCreationDateBefore</code>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRestoreJobsByProtectedResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListRestoreJobsByProtectedResource service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListRestoreJobsByProtectedResource">REST API Reference for ListRestoreJobsByProtectedResource Operation</seealso>
+        public virtual Task<ListRestoreJobsByProtectedResourceResponse> ListRestoreJobsByProtectedResourceAsync(ListRestoreJobsByProtectedResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRestoreJobsByProtectedResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRestoreJobsByProtectedResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListRestoreJobsByProtectedResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListRestoreJobSummaries
 
         internal virtual ListRestoreJobSummariesResponse ListRestoreJobSummaries(ListRestoreJobSummariesRequest request)
@@ -3226,6 +3699,92 @@ namespace Amazon.Backup
             options.ResponseUnmarshaller = ListRestoreJobSummariesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListRestoreJobSummariesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListRestoreTestingPlans
+
+        internal virtual ListRestoreTestingPlansResponse ListRestoreTestingPlans(ListRestoreTestingPlansRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRestoreTestingPlansRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRestoreTestingPlansResponseUnmarshaller.Instance;
+
+            return Invoke<ListRestoreTestingPlansResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a list of restore testing plans.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRestoreTestingPlans service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListRestoreTestingPlans service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListRestoreTestingPlans">REST API Reference for ListRestoreTestingPlans Operation</seealso>
+        public virtual Task<ListRestoreTestingPlansResponse> ListRestoreTestingPlansAsync(ListRestoreTestingPlansRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRestoreTestingPlansRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRestoreTestingPlansResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListRestoreTestingPlansResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListRestoreTestingSelections
+
+        internal virtual ListRestoreTestingSelectionsResponse ListRestoreTestingSelections(ListRestoreTestingSelectionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRestoreTestingSelectionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRestoreTestingSelectionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListRestoreTestingSelectionsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a list of restore testing selections. Can be filtered by <code>MaxResults</code>
+        /// and <code>RestoreTestingPlanName</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRestoreTestingSelections service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListRestoreTestingSelections service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListRestoreTestingSelections">REST API Reference for ListRestoreTestingSelections Operation</seealso>
+        public virtual Task<ListRestoreTestingSelectionsResponse> ListRestoreTestingSelectionsAsync(ListRestoreTestingSelectionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRestoreTestingSelectionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRestoreTestingSelectionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListRestoreTestingSelectionsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3441,6 +4000,59 @@ namespace Amazon.Backup
             options.ResponseUnmarshaller = PutBackupVaultNotificationsResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutBackupVaultNotificationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutRestoreValidationResult
+
+        internal virtual PutRestoreValidationResultResponse PutRestoreValidationResult(PutRestoreValidationResultRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutRestoreValidationResultRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutRestoreValidationResultResponseUnmarshaller.Instance;
+
+            return Invoke<PutRestoreValidationResultResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// This request allows you to send your independent self-run restore test validation
+        /// results. <code>RestoreJobId</code> and <code>ValidationStatus</code> are required.
+        /// Optionally, you can input a <code>ValidationStatusMessage</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutRestoreValidationResult service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutRestoreValidationResult service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a parameter
+        /// is of the wrong type.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/PutRestoreValidationResult">REST API Reference for PutRestoreValidationResult Operation</seealso>
+        public virtual Task<PutRestoreValidationResultResponse> PutRestoreValidationResultAsync(PutRestoreValidationResultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutRestoreValidationResultRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutRestoreValidationResultResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutRestoreValidationResultResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4145,6 +4757,143 @@ namespace Amazon.Backup
             options.ResponseUnmarshaller = UpdateReportPlanResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateReportPlanResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateRestoreTestingPlan
+
+        internal virtual UpdateRestoreTestingPlanResponse UpdateRestoreTestingPlan(UpdateRestoreTestingPlanRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateRestoreTestingPlanRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRestoreTestingPlanResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateRestoreTestingPlanResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// This request will send changes to your specified restore testing plan. <code>RestoreTestingPlanName</code>
+        /// cannot be updated after it is created.
+        /// 
+        ///  
+        /// <para>
+        ///  <code>RecoveryPointSelection</code> can contain:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>Algorithm</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ExcludeVaults</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>IncludeVaults</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>RecoveryPointTypes</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>SelectionWindowDays</code> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRestoreTestingPlan service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateRestoreTestingPlan service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.ConflictException">
+        /// Backup can't perform the action that you requested until it finishes performing a
+        /// previous action. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateRestoreTestingPlan">REST API Reference for UpdateRestoreTestingPlan Operation</seealso>
+        public virtual Task<UpdateRestoreTestingPlanResponse> UpdateRestoreTestingPlanAsync(UpdateRestoreTestingPlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateRestoreTestingPlanRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRestoreTestingPlanResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateRestoreTestingPlanResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateRestoreTestingSelection
+
+        internal virtual UpdateRestoreTestingSelectionResponse UpdateRestoreTestingSelection(UpdateRestoreTestingSelectionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateRestoreTestingSelectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRestoreTestingSelectionResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateRestoreTestingSelectionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Most elements except the <code>RestoreTestingSelectionName</code> can be updated with
+        /// this request.
+        /// 
+        ///  
+        /// <para>
+        ///  <code>RestoreTestingSelection</code> can use either protected resource ARNs or conditions,
+        /// but not both. That is, if your selection has <code>ProtectedResourceArns</code>, requesting
+        /// an update with the parameter <code>ProtectedResourceConditions</code> will be unsuccessful.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRestoreTestingSelection service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateRestoreTestingSelection service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.ConflictException">
+        /// Backup can't perform the action that you requested until it finishes performing a
+        /// previous action. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateRestoreTestingSelection">REST API Reference for UpdateRestoreTestingSelection Operation</seealso>
+        public virtual Task<UpdateRestoreTestingSelectionResponse> UpdateRestoreTestingSelectionAsync(UpdateRestoreTestingSelectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateRestoreTestingSelectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRestoreTestingSelectionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateRestoreTestingSelectionResponse>(request, options, cancellationToken);
         }
 
         #endregion

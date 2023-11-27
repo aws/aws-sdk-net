@@ -121,9 +121,24 @@ namespace Amazon.Backup.Model
         IListRestoreJobsPaginator ListRestoreJobs(ListRestoreJobsRequest request);
 
         /// <summary>
+        /// Paginator for ListRestoreJobsByProtectedResource operation
+        ///</summary>
+        IListRestoreJobsByProtectedResourcePaginator ListRestoreJobsByProtectedResource(ListRestoreJobsByProtectedResourceRequest request);
+
+        /// <summary>
         /// Paginator for ListRestoreJobSummaries operation
         ///</summary>
         IListRestoreJobSummariesPaginator ListRestoreJobSummaries(ListRestoreJobSummariesRequest request);
+
+        /// <summary>
+        /// Paginator for ListRestoreTestingPlans operation
+        ///</summary>
+        IListRestoreTestingPlansPaginator ListRestoreTestingPlans(ListRestoreTestingPlansRequest request);
+
+        /// <summary>
+        /// Paginator for ListRestoreTestingSelections operation
+        ///</summary>
+        IListRestoreTestingSelectionsPaginator ListRestoreTestingSelections(ListRestoreTestingSelectionsRequest request);
 
         /// <summary>
         /// Paginator for ListTags operation

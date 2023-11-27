@@ -34,6 +34,8 @@ namespace Amazon.Backup.Model
     public partial class ProtectedResource
     {
         private DateTime? _lastBackupTime;
+        private string _lastBackupVaultArn;
+        private string _lastRecoveryPointArn;
         private string _resourceArn;
         private string _resourceName;
         private string _resourceType;
@@ -57,6 +59,43 @@ namespace Amazon.Backup.Model
         internal bool IsSetLastBackupTime()
         {
             return this._lastBackupTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastBackupVaultArn. 
+        /// <para>
+        /// This is the ARN (Amazon Resource Name) of the backup vault that contains the most
+        /// recent backup recovery point.
+        /// </para>
+        /// </summary>
+        public string LastBackupVaultArn
+        {
+            get { return this._lastBackupVaultArn; }
+            set { this._lastBackupVaultArn = value; }
+        }
+
+        // Check to see if LastBackupVaultArn property is set
+        internal bool IsSetLastBackupVaultArn()
+        {
+            return this._lastBackupVaultArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastRecoveryPointArn. 
+        /// <para>
+        /// This is the ARN (Amazon Resource Name) of the most recent recovery point.
+        /// </para>
+        /// </summary>
+        public string LastRecoveryPointArn
+        {
+            get { return this._lastRecoveryPointArn; }
+            set { this._lastRecoveryPointArn = value; }
+        }
+
+        // Check to see if LastRecoveryPointArn property is set
+        internal bool IsSetLastRecoveryPointArn()
+        {
+            return this._lastRecoveryPointArn != null;
         }
 
         /// <summary>

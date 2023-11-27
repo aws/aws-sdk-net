@@ -69,6 +69,12 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                     response.CompletionDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CreatedBy", targetDepth))
+                {
+                    var unmarshaller = RestoreJobCreatorUnmarshaller.Instance;
+                    response.CreatedBy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CreatedResourceArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -79,6 +85,18 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     response.CreationDate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DeletionStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.DeletionStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DeletionStatusMessage", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.DeletionStatusMessage = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ExpectedCompletionTimeMinutes", targetDepth))
@@ -105,6 +123,12 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                     response.RecoveryPointArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("RecoveryPointCreationDate", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    response.RecoveryPointCreationDate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ResourceType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -127,6 +151,18 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.StatusMessage = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ValidationStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ValidationStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ValidationStatusMessage", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ValidationStatusMessage = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

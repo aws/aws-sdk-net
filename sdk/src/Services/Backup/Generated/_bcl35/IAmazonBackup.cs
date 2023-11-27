@@ -550,6 +550,165 @@ namespace Amazon.Backup
 
         #endregion
         
+        #region  CreateRestoreTestingPlan
+
+
+        /// <summary>
+        /// This is the first of two steps to create a restore testing plan; once this request
+        /// is successful, finish the procedure with request CreateRestoreTestingSelection.
+        /// 
+        ///  
+        /// <para>
+        /// You must include the parameter RestoreTestingPlan. You may optionally include CreatorRequestId
+        /// and Tags.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRestoreTestingPlan service method.</param>
+        /// 
+        /// <returns>The response from the CreateRestoreTestingPlan service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.AlreadyExistsException">
+        /// The required resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ConflictException">
+        /// Backup can't perform the action that you requested until it finishes performing a
+        /// previous action. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.LimitExceededException">
+        /// A limit in the request has been exceeded; for example, a maximum number of items allowed
+        /// in a request.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CreateRestoreTestingPlan">REST API Reference for CreateRestoreTestingPlan Operation</seealso>
+        CreateRestoreTestingPlanResponse CreateRestoreTestingPlan(CreateRestoreTestingPlanRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateRestoreTestingPlan operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateRestoreTestingPlan operation on AmazonBackupClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateRestoreTestingPlan
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CreateRestoreTestingPlan">REST API Reference for CreateRestoreTestingPlan Operation</seealso>
+        IAsyncResult BeginCreateRestoreTestingPlan(CreateRestoreTestingPlanRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateRestoreTestingPlan operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateRestoreTestingPlan.</param>
+        /// 
+        /// <returns>Returns a  CreateRestoreTestingPlanResult from Backup.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CreateRestoreTestingPlan">REST API Reference for CreateRestoreTestingPlan Operation</seealso>
+        CreateRestoreTestingPlanResponse EndCreateRestoreTestingPlan(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateRestoreTestingSelection
+
+
+        /// <summary>
+        /// This request can be sent after CreateRestoreTestingPlan request returns successfully.
+        /// This is the second part of creating a resource testing plan, and it must be completed
+        /// sequentially.
+        /// 
+        ///  
+        /// <para>
+        /// This consists of <code>RestoreTestingSelectionName</code>, <code>ProtectedResourceType</code>,
+        /// and one of the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>ProtectedResourceArns</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ProtectedResourceConditions</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Each protected resource type can have one single value.
+        /// </para>
+        ///  
+        /// <para>
+        /// A restore testing selection can include a wildcard value ("*") for <code>ProtectedResourceArns</code>
+        /// along with <code>ProtectedResourceConditions</code>. Alternatively, you can include
+        /// up to 30 specific protected resource ARNs in <code>ProtectedResourceArns</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Cannot select by both protected resource types AND specific ARNs. Request will fail
+        /// if both are included.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRestoreTestingSelection service method.</param>
+        /// 
+        /// <returns>The response from the CreateRestoreTestingSelection service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.AlreadyExistsException">
+        /// The required resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.LimitExceededException">
+        /// A limit in the request has been exceeded; for example, a maximum number of items allowed
+        /// in a request.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CreateRestoreTestingSelection">REST API Reference for CreateRestoreTestingSelection Operation</seealso>
+        CreateRestoreTestingSelectionResponse CreateRestoreTestingSelection(CreateRestoreTestingSelectionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateRestoreTestingSelection operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateRestoreTestingSelection operation on AmazonBackupClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateRestoreTestingSelection
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CreateRestoreTestingSelection">REST API Reference for CreateRestoreTestingSelection Operation</seealso>
+        IAsyncResult BeginCreateRestoreTestingSelection(CreateRestoreTestingSelectionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateRestoreTestingSelection operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateRestoreTestingSelection.</param>
+        /// 
+        /// <returns>Returns a  CreateRestoreTestingSelectionResult from Backup.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CreateRestoreTestingSelection">REST API Reference for CreateRestoreTestingSelection Operation</seealso>
+        CreateRestoreTestingSelectionResponse EndCreateRestoreTestingSelection(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteBackupPlan
 
 
@@ -1088,6 +1247,111 @@ namespace Amazon.Backup
         /// <returns>Returns a  DeleteReportPlanResult from Backup.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DeleteReportPlan">REST API Reference for DeleteReportPlan Operation</seealso>
         DeleteReportPlanResponse EndDeleteReportPlan(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteRestoreTestingPlan
+
+
+        /// <summary>
+        /// This request deletes the specified restore testing plan.
+        /// 
+        ///  
+        /// <para>
+        /// Deletion can only successfully occur if all associated restore testing selections
+        /// are deleted first.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRestoreTestingPlan service method.</param>
+        /// 
+        /// <returns>The response from the DeleteRestoreTestingPlan service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a parameter
+        /// is of the wrong type.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DeleteRestoreTestingPlan">REST API Reference for DeleteRestoreTestingPlan Operation</seealso>
+        DeleteRestoreTestingPlanResponse DeleteRestoreTestingPlan(DeleteRestoreTestingPlanRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteRestoreTestingPlan operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRestoreTestingPlan operation on AmazonBackupClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteRestoreTestingPlan
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DeleteRestoreTestingPlan">REST API Reference for DeleteRestoreTestingPlan Operation</seealso>
+        IAsyncResult BeginDeleteRestoreTestingPlan(DeleteRestoreTestingPlanRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteRestoreTestingPlan operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteRestoreTestingPlan.</param>
+        /// 
+        /// <returns>Returns a  DeleteRestoreTestingPlanResult from Backup.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DeleteRestoreTestingPlan">REST API Reference for DeleteRestoreTestingPlan Operation</seealso>
+        DeleteRestoreTestingPlanResponse EndDeleteRestoreTestingPlan(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteRestoreTestingSelection
+
+
+        /// <summary>
+        /// Input the Restore Testing Plan name and Restore Testing Selection name.
+        /// 
+        ///  
+        /// <para>
+        /// All testing selections associated with a restore testing plan must be deleted before
+        /// the restore testing plan can be deleted.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRestoreTestingSelection service method.</param>
+        /// 
+        /// <returns>The response from the DeleteRestoreTestingSelection service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DeleteRestoreTestingSelection">REST API Reference for DeleteRestoreTestingSelection Operation</seealso>
+        DeleteRestoreTestingSelectionResponse DeleteRestoreTestingSelection(DeleteRestoreTestingSelectionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteRestoreTestingSelection operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRestoreTestingSelection operation on AmazonBackupClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteRestoreTestingSelection
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DeleteRestoreTestingSelection">REST API Reference for DeleteRestoreTestingSelection Operation</seealso>
+        IAsyncResult BeginDeleteRestoreTestingSelection(DeleteRestoreTestingSelectionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteRestoreTestingSelection operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteRestoreTestingSelection.</param>
+        /// 
+        /// <returns>Returns a  DeleteRestoreTestingSelectionResult from Backup.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DeleteRestoreTestingSelection">REST API Reference for DeleteRestoreTestingSelection Operation</seealso>
+        DeleteRestoreTestingSelectionResponse EndDeleteRestoreTestingSelection(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2283,6 +2547,209 @@ namespace Amazon.Backup
 
         #endregion
         
+        #region  GetRestoreJobMetadata
+
+
+        /// <summary>
+        /// This request returns the metadata for the specified restore job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRestoreJobMetadata service method.</param>
+        /// 
+        /// <returns>The response from the GetRestoreJobMetadata service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/GetRestoreJobMetadata">REST API Reference for GetRestoreJobMetadata Operation</seealso>
+        GetRestoreJobMetadataResponse GetRestoreJobMetadata(GetRestoreJobMetadataRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetRestoreJobMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetRestoreJobMetadata operation on AmazonBackupClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetRestoreJobMetadata
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/GetRestoreJobMetadata">REST API Reference for GetRestoreJobMetadata Operation</seealso>
+        IAsyncResult BeginGetRestoreJobMetadata(GetRestoreJobMetadataRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetRestoreJobMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetRestoreJobMetadata.</param>
+        /// 
+        /// <returns>Returns a  GetRestoreJobMetadataResult from Backup.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/GetRestoreJobMetadata">REST API Reference for GetRestoreJobMetadata Operation</seealso>
+        GetRestoreJobMetadataResponse EndGetRestoreJobMetadata(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetRestoreTestingInferredMetadata
+
+
+        /// <summary>
+        /// This request returns the minimal required set of metadata needed to start a restore
+        /// job with secure default settings. <code>BackupVaultName</code> and <code>RecoveryPointArn</code>
+        /// are required parameters. <code>BackupVaultAccountId</code> is an optional parameter.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRestoreTestingInferredMetadata service method.</param>
+        /// 
+        /// <returns>The response from the GetRestoreTestingInferredMetadata service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/GetRestoreTestingInferredMetadata">REST API Reference for GetRestoreTestingInferredMetadata Operation</seealso>
+        GetRestoreTestingInferredMetadataResponse GetRestoreTestingInferredMetadata(GetRestoreTestingInferredMetadataRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetRestoreTestingInferredMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetRestoreTestingInferredMetadata operation on AmazonBackupClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetRestoreTestingInferredMetadata
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/GetRestoreTestingInferredMetadata">REST API Reference for GetRestoreTestingInferredMetadata Operation</seealso>
+        IAsyncResult BeginGetRestoreTestingInferredMetadata(GetRestoreTestingInferredMetadataRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetRestoreTestingInferredMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetRestoreTestingInferredMetadata.</param>
+        /// 
+        /// <returns>Returns a  GetRestoreTestingInferredMetadataResult from Backup.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/GetRestoreTestingInferredMetadata">REST API Reference for GetRestoreTestingInferredMetadata Operation</seealso>
+        GetRestoreTestingInferredMetadataResponse EndGetRestoreTestingInferredMetadata(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetRestoreTestingPlan
+
+
+        /// <summary>
+        /// Returns <code>RestoreTestingPlan</code> details for the specified <code>RestoreTestingPlanName</code>.
+        /// The details are the body of a restore testing plan in JSON format, in addition to
+        /// plan metadata.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRestoreTestingPlan service method.</param>
+        /// 
+        /// <returns>The response from the GetRestoreTestingPlan service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/GetRestoreTestingPlan">REST API Reference for GetRestoreTestingPlan Operation</seealso>
+        GetRestoreTestingPlanResponse GetRestoreTestingPlan(GetRestoreTestingPlanRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetRestoreTestingPlan operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetRestoreTestingPlan operation on AmazonBackupClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetRestoreTestingPlan
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/GetRestoreTestingPlan">REST API Reference for GetRestoreTestingPlan Operation</seealso>
+        IAsyncResult BeginGetRestoreTestingPlan(GetRestoreTestingPlanRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetRestoreTestingPlan operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetRestoreTestingPlan.</param>
+        /// 
+        /// <returns>Returns a  GetRestoreTestingPlanResult from Backup.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/GetRestoreTestingPlan">REST API Reference for GetRestoreTestingPlan Operation</seealso>
+        GetRestoreTestingPlanResponse EndGetRestoreTestingPlan(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetRestoreTestingSelection
+
+
+        /// <summary>
+        /// Returns RestoreTestingSelection, which displays resources and elements of the restore
+        /// testing plan.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRestoreTestingSelection service method.</param>
+        /// 
+        /// <returns>The response from the GetRestoreTestingSelection service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/GetRestoreTestingSelection">REST API Reference for GetRestoreTestingSelection Operation</seealso>
+        GetRestoreTestingSelectionResponse GetRestoreTestingSelection(GetRestoreTestingSelectionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetRestoreTestingSelection operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetRestoreTestingSelection operation on AmazonBackupClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetRestoreTestingSelection
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/GetRestoreTestingSelection">REST API Reference for GetRestoreTestingSelection Operation</seealso>
+        IAsyncResult BeginGetRestoreTestingSelection(GetRestoreTestingSelectionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetRestoreTestingSelection operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetRestoreTestingSelection.</param>
+        /// 
+        /// <returns>Returns a  GetRestoreTestingSelectionResult from Backup.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/GetRestoreTestingSelection">REST API Reference for GetRestoreTestingSelection Operation</seealso>
+        GetRestoreTestingSelectionResponse EndGetRestoreTestingSelection(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetSupportedResourceTypes
 
 
@@ -3312,6 +3779,66 @@ namespace Amazon.Backup
 
         #endregion
         
+        #region  ListRestoreJobsByProtectedResource
+
+
+        /// <summary>
+        /// This returns restore jobs that contain the specified protected resource.
+        /// 
+        ///  
+        /// <para>
+        /// You must include <code>ResourceArn</code>. You can optionally include <code>NextToken</code>,
+        /// <code>ByStatus</code>, <code>MaxResults</code>, <code>ByRecoveryPointCreationDateAfter</code>
+        /// , and <code>ByRecoveryPointCreationDateBefore</code>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRestoreJobsByProtectedResource service method.</param>
+        /// 
+        /// <returns>The response from the ListRestoreJobsByProtectedResource service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListRestoreJobsByProtectedResource">REST API Reference for ListRestoreJobsByProtectedResource Operation</seealso>
+        ListRestoreJobsByProtectedResourceResponse ListRestoreJobsByProtectedResource(ListRestoreJobsByProtectedResourceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListRestoreJobsByProtectedResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListRestoreJobsByProtectedResource operation on AmazonBackupClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListRestoreJobsByProtectedResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListRestoreJobsByProtectedResource">REST API Reference for ListRestoreJobsByProtectedResource Operation</seealso>
+        IAsyncResult BeginListRestoreJobsByProtectedResource(ListRestoreJobsByProtectedResourceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListRestoreJobsByProtectedResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListRestoreJobsByProtectedResource.</param>
+        /// 
+        /// <returns>Returns a  ListRestoreJobsByProtectedResourceResult from Backup.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListRestoreJobsByProtectedResource">REST API Reference for ListRestoreJobsByProtectedResource Operation</seealso>
+        ListRestoreJobsByProtectedResourceResponse EndListRestoreJobsByProtectedResource(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListRestoreJobSummaries
 
 
@@ -3364,6 +3891,104 @@ namespace Amazon.Backup
         /// <returns>Returns a  ListRestoreJobSummariesResult from Backup.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListRestoreJobSummaries">REST API Reference for ListRestoreJobSummaries Operation</seealso>
         ListRestoreJobSummariesResponse EndListRestoreJobSummaries(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListRestoreTestingPlans
+
+
+        /// <summary>
+        /// Returns a list of restore testing plans.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRestoreTestingPlans service method.</param>
+        /// 
+        /// <returns>The response from the ListRestoreTestingPlans service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListRestoreTestingPlans">REST API Reference for ListRestoreTestingPlans Operation</seealso>
+        ListRestoreTestingPlansResponse ListRestoreTestingPlans(ListRestoreTestingPlansRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListRestoreTestingPlans operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListRestoreTestingPlans operation on AmazonBackupClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListRestoreTestingPlans
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListRestoreTestingPlans">REST API Reference for ListRestoreTestingPlans Operation</seealso>
+        IAsyncResult BeginListRestoreTestingPlans(ListRestoreTestingPlansRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListRestoreTestingPlans operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListRestoreTestingPlans.</param>
+        /// 
+        /// <returns>Returns a  ListRestoreTestingPlansResult from Backup.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListRestoreTestingPlans">REST API Reference for ListRestoreTestingPlans Operation</seealso>
+        ListRestoreTestingPlansResponse EndListRestoreTestingPlans(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListRestoreTestingSelections
+
+
+        /// <summary>
+        /// Returns a list of restore testing selections. Can be filtered by <code>MaxResults</code>
+        /// and <code>RestoreTestingPlanName</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRestoreTestingSelections service method.</param>
+        /// 
+        /// <returns>The response from the ListRestoreTestingSelections service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListRestoreTestingSelections">REST API Reference for ListRestoreTestingSelections Operation</seealso>
+        ListRestoreTestingSelectionsResponse ListRestoreTestingSelections(ListRestoreTestingSelectionsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListRestoreTestingSelections operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListRestoreTestingSelections operation on AmazonBackupClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListRestoreTestingSelections
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListRestoreTestingSelections">REST API Reference for ListRestoreTestingSelections Operation</seealso>
+        IAsyncResult BeginListRestoreTestingSelections(ListRestoreTestingSelectionsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListRestoreTestingSelections operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListRestoreTestingSelections.</param>
+        /// 
+        /// <returns>Returns a  ListRestoreTestingSelectionsResult from Backup.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListRestoreTestingSelections">REST API Reference for ListRestoreTestingSelections Operation</seealso>
+        ListRestoreTestingSelectionsResponse EndListRestoreTestingSelections(IAsyncResult asyncResult);
 
         #endregion
         
@@ -3603,6 +4228,65 @@ namespace Amazon.Backup
         /// <returns>Returns a  PutBackupVaultNotificationsResult from Backup.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/PutBackupVaultNotifications">REST API Reference for PutBackupVaultNotifications Operation</seealso>
         PutBackupVaultNotificationsResponse EndPutBackupVaultNotifications(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  PutRestoreValidationResult
+
+
+        /// <summary>
+        /// This request allows you to send your independent self-run restore test validation
+        /// results. <code>RestoreJobId</code> and <code>ValidationStatus</code> are required.
+        /// Optionally, you can input a <code>ValidationStatusMessage</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutRestoreValidationResult service method.</param>
+        /// 
+        /// <returns>The response from the PutRestoreValidationResult service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a parameter
+        /// is of the wrong type.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/PutRestoreValidationResult">REST API Reference for PutRestoreValidationResult Operation</seealso>
+        PutRestoreValidationResultResponse PutRestoreValidationResult(PutRestoreValidationResultRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutRestoreValidationResult operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutRestoreValidationResult operation on AmazonBackupClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutRestoreValidationResult
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/PutRestoreValidationResult">REST API Reference for PutRestoreValidationResult Operation</seealso>
+        IAsyncResult BeginPutRestoreValidationResult(PutRestoreValidationResultRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutRestoreValidationResult operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutRestoreValidationResult.</param>
+        /// 
+        /// <returns>Returns a  PutRestoreValidationResultResult from Backup.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/PutRestoreValidationResult">REST API Reference for PutRestoreValidationResult Operation</seealso>
+        PutRestoreValidationResultResponse EndPutRestoreValidationResult(IAsyncResult asyncResult);
 
         #endregion
         
@@ -4385,6 +5069,155 @@ namespace Amazon.Backup
         /// <returns>Returns a  UpdateReportPlanResult from Backup.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateReportPlan">REST API Reference for UpdateReportPlan Operation</seealso>
         UpdateReportPlanResponse EndUpdateReportPlan(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateRestoreTestingPlan
+
+
+        /// <summary>
+        /// This request will send changes to your specified restore testing plan. <code>RestoreTestingPlanName</code>
+        /// cannot be updated after it is created.
+        /// 
+        ///  
+        /// <para>
+        ///  <code>RecoveryPointSelection</code> can contain:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>Algorithm</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ExcludeVaults</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>IncludeVaults</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>RecoveryPointTypes</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>SelectionWindowDays</code> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRestoreTestingPlan service method.</param>
+        /// 
+        /// <returns>The response from the UpdateRestoreTestingPlan service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.ConflictException">
+        /// Backup can't perform the action that you requested until it finishes performing a
+        /// previous action. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateRestoreTestingPlan">REST API Reference for UpdateRestoreTestingPlan Operation</seealso>
+        UpdateRestoreTestingPlanResponse UpdateRestoreTestingPlan(UpdateRestoreTestingPlanRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateRestoreTestingPlan operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRestoreTestingPlan operation on AmazonBackupClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateRestoreTestingPlan
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateRestoreTestingPlan">REST API Reference for UpdateRestoreTestingPlan Operation</seealso>
+        IAsyncResult BeginUpdateRestoreTestingPlan(UpdateRestoreTestingPlanRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateRestoreTestingPlan operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateRestoreTestingPlan.</param>
+        /// 
+        /// <returns>Returns a  UpdateRestoreTestingPlanResult from Backup.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateRestoreTestingPlan">REST API Reference for UpdateRestoreTestingPlan Operation</seealso>
+        UpdateRestoreTestingPlanResponse EndUpdateRestoreTestingPlan(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateRestoreTestingSelection
+
+
+        /// <summary>
+        /// Most elements except the <code>RestoreTestingSelectionName</code> can be updated with
+        /// this request.
+        /// 
+        ///  
+        /// <para>
+        ///  <code>RestoreTestingSelection</code> can use either protected resource ARNs or conditions,
+        /// but not both. That is, if your selection has <code>ProtectedResourceArns</code>, requesting
+        /// an update with the parameter <code>ProtectedResourceConditions</code> will be unsuccessful.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRestoreTestingSelection service method.</param>
+        /// 
+        /// <returns>The response from the UpdateRestoreTestingSelection service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.ConflictException">
+        /// Backup can't perform the action that you requested until it finishes performing a
+        /// previous action. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateRestoreTestingSelection">REST API Reference for UpdateRestoreTestingSelection Operation</seealso>
+        UpdateRestoreTestingSelectionResponse UpdateRestoreTestingSelection(UpdateRestoreTestingSelectionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateRestoreTestingSelection operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRestoreTestingSelection operation on AmazonBackupClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateRestoreTestingSelection
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateRestoreTestingSelection">REST API Reference for UpdateRestoreTestingSelection Operation</seealso>
+        IAsyncResult BeginUpdateRestoreTestingSelection(UpdateRestoreTestingSelectionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateRestoreTestingSelection operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateRestoreTestingSelection.</param>
+        /// 
+        /// <returns>Returns a  UpdateRestoreTestingSelectionResult from Backup.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateRestoreTestingSelection">REST API Reference for UpdateRestoreTestingSelection Operation</seealso>
+        UpdateRestoreTestingSelectionResponse EndUpdateRestoreTestingSelection(IAsyncResult asyncResult);
 
         #endregion
                 

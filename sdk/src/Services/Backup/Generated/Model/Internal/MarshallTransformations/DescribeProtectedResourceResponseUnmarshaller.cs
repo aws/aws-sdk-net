@@ -57,6 +57,36 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                     response.LastBackupTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LastBackupVaultArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.LastBackupVaultArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LastRecoveryPointArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.LastRecoveryPointArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LatestRestoreExecutionTimeMinutes", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    response.LatestRestoreExecutionTimeMinutes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LatestRestoreJobCreationDate", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    response.LatestRestoreJobCreationDate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LatestRestoreRecoveryPointCreationDate", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    response.LatestRestoreRecoveryPointCreationDate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ResourceArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

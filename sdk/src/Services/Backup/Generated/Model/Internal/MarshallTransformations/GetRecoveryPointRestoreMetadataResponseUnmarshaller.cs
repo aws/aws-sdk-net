@@ -63,6 +63,12 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                     response.RecoveryPointArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ResourceType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ResourceType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RestoreMetadata", targetDepth))
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);

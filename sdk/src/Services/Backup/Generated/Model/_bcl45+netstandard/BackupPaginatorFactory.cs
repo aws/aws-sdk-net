@@ -188,11 +188,35 @@ namespace Amazon.Backup.Model
         }
 
         /// <summary>
+        /// Paginator for ListRestoreJobsByProtectedResource operation
+        ///</summary>
+        public IListRestoreJobsByProtectedResourcePaginator ListRestoreJobsByProtectedResource(ListRestoreJobsByProtectedResourceRequest request) 
+        {
+            return new ListRestoreJobsByProtectedResourcePaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListRestoreJobSummaries operation
         ///</summary>
         public IListRestoreJobSummariesPaginator ListRestoreJobSummaries(ListRestoreJobSummariesRequest request) 
         {
             return new ListRestoreJobSummariesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListRestoreTestingPlans operation
+        ///</summary>
+        public IListRestoreTestingPlansPaginator ListRestoreTestingPlans(ListRestoreTestingPlansRequest request) 
+        {
+            return new ListRestoreTestingPlansPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListRestoreTestingSelections operation
+        ///</summary>
+        public IListRestoreTestingSelectionsPaginator ListRestoreTestingSelections(ListRestoreTestingSelectionsRequest request) 
+        {
+            return new ListRestoreTestingSelectionsPaginator(this.client, request);
         }
 
         /// <summary>

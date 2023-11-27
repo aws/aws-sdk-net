@@ -34,6 +34,11 @@ namespace Amazon.Backup.Model
     public partial class DescribeProtectedResourceResponse : AmazonWebServiceResponse
     {
         private DateTime? _lastBackupTime;
+        private string _lastBackupVaultArn;
+        private string _lastRecoveryPointArn;
+        private long? _latestRestoreExecutionTimeMinutes;
+        private DateTime? _latestRestoreJobCreationDate;
+        private DateTime? _latestRestoreRecoveryPointCreationDate;
         private string _resourceArn;
         private string _resourceName;
         private string _resourceType;
@@ -57,6 +62,97 @@ namespace Amazon.Backup.Model
         internal bool IsSetLastBackupTime()
         {
             return this._lastBackupTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastBackupVaultArn. 
+        /// <para>
+        /// This is the ARN (Amazon Resource Name) of the backup vault that contains the most
+        /// recent backup recovery point.
+        /// </para>
+        /// </summary>
+        public string LastBackupVaultArn
+        {
+            get { return this._lastBackupVaultArn; }
+            set { this._lastBackupVaultArn = value; }
+        }
+
+        // Check to see if LastBackupVaultArn property is set
+        internal bool IsSetLastBackupVaultArn()
+        {
+            return this._lastBackupVaultArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastRecoveryPointArn. 
+        /// <para>
+        /// This is the ARN (Amazon Resource Name) of the most recent recovery point.
+        /// </para>
+        /// </summary>
+        public string LastRecoveryPointArn
+        {
+            get { return this._lastRecoveryPointArn; }
+            set { this._lastRecoveryPointArn = value; }
+        }
+
+        // Check to see if LastRecoveryPointArn property is set
+        internal bool IsSetLastRecoveryPointArn()
+        {
+            return this._lastRecoveryPointArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LatestRestoreExecutionTimeMinutes. 
+        /// <para>
+        /// This is the time in minutes the most recent restore job took to complete.
+        /// </para>
+        /// </summary>
+        public long LatestRestoreExecutionTimeMinutes
+        {
+            get { return this._latestRestoreExecutionTimeMinutes.GetValueOrDefault(); }
+            set { this._latestRestoreExecutionTimeMinutes = value; }
+        }
+
+        // Check to see if LatestRestoreExecutionTimeMinutes property is set
+        internal bool IsSetLatestRestoreExecutionTimeMinutes()
+        {
+            return this._latestRestoreExecutionTimeMinutes.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LatestRestoreJobCreationDate. 
+        /// <para>
+        /// This is the creation date of the most recent restore job.
+        /// </para>
+        /// </summary>
+        public DateTime LatestRestoreJobCreationDate
+        {
+            get { return this._latestRestoreJobCreationDate.GetValueOrDefault(); }
+            set { this._latestRestoreJobCreationDate = value; }
+        }
+
+        // Check to see if LatestRestoreJobCreationDate property is set
+        internal bool IsSetLatestRestoreJobCreationDate()
+        {
+            return this._latestRestoreJobCreationDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LatestRestoreRecoveryPointCreationDate. 
+        /// <para>
+        /// This is the date the most recent recovery point was created.
+        /// </para>
+        /// </summary>
+        public DateTime LatestRestoreRecoveryPointCreationDate
+        {
+            get { return this._latestRestoreRecoveryPointCreationDate.GetValueOrDefault(); }
+            set { this._latestRestoreRecoveryPointCreationDate = value; }
+        }
+
+        // Check to see if LatestRestoreRecoveryPointCreationDate property is set
+        internal bool IsSetLatestRestoreRecoveryPointCreationDate()
+        {
+            return this._latestRestoreRecoveryPointCreationDate.HasValue; 
         }
 
         /// <summary>

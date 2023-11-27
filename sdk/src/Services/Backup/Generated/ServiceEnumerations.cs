@@ -663,6 +663,60 @@ namespace Amazon.Backup
 
 
     /// <summary>
+    /// Constants used for properties of type RestoreDeletionStatus.
+    /// </summary>
+    public class RestoreDeletionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DELETING for RestoreDeletionStatus
+        /// </summary>
+        public static readonly RestoreDeletionStatus DELETING = new RestoreDeletionStatus("DELETING");
+        /// <summary>
+        /// Constant FAILED for RestoreDeletionStatus
+        /// </summary>
+        public static readonly RestoreDeletionStatus FAILED = new RestoreDeletionStatus("FAILED");
+        /// <summary>
+        /// Constant SUCCESSFUL for RestoreDeletionStatus
+        /// </summary>
+        public static readonly RestoreDeletionStatus SUCCESSFUL = new RestoreDeletionStatus("SUCCESSFUL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RestoreDeletionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RestoreDeletionStatus FindValue(string value)
+        {
+            return FindValue<RestoreDeletionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RestoreDeletionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type RestoreJobState.
     /// </summary>
     public class RestoreJobState : ConstantClass
@@ -792,6 +846,164 @@ namespace Amazon.Backup
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RestoreJobStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RestoreTestingRecoveryPointSelectionAlgorithm.
+    /// </summary>
+    public class RestoreTestingRecoveryPointSelectionAlgorithm : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant LATEST_WITHIN_WINDOW for RestoreTestingRecoveryPointSelectionAlgorithm
+        /// </summary>
+        public static readonly RestoreTestingRecoveryPointSelectionAlgorithm LATEST_WITHIN_WINDOW = new RestoreTestingRecoveryPointSelectionAlgorithm("LATEST_WITHIN_WINDOW");
+        /// <summary>
+        /// Constant RANDOM_WITHIN_WINDOW for RestoreTestingRecoveryPointSelectionAlgorithm
+        /// </summary>
+        public static readonly RestoreTestingRecoveryPointSelectionAlgorithm RANDOM_WITHIN_WINDOW = new RestoreTestingRecoveryPointSelectionAlgorithm("RANDOM_WITHIN_WINDOW");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RestoreTestingRecoveryPointSelectionAlgorithm(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RestoreTestingRecoveryPointSelectionAlgorithm FindValue(string value)
+        {
+            return FindValue<RestoreTestingRecoveryPointSelectionAlgorithm>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RestoreTestingRecoveryPointSelectionAlgorithm(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RestoreTestingRecoveryPointType.
+    /// </summary>
+    public class RestoreTestingRecoveryPointType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONTINUOUS for RestoreTestingRecoveryPointType
+        /// </summary>
+        public static readonly RestoreTestingRecoveryPointType CONTINUOUS = new RestoreTestingRecoveryPointType("CONTINUOUS");
+        /// <summary>
+        /// Constant SNAPSHOT for RestoreTestingRecoveryPointType
+        /// </summary>
+        public static readonly RestoreTestingRecoveryPointType SNAPSHOT = new RestoreTestingRecoveryPointType("SNAPSHOT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RestoreTestingRecoveryPointType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RestoreTestingRecoveryPointType FindValue(string value)
+        {
+            return FindValue<RestoreTestingRecoveryPointType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RestoreTestingRecoveryPointType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RestoreValidationStatus.
+    /// </summary>
+    public class RestoreValidationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for RestoreValidationStatus
+        /// </summary>
+        public static readonly RestoreValidationStatus FAILED = new RestoreValidationStatus("FAILED");
+        /// <summary>
+        /// Constant SUCCESSFUL for RestoreValidationStatus
+        /// </summary>
+        public static readonly RestoreValidationStatus SUCCESSFUL = new RestoreValidationStatus("SUCCESSFUL");
+        /// <summary>
+        /// Constant TIMED_OUT for RestoreValidationStatus
+        /// </summary>
+        public static readonly RestoreValidationStatus TIMED_OUT = new RestoreValidationStatus("TIMED_OUT");
+        /// <summary>
+        /// Constant VALIDATING for RestoreValidationStatus
+        /// </summary>
+        public static readonly RestoreValidationStatus VALIDATING = new RestoreValidationStatus("VALIDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RestoreValidationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RestoreValidationStatus FindValue(string value)
+        {
+            return FindValue<RestoreValidationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RestoreValidationStatus(string value)
         {
             return FindValue(value);
         }

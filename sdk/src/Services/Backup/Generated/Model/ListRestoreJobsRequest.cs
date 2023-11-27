@@ -40,6 +40,7 @@ namespace Amazon.Backup.Model
         private DateTime? _byCompleteBefore;
         private DateTime? _byCreatedAfter;
         private DateTime? _byCreatedBefore;
+        private string _byRestoreTestingPlanArn;
         private RestoreJobStatus _byStatus;
         private int? _maxResults;
         private string _nextToken;
@@ -138,6 +139,25 @@ namespace Amazon.Backup.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ByRestoreTestingPlanArn. 
+        /// <para>
+        /// This returns only restore testing jobs that match the specified resource Amazon Resource
+        /// Name (ARN).
+        /// </para>
+        /// </summary>
+        public string ByRestoreTestingPlanArn
+        {
+            get { return this._byRestoreTestingPlanArn; }
+            set { this._byRestoreTestingPlanArn = value; }
+        }
+
+        // Check to see if ByRestoreTestingPlanArn property is set
+        internal bool IsSetByRestoreTestingPlanArn()
+        {
+            return this._byRestoreTestingPlanArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ByStatus. 
         /// <para>
         /// Returns only restore jobs associated with the specified job status.
@@ -178,7 +198,7 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// The next item following a partial list of returned items. For example, if a request
-        /// is made to return <code>maxResults</code> number of items, <code>NextToken</code>
+        /// is made to return <code>MaxResults</code> number of items, <code>NextToken</code>
         /// allows you to return more items in your list starting at the location pointed to by
         /// the next token.
         /// </para>
