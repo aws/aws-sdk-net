@@ -712,6 +712,41 @@ namespace Amazon.Detective
 
         #endregion
                 
+        #region  GetInvestigation
+
+
+
+        /// <summary>
+        /// Returns the investigation results of an investigation for a behavior graph.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetInvestigation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetInvestigation service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.AccessDeniedException">
+        /// The request issuer does not have permission to access this resource or perform this
+        /// operation.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.InternalServerException">
+        /// The request was valid but failed because of a problem with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ResourceNotFoundException">
+        /// The request refers to a nonexistent resource.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.TooManyRequestsException">
+        /// The request cannot be completed because too many other requests are occurring at the
+        /// same time.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ValidationException">
+        /// The request parameters are invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/GetInvestigation">REST API Reference for GetInvestigation Operation</seealso>
+        Task<GetInvestigationResponse> GetInvestigationAsync(GetInvestigationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetMembers
 
 
@@ -806,6 +841,76 @@ namespace Amazon.Detective
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/ListGraphs">REST API Reference for ListGraphs Operation</seealso>
         Task<ListGraphsResponse> ListGraphsAsync(ListGraphsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListIndicators
+
+
+
+        /// <summary>
+        /// Get the indicators from an investigation
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListIndicators service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListIndicators service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.AccessDeniedException">
+        /// The request issuer does not have permission to access this resource or perform this
+        /// operation.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.InternalServerException">
+        /// The request was valid but failed because of a problem with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ResourceNotFoundException">
+        /// The request refers to a nonexistent resource.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.TooManyRequestsException">
+        /// The request cannot be completed because too many other requests are occurring at the
+        /// same time.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ValidationException">
+        /// The request parameters are invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/ListIndicators">REST API Reference for ListIndicators Operation</seealso>
+        Task<ListIndicatorsResponse> ListIndicatorsAsync(ListIndicatorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListInvestigations
+
+
+
+        /// <summary>
+        /// List all Investigations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListInvestigations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListInvestigations service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.AccessDeniedException">
+        /// The request issuer does not have permission to access this resource or perform this
+        /// operation.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.InternalServerException">
+        /// The request was valid but failed because of a problem with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ResourceNotFoundException">
+        /// The request refers to a nonexistent resource.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.TooManyRequestsException">
+        /// The request cannot be completed because too many other requests are occurring at the
+        /// same time.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ValidationException">
+        /// The request parameters are invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/ListInvestigations">REST API Reference for ListInvestigations Operation</seealso>
+        Task<ListInvestigationsResponse> ListInvestigationsAsync(ListInvestigationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -997,6 +1102,41 @@ namespace Amazon.Detective
 
         #endregion
                 
+        #region  StartInvestigation
+
+
+
+        /// <summary>
+        /// initiate an investigation on an entity in a graph
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartInvestigation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartInvestigation service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.AccessDeniedException">
+        /// The request issuer does not have permission to access this resource or perform this
+        /// operation.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.InternalServerException">
+        /// The request was valid but failed because of a problem with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ResourceNotFoundException">
+        /// The request refers to a nonexistent resource.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.TooManyRequestsException">
+        /// The request cannot be completed because too many other requests are occurring at the
+        /// same time.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ValidationException">
+        /// The request parameters are invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/StartInvestigation">REST API Reference for StartInvestigation Operation</seealso>
+        Task<StartInvestigationResponse> StartInvestigationAsync(StartInvestigationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  StartMonitoringMember
 
 
@@ -1176,6 +1316,41 @@ namespace Amazon.Detective
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/UpdateDatasourcePackages">REST API Reference for UpdateDatasourcePackages Operation</seealso>
         Task<UpdateDatasourcePackagesResponse> UpdateDatasourcePackagesAsync(UpdateDatasourcePackagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateInvestigationState
+
+
+
+        /// <summary>
+        /// Update the state of an investigation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateInvestigationState service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateInvestigationState service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.AccessDeniedException">
+        /// The request issuer does not have permission to access this resource or perform this
+        /// operation.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.InternalServerException">
+        /// The request was valid but failed because of a problem with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ResourceNotFoundException">
+        /// The request refers to a nonexistent resource.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.TooManyRequestsException">
+        /// The request cannot be completed because too many other requests are occurring at the
+        /// same time.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ValidationException">
+        /// The request parameters are invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/UpdateInvestigationState">REST API Reference for UpdateInvestigationState Operation</seealso>
+        Task<UpdateInvestigationStateResponse> UpdateInvestigationStateAsync(UpdateInvestigationStateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

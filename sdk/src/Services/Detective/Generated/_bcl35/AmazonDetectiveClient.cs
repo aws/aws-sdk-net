@@ -1329,6 +1329,77 @@ namespace Amazon.Detective
 
         #endregion
         
+        #region  GetInvestigation
+
+        /// <summary>
+        /// Returns the investigation results of an investigation for a behavior graph.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetInvestigation service method.</param>
+        /// 
+        /// <returns>The response from the GetInvestigation service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.AccessDeniedException">
+        /// The request issuer does not have permission to access this resource or perform this
+        /// operation.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.InternalServerException">
+        /// The request was valid but failed because of a problem with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ResourceNotFoundException">
+        /// The request refers to a nonexistent resource.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.TooManyRequestsException">
+        /// The request cannot be completed because too many other requests are occurring at the
+        /// same time.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ValidationException">
+        /// The request parameters are invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/GetInvestigation">REST API Reference for GetInvestigation Operation</seealso>
+        public virtual GetInvestigationResponse GetInvestigation(GetInvestigationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetInvestigationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetInvestigationResponseUnmarshaller.Instance;
+
+            return Invoke<GetInvestigationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetInvestigation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetInvestigation operation on AmazonDetectiveClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetInvestigation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/GetInvestigation">REST API Reference for GetInvestigation Operation</seealso>
+        public virtual IAsyncResult BeginGetInvestigation(GetInvestigationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetInvestigationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetInvestigationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetInvestigation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetInvestigation.</param>
+        /// 
+        /// <returns>Returns a  GetInvestigationResult from Detective.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/GetInvestigation">REST API Reference for GetInvestigation Operation</seealso>
+        public virtual GetInvestigationResponse EndGetInvestigation(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetInvestigationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetMembers
 
         /// <summary>
@@ -1530,6 +1601,148 @@ namespace Amazon.Detective
         public virtual ListGraphsResponse EndListGraphs(IAsyncResult asyncResult)
         {
             return EndInvoke<ListGraphsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListIndicators
+
+        /// <summary>
+        /// Get the indicators from an investigation
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListIndicators service method.</param>
+        /// 
+        /// <returns>The response from the ListIndicators service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.AccessDeniedException">
+        /// The request issuer does not have permission to access this resource or perform this
+        /// operation.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.InternalServerException">
+        /// The request was valid but failed because of a problem with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ResourceNotFoundException">
+        /// The request refers to a nonexistent resource.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.TooManyRequestsException">
+        /// The request cannot be completed because too many other requests are occurring at the
+        /// same time.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ValidationException">
+        /// The request parameters are invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/ListIndicators">REST API Reference for ListIndicators Operation</seealso>
+        public virtual ListIndicatorsResponse ListIndicators(ListIndicatorsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListIndicatorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListIndicatorsResponseUnmarshaller.Instance;
+
+            return Invoke<ListIndicatorsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListIndicators operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListIndicators operation on AmazonDetectiveClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListIndicators
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/ListIndicators">REST API Reference for ListIndicators Operation</seealso>
+        public virtual IAsyncResult BeginListIndicators(ListIndicatorsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListIndicatorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListIndicatorsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListIndicators operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListIndicators.</param>
+        /// 
+        /// <returns>Returns a  ListIndicatorsResult from Detective.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/ListIndicators">REST API Reference for ListIndicators Operation</seealso>
+        public virtual ListIndicatorsResponse EndListIndicators(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListIndicatorsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListInvestigations
+
+        /// <summary>
+        /// List all Investigations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListInvestigations service method.</param>
+        /// 
+        /// <returns>The response from the ListInvestigations service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.AccessDeniedException">
+        /// The request issuer does not have permission to access this resource or perform this
+        /// operation.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.InternalServerException">
+        /// The request was valid but failed because of a problem with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ResourceNotFoundException">
+        /// The request refers to a nonexistent resource.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.TooManyRequestsException">
+        /// The request cannot be completed because too many other requests are occurring at the
+        /// same time.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ValidationException">
+        /// The request parameters are invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/ListInvestigations">REST API Reference for ListInvestigations Operation</seealso>
+        public virtual ListInvestigationsResponse ListInvestigations(ListInvestigationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListInvestigationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListInvestigationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListInvestigationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListInvestigations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListInvestigations operation on AmazonDetectiveClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListInvestigations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/ListInvestigations">REST API Reference for ListInvestigations Operation</seealso>
+        public virtual IAsyncResult BeginListInvestigations(ListInvestigationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListInvestigationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListInvestigationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListInvestigations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListInvestigations.</param>
+        /// 
+        /// <returns>Returns a  ListInvestigationsResult from Detective.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/ListInvestigations">REST API Reference for ListInvestigations Operation</seealso>
+        public virtual ListInvestigationsResponse EndListInvestigations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListInvestigationsResponse>(asyncResult);
         }
 
         #endregion
@@ -1902,6 +2115,77 @@ namespace Amazon.Detective
 
         #endregion
         
+        #region  StartInvestigation
+
+        /// <summary>
+        /// initiate an investigation on an entity in a graph
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartInvestigation service method.</param>
+        /// 
+        /// <returns>The response from the StartInvestigation service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.AccessDeniedException">
+        /// The request issuer does not have permission to access this resource or perform this
+        /// operation.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.InternalServerException">
+        /// The request was valid but failed because of a problem with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ResourceNotFoundException">
+        /// The request refers to a nonexistent resource.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.TooManyRequestsException">
+        /// The request cannot be completed because too many other requests are occurring at the
+        /// same time.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ValidationException">
+        /// The request parameters are invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/StartInvestigation">REST API Reference for StartInvestigation Operation</seealso>
+        public virtual StartInvestigationResponse StartInvestigation(StartInvestigationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartInvestigationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartInvestigationResponseUnmarshaller.Instance;
+
+            return Invoke<StartInvestigationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartInvestigation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartInvestigation operation on AmazonDetectiveClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartInvestigation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/StartInvestigation">REST API Reference for StartInvestigation Operation</seealso>
+        public virtual IAsyncResult BeginStartInvestigation(StartInvestigationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartInvestigationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartInvestigationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartInvestigation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartInvestigation.</param>
+        /// 
+        /// <returns>Returns a  StartInvestigationResult from Detective.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/StartInvestigation">REST API Reference for StartInvestigation Operation</seealso>
+        public virtual StartInvestigationResponse EndStartInvestigation(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartInvestigationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  StartMonitoringMember
 
         /// <summary>
@@ -2224,6 +2508,77 @@ namespace Amazon.Detective
         public virtual UpdateDatasourcePackagesResponse EndUpdateDatasourcePackages(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateDatasourcePackagesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateInvestigationState
+
+        /// <summary>
+        /// Update the state of an investigation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateInvestigationState service method.</param>
+        /// 
+        /// <returns>The response from the UpdateInvestigationState service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.AccessDeniedException">
+        /// The request issuer does not have permission to access this resource or perform this
+        /// operation.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.InternalServerException">
+        /// The request was valid but failed because of a problem with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ResourceNotFoundException">
+        /// The request refers to a nonexistent resource.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.TooManyRequestsException">
+        /// The request cannot be completed because too many other requests are occurring at the
+        /// same time.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ValidationException">
+        /// The request parameters are invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/UpdateInvestigationState">REST API Reference for UpdateInvestigationState Operation</seealso>
+        public virtual UpdateInvestigationStateResponse UpdateInvestigationState(UpdateInvestigationStateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateInvestigationStateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateInvestigationStateResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateInvestigationStateResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateInvestigationState operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateInvestigationState operation on AmazonDetectiveClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateInvestigationState
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/UpdateInvestigationState">REST API Reference for UpdateInvestigationState Operation</seealso>
+        public virtual IAsyncResult BeginUpdateInvestigationState(UpdateInvestigationStateRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateInvestigationStateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateInvestigationStateResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateInvestigationState operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateInvestigationState.</param>
+        /// 
+        /// <returns>Returns a  UpdateInvestigationStateResult from Detective.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/UpdateInvestigationState">REST API Reference for UpdateInvestigationState Operation</seealso>
+        public virtual UpdateInvestigationStateResponse EndUpdateInvestigationState(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateInvestigationStateResponse>(asyncResult);
         }
 
         #endregion

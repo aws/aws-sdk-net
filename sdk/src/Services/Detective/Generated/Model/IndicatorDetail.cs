@@ -1,0 +1,193 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the detective-2018-10-26.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+namespace Amazon.Detective.Model
+{
+    /// <summary>
+    /// Details about the indicators of compromise which are used to determine if a resource
+    /// is involved in a security incident.
+    /// </summary>
+    public partial class IndicatorDetail
+    {
+        private FlaggedIpAddressDetail _flaggedIpAddressDetail;
+        private ImpossibleTravelDetail _impossibleTravelDetail;
+        private NewAsoDetail _newAsoDetail;
+        private NewGeolocationDetail _newGeolocationDetail;
+        private NewUserAgentDetail _newUserAgentDetail;
+        private RelatedFindingDetail _relatedFindingDetail;
+        private RelatedFindingGroupDetail _relatedFindingGroupDetail;
+        private TTPsObservedDetail _ttPsObservedDetail;
+
+        /// <summary>
+        /// Gets and sets the property FlaggedIpAddressDetail. 
+        /// <para>
+        /// Suspicious IP addresses that are flagged, which indicates critical or severe threats
+        /// based on threat intelligence by Detective. This indicator is derived from AWS threat
+        /// intelligence.
+        /// </para>
+        /// </summary>
+        public FlaggedIpAddressDetail FlaggedIpAddressDetail
+        {
+            get { return this._flaggedIpAddressDetail; }
+            set { this._flaggedIpAddressDetail = value; }
+        }
+
+        // Check to see if FlaggedIpAddressDetail property is set
+        internal bool IsSetFlaggedIpAddressDetail()
+        {
+            return this._flaggedIpAddressDetail != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImpossibleTravelDetail. 
+        /// <para>
+        /// Identifies unusual and impossible user activity for an account. 
+        /// </para>
+        /// </summary>
+        public ImpossibleTravelDetail ImpossibleTravelDetail
+        {
+            get { return this._impossibleTravelDetail; }
+            set { this._impossibleTravelDetail = value; }
+        }
+
+        // Check to see if ImpossibleTravelDetail property is set
+        internal bool IsSetImpossibleTravelDetail()
+        {
+            return this._impossibleTravelDetail != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NewAsoDetail. 
+        /// <para>
+        /// Contains details about the new Autonomous System Organization (ASO).
+        /// </para>
+        /// </summary>
+        public NewAsoDetail NewAsoDetail
+        {
+            get { return this._newAsoDetail; }
+            set { this._newAsoDetail = value; }
+        }
+
+        // Check to see if NewAsoDetail property is set
+        internal bool IsSetNewAsoDetail()
+        {
+            return this._newAsoDetail != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NewGeolocationDetail. 
+        /// <para>
+        /// Contains details about the new geographic location.
+        /// </para>
+        /// </summary>
+        public NewGeolocationDetail NewGeolocationDetail
+        {
+            get { return this._newGeolocationDetail; }
+            set { this._newGeolocationDetail = value; }
+        }
+
+        // Check to see if NewGeolocationDetail property is set
+        internal bool IsSetNewGeolocationDetail()
+        {
+            return this._newGeolocationDetail != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NewUserAgentDetail. 
+        /// <para>
+        /// Contains details about the new user agent.
+        /// </para>
+        /// </summary>
+        public NewUserAgentDetail NewUserAgentDetail
+        {
+            get { return this._newUserAgentDetail; }
+            set { this._newUserAgentDetail = value; }
+        }
+
+        // Check to see if NewUserAgentDetail property is set
+        internal bool IsSetNewUserAgentDetail()
+        {
+            return this._newUserAgentDetail != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RelatedFindingDetail. 
+        /// <para>
+        /// Contains details about related findings.
+        /// </para>
+        /// </summary>
+        public RelatedFindingDetail RelatedFindingDetail
+        {
+            get { return this._relatedFindingDetail; }
+            set { this._relatedFindingDetail = value; }
+        }
+
+        // Check to see if RelatedFindingDetail property is set
+        internal bool IsSetRelatedFindingDetail()
+        {
+            return this._relatedFindingDetail != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RelatedFindingGroupDetail. 
+        /// <para>
+        /// Contains details about related finding groups.
+        /// </para>
+        /// </summary>
+        public RelatedFindingGroupDetail RelatedFindingGroupDetail
+        {
+            get { return this._relatedFindingGroupDetail; }
+            set { this._relatedFindingGroupDetail = value; }
+        }
+
+        // Check to see if RelatedFindingGroupDetail property is set
+        internal bool IsSetRelatedFindingGroupDetail()
+        {
+            return this._relatedFindingGroupDetail != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TTPsObservedDetail. 
+        /// <para>
+        /// Details about the indicator of compromise.
+        /// </para>
+        /// </summary>
+        public TTPsObservedDetail TTPsObservedDetail
+        {
+            get { return this._ttPsObservedDetail; }
+            set { this._ttPsObservedDetail = value; }
+        }
+
+        // Check to see if TTPsObservedDetail property is set
+        internal bool IsSetTTPsObservedDetail()
+        {
+            return this._ttPsObservedDetail != null;
+        }
+
+    }
+}
